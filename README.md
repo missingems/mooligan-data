@@ -33,7 +33,7 @@ Card details come from Scryfall's API, not from this pipeline.
 
 `.github/workflows/scrape.yml` runs at 02:00 and 14:00 UTC, and can be started by hand from the Actions tab.
 
-1. **Download.** It downloads `snapshots/` and `state/deck-ids.json` from R2. They are the previous run's output, and the only state the scraper keeps.
+1. **Download.** It downloads `snapshots/` and `state/` from R2. They are the previous run's output, and the only state the scraper keeps.
 2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
    - reads the metagame page (30-day window);
    - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so a run stops at the first page with nothing new;
