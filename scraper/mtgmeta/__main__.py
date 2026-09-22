@@ -12,6 +12,7 @@ import sys
 from pathlib import Path
 
 from .browser import open_browser
+from .published import fetch_published_decks
 from .scrape import ScrapeConfig, scrape
 from .store import SnapshotStore
 
@@ -44,7 +45,8 @@ def main() -> int:
         concurrency=int(os.environ.get("CONCURRENCY", "6")),
     ) as browser:
         report = scrape(browser, store, config)
-    written = store.finish()
+    data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
+    written = store.finish(fetch_decks=lambda ids: fetch_published_decks(data_url, ids))
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
 
     logging.info(

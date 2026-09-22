@@ -33,13 +33,16 @@ const formatDate = (iso) =>
 const timeframeLabel = (timeframe) => timeframe.replace(/^(\d+)d$/, (_, days) => `${days} days`);
 const count = (cards) => cards.reduce((sum, card) => sum + card.quantity, 0);
 
-// ---- Routing: #/<format>[?t=<timeframe>], #/<format>/event/<id>, #/<format>/archetype/<id>, #/deck/<id>
+const cardSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+// ---- Routing: #/<format>[?t=<window>], #/<format>/event/<id>, #/<format>/archetype/<id>, #/deck/<id>, #/card/<slug>
 
 function parseRoute() {
   const [path, query = ""] = location.hash.replace(/^#\/?/, "").split("?");
   const parts = path.split("/").filter(Boolean).map(decodeURIComponent);
   const params = new URLSearchParams(query);
   if (parts[0] === "deck" && parts[1]) return { name: "deck", deckId: parts[1] };
+  if (parts[0] === "card" && parts[1]) return { name: "card", slug: parts[1] };
   const format = config.formats.includes(parts[0]) ? parts[0] : config.formats[0];
   if (parts[1] === "event" && parts[2]) return { name: "event", format, eventId: parts[2] };
   if (parts[1] === "archetype" && parts[2]) return { name: "archetype", format, archetypeId: parts[2] };
@@ -55,13 +58,15 @@ async function render() {
   try {
     const api = await apiReady;
     const content =
-      route.name === "deck"
-        ? await deckView(api, route)
-        : route.name === "event"
-          ? await eventView(api, route)
-          : route.name === "archetype"
-            ? await archetypeView(api, route)
-            : await metaView(api, route);
+      route.name === "card"
+        ? await cardView(api, route)
+        : route.name === "deck"
+          ? await deckView(api, route)
+          : route.name === "event"
+            ? await eventView(api, route)
+            : route.name === "archetype"
+              ? await archetypeView(api, route)
+              : await metaView(api, route);
     if (token === renderToken) view.replaceChildren(content);
   } catch (error) {
     if (token !== renderToken) return;
@@ -88,11 +93,13 @@ async function metaView(api, { format, timeframe }) {
   ]);
   document.title = `${formatName(format)} metagame · MTG Metagame`;
 
-  const timeframes = config.timeframes.length < 2 ? null : el(
+  const windows = meta?.windows ?? [];
+  const timeframes = windows.length < 2 ? null : el(
     "nav",
     { class: "segmented", "aria-label": "Timeframe" },
-    config.timeframes.map((option) =>
-      el("a", { href: `#/${format}?t=${option}`, "aria-current": option === timeframe ? "true" : undefined }, timeframeLabel(option)),
+    windows.map((option) =>
+      el("a", { href: `#/${format}?t=${option}`, "aria-current": option === (meta.timeframe ?? timeframe) ? "true" : undefined },
+        timeframeLabel(option)),
     ),
   );
 
@@ -330,6 +337,60 @@ function notStoredYet(message, goldfishUrl, format) {
     format ? el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`) : null);
 }
 
+async function cardView(api, { slug }) {
+  const [card, details] = await Promise.all([
+    api.getCard({ slug }).catch((error) => {
+      if (error.code !== "not-found") throw error;
+      return null;
+    }),
+    api.getCardDetails({ card_name: slug.replace(/-/g, " ") }).catch(() => null),
+  ]);
+  const name = card?.card_name ?? details?.name ?? slug;
+  document.title = `${name} · MTG Metagame`;
+  if (!card) {
+    return el("div", {},
+      el("div", { class: "page-head" }, el("div", {}, el("h1", {}, name))),
+      el("p", { class: "status" }, "No stored deck in the tracked formats plays this card."));
+  }
+
+  const image = details?.image_uris?.normal ?? details?.card_faces?.[0]?.image_uris?.normal;
+  const playRate = (entry) => entry.decks / entry.of_decks;
+  const played = Object.entries(card.formats).sort((a, b) => playRate(b[1]) - playRate(a[1]));
+
+  const archetypeRow = (format, archetype) =>
+    el("tr", {},
+      el("td", {},
+        archetype.archetype_id
+          ? el("a", { href: `#/${format}/archetype/${encodeURIComponent(archetype.archetype_id)}` }, archetype.name)
+          : archetype.name),
+      el("td", { class: "finish" }, `${archetype.decks} ${archetype.decks === 1 ? "deck" : "decks"}`),
+      el("td", { class: "finish" }, `${archetype.avg_copies}×`),
+      el("td", {}, archetype.deck_ids.slice(0, 3).map((deckId, index) =>
+        el("span", {}, index ? " " : "", el("a", { href: `#/deck/${encodeURIComponent(deckId)}?format=${format}` }, `#${index + 1}`)))));
+
+  const formatPanel = ([format, entry]) =>
+    el("section", { class: "panel archetype-event" },
+      el("h2", {},
+        el("a", { href: `#/${format}` }, formatName(format)),
+        el("small", {}, `${Math.round(playRate(entry) * 100)}% · ${entry.decks} of ${entry.of_decks} decks`)),
+      el("table", {}, el("tbody", {}, entry.archetypes.map((archetype) => archetypeRow(format, archetype)))));
+
+  return el(
+    "div",
+    {},
+    el("div", { class: "page-head" },
+      el("div", {},
+        el("h1", {}, name),
+        el("p", {}, `Played in ${played.length} ${played.length === 1 ? "format" : "formats"} · updated ${formatDate(card.generated_at)}`)),
+      details?.scryfall_uri
+        ? el("a", { class: "button", href: details.scryfall_uri, target: "_blank", rel: "noopener" }, "Scryfall")
+        : null),
+    el("div", { class: "card-played" },
+      image ? el("img", { class: "card-art", src: image, alt: name, loading: "lazy" }) : null,
+      el("div", { class: "archetype-events" }, played.map(formatPanel))),
+  );
+}
+
 // ---- Card details dialog
 
 async function showCard(api, name, format) {
@@ -352,7 +413,9 @@ async function showCard(api, name, format) {
             face.power != null ? el("div", { class: "pt" }, `${face.power}/${face.toughness}`) : null,
             face.loyalty != null ? el("div", { class: "pt" }, `Loyalty ${face.loyalty}`) : null)),
         legality ? el("div", { class: "legal" }, `${formatName(format)}: ${legality.replace("_", " ")}`) : null,
-        card.scryfall_uri ? el("p", {}, el("a", { href: card.scryfall_uri, target: "_blank", rel: "noopener" }, "View on Scryfall")) : null),
+        el("p", {},
+          el("a", { href: `#/card/${encodeURIComponent(cardSlug(card.name.split("//")[0]))}`, onclick: () => dialog.close() }, "Where it's played"),
+          card.scryfall_uri ? el("span", {}, " · ", el("a", { href: card.scryfall_uri, target: "_blank", rel: "noopener" }, "Scryfall")) : null)),
     );
   } catch (error) {
     body.replaceChildren(el("p", { class: "status error", id: "card-dialog-title" }, error.message));

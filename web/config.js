@@ -4,5 +4,5 @@ export default {
   formats: [
     "modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander",
   ],
-  timeframes: ["30d"],
+  timeframes: ["30d", "14d", "7d"],
 };

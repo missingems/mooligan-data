@@ -23,8 +23,10 @@ export async function createApi() {
 
   return {
     async getMeta({ format, timeframe }) {
-      const meta = (await snapshot(format)).meta[timeframe];
-      return meta ? { format, ...meta } : notFound(`${format} over ${timeframe}`);
+      const { meta } = await snapshot(format);
+      // Fall back to the widest window a format publishes.
+      const entry = meta[timeframe] ?? meta[Object.keys(meta)[0]];
+      return entry ? { format, windows: Object.keys(meta), ...entry } : notFound(`${format} over ${timeframe}`);
     },
     async getEvents({ format, limit = 20 }) {
       const events = (await snapshot(format)).events.slice(0, limit).map((event) => ({ format, ...event }));
@@ -49,6 +51,10 @@ export async function createApi() {
           archetype.deck_id === deck_id || archetype.results.some((result) => result.deck_id === deck_id),
       );
       return match ? { archetype_id: match.archetype_id, name: match.name } : null;
+    },
+    /** Where a card is played, across every format. */
+    async getCard({ slug }) {
+      return getJson(`cards/${encodeURIComponent(slug)}.json`);
     },
     async getCardDetails({ card_name }) {
       const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(card_name)}`;

@@ -104,6 +104,10 @@ td.finish { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .archetype-event table td { padding: 5px 6px; }
 .archetype-event tr:first-child td { border-top: 0; }
 
+.card-played { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 700px) { .card-played { grid-template-columns: minmax(0, 1fr); } .card-art { max-width: 240px; } }
+.card-art { width: 100%; border-radius: 4.75% / 3.5%; display: block; }
+
 .status { color: var(--muted); padding: 24px 0; }
 .error { color: #c92a2a; }
 @media (prefers-color-scheme: dark) { .error { color: #ff8787; } }

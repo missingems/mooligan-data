@@ -119,8 +119,12 @@ class SnapshotStore:
 
     # ---- Publishing
 
-    def finish(self) -> List[str]:
-        """Writes the snapshots, deck id list and index, and returns the snapshot paths written."""
+    def finish(self, fetch_decks=None) -> List[str]:
+        """Writes the snapshots, deck id list and index, and returns the paths written.
+
+        `fetch_decks(ids) -> {id: deck}` supplies decklists published by earlier
+        runs, whose contents this run never saw but whose cards still count.
+        """
         written = []
         formats = {}
         card_decks: Dict[str, FormatDecks] = {}
@@ -164,6 +168,13 @@ class SnapshotStore:
                 for result in event["results"]:
                     membership.setdefault(result["deck_id"], (result.get("archetype_id") or "", result.get("archetype") or "Other"))
             stored = self._deck_cards.get(format, {})
+            if fetch_decks:
+                missing = [deck_id for deck_id in membership if deck_id not in stored and deck_id in self._deck_ids]
+                for deck_id, deck in fetch_decks(missing).items():
+                    stored[deck_id] = {
+                        "m": [[card["quantity"], card["card_name"]] for card in deck.get("mainboard", [])],
+                        "s": [[card["quantity"], card["card_name"]] for card in deck.get("sideboard", [])],
+                    }
             self._deck_cards[format] = {deck_id: stored[deck_id] for deck_id in membership if deck_id in stored}
             card_decks[format] = FormatDecks(self._deck_cards[format], membership)
 

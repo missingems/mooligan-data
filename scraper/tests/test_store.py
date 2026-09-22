@@ -96,3 +96,32 @@ def test_duplicates_are_remembered_for_later_runs(tmp_path):
     first.save_event(standings_event("66774", "Modern Challenge 32 2026-09-22", 1000))
     first.finish()
     assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"66776"}
+
+
+def test_published_decks_fill_in_the_card_pages(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    first.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", None, None, [
+        ArchetypeResult("5", day("2026-09-20"), "p", "1", "Modern League", "5-0"),
+    ]))
+    first.save_decks([Deck("5", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [], "modern", "1")])
+    first.finish()
+
+    # A later run knows deck 5 is stored but never saw its cards; the bucket has them.
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    later._deck_cards["modern"] = {}
+    asked = []
+
+    def fetch(ids):
+        asked.extend(ids)
+        return {"5": {"mainboard": [{"quantity": 4, "card_name": "Eldrazi Temple"}], "sideboard": []}}
+
+    later.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", None, None, [
+        ArchetypeResult("5", day("2026-09-20"), "p", "1", "Modern League", "5-0"),
+    ]))
+    later.finish(fetch_decks=fetch)
+
+    assert asked == ["5"]
+    page = json.loads((tmp_path / "cards" / "eldrazi-temple.json").read_text())
+    assert page["formats"]["modern"]["of_decks"] == 1
