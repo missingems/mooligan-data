@@ -28,7 +28,8 @@ Website (web/, GitHub Pages) ──▶ getMeta · getEvents · getDecklist · ge
 The field names follow the spec. `functions/src/shared/schema.ts` and `scraper/mtgmeta/models.py` define them, and must be kept in step. These fields go beyond the spec:
 
 - `meta.archetypes[].deck_count` and `meta.timeframe`
-- `events.url`, and `decks.format` and `decks.event_id`
+- `meta.archetypes[].deck_id`: the deck featured on the archetype's MTGGoldfish page, stored in `decks`. The website opens it when you click an archetype.
+- `events.url`, and `decks.format` and `decks.event_id`. `event_id` is null for an archetype's featured deck.
 - `cards.search_names`: the lower-cased full name plus each face name. Decklists name a double-faced card by its front face ("Fable of the Mirror-Breaker"), which `where("name", "==", …)` would never match.
 
 ## Scryfall sync
@@ -54,7 +55,7 @@ Timestamps are returned as ISO 8601 strings. Invalid input throws `invalid-argum
 
 `python -m mtgmeta` opens MTGGoldfish in SeleniumBase UC mode. For each format, it:
 
-1. reads the full metagame page for each window in `META_DAYS`. The site's own period selector switches the window, and it offers 7, 14, 30, 90 and 365 days.
+1. reads the full metagame page for each window in `META_DAYS`. The site's own period selector switches the window, and it offers 7, 14, 30, 90 and 365 days. It then opens each archetype's page, records the deck featured there as the archetype's `deck_id`, and downloads that deck the first time it appears. This costs one page load per archetype on every run: about 8 minutes for Modern's 60 archetypes.
 2. lists the recent tournaments and reads each tournament page for players, archetypes and finishes. A Challenge finish reads "1st Place", and a League finish is a record such as "5-0".
 3. downloads each new decklist as text through `fetch("/deck/download/{id}")` inside the page, so the request reuses the browser's Cloudflare clearance.
 
@@ -66,6 +67,7 @@ One failed page doesn't stop the run. The job exits with status 1 when anything 
 | `META_DAYS` | `30` | Metagame windows, e.g. `30,7` gives `modern_30d` and `modern_7d` |
 | `EVENTS_PER_FORMAT` | `10` | Recent events read per format |
 | `MAX_NEW_DECKS` | `400` | New decklists downloaded per run. Anything over the limit waits for the next run |
+| `ARCHETYPE_DECKS` | `100` | Archetypes per metagame, most played first, whose featured deck is stored. The site links any others to MTGGoldfish |
 | `REQUEST_DELAY` | `1.5` | Base seconds between requests, plus up to 50% random extra |
 | `HEADLESS` | `1` on macOS, `0` on Linux | On Linux, UC mode runs Chrome headed inside Xvfb |
 

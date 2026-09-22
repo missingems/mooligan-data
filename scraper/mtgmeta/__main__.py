@@ -27,6 +27,7 @@ def main() -> int:
         meta_days=_list("META_DAYS", "30"),
         events_per_format=int(os.environ.get("EVENTS_PER_FORMAT", "10")),
         max_new_decks=int(os.environ.get("MAX_NEW_DECKS", "400")),
+        archetype_decks=int(os.environ.get("ARCHETYPE_DECKS", "100")),
     )
     store = JsonFileStore(args.dry_run) if args.dry_run else FirestoreStore(os.environ.get("GOOGLE_CLOUD_PROJECT"))
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"

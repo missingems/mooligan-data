@@ -7,7 +7,7 @@ from typing import List, Optional, Tuple
 
 from bs4 import BeautifulSoup
 
-from .models import Archetype, DeckCard, Event, EventResult, EventSummary, Meta
+from .models import Archetype, DeckCard, Event, EventResult, EventSummary, FeaturedDeck, Meta
 
 BASE_URL = "https://www.mtggoldfish.com"
 
@@ -17,6 +17,7 @@ _COUNT = re.compile(r"\((\d[\d,]*)\)")
 _ARCHETYPE_HREF = re.compile(r"/archetype/([^/#?]+)")
 _TOURNAMENT_HREF = re.compile(r"^/tournament/(\d+)")
 _DECK_HREF = re.compile(r"/deck/(\d+)")
+_DOWNLOAD_HREF = re.compile(r"^/deck/download/(\d+)")
 _DECK_LINE = re.compile(r"^\s*(\d+)\s*x?\s+(.+?)\s*$")
 
 
@@ -122,6 +123,17 @@ def parse_tournament(html: str, event_id: str, format: str, summary: Optional[Ev
         results=results,
         url=f"{BASE_URL}/tournament/{event_id}",
     )
+
+
+def parse_archetype(html: str, archetype_id: str) -> FeaturedDeck:
+    """The deck an archetype page features, and who played it."""
+    soup = BeautifulSoup(html, "html.parser")
+    link = soup.find("a", href=_DOWNLOAD_HREF)
+    if link is None:
+        raise ParseError(f"No featured deck on archetype {archetype_id}")
+    author = soup.select_one("h1.title .author")
+    player = re.sub(r"^by\s+", "", author.get_text(" ", strip=True)) if author else ""
+    return FeaturedDeck(deck_id=_DOWNLOAD_HREF.match(link["href"]).group(1), player=player)
 
 
 def parse_decklist(text: str) -> Tuple[List[DeckCard], List[DeckCard]]:

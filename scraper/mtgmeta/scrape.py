@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
-from typing import List, Protocol, Sequence
+from typing import Dict, List, Protocol, Sequence
 
-from .models import Deck, RunReport
-from .parsing import parse_decklist, parse_meta, parse_tournament, parse_tournament_list
+from .models import Deck, Meta, RunReport
+from .parsing import parse_archetype, parse_decklist, parse_meta, parse_tournament, parse_tournament_list
 from .store import Store
 
 log = logging.getLogger(__name__)
@@ -26,15 +26,19 @@ class ScrapeConfig:
     # Decks never change once published, so each run only downloads new ones;
     # the cap keeps a first run (or a backlog) from hammering the site.
     max_new_decks: int = 400
+    # Archetypes per metagame whose featured deck is saved, most played first.
+    archetype_decks: int = 100
 
 
 def scrape(browser: Browser, store: Store, config: ScrapeConfig) -> RunReport:
     report = RunReport()
     deck_budget = config.max_new_decks
     for format in config.formats:
+        featured: Dict[str, str] = {}  # archetype id -> deck id, shared by every window
         for days in config.meta_days:
             try:
                 meta = parse_meta(browser.metagame(format, days), format, f"{days}d")
+                _attach_featured_decks(browser, store, meta, config.archetype_decks, featured, report)
                 store.save_meta(meta)
                 report.meta.append(meta.doc_id)
                 log.info("Saved meta %s (%d archetypes)", meta.doc_id, len(meta.archetypes))
@@ -89,6 +93,35 @@ def scrape(browser: Browser, store: Store, config: ScrapeConfig) -> RunReport:
     if deck_budget <= 0:
         log.warning("Stopped at the limit of %d new decks; the rest come next run", config.max_new_decks)
     return report
+
+
+def _attach_featured_decks(
+    browser: Browser, store: Store, meta: Meta, limit: int, featured: Dict[str, str], report: RunReport
+) -> None:
+    """Gives each archetype a `deck_id`, saving its featured deck the first time it is seen."""
+    for archetype in meta.archetypes[:limit]:
+        if archetype.id in featured:
+            archetype.deck_id = featured[archetype.id]
+            continue
+        try:
+            deck = parse_archetype(browser.page(f"/archetype/{archetype.id}"), archetype.id)
+            if not store.existing_deck_ids([deck.deck_id]):
+                mainboard, sideboard = parse_decklist(browser.deck_text(deck.deck_id))
+                store.save_decks([
+                    Deck(
+                        deck_id=deck.deck_id,
+                        player=deck.player,
+                        archetype=archetype.name,
+                        mainboard=mainboard,
+                        sideboard=sideboard,
+                        format=meta.format,
+                        event_id=None,
+                    )
+                ])
+                report.decks_written += 1
+            featured[archetype.id] = archetype.deck_id = deck.deck_id
+        except Exception as error:  # noqa: BLE001
+            _fail(report, f"archetype {archetype.id}", error)
 
 
 def _fail(report: RunReport, what: str, error: Exception) -> None:

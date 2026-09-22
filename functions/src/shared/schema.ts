@@ -7,6 +7,8 @@ export interface MetaArchetype {
   id: string;
   /** Number of decks behind the percentage, when MTGGoldfish shows it. */
   deck_count?: number;
+  /** The archetype's featured deck on MTGGoldfish, stored in `decks`. */
+  deck_id?: string;
 }
 
 export interface MetaDoc {
@@ -43,7 +45,8 @@ export interface DeckDoc {
   mainboard: DeckCard[];
   sideboard: DeckCard[];
   format?: string;
-  event_id?: string;
+  /** Null for an archetype's featured deck, which is not from a scraped event. */
+  event_id?: string | null;
   last_updated?: FirebaseFirestore.Timestamp;
 }
 

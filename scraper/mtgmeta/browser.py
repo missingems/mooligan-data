@@ -71,18 +71,21 @@ class GoldfishBrowser:
         """Downloads a plain-text decklist with fetch() inside the page, reusing its Cloudflare clearance."""
         for attempt in range(1, attempts + 1):
             self._pause()
-            # BaseCase.execute_async_script takes no script arguments, so embed the path.
-            raw = self._sb.execute_async_script(
-                """
-                const done = arguments[arguments.length - 1];
-                fetch(%s, {credentials: 'include'})
-                  .then(r => r.text().then(body => done(JSON.stringify({status: r.status, type: r.headers.get('content-type') || '', body}))))
-                  .catch(error => done(JSON.stringify({status: 0, type: '', body: String(error)})));
-                """
-                % json.dumps(f"/deck/download/{deck_id}"),
-                timeout=30,
-            )
-            response = json.loads(raw)
+            try:
+                # BaseCase.execute_async_script takes no script arguments, so embed the path.
+                raw = self._sb.execute_async_script(
+                    """
+                    const done = arguments[arguments.length - 1];
+                    fetch(%s, {credentials: 'include'})
+                      .then(r => r.text().then(body => done(JSON.stringify({status: r.status, type: r.headers.get('content-type') || '', body}))))
+                      .catch(error => done(JSON.stringify({status: 0, type: '', body: String(error)})));
+                    """
+                    % json.dumps(f"/deck/download/{deck_id}"),
+                    timeout=30,
+                )
+                response = json.loads(raw)
+            except Exception as error:  # noqa: BLE001 - a hung request times out the script
+                response = {"status": 0, "type": "", "body": str(error)}
             if response["status"] == 200 and response["type"].startswith("text/plain"):
                 return response["body"]
             log.warning("Deck %s download got %s %s (attempt %d/%d)", deck_id, response["status"], response["type"], attempt, attempts)

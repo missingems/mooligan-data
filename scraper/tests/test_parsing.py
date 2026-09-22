@@ -5,6 +5,7 @@ import pytest
 
 from mtgmeta.parsing import (
     ParseError,
+    parse_archetype,
     parse_decklist,
     parse_meta,
     parse_tournament,
@@ -81,3 +82,13 @@ def test_decklist_accepts_a_sideboard_heading_and_no_sideboard():
 def test_decklist_rejects_a_challenge_page():
     with pytest.raises(ParseError):
         parse_decklist("<!DOCTYPE html><html><head><title>Just a moment...</title>")
+
+
+def test_archetype_page_names_its_featured_deck():
+    deck = parse_archetype(fixture("archetype_modern_izzet_prowess.html"), "modern-izzet-prowess")
+    assert (deck.deck_id, deck.player) == ("7945486", "Roy Varney")
+
+
+def test_archetype_page_without_a_deck_is_an_error():
+    with pytest.raises(ParseError):
+        parse_archetype("<h1 class='title'>Izzet Prowess</h1>", "modern-izzet-prowess")

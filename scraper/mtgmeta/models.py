@@ -12,6 +12,8 @@ class Archetype:
     percentage: float
     id: str
     deck_count: Optional[int] = None
+    # The featured list on the archetype's MTGGoldfish page, stored in `decks`.
+    deck_id: Optional[str] = None
 
 
 @dataclass
@@ -66,7 +68,14 @@ class Deck:
     mainboard: List[DeckCard]
     sideboard: List[DeckCard]
     format: str
-    event_id: str
+    # None for an archetype's featured deck, which is not from a scraped event.
+    event_id: Optional[str]
+
+
+@dataclass
+class FeaturedDeck:
+    deck_id: str
+    player: str
 
 
 def to_document(record: Any, drop: tuple = ()) -> Dict[str, Any]:

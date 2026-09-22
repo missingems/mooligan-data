@@ -127,9 +127,10 @@ function metaPanel(meta) {
             "a",
             {
               class: "name",
-              href: `https://www.mtggoldfish.com/archetype/${encodeURIComponent(archetype.id)}`,
-              target: "_blank",
-              rel: "noopener",
+              // Archetypes past the scraper's ARCHETYPE_DECKS limit have no stored deck.
+              ...(archetype.deck_id
+                ? { href: `#/deck/${encodeURIComponent(archetype.deck_id)}?format=${encodeURIComponent(meta.format)}` }
+                : { href: `https://www.mtggoldfish.com/archetype/${encodeURIComponent(archetype.id)}`, target: "_blank", rel: "noopener" }),
               style: { "--share": `${(archetype.percentage / top) * 100}%` },
             },
             archetype.name,
@@ -206,7 +207,11 @@ async function deckView(api, { deckId }) {
   const backParams = new URLSearchParams(location.hash.split("?")[1] ?? "");
   const format = deck.format ?? backParams.get("format");
   const eventId = deck.event_id ?? backParams.get("event");
-  const back = format && eventId ? el("a", { href: `#/${format}/event/${encodeURIComponent(eventId)}` }, "← Event") : null;
+  const back = eventId && format
+    ? el("a", { href: `#/${format}/event/${encodeURIComponent(eventId)}` }, "← Event")
+    : format
+      ? el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`)
+      : null;
 
   const board = (title, cards) =>
     el("section", {},
