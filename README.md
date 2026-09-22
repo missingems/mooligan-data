@@ -39,7 +39,7 @@ Card details come from Scryfall's API, not from this pipeline.
    - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so a run stops at the first page with nothing new;
    - reads the 10 latest events plus up to `MAX_NEW_EVENTS` older ones that the archetype lists mention;
    - downloads new decklists through `fetch("/deck/download/{id}")` inside the page, up to `MAX_NEW_DECKS` a run. Featured decks come first, then the newest.
-3. **Publish.** `SnapshotStore.finish()` drops anything older than `HISTORY_DAYS`, then writes the snapshots, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet.
+3. **Publish.** `SnapshotStore.finish()` drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet.
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 

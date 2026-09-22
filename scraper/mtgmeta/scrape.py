@@ -138,7 +138,9 @@ def _read_archetypes(
             featured = None
         try:
             known = store.load_archetype_results(format, archetype.id)
-            fresh = _new_archetype_results(browser, archetype.id, {r.deck_id for r in known}, cutoff, config.max_archetype_pages)
+            fresh = _new_archetype_results(
+                browser, archetype.id, {r.deck_id for r in known}, store.ignored_event_ids(), cutoff, config.max_archetype_pages
+            )
         except Exception as error:  # noqa: BLE001
             _fail(report, f"archetype decks {archetype.id}", error)
             continue
@@ -166,13 +168,15 @@ def _read_archetypes(
 
 
 def _new_archetype_results(
-    browser: Browser, archetype_id: str, known: set, cutoff: datetime, max_pages: int
+    browser: Browser, archetype_id: str, known: set, ignored_events: set, cutoff: datetime, max_pages: int
 ) -> List[ArchetypeResult]:
     """Reads the archetype's deck pages until a page holds nothing new or reaches past the cutoff."""
     fresh: List[ArchetypeResult] = []
     for page in range(1, max_pages + 1):
         rows, has_next = parse_archetype_decks(browser.page(f"/archetype/{archetype_id}/decks?page={page}"), archetype_id)
-        new_rows = [row for row in rows if row.deck_id not in known and row.date >= cutoff]
+        new_rows = [
+            row for row in rows if row.deck_id not in known and row.event_id not in ignored_events and row.date >= cutoff
+        ]
         fresh.extend(new_rows)
         # Rows are newest first, but an event can be posted days late, so a
         # page is only "caught up" once none of its rows are new.
@@ -191,7 +195,9 @@ def _read_events(
         recent = []
 
     # Events the archetype lists mention but that are not stored yet, newest first.
-    seen = {summary.event_id for summary in recent}
+    ignored = store.ignored_event_ids()
+    recent = [summary for summary in recent if summary.event_id not in ignored]
+    seen = {summary.event_id for summary in recent} | ignored
     mentioned: Dict[str, EventSummary] = {}
     for history in histories:
         for result in history.results:

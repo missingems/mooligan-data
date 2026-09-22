@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
@@ -25,6 +26,7 @@ class Store(Protocol):
     def existing_event_ids(self, event_ids: Iterable[str]) -> Set[str]: ...
     def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]: ...
     def save_archetype(self, history: ArchetypeHistory) -> None: ...
+    def ignored_event_ids(self) -> Set[str]: ...
 
 
 class SnapshotStore:
@@ -43,6 +45,8 @@ class SnapshotStore:
             }
         ids_path = root / "state" / "deck-ids.json"
         self._deck_ids: Set[str] = set(json.loads(ids_path.read_text())) if ids_path.exists() else set()
+        duplicates_path = root / "state" / "duplicate-event-ids.json"
+        self._duplicates: Set[str] = set(json.loads(duplicates_path.read_text())) if duplicates_path.exists() else set()
 
     # ---- Store
 
@@ -78,6 +82,10 @@ class SnapshotStore:
             return []
         return [ArchetypeResult(**{**result, "date": _parse(result["date"])}) for result in archetype["results"]]
 
+    def ignored_event_ids(self) -> Set[str]:
+        """Duplicate events found earlier, which the scrape must not read or count again."""
+        return set(self._duplicates)
+
     def save_archetype(self, history: ArchetypeHistory) -> None:
         document = _jsonable(to_document(history, drop=("format",)))
         document["last_updated"] = self._stamp()
@@ -90,17 +98,23 @@ class SnapshotStore:
         written = []
         formats = {}
         for format, snapshot in self._snapshots.items():
+            self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
+            duplicates = self._duplicates
             events = sorted(
-                (event for event in snapshot["events"].values() if _parse(event["date"]) >= self._cutoff),
+                (
+                    event
+                    for event in snapshot["events"].values()
+                    if _parse(event["date"]) >= self._cutoff and event["event_id"] not in duplicates
+                ),
                 key=lambda event: (event["date"], event["event_id"]),
                 reverse=True,
             )
-            # Archetypes no longer in the metagame drop out once their results age past the window.
-            archetypes = {
-                archetype_id: archetype
-                for archetype_id, archetype in sorted(snapshot["archetypes"].items())
-                if any(_parse(result["date"]) >= self._cutoff for result in archetype["results"])
-            }
+            archetypes = {}
+            for archetype_id, archetype in sorted(snapshot["archetypes"].items()):
+                results = [result for result in archetype["results"] if result.get("event_id") not in duplicates]
+                # Archetypes no longer in the metagame drop out once their results age past the window.
+                if any(_parse(result["date"]) >= self._cutoff for result in results):
+                    archetypes[archetype_id] = {**archetype, "results": results}
             if not snapshot["meta"] and not events and not archetypes:
                 continue
             document = {
@@ -124,6 +138,7 @@ class SnapshotStore:
                 "archetypes": len(archetypes),
             }
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
+        self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
@@ -139,6 +154,27 @@ class SnapshotStore:
 
     def _stamp(self) -> str:
         return _iso(self._now)
+
+
+def _duplicate_event_ids(events: Iterable[Dict[str, Any]]) -> Set[str]:
+    """Events MTGGoldfish imported twice: same players at the same finishes, under a second id.
+
+    The copy's name usually ends in " (1)". MTGO also runs several Challenges a
+    day under one name, so only identical standings count as a duplicate, and
+    only for events big enough that a match can't be chance.
+    """
+    kept: Dict[tuple, Dict[str, Any]] = {}
+    duplicates: Set[str] = set()
+    # The original is the one without a " (n)" suffix, or else the lower id.
+    for event in sorted(events, key=lambda e: (bool(re.search(r" \(\d+\)$", e["event_name"])), int(e["event_id"]) if e["event_id"].isdigit() else 0)):
+        if len(event["results"]) < 8:
+            continue
+        standings = (event["date"][:10], tuple((r["player"], r["finish"]) for r in event["results"]))
+        if standings in kept:
+            duplicates.add(event["event_id"])
+        else:
+            kept[standings] = event
+    return duplicates
 
 
 def _iso(value: datetime) -> str:

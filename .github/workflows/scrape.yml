@@ -71,7 +71,7 @@ jobs:
             cp work/decks "$R2/decks" --recursive --cache-control "public, max-age=31536000, immutable"
           fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
-          cp work/state/deck-ids.json "$R2/state/deck-ids.json" --cache-control "no-cache"
+          cp work/state "$R2/state" --recursive --cache-control "no-cache"
           cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
           echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks"; cat work/index.json
 

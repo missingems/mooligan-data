@@ -7,7 +7,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `decks/{deck_id}.json` | One decklist. Never changes once published | `max-age=31536000, immutable` |
-| `state/deck-ids.json` | The scraper's own bookkeeping. Apps can ignore it | `no-cache` |
+| `state/*.json` | The scraper's own bookkeeping: stored deck ids, and duplicate events. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard` and `pioneer`. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -85,7 +85,7 @@ A format is missing from `formats` until its first scrape completes.
 ```
 
 - **`meta`** is keyed by window. Only `30d` is published today. Archetypes are in MTGGoldfish's order, most played first. `deck_count` can be null, and `deck_id` (the archetype's featured list) is null when it couldn't be read.
-- **`events`** is newest first and covers the last 30 days. A result's `finish` is a placing such as `"1st Place"` for Challenges, or a record such as `"5-0"` for Leagues. `archetype_id` is null when the deck isn't in a tracked archetype's list; `archetype` is then the pilot's own deck title.
+- **`events`** is newest first and covers the last 30 days. MTGGoldfish sometimes imports a Challenge twice, and names the copy "… (1)". A copy with the same standings as another event is left out, here and in `archetypes`. A result's `finish` is a placing such as `"1st Place"` for Challenges, or a record such as `"5-0"` for Leagues. `archetype_id` is null when the deck isn't in a tracked archetype's list; `archetype` is then the pilot's own deck title.
 - **`archetypes`** is keyed by archetype id. `results` holds every deck of that archetype in the last 30 days, newest first. To group by event, group on `event_id`, which is null for the rare result without one; `event_name` is always set.
 
 ## `decks/{deck_id}.json`

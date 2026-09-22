@@ -66,3 +66,33 @@ def test_events_and_archetypes_past_the_window_drop_out(tmp_path):
     snapshot = json.loads((tmp_path / "snapshots" / "modern.json").read_text())
     assert [e["event_id"] for e in snapshot["events"]] == ["new"]
     assert snapshot["archetypes"] == {}
+
+
+def standings_event(event_id, name, deck_offset, players=None):
+    players = players or [f"player{i}" for i in range(32)]
+    results = [EventResult(p, "Eldrazi", f"{i + 1}th Place", str(deck_offset + i)) for i, p in enumerate(players)]
+    return Event(event_id, name, "modern", day("2026-09-22"), results, "url")
+
+
+def test_events_imported_twice_are_published_once(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_event(standings_event("66776", "Modern Challenge 32 2026-09-22 (1)", 2000))
+    store.save_event(standings_event("66774", "Modern Challenge 32 2026-09-22", 1000))
+    # A different Challenge the same day, under the same name pattern, stays.
+    store.save_event(standings_event("66780", "Modern Challenge 32 2026-09-22 (2)", 3000, [f"other{i}" for i in range(32)]))
+    store.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", None, None, [
+        ArchetypeResult("2000", day("2026-09-22"), "player0", "66776", "Modern Challenge 32 2026-09-22 (1)", "1th Place"),
+        ArchetypeResult("1000", day("2026-09-22"), "player0", "66774", "Modern Challenge 32 2026-09-22", "1th Place"),
+    ]))
+    store.finish()
+    snapshot = json.loads((tmp_path / "snapshots" / "modern.json").read_text())
+    assert sorted(e["event_id"] for e in snapshot["events"]) == ["66774", "66780"]
+    assert [r["event_id"] for r in snapshot["archetypes"]["modern-eldrazi"]["results"]] == ["66774"]
+
+
+def test_duplicates_are_remembered_for_later_runs(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    first.save_event(standings_event("66776", "Modern Challenge 32 2026-09-22 (1)", 2000))
+    first.save_event(standings_event("66774", "Modern Challenge 32 2026-09-22", 1000))
+    first.finish()
+    assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"66776"}

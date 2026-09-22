@@ -128,3 +128,17 @@ def test_events_found_through_archetypes_are_read(tmp_path):
 
     # The two newest events the Izzet list mentions that the tournaments list did not.
     assert report.events == ["66753", "66742", "66728"]
+
+
+def test_rows_and_events_of_known_duplicates_are_skipped(tmp_path):
+    (tmp_path / "state").mkdir()
+    (tmp_path / "state" / "duplicate-event-ids.json").write_text('["66742"]')
+    # Only 66753 has a page: the fixture would otherwise make every event look identical.
+    browser = FixtureBrowser(event_pages=("66753",))
+
+    report = run(tmp_path, browser, config(max_new_events=5, max_new_decks=0))
+
+    assert "66742" not in report.events
+    assert "/tournament/66742" not in browser.requests
+    results = snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]
+    assert "66742" not in {r["event_id"] for r in results} and len(results) == 8
