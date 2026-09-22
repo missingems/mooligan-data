@@ -1,0 +1,56 @@
+name: Scrape MTGGoldfish
+
+# Manual for now: the output is only uploaded as an artifact until the data
+# has somewhere to be published.
+on:
+  workflow_dispatch:
+    inputs:
+      formats:
+        description: Formats to scrape
+        default: modern
+      archetype_decks:
+        description: Archetypes per format
+        default: "5"
+      history_days:
+        description: Days of archetype results
+        default: "3"
+      max_new_events:
+        description: Older events per format
+        default: "5"
+      max_new_decks:
+        description: New decklists per run
+        default: "10"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    defaults:
+      run:
+        working-directory: scraper
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+      # The runner image ships Google Chrome; UC mode runs it headed inside Xvfb.
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
+      - run: pip install -r requirements.txt
+      - name: Scrape
+        env:
+          FORMATS: ${{ inputs.formats }}
+          META_DAYS: "30"
+          ARCHETYPE_DECKS: ${{ inputs.archetype_decks }}
+          HISTORY_DAYS: ${{ inputs.history_days }}
+          MAX_NEW_EVENTS: ${{ inputs.max_new_events }}
+          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
+          REQUEST_DELAY: "2"
+        run: google-chrome --version && python -m mtgmeta --dry-run output
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-output
+          path: scraper/output
+          if-no-files-found: warn
