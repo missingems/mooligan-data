@@ -93,7 +93,8 @@ async function metaView(api, { format, timeframe }) {
   ]);
   document.title = `${formatName(format)} metagame · MTG Metagame`;
 
-  const windows = meta?.windows ?? [];
+  // The snapshot keys them alphabetically ("14d", "30d", "7d"); show them by length.
+  const windows = [...(meta?.windows ?? [])].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   const timeframes = windows.length < 2 ? null : el(
     "nav",
     { class: "segmented", "aria-label": "Timeframe" },
