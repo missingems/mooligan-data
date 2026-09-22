@@ -7,7 +7,7 @@ import random
 import sys
 import time
 from contextlib import contextmanager
-from typing import Dict, Iterator, List, Sequence, Union
+from typing import Dict, Iterator, List, Sequence, Tuple, Union
 
 from seleniumbase import SB
 
@@ -52,16 +52,18 @@ class GoldfishBrowser:
                 return self._sb.get_page_source()
         raise BlockedError(f"Blocked on {url}")
 
-    def metagame(self, format: str, days: str) -> str:
-        """The full metagame page with the `days` window selected."""
+    def metagame(self, format: str, days: str) -> Tuple[str, bool]:
+        """The metagame page with the `days` window selected, and whether the page has a selector.
+
+        A format without one (Duel Commander) has a single, unwindowed page.
+        """
         html = self.page(f"/metagame/{format}/full")
         window = selected_period(html)
-        if window == days:
-            return html
         if window is None:
-            # Some formats (Duel Commander) have no window selector at all.
             log.info("The %s metagame has no window selector; taking the page as it comes", format)
-            return html
+            return html, False
+        if window == days:
+            return html, True
         before = self._tile_statistics()
         # Changing the select submits a Turbo form that swaps only the tiles, so
         # the option's `selected` attribute in the HTML keeps saying 30 days.
@@ -75,7 +77,7 @@ class GoldfishBrowser:
             time.sleep(0.5)
             if self._tile_statistics() != before:
                 time.sleep(1)  # let the rest of the tiles land
-                return self._sb.get_page_source()
+                return self._sb.get_page_source(), True
         raise TimeoutError(f"The {format} metagame did not switch to {days} days")
 
     def fetch_pages(self, paths: Sequence[str], attempts: int = 4) -> Dict[str, Union[str, Exception]]:

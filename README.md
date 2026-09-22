@@ -26,6 +26,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `index.json` gives each format's snapshot with a hash, so clients download only when something changed.
 - `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
 - `decks/{id}.json` holds one decklist per file, cached for good.
+- `cards/{slug}.json` says where a card is played, across every format, with links to decks.
 
 Card details come from Scryfall's API, not from this pipeline.
 
@@ -41,7 +42,7 @@ Card details come from Scryfall's API, not from this pipeline.
    - downloads new decklists, up to `MAX_NEW_DECKS` a run. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
 
    Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. A refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
-3. **Publish.** `SnapshotStore.finish()` drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet.
+3. **Publish.** `SnapshotStore.finish()` builds a page per card from the stored decklists (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet.
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
@@ -50,7 +51,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | Variable | Default | Meaning |
 | --- | --- | --- |
 | `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
-| `META_DAYS` | `30` | Metagame windows; `30,7` would publish both |
+| `META_DAYS` | `30,14,7` in the workflow | Metagame windows to publish |
 | `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
 | `MAX_NEW_EVENTS` | `60` | Older events per format read per run |
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |

@@ -44,8 +44,9 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
       - run: pip install -r requirements.txt
 
-      - name: Download the previous snapshots
+      - name: Download the previous snapshots and state
         # sync succeeds on an empty bucket, so the first run starts from nothing.
+        # state holds what each stored deck plays, which the card pages are built from.
         run: |
           aws s3 sync "$R2/snapshots" work/snapshots --endpoint-url "$R2_ENDPOINT"
           aws s3 sync "$R2/state" work/state --endpoint-url "$R2_ENDPOINT"
@@ -56,7 +57,7 @@ jobs:
         env:
           FORMATS: ${{ inputs.formats || 'modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander' }}
           MAX_NEW_DECKS: ${{ inputs.max_new_decks || '1500' }}
-          META_DAYS: "30"
+          META_DAYS: "30,14,7"
           REQUEST_DELAY: "1"
           CONCURRENCY: "6"
         run: python -m mtgmeta work
@@ -70,10 +71,14 @@ jobs:
           if [ -d work/decks ]; then
             cp work/decks "$R2/decks" --recursive --cache-control "public, max-age=31536000, immutable"
           fi
+          if [ -d work/cards ]; then
+            cp work/cards "$R2/cards" --recursive --cache-control "public, max-age=300"
+          fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           cp work/state "$R2/state" --recursive --cache-control "no-cache"
           cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
-          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks"; cat work/index.json
+          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages"
+          cat work/index.json
 
       - name: Fail if the scrape reported errors
         if: steps.scrape.outcome == 'failure'

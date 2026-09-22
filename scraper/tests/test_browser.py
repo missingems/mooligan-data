@@ -89,12 +89,12 @@ class MetagameSession(FakeSession):
 def test_a_metagame_without_a_window_selector_is_taken_as_it_comes(monkeypatch):
     monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
     session = MetagameSession(has_selector=False)
-    html = GoldfishBrowser(session, delay=0, concurrency=3).metagame("duel_commander", "7")
-    assert html == session.html and session.scripts == []
+    html, windowed = GoldfishBrowser(session, delay=0, concurrency=3).metagame("duel_commander", "7")
+    assert (html, windowed) == (session.html, False) and session.scripts == []
 
 
 def test_the_selected_window_is_returned_unchanged(monkeypatch):
     monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
     session = MetagameSession(has_selector=True)
-    html = GoldfishBrowser(session, delay=0, concurrency=3).metagame("modern", "30")
-    assert html == session.html and session.scripts == []
+    html, windowed = GoldfishBrowser(session, delay=0, concurrency=3).metagame("modern", "30")
+    assert (html, windowed) == (session.html, True) and session.scripts == []

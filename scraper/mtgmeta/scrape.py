@@ -32,7 +32,7 @@ log = logging.getLogger(__name__)
 
 class Browser(Protocol):
     def page(self, path: str) -> str: ...
-    def metagame(self, format: str, days: str) -> str: ...
+    def metagame(self, format: str, days: str) -> Tuple[str, bool]: ...
     def fetch_pages(self, paths: Sequence[str]) -> Dict[str, Union[str, Exception]]: ...
 
 
@@ -105,9 +105,14 @@ def _read_metas(browser: Browser, format: str, meta_days: Sequence[str], report:
     metas = []
     for days in meta_days:
         try:
-            meta = parse_meta(browser.metagame(format, days), format, f"{days}d")
+            html, windowed = browser.metagame(format, days)
+            meta = parse_meta(html, format, f"{days}d")
             log.info("Read meta %s (%d archetypes)", meta.doc_id, len(meta.archetypes))
             metas.append(meta)
+            if not windowed:
+                # One unwindowed page: publishing it again under other windows would repeat it.
+                log.info("The %s metagame has one window only; skipping %s", format, ", ".join(meta_days[1:]))
+                break
         except Exception as error:  # noqa: BLE001 - one failed page must not stop the run
             _fail(report, f"meta {format} {days}d", error)
     return metas

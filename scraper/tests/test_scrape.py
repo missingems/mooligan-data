@@ -36,7 +36,7 @@ class FixtureBrowser:
         raise RuntimeError(f"503 on {path}")
 
     def metagame(self, format, days):
-        return (FIXTURES / "metagame_modern.html").read_text()
+        return (FIXTURES / "metagame_modern.html").read_text(), True
 
     def fetch_pages(self, paths):
         results = {}
@@ -189,3 +189,33 @@ def test_decks_mtggoldfish_no_longer_serves_are_skipped_next_run(tmp_path):
     second = FixtureBrowser()
     run(tmp_path, second, config(max_new_decks=100))
     assert "7966110" not in second.deck_downloads
+
+
+def test_an_unwindowed_metagame_is_published_once(tmp_path):
+    browser = FixtureBrowser()
+    browser.metagame = lambda format, days: ((FIXTURES / "metagame_modern.html").read_text(), False)
+    report = run(tmp_path, browser, config(meta_days=("30", "7")))
+    assert report.meta == ["modern_30d"]
+    assert list(snapshot(tmp_path)["meta"]) == ["30d"]
+
+
+def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):
+    run(tmp_path, FixtureBrowser(), config())
+
+    index = json.loads((tmp_path / "cards" / "index.json").read_text())
+    assert index["cards"]["lightning-bolt"] == {"name": "Lightning Bolt", "formats": ["modern"]}
+    bolt = json.loads((tmp_path / "cards" / "lightning-bolt.json").read_text())
+    modern = bolt["formats"]["modern"]
+    # Every fixture deck is the same Izzet list. 9 of the 10 downloaded are counted:
+    # Eldrazi has no results in the fixture, so neither it nor its featured deck is published.
+    assert (modern["decks"], modern["of_decks"]) == (9, 9)
+    assert modern["archetypes"][0]["archetype_id"] == "modern-izzet-prowess"
+    assert modern["archetypes"][0]["deck_ids"][0] in modern["archetypes"][0]["deck_ids"]
+
+    # A run that finds nothing new rewrites no card page, only the index.
+    before = {p.name for p in (tmp_path / "cards").glob("*.json")}
+    for path in (tmp_path / "cards").glob("*.json"):
+        path.unlink()
+    run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
+    after = {p.name for p in (tmp_path / "cards").glob("*.json")}
+    assert after == {"index.json"} and len(before) > 10

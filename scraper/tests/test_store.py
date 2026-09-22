@@ -22,7 +22,7 @@ def test_finish_publishes_snapshot_index_and_deck_ids(tmp_path):
     store.save_event(event("2", "2026-09-21"))
     store.save_event(event("1", "2026-09-20"))
 
-    assert store.finish() == ["snapshots/modern.json"]  # pioneer has nothing, so no file
+    assert store.finish() == ["snapshots/modern.json", "cards/index.json"]  # pioneer has nothing, so no file
 
     body = (tmp_path / "snapshots" / "modern.json").read_bytes()
     snapshot = json.loads(body)
