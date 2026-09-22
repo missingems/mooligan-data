@@ -7,7 +7,7 @@ from typing import List, Optional, Tuple
 
 from bs4 import BeautifulSoup
 
-from .models import Archetype, DeckCard, Event, EventResult, EventSummary, FeaturedDeck, Meta
+from .models import Archetype, ArchetypeResult, DeckCard, Event, EventResult, EventSummary, FeaturedDeck, Meta
 
 BASE_URL = "https://www.mtggoldfish.com"
 
@@ -16,6 +16,8 @@ _PERCENT = re.compile(r"([\d.]+)\s*%")
 _COUNT = re.compile(r"\((\d[\d,]*)\)")
 _ARCHETYPE_HREF = re.compile(r"/archetype/([^/#?]+)")
 _TOURNAMENT_HREF = re.compile(r"^/tournament/(\d+)")
+# The archetype deck table links events as /tournaments/<id>.
+_ANY_TOURNAMENT_HREF = re.compile(r"^/tournaments?/(\d+)")
 _DECK_HREF = re.compile(r"/deck/(\d+)")
 _DOWNLOAD_HREF = re.compile(r"^/deck/download/(\d+)")
 _DECK_LINE = re.compile(r"^\s*(\d+)\s*x?\s+(.+?)\s*$")
@@ -134,6 +136,39 @@ def parse_archetype(html: str, archetype_id: str) -> FeaturedDeck:
     author = soup.select_one("h1.title .author")
     player = re.sub(r"^by\s+", "", author.get_text(" ", strip=True)) if author else ""
     return FeaturedDeck(deck_id=_DOWNLOAD_HREF.match(link["href"]).group(1), player=player)
+
+
+def parse_archetype_decks(html: str, archetype_id: str) -> Tuple[List[ArchetypeResult], bool]:
+    """One page of /archetype/<id>/decks, newest first, and whether a next page exists."""
+    soup = BeautifulSoup(html, "html.parser")
+    table = next(
+        (t for t in soup.select("table") if [th.get_text(strip=True) for th in t.select("th")][:5] == ["Date", "Deck", "Author", "Event", "Place"]),
+        None,
+    )
+    if table is None:
+        raise ParseError(f"No deck table on archetype {archetype_id}")
+    results: List[ArchetypeResult] = []
+    for row in table.select("tr"):
+        cells = row.find_all("td", recursive=False)
+        if len(cells) < 5:
+            continue
+        deck_link = cells[1].find("a", href=_DECK_HREF)
+        date = parse_date(cells[0].get_text(strip=True))
+        if deck_link is None or date is None:
+            continue
+        event_link = cells[3].find("a", href=_ANY_TOURNAMENT_HREF)
+        results.append(
+            ArchetypeResult(
+                deck_id=_DECK_HREF.search(deck_link["href"]).group(1),
+                date=date,
+                player=cells[2].get_text(" ", strip=True),
+                event_id=_ANY_TOURNAMENT_HREF.match(event_link["href"]).group(1) if event_link else None,
+                event_name=cells[3].get_text(" ", strip=True),
+                finish=_finish(cells[4].get_text(" ", strip=True)),
+            )
+        )
+    has_next = soup.select_one("ul.pagination li.next:not(.disabled) a[href]") is not None
+    return results, has_next
 
 
 def parse_decklist(text: str) -> Tuple[List[DeckCard], List[DeckCard]]:

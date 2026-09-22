@@ -1,7 +1,7 @@
 import type { Firestore } from "firebase-admin/firestore";
 import { HttpsError } from "firebase-functions/v2/https";
 import { searchKey } from "../scryfall/normalizeCard.js";
-import { Collections, type CardDoc, type DeckDoc, type EventDoc, type MetaDoc } from "../shared/schema.js";
+import { Collections, type ArchetypeDoc, type CardDoc, type DeckDoc, type EventDoc, type MetaDoc } from "../shared/schema.js";
 import { serialize, type Serialized } from "../shared/serialize.js";
 import { asPayload, optionalInteger, requireSlug, requireText } from "../shared/validation.js";
 
@@ -11,6 +11,7 @@ export const DEFAULT_TIMEFRAME = "30d";
 
 export type MetaResponse = Serialized<MetaDoc> & { id: string };
 export type EventSummary = Serialized<EventDoc> & { event_id: string };
+export type ArchetypeResponse = Serialized<ArchetypeDoc> & { id: string };
 export type DecklistResponse = Serialized<DeckDoc> & { deck_id: string };
 export type CardResponse = Serialized<CardDoc>;
 
@@ -37,6 +38,24 @@ export async function getEvents(db: Firestore, data: unknown): Promise<{ events:
   return {
     events: snapshot.docs.map((doc) => ({ event_id: doc.id, ...serialize(doc.data() as EventDoc) })),
   };
+}
+
+export async function getEvent(db: Firestore, data: unknown): Promise<EventSummary> {
+  const eventId = requireText(asPayload(data), "event_id", 64, /^[A-Za-z0-9_-]+$/);
+  const snapshot = await db.collection(Collections.events).doc(eventId).get();
+  if (!snapshot.exists) throw new HttpsError("not-found", `No event ${eventId}.`);
+  return { event_id: eventId, ...serialize(snapshot.data() as EventDoc) };
+}
+
+/** An archetype's results over the history window, newest first. */
+export async function getArchetype(db: Firestore, data: unknown): Promise<ArchetypeResponse> {
+  const payload = asPayload(data);
+  const format = requireSlug(payload, "format");
+  const archetypeId = requireText(payload, "archetype_id", 120, /^[a-z0-9][a-z0-9_-]*$/);
+  const id = `${format}_${archetypeId}`;
+  const snapshot = await db.collection(Collections.archetypes).doc(id).get();
+  if (!snapshot.exists) throw new HttpsError("not-found", `No results for ${archetypeId}.`);
+  return { id, ...serialize(snapshot.data() as ArchetypeDoc) };
 }
 
 export async function getDecklist(db: Firestore, data: unknown): Promise<DecklistResponse> {

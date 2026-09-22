@@ -1,6 +1,6 @@
 import { Timestamp } from "firebase-admin/firestore";
 import { describe, expect, it } from "vitest";
-import { getCardDetails, getDecklist, getEvents, getMeta } from "../src/api/handlers.js";
+import { getArchetype, getCardDetails, getDecklist, getEvent, getEvents, getMeta } from "../src/api/handlers.js";
 import { normalizeCard } from "../src/scryfall/normalizeCard.js";
 import { rawCard } from "./cardFixtures.js";
 import { fakeFirestore } from "./fakeFirestore.js";
@@ -30,6 +30,19 @@ const db = fakeFirestore({
     "2": { event_name: "Modern League", format: "modern", date: day("2026-09-20"), results: [] },
     "3": { event_name: "Pioneer Challenge", format: "pioneer", date: day("2026-09-21"), results: [] },
     "4": { event_name: "Modern Showcase", format: "modern", date: day("2026-09-19"), results: [] },
+  },
+  archetypes: {
+    "modern_modern-izzet-prowess": {
+      format: "modern",
+      archetype_id: "modern-izzet-prowess",
+      name: "Izzet Prowess",
+      deck_id: "7945486",
+      featured_player: "Roy Varney",
+      results: [
+        { deck_id: "7966110", date: day("2026-09-21"), player: "Xsper", event_id: "66753", event_name: "Modern Challenge 32", finish: "13th Place" },
+      ],
+      last_updated: day("2026-09-22"),
+    },
   },
   decks: {
     "7967157": {
@@ -79,6 +92,32 @@ describe("getEvents", () => {
     await expect(getEvents(db, { format: "modern", limit: 0 })).rejects.toMatchObject({ code: "invalid-argument" });
     await expect(getEvents(db, { format: "modern", limit: 1.5 })).rejects.toMatchObject({ code: "invalid-argument" });
     await expect(getEvents(db, { format: "modern", limit: 101 })).rejects.toMatchObject({ code: "invalid-argument" });
+  });
+});
+
+describe("getEvent", () => {
+  it("returns one event by id, however old", async () => {
+    const event = await getEvent(db, { event_id: "1" });
+    expect(event.event_name).toBe("Modern Challenge 32");
+    expect(event.date).toBe("2026-09-18T00:00:00.000Z");
+  });
+
+  it("reports unknown events", async () => {
+    await expect(getEvent(db, { event_id: "999" })).rejects.toMatchObject({ code: "not-found" });
+    await expect(getEvent(db, { event_id: "../1" })).rejects.toMatchObject({ code: "invalid-argument" });
+  });
+});
+
+describe("getArchetype", () => {
+  it("returns the archetype's results with ISO dates", async () => {
+    const archetype = await getArchetype(db, { format: "modern", archetype_id: "modern-izzet-prowess" });
+    expect(archetype.id).toBe("modern_modern-izzet-prowess");
+    expect(archetype.results[0]).toMatchObject({ deck_id: "7966110", date: "2026-09-21T00:00:00.000Z" });
+  });
+
+  it("validates and reports unknown archetypes", async () => {
+    await expect(getArchetype(db, { format: "modern", archetype_id: "Bad Id" })).rejects.toMatchObject({ code: "invalid-argument" });
+    await expect(getArchetype(db, { format: "modern", archetype_id: "modern-nope" })).rejects.toMatchObject({ code: "not-found" });
   });
 });
 

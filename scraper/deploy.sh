@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Builds the scraper image with Cloud Build and deploys it as a Cloud Run Job
-# that Cloud Scheduler starts at 02:00 and 14:00 UTC.
+# that Cloud Scheduler starts at 02:00 and 14:00 UTC. The 4-hour task timeout
+# covers the first run, which reads each archetype's whole history window.
 #
 #   PROJECT_ID=my-project ./deploy.sh
 set -euo pipefail
@@ -36,8 +37,8 @@ gcloud run jobs deploy "$JOB" \
   --region "$REGION" \
   --service-account "$RUNNER_SA" \
   --cpu 2 --memory 2Gi \
-  --task-timeout 3600s --max-retries 1 \
-  --set-env-vars "GOOGLE_CLOUD_PROJECT=${PROJECT_ID},FORMATS=${FORMATS:-modern,standard,pioneer},META_DAYS=${META_DAYS:-30},EVENTS_PER_FORMAT=${EVENTS_PER_FORMAT:-10},MAX_NEW_DECKS=${MAX_NEW_DECKS:-400}"
+  --task-timeout 14400s --max-retries 1 \
+  --set-env-vars "GOOGLE_CLOUD_PROJECT=${PROJECT_ID},FORMATS=${FORMATS:-modern,standard,pioneer},META_DAYS=${META_DAYS:-30},EVENTS_PER_FORMAT=${EVENTS_PER_FORMAT:-10},MAX_NEW_EVENTS=${MAX_NEW_EVENTS:-60},MAX_NEW_DECKS=${MAX_NEW_DECKS:-400},HISTORY_DAYS=${HISTORY_DAYS:-30}"
 
 # Cloud Scheduler starts the job through the Cloud Run Admin API as the invoker account.
 gcloud iam service-accounts describe "$INVOKER_SA" >/dev/null 2>&1 ||

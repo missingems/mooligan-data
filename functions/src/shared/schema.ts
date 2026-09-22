@@ -23,6 +23,29 @@ export interface EventResult {
   archetype: string;
   finish: string;
   deck_id: string;
+  /** Set when the deck is in a tracked archetype's list; `archetype` is then its name. */
+  archetype_id?: string | null;
+}
+
+/** One deck of an archetype, as MTGGoldfish's /archetype/<id>/decks lists it. */
+export interface ArchetypeResult {
+  deck_id: string;
+  date: FirebaseFirestore.Timestamp;
+  player: string;
+  event_id: string | null;
+  event_name: string;
+  finish: string;
+}
+
+/** Document id `{format}_{archetype_id}`; results newest first. */
+export interface ArchetypeDoc {
+  format: string;
+  archetype_id: string;
+  name: string;
+  deck_id: string | null;
+  featured_player: string | null;
+  results: ArchetypeResult[];
+  last_updated: FirebaseFirestore.Timestamp;
 }
 
 export interface EventDoc {
@@ -98,6 +121,7 @@ export const Collections = {
   meta: "meta",
   events: "events",
   decks: "decks",
+  archetypes: "archetypes",
   cards: "cards",
   syncState: "sync_state",
 } as const;

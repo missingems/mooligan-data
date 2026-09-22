@@ -4,9 +4,10 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from pathlib import Path
+from datetime import timezone
 from typing import Iterable, List, Protocol, Set
 
-from .models import Deck, Event, Meta, to_document
+from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
 
 
 class Store(Protocol):
@@ -14,6 +15,9 @@ class Store(Protocol):
     def save_event(self, event: Event) -> None: ...
     def save_decks(self, decks: List[Deck]) -> None: ...
     def existing_deck_ids(self, deck_ids: Iterable[str]) -> Set[str]: ...
+    def existing_event_ids(self, event_ids: Iterable[str]) -> Set[str]: ...
+    def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]: ...
+    def save_archetype(self, history: ArchetypeHistory) -> None: ...
 
 
 class FirestoreStore:
@@ -46,16 +50,31 @@ class FirestoreStore:
             batch.commit()
 
     def existing_deck_ids(self, deck_ids: Iterable[str]) -> Set[str]:
-        ids = list(dict.fromkeys(deck_ids))
+        return self._existing("decks", deck_ids)
+
+    def existing_event_ids(self, event_ids: Iterable[str]) -> Set[str]:
+        return self._existing("events", event_ids)
+
+    def _existing(self, collection_name: str, doc_ids: Iterable[str]) -> Set[str]:
+        ids = list(dict.fromkeys(doc_ids))
         found: Set[str] = set()
-        collection = self._db.collection("decks")
+        collection = self._db.collection(collection_name)
         for start in range(0, len(ids), 100):
-            refs = [collection.document(deck_id) for deck_id in ids[start : start + 100]]
-            # Only ids are needed, so skip downloading the 75 cards of each deck.
-            for snapshot in self._db.get_all(refs, field_paths=["player"]):
+            refs = [collection.document(doc_id) for doc_id in ids[start : start + 100]]
+            # Only ids are needed, so skip downloading each document's body.
+            for snapshot in self._db.get_all(refs, field_paths=["format"]):
                 if snapshot.exists:
                     found.add(snapshot.id)
         return found
+
+    def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]:
+        snapshot = self._db.collection("archetypes").document(f"{format}_{archetype_id}").get()
+        return _results_from_documents((snapshot.to_dict() or {}).get("results", []))
+
+    def save_archetype(self, history: ArchetypeHistory) -> None:
+        document = to_document(history)
+        document["last_updated"] = self._now
+        self._db.collection("archetypes").document(history.doc_id).set(document)
 
 
 class JsonFileStore:
@@ -82,6 +101,26 @@ class JsonFileStore:
 
     def existing_deck_ids(self, deck_ids: Iterable[str]) -> Set[str]:
         return {deck_id for deck_id in deck_ids if (self._root / "decks" / f"{deck_id}.json").exists()}
+
+    def existing_event_ids(self, event_ids: Iterable[str]) -> Set[str]:
+        return {event_id for event_id in event_ids if (self._root / "events" / f"{event_id}.json").exists()}
+
+    def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]:
+        path = self._root / "archetypes" / f"{format}_{archetype_id}.json"
+        return _results_from_documents(json.loads(path.read_text())["results"]) if path.exists() else []
+
+    def save_archetype(self, history: ArchetypeHistory) -> None:
+        self._write("archetypes", history.doc_id, to_document(history))
+
+
+def _results_from_documents(documents: List[dict]) -> List[ArchetypeResult]:
+    results = []
+    for document in documents:
+        date = document["date"]
+        if isinstance(date, str):
+            date = datetime.fromisoformat(date)
+        results.append(ArchetypeResult(**{**document, "date": date.astimezone(timezone.utc)}))
+    return results
 
 
 def _json_default(value):

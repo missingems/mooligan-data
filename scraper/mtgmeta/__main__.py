@@ -28,6 +28,9 @@ def main() -> int:
         events_per_format=int(os.environ.get("EVENTS_PER_FORMAT", "10")),
         max_new_decks=int(os.environ.get("MAX_NEW_DECKS", "400")),
         archetype_decks=int(os.environ.get("ARCHETYPE_DECKS", "100")),
+        max_new_events=int(os.environ.get("MAX_NEW_EVENTS", "60")),
+        history_days=int(os.environ.get("HISTORY_DAYS", "30")),
+        max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
     )
     store = JsonFileStore(args.dry_run) if args.dry_run else FirestoreStore(os.environ.get("GOOGLE_CLOUD_PROJECT"))
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
@@ -35,8 +38,8 @@ def main() -> int:
         report = scrape(browser, store, config)
 
     logging.info(
-        "Done: %d meta, %d events, %d decks written, %d already stored, %d errors",
-        len(report.meta), len(report.events), report.decks_written, report.decks_skipped, len(report.errors),
+        "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
+        len(report.meta), len(report.archetypes), len(report.events), report.decks_written, report.decks_skipped, len(report.errors),
     )
     for error in report.errors:
         logging.error("  %s", error)

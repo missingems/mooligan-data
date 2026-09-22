@@ -33,6 +33,35 @@ class EventResult:
     archetype: str
     finish: str
     deck_id: str
+    # Set when the deck appears in an archetype's list, whose name then replaces
+    # the pilot's own deck title (leagues show titles like "UR").
+    archetype_id: Optional[str] = None
+
+
+@dataclass
+class ArchetypeResult:
+    """One row of an archetype's deck list on MTGGoldfish."""
+
+    deck_id: str
+    date: datetime
+    player: str
+    event_id: Optional[str]
+    event_name: str
+    finish: str
+
+
+@dataclass
+class ArchetypeHistory:
+    format: str
+    archetype_id: str
+    name: str
+    deck_id: Optional[str]
+    featured_player: Optional[str]
+    results: List[ArchetypeResult]
+
+    @property
+    def doc_id(self) -> str:
+        return f"{self.format}_{self.archetype_id}"
 
 
 @dataclass
@@ -88,6 +117,7 @@ def to_document(record: Any, drop: tuple = ()) -> Dict[str, Any]:
 @dataclass
 class RunReport:
     meta: List[str] = field(default_factory=list)
+    archetypes: List[str] = field(default_factory=list)
     events: List[str] = field(default_factory=list)
     decks_written: int = 0
     decks_skipped: int = 0

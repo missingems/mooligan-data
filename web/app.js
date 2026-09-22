@@ -29,7 +29,7 @@ const formatDate = (iso) =>
 const timeframeLabel = (timeframe) => timeframe.replace(/^(\d+)d$/, (_, days) => `${days} days`);
 const count = (cards) => cards.reduce((sum, card) => sum + card.quantity, 0);
 
-// ---- Routing: #/<format>[?t=<timeframe>], #/<format>/event/<id>, #/deck/<id>
+// ---- Routing: #/<format>[?t=<timeframe>], #/<format>/event/<id>, #/<format>/archetype/<id>, #/deck/<id>
 
 function parseRoute() {
   const [path, query = ""] = location.hash.replace(/^#\/?/, "").split("?");
@@ -38,6 +38,7 @@ function parseRoute() {
   if (parts[0] === "deck" && parts[1]) return { name: "deck", deckId: parts[1] };
   const format = config.formats.includes(parts[0]) ? parts[0] : config.formats[0];
   if (parts[1] === "event" && parts[2]) return { name: "event", format, eventId: parts[2] };
+  if (parts[1] === "archetype" && parts[2]) return { name: "archetype", format, archetypeId: parts[2] };
   const timeframe = config.timeframes.includes(params.get("t")) ? params.get("t") : config.timeframes[0];
   return { name: "meta", format, timeframe };
 }
@@ -55,7 +56,9 @@ async function render() {
         ? await deckView(api, route)
         : route.name === "event"
           ? await eventView(api, route)
-          : await metaView(api, route);
+          : route.name === "archetype"
+            ? await archetypeView(api, route)
+            : await metaView(api, route);
     if (token === renderToken) view.replaceChildren(content);
   } catch (error) {
     if (token !== renderToken) return;
@@ -85,7 +88,7 @@ function showSourceNotice(source) {
 async function metaView(api, { format, timeframe }) {
   const [meta, { events }] = await Promise.all([
     api.getMeta({ format, timeframe }).catch((error) => (error.code === "not-found" ? null : Promise.reject(error))),
-    api.getEvents({ format, limit: 15 }),
+    api.getEvents({ format, limit: 100 }),
   ]);
   document.title = `${titleCase(format)} metagame · MTG Metagame`;
 
@@ -127,10 +130,7 @@ function metaPanel(meta) {
             "a",
             {
               class: "name",
-              // Archetypes past the scraper's ARCHETYPE_DECKS limit have no stored deck.
-              ...(archetype.deck_id
-                ? { href: `#/deck/${encodeURIComponent(archetype.deck_id)}?format=${encodeURIComponent(meta.format)}` }
-                : { href: `https://www.mtggoldfish.com/archetype/${encodeURIComponent(archetype.id)}`, target: "_blank", rel: "noopener" }),
+              href: `#/${meta.format}/archetype/${encodeURIComponent(archetype.id)}`,
               style: { "--share": `${(archetype.percentage / top) * 100}%` },
             },
             archetype.name,
@@ -152,35 +152,42 @@ function metaPanel(meta) {
 }
 
 function eventsPanel(format, events) {
-  return el(
-    "section",
-    { class: "panel" },
-    el("h2", {}, "Recent events"),
-    events.length === 0
-      ? el("p", { class: "status" }, "No events scraped yet.")
-      : el(
-          "ul",
-          { class: "event-list" },
-          events.map((event) => {
-            const winner = event.results[0];
-            return el(
-              "li",
-              {},
-              el("a", { href: `#/${format}/event/${encodeURIComponent(event.event_id)}` }, event.event_name),
-              el("div", { class: "sub" },
-                [formatDate(event.date), `${event.results.length} decks`, winner ? `${winner.finish}: ${winner.archetype}` : null]
-                  .filter(Boolean).join(" · ")),
-            );
-          }),
-        ),
-  );
+  const panel = el("section", { class: "panel" }, el("h2", {}, "Recent events", el("small", {}, `${events.length} stored`)));
+  if (events.length === 0) {
+    panel.append(el("p", { class: "status" }, "No events scraped yet."));
+    return panel;
+  }
+  const list = el("ul", { class: "event-list" });
+  const renderRows = (limit) =>
+    list.replaceChildren(
+      ...events.slice(0, limit).map((event) => {
+        const winner = event.results[0];
+        return el(
+          "li",
+          {},
+          el("a", { href: `#/${format}/event/${encodeURIComponent(event.event_id)}` }, event.event_name),
+          el("div", { class: "sub" },
+            [formatDate(event.date), `${event.results.length} decks`, winner ? `${winner.finish}: ${winner.archetype}` : null]
+              .filter(Boolean).join(" · ")),
+        );
+      }),
+    );
+  renderRows(20);
+  panel.append(list);
+  if (events.length > 20) {
+    const more = el("button", { class: "show-all", type: "button", onclick: () => { renderRows(Infinity); more.remove(); } },
+      `Show all ${events.length}`);
+    panel.append(more);
+  }
+  return panel;
 }
 
 async function eventView(api, { format, eventId }) {
-  // There is no single-event callable; the event is among the format's recent ones.
-  const { events } = await api.getEvents({ format, limit: 100 });
-  const event = events.find((candidate) => candidate.event_id === eventId);
-  if (!event) throw Object.assign(new Error(`Event ${eventId} is not among recent ${titleCase(format)} events.`), { code: "not-found" });
+  const event = await api.getEvent({ event_id: eventId }).catch((error) => {
+    if (error.code !== "not-found") throw error;
+    return null;
+  });
+  if (!event) return notStoredYet(`This event hasn't been scraped yet.`, `https://www.mtggoldfish.com/tournament/${encodeURIComponent(eventId)}`, format);
   document.title = `${event.event_name} · MTG Metagame`;
   return el(
     "div",
@@ -192,17 +199,27 @@ async function eventView(api, { format, eventId }) {
       el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`)),
     el("section", { class: "panel" },
       el("table", {},
-        el("thead", {}, el("tr", {}, el("th", {}, "Finish"), el("th", {}, "Deck"), el("th", {}, "Player"))),
+        el("thead", {}, el("tr", {}, el("th", {}, "Finish"), el("th", {}, "Deck"), el("th", {}, "Player"), el("th", {}, "Archetype"))),
         el("tbody", {}, event.results.map((result) =>
           el("tr", {},
             el("td", { class: "finish" }, result.finish),
             el("td", {}, el("a", { href: `#/deck/${encodeURIComponent(result.deck_id)}?event=${encodeURIComponent(eventId)}&format=${format}` }, result.archetype)),
-            el("td", {}, result.player)))))),
+            el("td", {}, result.player),
+            el("td", {}, result.archetype_id
+              ? el("a", { href: `#/${format}/archetype/${encodeURIComponent(result.archetype_id)}` }, "All results")
+              : null)))))),
   );
 }
 
 async function deckView(api, { deckId }) {
-  const deck = await api.getDecklist({ deck_id: deckId });
+  const deck = await api.getDecklist({ deck_id: deckId }).catch((error) => {
+    if (error.code !== "not-found") throw error;
+    return null;
+  });
+  if (!deck) {
+    const format = new URLSearchParams(location.hash.split("?")[1] ?? "").get("format");
+    return notStoredYet("This decklist hasn't been downloaded yet. Each scrape adds more.", `https://www.mtggoldfish.com/deck/${encodeURIComponent(deckId)}`, format);
+  }
   document.title = `${deck.archetype} by ${deck.player} · MTG Metagame`;
   const backParams = new URLSearchParams(location.hash.split("?")[1] ?? "");
   const format = deck.format ?? backParams.get("format");
@@ -241,6 +258,70 @@ async function deckView(api, { deckId }) {
         back)),
     el("div", { class: "panel boards" }, board("Mainboard", deck.mainboard), deck.sideboard.length ? board("Sideboard", deck.sideboard) : null),
   );
+}
+
+async function archetypeView(api, { format, archetypeId }) {
+  const archetype = await api.getArchetype({ format, archetype_id: archetypeId }).catch((error) => {
+    if (error.code !== "not-found") throw error;
+    return null;
+  });
+  const goldfish = `https://www.mtggoldfish.com/archetype/${encodeURIComponent(archetypeId)}`;
+  if (!archetype) return notStoredYet("This archetype's results haven't been scraped yet.", goldfish, format);
+  document.title = `${archetype.name} · MTG Metagame`;
+
+  // Results are newest first, so events come out in date order as they are first seen.
+  const events = new Map();
+  for (const result of archetype.results) {
+    const key = result.event_id ?? result.event_name;
+    if (!events.has(key)) events.set(key, { id: result.event_id, name: result.event_name, date: result.date, results: [] });
+    events.get(key).results.push(result);
+  }
+  const groups = [...events.values()];
+  const deckHref = (deckId, eventId) =>
+    `#/deck/${encodeURIComponent(deckId)}?format=${format}${eventId ? `&event=${encodeURIComponent(eventId)}` : ""}`;
+
+  const list = el("div", { class: "archetype-events" });
+  const renderGroups = (limit) =>
+    list.replaceChildren(
+      ...groups.slice(0, limit).map((group) =>
+        el("section", { class: "panel archetype-event" },
+          el("h2", {},
+            group.id ? el("a", { href: `#/${format}/event/${encodeURIComponent(group.id)}` }, group.name) : group.name,
+            el("small", {}, `${formatDate(group.date)} · ${group.results.length} ${group.results.length === 1 ? "deck" : "decks"}`)),
+          el("table", {},
+            el("tbody", {}, group.results.map((result) =>
+              el("tr", {},
+                el("td", { class: "finish" }, result.finish),
+                el("td", {}, el("a", { href: deckHref(result.deck_id, group.id) }, result.player)))))))),
+    );
+  renderGroups(30);
+  const more = groups.length > 30
+    ? el("button", { class: "show-all", type: "button", onclick: () => { renderGroups(Infinity); more.remove(); } }, `Show all ${groups.length} events`)
+    : null;
+
+  return el(
+    "div",
+    {},
+    el("div", { class: "page-head" },
+      el("div", {}, el("h1", {}, archetype.name),
+        el("p", {}, `${archetype.results.length} decks in ${groups.length} events · updated ${formatDate(archetype.last_updated)}`)),
+      el("div", { class: "deck-actions" },
+        archetype.deck_id
+          ? el("a", { class: "button", href: deckHref(archetype.deck_id, null) },
+              archetype.featured_player ? `Featured list by ${archetype.featured_player}` : "Featured list")
+          : null,
+        el("a", { class: "button", href: goldfish, target: "_blank", rel: "noopener" }, "MTGGoldfish"),
+        el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`))),
+    groups.length ? list : el("p", { class: "status" }, "No results in the history window."),
+    more,
+  );
+}
+
+function notStoredYet(message, goldfishUrl, format) {
+  return el("div", {},
+    el("p", { class: "status" }, message, " ",
+      el("a", { href: goldfishUrl, target: "_blank", rel: "noopener" }, "View it on MTGGoldfish"), "."),
+    format ? el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`) : null);
 }
 
 // ---- Card details dialog

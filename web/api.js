@@ -24,6 +24,8 @@ async function firebaseApi() {
     source: "firebase",
     getMeta: call("getMeta"),
     getEvents: call("getEvents"),
+    getEvent: call("getEvent"),
+    getArchetype: call("getArchetype"),
     getDecklist: call("getDecklist"),
     getCardDetails: call("getCardDetails"),
   };
@@ -48,6 +50,13 @@ async function sampleApi() {
         .sort((a, b) => b.date.localeCompare(a.date))
         .slice(0, limit);
       return { events };
+    },
+    async getEvent({ event_id }) {
+      return data.events[event_id] ? { event_id, ...data.events[event_id] } : notFound(`Event ${event_id}`);
+    },
+    async getArchetype({ format, archetype_id }) {
+      const id = `${format}_${archetype_id}`;
+      return data.archetypes?.[id] ? { id, ...data.archetypes[id] } : notFound(`Results for ${archetype_id}`);
     },
     async getDecklist({ deck_id }) {
       return data.decks[deck_id] ? { deck_id, ...data.decks[deck_id] } : notFound(`Deck ${deck_id}`);

@@ -103,6 +103,11 @@ td.finish { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .card-link:hover { color: var(--accent); background: none; text-decoration: underline; }
 .deck-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
+.archetype-events { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; align-items: start; }
+.archetype-event > h2 { flex-wrap: wrap; font-size: 1rem; }
+.archetype-event table td { padding: 5px 6px; }
+.archetype-event tr:first-child td { border-top: 0; }
+
 .status { color: var(--muted); padding: 24px 0; }
 .error { color: #c92a2a; }
 @media (prefers-color-scheme: dark) { .error { color: #ff8787; } }

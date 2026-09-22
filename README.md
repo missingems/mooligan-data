@@ -22,13 +22,15 @@ Website (web/, GitHub Pages) ──▶ getMeta · getEvents · getDecklist · ge
 | `meta` | `{format}_{timeframe}`, e.g. `modern_30d` | scraper |
 | `events` | MTGGoldfish tournament id | scraper |
 | `decks` | MTGGoldfish deck id | scraper (new decks only; published decks never change) |
+| `archetypes` | `{format}_{archetype_id}`, e.g. `modern_modern-izzet-prowess` | scraper: every deck of the archetype in the history window, newest first |
 | `cards` | Scryfall `oracle_id` (the Scryfall `id` for cards without one) | Scryfall sync |
 | `sync_state` | `scryfall` plus 16 `hashes` shards | Scryfall sync bookkeeping |
 
 The field names follow the spec. `functions/src/shared/schema.ts` and `scraper/mtgmeta/models.py` define them, and must be kept in step. These fields go beyond the spec:
 
 - `meta.archetypes[].deck_count` and `meta.timeframe`
-- `meta.archetypes[].deck_id`: the deck featured on the archetype's MTGGoldfish page, stored in `decks`. The website opens it when you click an archetype.
+- `meta.archetypes[].deck_id`: the deck featured on the archetype's MTGGoldfish page, stored in `decks`.
+- `events.results[].archetype_id`: set when the deck is in a tracked archetype's list. `archetype` then holds the archetype's name instead of the pilot's own deck title (leagues show titles like "UR").
 - `events.url`, and `decks.format` and `decks.event_id`. `event_id` is null for an archetype's featured deck.
 - `cards.search_names`: the lower-cased full name plus each face name. Decklists name a double-faced card by its front face ("Fable of the Mirror-Breaker"), which `where("name", "==", …)` would never match.
 
@@ -46,6 +48,8 @@ Measured against the real file (2026-09-21): 38,906 cards, 78 batches, 165 MB pe
 | --- | --- | --- |
 | `getMeta` | `{ format, timeframe? }`, timeframe defaults to `"30d"` | The `meta` document |
 | `getEvents` | `{ format, limit? }`, limit 1–100, default 20 | `{ events: [...] }`, newest first, each with its `results` |
+| `getEvent` | `{ event_id }` | One `events` document |
+| `getArchetype` | `{ format, archetype_id }` | The `archetypes` document: name, featured deck, and every result with its event, player and finish |
 | `getDecklist` | `{ deck_id }` | The deck, with `mainboard` and `sideboard` |
 | `getCardDetails` | `{ card_name }`, matched without regard to case, by full or face name | The `cards` document |
 
@@ -55,9 +59,10 @@ Timestamps are returned as ISO 8601 strings. Invalid input throws `invalid-argum
 
 `python -m mtgmeta` opens MTGGoldfish in SeleniumBase UC mode. For each format, it:
 
-1. reads the full metagame page for each window in `META_DAYS`. The site's own period selector switches the window, and it offers 7, 14, 30, 90 and 365 days. It then opens each archetype's page, records the deck featured there as the archetype's `deck_id`, and downloads that deck the first time it appears. This costs one page load per archetype on every run: about 8 minutes for Modern's 60 archetypes.
-2. lists the recent tournaments and reads each tournament page for players, archetypes and finishes. A Challenge finish reads "1st Place", and a League finish is a record such as "5-0".
-3. downloads each new decklist as text through `fetch("/deck/download/{id}")` inside the page, so the request reuses the browser's Cloudflare clearance.
+1. reads the full metagame page for each window in `META_DAYS`. The site's own period selector switches the window, and it offers 7, 14, 30, 90 and 365 days.
+2. for each archetype, reads its page for the featured deck, then `/archetype/<id>/decks` (50 decks a page, newest first) for every result in the last `HISTORY_DAYS`. Results merge into the stored history, so a later run stops at the first page with nothing new. That is usually one page, but the first run reads about one page per 50 decks.
+3. reads the 10 events on the tournaments list, which is all that page ever shows, plus up to `MAX_NEW_EVENTS` older events that the archetype lists mention and that aren't stored yet. Events therefore build up over time. A Challenge finish reads "1st Place", and a League finish is a record such as "5-0".
+4. downloads decklists it doesn't have yet, up to `MAX_NEW_DECKS` a run: featured decks first, then the newest results. It uses `fetch("/deck/download/{id}")` inside the page, so the request reuses the browser's Cloudflare clearance. A list not downloaded yet shows as "not downloaded yet" on the site, with a link to MTGGoldfish.
 
 One failed page doesn't stop the run. The job exits with status 1 when anything failed, so Cloud Run shows the error.
 
@@ -66,8 +71,11 @@ One failed page doesn't stop the run. The job exits with status 1 when anything 
 | `FORMATS` | `modern,standard,pioneer` | Formats to scrape |
 | `META_DAYS` | `30` | Metagame windows, e.g. `30,7` gives `modern_30d` and `modern_7d` |
 | `EVENTS_PER_FORMAT` | `10` | Recent events read per format |
+| `MAX_NEW_EVENTS` | `60` | Older events per format read per run, found through archetype lists |
+| `HISTORY_DAYS` | `30` | How far back each archetype's results go |
+| `MAX_ARCHETYPE_PAGES` | `20` | Deck pages per archetype per run |
 | `MAX_NEW_DECKS` | `400` | New decklists downloaded per run. Anything over the limit waits for the next run |
-| `ARCHETYPE_DECKS` | `100` | Archetypes per metagame, most played first, whose featured deck is stored. The site links any others to MTGGoldfish |
+| `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results and featured deck are kept |
 | `REQUEST_DELAY` | `1.5` | Base seconds between requests, plus up to 50% random extra |
 | `HEADLESS` | `1` on macOS, `0` on Linux | On Linux, UC mode runs Chrome headed inside Xvfb |
 
@@ -104,7 +112,7 @@ You need the Firebase CLI (`npm i -g firebase-tools`), the gcloud CLI, and a Fir
 4. **Scraper.** `PROJECT_ID=<project-id> ./scraper/deploy.sh` does the following:
    - builds the image with Cloud Build, so Docker isn't needed locally
    - creates a service account that can only write Firestore
-   - deploys the Cloud Run Job with 2 CPU, 2 GiB and a 1-hour timeout
+   - deploys the Cloud Run Job with 2 CPU, 2 GiB and a 4-hour timeout. The first run reads the full history and can take 2 hours or more across three formats; later runs take well under an hour.
    - schedules it for `0 2,14 * * *` UTC
 
    Start a run straight away with `gcloud run jobs execute mtggoldfish-scraper --region us-central1`.
@@ -120,5 +128,6 @@ CI runs both suites on each push and pull request.
 ## Caveats
 
 - MTGGoldfish sits behind Cloudflare, and its markup can change. The parsers raise `ParseError` when a page doesn't look as expected. They never write empty data. Check the job's logs when the job fails.
+- Cloudflare starts challenging every request after a lot of scraping from one address. That happened on this machine after a few hours of testing. The scraper then fails page by page, and later runs pick up where it left off. Raise `REQUEST_DELAY` if Cloud Run's runs get blocked.
 - Scraping may conflict with MTGGoldfish's terms of use. Keep the request rate low, and don't redistribute the data commercially.
 - The Docker image hasn't been built on this machine, because Docker isn't installed here. Cloud Build builds it during `deploy.sh`.
