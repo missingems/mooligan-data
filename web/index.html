@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTG Metagame</title>
+  <meta name="description" content="Tournament metagame, events and decklists scraped from MTGGoldfish, with card details from Scryfall.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='6' y='3' width='20' height='26' rx='3' fill='%234b6bfb'/><rect x='10' y='8' width='12' height='9' rx='1.5' fill='white' opacity='.85'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#/">MTG Metagame</a>
+    <nav class="formats" aria-label="Format"></nav>
+  </header>
+  <p class="notice" hidden></p>
+  <main id="view" aria-live="polite"></main>
+  <dialog id="card-dialog" aria-labelledby="card-dialog-title">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <div class="card-dialog-body"></div>
+  </dialog>
+  <footer class="site-footer">
+    Data from <a href="https://www.mtggoldfish.com">MTGGoldfish</a> and <a href="https://scryfall.com">Scryfall</a>.
+    Card images and text © Wizards of the Coast. Not affiliated with either site.
+  </footer>
+</body>
+</html>
