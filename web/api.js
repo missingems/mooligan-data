@@ -41,6 +41,15 @@ export async function createApi() {
     async getDecklist({ deck_id }) {
       return getJson(`decks/${encodeURIComponent(deck_id)}.json`);
     },
+    /** For decks stored before they carried an archetype id: find them in the snapshot. */
+    async findArchetypeOfDeck({ format, deck_id }) {
+      const { archetypes } = await snapshot(format);
+      const match = Object.values(archetypes).find(
+        (archetype) =>
+          archetype.deck_id === deck_id || archetype.results.some((result) => result.deck_id === deck_id),
+      );
+      return match ? { archetype_id: match.archetype_id, name: match.name } : null;
+    },
     async getCardDetails({ card_name }) {
       const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(card_name)}`;
       const response = await fetch(url);

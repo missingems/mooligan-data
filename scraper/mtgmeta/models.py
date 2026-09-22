@@ -99,6 +99,8 @@ class Deck:
     format: str
     # None for an archetype's featured deck, which is not from a scraped event.
     event_id: Optional[str]
+    # The archetype's MTGGoldfish id, when the deck is in a tracked archetype's list.
+    archetype_id: Optional[str] = None
 
 
 @dataclass

@@ -219,6 +219,9 @@ async function deckView(api, { deckId }) {
   document.title = `${deck.archetype} by ${deck.player} · MTG Metagame`;
   const backParams = new URLSearchParams(location.hash.split("?")[1] ?? "");
   const format = deck.format ?? backParams.get("format");
+  // Decks downloaded before they carried an archetype id are looked up in the snapshot.
+  const archetypeId =
+    deck.archetype_id ?? (format ? (await api.findArchetypeOfDeck({ format, deck_id: deckId }).catch(() => null))?.archetype_id : null);
   const eventId = deck.event_id ?? backParams.get("event");
   const back = eventId && format
     ? el("a", { href: `#/${format}/event/${encodeURIComponent(eventId)}` }, "← Event")
@@ -248,7 +251,13 @@ async function deckView(api, { deckId }) {
     "div",
     {},
     el("div", { class: "page-head" },
-      el("div", {}, el("h1", {}, deck.archetype), el("p", {}, `Piloted by ${deck.player}`)),
+      el("div", {},
+        el("h1", {}, deck.archetype),
+        el("p", {}, `Piloted by ${deck.player}`,
+          archetypeId && format
+            ? el("span", {}, " · ",
+                el("a", { href: `#/${format}/archetype/${encodeURIComponent(archetypeId)}` }, `All ${deck.archetype} results`))
+            : null)),
       el("div", { class: "deck-actions" }, copy,
         el("a", { class: "button", href: `https://www.mtggoldfish.com/deck/${encodeURIComponent(deckId)}`, target: "_blank", rel: "noopener" }, "MTGGoldfish"),
         back)),

@@ -107,6 +107,9 @@ def test_scrape_publishes_meta_archetypes_events_and_decks(tmp_path):
     assert browser.deck_downloads[:2] == ["9000001", "9000002"]
     assert deck(tmp_path, "9000001")["event_id"] is None
     assert deck(tmp_path, "7966110")["archetype"] == "Izzet Prowess"
+    # A deck carries its archetype's id, so the app can open the archetype from the deck.
+    assert deck(tmp_path, "7966110")["archetype_id"] == "modern-izzet-prowess"
+    assert deck(tmp_path, "9000001")["archetype_id"] == "modern-izzet-prowess"
     assert len(json.loads((tmp_path / "state" / "deck-ids.json").read_text())) == 10
 
 

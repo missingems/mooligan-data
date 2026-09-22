@@ -66,6 +66,7 @@ class _WantedDeck:
     archetype: str
     format: str
     event_id: Optional[str]
+    archetype_id: Optional[str] = None
 
 
 def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[datetime] = None) -> RunReport:
@@ -256,19 +257,23 @@ def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[E
     for history in histories:
         if history.deck_id:
             wanted[history.deck_id] = _WantedDeck(
-                history.deck_id, far_future, history.featured_player or "", history.name, format, None
+                history.deck_id, far_future, history.featured_player or "", history.name, format, None, history.archetype_id
             )
     for history in histories:
         for result in history.results:
             wanted.setdefault(
                 result.deck_id,
-                _WantedDeck(result.deck_id, result.date, result.player, history.name, format, result.event_id),
+                _WantedDeck(
+                    result.deck_id, result.date, result.player, history.name, format, result.event_id, history.archetype_id
+                ),
             )
     for event in events:
         for result in event.results:
             wanted.setdefault(
                 result.deck_id,
-                _WantedDeck(result.deck_id, event.date, result.player, result.archetype, format, event.event_id),
+                _WantedDeck(
+                    result.deck_id, event.date, result.player, result.archetype, format, event.event_id, result.archetype_id
+                ),
             )
     return sorted(wanted.values(), key=lambda deck: deck.date, reverse=True)
 
@@ -289,7 +294,11 @@ def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], b
                 _fail(report, f"deck {want.deck_id}", error)
                 continue
             budget -= 1
-            pending.append(Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id))
+            pending.append(
+                Deck(
+                    want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id
+                )
+            )
         _flush_decks(store, pending, report)
     return budget
 
