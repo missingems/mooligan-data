@@ -37,7 +37,9 @@ class Browser(Protocol):
 
 @dataclass
 class ScrapeConfig:
-    formats: Sequence[str] = ("modern", "standard", "pioneer")
+    formats: Sequence[str] = (
+        "modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander",
+    )
     meta_days: Sequence[str] = ("30",)
     # The tournaments list only ever shows the latest 10.
     events_per_format: int = 10

@@ -9,7 +9,7 @@ on:
     inputs:
       formats:
         description: Formats to scrape
-        default: modern,standard,pioneer
+        default: modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander
       max_new_decks:
         description: New decklists per format per run
         default: "1500"
@@ -54,7 +54,7 @@ jobs:
         id: scrape
         continue-on-error: true
         env:
-          FORMATS: ${{ inputs.formats || 'modern,standard,pioneer' }}
+          FORMATS: ${{ inputs.formats || 'modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander' }}
           MAX_NEW_DECKS: ${{ inputs.max_new_decks || '1500' }}
           META_DAYS: "30"
           REQUEST_DELAY: "1"

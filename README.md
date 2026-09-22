@@ -49,7 +49,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 
 | Variable | Default | Meaning |
 | --- | --- | --- |
-| `FORMATS` | `modern,standard,pioneer` | Formats to scrape |
+| `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
 | `META_DAYS` | `30` | Metagame windows; `30,7` would publish both |
 | `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
 | `MAX_NEW_EVENTS` | `60` | Older events per format read per run |

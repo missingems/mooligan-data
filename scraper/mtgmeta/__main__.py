@@ -27,7 +27,7 @@ def main() -> int:
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
     config = ScrapeConfig(
-        formats=_list("FORMATS", "modern,standard,pioneer"),
+        formats=_list("FORMATS", "modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander"),
         meta_days=_list("META_DAYS", "30"),
         events_per_format=int(os.environ.get("EVENTS_PER_FORMAT", "10")),
         max_new_decks=int(os.environ.get("MAX_NEW_DECKS", "400")),

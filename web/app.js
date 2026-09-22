@@ -23,6 +23,10 @@ function el(tag, attrs = {}, ...children) {
   return node;
 }
 
+const FORMAT_NAMES = { penny_dreadful: "Penny Dreadful", duel_commander: "Duel Commander" };
+// Scryfall's legality keys differ from MTGGoldfish's format ids for these two.
+const SCRYFALL_LEGALITY = { penny_dreadful: "penny", duel_commander: "duel" };
+const formatName = (format) => FORMAT_NAMES[format] ?? titleCase(format);
 const titleCase = (text) => text.replace(/(^|[\s_-])(\w)/g, (_, gap, letter) => gap.replace(/[_-]/, " ") + letter.toUpperCase());
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
@@ -70,7 +74,7 @@ async function render() {
 function renderFormatNav(current) {
   document.querySelector(".formats").replaceChildren(
     ...config.formats.map((format) =>
-      el("a", { href: `#/${format}`, "aria-current": format === current ? "page" : undefined }, titleCase(format)),
+      el("a", { href: `#/${format}`, "aria-current": format === current ? "page" : undefined }, formatName(format)),
     ),
   );
 }
@@ -82,7 +86,7 @@ async function metaView(api, { format, timeframe }) {
     api.getMeta({ format, timeframe }).catch((error) => (error.code === "not-found" ? null : Promise.reject(error))),
     api.getEvents({ format, limit: 100 }),
   ]);
-  document.title = `${titleCase(format)} metagame · MTG Metagame`;
+  document.title = `${formatName(format)} metagame · MTG Metagame`;
 
   const timeframes = config.timeframes.length < 2 ? null : el(
     "nav",
@@ -98,7 +102,7 @@ async function metaView(api, { format, timeframe }) {
     el(
       "div",
       { class: "page-head" },
-      el("div", {}, el("h1", {}, `${titleCase(format)} metagame`),
+      el("div", {}, el("h1", {}, `${formatName(format)} metagame`),
         el("p", {}, meta ? `Updated ${formatDate(meta.last_updated)}` : "No metagame scraped yet for this timeframe.")),
       timeframes,
     ),
@@ -186,9 +190,9 @@ async function eventView(api, { format, eventId }) {
     {},
     el("div", { class: "page-head" },
       el("div", {}, el("h1", {}, event.event_name),
-        el("p", {}, `${titleCase(event.format)} · ${formatDate(event.date)} · `,
+        el("p", {}, `${formatName(event.format)} · ${formatDate(event.date)} · `,
           el("a", { href: event.url ?? `https://www.mtggoldfish.com/tournament/${eventId}`, target: "_blank", rel: "noopener" }, "MTGGoldfish"))),
-      el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`)),
+      el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`)),
     el("section", { class: "panel" },
       el("table", {},
         el("thead", {}, el("tr", {}, el("th", {}, "Finish"), el("th", {}, "Deck"), el("th", {}, "Player"), el("th", {}, "Archetype"))),
@@ -219,7 +223,7 @@ async function deckView(api, { deckId }) {
   const back = eventId && format
     ? el("a", { href: `#/${format}/event/${encodeURIComponent(eventId)}` }, "← Event")
     : format
-      ? el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`)
+      ? el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`)
       : null;
 
   const board = (title, cards) =>
@@ -303,7 +307,7 @@ async function archetypeView(api, { format, archetypeId }) {
               archetype.featured_player ? `Featured list by ${archetype.featured_player}` : "Featured list")
           : null,
         el("a", { class: "button", href: goldfish, target: "_blank", rel: "noopener" }, "MTGGoldfish"),
-        el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`))),
+        el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`))),
     groups.length ? list : el("p", { class: "status" }, "No results in the history window."),
     more,
   );
@@ -314,7 +318,7 @@ function notStoredYet(message, goldfishUrl, format) {
   return el("div", {},
     el("p", { class: "status" }, message, " ",
       el("a", { href: goldfishUrl, target: "_blank", rel: "noopener" }, "View it on MTGGoldfish"), "."),
-    format ? el("a", { href: `#/${format}` }, `← ${titleCase(format)} metagame`) : null);
+    format ? el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`) : null);
 }
 
 // ---- Card details dialog
@@ -327,7 +331,7 @@ async function showCard(api, name, format) {
     const card = await api.getCardDetails({ card_name: name });
     const faces = card.card_faces?.length ? card.card_faces : [card];
     const image = card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal;
-    const legality = format && card.legalities?.[format];
+    const legality = format && card.legalities?.[SCRYFALL_LEGALITY[format] ?? format];
     body.replaceChildren(
       image ? el("img", { src: image, alt: card.name, loading: "lazy" }) : el("div"),
       el("div", {},
@@ -338,7 +342,7 @@ async function showCard(api, name, format) {
             face.oracle_text ? el("div", { class: "oracle" }, face.oracle_text) : null,
             face.power != null ? el("div", { class: "pt" }, `${face.power}/${face.toughness}`) : null,
             face.loyalty != null ? el("div", { class: "pt" }, `Loyalty ${face.loyalty}`) : null)),
-        legality ? el("div", { class: "legal" }, `${titleCase(format)}: ${legality.replace("_", " ")}`) : null,
+        legality ? el("div", { class: "legal" }, `${formatName(format)}: ${legality.replace("_", " ")}`) : null,
         card.scryfall_uri ? el("p", {}, el("a", { href: card.scryfall_uri, target: "_blank", rel: "noopener" }, "View on Scryfall")) : null),
     );
   } catch (error) {
