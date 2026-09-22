@@ -80,7 +80,7 @@ function showSourceNotice(source) {
   const notice = document.querySelector(".notice");
   notice.hidden = source !== "sample";
   notice.textContent =
-    "Showing a bundled sample from MTGGoldfish (Modern only). Add your Firebase web config to web/config.js to show live data.";
+    "Showing a bundled sample from MTGGoldfish (Modern only, one week of archetype results). Add your Firebase web config to web/config.js to show live data.";
 }
 
 // ---- Views
@@ -318,6 +318,7 @@ async function archetypeView(api, { format, archetypeId }) {
 }
 
 function notStoredYet(message, goldfishUrl, format) {
+  document.title = "MTG Metagame";
   return el("div", {},
     el("p", { class: "status" }, message, " ",
       el("a", { href: goldfishUrl, target: "_blank", rel: "noopener" }, "View it on MTGGoldfish"), "."),
