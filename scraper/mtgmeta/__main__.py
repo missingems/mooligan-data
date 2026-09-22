@@ -38,7 +38,11 @@ def main() -> int:
     )
     store = SnapshotStore(args.directory, config.formats, config.history_days)
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
-    with open_browser(headless=headless, delay=float(os.environ.get("REQUEST_DELAY", "1.5"))) as browser:
+    with open_browser(
+        headless=headless,
+        delay=float(os.environ.get("REQUEST_DELAY", "1.5")),
+        concurrency=int(os.environ.get("CONCURRENCY", "6")),
+    ) as browser:
         report = scrape(browser, store, config)
     written = store.finish()
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")

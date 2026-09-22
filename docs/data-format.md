@@ -18,7 +18,7 @@ Formats are `modern`, `standard` and `pioneer`. `schema` is `1`, and it will cha
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
 4. Look up cards on Scryfall by `card_name` (`https://api.scryfall.com/cards/named?exact=…`), keeping to Scryfall's guidelines: a User-Agent header, at most about 10 requests a second, and caching.
 
-A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 400 new decklists a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet".
+A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 1,500 new decklists per format a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet".
 
 ## `index.json`
 

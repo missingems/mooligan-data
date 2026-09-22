@@ -11,8 +11,8 @@ on:
         description: Formats to scrape
         default: modern,standard,pioneer
       max_new_decks:
-        description: New decklists per run
-        default: "400"
+        description: New decklists per format per run
+        default: "1500"
 
 # Two runs must never publish over each other.
 concurrency:
@@ -29,8 +29,7 @@ env:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # A first run reads a month of history for every archetype.
-    timeout-minutes: 350
+    timeout-minutes: 120
     defaults:
       run:
         working-directory: scraper
@@ -56,9 +55,10 @@ jobs:
         continue-on-error: true
         env:
           FORMATS: ${{ inputs.formats || 'modern,standard,pioneer' }}
-          MAX_NEW_DECKS: ${{ inputs.max_new_decks || '400' }}
+          MAX_NEW_DECKS: ${{ inputs.max_new_decks || '1500' }}
           META_DAYS: "30"
-          REQUEST_DELAY: "2"
+          REQUEST_DELAY: "1"
+          CONCURRENCY: "6"
         run: python -m mtgmeta work
 
       # finish() writes index.json last, so its presence means the run got as far as publishing.

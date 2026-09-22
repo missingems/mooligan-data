@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Protocol, Sequence, Tuple
+from typing import Dict, List, Optional, Protocol, Sequence, Tuple, Union
 
 from .models import (
     Archetype,
@@ -32,7 +32,7 @@ log = logging.getLogger(__name__)
 class Browser(Protocol):
     def page(self, path: str) -> str: ...
     def metagame(self, format: str, days: str) -> str: ...
-    def deck_text(self, deck_id: str) -> str: ...
+    def fetch_pages(self, paths: Sequence[str]) -> Dict[str, Union[str, Exception]]: ...
 
 
 @dataclass
@@ -129,25 +129,22 @@ def _read_archetypes(
     cutoff: datetime,
     report: RunReport,
 ) -> List[ArchetypeHistory]:
+    featured_pages = browser.fetch_pages([f"/archetype/{archetype.id}" for archetype in archetypes])
+    fresh, failed = _new_archetype_results(browser, store, format, archetypes, cutoff, config.max_archetype_pages, report)
     histories = []
     for archetype in archetypes:
+        if archetype.id in failed:
+            continue
+        featured = None
         try:
-            featured = parse_archetype(browser.page(f"/archetype/{archetype.id}"), archetype.id)
+            featured = parse_archetype(_body(featured_pages[f"/archetype/{archetype.id}"]), archetype.id)
         except Exception as error:  # noqa: BLE001
             _fail(report, f"archetype {archetype.id}", error)
-            featured = None
-        try:
-            known = store.load_archetype_results(format, archetype.id)
-            fresh = _new_archetype_results(
-                browser, archetype.id, {r.deck_id for r in known}, store.ignored_event_ids(), cutoff, config.max_archetype_pages
-            )
-        except Exception as error:  # noqa: BLE001
-            _fail(report, f"archetype decks {archetype.id}", error)
-            continue
-        fresh_ids = {result.deck_id for result in fresh}
+        known = store.load_archetype_results(format, archetype.id)
+        fresh_ids = {result.deck_id for result in fresh[archetype.id]}
         # A stable sort keeps MTGGoldfish's order among decks of the same day.
         results = sorted(
-            (result for result in fresh + [r for r in known if r.deck_id not in fresh_ids] if result.date >= cutoff),
+            (result for result in fresh[archetype.id] + [r for r in known if r.deck_id not in fresh_ids] if result.date >= cutoff),
             key=lambda result: result.date,
             reverse=True,
         )
@@ -162,27 +159,52 @@ def _read_archetypes(
         )
         if _save(report, f"archetype {history.doc_id}", lambda: store.save_archetype(history)):
             report.archetypes.append(history.doc_id)
-            log.info("Saved archetype %s (%d results, %d new)", history.doc_id, len(results), len(fresh))
+            log.info("Saved archetype %s (%d results, %d new)", history.doc_id, len(results), len(fresh[archetype.id]))
         histories.append(history)
     return histories
 
 
 def _new_archetype_results(
-    browser: Browser, archetype_id: str, known: set, ignored_events: set, cutoff: datetime, max_pages: int
-) -> List[ArchetypeResult]:
-    """Reads the archetype's deck pages until a page holds nothing new or reaches past the cutoff."""
-    fresh: List[ArchetypeResult] = []
+    browser: Browser,
+    store: Store,
+    format: str,
+    archetypes: List[Archetype],
+    cutoff: datetime,
+    max_pages: int,
+    report: RunReport,
+) -> Tuple[Dict[str, List[ArchetypeResult]], set]:
+    """Reads every archetype's deck pages a page number at a time, all archetypes together.
+
+    An archetype stops once a page holds nothing new or reaches past the cutoff.
+    Returns the new rows per archetype, and the archetypes whose pages failed.
+    """
+    ignored = store.ignored_event_ids()
+    known = {a.id: {r.deck_id for r in store.load_archetype_results(format, a.id)} for a in archetypes}
+    fresh: Dict[str, List[ArchetypeResult]] = {a.id: [] for a in archetypes}
+    failed = set()
+    active = [a.id for a in archetypes]
     for page in range(1, max_pages + 1):
-        rows, has_next = parse_archetype_decks(browser.page(f"/archetype/{archetype_id}/decks?page={page}"), archetype_id)
-        new_rows = [
-            row for row in rows if row.deck_id not in known and row.event_id not in ignored_events and row.date >= cutoff
-        ]
-        fresh.extend(new_rows)
-        # Rows are newest first, but an event can be posted days late, so a
-        # page is only "caught up" once none of its rows are new.
-        if not new_rows or not has_next or (rows and rows[-1].date < cutoff):
+        if not active:
             break
-    return fresh
+        pages = browser.fetch_pages([f"/archetype/{archetype_id}/decks?page={page}" for archetype_id in active])
+        still_active = []
+        for archetype_id in active:
+            try:
+                rows, has_next = parse_archetype_decks(_body(pages[f"/archetype/{archetype_id}/decks?page={page}"]), archetype_id)
+            except Exception as error:  # noqa: BLE001
+                _fail(report, f"archetype decks {archetype_id} page {page}", error)
+                failed.add(archetype_id)
+                continue
+            new_rows = [
+                row for row in rows if row.deck_id not in known[archetype_id] and row.event_id not in ignored and row.date >= cutoff
+            ]
+            fresh[archetype_id].extend(new_rows)
+            # Rows are newest first, but an event can be posted days late, so a
+            # page is only "caught up" once none of its rows are new.
+            if new_rows and has_next and not (rows and rows[-1].date < cutoff):
+                still_active.append(archetype_id)
+        active = still_active
+    return fresh, failed
 
 
 def _read_events(
@@ -205,17 +227,20 @@ def _read_events(
                 mentioned[result.event_id] = EventSummary(result.event_id, result.event_name, result.date)
     stored = store.existing_event_ids(mentioned) if mentioned else set()
     older = sorted((s for s in mentioned.values() if s.event_id not in stored), key=lambda s: s.date, reverse=True)
+    if len(older) > config.max_new_events:
+        log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
 
+    summaries = recent + older[: config.max_new_events]
+    pages = browser.fetch_pages([f"/tournament/{summary.event_id}" for summary in summaries])
     events = []
-    for summary in recent + older[: config.max_new_events]:
+    for summary in summaries:
         try:
-            event = parse_tournament(browser.page(f"/tournament/{summary.event_id}"), summary.event_id, format, summary)
+            html = _body(pages[f"/tournament/{summary.event_id}"])
+            event = parse_tournament(html, summary.event_id, format, summary)
             log.info("Read event %s %s (%d results)", event.event_id, event.event_name, len(event.results))
             events.append(event)
         except Exception as error:  # noqa: BLE001
             _fail(report, f"event {summary.event_id}", error)
-    if len(older) > config.max_new_events:
-        log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
     return events
 
 
@@ -246,24 +271,28 @@ def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[E
 def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], budget: int, report: RunReport) -> int:
     existing = store.existing_deck_ids(deck.deck_id for deck in wanted)
     report.decks_skipped += len(existing)
-    pending: List[Deck] = []
-    for want in wanted:
-        if want.deck_id in existing:
-            continue
-        if budget <= 0:
-            break
-        try:
-            mainboard, sideboard = parse_decklist(browser.deck_text(want.deck_id))
-        except Exception as error:  # noqa: BLE001
-            _fail(report, f"deck {want.deck_id}", error)
-            continue
-        budget -= 1
-        pending.append(Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id))
-        # Save in small batches so a crash or timeout keeps what was downloaded.
-        if len(pending) >= 25:
-            _flush_decks(store, pending, report)
-    _flush_decks(store, pending, report)
+    todo = [want for want in wanted if want.deck_id not in existing][: max(budget, 0)]
+    # Downloaded in chunks and saved after each, so a crash or timeout keeps what was fetched.
+    for start in range(0, len(todo), 50):
+        chunk = todo[start : start + 50]
+        texts = browser.fetch_pages([f"/deck/download/{want.deck_id}" for want in chunk])
+        pending: List[Deck] = []
+        for want in chunk:
+            try:
+                mainboard, sideboard = parse_decklist(_body(texts[f"/deck/download/{want.deck_id}"]))
+            except Exception as error:  # noqa: BLE001
+                _fail(report, f"deck {want.deck_id}", error)
+                continue
+            budget -= 1
+            pending.append(Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id))
+        _flush_decks(store, pending, report)
     return budget
+
+
+def _body(result: Union[str, Exception]) -> str:
+    if isinstance(result, Exception):
+        raise result
+    return result
 
 
 def _flush_decks(store: Store, pending: List[Deck], report: RunReport) -> None:

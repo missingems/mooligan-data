@@ -18,6 +18,9 @@ class FixtureBrowser:
 
     def page(self, path):
         self.requests.append(path)
+        if path.startswith("/deck/download/"):
+            self.deck_downloads.append(path.rsplit("/", 1)[1])
+            return (FIXTURES / "deck_7967072.txt").read_text()
         if path == "/tournaments/modern":
             return (FIXTURES / "tournaments_modern.html").read_text()
         if path.startswith("/tournament/") and path.rsplit("/", 1)[1] in self.event_pages:
@@ -35,9 +38,14 @@ class FixtureBrowser:
     def metagame(self, format, days):
         return (FIXTURES / "metagame_modern.html").read_text()
 
-    def deck_text(self, deck_id):
-        self.deck_downloads.append(deck_id)
-        return (FIXTURES / "deck_7967072.txt").read_text()
+    def fetch_pages(self, paths):
+        results = {}
+        for path in paths:
+            try:
+                results[path] = self.page(path)
+            except Exception as error:
+                results[path] = error
+        return results
 
 
 def run(root, browser, cfg):

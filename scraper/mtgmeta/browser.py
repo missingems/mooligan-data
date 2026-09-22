@@ -7,7 +7,7 @@ import random
 import sys
 import time
 from contextlib import contextmanager
-from typing import Iterator
+from typing import Dict, Iterator, List, Sequence, Union
 
 from seleniumbase import SB
 
@@ -18,14 +18,20 @@ log = logging.getLogger(__name__)
 _CHALLENGE_TITLES = ("just a moment", "attention required", "access denied")
 
 
+def _is_challenge(body: str) -> bool:
+    head = body[:3000].lower()
+    return "<title>just a moment" in head or "challenges.cloudflare.com" in head or "cf-chl" in head
+
+
 class BlockedError(RuntimeError):
     """Cloudflare kept serving its challenge instead of the page."""
 
 
 class GoldfishBrowser:
-    def __init__(self, sb, delay: float) -> None:
+    def __init__(self, sb, delay: float, concurrency: int) -> None:
         self._sb = sb
         self._delay = delay
+        self._concurrency = max(1, concurrency)
 
     def _pause(self) -> None:
         time.sleep(self._delay + random.uniform(0, self._delay / 2))
@@ -67,31 +73,58 @@ class GoldfishBrowser:
                 return self._sb.get_page_source()
         raise TimeoutError(f"The {format} metagame did not switch to {days} days")
 
-    def deck_text(self, deck_id: str, attempts: int = 3) -> str:
-        """Downloads a plain-text decklist with fetch() inside the page, reusing its Cloudflare clearance."""
+    def fetch_pages(self, paths: Sequence[str], attempts: int = 4) -> Dict[str, Union[str, Exception]]:
+        """Fetches `paths` with fetch() inside the open page, `concurrency` at a time.
+
+        The requests reuse the page's Cloudflare clearance and skip rendering, so
+        they take a fraction of a navigation. A 403 or challenge means the
+        clearance isn't ready or has lapsed: the page is reloaded to renew it and
+        those paths are retried. Each path maps to its body, or to the error it
+        ended with.
+        """
+        results: Dict[str, Union[str, Exception]] = {}
+        pending = list(dict.fromkeys(paths))
         for attempt in range(1, attempts + 1):
-            self._pause()
-            try:
-                # BaseCase.execute_async_script takes no script arguments, so embed the path.
-                raw = self._sb.execute_async_script(
-                    """
-                    const done = arguments[arguments.length - 1];
-                    fetch(%s, {credentials: 'include'})
-                      .then(r => r.text().then(body => done(JSON.stringify({status: r.status, type: r.headers.get('content-type') || '', body}))))
-                      .catch(error => done(JSON.stringify({status: 0, type: '', body: String(error)})));
-                    """
-                    % json.dumps(f"/deck/download/{deck_id}"),
-                    timeout=30,
-                )
-                response = json.loads(raw)
-            except Exception as error:  # noqa: BLE001 - a hung request times out the script
-                response = {"status": 0, "type": "", "body": str(error)}
-            if response["status"] == 200 and response["type"].startswith("text/plain"):
-                return response["body"]
-            log.warning("Deck %s download got %s %s (attempt %d/%d)", deck_id, response["status"], response["type"], attempt, attempts)
-            # A challenge page means the clearance expired; reload a page to renew it.
-            self.page(f"/deck/{deck_id}")
-        raise BlockedError(f"Could not download deck {deck_id}")
+            blocked: List[str] = []
+            for start in range(0, len(pending), self._concurrency):
+                batch = pending[start : start + self._concurrency]
+                self._pause()
+                for path, response in zip(batch, self._fetch_batch(batch)):
+                    status, body = response["status"], response["body"]
+                    if status == 200 and not _is_challenge(body):
+                        results[path] = body
+                    elif status in (0, 403, 429, 503) or _is_challenge(body):
+                        blocked.append(path)
+                    else:
+                        results[path] = RuntimeError(f"HTTP {status} on {path}")
+                if blocked and len(blocked) == len(batch):
+                    # The whole batch was refused: stop spending requests and renew first.
+                    blocked.extend(pending[start + self._concurrency :])
+                    break
+            if not blocked:
+                break
+            log.warning("%d requests refused (attempt %d/%d); renewing the clearance", len(blocked), attempt, attempts)
+            pending = blocked
+            time.sleep(5 * attempt)
+            self.page("/")
+        else:
+            for path in pending:
+                results[path] = BlockedError(f"Blocked on {path}")
+        return results
+
+    def _fetch_batch(self, paths: List[str]) -> List[dict]:
+        # BaseCase.execute_async_script takes no script arguments, so embed the paths.
+        script = """
+            const done = arguments[arguments.length - 1];
+            Promise.all(%s.map(path => fetch(path, {credentials: 'include'})
+              .then(r => r.text().then(body => ({status: r.status, body})))
+              .catch(error => ({status: 0, body: String(error)}))))
+              .then(responses => done(JSON.stringify(responses)));
+        """ % json.dumps(paths)
+        try:
+            return json.loads(self._sb.execute_async_script(script, timeout=90))
+        except Exception as error:  # noqa: BLE001 - a hung request times out the whole script
+            return [{"status": 0, "body": str(error)} for _ in paths]
 
     def _cleared(self, wait: float) -> bool:
         """Whether the real page is showing, giving an automatic challenge `wait` seconds to pass."""
@@ -112,9 +145,9 @@ class GoldfishBrowser:
 
 
 @contextmanager
-def open_browser(headless: bool, delay: float) -> Iterator[GoldfishBrowser]:
+def open_browser(headless: bool, delay: float, concurrency: int) -> Iterator[GoldfishBrowser]:
     # On Linux (the Cloud Run container) UC mode runs headed inside Xvfb, which
     # Cloudflare challenges far less often than headless Chrome.
     use_xvfb = sys.platform.startswith("linux") and not headless
     with SB(uc=True, headless=headless, xvfb=use_xvfb, locale="en") as sb:
-        yield GoldfishBrowser(sb, delay)
+        yield GoldfishBrowser(sb, delay, concurrency)
