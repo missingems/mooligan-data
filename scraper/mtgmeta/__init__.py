@@ -1,1 +1,1 @@
-"""MTGGoldfish meta, tournament and decklist scraper that writes to Firestore."""
+"""MTGGoldfish meta, tournament and decklist scraper that publishes JSON snapshots."""

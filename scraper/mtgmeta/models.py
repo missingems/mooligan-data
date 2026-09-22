@@ -1,4 +1,4 @@
-"""Records written to Firestore; field names match functions/src/shared/schema.ts."""
+"""Scraped records; their fields become the published JSON (see docs/data-format.md)."""
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field

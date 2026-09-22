@@ -1,4 +1,8 @@
-"""Entry point: `python -m mtgmeta [--dry-run DIR]`. Settings come from the environment (see README)."""
+"""Entry point: `python -m mtgmeta DIR`. Settings come from the environment (see README).
+
+DIR holds the previous snapshots and deck id list on the way in, and the files
+to publish on the way out.
+"""
 from __future__ import annotations
 
 import argparse
@@ -9,7 +13,7 @@ from pathlib import Path
 
 from .browser import open_browser
 from .scrape import ScrapeConfig, scrape
-from .store import FirestoreStore, JsonFileStore
+from .store import SnapshotStore
 
 
 def _list(name: str, default: str):
@@ -18,7 +22,7 @@ def _list(name: str, default: str):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dry-run", metavar="DIR", type=Path, help="write JSON files to DIR instead of Firestore")
+    parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
     args = parser.parse_args()
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
@@ -32,10 +36,12 @@ def main() -> int:
         history_days=int(os.environ.get("HISTORY_DAYS", "30")),
         max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
     )
-    store = JsonFileStore(args.dry_run) if args.dry_run else FirestoreStore(os.environ.get("GOOGLE_CLOUD_PROJECT"))
+    store = SnapshotStore(args.directory, config.formats, config.history_days)
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
     with open_browser(headless=headless, delay=float(os.environ.get("REQUEST_DELAY", "1.5"))) as browser:
         report = scrape(browser, store, config)
+    written = store.finish()
+    logging.info("Wrote %s", ", ".join(written) or "no snapshots")
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
@@ -43,7 +49,7 @@ def main() -> int:
     )
     for error in report.errors:
         logging.error("  %s", error)
-    # A partial run still keeps what it saved; fail the job so Cloud Run surfaces it.
+    # A partial run still publishes what it saved; the exit code flags the errors.
     return 1 if report.errors else 0
 
 

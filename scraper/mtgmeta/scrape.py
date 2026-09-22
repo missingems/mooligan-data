@@ -155,7 +155,7 @@ def _read_archetypes(
             name=archetype.name,
             deck_id=featured.deck_id if featured else None,
             featured_player=featured.player if featured else None,
-            # Keeps the document well under Firestore's 1 MiB limit.
+            # Bounds the snapshot's size if an archetype takes over the format.
             results=results[:3000],
         )
         if _save(report, f"archetype {history.doc_id}", lambda: store.save_archetype(history)):

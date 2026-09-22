@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mtgmeta.scrape import ScrapeConfig, scrape
-from mtgmeta.store import JsonFileStore
+from mtgmeta.store import SnapshotStore
 
 FIXTURES = Path(__file__).parent / "fixtures"
 NOW = datetime(2026, 9, 22, tzinfo=timezone.utc)
@@ -40,8 +40,20 @@ class FixtureBrowser:
         return (FIXTURES / "deck_7967072.txt").read_text()
 
 
-def read(root, collection, doc_id):
-    return json.loads((root / collection / f"{doc_id}.json").read_text())
+def run(root, browser, cfg):
+    """One scrape as the workflow runs it: load the directory, scrape, publish."""
+    store = SnapshotStore(root, cfg.formats, cfg.history_days, now=NOW)
+    report = scrape(browser, store, cfg, now=NOW)
+    store.finish()
+    return report
+
+
+def snapshot(root):
+    return json.loads((root / "snapshots" / "modern.json").read_text())
+
+
+def deck(root, deck_id):
+    return json.loads((root / "decks" / f"{deck_id}.json").read_text())
 
 
 def config(**overrides):
@@ -50,11 +62,10 @@ def config(**overrides):
     return ScrapeConfig(**values)
 
 
-def test_scrape_writes_meta_archetypes_events_and_decks(tmp_path):
-    store = JsonFileStore(tmp_path)
+def test_scrape_publishes_meta_archetypes_events_and_decks(tmp_path):
     browser = FixtureBrowser()
 
-    report = scrape(browser, store, config(), now=NOW)
+    report = run(tmp_path, browser, config())
 
     assert report.meta == ["modern_30d"]
     assert report.archetypes == ["modern_modern-izzet-prowess", "modern_modern-eldrazi"]
@@ -62,15 +73,16 @@ def test_scrape_writes_meta_archetypes_events_and_decks(tmp_path):
     assert report.events == ["66753"]
     assert len(report.errors) == 1 and "66764" in report.errors[0]
 
-    meta = read(tmp_path, "meta", "modern_30d")
+    published = snapshot(tmp_path)
+    meta = published["meta"]["30d"]
     assert [a.get("deck_id") for a in meta["archetypes"]] == ["9000001", "9000002", None, None, None, None]
 
-    izzet = read(tmp_path, "archetypes", "modern_modern-izzet-prowess")
+    izzet = published["archetypes"]["modern-izzet-prowess"]
     assert (izzet["name"], izzet["deck_id"], izzet["featured_player"]) == ("Izzet Prowess", "9000001", "Roy Varney")
     assert len(izzet["results"]) == 12
     assert izzet["results"][0] == {
         "deck_id": "7966110",
-        "date": "2026-09-21T00:00:00+00:00",
+        "date": "2026-09-21T00:00:00Z",
         "player": "Xsper",
         "event_id": "66753",
         "event_name": "Modern Challenge 32 2026-09-21",
@@ -78,43 +90,41 @@ def test_scrape_writes_meta_archetypes_events_and_decks(tmp_path):
     }
 
     # Event rows of a tracked archetype carry its name and id.
-    event = read(tmp_path, "events", "66753")
+    event = next(e for e in published["events"] if e["event_id"] == "66753")
     xsper = next(r for r in event["results"] if r["deck_id"] == "7966110")
     assert (xsper["archetype"], xsper["archetype_id"]) == ("Izzet Prowess", "modern-izzet-prowess")
 
     # Featured decks come first, then the newest results, up to the budget.
     assert report.decks_written == 10
     assert browser.deck_downloads[:2] == ["9000001", "9000002"]
-    assert read(tmp_path, "decks", "9000001")["event_id"] is None
-    assert read(tmp_path, "decks", "7966110")["archetype"] == "Izzet Prowess"
+    assert deck(tmp_path, "9000001")["event_id"] is None
+    assert deck(tmp_path, "7966110")["archetype"] == "Izzet Prowess"
+    assert len(json.loads((tmp_path / "state" / "deck-ids.json").read_text())) == 10
 
 
 def test_a_second_run_reads_one_page_and_keeps_the_history(tmp_path):
-    store = JsonFileStore(tmp_path)
-    scrape(FixtureBrowser(), store, config(), now=NOW)
+    run(tmp_path, FixtureBrowser(), config())
     browser = FixtureBrowser()
 
-    report = scrape(browser, store, config(max_new_decks=100), now=NOW)
+    report = run(tmp_path, browser, config(max_new_decks=100))
 
     # Page 1 held nothing new, so page 2 was never asked for.
     assert "/archetype/modern-izzet-prowess/decks?page=2" not in browser.requests
-    assert len(read(tmp_path, "archetypes", "modern_modern-izzet-prowess")["results"]) == 12
+    assert len(snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]) == 12
     assert report.decks_skipped == 10
     assert not set(browser.deck_downloads) & {"9000001", "9000002", "7966110"}
 
 
 def test_history_older_than_the_window_is_dropped(tmp_path):
-    store = JsonFileStore(tmp_path)
-    scrape(FixtureBrowser(), store, config(history_days=3), now=NOW)
-    dates = {r["date"][:10] for r in read(tmp_path, "archetypes", "modern_modern-izzet-prowess")["results"]}
+    run(tmp_path, FixtureBrowser(), config(history_days=3))
+    dates = {r["date"][:10] for r in snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]}
     assert dates == {"2026-09-20", "2026-09-21"}  # 2026-09-16 is out
 
 
 def test_events_found_through_archetypes_are_read(tmp_path):
-    store = JsonFileStore(tmp_path)
     browser = FixtureBrowser(event_pages=("66753", "66742", "66728"))
 
-    report = scrape(browser, store, config(max_new_events=2, max_new_decks=0), now=NOW)
+    report = run(tmp_path, browser, config(max_new_events=2, max_new_decks=0))
 
     # The two newest events the Izzet list mentions that the tournaments list did not.
     assert report.events == ["66753", "66742", "66728"]

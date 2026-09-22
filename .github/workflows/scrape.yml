@@ -1,29 +1,35 @@
 name: Scrape MTGGoldfish
 
-# Manual for now: the output is only uploaded as an artifact until the data
-# has somewhere to be published.
+# Downloads the published snapshots from R2, scrapes what is new, and uploads
+# the result. See docs/data-format.md for the files.
 on:
+  schedule:
+    - cron: "0 2,14 * * *"
   workflow_dispatch:
     inputs:
       formats:
         description: Formats to scrape
-        default: modern
-      archetype_decks:
-        description: Archetypes per format
-        default: "5"
-      history_days:
-        description: Days of archetype results
-        default: "3"
-      max_new_events:
-        description: Older events per format
-        default: "5"
+        default: modern,standard,pioneer
       max_new_decks:
         description: New decklists per run
-        default: "10"
+        default: "400"
+
+# Two runs must never publish over each other.
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: auto
+  R2: s3://mtg-meta-data
+  R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # A first run reads a month of history for every archetype.
     timeout-minutes: 350
     defaults:
       run:
@@ -38,19 +44,39 @@ jobs:
       # The runner image ships Google Chrome; UC mode runs it headed inside Xvfb.
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
       - run: pip install -r requirements.txt
+
+      - name: Download the previous snapshots
+        # sync succeeds on an empty bucket, so the first run starts from nothing.
+        run: |
+          aws s3 sync "$R2/snapshots" work/snapshots --endpoint-url "$R2_ENDPOINT"
+          aws s3 sync "$R2/state" work/state --endpoint-url "$R2_ENDPOINT"
+
       - name: Scrape
+        id: scrape
+        continue-on-error: true
         env:
-          FORMATS: ${{ inputs.formats }}
+          FORMATS: ${{ inputs.formats || 'modern,standard,pioneer' }}
+          MAX_NEW_DECKS: ${{ inputs.max_new_decks || '400' }}
           META_DAYS: "30"
-          ARCHETYPE_DECKS: ${{ inputs.archetype_decks }}
-          HISTORY_DAYS: ${{ inputs.history_days }}
-          MAX_NEW_EVENTS: ${{ inputs.max_new_events }}
-          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
           REQUEST_DELAY: "2"
-        run: google-chrome --version && python -m mtgmeta --dry-run output
-      - if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: scrape-output
-          path: scraper/output
-          if-no-files-found: warn
+        run: python -m mtgmeta work
+
+      # finish() writes index.json last, so its presence means the run got as far as publishing.
+      - name: Upload to R2
+        if: always() && hashFiles('scraper/work/index.json') != ''
+        run: |
+          cp() { aws s3 cp "$@" --endpoint-url "$R2_ENDPOINT" --content-type application/json --only-show-errors; }
+          # Decks first and the index last, so nothing published points at a file not yet uploaded.
+          if [ -d work/decks ]; then
+            cp work/decks "$R2/decks" --recursive --cache-control "public, max-age=31536000, immutable"
+          fi
+          cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
+          cp work/state/deck-ids.json "$R2/state/deck-ids.json" --cache-control "no-cache"
+          cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
+          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks"; cat work/index.json
+
+      - name: Fail if the scrape reported errors
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          echo "The scrape logged errors; what it did collect was published. See the Scrape step."
+          exit 1
