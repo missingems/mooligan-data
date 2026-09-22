@@ -1,0 +1,24 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "events",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "format", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "cards",
+      "fieldPath": "oracle_text",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "cards",
+      "fieldPath": "card_faces",
+      "indexes": []
+    }
+  ]
+}
