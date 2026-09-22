@@ -150,3 +150,18 @@ def test_rows_and_events_of_known_duplicates_are_skipped(tmp_path):
     assert "/tournament/66742" not in browser.requests
     results = snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]
     assert "66742" not in {r["event_id"] for r in results} and len(results) == 8
+
+
+def test_each_format_has_its_own_deck_allowance(tmp_path):
+    browser = FixtureBrowser()
+    browser_page = browser.page
+
+    def page(path):
+        # Serve the Modern fixtures for a second format too.
+        return browser_page(path.replace("/tournaments/legacy", "/tournaments/modern").replace("legacy-", "modern-"))
+
+    browser.page = page
+    report = run(tmp_path, browser, config(formats=("modern", "legacy"), max_new_decks=3))
+    # A shared allowance would stop at 3 in total; each format gets its own 3.
+    assert report.decks_written == 6
+    assert len(browser.deck_downloads) == 6

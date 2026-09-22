@@ -43,8 +43,8 @@ class ScrapeConfig:
     events_per_format: int = 10
     # Older events found through archetype deck lists, read per format per run.
     max_new_events: int = 60
-    # Decks never change once published, so each run only downloads new ones;
-    # the cap keeps a first run (or a backlog) from hammering the site.
+    # Per format. Decks never change once published, so each run only downloads
+    # new ones; the cap keeps a first run (or a backlog) from hammering the site.
     max_new_decks: int = 400
     # Archetypes per format, most played first, whose results and featured deck are kept.
     archetype_decks: int = 100
@@ -68,7 +68,6 @@ class _WantedDeck:
 def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[datetime] = None) -> RunReport:
     report = RunReport()
     cutoff = (now or datetime.now(timezone.utc)) - timedelta(days=config.history_days)
-    deck_budget = config.max_new_decks
     for format in config.formats:
         metas = _read_metas(browser, format, config.meta_days, report)
         histories = _read_archetypes(browser, store, format, _ranked_archetypes(metas)[: config.archetype_decks], config, cutoff, report)
@@ -91,10 +90,10 @@ def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[d
             if _save(report, f"event {event.event_id}", lambda: store.save_event(event)):
                 report.events.append(event.event_id)
 
-        wanted = _wanted_decks(format, histories, events)
-        deck_budget = _download_decks(browser, store, wanted, deck_budget, report)
-    if deck_budget <= 0:
-        log.warning("Stopped at the limit of %d new decks; the rest come next run", config.max_new_decks)
+        # Each format has its own allowance, so one big backlog can't starve the others.
+        left = _download_decks(browser, store, _wanted_decks(format, histories, events), config.max_new_decks, report)
+        if left <= 0:
+            log.warning("Stopped %s at the limit of %d new decks; the rest come next run", format, config.max_new_decks)
     return report
 
 
