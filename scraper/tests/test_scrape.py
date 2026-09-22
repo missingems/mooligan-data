@@ -168,3 +168,24 @@ def test_each_format_has_its_own_deck_allowance(tmp_path):
     # A shared allowance would stop at 3 in total; each format gets its own 3.
     assert report.decks_written == 6
     assert len(browser.deck_downloads) == 6
+
+
+def test_decks_mtggoldfish_no_longer_serves_are_skipped_next_run(tmp_path):
+    browser = FixtureBrowser()
+    browser_page = browser.page
+
+    def page(path):
+        # A deleted deck redirects to a page instead of a list.
+        if path == "/deck/download/7966110":
+            browser.deck_downloads.append("7966110")
+            return "<!DOCTYPE html><html><head><title>Metagame</title></head><body></body></html>"
+        return browser_page(path)
+
+    browser.page = page
+    report = run(tmp_path, browser, config())
+    assert report.errors == ["event 66764: 503 on /tournament/66764"]  # the dead deck is not an error
+    assert json.loads((tmp_path / "state" / "missing-deck-ids.json").read_text()) == ["7966110"]
+
+    second = FixtureBrowser()
+    run(tmp_path, second, config(max_new_decks=100))
+    assert "7966110" not in second.deck_downloads

@@ -281,7 +281,9 @@ def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[E
 def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], budget: int, report: RunReport) -> int:
     existing = store.existing_deck_ids(deck.deck_id for deck in wanted)
     report.decks_skipped += len(existing)
-    todo = [want for want in wanted if want.deck_id not in existing][: max(budget, 0)]
+    gone = store.missing_deck_ids()
+    todo = [want for want in wanted if want.deck_id not in existing and want.deck_id not in gone][: max(budget, 0)]
+    missing: List[str] = []
     # Downloaded in chunks and saved after each, so a crash or timeout keeps what was fetched.
     for start in range(0, len(todo), 50):
         chunk = todo[start : start + 50]
@@ -290,6 +292,11 @@ def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], b
         for want in chunk:
             try:
                 mainboard, sideboard = parse_decklist(_body(texts[f"/deck/download/{want.deck_id}"]))
+            except ParseError:
+                # MTGGoldfish redirects a deleted deck to its metagame page.
+                log.info("Deck %s is no longer on MTGGoldfish", want.deck_id)
+                missing.append(want.deck_id)
+                continue
             except Exception as error:  # noqa: BLE001
                 _fail(report, f"deck {want.deck_id}", error)
                 continue
@@ -300,6 +307,9 @@ def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], b
                 )
             )
         _flush_decks(store, pending, report)
+    if missing:
+        store.mark_missing_decks(missing)
+        log.info("%d decks are no longer on MTGGoldfish; later runs skip them", len(missing))
     return budget
 
 

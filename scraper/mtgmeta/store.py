@@ -27,6 +27,8 @@ class Store(Protocol):
     def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]: ...
     def save_archetype(self, history: ArchetypeHistory) -> None: ...
     def ignored_event_ids(self) -> Set[str]: ...
+    def missing_deck_ids(self) -> Set[str]: ...
+    def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
 
 
 class SnapshotStore:
@@ -47,6 +49,8 @@ class SnapshotStore:
         self._deck_ids: Set[str] = set(json.loads(ids_path.read_text())) if ids_path.exists() else set()
         duplicates_path = root / "state" / "duplicate-event-ids.json"
         self._duplicates: Set[str] = set(json.loads(duplicates_path.read_text())) if duplicates_path.exists() else set()
+        missing_path = root / "state" / "missing-deck-ids.json"
+        self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
 
     # ---- Store
 
@@ -85,6 +89,13 @@ class SnapshotStore:
     def ignored_event_ids(self) -> Set[str]:
         """Duplicate events found earlier, which the scrape must not read or count again."""
         return set(self._duplicates)
+
+    def missing_deck_ids(self) -> Set[str]:
+        """Decks MTGGoldfish no longer serves; asking again every run would be wasted."""
+        return set(self._missing)
+
+    def mark_missing_decks(self, deck_ids: Iterable[str]) -> None:
+        self._missing |= set(deck_ids)
 
     def save_archetype(self, history: ArchetypeHistory) -> None:
         document = _jsonable(to_document(history, drop=("format",)))
@@ -139,6 +150,7 @@ class SnapshotStore:
             }
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
+        self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
