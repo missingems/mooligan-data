@@ -1,0 +1,25 @@
+name: Check R2 access
+
+# Writes a small file with the R2 secrets and reads it back through the
+# public domain, to confirm the token, bucket and custom domain line up.
+on: workflow_dispatch
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+    steps:
+      - name: Upload a check file
+        run: |
+          echo "{\"checked_at\": \"$(date -u +%FT%TZ)\", \"run\": \"${{ github.run_id }}\"}" > check.json
+          aws s3 cp check.json s3://mtg-meta-data/check.json --endpoint-url "$ENDPOINT" \
+            --content-type application/json --cache-control "no-cache"
+      - name: Read it back from data.mooligan.com
+        run: |
+          body=$(curl -fsS "https://data.mooligan.com/check.json?run=${{ github.run_id }}")
+          echo "$body"
+          echo "$body" | grep -q "${{ github.run_id }}"
