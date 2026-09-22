@@ -1,133 +1,82 @@
 # MTG Meta Pipeline
 
-A serverless backend that scrapes MTGGoldfish tournament data twice a day and mirrors Scryfall's card database once a day into Firestore. Firebase callable functions serve the data, and a static website on GitHub Pages shows it.
+Scrapes MTGGoldfish's metagame, tournament results and decklists twice a day, and publishes them as static JSON at **`https://data.mooligan.com`**, a Cloudflare R2 bucket. A mobile app and the website read the same files. There's no server or database.
 
 ```
-Cloud Scheduler ──02:00, 14:00 UTC──▶ Cloud Run Job (scraper/)          ──▶ Firestore: meta, events, decks
-Cloud Scheduler ──03:00 UTC─────────▶ scheduledScryfallSync (functions/) ──▶ Firestore: cards
-Website (web/, GitHub Pages) ──▶ getMeta · getEvents · getDecklist · getCardDetails ──▶ Firestore
+GitHub Actions (02:00, 14:00 UTC)
+  └─ download previous snapshots from R2 → scrape what's new → upload to R2
+                                                                   │
+                            data.mooligan.com (Cloudflare CDN) ◀───┘
+                              ├─ the app
+                              └─ web/ on GitHub Pages
 ```
 
-| Folder | What it holds |
+| Path | What it holds |
 | --- | --- |
-| `functions/` | TypeScript Cloud Functions: the daily Scryfall sync and the four callables |
-| `scraper/` | Python SeleniumBase (UC mode) scraper, its Dockerfile and `deploy.sh` for the Cloud Run Job |
+| `scraper/` | Python SeleniumBase (UC mode) scraper, and the snapshot store it publishes |
 | `web/` | Static site: plain HTML and ES modules, no build step |
-| `firestore.rules` | Denies every client read and write. Only the Admin SDK touches the database |
+| `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
+| `.github/workflows/scrape.yml` | The scheduled scrape and upload |
+| `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
-## Firestore collections
+## Published data
 
-| Collection | Document ID | Written by |
-| --- | --- | --- |
-| `meta` | `{format}_{timeframe}`, e.g. `modern_30d` | scraper |
-| `events` | MTGGoldfish tournament id | scraper |
-| `decks` | MTGGoldfish deck id | scraper (new decks only; published decks never change) |
-| `archetypes` | `{format}_{archetype_id}`, e.g. `modern_modern-izzet-prowess` | scraper: every deck of the archetype in the history window, newest first |
-| `cards` | Scryfall `oracle_id` (the Scryfall `id` for cards without one) | Scryfall sync |
-| `sync_state` | `scryfall` plus 16 `hashes` shards | Scryfall sync bookkeeping |
+See [docs/data-format.md](docs/data-format.md). In short:
 
-The field names follow the spec. `functions/src/shared/schema.ts` and `scraper/mtgmeta/models.py` define them, and must be kept in step. These fields go beyond the spec:
+- `index.json` gives each format's snapshot with a hash, so clients download only when something changed.
+- `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
+- `decks/{id}.json` holds one decklist per file, cached for good.
 
-- `meta.archetypes[].deck_count` and `meta.timeframe`
-- `meta.archetypes[].deck_id`: the deck featured on the archetype's MTGGoldfish page, stored in `decks`.
-- `events.results[].archetype_id`: set when the deck is in a tracked archetype's list. `archetype` then holds the archetype's name instead of the pilot's own deck title (leagues show titles like "UR").
-- `events.url`, and `decks.format` and `decks.event_id`. `event_id` is null for an archetype's featured deck.
-- `cards.search_names`: the lower-cased full name plus each face name. Decklists name a double-faced card by its front face ("Fable of the Mirror-Breaker"), which `where("name", "==", …)` would never match.
+Card details come from Scryfall's API, not from this pipeline.
 
-## Scryfall sync
+## How a run works
 
-`scheduledScryfallSync` runs daily at 03:00 UTC. It reads `oracle-cards` from Scryfall's bulk-data API, then streams the `jsonl.gz` file through gunzip and readline, so only one line is in memory at a time. It writes to `cards` in `WriteBatch`es of 500, with four batches committing at once.
+`.github/workflows/scrape.yml` runs at 02:00 and 14:00 UTC, and can be started by hand from the Actions tab.
 
-Each card is reduced to its gameplay fields and hashed. Prices are dropped because they change every day. The hashes live in 16 shard documents, so a run starts with 16 reads and rewrites only the cards whose content changed. The first run writes all ~39k cards, and later runs usually write a handful. If Scryfall's `updated_at` hasn't moved since the last run, the run does nothing. A card that disappears from the file is deleted only when the file held at least 10,000 cards, so a truncated download can never empty the collection.
+1. **Download.** It downloads `snapshots/` and `state/deck-ids.json` from R2. They are the previous run's output, and the only state the scraper keeps.
+2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
+   - reads the metagame page (30-day window);
+   - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so a run stops at the first page with nothing new;
+   - reads the 10 latest events plus up to `MAX_NEW_EVENTS` older ones that the archetype lists mention;
+   - downloads new decklists through `fetch("/deck/download/{id}")` inside the page, up to `MAX_NEW_DECKS` a run. Featured decks come first, then the newest.
+3. **Publish.** `SnapshotStore.finish()` drops anything older than `HISTORY_DAYS`, then writes the snapshots, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet.
 
-Measured against the real file (2026-09-21): 38,906 cards, 78 batches, 165 MB peak RSS, largest card document 6 KB, largest hash shard 152 KB.
+One failed page doesn't stop the run. Whatever was collected is still published, and the job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
-## Callable functions
-
-| Function | Input | Returns |
-| --- | --- | --- |
-| `getMeta` | `{ format, timeframe? }`, timeframe defaults to `"30d"` | The `meta` document |
-| `getEvents` | `{ format, limit? }`, limit 1–100, default 20 | `{ events: [...] }`, newest first, each with its `results` |
-| `getEvent` | `{ event_id }` | One `events` document |
-| `getArchetype` | `{ format, archetype_id }` | The `archetypes` document: name, featured deck, and every result with its event, player and finish |
-| `getDecklist` | `{ deck_id }` | The deck, with `mainboard` and `sideboard` |
-| `getCardDetails` | `{ card_name }`, matched without regard to case, by full or face name | The `cards` document |
-
-Timestamps are returned as ISO 8601 strings. Invalid input throws `invalid-argument`, and a missing document throws `not-found`. The callables need no sign-in, because the website is public. Each function is capped at 10 instances.
-
-## Scraper
-
-`python -m mtgmeta` opens MTGGoldfish in SeleniumBase UC mode. For each format, it:
-
-1. reads the full metagame page for each window in `META_DAYS`. The site's own period selector switches the window, and it offers 7, 14, 30, 90 and 365 days.
-2. for each archetype, reads its page for the featured deck, then `/archetype/<id>/decks` (50 decks a page, newest first) for every result in the last `HISTORY_DAYS`. Results merge into the stored history, so a later run stops at the first page with nothing new. That is usually one page, but the first run reads about one page per 50 decks.
-3. reads the 10 events on the tournaments list, which is all that page ever shows, plus up to `MAX_NEW_EVENTS` older events that the archetype lists mention and that aren't stored yet. Events therefore build up over time. A Challenge finish reads "1st Place", and a League finish is a record such as "5-0".
-4. downloads decklists it doesn't have yet, up to `MAX_NEW_DECKS` a run: featured decks first, then the newest results. It uses `fetch("/deck/download/{id}")` inside the page, so the request reuses the browser's Cloudflare clearance. A list not downloaded yet shows as "not downloaded yet" on the site, with a link to MTGGoldfish.
-
-One failed page doesn't stop the run. The job exits with status 1 when anything failed, so Cloud Run shows the error.
+A first run reads a month of history for every archetype, so it takes a few hours. Later runs usually read one page per archetype.
 
 | Variable | Default | Meaning |
 | --- | --- | --- |
 | `FORMATS` | `modern,standard,pioneer` | Formats to scrape |
-| `META_DAYS` | `30` | Metagame windows, e.g. `30,7` gives `modern_30d` and `modern_7d` |
-| `EVENTS_PER_FORMAT` | `10` | Recent events read per format |
-| `MAX_NEW_EVENTS` | `60` | Older events per format read per run, found through archetype lists |
-| `HISTORY_DAYS` | `30` | How far back each archetype's results go |
-| `MAX_ARCHETYPE_PAGES` | `20` | Deck pages per archetype per run |
-| `MAX_NEW_DECKS` | `400` | New decklists downloaded per run. Anything over the limit waits for the next run |
-| `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results and featured deck are kept |
-| `REQUEST_DELAY` | `1.5` | Base seconds between requests, plus up to 50% random extra |
-| `HEADLESS` | `1` on macOS, `0` on Linux | On Linux, UC mode runs Chrome headed inside Xvfb |
+| `META_DAYS` | `30` | Metagame windows; `30,7` would publish both |
+| `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
+| `MAX_NEW_EVENTS` | `60` | Older events per format read per run |
+| `HISTORY_DAYS` | `30` | How far back events and archetype results go |
+| `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results are kept |
+| `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |
+| `MAX_NEW_DECKS` | `400` | New decklists per run |
+| `REQUEST_DELAY` | `2` in the workflow | Base seconds between requests, plus up to 50% random extra |
 
-Run it locally:
+## Setup
+
+- **R2:** the bucket is `mtg-meta-data`, with custom domain `data.mooligan.com` and CORS allowing `https://missingems.github.io` and `http://localhost:8765`.
+- **GitHub secrets:** `R2_ACCOUNT_ID`, and `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` from an account API token with Object Read & Write on that bucket only.
+- **Website:** GitHub Pages, deployed from `web/` on each push to `main`. It's at https://missingems.github.io/mtg-meta-pipeline/.
+
+## Running locally
 
 ```bash
 cd scraper && python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/python -m pytest -q
-FORMATS=modern EVENTS_PER_FORMAT=2 MAX_NEW_DECKS=5 .venv/bin/python -m mtgmeta --dry-run output
+FORMATS=modern ARCHETYPE_DECKS=5 HISTORY_DAYS=3 MAX_NEW_DECKS=5 .venv/bin/python -m mtgmeta work
+python3 -m http.server -d web 8765   # the site, reading data.mooligan.com
 ```
 
-`--dry-run DIR` writes JSON files instead of Firestore documents. Without it, the scraper writes to the project in `GOOGLE_CLOUD_PROJECT` using Application Default Credentials.
-
-## Setting up
-
-You need the Firebase CLI (`npm i -g firebase-tools`), the gcloud CLI, and a Firebase project on the Blaze plan. Scheduled functions and Cloud Run need billing.
-
-1. **Project.** Put your project id in `.firebaserc`. Create the Firestore database in the console, in Native mode.
-2. **Rules, indexes and functions.**
-   ```bash
-   cd functions && npm install && npm test
-   cd .. && firebase deploy --only firestore,functions
-   ```
-   To deploy somewhere other than `us-central1`, set `FUNCTIONS_REGION=<region>` in `functions/.env`, and set the same region in `web/config.js`.
-3. **First card load.** Either run the scheduled job once:
-   ```bash
-   gcloud scheduler jobs run firebase-schedule-scheduledScryfallSync-us-central1 --location us-central1
-   ```
-   or run the sync from your machine:
-   ```bash
-   gcloud auth application-default login
-   cd functions && GCLOUD_PROJECT=<project-id> npm run sync:local
-   ```
-4. **Scraper.** `PROJECT_ID=<project-id> ./scraper/deploy.sh` does the following:
-   - builds the image with Cloud Build, so Docker isn't needed locally
-   - creates a service account that can only write Firestore
-   - deploys the Cloud Run Job with 2 CPU, 2 GiB and a 4-hour timeout. The first run reads the full history and can take 2 hours or more across three formats; later runs take well under an hour.
-   - schedules it for `0 2,14 * * *` UTC
-
-   Start a run straight away with `gcloud run jobs execute mtggoldfish-scraper --region us-central1`.
-5. **Website.** Paste the web app config from the Firebase console into `web/config.js`. Then choose **Settings → Pages → Source: GitHub Actions** in the GitHub repository. Each push to `main` that changes `web/` deploys the site. Until `projectId` is set, the site shows the bundled sample in `web/sample/data.json`. To preview it locally, run `python3 -m http.server -d web 8000`.
-
-## Tests
-
-- `functions/`: `npm test` covers the stream parser (gzipped and plain input), card normalisation and hashing, batching, the skip and delete logic of the sync, and every callable against a fake Firestore.
-- `scraper/`: `pytest` runs the parsers against trimmed copies of real MTGGoldfish pages from 2026-09-22, and runs a full scrape into JSON files with a fake browser.
-
-CI runs both suites on each push and pull request.
+A local run writes into `scraper/work/` and publishes nothing.
 
 ## Caveats
 
-- MTGGoldfish sits behind Cloudflare, and its markup can change. The parsers raise `ParseError` when a page doesn't look as expected. They never write empty data. Check the job's logs when the job fails.
-- Cloudflare starts challenging every request after a lot of scraping from one address. That happened on this machine after a few hours of testing. The scraper then fails page by page, and later runs pick up where it left off. Raise `REQUEST_DELAY` if Cloud Run's runs get blocked.
-- Scraping may conflict with MTGGoldfish's terms of use. Keep the request rate low, and don't redistribute the data commercially.
-- The Docker image hasn't been built on this machine, because Docker isn't installed here. Cloud Build builds it during `deploy.sh`.
+- MTGGoldfish sits behind Cloudflare, and its markup can change. The parsers raise `ParseError` rather than write empty data, so a layout change shows up as a failed run.
+- Cloudflare challenges an address that scrapes a lot. GitHub's runners have got through so far. If runs start failing with "Blocked on …", raise `REQUEST_DELAY`.
+- GitHub disables scheduled workflows in a public repo after 60 days without commits. If the schedule stops, re-enable it from the Actions tab.
+- Scraping may conflict with MTGGoldfish's terms of use. Keep the rate low, and don't redistribute the data commercially.

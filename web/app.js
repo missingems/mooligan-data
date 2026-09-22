@@ -50,7 +50,6 @@ async function render() {
   view.replaceChildren(el("p", { class: "status" }, "Loading…"));
   try {
     const api = await apiReady;
-    showSourceNotice(api.source);
     const content =
       route.name === "deck"
         ? await deckView(api, route)
@@ -76,13 +75,6 @@ function renderFormatNav(current) {
   );
 }
 
-function showSourceNotice(source) {
-  const notice = document.querySelector(".notice");
-  notice.hidden = source !== "sample";
-  notice.textContent =
-    "Showing a bundled sample from MTGGoldfish (Modern only, one week of archetype results). Add your Firebase web config to web/config.js to show live data.";
-}
-
 // ---- Views
 
 async function metaView(api, { format, timeframe }) {
@@ -92,7 +84,7 @@ async function metaView(api, { format, timeframe }) {
   ]);
   document.title = `${titleCase(format)} metagame · MTG Metagame`;
 
-  const timeframes = el(
+  const timeframes = config.timeframes.length < 2 ? null : el(
     "nav",
     { class: "segmented", "aria-label": "Timeframe" },
     config.timeframes.map((option) =>
@@ -183,7 +175,7 @@ function eventsPanel(format, events) {
 }
 
 async function eventView(api, { format, eventId }) {
-  const event = await api.getEvent({ event_id: eventId }).catch((error) => {
+  const event = await api.getEvent({ format, event_id: eventId }).catch((error) => {
     if (error.code !== "not-found") throw error;
     return null;
   });

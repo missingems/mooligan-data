@@ -1,73 +1,59 @@
 import config from "./config.js";
 
-const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/12.19.0";
-
-/** The four backend calls, served by Firebase or by the bundled sample data. */
+/**
+ * Reads the published snapshots (see docs/data-format.md). A format's snapshot
+ * holds its meta, events and archetype results; decklists are one file each;
+ * card details come from Scryfall.
+ */
 export async function createApi() {
-  return config.firebase.projectId ? firebaseApi() : sampleApi();
-}
-
-async function firebaseApi() {
-  const [{ initializeApp }, { getFunctions, httpsCallable }] = await Promise.all([
-    import(`${FIREBASE_SDK}/firebase-app.js`),
-    import(`${FIREBASE_SDK}/firebase-functions.js`),
-  ]);
-  const functions = getFunctions(initializeApp(config.firebase), config.functionsRegion);
-  const call = (name) => async (data) => {
-    try {
-      return (await httpsCallable(functions, name)(data)).data;
-    } catch (error) {
-      throw new ApiError(error.code?.replace("functions/", "") ?? "unknown", error.message);
+  const snapshots = new Map();
+  const snapshot = (format) => {
+    if (!snapshots.has(format)) {
+      snapshots.set(format, getJson(`snapshots/${format}.json`).catch((error) => {
+        snapshots.delete(format); // retry on the next call
+        if (error.code === "not-found") throw new ApiError("not-found", `No ${format} data published yet.`);
+        throw error;
+      }));
     }
+    return snapshots.get(format);
   };
-  return {
-    source: "firebase",
-    getMeta: call("getMeta"),
-    getEvents: call("getEvents"),
-    getEvent: call("getEvent"),
-    getArchetype: call("getArchetype"),
-    getDecklist: call("getDecklist"),
-    getCardDetails: call("getCardDetails"),
-  };
-}
-
-async function sampleApi() {
-  const response = await fetch(new URL("./sample/data.json", import.meta.url));
-  const data = await response.json();
   const notFound = (what) => {
-    throw new ApiError("not-found", `${what} is not in the sample data.`);
+    throw new ApiError("not-found", `${what} is not in the published data.`);
   };
+
   return {
-    source: "sample",
     async getMeta({ format, timeframe }) {
-      const id = `${format}_${timeframe}`;
-      return data.meta[id] ? { id, ...data.meta[id] } : notFound(`${format} over ${timeframe}`);
+      const meta = (await snapshot(format)).meta[timeframe];
+      return meta ? { format, ...meta } : notFound(`${format} over ${timeframe}`);
     },
     async getEvents({ format, limit = 20 }) {
-      const events = Object.entries(data.events)
-        .map(([event_id, event]) => ({ event_id, ...event }))
-        .filter((event) => event.format === format)
-        .sort((a, b) => b.date.localeCompare(a.date))
-        .slice(0, limit);
+      const events = (await snapshot(format)).events.slice(0, limit).map((event) => ({ format, ...event }));
       return { events };
     },
-    async getEvent({ event_id }) {
-      return data.events[event_id] ? { event_id, ...data.events[event_id] } : notFound(`Event ${event_id}`);
+    async getEvent({ format, event_id }) {
+      const event = (await snapshot(format)).events.find((candidate) => candidate.event_id === event_id);
+      return event ? { format, ...event } : notFound(`Event ${event_id}`);
     },
     async getArchetype({ format, archetype_id }) {
-      const id = `${format}_${archetype_id}`;
-      return data.archetypes?.[id] ? { id, ...data.archetypes[id] } : notFound(`Results for ${archetype_id}`);
+      const archetype = (await snapshot(format)).archetypes[archetype_id];
+      return archetype ? { format, ...archetype } : notFound(`Results for ${archetype_id}`);
     },
     async getDecklist({ deck_id }) {
-      return data.decks[deck_id] ? { deck_id, ...data.decks[deck_id] } : notFound(`Deck ${deck_id}`);
+      return getJson(`decks/${encodeURIComponent(deck_id)}.json`);
     },
-    // The sample has no card database, so ask Scryfall directly.
     async getCardDetails({ card_name }) {
       const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(card_name)}`;
       const response = await fetch(url);
       return response.ok ? response.json() : notFound(card_name);
     },
   };
+}
+
+async function getJson(path) {
+  const response = await fetch(`${config.dataUrl}/${path}`);
+  if (response.status === 404) throw new ApiError("not-found", `${path} is not published.`);
+  if (!response.ok) throw new ApiError("unavailable", `Loading ${path} failed (${response.status}).`);
+  return response.json();
 }
 
 export class ApiError extends Error {
