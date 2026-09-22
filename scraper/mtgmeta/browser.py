@@ -55,7 +55,12 @@ class GoldfishBrowser:
     def metagame(self, format: str, days: str) -> str:
         """The full metagame page with the `days` window selected."""
         html = self.page(f"/metagame/{format}/full")
-        if selected_period(html) == days:
+        window = selected_period(html)
+        if window == days:
+            return html
+        if window is None:
+            # Some formats (Duel Commander) have no window selector at all.
+            log.info("The %s metagame has no window selector; taking the page as it comes", format)
             return html
         before = self._tile_statistics()
         # Changing the select submits a Turbo form that swaps only the tiles, so

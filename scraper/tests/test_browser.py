@@ -66,3 +66,35 @@ def test_paths_still_refused_after_every_attempt_fail(monkeypatch):
     browser, session = make([[403]] * 10, concurrency=1, monkeypatch=monkeypatch)
     results = browser.fetch_pages(["/a"], attempts=2)
     assert isinstance(results["/a"], BlockedError) and session.reloads == 2
+
+
+class MetagameSession(FakeSession):
+    """A metagame page, optionally without the window selector some formats lack."""
+
+    def __init__(self, has_selector):
+        super().__init__([])
+        self.scripts = []
+        self.html = (
+            '<select id="period"><option selected value="30">30 Days</option></select>' if has_selector else "<p>no selector</p>"
+        )
+
+    def get_page_source(self):
+        return self.html
+
+    def execute_script(self, script):
+        self.scripts.append(script)
+        return ""
+
+
+def test_a_metagame_without_a_window_selector_is_taken_as_it_comes(monkeypatch):
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = MetagameSession(has_selector=False)
+    html = GoldfishBrowser(session, delay=0, concurrency=3).metagame("duel_commander", "7")
+    assert html == session.html and session.scripts == []
+
+
+def test_the_selected_window_is_returned_unchanged(monkeypatch):
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = MetagameSession(has_selector=True)
+    html = GoldfishBrowser(session, delay=0, concurrency=3).metagame("modern", "30")
+    assert html == session.html and session.scripts == []

@@ -17,6 +17,7 @@ from .models import (
     RunReport,
 )
 from .parsing import (
+    ParseError,
     parse_archetype,
     parse_archetype_decks,
     parse_decklist,
@@ -139,6 +140,9 @@ def _read_archetypes(
         featured = None
         try:
             featured = parse_archetype(_body(featured_pages[f"/archetype/{archetype.id}"]), archetype.id)
+        except ParseError as error:
+            # A catch-all archetype such as "Other" has no featured deck of its own.
+            log.info("No featured deck for %s: %s", archetype.id, error)
         except Exception as error:  # noqa: BLE001
             _fail(report, f"archetype {archetype.id}", error)
         known = store.load_archetype_results(format, archetype.id)
