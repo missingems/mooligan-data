@@ -13,7 +13,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published | `max-age=300` |
-| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
+| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 

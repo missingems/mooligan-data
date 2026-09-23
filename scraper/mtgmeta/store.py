@@ -16,6 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash
 from .edhrec import due_slugs, edhrec_slug
+from .parsing import event_kind
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
 
 SCHEMA = 1
@@ -32,6 +33,8 @@ class Store(Protocol):
     def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]: ...
     def save_archetype(self, history: ArchetypeHistory) -> None: ...
     def ignored_event_ids(self) -> Set[str]: ...
+    def mark_empty_events(self, event_ids: Iterable[str]) -> None: ...
+    def events_missing_source(self, format: str) -> List[str]: ...
     def missing_deck_ids(self) -> Set[str]: ...
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
 
@@ -54,6 +57,8 @@ class SnapshotStore:
         self._deck_ids: Set[str] = set(json.loads(ids_path.read_text())) if ids_path.exists() else set()
         duplicates_path = root / "state" / "duplicate-event-ids.json"
         self._duplicates: Set[str] = set(json.loads(duplicates_path.read_text())) if duplicates_path.exists() else set()
+        empty_path = root / "state" / "empty-event-ids.json"
+        self._empty_events: Set[str] = set(json.loads(empty_path.read_text())) if empty_path.exists() else set()
         missing_path = root / "state" / "missing-deck-ids.json"
         self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
         # What each stored deck plays, so card pages can be built without downloading every deck again.
@@ -108,8 +113,16 @@ class SnapshotStore:
         return [ArchetypeResult(**{**result, "date": _parse(result["date"])}) for result in archetype["results"]]
 
     def ignored_event_ids(self) -> Set[str]:
-        """Duplicate events found earlier, which the scrape must not read or count again."""
-        return set(self._duplicates)
+        """Events the scrape must not read or count again: duplicates, and events with no decklists."""
+        return self._duplicates | self._empty_events
+
+    def mark_empty_events(self, event_ids: Iterable[str]) -> None:
+        self._empty_events |= set(event_ids)
+
+    def events_missing_source(self, format: str) -> List[str]:
+        """Stored events read before the page's source was kept, newest first, so a run can fill it in."""
+        events = self._snapshot(format)["events"].values()
+        return [e["event_id"] for e in sorted(events, key=lambda e: e["date"], reverse=True) if not e.get("source")]
 
     def missing_deck_ids(self) -> Set[str]:
         """Decks MTGGoldfish no longer serves; asking again every run would be wasted."""
@@ -149,6 +162,10 @@ class SnapshotStore:
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
             duplicates = self._duplicates
+            # The tier comes from the name, so events stored before it existed get it here.
+            for event in snapshot["events"].values():
+                event.setdefault("kind", event_kind(event["event_name"]))
+                event.setdefault("source", None)
             events = sorted(
                 (
                     event
@@ -215,6 +232,7 @@ class SnapshotStore:
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
+        self._write("state/empty-event-ids.json", json.dumps(sorted(self._empty_events)).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())

@@ -187,3 +187,23 @@ def test_commander_pages_are_published_for_the_commanders_cards_name(tmp_path):
     assert page["average_deck"] == [{"header": "Lands", "cards": ["Island"]}]
     index = json.loads((tmp_path / "edh" / "commanders" / "index.json").read_text())
     assert index["commanders"]["vivi-ornitier"] == {"name": "Vivi Ornitier", "decks": 40779}
+
+
+def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    first.save_event(event("1", "2026-09-20"))
+    first.finish()
+    # Strip what an older run would not have stored.
+    path = tmp_path / "snapshots" / "modern.json"
+    stored = json.loads(path.read_text())
+    for e in stored["events"]:
+        e.pop("kind"); e.pop("source")
+    path.write_text(json.dumps(stored))
+
+    second = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    assert second.events_missing_source("modern") == ["1"]
+    second.mark_empty_events(["9"])
+    second.finish()
+    published = json.loads(path.read_text())["events"][0]
+    assert (published["kind"], published["source"]) == ("mtgo_league", None)
+    assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"9"}

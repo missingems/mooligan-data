@@ -249,6 +249,8 @@ def _read_events(
     candidates: Dict[str, EventSummary] = {}
     if cutoff and now:
         for summary in _search_events(browser, format, cutoff, now, config.max_search_pages, report):
+            if summary.decklists == 0:
+                continue  # listed, but nothing to read
             if summary.event_id not in seen:
                 candidates.setdefault(summary.event_id, summary)
     # Plus the events the archetype lists mention, which cover multi-format events.
@@ -264,18 +266,28 @@ def _read_events(
     )
     if len(older) > config.max_new_events:
         log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
+    # Stored events read before their source was kept are re-read with whatever room is left.
+    room = max(config.max_new_events - len(older), 0)
+    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in seen][:room]
 
-    summaries = recent + older[: config.max_new_events]
+    summaries = recent + older[: config.max_new_events] + refresh
     pages = browser.fetch_pages([f"/tournament/{summary.event_id}" for summary in summaries])
     events = []
+    empty = []
     for summary in summaries:
         try:
             html = _body(pages[f"/tournament/{summary.event_id}"])
-            event = parse_tournament(html, summary.event_id, format, summary)
+            event = parse_tournament(html, summary.event_id, format, summary if summary.event_name else None)
             log.info("Read event %s %s (%d results)", event.event_id, event.event_name, len(event.results))
             events.append(event)
+        except ParseError as error:
+            # An event with no decklists has no results table; there is nothing to come back for.
+            log.info("Event %s has nothing to read: %s", summary.event_id, error)
+            empty.append(summary.event_id)
         except Exception as error:  # noqa: BLE001
             _fail(report, f"event {summary.event_id}", error)
+    if empty:
+        store.mark_empty_events(empty)
     return events
 
 

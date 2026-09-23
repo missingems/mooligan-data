@@ -239,3 +239,21 @@ def test_events_come_from_the_tournament_search_and_carry_their_kind(tmp_path):
     # Every fixture event page is the same, so the duplicate check keeps one; it carries its tier and source.
     events = snapshot(tmp_path)["events"]
     assert len(events) == 1 and (events[0]["kind"], events[0]["source"]) == ("mtgo_challenge", "mtgo.com")
+
+
+def test_events_without_decklists_are_skipped_and_remembered(tmp_path):
+    browser = FixtureBrowser(event_pages=("66753",))
+    page = browser.page
+
+    def serve(path):
+        if path == "/tournament/66742":
+            return "<html><h2>Modern League 2026-09-21</h2><p>Date: 2026-09-21</p><p>No decklists yet</p></html>"
+        return page(path)
+
+    browser.page = serve
+    report = run(tmp_path, browser, config(max_new_events=1, max_new_decks=0))
+    assert not any("66742" in error for error in report.errors)
+    assert "66742" in json.loads((tmp_path / "state" / "empty-event-ids.json").read_text())
+    second = FixtureBrowser(event_pages=("66753",))
+    run(tmp_path, second, config(max_new_events=1, max_new_decks=0))
+    assert "/tournament/66742" not in second.requests
