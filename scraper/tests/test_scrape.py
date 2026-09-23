@@ -236,5 +236,6 @@ def test_events_come_from_the_tournament_search_and_carry_their_kind(tmp_path):
     assert report.events == ["66753", "66742", "66728", "66737", "66723", "66651", "66660"]
     searched = [p for p in browser.requests if p.startswith("/tournament_searches/create?")]
     assert len(searched) == 2 and "tournament_search%5Bformat%5D=modern" in searched[0]
-    events = {e["event_id"]: e for e in snapshot(tmp_path)["events"]}
-    assert (events["66753"]["kind"], events["66753"]["source"]) == ("mtgo_challenge", "mtgo.com")
+    # Every fixture event page is the same, so the duplicate check keeps one; it carries its tier and source.
+    events = snapshot(tmp_path)["events"]
+    assert len(events) == 1 and (events[0]["kind"], events[0]["source"]) == ("mtgo_challenge", "mtgo.com")
