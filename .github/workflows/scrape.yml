@@ -60,6 +60,9 @@ jobs:
           META_DAYS: "30,14,7"
           REQUEST_DELAY: "1"
           CONCURRENCY: "6"
+          # EDHREC is read with their permission: a slice of the cards each run.
+          EDHREC_CARDS_PER_RUN: "800"
+          EDHREC_DELAY: "0.4"
         run: python -m mtgmeta work
 
       # finish() writes index.json last, so its presence means the run got as far as publishing.

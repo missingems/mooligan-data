@@ -9,7 +9,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `decks/{deck_id}.json` | One decklist. Never changes once published | `max-age=31536000, immutable` |
 | `cards/{slug}.json` | Where one card is played, across every format | `max-age=300` |
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
-| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate events, deleted decks. Apps can ignore them | `no-cache` |
+| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -137,6 +137,22 @@ A format is missing from `formats` until its first scrape completes.
 
 Counted over the decklists stored for the last 30 days, so it follows the same window as the snapshots.
 
+A card also carries an `edh` section when EDHREC has Commander data for it:
+
+```json
+"edh": {
+  "decks": 562775,
+  "of_decks": 5011429,
+  "salt": 0.18,
+  "url": "https://edhrec.com/cards/lightning-bolt",
+  "commanders": [
+    { "name": "Vivi Ornitier", "slug": "vivi-ornitier", "decks": 23169, "of_decks": 40779 }
+  ]
+}
+```
+
+`decks` of `of_decks` is how many Commander decks that could play the card do play it; each commander row is the same for that commander's decks. `salt` is EDHREC's salt score, and is null when they have none. At most 12 commanders, most decks first. **This data is EDHREC's, used with their permission: show it with attribution and link back to `url`.** Each run refreshes a slice of the cards (800 by default), oldest check first, so a card's Commander numbers can be a few days old.
+
 - **`decks`** is how many decks of that format play the card; **`of_decks`** is how many decks the format has in the window. Their ratio is the card's play rate.
 - **`archetypes`** is most-played first, at most 12 per format. `archetype_id` is null for decks outside a tracked archetype, whose `name` is then "Other". `avg_copies` counts mainboard and sideboard together, so a card in both boards is one deck with the copies added up.
 - **`deck_ids`** links up to 5 decks, newest first, that an app can open directly.
@@ -148,4 +164,4 @@ Counted over the decklists stored for the last 30 days, so it follows the same w
 { "schema": 1, "generated_at": "…", "cards": { "lightning-bolt": { "name": "Lightning Bolt", "formats": ["legacy", "modern"] } } }
 ```
 
-Useful for showing "played in Modern and Legacy" without fetching each card page, and for knowing whether a card page exists at all.
+Each entry also carries `"edh": true` when that card has Commander data. Useful for showing "played in Modern and Legacy" without fetching each card page, and for knowing whether a card page exists at all.

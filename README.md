@@ -26,7 +26,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `index.json` gives each format's snapshot with a hash, so clients download only when something changed.
 - `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
 - `decks/{id}.json` holds one decklist per file, cached for good.
-- `cards/{slug}.json` says where a card is played, across every format, with links to decks.
+- `cards/{slug}.json` says where a card is played, across every format, with links to decks, plus its Commander usage from EDHREC.
 
 Card details come from Scryfall's API, not from this pipeline.
 
@@ -77,6 +77,10 @@ python3 -m http.server -d web 8765   # the site, reading data.mooligan.com
 ```
 
 A local run writes into `scraper/work/` and publishes nothing.
+
+## EDHREC
+
+Commander usage on each card page comes from EDHREC, used with their permission. A run refreshes `EDHREC_CARDS_PER_RUN` cards (800 by default) at `EDHREC_DELAY` seconds apart, longest unchecked first, so the whole set comes round every few days and the rate stays low. Their numbers move about once a day. Anything showing this data must credit EDHREC and link back to the `url` on each entry.
 
 ## Caveats
 

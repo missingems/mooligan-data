@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash
+from .edhrec import due_slugs, edhrec_slug
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
 
 SCHEMA = 1
@@ -60,6 +61,8 @@ class SnapshotStore:
         for format in formats:
             cards_path = root / "state" / "deck-cards" / f"{format}.json"
             self._deck_cards[format] = json.loads(cards_path.read_text()) if cards_path.exists() else {}
+        edh_path = root / "state" / "edhrec.json"
+        self._edh: Dict[str, dict] = json.loads(edh_path.read_text()) if edh_path.exists() else {}
         hashes_path = root / "state" / "card-hashes.json"
         self._card_hashes: Dict[str, str] = json.loads(hashes_path.read_text()) if hashes_path.exists() else {}
 
@@ -119,11 +122,13 @@ class SnapshotStore:
 
     # ---- Publishing
 
-    def finish(self, fetch_decks=None) -> List[str]:
+    def finish(self, fetch_decks=None, fetch_edh=None, edh_limit: int = 0) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
         `fetch_decks(ids) -> {id: deck}` supplies decklists published by earlier
         runs, whose contents this run never saw but whose cards still count.
+        `fetch_edh(slugs) -> {slug: entry}` reads Commander usage for at most
+        `edh_limit` cards, the longest unchecked first.
         """
         written = []
         formats = {}
@@ -192,7 +197,7 @@ class SnapshotStore:
             }
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
-        written += self._write_card_pages(card_decks)
+        written += self._write_card_pages(card_decks, fetch_edh, edh_limit)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
@@ -201,9 +206,10 @@ class SnapshotStore:
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
 
-    def _write_card_pages(self, card_decks: Dict[str, FormatDecks]) -> List[str]:
+    def _write_card_pages(self, card_decks: Dict[str, FormatDecks], fetch_edh=None, edh_limit: int = 0) -> List[str]:
         """Writes a page per card, skipping the ones whose numbers did not move."""
         pages, index = build_card_pages(card_decks, self._stamp())
+        self._attach_edh(pages, index, fetch_edh, edh_limit)
         written = []
         hashes = {}
         for card_slug, page in pages.items():
@@ -213,10 +219,25 @@ class SnapshotStore:
             self._write(f"cards/{card_slug}.json", json.dumps(page, ensure_ascii=False, separators=(",", ":")).encode())
             written.append(f"cards/{card_slug}.json")
         self._card_hashes = hashes
+        self._write("state/edhrec.json", json.dumps(self._edh, sort_keys=True, separators=(",", ":")).encode())
         self._write("cards/index.json", json.dumps(index, ensure_ascii=False, separators=(",", ":")).encode())
         self._write("state/card-hashes.json", json.dumps(hashes, sort_keys=True).encode())
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
+
+    def _attach_edh(self, pages: Dict[str, dict], index: dict, fetch_edh, limit: int) -> None:
+        """Refreshes a slice of the Commander data and puts what is known on each page."""
+        wanted = {card_slug: edhrec_slug(page["card_name"]) for card_slug, page in pages.items()}
+        if fetch_edh and limit > 0:
+            due = due_slugs(self._edh, wanted, limit)
+            entries = fetch_edh([slug for _, slug in due])
+            for _, slug in due:
+                self._edh[slug] = {"checked_at": self._stamp(), "entry": entries.get(slug)}
+        for card_slug, page in pages.items():
+            entry = self._edh.get(wanted[card_slug], {}).get("entry")
+            if entry:
+                page["edh"] = entry
+                index["cards"][card_slug]["edh"] = True
 
     def _snapshot(self, format: str) -> Dict[str, Any]:
         return self._snapshots.setdefault(format, {"meta": {}, "events": {}, "archetypes": {}})

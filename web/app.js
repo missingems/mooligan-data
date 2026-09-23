@@ -369,6 +369,19 @@ async function cardView(api, { slug }) {
       el("td", {}, archetype.deck_ids.slice(0, 3).map((deckId, index) =>
         el("span", {}, index ? " " : "", el("a", { href: `#/deck/${encodeURIComponent(deckId)}?format=${format}` }, `#${index + 1}`)))));
 
+  const edhPanel = (edh) =>
+    el("section", { class: "panel archetype-event" },
+      el("h2", {},
+        el("a", { href: edh.url, target: "_blank", rel: "noopener" }, "Commander"),
+        el("small", {}, `${(100 * edh.decks / edh.of_decks).toFixed(1)}% · ${edh.decks.toLocaleString()} of ${edh.of_decks.toLocaleString()} decks`)),
+      el("table", {},
+        el("tbody", {}, edh.commanders.map((commander) =>
+          el("tr", {},
+            el("td", {}, el("a", { href: `https://edhrec.com/commanders/${commander.slug}`, target: "_blank", rel: "noopener" }, commander.name)),
+            el("td", { class: "finish" }, commander.decks.toLocaleString()),
+            el("td", { class: "finish" }, commander.of_decks ? `${Math.round((commander.decks / commander.of_decks) * 100)}%` : ""))))),
+      el("p", { class: "legal" }, "Commander data from EDHREC, used with permission."));
+
   const formatPanel = ([format, entry]) =>
     el("section", { class: "panel archetype-event" },
       el("h2", {},
@@ -382,13 +395,13 @@ async function cardView(api, { slug }) {
     el("div", { class: "page-head" },
       el("div", {},
         el("h1", {}, name),
-        el("p", {}, `Played in ${played.length} ${played.length === 1 ? "format" : "formats"} · updated ${formatDate(card.generated_at)}`)),
+        el("p", {}, `Played in ${played.length} ${played.length === 1 ? "format" : "formats"}${card.edh ? " and Commander" : ""} · updated ${formatDate(card.generated_at)}`)),
       details?.scryfall_uri
         ? el("a", { class: "button", href: details.scryfall_uri, target: "_blank", rel: "noopener" }, "Scryfall")
         : null),
     el("div", { class: "card-played" },
       image ? el("img", { class: "card-art", src: image, alt: name, loading: "lazy" }) : null,
-      el("div", { class: "archetype-events" }, played.map(formatPanel))),
+      el("div", { class: "archetype-events" }, [...played.map(formatPanel), card.edh ? edhPanel(card.edh) : null])),
   );
 }
 

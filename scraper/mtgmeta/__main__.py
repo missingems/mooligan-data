@@ -12,6 +12,7 @@ import sys
 from pathlib import Path
 
 from .browser import open_browser
+from .edhrec import Edhrec
 from .published import fetch_published_decks
 from .scrape import ScrapeConfig, scrape
 from .store import SnapshotStore
@@ -46,7 +47,16 @@ def main() -> int:
     ) as browser:
         report = scrape(browser, store, config)
     data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
-    written = store.finish(fetch_decks=lambda ids: fetch_published_decks(data_url, ids))
+    # EDHREC is read with their permission: a slice of the cards each run, at a low rate.
+    edhrec = Edhrec(
+        user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
+        delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
+    )
+    written = store.finish(
+        fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
+        fetch_edh=edhrec.cards,
+        edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
+    )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
 
     logging.info(
