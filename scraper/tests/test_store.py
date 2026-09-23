@@ -147,6 +147,10 @@ def test_the_catalog_gives_pages_their_oracle_id_and_widens_the_commander_rotati
 
     store.finish(fetch_edh=fetch_edh, edh_limit=5, catalog=catalog)
 
+    # The index carries oracle ids, so a decklist name resolves to a card with one cached file.
+    index = json.loads((tmp_path / "cards" / "index.json").read_text())
+    assert index["cards"]["eldrazi-temple"]["oracle_id"] == "oracle-temple"
+
     # A card no tournament deck plays is still offered to EDHREC, and gets a page of its own.
     assert sorted(asked) == ["arcane-signet", "eldrazi-temple"]
     temple = json.loads((tmp_path / "cards" / "eldrazi-temple.json").read_text())
@@ -154,7 +158,7 @@ def test_the_catalog_gives_pages_their_oracle_id_and_widens_the_commander_rotati
     signet = json.loads((tmp_path / "cards" / "arcane-signet.json").read_text())
     assert signet["oracle_id"] == "oracle-signet" and signet["formats"] == {} and signet["edh"]["decks"] == 9
     index = json.loads((tmp_path / "cards" / "index.json").read_text())
-    assert index["cards"]["arcane-signet"] == {"name": "Arcane Signet", "formats": [], "edh": True}
+    assert index["cards"]["arcane-signet"] == {"name": "Arcane Signet", "formats": [], "edh": True, "oracle_id": "oracle-signet"}
 
 
 def test_commander_pages_are_published_for_the_commanders_cards_name(tmp_path):
@@ -207,3 +211,13 @@ def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp
     published = json.loads(path.read_text())["events"][0]
     assert (published["kind"], published["source"]) == ("mtgo_league", None)
     assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"9"}
+
+
+def test_decklist_entries_carry_their_oracle_id(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    catalog = {"eldrazi-temple": {"name": "Eldrazi Temple", "oracle_id": "oracle-temple"}}
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
+    store.save_decks([Deck("5", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple"), DeckCard(1, "Unknown Card")], [], "modern", "1")])
+    deck = json.loads((tmp_path / "decks" / "5.json").read_text())
+    assert [card["oracle_id"] for card in deck["mainboard"]] == ["oracle-temple", None]

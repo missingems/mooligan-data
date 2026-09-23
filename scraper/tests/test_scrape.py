@@ -208,7 +208,7 @@ def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):
     run(tmp_path, FixtureBrowser(), config())
 
     index = json.loads((tmp_path / "cards" / "index.json").read_text())
-    assert index["cards"]["lightning-bolt"] == {"name": "Lightning Bolt", "formats": ["modern"]}
+    assert index["cards"]["lightning-bolt"] == {"name": "Lightning Bolt", "formats": ["modern"], "oracle_id": None}
     bolt = json.loads((tmp_path / "cards" / "lightning-bolt.json").read_text())
     modern = bolt["formats"]["modern"]
     # Every fixture deck is the same Izzet list. 9 of the 10 downloaded are counted:

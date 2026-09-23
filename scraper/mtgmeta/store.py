@@ -14,7 +14,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
-from .cards import FormatDecks, build_card_pages, page_hash
+from .cards import FormatDecks, build_card_pages, page_hash, slug
 from .edhrec import due_slugs, edhrec_slug
 from .parsing import event_kind
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
@@ -40,8 +40,17 @@ class Store(Protocol):
 
 
 class SnapshotStore:
-    def __init__(self, root: Path, formats: Sequence[str], history_days: int, now: Optional[datetime] = None) -> None:
+    def __init__(
+        self,
+        root: Path,
+        formats: Sequence[str],
+        history_days: int,
+        now: Optional[datetime] = None,
+        catalog: Optional[Dict[str, dict]] = None,
+    ) -> None:
         self._root = root
+        # Every card Magic has, by slug, so decklist entries can carry their oracle id.
+        self._catalog: Dict[str, dict] = catalog or {}
         self._now = now or datetime.now(timezone.utc)
         self._cutoff = self._now - timedelta(days=history_days)
         self._snapshots: Dict[str, Dict[str, Any]] = {}
@@ -92,6 +101,9 @@ class SnapshotStore:
             path.parent.mkdir(parents=True, exist_ok=True)
             document = _jsonable(to_document(deck))
             document["last_updated"] = self._stamp()
+            for board in ("mainboard", "sideboard"):
+                for card in document[board]:
+                    card["oracle_id"] = self._catalog.get(slug(card["card_name"]), {}).get("oracle_id")
             path.write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
             self._deck_ids.add(deck.deck_id)
             self._deck_cards.setdefault(deck.format, {})[deck.deck_id] = {
@@ -243,9 +255,12 @@ class SnapshotStore:
     ) -> List[str]:
         """Writes a page per card, skipping the ones whose numbers did not move."""
         pages, index = build_card_pages(card_decks, self._stamp())
+        catalog = catalog or self._catalog
         self._attach_edh(pages, index, fetch_edh, edh_limit, catalog)
         for card_slug, page in pages.items():
             page["oracle_id"] = catalog.get(card_slug, {}).get("oracle_id")
+            # The index carries it too, so a decklist name resolves to a card with one cached file.
+            index["cards"][card_slug]["oracle_id"] = page["oracle_id"]
         written = []
         hashes = {}
         for card_slug, page in pages.items():

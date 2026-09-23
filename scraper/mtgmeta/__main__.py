@@ -112,7 +112,14 @@ def main() -> int:
         history_days=int(os.environ.get("HISTORY_DAYS", "30")),
         max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
     )
-    store = SnapshotStore(args.directory, config.formats, config.history_days)
+    # Every card Magic has: oracle ids for the card pages, and the Commander rotation.
+    try:
+        catalog = card_catalog() if os.environ.get("SCRYFALL_CATALOG", "1") == "1" else {}
+    except Exception as error:  # noqa: BLE001 - the run still publishes without it
+        logging.exception("Could not read Scryfall's card catalog")
+        report.errors.append(f"scryfall catalog: {error}")
+        catalog = {}
+    store = SnapshotStore(args.directory, config.formats, config.history_days, catalog=catalog)
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
     with open_browser(
         headless=headless,
@@ -126,13 +133,6 @@ def main() -> int:
         user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
         delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
     )
-    # Every card Magic has: oracle ids for the card pages, and the Commander rotation.
-    try:
-        catalog = card_catalog() if os.environ.get("SCRYFALL_CATALOG", "1") == "1" else {}
-    except Exception as error:  # noqa: BLE001 - the run still publishes without it
-        logging.exception("Could not read Scryfall's card catalog")
-        report.errors.append(f"scryfall catalog: {error}")
-        catalog = {}
     written = store.finish(
         fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
         fetch_edh=edhrec.cards,
