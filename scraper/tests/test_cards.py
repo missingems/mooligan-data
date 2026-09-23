@@ -20,7 +20,10 @@ ARCHETYPES = {
 
 def test_slug():
     assert slug("Fable of the Mirror-Breaker") == "fable-of-the-mirror-breaker"
-    assert slug("Sword of Fire and Ice // Test") == "sword-of-fire-and-ice-test"
+    assert slug("Fire // Ice") == "fire"
+    assert slug("Fire/Ice") == "fire", "MTGGoldfish writes split cards with one slash"
+    assert slug("Bartolomé del Presidio") == "bartolome-del-presidio"
+    assert slug("Bartolome del Presidio") == "bartolome-del-presidio"
 
 
 def test_a_card_page_counts_decks_and_archetypes():

@@ -8,6 +8,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import unicodedata
 from typing import Dict, List, Tuple
 
 SCHEMA = 1
@@ -18,8 +19,16 @@ MAX_DECK_IDS = 5
 
 
 def slug(card_name: str) -> str:
-    """The file name for a card: "Fable of the Mirror-Breaker" -> "fable-of-the-mirror-breaker"."""
-    return re.sub(r"[^a-z0-9]+", "-", card_name.lower()).strip("-")
+    """The file name for a card: "Fable of the Mirror-Breaker" -> "fable-of-the-mirror-breaker".
+
+    Only the front face counts, whether written "Fire // Ice" (Scryfall) or
+    "Fire/Ice" (MTGGoldfish), and accents fold away, since MTGGoldfish writes
+    "Bartolome" for Scryfall's "Bartolomé". MTGMetaKit's CardSlug applies the
+    same rule, so the two must change together.
+    """
+    front = card_name.split("/", 1)[0]
+    folded = unicodedata.normalize("NFKD", front).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", folded.lower()).strip("-")
 
 
 def build_card_pages(

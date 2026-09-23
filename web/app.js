@@ -44,7 +44,9 @@ const EVENT_KINDS = {
 };
 const kindName = (kind) => EVENT_KINDS[kind] ?? "Other";
 
-const cardSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+// The same rule as the pipeline: front face only, accents folded, runs of other characters to a hyphen.
+const cardSlug = (name) =>
+  name.split("/")[0].normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 // ---- Routing: #/<format>[?t=<window>], #/<format>/event/<id>, #/<format>/archetype/<id>, #/deck/<id>, #/card/<slug>
 
@@ -504,7 +506,7 @@ async function commanderView(api, { slug }) {
     );
   }
   document.title = `${commander.name} · MTG Metagame`;
-  const cardLink = (name) => el("a", { href: `#/card/${encodeURIComponent(cardSlug(name.split("//")[0]))}` }, name);
+  const cardLink = (name) => el("a", { href: `#/card/${encodeURIComponent(cardSlug(name))}` }, name);
 
   const inclusionSection = (section) =>
     el("section", { class: "panel archetype-event" },
@@ -635,7 +637,7 @@ async function showCard(api, name, format) {
             face.loyalty != null ? el("div", { class: "pt" }, `Loyalty ${face.loyalty}`) : null)),
         legality ? el("div", { class: "legal" }, `${formatName(format)}: ${legality.replace("_", " ")}`) : null,
         el("p", {},
-          el("a", { href: `#/card/${encodeURIComponent(cardSlug(card.name.split("//")[0]))}`, onclick: () => dialog.close() }, "Where it's played"),
+          el("a", { href: `#/card/${encodeURIComponent(cardSlug(card.name))}`, onclick: () => dialog.close() }, "Where it's played"),
           card.scryfall_uri ? el("span", {}, " · ", el("a", { href: card.scryfall_uri, target: "_blank", rel: "noopener" }, "Scryfall")) : null)),
     );
   } catch (error) {
