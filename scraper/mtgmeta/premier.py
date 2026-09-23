@@ -68,6 +68,8 @@ def premier_events(entries: List[dict], now: Optional[datetime] = None, months_a
             continue
         if (end or start) < now - timedelta(days=7) or start > horizon:
             continue
+        # Dates are the venue's own: an end at 18:00 Pacific is still that day, not the next UTC day.
+        local_start, local_end = _parse(entry.get("startTime"), local=True), _parse(entry.get("endTime"), local=True)
         name = (entry.get("eventName") or entry.get("entryTitle") or "").strip()
         place = name.split(": ", 1)[1].strip() if ": " in name else None
         events.append(
@@ -75,8 +77,8 @@ def premier_events(entries: List[dict], now: Optional[datetime] = None, months_a
                 "id": entry.get("id"),
                 "name": name,
                 "type": (entry.get("eventScheduleType") or {}).get("typeTitle"),
-                "start": start.strftime("%Y-%m-%d"),
-                "end": (end or start).strftime("%Y-%m-%d"),
+                "start": local_start.strftime("%Y-%m-%d"),
+                "end": (local_end or local_start).strftime("%Y-%m-%d"),
                 "start_time": entry.get("startTime"),
                 "end_time": entry.get("endTime"),
                 "place": place,
@@ -105,11 +107,12 @@ def schedule_page(events: List[dict], generated_at: str) -> dict:
     }
 
 
-def _parse(value: Optional[str]) -> Optional[datetime]:
+def _parse(value: Optional[str], local: bool = False) -> Optional[datetime]:
     if not value:
         return None
     try:
-        return datetime.fromisoformat(value).astimezone(timezone.utc)
+        parsed = datetime.fromisoformat(value)
+        return parsed if local else parsed.astimezone(timezone.utc)
     except ValueError:
         return None
 

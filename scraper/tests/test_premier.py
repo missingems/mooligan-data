@@ -35,3 +35,10 @@ def test_regions_come_from_the_name():
     assert region_of("Super Series Finals: Sydney") == "australia_nz"
     assert region_of("MIT Championship: Taipei City") == "chinese_taipei"
     assert region_of("Magic World Championship 32") is None
+
+
+def test_dates_are_the_venues_own_days():
+    html = HTML.replace('startTime:"2027-02-26T09:00-08:00",endTime:"2027-02-28T18:00-08:00"', 'startTime:"2026-10-02T10:00-04:00",endTime:"2026-10-04T20:00-04:00"')
+    ottawa = [e for e in premier_events(calendar_from_html(html), now=NOW) if e["name"] == "Pro Tour Nauctis"][0]
+    # 20:00 in Ottawa is already the 5th in UTC, but the event ends on the 4th.
+    assert (ottawa["start"], ottawa["end"]) == ("2026-10-02", "2026-10-04")
