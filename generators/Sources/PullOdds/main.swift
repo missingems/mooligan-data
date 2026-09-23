@@ -15,6 +15,7 @@
 // The chance maths is Mooligan's `MTGJSONBoosterConfig.chances()`, kept in step with it.
 
 import Foundation
+import GeneratorSupport
 
 enum OddsConfig {
     static let env = ProcessInfo.processInfo.environment
@@ -163,7 +164,9 @@ func main() async throws {
     let fm = FileManager.default
     let session = URLSession(configuration: .default)
 
-    let (metaData, _) = try await session.data(from: URL(string: "https://mtgjson.com/api/v5/Meta.json")!)
+    let (metaData, _) = try await withRetries("MTGJSON Meta.json") {
+        try await session.data(from: URL(string: "https://mtgjson.com/api/v5/Meta.json")!)
+    }
     let version = try JSONDecoder().decode(OddsMeta.self, from: metaData).data.version
     print("🎴 MTGJSON \(version)")
 
@@ -174,7 +177,9 @@ func main() async throws {
         let work = fm.temporaryDirectory.appendingPathComponent("mtgjson-\(UUID().uuidString)")
         try fm.createDirectory(at: work, withIntermediateDirectories: true)
         print("📥 Downloading AllSetFiles.zip")
-        let (zip, _) = try await session.download(from: URL(string: "https://mtgjson.com/api/v5/AllSetFiles.zip")!)
+        let (zip, _) = try await withRetries("MTGJSON AllSetFiles.zip") {
+            try await session.download(from: URL(string: "https://mtgjson.com/api/v5/AllSetFiles.zip")!)
+        }
         try run("/usr/bin/unzip", ["-q", zip.path, "-d", work.path])
         setFiles = work
     }

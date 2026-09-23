@@ -88,6 +88,9 @@ jobs:
         run: .build/release/PullOdds
 
       - name: Price catalog
+        # Runs even when the pull odds failed: the two share nothing but MTGJSON, and a failure
+        # of either still fails the job.
+        if: ${{ !cancelled() }}
         continue-on-error: true
         env:
           OUTPUT_DIR: work/catalog

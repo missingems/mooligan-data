@@ -7,9 +7,11 @@ let package = Package(
     name: "generators",
     platforms: [.macOS(.v14)],
     targets: [
+        .target(name: "GeneratorSupport"),
+        .testTarget(name: "GeneratorSupportTests", dependencies: ["GeneratorSupport"]),
         .executableTarget(name: "ImageHashIndexer"),
-        .executableTarget(name: "PullOdds"),
-        .executableTarget(name: "Prices"),
+        .executableTarget(name: "PullOdds", dependencies: ["GeneratorSupport"]),
+        .executableTarget(name: "Prices", dependencies: ["GeneratorSupport"]),
     ],
     swiftLanguageModes: [.v5]
 )

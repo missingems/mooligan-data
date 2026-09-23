@@ -34,6 +34,7 @@
 
 import Compression
 import Foundation
+import GeneratorSupport
 
 enum PricesConfig {
     static let env = ProcessInfo.processInfo.environment
@@ -347,7 +348,9 @@ func main() async throws {
         source = local
     } else {
         print("📥 Downloading AllPrices.json.xz")
-        let (download, _) = try await URLSession.shared.download(from: URL(string: "https://mtgjson.com/api/v5/AllPrices.json.xz")!)
+        let (download, _) = try await withRetries("MTGJSON AllPrices.json.xz") {
+            try await URLSession.shared.download(from: URL(string: "https://mtgjson.com/api/v5/AllPrices.json.xz")!)
+        }
         source = download
     }
 

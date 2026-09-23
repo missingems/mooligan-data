@@ -18,3 +18,14 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
       - run: python -m pytest -q
+
+  generators:
+    # macOS: the image indexer needs Vision. Builds every generator and tests the shared support.
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: generators
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift build
+      - run: swift test

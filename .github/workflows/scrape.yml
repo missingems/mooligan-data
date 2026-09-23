@@ -47,9 +47,19 @@ jobs:
       - name: Download the previous snapshots and state
         # sync succeeds on an empty bucket, so the first run starts from nothing.
         # state holds what each stored deck plays, which the card pages are built from.
+        # Three tries: a dropped connection mid-sync failed a whole run once, and sync picks up
+        # where it left off.
         run: |
-          aws s3 sync "$R2/snapshots" work/snapshots --endpoint-url "$R2_ENDPOINT"
-          aws s3 sync "$R2/state" work/state --endpoint-url "$R2_ENDPOINT"
+          sync() {
+            for attempt in 1 2 3; do
+              aws s3 sync "$1" "$2" --endpoint-url "$R2_ENDPOINT" && return 0
+              echo "::warning::sync of $1 failed (attempt $attempt of 3)"
+              sleep 15
+            done
+            return 1
+          }
+          sync "$R2/snapshots" work/snapshots
+          sync "$R2/state" work/state
 
       - name: Scrape
         id: scrape
