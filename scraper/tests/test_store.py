@@ -125,3 +125,33 @@ def test_published_decks_fill_in_the_card_pages(tmp_path):
     assert asked == ["5"]
     page = json.loads((tmp_path / "cards" / "eldrazi-temple.json").read_text())
     assert page["formats"]["modern"]["of_decks"] == 1
+
+
+def test_the_catalog_gives_pages_their_oracle_id_and_widens_the_commander_rotation(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", None, None, [
+        ArchetypeResult("5", day("2026-09-20"), "p", "1", "Modern League", "5-0"),
+    ]))
+    store.save_decks([Deck("5", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [], "modern", "1")])
+    catalog = {
+        "eldrazi-temple": {"name": "Eldrazi Temple", "oracle_id": "oracle-temple"},
+        "arcane-signet": {"name": "Arcane Signet", "oracle_id": "oracle-signet"},
+    }
+    asked = []
+
+    def fetch_edh(slugs):
+        asked.extend(slugs)
+        return {"arcane-signet": {"decks": 9, "of_decks": 10, "salt": None, "url": "u", "commanders": []}}
+
+    store.finish(fetch_edh=fetch_edh, edh_limit=5, catalog=catalog)
+
+    # A card no tournament deck plays is still offered to EDHREC, and gets a page of its own.
+    assert sorted(asked) == ["arcane-signet", "eldrazi-temple"]
+    temple = json.loads((tmp_path / "cards" / "eldrazi-temple.json").read_text())
+    assert temple["oracle_id"] == "oracle-temple" and "edh" not in temple
+    signet = json.loads((tmp_path / "cards" / "arcane-signet.json").read_text())
+    assert signet["oracle_id"] == "oracle-signet" and signet["formats"] == {} and signet["edh"]["decks"] == 9
+    index = json.loads((tmp_path / "cards" / "index.json").read_text())
+    assert index["cards"]["arcane-signet"] == {"name": "Arcane Signet", "formats": [], "edh": True}

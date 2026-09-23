@@ -28,7 +28,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `decks/{id}.json` holds one decklist per file, cached for good.
 - `cards/{slug}.json` says where a card is played, across every format, with links to decks, plus its Commander usage from EDHREC.
 
-Card details come from Scryfall's API, not from this pipeline.
+Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids.
 
 ## How a run works
 

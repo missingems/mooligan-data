@@ -18,7 +18,7 @@ Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `pre
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
-4. For "where is this card played", fetch `cards/{slug}.json`, where the slug is the card's name lower-cased with every run of non-alphanumeric characters replaced by `-` ("Fable of the Mirror-Breaker" becomes `fable-of-the-mirror-breaker`). A 404 means the card isn't played in any tracked format.
+4. For "where is this card played", fetch `cards/{slug}.json`. Build the slug from the card's Scryfall name: take the part before any `//`, lower-case it, and replace every run of non-alphanumeric characters with `-`. "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki" becomes `fable-of-the-mirror-breaker`. The slugs come from the same Scryfall names your app already has, so this matches without a lookup table, and each page repeats its `oracle_id` so you can check you have the right card. A 404 means no tournament deck plays it and EDHREC has nothing for it yet.
 5. Look up cards on Scryfall by `card_name` (`https://api.scryfall.com/cards/named?exact=…`), keeping to Scryfall's guidelines: a User-Agent header, at most about 10 requests a second, and caching.
 
 A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 1,500 new decklists per format a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet".
@@ -116,6 +116,7 @@ A format is missing from `formats` until its first scrape completes.
   "schema": 1,
   "slug": "lightning-bolt",
   "card_name": "Lightning Bolt",
+  "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
   "generated_at": "2026-09-23T02:00:11Z",
   "formats": {
     "modern": {
@@ -151,12 +152,13 @@ A card also carries an `edh` section when EDHREC has Commander data for it:
 }
 ```
 
-`decks` of `of_decks` is how many Commander decks that could play the card do play it; each commander row is the same for that commander's decks. `salt` is EDHREC's salt score, and is null when they have none. At most 12 commanders, most decks first. **This data is EDHREC's, used with their permission: show it with attribution and link back to `url`.** Each run refreshes a slice of the cards (800 by default), oldest check first, so a card's Commander numbers can be a few days old.
+`decks` of `of_decks` is how many Commander decks that could play the card do play it; each commander row is the same for that commander's decks. `salt` is EDHREC's salt score, and is null when they have none. At most 12 commanders, most decks first. **This data is EDHREC's, used with their permission: show it with attribution and link back to `url`.** Each run refreshes a slice of the cards (800 by default), longest unchecked first, working through every card Magic has (~35,000 from Scryfall's bulk file). One card comes round about every three weeks, so its Commander numbers can be that old, and a card may have no `edh` section until its first turn.
 
 - **`decks`** is how many decks of that format play the card; **`of_decks`** is how many decks the format has in the window. Their ratio is the card's play rate.
 - **`archetypes`** is most-played first, at most 12 per format. `archetype_id` is null for decks outside a tracked archetype, whose `name` is then "Other". `avg_copies` counts mainboard and sideboard together, so a card in both boards is one deck with the copies added up.
 - **`deck_ids`** links up to 5 decks, newest first, that an app can open directly.
-- A card is missing from `cards/` when no stored deck plays it. Stored decklists lag a little behind the newest events, so a brand-new card can take a run or two to appear.
+- **`oracle_id`** is Scryfall's oracle id for the card, or null for the few cards the catalog doesn't cover.
+- `formats` is empty for a card that only has Commander data. A card is missing from `cards/` when no stored deck plays it and EDHREC has nothing for it. Stored decklists lag a little behind the newest events, so a brand-new card can take a run or two to appear.
 
 ## `cards/index.json`
 

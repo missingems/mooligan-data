@@ -14,6 +14,7 @@ from pathlib import Path
 from .browser import open_browser
 from .edhrec import Edhrec
 from .published import fetch_published_decks
+from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
 from .store import SnapshotStore
 
@@ -52,10 +53,18 @@ def main() -> int:
         user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
         delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
     )
+    # Every card Magic has: oracle ids for the card pages, and the Commander rotation.
+    try:
+        catalog = card_catalog() if os.environ.get("SCRYFALL_CATALOG", "1") == "1" else {}
+    except Exception as error:  # noqa: BLE001 - the run still publishes without it
+        logging.exception("Could not read Scryfall's card catalog")
+        report.errors.append(f"scryfall catalog: {error}")
+        catalog = {}
     written = store.finish(
         fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
         fetch_edh=edhrec.cards,
         edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
+        catalog=catalog,
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
 

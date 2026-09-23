@@ -122,13 +122,15 @@ class SnapshotStore:
 
     # ---- Publishing
 
-    def finish(self, fetch_decks=None, fetch_edh=None, edh_limit: int = 0) -> List[str]:
+    def finish(self, fetch_decks=None, fetch_edh=None, edh_limit: int = 0, catalog: Optional[Dict[str, dict]] = None) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
         `fetch_decks(ids) -> {id: deck}` supplies decklists published by earlier
         runs, whose contents this run never saw but whose cards still count.
         `fetch_edh(slugs) -> {slug: entry}` reads Commander usage for at most
-        `edh_limit` cards, the longest unchecked first.
+        `edh_limit` cards, the longest unchecked first. `catalog` is every card
+        Magic has, keyed by slug, which gives pages their oracle id and widens
+        the Commander refresh past the cards tournaments play.
         """
         written = []
         formats = {}
@@ -197,7 +199,7 @@ class SnapshotStore:
             }
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
-        written += self._write_card_pages(card_decks, fetch_edh, edh_limit)
+        written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog or {})
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
@@ -206,10 +208,14 @@ class SnapshotStore:
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
 
-    def _write_card_pages(self, card_decks: Dict[str, FormatDecks], fetch_edh=None, edh_limit: int = 0) -> List[str]:
+    def _write_card_pages(
+        self, card_decks: Dict[str, FormatDecks], fetch_edh=None, edh_limit: int = 0, catalog: Dict[str, dict] = {}
+    ) -> List[str]:
         """Writes a page per card, skipping the ones whose numbers did not move."""
         pages, index = build_card_pages(card_decks, self._stamp())
-        self._attach_edh(pages, index, fetch_edh, edh_limit)
+        self._attach_edh(pages, index, fetch_edh, edh_limit, catalog)
+        for card_slug, page in pages.items():
+            page["oracle_id"] = catalog.get(card_slug, {}).get("oracle_id")
         written = []
         hashes = {}
         for card_slug, page in pages.items():
@@ -225,19 +231,30 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
-    def _attach_edh(self, pages: Dict[str, dict], index: dict, fetch_edh, limit: int) -> None:
-        """Refreshes a slice of the Commander data and puts what is known on each page."""
-        wanted = {card_slug: edhrec_slug(page["card_name"]) for card_slug, page in pages.items()}
+    def _attach_edh(self, pages: Dict[str, dict], index: dict, fetch_edh, limit: int, catalog: Dict[str, dict]) -> None:
+        """Refreshes a slice of the Commander data and puts what is known on each page.
+
+        Every card in the catalog takes its turn, so a card no tournament deck
+        plays still gets a page once EDHREC has something for it.
+        """
+        names = {card_slug: page["card_name"] for card_slug, page in pages.items()}
+        names.update({card_slug: card["name"] for card_slug, card in catalog.items() if card_slug not in names})
+        wanted = {card_slug: edhrec_slug(name) for card_slug, name in names.items()}
         if fetch_edh and limit > 0:
             due = due_slugs(self._edh, wanted, limit)
             entries = fetch_edh([slug for _, slug in due])
             for _, slug in due:
                 self._edh[slug] = {"checked_at": self._stamp(), "entry": entries.get(slug)}
-        for card_slug, page in pages.items():
+        for card_slug, name in names.items():
             entry = self._edh.get(wanted[card_slug], {}).get("entry")
-            if entry:
-                page["edh"] = entry
-                index["cards"][card_slug]["edh"] = True
+            if not entry:
+                continue
+            page = pages.setdefault(
+                card_slug,
+                {"schema": SCHEMA, "slug": card_slug, "card_name": name, "generated_at": self._stamp(), "formats": {}},
+            )
+            page["edh"] = entry
+            index["cards"].setdefault(card_slug, {"name": name, "formats": []})["edh"] = True
 
     def _snapshot(self, format: str) -> Dict[str, Any]:
         return self._snapshots.setdefault(format, {"meta": {}, "events": {}, "archetypes": {}})
