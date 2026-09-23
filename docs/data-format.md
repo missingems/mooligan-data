@@ -11,6 +11,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
+| `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
+| `locator/index.json` | The places published | `max-age=300` |
 | `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
@@ -200,3 +202,39 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
 - **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
 - Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
 - Each run refreshes 150 commanders, longest unchecked first, so a commander may be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
+
+## `locator/{place}.json`
+
+Upcoming Magic events near a configured place, read twice a day from Wizards' Store & Event Locator. Places are set in the workflow (`LOCATOR_PLACES`); `locator/index.json` lists them. Events are the next `days_ahead` days within `distance_miles`, soonest first.
+
+```json
+{
+  "schema": 1,
+  "place": "Singapore",
+  "slug": "singapore",
+  "distance_miles": 15,
+  "days_ahead": 14,
+  "generated_at": "2026-09-23T14:00:11Z",
+  "url": "https://locator.wizards.com/search?query=Singapore&searchType=magic-events&distance=15",
+  "events": [
+    {
+      "id": "11505843",
+      "title": "Unsleeved Morning Commander Party",
+      "format": "Commander",
+      "start": "2026-09-23T03:00:00Z",
+      "time_zone": "Asia/Singapore",
+      "rules_level": "CASUAL",
+      "has_top8": false,
+      "entry_fee": { "amount": 0, "currency": "USD" },
+      "capacity": 32,
+      "tags": ["commander"],
+      "is_online": false,
+      "latitude": 1.3045,
+      "longitude": 103.8597,
+      "store": { "id": "19413", "name": "Unsleeved by Lazy Potato", "address": "17A Jalan Klapa, Singapore, 199329", "website": "https://treasuresbylazypotato.com", "phone": "+65…", "premium": false, "url": "https://locator.wizards.com/store/19413" }
+    }
+  ]
+}
+```
+
+`start` is UTC; show it in `time_zone`. `rules_level` is `CASUAL`, `REGULAR`, `COMPETITIVE` or `PROFESSIONAL`, which is the locator's own casual-to-premier scale. `format` is the locator's name (Commander, Sealed Deck, Standard, Booster Draft, …) and can be null. `entry_fee.amount` of 0 means free, and the currency is whatever the store entered. For any place not published, deep-link to `url` with the user's own query instead.

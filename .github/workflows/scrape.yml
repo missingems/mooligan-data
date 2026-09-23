@@ -63,6 +63,10 @@ jobs:
           # EDHREC is read with their permission: a slice of the cards each run.
           EDHREC_CARDS_PER_RUN: "800"
           EDHREC_COMMANDERS_PER_RUN: "150"
+          # Upcoming events near these places, from Wizards' locator; semicolon-separated.
+          LOCATOR_PLACES: "Singapore"
+          LOCATOR_DISTANCE_MILES: "15"
+          LOCATOR_DAYS: "14"
           EDHREC_DELAY: "0.4"
         run: python -m mtgmeta work
 
@@ -80,6 +84,9 @@ jobs:
           fi
           if [ -d work/edh ]; then
             cp work/edh "$R2/edh" --recursive --cache-control "public, max-age=300"
+          fi
+          if [ -d work/locator ]; then
+            cp work/locator "$R2/locator" --recursive --cache-control "public, max-age=300"
           fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           cp work/state "$R2/state" --recursive --cache-control "no-cache"

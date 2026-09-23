@@ -56,6 +56,13 @@ export async function createApi() {
     async getCard({ slug }) {
       return getJson(`cards/${encodeURIComponent(slug)}.json`);
     },
+    /** Upcoming in-store events near a published place, from Wizards' locator. */
+    async getPlaces() {
+      return getJson("locator/index.json").catch((error) => (error.code === "not-found" ? { places: {} } : Promise.reject(error)));
+    },
+    async getPlaceEvents({ slug }) {
+      return getJson(`locator/${encodeURIComponent(slug)}.json`);
+    },
     /** A commander's card inclusions and average decklist, from EDHREC. */
     async getCommander({ slug }) {
       return getJson(`edh/commanders/${encodeURIComponent(slug)}.json`);

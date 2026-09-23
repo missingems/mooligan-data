@@ -6,13 +6,16 @@ to publish on the way out.
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .browser import open_browser
 from .edhrec import Edhrec
+from .locator import Locator, place_page
 from .published import fetch_published_decks
 from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
@@ -21,6 +24,38 @@ from .store import SnapshotStore
 
 def _list(name: str, default: str):
     return tuple(item.strip().lower() for item in os.environ.get(name, default).split(",") if item.strip())
+
+
+def publish_locator(directory: Path, report) -> list:
+    """Upcoming events near each configured place, from Wizards' locator, as locator/<place>.json."""
+    places = [place.strip() for place in os.environ.get("LOCATOR_PLACES", "").split(";") if place.strip()]
+    if not places:
+        return []
+    locator = Locator(
+        user_agent=os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
+        delay=float(os.environ.get("LOCATOR_DELAY", "1.0")),
+    )
+    distance = int(os.environ.get("LOCATOR_DISTANCE_MILES", "15"))
+    days = int(os.environ.get("LOCATOR_DAYS", "14"))
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    written, index = [], {}
+    for place in places:
+        try:
+            events = locator.events(place, distance, days)
+        except Exception as error:  # noqa: BLE001 - one place must not stop the others
+            logging.exception("Locator failed for %s", place)
+            report.errors.append(f"locator {place}: {error}")
+            continue
+        page = place_page(place, distance, days, events, stamp)
+        path = directory / "locator" / f"{page['slug']}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")))
+        index[page["slug"]] = {"place": place, "events": len(events), "distance_miles": distance, "days_ahead": days}
+        written.append(f"locator/{page['slug']}.json")
+        logging.info("Locator: %d events in the next %d days near %s", len(events), days, place)
+    if index:
+        (directory / "locator" / "index.json").write_text(json.dumps({"schema": 1, "generated_at": stamp, "places": index}, indent=2))
+    return written
 
 
 def main() -> int:
@@ -70,6 +105,7 @@ def main() -> int:
         commander_limit=int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150")),
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
+    written += publish_locator(args.directory, report)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",

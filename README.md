@@ -79,6 +79,10 @@ python3 -m http.server -d web 8765   # the site, reading data.mooligan.com
 
 A local run writes into `scraper/work/` and publishes nothing.
 
+## Wizards' event locator
+
+`LOCATOR_PLACES` (semicolon-separated) names places whose upcoming in-store events are read from Wizards' Store & Event Locator and published as `locator/<place>.json`: the next `LOCATOR_DAYS` days within `LOCATOR_DISTANCE_MILES`, one page of 100 events per request, `LOCATOR_DELAY` seconds apart. Note that Wizards' Terms of Use bar automated collection from their sites; this is run at Jun's own decision, kept to a few requests a run, and links every event back to the locator and the store.
+
 ## EDHREC
 
 Commander usage on each card page comes from EDHREC, used with their permission. A run refreshes `EDHREC_CARDS_PER_RUN` cards (800 by default) and `EDHREC_COMMANDERS_PER_RUN` commanders (150), at `EDHREC_DELAY` seconds apart, longest unchecked first, so the set comes round over days and the rate stays low. A commander page carries what that commander's decks play and its average decklist, so a reader never has to leave for the numbers. Their numbers move about once a day. Anything showing this data must credit EDHREC and link back to the `url` on each entry.

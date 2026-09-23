@@ -55,6 +55,7 @@ function parseRoute() {
   if (parts[0] === "deck" && parts[1]) return { name: "deck", deckId: parts[1] };
   if (parts[0] === "card" && parts[1]) return { name: "card", slug: parts[1] };
   if (parts[0] === "commander" && parts[1]) return { name: "commander", slug: parts[1] };
+  if (parts[0] === "near") return { name: "near", slug: parts[1] ?? null };
   const format = config.formats.includes(parts[0]) ? parts[0] : config.formats[0];
   if (parts[1] === "event" && parts[2]) return { name: "event", format, eventId: parts[2] };
   if (parts[1] === "archetype" && parts[2]) return { name: "archetype", format, archetypeId: parts[2] };
@@ -65,22 +66,24 @@ function parseRoute() {
 async function render() {
   const token = ++renderToken;
   const route = parseRoute();
-  renderFormatNav(route.format);
+  renderFormatNav(route.format, route.name === "near");
   view.replaceChildren(el("p", { class: "status" }, "Loading…"));
   try {
     const api = await apiReady;
     const content =
-      route.name === "commander"
-        ? await commanderView(api, route)
-        : route.name === "card"
-          ? await cardView(api, route)
-          : route.name === "deck"
-            ? await deckView(api, route)
-            : route.name === "event"
-              ? await eventView(api, route)
-              : route.name === "archetype"
-                ? await archetypeView(api, route)
-                : await metaView(api, route);
+      route.name === "near"
+        ? await nearView(api, route)
+        : route.name === "commander"
+          ? await commanderView(api, route)
+          : route.name === "card"
+            ? await cardView(api, route)
+            : route.name === "deck"
+              ? await deckView(api, route)
+              : route.name === "event"
+                ? await eventView(api, route)
+                : route.name === "archetype"
+                  ? await archetypeView(api, route)
+                  : await metaView(api, route);
     if (token === renderToken) view.replaceChildren(content);
   } catch (error) {
     if (token !== renderToken) return;
@@ -90,11 +93,12 @@ async function render() {
   }
 }
 
-function renderFormatNav(current) {
+function renderFormatNav(current, nearActive = false) {
   document.querySelector(".formats").replaceChildren(
     ...config.formats.map((format) =>
-      el("a", { href: `#/${format}`, "aria-current": format === current ? "page" : undefined }, formatName(format)),
+      el("a", { href: `#/${format}`, "aria-current": format === current && !nearActive ? "page" : undefined }, formatName(format)),
     ),
+    el("a", { href: "#/near", "aria-current": nearActive ? "page" : undefined }, "Near you"),
   );
 }
 
@@ -354,6 +358,67 @@ async function archetypeView(api, { format, archetypeId }) {
         el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`))),
     groups.length ? list : el("p", { class: "status" }, "No results in the history window."),
     more,
+  );
+}
+
+async function nearView(api, { slug }) {
+  const { places } = await api.getPlaces();
+  const slugs = Object.keys(places);
+  const chosen = slug && places[slug] ? slug : slugs[0];
+  if (!chosen) {
+    document.title = "Near you · MTG Metagame";
+    return el("p", { class: "status" }, "No places published yet.");
+  }
+  const page = await api.getPlaceEvents({ slug: chosen });
+  document.title = `Events near ${page.place} · MTG Metagame`;
+  const when = (event) =>
+    new Date(event.start).toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: event.time_zone ?? "UTC" });
+  const dayOf = (event) => new Date(event.start).toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric", timeZone: event.time_zone ?? "UTC" });
+  const fee = (event) => (!event.entry_fee || !event.entry_fee.amount ? "Free" : `${event.entry_fee.amount} ${event.entry_fee.currency}`);
+  const levelName = { CASUAL: "Casual", REGULAR: "Regular", COMPETITIVE: "Competitive", PROFESSIONAL: "Professional" };
+
+  let level = null;
+  const list = el("div", { class: "archetype-events" });
+  const chips = el("nav", { class: "segmented chips", "aria-label": "Rules level" });
+  const levels = Object.keys(levelName).filter((key) => page.events.some((event) => event.rules_level === key));
+  const render = () => {
+    const events = level ? page.events.filter((event) => event.rules_level === level) : page.events;
+    const days = new Map();
+    for (const event of events) (days.get(dayOf(event)) ?? days.set(dayOf(event), []).get(dayOf(event))).push(event);
+    list.replaceChildren(
+      ...[...days.entries()].map(([day, dayEvents]) =>
+        el("section", { class: "panel archetype-event" },
+          el("h2", {}, day, el("small", {}, `${dayEvents.length} ${dayEvents.length === 1 ? "event" : "events"}`)),
+          el("table", {}, el("tbody", {}, dayEvents.map((event) =>
+            el("tr", {},
+              el("td", { class: "finish" }, when(event).split(", ").pop()),
+              el("td", {},
+                el("div", {}, event.title),
+                el("div", { class: "sub" },
+                  [event.format, event.store.name, levelName[event.rules_level] ?? null, fee(event), event.capacity ? `${event.capacity} seats` : null]
+                    .filter(Boolean).join(" · "))),
+              el("td", {}, event.store.url ? el("a", { href: event.store.url, target: "_blank", rel: "noopener" }, "Store") : null))))))),
+    );
+    chips.replaceChildren(
+      el("a", { href: "#", "aria-current": level ? undefined : "true", onclick: (e) => { e.preventDefault(); level = null; render(); } }, "All"),
+      ...levels.map((key) => el("a", { href: "#", "aria-current": level === key ? "true" : undefined, onclick: (e) => { e.preventDefault(); level = key; render(); } }, levelName[key])),
+    );
+  };
+  render();
+
+  return el(
+    "div",
+    {},
+    el("div", { class: "page-head" },
+      el("div", {},
+        el("h1", {}, `Events near ${page.place}`),
+        el("p", {}, `${page.events.length} events in the next ${page.days_ahead} days within ${page.distance_miles} miles · updated ${formatDate(page.generated_at)}`)),
+      el("div", { class: "deck-actions" },
+        ...slugs.filter((other) => other !== chosen).map((other) => el("a", { class: "button", href: `#/near/${other}` }, places[other].place)),
+        el("a", { class: "button", href: page.url, target: "_blank", rel: "noopener" }, "Wizards locator"))),
+    levels.length > 1 ? chips : null,
+    list,
+    el("p", { class: "legal" }, "Event listings from Wizards of the Coast's Store & Event Locator."),
   );
 }
 
