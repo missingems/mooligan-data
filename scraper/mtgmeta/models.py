@@ -66,11 +66,13 @@ class ArchetypeHistory:
 
 @dataclass
 class EventSummary:
-    """An event as the tournaments list shows it, before its own page is read."""
+    """An event as a listing shows it, before its own page is read."""
 
     event_id: str
     event_name: str
     date: Optional[datetime]
+    # The search results give the decklist count; the tournaments list does not.
+    decklists: Optional[int] = None
 
 
 @dataclass
@@ -81,6 +83,10 @@ class Event:
     date: datetime
     results: List[EventResult]
     url: str
+    # Pro Tour, Regional Championship, RCQ and so on: see parsing.event_kind.
+    kind: str = "other"
+    # Where MTGGoldfish took the results from: "mtgo.com", "melee.gg", or None.
+    source: Optional[str] = None
 
 
 @dataclass

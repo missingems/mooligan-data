@@ -23,6 +23,25 @@ _DOWNLOAD_HREF = re.compile(r"^/deck/download/(\d+)")
 _DECK_LINE = re.compile(r"^\s*(\d+)\s*x?\s+(.+?)\s*$")
 
 
+# Event tiers by name, first match wins. Names are as MTGGoldfish imports them.
+EVENT_KINDS = (
+    ("pro_tour", re.compile(r"\bpro tour\b|\bworld championship\b|\bmagic world\b", re.I)),
+    ("regional_championship", re.compile(r"\bregional championship\b(?!.*\bqualifier\b)|\bRC\b(?!\s*(super\s+)?qualifier)", re.I)),
+    ("rcq", re.compile(r"\bRCQ\b|\bqualifier\b|\bclasificatorio\b|\bqualifikation\b", re.I)),
+    ("store_championship", re.compile(r"\bstore championship\b", re.I)),
+    ("mtgo_league", re.compile(r"\bleague\b", re.I)),
+    ("mtgo_challenge", re.compile(r"\bchallenge\b|\bshowcase\b|\bsuper qualifier\b|\bprelim", re.I)),
+)
+
+
+def event_kind(event_name: str) -> str:
+    """Which tier an event belongs to, from its name; "other" for local and unnamed events."""
+    for kind, pattern in EVENT_KINDS:
+        if pattern.search(event_name):
+            return kind
+    return "other"
+
+
 class ParseError(ValueError):
     """The page did not look the way the parser expects (layout change or a challenge page)."""
 
@@ -90,6 +109,28 @@ def parse_tournament_list(html: str) -> List[EventSummary]:
     return events
 
 
+def parse_tournament_search(html: str) -> Tuple[List[EventSummary], bool]:
+    """One page of /tournament_searches/create results, newest first, and whether a next page exists."""
+    soup = BeautifulSoup(html, "html.parser")
+    events: List[EventSummary] = []
+    for row in soup.select("table tr"):
+        cells = row.find_all("td", recursive=False)
+        link = cells[1].find("a", href=_TOURNAMENT_HREF) if len(cells) >= 2 else None
+        if link is None:
+            continue
+        count = cells[3].get_text(strip=True) if len(cells) >= 4 else ""
+        events.append(
+            EventSummary(
+                event_id=_TOURNAMENT_HREF.match(link["href"]).group(1),
+                event_name=link.get_text(strip=True),
+                date=parse_date(cells[0].get_text(strip=True)),
+                decklists=int(count) if count.isdigit() else None,
+            )
+        )
+    has_next = soup.select_one("ul.pagination li.next:not(.disabled) a[href]") is not None
+    return events, has_next
+
+
 def parse_tournament(html: str, event_id: str, format: str, summary: Optional[EventSummary] = None) -> Event:
     soup = BeautifulSoup(html, "html.parser")
     table = soup.select_one("table.table-tournament")
@@ -124,6 +165,8 @@ def parse_tournament(html: str, event_id: str, format: str, summary: Optional[Ev
         date=date,
         results=results,
         url=f"{BASE_URL}/tournament/{event_id}",
+        kind=event_kind(name),
+        source=_source(soup),
     )
 
 
@@ -211,6 +254,16 @@ def _event_name(soup: BeautifulSoup) -> Optional[str]:
         if _DATE.search(text):
             return text
     return None
+
+
+def _source(soup: BeautifulSoup) -> Optional[str]:
+    """The site MTGGoldfish imported the results from, as its host name."""
+    label = soup.find(string=re.compile(r"Source:"))
+    link = label.find_next("a", href=True) if label else None
+    if link is None:
+        return None
+    host = re.sub(r"^https?://(www\.)?", "", link["href"]).split("/")[0]
+    return host or None
 
 
 def _labelled_date(soup: BeautifulSoup) -> Optional[datetime]:

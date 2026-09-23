@@ -68,6 +68,8 @@ A format is missing from `formats` until its first scrape completes.
       "event_name": "Modern Challenge 32 2026-09-21",
       "date": "2026-09-21T00:00:00Z",
       "url": "https://www.mtggoldfish.com/tournament/66753",
+      "kind": "mtgo_challenge",
+      "source": "mtgo.com",
       "last_updated": "2026-09-22T14:40:12Z",
       "results": [
         { "finish": "1st Place", "player": "ashame", "archetype": "Eldrazi Ramp", "archetype_id": "modern-eldrazi-ramp", "deck_id": "7966104" }
@@ -90,7 +92,7 @@ A format is missing from `formats` until its first scrape completes.
 ```
 
 - **`meta`** is keyed by window: `30d`, `14d` and `7d`. A format whose page has no window selector (Duel Commander) publishes `30d` only. Archetypes are in MTGGoldfish's order, most played first. `deck_count` can be null, and `deck_id` (the archetype's featured list) is null when it couldn't be read.
-- **`events`** is newest first and covers the last 30 days. MTGGoldfish sometimes imports a Challenge twice, and names the copy "… (1)". A copy with the same standings as another event is left out, here and in `archetypes`. A result's `finish` is a placing such as `"1st Place"` for Challenges, or a record such as `"5-0"` for Leagues. `archetype_id` is null when the deck isn't in a tracked archetype's list; `archetype` is then the pilot's own deck title.
+- **`events`** is newest first and covers every event MTGGoldfish lists for the format in the last 30 days: it is read from their tournament search, not just the "latest 10". Each has a **`kind`**, worked out from its name: `pro_tour` (also Worlds), `regional_championship`, `rcq` (RCQs and any other qualifier), `store_championship`, `mtgo_challenge` (Challenges, Showcases, prelims), `mtgo_league`, or `other` for local and unnamed events. **`source`** is the site the results came from, usually `mtgo.com` or `melee.gg`, or null. MTGGoldfish sometimes imports a Challenge twice, and names the copy "… (1)". A copy with the same standings as another event is left out, here and in `archetypes`. A result's `finish` is a placing such as `"1st Place"` for Challenges, or a record such as `"5-0"` for Leagues. `archetype_id` is null when the deck isn't in a tracked archetype's list; `archetype` is then the pilot's own deck title.
 - **`archetypes`** is keyed by archetype id. `results` holds every deck of that archetype in the last 30 days, newest first. To group by event, group on `event_id`, which is null for the rare result without one; `event_name` is always set.
 
 ## `decks/{deck_id}.json`

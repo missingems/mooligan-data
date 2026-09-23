@@ -23,6 +23,11 @@ class FixtureBrowser:
             return (FIXTURES / "deck_7967072.txt").read_text()
         if path == "/tournaments/modern":
             return (FIXTURES / "tournaments_modern.html").read_text()
+        if path.startswith("/tournament_searches/create?"):
+            # Page 1 is a real results page that says a next page exists; page 2 is empty.
+            if path.endswith("&page=1"):
+                return (FIXTURES / "tournament_search_modern_p2.html").read_text()
+            return "<table><tr><th>Date</th><th>Name</th><th>Format</th><th>Decklists</th></tr></table>"
         if path.startswith("/tournament/") and path.rsplit("/", 1)[1] in self.event_pages:
             return (FIXTURES / "tournament_66753.html").read_text()
         if path == "/archetype/modern-izzet-prowess/decks?page=1":
@@ -219,3 +224,17 @@ def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):
     run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
     after = {p.name for p in (tmp_path / "cards").glob("*.json")}
     assert after == {"index.json"} and len(before) > 10
+
+
+def test_events_come_from_the_tournament_search_and_carry_their_kind(tmp_path):
+    browser = FixtureBrowser(event_pages=("66753", "66742", "66728", "66737", "66723", "66651", "66660"))
+
+    report = run(tmp_path, browser, config(max_new_events=6, max_new_decks=0))
+
+    # After the tournaments list's own: the newest unstored events first, whether the
+    # archetype lists mention them (66742, 66728, 66737, 66723) or only the search does.
+    assert report.events == ["66753", "66742", "66728", "66737", "66723", "66651", "66660"]
+    searched = [p for p in browser.requests if p.startswith("/tournament_searches/create?")]
+    assert len(searched) == 2 and "tournament_search%5Bformat%5D=modern" in searched[0]
+    events = {e["event_id"]: e for e in snapshot(tmp_path)["events"]}
+    assert (events["66753"]["kind"], events["66753"]["source"]) == ("mtgo_challenge", "mtgo.com")

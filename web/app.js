@@ -33,6 +33,17 @@ const formatDate = (iso) =>
 const timeframeLabel = (timeframe) => timeframe.replace(/^(\d+)d$/, (_, days) => `${days} days`);
 const count = (cards) => cards.reduce((sum, card) => sum + card.quantity, 0);
 
+const EVENT_KINDS = {
+  pro_tour: "Pro Tour",
+  regional_championship: "Regional Championship",
+  rcq: "RCQ",
+  store_championship: "Store Championship",
+  mtgo_challenge: "MTGO Challenge",
+  mtgo_league: "MTGO League",
+  other: "Other",
+};
+const kindName = (kind) => EVENT_KINDS[kind] ?? "Other";
+
 const cardSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 // ---- Routing: #/<format>[?t=<window>], #/<format>/event/<id>, #/<format>/archetype/<id>, #/deck/<id>, #/card/<slug>
@@ -164,28 +175,41 @@ function eventsPanel(format, events) {
     panel.append(el("p", { class: "status" }, "No events scraped yet."));
     return panel;
   }
+  // One chip per tier present, so the Pro Tours and RCQs stand out from the daily MTGO events.
+  const kinds = Object.keys(EVENT_KINDS).filter((kind) => events.some((event) => (event.kind ?? "other") === kind));
+  let selected = null;
   const list = el("ul", { class: "event-list" });
-  const renderRows = (limit) =>
+  const chips = el("nav", { class: "segmented chips", "aria-label": "Event tier" });
+  const shown = () => (selected ? events.filter((event) => (event.kind ?? "other") === selected) : events);
+  const renderRows = (limit) => {
+    const rows = shown();
     list.replaceChildren(
-      ...events.slice(0, limit).map((event) => {
+      ...rows.slice(0, limit).map((event) => {
         const winner = event.results[0];
         return el(
           "li",
           {},
           el("a", { href: `#/${format}/event/${encodeURIComponent(event.event_id)}` }, event.event_name),
           el("div", { class: "sub" },
-            [formatDate(event.date), `${event.results.length} decks`, winner ? `${winner.finish}: ${winner.archetype}` : null]
+            [formatDate(event.date), kindName(event.kind), `${event.results.length} decks`, winner ? `${winner.finish}: ${winner.archetype}` : null]
               .filter(Boolean).join(" · ")),
         );
       }),
     );
+    more.hidden = rows.length <= limit;
+    more.textContent = `Show all ${rows.length}`;
+  };
+  const more = el("button", { class: "show-all", type: "button", onclick: () => renderRows(Infinity) });
+  const renderChips = () =>
+    chips.replaceChildren(
+      el("a", { href: "#", "aria-current": selected ? undefined : "true", onclick: (e) => { e.preventDefault(); selected = null; renderChips(); renderRows(20); } }, "All"),
+      ...kinds.map((kind) =>
+        el("a", { href: "#", "aria-current": selected === kind ? "true" : undefined,
+          onclick: (e) => { e.preventDefault(); selected = kind; renderChips(); renderRows(20); } }, kindName(kind))),
+    );
+  renderChips();
   renderRows(20);
-  panel.append(list);
-  if (events.length > 20) {
-    const more = el("button", { class: "show-all", type: "button", onclick: () => { renderRows(Infinity); more.remove(); } },
-      `Show all ${events.length}`);
-    panel.append(more);
-  }
+  panel.append(kinds.length > 1 ? chips : null, list, more);
   return panel;
 }
 
@@ -201,7 +225,7 @@ async function eventView(api, { format, eventId }) {
     {},
     el("div", { class: "page-head" },
       el("div", {}, el("h1", {}, event.event_name),
-        el("p", {}, `${formatName(event.format)} · ${formatDate(event.date)} · `,
+        el("p", {}, `${formatName(event.format)} · ${formatDate(event.date)} · ${kindName(event.kind)}${event.source ? ` · from ${event.source}` : ""} · `,
           el("a", { href: event.url ?? `https://www.mtggoldfish.com/tournament/${eventId}`, target: "_blank", rel: "noopener" }, "MTGGoldfish"))),
       el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`)),
     el("section", { class: "panel" },

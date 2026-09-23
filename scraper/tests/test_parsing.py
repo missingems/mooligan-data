@@ -92,3 +92,32 @@ def test_archetype_page_names_its_featured_deck():
 def test_archetype_page_without_a_deck_is_an_error():
     with pytest.raises(ParseError):
         parse_archetype("<h1 class='title'>Izzet Prowess</h1>", "modern-izzet-prowess")
+
+
+def test_search_results_list_events_with_their_decklist_counts():
+    from mtgmeta.parsing import parse_tournament_search
+
+    events, has_next = parse_tournament_search(fixture("tournament_search_modern_p2.html"))
+    assert has_next and len(events) == 6
+    assert events[0].decklists is not None and events[0].date is not None
+    assert all(event.event_id.isdigit() for event in events)
+
+
+def test_event_kinds_come_from_the_name():
+    from mtgmeta.parsing import event_kind
+
+    assert event_kind("Pro Tour Marvel Super Heroes") == "pro_tour"
+    assert event_kind("Regional Championship - SCG CON Baltimore - Saturday") == "regional_championship"
+    assert event_kind("Modern RC Qualifier 2026-09-19") == "rcq"
+    assert event_kind("$uper $unday RCQ - Modern - SCG CON Baltimore") == "rcq"
+    assert event_kind("ACUP Clasificatorio Arcanis 2026") == "rcq"
+    assert event_kind("Modern Store Championship") == "store_championship"
+    assert event_kind("Modern Challenge 32 2026-09-21") == "mtgo_challenge"
+    assert event_kind("Pauper RC Super Qualifier 2026-09-20") == "rcq"
+    assert event_kind("Modern League 2026-09-22") == "mtgo_league"
+    assert event_kind("3ª Etapa CLM Modern") == "other"
+
+
+def test_the_tournament_page_gives_its_kind_and_source():
+    event = parse_tournament(fixture("tournament_66753.html"), "66753", "modern")
+    assert (event.kind, event.source) == ("mtgo_challenge", "mtgo.com")

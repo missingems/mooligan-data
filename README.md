@@ -38,7 +38,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
    - reads the metagame page (30-day window);
    - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so an archetype stops at the first page with nothing new;
-   - reads the 10 latest events plus up to `MAX_NEW_EVENTS` older ones that the archetype lists mention;
+   - reads every event of the window from MTGGoldfish's tournament search (20 a page, `MAX_SEARCH_PAGES` at most), plus the archetype lists' mentions for multi-format events, and reads up to `MAX_NEW_EVENTS` not yet stored, newest first. Each event is classed by name (Pro Tour, Regional Championship, RCQ, Store Championship, MTGO Challenge or League, other);
    - downloads new decklists, up to `MAX_NEW_DECKS` a run. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
 
    Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. A refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
@@ -53,7 +53,8 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
 | `META_DAYS` | `30,14,7` in the workflow | Metagame windows to publish |
 | `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
-| `MAX_NEW_EVENTS` | `60` | Older events per format read per run |
+| `MAX_NEW_EVENTS` | `150` | Events not yet stored read per format per run |
+| `MAX_SEARCH_PAGES` | `25` | Tournament-search pages read per format, 20 events each |
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |
 | `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results are kept |
 | `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |

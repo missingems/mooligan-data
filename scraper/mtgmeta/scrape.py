@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
+from urllib.parse import urlencode
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Protocol, Sequence, Tuple, Union
 
@@ -24,6 +25,7 @@ from .parsing import (
     parse_meta,
     parse_tournament,
     parse_tournament_list,
+    parse_tournament_search,
 )
 from .store import Store
 
@@ -44,8 +46,11 @@ class ScrapeConfig:
     meta_days: Sequence[str] = ("30",)
     # The tournaments list only ever shows the latest 10.
     events_per_format: int = 10
-    # Older events found through archetype deck lists, read per format per run.
-    max_new_events: int = 60
+    # Pages of the tournament search read per format, 20 events each, newest
+    # first, until the window is covered. Modern's 30 days is about 7 pages.
+    max_search_pages: int = 25
+    # Events not yet stored (from the search or archetype lists) read per format per run.
+    max_new_events: int = 150
     # Per format. Decks never change once published, so each run only downloads
     # new ones; the cap keeps a first run (or a backlog) from hammering the site.
     max_new_decks: int = 400
@@ -86,7 +91,7 @@ def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[d
         canonical: Dict[str, Tuple[str, str]] = {
             result.deck_id: (history.name, history.archetype_id) for history in histories for result in history.results
         }
-        events = _read_events(browser, store, format, histories, config, report)
+        events = _read_events(browser, store, format, histories, config, report, cutoff, now or datetime.now(timezone.utc))
         for event in events:
             for result in event.results:
                 if result.deck_id in canonical:
@@ -219,7 +224,14 @@ def _new_archetype_results(
 
 
 def _read_events(
-    browser: Browser, store: Store, format: str, histories: List[ArchetypeHistory], config: ScrapeConfig, report: RunReport
+    browser: Browser,
+    store: Store,
+    format: str,
+    histories: List[ArchetypeHistory],
+    config: ScrapeConfig,
+    report: RunReport,
+    cutoff: Optional[datetime] = None,
+    now: Optional[datetime] = None,
 ) -> List[Event]:
     try:
         recent = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
@@ -227,17 +239,29 @@ def _read_events(
         _fail(report, f"tournaments {format}", error)
         recent = []
 
-    # Events the archetype lists mention but that are not stored yet, newest first.
     ignored = store.ignored_event_ids()
     recent = [summary for summary in recent if summary.event_id not in ignored]
     seen = {summary.event_id for summary in recent} | ignored
-    mentioned: Dict[str, EventSummary] = {}
+
+    # Every event of the format in the window, from the tournament search: the
+    # only listing that goes past the latest ten, and the one that has the Pro
+    # Tours, Regional Championships and RCQs.
+    candidates: Dict[str, EventSummary] = {}
+    if cutoff and now:
+        for summary in _search_events(browser, format, cutoff, now, config.max_search_pages, report):
+            if summary.event_id not in seen:
+                candidates.setdefault(summary.event_id, summary)
+    # Plus the events the archetype lists mention, which cover multi-format events.
     for history in histories:
         for result in history.results:
-            if result.event_id and result.event_id not in seen and result.event_id not in mentioned:
-                mentioned[result.event_id] = EventSummary(result.event_id, result.event_name, result.date)
-    stored = store.existing_event_ids(mentioned) if mentioned else set()
-    older = sorted((s for s in mentioned.values() if s.event_id not in stored), key=lambda s: s.date, reverse=True)
+            if result.event_id and result.event_id not in seen:
+                candidates.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
+    stored = store.existing_event_ids(candidates) if candidates else set()
+    older = sorted(
+        (s for s in candidates.values() if s.event_id not in stored),
+        key=lambda s: s.date or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True,
+    )
     if len(older) > config.max_new_events:
         log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
 
@@ -253,6 +277,33 @@ def _read_events(
         except Exception as error:  # noqa: BLE001
             _fail(report, f"event {summary.event_id}", error)
     return events
+
+
+def _search_events(
+    browser: Browser, format: str, cutoff: datetime, now: datetime, max_pages: int, report: RunReport
+) -> List[EventSummary]:
+    """Walks the tournament search for the format, newest first, until it reaches the cutoff."""
+    query = urlencode(
+        {
+            "tournament_search[name]": "",
+            "tournament_search[format]": format,
+            "tournament_search[date_range]": f"{cutoff:%m/%d/%Y} - {now:%m/%d/%Y}",
+            "commit": "Search",
+        }
+    )
+    found: List[EventSummary] = []
+    for page in range(1, max_pages + 1):
+        path = f"/tournament_searches/create?{query}&page={page}"
+        try:
+            events, has_next = parse_tournament_search(_body(browser.fetch_pages([path])[path]))
+        except Exception as error:  # noqa: BLE001
+            _fail(report, f"tournament search {format} page {page}", error)
+            break
+        found.extend(event for event in events if event.date is None or event.date >= cutoff)
+        if not has_next or not events or (events[-1].date and events[-1].date < cutoff):
+            break
+    log.info("Tournament search: %d %s events in the window", len(found), format)
+    return found
 
 
 def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[Event]) -> List[_WantedDeck]:
