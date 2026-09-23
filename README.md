@@ -16,6 +16,7 @@ GitHub Actions (02:00, 14:00 UTC)
 | `scraper/` | Python SeleniumBase (UC mode) scraper, and the snapshot store it publishes |
 | `web/` | Static site: plain HTML and ES modules, no build step |
 | `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
+| [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 

@@ -109,12 +109,12 @@ A format is missing from `formats` until its first scrape completes.
   "event_id": "66753",
   "archetype_id": "modern-eldrazi-ramp",
   "last_updated": "2026-09-22T14:40:12Z",
-  "mainboard": [{ "quantity": 4, "card_name": "Ancient Stirrings" }],
-  "sideboard": [{ "quantity": 2, "card_name": "Nature's Claim" }]
+  "mainboard": [{ "quantity": 4, "card_name": "Ancient Stirrings", "oracle_id": "0f9c3b6b-…" }],
+  "sideboard": [{ "quantity": 2, "card_name": "Nature's Claim", "oracle_id": "…" }]
 }
 ```
 
-`event_id` is null for an archetype's featured list. `archetype_id` points at the entry in the snapshot's `archetypes`, so a deck screen can link to everything else that archetype did. It is null for decks stored before 23 September 2026, and for decks outside a tracked archetype; those can still be found by searching the snapshot's `archetypes` for the `deck_id`. `card_name` is exactly as MTGGoldfish writes it. For a double-faced card that's the front face ("Fable of the Mirror-Breaker"), which Scryfall's `exact` lookup accepts.
+Each entry's `oracle_id` is Scryfall's, matched from the name; it is null on decks published before 2026-09-23 and for names the catalog doesn't know, and `cards/index.json` (which carries `oracle_id` per card) resolves those by slug. `event_id` is null for an archetype's featured list. `archetype_id` points at the entry in the snapshot's `archetypes`, so a deck screen can link to everything else that archetype did. It is null for decks stored before 23 September 2026, and for decks outside a tracked archetype; those can still be found by searching the snapshot's `archetypes` for the `deck_id`. `card_name` is exactly as MTGGoldfish writes it. For a double-faced card that's the front face ("Fable of the Mirror-Breaker"), which Scryfall's `exact` lookup accepts.
 
 ## `cards/{slug}.json`
 
