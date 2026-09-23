@@ -1,0 +1,108 @@
+name: Build card catalog
+
+# The card catalog: image feature prints (Vision, so macOS), pull odds and the
+# price catalog, published under catalog/ on R2. Moved here from the
+# MTGImageHash repository, which keeps serving GitHub Pages until the app has
+# switched to data.mooligan.com/catalog.
+on:
+  schedule:
+    - cron: "17 10,22 * * *"
+  workflow_dispatch:
+    inputs:
+      full_rebuild:
+        description: Recompute every image vector and start a new master version
+        type: boolean
+        default: false
+      seed_from_pages:
+        description: First run only - copy the current GitHub Pages output into R2 before building
+        type: boolean
+        default: false
+
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: auto
+  R2: s3://mtg-meta-data/catalog
+  R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+  PAGES: https://missingems.github.io/MTGImageHash
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 340
+    defaults:
+      run:
+        working-directory: generators
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Seed R2 from GitHub Pages
+        if: inputs.seed_from_pages
+        # Everything the indexer reads back as previous state, plus the odds and
+        # prices trees, so the first R2 run is incremental rather than a rebuild.
+        run: |
+          python3 - <<'EOF'
+          import json, os, urllib.request
+          base = os.environ["PAGES"]
+          def get(path):
+              with urllib.request.urlopen(f"{base}/{path}", timeout=120) as r:
+                  return r.read()
+          def save(path):
+              target = os.path.join("seed", path)
+              os.makedirs(os.path.dirname(target), exist_ok=True)
+              open(target, "wb").write(get(path)); print("seeded", path)
+          manifest = json.loads(get("manifest.json")); save("manifest.json")
+          index = json.loads(get("index.json")); save("index.json"); save("projection.bin"); save("visualizer_data.json")
+          for part in index["parts"]: save(part)
+          for i in range(manifest["masterChunks"]): save(f"MTG_Hashes_Master_{i}.lzfse")
+          for n in range(1, manifest["latestPatch"] + 1): save(f"patch_{n}.bin"); save(f"patch_{n}.lzfse")
+          prices = json.loads(get("prices-meta.json")); save("prices-meta.json"); save(prices["full"]["path"])
+          for day in prices["days"]: save(day["path"])
+          odds = json.loads(get("pull-odds.json")); save("pull-odds.json"); save("pull-odds-meta.json")
+          for code in sorted({p["id"].split("/")[0].upper() for p in odds["products"]}):
+              try: save(f"boosters/{code}.json")
+              except Exception as e: print("no booster file for", code, e)
+          EOF
+          aws s3 sync seed "$R2" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          echo "seeded $(find seed -type f | wc -l) files"
+
+      - name: Build
+        run: swift build -c release
+
+      - name: Image feature prints
+        env:
+          OUTPUT_DIR: work/catalog
+          STATE_BASE_URL: https://data.mooligan.com/catalog
+          FULL_REBUILD: ${{ inputs.full_rebuild && '1' || '0' }}
+        run: |
+          .build/release/ImageHashIndexer
+          cp visualizer.html work/catalog/index.html
+
+      - name: Pull odds
+        env:
+          OUTPUT_DIR: work/catalog
+        run: .build/release/PullOdds
+
+      - name: Price catalog
+        continue-on-error: true
+        env:
+          OUTPUT_DIR: work/catalog
+        run: .build/release/Prices
+
+      - name: Upload to R2
+        if: always() && hashFiles('generators/work/catalog/index.json') != ''
+        # Sizes match for unchanged master chunks, so only what changed is sent;
+        # metas go last so nothing points at a file not yet uploaded.
+        run: |
+          aws s3 sync work/catalog "$R2" --endpoint-url "$R2_ENDPOINT" --size-only --only-show-errors \
+            --exclude "index.json" --exclude "manifest.json" --exclude "prices-meta.json" --exclude "pull-odds-meta.json" \
+            --cache-control "public, max-age=3600"
+          for meta in index.json manifest.json prices-meta.json pull-odds-meta.json; do
+            [ -f "work/catalog/$meta" ] && aws s3 cp "work/catalog/$meta" "$R2/$meta" --endpoint-url "$R2_ENDPOINT" \
+              --content-type application/json --cache-control "public, max-age=300" --only-show-errors
+          done
+          cat work/catalog/manifest.json

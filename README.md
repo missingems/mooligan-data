@@ -1,4 +1,4 @@
-# MTG Meta Pipeline
+# mooligan-data
 
 Scrapes MTGGoldfish's metagame, tournament results and decklists twice a day, and publishes them as static JSON at **`https://data.mooligan.com`**, a Cloudflare R2 bucket. A mobile app and the website read the same files. There's no server or database.
 
@@ -14,10 +14,12 @@ GitHub Actions (02:00, 14:00 UTC)
 | Path | What it holds |
 | --- | --- |
 | `scraper/` | Python SeleniumBase (UC mode) scraper, and the snapshot store it publishes |
+| `generators/` | Swift generators for the card catalog: image feature prints, pull odds, price catalog (from the MTGImageHash repository; see `generators/README.md`) |
 | `web/` | Static site: plain HTML and ES modules, no build step |
 | `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
+| `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
 ## Published data
@@ -67,7 +69,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 
 - **R2:** the bucket is `mtg-meta-data`, with custom domain `data.mooligan.com` and CORS allowing `https://missingems.github.io` and `http://localhost:8765`.
 - **GitHub secrets:** `R2_ACCOUNT_ID`, and `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` from an account API token with Object Read & Write on that bucket only.
-- **Website:** GitHub Pages, deployed from `web/` on each push to `main`. It's at https://missingems.github.io/mtg-meta-pipeline/.
+- **Website:** GitHub Pages, deployed from `web/` on each push to `main`. It's at https://missingems.github.io/mooligan-data/.
 
 ## Running locally
 
@@ -79,6 +81,10 @@ python3 -m http.server -d web 8765   # the site, reading data.mooligan.com
 ```
 
 A local run writes into `scraper/work/` and publishes nothing.
+
+## Card catalog
+
+`generators/` holds the three Swift programs that used to live in the MTGImageHash repository, unchanged: `ImageHashIndexer` (Vision feature prints of every card face, incremental patches over a master), `PullOdds` (MTGJSON booster odds) and `Prices` (the MTGJSON price catalog). `.github/workflows/catalog.yml` runs them at 10:17 and 22:17 UTC on a macOS runner and publishes to `catalog/` on R2, so the app's base URL becomes `https://data.mooligan.com/catalog`. The file layout is documented in `generators/README.md`. Run the workflow once with `seed_from_pages` to copy the current GitHub Pages output into R2 first, so the indexer's first run is incremental. The MTGImageHash workflow keeps GitHub Pages current until the app has switched.
 
 ## Premier play calendar
 
