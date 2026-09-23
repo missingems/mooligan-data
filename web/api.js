@@ -56,6 +56,10 @@ export async function createApi() {
     async getCard({ slug }) {
       return getJson(`cards/${encodeURIComponent(slug)}.json`);
     },
+    /** A commander's card inclusions and average decklist, from EDHREC. */
+    async getCommander({ slug }) {
+      return getJson(`edh/commanders/${encodeURIComponent(slug)}.json`);
+    },
     async getCardDetails({ card_name }) {
       const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(card_name)}`;
       const response = await fetch(url);

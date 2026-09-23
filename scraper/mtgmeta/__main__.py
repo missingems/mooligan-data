@@ -65,6 +65,8 @@ def main() -> int:
         fetch_edh=edhrec.cards,
         edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
         catalog=catalog,
+        fetch_commanders=edhrec.commanders,
+        commander_limit=int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150")),
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
 

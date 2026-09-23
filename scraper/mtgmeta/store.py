@@ -57,12 +57,15 @@ class SnapshotStore:
         missing_path = root / "state" / "missing-deck-ids.json"
         self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
         # What each stored deck plays, so card pages can be built without downloading every deck again.
+        self._wanted_commanders: Dict[str, str] = {}
         self._deck_cards: Dict[str, Dict[str, dict]] = {}
         for format in formats:
             cards_path = root / "state" / "deck-cards" / f"{format}.json"
             self._deck_cards[format] = json.loads(cards_path.read_text()) if cards_path.exists() else {}
         edh_path = root / "state" / "edhrec.json"
         self._edh: Dict[str, dict] = json.loads(edh_path.read_text()) if edh_path.exists() else {}
+        commanders_path = root / "state" / "edhrec-commanders.json"
+        self._commanders: Dict[str, dict] = json.loads(commanders_path.read_text()) if commanders_path.exists() else {}
         hashes_path = root / "state" / "card-hashes.json"
         self._card_hashes: Dict[str, str] = json.loads(hashes_path.read_text()) if hashes_path.exists() else {}
 
@@ -122,7 +125,15 @@ class SnapshotStore:
 
     # ---- Publishing
 
-    def finish(self, fetch_decks=None, fetch_edh=None, edh_limit: int = 0, catalog: Optional[Dict[str, dict]] = None) -> List[str]:
+    def finish(
+        self,
+        fetch_decks=None,
+        fetch_edh=None,
+        edh_limit: int = 0,
+        catalog: Optional[Dict[str, dict]] = None,
+        fetch_commanders=None,
+        commander_limit: int = 0,
+    ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
         `fetch_decks(ids) -> {id: deck}` supplies decklists published by earlier
@@ -200,6 +211,7 @@ class SnapshotStore:
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog or {})
+        written += self._write_commander_pages(fetch_commanders, commander_limit)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
@@ -231,6 +243,30 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
+    def _write_commander_pages(self, fetch_commanders, limit: int) -> List[str]:
+        """Refreshes a slice of the commanders a card page names, and publishes their pages."""
+        wanted = {slug: name for slug, name in self._wanted_commanders.items()}
+        if fetch_commanders and limit > 0 and wanted:
+            due = due_slugs({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, limit)
+            entries = fetch_commanders([slug for _, slug in due])
+            for slug, entry in entries.items():
+                if not entry:
+                    continue
+                self._write(f"edh/commanders/{slug}.json", _json_bytes({**entry, "schema": SCHEMA, "generated_at": self._stamp()}))
+                self._commanders[slug] = {"checked_at": self._stamp(), "name": entry["name"], "decks": entry["decks"]}
+        self._write("state/edhrec-commanders.json", json.dumps(self._commanders, sort_keys=True, separators=(",", ":")).encode())
+        if not self._commanders:
+            return []
+        index = {
+            "schema": SCHEMA,
+            "generated_at": self._stamp(),
+            "commanders": {
+                slug: {"name": state["name"], "decks": state["decks"]} for slug, state in sorted(self._commanders.items())
+            },
+        }
+        self._write("edh/commanders/index.json", _json_bytes(index))
+        return ["edh/commanders/index.json"]
+
     def _attach_edh(self, pages: Dict[str, dict], index: dict, fetch_edh, limit: int, catalog: Dict[str, dict]) -> None:
         """Refreshes a slice of the Commander data and puts what is known on each page.
 
@@ -245,10 +281,13 @@ class SnapshotStore:
             entries = fetch_edh([slug for _, slug in due])
             for _, slug in due:
                 self._edh[slug] = {"checked_at": self._stamp(), "entry": entries.get(slug)}
+        self._wanted_commanders: Dict[str, str] = {}
         for card_slug, name in names.items():
             entry = self._edh.get(wanted[card_slug], {}).get("entry")
             if not entry:
                 continue
+            for commander in entry.get("commanders", []):
+                self._wanted_commanders.setdefault(commander["slug"], commander["name"])
             page = pages.setdefault(
                 card_slug,
                 {"schema": SCHEMA, "slug": card_slug, "card_name": name, "generated_at": self._stamp(), "formats": {}},
@@ -266,6 +305,10 @@ class SnapshotStore:
 
     def _stamp(self) -> str:
         return _iso(self._now)
+
+
+def _json_bytes(document: dict) -> bytes:
+    return json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
 
 
 def _duplicate_event_ids(events: Iterable[Dict[str, Any]]) -> Set[str]:

@@ -62,6 +62,7 @@ jobs:
           CONCURRENCY: "6"
           # EDHREC is read with their permission: a slice of the cards each run.
           EDHREC_CARDS_PER_RUN: "800"
+          EDHREC_COMMANDERS_PER_RUN: "150"
           EDHREC_DELAY: "0.4"
         run: python -m mtgmeta work
 
@@ -76,6 +77,9 @@ jobs:
           fi
           if [ -d work/cards ]; then
             cp work/cards "$R2/cards" --recursive --cache-control "public, max-age=300"
+          fi
+          if [ -d work/edh ]; then
+            cp work/edh "$R2/edh" --recursive --cache-control "public, max-age=300"
           fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           cp work/state "$R2/state" --recursive --cache-control "no-cache"

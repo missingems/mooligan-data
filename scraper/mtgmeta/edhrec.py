@@ -18,7 +18,10 @@ from typing import Dict, List, Optional, Sequence, Tuple
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://json.edhrec.com/pages/cards"
+COMMANDER_URL = "https://json.edhrec.com/pages/commanders"
+AVERAGE_DECK_URL = "https://json.edhrec.com/pages/average-decks"
 CARD_URL = "https://edhrec.com/cards"
+SITE_COMMANDER_URL = "https://edhrec.com/commanders"
 # Commanders kept per card, most decks first.
 MAX_COMMANDERS = 12
 
@@ -39,20 +42,39 @@ class Edhrec:
 
     def card(self, slug: str) -> Optional[dict]:
         """What Commander decks do with this card, or None when EDHREC has no page for it."""
-        request = urllib.request.Request(f"{BASE_URL}/{slug}.json", headers={"User-Agent": self._user_agent})
+        body = self._json(f"{BASE_URL}/{slug}.json")
+        return _entry(body, slug) if body else None
+
+    def commander(self, slug: str) -> Optional[dict]:
+        """A commander's card inclusions and its average decklist."""
+        body = self._json(f"{COMMANDER_URL}/{slug}.json")
+        if not body:
+            return None
+        average = self._json(f"{AVERAGE_DECK_URL}/{slug}.json")
+        return _commander_entry(body, average, slug)
+
+    def commanders(self, slugs: Sequence[str]) -> Dict[str, Optional[dict]]:
+        entries: Dict[str, Optional[dict]] = {}
+        for index, slug in enumerate(slugs):
+            if index:
+                time.sleep(self._delay)
+            entries[slug] = self.commander(slug)
+        log.info("EDHREC: read %d commanders, %d with data", len(entries), sum(1 for e in entries.values() if e))
+        return entries
+
+    def _json(self, url: str) -> Optional[dict]:
+        request = urllib.request.Request(url, headers={"User-Agent": self._user_agent})
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
-                body = json.loads(response.read())
+                return json.loads(response.read())
         except urllib.error.HTTPError as error:
-            # A card they have no page for answers 403 from their bucket.
-            if error.code in (403, 404):
-                return None
-            log.warning("EDHREC %s: %s", slug, error)
+            # Something they have no page for answers 403 from their bucket.
+            if error.code not in (403, 404):
+                log.warning("EDHREC %s: %s", url, error)
             return None
         except (urllib.error.URLError, OSError, ValueError) as error:
-            log.warning("EDHREC %s: %s", slug, error)
+            log.warning("EDHREC %s: %s", url, error)
             return None
-        return _entry(body, slug)
 
     def cards(self, slugs: Sequence[str]) -> Dict[str, Optional[dict]]:
         """Reads each card in turn, pausing between requests to keep the rate low."""
@@ -94,6 +116,50 @@ def _entry(body: dict, slug: str) -> Optional[dict]:
         "url": f"{CARD_URL}/{slug}",
         "commanders": commanders,
     }
+
+
+def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional[dict]:
+    container = body.get("container", {}).get("json_dict", {})
+    card = container.get("card") or {}
+    decks = card.get("num_decks")
+    if not isinstance(decks, int) or decks <= 0:
+        return None
+    sections = []
+    for cardlist in container.get("cardlists", []):
+        cards = [
+            {
+                "name": view.get("name", ""),
+                "decks": view["num_decks"],
+                "of_decks": view.get("potential_decks") or decks,
+                "synergy": round(view["synergy"], 2) if isinstance(view.get("synergy"), (int, float)) else None,
+            }
+            for view in cardlist.get("cardviews", [])
+            if isinstance(view.get("num_decks"), int) and view.get("name")
+        ]
+        if cards:
+            sections.append({"tag": cardlist.get("tag", ""), "header": cardlist.get("header", ""), "cards": cards})
+    return {
+        "name": card.get("name", ""),
+        "slug": slug,
+        "decks": decks,
+        "salt": round(card["salt"], 2) if isinstance(card.get("salt"), (int, float)) else None,
+        "url": f"{SITE_COMMANDER_URL}/{slug}",
+        "sections": sections,
+        "average_deck": _average_deck(average),
+    }
+
+
+def _average_deck(average: Optional[dict]) -> List[dict]:
+    """The typical list EDHREC builds for the commander, by card type."""
+    if not average:
+        return []
+    container = average.get("container", {}).get("json_dict", {})
+    sections = []
+    for cardlist in container.get("cardlists", []):
+        names = [view["name"] for view in cardlist.get("cardviews", []) if view.get("name")]
+        if names:
+            sections.append({"header": cardlist.get("header", ""), "cards": names})
+    return sections
 
 
 def due_slugs(known: Dict[str, dict], wanted: Dict[str, str], limit: int) -> List[Tuple[str, str]]:

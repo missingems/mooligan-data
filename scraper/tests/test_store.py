@@ -155,3 +155,35 @@ def test_the_catalog_gives_pages_their_oracle_id_and_widens_the_commander_rotati
     assert signet["oracle_id"] == "oracle-signet" and signet["formats"] == {} and signet["edh"]["decks"] == 9
     index = json.loads((tmp_path / "cards" / "index.json").read_text())
     assert index["cards"]["arcane-signet"] == {"name": "Arcane Signet", "formats": [], "edh": True}
+
+
+def test_commander_pages_are_published_for_the_commanders_cards_name(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", None, None, [
+        ArchetypeResult("5", day("2026-09-20"), "p", "1", "Modern League", "5-0"),
+    ]))
+    store.save_decks([Deck("5", "p", "Eldrazi", [DeckCard(4, "Sol Ring")], [], "modern", "1")])
+
+    def fetch_edh(slugs):
+        return {"sol-ring": {"decks": 8, "of_decks": 10, "salt": 1.5, "url": "u", "commanders": [
+            {"name": "Vivi Ornitier", "slug": "vivi-ornitier", "decks": 5, "of_decks": 7},
+        ]}}
+
+    def fetch_commanders(slugs):
+        assert slugs == ["vivi-ornitier"]
+        return {"vivi-ornitier": {
+            "name": "Vivi Ornitier", "slug": "vivi-ornitier", "decks": 40779, "salt": 2.81, "url": "u",
+            "sections": [{"tag": "topcards", "header": "Top Cards", "cards": [
+                {"name": "Brainstorm", "decks": 28385, "of_decks": 40779, "synergy": 0.28}]}],
+            "average_deck": [{"header": "Lands", "cards": ["Island"]}],
+        }}
+
+    store.finish(fetch_edh=fetch_edh, edh_limit=5, fetch_commanders=fetch_commanders, commander_limit=5)
+
+    page = json.loads((tmp_path / "edh" / "commanders" / "vivi-ornitier.json").read_text())
+    assert page["decks"] == 40779 and page["sections"][0]["cards"][0]["name"] == "Brainstorm"
+    assert page["average_deck"] == [{"header": "Lands", "cards": ["Island"]}]
+    index = json.loads((tmp_path / "edh" / "commanders" / "index.json").read_text())
+    assert index["commanders"]["vivi-ornitier"] == {"name": "Vivi Ornitier", "decks": 40779}

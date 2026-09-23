@@ -9,6 +9,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `decks/{deck_id}.json` | One decklist. Never changes once published | `max-age=31536000, immutable` |
 | `cards/{slug}.json` | Where one card is played, across every format | `max-age=300` |
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
+| `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
+| `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
@@ -167,3 +169,32 @@ A card also carries an `edh` section when EDHREC has Commander data for it:
 ```
 
 Each entry also carries `"edh": true` when that card has Commander data. Useful for showing "played in Modern and Legacy" without fetching each card page, and for knowing whether a card page exists at all.
+
+## `edh/commanders/{slug}.json`
+
+The `slug` is the one on each card page's `edh.commanders[].slug`, so a card leads to the commanders playing it, and each of those to what that commander's decks play.
+
+```json
+{
+  "schema": 1,
+  "slug": "vivi-ornitier",
+  "name": "Vivi Ornitier",
+  "decks": 40779,
+  "salt": 2.81,
+  "url": "https://edhrec.com/commanders/vivi-ornitier",
+  "generated_at": "2026-09-23T02:00:11Z",
+  "sections": [
+    {
+      "tag": "topcards",
+      "header": "Top Cards",
+      "cards": [{ "name": "Brainstorm", "decks": 28385, "of_decks": 40779, "synergy": 0.28 }]
+    }
+  ],
+  "average_deck": [{ "header": "Lands", "cards": ["Island"] }]
+}
+```
+
+- **`sections`** are EDHREC's own groupings: `topcards`, `highsynergycards`, `gamechangers`, then by card type. A card's `decks` of `of_decks` is how many of this commander's decks play it, and `synergy` is EDHREC's synergy score (0.28 means 28 percentage points more than other decks of the same colours would play it).
+- **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
+- Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
+- Each run refreshes 150 commanders, longest unchecked first, so a commander may be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**

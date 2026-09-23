@@ -43,6 +43,7 @@ function parseRoute() {
   const params = new URLSearchParams(query);
   if (parts[0] === "deck" && parts[1]) return { name: "deck", deckId: parts[1] };
   if (parts[0] === "card" && parts[1]) return { name: "card", slug: parts[1] };
+  if (parts[0] === "commander" && parts[1]) return { name: "commander", slug: parts[1] };
   const format = config.formats.includes(parts[0]) ? parts[0] : config.formats[0];
   if (parts[1] === "event" && parts[2]) return { name: "event", format, eventId: parts[2] };
   if (parts[1] === "archetype" && parts[2]) return { name: "archetype", format, archetypeId: parts[2] };
@@ -58,15 +59,17 @@ async function render() {
   try {
     const api = await apiReady;
     const content =
-      route.name === "card"
-        ? await cardView(api, route)
-        : route.name === "deck"
-          ? await deckView(api, route)
-          : route.name === "event"
-            ? await eventView(api, route)
-            : route.name === "archetype"
-              ? await archetypeView(api, route)
-              : await metaView(api, route);
+      route.name === "commander"
+        ? await commanderView(api, route)
+        : route.name === "card"
+          ? await cardView(api, route)
+          : route.name === "deck"
+            ? await deckView(api, route)
+            : route.name === "event"
+              ? await eventView(api, route)
+              : route.name === "archetype"
+                ? await archetypeView(api, route)
+                : await metaView(api, route);
     if (token === renderToken) view.replaceChildren(content);
   } catch (error) {
     if (token !== renderToken) return;
@@ -330,6 +333,52 @@ async function archetypeView(api, { format, archetypeId }) {
   );
 }
 
+async function commanderView(api, { slug }) {
+  const commander = await api.getCommander({ slug }).catch((error) => {
+    if (error.code !== "not-found") throw error;
+    return null;
+  });
+  if (!commander) {
+    return notStoredYet(
+      "This commander hasn't been fetched yet. Each run adds more.",
+      `https://edhrec.com/commanders/${encodeURIComponent(slug)}`,
+      null,
+    );
+  }
+  document.title = `${commander.name} · MTG Metagame`;
+  const cardLink = (name) => el("a", { href: `#/card/${encodeURIComponent(cardSlug(name.split("//")[0]))}` }, name);
+
+  const inclusionSection = (section) =>
+    el("section", { class: "panel archetype-event" },
+      el("h2", {}, section.header || section.tag),
+      el("table", {},
+        el("tbody", {}, section.cards.map((card) =>
+          el("tr", {},
+            el("td", {}, cardLink(card.name)),
+            el("td", { class: "finish" }, `${Math.round((card.decks / card.of_decks) * 100)}%`),
+            el("td", { class: "finish" }, card.synergy == null ? "" : `${card.synergy > 0 ? "+" : ""}${Math.round(card.synergy * 100)}%`))))));
+
+  const averageSection = (section) =>
+    el("section", {},
+      el("h2", {}, `${section.header} (${section.cards.length})`),
+      el("ul", { class: "deck-list" }, section.cards.map((name) => el("li", {}, el("span", { class: "qty" }), cardLink(name)))));
+
+  return el(
+    "div",
+    {},
+    el("div", { class: "page-head" },
+      el("div", {},
+        el("h1", {}, commander.name),
+        el("p", {}, `${commander.decks.toLocaleString()} Commander decks${commander.salt == null ? "" : ` · salt ${commander.salt}`} · updated ${formatDate(commander.generated_at)}`)),
+      el("a", { class: "button", href: commander.url, target: "_blank", rel: "noopener" }, "EDHREC")),
+    commander.average_deck.length
+      ? el("div", { class: "panel boards" }, commander.average_deck.map(averageSection))
+      : null,
+    el("p", { class: "legal" }, "Percentages are how many of this commander's decks play the card; synergy is EDHREC's. Data from EDHREC, used with permission."),
+    el("div", { class: "archetype-events" }, commander.sections.map(inclusionSection)),
+  );
+}
+
 function notStoredYet(message, goldfishUrl, format) {
   document.title = "MTG Metagame";
   return el("div", {},
@@ -377,7 +426,7 @@ async function cardView(api, { slug }) {
       el("table", {},
         el("tbody", {}, edh.commanders.map((commander) =>
           el("tr", {},
-            el("td", {}, el("a", { href: `https://edhrec.com/commanders/${commander.slug}`, target: "_blank", rel: "noopener" }, commander.name)),
+            el("td", {}, el("a", { href: `#/commander/${encodeURIComponent(commander.slug)}` }, commander.name)),
             el("td", { class: "finish" }, commander.decks.toLocaleString()),
             el("td", { class: "finish" }, commander.of_decks ? `${Math.round((commander.decks / commander.of_decks) * 100)}%` : ""))))),
       el("p", { class: "legal" }, "Commander data from EDHREC, used with permission."));
