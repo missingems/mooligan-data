@@ -56,6 +56,10 @@ export async function createApi() {
     async getCard({ slug }) {
       return getJson(`cards/${encodeURIComponent(slug)}.json`);
     },
+    /** Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds. */
+    async getPremier() {
+      return getJson("premier/schedule.json");
+    },
     /** Upcoming in-store events near a published place, from Wizards' locator. */
     async getPlaces() {
       return getJson("locator/index.json").catch((error) => (error.code === "not-found" ? { places: {} } : Promise.reject(error)));

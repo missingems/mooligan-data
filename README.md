@@ -79,6 +79,10 @@ python3 -m http.server -d web 8765   # the site, reading data.mooligan.com
 
 A local run writes into `scraper/work/` and publishes nothing.
 
+## Premier play calendar
+
+`premier/schedule.json` is magic.gg's schedule of Pro Tours, Regional Championships, Spotlight Series, Worlds and CommandFests, read once a run. The page embeds its calendar as Nuxt state, which the scraper evaluates with Node. Each event gets a `region` from its name so an app can show the user's own Regional Championship.
+
 ## Wizards' event locator
 
 `LOCATOR_PLACES` (semicolon-separated) names places whose upcoming in-store events are read from Wizards' Store & Event Locator and published as `locator/<place>.json`: the next `LOCATOR_DAYS` days within `LOCATOR_DISTANCE_MILES`, one page of 100 events per request, `LOCATOR_DELAY` seconds apart. Note that Wizards' Terms of Use bar automated collection from their sites; this is run at Jun's own decision, kept to a few requests a run, and links every event back to the locator and the store.

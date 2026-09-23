@@ -56,6 +56,7 @@ function parseRoute() {
   if (parts[0] === "card" && parts[1]) return { name: "card", slug: parts[1] };
   if (parts[0] === "commander" && parts[1]) return { name: "commander", slug: parts[1] };
   if (parts[0] === "near") return { name: "near", slug: parts[1] ?? null };
+  if (parts[0] === "premier") return { name: "premier" };
   const format = config.formats.includes(parts[0]) ? parts[0] : config.formats[0];
   if (parts[1] === "event" && parts[2]) return { name: "event", format, eventId: parts[2] };
   if (parts[1] === "archetype" && parts[2]) return { name: "archetype", format, archetypeId: parts[2] };
@@ -66,24 +67,26 @@ function parseRoute() {
 async function render() {
   const token = ++renderToken;
   const route = parseRoute();
-  renderFormatNav(route.format, route.name === "near");
+  renderFormatNav(route.format, ["near", "premier"].includes(route.name) ? route.name : null);
   view.replaceChildren(el("p", { class: "status" }, "Loading…"));
   try {
     const api = await apiReady;
     const content =
-      route.name === "near"
-        ? await nearView(api, route)
-        : route.name === "commander"
-          ? await commanderView(api, route)
-          : route.name === "card"
-            ? await cardView(api, route)
-            : route.name === "deck"
-              ? await deckView(api, route)
-              : route.name === "event"
-                ? await eventView(api, route)
-                : route.name === "archetype"
-                  ? await archetypeView(api, route)
-                  : await metaView(api, route);
+      route.name === "premier"
+        ? await premierView(api)
+        : route.name === "near"
+          ? await nearView(api, route)
+          : route.name === "commander"
+            ? await commanderView(api, route)
+            : route.name === "card"
+              ? await cardView(api, route)
+              : route.name === "deck"
+                ? await deckView(api, route)
+                : route.name === "event"
+                  ? await eventView(api, route)
+                  : route.name === "archetype"
+                    ? await archetypeView(api, route)
+                    : await metaView(api, route);
     if (token === renderToken) view.replaceChildren(content);
   } catch (error) {
     if (token !== renderToken) return;
@@ -93,12 +96,13 @@ async function render() {
   }
 }
 
-function renderFormatNav(current, nearActive = false) {
+function renderFormatNav(current, page = null) {
   document.querySelector(".formats").replaceChildren(
     ...config.formats.map((format) =>
-      el("a", { href: `#/${format}`, "aria-current": format === current && !nearActive ? "page" : undefined }, formatName(format)),
+      el("a", { href: `#/${format}`, "aria-current": format === current && !page ? "page" : undefined }, formatName(format)),
     ),
-    el("a", { href: "#/near", "aria-current": nearActive ? "page" : undefined }, "Near you"),
+    el("a", { href: "#/premier", "aria-current": page === "premier" ? "page" : undefined }, "Premier"),
+    el("a", { href: "#/near", "aria-current": page === "near" ? "page" : undefined }, "Near you"),
   );
 }
 
@@ -358,6 +362,71 @@ async function archetypeView(api, { format, archetypeId }) {
         el("a", { href: `#/${format}` }, `← ${formatName(format)} metagame`))),
     groups.length ? list : el("p", { class: "status" }, "No results in the history window."),
     more,
+  );
+}
+
+const REGION_NAMES = {
+  southeast_asia: "Southeast Asia", japan: "Japan", chinese_taipei: "Chinese Taipei", china: "China", korea: "Korea",
+  australia_nz: "Australia & NZ", usa: "USA", canada: "Canada", europe: "Europe", mexico_central_america: "Mexico & Central America",
+  south_america: "South America",
+};
+
+async function premierView(api) {
+  const schedule = await api.getPremier().catch((error) => {
+    if (error.code !== "not-found") throw error;
+    return null;
+  });
+  document.title = "Premier play · MTG Metagame";
+  if (!schedule) return el("p", { class: "status" }, "The premier play calendar hasn't been published yet.");
+  const types = [...new Set(schedule.events.map((event) => event.type ?? "Other"))];
+  const regions = [...new Set(schedule.events.map((event) => event.region).filter(Boolean))];
+  let type = null;
+  let region = null;
+  const dateRange = (event) => {
+    const start = new Date(`${event.start}T00:00:00Z`);
+    const end = new Date(`${event.end}T00:00:00Z`);
+    const fmt = (d, withMonth) => d.toLocaleDateString(undefined, { ...(withMonth ? { month: "short" } : {}), day: "numeric", timeZone: "UTC" });
+    return event.start === event.end ? fmt(start, true) : `${fmt(start, true)}–${fmt(end, start.getUTCMonth() !== end.getUTCMonth())}`;
+  };
+  const monthOf = (event) => new Date(`${event.start}T00:00:00Z`).toLocaleDateString(undefined, { month: "long", year: "numeric", timeZone: "UTC" });
+
+  const list = el("div", { class: "archetype-events" });
+  const chips = el("div", {});
+  const render = () => {
+    // A region filter keeps the global events (Pro Tour, Worlds), which have no region.
+    const events = schedule.events.filter((event) => (!type || (event.type ?? "Other") === type) && (!region || !event.region || event.region === region));
+    const months = new Map();
+    for (const event of events) (months.get(monthOf(event)) ?? months.set(monthOf(event), []).get(monthOf(event))).push(event);
+    list.replaceChildren(
+      ...[...months.entries()].map(([month, monthEvents]) =>
+        el("section", { class: "panel archetype-event" },
+          el("h2", {}, month, el("small", {}, `${monthEvents.length} ${monthEvents.length === 1 ? "event" : "events"}`)),
+          el("table", {}, el("tbody", {}, monthEvents.map((event) =>
+            el("tr", {},
+              el("td", { class: "finish" }, dateRange(event)),
+              el("td", {},
+                el("div", {}, el("a", { href: event.url, target: "_blank", rel: "noopener" }, event.name)),
+                el("div", { class: "sub" }, [event.type, event.region ? REGION_NAMES[event.region] ?? event.region : "Global"].filter(Boolean).join(" · "))))))))),
+    );
+    const chip = (label, active, onclick) => el("a", { href: "#", "aria-current": active ? "true" : undefined, onclick: (e) => { e.preventDefault(); onclick(); render(); } }, label);
+    chips.replaceChildren(
+      el("nav", { class: "segmented chips", "aria-label": "Event type" },
+        chip("All types", !type, () => (type = null)), ...types.map((t) => chip(t, type === t, () => (type = t)))),
+      el("nav", { class: "segmented chips", "aria-label": "Region" },
+        chip("All regions", !region, () => (region = null)), ...regions.map((r) => chip(REGION_NAMES[r] ?? r, region === r, () => (region = r)))),
+    );
+  };
+  render();
+  return el(
+    "div",
+    {},
+    el("div", { class: "page-head" },
+      el("div", {}, el("h1", {}, "Premier play"),
+        el("p", {}, `${schedule.events.length} events in the next year · updated ${formatDate(schedule.generated_at)}`)),
+      el("a", { class: "button", href: schedule.source, target: "_blank", rel: "noopener" }, "magic.gg schedule")),
+    chips,
+    list,
+    el("p", { class: "legal" }, "Calendar from magic.gg. Regional Championship Qualifiers are store events: see Near you."),
   );
 }
 

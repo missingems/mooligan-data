@@ -12,7 +12,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
-| `locator/index.json` | The places published | `max-age=300` |
+| `locator/index.json` | The places published, with their coordinates | `max-age=300` |
+| `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
@@ -237,4 +238,40 @@ Upcoming Magic events near a configured place, read twice a day from Wizards' St
 }
 ```
 
+`locator/index.json` gives each place its `latitude` and `longitude` (the median of its events). To choose a place from the device's location, pick the nearest one; if none is within, say, 60 miles, deep-link to the locator with the user's own area instead.
+
 `start` is UTC; show it in `time_zone`. `rules_level` is `CASUAL`, `REGULAR`, `COMPETITIVE` or `PROFESSIONAL`, which is the locator's own casual-to-premier scale. `format` is the locator's name (Commander, Sealed Deck, Standard, Booster Draft, …) and can be null. `entry_fee.amount` of 0 means free, and the currency is whatever the store entered. For any place not published, deep-link to `url` with the user's own query instead.
+
+## `premier/schedule.json`
+
+Wizards' premier play calendar, read from magic.gg's schedule page each run: every event from a week ago to twelve months ahead, soonest first.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-09-23T14:00:11Z",
+  "source": "https://magic.gg/schedule",
+  "regions": ["australia_nz", "canada", "china", "chinese_taipei", "europe", "japan", "korea", "mexico_central_america", "south_america", "southeast_asia", "usa"],
+  "events": [
+    {
+      "id": "18n7YfJ329iwE09esF7DHx",
+      "name": "SEA Championship Final: Singapore",
+      "type": "Championships",
+      "start": "2026-10-16",
+      "end": "2026-10-18",
+      "start_time": "2026-10-16T10:00+08:00",
+      "end_time": "2026-10-18T18:00+08:00",
+      "place": "Singapore",
+      "region": "southeast_asia",
+      "game_type": "Tabletop",
+      "url": "https://magic.gg/news/play-update-2026-27-round-2-regional-championship-promos-and-qualifiers"
+    }
+  ]
+}
+```
+
+- **`type`** is magic.gg's own: `Pro Tour`, `World Championships`, `Championships` (the Regional Championships and their regional finals), `Magic Spotlight Series`, `CommandFest`, `Convention`, `Prereleases`.
+- **`place`** is the city from the event's name when it has one; **`region`** is the Regional Championship region matched from the name, or null for global events such as the Pro Tour and Worlds. An app should show its user the events for their region (from the device's country) plus every event with a null region.
+- **`url`** is where magic.gg sends readers, usually an announcement article or the organiser's site.
+
+Regional Championship Qualifiers (RCQs) are store events and are not in this calendar: they appear in `locator/{place}.json` with `rules_level` of `COMPETITIVE`, and in the tournament feed's `events` with `kind` of `rcq` once results are posted.

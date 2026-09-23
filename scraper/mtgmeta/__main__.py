@@ -26,6 +26,36 @@ def _list(name: str, default: str):
     return tuple(item.strip().lower() for item in os.environ.get(name, default).split(",") if item.strip())
 
 
+def _centre(events: list) -> dict:
+    """The median coordinates of a place's events, which sits on the place itself."""
+    lats = sorted(e["latitude"] for e in events if isinstance(e.get("latitude"), (int, float)))
+    lngs = sorted(e["longitude"] for e in events if isinstance(e.get("longitude"), (int, float)))
+    if not lats or not lngs:
+        return {}
+    return {"latitude": round(lats[len(lats) // 2], 4), "longitude": round(lngs[len(lngs) // 2], 4)}
+
+
+def publish_premier(directory: Path, report) -> list:
+    """The premier play calendar from magic.gg, as premier/schedule.json."""
+    if os.environ.get("PREMIER_SCHEDULE", "1") != "1":
+        return []
+    from .premier import by_type, calendar_from_html, fetch_schedule, premier_events, schedule_page
+
+    try:
+        html = fetch_schedule(os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"))
+        events = premier_events(calendar_from_html(html))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Premier schedule failed")
+        report.errors.append(f"premier schedule: {error}")
+        return []
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    path = directory / "premier" / "schedule.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(schedule_page(events, stamp), ensure_ascii=False, separators=(",", ":")))
+    logging.info("Premier schedule: %d upcoming events %s", len(events), by_type(events))
+    return ["premier/schedule.json"]
+
+
 def publish_locator(directory: Path, report) -> list:
     """Upcoming events near each configured place, from Wizards' locator, as locator/<place>.json."""
     places = [place.strip() for place in os.environ.get("LOCATOR_PLACES", "").split(";") if place.strip()]
@@ -50,7 +80,14 @@ def publish_locator(directory: Path, report) -> list:
         path = directory / "locator" / f"{page['slug']}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")))
-        index[page["slug"]] = {"place": place, "events": len(events), "distance_miles": distance, "days_ahead": days}
+        index[page["slug"]] = {
+            "place": place,
+            "events": len(events),
+            "distance_miles": distance,
+            "days_ahead": days,
+            # The place's own coordinates, for an app choosing the nearest published place.
+            **_centre(events),
+        }
         written.append(f"locator/{page['slug']}.json")
         logging.info("Locator: %d events in the next %d days near %s", len(events), days, place)
     if index:
@@ -106,6 +143,7 @@ def main() -> int:
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
+    written += publish_premier(args.directory, report)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
