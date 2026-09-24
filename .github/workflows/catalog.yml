@@ -98,10 +98,16 @@ jobs:
 
       - name: Upload to R2
         if: always() && hashFiles('generators/work/catalog/index.json') != ''
-        # Sizes match for unchanged master chunks, so only what changed is sent;
-        # metas go last so nothing points at a file not yet uploaded.
+        # Everything but the metas first, so nothing points at a file not yet uploaded. Not
+        # `--size-only`: a flat part or the projection changes content without changing size, and
+        # the phones downloaded parts of patch 6 under a manifest that said 9. The master chunks
+        # are matched by size, since they only change with a rebase and are 200 MB.
         run: |
+          previous=$(aws s3 cp "$R2/index.json" - --endpoint-url "$R2_ENDPOINT" 2>/dev/null || echo '{}')
           aws s3 sync work/catalog "$R2" --endpoint-url "$R2_ENDPOINT" --size-only --only-show-errors \
+            --exclude "*" --include "MTG_Hashes_Master_*.lzfse" --cache-control "public, max-age=3600"
+          aws s3 sync work/catalog "$R2" --endpoint-url "$R2_ENDPOINT" --only-show-errors \
+            --exclude "MTG_Hashes_Master_*.lzfse" \
             --exclude "index.json" --exclude "manifest.json" --exclude "prices-meta.json" --exclude "pull-odds-meta.json" \
             --cache-control "public, max-age=3600"
           for meta in index.json manifest.json prices-meta.json pull-odds-meta.json; do
@@ -109,3 +115,9 @@ jobs:
               --content-type application/json --cache-control "public, max-age=300" --only-show-errors
           done
           cat work/catalog/manifest.json
+          # Parts neither this manifest nor the one before it lists: a phone that started
+          # downloading before this publish still finds the previous set.
+          keep=$(python3 -c "import json,sys; print('\n'.join(json.load(open('work/catalog/index.json'))['parts'] + json.loads(sys.argv[1]).get('parts', [])))" "$previous")
+          aws s3 ls "$R2/" --endpoint-url "$R2_ENDPOINT" | awk '{print $4}' | grep -E '^index_.*\.bin$' | while read -r part; do
+            echo "$keep" | grep -qx "$part" || aws s3 rm "$R2/$part" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          done

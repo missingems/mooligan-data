@@ -17,7 +17,7 @@
 // unarchiving a hundred thousand feature prints on the phone (1 GB and every core
 // for seconds, measured):
 //   index.json                    FlatIndexManifest: parts, patch level, projection digest
-//   index_<i>.bin                 byte ranges of one file in Mooligan's CardFeaturePrintIndex
+//   index_<master>_p<patch>_<i>.bin  byte ranges of one file in Mooligan's CardFeaturePrintIndex
 //                                 layout, Float16 vectors and search shortlist included
 //   projection.bin                the master's shortlist projection (Float32), kept until a
 //                                 rebase so patches are projected the way devices' copies are
@@ -610,11 +610,15 @@ func writeFlatIndex(
     file.append(version)
     file.append(idData)
 
+    // Named by master and patch: a part's content changes with every patch while its size does not,
+    // so a name reused across patches let a sync that compares sizes leave stale parts behind an
+    // updated manifest, and a phone assembling them mid-publish could get a mixed file. A new name
+    // per patch makes every part immutable; the manifest, uploaded last, points at a complete set.
     let partSize = (file.count + flatIndexParts - 1) / flatIndexParts
     var parts: [String] = []
     for part in 0..<flatIndexParts {
         let range = min(part * partSize, file.count)..<min((part + 1) * partSize, file.count)
-        let name = "index_\(part).bin"
+        let name = "index_\(masterVersion)_p\(latestPatch)_\(part).bin"
         try file.subdata(in: range).write(to: directory.appendingPathComponent(name))
         parts.append(name)
     }
