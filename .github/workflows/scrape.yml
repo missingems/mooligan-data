@@ -102,6 +102,10 @@ jobs:
             cp work/premier "$R2/premier" --recursive --cache-control "public, max-age=300"
           fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
+          # Built from the snapshots above, so it goes up after them.
+          if [ -f work/explore.json ]; then
+            cp work/explore.json "$R2/explore.json" --cache-control "public, max-age=300"
+          fi
           cp work/state "$R2/state" --recursive --cache-control "no-cache"
           cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
           echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages"
