@@ -20,7 +20,7 @@ def result(date, finish, deck_id="1", event_id="1"):
     return {"deck_id": deck_id, "date": f"{date}T00:00:00Z", "player": "p", "event_id": event_id, "event_name": "E", "finish": finish}
 
 
-def event(event_id, name, date, finishes, kind="mtgo_challenge", source="mtgo.com"):
+def event(event_id, name, date, finishes, kind="mtgo_challenge", source="mtgo.com", archetype_id="a"):
     return {
         "event_id": event_id,
         "event_name": name,
@@ -29,7 +29,13 @@ def event(event_id, name, date, finishes, kind="mtgo_challenge", source="mtgo.co
         "kind": kind,
         "source": source,
         "results": [
-            {"finish": finish, "player": f"player{n}", "archetype": "Boros Energy" if n == 0 else "Other Deck", "deck_id": str(n)}
+            {
+                "finish": finish,
+                "player": f"player{n}",
+                "archetype": "Boros Energy" if n == 0 else "Other Deck",
+                "archetype_id": archetype_id if n == 0 else None,
+                "deck_id": str(n),
+            }
             for n, finish in enumerate(finishes)
         ],
     }
@@ -172,7 +178,7 @@ def test_an_event_lists_its_winner_and_publishes_no_deck_lists():
     challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
     league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0", "5-0"], kind="mtgo_league")
     recent = modern(meta30=[archetype("a", 1.0)], events=[challenge, league])["recent_events"]
-    assert set(recent[0]) == {"name", "date", "kind", "source", "url", "deck_count", "winner_archetype", "winner_player"}
+    assert set(recent[0]) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "winner_player", "lead"}
     by_url = {e["url"].rsplit("/", 1)[1]: e for e in recent}
     assert by_url["7"]["winner_archetype"] == "Boros Energy" and by_url["7"]["winner_player"] == "player0" and by_url["7"]["deck_count"] == 3
     assert by_url["8"]["winner_archetype"] is None and by_url["8"]["winner_player"] is None and by_url["8"]["deck_count"] == 2
@@ -197,9 +203,64 @@ def test_latest_event_is_the_newest_with_a_winner_else_the_first_else_null():
     challenge = event("5", "Modern Challenge 32 2026-09-28", "2026-09-28", ["1st Place", "2nd Place"])
     latest = modern(meta30=[archetype("a", 1.0)], events=[league, challenge])["latest_event"]
     assert latest["name"] == "Modern Challenge 32" and latest["winner_archetype"] == "Boros Energy"
-    assert set(latest) == {"name", "date", "kind", "source", "url", "deck_count", "winner_archetype"}  # no winner_player
+    assert set(latest) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "lead"}  # no winner_player
 
     only_league = modern(meta30=[archetype("a", 1.0)], events=[league])["latest_event"]
     assert only_league["name"] == "Modern League" and only_league["winner_archetype"] is None
 
     assert modern(meta30=[archetype("a", 1.0)])["latest_event"] is None
+
+
+def test_an_event_has_its_id_and_result_count():
+    challenge = event("66947", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
+    recent = modern(meta30=[archetype("a", 1.0)], events=[challenge])["recent_events"][0]
+    assert (recent["id"], recent["result_count"], recent["deck_count"]) == ("66947", 3, 3)
+    assert recent["url"].endswith("/66947")  # the id is the tournament id in the url
+
+
+def test_the_lead_of_an_event_is_its_winner_with_the_first_two_key_cards_of_its_archetype():
+    challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
+    challenge["results"].reverse()  # the winner is listed last
+    lead = modern(meta30=[archetype("a", 5.0)], events=[challenge])["recent_events"][0]["lead"]
+    assert lead == {
+        "finish": "1st Place",
+        "archetype": "Boros Energy",
+        "archetype_id": "a",
+        "player": "player0",
+        "deck_id": "0",
+        "key_cards": [{"name": "Card 0", "oracle_id": "o0"}, {"name": "Card 1", "oracle_id": "o1"}],
+    }
+
+
+def test_an_event_without_a_winner_leads_with_its_first_listed_result():
+    league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0", "5-0"], kind="mtgo_league")
+    document = modern(meta30=[archetype("a", 5.0)], events=[league])
+    lead = document["recent_events"][0]["lead"]
+    assert (lead["finish"], lead["archetype"], lead["player"], lead["deck_id"]) == ("5-0", "Boros Energy", "player0", "0")
+    assert lead["key_cards"] != [] and document["latest_event"]["lead"] == lead
+
+
+def test_a_lead_has_no_key_cards_when_its_archetype_is_untracked_or_not_in_the_metagame():
+    untracked = event("9", "Modern League 2026-09-29", "2026-09-29", ["5-0"], kind="mtgo_league", archetype_id=None)
+    gone = event("10", "Modern League 2026-09-28", "2026-09-28", ["5-0"], kind="mtgo_league", archetype_id="not-in-meta")
+    recent = modern(meta30=[archetype("a", 5.0)], events=[untracked, gone])["recent_events"]
+    assert [(e["lead"]["archetype_id"], e["lead"]["key_cards"]) for e in recent] == [(None, []), ("not-in-meta", [])]
+
+
+def test_key_cards_come_from_the_longest_window_that_shows_the_archetype_and_falls_back_to_a_shorter_one():
+    week_only = archetype("w", 3.0, key_cards=[{"name": "Week Card", "oracle_id": "w0"}])
+    bare_month = archetype("m", 3.0, key_cards=[])
+    week_has_them = archetype("m", 3.0, key_cards=[{"name": "Filled", "oracle_id": "f0"}])
+    winners = [
+        event("1", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place"], archetype_id="w"),
+        event("2", "Modern Challenge 32 2026-09-28", "2026-09-28", ["1st Place"], archetype_id="m"),
+    ]
+    recent = modern(meta30=[archetype("a", 9.0), bare_month], meta7=[week_only, week_has_them], events=winners)["recent_events"]
+    assert [e["lead"]["key_cards"] for e in recent] == [[{"name": "Week Card", "oracle_id": "w0"}], [{"name": "Filled", "oracle_id": "f0"}]]
+
+
+def test_an_event_with_no_results_has_a_null_lead():
+    empty = event("11", "Modern League 2026-09-29", "2026-09-29", [], kind="mtgo_league")
+    document = modern(meta30=[archetype("a", 1.0)], events=[empty])
+    assert document["recent_events"][0]["lead"] is None and document["recent_events"][0]["result_count"] == 0
+    assert document["latest_event"]["lead"] is None
