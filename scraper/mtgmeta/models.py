@@ -14,6 +14,10 @@ class Archetype:
     deck_count: Optional[int] = None
     # The featured list on the archetype's MTGGoldfish page, stored in `decks`.
     deck_id: Optional[str] = None
+    # WUBRG letters in WUBRG order, from the tile's colour pips; empty when colourless or not shown.
+    colors: List[str] = field(default_factory=list)
+    # Card names from the tile's key card list (three at most), in the tile's order.
+    key_cards: List[str] = field(default_factory=list)
 
 
 @dataclass

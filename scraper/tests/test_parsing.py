@@ -29,6 +29,49 @@ def test_meta_reads_each_archetype_tile():
     assert all(0 < archetype.percentage < 100 for archetype in meta.archetypes)
 
 
+def test_meta_reads_each_tiles_colours_and_key_cards():
+    meta = parse_meta(fixture("metagame_modern.html"), "modern", "30d")
+    by_id = {archetype.id: archetype for archetype in meta.archetypes}
+    prowess = by_id["modern-izzet-prowess"]
+    assert prowess.colors == ["U", "R"]  # "colors: blue red"
+    assert prowess.key_cards == ["Cori-Steel Cutter", "Mishra's Bauble", "Dragon's Rage Channeler"]
+    assert by_id["modern-eldrazi"].colors == ["G"]
+    assert by_id["modern-eldrazi"].key_cards[1] == "Emrakul, the Promised End"  # commas stay in a name
+    assert all(archetype.colors == sorted(archetype.colors, key="WUBRG".index) for archetype in meta.archetypes)
+
+
+def _tile(pips: str, key_cards: str) -> str:
+    return f"""
+    <div class="archetype-tile">
+      <div class="archetype-tile-title"><a href="/archetype/modern-x#paper">X</a></div>
+      {pips}
+      {key_cards}
+      <div class="metagame-percentage"><div class="archetype-tile-statistic-value">1.5% <span>(12)</span></div></div>
+    </div>"""
+
+
+def test_colours_come_in_wubrg_order_whatever_the_label_order():
+    pips = '<div class="manacost-container"><span class="manacost" aria-label="colors: green black white red blue"></span></div>'
+    assert parse_meta(_tile(pips, ""), "modern", "30d").archetypes[0].colors == ["W", "U", "B", "R", "G"]
+
+
+def test_colours_fall_back_to_the_pip_icons_and_colourless_is_empty():
+    icons = '<div class="manacost-container"><span class="manacost"><i class="ms ms-g ms-cost"></i><i class="ms ms-w ms-cost"></i></span></div>'
+    assert parse_meta(_tile(icons, ""), "modern", "30d").archetypes[0].colors == ["W", "G"]
+    colourless = '<div class="manacost-container"><span class="manacost" aria-label="colors: colorless"><i class="ms ms-c ms-cost"></i></span></div>'
+    assert parse_meta(_tile(colourless, ""), "modern", "30d").archetypes[0].colors == []
+
+
+def test_a_tile_without_pips_or_key_cards_still_parses():
+    archetype = parse_meta(_tile("", ""), "modern", "30d").archetypes[0]
+    assert (archetype.id, archetype.percentage, archetype.colors, archetype.key_cards) == ("modern-x", 1.5, [], [])
+
+
+def test_key_cards_stop_at_three():
+    cards = "<div class='archetype-tile-description'><ul>" + "".join(f"<li>Card {n}</li>" for n in range(5)) + "</ul></div>"
+    assert parse_meta(_tile("", cards), "modern", "30d").archetypes[0].key_cards == ["Card 0", "Card 1", "Card 2"]
+
+
 def test_meta_page_reports_its_window():
     assert selected_period(fixture("metagame_modern.html")) == "30"
 

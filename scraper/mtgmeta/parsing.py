@@ -21,6 +21,8 @@ _ANY_TOURNAMENT_HREF = re.compile(r"^/tournaments?/(\d+)")
 _DECK_HREF = re.compile(r"/deck/(\d+)")
 _DOWNLOAD_HREF = re.compile(r"^/deck/download/(\d+)")
 _DECK_LINE = re.compile(r"^\s*(\d+)\s*x?\s+(.+?)\s*$")
+_COLOR_LETTERS = "WUBRG"
+_COLOR_NAMES = {"white": "W", "blue": "U", "black": "B", "red": "R", "green": "G"}
 
 
 # Event tiers by name, first match wins. Names are as MTGGoldfish imports them.
@@ -74,11 +76,36 @@ def parse_meta(html: str, format: str, timeframe: str) -> Meta:
                 percentage=float(percent.group(1)),
                 id=slug.group(1),
                 deck_count=int(count.group(1).replace(",", "")) if count else None,
+                colors=_tile_colors(tile),
+                key_cards=_tile_key_cards(tile),
             )
         )
     if not archetypes:
         raise ParseError(f"No archetype tiles on the {format} metagame page")
     return Meta(format=format, timeframe=timeframe, archetypes=archetypes)
+
+
+def _tile_colors(tile) -> List[str]:
+    """The colours a tile shows, as WUBRG letters in WUBRG order; empty for colourless or no pips.
+
+    The pips are a `manacost` span labelled "colors: blue red", with an `ms-u ms-r`
+    icon each. The label is read first, and the icons only when it names no colour.
+    """
+    manacost = tile.select_one(".manacost-container .manacost")
+    if manacost is None:
+        return []
+    words = re.findall(r"[a-z]+", (manacost.get("aria-label") or "").lower())
+    found = {_COLOR_NAMES[word] for word in words if word in _COLOR_NAMES}
+    if not found:
+        for icon in manacost.select("i"):
+            found |= {letter for letter in _COLOR_LETTERS if f"ms-{letter.lower()}" in icon.get("class", [])}
+    return [letter for letter in _COLOR_LETTERS if letter in found]
+
+
+def _tile_key_cards(tile) -> List[str]:
+    """The card names in a tile's key card list, at most three."""
+    names = (item.get_text(" ", strip=True) for item in tile.select(".archetype-tile-description ul li"))
+    return [name for name in names if name][:3]
 
 
 def selected_period(html: str) -> Optional[str]:
