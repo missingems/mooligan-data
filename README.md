@@ -27,6 +27,7 @@ GitHub Actions (02:00, 14:00 UTC)
 See [docs/data-format.md](docs/data-format.md). In short:
 
 - `index.json` gives each format's snapshot with a hash, so clients download only when something changed.
+- `explore.json` is a small summary for a landing screen: the top archetypes and the latest events of the six main formats, built from the snapshots.
 - `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
 - `decks/{id}.json` holds one decklist per file, cached for good.
 - `cards/{slug}.json` says where a card is played, across every format, with links to decks, plus its Commander usage from EDHREC.
