@@ -23,6 +23,17 @@ STANDINGS = 8
 KEY_CARDS = 2
 RECENT_EVENTS = 20
 WINDOW_DAYS = 30
+# Each meta window, with the two windows whose shares its trend compares: the
+# archetype's share in the first against its share in the second. The 30-day
+# list has no longer window to compare with, so it sets the last week against
+# the month, as `share_7d` against `share_30d` does.
+WINDOWS = (
+    ("7d", "7d", "14d"),
+    ("14d", "14d", "30d"),
+    ("30d", "7d", "30d"),
+)
+# A move of more than this many points of share (in tenths, as shown) is a trend.
+TREND_TENTHS = 10
 
 # "1st Place" and so on: a league's "5-0" is a record, not a placing.
 _PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
@@ -45,6 +56,7 @@ def build_explore(snapshots: Dict[str, dict], now: datetime) -> dict:
                 "name": name,
                 "latest_event": {key: latest[key] for key in _LATEST_KEYS} if latest else None,
                 "standings": _standings(snapshot, now),
+                "standings_by_window": _standings_by_window(snapshot.get("meta", {})),
                 "recent_events": events,
             }
         )
@@ -71,13 +83,53 @@ def _standings(snapshot: dict, now: datetime) -> List[dict]:
                 "top8_30d": sum(1 for place in places if place <= 8),
                 "wins_30d": sum(1 for place in places if place == 1),
                 "colors": list(archetype.get("colors", [])),
-                "key_cards": [
-                    {"name": card["name"], "oracle_id": card.get("oracle_id")}
-                    for card in archetype.get("key_cards", [])[:KEY_CARDS]
-                ],
+                "key_cards": _key_cards(archetype),
             }
         )
     return standings
+
+
+def _standings_by_window(meta: dict) -> Dict[str, List[dict]]:
+    """The top archetypes of each window by that window's own share, and which way each is moving."""
+    shares = {
+        window: {archetype["id"]: archetype["percentage"] for archetype in meta.get(window, {}).get("archetypes", [])}
+        for window, _, _ in WINDOWS
+    }
+    by_window = {}
+    for window, recent, baseline in WINDOWS:
+        archetypes = meta.get(window, {}).get("archetypes", [])
+        by_window[window] = [
+            {
+                "id": archetype["id"],
+                "name": archetype["name"],
+                "share": round(archetype["percentage"], 1),
+                "deck_count": archetype.get("deck_count"),
+                "trend": _trend(shares[recent].get(archetype["id"]), shares[baseline].get(archetype["id"])),
+                "colors": list(archetype.get("colors", [])),
+                "key_cards": _key_cards(archetype),
+            }
+            for archetype in sorted(archetypes, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]
+        ]
+    return by_window
+
+
+def _trend(recent: Optional[float], baseline: Optional[float]) -> Optional[str]:
+    """'up' or 'down' when the shares, as shown to one decimal, differ by more than a point; None when either is missing."""
+    if recent is None or baseline is None:
+        return None
+    change = round(recent * 10) - round(baseline * 10)
+    if change > TREND_TENTHS:
+        return "up"
+    if change < -TREND_TENTHS:
+        return "down"
+    return None
+
+
+def _key_cards(archetype: dict) -> List[dict]:
+    return [
+        {"name": card["name"], "oracle_id": card.get("oracle_id")}
+        for card in archetype.get("key_cards", [])[:KEY_CARDS]
+    ]
 
 
 def _places(results: List[dict], since: datetime, now: datetime) -> List[int]:

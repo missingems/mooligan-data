@@ -35,10 +35,12 @@ def event(event_id, name, date, finishes, kind="mtgo_challenge", source="mtgo.co
     }
 
 
-def snapshot(meta30, meta7=None, archetypes=None, events=None):
+def snapshot(meta30, meta7=None, archetypes=None, events=None, meta14=None):
     meta = {"30d": {"archetypes": meta30}}
     if meta7 is not None:
         meta["7d"] = {"archetypes": meta7}
+    if meta14 is not None:
+        meta["14d"] = {"archetypes": meta14}
     return {"meta": meta, "archetypes": archetypes or {}, "events": events or []}
 
 
@@ -66,6 +68,65 @@ def test_share_is_one_decimal_and_the_seven_day_share_is_null_without_data():
     assert (both[0]["share_30d"], both[0]["share_7d"], both[0]["deck_count_30d"]) == (9.9, 11.0, 120)
     assert both[1]["share_7d"] is None  # not in the 7-day window
     assert modern(meta30=[archetype("a", 9.0)])["standings"][0]["share_7d"] is None  # no 7-day window at all
+
+
+def test_each_window_lists_its_own_top_eight_by_its_own_share():
+    month = [archetype(f"a{n}", n / 10, deck_count=n) for n in range(1, 13)]
+    week = [archetype(f"a{n}", (13 - n) / 10, deck_count=100 + n) for n in range(1, 13)]  # the reverse order
+    fortnight = week[6:] + week[:6]
+    by_window = modern(meta30=month, meta14=fortnight, meta7=week)["standings_by_window"]
+    assert list(by_window) == ["7d", "14d", "30d"]
+    assert [s["id"] for s in by_window["30d"]] == ["a12", "a11", "a10", "a9", "a8", "a7", "a6", "a5"]
+    assert [s["id"] for s in by_window["7d"]] == ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
+    assert [s["id"] for s in by_window["14d"]] == ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
+    # A window's own share and deck count, never the month's.
+    assert (by_window["7d"][0]["share"], by_window["7d"][0]["deck_count"]) == (1.2, 101)
+    assert (by_window["30d"][0]["share"], by_window["30d"][0]["deck_count"]) == (1.2, 12)
+
+
+def test_the_thirty_day_list_matches_the_older_standings_field_and_the_field_stays_as_it_was():
+    entries = [archetype("a", 9.87, deck_count=120, colors=["U"]), archetype("b", 5.0, deck_count=None, key_cards=[])]
+    document = modern(meta30=entries, meta7=[archetype("a", 11.04)])
+    old, new = document["standings"], document["standings_by_window"]["30d"]
+    assert set(old[0]) == {"id", "name", "share_30d", "share_7d", "deck_count_30d", "top8_30d", "wins_30d", "colors", "key_cards"}
+    assert [(o["id"], o["name"], o["share_30d"], o["deck_count_30d"], o["colors"], o["key_cards"]) for o in old] == [
+        (n["id"], n["name"], n["share"], n["deck_count"], n["colors"], n["key_cards"]) for n in new
+    ]
+    assert set(new[0]) == {"id", "name", "share", "deck_count", "trend", "colors", "key_cards"}
+    assert new[1]["deck_count"] is None and new[1]["key_cards"] == [] and new[0]["colors"] == ["U"]
+    assert [k["oracle_id"] for k in new[0]["key_cards"]] == ["o0", "o1"]  # the first two
+
+
+def test_a_window_with_no_data_is_an_empty_list():
+    by_window = modern(meta30=[archetype("a", 5.0)])["standings_by_window"]
+    assert by_window["7d"] == [] and by_window["14d"] == []
+    assert [s["id"] for s in by_window["30d"]] == ["a"]
+    assert modern(meta30=[])["standings_by_window"] == {"7d": [], "14d": [], "30d": []}
+
+
+def test_each_windows_trend_compares_it_with_the_next_longer_one():
+    # 7d against 14d, 14d against 30d, and 30d against the last week.
+    week = [archetype("up", 12.0), archetype("down", 3.0), archetype("flat", 8.0), archetype("edge", 9.0), archetype("new", 4.0)]
+    fortnight = [archetype("up", 10.0), archetype("down", 5.0), archetype("flat", 8.5), archetype("edge", 8.0), archetype("gone", 2.0)]
+    month = [archetype("up", 8.0), archetype("down", 6.0), archetype("flat", 8.0), archetype("edge", 8.0), archetype("new", 1.0), archetype("gone", 5.0)]
+    by_window = modern(meta30=month, meta14=fortnight, meta7=week)["standings_by_window"]
+    trends = {window: {s["id"]: s["trend"] for s in standings} for window, standings in by_window.items()}
+    assert trends["7d"] == {"up": "up", "down": "down", "flat": None, "edge": None, "new": None}  # exactly a point is not more; "new" has no 14d share
+    assert trends["14d"] == {"up": "up", "down": None, "flat": None, "edge": None, "gone": "down"}
+    assert trends["30d"] == {"up": "up", "down": "down", "flat": None, "edge": None, "new": "up", "gone": None}  # "gone" has no 7d share
+
+
+def test_a_trend_is_null_when_the_comparison_window_is_missing_and_uses_shares_as_shown():
+    only_month = modern(meta30=[archetype("a", 5.0)])["standings_by_window"]
+    assert only_month["30d"][0]["trend"] is None  # no 7-day window to compare with
+    week_and_month = modern(meta30=[archetype("a", 5.0)], meta7=[archetype("a", 9.0)])["standings_by_window"]
+    assert week_and_month["7d"][0]["trend"] is None  # no 14-day window
+    assert week_and_month["30d"][0]["trend"] == "up"
+    # 15.04 shows as 15.0 and 14.0 is one point below it, not more than one.
+    shown = modern(meta30=[archetype("a", 14.0)], meta7=[archetype("a", 15.04)])["standings_by_window"]
+    assert shown["30d"][0]["trend"] is None
+    shown = modern(meta30=[archetype("a", 14.0)], meta7=[archetype("a", 15.06)])["standings_by_window"]
+    assert shown["30d"][0]["trend"] == "up"
 
 
 def test_top8_and_wins_count_placings_in_the_window_only():

@@ -129,6 +129,18 @@ A summary of the six main formats for a landing screen, written with the snapsho
           "key_cards": [ { "name": "Ragavan, Nimble Pilferer", "oracle_id": "…" } ]
         }
       ],
+      "standings_by_window": {
+        "7d": [
+          {
+            "id": "modern-boros-energy", "name": "Boros Energy",
+            "share": 19.1, "deck_count": 42, "trend": "up",
+            "colors": ["R", "W"],
+            "key_cards": [ { "name": "Ragavan, Nimble Pilferer", "oracle_id": "…" } ]
+          }
+        ],
+        "14d": [ "…" ],
+        "30d": [ "…" ]
+      },
       "recent_events": [
         { "name": "Modern Challenge 32", "date": "2026-09-29", "kind": "mtgo_challenge", "source": "mtgo.com", "url": "https://www.mtggoldfish.com/tournament/66929", "deck_count": 32, "winner_archetype": "Boros Energy", "winner_player": "ashame" }
       ]
@@ -139,6 +151,8 @@ A summary of the six main formats for a landing screen, written with the snapsho
 
 - **`formats`** are in this order: `standard`, `pioneer`, `modern`, `legacy`, `pauper`, `vintage`; a format is left out until its first scrape has produced a snapshot. `name` is its display name. The other formats (Premodern, Penny Dreadful, Duel Commander) are only in their snapshots.
 - **`standings`** are the eight archetypes with the biggest 30-day share, most played first. `id` is the archetype's id in the snapshot (`snapshots/{format}.json` → `archetypes`), so a row links to all of that archetype's results and to its featured deck. `share_30d` and `share_7d` are percent of the format's decks, to one decimal; `share_7d` is null when the archetype isn't in the 7-day window. `deck_count_30d` is the number of decks behind `share_30d` (null if MTGGoldfish didn't show it). `top8_30d` counts the archetype's results in the last 30 days that finished 1st to 8th place, and `wins_30d` those that finished 1st. A league's `"5-0"` is a record, not a placing, so it counts toward neither, and results dated in the future are left out. `colors` and `key_cards` are as in the snapshot's meta, with only the first two key cards.
+- **`standings_by_window`** is the standings for each of the snapshot's meta windows, for a 7 / 14 / 30 day switch. Each of `7d`, `14d` and `30d` is that window's eight archetypes with the biggest share *in that window*, most played first, so the members and their order can differ between windows. `id`, `name`, `colors` and `key_cards` are as in `standings`. `share` is the archetype's percent of the format's decks in that window, to one decimal, and `deck_count` the number of decks behind it (null if MTGGoldfish didn't show it). A window with no data (a snapshot from before it was scraped, or a format with `30d` only) is an empty list. `standings` is unchanged, and is the `30d` list with its extra counts. Added on 30 September 2026, so decode it as optional.
+  - **`trend`** is `"up"` or `"down"` when the archetype's share is moving by more than one point, else null. It sets a shorter window's share against a longer one's: `7d` against `14d`, `14d` against `30d`, and for the `30d` list the last week (`share_7d`) against the month (`share_30d`). `"up"` means the shorter window is higher by more than one point, `"down"` lower by more than one point, judged on the shares as shown to one decimal, so a move of exactly 1.0 is null. It is null too when the archetype isn't in the window it is compared with (which is searched whole, not only its top eight).
 - **`recent_events`** are the newest 20 events in the snapshot, newest first, dated today or earlier (MTGGoldfish lists the occasional event weeks ahead, which is left out). They are every kind, Leagues and local events included, so filter on `kind` to show only Challenges and up. `name` is the event's name with its own date taken out (MTGGoldfish writes "Modern Challenge 32 2026-09-29"), which is in `date` (`yyyy-MM-dd`, UTC). `deck_count` is how many results MTGGoldfish published for the event, not the size of the field. `winner_archetype` and `winner_player` come from the 1st place result, and are null for Leagues and any event with no 1st place. `kind`, `source` and `url` are the snapshot event's.
 - **`latest_event`** is the first of `recent_events` that has a winner, or the first if none has, or null when there are no events. It has the fields of a recent event except `winner_player`.
 - An `explore.json` run for some formats only keeps the rest from the snapshots already published, and it isn't written at all when there is nothing to summarise.
