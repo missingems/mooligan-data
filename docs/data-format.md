@@ -7,6 +7,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
+| `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
+| `events/{event_id}.json` | One event of the last 30 days: its whole standings | `max-age=300` |
 | `decks/{deck_id}.json` | One decklist. Never changes once published | `max-age=31536000, immutable` |
 | `cards/{slug}.json` | Where one card is played, across every format | `max-age=300` |
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
@@ -26,10 +28,15 @@ Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `pre
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
+   To drill down from the Explore tab, follow a row to the file it names, then on to a deck:
+   - **explore → archetype file → deck file.** A standings row's `id` is the file `archetypes/{id}.json`, which lists that archetype's recent decks; each deck row's `deck_id` is `decks/{deck_id}.json`.
+   - **explore → event file → deck file.** A recent event's `id` is the file `events/{id}.json`, which lists its whole standings; each result's `deck_id` is `decks/{deck_id}.json`.
+
+   An event row already shows the result that led it (`lead`: its archetype, player and two key cards), so it needs no download until it is opened. From an event file, a result with an `archetype_id` links on to `archetypes/{archetype_id}.json`; from an archetype file, a deck with an `event_id` links to `events/{event_id}.json`. Any of these can be a 404 (see below).
 4. For "where is this card played", fetch `cards/{slug}.json`. Build the slug from the card's Scryfall name: take the part before any `/`, fold accents to ASCII (é → e), lower-case it, and replace every run of non-alphanumeric characters with `-`. "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki" becomes `fable-of-the-mirror-breaker`. The slugs come from the same Scryfall names your app already has, so this matches without a lookup table, and each page repeats its `oracle_id` so you can check you have the right card. A 404 means no tournament deck plays it and EDHREC has nothing for it yet.
 5. Look up cards on Scryfall by `card_name` (`https://api.scryfall.com/cards/named?exact=…`), keeping to Scryfall's guidelines: a User-Agent header, at most about 10 requests a second, and caching.
 
-A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 1,500 new decklists per format a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet".
+A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 1,500 new decklists per format a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet". The archetype and event files say which decks to expect: each row's `published` is false for a deck whose file doesn't exist yet, so the app can grey the row out instead of asking. An `event_id` in an archetype's deck list can point at an event with no file (an event outside the last 30 days, or one dated ahead), which is a 404 as well.
 
 ## `index.json`
 
@@ -120,7 +127,10 @@ A summary of the six main formats for a landing screen, written with the snapsho
     {
       "format": "modern",
       "name": "Modern",
-      "latest_event": { "name": "Modern Challenge 32", "date": "2026-09-29", "kind": "mtgo_challenge", "source": "mtgo.com", "url": "https://www.mtggoldfish.com/tournament/66929", "deck_count": 32, "winner_archetype": "Boros Energy" },
+      "latest_event": {
+        "id": "66929", "name": "Modern Challenge 32", "date": "2026-09-29", "kind": "mtgo_challenge", "source": "mtgo.com", "url": "https://www.mtggoldfish.com/tournament/66929", "deck_count": 32, "result_count": 32, "winner_archetype": "Boros Energy",
+        "lead": { "finish": "1st Place", "archetype": "Boros Energy", "archetype_id": "modern-boros-energy", "player": "ashame", "deck_id": "7966104", "key_cards": [ { "name": "Ragavan, Nimble Pilferer", "oracle_id": "…" }, { "name": "Ocelot Pride", "oracle_id": "…" } ] }
+      },
       "standings": [
         {
           "id": "modern-boros-energy", "name": "Boros Energy",
@@ -142,7 +152,10 @@ A summary of the six main formats for a landing screen, written with the snapsho
         "30d": [ "…" ]
       },
       "recent_events": [
-        { "name": "Modern Challenge 32", "date": "2026-09-29", "kind": "mtgo_challenge", "source": "mtgo.com", "url": "https://www.mtggoldfish.com/tournament/66929", "deck_count": 32, "winner_archetype": "Boros Energy", "winner_player": "ashame" }
+        {
+          "id": "66929", "name": "Modern Challenge 32", "date": "2026-09-29", "kind": "mtgo_challenge", "source": "mtgo.com", "url": "https://www.mtggoldfish.com/tournament/66929", "deck_count": 32, "result_count": 32, "winner_archetype": "Boros Energy", "winner_player": "ashame",
+          "lead": { "finish": "1st Place", "archetype": "Boros Energy", "archetype_id": "modern-boros-energy", "player": "ashame", "deck_id": "7966104", "key_cards": [ { "name": "Ragavan, Nimble Pilferer", "oracle_id": "…" }, { "name": "Ocelot Pride", "oracle_id": "…" } ] }
+        }
       ]
     }
   ]
@@ -150,12 +163,68 @@ A summary of the six main formats for a landing screen, written with the snapsho
 ```
 
 - **`formats`** are in this order: `standard`, `pioneer`, `modern`, `legacy`, `pauper`, `vintage`; a format is left out until its first scrape has produced a snapshot. `name` is its display name. The other formats (Premodern, Penny Dreadful, Duel Commander) are only in their snapshots.
-- **`standings`** are the eight archetypes with the biggest 30-day share, most played first. `id` is the archetype's id in the snapshot (`snapshots/{format}.json` → `archetypes`), so a row links to all of that archetype's results and to its featured deck. `share_30d` and `share_7d` are percent of the format's decks, to one decimal; `share_7d` is null when the archetype isn't in the 7-day window. `deck_count_30d` is the number of decks behind `share_30d` (null if MTGGoldfish didn't show it). `top8_30d` counts the archetype's results in the last 30 days that finished 1st to 8th place, and `wins_30d` those that finished 1st. A league's `"5-0"` is a record, not a placing, so it counts toward neither, and results dated in the future are left out. `colors` and `key_cards` are as in the snapshot's meta, with only the first two key cards.
+- **`standings`** are the eight archetypes with the biggest 30-day share, most played first. `id` is the archetype's id in the snapshot (`snapshots/{format}.json` → `archetypes`), so a row links to all of that archetype's results and to its featured deck, and it names the file `archetypes/{id}.json`, its recent decks. `share_30d` and `share_7d` are percent of the format's decks, to one decimal; `share_7d` is null when the archetype isn't in the 7-day window. `deck_count_30d` is the number of decks behind `share_30d` (null if MTGGoldfish didn't show it). `top8_30d` counts the archetype's results in the last 30 days that finished 1st to 8th place, and `wins_30d` those that finished 1st. A league's `"5-0"` is a record, not a placing, so it counts toward neither, and results dated in the future are left out. `colors` and `key_cards` are as in the snapshot's meta, with only the first two key cards.
 - **`standings_by_window`** is the standings for each of the snapshot's meta windows, for a 7 / 14 / 30 day switch. Each of `7d`, `14d` and `30d` is that window's eight archetypes with the biggest share *in that window*, most played first, so the members and their order can differ between windows. `id`, `name`, `colors` and `key_cards` are as in `standings`. `share` is the archetype's percent of the format's decks in that window, to one decimal, and `deck_count` the number of decks behind it (null if MTGGoldfish didn't show it). A window with no data (a snapshot from before it was scraped, or a format with `30d` only) is an empty list. `standings` is unchanged, and is the `30d` list with its extra counts. Added on 30 September 2026, so decode it as optional.
   - **`trend`** is `"up"` or `"down"` when the archetype's share is moving by more than one point, else null. It sets a shorter window's share against a longer one's: `7d` against `14d`, `14d` against `30d`, and for the `30d` list the last week (`share_7d`) against the month (`share_30d`). `"up"` means the shorter window is higher by more than one point, `"down"` lower by more than one point, judged on the shares as shown to one decimal, so a move of exactly 1.0 is null. It is null too when the archetype isn't in the window it is compared with (which is searched whole, not only its top eight).
 - **`recent_events`** are the newest 20 events in the snapshot, newest first, dated today or earlier (MTGGoldfish lists the occasional event weeks ahead, which is left out). They are every kind, Leagues and local events included, so filter on `kind` to show only Challenges and up. `name` is the event's name with its own date taken out (MTGGoldfish writes "Modern Challenge 32 2026-09-29"), which is in `date` (`yyyy-MM-dd`, UTC). `deck_count` is how many results MTGGoldfish published for the event, not the size of the field. `winner_archetype` and `winner_player` come from the 1st place result, and are null for Leagues and any event with no 1st place. `kind`, `source` and `url` are the snapshot event's.
+  - **`id`** is the event's id, MTGGoldfish's tournament id (the number at the end of `url`), and names the file `events/{id}.json`. **`result_count`** is the number of results published for the event, the same as `deck_count`.
+  - **`lead`** is the result an event row can show without opening the event: the 1st place result, or, for an event with no 1st place (a League), the first result listed. It is `{ "finish", "archetype", "archetype_id", "player", "deck_id", "key_cards" }`: `finish` is a placing such as `"1st Place"` or a record such as `"5-0"`; `archetype_id` is null when the deck isn't in a tracked archetype, and `archetype` is then the pilot's own deck title; `deck_id` is `decks/{deck_id}.json`. `key_cards` are the first two of that archetype's tile in the format's metagame (from the longest window that shows it), as in `standings`, and `[]` when `archetype_id` is null or the archetype has no tile in any window. `lead` is null only when the event has no results. Added on 30 September 2026, so decode `id`, `result_count` and `lead` as optional.
 - **`latest_event`** is the first of `recent_events` that has a winner, or the first if none has, or null when there are no events. It has the fields of a recent event except `winner_player`.
 - An `explore.json` run for some formats only keeps the rest from the snapshots already published, and it isn't written at all when there is nothing to summarise.
+
+## `archetypes/{archetype_id}.json`
+
+One file per archetype in each format's current metagame (any of the `7d`, `14d` and `30d` windows), written with the snapshots. The `archetype_id` is a standings row's `id`, and ids are unique across formats. Every format's archetypes are written, including the three formats `explore.json` leaves out. Everything in it can be worked out from the snapshot; it is that archetype's slice, so a screen doesn't download the whole format.
+
+```json
+{
+  "id": "modern-eldrazi",
+  "name": "Eldrazi",
+  "format": "modern",
+  "colors": ["G"],
+  "key_cards": [
+    { "name": "Thought-Knot Seer", "oracle_id": "cef7396d-…" },
+    { "name": "Emrakul, the Promised End", "oracle_id": "…" },
+    { "name": "Kozilek's Command", "oracle_id": "…" }
+  ],
+  "shares": { "7d": 14.6, "14d": 14.4, "30d": 10.3 },
+  "decks": [
+    { "deck_id": "7977623", "date": "2026-09-29", "event_id": "66952", "event_name": "Modern Challenge 64", "finish": "15th Place", "player": "Uagli1", "published": true }
+  ]
+}
+```
+
+- **`colors`** and **`key_cards`** are as in the snapshot's meta, with up to three key cards (the tile's own three), `[]` when the tile shows none.
+- **`shares`** is the archetype's percent of the format's decks in each window, to one decimal, null for a window that doesn't list it (or a format with no such window; Duel Commander has `30d` only).
+- **`decks`** are the archetype's results in the snapshot, newest first, at most 60, dated today or earlier. Results of one day are in the snapshot's order, which is not by finish. `date` is `yyyy-MM-dd` (UTC) and `event_name` has the event's own date taken out, as in `explore.json`. `event_id` is null for a result without an event, and otherwise names `events/{event_id}.json`, when that event is in the last 30 days. `finish` is a placing or a League record.
+- **`published`** is whether `decks/{deck_id}.json` exists. The scraper caps how many decklists it downloads each run (see above), so a new result can wait a run or two; it is false until then.
+- An archetype with no results yet has `decks: []`.
+
+## `events/{event_id}.json`
+
+One file per event of the last 30 days, in every format, written with the snapshots and dated today or earlier. `event_id` is `id` in `explore.json`'s recent events and the snapshot event's `event_id`, and is unique across formats. An event the scraper left out as a duplicate has none.
+
+```json
+{
+  "id": "66947",
+  "name": "Modern League",
+  "date": "2026-09-30",
+  "kind": "mtgo_league",
+  "source": "mtgo.com",
+  "url": "https://www.mtggoldfish.com/tournament/66947",
+  "format": "modern",
+  "results": [
+    {
+      "finish": "5-0", "player": "aljce", "archetype": "Amulet Titan", "archetype_id": "amulet-titan", "deck_id": "7977435", "published": true,
+      "key_cards": [ { "name": "Primeval Titan", "oracle_id": "…" }, { "name": "Amulet of Vigor", "oracle_id": "…" } ]
+    }
+  ]
+}
+```
+
+- `name`, `date` (`yyyy-MM-dd`, UTC), `kind`, `source` and `url` are as in a recent event in `explore.json`.
+- **`results`** are in finish order, as the snapshot publishes them (as MTGGoldfish lists them; a League's are all `"5-0"`, in no particular order). Each carries what a snapshot event's result does (`finish`, `player`, `archetype`, `archetype_id`, `deck_id`), plus **`published`** (whether `decks/{deck_id}.json` exists) and **`key_cards`**, the first two of the archetype's tile as in `lead`, `[]` when `archetype_id` is null or the archetype isn't in the current metagame. A result with an `archetype_id` links to `archetypes/{archetype_id}.json` when that archetype is in the current metagame (it may 404 otherwise).
+- These files are only rewritten, never deleted: when an event or archetype ages out it stops being linked from `explore.json` and the snapshots but its file stays where it was.
 
 ## `decks/{deck_id}.json`
 
