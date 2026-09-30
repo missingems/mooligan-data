@@ -22,7 +22,7 @@ def test_finish_publishes_snapshot_index_and_deck_ids(tmp_path):
     store.save_event(event("2", "2026-09-21"))
     store.save_event(event("1", "2026-09-20"))
 
-    assert store.finish() == ["snapshots/modern.json", "cards/index.json"]  # pioneer has nothing, so no file
+    assert store.finish() == ["snapshots/modern.json", "explore.json", "cards/index.json"]  # pioneer has nothing, so no file
 
     body = (tmp_path / "snapshots" / "modern.json").read_bytes()
     snapshot = json.loads(body)
@@ -221,3 +221,53 @@ def test_decklist_entries_carry_their_oracle_id(tmp_path):
     store.save_decks([Deck("5", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple"), DeckCard(1, "Unknown Card")], [], "modern", "1")])
     deck = json.loads((tmp_path / "decks" / "5.json").read_text())
     assert [card["oracle_id"] for card in deck["mainboard"]] == ["oracle-temple", None]
+
+
+def test_meta_key_cards_carry_their_oracle_id_and_null_when_unknown(tmp_path):
+    catalog = {"ragavan-nimble-pilferer": {"name": "Ragavan, Nimble Pilferer", "oracle_id": "oracle-ragavan"}}
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
+    store.save_meta(Meta("modern", "30d", [
+        Archetype("Boros Energy", 9.4, "modern-boros-energy", 648, colors=["W", "R"], key_cards=["Ragavan, Nimble Pilferer", "Made-up Card"]),
+        Archetype("Bare", 1.0, "modern-bare"),
+    ]))
+    store.finish()
+    archetypes = json.loads((tmp_path / "snapshots" / "modern.json").read_text())["meta"]["30d"]["archetypes"]
+    assert archetypes[0]["colors"] == ["W", "R"]
+    assert archetypes[0]["key_cards"] == [
+        {"name": "Ragavan, Nimble Pilferer", "oracle_id": "oracle-ragavan"},
+        {"name": "Made-up Card", "oracle_id": None},
+    ]
+    assert archetypes[0]["deck_count"] == 648 and "deck_id" in archetypes[0]  # the existing fields are unchanged
+    assert (archetypes[1]["colors"], archetypes[1]["key_cards"]) == ([], [])
+
+
+def test_explore_is_published_with_the_snapshots(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_meta(Meta("modern", "30d", [Archetype("Eldrazi", 9.4, "modern-eldrazi", 648)]))
+    store.save_event(standings_event("9", "Modern Challenge 32 2026-09-22", 100))
+    assert "explore.json" in store.finish()
+    explore = json.loads((tmp_path / "explore.json").read_text())
+    assert explore["generated_at"] == "2026-09-22T12:00:00Z"
+    assert [f["format"] for f in explore["formats"]] == ["modern"]
+    assert explore["formats"][0]["standings"][0]["id"] == "modern-eldrazi"
+    assert explore["formats"][0]["recent_events"][0]["name"] == "Modern Challenge 32"
+
+
+def test_a_run_of_one_format_keeps_the_others_in_explore(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern", "pioneer"], history_days=30, now=NOW)
+    first.save_meta(Meta("modern", "30d", [Archetype("Eldrazi", 9.4, "modern-eldrazi", 648)]))
+    first.save_meta(Meta("pioneer", "30d", [Archetype("Rakdos", 12.0, "pioneer-rakdos", 90)]))
+    first.finish()
+
+    second = SnapshotStore(tmp_path, ["pioneer"], history_days=30, now=NOW)
+    second.save_meta(Meta("pioneer", "30d", [Archetype("Rakdos Midrange", 13.0, "pioneer-rakdos", 95)]))
+    second.finish()
+    formats = {f["format"]: f for f in json.loads((tmp_path / "explore.json").read_text())["formats"]}
+    assert set(formats) == {"modern", "pioneer"}  # standard has never been scraped, so it is left out
+    assert formats["pioneer"]["standings"][0]["name"] == "Rakdos Midrange"
+    assert formats["modern"]["standings"][0]["name"] == "Eldrazi"
+
+
+def test_nothing_scraped_leaves_explore_unwritten(tmp_path):
+    SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).finish()
+    assert not (tmp_path / "explore.json").exists()

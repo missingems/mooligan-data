@@ -16,6 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
 from .edhrec import due_slugs, edhrec_slug
+from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
 
@@ -88,6 +89,12 @@ class SnapshotStore:
     def save_meta(self, meta: Meta) -> None:
         document = _jsonable(to_document(meta, drop=("format",)))
         document["last_updated"] = self._stamp()
+        for archetype in document["archetypes"]:
+            # A key card is its name and Scryfall's oracle id, null for a name the catalog doesn't know.
+            archetype["key_cards"] = [
+                {"name": name, "oracle_id": self._catalog.get(slug(name), {}).get("oracle_id")}
+                for name in archetype["key_cards"]
+            ]
         self._snapshot(meta.format)["meta"][meta.timeframe] = document
 
     def save_event(self, event: Event) -> None:
@@ -170,6 +177,7 @@ class SnapshotStore:
         """
         written = []
         formats = {}
+        documents: Dict[str, dict] = {}
         card_decks: Dict[str, FormatDecks] = {}
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
@@ -229,6 +237,7 @@ class SnapshotStore:
             relative = f"snapshots/{format}.json"
             self._write(relative, body)
             written.append(relative)
+            documents[format] = document
             formats[format] = {
                 "path": relative,
                 "sha256": hashlib.sha256(body).hexdigest(),
@@ -237,6 +246,7 @@ class SnapshotStore:
                 "events": len(events),
                 "archetypes": len(archetypes),
             }
+        written += self._write_explore(documents)
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog or {})
@@ -249,6 +259,24 @@ class SnapshotStore:
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
+
+    def _write_explore(self, documents: Dict[str, dict]) -> List[str]:
+        """Writes explore.json from the snapshots just built, and from the published ones for formats this run skipped.
+
+        A run limited to one format (the workflow's `formats` input) must not
+        publish an explore.json that has lost the others, so those are read from
+        the snapshots the workflow downloaded.
+        """
+        snapshots = dict(documents)
+        for format, _ in EXPLORE_FORMATS:
+            path = self._root / "snapshots" / f"{format}.json"
+            if format not in snapshots and path.exists():
+                snapshots[format] = json.loads(path.read_text())
+        explore = build_explore(snapshots, self._now)
+        if not explore["formats"]:
+            return []  # nothing to summarise: leave the published file alone
+        self._write("explore.json", _json_bytes(explore))
+        return ["explore.json"]
 
     def _write_card_pages(
         self, card_decks: Dict[str, FormatDecks], fetch_edh=None, edh_limit: int = 0, catalog: Dict[str, dict] = {}
