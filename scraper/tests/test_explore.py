@@ -118,6 +118,13 @@ def test_an_event_lists_its_winner_and_publishes_no_deck_lists():
     assert by_url["8"]["name"] == "Modern League" and by_url["8"]["kind"] == "mtgo_league"
 
 
+def test_the_events_own_date_leaves_its_name_wherever_it_sits():
+    copy = event("4", "Modern League 2026-09-29 (1)", "2026-09-29", ["5-0"], kind="mtgo_league")
+    other_date = event("5", "Modern Challenge 32 2026-09-28", "2026-09-29", ["1st Place"])  # not this event's own date
+    names = {e["url"].rsplit("/", 1)[1]: e["name"] for e in modern(meta30=[archetype("a", 1.0)], events=[copy, other_date])["recent_events"]}
+    assert names == {"4": "Modern League (1)", "5": "Modern Challenge 32 2026-09-28"}
+
+
 def test_names_without_a_trailing_date_are_kept_whole():
     local = event("3", "Charlotte Legacy League Season 3 Week 13", "2026-09-28", ["4-1"], kind="other", source=None)
     recent = modern(meta30=[archetype("a", 1.0)], events=[local])["recent_events"]

@@ -26,8 +26,6 @@ WINDOW_DAYS = 30
 
 # "1st Place" and so on: a league's "5-0" is a record, not a placing.
 _PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
-# Names from MTGGoldfish end in the event's date, which the entry carries on its own.
-_TRAILING_DATE = re.compile(r"\s+\d{4}-\d{2}-\d{2}$")
 # The latest event is a recent one without the winner's player.
 _LATEST_KEYS = ("name", "date", "kind", "source", "url", "deck_count", "winner_archetype")
 
@@ -101,7 +99,7 @@ def _recent_events(events: List[dict], now: datetime) -> List[dict]:
         winner = next((result for result in event["results"] if result["finish"] == "1st Place"), None)
         recent.append(
             {
-                "name": _TRAILING_DATE.sub("", event["event_name"]),
+                "name": _name_without_date(event["event_name"], event["date"][:10]),
                 "date": event["date"][:10],
                 "kind": event.get("kind", "other"),
                 "source": event.get("source"),
@@ -112,6 +110,11 @@ def _recent_events(events: List[dict], now: datetime) -> List[dict]:
             }
         )
     return recent
+
+
+def _name_without_date(name: str, date: str) -> str:
+    """MTGGoldfish puts the event's date in its name ("Modern League 2026-09-29 (1)"); the entry has it on its own."""
+    return re.sub(r"\s{2,}", " ", name.replace(date, " ")).strip() or name
 
 
 def _iso(value: datetime) -> str:
