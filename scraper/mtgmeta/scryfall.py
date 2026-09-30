@@ -9,6 +9,7 @@ from __future__ import annotations
 import gzip
 import json
 import logging
+import re
 import urllib.request
 from typing import Dict, Optional
 
@@ -25,7 +26,11 @@ SKIPPED_LAYOUTS = {"token", "double_faced_token", "art_series", "emblem", "vangu
 
 
 def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
-    """Maps a card's slug to its name and oracle id, streaming the file a line at a time."""
+    """Maps a card's slug to its name and oracle id, streaming the file a line at a time.
+
+    What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
+    a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any) and `"mana_value"`.
+    """
     download = url or _bulk_download_uri()
     catalog: Dict[str, dict] = {}
     request = urllib.request.Request(download, headers=HEADERS)
@@ -41,10 +46,30 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
             oracle_id = card.get("oracle_id") or (card.get("card_faces") or [{}])[0].get("oracle_id")
             # Decklists name a double-faced card by its front face, which is how the slug reads.
             key = slug(card["name"].split("//")[0])
-            if key:
-                catalog.setdefault(key, {"name": card["name"], "oracle_id": oracle_id})
+            if key and key not in catalog:
+                entry = {"name": card["name"], "oracle_id": oracle_id}
+                # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
+                front_type = card.get("type_line") or (card.get("card_faces") or [{}])[0].get("type_line") or ""
+                if re.search(r"\bLand\b", front_type.split("//")[0]):
+                    entry["land"] = True
+                price = _price(card.get("prices") or {})
+                if price is not None:
+                    entry["price"] = price
+                if card.get("cmc") is not None:
+                    entry["mana_value"] = card["cmc"]
+                catalog[key] = entry
     log.info("Scryfall: %d cards in the catalog", len(catalog))
     return catalog
+
+
+def _price(prices: dict) -> Optional[float]:
+    """The card's price in USD, from its regular printing, else foil, else etched; None when there is none."""
+    for kind in ("usd", "usd_foil", "usd_etched"):
+        try:
+            return float(prices[kind])
+        except (KeyError, TypeError, ValueError):
+            continue
+    return None
 
 
 def _bulk_download_uri() -> str:

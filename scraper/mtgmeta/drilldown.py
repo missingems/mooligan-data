@@ -8,18 +8,26 @@ just wrote, so they are never older than it. See docs/data-format.md.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import Dict, Set
+from typing import Dict, Optional, Set
 
-from .explore import WINDOWS, archetype_tiles, key_cards, name_without_date, result_key_cards
+from .explore import WINDOWS, Previews, archetype_tiles, deck_key_cards, key_cards, name_without_date
 
 ARCHETYPE_DECKS = 60
 ARCHETYPE_KEY_CARDS = 3
 
 
-def build_archetype_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> Dict[str, dict]:
+def build_archetype_pages(
+    snapshot: dict,
+    now: datetime,
+    deck_ids: Set[str],
+    decks: Optional[Dict[str, dict]] = None,
+    catalog: Optional[Dict[str, dict]] = None,
+) -> Dict[str, dict]:
     """A page per archetype in the format's metagame (any window), by archetype id.
 
-    `deck_ids` are the decklists published, which is what each deck's `published` says.
+    `deck_ids` are the decklists published, which is what each deck's `published` says. A tile
+    that shows no key cards takes them from the archetype's featured deck instead, when `decks`
+    (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards.
     """
     meta = snapshot.get("meta", {})
     shares = {
@@ -29,7 +37,12 @@ def build_archetype_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> 
     today = _today(now)
     pages = {}
     for archetype_id, tile in archetype_tiles(meta).items():
-        results = snapshot.get("archetypes", {}).get(archetype_id, {}).get("results", [])
+        archetype = snapshot.get("archetypes", {}).get(archetype_id, {})
+        results = archetype.get("results", [])
+        cards = key_cards(tile, ARCHETYPE_KEY_CARDS)
+        featured = (decks or {}).get(archetype.get("deck_id"))
+        if not cards and featured:
+            cards = deck_key_cards(featured.get("m", []), catalog or {}, tile["name"], ARCHETYPE_KEY_CARDS)
         # Stable, so results of one day keep the order the snapshot has them in.
         past = sorted((result for result in results if result["date"][:10] <= today), key=lambda result: result["date"], reverse=True)
         pages[archetype_id] = {
@@ -37,7 +50,7 @@ def build_archetype_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> 
             "name": tile["name"],
             "format": snapshot["format"],
             "colors": list(tile.get("colors", [])),
-            "key_cards": key_cards(tile, ARCHETYPE_KEY_CARDS),
+            "key_cards": cards,
             "shares": {
                 window: round(shares[window][archetype_id], 1) if archetype_id in shares[window] else None
                 for window, _, _ in WINDOWS
@@ -58,9 +71,19 @@ def build_archetype_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> 
     return pages
 
 
-def build_event_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> Dict[str, dict]:
-    """A page per event in the snapshot dated today or earlier, by event id."""
-    tiles = archetype_tiles(snapshot.get("meta", {}))
+def build_event_pages(
+    snapshot: dict,
+    now: datetime,
+    deck_ids: Set[str],
+    decks: Optional[Dict[str, dict]] = None,
+    catalog: Optional[Dict[str, dict]] = None,
+) -> Dict[str, dict]:
+    """A page per event in the snapshot dated today or earlier, by event id.
+
+    `decks` is the format's stored deck contents and `catalog` the card catalog, as in
+    `build_explore`: a result whose archetype has no key cards takes its own deck's.
+    """
+    previews = Previews(snapshot.get("meta", {}), decks, catalog)
     today = _today(now)
     pages = {}
     for event in snapshot.get("events", []):
@@ -82,7 +105,7 @@ def build_event_pages(snapshot: dict, now: datetime, deck_ids: Set[str]) -> Dict
                     "archetype_id": result.get("archetype_id"),
                     "deck_id": result["deck_id"],
                     "published": result["deck_id"] in deck_ids,
-                    "key_cards": result_key_cards(result.get("archetype_id"), tiles),
+                    "key_cards": previews.key_cards(result),
                 }
                 for result in event["results"]
             ],

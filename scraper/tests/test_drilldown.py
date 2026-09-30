@@ -121,3 +121,42 @@ def test_event_pages_leave_out_events_still_to_be_played_and_take_the_date_out_o
     pages = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=events), NOW, set())
     assert list(pages) == ["2"]
     assert (pages["2"]["name"], pages["2"]["kind"]) == ("Modern League (1)", "mtgo_league")
+
+
+def test_an_event_result_with_no_key_cards_takes_its_decks_two_most_played_non_lands():
+    event = source_event("66947", "2026-09-29", [entry("5-0", "10", None, "Gruul Aggro"), entry("5-0", "11"), entry("5-0", "12", None, "Unknown Deck")])
+    decks = {
+        "10": {"m": [[4, "Mountain"], [2, "Bonecrusher Giant"], [4, "Kumano Faces Kakkazan"], [3, "Made-up Card"]], "s": []},
+        "11": {"m": [[4, "Kumano Faces Kakkazan"]], "s": []},  # the tile has key cards, so it is used
+    }
+    catalog = {
+        "mountain": {"name": "Mountain", "oracle_id": "o-mountain", "land": True},
+        "bonecrusher-giant": {"name": "Bonecrusher Giant // Stomp", "oracle_id": "o-giant"},
+        "kumano-faces-kakkazan": {"name": "Kumano Faces Kakkazan", "oracle_id": "o-kumano"},
+    }
+    page = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=[event]), NOW, {"10", "11"}, decks, catalog)["66947"]
+    first, second, third = page["results"]
+    # Four Kumano beat two Giants; the Mountain is a land, and the unknown name is skipped. The deck's own name is kept.
+    assert first["key_cards"] == [{"name": "Kumano Faces Kakkazan", "oracle_id": "o-kumano"}, {"name": "Bonecrusher Giant", "oracle_id": "o-giant"}]
+    assert [c["oracle_id"] for c in second["key_cards"]] == ["a-o0", "a-o1"]
+    assert third["key_cards"] == []  # its deck isn't stored (published is false), so there is nothing to show
+
+
+def test_an_archetype_tile_with_no_key_cards_takes_its_featured_decks_three_cards_led_by_the_namesake():
+    document = snapshot({"30d": [tile("beanstalk-control", 5.0, key_cards=0), tile("b", 4.0, key_cards=4), tile("c", 3.0, key_cards=0)]}, {"beanstalk-control": [], "b": [], "c": []})
+    document["archetypes"]["beanstalk-control"]["deck_id"] = "9"
+    document["archetypes"]["b"]["deck_id"] = "9"  # a tile with key cards keeps them
+    document["archetypes"]["c"]["deck_id"] = "8"  # its featured deck isn't stored
+    decks = {"9": {"m": [[4, "Mountain"], [4, "Lightning Bolt"], [3, "Fertile Beanstalk"], [2, "Ocelot Pride"], [4, "Ragavan"]], "s": []}}
+    catalog = {
+        "mountain": {"name": "Mountain", "oracle_id": "o-mountain", "land": True},
+        "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "o-bolt", "price": 1.0},
+        "fertile-beanstalk": {"name": "Fertile Beanstalk", "oracle_id": "o-beanstalk"},
+        "ocelot-pride": {"name": "Ocelot Pride", "oracle_id": "o-ocelot"},
+        "ragavan": {"name": "Ragavan", "oracle_id": "o-ragavan", "price": 60.0},
+    }
+    pages = build_archetype_pages(document, NOW, set(), decks, catalog)
+    assert [c["oracle_id"] for c in pages["beanstalk-control"]["key_cards"]] == ["o-beanstalk", "o-ragavan", "o-bolt"]  # the namesake, then the 4-ofs by price
+    assert [c["oracle_id"] for c in pages["b"]["key_cards"]] == ["b-o0", "b-o1", "b-o2"]
+    assert pages["c"]["key_cards"] == []
+    assert build_archetype_pages(document, NOW, set())["beanstalk-control"]["key_cards"] == []  # without decks and a catalog, as before

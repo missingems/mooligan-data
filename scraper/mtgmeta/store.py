@@ -180,6 +180,7 @@ class SnapshotStore:
         formats = {}
         documents: Dict[str, dict] = {}
         card_decks: Dict[str, FormatDecks] = {}
+        catalog = catalog or self._catalog
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
             duplicates = self._duplicates
@@ -247,11 +248,11 @@ class SnapshotStore:
                 "events": len(events),
                 "archetypes": len(archetypes),
             }
-        written += self._write_explore(documents)
-        self._write_drilldown(documents)
+        written += self._write_explore(documents, catalog)
+        self._write_drilldown(documents, catalog)
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
-        written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog or {})
+        written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
         written += self._write_commander_pages(fetch_commanders, commander_limit)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
@@ -262,25 +263,33 @@ class SnapshotStore:
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
 
-    def _write_explore(self, documents: Dict[str, dict]) -> List[str]:
+    def _write_explore(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> List[str]:
         """Writes explore.json from the snapshots just built, and from the published ones for formats this run skipped.
 
         A run limited to one format (the workflow's `formats` input) must not
         publish an explore.json that has lost the others, so those are read from
-        the snapshots the workflow downloaded.
+        the snapshots the workflow downloaded, with the stored decks that come with them.
         """
         snapshots = dict(documents)
         for format, _ in EXPLORE_FORMATS:
             path = self._root / "snapshots" / f"{format}.json"
             if format not in snapshots and path.exists():
                 snapshots[format] = json.loads(path.read_text())
-        explore = build_explore(snapshots, self._now)
+        decks = {format: self._stored_deck_cards(format) for format in snapshots}
+        explore = build_explore(snapshots, self._now, decks, catalog)
         if not explore["formats"]:
             return []  # nothing to summarise: leave the published file alone
         self._write("explore.json", _json_bytes(explore))
         return ["explore.json"]
 
-    def _write_drilldown(self, documents: Dict[str, dict]) -> None:
+    def _stored_deck_cards(self, format: str) -> Dict[str, dict]:
+        """What each stored deck of the format plays: this run's, or for a format it skipped, the previous run's."""
+        if format in self._deck_cards:
+            return self._deck_cards[format]
+        path = self._root / "state" / "deck-cards" / f"{format}.json"
+        return json.loads(path.read_text()) if path.exists() else {}
+
+    def _write_drilldown(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> None:
         """Writes archetypes/{id}.json and events/{id}.json for the formats this run built.
 
         MTGGoldfish's archetype and tournament ids are global (each belongs to one format), so
@@ -291,8 +300,8 @@ class SnapshotStore:
         counts = {"archetypes": 0, "events": 0}
         for format, document in documents.items():
             for kind, pages in (
-                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids)),
-                ("events", build_event_pages(document, self._now, self._deck_ids)),
+                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
+                ("events", build_event_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
             ):
                 for page_id, page in pages.items():
                     # An id becomes a file name, so only the plain ones the site uses are written.

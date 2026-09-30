@@ -311,3 +311,78 @@ def test_a_run_for_one_format_writes_no_pages_for_the_others(tmp_path):
     store.finish()
     assert (tmp_path / "events" / "1.json").exists()
     assert not (tmp_path / "archetypes").exists()  # modern has no metagame yet
+
+
+def _league_with_a_brew(store):
+    """A League whose winner plays an archetype nobody tracks (no id), with its decklist stored."""
+    from mtgmeta.models import Deck, DeckCard
+
+    store.save_event(Event("7", "Modern League 2026-09-21", "modern", day("2026-09-21"), [
+        EventResult("p1", "Gruul Aggro", "5-0", "5"),
+        EventResult("p2", "Some Brew", "5-0", "6"),  # never downloaded
+    ], "https://www.mtggoldfish.com/tournament/7"))
+    store.save_decks([Deck("5", "p1", "Gruul Aggro", [DeckCard(4, "Mountain"), DeckCard(3, "Bonecrusher Giant"), DeckCard(4, "Kumano Faces Kakkazan")], [], "modern", "7")])
+
+
+PREVIEW_CATALOG = {
+    "mountain": {"name": "Mountain", "oracle_id": "oracle-mountain", "land": True},
+    "bonecrusher-giant": {"name": "Bonecrusher Giant // Stomp", "oracle_id": "oracle-giant"},
+    "kumano-faces-kakkazan": {"name": "Kumano Faces Kakkazan", "oracle_id": "oracle-kumano"},
+}
+PREVIEW = [{"name": "Kumano Faces Kakkazan", "oracle_id": "oracle-kumano"}, {"name": "Bonecrusher Giant", "oracle_id": "oracle-giant"}]
+
+
+def test_an_untracked_deck_previews_its_own_cards_in_explore_and_the_event_page(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    _league_with_a_brew(store)
+    store.finish()
+
+    recent = json.loads((tmp_path / "explore.json").read_text())["formats"][0]["recent_events"][0]
+    assert recent["lead"]["key_cards"] == PREVIEW  # no land, the deck's most played first
+    assert [(r["deck_id"], r["key_cards"]) for r in recent["top"]] == [("5", PREVIEW), ("6", [])]  # deck 6 was never downloaded
+    page = json.loads((tmp_path / "events" / "7.json").read_text())
+    assert [(r["deck_id"], r["published"], r["key_cards"]) for r in page["results"]] == [("5", True, PREVIEW), ("6", False, [])]
+
+
+def test_decks_published_by_earlier_runs_give_previews_too(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    _league_with_a_brew(first)
+    first.finish()
+
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    later._deck_cards["modern"] = {}  # this run never saw deck 5's cards; the bucket has them
+    asked = []
+
+    def fetch(ids):
+        asked.extend(ids)
+        return {"5": {"mainboard": [{"quantity": 4, "card_name": "Kumano Faces Kakkazan"}, {"quantity": 2, "card_name": "Mountain"}], "sideboard": []}}
+
+    later.finish(fetch_decks=fetch)
+    assert asked == ["5"]
+    recent = json.loads((tmp_path / "explore.json").read_text())["formats"][0]["recent_events"][0]
+    assert recent["lead"]["key_cards"] == [{"name": "Kumano Faces Kakkazan", "oracle_id": "oracle-kumano"}]
+
+
+def test_a_run_of_one_format_keeps_the_previews_of_the_others_in_explore(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern", "pioneer"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    _league_with_a_brew(first)
+    first.finish()
+
+    second = SnapshotStore(tmp_path, ["pioneer"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    second.save_meta(Meta("pioneer", "30d", [Archetype("Rakdos", 12.0, "pioneer-rakdos", 90)]))
+    second.finish()
+    formats = {f["format"]: f for f in json.loads((tmp_path / "explore.json").read_text())["formats"]}
+    assert formats["modern"]["recent_events"][0]["lead"]["key_cards"] == PREVIEW  # from state/deck-cards/modern.json
+
+
+def test_an_archetype_page_with_no_tile_cards_previews_its_featured_deck(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=PREVIEW_CATALOG)
+    _league_with_a_brew(store)
+    store.save_meta(Meta("modern", "30d", [Archetype("Gruul Aggro", 9.4, "modern-gruul-aggro", 648)]))  # the tile shows no key cards
+    store.save_archetype(ArchetypeHistory("modern", "modern-gruul-aggro", "Gruul Aggro", "5", "Roy", [
+        ArchetypeResult("5", day("2026-09-21"), "p1", "7", "Modern League 2026-09-21", "5-0"),
+    ]))
+    store.finish()
+
+    page = json.loads((tmp_path / "archetypes" / "modern-gruul-aggro.json").read_text())
+    assert page["key_cards"] == PREVIEW

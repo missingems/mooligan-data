@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from mtgmeta.explore import build_explore
+from mtgmeta.explore import build_explore, deck_key_cards
 
 NOW = datetime(2026, 9, 30, 2, tzinfo=timezone.utc)
 
@@ -50,8 +50,24 @@ def snapshot(meta30, meta7=None, archetypes=None, events=None, meta14=None):
     return {"meta": meta, "archetypes": archetypes or {}, "events": events or []}
 
 
-def modern(**kwargs):
-    return build_explore({"modern": snapshot(**kwargs)}, NOW)["formats"][0]
+def modern(decks=None, catalog=None, **kwargs):
+    return build_explore({"modern": snapshot(**kwargs)}, NOW, {"modern": decks or {}}, catalog)["formats"][0]
+
+
+def stored(*cards):
+    """A stored decklist's mainboard, as the store keeps it: [quantity, name] pairs."""
+    return {"m": [list(card) for card in cards], "s": [[4, "Sideboard Card"]]}
+
+
+# What the Scryfall catalog gives: its name and oracle id, and "land" for a land.
+CATALOG = {
+    "ragavan-nimble-pilferer": {"name": "Ragavan, Nimble Pilferer", "oracle_id": "o-ragavan"},
+    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "o-bolt"},
+    "ocelot-pride": {"name": "Ocelot Pride", "oracle_id": "o-ocelot"},
+    "sideboard-card": {"name": "Sideboard Card", "oracle_id": "o-side"},
+    "mountain": {"name": "Mountain", "oracle_id": "o-mountain", "land": True},
+    "arid-mesa": {"name": "Arid Mesa", "oracle_id": "o-mesa", "land": True},
+}
 
 
 def test_formats_come_in_the_apps_order_and_skip_what_is_missing():
@@ -163,13 +179,19 @@ def test_colours_and_the_first_two_key_cards_pass_through_and_old_snapshots_give
     assert (standings[1]["colors"], standings[1]["key_cards"], standings[1]["deck_count_30d"]) == ([], [], None)
 
 
-def test_recent_events_are_newest_first_up_to_today_and_at_most_twenty():
-    events = [event(str(100 + n), f"Modern Challenge 32 2026-09-{day:02d}", f"2026-09-{day:02d}", ["1st Place", "2nd Place"]) for n, day in enumerate(range(1, 30))]
+def test_recent_events_are_newest_first_up_to_today_and_at_most_thirty():
+    # Two Challenges a day for the first fifteen days of the month, then a League a day.
+    events = [
+        event(str(100 + n), f"Modern Challenge 32 2026-09-{day:02d}", f"2026-09-{day:02d}", ["1st Place", "2nd Place"])
+        for n, day in enumerate(list(range(1, 16)) * 2)
+    ]
+    events += [event(str(200 + day), f"Modern League 2026-09-{day:02d}", f"2026-09-{day:02d}", ["5-0"], kind="mtgo_league") for day in range(16, 30)]
     events.append(event("999", "Store Qualifier 2026-11-04", "2026-11-04", ["1st Place"]))
     events.append(event("998", "Modern Challenge 32 2026-09-30", "2026-09-30", ["1st Place"]))  # today counts
     recent = modern(meta30=[archetype("a", 1.0)], events=events)["recent_events"]
-    assert len(recent) == 20
+    assert len(recent) == 30  # 45 are dated up to today
     assert recent[0]["date"] == "2026-09-30" and recent[1]["date"] == "2026-09-29"
+    assert [e["kind"] for e in recent[:15]].count("mtgo_league") == 14  # Leagues count like any other event
     assert [e["date"] for e in recent] == sorted((e["date"] for e in recent), reverse=True)
     assert all(e["date"] <= "2026-09-30" for e in recent)
 
@@ -178,7 +200,7 @@ def test_an_event_lists_its_winner_and_publishes_no_deck_lists():
     challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
     league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0", "5-0"], kind="mtgo_league")
     recent = modern(meta30=[archetype("a", 1.0)], events=[challenge, league])["recent_events"]
-    assert set(recent[0]) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "winner_player", "lead"}
+    assert set(recent[0]) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "winner_player", "lead", "top"}
     by_url = {e["url"].rsplit("/", 1)[1]: e for e in recent}
     assert by_url["7"]["winner_archetype"] == "Boros Energy" and by_url["7"]["winner_player"] == "player0" and by_url["7"]["deck_count"] == 3
     assert by_url["8"]["winner_archetype"] is None and by_url["8"]["winner_player"] is None and by_url["8"]["deck_count"] == 2
@@ -203,7 +225,7 @@ def test_latest_event_is_the_newest_with_a_winner_else_the_first_else_null():
     challenge = event("5", "Modern Challenge 32 2026-09-28", "2026-09-28", ["1st Place", "2nd Place"])
     latest = modern(meta30=[archetype("a", 1.0)], events=[league, challenge])["latest_event"]
     assert latest["name"] == "Modern Challenge 32" and latest["winner_archetype"] == "Boros Energy"
-    assert set(latest) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "lead"}  # no winner_player
+    assert set(latest) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top"}  # no winner_player
 
     only_league = modern(meta30=[archetype("a", 1.0)], events=[league])["latest_event"]
     assert only_league["name"] == "Modern League" and only_league["winner_archetype"] is None
@@ -259,8 +281,132 @@ def test_key_cards_come_from_the_longest_window_that_shows_the_archetype_and_fal
     assert [e["lead"]["key_cards"] for e in recent] == [[{"name": "Week Card", "oracle_id": "w0"}], [{"name": "Filled", "oracle_id": "f0"}]]
 
 
-def test_an_event_with_no_results_has_a_null_lead():
+def test_an_event_with_no_results_has_a_null_lead_and_no_top():
     empty = event("11", "Modern League 2026-09-29", "2026-09-29", [], kind="mtgo_league")
     document = modern(meta30=[archetype("a", 1.0)], events=[empty])
     assert document["recent_events"][0]["lead"] is None and document["recent_events"][0]["result_count"] == 0
     assert document["latest_event"]["lead"] is None
+    assert document["recent_events"][0]["top"] == [] and document["latest_event"]["top"] == []
+
+
+def test_top_is_the_first_three_results_in_finish_order_and_its_first_is_the_lead():
+    challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place", "4th Place"])
+    challenge["results"][1]["archetype_id"] = "b"
+    challenge["results"][1]["archetype"] = "Bee"
+    challenge["results"].reverse()  # listed out of order: 4th, 3rd, 2nd, 1st
+    metas = [archetype("a", 5.0), archetype("b", 4.0, key_cards=[{"name": "Bee Card", "oracle_id": "b0"}])]
+    recent = modern(meta30=metas, events=[challenge])["recent_events"][0]
+    top = recent["top"]
+    assert [(r["finish"], r["player"], r["deck_id"]) for r in top] == [("1st Place", "player0", "0"), ("2nd Place", "player1", "1"), ("3rd Place", "player2", "2")]
+    assert set(top[0]) == {"finish", "player", "archetype", "archetype_id", "deck_id", "key_cards"}
+    assert (top[1]["archetype"], top[1]["archetype_id"], top[1]["key_cards"]) == ("Bee", "b", [{"name": "Bee Card", "oracle_id": "b0"}])
+    assert (top[2]["archetype"], top[2]["archetype_id"], top[2]["key_cards"]) == ("Other Deck", None, [])  # untracked, and no deck stored
+    assert recent["lead"] == top[0] and recent["winner_player"] == "player0"
+
+
+def test_top_of_a_league_is_the_first_three_listed_and_a_short_event_has_fewer():
+    league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0"] * 5, kind="mtgo_league")
+    two = event("9", "Modern League 2026-09-28", "2026-09-28", ["5-0", "5-0"], kind="mtgo_league")
+    recent = modern(meta30=[archetype("a", 1.0)], events=[league, two])["recent_events"]
+    assert [r["player"] for r in recent[0]["top"]] == ["player0", "player1", "player2"]
+    assert len(recent[1]["top"]) == 2 and recent[1]["lead"] == recent[1]["top"][0]
+
+
+def test_latest_event_has_the_top_of_its_event():
+    challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place"])
+    document = modern(meta30=[archetype("a", 1.0)], events=[challenge])
+    assert document["latest_event"]["top"] == document["recent_events"][0]["top"] and len(document["latest_event"]["top"]) == 2
+
+
+def test_a_result_without_key_cards_takes_its_decks_two_most_played_non_lands():
+    league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0", "5-0", "5-0"], kind="mtgo_league", archetype_id=None)
+    decks = {
+        "0": stored((4, "Mountain"), (4, "Lightning Bolt"), (4, "Arid Mesa"), (3, "Ragavan, Nimble Pilferer"), (2, "Ocelot Pride")),
+        "1": stored((2, "Ragavan, Nimble Pilferer"), (2, "Lightning Bolt"), (2, "Ocelot Pride"), (1, "Made-up Card")),  # ties keep the decklist's order
+        "2": stored((2, "Lightning Bolt"), (2, "Ragavan, Nimble Pilferer"), (1, "Lightning Bolt"), (3, "Made-up Card")),  # copies of a name add up; unknown names are skipped
+    }
+    top = modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks, catalog=CATALOG)["recent_events"][0]["top"]
+    assert [r["key_cards"] for r in top] == [
+        [{"name": "Lightning Bolt", "oracle_id": "o-bolt"}, {"name": "Ragavan, Nimble Pilferer", "oracle_id": "o-ragavan"}],
+        [{"name": "Ragavan, Nimble Pilferer", "oracle_id": "o-ragavan"}, {"name": "Lightning Bolt", "oracle_id": "o-bolt"}],
+        [{"name": "Lightning Bolt", "oracle_id": "o-bolt"}, {"name": "Ragavan, Nimble Pilferer", "oracle_id": "o-ragavan"}],
+    ]
+
+
+def test_the_deck_fallback_covers_an_archetype_left_out_of_the_metagame_and_a_tile_with_no_key_cards():
+    gone = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0"], kind="mtgo_league", archetype_id="not-in-meta")
+    bare = event("9", "Modern League 2026-09-28", "2026-09-28", ["5-0"], kind="mtgo_league", archetype_id="bare")
+    decks = {"0": stored((4, "Lightning Bolt"), (4, "Ocelot Pride"))}
+    recent = modern(meta30=[archetype("bare", 1.0, key_cards=[])], events=[gone, bare], decks=decks, catalog=CATALOG)["recent_events"]
+    assert [[c["oracle_id"] for c in e["lead"]["key_cards"]] for e in recent] == [["o-bolt", "o-ocelot"]] * 2
+
+
+def test_the_archetypes_own_key_cards_win_over_the_deck_and_a_deck_only_has_its_mainboard():
+    winner = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place"])
+    decks = {"0": stored((4, "Lightning Bolt")), "1": {"m": [[4, "Mountain"]], "s": [[4, "Sideboard Card"]]}}
+    top = modern(meta30=[archetype("a", 1.0)], events=[winner], decks=decks, catalog=CATALOG)["recent_events"][0]["top"]
+    assert [c["oracle_id"] for c in top[0]["key_cards"]] == ["o0", "o1"]  # the tile's, though the deck is known
+    assert top[1]["key_cards"] == []  # only a land in the main, and the sideboard doesn't count
+
+
+def test_without_a_stored_deck_or_a_catalog_a_result_keeps_empty_key_cards():
+    league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0"], kind="mtgo_league", archetype_id=None)
+    decks = {"0": stored((4, "Lightning Bolt"))}
+    assert modern(meta30=[archetype("a", 1.0)], events=[league], catalog=CATALOG)["recent_events"][0]["lead"]["key_cards"] == []
+    assert modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks)["recent_events"][0]["lead"]["key_cards"] == []
+    assert modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks, catalog={})["recent_events"][0]["lead"]["key_cards"] == []
+
+
+# Prices and mana values decide ties between cards played in equal numbers.
+PRICED = {
+    "amulet-of-vigor": {"name": "Amulet of Vigor", "oracle_id": "o-amulet", "price": 30.0, "mana_value": 1},
+    "primeval-titan": {"name": "Primeval Titan", "oracle_id": "o-titan", "price": 2.0, "mana_value": 6},
+    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "o-bolt", "price": 1.5, "mana_value": 1},
+    "ocelot-pride": {"name": "Ocelot Pride", "oracle_id": "o-ocelot", "price": 8.0, "mana_value": 1},
+    "spell-cheap": {"name": "Spell Cheap", "oracle_id": "o-cheap", "mana_value": 1},
+    "spell-dear": {"name": "Spell Dear", "oracle_id": "o-dear", "mana_value": 5},
+    "spell-free": {"name": "Spell Free", "oracle_id": "o-free", "price": 0.0, "mana_value": 0},
+    "wear": {"name": "Wear // Tear", "oracle_id": "o-wear", "mana_value": 2},
+    "fable-of-the-mirror-breaker": {"name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", "oracle_id": "o-fable", "price": 10.0, "mana_value": 3},
+    "mountain": {"name": "Mountain", "oracle_id": "o-mountain", "land": True},
+}
+
+
+def picked(mainboard, archetype="", limit=2):
+    return [card["oracle_id"] for card in deck_key_cards(mainboard, PRICED, archetype, limit)]
+
+
+def test_a_namesake_card_comes_first_then_the_most_played():
+    deck = [[4, "Lightning Bolt"], [4, "Ocelot Pride"], [1, "Amulet of Vigor"], [4, "Primeval Titan"], [4, "Mountain"]]
+    # "Amulet Titan" names two cards; the better ranked, four Primeval Titan against one Amulet, is the namesake.
+    assert picked(deck, "Amulet Titan") == ["o-titan", "o-ocelot"]  # then the priciest of the 4-ofs left
+    assert picked(deck, "Amulet Titan", limit=3) == ["o-titan", "o-ocelot", "o-bolt"]
+    assert picked(deck, "Lands Deck") == ["o-ocelot", "o-titan"]  # no namesake: the most played, the pricier first; the land never counts
+    assert picked([[4, "Lightning Bolt"], [1, "Amulet of Vigor"]], "Amulet Titan") == ["o-amulet", "o-bolt"]  # a one-of namesake still leads
+
+
+def test_the_namesake_matches_on_words_of_four_letters_or_more_in_the_front_face_name():
+    deck = [[4, "Lightning Bolt"], [3, "Ocelot Pride"], [2, "Wear/Tear"], [1, "Fable of the Mirror-Breaker"]]
+    assert picked(deck, "Wear Deck") == ["o-wear", "o-bolt"]  # "Wear/Tear" is written by its front face
+    assert picked(deck, "Tear Deck") == ["o-bolt", "o-ocelot"]  # the back face doesn't count
+    assert picked(deck, "FABLE MIRROR") == ["o-fable", "o-bolt"]  # any case; the deck writes the front face of a double-faced card
+    assert picked(deck, "Big Ice Pod") == ["o-bolt", "o-ocelot"]  # "Big", "Ice" and "Pod" are under four letters
+    assert picked(deck, "W") == ["o-bolt", "o-ocelot"] and picked(deck, "") == ["o-bolt", "o-ocelot"]
+
+
+def test_ties_in_copies_go_to_the_price_then_the_mana_value_then_the_decklist_order():
+    deck = [[4, "Spell Cheap"], [4, "Lightning Bolt"], [4, "Ocelot Pride"], [4, "Spell Dear"], [4, "Spell Free"], [3, "Primeval Titan"]]
+    # $8, $1.5, then a $0 card beats the two with no price, which fall to mana value (5, then 1).
+    assert picked(deck, "", limit=5) == ["o-ocelot", "o-bolt", "o-free", "o-dear", "o-cheap"]
+    assert picked([[4, "Spell Dear"], [4, "Spell Cheap"], [4, "Spell Free"]], "", limit=2) == ["o-free", "o-dear"]
+    same = {"a": {"name": "A", "oracle_id": "oa", "price": 1.0, "mana_value": 2}, "b": {"name": "B", "oracle_id": "ob", "price": 1.0, "mana_value": 2}}
+    assert [c["name"] for c in deck_key_cards([[2, "B"], [2, "A"]], same)] == ["B", "A"]  # nothing left to tell them apart
+    assert [c["name"] for c in deck_key_cards([[1, "B"], [2, "A"]], same)] == ["A", "B"]  # copies come before price
+
+
+def test_a_result_previews_its_deck_with_the_namesake_of_its_archetype_title():
+    league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0"], kind="mtgo_league", archetype_id=None)
+    league["results"][0]["archetype"] = "Amulet Titan"
+    decks = {"0": stored((4, "Lightning Bolt"), (1, "Amulet of Vigor"), (2, "Primeval Titan"))}
+    lead = modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks, catalog=PRICED)["recent_events"][0]["lead"]
+    assert [c["oracle_id"] for c in lead["key_cards"]] == ["o-titan", "o-bolt"]
