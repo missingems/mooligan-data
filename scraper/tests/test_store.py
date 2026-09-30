@@ -271,3 +271,43 @@ def test_a_run_of_one_format_keeps_the_others_in_explore(tmp_path):
 def test_nothing_scraped_leaves_explore_unwritten(tmp_path):
     SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).finish()
     assert not (tmp_path / "explore.json").exists()
+
+
+def test_finish_writes_a_page_per_archetype_and_event_and_flags_the_decks_it_has(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    store = SnapshotStore(tmp_path, ["modern", "pioneer"], history_days=30, now=NOW)
+    store.save_meta(Meta("modern", "30d", [Archetype("Eldrazi", 9.4, "modern-eldrazi", 648, colors=["G"], key_cards=["Eldrazi Temple"])]))
+    store.save_event(Event("7", "Modern Challenge 32 2026-09-21", "modern", day("2026-09-21"), [
+        EventResult("p1", "Eldrazi", "1st Place", "5", "modern-eldrazi"),
+        EventResult("p2", "Some Brew", "2nd Place", "6"),
+    ], "https://www.mtggoldfish.com/tournament/7"))
+    store.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", "9", "Roy", [
+        ArchetypeResult("5", day("2026-09-21"), "p1", "7", "Modern Challenge 32 2026-09-21", "1st Place"),
+    ]))
+    store.save_decks([Deck("5", "p1", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [], "modern", "7")])
+    store.finish()
+
+    archetype = json.loads((tmp_path / "archetypes" / "modern-eldrazi.json").read_text())
+    assert (archetype["id"], archetype["format"], archetype["colors"], archetype["shares"]) == ("modern-eldrazi", "modern", ["G"], {"7d": None, "14d": None, "30d": 9.4})
+    assert [(d["deck_id"], d["event_id"], d["event_name"], d["published"]) for d in archetype["decks"]] == [("5", "7", "Modern Challenge 32", True)]
+
+    event = json.loads((tmp_path / "events" / "7.json").read_text())
+    assert (event["id"], event["date"], event["format"]) == ("7", "2026-09-21", "modern")
+    assert [(r["deck_id"], r["archetype_id"], r["published"], [c["name"] for c in r["key_cards"]]) for r in event["results"]] == [
+        ("5", "modern-eldrazi", True, ["Eldrazi Temple"]),
+        ("6", None, False, []),  # never downloaded, so a 404 on decks/6.json
+    ]
+
+    explore = json.loads((tmp_path / "explore.json").read_text())
+    recent = explore["formats"][0]["recent_events"][0]
+    assert (recent["id"], recent["result_count"], recent["lead"]["deck_id"]) == ("7", 2, "5")
+    assert not (tmp_path / "archetypes" / "pioneer.json").exists() and not (tmp_path / "events" / "pioneer.json").exists()
+
+
+def test_a_run_for_one_format_writes_no_pages_for_the_others(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_event(event("1", "2026-09-20"))
+    store.finish()
+    assert (tmp_path / "events" / "1.json").exists()
+    assert not (tmp_path / "archetypes").exists()  # modern has no metagame yet

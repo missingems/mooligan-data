@@ -101,6 +101,14 @@ jobs:
           if [ -d work/premier ]; then
             cp work/premier "$R2/premier" --recursive --cache-control "public, max-age=300"
           fi
+          # Written from the snapshots with the same max-age, and uploaded before them and explore.json,
+          # which link to them. Like the other prefixes these are only overwritten, never pruned.
+          if [ -d work/archetypes ]; then
+            cp work/archetypes "$R2/archetypes" --recursive --cache-control "public, max-age=300"
+          fi
+          if [ -d work/events ]; then
+            cp work/events "$R2/events" --recursive --cache-control "public, max-age=300"
+          fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           # Built from the snapshots above, so it goes up after them.
           if [ -f work/explore.json ]; then
@@ -108,7 +116,7 @@ jobs:
           fi
           cp work/state "$R2/state" --recursive --cache-control "no-cache"
           cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
-          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages"
+          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages, $(ls work/archetypes 2>/dev/null | wc -l) archetype pages, $(ls work/events 2>/dev/null | wc -l) event pages"
           cat work/index.json
 
       - name: Fail if the scrape reported errors

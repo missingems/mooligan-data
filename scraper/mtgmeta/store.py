@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
+from .drilldown import build_archetype_pages, build_event_pages
 from .edhrec import due_slugs, edhrec_slug
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
@@ -247,6 +248,7 @@ class SnapshotStore:
                 "archetypes": len(archetypes),
             }
         written += self._write_explore(documents)
+        self._write_drilldown(documents)
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog or {})
@@ -277,6 +279,29 @@ class SnapshotStore:
             return []  # nothing to summarise: leave the published file alone
         self._write("explore.json", _json_bytes(explore))
         return ["explore.json"]
+
+    def _write_drilldown(self, documents: Dict[str, dict]) -> None:
+        """Writes archetypes/{id}.json and events/{id}.json for the formats this run built.
+
+        MTGGoldfish's archetype and tournament ids are global (each belongs to one format), so
+        the files sit side by side, and a format this run skipped keeps the files already
+        published. Nothing is deleted: a page for an event or archetype that has aged out stays where it
+        is, unlinked, until the bucket is cleaned.
+        """
+        counts = {"archetypes": 0, "events": 0}
+        for format, document in documents.items():
+            for kind, pages in (
+                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids)),
+                ("events", build_event_pages(document, self._now, self._deck_ids)),
+            ):
+                for page_id, page in pages.items():
+                    # An id becomes a file name, so only the plain ones the site uses are written.
+                    if not re.fullmatch(r"[A-Za-z0-9_-]+", page_id):
+                        log.warning("Skipped %s page with an unusable id %r in %s", kind, page_id, format)
+                        continue
+                    self._write(f"{kind}/{page_id}.json", _json_bytes(page))
+                    counts[kind] += 1
+        log.info("Drill-down pages: %d archetypes, %d events", counts["archetypes"], counts["events"])
 
     def _write_card_pages(
         self, card_decks: Dict[str, FormatDecks], fetch_edh=None, edh_limit: int = 0, catalog: Dict[str, dict] = {}
