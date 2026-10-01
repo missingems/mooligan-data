@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,extract,ingest,prompt,recheck,build} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,extract,ingest,prompt,recheck,bio-input,bio-ingest,build} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "build"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "build"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -57,6 +57,20 @@ def main() -> int:
         checked = save(args.data, args.page, load_pages(args.data)[args.page], json.loads(args.raw.read_text()), args.model, None)
         print(json.dumps({"page": args.page, "entities": len(checked["entities"]), "events": len(checked["events"]),
                           "relations": len(checked["relations"]), "rejected": [(r["kind"], r["reason"], r["quote"][:60]) for r in checked["rejected"]]}))
+        return 0
+
+    if args.step == "bio-input":
+        from .bios import INSTRUCTIONS, material
+
+        print(INSTRUCTIONS + "\n\n---\n\n" + material(args.data / "index", args.page))
+        return 0
+
+    if args.step == "bio-ingest":
+        from .bios import ingest
+
+        checked = ingest(args.data, args.page, json.loads(args.raw.read_text()), args.model)
+        print(json.dumps({"id": args.page, "bio": len(checked["bio"]), "summary": bool(checked["summary"]),
+                          "status": bool(checked["status"]), "rejected": [(r["part"], r.get("text", "")[:60]) for r in checked["rejected"]]}))
         return 0
 
     if args.step == "recheck":

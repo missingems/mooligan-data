@@ -312,8 +312,14 @@ def build(directory: Path) -> dict:
         for entity_id in (relation["source"], relation["target"]):
             by_entity[entity_id]["relations"].append(relation)
     for entity_id, entity in entities.items():
+        # A bio written for the entity (see bios.py) gives it a better description than any one page.
+        bio_path = directory / "bios" / f"{entity_id}.json"
+        bio = json.loads(bio_path.read_text()) if bio_path.exists() else None
+        if bio and bio.get("summary"):
+            entity["description"] = bio["summary"]["text"]
         write(out / "entity" / f"{entity_id}.json", {
             **entity,
+            "bio": {k: bio[k] for k in ("summary", "bio", "status")} if bio else None,
             "timeline": by_entity[entity_id]["events"],
             "relations": by_entity[entity_id]["relations"],
             "pages_say": said[entity_id],
