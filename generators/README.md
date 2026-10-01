@@ -1,5 +1,5 @@
 # MTGImageHash
-The Magic: The Gathering card-recognition database used by Mooligan's scanner, rebuilt twice daily from Scryfall.
+The Magic: The Gathering card-recognition database used by Mooligan's scanner, rebuilt daily from Scryfall.
 
 Each card face is stored as an Apple Vision feature print (`VNGenerateImageFeaturePrintRequest` revision 2, `scaleFill`, 768 floats), computed from Scryfall's `normal` image. Only paper cards are included; substitute, checklist and art-series layouts are skipped. This matches the pipeline in the MTGCards app, which produced the database bundled in Mooligan.
 
@@ -54,7 +54,7 @@ For the archived files:
 - If `masterVersion` differs from the client's copy, or the client is more than 20 patches behind, it downloads every master chunk. The master always contains every patch.
 - Otherwise the client applies `patch_(local+1)` through `patch_latest` in order.
 
-`masterVersion` changes when a rebase happens: after 14 patches (about a week), or on a manual full rebuild. Faces that leave Scryfall's catalog are dropped only at a rebase, because patches can only add or replace entries.
+`masterVersion` changes when a rebase happens: after 14 patches (about two weeks, at one build a day), or on a manual full rebuild. Faces that leave Scryfall's catalog are dropped only at a rebase, because patches can only add or replace entries.
 
 ## How it runs
 
