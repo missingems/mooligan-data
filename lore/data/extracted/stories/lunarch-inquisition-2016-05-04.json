@@ -1,0 +1,608 @@
+{
+ "page": "stories/lunarch-inquisition-2016-05-04",
+ "url": "https://magic.wizards.com/en/news/magic-story/lunarch-inquisition-2016-05-04",
+ "title": "The Lunarch Inquisition",
+ "story_date": "2016-05-04",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:34:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [
+    "Guardian of Thraben",
+    "Thalia Guardian of Thraben"
+   ],
+   "description": "A soldier stripped of the title Guardian of Thraben who renounces Avacyn's church, accuses Bishop Jerren of leading the Skirsdag, and founds the Order of Saint Traft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [
+    "Commander Odric",
+    "Lunarch Marshal"
+   ],
+   "description": "A cathar leader who sits on the Lunarch Council without a vote, who betrays Thalia's heresy, then rescues her and kills his own cathars to flee Thraben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grete",
+   "type": "character",
+   "aliases": [
+    "Executive Officer Grete"
+   ],
+   "description": "Odric's red-haired champion who escorts Thalia out, then helps free her and swears to follow her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bishop Jerren",
+   "type": "character",
+   "aliases": [
+    "Jerren"
+   ],
+   "description": "A bishop who is nominal leader of the Lunarch Council and is accused of leading the Skirsdag in communion with Ormendahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quilion",
+   "type": "character",
+   "aliases": [
+    "Bishop Quilion"
+   ],
+   "description": "A lesser bishop who defends Jerren and calls Thalia the only heretic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carlin",
+   "type": "character",
+   "aliases": [
+    "Bishop Carlin"
+   ],
+   "description": "A bishop who reads Thalia's letter and pales.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dougan",
+   "type": "character",
+   "aliases": [],
+   "description": "A young cathar trained by Odric, who blocks the escape on Jerren's orders and is wounded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marta",
+   "type": "character",
+   "aliases": [],
+   "description": "A young cathar trained by Odric, killed by Grete in the fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haral",
+   "type": "character",
+   "aliases": [],
+   "description": "An older soldier who fought zombies with Odric and is killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulmach",
+   "type": "character",
+   "aliases": [
+    "Chief Inquisitor"
+   ],
+   "description": "The Chief Inquisitor of Nephalia whose inquisition burns children at Elgaud.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "deity",
+   "aliases": [
+    "Profane Prince"
+   ],
+   "description": "A demon called the Profane Prince, in communion with Jerren according to Thalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [
+    "Blessed Avacyn"
+   ],
+   "description": "The archangel at the head of the church, now leading a purge; Thalia doubts whether the Helvault corrupted her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saint Traft",
+   "type": "character",
+   "aliases": [
+    "Demon Slayer",
+    "Beloved of Angels",
+    "Martyr of the Needle's Eye"
+   ],
+   "description": "A holy geist and legendary saint who appears beside Thalia and is patron of her order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [
+    "High City"
+   ],
+   "description": "The holy city where the Lunarch Council sits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben Cathedral",
+   "type": "location",
+   "aliases": [
+    "the cathedral"
+   ],
+   "description": "The cathedral where the Lunarch Council meets and where Thalia is imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elgaud",
+   "type": "location",
+   "aliases": [
+    "Elgaud Grounds"
+   ],
+   "description": "A place in Nephalia where the inquisition has burned children.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "The region where the church is led by Ulmach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wittal Parish",
+   "type": "location",
+   "aliases": [
+    "Wittal"
+   ],
+   "description": "A parish near the ruins of Estwald where Thalia says she found a witch with Jerren's letter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nearheath Chapel",
+   "type": "location",
+   "aliases": [
+    "tiny Nearheath chapel"
+   ],
+   "description": "A small chapel where Thalia gathers cathars and founds her order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The prison that contained the demons and Avacyn before Thalia sundered it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lunarch Council",
+   "type": "faction",
+   "aliases": [
+    "the council"
+   ],
+   "description": "The council of senior bishops that commands the Church of Avacyn, with cathar leaders as advisors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [
+    "the church"
+   ],
+   "description": "The church of Innistrad that serves Avacyn and runs the inquisition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cathars",
+   "type": "faction",
+   "aliases": [
+    "cathar"
+   ],
+   "description": "The soldiers of Avacyn's church.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inquisition",
+   "type": "faction",
+   "aliases": [
+    "inquisitors"
+   ],
+   "description": "The church's inquisition, operating under the council's aegis, led by Ulmach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirsdag",
+   "type": "faction",
+   "aliases": [],
+   "description": "A demonic cult accused by Thalia of being led by Bishop Jerren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Saint Traft",
+   "type": "faction",
+   "aliases": [],
+   "description": "A band of cathars gathered by Thalia in a small chapel to fight corrupt church and angels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Flight Alabaster",
+   "type": "faction",
+   "aliases": [],
+   "description": "A flight of angels invoked in cathar funeral rites.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thalia rides to Thraben Cathedral, furious after witnessing atrocities at Elgaud.",
+   "participants": [
+    "Thalia",
+    "Elgaud",
+    "Thraben Cathedral"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The ride from the Elgaud Grounds in Nephalia to Thraben Cathedral had taken days"
+  },
+  {
+   "summary": "Thalia confronts Odric, demanding he stop the inquisition's burning of children at Elgaud.",
+   "participants": [
+    "Thalia",
+    "Odric",
+    "Ulmach"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "We're burning children now."
+  },
+  {
+   "summary": "Odric defends the purge, saying Avacyn is leading it and the church must follow her example.",
+   "participants": [
+    "Odric",
+    "Thalia",
+    "Avacyn"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "minor",
+   "paragraph": 22,
+   "quote": "Avacyn is leading this purge."
+  },
+  {
+   "summary": "Thalia confides her doubt that Avacyn was corrupted by her time in the Helvault.",
+   "participants": [
+    "Thalia",
+    "Odric",
+    "Avacyn",
+    "Helvault"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "What if her time in the Helvault corrupted her?"
+  },
+  {
+   "summary": "Thalia declares she can no longer serve Avacyn and her church.",
+   "participants": [
+    "Thalia",
+    "Odric"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 48,
+   "quote": "I can no longer serve Avacyn and her church."
+  },
+  {
+   "summary": "Odric urges Thalia to leave Thraben and has Grete escort her beyond the wall.",
+   "participants": [
+    "Odric",
+    "Thalia",
+    "Grete"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "minor",
+   "paragraph": 52,
+   "quote": "Will you please escort Thalia beyond the outer wall?"
+  },
+  {
+   "summary": "Thalia tells Grete she will fight, even against the angels if she must.",
+   "participants": [
+    "Thalia",
+    "Grete"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 59,
+   "quote": "I'm going to fight,"
+  },
+  {
+   "summary": "Weeks later Thalia bursts into the Lunarch Council, where Odric tells her the council has removed her title; she realizes he informed the council of her heresy.",
+   "participants": [
+    "Thalia",
+    "Odric",
+    "Bishop Jerren",
+    "Lunarch Council"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "The council has removed it from you."
+  },
+  {
+   "summary": "Thalia accuses Bishop Jerren of communion with Ormendahl and of leading the Skirsdag.",
+   "participants": [
+    "Thalia",
+    "Bishop Jerren",
+    "Ormendahl",
+    "Skirsdag"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 80,
+   "quote": "I bring evidence that you have been in communion with the demon Ormendahl, called the Profane Prince, and you are now the leader of the Skirsdag."
+  },
+  {
+   "summary": "Thalia recounts finding a witch eating a messenger's heart in Wittal parish and killing her (recounted).",
+   "participants": [
+    "Thalia"
+   ],
+   "location": "Wittal Parish",
+   "importance": "minor",
+   "paragraph": 86,
+   "quote": "Rushing inside, we found the witch lifting the quivering heart from the corpse of a messenger"
+  },
+  {
+   "summary": "Thalia presents a bloodstained letter bearing Jerren's seal giving instructions to the witch in the Profane Prince's name.",
+   "participants": [
+    "Thalia",
+    "Bishop Jerren",
+    "Ormendahl"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 90,
+   "quote": "The letter bears the seal and signature of none other than Bishop Jerren, giving instructions to this witch in the name of the Profane Prince!"
+  },
+  {
+   "summary": "Several bishops refuse the letter until Carlin takes it and pales as she reads.",
+   "participants": [
+    "Carlin",
+    "Quilion",
+    "Thalia",
+    "Bishop Jerren"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "minor",
+   "paragraph": 92,
+   "quote": "Three bishops refused her as the council sat in stony silence, before Bishop Carlin took it with a quivering hand."
+  },
+  {
+   "summary": "The council calls for Thalia's execution and cathars seize her on Jerren's signal.",
+   "participants": [
+    "Thalia",
+    "Bishop Jerren",
+    "Cathars",
+    "Lunarch Council"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 100,
+   "quote": "Cathars came and seized Thalia's arms before she could draw it, looking to Jerren for direction."
+  },
+  {
+   "summary": "Odric, shaken by the council's cruelty, goes to Thalia's cell and tells the guard to open it, planning to leave with her.",
+   "participants": [
+    "Odric",
+    "Thalia",
+    "Grete"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 107,
+   "quote": "We are leaving here, together."
+  },
+  {
+   "summary": "Dougan and other cathars block Odric, Thalia and Grete at the stables on Jerren's orders.",
+   "participants": [
+    "Odric",
+    "Thalia",
+    "Grete",
+    "Dougan",
+    "Cathars"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "Stop where you stand, Lunarch Marshal,"
+  },
+  {
+   "summary": "Odric disarms and wounds Dougan, and Grete kills Marta in the fight against the eight cathars.",
+   "participants": [
+    "Odric",
+    "Grete",
+    "Dougan",
+    "Marta"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 133,
+   "quote": "Marta, fighting on despite the wound in her shoulder, fell under Grete's heavy sword."
+  },
+  {
+   "summary": "Odric kills Haral, leaving all eight cathars bleeding or dying on the cathedral floor.",
+   "participants": [
+    "Odric",
+    "Haral"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 137,
+   "quote": "The inevitable opening came, and Odric took it without thinking, slashing the man's throat open."
+  },
+  {
+   "summary": "The three escape the cathedral and leave Thraben on horseback.",
+   "participants": [
+    "Odric",
+    "Thalia",
+    "Grete"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 140,
+   "quote": "And they left the cathedral, then left Thraben, left their old lives far behind."
+  },
+  {
+   "summary": "Thalia welcomes Grete to the Order of Saint Traft in a small Nearheath chapel.",
+   "participants": [
+    "Thalia",
+    "Grete",
+    "Odric",
+    "Order of Saint Traft"
+   ],
+   "location": "Nearheath Chapel",
+   "importance": "major",
+   "paragraph": 153,
+   "quote": "Welcome to the Order of Saint Traft,"
+  },
+  {
+   "summary": "The holy geist of Saint Traft appears beside Thalia.",
+   "participants": [
+    "Saint Traft",
+    "Thalia",
+    "Grete"
+   ],
+   "location": "Nearheath Chapel",
+   "importance": "major",
+   "paragraph": 156,
+   "quote": "radiant but insubstantial, a holy geist."
+  },
+  {
+   "summary": "Grete kneels and pledges to follow Thalia.",
+   "participants": [
+    "Grete",
+    "Thalia"
+   ],
+   "location": "Nearheath Chapel",
+   "importance": "major",
+   "paragraph": 158,
+   "quote": "Wherever you lead."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thalia",
+   "relation": "ally",
+   "target": "Odric",
+   "note": "Old friends, though divided over the inquisition.",
+   "paragraph": 11,
+   "quote": "It's good to see you, old friend,"
+  },
+  {
+   "source": "Odric",
+   "relation": "member_of",
+   "target": "Lunarch Council",
+   "note": "He sits on the council without a vote.",
+   "paragraph": 45,
+   "quote": "I am a member of the Lunarch Council..."
+  },
+  {
+   "source": "Odric",
+   "relation": "serves",
+   "target": "Church of Avacyn",
+   "note": "He says he serves Avacyn and her church.",
+   "paragraph": 47,
+   "quote": "I serve Avacyn and her church."
+  },
+  {
+   "source": "Grete",
+   "relation": "serves",
+   "target": "Odric",
+   "note": "Described as Odric's champion.",
+   "paragraph": 50,
+   "quote": "Odric's champion"
+  },
+  {
+   "source": "Ulmach",
+   "relation": "leader_of",
+   "target": "Inquisition",
+   "note": "Chief Inquisitor.",
+   "paragraph": 16,
+   "quote": "He's Chief Inquisitor, Thalia."
+  },
+  {
+   "source": "Bishop Jerren",
+   "relation": "leader_of",
+   "target": "Lunarch Council",
+   "note": "Called the nominal leader of the council.",
+   "paragraph": 81,
+   "quote": "the nominal leader of the council"
+  },
+  {
+   "source": "Bishop Jerren",
+   "relation": "leader_of",
+   "target": "Skirsdag",
+   "note": "Alleged by Thalia, who accuses him of communion with Ormendahl.",
+   "paragraph": 80,
+   "quote": "you are now the leader of the Skirsdag."
+  },
+  {
+   "source": "Odric",
+   "relation": "mentor_of",
+   "target": "Dougan",
+   "note": "Odric trained him.",
+   "paragraph": 122,
+   "quote": "He had trained the young man, years ago."
+  },
+  {
+   "source": "Odric",
+   "relation": "mentor_of",
+   "target": "Marta",
+   "note": "Odric trained her.",
+   "paragraph": 130,
+   "quote": "Marta, another young cathar he had trained."
+  },
+  {
+   "source": "Odric",
+   "relation": "killed",
+   "target": "Haral",
+   "note": "Slashes his throat.",
+   "paragraph": 137,
+   "quote": "slashing the man's throat open."
+  },
+  {
+   "source": "Grete",
+   "relation": "killed",
+   "target": "Marta",
+   "note": "Marta falls under Grete's sword.",
+   "paragraph": 133,
+   "quote": "Marta, fighting on despite the wound in her shoulder, fell under Grete's heavy sword."
+  },
+  {
+   "source": "Thalia",
+   "relation": "leader_of",
+   "target": "Order of Saint Traft",
+   "note": "She gathers the cathars and welcomes Grete to the order.",
+   "paragraph": 153,
+   "quote": "Welcome to the Order of Saint Traft,"
+  },
+  {
+   "source": "Saint Traft",
+   "relation": "other",
+   "target": "Thalia",
+   "note": "Thalia says he chose her as patron.",
+   "paragraph": 155,
+   "quote": "He chose me."
+  }
+ ],
+ "rejected": []
+}

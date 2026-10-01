@@ -1,0 +1,622 @@
+{
+ "page": "stories/dead-night-2016-11-30",
+ "url": "https://magic.wizards.com/en/news/magic-story/dead-night-2016-11-30",
+ "title": "In the Dead of Night",
+ "story_date": "2016-11-30",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:27:43Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Yahenni",
+   "type": "character",
+   "aliases": [],
+   "description": "An aetherborn socialite and philanthropist, minutes from death, who discovers they can drain essence from living people to extend their life.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nived",
+   "type": "character",
+   "aliases": [],
+   "description": "Yahenni's favorite caterer, who paints the renegade symbol on the Museum of Invention and is shocked unconscious by a Consulate enforcer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate enforcer",
+   "type": "character",
+   "aliases": [
+    "The Honorable"
+   ],
+   "description": "A sadistic Consulate enforcer who torments Nived and hunts for sympathizers of the renegades; killed by Yahenni.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gonti",
+   "type": "character",
+   "aliases": [],
+   "description": "An infamous aetherborn crime lord with a manufactured metal heart, who sends Yahenni to warn the renegades so they will move against the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A human pyromancer and planeswalker, daughter of Pia Nalaar, hiding with the renegades and Gatewatch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elf planeswalker and Gatewatch member who comforts Yahenni with a current of land energy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker of the Gatewatch hiding in the statue, who uses mind magic to hurt Yahenni on the ladder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A planeswalker of the Gatewatch in a dark dress with fur at the collar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A beefy, sideburned human planeswalker of the Gatewatch who watches the outside through a gap in the walls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani",
+    "the giant cat"
+   ],
+   "description": "A leonin planeswalker waiting with Mrs. Pashiri at the ration line.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Chandra's mother, a criminal in the Consulate's eyes, now free and meeting other renegades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oviya Pashiri",
+   "type": "character",
+   "aliases": [
+    "Mrs. Pashiri"
+   ],
+   "description": "A friend of the renegades who is with Ajani at the receiving line for grocery rations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker the Gatewatch fears may accompany the Consulate; Chandra calls him a tool.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Depala",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarven friend of Yahenni whose pet hyena Yahenni accidentally killed at four weeks old.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rajul",
+   "type": "character",
+   "aliases": [],
+   "description": "A great aetherborn inventor who pioneered medical technology for non-organic beings and has a statue in the Statuary Garden.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Aradaras",
+   "type": "faction",
+   "aliases": [
+    "Aradaras"
+   ],
+   "description": "The mother-and-son team who perfected the aether-propelled train and started the tradition of inventor statues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Consulate",
+   "type": "faction",
+   "aliases": [
+    "Consulate of Ghirapur"
+   ],
+   "description": "The governing body of Ghirapur which confiscated unapproved devices, cut energy access and imposed a curfew.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Renegades",
+   "type": "faction",
+   "aliases": [
+    "renegades"
+   ],
+   "description": "A rebel faction opposing the Consulate, whose symbol is the leaking spire.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The group of planeswalkers hiding with the renegades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of Kaladesh under Consulate curfew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the story takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Weldfast",
+   "type": "location",
+   "aliases": [
+    "Weldfast"
+   ],
+   "description": "A district of Ghirapur and once the best night district of the city, now shut down under curfew.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Museum of Invention",
+   "type": "location",
+   "aliases": [],
+   "description": "A Ghirapur museum covered in Consulate banners, where Nived paints the leaking spire.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Statuary Garden",
+   "type": "location",
+   "aliases": [],
+   "description": "A massive arboretum near Aradara Station lined with statues of Ghirapur's most famous inventors; the renegades hide in a statue there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aradara Station",
+   "type": "location",
+   "aliases": [],
+   "description": "A station near the Statuary Garden.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yahenni's penthouse",
+   "type": "location",
+   "aliases": [
+    "my penthouse"
+   ],
+   "description": "Yahenni's secure penthouse with more than seven bedrooms, offered as a hideout.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gonti's residence",
+   "type": "location",
+   "aliases": [],
+   "description": "A palace disguised as a warehouse, full of stolen opulence and devices hidden from the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Great Conduit",
+   "type": "location",
+   "aliases": [
+    "the Conduit"
+   ],
+   "description": "A mural of it decorates Gonti's room; Yahenni wonders whether aetherborn float in it before life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether",
+   "type": "concept",
+   "aliases": [],
+   "description": "The substance aetherborn are made of, restricted by the Consulate's ordinances.",
+   "presence": "appears"
+  },
+  {
+   "name": "Penultimate Party",
+   "type": "concept",
+   "aliases": [],
+   "description": "The party every aetherborn is supposed to be guaranteed before they die.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The leaking spire",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The renegade symbol: an upside down Consulate symbol with flourishes emptying out of the bottom, representing hope that aether is returned to the people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aetherborn",
+   "type": "creature",
+   "aliases": [],
+   "description": "Short-lived empathic beings born of aether, like Yahenni and Gonti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gremlin",
+   "type": "creature",
+   "aliases": [],
+   "description": "A starving gremlin follows Yahenni, waiting for them to die.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yahenni, minutes from death, stumbles through the curfew-empty Weldfast looking for someone to be with them.",
+   "participants": [
+    "Yahenni"
+   ],
+   "location": "The Weldfast",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "It is dark and I am the only person shambling under the eaves of the Weldfast."
+  },
+  {
+   "summary": "Yahenni realizes they will die alone and panics, then smells a familiar friend.",
+   "participants": [
+    "Yahenni"
+   ],
+   "location": "The Weldfast",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "I'm going to die alone."
+  },
+  {
+   "summary": "Yahenni finds Nived painting the renegade leaking spire over torn Consulate banners at the Museum of Invention.",
+   "participants": [
+    "Yahenni",
+    "Nived",
+    "The Renegades"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "From across the street I can make out a human figure putting the final touches on their graffiti."
+  },
+  {
+   "summary": "Yahenni apologizes to Nived for canceling his catering of their Penultimate Party at the last moment.",
+   "participants": [
+    "Yahenni",
+    "Nived"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "minor",
+   "paragraph": 39,
+   "quote": "\"I'm sorry...I canceled...less than a day prior to when my party was scheduled...\""
+  },
+  {
+   "summary": "A Consulate enforcer and an armament automaton arrest Nived for vandalism and shock him unconscious with an energy device.",
+   "participants": [
+    "Consulate enforcer",
+    "Nived",
+    "The Consulate"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "Nived screams, seizes, and topples to the ground."
+  },
+  {
+   "summary": "The enforcer repeatedly shocks and kicks the unconscious Nived while demanding what Yahenni knows about six renegade sympathizers, including Pia Nalaar's daughter.",
+   "participants": [
+    "Consulate enforcer",
+    "Nived",
+    "Yahenni",
+    "Pia Nalaar"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "minor",
+   "paragraph": 61,
+   "quote": "I'm looking for six individuals that are sympathetic to the renegades' cause."
+  },
+  {
+   "summary": "Yahenni drains the enforcer's essence, killing them, feeling their death, and restoring their own body for twelve days.",
+   "participants": [
+    "Yahenni",
+    "Consulate enforcer"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "major",
+   "paragraph": 68,
+   "quote": "I claw my right hand and pull from the enforcer's neck."
+  },
+  {
+   "summary": "Yahenni realizes they have killed a person and are a murderer, but rationalizes that they may live by killing bad people.",
+   "participants": [
+    "Yahenni"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "major",
+   "paragraph": 76,
+   "quote": "...I am a murderer."
+  },
+  {
+   "summary": "Yahenni hides Nived behind a stall and decides to find the renegades and the criminal's daughter, then seek Gonti's help.",
+   "participants": [
+    "Yahenni",
+    "Nived",
+    "Gonti"
+   ],
+   "location": "The Museum of Invention",
+   "importance": "minor",
+   "paragraph": 88,
+   "quote": "I need to find the renegades."
+  },
+  {
+   "summary": "Yahenni gets Nived home and reaches Gonti's palace-like hideout, where Gonti is bathing in aether attar, a metal lump visible on their chest.",
+   "participants": [
+    "Yahenni",
+    "Gonti"
+   ],
+   "location": "Gonti's residence",
+   "importance": "minor",
+   "paragraph": 97,
+   "quote": "Gonti sits submerged, their face covered with a gilded mask."
+  },
+  {
+   "summary": "Yahenni blackmails Gonti with the secret of their manufactured heart, asking where Chandra and Pia Nalaar are hiding.",
+   "participants": [
+    "Yahenni",
+    "Gonti",
+    "Chandra Nalaar",
+    "Pia Nalaar"
+   ],
+   "location": "Gonti's residence",
+   "importance": "major",
+   "paragraph": 115,
+   "quote": "\"If you tell me where they are hiding, I will keep the secret of your manufactured heart to myself."
+  },
+  {
+   "summary": "Gonti realizes Yahenni is an essence drainer and reveals having employed two before.",
+   "participants": [
+    "Gonti",
+    "Yahenni"
+   ],
+   "location": "Gonti's residence",
+   "importance": "minor",
+   "paragraph": 119,
+   "quote": "\"Essence drainers are rare,\" Gonti replies, \"I've only ever had two in my employment."
+  },
+  {
+   "summary": "Gonti reveals the renegades' safe house in the Statuary Garden and tasks Yahenni with warning them that the Consulate is coming, to force them into acting.",
+   "participants": [
+    "Gonti",
+    "Yahenni",
+    "Chandra Nalaar",
+    "The Renegades"
+   ],
+   "location": "Gonti's residence",
+   "importance": "major",
+   "paragraph": 132,
+   "quote": "You'll find the younger Nalaar and her associates in a safe house within the Statuary Garden."
+  },
+  {
+   "summary": "Yahenni goes to the Statuary Garden and climbs a ladder up a Vedalken inventor's statue where they sense the hidden renegades.",
+   "participants": [
+    "Yahenni"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "minor",
+   "paragraph": 138,
+   "quote": "I walk casually toward the statue and start to climb a ladder around the back."
+  },
+  {
+   "summary": "Jace causes Yahenni a body ache on the ladder until Nissa and Chandra recognize them and let them into the hideout.",
+   "participants": [
+    "Yahenni",
+    "Jace Beleren",
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "minor",
+   "paragraph": 150,
+   "quote": "\"Yahenni!\" Chandra yells while opening the hatch and pulling me through."
+  },
+  {
+   "summary": "Chandra introduces Yahenni to Jace, Liliana and Gideon; Chandra says they got her mother free.",
+   "participants": [
+    "Chandra Nalaar",
+    "Yahenni",
+    "Jace Beleren",
+    "Liliana Vess",
+    "Gideon Jura",
+    "Nissa Revane"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "minor",
+   "paragraph": 160,
+   "quote": "Yahenni, this man is Jace, this woman is Liliana, and the man in the corner is Gideon."
+  },
+  {
+   "summary": "Yahenni warns that the Consulate is on its way and offers their penthouse as a safe hideout; the group agrees.",
+   "participants": [
+    "Yahenni",
+    "Nissa Revane",
+    "Gideon Jura",
+    "Jace Beleren",
+    "Liliana Vess"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "major",
+   "paragraph": 177,
+   "quote": "My penthouse is safe."
+  },
+  {
+   "summary": "Yahenni, descending the ladder, sees a Consulate cruiser speeding toward the statue and leaps onto its hood, draining the enforcer driver to death.",
+   "participants": [
+    "Yahenni",
+    "The Consulate"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "major",
+   "paragraph": 201,
+   "quote": "And I jump down."
+  },
+  {
+   "summary": "The enforcer's cruiser crashes into another statue; Yahenni's life is extended to twenty-two days.",
+   "participants": [
+    "Yahenni"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "I now have twenty-two days left to live."
+  },
+  {
+   "summary": "Nissa has Gideon call back Chandra, who walked the wrong way, and directs the group to Yahenni's home and sends word to Ajani, Pia and Mrs. Pashiri.",
+   "participants": [
+    "Nissa Revane",
+    "Gideon Jura",
+    "Chandra Nalaar",
+    "Ajani Goldmane",
+    "Pia Nalaar",
+    "Oviya Pashiri"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "minor",
+   "paragraph": 228,
+   "quote": "Tell Chandra Yahenni's home is that way, and have Jace inform Ajani, Pia, and Mrs. Pashiri of our new location"
+  },
+  {
+   "summary": "Nissa comforts Yahenni with a current of land energy, telling them they are her friend; Yahenni resolves to do good with their remaining days.",
+   "participants": [
+    "Nissa Revane",
+    "Yahenni"
+   ],
+   "location": "The Statuary Garden",
+   "importance": "major",
+   "paragraph": 241,
+   "quote": "\"Because you are my friend,\" she says delicately."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yahenni",
+   "relation": "killed",
+   "target": "Consulate enforcer",
+   "note": "Yahenni drains the enforcer to death.",
+   "paragraph": 75,
+   "quote": "Today I killed a person."
+  },
+  {
+   "source": "Yahenni",
+   "relation": "enemy",
+   "target": "The Consulate",
+   "note": "Yahenni resolves to kill bad people and help the renegades.",
+   "paragraph": 175,
+   "quote": "I want to join the renegade cause"
+  },
+  {
+   "source": "Yahenni",
+   "relation": "ally",
+   "target": "Nissa Revane",
+   "note": "Nissa says they are her friend.",
+   "paragraph": 241,
+   "quote": "\"Because you are my friend,\" she says delicately."
+  },
+  {
+   "source": "Yahenni",
+   "relation": "ally",
+   "target": "Nived",
+   "note": "Nived is Yahenni's favorite caterer and friend.",
+   "paragraph": 28,
+   "quote": "It's Nived, my favorite caterer!"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "family",
+   "target": "Pia Nalaar",
+   "note": "Chandra got her mother free.",
+   "paragraph": 154,
+   "quote": "\"Happy to have you there. I heard you found your parent.\""
+  },
+  {
+   "source": "Gonti",
+   "relation": "leader_of",
+   "target": "Gonti's residence",
+   "note": "Gonti is the crime lord whose residence hides stolen devices.",
+   "paragraph": 92,
+   "quote": "the private residence of the infamous crime lord Gonti"
+  },
+  {
+   "source": "Gonti",
+   "relation": "enemy",
+   "target": "The Consulate",
+   "note": "Gonti calls the curfew and confiscation a curse on the city.",
+   "paragraph": 128,
+   "quote": "the Consulate's mandatory curfew and confiscation of our personal property is a curse on our city"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "Gatewatch members hiding together.",
+   "paragraph": 160,
+   "quote": "\"This is Yahenni. They're someone we can trust,\" Chandra says as an introduction to the group."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "She grimly warns Tezzeret might come with the Consulate.",
+   "paragraph": 171,
+   "quote": "\"Tezzeret might be with them,\" the woman in the dark dress states grimly."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "Chandra spits that he is a tool.",
+   "paragraph": 157,
+   "quote": "\"He's a tool,\" Chandra spits."
+  },
+  {
+   "source": "The Weldfast",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "A district of the city.",
+   "paragraph": 15,
+   "quote": "What used to be the best night district in the city is boarded up"
+  },
+  {
+   "source": "The Statuary Garden",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "A garden in the city near Aradara Station.",
+   "paragraph": 136,
+   "quote": "The Statuary Garden is a massive arboretum near Aradara Station."
+  }
+ ],
+ "rejected": []
+}

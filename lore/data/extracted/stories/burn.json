@@ -1,0 +1,685 @@
+{
+ "page": "stories/burn",
+ "url": "https://magic.wizards.com/en/news/magic-story/burn",
+ "title": "Burn",
+ "story_date": "2017-04-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:33:19Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [
+    "Baan",
+    "Minister Baan"
+   ],
+   "description": "A Consulate minister and inspector who plans the counterattack on the Aether Hub by exploiting the Gatewatch's weaknesses and later arrests Baral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [
+    "Special Grand Consul Tezzeret",
+    "Grand Consul",
+    "Head Judge Tezzeret"
+   ],
+   "description": "The metal-armed Special Grand Consul with crimson tattoos that remind him of a debt, who screams at staff and sends Baral after the Nalaars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [
+    "Dhiren Baral",
+    "Chief Inspector",
+    "Chief of Compliance"
+   ],
+   "description": "A scarred Consulate Chief of Compliance who killed Kiran Nalaar, imprisoned Pia and torments Chandra to draw her away from the Hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra",
+    "the monster"
+   ],
+   "description": "A pyromancer planeswalker who is haunted by guilt, fights Baral and nearly detonates herself before Nissa calms her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "Gids",
+    "Beefslab",
+    "Mr. Jura"
+   ],
+   "description": "A planeswalker who defends the Hub, fights a Gearhulk from inside and carries Chandra afterward.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elf planeswalker who protects Chandra, fights with a sword formed from her staff, and talks her out of destroying herself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana",
+    "Night Queen",
+    "Lili"
+   ],
+   "description": "A necromancer planeswalker who destroys a greenwood Gearhulk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "Cloak Boy"
+   ],
+   "description": "A mind mage who is away aiding Kari Zev.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani",
+    "White Cat"
+   ],
+   "description": "A leonin planeswalker who heals Mrs. Pashiri and tells Chandra it was not her fault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oviya Pashiri",
+   "type": "character",
+   "aliases": [
+    "Mrs. Pashiri",
+    "Grandmother"
+   ],
+   "description": "A lifecrafter who is struck by thopter lightning and left unconscious but alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Renegade Prime",
+    "Mom",
+    "Mrs. Nalaar"
+   ],
+   "description": "Chandra's mother and a renegade leader who embraces her after the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiran Nalaar",
+   "type": "character",
+   "aliases": [
+    "Dad",
+    "daddy"
+   ],
+   "description": "Chandra's father, killed by Baral twelve years earlier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadowblayde",
+   "type": "character",
+   "aliases": [
+    "Miss Blayde"
+   ],
+   "description": "A dark-skinned elf renegade who runs communications with mechanical butterflies and rescues Gideon from a wrecked Gearhulk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gonti",
+   "type": "character",
+   "aliases": [],
+   "description": "An aetherborn criminal mastermind at the renegades' top deck planning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kari Zev",
+   "type": "character",
+   "aliases": [
+    "Captain Zev"
+   ],
+   "description": "A sky pirate allied with the renegades with Jace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [
+    "Saheeli"
+   ],
+   "description": "An inventor among the renegade leaders at the Hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consul Kambal",
+   "type": "character",
+   "aliases": [
+    "Kambal"
+   ],
+   "description": "A Consul who assured Baan the Hub was safe from usurpation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hixus",
+   "type": "character",
+   "aliases": [],
+   "description": "A mentor whose advice about choosing between protecting and needing to protect Gideon recalls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The planeswalker group supporting the renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The government attacking the renegades with Gearhulks and inspectors.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rebels holding the Aether Hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Inspectors",
+   "type": "faction",
+   "aliases": [
+    "inspectors"
+   ],
+   "description": "Faceless armored Consulate enforcers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The city on Kaladesh in civil war.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Aether Hub",
+   "type": "location",
+   "aliases": [
+    "the Hub"
+   ],
+   "description": "The vital aether distribution center the renegades hold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weldfast",
+   "type": "location",
+   "aliases": [],
+   "description": "Solidly renegade territory where the Heart of Kiran retreats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Chandra's home plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Purifying Fire showed Chandra her guilt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skysovereign",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The Consulate dreadnought serving as Tezzeret's command deck.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heart of Kiran",
+   "type": "artifact",
+   "aliases": [
+    "dad's ship"
+   ],
+   "description": "The renegade airship that rises beside the Hub and later hangs over Weldfast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gearhulks",
+   "type": "creature",
+   "aliases": [
+    "Gearhulk"
+   ],
+   "description": "Giant Consulate war machines, five in number, deployed against the renegade lines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purifying Fire",
+   "type": "concept",
+   "aliases": [],
+   "description": "A Regatha fire that demanded acceptance of responsibility from Chandra.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On Skysovereign, Tezzeret screams at an orderly and Baan challenges the Grand Consul's tactics privately.",
+   "participants": [
+    "Tezzeret",
+    "Dovin Baan"
+   ],
+   "location": "Skysovereign",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "I acknowledge the effectiveness of your harangues at keeping this crew aligned and attentive. I, however, am...unimpressed."
+  },
+  {
+   "summary": "Baan lays out a pincer-and-airborne plan to retake the Aether Hub, exploiting the Gatewatch's divided leadership and Chandra's rashness.",
+   "participants": [
+    "Dovin Baan",
+    "Tezzeret"
+   ],
+   "location": "Skysovereign",
+   "importance": "major",
+   "paragraph": 34,
+   "quote": "Transports loaded with Inspectors."
+  },
+  {
+   "summary": "Tezzeret orders Baral to lure the Nalaars and their friends away from the Hub, adding Baan to Baral's squad.",
+   "participants": [
+    "Tezzeret",
+    "Baral",
+    "Dovin Baan"
+   ],
+   "location": "Skysovereign",
+   "importance": "major",
+   "paragraph": 60,
+   "quote": "Annoy the Nalaars. Lure them away from the Aether Hub."
+  },
+  {
+   "summary": "Chandra, sleepless and troubled, looks over Ghirapur from the Hub and misses her mother.",
+   "participants": [
+    "Chandra Nalaar",
+    "Pia Nalaar"
+   ],
+   "location": "The Aether Hub",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "Now she's back, somewhere up above me, just a little bit away."
+  },
+  {
+   "summary": "Gideon comforts Chandra, and they recall how they met and the Purifying Fire; Chandra confesses guilt over the Sanctum of Stars and asks for a hug.",
+   "participants": [
+    "Chandra Nalaar",
+    "Gideon Jura"
+   ],
+   "location": "The Aether Hub",
+   "importance": "major",
+   "paragraph": 146,
+   "quote": "He's standing with arms wide, smiling."
+  },
+  {
+   "summary": "Nissa finds Chandra in Gideon's arms, and Chandra awkwardly tries to explain.",
+   "participants": [
+    "Nissa Revane",
+    "Chandra Nalaar",
+    "Gideon Jura"
+   ],
+   "location": "The Aether Hub",
+   "importance": "minor",
+   "paragraph": 156,
+   "quote": "Nissa sets a plate of eggplant and potato curry on one of the benches"
+  },
+  {
+   "summary": "Baral's amplified voice taunts Chandra about her father's death and her mother's imprisonment, goading her into running out; Nissa follows.",
+   "participants": [
+    "Baral",
+    "Chandra Nalaar",
+    "Nissa Revane",
+    "Gideon Jura"
+   ],
+   "location": "The Aether Hub",
+   "importance": "major",
+   "paragraph": 172,
+   "quote": "Have you told your friends the story? About how you got daddy killed?"
+  },
+  {
+   "summary": "Gideon, torn, asks Nissa to keep Chandra safe and returns to the Hub's defenses.",
+   "participants": [
+    "Gideon Jura",
+    "Nissa Revane",
+    "Hixus"
+   ],
+   "location": "The Aether Hub",
+   "importance": "minor",
+   "paragraph": 199,
+   "quote": "\"Keep her safe.\""
+  },
+  {
+   "summary": "Baral leads Chandra through old stone streets toward a trap.",
+   "participants": [
+    "Baral",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 211,
+   "quote": "\"All that time your mother suffered . Thinking you were dead .\""
+  },
+  {
+   "summary": "Chandra turns the thorn wall into a fire and injures her arm; Nissa's vines and elemental destroy Baral's thopters.",
+   "participants": [
+    "Chandra Nalaar",
+    "Baral",
+    "Nissa Revane"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 241,
+   "quote": "A trio of vines leapt up from the neighboring streets, raining debris."
+  },
+  {
+   "summary": "Baral and Baan escape the failed trap in a thopter, and the Consulate's next phase begins.",
+   "participants": [
+    "Baral",
+    "Dovin Baan"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 277,
+   "quote": "High above them, the black specks of thopters lifted from the decks of Skysovereign ."
+  },
+  {
+   "summary": "Gideon is stomped by a Gearhulk, survives, and climbs it to survey the battle.",
+   "participants": [
+    "Gideon Jura",
+    "Gearhulks"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 282,
+   "quote": "\"It's all right,\" he called, with forced cheer. \"I'm indestructible.\""
+  },
+  {
+   "summary": "Liliana rots a living-wood Gearhulk to pieces.",
+   "participants": [
+    "Liliana Vess",
+    "Gearhulks"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 316,
+   "quote": "She snapped her fingers, and the Gearhulk fell to pieces at her feet."
+  },
+  {
+   "summary": "Gideon drops into a Gearhulk's gears and wrecks it from inside; Shadowblayde's crew rescues him.",
+   "participants": [
+    "Gideon Jura",
+    "Shadowblayde",
+    "Gearhulks"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 329,
+   "quote": "He looked into the gap between the armor, took a few rapid breaths, and dropped into the gears."
+  },
+  {
+   "summary": "Gideon sees Consulate thopters approaching the Hub and rushes back.",
+   "participants": [
+    "Gideon Jura",
+    "Liliana Vess",
+    "Shadowblayde"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 348,
+   "quote": "\"Get back to the Hub!\" he shouted, breaking into a run."
+  },
+  {
+   "summary": "Baral confronts Chandra and Nissa on a rooftop; Nissa fights his automatons with a sword and Baral nearly kills Chandra with his blade.",
+   "participants": [
+    "Baral",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 410,
+   "quote": "The blade falls."
+  },
+  {
+   "summary": "Thopter lightning strikes Mrs. Pashiri on the Hub platform after Baral orders the lifecrafter taken out.",
+   "participants": [
+    "Oviya Pashiri",
+    "Ajani Goldmane",
+    "Baral"
+   ],
+   "location": "The Aether Hub",
+   "importance": "major",
+   "paragraph": 426,
+   "quote": "Mrs. Pashiri seizes and topples, smoke-colored braids flying apart."
+  },
+  {
+   "summary": "Baral claims he killed Kiran Nalaar and Chandra's auntie and prepares to kill Chandra; Chandra gathers superheated fire, ready to release it.",
+   "participants": [
+    "Baral",
+    "Chandra Nalaar",
+    "Kiran Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 439,
+   "quote": "\"I killed your daddy, renegade,\" he says."
+  },
+  {
+   "summary": "Nissa embraces Chandra and talks her down from detonating, guiding her to put out the fire through a memory of floating in a quarry.",
+   "participants": [
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 463,
+   "quote": "\"Don't leave us,\" Nissa says, softly. \"You're loved.\""
+  },
+  {
+   "summary": "Nissa's elemental batters Baral, and the women escape.",
+   "participants": [
+    "Nissa Revane",
+    "Baral",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 485,
+   "quote": "A tree slammed into him from the left."
+  },
+  {
+   "summary": "Baan arrests the injured Baral for murder, attempted murder, extrajudicial incarceration and falsifying records.",
+   "participants": [
+    "Dovin Baan",
+    "Baral"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 501,
+   "quote": "Chief Inspector Dhiren Baral, I charge you with one count of murder"
+  },
+  {
+   "summary": "Baan reports the Hub regained and leaves Baral under arrest.",
+   "participants": [
+    "Dovin Baan",
+    "Baral"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 504,
+   "quote": "The Aether Hub has been regained."
+  },
+  {
+   "summary": "Gideon carries the wounded Chandra to the Heart of Kiran hanging over Weldfast, where the renegades have retreated.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Weldfast",
+   "importance": "minor",
+   "paragraph": 515,
+   "quote": "Heart of Kiran had carried the escapees from the Aether Hub to the safety of Weldfast, solidly renegade territory."
+  },
+  {
+   "summary": "Ajani heals Mrs. Pashiri and tells Chandra it was not her fault.",
+   "participants": [
+    "Ajani Goldmane",
+    "Chandra Nalaar",
+    "Oviya Pashiri",
+    "Gideon Jura"
+   ],
+   "location": "Weldfast",
+   "importance": "minor",
+   "paragraph": 536,
+   "quote": "This was not your fault, Chandra."
+  },
+  {
+   "summary": "Pia embraces Chandra, telling her she cannot lose her again.",
+   "participants": [
+    "Pia Nalaar",
+    "Chandra Nalaar"
+   ],
+   "location": "Weldfast",
+   "importance": "major",
+   "paragraph": 552,
+   "quote": "\"I can't lose you again.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baral",
+   "relation": "killed",
+   "target": "Kiran Nalaar",
+   "note": "Baral says he shoved a blade under Kiran's ribs.",
+   "paragraph": 421,
+   "quote": "When I shoved the blade under his ribs."
+  },
+  {
+   "source": "Baral",
+   "relation": "serves",
+   "target": "Tezzeret",
+   "note": "Baral is called in and ordered as Tezzeret's attack dog.",
+   "paragraph": 69,
+   "quote": "\"Baral's an attack dog,\" Tezzeret said"
+  },
+  {
+   "source": "Baral",
+   "relation": "enemy",
+   "target": "Chandra Nalaar",
+   "note": "Baral calls her a monster and tries to kill her.",
+   "paragraph": 181,
+   "quote": "So many died that day, little monster ."
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "serves",
+   "target": "Tezzeret",
+   "note": "Baan reports to the Grand Consul.",
+   "paragraph": 22,
+   "quote": "We pay you to see flaws."
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "enemy",
+   "target": "Baral",
+   "note": "Baan arrests and charges Baral.",
+   "paragraph": 501,
+   "quote": "I charge you with one count of murder"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Mother and daughter.",
+   "paragraph": 27,
+   "quote": "Pia Nalaar, partner of Kiran, mother of Chandra."
+  },
+  {
+   "source": "Kiran Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Father and daughter.",
+   "paragraph": 27,
+   "quote": "Pia Nalaar, partner of Kiran, mother of Chandra."
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "Nissa says she will stand with Chandra and holds her back from destruction.",
+   "paragraph": 186,
+   "quote": "\"I know,\" she says. \"I'll stand with you.\""
+  },
+  {
+   "source": "Ajani Goldmane",
+   "relation": "ally",
+   "target": "Oviya Pashiri",
+   "note": "Ajani calls her Grandmother and heals her.",
+   "paragraph": 536,
+   "quote": "\"Grandmother will be fine, in time."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "He comforts and carries her.",
+   "paragraph": 104,
+   "quote": "If you need someone to talk to, or just to vent at, I'm here, all right?"
+  },
+  {
+   "source": "Shadowblayde",
+   "relation": "ally",
+   "target": "Gideon Jura",
+   "note": "She runs communications for him and rescues him.",
+   "paragraph": 342,
+   "quote": "\"Brilliant work, Beefslab,\" Shadowblayde grinned"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "leader_of",
+   "target": "The Consulate",
+   "note": "Tezzeret is Special Grand Consul.",
+   "paragraph": 7,
+   "quote": "now Special Grand Consul Tezzeret, endowed by the Consuls for the duration of the present crisis"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "leader_of",
+   "target": "The Renegades",
+   "note": "Pia commands the Hub position personally.",
+   "paragraph": 25,
+   "quote": "The criminal Renegade Prime commands the position personally."
+  }
+ ],
+ "rejected": []
+}

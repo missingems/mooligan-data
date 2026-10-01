@@ -1,0 +1,508 @@
+{
+ "page": "stories/trust-2017-04-05",
+ "url": "https://magic.wizards.com/en/news/magic-story/trust-2017-04-05",
+ "title": "Trust",
+ "story_date": "2017-04-05",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:33:49Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "Gids",
+    "Kytheon Iora",
+    "Kytheon",
+    "Fearless Leader",
+    "General"
+   ],
+   "description": "A planeswalker and Gatewatch member, born Kytheon Iora on Theros, who is overwhelmed by meeting the god Oketra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A mind mage who reads minds to improvise cover stories and creates an opening in the Hekma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra",
+    "hothead"
+   ],
+   "description": "A pyromancer planeswalker who wants to help a fleeing woman and questions Gideon's trust in Oketra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elf planeswalker who calms Gideon and helps Jace open the barrier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A necromancer planeswalker who charms Temmet and delights in the city's use of the dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A leonin planeswalker who warned the group about Bolas's power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas",
+    "the God-Pharaoh",
+    "the Horned One"
+   ],
+   "description": "An elder dragon planeswalker revered by the people of the city as the absent God-Pharaoh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temmet",
+   "type": "character",
+   "aliases": [],
+   "description": "A poised young Naktamun official of about sixteen who guides the group and houses them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vizier Eknet",
+   "type": "character",
+   "aliases": [
+    "Eknet"
+   ],
+   "description": "An aven vizier of the Hekma Guard who repairs the barrier and is bluffed by Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oketra",
+   "type": "deity",
+   "aliases": [
+    "the cat-headed god"
+   ],
+   "description": "A cat-headed god of solidarity and order who trains children and recognizes Gideon as one of hers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [
+    "the sun god"
+   ],
+   "description": "A Theros god who once invited young Gideon to be his champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god of death who destroyed Gideon's Irregulars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet who judges the Trial of Strength.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bontu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet whose viziers pursue the fleeing woman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kefnet",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet named by Jace in his cover story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The fleeing woman",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman captured after shouting that the trials, the gods and the hours are lies and that the return will bring devastation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon's Irregulars",
+   "type": "faction",
+   "aliases": [
+    "Irregulars"
+   ],
+   "description": "Gideon's closest friends from his youth, destroyed by Erebos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The planeswalker group sworn to protect the Multiverse from threats such as Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hekma Guard",
+   "type": "faction",
+   "aliases": [],
+   "description": "Viziers who maintain the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Viziers of Bontu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers including a minotaur who pursue the fleeing woman.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Anointed",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mummified dead who do all the labor in the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The desert plane of Bolas where the city lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [
+    "the city"
+   ],
+   "description": "A lush, shining city beneath a barrier on Amonkhet where the populace trains for trials.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Hekma",
+   "type": "artifact",
+   "aliases": [
+    "the dome",
+    "the barrier"
+   ],
+   "description": "The iridescent protective barrier over the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "The horns of Nicol Bolas",
+   "type": "location",
+   "aliases": [
+    "the great horns"
+   ],
+   "description": "Massive twin horns on the horizon beside the second sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Gideon's birth plane of petty gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where Gideon lived and where the name Gideon stuck.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the group's previous mission.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Trial of Strength",
+   "type": "event",
+   "aliases": [],
+   "description": "A trial for initiates that Rhonas judges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aven of Amonkhet",
+   "type": "creature",
+   "aliases": [
+    "aven"
+   ],
+   "description": "Crane-headed winged people of Naktamun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sand wurms",
+   "type": "creature",
+   "aliases": [
+    "sandwurms"
+   ],
+   "description": "Desert monsters that attacked the Gatewatch.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gideon, ruminating on whether the gods are Bolas's agents or his opponents, trudges through the desert with the group.",
+   "participants": [
+    "Gideon Jura",
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Nissa Revane"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "To see gods wading amidst the horrors of the desert had not been among them."
+  },
+  {
+   "summary": "Liliana and Chandra clear zombies at the dome and Jace and Nissa open a hole in the Hekma, and the group enters the city.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar",
+    "Jace Beleren",
+    "Nissa Revane",
+    "Gideon Jura"
+   ],
+   "location": "The Hekma",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "a hole a little wider than Jace's outstretched arms opened to admit them."
+  },
+  {
+   "summary": "An aven vizier arrives to repair the barrier and questions their strange clothes; Jace reads his mind and bluffs a cover story about a faraway district.",
+   "participants": [
+    "Vizier Eknet",
+    "Jace Beleren",
+    "Gideon Jura"
+   ],
+   "location": "The Hekma",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "Well, of course, that's why I'm here in the . . . Nitin district, to teach you."
+  },
+  {
+   "summary": "Gideon decides they should keep their other-planar origin hidden despite Chandra's wish to open the people's eyes.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar",
+    "Jace Beleren"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 41,
+   "quote": "We shouldn't draw attention to ourselves any more than we need to"
+  },
+  {
+   "summary": "Liliana charms Temmet by claiming they were on a mission for the Horned One, and the group learns the standard greeting.",
+   "participants": [
+    "Liliana Vess",
+    "Temmet",
+    "Jace Beleren",
+    "Gideon Jura"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 55,
+   "quote": "\"We have been out in the desert for some time,\" she said, \"on a special mission for the Horned One.\""
+  },
+  {
+   "summary": "Temmet leads them through the city, where they see people training and the Anointed doing all labor.",
+   "participants": [
+    "Temmet",
+    "Gideon Jura",
+    "Liliana Vess",
+    "The Anointed"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "\"The Anointed perform all the work here, so the living need do nothing but train."
+  },
+  {
+   "summary": "Gideon meets the god Oketra, who names him Kytheon Iora and says the others' fates are undecided.",
+   "participants": [
+    "Gideon Jura",
+    "Oketra",
+    "Temmet"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 91,
+   "quote": "\"You're one of mine, Kytheon Iora,\" she said."
+  },
+  {
+   "summary": "Gideon recalls Heliod and the death of his Irregulars, doubting he can trust a god again.",
+   "participants": [
+    "Gideon Jura",
+    "Heliod",
+    "Erebos",
+    "Gideon's Irregulars"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 89,
+   "quote": "The mission Heliod had set before him had led to the death of Gideon's closest friends, his Irregulars."
+  },
+  {
+   "summary": "Temmet lodges them in two rooms; Gideon watches Oketra walk to her temple.",
+   "participants": [
+    "Temmet",
+    "Gideon Jura",
+    "Oketra"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 98,
+   "quote": "Liliana swept into one of the rooms and closed the door without a word."
+  },
+  {
+   "summary": "On the balcony Gideon tells Chandra his birth name was Kytheon Iora and explains what gods are and how Oketra differs.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 103,
+   "quote": "\"Kytheon,\" he said. \"Kytheon Iora.\""
+  },
+  {
+   "summary": "A woman runs through the street shouting that the trials, gods and hours are lies; soldiers including a minotaur capture her while Gideon restrains Chandra.",
+   "participants": [
+    "The fleeing woman",
+    "Viziers of Bontu",
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 135,
+   "quote": "\"The return will bring only devastation and ruin!\""
+  },
+  {
+   "summary": "Gideon promises to quietly investigate and says there is no deception in Oketra, while Jace and Liliana doubt gods.",
+   "participants": [
+    "Gideon Jura",
+    "Jace Beleren",
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 141,
+   "quote": "But there is no deception in Oketra."
+  },
+  {
+   "summary": "Temmet explains the woman was pursued by viziers of Bontu and her crop was due for a trial; the group wonders if the people are being harvested.",
+   "participants": [
+    "Temmet",
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Jace Beleren"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 151,
+   "quote": "\"She proved herself unworthy of life among us.\""
+  },
+  {
+   "summary": "Unable to sleep, Gideon seeks out Oketra at dawn, telling her he seeks her.",
+   "participants": [
+    "Gideon Jura",
+    "Oketra"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 172,
+   "quote": "\"You,\" he said."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oketra",
+   "relation": "other",
+   "target": "Gideon Jura",
+   "note": "She says Gideon is one of hers and calls him by his birth name.",
+   "paragraph": 91,
+   "quote": "\"You're one of mine, Kytheon Iora,\" she said."
+  },
+  {
+   "source": "Temmet",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Temmet reveres the God-Pharaoh.",
+   "paragraph": 64,
+   "quote": "All things are ordered as the God-Pharaoh—may his return come quickly"
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "member_of",
+   "target": "The Gatewatch",
+   "note": "Gatewatch member.",
+   "paragraph": 1,
+   "quote": "As the Gatewatch, they had sworn an oath to protect the Multiverse"
+  },
+  {
+   "source": "Erebos",
+   "relation": "killed",
+   "target": "Gideon's Irregulars",
+   "note": "Erebos destroyed them with a flick of the wrist.",
+   "paragraph": 89,
+   "quote": "The god of death, Erebos, had destroyed them with a flick of the wrist, punishing Gideon's hubris."
+  },
+  {
+   "source": "Heliod",
+   "relation": "other",
+   "target": "Gideon Jura",
+   "note": "Heliod invited young Gideon to become his champion.",
+   "paragraph": 86,
+   "quote": "invited him to become the sun god's champion"
+  },
+  {
+   "source": "Naktamun",
+   "relation": "located_in",
+   "target": "Amonkhet",
+   "note": "The city is on Amonkhet.",
+   "paragraph": 1,
+   "quote": "What kind of city could prosper under Bolas's reign?"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "ally",
+   "target": "Gideon Jura",
+   "note": "An uneasy teammate whose cooperation Gideon doubts.",
+   "paragraph": 5,
+   "quote": "She had pulled them out of the fire on Innistrad, no doubt."
+  }
+ ],
+ "rejected": []
+}

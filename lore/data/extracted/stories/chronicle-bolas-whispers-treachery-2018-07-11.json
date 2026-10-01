@@ -1,0 +1,641 @@
+{
+ "page": "stories/chronicle-bolas-whispers-treachery-2018-07-11",
+ "url": "https://magic.wizards.com/en/news/magic-story/chronicle-bolas-whispers-treachery-2018-07-11",
+ "title": "Chronicle of Bolas: Whispers of Treachery",
+ "story_date": "2018-07-11",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:33:39Z",
+ "storyline": "Chronicle of Bolas",
+ "entities": [
+  {
+   "name": "Naiva",
+   "type": "character",
+   "aliases": [
+    "Nai"
+   ],
+   "description": "A young Temur hunter who tends Tae Jin's wound and feels left out of her twin's shamanic training.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baishya",
+   "type": "character",
+   "aliases": [
+    "Bai",
+    "Baisya"
+   ],
+   "description": "A young whisperer who bonds with Tae Jin over shamanic training.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yasova Dragonclaw",
+   "type": "character",
+   "aliases": [
+    "Yasova",
+    "Grandmother",
+    "First Mother"
+   ],
+   "description": "The former Temur chief, now called First Mother, who confronts Tae Jin and reveals she witnessed Bolas kill Ugin eighteen years ago.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tae Jin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Jeskai ghostfire warrior whose mother was a scribe of Shu Yun and who recites Ugin's story on his master's orders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fec",
+   "type": "character",
+   "aliases": [],
+   "description": "An old orc hunter who warns of a dragon tempest and helps Yasova harvest the broodling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mattak",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter on sentry duty who asks Yasova to come see something.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oiyan",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter assigned to sentry duty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darka",
+   "type": "character",
+   "aliases": [],
+   "description": "A quiet ainok hunter assigned to sentry duty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakhan",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter who kindles a fire in the shelter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorya",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter who hauls water for the shelter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "the Spirit Dragon"
+   ],
+   "description": "The Spirit Dragon, narrator of the story, who is betrayed by his twin and is flung between planes before landing on Tarkir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Nicol",
+    "Bolas"
+   ],
+   "description": "Ugin's twin, who manipulates human leaders by whispers into a war of heirs and then claims their rule, and who later killed Ugin per Yasova.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "character",
+   "aliases": [
+    "Brother Rhuell"
+   ],
+   "description": "An elder dragon who takes human form to observe humans and recommends destroying the human chief; he flies off after rebuking Nicol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcades Sabboth",
+   "type": "character",
+   "aliases": [
+    "Arcades"
+   ],
+   "description": "The twins' elder brother, a dragon ruling a human realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [
+    "Vaevictis"
+   ],
+   "description": "A dragon whom Nicol wishes to take revenge on.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merrevia Sal",
+   "type": "character",
+   "aliases": [],
+   "description": "The twins' sister whose skull and spine decorate human settlements.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Te Ju Ki",
+   "type": "character",
+   "aliases": [],
+   "description": "The human elder who taught Ugin about planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The dragon-killer chief",
+   "type": "character",
+   "aliases": [
+    "the chief",
+    "old chief"
+   ],
+   "description": "An old human chief who killed Merrevia Sal, rules by decreeing that dragon-killers become heirs, and is murdered by his second wife.",
+   "presence": "appears"
+  },
+  {
+   "name": "The chief's son",
+   "type": "character",
+   "aliases": [
+    "the chief's firstborn son"
+   ],
+   "description": "The neglected firstborn son of the chief, who killed a dragon and, goaded by Nicol's whispers, takes the throne.",
+   "presence": "appears"
+  },
+  {
+   "name": "The chief's second wife",
+   "type": "character",
+   "aliases": [
+    "the mage"
+   ],
+   "description": "The chief's second wife, a mage who first ensorcelled venom, who murders the chief and later marries and dies with the son.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shu Yun",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader of the Jeskai before the fall whom Tae Jin's mother served as scribe, who liked his secrets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojutai",
+   "type": "deity",
+   "aliases": [
+    "Ojutai Dragonlord"
+   ],
+   "description": "The Dragonlord who purged Jeskai knowledge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka",
+   "type": "deity",
+   "aliases": [
+    "Atarka Dragonlord",
+    "Dragonlord Atarka"
+   ],
+   "description": "The Dragonlord who killed Naiva and Baishya's mother for being a whisperer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose hedrons held magic that preserved some essence of Ugin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anchin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Yasova's beloved animal, whose pelt is her mantle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the story takes place and where Ugin lands after crossing the planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The birth mountain",
+   "type": "location",
+   "aliases": [],
+   "description": "The mountain where the twins hatched, surrounded by dragon-killer settlements.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin's grave",
+   "type": "location",
+   "aliases": [],
+   "description": "A chasm toward which the party is traveling to finish the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghostfire warriors",
+   "type": "faction",
+   "aliases": [
+    "ghostfire warrior"
+   ],
+   "description": "Jeskai warriors who wield spectral blades, supposedly doomed by a bargain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeskai",
+   "type": "faction",
+   "aliases": [
+    "Jeskai Way"
+   ],
+   "description": "The people and tradition Tae Jin belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragonlords",
+   "type": "faction",
+   "aliases": [
+    "dragonlord"
+   ],
+   "description": "The dragons who rule Tarkir's clans and have outlawed the old ways.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Temur",
+   "type": "faction",
+   "aliases": [
+    "Temur clan"
+   ],
+   "description": "Yasova's former clan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragon tempest",
+   "type": "concept",
+   "aliases": [
+    "tempests that birth dragons"
+   ],
+   "description": "Storms that birth dragons, now growing stronger.",
+   "presence": "appears"
+  },
+  {
+   "name": "The planes",
+   "type": "concept",
+   "aliases": [
+    "other planes",
+    "other worlds"
+   ],
+   "description": "Other worlds that powerful individuals can walk between.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yasova demands the truth from Tae Jin after finding he is a ghostfire warrior, threatening to kill him.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "All our lives are forfeit if the dragons discover we have sheltered a ghostfire warrior."
+  },
+  {
+   "summary": "Tae Jin explains that his mother was a scribe of Shu Yun who survived Ojutai's purge and that his master taught him the ghostfire blade.",
+   "participants": [
+    "Tae Jin",
+    "Shu Yun",
+    "Ojutai"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "She survived Ojutai's purge and dedicated herself to saving what she could of the history and knowledge of the Jeskai Way."
+  },
+  {
+   "summary": "Fec warns of an approaching dragon tempest, and the party shelters in a rock chamber.",
+   "participants": [
+    "Fec",
+    "Yasova Dragonclaw"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "It's a dragon tempest, and it's moving in fast,"
+  },
+  {
+   "summary": "Naiva tends Tae Jin's wound and learns he left his mother at twelve; she reveals Atarka killed her own mother for being a whisperer.",
+   "participants": [
+    "Naiva",
+    "Tae Jin",
+    "Baishya",
+    "Atarka"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "Our mother is dead. Atarka killed her for being a whisperer."
+  },
+  {
+   "summary": "Tae Jin argues that keeping the old ways alive defies the dragons, and Naiva realizes she was wrong.",
+   "participants": [
+    "Tae Jin",
+    "Naiva",
+    "Baishya"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 59,
+   "quote": "By keeping them alive, we defy the dragons rather than accept defeat."
+  },
+  {
+   "summary": "Yasova asks Tae Jin to resume his story of Ugin and Nicol.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "There is more to your story. I'll listen."
+  },
+  {
+   "summary": "Flashback: Ugin and Nicol wait on the birth mountain overnight and see a lone traveler who proves to be Chromium Rhuell in human form.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Chromium Rhuell"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 97,
+   "quote": "who appeared outwardly as a pregnant human except for the way his eyes shone like sapphires"
+  },
+  {
+   "summary": "Flashback: Chromium Rhuell describes the dragon-killing chief and his heirs and proposes destroying them; Nicol twists his words.",
+   "participants": [
+    "Chromium Rhuell",
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 116,
+   "quote": "My recommendation is that we destroy the chief, his heirs, and his acolytes, burn all the temples, and salt the fields."
+  },
+  {
+   "summary": "Flashback: Chromium Rhuell, enraged by Nicol's twisting of words, reveals his true dragon form, belittles Nicol as the least of them, and flies away.",
+   "participants": [
+    "Chromium Rhuell",
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 130,
+   "quote": "You are the least of us, last fallen, not even a whole dragon but only half of one, bound as you are to Ugin."
+  },
+  {
+   "summary": "Flashback: The twins watch the chief's procession and temple; Ugin hears whispers about the heirs' rivalry.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "The dragon-killer chief"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 141,
+   "quote": "She intends to outlast you and have you throttled when he dies."
+  },
+  {
+   "summary": "Flashback: Nicol identifies the chief's attendants as two of his four heirs and says it will be easy.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin",
+    "The dragon-killer chief"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 149,
+   "quote": "Those two who attend him so assiduously are two of his heirs."
+  },
+  {
+   "summary": "Flashback: Nicol kills a young messenger to stop word reaching the other heirs.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 157,
+   "quote": "he swooped down, caught up the youth in his claws and, as the young human screamed and struggled, bit off his head."
+  },
+  {
+   "summary": "Flashback: Nicol whispers into the mind of the chief's son at a lakeside settlement, persuading him to march against the other heirs and kill his father.",
+   "participants": [
+    "Nicol Bolas",
+    "The chief's son",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 171,
+   "quote": "It could be your measure. If you march against the other heirs."
+  },
+  {
+   "summary": "Flashback: Nicol marks the longhouse ridge and the son's warriors march off; Nicol explains humans are easy to manipulate through hate, envy and fear.",
+   "participants": [
+    "Nicol Bolas",
+    "The chief's son",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 177,
+   "quote": "Humans are riddled with hate and envy and fear and greed."
+  },
+  {
+   "summary": "Flashback: The chief's son seizes the central settlement, Nicol lures the other two heirs into a battle and burns the temple.",
+   "participants": [
+    "Nicol Bolas",
+    "The chief's son"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 178,
+   "quote": "Nicol flew down to the unguarded temple and burned it and its acolytes to the ground."
+  },
+  {
+   "summary": "Flashback: Nicol deposits the old chief in the courtyard of his second wife, who has been whispered into rebellion; she kills him.",
+   "participants": [
+    "Nicol Bolas",
+    "The dragon-killer chief",
+    "The chief's second wife"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 187,
+   "quote": "She stabbed him once, twice, and thrice, and had his bloody, bloated body thrown into the stinking refuse of a latrine."
+  },
+  {
+   "summary": "Flashback: The son and the second wife are wed, then kill each other in a blood oath, and Nicol proclaims himself the humans' true leader.",
+   "participants": [
+    "The chief's son",
+    "The chief's second wife",
+    "Nicol Bolas"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 201,
+   "quote": "I rule you now. I am your true leader. Bow before me."
+  },
+  {
+   "summary": "Flashback: Ugin realizes Nicol caused the earlier murder and plans to manipulate his mind too, and he feels his twin's betrayal.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 215,
+   "quote": "He wanted to use me for his own ends, because he had never truly cared for me at all."
+  },
+  {
+   "summary": "Flashback: Ugin is torn into the space between planes and then lands on Tarkir.",
+   "participants": [
+    "Ugin"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 219,
+   "quote": "being torn from the only place I had never known and flung into the space between the planes."
+  },
+  {
+   "summary": "Tae Jin ends his story, and Yasova says she witnessed Ugin's death eighteen years ago and another dragon who vanished in golden light.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin",
+    "Naiva",
+    "Baishya",
+    "Ugin"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 232,
+   "quote": "Eighteen years ago, I witnessed a battle in the sky that ended with the death of Ugin."
+  },
+  {
+   "summary": "Yasova reveals Bolas killed Ugin and that she was used as a tool, and that hedrons cast by Sarkhan Vol preserved some essence of Ugin.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Nicol Bolas",
+    "Ugin",
+    "Sarkhan Vol"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 239,
+   "quote": "That dragon, called Bolas, killed Ugin."
+  },
+  {
+   "summary": "A dragon tempest breaks and Mattak asks Yasova to come see something.",
+   "participants": [
+    "Mattak",
+    "Yasova Dragonclaw",
+    "Fec"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 245,
+   "quote": "First Mother, you'd best come see."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Naiva",
+   "relation": "family",
+   "target": "Baishya",
+   "note": "twin sisters who lost their mother to Atarka",
+   "paragraph": 47,
+   "quote": "Our mother is dead. Atarka killed her for being a whisperer."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "killed",
+   "target": "Ugin",
+   "note": "per Yasova's account of the battle eighteen years ago",
+   "paragraph": 239,
+   "quote": "That dragon, called Bolas, killed Ugin."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "family",
+   "target": "Ugin",
+   "note": "twin brothers",
+   "paragraph": 130,
+   "quote": "not even a whole dragon but only half of one, bound as you are to Ugin."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Chromium Rhuell",
+   "note": "Rhuell rebukes Nicol for twisting his words",
+   "paragraph": 130,
+   "quote": "I hear what you are doing, Nicol Bolas."
+  },
+  {
+   "source": "The chief's second wife",
+   "relation": "killed",
+   "target": "The dragon-killer chief",
+   "note": "stabs him after Nicol delivers him",
+   "paragraph": 187,
+   "quote": "She stabbed him once, twice, and thrice"
+  },
+  {
+   "source": "The chief's son",
+   "relation": "romantic",
+   "target": "The chief's second wife",
+   "note": "they wed and then die by each other's claws",
+   "paragraph": 195,
+   "quote": "This day is the wedding of the heirs of the dragon killer"
+  },
+  {
+   "source": "Tae Jin",
+   "relation": "serves",
+   "target": "Ugin",
+   "note": "carries Ugin's story at his master's command after a vision",
+   "paragraph": 9,
+   "quote": "my master received a vision nevertheless."
+  },
+  {
+   "source": "Ojutai",
+   "relation": "enemy",
+   "target": "Jeskai",
+   "note": "Ojutai's purge of Jeskai knowledge",
+   "paragraph": 3,
+   "quote": "She survived Ojutai's purge"
+  },
+  {
+   "source": "Yasova Dragonclaw",
+   "relation": "leader_of",
+   "target": "The Temur",
+   "note": "known as Dragonclaw of the Temur clan; now called First Mother",
+   "paragraph": 0,
+   "quote": "once known as Yasova Dragonclaw of the Temur clan"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Vaevictis Asmadi",
+   "note": "Nicol dreams of revenge on Vaevictis and his brothers",
+   "paragraph": 206,
+   "quote": "from getting our revenge on Vaevictis and his surly brothers"
+  }
+ ],
+ "rejected": []
+}

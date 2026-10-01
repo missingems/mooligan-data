@@ -1,0 +1,483 @@
+{
+ "page": "stories/hour-promise-2017-06-28",
+ "url": "https://magic.wizards.com/en/news/magic-story/hour-promise-2017-06-28",
+ "title": "The Hour of Promise",
+ "story_date": "2017-06-28",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:34:10Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Hapatra",
+   "type": "character",
+   "aliases": [
+    "Vizier Hapatra",
+    "master of poisons"
+   ],
+   "description": "A vizier of the Temple of Strength and master of poisons who devoted her life to Rhonas and fights the marauding dead with her basilisk Tuya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Khufu",
+   "type": "character",
+   "aliases": [],
+   "description": "A broad-shouldered, thirty-five-year-old vizier of the Temple of Strength who insists everything is part of the Hour of Glory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iput",
+   "type": "character",
+   "aliases": [],
+   "description": "The youngest, most fleet-footed vizier of the Temple of Strength, who brings news that Rhonas is dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuya",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hapatra's huge basilisk familiar, magically bonded to her, which she rides into battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [
+    "God of Strength"
+   ],
+   "description": "The God of Strength, killed by the scorpion god, whose death Hapatra and the viziers feel as a pain in the heart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kefnet",
+   "type": "deity",
+   "aliases": [
+    "God of Knowledge"
+   ],
+   "description": "The ibis-headed God of Knowledge who tries to repair the Hekma and is killed by the scorpion god.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oketra",
+   "type": "deity",
+   "aliases": [
+    "God of Solidarity"
+   ],
+   "description": "The archer god who fights the scorpion god alongside Kefnet and is killed by it.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Scorpion God",
+   "type": "deity",
+   "aliases": [
+    "god-killer",
+    "the beast"
+   ],
+   "description": "A giant scorpion-headed god that killed Rhonas and kills Kefnet and Oketra, reforming itself from dust after Oketra beheads it.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Locust God",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god atop a spire who sends swarms of locusts to devour the Hekma and mob Kefnet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bontu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet whom Hapatra intends to find and keep alive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet whom Hapatra intends to find and keep alive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [
+    "the heretic Samut"
+   ],
+   "description": "A dissenter who joins Hapatra with Djeru to protect Oketra and tells her the gods were manipulated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [
+    "the champion Djeru"
+   ],
+   "description": "A former initiate who joins Hapatra and Samut, wanting to keep the gods alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A broad-shouldered planeswalker whom Oketra had claimed as her own and who cries out as she dies; Hapatra tells him to kill the source of the hell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "a pale woman in a violet dress"
+   ],
+   "description": "A pale woman in a violet dress glimpsed rushing past with Gideon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh"
+   ],
+   "description": "The absent God-Pharaoh whom Hapatra blames for the disaster and who is said to be a trespasser from another world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Strength",
+   "type": "location",
+   "aliases": [
+    "the Holding"
+   ],
+   "description": "Rhonas's temple, whose interior is an extensive wildlife preserve training ground called the Holding.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Hekma",
+   "type": "concept",
+   "aliases": [],
+   "description": "The barrier protecting Naktamun, eaten away by locusts until a quarter of it vanishes.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Luxa",
+   "type": "location",
+   "aliases": [
+    "River Luxa"
+   ],
+   "description": "The river whose blood-stained water recedes and leaves an empty riverbed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of Amonkhet, now overrun by locusts and marauding mummies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Curse of Wandering",
+   "type": "concept",
+   "aliases": [],
+   "description": "The curse that animates the dead of Amonkhet, which Hapatra's poisons slow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Anointed",
+   "type": "faction",
+   "aliases": [
+    "anointed",
+    "mummies"
+   ],
+   "description": "Mummified caretakers who keep performing their duties despite the chaos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hour of Promise",
+   "type": "event",
+   "aliases": [
+    "the Hour of Promise"
+   ],
+   "description": "The hour when the Hekma is torn down, said to herald paradise.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hapatra and the other viziers anxiously await word of the new gods on the steps of the Temple of Strength.",
+   "participants": [
+    "Hapatra",
+    "Khufu",
+    "Iput"
+   ],
+   "location": "Temple of Strength",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "We should have news of the new gods' intentions by now,"
+  },
+  {
+   "summary": "All the viziers feel a sudden agonizing pain in their chests as Hapatra sees Kefnet take to the air and locusts gather.",
+   "participants": [
+    "Hapatra",
+    "Khufu",
+    "Kefnet"
+   ],
+   "location": "Temple of Strength",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "A sudden, jarring pain burst in Hapatra's chest"
+  },
+  {
+   "summary": "Iput returns in tears and announces that the scorpion god killed Rhonas and means to kill them all.",
+   "participants": [
+    "Iput",
+    "Hapatra",
+    "Khufu",
+    "The Scorpion God",
+    "Rhonas"
+   ],
+   "location": "Temple of Strength",
+   "importance": "major",
+   "paragraph": 39,
+   "quote": "The scorpion god killed him. It means to kill them all."
+  },
+  {
+   "summary": "Hapatra sees the locust god direct swarms that devour the Hekma and tells the viziers to arm themselves.",
+   "participants": [
+    "Hapatra",
+    "The Locust God",
+    "The Hekma"
+   ],
+   "location": "Temple of Strength",
+   "importance": "major",
+   "paragraph": 49,
+   "quote": "The locusts were eating away at the Hekma itself."
+  },
+  {
+   "summary": "A quarter of the Hekma vanishes and marauding mummies pour into Naktamun while Kefnet tries in vain to repair the barrier.",
+   "participants": [
+    "The Hekma",
+    "Kefnet",
+    "The Locust God"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 64,
+   "quote": "a wave of marauding mummies poured into the city from the wastes beyond."
+  },
+  {
+   "summary": "Hapatra arms herself with poisons and summons her basilisk Tuya.",
+   "participants": [
+    "Hapatra",
+    "Tuya"
+   ],
+   "location": "Temple of Strength",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "The two shared a magical bond"
+  },
+  {
+   "summary": "Hapatra leads the beasts of the Holding out against the mummies and locusts, cutting down the dead with her poisoned scimitar.",
+   "participants": [
+    "Hapatra",
+    "Tuya",
+    "The Anointed"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 97,
+   "quote": "With every swipe of her blade, another mummy halted, hunched over, and fell to the earth"
+  },
+  {
+   "summary": "Hapatra concludes it is the absent God-Pharaoh's fault and saves two children from mummies.",
+   "participants": [
+    "Hapatra",
+    "Nicol Bolas"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 107,
+   "quote": "The God-Pharaoh who was not here."
+  },
+  {
+   "summary": "Hapatra takes Samut and Djeru onto Tuya as they seek to protect Oketra.",
+   "participants": [
+    "Hapatra",
+    "Samut",
+    "Djeru",
+    "Tuya"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 139,
+   "quote": "The two former initiates gracefully climbed atop Tuya"
+  },
+  {
+   "summary": "Hapatra glimpses Gideon and Liliana running past, and Djeru tells her not to stop.",
+   "participants": [
+    "Hapatra",
+    "Gideon Jura",
+    "Liliana Vess",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 149,
+   "quote": "One was Gideon, the broad-shouldered warrior Oketra had claimed as one of her own."
+  },
+  {
+   "summary": "Hapatra finds Kefnet and Oketra confronting the scorpion god, and Oketra tells her the gods are there to protect the mortals.",
+   "participants": [
+    "Hapatra",
+    "Kefnet",
+    "Oketra",
+    "The Scorpion God"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 160,
+   "quote": "We are here to protect you"
+  },
+  {
+   "summary": "Kefnet and Oketra fight the scorpion god in tandem, and it grazes Kefnet's wing.",
+   "participants": [
+    "Kefnet",
+    "Oketra",
+    "The Scorpion God"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 177,
+   "quote": "They moved in tandem with one another"
+  },
+  {
+   "summary": "Oketra's arrow of white light blasts through the scorpion god's head and it crumbles to dust.",
+   "participants": [
+    "Oketra",
+    "The Scorpion God"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 180,
+   "quote": "The scorpion god's pursuit was halted by Oketra's arrow of white light exploding through his head."
+  },
+  {
+   "summary": "The scorpion god reconstitutes itself from dust and stabs Kefnet through the forehead, killing him.",
+   "participants": [
+    "The Scorpion God",
+    "Kefnet"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 186,
+   "quote": "the beautiful and brilliant Kefnet, God of Knowledge, was dead before he hit the ground."
+  },
+  {
+   "summary": "Oketra leaps between Tuya and the scorpion god and is impaled by its stinger while Gideon cries out.",
+   "participants": [
+    "Oketra",
+    "The Scorpion God",
+    "Gideon Jura",
+    "Hapatra"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 195,
+   "quote": "the scorpion god's stinger was lodged in Oketra's gut."
+  },
+  {
+   "summary": "Hapatra weeps for her gods, then tells Gideon the source of the hell is his responsibility to kill.",
+   "participants": [
+    "Hapatra",
+    "Gideon Jura",
+    "Samut",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 208,
+   "quote": "Then he is your responsibility to kill."
+  },
+  {
+   "summary": "Hapatra resolves to find Bontu and Hazoret and keep them alive at all costs.",
+   "participants": [
+    "Hapatra",
+    "Samut",
+    "Djeru",
+    "Bontu",
+    "Hazoret"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 210,
+   "quote": "We must find Bontu and Hazoret and keep them alive at all costs."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Scorpion God",
+   "relation": "killed",
+   "target": "Rhonas",
+   "note": "Iput reports he was killed",
+   "paragraph": 39,
+   "quote": "The scorpion god killed him."
+  },
+  {
+   "source": "The Scorpion God",
+   "relation": "killed",
+   "target": "Kefnet",
+   "note": "stung him through the forehead",
+   "paragraph": 186,
+   "quote": "its stinger pierced the middle of his forehead."
+  },
+  {
+   "source": "The Scorpion God",
+   "relation": "killed",
+   "target": "Oketra",
+   "note": "stabbed her with its stinger",
+   "paragraph": 195,
+   "quote": "the scorpion god's stinger was lodged in Oketra's gut."
+  },
+  {
+   "source": "Hapatra",
+   "relation": "serves",
+   "target": "Rhonas",
+   "note": "vizier devoted to Rhonas",
+   "paragraph": 142,
+   "quote": "Serving Rhonas was my purpose in life."
+  },
+  {
+   "source": "Hapatra",
+   "relation": "member_of",
+   "target": "Temple of Strength",
+   "note": "a vizier of the temple",
+   "paragraph": 2,
+   "quote": "The other viziers of the temple flanked her on either side"
+  },
+  {
+   "source": "Hapatra",
+   "relation": "ally",
+   "target": "Tuya",
+   "note": "bonded familiar and mount",
+   "paragraph": 83,
+   "quote": "The two shared a magical bond"
+  },
+  {
+   "source": "Kefnet",
+   "relation": "ally",
+   "target": "Oketra",
+   "note": "siblings who fight in tandem",
+   "paragraph": 177,
+   "quote": "They moved in tandem with one another"
+  },
+  {
+   "source": "Hapatra",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "she blames the absent God-Pharaoh",
+   "paragraph": 108,
+   "quote": "This was his fault."
+  }
+ ],
+ "rejected": []
+}

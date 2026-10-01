@@ -1,0 +1,613 @@
+{
+ "page": "stories/judgment-2017-05-17",
+ "url": "https://magic.wizards.com/en/news/magic-story/judgment-2017-05-17",
+ "title": "Judgment",
+ "story_date": "2017-05-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:31:03Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [
+    "Initiate Samut",
+    "dissenter"
+   ],
+   "description": "A fugitive dissenter and former initiate of the Tah crop who tries to keep her friend Djeru from dying in the final Trial.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "A devout initiate and Samut's oldest friend, who wishes to die a glorious death in the final Trial of Zeal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [
+    "God of Zeal",
+    "Keeper of the Gate",
+    "Fervent One",
+    "Mother of Zeal",
+    "Gate Keeper",
+    "Trials' End",
+    "Giver of Gifts"
+   ],
+   "description": "The jackal-headed god of zeal who presides over the final Trial and seizes Samut as a dissenter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "Kytheon Iora"
+   ],
+   "description": "A planeswalker and member of the Gatewatch, who rescues Samut and shields Djeru from Hazoret's spear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A red-haired fire planeswalker of the Gatewatch who is furious that Liliana hid her demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A telepathic planeswalker of the Gatewatch who tells Samut the God-Pharaoh is a dragon from another world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A planeswalker of the Gatewatch who tracked Samut and learns how to break the cartouches' control.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A necromancer planeswalker of the Gatewatch who reveals that her third demon is on Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh",
+    "the trespasser",
+    "the greatest trespasser",
+    "Great Trespasser"
+   ],
+   "description": "A dragon from another world who rules Amonkhet as the God-Pharaoh and has remade the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nakht",
+   "type": "character",
+   "aliases": [],
+   "description": "Samut and Djeru's childhood friend, an aven who died in the desert and now roams the sands as the risen dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temmet",
+   "type": "character",
+   "aliases": [],
+   "description": "A vizier whom Djeru thought could attest for Samut.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tah crop",
+   "type": "faction",
+   "aliases": [
+    "her crop"
+   ],
+   "description": "Samut's crop of initiates, which she has abandoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Gatewatch",
+   "type": "faction",
+   "aliases": [
+    "the strangers"
+   ],
+   "description": "The group of planeswalkers, here Gideon, Chandra, Jace, Nissa and Liliana, who have come to Amonkhet to confront Nicol Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gods of Amonkhet",
+   "type": "faction",
+   "aliases": [
+    "the gods",
+    "the pantheon"
+   ],
+   "description": "The five surviving gods of Amonkhet, tampered with by Bolas, who attend Hazoret's final Trial.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Anointed",
+   "type": "faction",
+   "aliases": [
+    "the anointed dead",
+    "guardian mummy",
+    "mummies"
+   ],
+   "description": "Mummified dead servants who hunt Samut and obey the gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trial of Zeal",
+   "type": "event",
+   "aliases": [
+    "the final Trial"
+   ],
+   "description": "Hazoret's final Trial in which initiates must kill the dissenters, after which the Hours begin.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Hours",
+   "type": "event",
+   "aliases": [
+    "the Hours begin"
+   ],
+   "description": "The prophesied event that begins when the second sun passes through the horns, ushering in the God-Pharaoh's return.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazoret's Monument",
+   "type": "location",
+   "aliases": [
+    "Hazoret's temple",
+    "the monument"
+   ],
+   "description": "A monument shaped like a god's head, whose innermost hearth-like temple Samut enters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [
+    "the city-state"
+   ],
+   "description": "The city of Amonkhet where Samut hides.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Arena",
+   "type": "location",
+   "aliases": [
+    "the stadium"
+   ],
+   "description": "The great arena where the final Trial is held.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Luxa",
+   "type": "location",
+   "aliases": [
+    "Luxa River"
+   ],
+   "description": "The river where the crowds rush as the Hours begin and the Gate to the Afterlife lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gate to the Afterlife",
+   "type": "location",
+   "aliases": [
+    "the Gate"
+   ],
+   "description": "The gate promised to open when the second sun sits between the horns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ammits",
+   "type": "creature",
+   "aliases": [
+    "the ammits"
+   ],
+   "description": "Demons that devour hearts, invoked by Hazoret as a curse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The desert plane ruled by the God-Pharaoh.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samut hides in an old embalming chamber after fleeing viziers and the anointed, and meets Djeru, who came disguised as a mummy.",
+   "participants": [
+    "Samut",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "The wholesome face of her friend Djeru emerged"
+  },
+  {
+   "summary": "Samut begs Djeru not to enter the final Trial, claiming the God-Pharaoh is a lie, but he refuses and walks out.",
+   "participants": [
+    "Samut",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "Don't go to the final Trial."
+  },
+  {
+   "summary": "Samut mentions Nakht, and Djeru angrily says Nakht died unworthy because of their foolish trespass.",
+   "participants": [
+    "Samut",
+    "Djeru",
+    "Nakht"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "Nakht died unworthy , out there in the dunes, because of our stupidity."
+  },
+  {
+   "summary": "Djeru leaves, saying he will plead to Hazoret for her, which gives Samut an idea.",
+   "participants": [
+    "Djeru",
+    "Samut",
+    "Hazoret"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 45,
+   "quote": "I'll plead to Hazoret for you."
+  },
+  {
+   "summary": "Samut enters Hazoret's monument and requests an audience with the god.",
+   "participants": [
+    "Samut",
+    "Hazoret"
+   ],
+   "location": "Hazoret's Monument",
+   "importance": "minor",
+   "paragraph": 54,
+   "quote": "I request an audience, mighty Hazoret."
+  },
+  {
+   "summary": "Samut asks Hazoret not to take Djeru's life, and Hazoret questions her right to cage his heart.",
+   "participants": [
+    "Samut",
+    "Hazoret",
+    "Djeru"
+   ],
+   "location": "Hazoret's Monument",
+   "importance": "minor",
+   "paragraph": 81,
+   "quote": "I have come to plead for Djeru's survival."
+  },
+  {
+   "summary": "Samut dares to ask whether Hazoret herself is mistaken and appeals to the god of compassion she once was before the God-Pharaoh.",
+   "participants": [
+    "Samut",
+    "Hazoret",
+    "Nicol Bolas"
+   ],
+   "location": "Hazoret's Monument",
+   "importance": "major",
+   "paragraph": 96,
+   "quote": "Any tiny sliver of a memory of that time before the God-Pharaoh?"
+  },
+  {
+   "summary": "Hazoret curses Samut and orders the anointed to seize the dissenter.",
+   "participants": [
+    "Hazoret",
+    "Samut",
+    "The Anointed"
+   ],
+   "location": "Hazoret's Monument",
+   "importance": "major",
+   "paragraph": 102,
+   "quote": "Seize the dissenter."
+  },
+  {
+   "summary": "Samut is imprisoned in a sarcophagus among other dissenters, who tell her dissenters are the monsters of the Trial of Zeal.",
+   "participants": [
+    "Samut"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 108,
+   "quote": "The monsters initiates face in the final Trial are the dissenters themselves."
+  },
+  {
+   "summary": "Samut explains that she needs to save Djeru, believing he could convince a god they were lied to.",
+   "participants": [
+    "Samut",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 118,
+   "quote": "If anyone could convince a god they'd been lied to, it's him."
+  },
+  {
+   "summary": "Gideon and Chandra free Samut from the sarcophagus, telling her they came to rescue her.",
+   "participants": [
+    "Samut",
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 128,
+   "quote": "He explained that they saw her days ago evading capture and came to rescue her."
+  },
+  {
+   "summary": "The Gatewatch share information with Samut, learning that Bolas is a dragon from another world and has tampered with the gods.",
+   "participants": [
+    "Samut",
+    "Jace Beleren",
+    "Nissa Revane",
+    "Gideon Jura",
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Nicol Bolas"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 133,
+   "quote": "The God-Pharaoh is a dragon from another world, Samut."
+  },
+  {
+   "summary": "Liliana reveals her third demon is on Amonkhet, and the Gatewatch quarrel angrily.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar",
+    "Nissa Revane",
+    "Jace Beleren",
+    "Gideon Jura"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 137,
+   "quote": "My third demon is here."
+  },
+  {
+   "summary": "Samut forces the group to focus on rescuing Djeru, and Gideon swears to help.",
+   "participants": [
+    "Samut",
+    "Gideon Jura"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 151,
+   "quote": "I swear to help you save the life of your friend."
+  },
+  {
+   "summary": "All the gods approach and Hazoret takes Samut and the Gatewatch to face the last initiates, knocking them out.",
+   "participants": [
+    "Hazoret",
+    "Samut",
+    "The Gatewatch",
+    "The Gods of Amonkhet"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 159,
+   "quote": "Your time has come"
+  },
+  {
+   "summary": "The dissidents awake in the arena with cartouches of control, and Nissa learns to move against the cartouche by treating it like a leyline.",
+   "participants": [
+    "Samut",
+    "Nissa Revane",
+    "Jace Beleren",
+    "The Gatewatch"
+   ],
+   "location": "The Arena",
+   "importance": "minor",
+   "paragraph": 170,
+   "quote": "They work like leylines"
+  },
+  {
+   "summary": "Hazoret orders the initiates to kill the heretics and starts the final Trial, casting her mark of battle rage over everyone.",
+   "participants": [
+    "Hazoret",
+    "Samut",
+    "Djeru",
+    "The Gatewatch"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 181,
+   "quote": "Hazoret's mark of battle rage appeared over their heads."
+  },
+  {
+   "summary": "The Gatewatch fight without magic, and Samut reaches Djeru and fights alongside him.",
+   "participants": [
+    "Samut",
+    "Djeru",
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Nissa Revane",
+    "Gideon Jura"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 198,
+   "quote": "She would protect him. They would fight together."
+  },
+  {
+   "summary": "Djeru prays for Samut's forgiveness while he and Samut fight, and he slices Gideon's arm.",
+   "participants": [
+    "Djeru",
+    "Samut",
+    "Gideon Jura",
+    "Hazoret"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 205,
+   "quote": "cutting a sleek, shallow slice cut through Gideon's forearm"
+  },
+  {
+   "summary": "The battle magic fades, and Djeru surrenders his khopesh and prays for Samut's glorified death.",
+   "participants": [
+    "Djeru",
+    "Hazoret",
+    "Samut"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 218,
+   "quote": "Djeru concluded with his khopesh on the ground, a formal surrender."
+  },
+  {
+   "summary": "Hazoret asks Djeru to claim his place, and he accepts, but Samut declines Hazoret's gift.",
+   "participants": [
+    "Hazoret",
+    "Djeru",
+    "Samut"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 242,
+   "quote": "Without hesitation, she shook her head."
+  },
+  {
+   "summary": "As Hazoret strikes, Samut tackles Djeru out of the way and Gideon blocks the spear with his golden barrier.",
+   "participants": [
+    "Samut",
+    "Djeru",
+    "Gideon Jura",
+    "Hazoret"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 255,
+   "quote": "He stood between them and Hazoret's spear"
+  },
+  {
+   "summary": "Djeru, enraged that his chance at a glorious death is gone, beats on Gideon and weeps that he wants to exist.",
+   "participants": [
+    "Djeru",
+    "Gideon Jura",
+    "Samut"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 274,
+   "quote": "Because I want to exist!"
+  },
+  {
+   "summary": "The second sun passes through the horns, a shadow crosses the arena, and the Hours begin.",
+   "participants": [
+    "Hazoret",
+    "Samut",
+    "Djeru",
+    "The Gatewatch"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 296,
+   "quote": "It has begun. The Hours have begun!"
+  },
+  {
+   "summary": "Gideon, left behind, recalls Hazoret whispering to him that she sees his death and that he is no god.",
+   "participants": [
+    "Gideon Jura",
+    "Hazoret"
+   ],
+   "location": "The Arena",
+   "importance": "major",
+   "paragraph": 314,
+   "quote": "for I see your death, Kytheon Iora."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samut",
+   "relation": "ally",
+   "target": "Djeru",
+   "note": "oldest and dearest friends and cropmates",
+   "paragraph": 12,
+   "quote": "her cropmate, her brother-in-arms, her friend."
+  },
+  {
+   "source": "Hazoret",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "described as the God-Pharaoh's chosen daughter, tampered with by him",
+   "paragraph": 184,
+   "quote": "the chosen daughter of the God-Pharaoh"
+  },
+  {
+   "source": "Samut",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "she vows the trespasser will pay for tainting the gods",
+   "paragraph": 163,
+   "quote": "Whoever the trespasser was would pay."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Samut",
+   "note": "swears to help her save Djeru",
+   "paragraph": 151,
+   "quote": "I swear to help you save the life of your friend."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "member_of",
+   "target": "The Gatewatch",
+   "note": "one of the group of strangers",
+   "paragraph": 224,
+   "quote": "The strangers known as the Gatewatch were alive"
+  },
+  {
+   "source": "Hazoret",
+   "relation": "enemy",
+   "target": "Samut",
+   "note": "orders her seized as a dissenter",
+   "paragraph": 102,
+   "quote": "Seize the dissenter."
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "ally",
+   "target": "Samut",
+   "note": "tracked her to the sarcophagi to rescue her",
+   "paragraph": 123,
+   "quote": "When Nissa tried to track her it led us here"
+  },
+  {
+   "source": "Nakht",
+   "relation": "ally",
+   "target": "Samut",
+   "note": "their friend who died in the dunes",
+   "paragraph": 34,
+   "quote": "Nakht died to show us what it looks like when a life is cut short."
+  }
+ ],
+ "rejected": []
+}

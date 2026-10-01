@@ -1,0 +1,164 @@
+{
+ "page": "stories/proclamation-adriana-captain-guard-2016-08-16",
+ "url": "https://magic.wizards.com/en/news/magic-story/proclamation-adriana-captain-guard-2016-08-16",
+ "title": "Proclamation by Adriana, Captain of the Guard",
+ "story_date": "2016-08-16",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:29:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Adriana",
+   "type": "character",
+   "aliases": [
+    "captain of the guard"
+   ],
+   "description": "The stripped captain of the guard of Paliano who carries Brago's sword and calls on the citizens to defy the usurper queen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [
+    "the Black Rose",
+    "the usurper queen"
+   ],
+   "description": "The new queen, whom Adriana calls a known assassin and plotter who murdered King Brago and forged her claim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Brago",
+   "type": "character",
+   "aliases": [
+    "Brago",
+    "Brago the Eternal",
+    "King Eternal"
+   ],
+   "description": "The immortal king of Paliano whom Adriana says was murdered by Marchesa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [
+    "Custodi priests"
+   ],
+   "description": "The priests who once made the king's word manifest and now back Marchesa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [],
+   "description": "The city whose free citizens Adriana addresses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brago's sword",
+   "type": "artifact",
+   "aliases": [
+    "the sword of Brago"
+   ],
+   "description": "The blade bearing the symbol of the city on its pommel, which Adriana now carries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "City Troops",
+   "type": "faction",
+   "aliases": [],
+   "description": "The soldiers of the city whose banners have already changed to Marchesa's sigil.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Adriana tells the citizens they awoke as unwitting traitors under the banner of a usurper queen, Marchesa.",
+   "participants": [
+    "Adriana",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "You awoke as unwitting traitors beneath the bloodstained banner of a usurper queen"
+  },
+  {
+   "summary": "Adriana accuses Marchesa of murdering King Brago and forging his will and of commanding the Custodi.",
+   "participants": [
+    "Adriana",
+    "Marchesa",
+    "King Brago",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Somehow, this vile deceiver murdered King Brago"
+  },
+  {
+   "summary": "Adriana notes that the City Troops' banners have changed and that Marchesa avoids the city's symbol.",
+   "participants": [
+    "Adriana",
+    "Marchesa",
+    "City Troops"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "But the banners of the City Troops have already changed."
+  },
+  {
+   "summary": "Adriana declares she carries Brago's sword and, though stripped of her title, will not relinquish her duty to defend the city from the usurper.",
+   "participants": [
+    "Adriana",
+    "Brago's sword",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "I know this because I now carry that sword"
+  },
+  {
+   "summary": "Adriana urges the citizens to stand with her and Brago and disobey the pretender.",
+   "participants": [
+    "Adriana",
+    "Marchesa",
+    "King Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "stand with me, and with Brago, and show your loyalty to your city through your disobedience to the pretender."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Adriana",
+   "relation": "enemy",
+   "target": "Marchesa",
+   "note": "Adriana vows to unseat the usurper.",
+   "paragraph": 6,
+   "quote": "I have no wish to rule, only to unseat the usurper"
+  },
+  {
+   "source": "Marchesa",
+   "relation": "killed",
+   "target": "King Brago",
+   "note": "Adriana accuses her of murdering the king.",
+   "paragraph": 4,
+   "quote": "Somehow, this vile deceiver murdered King Brago"
+  },
+  {
+   "source": "Marchesa",
+   "relation": "ally",
+   "target": "Custodi",
+   "note": "Adriana says she commands the Custodi's loyalty.",
+   "paragraph": 4,
+   "quote": "Somehow, she commands the loyalty of the Custodi priests"
+  }
+ ],
+ "rejected": []
+}

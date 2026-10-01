@@ -1,0 +1,419 @@
+{
+ "page": "stories/bloody-instructions",
+ "url": "https://magic.wizards.com/en/news/magic-story/bloody-instructions",
+ "title": "Bloody Instructions",
+ "story_date": "2016-08-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:30:34Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Grenzo",
+   "type": "character",
+   "aliases": [
+    "Grenzo, Dungeon Warden",
+    "old man"
+   ],
+   "description": "A hunched, hulking goblin with a staff who leads goblin lackeys, breaks into Fimarell's villa and burns it, and is locked out of his dungeons by Marchesa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [
+    "Daretti, Scrap Savant"
+   ],
+   "description": "A goblin in a mechanical chair, a former Academy supplicant who takes revenge on Zadrous Fimarell for stealing his manuscript.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zadrous Fimarell",
+   "type": "character",
+   "aliases": [
+    "Fimarell",
+    "the academic",
+    "the professor"
+   ],
+   "description": "An old, paranoid former Academy academic who brought cogwork to Paliano and built his career on Daretti's stolen words; he is thrown from his window.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [
+    "Queen Marchesa",
+    "the queen",
+    "Our Sovereign Lady"
+   ],
+   "description": "The new sovereign of Paliano, celebrated at a festival and resented by Grenzo for locking him out of his dungeons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muzzio",
+   "type": "character",
+   "aliases": [],
+   "description": "An apprentice and academic, now exiled, whom Fimarell dedicated himself to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alendis",
+   "type": "character",
+   "aliases": [],
+   "description": "A former Academy man who told Daretti the Academy was not ready for a goblin and has apparently joined the Custodi; he is next on Daretti's list.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [],
+   "description": "The city in political chaos where the Festival of Our Sovereign Lady's Grace is held.",
+   "presence": "appears"
+  },
+  {
+   "name": "Academy",
+   "type": "faction",
+   "aliases": [
+    "the academy"
+   ],
+   "description": "The long-considered seat of knowledge and study in Paliano, now dissolved by royal decree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [],
+   "description": "The ghostly clergy of Paliano, which Alendis apparently joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of Our Sovereign Lady's Grace",
+   "type": "event",
+   "aliases": [],
+   "description": "A fireworks-filled festival in Paliano declaring the populace's love for Marchesa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fimarell's villa",
+   "type": "location",
+   "aliases": [
+    "the villa"
+   ],
+   "description": "The home of Zadrous Fimarell, guarded by a sentry, broken into and burned by Grenzo and Daretti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cogwork",
+   "type": "concept",
+   "aliases": [],
+   "description": "Mechanical life and inventions that Paliano outlawed and that Fimarell once helped bring to the city.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Paliano celebrates the Festival of Our Sovereign Lady's Grace while a lone sentry guards Fimarell's house.",
+   "participants": [
+    "Marchesa",
+    "Paliano"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "In the distance, the Festival of Our Sovereign Lady's Grace raged."
+  },
+  {
+   "summary": "A mob of goblins pelts the sentry with vegetables and a firebomb to draw him from his post.",
+   "participants": [
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Weapon raised, he raced for them."
+  },
+  {
+   "summary": "Grenzo smashes in the villa door with his staff, grumbling that Marchesa locked him out of his dungeons.",
+   "participants": [
+    "Grenzo",
+    "Daretti",
+    "Marchesa"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "One sharp thump from his staff and the villa door crashed to the ground."
+  },
+  {
+   "summary": "Grenzo's goblins flood into the villa's foyer and start looting.",
+   "participants": [
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "The crowd of goblins flooded into the foyer"
+  },
+  {
+   "summary": "Upstairs, Fimarell lies awake and recalls his former glory at the Academy, built on one invention and a lot of handshaking, until it all came crashing down (flashback).",
+   "participants": [
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 22,
+   "quote": "He was never a genius, he knew that"
+  },
+  {
+   "summary": "Goblins have overpowered and tied up three city guards beneath a toppled bookshelf.",
+   "participants": [
+    "Grenzo"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "Three city guards lay unconscious on the floor, pinned under a toppled bookshelf."
+  },
+  {
+   "summary": "Grenzo smashes Fimarell's desk and says the papers of praise are fuel.",
+   "participants": [
+    "Grenzo",
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "This is fuel."
+  },
+  {
+   "summary": "Daretti finds blueprints for one of the first cogwork sentries bearing the Academy seal.",
+   "participants": [
+    "Daretti",
+    "Grenzo",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 30,
+   "quote": "It's the blueprints for a cogwork sentry."
+  },
+  {
+   "summary": "Grenzo tells Daretti the Academy is dead, Muzzio exiled and cogwork outlawed, and urges him to act like a hyena.",
+   "participants": [
+    "Grenzo",
+    "Daretti",
+    "Muzzio",
+    "Academy"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "Well, the academy is dead and Muzzio is exiled."
+  },
+  {
+   "summary": "Daretti, stirred, tells Grenzo to burn everything.",
+   "participants": [
+    "Daretti",
+    "Grenzo"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "Burn it. Burn it all. Burn the ashes."
+  },
+  {
+   "summary": "Daretti finds yellowed parchment among the papers that tells him it is time for fresher prey.",
+   "participants": [
+    "Daretti",
+    "Grenzo"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "He withdrew some yellowed parchment."
+  },
+  {
+   "summary": "At the top of the stairs Daretti forgets his speech and Grenzo prompts him through it.",
+   "participants": [
+    "Daretti",
+    "Grenzo"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "I've forgotten it."
+  },
+  {
+   "summary": "Fimarell spots the goblins in the hallway, yells thieves and slams his bedroom door.",
+   "participants": [
+    "Zadrous Fimarell",
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 44,
+   "quote": "\"Thieves!\" Fimarell yelled and slammed the door."
+  },
+  {
+   "summary": "Daretti delivers his speech accusing Fimarell of falsehood and deception.",
+   "participants": [
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "And it is the burden of the honest to bring lies to bear and carry the falsifier to justice."
+  },
+  {
+   "summary": "Daretti's chair extends mechanical legs and raises him like a spider over Fimarell.",
+   "participants": [
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 48,
+   "quote": "Daretti's chair extended its mechanical legs"
+  },
+  {
+   "summary": "Daretti reveals that Fimarell criticized his words and then took them as his own.",
+   "participants": [
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "major",
+   "paragraph": 52,
+   "quote": "You built your career on the back of my words."
+  },
+  {
+   "summary": "Daretti gags Fimarell with a page of the stolen manuscript.",
+   "participants": [
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 53,
+   "quote": "He balled up the top page of the manuscript and shoved it into Fimarell's mouth."
+  },
+  {
+   "summary": "Daretti heaves Fimarell through the window; he falls two stories to the street.",
+   "participants": [
+    "Daretti",
+    "Zadrous Fimarell"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "major",
+   "paragraph": 59,
+   "quote": "Daretti reached under Fimarell's legs and heaved him up and through the window."
+  },
+  {
+   "summary": "Grenzo burns the manuscript in a pot and drops burning refuse onto the street.",
+   "participants": [
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 63,
+   "quote": "Grenzo dropped the torch after them."
+  },
+  {
+   "summary": "Grenzo's minions smash the furniture, pile it with papers and pour oil on it.",
+   "participants": [
+    "Grenzo"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 65,
+   "quote": "One poured oil over the pile."
+  },
+  {
+   "summary": "Grenzo and Daretti bicker over who is whose protege while the fire takes hold of the villa.",
+   "participants": [
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Fimarell's villa",
+   "importance": "minor",
+   "paragraph": 72,
+   "quote": "The flames caught quickly and the fire crackled, crawling up the walls."
+  },
+  {
+   "summary": "Daretti names Alendis, who apparently joined the Custodi, as his next target; Grenzo adds anyone in league with Marchesa.",
+   "participants": [
+    "Daretti",
+    "Grenzo",
+    "Alendis",
+    "Custodi",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 74,
+   "quote": "Sounds like the oily bastard joined the Custodi."
+  },
+  {
+   "summary": "Grenzo muses that Marchesa once ran in shadows but now locks every door, and proposes crashing all their parties.",
+   "participants": [
+    "Grenzo",
+    "Daretti",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "Now she's got her comfy chair and locks every door at night."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Daretti",
+   "relation": "ally",
+   "target": "Grenzo",
+   "note": "They work together and bicker over who leads.",
+   "paragraph": 67,
+   "quote": "Let's be clear here. You are my enforcer."
+  },
+  {
+   "source": "Daretti",
+   "relation": "killed",
+   "target": "Zadrous Fimarell",
+   "note": "He throws Fimarell from the window onto the street.",
+   "paragraph": 59,
+   "quote": "Daretti reached under Fimarell's legs and heaved him up and through the window."
+  },
+  {
+   "source": "Daretti",
+   "relation": "enemy",
+   "target": "Zadrous Fimarell",
+   "note": "Daretti says Fimarell stole his manuscript and career.",
+   "paragraph": 52,
+   "quote": "How dare you call us thieves, you sham!"
+  },
+  {
+   "source": "Grenzo",
+   "relation": "enemy",
+   "target": "Marchesa",
+   "note": "Grenzo is angry she locked him out of his dungeons and puts her allies on his list.",
+   "paragraph": 75,
+   "quote": "Well, if that means he's in league with Marchesa, then he's on my list too."
+  },
+  {
+   "source": "Alendis",
+   "relation": "member_of",
+   "target": "Custodi",
+   "note": "Daretti says he apparently joined the Custodi.",
+   "paragraph": 74,
+   "quote": "Sounds like the oily bastard joined the Custodi."
+  }
+ ],
+ "rejected": []
+}

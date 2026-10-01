@@ -1,0 +1,936 @@
+{
+ "page": "stories/homesick-2016-08-29",
+ "url": "https://magic.wizards.com/en/news/magic-story/homesick-2016-08-29",
+ "title": "Homesick",
+ "story_date": "2016-08-29",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:32:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana",
+    "Countess Vess",
+    "Miss Liliana"
+   ],
+   "description": "A Dominarian necromancer and planeswalker of the Gatewatch who keeps her own lodging, hides her resentment of Jace, and steers Chandra and the group.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra",
+    "Monk Nalaar",
+    "Miss Nalaar"
+   ],
+   "description": "A pyromancer and planeswalker of the Gatewatch from Kaladesh who was raised by monks on Regatha, and whose parents were renegades; she is awkwardly drawn to Nissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "Guildpact"
+   ],
+   "description": "A telepath and planeswalker of the Gatewatch who is also the Ravnican Guildpact, swamped with paperwork and hosting the team in his house.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "Gids",
+    "Beefslab",
+    "Mancake",
+    "Captain Jura"
+   ],
+   "description": "A hieromancer from Theros and planeswalker of the Gatewatch who is indestructible when ready for a blow and acts as battlefield commander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elven animist from Zendikar and planeswalker of the Gatewatch who is overwhelmed by Ravnica and mourns her lost bond with Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lavinia",
+   "type": "character",
+   "aliases": [
+    "Lavinia of the Azorius"
+   ],
+   "description": "An Azorius guard who attends Jace as Guildpact, anticipates his needs, and has been sworn to secrecy about planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [
+    "Minister Baan",
+    "Minister of Inspections"
+   ],
+   "description": "A tall vedalken Minister of Inspections for the Consulate of Kaladesh who asks the Gatewatch to root out renegades threatening the Inventors' Fair and reveals Chandra's parents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A renegade luminary and, per Baan, Chandra's mother, reported dead after the Bunarat manhunt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiran Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A renegade luminary and, per Baan, Chandra's father, reported dead after the Bunarat manhunt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A soratami scholar of Kamigawa who helped defeat Emrakul and passes word among planeswalkers on behalf of the Gatewatch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mother Luti",
+   "type": "character",
+   "aliases": [],
+   "description": "A monk from Chandra's upbringing who taught the log-burning ritual about being consumed by divinity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of a criminal Consortium for which Liliana and Jace once worked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [
+    "the eldritch titan"
+   ],
+   "description": "The Eldrazi titan the Gatewatch defeated and sealed in Innistrad's silver moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The alliance of five planeswalkers formed to protect worlds from threats from beyond, now headquartered in Jace's house.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate of Kaladesh",
+   "type": "faction",
+   "aliases": [
+    "the Consulate"
+   ],
+   "description": "The unified, centralized, meritocratic government of Kaladesh that Baan represents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [
+    "renegade movement"
+   ],
+   "description": "A movement against the Consulate accused of sabotage and theft of aether resources.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "the Azorius"
+   ],
+   "description": "The Ravnican guild leadership whose influential members were petrified by a gorgon assassin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inventors' Fair",
+   "type": "event",
+   "aliases": [
+    "Inventors' Festival"
+   ],
+   "description": "A Kaladeshi festival in Ghirapur with expositions of artifice and grants, disrupted by vandals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace's house",
+   "type": "location",
+   "aliases": [
+    "Jace's sanctum",
+    "our headquarters"
+   ],
+   "description": "Jace's Ravnican home with a vast library, a gymnasium and a roof garden, where the Gatewatch lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Gatewatch lives, overwhelming Nissa with its noise and crowds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of inventors and brass cities, home of Baan and Chandra's birthplace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Nissa's home world, whose voice she can no longer hear in her mind.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The place where Chandra was raised with monks and rituals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Gatewatch defeated Emrakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The capital city of Kaladesh where the Inventors' Fair is held and where Chandra grew up near.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bunarat",
+   "type": "location",
+   "aliases": [],
+   "description": "A village set ablaze during the manhunt for the Nalaars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [
+    "the Veil"
+   ],
+   "description": "The artifact Liliana keeps hidden in a pocket, possessed by whispering Onakke spirits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether",
+   "type": "concept",
+   "aliases": [],
+   "description": "Energy in the air of Kaladesh that the Consulate siphons and stores in devices.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leylines",
+   "type": "concept",
+   "aliases": [],
+   "description": "Natural magic patterns in the land of Zendikar that Nissa perceives and manipulates.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liliana wakes a hungover Chandra at noon in Jace's house.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Morning, Liliana"
+  },
+  {
+   "summary": "Liliana guesses Chandra spent the night at the Izzet air races.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "You went to see the Izzet air races."
+  },
+  {
+   "summary": "Liliana notes Nissa has barely left the roof garden since the first morning.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "She's been staying in the roof garden ever since."
+  },
+  {
+   "summary": "Liliana explains she keeps her own lodgings because she dislikes relying on others, hiding that she will not sleep under a roof Jace paid for.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar",
+    "Jace Beleren"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 51,
+   "quote": "I mislike relying on the mercy of others"
+  },
+  {
+   "summary": "In the courtyard Nissa conjures a bush-beast that drives Gideon into the ground, testing his indestructibility.",
+   "participants": [
+    "Nissa Revane",
+    "Gideon Jura"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 73,
+   "quote": "Its front limbs interlaced into a single fist, which it drove down on Gideon like an avalanche."
+  },
+  {
+   "summary": "Gideon asks Nissa if his habit of clapping shoulders makes her uncomfortable and promises to stop.",
+   "participants": [
+    "Gideon Jura",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 85,
+   "quote": "That thing I do, where I clap people on the shoulder? Does that make you uncomfortable?"
+  },
+  {
+   "summary": "Liliana bristles that Nissa gets apologies while she once had to learn to break fingers.",
+   "participants": [
+    "Liliana Vess",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "Two hundred years ago, she'd had to learn to break fingers."
+  },
+  {
+   "summary": "Liliana reflects that Jace swore Lavinia to secrecy about planeswalking, and Lavinia guards him to keep him from leaving.",
+   "participants": [
+    "Liliana Vess",
+    "Jace Beleren",
+    "Lavinia"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 95,
+   "quote": "to swear her to secrecy"
+  },
+  {
+   "summary": "Liliana makes Jace drop his tidy glamour, revealing him tired and unkempt.",
+   "participants": [
+    "Liliana Vess",
+    "Jace Beleren"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 98,
+   "quote": "You can drop the glamour, dear. No one cares."
+  },
+  {
+   "summary": "Jace explains he has put word out through Tamiyo that the Gatewatch is ready to help.",
+   "participants": [
+    "Jace Beleren",
+    "Tamiyo",
+    "Gatewatch"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 116,
+   "quote": "I've put word out through Tamiyo that the Gatewatch is ready to help."
+  },
+  {
+   "summary": "Jace introduces Dovin Baan, a Minister of Inspections from Kaladesh, as the first to seek out the Gatewatch.",
+   "participants": [
+    "Jace Beleren",
+    "Dovin Baan",
+    "Gatewatch"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 120,
+   "quote": "Our guest is Dovin Baan."
+  },
+  {
+   "summary": "Baan presents himself as a representative of the Consulate of Kaladesh and describes its unified system.",
+   "participants": [
+    "Dovin Baan",
+    "Consulate of Kaladesh"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 135,
+   "quote": "I have the honor of coming before you as an officially and duly designated representative of the Consulate of Kaladesh."
+  },
+  {
+   "summary": "Baan explains that the Inventors' Fair preparations have been disrupted by vandals.",
+   "participants": [
+    "Dovin Baan",
+    "Inventors' Fair",
+    "Renegades"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 141,
+   "quote": "preparations have been repeatedly disrupted by vandals and malcontents"
+  },
+  {
+   "summary": "Gideon realizes Baan wants the Gatewatch to provide security and hunt the renegades.",
+   "participants": [
+    "Gideon Jura",
+    "Dovin Baan",
+    "Gatewatch"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 143,
+   "quote": "So, to be clear, you want the Gatewatch to provide...security?"
+  },
+  {
+   "summary": "Chandra storms out of the meeting furious at Baan's description of the renegades.",
+   "participants": [
+    "Chandra Nalaar",
+    "Dovin Baan"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 148,
+   "quote": "Chandra's chair tilted over backward as she bolted to her feet."
+  },
+  {
+   "summary": "Baan asks who makes decisions for the group, and Jace and Gideon each fumble to name a leader.",
+   "participants": [
+    "Jace Beleren",
+    "Gideon Jura",
+    "Dovin Baan"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 159,
+   "quote": "Gideon is the battlefield commander..."
+  },
+  {
+   "summary": "Liliana tells Baan the Gatewatch handles outside threats, not internal ones, so its hands are tied.",
+   "participants": [
+    "Liliana Vess",
+    "Dovin Baan",
+    "Gatewatch"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 164,
+   "quote": "our hands are tied."
+  },
+  {
+   "summary": "Baan accepts Liliana's reasoning and prepares to leave.",
+   "participants": [
+    "Dovin Baan",
+    "Liliana Vess"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 165,
+   "quote": "I did not fully comprehend the strictures you operate under."
+  },
+  {
+   "summary": "Gideon invites Baan to stay for dinner and a tour of the headquarters.",
+   "participants": [
+    "Gideon Jura",
+    "Dovin Baan"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 167,
+   "quote": "Minister, you should at least stay for dinner."
+  },
+  {
+   "summary": "Jace reveals influential Azorius Senate members were petrified while he was away.",
+   "participants": [
+    "Jace Beleren",
+    "Lavinia",
+    "Azorius Senate"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 174,
+   "quote": "a few influential members in the Azorius Senate were...eliminated."
+  },
+  {
+   "summary": "Jace explains a planeswalking gorgon assassin with a grudge against the Azorius swore she would return.",
+   "participants": [
+    "Jace Beleren",
+    "Liliana Vess",
+    "Azorius Senate"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 177,
+   "quote": "About a year ago, there was a gorgon assassin operating on Ravnica."
+  },
+  {
+   "summary": "Jace asks Gideon to investigate the petrifications and work with the Azorius.",
+   "participants": [
+    "Jace Beleren",
+    "Gideon Jura",
+    "Lavinia"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 182,
+   "quote": "I'd like you to investigate this."
+  },
+  {
+   "summary": "Liliana recalls that she and Jace once worked for Tezzeret's Consortium (backstory).",
+   "participants": [
+    "Liliana Vess",
+    "Jace Beleren",
+    "Tezzeret"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 186,
+   "quote": "when she and Jace had worked for Tezzeret's criminal Consortium"
+  },
+  {
+   "summary": "Liliana feels the Chain Veil in its hidden pocket and the whispering spirits inside it.",
+   "participants": [
+    "Liliana Vess",
+    "Chain Veil"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 187,
+   "quote": "She laid a hand over the hidden pocket where she kept the Chain Veil."
+  },
+  {
+   "summary": "Jace tells Liliana he hates it when she takes over, and she answers that she remembers when he enjoyed that.",
+   "participants": [
+    "Jace Beleren",
+    "Liliana Vess"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 200,
+   "quote": "I remember when you enjoyed that."
+  },
+  {
+   "summary": "Chandra rages that the Consulate killed Kaladesh's best inventors as she punches Gideon's punching bag.",
+   "participants": [
+    "Chandra Nalaar",
+    "Consulate of Kaladesh"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 208,
+   "quote": "They killed the best damn inventors on Kaladesh."
+  },
+  {
+   "summary": "Gideon's punching bag bursts into flames and Chandra puts it out with a bucket, leaving a sand pile.",
+   "participants": [
+    "Chandra Nalaar",
+    "Gideon Jura"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 210,
+   "quote": "The canvas of Gids's punchybag bursts into flames."
+  },
+  {
+   "summary": "Chandra wonders whether she belongs and thinks of returning to Regatha.",
+   "participants": [
+    "Chandra Nalaar",
+    "Mother Luti"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 222,
+   "quote": "I should go back to Regatha."
+  },
+  {
+   "summary": "Chandra remembers floating in green when she touched Nissa's mind and is drawn to seek her out.",
+   "participants": [
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 227,
+   "quote": "She was floating in green and I could breathe there."
+  },
+  {
+   "summary": "Chandra finds Nissa sitting on moss in her flower-filled room.",
+   "participants": [
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 239,
+   "quote": "She's sitting cross-legged on a patch of moss."
+  },
+  {
+   "summary": "Chandra clumsily tells Nissa that on Zendikar she felt Nissa's calm mind behind the world's anger.",
+   "participants": [
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 256,
+   "quote": "But behind Zendikar, behind the anger and the power, I felt you"
+  },
+  {
+   "summary": "Nissa offers to teach Chandra to meditate.",
+   "participants": [
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 264,
+   "quote": "I can teach you to meditate, if you wish."
+  },
+  {
+   "summary": "Mortified, Chandra flees Nissa's room.",
+   "participants": [
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 276,
+   "quote": "I turn and run, trailing sparks, trees and flowers smearing around me, banging through the door."
+  },
+  {
+   "summary": "Chandra rushes past Baan and Gideon, apologizing for blowing up the punching bag.",
+   "participants": [
+    "Chandra Nalaar",
+    "Gideon Jura",
+    "Dovin Baan",
+    "Liliana Vess"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 283,
+   "quote": "SorryIblewupyourthingy"
+  },
+  {
+   "summary": "Liliana finds Chandra hiding in an alley and persuades her to come along shopping.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 292,
+   "quote": "She was crouched halfway down an alley three blocks from Jace's home"
+  },
+  {
+   "summary": "Liliana invites Chandra to join her and talk on the way.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 306,
+   "quote": "Then I suppose you'll have to come along and see."
+  },
+  {
+   "summary": "Nissa, daydreaming of waking as a seed in the dark, is jolted back by Gideon at dinner.",
+   "participants": [
+    "Nissa Revane",
+    "Gideon Jura"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 321,
+   "quote": "I'm not a seed."
+  },
+  {
+   "summary": "Gideon tells Baan about what Nissa and Chandra did on Zendikar.",
+   "participants": [
+    "Gideon Jura",
+    "Dovin Baan",
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 327,
+   "quote": "I was telling Minister Baan what you did on Zendikar."
+  },
+  {
+   "summary": "Nissa feels overwhelmed and alone among the crowds of Ravnica, cut off from Zendikar's voice.",
+   "participants": [
+    "Nissa Revane",
+    "Zendikar"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 340,
+   "quote": "She'd never been among so many, and never been so alone."
+  },
+  {
+   "summary": "Baan contrasts aether with leylines, and Nissa explains that on her world they ask rather than take.",
+   "participants": [
+    "Dovin Baan",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 349,
+   "quote": "We don't take."
+  },
+  {
+   "summary": "Jace returns from his paperwork and Lavinia hands him tea, anticipating his needs.",
+   "participants": [
+    "Jace Beleren",
+    "Lavinia"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 355,
+   "quote": "It's my job to anticipate you, Guildpact,"
+  },
+  {
+   "summary": "Baan voices his deterministic view that a criminal will forever remain a criminal.",
+   "participants": [
+    "Dovin Baan",
+    "Jace Beleren"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 363,
+   "quote": "A criminal will forever remain a criminal."
+  },
+  {
+   "summary": "Lavinia reports that Liliana and Chandra spent the afternoon in the market district and then planeswalked together.",
+   "participants": [
+    "Lavinia",
+    "Liliana Vess",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 385,
+   "quote": "They spent the afternoon wandering the market district"
+  },
+  {
+   "summary": "Baan recognizes Chandra's surname and reveals Pia and Kiran Nalaar were renegade luminaries.",
+   "participants": [
+    "Dovin Baan",
+    "Pia Nalaar",
+    "Kiran Nalaar",
+    "Renegades"
+   ],
+   "location": "Jace's house",
+   "importance": "major",
+   "paragraph": 392,
+   "quote": "Pia and Kiran Nalaar were early luminaries of the renegade movement."
+  },
+  {
+   "summary": "Baan explains that Chandra's parents, hunted after she manifested pyromancy, were reported dead when Bunarat was set ablaze.",
+   "participants": [
+    "Dovin Baan",
+    "Pia Nalaar",
+    "Kiran Nalaar",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "major",
+   "paragraph": 394,
+   "quote": "the girl escaped custody when she manifested dangerous pyromantic abilities"
+  },
+  {
+   "summary": "Gideon defends Chandra, saying her parents' sins have nothing to do with her.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 399,
+   "quote": "But her heart's the size of the moon."
+  },
+  {
+   "summary": "Nissa says Chandra's past was hers to share, since everyone has scars others should not touch.",
+   "participants": [
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 406,
+   "quote": "We all have scars we don't want others to touch."
+  },
+  {
+   "summary": "Lavinia stops Jace from leaving to find Chandra, saying Gideon and Nissa can search for Monk Nalaar.",
+   "participants": [
+    "Lavinia",
+    "Jace Beleren",
+    "Gideon Jura",
+    "Nissa Revane"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 414,
+   "quote": "They can find Monk Nalaar."
+  },
+  {
+   "summary": "Nissa volunteers to go to Kaladesh with Baan and stand with Chandra.",
+   "participants": [
+    "Nissa Revane",
+    "Dovin Baan",
+    "Chandra Nalaar"
+   ],
+   "location": "Jace's house",
+   "importance": "minor",
+   "paragraph": 424,
+   "quote": "I'll stand with her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jace Beleren",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "One of the five Gatewatch planeswalkers.",
+   "paragraph": 1,
+   "quote": "Five Planeswalkers allied as the Gatewatch."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "One of the five Gatewatch planeswalkers.",
+   "paragraph": 1,
+   "quote": "Five Planeswalkers allied as the Gatewatch."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "One of the five Gatewatch planeswalkers.",
+   "paragraph": 1,
+   "quote": "Five Planeswalkers allied as the Gatewatch."
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "One of the five Gatewatch planeswalkers.",
+   "paragraph": 1,
+   "quote": "Five Planeswalkers allied as the Gatewatch."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "One of the five Gatewatch planeswalkers.",
+   "paragraph": 1,
+   "quote": "Five Planeswalkers allied as the Gatewatch."
+  },
+  {
+   "source": "Lavinia",
+   "relation": "serves",
+   "target": "Jace Beleren",
+   "note": "She attends him as Guildpact and anticipates his needs.",
+   "paragraph": 355,
+   "quote": "It's my job to anticipate you, Guildpact,"
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "serves",
+   "target": "Consulate of Kaladesh",
+   "note": "He is its designated representative and Minister of Inspections.",
+   "paragraph": 135,
+   "quote": "I have the honor of coming before you as an officially and duly designated representative of the Consulate of Kaladesh."
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Baan believes Pia and Kiran are Chandra's parents.",
+   "paragraph": 394,
+   "quote": "Her parents, unless I greatly miss my guess."
+  },
+  {
+   "source": "Kiran Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Baan believes Pia and Kiran are Chandra's parents.",
+   "paragraph": 394,
+   "quote": "Her parents, unless I greatly miss my guess."
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "member_of",
+   "target": "Renegades",
+   "note": "An early luminary of the renegade movement.",
+   "paragraph": 392,
+   "quote": "Pia and Kiran Nalaar were early luminaries of the renegade movement."
+  },
+  {
+   "source": "Kiran Nalaar",
+   "relation": "member_of",
+   "target": "Renegades",
+   "note": "An early luminary of the renegade movement.",
+   "paragraph": 392,
+   "quote": "Pia and Kiran Nalaar were early luminaries of the renegade movement."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Jace Beleren",
+   "note": "A strained former closeness; she remembers when he enjoyed her taking charge.",
+   "paragraph": 200,
+   "quote": "I remember when you enjoyed that."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Chain Veil",
+   "note": "She carries the Chain Veil hidden in a pocket.",
+   "paragraph": 187,
+   "quote": "She laid a hand over the hidden pocket where she kept the Chain Veil."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "other",
+   "target": "Nissa Revane",
+   "note": "Chandra seeks Nissa out for calm and is offered meditation lessons.",
+   "paragraph": 264,
+   "quote": "I can teach you to meditate, if you wish."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,617 @@
+{
+ "page": "stories/chronicle-bolas-things-unseen-2018-06-27",
+ "url": "https://magic.wizards.com/en/news/magic-story/chronicle-bolas-things-unseen-2018-06-27",
+ "title": "Chronicle of Bolas: Things Unseen",
+ "story_date": "2018-06-27",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:32:56Z",
+ "storyline": "Chronicle of Bolas",
+ "entities": [
+  {
+   "name": "Naiva",
+   "type": "character",
+   "aliases": [
+    "Nai"
+   ],
+   "description": "A young Temur hunter who spears the aven interpreter and later kills the Atarka broodling, and feels drawn to Tae Jin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baishya",
+   "type": "character",
+   "aliases": [
+    "Bai"
+   ],
+   "description": "A young whisperer who moves a boulder with earth magic to shield Tae Jin and later traps the broodling with a rock.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yasova Dragonclaw",
+   "type": "character",
+   "aliases": [
+    "Yasova",
+    "Grandmother",
+    "First Mother"
+   ],
+   "description": "The former Temur chief and leader of the hunting party, who secretly signals to kill the Ojutai broodling and guides the party to Ugin's grave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tae Jin",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Jeskai wanderer bearing a dragon mark of a ghostfire warrior, who recites Ugin's story and wields a spectral ice blade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fec",
+   "type": "character",
+   "aliases": [],
+   "description": "An orc hunter who advises caution and fights the broodling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mattak",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter on sentry duty.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oiyan",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Yasova's dependable hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darka",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Yasova's dependable hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakhan",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Yasova's dependable hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorya",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Yasova's dependable hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "the Spirit Dragon",
+    "Ugin Spirit Dragon"
+   ],
+   "description": "The Spirit Dragon whose first-person story Tae Jin recites, about wandering with and following his twin Nicol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Nicol",
+    "Bolas"
+   ],
+   "description": "Ugin's twin, who hates humans and promises vengeance for their sister; in the story he claims a cunning plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [
+    "Vaevictis"
+   ],
+   "description": "A large, red-crested dragon who with his siblings terrorizes human settlements and chases Nicol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "A reddish-green dragon who steals the twins' kills and warns them away from the birth mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Te Ju Ki",
+   "type": "character",
+   "aliases": [],
+   "description": "The wise human elder who taught Ugin to spin globes of light representing planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcades Sabboth",
+   "type": "character",
+   "aliases": [
+    "Arcades"
+   ],
+   "description": "The twins' older brother who rules a human colony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka",
+   "type": "deity",
+   "aliases": [
+    "Dragonlord Atarka"
+   ],
+   "description": "The Dragonlord who rules the territory and demands meat tribute; she hates and fears magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka's broodling",
+   "type": "creature",
+   "aliases": [
+    "the Atarka broodling",
+    "red dragon crowned with antlers"
+   ],
+   "description": "A red antlered dragon that follows the party, kills the Ojutai broodling, and then attacks the camp before Naiva kills it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai's broodling",
+   "type": "creature",
+   "aliases": [
+    "the Ojutai broodling",
+    "Ojutai dragon"
+   ],
+   "description": "A pale dragon that tries to kill Tae Jin with ice breath and is later killed by the Atarka broodling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aven interpreter",
+   "type": "creature",
+   "aliases": [
+    "the aven"
+   ],
+   "description": "An aven who translates for the Ojutai broodling and is killed by Naiva's and Yasova's spears.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai",
+   "type": "deity",
+   "aliases": [
+    "the Great Teacher"
+   ],
+   "description": "A Dragonlord whose broodling hunts Tae Jin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shu Yun",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who made a bargain that all ghostfire warriors would die to spare the rest of the Jeskai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Temur",
+   "type": "faction",
+   "aliases": [
+    "Temur clan"
+   ],
+   "description": "The clan of Yasova and her granddaughters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeskai",
+   "type": "faction",
+   "aliases": [],
+   "description": "The people of Tae Jin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghostfire warriors",
+   "type": "faction",
+   "aliases": [
+    "ghostfire warrior"
+   ],
+   "description": "Warriors bearing a dragon mark, supposedly all doomed by Shu Yun's bargain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Windfolk",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elementals that gave Baishya a vision.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin's grave",
+   "type": "location",
+   "aliases": [],
+   "description": "A chasm with a blue haze toward which the party travels.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The birth mountain",
+   "type": "location",
+   "aliases": [
+    "the mountain of our birth"
+   ],
+   "description": "The mountain where Nicol and Ugin hatched; now surrounded by human settlements that mount dragon skulls on gates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayagor",
+   "type": "location",
+   "aliases": [],
+   "description": "The gathering place where meat is delivered to Atarka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qal Sisma",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountain range seen from the party's camp.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragon hunters",
+   "type": "faction",
+   "aliases": [
+    "humans around the birth mountain"
+   ],
+   "description": "Human settlers who have turned dragon corpses into trophies and attack dragons with poisoned bolts.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As the Ojutai broodling prepares to kill Tae Jin, Yasova secretly signals the hunters to kill.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Naiva",
+    "Tae Jin",
+    "Ojutai's broodling"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Keeping her hand hidden from the aven on the rock, Grandmother gestured Kill ."
+  },
+  {
+   "summary": "Baishya rolls a boulder to block the broodling's ice breath, and Naiva and Yasova kill the aven interpreter with spears.",
+   "participants": [
+    "Baishya",
+    "Naiva",
+    "Yasova Dragonclaw",
+    "Aven interpreter",
+    "Tae Jin"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Grandmother cast her own spear, and the weapon struck the aven's head for the death blow."
+  },
+  {
+   "summary": "The broodling shoves aside the boulder as it looms over the twins, but an Atarka broodling slams into it.",
+   "participants": [
+    "Ojutai's broodling",
+    "Atarka's broodling",
+    "Naiva",
+    "Baishya"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "The two beasts went tumbling over the grass, grappling and clawing."
+  },
+  {
+   "summary": "Baishya admits she did not know she could move a rock like that.",
+   "participants": [
+    "Baishya",
+    "Naiva"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "I didn't either,"
+  },
+  {
+   "summary": "Yasova decides to go on to Ugin's grave, accepting the portent of Tae Jin's arrival and the windfolk's vision.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Fec",
+    "Tae Jin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "We will go on to Ugin's grave."
+  },
+  {
+   "summary": "Yasova asks Tae Jin to continue Ugin's story, especially about Bolas.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin",
+    "Nicol Bolas"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 45,
+   "quote": "Tell me more about Ugin. And about Bolas."
+  },
+  {
+   "summary": "Flashback in Ugin's words: Ugin flies alone back across the land toward the birth mountain, finding solitude difficult and learning that all things breathe.",
+   "participants": [
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 52,
+   "quote": "But slowly as I flew and hunted my way back across the wide, wild land, I began to hear how all things breathe."
+  },
+  {
+   "summary": "Flashback: Ugin finds Vaevictis Asmadi and his siblings chasing Nicol while burning human settlements.",
+   "participants": [
+    "Ugin",
+    "Vaevictis Asmadi",
+    "Nicol Bolas"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 56,
+   "quote": "They were chasing a dragon."
+  },
+  {
+   "summary": "Flashback: Ugin frightens Vaevictis off with spun globes of light so Nicol can escape.",
+   "participants": [
+    "Ugin",
+    "Vaevictis Asmadi",
+    "Nicol Bolas"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 64,
+   "quote": "So, I reached into my tiny arsenal of magical tricks and spun a pair of transparent, feather-light globes out of the nexus of colors and into the air."
+  },
+  {
+   "summary": "Flashback: Nicol reunites with Ugin and mocks Te Ju Ki, claiming no human can be as wise as the youngest dragon.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin",
+    "Te Ju Ki"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 80,
+   "quote": "No human, however old, can ever be as wise as the youngest dragon"
+  },
+  {
+   "summary": "Flashback: Nicol tells Ugin of other lands across the ocean and refuses to consider that other dragons may be older.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 91,
+   "quote": "We are the first, after all, and thus the most powerful."
+  },
+  {
+   "summary": "Flashback: Palladia-Mors steals the twins' kills and warns them that humans near the birth mountain think they are dragon hunters.",
+   "participants": [
+    "Palladia-Mors",
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "minor",
+   "paragraph": 105,
+   "quote": "Those humans have gotten above themselves and think they are dragon hunters."
+  },
+  {
+   "summary": "Flashback: the twins reach the birth mountain and find human settlements with dragon skulls and carved gates showing dragons being killed.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Dragon hunters"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 119,
+   "quote": "They have turned our sister into an ornament!"
+  },
+  {
+   "summary": "Flashback: humans fire poisoned bolts, wounding Ugin, and fight to bathe in his fallen blood.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Dragon hunters"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 121,
+   "quote": "Although Nicol twisted out of their way, my left rear claw was cut by a glancing blow."
+  },
+  {
+   "summary": "Flashback: Ugin lands on the mountain's rim and Nicol vows to avenge their sister, claiming a cunning plan that needs no killing.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The birth mountain",
+   "importance": "major",
+   "paragraph": 141,
+   "quote": "I have a plan, a very cunning plan, because I have taught myself to do something no one else can do."
+  },
+  {
+   "summary": "Yasova's party camps; at dusk Naiva tells Tae Jin that Yasova brings children to Ugin's grave to wake their magic early.",
+   "participants": [
+    "Naiva",
+    "Tae Jin",
+    "Baishya",
+    "Yasova Dragonclaw"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 158,
+   "quote": "Atarka hates magic. She fears it."
+  },
+  {
+   "summary": "Tae Jin says his master believes some essence of Ugin endures and reached out, which is why he was sent.",
+   "participants": [
+    "Tae Jin",
+    "Ugin",
+    "Baishya"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 162,
+   "quote": "The tempests that birth dragons have increased in strength since Ugin's death."
+  },
+  {
+   "summary": "The wounded Atarka broodling carries the dead Ojutai dragon to the camp and attacks, calling them traitors.",
+   "participants": [
+    "Atarka's broodling",
+    "Ojutai's broodling",
+    "Tae Jin",
+    "Naiva",
+    "Baishya"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 166,
+   "quote": "Come out! My cousin tells me truth before she dies. Traitor! Dragon killer!"
+  },
+  {
+   "summary": "Tae Jin conjures a ghostly blade and slashes open the broodling's belly.",
+   "participants": [
+    "Tae Jin",
+    "Atarka's broodling"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 173,
+   "quote": "the white sparks elongated to become a long ghostly blade that shimmered, bright yet without physical substance"
+  },
+  {
+   "summary": "Naiva kills the broodling by driving her spear through its eye.",
+   "participants": [
+    "Naiva",
+    "Atarka's broodling",
+    "Baishya",
+    "Yasova Dragonclaw",
+    "Fec"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 175,
+   "quote": "Naiva thrust the obsidian point of her spear into the dragon's unblinking eye"
+  },
+  {
+   "summary": "Yasova identifies Tae Jin's dragon mark as that of a ghostfire warrior and demands to know how he exists.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin",
+    "Shu Yun",
+    "Ghostfire warriors"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 185,
+   "quote": "You wear the dragon mark of a ghostfire warrior."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Naiva",
+   "relation": "family",
+   "target": "Baishya",
+   "note": "twin sisters",
+   "paragraph": 10,
+   "quote": "At least they would die as they had been born: together."
+  },
+  {
+   "source": "Yasova Dragonclaw",
+   "relation": "family",
+   "target": "Naiva",
+   "note": "grandmother of Naiva",
+   "paragraph": 0,
+   "quote": "Her entire life she had watched her grandmother, Yasova, once known as Dragonclaw of the Temur clan"
+  },
+  {
+   "source": "Ugin",
+   "relation": "family",
+   "target": "Nicol Bolas",
+   "note": "twin brothers",
+   "paragraph": 86,
+   "quote": "because we are twins and we should share everything."
+  },
+  {
+   "source": "Te Ju Ki",
+   "relation": "mentor_of",
+   "target": "Ugin",
+   "note": "taught him magic of globes of light",
+   "paragraph": 75,
+   "quote": "They are a magic that Te Ju Ki has been teaching me."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Vaevictis Asmadi",
+   "note": "Vaevictis and siblings chase Nicol; Nicol calls them hateful creatures",
+   "paragraph": 72,
+   "quote": "They're hateful creatures who haven't one brain to rub between the four of them."
+  },
+  {
+   "source": "Ugin",
+   "relation": "ally",
+   "target": "Nicol Bolas",
+   "note": "Ugin saves Nicol from Vaevictis",
+   "paragraph": 63,
+   "quote": "Whatever happened to me, I could not allow him to die."
+  },
+  {
+   "source": "Atarka's broodling",
+   "relation": "killed",
+   "target": "Ojutai's broodling",
+   "note": "carries its body to the camp",
+   "paragraph": 165,
+   "quote": "the Atarka broodling was carrying the limp body of the Ojutai dragon in its claws."
+  },
+  {
+   "source": "Naiva",
+   "relation": "killed",
+   "target": "Atarka's broodling",
+   "note": "she spears it through the eye",
+   "paragraph": 175,
+   "quote": "The beast shuddered and with a last gasp coughed up glowing embers."
+  },
+  {
+   "source": "Yasova Dragonclaw",
+   "relation": "killed",
+   "target": "Aven interpreter",
+   "note": "her spear delivers the death blow",
+   "paragraph": 7,
+   "quote": "Grandmother cast her own spear, and the weapon struck the aven's head for the death blow."
+  },
+  {
+   "source": "Atarka",
+   "relation": "enemy",
+   "target": "Yasova Dragonclaw",
+   "note": "Atarka hates magic and the whisperers Yasova hides",
+   "paragraph": 158,
+   "quote": "Grandmother thought if she could learn early which children are likely to become whisperers, she could better hide them from Atarka's wrath."
+  },
+  {
+   "source": "Fec",
+   "relation": "serves",
+   "target": "Yasova Dragonclaw",
+   "note": "a trusted hunter who defers to the First Mother",
+   "paragraph": 36,
+   "quote": "The First Mother had spoken, so it was settled."
+  }
+ ],
+ "rejected": []
+}

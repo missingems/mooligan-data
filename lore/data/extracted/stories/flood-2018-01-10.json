@@ -1,0 +1,708 @@
+{
+ "page": "stories/flood-2018-01-10",
+ "url": "https://magic.wizards.com/en/news/magic-story/flood-2018-01-10",
+ "title": "The Flood",
+ "story_date": "2018-01-10",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:31:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kumena",
+   "type": "character",
+   "aliases": [
+    "Shaper Kumena",
+    "Kumena the Shaper"
+   ],
+   "description": "A River Herald Shaper, leader of his people, who reaches Orazca first, takes the power of the Immortal Sun and is thrown from the tower by vampires.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tishana",
+   "type": "character",
+   "aliases": [],
+   "description": "A River Herald rival whom Kumena evades by using little magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vona of Iedo",
+   "type": "character",
+   "aliases": [
+    "Vona",
+    "Butcher of Magan"
+   ],
+   "description": "A vampire conquistador who attacks Kumena and throws him from the window.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mavren Fein",
+   "type": "character",
+   "aliases": [
+    "hierophant"
+   ],
+   "description": "A vampire hierophant who joins Vona in attacking Kumena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A mind mage and planeswalker whose lost memories flood back after a fall at Orazca.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [
+    "the gorgon"
+   ],
+   "description": "A gorgon planeswalker and assassin who shares Jace's memories and comforts him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alhammarret",
+   "type": "character",
+   "aliases": [
+    "the sphinx"
+   ],
+   "description": "A sphinx who manipulated and tortured Jace's mind and whose own mind Jace shattered in a remembered fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emmara",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the few friends Jace names after regaining his memories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the few friends Jace names after regaining his memories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi titan whom Jace toasts in a remembered conversation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [
+    "the golden city",
+    "the city"
+   ],
+   "description": "The golden city containing the Immortal Sun that rises from the jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Immortal Sun",
+   "type": "artifact",
+   "aliases": [
+    "the Sun"
+   ],
+   "description": "A relic embedded in the floor of Orazca's central tower that Kumena claims.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Orazca rises.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city plane where Jace and Vraska first met and where Jace once got tattoos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vryn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Jace's home plane, a gritty frontier with a large circular structure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane named in a remembered conversation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormwreck Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "The sea where Vraska captained her ship in a remembered scene.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "The merfolk of Ixalan whom Kumena leads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ochran",
+   "type": "faction",
+   "aliases": [],
+   "description": "An assassins' group to which Vraska's fellow assassins belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "The Ravnican guild whose shaman gave Jace his first tattoos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "The Ravnican guild whose folk song Vraska sings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaumatic Compass",
+   "type": "artifact",
+   "aliases": [
+    "the compass"
+   ],
+   "description": "The compass that points to the central tower.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kumena nears Orazca using little magic to avoid Tishana.",
+   "participants": [
+    "Kumena",
+    "Tishana",
+    "Orazca",
+    "Immortal Sun"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was nearing the golden city of Orazca, the resting place of the Immortal Sun."
+  },
+  {
+   "summary": "Kumena climbs the great staircase and enters Orazca.",
+   "participants": [
+    "Kumena",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "Kumena ascended to the golden city at last."
+  },
+  {
+   "summary": "A voice from the golden walls calls Kumena to set it free.",
+   "participants": [
+    "Kumena",
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "Kumena the Shaper, child of the Great River, leader of your people. Come set me free."
+  },
+  {
+   "summary": "Kumena realizes the voice is his own reflected power.",
+   "participants": [
+    "Kumena",
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 28,
+   "quote": "The voice was deep and commanding, the voice of a leader. It was his own."
+  },
+  {
+   "summary": "The voice calls itself the Sun and tells Kumena to follow it through the labyrinth.",
+   "participants": [
+    "Kumena",
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "I am the Sun, Kumena. As you will be."
+  },
+  {
+   "summary": "Kumena reaches the central tower and finds the Immortal Sun embedded in the floor.",
+   "participants": [
+    "Kumena",
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 43,
+   "quote": "He stepped into the chamber, and beheld the Immortal Sun."
+  },
+  {
+   "summary": "Kumena steps onto the Immortal Sun and takes its power.",
+   "participants": [
+    "Kumena",
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 45,
+   "quote": "Kumena stepped onto the Immortal Sun and took that power, his power."
+  },
+  {
+   "summary": "Kumena raises the city from the ground, opening a canyon around it and flooding it with rivers.",
+   "participants": [
+    "Kumena",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 48,
+   "quote": "He flexed his fingers, and the city lurched upward, separating from the rock around it."
+  },
+  {
+   "summary": "Kumena's laughter is cut short when Vona confronts him atop the Sun.",
+   "participants": [
+    "Kumena",
+    "Vona of Iedo"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 53,
+   "quote": "Kumena turned his physical form, the one that stood atop the Immortal Sun, and locked eyes with a vampire."
+  },
+  {
+   "summary": "Vona and Mavren Fein tackle Kumena and wound him.",
+   "participants": [
+    "Vona of Iedo",
+    "Mavren Fein",
+    "Kumena"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 60,
+   "quote": "The vampires scratched and bit, and one of their swords sliced a long line into Kumena's side."
+  },
+  {
+   "summary": "Vona throws Kumena out of the tower window.",
+   "participants": [
+    "Vona of Iedo",
+    "Kumena"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 66,
+   "quote": "before Kumena could react, she threw him out the window."
+  },
+  {
+   "summary": "Jace lies bleeding on the riverbank, his mind broadcasting memories.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 68,
+   "quote": "Jace lay in agony on the riverbank."
+  },
+  {
+   "summary": "Vraska realizes Jace's injury has left his mind unable to contain his memories.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 70,
+   "quote": "He broadcasted his memories now in bursts and stops, clearly trying to wrestle them back under control."
+  },
+  {
+   "summary": "Vraska is hit by an image of a broken white brick barrier at a harbor on a plane she has never visited.",
+   "participants": [
+    "Vraska"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 73,
+   "quote": "There was a massive barrier made of white brick against a turbulent sky."
+  },
+  {
+   "summary": "Vraska sees a memory of a half-metal man scarring Jace's back and forearm.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 89,
+   "quote": "dragged a manablade in long, arrow-straight lines down his back, then one single line down his right forearm"
+  },
+  {
+   "summary": "Vraska sees a memory of a teenage Jace getting white tattoos from a Gruul shaman on Ravnica.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Gruul Clans"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 104,
+   "quote": "The shaman leaned over the teenager and drew a line with his finger down Jace's cheek, leaving a brilliant white tattoo in its place."
+  },
+  {
+   "summary": "Vraska witnesses a memory of Jace asking a woman in violet if she will be sad when he dies.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "Will you be sad when I die?"
+  },
+  {
+   "summary": "The woman in violet gives a cold answer, then pours drinks and toasts to new good old days to keep Jace there.",
+   "participants": [
+    "Jace Beleren",
+    "Emrakul",
+    "Innistrad"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 157,
+   "quote": "To new good old days,"
+  },
+  {
+   "summary": "Jace chokes out the name Vryn as a memory of his home plane floods in.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Vryn"
+   ],
+   "location": "Vryn",
+   "importance": "minor",
+   "paragraph": 163,
+   "quote": "He choked out a single word."
+  },
+  {
+   "summary": "Vraska sees a memory of Jace's mother reading to him as a toddler.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Vryn",
+   "importance": "minor",
+   "paragraph": 169,
+   "quote": "She was reading to her toddler from a notebook as she wandered the tiny kitchen"
+  },
+  {
+   "summary": "Vraska sees that Jace was forced to forget his first planeswalks and mentally violated every time he remembered.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 183,
+   "quote": "the realization he had been forced to forget his first planeswalk"
+  },
+  {
+   "summary": "Vraska experiences Jace's memory of facing the sphinx Alhammarret on a rooftop.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 191,
+   "quote": "the sphinx Alhammarret was crouched to attack in front of her."
+  },
+  {
+   "summary": "Jace's mind-strike collapses Alhammarret's mind in a catastrophic implosion (flashback).",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 195,
+   "quote": "What was a well of weathered marble violently collapsed against itself in a catastrophic implosion that deafened the senses."
+  },
+  {
+   "summary": "Jace's own memories are ripped away in the psychic backlash.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 196,
+   "quote": "But Jace had struck out too hungrily, too hard, and his own memories were ripped away in the process of psychic demolition."
+  },
+  {
+   "summary": "Alhammarret, mind destroyed, screams like an infant.",
+   "participants": [
+    "Alhammarret",
+    "Jace Beleren"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 197,
+   "quote": "It was the terrified howl of an infant."
+  },
+  {
+   "summary": "Jace instinctively planeswalks away, losing more memories as he goes.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 203,
+   "quote": "Jace began to instinctively planeswalk away"
+  },
+  {
+   "summary": "Only the image of the sphinx's collar symbol remains in Jace's memory.",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "minor",
+   "paragraph": 205,
+   "quote": "All that remained was the image of the sphinx's collar"
+  },
+  {
+   "summary": "Vraska holds the weeping Jace, the first time she has touched anyone willingly in years.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 207,
+   "quote": "Vraska instantly dove to the ground and scooped him into her arms."
+  },
+  {
+   "summary": "Jace's memory shows Vraska singing a Golgari song aboard her ship.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Golgari Swarm"
+   ],
+   "location": "Stormwreck Sea",
+   "importance": "minor",
+   "paragraph": 211,
+   "quote": "this Vraska was singing a Golgari folk song at the top of her lungs as her crew cleaned the ship."
+  },
+  {
+   "summary": "Jace's memory shows Vraska as a menacing figure the first time they met.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 214,
+   "quote": "It was the first time they had met."
+  },
+  {
+   "summary": "Jace says Vraska saw everything and acknowledges she is an assassin; she answers she is also a friend.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 222,
+   "quote": "You're an assassin"
+  },
+  {
+   "summary": "Jace says his memory is not fully back and has gaps.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 227,
+   "quote": "It's not all back. There are gaps."
+  },
+  {
+   "summary": "Vraska apologizes for trying to kill Jace on Ravnica.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Ravnica"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 231,
+   "quote": "I'm sorry I tried to kill you on Ravnica,"
+  },
+  {
+   "summary": "Jace forgives Vraska for trying to kill him.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 234,
+   "quote": "I forgive you for trying to kill me,"
+  },
+  {
+   "summary": "Vraska checks the compass, which points straight at the central tower.",
+   "participants": [
+    "Vraska",
+    "Thaumatic Compass",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 238,
+   "quote": "its light pointed an arrow-straight line toward the tower."
+  },
+  {
+   "summary": "Jace says the last three months were the best of his life.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 246,
+   "quote": "It was the best three months of my life."
+  },
+  {
+   "summary": "Vraska tells Jace the person who listened to her is who he really is.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 249,
+   "quote": "That Jace is still in you, and I think that Jace is who you really are."
+  },
+  {
+   "summary": "Jace speaks of his mother wanting him to be a scholar.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 257,
+   "quote": "My mother wanted me to move to the city to be a scholar."
+  },
+  {
+   "summary": "Vraska helps Jace up and they start to climb the staircase to Orazca.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 265,
+   "quote": "Vraska held out a hand to help Jace to his feet."
+  },
+  {
+   "summary": "Jace admits he used to be a coward as they climb.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 271,
+   "quote": "I used to be a coward."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vraska",
+   "relation": "ally",
+   "target": "Jace Beleren",
+   "note": "Vraska calls herself his friend.",
+   "paragraph": 223,
+   "quote": "And a friend,"
+  },
+  {
+   "source": "Alhammarret",
+   "relation": "enemy",
+   "target": "Jace Beleren",
+   "note": "The mentor who betrayed and manipulated Jace.",
+   "paragraph": 192,
+   "quote": "She saw how this mentor had betrayed him"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Alhammarret",
+   "note": "Jace shattered Alhammarret's mind in self-defense.",
+   "paragraph": 194,
+   "quote": "Jace reached out defensively with his own mind."
+  },
+  {
+   "source": "Vona of Iedo",
+   "relation": "ally",
+   "target": "Mavren Fein",
+   "note": "They attack Kumena together.",
+   "paragraph": 56,
+   "quote": "What do you say, Mavren Fein?"
+  },
+  {
+   "source": "Vona of Iedo",
+   "relation": "enemy",
+   "target": "Kumena",
+   "note": "She throws him out the window.",
+   "paragraph": 66,
+   "quote": "before Kumena could react, she threw him out the window."
+  },
+  {
+   "source": "Kumena",
+   "relation": "leader_of",
+   "target": "River Heralds",
+   "note": "The voice calls him leader of his people.",
+   "paragraph": 17,
+   "quote": "Kumena the Shaper, child of the Great River, leader of your people."
+  },
+  {
+   "source": "Kumena",
+   "relation": "enemy",
+   "target": "Tishana",
+   "note": "He avoids magic so Tishana cannot find him.",
+   "paragraph": 1,
+   "quote": "Any greater act of spellcraft would have led Tishana straight to him."
+  },
+  {
+   "source": "Vraska",
+   "relation": "member_of",
+   "target": "Ochran",
+   "note": "Fellow assassins in the Ochran.",
+   "paragraph": 70,
+   "quote": "One of her fellow assassins in the Ochran had grown quick-tempered after such a blow when she was younger."
+  }
+ ],
+ "rejected": []
+}
