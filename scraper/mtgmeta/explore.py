@@ -78,7 +78,7 @@ def build_explore(
                 "name": name,
                 "latest_event": {key: latest[key] for key in _LATEST_KEYS} if latest else None,
                 "standings": _standings(snapshot, now, previews),
-                "standings_by_window": _standings_by_window(snapshot.get("meta", {}), previews),
+                "standings_by_window": _standings_by_window(snapshot, now, previews),
                 "recent_events": events,
             }
         )
@@ -111,8 +111,12 @@ def _standings(snapshot: dict, now: datetime, previews: "Previews") -> List[dict
     return standings
 
 
-def _standings_by_window(meta: dict, previews: "Previews") -> Dict[str, List[dict]]:
-    """The top archetypes of each window by that window's own share, and which way each is moving."""
+def _standings_by_window(snapshot: dict, now: datetime, previews: "Previews") -> Dict[str, List[dict]]:
+    """The top archetypes of each window by that window's own share, and which way each is moving.
+
+    Each also counts its top 8s and wins among the placings of that window's own days.
+    """
+    meta = snapshot.get("meta", {})
     shares = {
         window: {archetype["id"]: archetype["percentage"] for archetype in meta.get(window, {}).get("archetypes", [])}
         for window, _, _ in WINDOWS
@@ -120,19 +124,31 @@ def _standings_by_window(meta: dict, previews: "Previews") -> Dict[str, List[dic
     by_window = {}
     for window, recent, baseline in WINDOWS:
         archetypes = meta.get(window, {}).get("archetypes", [])
-        by_window[window] = [
-            {
-                "id": archetype["id"],
-                "name": archetype["name"],
-                "share": round(archetype["percentage"], 1),
-                "deck_count": archetype.get("deck_count"),
-                "trend": _trend(shares[recent].get(archetype["id"]), shares[baseline].get(archetype["id"])),
-                "colors": previews.tile_colors(archetype),
-                "key_cards": key_cards(archetype),
-            }
-            for archetype in sorted(archetypes, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]
-        ]
+        since = now - timedelta(days=_days(window))
+        entries = []
+        # sorted() is stable, so equal shares keep MTGGoldfish's order.
+        for archetype in sorted(archetypes, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]:
+            places = _places(snapshot.get("archetypes", {}).get(archetype["id"], {}).get("results", []), since, now)
+            entries.append(
+                {
+                    "id": archetype["id"],
+                    "name": archetype["name"],
+                    "share": round(archetype["percentage"], 1),
+                    "deck_count": archetype.get("deck_count"),
+                    "top8": sum(1 for place in places if place <= 8),
+                    "wins": sum(1 for place in places if place == 1),
+                    "trend": _trend(shares[recent].get(archetype["id"]), shares[baseline].get(archetype["id"])),
+                    "colors": previews.tile_colors(archetype),
+                    "key_cards": key_cards(archetype),
+                }
+            )
+        by_window[window] = entries
     return by_window
+
+
+def _days(window: str) -> int:
+    """How many days a meta window covers: 7 for "7d"."""
+    return int(window.rstrip("d"))
 
 
 def _trend(recent: Optional[float], baseline: Optional[float]) -> Optional[str]:

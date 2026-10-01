@@ -114,7 +114,7 @@ def test_the_thirty_day_list_matches_the_older_standings_field_and_the_field_sta
     assert [(o["id"], o["name"], o["share_30d"], o["deck_count_30d"], o["colors"], o["key_cards"]) for o in old] == [
         (n["id"], n["name"], n["share"], n["deck_count"], n["colors"], n["key_cards"]) for n in new
     ]
-    assert set(new[0]) == {"id", "name", "share", "deck_count", "trend", "colors", "key_cards"}
+    assert set(new[0]) == {"id", "name", "share", "deck_count", "top8", "wins", "trend", "colors", "key_cards"}
     assert new[1]["deck_count"] is None and new[1]["key_cards"] == [] and new[0]["colors"] == ["U"]
     assert [k["oracle_id"] for k in new[0]["key_cards"]] == ["o0", "o1"]  # the first two
 
@@ -411,6 +411,33 @@ def test_a_result_previews_its_deck_with_the_namesake_of_its_archetype_title():
     decks = {"0": stored((4, "Lightning Bolt"), (1, "Amulet of Vigor"), (2, "Primeval Titan"))}
     lead = modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks, catalog=PRICED)["recent_events"][0]["lead"]
     assert [c["oracle_id"] for c in lead["key_cards"]] == ["o-titan", "o-bolt"]
+
+
+def test_each_windows_top8_and_wins_count_only_the_placings_of_its_own_days():
+    results = [
+        result("2026-09-30", "2nd Place"),  # today counts
+        result("2026-09-29", "1st Place"),
+        result("2026-09-24", "5th Place"),
+        result("2026-09-22", "1st Place"),  # outside 7 days (the 7-day window starts on the 23rd, at 02:00)
+        result("2026-09-17", "8th Place"),
+        result("2026-09-15", "1st Place"),  # outside 14 days
+        result("2026-09-05", "9th Place"),  # in the month, but not a top 8
+        result("2026-09-05", "5-0"),  # a record is not a placing
+        result("2026-08-31", "1st Place"),  # outside 30 days
+        result("2026-11-04", "1st Place"),  # not played yet
+    ]
+    entries = [archetype("a", 5.0)]
+    by_window = modern(meta30=entries, meta14=entries, meta7=entries, archetypes={"a": {"results": results}})["standings_by_window"]
+    assert [(w, by_window[w][0]["top8"], by_window[w][0]["wins"]) for w in ("7d", "14d", "30d")] == [("7d", 3, 1), ("14d", 5, 2), ("30d", 6, 3)]
+    # The 30-day list agrees with the older standings field.
+    standing = modern(meta30=entries, archetypes={"a": {"results": results}})["standings"][0]
+    assert (standing["top8_30d"], standing["wins_30d"]) == (6, 3)
+
+
+def test_top8_and_wins_of_a_window_are_zero_without_results():
+    by_window = modern(meta30=[archetype("a", 5.0)], meta7=[archetype("a", 5.0)])["standings_by_window"]
+    assert (by_window["7d"][0]["top8"], by_window["7d"][0]["wins"]) == (0, 0)
+    assert (by_window["30d"][0]["top8"], by_window["30d"][0]["wins"]) == (0, 0)
 
 
 # Costs for the colour tests: the catalog's `mana_cost`, and "land" for a land.
