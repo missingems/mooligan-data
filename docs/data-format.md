@@ -1,6 +1,6 @@
 # Published data format
 
-Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper at 02:00 and 14:00 UTC. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
+Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper once a day at 14:00 UTC. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
 
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
@@ -431,7 +431,7 @@ One file per published format plus `all.json`, written every run: the cards whos
 }
 ```
 
-- **Prices.** TCGplayer's retail price in US dollars, from MTGJSON, as published in `catalog/prices/history.bin.gz` (the catalog workflow builds it at 10:17 and 22:17 UTC; this file is rebuilt from the latest one each scrape). **`price_day`** is the last day MTGJSON has a price for, and every window ends on it, so `1d` sets `price_day` against the day before it.
+- **Prices.** TCGplayer's retail price in US dollars, from MTGJSON, as published in `catalog/prices/history.bin.gz` (the catalog workflow builds it at 10:17 UTC; this file is rebuilt from it by the scrape at 14:00). **`price_day`** is the last day MTGJSON has a price for, and every window ends on it, so `1d` sets `price_day` against the day before it.
 - **A card's price** is the cheapest of its paper printings in the regular (non-foil) finish that day: what it costs to play it. A new, cheaper reprint lowers it from the day it is priced, so a reprint shows as a loss. Printings that are not the card to play with are left out: oversized cards, gold-bordered and other memorabilia, tokens, minigames, and the Un-sets and playtest cards. A printing's price holds over up to 3 days MTGJSON skipped, and after that the printing has no price. **`scryfall_id`** and **`set`** are the printing that is cheapest on `price_day`.
 - **What moves.** A card is listed when it has a price on `price_day` and at the start of the window, cost at least $0.50 at both ends and at least $1 at one of them, and moved by at least $0.25, so bulk commons moving a few cents don't fill the lists. **`price`** is its price on `price_day`, **`previous`** at the start of the window, **`change`** the difference in dollars and **`percent`** that as a percent of `previous`, to one decimal.
 - **Order.** `gainers` are the largest `percent` first, `losers` the most negative first, ties by `change`; each has at most 30 cards.
@@ -471,7 +471,7 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
 
 ## `locator/{place}.json`
 
-Upcoming Magic events near a configured place, read twice a day from Wizards' Store & Event Locator. Places are set in the workflow (`LOCATOR_PLACES`); `locator/index.json` lists them. Events are the next `days_ahead` days within `distance_miles`, soonest first.
+Upcoming Magic events near a configured place, read once a day from Wizards' Store & Event Locator. Places are set in the workflow (`LOCATOR_PLACES`); `locator/index.json` lists them. Events are the next `days_ahead` days within `distance_miles`, soonest first.
 
 ```json
 {

@@ -4,7 +4,8 @@ name: Scrape MTGGoldfish
 # the result. See docs/data-format.md for the files.
 on:
   schedule:
-    - cron: "0 2,14 * * *"
+    # Once a day, after the card catalog's 10:17 build, so the price movers read that day's prices.
+    - cron: "0 14 * * *"
   workflow_dispatch:
     inputs:
       formats:
@@ -71,8 +72,8 @@ jobs:
           REQUEST_DELAY: "1"
           CONCURRENCY: "6"
           # EDHREC is read with their permission: a slice of the cards each run.
-          EDHREC_CARDS_PER_RUN: "800"
-          EDHREC_COMMANDERS_PER_RUN: "150"
+          EDHREC_CARDS_PER_RUN: "1600"
+          EDHREC_COMMANDERS_PER_RUN: "300"
           # Upcoming events near these places, from Wizards' locator; semicolon-separated.
           LOCATOR_PLACES: "Singapore"
           LOCATOR_DISTANCE_MILES: "15"
