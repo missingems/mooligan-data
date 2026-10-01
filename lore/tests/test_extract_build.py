@@ -45,6 +45,7 @@ def test_locate_folds_typography_and_finds_the_right_paragraph():
     assert locate("\"we have to go,\" he said", PAGE["paragraphs"], 1) == 0
     assert locate("Jace lost his spark", PAGE["paragraphs"], 0) is None
     assert locate("Jace", PAGE["paragraphs"], 0) is None  # too short to prove anything
+    assert locate("ace looked at the sky", PAGE["paragraphs"], 0) is None  # not on a word boundary
 
 
 def test_check_keeps_quoted_facts_and_rejects_the_rest():

@@ -102,14 +102,39 @@ def _page_order(extractions: List[dict], pages: Dict[str, dict]) -> List[dict]:
     return sorted(extractions, key=key)
 
 
+def duplicate_pages(pages: Dict[str, dict]) -> Set[str]:
+    """Pages the site has twice ("krenko-mob-boss-2012-07-16" and "-07-18"; "oracle-ephara-2014-03-19" and "-0").
+
+    Two stories are the same when their titles match and every paragraph after the first does (the first is
+    where a copy differs, in a split drop cap), or when one is the other's slug plus "-0" under the same title.
+    The one kept is the first by slug, a "-0" copy sorting last.
+    """
+    by_title: Dict[tuple, List[str]] = defaultdict(list)
+    for key, page in pages.items():
+        if page.get("kind") == "story":
+            by_title[(page["title"].strip().lower(), tuple(p["text"] for p in page["paragraphs"][1:]))].append(key)
+    dropped: Set[str] = set()
+    for keys in by_title.values():
+        keys.sort(key=lambda k: (k.endswith("-0"), k))
+        dropped.update(keys[1:])
+    # A "-0" copy with the same title as its original is a re-upload, even with a word changed.
+    for key, page in pages.items():
+        original = pages.get(key[:-2]) if key.endswith("-0") else None
+        if original and original["title"].strip().lower() == page["title"].strip().lower():
+            dropped.add(key)
+    return dropped
+
+
 def build(directory: Path) -> dict:
     pages = {}
     for folder in ("stories", "profiles"):
         for path in (directory / folder).glob("*.json"):
             pages[f"{folder}/{path.stem}"] = json.loads(path.read_text())
     extractions = [json.loads(path.read_text()) for path in sorted((directory / "extracted").glob("*/*.json"))]
-    extractions = _page_order(extractions, pages)
+    duplicates = duplicate_pages(pages)
+    extractions = _page_order([e for e in extractions if e["page"] not in duplicates], pages)
     merges = json.loads((directory / "merges.json").read_text()) if (directory / "merges.json").exists() else {}
+    storyline_names = merges.get("storylines", {})
 
     # 1. Group names into entities.
     groups = _Groups((fold(a), fold(b)) for a, b in merges.get("different", []))
@@ -177,6 +202,7 @@ def build(directory: Path) -> dict:
         page = pages.get(extraction["page"], {})
         nav = page.get("storyline_nav") or {}
         storyline = nav.get("title") or extraction.get("storyline") or ""
+        storyline = storyline_names.get(storyline, storyline)
         slug = extraction["page"].split("/", 1)[1]
         page_index.append({
             "page": extraction["page"],
@@ -285,6 +311,7 @@ def build(directory: Path) -> dict:
         "shared_aliases": {alias: sorted(entity_of[groups.find(o)] for o in owners) for alias, owners in sorted(shared.items())},
         "mixed_types": mixed,
         "rejected": sum(len(e.get("rejected", [])) for e in extractions),
+        "duplicate_pages": sorted(duplicates),
     })
     report = {"pages": len(extractions), "entities": len(entities), "events": len(events), "relations": len(relations), "storylines": len(storylines)}
     log.info("Index: %s", report)

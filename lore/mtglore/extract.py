@@ -172,13 +172,17 @@ def fold(text: str) -> str:
 
 
 def locate(quote: str, paragraphs: List[dict], hint: int) -> Optional[int]:
-    """The paragraph holding `quote` word for word: the one Claude named, else any other, else None."""
+    """The paragraph holding `quote` word for word: the one Claude named, else any other, else None.
+
+    The quote must start and end on word boundaries, so "He heard" does not pass for "She heard".
+    """
     needle = fold(quote).strip(" .,;:!?\"'")
     if len(needle) < 8:
         return None
+    pattern = re.compile(r"(?<!\w)" + re.escape(needle) + r"(?!\w)")
     order = ([hint] if 0 <= hint < len(paragraphs) else []) + [i for i in range(len(paragraphs)) if i != hint]
     for index in order:
-        if needle in fold(paragraphs[index]["text"]):
+        if pattern.search(fold(paragraphs[index]["text"])):
             return index
     return None
 
@@ -306,6 +310,27 @@ def save(directory: Path, key: str, page: dict, raw: dict, model: str, effort: O
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(document, ensure_ascii=False, indent=1) + "\n")
     return checked
+
+
+def recheck(directory: Path) -> dict:
+    """Runs every saved extraction through `check` again, as after the check gets stricter.
+
+    What no longer passes moves to `rejected`; what was rejected before stays there.
+    """
+    pages = load_pages(directory)
+    report = {"pages": 0, "newly_rejected": 0}
+    for path in sorted((directory / "extracted").glob("*/*.json")):
+        document = json.loads(path.read_text())
+        page = pages.get(document["page"])
+        if page is None:
+            continue
+        checked = check(page, document)
+        newly = len(checked["rejected"])
+        checked["rejected"] += document.get("rejected", [])
+        path.write_text(json.dumps({**document, **checked}, ensure_ascii=False, indent=1) + "\n")
+        report["pages"] += 1
+        report["newly_rejected"] += newly
+    return report
 
 
 def collect(client, directory: Path, pages: Dict[str, dict]) -> dict:
