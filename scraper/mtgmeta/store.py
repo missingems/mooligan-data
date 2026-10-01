@@ -19,6 +19,7 @@ from .drilldown import build_archetype_pages, build_event_pages
 from .edhrec import due_slugs, edhrec_slug
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
+from .breakouts import build_breakouts
 from .popular import build_popular_cards
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
 
@@ -297,18 +298,20 @@ class SnapshotStore:
         return json.loads(path.read_text()) if path.exists() else {}
 
     def _write_popular_cards(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> None:
-        """Writes popular-cards/{format}.json for the formats this run built, from the decklists stored for each.
+        """Writes popular-cards/{format}.json and breakouts/{format}.json for the formats this run built, from the decklists stored for each.
 
         A format this run skipped keeps the file already published, as with the drill-down pages. Without a
         catalog no card can be named or told apart from a basic, so a run that could not read Scryfall's leaves
         the published files alone instead of replacing them with empty lists.
         """
         if not catalog:
-            log.warning("No card catalog: popular cards were not rebuilt")
+            log.warning("No card catalog: popular cards and breakouts were not rebuilt")
             return
         for format, document in documents.items():
-            self._write(f"popular-cards/{format}.json", _json_bytes(build_popular_cards(document, self._deck_cards.get(format, {}), catalog, self._now)))
-        log.info("Popular cards: %d formats", len(documents))
+            decks = self._deck_cards.get(format, {})
+            self._write(f"popular-cards/{format}.json", _json_bytes(build_popular_cards(document, decks, catalog, self._now)))
+            self._write(f"breakouts/{format}.json", _json_bytes(build_breakouts(document, decks, catalog, self._now)))
+        log.info("Popular cards and breakouts: %d formats", len(documents))
 
     def _write_drilldown(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> None:
         """Writes archetypes/{id}.json and events/{id}.json for the formats this run built.

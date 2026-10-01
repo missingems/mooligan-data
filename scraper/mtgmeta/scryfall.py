@@ -11,13 +11,15 @@ import json
 import logging
 import re
 import urllib.request
-from typing import Dict, Optional
+from typing import Dict, Iterator, Optional
 
 from .cards import slug
 
 log = logging.getLogger(__name__)
 
 BULK_DATA_URL = "https://api.scryfall.com/bulk-data/oracle-cards"
+# Every printing, for the price movers, which are priced per printing.
+DEFAULT_CARDS_URL = "https://api.scryfall.com/bulk-data/default-cards"
 # Scryfall asks every client for a descriptive User-Agent and an Accept header.
 HEADERS = {"User-Agent": "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)", "Accept": "application/json"}
 
@@ -34,39 +36,42 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
     there: `"type_line"` of the front face, which is what a decklist plays ("" for a card with none), and the
     `"layout"`, which says whether "Fire // Ice" is a split card (both halves are its name) or a double-faced one.
     """
-    download = url or _bulk_download_uri()
     catalog: Dict[str, dict] = {}
+    for card in bulk_cards(url or _bulk_download_uri()):
+        if card.get("layout") in SKIPPED_LAYOUTS or not card.get("name"):
+            continue
+        oracle_id = card.get("oracle_id") or (card.get("card_faces") or [{}])[0].get("oracle_id")
+        # Decklists name a double-faced card by its front face, which is how the slug reads.
+        key = slug(card["name"].split("//")[0])
+        if key and key not in catalog:
+            front_type = card.get("type_line") or (card.get("card_faces") or [{}])[0].get("type_line") or ""
+            front_type = front_type.split("//")[0].strip()
+            entry = {"name": card["name"], "oracle_id": oracle_id, "type_line": front_type, "layout": card.get("layout") or ""}
+            # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
+            if re.search(r"\bLand\b", front_type):
+                entry["land"] = True
+            price = _price(card.get("prices") or {})
+            if price is not None:
+                entry["price"] = price
+            if card.get("cmc") is not None:
+                entry["mana_value"] = card["cmc"]
+            cost = _mana_cost(card)
+            if cost:
+                entry["mana_cost"] = cost
+            catalog[key] = entry
+    log.info("Scryfall: %d cards in the catalog", len(catalog))
+    return catalog
+
+
+def bulk_cards(download: str) -> Iterator[dict]:
+    """Each card of a Scryfall bulk file, streamed a line at a time so the file is never held whole."""
     request = urllib.request.Request(download, headers=HEADERS)
     with urllib.request.urlopen(request, timeout=120) as response:
         stream = gzip.GzipFile(fileobj=response) if download.endswith(".gz") else response
         for line in stream:
             line = line.strip()
-            if not line:
-                continue
-            card = json.loads(line)
-            if card.get("layout") in SKIPPED_LAYOUTS or not card.get("name"):
-                continue
-            oracle_id = card.get("oracle_id") or (card.get("card_faces") or [{}])[0].get("oracle_id")
-            # Decklists name a double-faced card by its front face, which is how the slug reads.
-            key = slug(card["name"].split("//")[0])
-            if key and key not in catalog:
-                front_type = card.get("type_line") or (card.get("card_faces") or [{}])[0].get("type_line") or ""
-                front_type = front_type.split("//")[0].strip()
-                entry = {"name": card["name"], "oracle_id": oracle_id, "type_line": front_type, "layout": card.get("layout") or ""}
-                # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
-                if re.search(r"\bLand\b", front_type):
-                    entry["land"] = True
-                price = _price(card.get("prices") or {})
-                if price is not None:
-                    entry["price"] = price
-                if card.get("cmc") is not None:
-                    entry["mana_value"] = card["cmc"]
-                cost = _mana_cost(card)
-                if cost:
-                    entry["mana_cost"] = cost
-                catalog[key] = entry
-    log.info("Scryfall: %d cards in the catalog", len(catalog))
-    return catalog
+            if line:
+                yield json.loads(line)
 
 
 def _mana_cost(card: dict) -> str:
@@ -92,8 +97,8 @@ def _price(prices: dict) -> Optional[float]:
     return None
 
 
-def _bulk_download_uri() -> str:
-    request = urllib.request.Request(BULK_DATA_URL, headers=HEADERS)
+def _bulk_download_uri(bulk: str = BULK_DATA_URL) -> str:
+    request = urllib.request.Request(bulk, headers=HEADERS)
     with urllib.request.urlopen(request, timeout=30) as response:
         body = json.loads(response.read())
     uri = body.get("jsonl_download_uri") or body.get("download_uri")

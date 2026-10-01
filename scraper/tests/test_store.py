@@ -458,6 +458,8 @@ def test_popular_cards_are_published_for_each_format_built_from_its_stored_decks
     ]
     assert list(modern["windows"]) == ["7d", "14d", "30d"]
     assert json.loads((tmp_path / "popular-cards" / "pioneer.json").read_text())["windows"]["30d"] == {"deck_count": 0, "lists": []}
+    breakouts = json.loads((tmp_path / "breakouts" / "modern.json").read_text())
+    assert (breakouts["format"], breakouts["deck_count"], breakouts["baseline_deck_count"], breakouts["cards"]) == ("modern", 3, 0, [])
 
 
 def test_a_run_of_one_format_leaves_the_popular_cards_of_the_others(tmp_path):

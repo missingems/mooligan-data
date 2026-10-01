@@ -13,6 +13,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `cards/{slug}.json` | Where one card is played, across every format | `max-age=300` |
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
 | `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
+| `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
+| `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
@@ -369,6 +371,74 @@ One file per format a run built, written with the snapshots: the cards that form
 - **`trend`** is `"up"` or `"down"` when the card's share of the decks on that board has moved against the period just before, and `null` when it has not, or when there are no decks in that earlier period. `7d` is set against days 8 to 14, `14d` against days 15 to 28, and `30d` sets its last 7 days against days 8 to 30. It moved when the share changed by more than 5 points and a two-proportion z-score is above 3, so a card in a handful of decks does not trend on chance.
 - **Against `cards/{slug}.json`.** That page counts every stored deck of the last 30 days, featured decks included, adds the mainboard and sideboard together, and has one window. This file counts only decks with a date, keeps the boards apart, and has the three windows, so a card's `decks` here will not match its `decks` there.
 - A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.
+
+## `breakouts/{format}.json`
+
+One file per format a run built, written with `popular-cards/{format}.json` from the same decklists: the cards new to the format's metagame, for a "cards to watch" screen. A card breaks out when the last 7 days' decks play it and the 23 days before barely did, whether it is a new release finding a home or an old card a new deck picked up. It says nothing about price.
+
+```json
+{
+  "schema": 1,
+  "format": "modern",
+  "generated_at": "2026-10-01T02:41:07Z",
+  "deck_count": 744,
+  "baseline_deck_count": 2410,
+  "cards": [
+    {
+      "name": "Psychic Frog", "oracle_id": "0f1d…", "type": "creature",
+      "decks": 61, "share": 8.2, "previous_share": 0.4, "new": false, "first_seen": "2026-09-12", "mainboard": 58,
+      "top8": 19, "wins": 3, "best_prestige": 3,
+      "archetypes": [ { "id": "modern-dimir-frog", "name": "Dimir Frog", "decks": 40 } ],
+      "price": 18.5
+    }
+  ]
+}
+```
+
+- **Periods.** `deck_count` is the decks of the last 7 days and `baseline_deck_count` those of days 8 to 30, dated and counted as in `popular-cards` (every dated stored deck once, featured decks left out). A deck counts for a card when it plays it on either board; **`mainboard`** says how many of the card's recent decks play it main.
+- **What breaks out.** At least 4 recent decks and 1% of them play the card, and its **`share`** of the recent decks (a percent, to one decimal) is at least three times its **`previous_share`** of the earlier ones. **`new`** is true when no earlier deck played it. With fewer than 20 earlier decks every card would look new, so `cards` is `[]`. Basics are left out.
+- **Order.** Most `decks` first, then most `top8`, then `name`; at most 25 cards.
+- **How the decks did.** **`top8`** and **`wins`** count the card's recent decks that placed 8th or better, or 1st (a League record such as `5-0` is no placing). **`best_prestige`** is the highest `prestige` (1 to 4, as in `explore.json`) of the events those decks were played in, so a card a Regional Championship deck played shows 4. A deck only an archetype's results list, from an event not stored, counts as 1.
+- **`archetypes`** are the three archetypes with the most of the card's recent decks, most first, with `id` linking to `archetypes/{id}.json`. A deck outside a tracked archetype isn't counted here.
+- **`first_seen`** is the date of the earliest deck of the last 30 days that plays the card.
+- **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
+- A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.
+
+## `movers/{format}.json`
+
+One file per published format plus `all.json`, written every run: the cards whose price rose (`gainers`) or fell (`losers`) most over the last day, 7 days and 30 days, for a "market movers" screen.
+
+```json
+{
+  "schema": 1,
+  "format": "modern",
+  "generated_at": "2026-10-01T02:41:07Z",
+  "price_day": "2026-09-30",
+  "windows": {
+    "1d": {
+      "gainers": [
+        {
+          "name": "Psychic Frog", "slug": "psychic-frog", "oracle_id": "0f1d…", "scryfall_id": "a7f3…", "set": "mh3",
+          "price": 18.5, "previous": 14.25, "change": 4.25, "percent": 29.8,
+          "history": [12.1, 12.3, …, 14.25, 18.5]
+        }
+      ],
+      "losers": [ … ]
+    },
+    "7d": { "gainers": [ … ], "losers": [ … ] },
+    "30d": { "gainers": [ … ], "losers": [ … ] }
+  }
+}
+```
+
+- **Prices.** TCGplayer's retail price in US dollars, from MTGJSON, as published in `catalog/prices/history.bin.gz` (the catalog workflow builds it at 10:17 and 22:17 UTC; this file is rebuilt from the latest one each scrape). **`price_day`** is the last day MTGJSON has a price for, and every window ends on it, so `1d` sets `price_day` against the day before it.
+- **A card's price** is the cheapest of its paper printings in the regular (non-foil) finish that day: what it costs to play it. A new, cheaper reprint lowers it from the day it is priced, so a reprint shows as a loss. Printings that are not the card to play with are left out: oversized cards, gold-bordered and other memorabilia, tokens, minigames, and the Un-sets and playtest cards. A printing's price holds over up to 3 days MTGJSON skipped, and after that the printing has no price. **`scryfall_id`** and **`set`** are the printing that is cheapest on `price_day`.
+- **What moves.** A card is listed when it has a price on `price_day` and at the start of the window, cost at least $0.50 at both ends and at least $1 at one of them, and moved by at least $0.25, so bulk commons moving a few cents don't fill the lists. **`price`** is its price on `price_day`, **`previous`** at the start of the window, **`change`** the difference in dollars and **`percent`** that as a percent of `previous`, to one decimal.
+- **Order.** `gainers` are the largest `percent` first, `losers` the most negative first, ties by `change`; each has at most 30 cards.
+- **Formats.** A format's file lists only cards legal (or restricted) there, by Scryfall's legalities: `penny_dreadful` is Scryfall's `penny` and `duel_commander` its `duel`. It says nothing about whether the card is played; for that, see `popular-cards/{format}.json`. `all.json` lists every card, legal anywhere or not.
+- **`history`** is the card's price on each of the last 30 days up to `price_day`, oldest first, for a sparkline, with `null` on a day it had none. It is the same in every window.
+- **`name`** is Scryfall's, both faces of a double-faced card ("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki"); `slug` is the card's `cards/{slug}.json`, which is a 404 for a card no tournament deck plays.
+- A run that could not read the price history or Scryfall's printings leaves the files as they were, and is marked failed.
 
 ## `edh/commanders/{slug}.json`
 

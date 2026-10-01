@@ -33,6 +33,8 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `decks/{id}.json` holds one decklist per file, cached for good.
 - `cards/{slug}.json` says where a card is played, across every format, with links to decks, plus its Commander usage from EDHREC.
 - `popular-cards/{format}.json` ranks the cards a format's dated decks play over the last 7, 14 and 30 days, mainboard by kind of card and sideboard apart, basics left out, with each card's trend.
+- `breakouts/{format}.json` lists the cards new to a format's metagame: played by the last 7 days' decks and barely by the 23 days before, with their top 8s, wins and archetypes.
+- `movers/{format}.json` lists the cards whose price rose or fell most over the last day, week and month, among the cards legal in a format, from the catalog's price history (a card costs its cheapest paper printing).
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
 
@@ -88,6 +90,10 @@ A local run writes into `scraper/work/` and publishes nothing.
 ## Card catalog
 
 `generators/` holds the three Swift programs that used to live in the MTGImageHash repository, unchanged: `ImageHashIndexer` (Vision feature prints of every card face, incremental patches over a master), `PullOdds` (MTGJSON booster odds) and `Prices` (the MTGJSON price catalog). `.github/workflows/catalog.yml` runs them at 10:17 and 22:17 UTC on a macOS runner and publishes to `catalog/` on R2, so the app's base URL becomes `https://data.mooligan.com/catalog`. The file layout is documented in `generators/README.md`. Run the workflow once with `seed_from_pages` to copy the current GitHub Pages output into R2 first, so the indexer's first run is incremental. The MTGImageHash workflow keeps GitHub Pages current until the app has switched.
+
+## Price movers
+
+Each run also builds `movers/{format}.json` from `catalog/prices/history.bin.gz`, which the card catalog workflow publishes, and Scryfall's default-cards bulk file, which says which printings are one card and where it is legal. Set `MOVERS=0` to skip it, or `MOVERS_PRICES_URL` to read another price history.
 
 ## Premier play calendar
 
