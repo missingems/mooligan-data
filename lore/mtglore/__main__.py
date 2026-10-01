@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,extract,build} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,extract,ingest,prompt,build} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,10 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "build"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "build"])
+    parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
+    parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
+    parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
     parser.add_argument("--data", type=Path, default=Path(__file__).resolve().parent.parent / "data")
     parser.add_argument("--refresh", action="store_true", help="scrape: fetch pages already saved again")
     parser.add_argument("--limit", type=int, help="extract: at most this many pages in the batch")
@@ -39,6 +42,21 @@ def main() -> int:
         logging.info("Extract: %s %s", outcome, json.dumps(report.get("failed") and {**report, "failed": len(report["failed"])} or report))
         for failure in report.get("failed", []):
             logging.error("  %s", failure)
+        return 0
+
+    if args.step == "prompt":
+        # What the batch sends Claude for one page, for making an extraction by other means.
+        from .extract import SYSTEM, load_pages, page_prompt
+
+        print(SYSTEM + "\n\n---\n\n" + page_prompt(load_pages(args.data)[args.page]))
+        return 0
+
+    if args.step == "ingest":
+        from .extract import load_pages, save
+
+        checked = save(args.data, args.page, load_pages(args.data)[args.page], json.loads(args.raw.read_text()), args.model, None)
+        print(json.dumps({"page": args.page, "entities": len(checked["entities"]), "events": len(checked["events"]),
+                          "relations": len(checked["relations"]), "rejected": [(r["kind"], r["reason"], r["quote"][:60]) for r in checked["rejected"]]}))
         return 0
 
     from .build import build

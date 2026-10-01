@@ -288,6 +288,26 @@ def wait(client, batch_id: str, deadline: float, poll: float = 60) -> bool:
         time.sleep(poll)
 
 
+def save(directory: Path, key: str, page: dict, raw: dict, model: str, effort: Optional[str]) -> dict:
+    """Checks one page's raw extraction and saves it as data/extracted/<key>.json."""
+    checked = check(page, raw)
+    document = {
+        "page": key,
+        "url": page["url"],
+        "title": page["title"],
+        "story_date": page.get("story_date", ""),
+        "model": model,
+        "prompt_version": PROMPT_VERSION,
+        "effort": effort,
+        "extracted_at": _now(),
+        **checked,
+    }
+    path = directory / "extracted" / f"{key}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(document, ensure_ascii=False, indent=1) + "\n")
+    return checked
+
+
 def collect(client, directory: Path, pages: Dict[str, dict]) -> dict:
     """Saves the finished batch's extractions, and clears the state so the next run submits what is left."""
     state = json.loads(_state_path(directory).read_text())
@@ -311,22 +331,7 @@ def collect(client, directory: Path, pages: Dict[str, dict]) -> dict:
         except ValueError:
             report["failed"].append(f"{key}: not JSON")
             continue
-        checked = check(pages[key], raw)
-        page = pages[key]
-        document = {
-            "page": key,
-            "url": page["url"],
-            "title": page["title"],
-            "story_date": page.get("story_date", ""),
-            "model": message.model,
-            "prompt_version": PROMPT_VERSION,
-            "effort": state.get("effort"),
-            "extracted_at": _now(),
-            **checked,
-        }
-        path = directory / "extracted" / f"{key}.json"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(document, ensure_ascii=False, indent=1) + "\n")
+        checked = save(directory, key, pages[key], raw, message.model, state.get("effort"))
         report["saved"] += 1
         report["kept"] += len(checked["events"]) + len(checked["relations"])
         report["rejected"] += len(checked["rejected"])
