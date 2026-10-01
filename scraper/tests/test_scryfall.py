@@ -18,6 +18,17 @@ CARDS = [
     {"name": "Foil Only", "oracle_id": "foil-oracle", "layout": "normal", "cmc": 2.0, "prices": {"usd": None, "usd_foil": "3.25", "usd_etched": None}},
     {"name": "Unpriced Thing", "oracle_id": "unpriced-oracle", "layout": "normal", "cmc": 0.0, "prices": {"usd": None, "usd_foil": None, "usd_etched": None}},
     {"name": "Lightning Bolt Elemental", "oracle_id": "elemental-oracle", "layout": "normal", "type_line": "Creature — Elemental Landwalker"},
+    {"name": "Counterspell", "oracle_id": "counter-oracle", "layout": "normal", "mana_cost": "{U}{U}"},
+    {"name": "Fire // Ice", "oracle_id": "fire-oracle", "layout": "split", "mana_cost": "{1}{R} // {1}{U}",
+     "card_faces": [{"mana_cost": "{1}{R}"}, {"mana_cost": "{1}{U}"}]},
+    {"name": "Bonecrusher Giant // Stomp", "oracle_id": "giant-oracle", "layout": "adventure", "mana_cost": "{2}{R} // {1}{R}",
+     "card_faces": [{"mana_cost": "{2}{R}"}, {"mana_cost": "{1}{R}"}]},
+    {"name": "Delver of Secrets // Insectile Aberration", "oracle_id": "delver-oracle", "layout": "transform", "mana_cost": "",
+     "card_faces": [{"mana_cost": "{U}"}, {"mana_cost": ""}]},
+    {"name": "Valki, God of Lies // Tibalt, Cosmic Impostor", "oracle_id": "valki-oracle", "layout": "modal_dfc",
+     "card_faces": [{"mana_cost": "{1}{B}"}, {"mana_cost": "{5}{B}{R}"}]},
+    {"name": "Reversible spell", "layout": "reversible_card", "card_faces": [{"oracle_id": "spell-oracle", "mana_cost": "{G}"}, {"mana_cost": "{G}"}]},
+    {"name": "Ornithopter", "oracle_id": "ornithopter-oracle", "layout": "normal", "mana_cost": "{0}"},
 ]
 
 
@@ -61,3 +72,22 @@ def test_the_catalog_keeps_the_price_and_mana_value_that_rank_a_decks_cards(tmp_
     assert catalog["foil-only"]["price"] == 3.25  # no regular price, so the foil one
     assert "price" not in catalog["unpriced-thing"] and catalog["unpriced-thing"]["mana_value"] == 0.0
     assert "price" not in catalog["lightning-bolt"] and "mana_value" not in catalog["lightning-bolt"]  # a record without them
+
+
+def test_the_catalog_keeps_the_mana_cost_that_gives_a_card_its_colours(tmp_path: Path):
+    path = tmp_path / "oracle-cards.jsonl.gz"
+    path.write_bytes(gzip.compress(b"\n".join(json.dumps(card).encode() for card in CARDS)))
+
+    catalog = card_catalog(path.as_uri())
+
+    assert catalog["counterspell"]["mana_cost"] == "{U}{U}"
+    # A split or adventure card has both halves on the card, and both count.
+    assert catalog["fire"]["mana_cost"] == "{1}{R} // {1}{U}"
+    assert catalog["bonecrusher-giant"]["mana_cost"] == "{2}{R} // {1}{R}"
+    # A transform or modal double-faced card has none of its own: the front face's stands in, as the deck plays the front.
+    assert catalog["delver-of-secrets"]["mana_cost"] == "{U}"
+    assert catalog["valki-god-of-lies"]["mana_cost"] == "{1}{B}"
+    assert catalog["reversible-spell"]["mana_cost"] == "{G}"
+    # A cost of {0} is a cost; a land or a card with none has no key at all.
+    assert catalog["ornithopter"]["mana_cost"] == "{0}"
+    assert "mana_cost" not in catalog["mountain"] and "mana_cost" not in catalog["lightning-bolt"]

@@ -29,7 +29,8 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
     """Maps a card's slug to its name and oracle id, streaming the file a line at a time.
 
     What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
-    a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any) and `"mana_value"`.
+    a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any), `"mana_value"`, and
+    `"mana_cost"` (see `_mana_cost`) when the card has one.
     """
     download = url or _bulk_download_uri()
     catalog: Dict[str, dict] = {}
@@ -57,9 +58,25 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
                     entry["price"] = price
                 if card.get("cmc") is not None:
                     entry["mana_value"] = card["cmc"]
+                cost = _mana_cost(card)
+                if cost:
+                    entry["mana_cost"] = cost
                 catalog[key] = entry
     log.info("Scryfall: %d cards in the catalog", len(catalog))
     return catalog
+
+
+def _mana_cost(card: dict) -> str:
+    """What the card costs to cast, for the colours it needs: "{1}{R}", "" for a land or a card with no cost.
+
+    A single-faced, split or adventure card has it on the card ("{1}{R} // {1}{U}" for a split card, both
+    halves joined, and both count). A transform or modal double-faced card has none on the card, so the
+    front face's stands in, as the front face is what a decklist plays.
+    """
+    cost = card.get("mana_cost") or ""
+    if not cost:
+        cost = (card.get("card_faces") or [{}])[0].get("mana_cost") or ""
+    return cost
 
 
 def _price(prices: dict) -> Optional[float]:
