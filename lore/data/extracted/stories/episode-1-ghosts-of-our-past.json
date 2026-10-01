@@ -1,0 +1,716 @@
+{
+ "page": "stories/episode-1-ghosts-of-our-past",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-1-ghosts-of-our-past",
+ "title": "Murders at Karlov Manor | Episode 1: Ghosts of Our Past",
+ "story_date": "2023-12-05",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:45:34Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Kaya Orzhov"
+   ],
+   "description": "A planeswalker and former leader of the Orzhov Syndicate, who returns to Ravnica for a gala in her honor and is pressed by Teysa to repay her debts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa",
+    "Karlov"
+   ],
+   "description": "The newest head of the Orzhov Syndicate and host of the gala at Karlov Manor, who uses a walking cane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [],
+   "description": "A massive archon who leads the Ravnican Agency of Magicological Investigations after the invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lavinia",
+   "type": "character",
+   "aliases": [],
+   "description": "The current head of the Azorius Senate, who converses with Ezrim at the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolsimir",
+   "type": "character",
+   "aliases": [],
+   "description": "A guild leader who insists Lazav is not dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [],
+   "description": "A winged angel who argues that the Boros should handle the investigation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Judith",
+   "type": "character",
+   "aliases": [],
+   "description": "A guild leader dressed in black and red who needles Kaya about the invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomik",
+   "type": "character",
+   "aliases": [],
+   "description": "A former Orzhov leader married to Ral who is Teysa's aide at the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Ral"
+   ],
+   "description": "A planeswalker of the Izzet who grieves the invasion's losses and is Tomik's husband.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [
+    "Investigator Kellan"
+   ],
+   "description": "A slim, dark-haired Agency investigator honored for containing Anzrag, who befriends Kaya at the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [],
+   "description": "A guild figure at odds with Vannifar who mistakes Kellan for a detective named Proft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vannifar",
+   "type": "character",
+   "aliases": [],
+   "description": "A guild leader who unseated Zegana's predecessor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "A gaudily dressed goblin who owes money to the Karlovs and networks at the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yarus",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gruul centaur who tries to reclaim the god Anzrag and is dragged away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anzrag",
+   "type": "deity",
+   "aliases": [],
+   "description": "A Gruul god that broke loose and rampaged in the Ninth District before being contained in an evidence capsule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dimir figure Tolsimir believes is still alive and planning something.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Proft",
+   "type": "character",
+   "aliases": [],
+   "description": "A detective people have been talking about whom Zegana thinks Kellan might be.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker who fought on New Phyrexia and lost, according to Kaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tyvar",
+   "type": "character",
+   "aliases": [],
+   "description": "A friend on Kaldheim adjusting to new limitations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild-run city plane where the gala takes place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karlov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Teysa Karlov's lavish manor and the site of the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ninth District",
+   "type": "location",
+   "aliases": [],
+   "description": "A district devastated by Anzrag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "The district where the Orzhov bought every pyrowork.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Phyrexian-controlled plane where the multiversal fight took place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya could visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya could visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya could visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya could visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes that Kaya's spark can cross.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov",
+    "the Syndicate"
+   ],
+   "description": "The guild of lawmages and wealth that hosts the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The law guild led by Lavinia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "The guild of Aurelia, which wants the investigation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "A guild that worships Anzrag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The guild of Ral and the pyroworks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "A guild that values social acumen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "The absent guild of secrets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "A new investigative body led by Ezrim, honored at the gala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders who attacked Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [
+    "the invasion"
+   ],
+   "description": "The recent attack on Ravnica and the Multiverse that left chaos and loss.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Orzhov launch an extravagant fireworks display above Karlov Manor to open the gala.",
+   "participants": [
+    "Orzhov Syndicate",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "The sky over Karlov Manor danced with a dizzying array of colors, brought to life by shimmering cascades of magic."
+  },
+  {
+   "summary": "Kaya joins Teysa on the manor's highest balcony.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Soundless as ever, Kaya stepped up next to her, stopping when she reached the rail."
+  },
+  {
+   "summary": "Teysa reminds Kaya that she owes the Orzhov for not being on Ravnica during the invasion.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya",
+    "Phyrexian invasion"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "You owe me this night, Kaya."
+  },
+  {
+   "summary": "Teysa demands that Kaya obey her through the evening.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "So tonight, you smile when I say smile, and you bow when I say bow"
+  },
+  {
+   "summary": "Teysa leads Kaya into the courtyard crowd of Ravnica's elite.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "settling one hand on the taller woman's shoulder in a proprietary fashion"
+  },
+  {
+   "summary": "Teysa explains that Ezrim leads the Agency after the invasion and has drawn away Azorius associates.",
+   "participants": [
+    "Teysa Karlov",
+    "Ezrim",
+    "Lavinia",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 28,
+   "quote": "Imagine her displeasure when after the invasion, he took on leadership."
+  },
+  {
+   "summary": "An Orzhov server recognizes Kaya as the former leader and the Planeswalker.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "Our former leader. The Planeswalker."
+  },
+  {
+   "summary": "Tolsimir insists that Lazav is not dead and is planning something.",
+   "participants": [
+    "Tolsimir",
+    "Teysa Karlov",
+    "Aurelia"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "It's naive to think that Lazav is dead."
+  },
+  {
+   "summary": "Kaya defends the fight against the invasion when Judith needles her.",
+   "participants": [
+    "Kaya",
+    "Judith"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 42,
+   "quote": "We didn't start the invasion, we stopped it"
+  },
+  {
+   "summary": "Judith falters when she sees the wall behind Kaya's eyes.",
+   "participants": [
+    "Judith",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 45,
+   "quote": "There was a wall behind the Planeswalker's eyes that hadn't been there on their last meeting"
+  },
+  {
+   "summary": "Teysa addresses the courtyard from the balcony.",
+   "participants": [
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 62,
+   "quote": "Citizens of Ravnica, welcome to Karlov Manor!"
+  },
+  {
+   "summary": "Teysa celebrates Kaya as a hero of the Phyrexian invasion.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 64,
+   "quote": "Tonight, we celebrate Orzhov's own former leader, Kaya, for her role in the salvation of Ravnica and the Multiverse during the Phyrexian invasion"
+  },
+  {
+   "summary": "Teysa announces a tribute to the Agency.",
+   "participants": [
+    "Teysa Karlov",
+    "Ezrim",
+    "Ravnican Agency of Magicological Investigations"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 66,
+   "quote": "tonight we honor the members of the Ravnican Agency of Magicological Investigations."
+  },
+  {
+   "summary": "Ezrim recounts how Investigator Kellan's team stopped the god Anzrag's rampage.",
+   "participants": [
+    "Ezrim",
+    "Kellan",
+    "Anzrag"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 73,
+   "quote": "a Gruul god broke loose of guild control and wreaked havoc across the Ninth District."
+  },
+  {
+   "summary": "Ezrim honors Kellan, who flees the balcony.",
+   "participants": [
+    "Ezrim",
+    "Kellan",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 75,
+   "quote": "The Agency thanks you, Ravnica thanks you, and I thank you"
+  },
+  {
+   "summary": "Kaya recalls Jace's defeat on New Phyrexia.",
+   "participants": [
+    "Kaya",
+    "Jace Beleren"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 80,
+   "quote": "He fought as hard as he could, but he lost. And because of that, we all lost."
+  },
+  {
+   "summary": "Zegana mistakes Kellan for the detective Proft.",
+   "participants": [
+    "Zegana",
+    "Vannifar",
+    "Kellan"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 86,
+   "quote": "Are you quite sure you're not that detective Proft everyone's been talking about?"
+  },
+  {
+   "summary": "Kellan seeks out Kaya to escape the crowd and they bond over discomfort.",
+   "participants": [
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "Getting out of here"
+  },
+  {
+   "summary": "Teysa presses Krenko about the debt he owes the Karlovs.",
+   "participants": [
+    "Teysa Karlov",
+    "Krenko",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 95,
+   "quote": "Think, Krenko. You owe the Karlovs."
+  },
+  {
+   "summary": "Yarus is dragged off the balcony shouting that Anzrag must be returned to the Gruul.",
+   "participants": [
+    "Yarus",
+    "Anzrag",
+    "Ezrim"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 100,
+   "quote": "Anzrag is our responsibility, our god, and he must be returned to us!"
+  },
+  {
+   "summary": "Aurelia demands the Boros take over the investigation, provoking a scoff from Kellan.",
+   "participants": [
+    "Aurelia",
+    "Teysa Karlov",
+    "Kellan"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 106,
+   "quote": "This investigation should be in the hands of the Boros."
+  },
+  {
+   "summary": "Kaya slips away from the argument at the buffet.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 107,
+   "quote": "She ducked around the buffet and through the door on the other side"
+  },
+  {
+   "summary": "Kaya considers leaving Ravnica by planeswalking but stops herself.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 111,
+   "quote": "She felt herself begin to reach, desire becoming reality, and stopped"
+  },
+  {
+   "summary": "Teysa finds Kaya alone and says she has something important to tell her.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 116,
+   "quote": "There's something I need to tell you. Something important. And I needed to catch you alone."
+  },
+  {
+   "summary": "A scream from inside the manor interrupts Teysa.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 120,
+   "quote": "Teysa started to reply as a scream rang out from inside the manor, drowning out her words and shattering the moment."
+  },
+  {
+   "summary": "Kaya runs toward the scream.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 121,
+   "quote": "Kaya didn't pause to think before running toward the sound."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teysa Karlov",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "newest head",
+   "paragraph": 1,
+   "quote": "Teysa, newest head of the Syndicate"
+  },
+  {
+   "source": "Kaya",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "its former leader",
+   "paragraph": 64,
+   "quote": "Orzhov's own former leader, Kaya"
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Teysa Karlov",
+   "note": "old friends with a tense debt between them",
+   "paragraph": 12,
+   "quote": "Come, old friend"
+  },
+  {
+   "source": "Lavinia",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "current head",
+   "paragraph": 26,
+   "quote": "Lavinia, current head of the Azorius Senate"
+  },
+  {
+   "source": "Ezrim",
+   "relation": "leader_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "speaks for the Agency",
+   "paragraph": 75,
+   "quote": "The Agency thanks you, Ravnica thanks you, and I thank you"
+  },
+  {
+   "source": "Kellan",
+   "relation": "member_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "an investigator with a team",
+   "paragraph": 73,
+   "quote": "Investigator Kellan and his team"
+  },
+  {
+   "source": "Aurelia",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "argues for the Boros",
+   "paragraph": 106,
+   "quote": "This investigation should be in the hands of the Boros."
+  },
+  {
+   "source": "Tomik",
+   "relation": "romantic",
+   "target": "Ral Zarek",
+   "note": "husband",
+   "paragraph": 51,
+   "quote": "My husband's guild is not my own"
+  },
+  {
+   "source": "Zegana",
+   "relation": "enemy",
+   "target": "Vannifar",
+   "note": "on poor terms since Vannifar unseated her predecessor",
+   "paragraph": 85,
+   "quote": "Kaya knew the pair had been on poor terms since Vannifar unseated her predecessor."
+  },
+  {
+   "source": "Krenko",
+   "relation": "other",
+   "target": "Teysa Karlov",
+   "note": "owes a debt to the Karlovs",
+   "paragraph": 95,
+   "quote": "You owe the Karlovs."
+  },
+  {
+   "source": "Yarus",
+   "relation": "serves",
+   "target": "Anzrag",
+   "note": "claims the god as the Gruul's responsibility",
+   "paragraph": 100,
+   "quote": "Anzrag is our responsibility, our god"
+  },
+  {
+   "source": "Yarus",
+   "relation": "enemy",
+   "target": "Ezrim",
+   "note": "glares murder at him",
+   "paragraph": 105,
+   "quote": "he glared murder at Ezrim"
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "bond over mutual discomfort",
+   "paragraph": 91,
+   "quote": "No wonder they honored you."
+  }
+ ],
+ "rejected": []
+}
