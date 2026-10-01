@@ -418,3 +418,87 @@ def test_an_archetype_page_with_no_tile_cards_previews_its_featured_deck(tmp_pat
 
     page = json.loads((tmp_path / "archetypes" / "modern-gruul-aggro.json").read_text())
     assert page["key_cards"] == PREVIEW
+
+
+POPULAR_CATALOG = {
+    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "oracle-bolt", "type_line": "Instant", "layout": "normal"},
+    "mountain": {"name": "Mountain", "oracle_id": "oracle-mountain", "type_line": "Basic Land — Mountain", "layout": "normal", "land": True},
+}
+
+
+def _two_decks_in_a_league(store, format="modern"):
+    """Two decks of a League on the 21st, which play Lightning Bolt and Mountain, and an archetype's result on the 22nd with one more."""
+    from mtgmeta.models import Deck, DeckCard
+
+    store.save_event(Event("7", "Modern League 2026-09-21", format, day("2026-09-21"), [
+        EventResult("p1", "Gruul Aggro", "5-0", "5"),
+        EventResult("p2", "Gruul Aggro", "5-0", "6"),
+    ], "https://www.mtggoldfish.com/tournament/7"))
+    store.save_archetype(ArchetypeHistory(format, "gruul-aggro", "Gruul Aggro", "5", "Roy", [
+        ArchetypeResult("8", day("2026-09-22"), "p3", None, "A paper event", "1st Place"),
+    ]))
+    for deck_id in ("5", "6", "8"):
+        store.save_decks([Deck(deck_id, "p", "Gruul Aggro", [DeckCard(4, "Lightning Bolt"), DeckCard(20, "Mountain")], [DeckCard(2, "Lightning Bolt")], format, "7")])
+
+
+def test_popular_cards_are_published_for_each_format_built_from_its_stored_decks(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern", "pioneer"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    _two_decks_in_a_league(store)
+    store.save_event(Event("9", "Pioneer League 2026-09-20", "pioneer", day("2026-09-20"), [EventResult("p", "Rakdos", "5-0", "1")], "url"))  # no deck stored
+    store.finish()
+
+    modern = json.loads((tmp_path / "popular-cards" / "modern.json").read_text())
+    assert (modern["schema"], modern["format"], modern["generated_at"]) == (1, "modern", "2026-09-22T12:00:00Z")
+    week = modern["windows"]["7d"]
+    assert week["deck_count"] == 3  # two of the league and the archetype's own result, the 22nd being today
+    assert [(one["kind"], [(c["name"], c["decks"], c["copies"]) for c in one["cards"]]) for one in week["lists"]] == [
+        ("all", [("Lightning Bolt", 3, 4.0)]),  # Mountain is a basic
+        ("instant", [("Lightning Bolt", 3, 4.0)]),
+        ("sideboard", [("Lightning Bolt", 3, 2.0)]),
+    ]
+    assert list(modern["windows"]) == ["7d", "14d", "30d"]
+    assert json.loads((tmp_path / "popular-cards" / "pioneer.json").read_text())["windows"]["30d"] == {"deck_count": 0, "lists": []}
+
+
+def test_a_run_of_one_format_leaves_the_popular_cards_of_the_others(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern", "pioneer"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    _two_decks_in_a_league(first)
+    first.save_event(Event("8", "Pioneer League 2026-09-19", "pioneer", day("2026-09-19"), [EventResult("p", "Rakdos", "5-0", "2")], "url"))
+    first.finish()
+    before = (tmp_path / "popular-cards" / "modern.json").read_bytes()
+
+    second = SnapshotStore(tmp_path, ["pioneer"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    second.save_event(Event("9", "Pioneer League 2026-09-20", "pioneer", day("2026-09-20"), [EventResult("p", "Rakdos", "5-0", "1")], "url"))
+    second.finish()
+    assert (tmp_path / "popular-cards" / "modern.json").read_bytes() == before
+    assert (tmp_path / "popular-cards" / "pioneer.json").exists()
+
+
+def test_popular_cards_count_the_decks_earlier_runs_stored_and_this_run_fetched(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    _two_decks_in_a_league(first)
+    first.finish()
+
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    later._deck_cards["modern"].pop("6")  # this run never saw deck 6's cards, and the bucket has them
+
+    def fetch(ids):
+        return {"6": {"mainboard": [{"quantity": 3, "card_name": "Lightning Bolt"}], "sideboard": []}}
+
+    later.finish(fetch_decks=fetch)
+    week = json.loads((tmp_path / "popular-cards" / "modern.json").read_text())["windows"]["7d"]
+    assert week["lists"][0]["cards"][0]["copies"] == 3.7  # (4 + 3 + 4) / 3
+
+
+def test_without_a_catalog_the_published_popular_cards_are_left_alone(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=POPULAR_CATALOG)
+    _two_decks_in_a_league(first)
+    first.finish()
+    before = (tmp_path / "popular-cards" / "modern.json").read_bytes()
+
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)  # Scryfall could not be read
+    later.finish()
+    assert (tmp_path / "popular-cards" / "modern.json").read_bytes() == before
+    fresh = tmp_path / "other"
+    SnapshotStore(fresh, ["modern"], history_days=30, now=NOW).finish()
+    assert not (fresh / "popular-cards").exists()

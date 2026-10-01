@@ -109,6 +109,10 @@ jobs:
           if [ -d work/events ]; then
             cp work/events "$R2/events" --recursive --cache-control "public, max-age=300"
           fi
+          # Built from the same snapshots and the stored decklists, with the same max-age and the same rule: only overwritten.
+          if [ -d work/popular-cards ]; then
+            cp work/popular-cards "$R2/popular-cards" --recursive --cache-control "public, max-age=300"
+          fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           # Built from the snapshots above, so it goes up after them.
           if [ -f work/explore.json ]; then
