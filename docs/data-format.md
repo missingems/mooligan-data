@@ -388,7 +388,7 @@ One file per format a run built, written with `popular-cards/{format}.json` from
       "name": "Psychic Frog", "oracle_id": "0f1d…", "type": "creature",
       "decks": 61, "share": 8.2, "previous_share": 0.4, "new": false, "first_seen": "2026-09-12", "mainboard": 58,
       "top8": 19, "wins": 3, "best_prestige": 3,
-      "archetypes": [ { "id": "modern-dimir-frog", "name": "Dimir Frog", "decks": 40 } ],
+      "archetypes": [ { "id": "modern-dimir-frog", "name": "Dimir Frog", "decks": 40, "colors": ["U", "B"] } ],
       "price": 18.5
     }
   ]
@@ -399,7 +399,7 @@ One file per format a run built, written with `popular-cards/{format}.json` from
 - **What breaks out.** At least 4 recent decks and 1% of them play the card, and its **`share`** of the recent decks (a percent, to one decimal) is at least three times its **`previous_share`** of the earlier ones. **`new`** is true when no earlier deck played it. With fewer than 20 earlier decks every card would look new, so `cards` is `[]`. Basics are left out.
 - **Order.** Most `decks` first, then most `top8`, then `name`; at most 25 cards.
 - **How the decks did.** **`top8`** and **`wins`** count the card's recent decks that placed 8th or better, or 1st (a League record such as `5-0` is no placing). **`best_prestige`** is the highest `prestige` (1 to 4, as in `explore.json`) of the events those decks were played in, so a card a Regional Championship deck played shows 4. A deck only an archetype's results list, from an event not stored, counts as 1.
-- **`archetypes`** are the three archetypes with the most of the card's recent decks, most first, with `id` linking to `archetypes/{id}.json`. A deck outside a tracked archetype isn't counted here.
+- **`archetypes`** are the three archetypes with the most of the card's recent decks, most first, with `id` linking to `archetypes/{id}.json`. A deck outside a tracked archetype isn't counted here. Each has **`colors`**, the archetype's colours as `W`, `U`, `B`, `R`, `G` in that order, worked out as for its row in `explore.json`'s `standings` (its tile's, else those of its featured deck; see *Colours of a result* below). `[]` means colourless; the key is missing when they are unknown (an archetype outside the metagame's windows with no stored featured deck), so decode it as optional and fall back to the format's `standings`. Added on 2 October 2026.
 - **`first_seen`** is the date of the earliest deck of the last 30 days that plays the card.
 - **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
 - A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.

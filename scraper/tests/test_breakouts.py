@@ -97,3 +97,21 @@ def test_breakouts_rank_by_decks_hold_at_most_the_limit_and_name_a_double_faced_
     recent = [(fable + [(1, "Consign to Memory")], [], "1st Place", "a")] * 6 + [(fable, [], "1st Place", "a")]
     file = breakouts(recent, kind="regional_championship", name="Regional Championship")
     assert [(row["name"], row["decks"], row["best_prestige"]) for row in file["cards"]] == [("Fable of the Mirror-Breaker", 7, 4), ("Consign to Memory", 6, 4)]
+
+
+def test_an_archetype_has_the_colours_its_standings_tile_shows_and_none_when_unknown():
+    frog = [(4, "Psychic Frog")]
+    recent = [(frog, [], "1st Place", "dimir")] * 2 + [(frog, [], "2nd Place", "burn")] * 2 + [(frog, [], "3rd Place", "mystery")] * 2
+    document, deck_cards = world(recent)
+    # A tile with colours; a tile with no pips whose featured deck is red; and an archetype with no tile, which is unknown.
+    tile = lambda id, **extra: {"id": id, "name": id.title(), **extra}
+    document["meta"] = {"30d": {"archetypes": [tile("dimir", colors=["U", "B"]), tile("burn", colors=[])]}}
+    document["archetypes"]["burn"]["deck_id"] = "b0"
+    deck_cards["b0"] = {"m": [(4, "Lightning Bolt")], "s": []}
+    catalog = {**CATALOG, slug("Lightning Bolt"): card("Lightning Bolt", "Instant", mana_cost="{R}")}
+    [row] = build_breakouts(document, deck_cards, catalog, NOW)["cards"]
+    assert row["archetypes"] == [
+        {"id": "burn", "name": "Burn", "decks": 2, "colors": ["R"]},
+        {"id": "dimir", "name": "Dimir", "decks": 2, "colors": ["U", "B"]},
+        {"id": "mystery", "name": "Mystery", "decks": 2},
+    ]

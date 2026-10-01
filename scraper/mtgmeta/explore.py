@@ -237,7 +237,13 @@ class Previews:
         derived = self._deck_colors(result["deck_id"])
         if derived is not None:
             return derived
-        archetype_id = result.get("archetype_id")
+        return self.archetype_colors(result.get("archetype_id"))
+
+    def archetype_colors(self, archetype_id: Optional[str]) -> Optional[List[str]]:
+        """The colours of an archetype as its standings row shows them: its tile's, else its featured deck's; None when unknown.
+
+        An archetype with no tile is unknown (a tile with a `colors` list but no pips and no featured deck to ask is `[]`).
+        """
         tile = self._tiles.get(archetype_id) if archetype_id else None
         if tile is None:
             return None

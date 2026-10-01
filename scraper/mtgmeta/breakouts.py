@@ -11,7 +11,7 @@ import re
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 
-from .explore import prestige
+from .explore import Previews, prestige
 from .popular import _copies, _deck_ids, _iso, card_kind, deck_dates, is_basic
 
 SCHEMA = 1
@@ -50,6 +50,7 @@ def build_breakouts(document: dict, deck_cards: Dict[str, dict], catalog: Dict[s
         return file
     played = {deck_id: _played(deck_cards[deck_id]) for deck_id in recent + baseline}
     results = _results(document)
+    previews = Previews(document.get("meta", {}), deck_cards, catalog, document.get("archetypes", {}))
     recent_decks = _decks_by_card(recent, played)
     baseline_decks = _decks_by_card(baseline, played)
     rows = []
@@ -62,7 +63,7 @@ def build_breakouts(document: dict, deck_cards: Dict[str, dict], catalog: Dict[s
         previous_share = 100 * len(earlier) / len(baseline)
         if len(decks) < MIN_DECKS or share < MIN_SHARE or share < GROWTH * previous_share:
             continue
-        rows.append(_row(card, known, decks, earlier, share, previous_share, played, results, dates))
+        rows.append(_row(card, known, decks, earlier, share, previous_share, played, results, dates, previews))
     rows.sort(key=lambda row: (-row["decks"], -row["top8"], row["name"]))
     file["cards"] = rows[:LIMIT]
     return file
@@ -106,7 +107,7 @@ def _place(result: dict) -> Optional[int]:
     return int(match.group(1)) if match else None
 
 
-def _row(card, known, decks, earlier, share, previous_share, played, results, dates) -> dict:
+def _row(card, known, decks, earlier, share, previous_share, played, results, dates, previews) -> dict:
     places = [results[deck_id][2] for deck_id in decks if deck_id in results and results[deck_id][2] is not None]
     archetypes: Dict[str, List] = {}
     for deck_id in decks:
@@ -129,10 +130,19 @@ def _row(card, known, decks, earlier, share, previous_share, played, results, da
         "wins": sum(1 for place in places if place == 1),
         "best_prestige": max((results[deck_id][3] for deck_id in decks if deck_id in results), default=None),
         "archetypes": [
-            {"id": archetype_id, "name": name, "decks": count}
+            _archetype(archetype_id, name, count, previews)
             for archetype_id, (name, count) in sorted(archetypes.items(), key=lambda item: (-item[1][1], item[0]))[:ARCHETYPES]
         ],
     }
     if known.get("price") is not None:
         row["price"] = known["price"]
     return row
+
+
+def _archetype(archetype_id: str, name: str, decks: int, previews: Previews) -> dict:
+    """An archetype a card is played in; its `colors` are left out when unknown, as a result's are."""
+    entry = {"id": archetype_id, "name": name, "decks": decks}
+    colors = previews.archetype_colors(archetype_id)
+    if colors is not None:
+        entry["colors"] = colors
+    return entry
