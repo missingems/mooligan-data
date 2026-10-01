@@ -95,6 +95,24 @@ def publish_locator(directory: Path, report) -> list:
     return written
 
 
+def publish_movers(directory: Path, report, data_url: str) -> list:
+    """The cards whose price moved most, from the published price catalog, as movers/{format}.json."""
+    if os.environ.get("MOVERS", "1") != "1":
+        return []
+    from .movers import movers
+
+    try:
+        files = movers(os.environ.get("MOVERS_PRICES_URL", f"{data_url}/catalog/prices/history.bin.gz"), datetime.now(timezone.utc))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Price movers failed")
+        report.errors.append(f"price movers: {error}")
+        return []
+    (directory / "movers").mkdir(parents=True, exist_ok=True)
+    for format, document in files.items():
+        (directory / "movers" / f"{format}.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
+    return [f"movers/{format}.json" for format in files]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
@@ -144,6 +162,7 @@ def main() -> int:
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
+    written += publish_movers(args.directory, report, data_url)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
