@@ -1,0 +1,47 @@
+name: Lore sources
+
+# Scrapes the story from before Magic Story: card flavor text (Scryfall), wizards.com's old story columns
+# (the Internet Archive) and MTG Wiki. Each source runs as its own job and commits its folder under lore/data.
+# See lore/mtglore/sources.py.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/lucid-allen-jjvx9l]
+    paths: [lore/sources.json]
+
+concurrency:
+  group: lore-sources
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [cards, archive, wiki]
+    defaults:
+      run:
+        working-directory: lore
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: lore/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: Scrape ${{ matrix.source }}
+        env:
+          LORE_DELAY: ${{ matrix.source == 'archive' && '1.5' || '1.0' }}
+        run: python -m mtglore scrape-${{ matrix.source }}
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          bash commit.sh "Lore - scrape ${{ matrix.source }}"

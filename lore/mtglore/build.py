@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 from urllib.parse import quote as url_quote
 
-from .extract import fold
+from .extract import fold, load_pages
 
 log = logging.getLogger(__name__)
 
@@ -142,10 +142,7 @@ def duplicate_pages(pages: Dict[str, dict]) -> Set[str]:
 
 
 def build(directory: Path) -> dict:
-    pages = {}
-    for folder in ("stories", "profiles"):
-        for path in (directory / folder).glob("*.json"):
-            pages[f"{folder}/{path.stem}"] = json.loads(path.read_text())
+    pages = load_pages(directory)
     extractions = [json.loads(path.read_text()) for path in sorted((directory / "extracted").glob("*/*.json"))]
     duplicates = duplicate_pages(pages)
     extractions = _page_order([e for e in extractions if e["page"] not in duplicates], pages)
@@ -238,6 +235,7 @@ def build(directory: Path) -> dict:
             "title": extraction["title"],
             "url": extraction["url"],
             "kind": page.get("kind", ""),
+            "source": page.get("source", "wizards"),
             "story_date": extraction.get("story_date", ""),
             "storyline": storyline,
         })
@@ -254,9 +252,19 @@ def build(directory: Path) -> dict:
                 "order": order,
                 "story_date": extraction.get("story_date", ""),
                 "presence": entity["presence"],
+                "source": page.get("source", "wizards"),
                 "description": entity["description"],
             })
-        common = {"page": extraction["page"], "order": order, "story_date": extraction.get("story_date", ""), "storyline": storyline}
+        # Where a fact comes from: Wizards' site (now or archived), a card's flavor text, or the fan wiki.
+        source = page.get("source", "wizards")
+        common = {"page": extraction["page"], "order": order, "story_date": extraction.get("story_date", ""), "storyline": storyline, "source": source}
+
+        def link(paragraph: int, quote: str) -> str:
+            # A card's flavor text links to the card; anything else to the page, at the quote.
+            paragraphs = page.get("paragraphs", [])
+            url = paragraphs[paragraph].get("url") if 0 <= paragraph < len(paragraphs) else None
+            return text_fragment(url or extraction["url"], quote)
+
         for number, event in enumerate(extraction["events"]):
             events.append({
                 "id": f"{slug}-e{number}",
@@ -267,7 +275,7 @@ def build(directory: Path) -> dict:
                 **common,
                 "paragraph": event["paragraph"],
                 "quote": event["quote"],
-                "link": text_fragment(extraction["url"], event["quote"]),
+                "link": link(event["paragraph"], event["quote"]),
             })
         for number, relation in enumerate(extraction["relations"]):
             relations.append({
@@ -279,7 +287,7 @@ def build(directory: Path) -> dict:
                 **common,
                 "paragraph": relation["paragraph"],
                 "quote": relation["quote"],
-                "link": text_fragment(extraction["url"], relation["quote"]),
+                "link": link(relation["paragraph"], relation["quote"]),
             })
 
     for entity_id, statements in said.items():

@@ -48,7 +48,8 @@ def material(index: Path, entity_id: str) -> str:
     lines.append("")
     lines.append("What each page says of it:")
     for said in entity["pages_say"]:
-        lines.append(f"[p:{said['page']}] {said['story_date'] or 'profile'} | {titles.get(said['page'], said['page'])} | {said['presence']} | {said['description']}")
+        source = "" if said.get("source", "wizards") == "wizards" else f" ({said['source']})"
+        lines.append(f"[p:{said['page']}] {said['story_date'] or 'undated'} | {titles.get(said['page'], said['page'])}{source} | {said['presence']} | {said['description']}")
     events = entity["timeline"]
     if len(events) > MAX_EVENTS:
         events = [event for event in events if event["importance"] == "major"]

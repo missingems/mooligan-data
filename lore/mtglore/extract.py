@@ -127,10 +127,23 @@ SCHEMA = {
 }
 
 
+KINDS = {
+    "story": "Magic Story article",
+    "profile": "profile page of a planeswalker or plane",
+    "archive": "story column from the old wizards.com (Savor the Flavor, Uncharted Realms, Magic Arcana or a feature), "
+               "as the Internet Archive saved it",
+    "cards": "the flavor text of every card in one Magic set; each paragraph is one card's flavor text, after the card's "
+             "name in parentheses (the name is not part of the text to quote). Flavor text quotes characters or "
+             "in-world writings, and the attribution after the dash names the speaker",
+    "wiki": "MTG Wiki article (fan-written summary of the official story, including the novels); a line starting "
+            "with ## is a section heading, not a paragraph",
+}
+
+
 def page_prompt(page: dict) -> str:
     lines = [
         f"Title: {page['title']}",
-        f"Kind: {'Magic Story article' if page['kind'] == 'story' else 'profile page of a planeswalker or plane'}",
+        f"Kind: {KINDS.get(page['kind'], page['kind'])}",
     ]
     if page.get("story_date"):
         lines.append(f"First published: {page['story_date']}")
@@ -144,8 +157,11 @@ def page_prompt(page: dict) -> str:
     for index, paragraph in enumerate(page["paragraphs"]):
         if scene is not None and paragraph["scene"] != scene:
             lines.append("")
+            if paragraph.get("section"):
+                lines.append(f"## {paragraph['section']}")
         scene = paragraph["scene"]
-        lines.append(f"[{index}] {paragraph['text']}")
+        card = f"({paragraph['card']}) " if paragraph.get("card") else ""
+        lines.append(f"[{index}] {card}{paragraph['text']}")
     return "\n".join(lines)
 
 
@@ -237,12 +253,18 @@ def check(page: dict, raw: dict) -> dict:
 # --- running the batch ----------------------------------------------------------------------------------
 
 
+# Where pages are kept, one folder per kind: the current site's stories and profiles, then the older sources
+# (see sources.py).
+PAGE_FOLDERS = ("stories", "profiles", "archive", "cards", "wiki")
+
+
 def load_pages(directory: Path) -> Dict[str, dict]:
     """Every saved page, keyed by the id its extraction is saved under ("stories/<slug>")."""
     pages = {}
-    for folder in ("stories", "profiles"):
+    for folder in PAGE_FOLDERS:
         for path in sorted((directory / folder).glob("*.json")):
-            pages[f"{folder}/{path.stem}"] = json.loads(path.read_text())
+            if not path.name.startswith("_"):
+                pages[f"{folder}/{path.stem}"] = json.loads(path.read_text())
     return pages
 
 

@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,extract,ingest,prompt,recheck,bio-input,bio-ingest,build} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,build} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "build"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "build"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -32,6 +32,24 @@ def main() -> int:
         for failure in report["failed"]:
             logging.error("  %s", failure)
         return 1 if report["failed"] and not report["saved"] else 0
+
+    if args.step in ("scrape-cards", "scrape-archive", "scrape-wiki"):
+        from .extract import load_pages
+        from .sources import Fetcher, scrape_archive, scrape_cards, scrape_wiki
+
+        fetcher = Fetcher(delay=float(os.environ.get("LORE_DELAY", "1.0")))
+        if args.step == "scrape-cards":
+            report = scrape_cards(fetcher, args.data)
+        elif args.step == "scrape-archive":
+            known = {page["title"].strip().lower() for page in load_pages(args.data).values()}
+            report = scrape_archive(fetcher, args.data, known)
+        else:
+            report = scrape_wiki(fetcher, args.data, depth=int(os.environ.get("LORE_WIKI_DEPTH", "3")), limit=args.limit)
+        failed = report.get("failed", [])
+        logging.info("%s: %s", args.step, json.dumps({**report, "failed": len(failed)}))
+        for failure in failed[:50]:
+            logging.error("  %s", failure)
+        return 0
 
     if args.step == "extract":
         import anthropic
