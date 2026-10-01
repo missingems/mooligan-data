@@ -98,3 +98,27 @@ def test_an_alias_joins_two_named_entities_only_when_it_shortens_the_name():
     assert not _shortening("ashiok", "jace beleren")
     assert not _shortening("nissa revane", "phyrexian nissa revane")
     assert not _shortening("jace beleren", "jace beleren")
+
+
+def test_citations_name_the_work_and_who_published_it():
+    from mtglore.cite import citation
+
+    story = {**PAGE, "authors": ["Alison Lührs"], "title": "Jace, Alone", "story_date": "2017-09-06"}
+    c = citation(story, 1, "Vraska took his hand")
+    assert c["text"] == '"Jace, Alone" by Alison Lührs. Magic Story, Wizards of the Coast, 6 Sep 2017.'
+    assert c["official"] and c["link"].startswith(PAGE["url"] + "#:~:text=")
+    card = {"kind": "cards", "source": "card-text", "title": "Invasion: card flavor text", "story_date": "2000-10-02",
+            "url": "https://scryfall.com/sets/inv", "paragraphs": [{"text": "x", "card": "Urza's Rage", "url": "https://scryfall.com/card/inv/10"}]}
+    c = citation(card, 0, "I will not be defeated")
+    assert c["text"] == "Urza's Rage (Invasion, 2000), flavor text. Wizards of the Coast." and c["url"].endswith("/inv/10")
+    wiki = {"kind": "wiki", "source": "mtg-wiki", "title": "Yawgmoth", "url": "https://mtg.wiki/page/Yawgmoth",
+            "license": "CC BY-NC-SA 4.0", "paragraphs": [{"text": "x", "section": "Early life"}]}
+    c = citation(wiki, 0, "born in the last century")
+    assert not c["official"] and c["license"] == "CC BY-NC-SA 4.0"
+    assert c["text"] == '"Yawgmoth", section "Early life". MTG Wiki contributors, CC BY-NC-SA 4.0.'
+    archived = {"kind": "archive", "source": "wizards-archive", "title": "Ajani Faces", "story_date": "2008-10-27",
+                "url": "https://web.archive.org/web/2015/http://www.wizards.com/x?x=mtg/daily/stf/1",
+                "original_url": "http://www.wizards.com/x?x=mtg/daily/stf/1", "paragraphs": []}
+    c = citation(archived)
+    assert c["series"] == "Savor the Flavor" and c["archived"].startswith("https://web.archive.org/")
+    assert c["text"] == '"Ajani Faces". Savor the Flavor, Wizards of the Coast, 27 Oct 2008. Archived by the Internet Archive.'

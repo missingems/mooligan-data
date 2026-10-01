@@ -28,8 +28,8 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
-from urllib.parse import quote as url_quote
 
+from .cite import citation, text_fragment
 from .extract import fold, load_pages
 
 log = logging.getLogger(__name__)
@@ -38,18 +38,6 @@ log = logging.getLogger(__name__)
 def slugify(name: str) -> str:
     text = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-") or "entity"
-
-
-def text_fragment(url: str, quote: str) -> str:
-    """The page's URL with a #:~:text= fragment, so a browser scrolls to the quote and highlights it."""
-
-    def encode(text: str) -> str:
-        return url_quote(text, safe="").replace("-", "%2D")
-
-    words = quote.split()
-    if len(words) <= 8:
-        return f"{url}#:~:text={encode(quote)}"
-    return f"{url}#:~:text={encode(' '.join(words[:4]))},{encode(' '.join(words[-4:]))}"
 
 
 _PRONOUNS = {"he", "him", "his", "she", "her", "hers", "they", "them", "it", "you", "i", "me", "we", "us"}
@@ -254,6 +242,7 @@ def build(directory: Path) -> dict:
                 "presence": entity["presence"],
                 "source": page.get("source", "wizards"),
                 "description": entity["description"],
+                "citation": citation(page),
             })
         # Where a fact comes from: Wizards' site (now or archived), a card's flavor text, or the fan wiki.
         source = page.get("source", "wizards")
@@ -276,6 +265,7 @@ def build(directory: Path) -> dict:
                 "paragraph": event["paragraph"],
                 "quote": event["quote"],
                 "link": link(event["paragraph"], event["quote"]),
+                "citation": citation(page, event["paragraph"], event["quote"]),
             })
         for number, relation in enumerate(extraction["relations"]):
             relations.append({
@@ -288,6 +278,7 @@ def build(directory: Path) -> dict:
                 "paragraph": relation["paragraph"],
                 "quote": relation["quote"],
                 "link": link(relation["paragraph"], relation["quote"]),
+                "citation": citation(page, relation["paragraph"], relation["quote"]),
             })
 
     for entity_id, statements in said.items():
@@ -301,7 +292,9 @@ def build(directory: Path) -> dict:
         profile = next((s for s in statements if s["page"].startswith("profiles/")
                         and fold(pages.get(s["page"], {}).get("title", "").split("|")[0]) in own_names), None)
         appears = [s for s in statements if s["presence"] == "appears"] or statements
-        entity["description"] = (profile or appears[-1])["description"]
+        chosen = profile or appears[-1]
+        entity["description"] = chosen["description"]
+        entity["description_citations"] = [chosen["citation"]]
 
     # 4. Write it all.
     out = directory / "index"
@@ -310,7 +303,8 @@ def build(directory: Path) -> dict:
     (out / "entity").mkdir(parents=True)
 
     def write(path: Path, data) -> None:
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+        # Compact: the index is for programs, and every fact carries a full citation.
+        path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     by_entity: Dict[str, Dict[str, list]] = defaultdict(lambda: {"events": [], "relations": []})
     for event in events:
@@ -324,8 +318,20 @@ def build(directory: Path) -> dict:
         # A bio written for the entity (see bios.py) gives it a better description than any one page.
         bio_path = directory / "bios" / f"{entity_id}.json"
         bio = json.loads(bio_path.read_text()) if bio_path.exists() else None
+        cited = {e["id"]: e["citation"] for e in by_entity[entity_id]["events"]}
+        cited.update({r["id"]: r["citation"] for r in by_entity[entity_id]["relations"]})
+        cited.update({f"p:{s['page']}": s["citation"] for s in said[entity_id]})
+
+        def with_citations(sentence):
+            # A bio sentence cites events, relations and pages by id; here each id becomes its citation.
+            return {**sentence, "citations": [cited[c] for c in sentence["cites"] if c in cited]} if sentence else None
+
+        if bio:
+            bio = {**bio, "summary": with_citations(bio.get("summary")), "status": with_citations(bio.get("status")),
+                   "bio": [with_citations(s) for s in bio.get("bio", [])]}
         if bio and bio.get("summary"):
             entity["description"] = bio["summary"]["text"]
+            entity["description_citations"] = bio["summary"]["citations"]
         write(out / "entity" / f"{entity_id}.json", {
             **entity,
             "bio": {k: bio[k] for k in ("summary", "bio", "status")} if bio else None,
@@ -342,6 +348,14 @@ def build(directory: Path) -> dict:
         for owner in owners:
             names[alias].add(entity_of[groups.find(owner)])
     write(out / "entities.json", ranked)
+    # Every page the index draws on, with its citation and how many facts come from it.
+    facts = defaultdict(int)
+    for fact in events + relations:
+        facts[fact["page"]] += 1
+    write(out / "sources.json", {
+        key: {"kind": pages[key].get("kind", ""), "facts": facts[key], "citation": citation(pages[key])}
+        for key in sorted({e["page"] for e in extractions}) if key in pages
+    })
     write(out / "events.json", events)
     write(out / "relations.json", relations)
     write(out / "storylines.json", list(storylines.values()))

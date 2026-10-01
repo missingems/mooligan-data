@@ -21,6 +21,8 @@ Each step only does what is new: scrape skips pages already saved, extract skips
 | --- | --- |
 | `stories/<slug>.json` | One article: title, url, authors, `story_date` (when it first came out; stories from before 2022 were republished, so this is read from the editor's note or the slug), the storyline's chapter list when the page has one, and the paragraphs with their scene numbers |
 | `profiles/<slug>.json` | A planeswalker's or plane's bio page under /en/story |
+| `archive/<slug>.json`, `cards/<set>.json`, `wiki/<slug>.json` | The older sources, in the same shape (see `mtglore/sources.py`): wizards.com's old columns, each set's flavor text, MTG Wiki articles |
+| `bios/<id>.json` | A short bio of one of the most-mentioned entities, every sentence citing what it rests on (see `mtglore/bios.py`) |
 | `extracted/{stories,profiles}/<slug>.json` | What Claude found on that page: entities, events and relations. Every event and relation carries a verbatim quote and its paragraph; ones whose quote is not in the page, or that name someone not listed, are under `rejected` |
 | `state/batch.json` | The batch in flight, while there is one, so the next run collects it rather than paying twice |
 | `merges.json` | Hand-kept fixes to how names are grouped: `same` (lists of names for one entity), `different` (pairs to keep apart), `rename` (a name to the name the entity should go by), `storylines` (a storyline's name to the spelling to use) |
@@ -30,6 +32,28 @@ Each step only does what is new: scrape skips pages already saved, extract skips
 | `index/names.json` | Each name and alias, folded to lower case, to the entity ids it may mean |
 | `index/storylines.json`, `pages.json` | The storylines and their pages, and every page in story order |
 | `index/review.json` | What to look at by hand: aliases more than one entity claims, entities typed differently on different pages, how many facts were rejected, and the pages left out as copies of another |
+
+## Sources and citations
+
+Every fact in the index says where it comes from. Each event, relation and entry in `pages_say` carries a `citation`; each bio sentence carries `citations` (one per event, relation or page it rests on); and each entity carries `description_citations`. `index/sources.json` lists every page the index draws on, with its citation and how many facts come from it.
+
+```json
+{"source": "wizards", "official": true, "publisher": "Wizards of the Coast",
+ "work": "Jace, Alone", "series": "Magic Story", "authors": ["Alison Lührs"], "date": "2017-09-06",
+ "url": "https://magic.wizards.com/en/news/magic-story/jace-alone-2017-09-06",
+ "link": "https://magic.wizards.com/en/news/magic-story/jace-alone-2017-09-06#:~:text=…",
+ "archived": null, "license": null,
+ "text": "\"Jace, Alone\" by Alison Lührs. Magic Story, Wizards of the Coast, 6 Sep 2017."}
+```
+
+| `source` | What it is | `url` / `link` |
+| --- | --- | --- |
+| `wizards` | magic.wizards.com: Magic Story articles and story profiles | the page; `link` scrolls to the quote |
+| `wizards-archive` | wizards.com's old story columns (Savor the Flavor, Uncharted Realms, Magic Arcana, features), read from the Internet Archive | `url` is the page as Wizards published it, `archived` the Archive's copy, which `link` opens |
+| `card-text` | a card's flavor text; `work` is the card, `series` its set | the card on Scryfall |
+| `mtg-wiki` | MTG Wiki, fan-written, so `official` is false. Under CC BY-NC-SA 4.0: where it is shown, show `text` (which credits the wiki's contributors and the licence) and link to `url` | the article |
+
+`text` is a credit line ready to show. An app should show it, or at least the `work` and `publisher`, with every fact, and should keep `official` facts and fan-wiki facts apart.
 
 Story order is the day a page first came out, then its place in its storyline's chapter list.
 
