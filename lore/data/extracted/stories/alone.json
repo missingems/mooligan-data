@@ -1,0 +1,799 @@
+{
+ "page": "stories/alone",
+ "url": "https://magic.wizards.com/en/news/magic-story/alone",
+ "title": "Phyrexia: All Will Be One | Alone",
+ "story_date": "2023-01-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:30Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Teferi Akosa",
+   "type": "character",
+   "aliases": [
+    "Teferi",
+    "Sefu",
+    "the Shaper",
+    "Teferi Planeswalker",
+    "the Destroyer of Zhalfir",
+    "archmage"
+   ],
+   "description": "A time-manipulating planeswalker who washes up on a beach in Zhalfir nearly four hundred years in the past, is recognized as the man who sent Zhalfir away, and resolves to protect Zhalfir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [
+    "the Destroyer of Dominaria"
+   ],
+   "description": "An artificer who meets Teferi in the place beyond time and warns that their time is up.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eshe",
+   "type": "character",
+   "aliases": [],
+   "description": "A hoarse-voiced guard leader of a caravan, a former member of a warband, who recognizes Teferi and tries to kill him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oyana",
+   "type": "character",
+   "aliases": [],
+   "description": "A young laborer in a Zhalfir fishing line who plans to join the akinji and speaks to Teferi as the father of Zhalfir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adia",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Civic Creed acolyte, orphaned by the Keldon War, who fears what war with Phyrexia will cost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jabari",
+   "type": "character",
+   "aliases": [],
+   "description": "A general of Zhalfir and an old friend of Teferi who brings him to Aku.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen Wezna",
+   "type": "character",
+   "aliases": [
+    "the queen",
+    "your grace"
+   ],
+   "description": "The queen of Zhalfir, who declares a long wait against Phyrexia and sentences Teferi, then spares him.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Wanderer",
+   "type": "character",
+   "aliases": [
+    "Wanderer"
+   ],
+   "description": "A white-haired planeswalker found in an amber prison who brings news of New Phyrexia's invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Subira",
+   "type": "character",
+   "aliases": [],
+   "description": "A caravanner whom Teferi loved and married, mother of Niambi, who has since died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niambi",
+   "type": "character",
+   "aliases": [],
+   "description": "Teferi's daughter, whom he once froze in time mid-fall and then caught.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "A dangerous prisoner of Zhalfir who escapes when his amber prison shatters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "General Mageta",
+   "type": "character",
+   "aliases": [
+    "Mageta"
+   ],
+   "description": "A Zhalfirin general wounded when Kaervek's prison shattered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker to whom Teferi was connected and whom he tries to contact through the mana well.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saheeli",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whom Teferi guesses may have helped reach Zhalfir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "A silver golem whom Teferi thinks may have been found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A telepath of the old Gatewatch whose mind-reading Teferi compares to his own.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who would call the path a song.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elf planeswalker reported gone in the Wanderer's account.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "The Phyrexian leader whose hordes Zhalfir prepares to face.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [
+    "Zhalfir Alone"
+   ],
+   "description": "A plane that Teferi sent into a void out of time, still preparing for a Phyrexian war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Zhalfir prepares to defend against Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The compleated plane whose invasion has begun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aku",
+   "type": "location",
+   "aliases": [
+    "the tomb city"
+   ],
+   "description": "An ancient tomb city above the Uuserk swamp, home to the Amber Tombs and where Queen Wezna waits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amber Tombs",
+   "type": "location",
+   "aliases": [
+    "central dome"
+   ],
+   "description": "A dome in Aku where Zhalfir keeps dangerous prisoners in amber.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiingal",
+   "type": "location",
+   "aliases": [],
+   "description": "A city to which the caravan is heading.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kipamu",
+   "type": "location",
+   "aliases": [],
+   "description": "A city of Zhalfir, the claimed home of Teferi's alias Sefu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Creedhall",
+   "type": "location",
+   "aliases": [],
+   "description": "A humble domed temple to the five creeds of magic with a mana well at the center.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Phyrexian War",
+   "type": "event",
+   "aliases": [
+    "Phyrexian invasion"
+   ],
+   "description": "The coming war that Zhalfir has prepared for over generations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "A past war that took family from most Zhalfirin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Keldon War",
+   "type": "event",
+   "aliases": [],
+   "description": "A past war that cost Zhalfirin families and orphaned Adia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The akinji",
+   "type": "faction",
+   "aliases": [
+    "akinji"
+   ],
+   "description": "Warriors of Zhalfir whom Oyana plans to join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The five creeds",
+   "type": "faction",
+   "aliases": [
+    "Shaper Creed",
+    "Civic Creed"
+   ],
+   "description": "The five creeds of magic that guide Zhalfir, including the Shaper and Civic creeds.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gatewatch",
+   "type": "faction",
+   "aliases": [
+    "old guard of the Gatewatch"
+   ],
+   "description": "The planeswalker alliance of which Teferi was a part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A bomb whose detonation sent Teferi and Urza to a place outside time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The anchor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The means that connected Teferi to the others, which has failed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teferi wakes on a beach after a dreamlike conversation with Urza, with only memories of Urza saying their time was up.",
+   "participants": [
+    "Teferi Akosa",
+    "Urza"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "I think our time is up,"
+  },
+  {
+   "summary": "Teferi realizes he is no longer connected to Kaya and cannot planeswalk.",
+   "participants": [
+    "Teferi Akosa",
+    "Kaya"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "summoned up the familiar movement of a planeswalk and found nothing"
+  },
+  {
+   "summary": "Teferi sleeps and dreams of Kroog, Argoth, and the Phyrexian stabbing him, and of Subira no longer wandering.",
+   "participants": [
+    "Teferi Akosa",
+    "Subira"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "The cold pressure when the Phyrexian stabbed him."
+  },
+  {
+   "summary": "Teferi uses time magic on the path and sees the beach decline from joyful to fearful and then empty, realizing he is in Zhalfir.",
+   "participants": [
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 27,
+   "quote": "reached into time, pulling history from the dust"
+  },
+  {
+   "summary": "Teferi realizes he is back in Zhalfir nearly four hundred years earlier.",
+   "participants": [
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 42,
+   "quote": "Nearly four hundred years later, he was back in Zhalfir."
+  },
+  {
+   "summary": "Teferi steps out in front of a caravan and is held at spearpoint by its guards.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 52,
+   "quote": "had Teferi surrounded and at spearpoint within the minute"
+  },
+  {
+   "summary": "Teferi lies to the guard leader that he was attacked by bandits.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 54,
+   "quote": "I was attacked by bandits"
+  },
+  {
+   "summary": "Eshe introduces herself and Teferi gives a false name.",
+   "participants": [
+    "Eshe",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 61,
+   "quote": "I am Eshe."
+  },
+  {
+   "summary": "Teferi reads Eshe's memory of the dead comrades, learning that the guards are themselves bandits who killed ten.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe",
+    "Jace Beleren"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 68,
+   "quote": "he channeled a subtle spell and pulled the answer from Eshe's memory"
+  },
+  {
+   "summary": "A frightened caravanner warns Teferi that the guards are bandits, and Eshe realizes who he is.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 78,
+   "quote": "She knew who he was."
+  },
+  {
+   "summary": "Eshe speaks of Zhalfir's generations of war and loss and accuses a snake among them.",
+   "participants": [
+    "Eshe",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 91,
+   "quote": "Every one of us here is linked in grief,"
+  },
+  {
+   "summary": "Eshe names Teferi as the snake who escaped Zhalfir's suffering.",
+   "participants": [
+    "Eshe",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 95,
+   "quote": "Here is Teferi, the snake."
+  },
+  {
+   "summary": "Eshe thrusts her spear at Teferi's heart and he freezes time.",
+   "participants": [
+    "Eshe",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 98,
+   "quote": "She lifted her spear, coiled her strength, and thrust for his heart."
+  },
+  {
+   "summary": "In frozen time, Teferi tells the slowed Eshe about Subira and his guilt for sending Zhalfir away.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe",
+    "Subira"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 105,
+   "quote": "I loved a caravanner once,"
+  },
+  {
+   "summary": "Teferi vows to see Zhalfir safe through what comes next.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 108,
+   "quote": "I will see Zhalfir safe through what comes next."
+  },
+  {
+   "summary": "Teferi demonstrates blue mana and resumes time, and Eshe tells him to go away.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 112,
+   "quote": "summoning up a fearsome blue light"
+  },
+  {
+   "summary": "Teferi leaves the caravan alone, and Eshe departs in the opposite direction.",
+   "participants": [
+    "Teferi Akosa",
+    "Eshe"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 120,
+   "quote": "Teferi went away, hurrying down the road, alone."
+  },
+  {
+   "summary": "Months later, Teferi works with villagers hauling a fishing net and speaks with Oyana, who calls him the father of Zhalfir.",
+   "participants": [
+    "Teferi Akosa",
+    "Oyana"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 147,
+   "quote": "You are the father of Zhalfir."
+  },
+  {
+   "summary": "Teferi says no one can stop the Phyrexians, and Oyana withdraws.",
+   "participants": [
+    "Teferi Akosa",
+    "Oyana"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 150,
+   "quote": "No one can stop them. Not even the brave."
+  },
+  {
+   "summary": "Teferi tries to reach Kaya through the creedhall's mana well and gets no answer.",
+   "participants": [
+    "Teferi Akosa",
+    "Kaya"
+   ],
+   "location": "Creedhall",
+   "importance": "minor",
+   "paragraph": 160,
+   "quote": "Can you hear me?"
+  },
+  {
+   "summary": "Adia tells Teferi that soldiers from Kipamu are looking for him because of the war.",
+   "participants": [
+    "Adia",
+    "Teferi Akosa"
+   ],
+   "location": "Creedhall",
+   "importance": "minor",
+   "paragraph": 166,
+   "quote": "Soldiers from Kipamu came looking for you."
+  },
+  {
+   "summary": "Teferi is reunited with the general Jabari, who has come to bring him to the queen.",
+   "participants": [
+    "Teferi Akosa",
+    "Jabari"
+   ],
+   "location": "Creedhall",
+   "importance": "major",
+   "paragraph": 178,
+   "quote": "I am just Teferi Akosa now, Jabari,"
+  },
+  {
+   "summary": "Jabari reveals another outsider has come to Zhalfir and asked for Teferi.",
+   "participants": [
+    "Jabari",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 191,
+   "quote": "You are not the only one from outside to come here."
+  },
+  {
+   "summary": "Teferi recognizes the described woman and her hat as the Wanderer.",
+   "participants": [
+    "Teferi Akosa",
+    "Jabari",
+    "The Wanderer"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 201,
+   "quote": "Not just any wanderer: the Wanderer."
+  },
+  {
+   "summary": "Adia gives Teferi mended robes and confesses she fears that return to the world means war will truly begin.",
+   "participants": [
+    "Adia",
+    "Teferi Akosa"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 222,
+   "quote": "I'm not so sure that Zhalfir returning to the world is a good thing"
+  },
+  {
+   "summary": "Teferi recalls freezing his daughter Niambi in time and then catching her, deciding to stand with Zhalfir rather than stop the fall.",
+   "participants": [
+    "Teferi Akosa",
+    "Niambi"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 229,
+   "quote": "he had frozen her in time, arresting her mid-fall"
+  },
+  {
+   "summary": "Teferi tells Adia that Zhalfir is not just war and cannot stop what is coming but can control what follows.",
+   "participants": [
+    "Teferi Akosa",
+    "Adia"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 238,
+   "quote": "We are not bound by fate,"
+  },
+  {
+   "summary": "Teferi, Jabari and the recruits reach Aku and learn Kaervek has escaped and General Mageta is wounded.",
+   "participants": [
+    "Teferi Akosa",
+    "Jabari",
+    "Kaervek",
+    "General Mageta"
+   ],
+   "location": "Aku",
+   "importance": "major",
+   "paragraph": 256,
+   "quote": "Kaervek has escaped,"
+  },
+  {
+   "summary": "Teferi sees the warding pendulum snapped and the floor shattered in the central dome of the Amber Tombs.",
+   "participants": [
+    "Teferi Akosa",
+    "Jabari"
+   ],
+   "location": "Amber Tombs",
+   "importance": "minor",
+   "paragraph": 264,
+   "quote": "With horror, Teferi saw that the pendulum had snapped"
+  },
+  {
+   "summary": "Queen Wezna confronts Teferi and demands why she should not carry out his sentence; he answers that if she kills him, they will win.",
+   "participants": [
+    "Queen Wezna",
+    "Teferi Akosa"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 268,
+   "quote": "they will win."
+  },
+  {
+   "summary": "Queen Wezna orders Jabari to lead the army while General Mageta recovers.",
+   "participants": [
+    "Queen Wezna",
+    "Jabari"
+   ],
+   "location": "Amber Tombs",
+   "importance": "minor",
+   "paragraph": 270,
+   "quote": "You will lead the army until he recovers."
+  },
+  {
+   "summary": "Queen Wezna tosses Teferi an amber prison holding the frozen Wanderer.",
+   "participants": [
+    "Queen Wezna",
+    "Teferi Akosa",
+    "The Wanderer"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 276,
+   "quote": "Small, frozen in time, likely moments after planeswalking, a warrior mid-strike."
+  },
+  {
+   "summary": "A creed leader breaks the amber prison and the Wanderer is freed.",
+   "participants": [
+    "The Wanderer",
+    "Queen Wezna",
+    "Teferi Akosa"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 282,
+   "quote": "the prison snapped, bursting open with a sharp report"
+  },
+  {
+   "summary": "The Wanderer learns she has been in Zhalfir a month, and Teferi reasons the anchor failed.",
+   "participants": [
+    "The Wanderer",
+    "Teferi Akosa",
+    "Queen Wezna"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 288,
+   "quote": "The anchor failed,"
+  },
+  {
+   "summary": "The Wanderer tells them New Phyrexia's invasion is upon them before she flickers away.",
+   "participants": [
+    "The Wanderer",
+    "Teferi Akosa",
+    "Queen Wezna",
+    "Nissa Revane"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 291,
+   "quote": "New Phyrexia's invasion is upon us,"
+  },
+  {
+   "summary": "Teferi resolves that it is not too late and vows to show the Phyrexians that the sun rises in Zhalfir.",
+   "participants": [
+    "Teferi Akosa"
+   ],
+   "location": "Amber Tombs",
+   "importance": "major",
+   "paragraph": 300,
+   "quote": "It's not too late,"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teferi Akosa",
+   "relation": "romantic",
+   "target": "Subira",
+   "note": "he loved and married her; she has died",
+   "paragraph": 162,
+   "quote": "I am the father of Niambi and husband of Subira."
+  },
+  {
+   "source": "Teferi Akosa",
+   "relation": "family",
+   "target": "Niambi",
+   "note": "father and daughter",
+   "paragraph": 162,
+   "quote": "I am the father of Niambi and husband of Subira."
+  },
+  {
+   "source": "Subira",
+   "relation": "family",
+   "target": "Niambi",
+   "note": "Niambi's mother and Teferi's wife",
+   "paragraph": 105,
+   "quote": "We loved each other, and we made a family together."
+  },
+  {
+   "source": "Eshe",
+   "relation": "enemy",
+   "target": "Teferi Akosa",
+   "note": "she tries to kill him as the destroyer of Zhalfir",
+   "paragraph": 95,
+   "quote": "Here is Teferi, the snake."
+  },
+  {
+   "source": "Jabari",
+   "relation": "ally",
+   "target": "Teferi Akosa",
+   "note": "old friend who embraces him",
+   "paragraph": 178,
+   "quote": "If the queen had sent his executioner, at least he was a friend."
+  },
+  {
+   "source": "Jabari",
+   "relation": "serves",
+   "target": "Queen Wezna",
+   "note": "Zhalfirin general serving the queen",
+   "paragraph": 270,
+   "quote": "You will lead the army until he recovers."
+  },
+  {
+   "source": "Queen Wezna",
+   "relation": "leader_of",
+   "target": "Zhalfir",
+   "note": "queen of Zhalfir",
+   "paragraph": 133,
+   "quote": "I serve at the pleasure of the queen."
+  },
+  {
+   "source": "Adia",
+   "relation": "member_of",
+   "target": "The five creeds",
+   "note": "Civic Creed acolyte",
+   "paragraph": 162,
+   "quote": "marking her as an inductee of the Civic Creed"
+  },
+  {
+   "source": "Teferi Akosa",
+   "relation": "leader_of",
+   "target": "The five creeds",
+   "note": "Oyana calls him the Shaper and father of Zhalfir whose creeds he shaped",
+   "paragraph": 147,
+   "quote": "Our creeds were shaped by you."
+  },
+  {
+   "source": "Teferi Akosa",
+   "relation": "other",
+   "target": "Zhalfir",
+   "note": "he sent Zhalfir away into a void",
+   "paragraph": 105,
+   "quote": "She didn't lose anyone when I sent Zhalfir away."
+  },
+  {
+   "source": "Teferi Akosa",
+   "relation": "ally",
+   "target": "The Wanderer",
+   "note": "an old companion who brings news of the invasion",
+   "paragraph": 292,
+   "quote": "The Wanderer crouched down next to him"
+  },
+  {
+   "source": "Kaervek",
+   "relation": "enemy",
+   "target": "Zhalfir",
+   "note": "a prisoner of Zhalfir who escaped his amber prison",
+   "paragraph": 256,
+   "quote": "His prison shattered."
+  }
+ ],
+ "rejected": []
+}

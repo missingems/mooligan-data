@@ -1,0 +1,211 @@
+{
+ "page": "profiles/new-phyrexia-plane",
+ "url": "https://magic.wizards.com/en/story/new-phyrexia-plane",
+ "title": "New Phyrexia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [
+    "Argentum",
+    "New Phyrexia"
+   ],
+   "description": "A world of metal originally known as Argentum, created by Karn, later compleated by the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Father of Machines"
+   ],
+   "description": "The planeswalker who created Mirrodin, brought Phyrexian oil to it, lost his mind and became the Father of Machines and leader of Phyrexia until restored to sanity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mirrodin's caretaker, who slowly went mad and abducted mortals from across the Multiverse to populate the plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian oil",
+   "type": "concept",
+   "aliases": [],
+   "description": "The substance Karn brought to Mirrodin which slowly transformed the creatures it touched.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "the Phyrexian forces"
+   ],
+   "description": "The force that spread through and compleated Mirrodin, overwhelming the Mirrans.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mirrans",
+   "type": "faction",
+   "aliases": [
+    "Mirrans"
+   ],
+   "description": "Mirrodin's inhabitants, who fought many battles but were overwhelmed by the Phyrexian forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koth",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who could not turn the tide against the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who could not turn the tide against the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who sacrificed his life to restore Karn to sanity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Praetors",
+   "type": "faction",
+   "aliases": [
+    "Praetors"
+   ],
+   "description": "Some of Karn's top lieutenants, whose factions fight for power amongst themselves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Compleation",
+   "type": "concept",
+   "aliases": [
+    "compleat"
+   ],
+   "description": "The Phyrexian campaign to alter the world of Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch slowly goes mad, abducting mortals from across the Multiverse to populate the plane.",
+   "participants": [
+    "Memnarch",
+    "Mirrodin"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Mirrodin's caretaker Memnarch slowly went mad, abducting mortals from across the Multiverse to populate the plane."
+  },
+  {
+   "summary": "Karn brings the Phyrexian oil to Mirrodin, which begins transforming the creatures it touches.",
+   "participants": [
+    "Karn",
+    "Phyrexian oil",
+    "Mirrodin"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Karn was the bringer of the Phyrexian oil to Mirrodin"
+  },
+  {
+   "summary": "Losing his mind, Karn becomes the Father of Machines and leader of Phyrexia.",
+   "participants": [
+    "Karn",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Slowly losing his mind, Karn became the Father of Machines and the leader of Phyrexia."
+  },
+  {
+   "summary": "The slow spread becomes an active campaign to compleat Mirrodin, and the Mirrans are overwhelmed.",
+   "participants": [
+    "Phyrexia",
+    "The Mirrans",
+    "Compleation",
+    "Mirrodin"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Mirrans fought many battles, but they soon were overwhelmed by the Phyrexian forces."
+  },
+  {
+   "summary": "Koth, Elspeth and Venser cannot turn the tide, and Venser sacrifices his life to restore Karn to sanity.",
+   "participants": [
+    "Koth",
+    "Elspeth",
+    "Venser",
+    "Karn"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Venser sacrificed his life to restore Karn to sanity."
+  },
+  {
+   "summary": "The Praetors and their factions fight for power amongst themselves while natives struggle to survive.",
+   "participants": [
+    "The Praetors",
+    "The Mirrans"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Now the Praetors—some of Karn's top lieutenants—and their factions fight for power amongst themselves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Mirrodin",
+   "note": "Originally known as Argentum.",
+   "paragraph": 0,
+   "quote": "Mirrodin, originally known as Argentum, was created by the Planeswalker Karn."
+  },
+  {
+   "source": "Karn",
+   "relation": "leader_of",
+   "target": "Phyrexia",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Karn became the Father of Machines and the leader of Phyrexia."
+  },
+  {
+   "source": "Venser",
+   "relation": "ally",
+   "target": "Karn",
+   "note": "Sacrificed his life to restore Karn's sanity.",
+   "paragraph": 2,
+   "quote": "Venser sacrificed his life to restore Karn to sanity."
+  },
+  {
+   "source": "The Praetors",
+   "relation": "serves",
+   "target": "Karn",
+   "note": "Some of Karn's top lieutenants.",
+   "paragraph": 2,
+   "quote": "the Praetors—some of Karn's top lieutenants"
+  }
+ ],
+ "rejected": []
+}

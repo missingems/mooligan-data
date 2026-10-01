@@ -1,0 +1,185 @@
+{
+ "page": "profiles/mirrodin-plane",
+ "url": "https://magic.wizards.com/en/story/mirrodin-plane",
+ "title": "Mirrodin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where everything is made of metal, lit by five suns, one for each color of mana; created by Karn and infected by Phyrexian oil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "The silver golem built by Urza who created Mirrodin and unwittingly introduced Phyrexian oil to it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker who built Karn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian oil",
+   "type": "concept",
+   "aliases": [
+    "the Phyrexian contagion"
+   ],
+   "description": "A dark contagion Karn unwittingly introduced, which infects the land and breeds horrors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [
+    "the Warden"
+   ],
+   "description": "The Warden Karn created to protect Mirrodin, who grew unstable, sentient, paranoid and angry, and kidnapped countless beings from other planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa Sunseeker",
+   "type": "character",
+   "aliases": [],
+   "description": "The elf who finally defeated Memnarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mirrans",
+   "type": "faction",
+   "aliases": [
+    "Mirrans"
+   ],
+   "description": "The inhabitants of Mirrodin; the first generations vanished and returned to the planes from which they were taken.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Phyrexia's red-aligned faction, which turns a blind eye to Mirrodin's citizens and allows them safe harbor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "New Phyrexia"
+   ],
+   "description": "The source of the horrors emerging from Mirrodin's core, whose factions are not unified in purpose.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn creates Mirrodin, but something goes wrong and he unwittingly introduces Phyrexian oil.",
+   "participants": [
+    "Karn",
+    "Mirrodin",
+    "Phyrexian oil"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He unwittingly introduced a dark contagion: Phyrexian oil."
+  },
+  {
+   "summary": "The Warden Karn created grows unstable and sentient, calling himself Memnarch.",
+   "participants": [
+    "Memnarch",
+    "Karn"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Even the Warden that Karn created to protect the plane grew unstable, gaining sentience and calling himself Memnarch."
+  },
+  {
+   "summary": "Memnarch kidnaps countless beings from other planes before the elf Glissa Sunseeker defeats him.",
+   "participants": [
+    "Memnarch",
+    "Glissa Sunseeker"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He kidnapped countless beings from other planes before he was finally defeated by the elf Glissa Sunseeker."
+  },
+  {
+   "summary": "New Phyrexian horrors emerge from Mirrodin's core, killing all Mirrans in their path.",
+   "participants": [
+    "Phyrexia",
+    "The Mirrans"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "New Phyrexian horrors continue to emerge from Mirrodin's core, killing all Mirrans in their path"
+  },
+  {
+   "summary": "Urabrask's red-aligned Phyrexian faction allows Mirrodin's citizens safe harbor.",
+   "participants": [
+    "Urabrask",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Its red-aligned faction, led by Urabrask, turns a blind eye to the citizens of Mirrodin, allowing them safe harbor."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Mirrodin",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Long ago, this metal plane was created by Karn, the silver golem built by the Planeswalker Urza."
+  },
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Karn",
+   "note": "",
+   "paragraph": 1,
+   "quote": "the silver golem built by the Planeswalker Urza"
+  },
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Memnarch",
+   "note": "Memnarch was the Warden Karn created.",
+   "paragraph": 2,
+   "quote": "Even the Warden that Karn created to protect the plane grew unstable"
+  },
+  {
+   "source": "Glissa Sunseeker",
+   "relation": "enemy",
+   "target": "Memnarch",
+   "note": "She defeated him.",
+   "paragraph": 2,
+   "quote": "he was finally defeated by the elf Glissa Sunseeker."
+  },
+  {
+   "source": "Urabrask",
+   "relation": "leader_of",
+   "target": "Phyrexia",
+   "note": "Leads its red-aligned faction.",
+   "paragraph": 4,
+   "quote": "Its red-aligned faction, led by Urabrask"
+  }
+ ],
+ "rejected": []
+}

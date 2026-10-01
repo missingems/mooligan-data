@@ -1,0 +1,640 @@
+{
+ "page": "stories/episode-6-the-ballad-of-thieves-and-thunderslingers",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers",
+ "title": "Outlaws of Thunder Junction | Episode 6: The Ballad of Thieves and Thunderslingers",
+ "story_date": "2024-03-25",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:39Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "A fae trickster and planeswalker who leads the heist, is betrayed by Vraska and Jace, and escapes by planeswalking while turning to stone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Oko's half-fae son who defeats Akul with mind control, rescues Annie, and later invites Amalia to Thunder Junction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [
+    "Annie"
+   ],
+   "description": "A sharpshooter and seer of illusions who spares Kellan by deliberately missing Oko, and is put to sleep by Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon who betrays Oko, petrifying him, to secure the child from the vault, saying she must fix what she has done.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Ashiok's disguise"
+   ],
+   "description": "A mind mage and planeswalker whose scarred, plugged body is revealed beneath the illusion of Ashiok, who takes the child from the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashiok",
+   "type": "character",
+   "aliases": [],
+   "description": "A nightmare-weaving figure who hired Oko's crew; revealed to be an illusion worn by Jace Beleren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Ral"
+   ],
+   "description": "A planeswalker who joins Kellan against Oko and urges Vraska to return to Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon leader of the Hellspurs, mind-controlled by Kellan and sealed in the collapsing vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [],
+   "description": "A giant demon who fights Akul and carries the crew away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tinybones",
+   "type": "character",
+   "aliases": [],
+   "description": "A skeleton thief who crosses the light grid to help open the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin explosives expert who leaves with Malcolm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malcolm",
+   "type": "character",
+   "aliases": [],
+   "description": "A winged siren scout who leaves with Breeches when Vraska does not return.",
+   "presence": "appears"
+  },
+  {
+   "name": "Satoru Umezawa",
+   "type": "character",
+   "aliases": [
+    "Umezawa"
+   ],
+   "description": "A thief on the crew who disarms the vault trap and plans to triple his fee next time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "A warlock who breaks the vault door's ward.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer and medic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer and Geralf's sister.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eriette",
+   "type": "character",
+   "aliases": [],
+   "description": "A witch who stays to ask Oko about Kellan and toasts a future reunion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amalia",
+   "type": "character",
+   "aliases": [
+    "Amalia Benavides Aguirre"
+   ],
+   "description": "A pointed-eared woman with a parasol and mapping satchel who arrives from Ravnica to join Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "The vault child",
+   "type": "character",
+   "aliases": [
+    "the child",
+    "the creature"
+   ],
+   "description": "An infant with orange fur and horns, held in a glass pod in Maag Taranau, taken by Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Akul's gang who attack the crew inside the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "The company that raided Tarnation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maag Taranau",
+   "type": "location",
+   "aliases": [
+    "the vault"
+   ],
+   "description": "A floating vault above Tarnation with traps, a warded door and a treasure chamber containing a child; it flies into the clouds after being opened.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarnation",
+   "type": "location",
+   "aliases": [],
+   "description": "The Hellspur city damaged by the vault's fall.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Wildcard Saloon",
+   "type": "location",
+   "aliases": [
+    "Wildcard Saloon"
+   ],
+   "description": "The crew's hideout, where they regroup.",
+   "presence": "appears"
+  },
+  {
+   "name": "Annie's ranch",
+   "type": "location",
+   "aliases": [],
+   "description": "The ranch where Kellan helps with chores.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orrinshire",
+   "type": "location",
+   "aliases": [],
+   "description": "A sheep-filled town Kellan fondly remembers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Ral and Amalia are from, offering work for Kellan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where Umezawa saw a similar security system.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes through which Oko returns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The medallion",
+   "type": "artifact",
+   "aliases": [
+    "the key"
+   ],
+   "description": "The six-piece key that opens the vault door.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Oko's reunited crew enters Maag Taranau, with the silent Annie leading them through traps.",
+   "participants": [
+    "Oko",
+    "Annie Flash",
+    "Breeches",
+    "Tinybones",
+    "Rakdos",
+    "Maag Taranau"
+   ],
+   "location": "Maag Taranau",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Annie's left iris glowed a vivid orange as she approached the outer entrance."
+  },
+  {
+   "summary": "Umezawa explains the dual-lever trap, and Tinybones is guided across the light grid with a dragonfly device.",
+   "participants": [
+    "Satoru Umezawa",
+    "Tinybones",
+    "Annie Flash",
+    "Oko"
+   ],
+   "location": "Maag Taranau",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "Annie did a few practice turns in the air before sending the dragonfly to the edge of the platform."
+  },
+  {
+   "summary": "Tinybones and Umezawa pull the levers together and disarm the light grid.",
+   "participants": [
+    "Tinybones",
+    "Satoru Umezawa"
+   ],
+   "location": "Maag Taranau",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "They pulled the levers in unison."
+  },
+  {
+   "summary": "Kaervek works on breaking the door's ward.",
+   "participants": [
+    "Kaervek",
+    "Oko"
+   ],
+   "location": "Maag Taranau",
+   "importance": "minor",
+   "paragraph": 38,
+   "quote": "Orange flames wove around his fingers, prodding and testing the protection spell."
+  },
+  {
+   "summary": "Akul and the Hellspurs arrive, and Rakdos tackles him.",
+   "participants": [
+    "Akul",
+    "Hellspurs",
+    "Rakdos",
+    "Oko"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "Rakdos smashed into his side and clobbered him to the ground."
+  },
+  {
+   "summary": "The crew fights the Hellspurs while Kaervek works, and Vraska suggests she and Oko must reach the treasure at any cost.",
+   "participants": [
+    "Oko",
+    "Vraska",
+    "Annie Flash",
+    "Breeches",
+    "Malcolm",
+    "Gisa",
+    "Geralf",
+    "Eriette",
+    "Satoru Umezawa",
+    "Hellspurs"
+   ],
+   "location": "Maag Taranau",
+   "importance": "minor",
+   "paragraph": 58,
+   "quote": "\"You and I need to reach the vault's treasure room. No matter the cost.\""
+  },
+  {
+   "summary": "The ward breaks and Oko and Vraska descend, leaving the crew behind.",
+   "participants": [
+    "Oko",
+    "Vraska",
+    "Kaervek"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 63,
+   "quote": "He turned for the door without remorse, disappearing down the stairs with Vraska close behind."
+  },
+  {
+   "summary": "Kellan ropes Oko with a golden vine and Ral Zarek appears, confronting Vraska.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "Ral Zarek",
+    "Vraska"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 66,
+   "quote": "A golden vine shot toward Oko's wrist, wrapping itself around his hand like a lasso."
+  },
+  {
+   "summary": "Vraska tells Ral the only way to fix what she has done is getting what is inside the vault.",
+   "participants": [
+    "Vraska",
+    "Ral Zarek"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 74,
+   "quote": "\"The only way to fix what I've done is by getting what's inside the vault.\""
+  },
+  {
+   "summary": "Kellan tells Oko he is his son, not crew, and Oko slams him to the ground with thorned vines after a race for the medallion.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "The medallion"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 89,
+   "quote": "Oko barely flicked a finger, and the vines slammed Kellan against the ground with brute force."
+  },
+  {
+   "summary": "Annie shoots Oko, purposely missing, and Kellan uses his fae magic as Ashiok's nightmares overwhelm them.",
+   "participants": [
+    "Annie Flash",
+    "Oko",
+    "Kellan",
+    "Ral Zarek",
+    "Ashiok"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 99,
+   "quote": "Shadows moved across the floor, wrapping around not only Kellan but Annie and Ral, too."
+  },
+  {
+   "summary": "Oko uses the key to open the vault door and enters the treasure vault.",
+   "participants": [
+    "Oko",
+    "Vraska",
+    "Ashiok",
+    "The medallion"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 106,
+   "quote": "With the back of his hand, Oko wiped the blood from his chin, and stepped into the treasure vault."
+  },
+  {
+   "summary": "Ashiok's illusion drops, revealing Jace Beleren, who puts Annie to sleep.",
+   "participants": [
+    "Ashiok",
+    "Jace Beleren",
+    "Annie Flash",
+    "Oko"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 112,
+   "quote": "The darkness evaporated, and beneath Ashiok's hooded cloak was Jace Beleren."
+  },
+  {
+   "summary": "Jace shatters the pod and takes the sleeping infant from the vault.",
+   "participants": [
+    "Jace Beleren",
+    "The vault child",
+    "Oko"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 117,
+   "quote": "Jace scooped up the child in his arms, cradling it to his chest."
+  },
+  {
+   "summary": "Vraska petrifies Oko, who planeswalks away before the stone reaches his head.",
+   "participants": [
+    "Vraska",
+    "Oko",
+    "Jace Beleren"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 122,
+   "quote": "\"Your services are no longer required,\""
+  },
+  {
+   "summary": "Kellan wakes to find Vraska, Jace and the child gone and the vault collapsing, and rescues Annie.",
+   "participants": [
+    "Kellan",
+    "Annie Flash",
+    "Vraska",
+    "Jace Beleren",
+    "Ral Zarek"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 128,
+   "quote": "By the time he reached her side, Vraska, the man, and the child had vanished without a trace."
+  },
+  {
+   "summary": "The crew flees the collapsing vault on Rakdos's back.",
+   "participants": [
+    "Kellan",
+    "Ral Zarek",
+    "Rakdos",
+    "Tinybones",
+    "Malcolm",
+    "Breeches",
+    "Eriette"
+   ],
+   "location": "Tarnation",
+   "importance": "minor",
+   "paragraph": 142,
+   "quote": "The team fled back through the corridor as the sound of the vault being ripped apart roared behind them."
+  },
+  {
+   "summary": "Akul seizes Annie, but Kellan takes control of the dragon's mind and orders him back into the collapsing vault.",
+   "participants": [
+    "Kellan",
+    "Akul",
+    "Annie Flash"
+   ],
+   "location": "Tarnation",
+   "importance": "major",
+   "paragraph": 158,
+   "quote": "\"Go back inside the vault—and don't come out.\""
+  },
+  {
+   "summary": "Rocks seal Akul inside, and the vault shoots into the clouds and vanishes.",
+   "participants": [
+    "Akul",
+    "Maag Taranau",
+    "Kellan"
+   ],
+   "location": "Tarnation",
+   "importance": "major",
+   "paragraph": 161,
+   "quote": "the vault shot toward the clouds and vanished from sight."
+  },
+  {
+   "summary": "Oko returns to the Wildcard Saloon and tells the crew that Vraska and Ashiok betrayed them.",
+   "participants": [
+    "Oko",
+    "Eriette",
+    "Satoru Umezawa",
+    "Kaervek",
+    "Gisa",
+    "Geralf",
+    "Tinybones",
+    "Rakdos"
+   ],
+   "location": "The Wildcard Saloon",
+   "importance": "major",
+   "paragraph": 173,
+   "quote": "\"Vraska and Ashiok were always planning to double-cross us."
+  },
+  {
+   "summary": "Oko disbands the crew with the promise of a future reunion, deciding to leave Kellan and Annie alone.",
+   "participants": [
+    "Oko",
+    "Eriette",
+    "Gisa",
+    "Geralf",
+    "Satoru Umezawa",
+    "Kaervek",
+    "Rakdos",
+    "Tinybones"
+   ],
+   "location": "The Wildcard Saloon",
+   "importance": "major",
+   "paragraph": 196,
+   "quote": "\"No. From now on, their business is their own,\""
+  },
+  {
+   "summary": "Weeks later, Kellan works on Annie's ranch and Ral offers him a job on Ravnica, which he declines.",
+   "participants": [
+    "Kellan",
+    "Ral Zarek",
+    "Annie Flash"
+   ],
+   "location": "Annie's ranch",
+   "importance": "minor",
+   "paragraph": 215,
+   "quote": "\"I think I've done enough wandering for a while,\""
+  },
+  {
+   "summary": "Amalia arrives from Ravnica in answer to Kellan's invitation, and they embrace.",
+   "participants": [
+    "Amalia",
+    "Kellan"
+   ],
+   "location": "Annie's ranch",
+   "importance": "major",
+   "paragraph": 228,
+   "quote": "\"I missed you, Kellan,\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oko",
+   "relation": "family",
+   "target": "Kellan",
+   "note": "Oko is Kellan's father; Kellan says he is son, not crew.",
+   "paragraph": 82,
+   "quote": "\"I'm not your crew; I'm your son.\""
+  },
+  {
+   "source": "Vraska",
+   "relation": "enemy",
+   "target": "Oko",
+   "note": "Vraska petrifies Oko, betraying him.",
+   "paragraph": 122,
+   "quote": "Your services are no longer required,"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "other",
+   "target": "Ashiok",
+   "note": "Ashiok was an illusion worn by Jace.",
+   "paragraph": 112,
+   "quote": "beneath Ashiok's hooded cloak was Jace Beleren."
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "They work together to take the child from the vault.",
+   "paragraph": 164,
+   "quote": "Vraska and Ashiok had tricked him. Or Vraska and Jace , it seemed."
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Ral says they are friends and urges her to return to Ravnica.",
+   "paragraph": 71,
+   "quote": "We are friends , Vraska."
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "Ral and Kellan work together against Oko and Ral offers him a job.",
+   "paragraph": 209,
+   "quote": "I could really use someone I trust."
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "Annie protects Kellan and he stays at her ranch.",
+   "paragraph": 97,
+   "quote": "I reckon they're worth protecting."
+  },
+  {
+   "source": "Kellan",
+   "relation": "enemy",
+   "target": "Akul",
+   "note": "Kellan mind-controls Akul and seals him in the vault.",
+   "paragraph": 154,
+   "quote": "It wasn't just hypnosis—it was control ."
+  },
+  {
+   "source": "Amalia",
+   "relation": "romantic",
+   "target": "Kellan",
+   "note": "Kellan blushes about expecting Amalia, and she says she missed him.",
+   "paragraph": 225,
+   "quote": "\"I—I'm glad you're here.\""
+  },
+  {
+   "source": "Tinybones",
+   "relation": "serves",
+   "target": "Oko",
+   "note": "Tinybones works for Oko.",
+   "paragraph": 34,
+   "quote": "\"I knew there was a reason I liked you.\""
+  },
+  {
+   "source": "Gisa",
+   "relation": "family",
+   "target": "Geralf",
+   "note": "Gisa and Geralf are siblings who continue bickering.",
+   "paragraph": 188,
+   "quote": "I guess you can count me and my brother in."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,578 @@
+{
+ "page": "stories/episode-1-triumph-of-the-fleshless",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-1-triumph-of-the-fleshless",
+ "title": "March of the Machine | Episode 1: Triumph of the Fleshless",
+ "story_date": "2023-03-16",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:42:07Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Norn",
+    "Grand Praetor",
+    "Mother of Machines",
+    "Grand Cenobite",
+    "Reverend Mother"
+   ],
+   "description": "The Phyrexian Grand Praetor who dispatches her evangels to every corner of the Multiverse and executes Sheoldred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "the smallest"
+   ],
+   "description": "A planeswalker held captive in the sanctum, who phases through matter and is encased in stone before being released.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [
+    "Kaito"
+   ],
+   "description": "A planeswalker held captive in the sanctum and released as a messenger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tyvar Kell",
+   "type": "character",
+   "aliases": [
+    "Tyvar",
+    "the largest"
+   ],
+   "description": "A planeswalker held captive in the sanctum who struggles against his stone bonds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian thane stripped of her armor who is brought before Norn bound and executed by Ajani.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "A compleated Phyrexian evangel sent to Ikoria to bring the monsters into the fold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [],
+   "description": "A compleated Phyrexian evangel who executes Sheoldred and is sent to Theros to bring its gods to Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "A winged Phyrexian angel loyal to Norn, given the task of harvesting New Capenna and destroying Halo's wellspring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A compleated kor lithomancer evangel who is sent to Zendikar to wake a Skyclave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A compleated elf who steers Realmbreaker's portals and attention at Norn's side.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A compleated evangel who hesitates when Norn tests her loyalty over Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A compleated evangel who departs ahead of Norn's commands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [
+    "the tree",
+    "the Phyrexian World Tree"
+   ],
+   "description": "The corrupted World Tree whose barbed limbs anchor on other planes, releasing pods of Phyrexian forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Argent Etchings",
+   "type": "artifact",
+   "aliases": [
+    "etchings"
+   ],
+   "description": "Norn's holy teachings, rendered in metal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halo",
+   "type": "concept",
+   "aliases": [],
+   "description": "The golden haze over New Capenna, which Norn says is the remains of the angels' ethereal forms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The compleated plane from which Norn directs the invasion of the Multiverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Nahiri's birth plane, with ancient forests and a floating Skyclave city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Lukka's home plane, with monsters that Phyrexia wants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Tamiyo's former home, a neon-lit night city targeted for invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Ajani's target plane, a sunlit land of gods guarded by a temple statue.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [
+    "Capenna"
+   ],
+   "description": "A golden plane shrouded in Halo where angels once sealed away a Phyrexian ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Skyclave",
+   "type": "artifact",
+   "aliases": [
+    "Skyclaves"
+   ],
+   "description": "An ancient floating weapon of Nahiri's people, ringed by hedrons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanctum",
+   "type": "location",
+   "aliases": [
+    "the inner sanctum"
+   ],
+   "description": "Elesh Norn's inner sanctum on New Phyrexia, where portals show invaded planes.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Phyrexian evangels",
+   "type": "faction",
+   "aliases": [
+    "holy evangels",
+    "evangels"
+   ],
+   "description": "Compleated former planeswalkers sent to spread Phyrexia's gospel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The unified compleated horde.",
+   "presence": "appears"
+  },
+  {
+   "name": "Compleation",
+   "type": "concept",
+   "aliases": [],
+   "description": "The Phyrexian process of transformation into a unified being.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Norn confronts three captive planeswalkers, Kaya, Kaito and Tyvar, who defy her offer.",
+   "participants": [
+    "Elesh Norn",
+    "Kaya",
+    "Kaito Shizuki",
+    "Tyvar Kell"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Behold the glory of New Phyrexia."
+  },
+  {
+   "summary": "Norn summons portals to five planes where Realmbreaker's limbs anchor and release pods of Phyrexian forces.",
+   "participants": [
+    "Elesh Norn",
+    "Realmbreaker"
+   ],
+   "location": "Sanctum",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Realmbreaker's massive, barb-tipped limbs burst forth, anchoring themselves wherever they please."
+  },
+  {
+   "summary": "Lukka, Ajani, Atraxa and Nahiri bring in the bound Sheoldred as an offering.",
+   "participants": [
+    "Lukka",
+    "Ajani",
+    "Atraxa",
+    "Nahiri",
+    "Sheoldred",
+    "Elesh Norn"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "Carried like a trussed up offering between them is the once powerful Sheoldred."
+  },
+  {
+   "summary": "Norn has Nahiri encase the three planeswalkers in stone and tells them to be her prophets.",
+   "participants": [
+    "Elesh Norn",
+    "Nahiri",
+    "Kaya",
+    "Kaito Shizuki",
+    "Tyvar Kell"
+   ],
+   "location": "Sanctum",
+   "importance": "major",
+   "paragraph": 20,
+   "quote": "You shall be the prophets of our coming,"
+  },
+  {
+   "summary": "Norn orders Ajani to execute Sheoldred for craving power over unity, and he beheads her.",
+   "participants": [
+    "Elesh Norn",
+    "Ajani",
+    "Sheoldred"
+   ],
+   "location": "Sanctum",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "Sheoldred's head bounces to a stop at her feet"
+  },
+  {
+   "summary": "Norn lets the captive planeswalkers escape deliberately so they can spread her gospel.",
+   "participants": [
+    "Elesh Norn",
+    "Kaya",
+    "Kaito Shizuki",
+    "Tyvar Kell"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "Elesh Norn counts on them escaping."
+  },
+  {
+   "summary": "Norn announces the evangels will unite their homelands and asks Nahiri where she was born.",
+   "participants": [
+    "Elesh Norn",
+    "Nahiri"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "we have decided to grant you the honor of uniting your homelands."
+  },
+  {
+   "summary": "Norn has Nissa show Zendikar's forests and a Skyclave, and Nahiri vows to wake the weapon.",
+   "participants": [
+    "Elesh Norn",
+    "Nissa Revane",
+    "Nahiri"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "I can wake it once more to enact our will."
+  },
+  {
+   "summary": "Nahiri departs for Zendikar.",
+   "participants": [
+    "Nahiri"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "In three steps, she winks out of existence"
+  },
+  {
+   "summary": "Norn sends Lukka to Ikoria to add its monsters to Phyrexian ranks, warning him of the price of failure.",
+   "participants": [
+    "Elesh Norn",
+    "Lukka"
+   ],
+   "location": "Ikoria",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "Go to Ikoria. Add these monsters to our ranks."
+  },
+  {
+   "summary": "Tamiyo and Atraxa discuss Lukka's likely fate and Norn's strategy.",
+   "participants": [
+    "Tamiyo",
+    "Atraxa",
+    "Elesh Norn",
+    "Lukka"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 53,
+   "quote": "Either way Phyrexia is served."
+  },
+  {
+   "summary": "Norn shows Tamiyo the night-lit city of Kamigawa and asks whether she still loves it and her family.",
+   "participants": [
+    "Elesh Norn",
+    "Tamiyo",
+    "Nissa Revane"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 63,
+   "quote": "Do you still care for your family?"
+  },
+  {
+   "summary": "Realmbreaker pierces Kamigawa's city as Tamiyo watches a mother save her children, and a man in black deflects falling tiles.",
+   "participants": [
+    "Tamiyo",
+    "Elesh Norn",
+    "Realmbreaker"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 69,
+   "quote": "Realmbreaker pierces the earth."
+  },
+  {
+   "summary": "Tamiyo falters when told to welcome the old into the new, and Atraxa reprimands her.",
+   "participants": [
+    "Tamiyo",
+    "Atraxa",
+    "Elesh Norn"
+   ],
+   "location": "Sanctum",
+   "importance": "major",
+   "paragraph": 74,
+   "quote": "Insolence isn't tolerated here. You were given a command."
+  },
+  {
+   "summary": "Norn commands Tamiyo to return with Kamigawa under her control or be recycled.",
+   "participants": [
+    "Elesh Norn",
+    "Tamiyo"
+   ],
+   "location": "Sanctum",
+   "importance": "major",
+   "paragraph": 76,
+   "quote": "Return with Kamigawa under your control or be recycled into something that serves better."
+  },
+  {
+   "summary": "Ajani correctly guesses Theros is his destination, a first-wave target.",
+   "participants": [
+    "Elesh Norn",
+    "Ajani"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "You want to see Theros."
+  },
+  {
+   "summary": "Phyrexian forces rain onto Theros, devouring livestock and humans.",
+   "participants": [
+    "Phyrexians",
+    "Realmbreaker"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 90,
+   "quote": "It starts the same as it did on Kamigawa"
+  },
+  {
+   "summary": "Norn orders Ajani to bring a guardian god of Theros within Phyrexia's embrace and to bring priests and the Argent Etchings.",
+   "participants": [
+    "Elesh Norn",
+    "Ajani"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 104,
+   "quote": "Bring priests with you,"
+  },
+  {
+   "summary": "Ajani departs for Theros while Norn hides her real reason for sending him.",
+   "participants": [
+    "Ajani",
+    "Elesh Norn"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 110,
+   "quote": "he did not discover the real reason she'd sent him to Theros."
+  },
+  {
+   "summary": "Norn tells Atraxa about the Phyrexian ship sealed away by angels on New Capenna and shows her the city.",
+   "participants": [
+    "Elesh Norn",
+    "Atraxa",
+    "Nissa Revane"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 120,
+   "quote": "Angels. False prophets bound to stone for their insolence,"
+  },
+  {
+   "summary": "Norn orders Atraxa to harvest New Capenna and destroy the wellspring of Halo.",
+   "participants": [
+    "Elesh Norn",
+    "Atraxa"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 128,
+   "quote": "You will harvest them all."
+  },
+  {
+   "summary": "Norn reveals a danger to New Phyrexia exists on New Capenna and Theros, which Atraxa and Ajani must seal.",
+   "participants": [
+    "Elesh Norn",
+    "Atraxa",
+    "Ajani"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 139,
+   "quote": "In killing New Capenna, we strike at her heart."
+  },
+  {
+   "summary": "Left alone, Norn calls attendants to recite her teachings to drive away her nightmares of the woman in white.",
+   "participants": [
+    "Elesh Norn"
+   ],
+   "location": "Sanctum",
+   "importance": "minor",
+   "paragraph": 146,
+   "quote": "Elesh Norn forgets her nightmares"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ajani",
+   "relation": "killed",
+   "target": "Sheoldred",
+   "note": "executed her on Norn's order",
+   "paragraph": 23,
+   "quote": "Sheoldred's head bounces to a stop at her feet"
+  },
+  {
+   "source": "Elesh Norn",
+   "relation": "enemy",
+   "target": "Sheoldred",
+   "note": "condemns her as a pretender to praeterdom",
+   "paragraph": 22,
+   "quote": "Phyrexia no longer has a place for those who crave power over unity."
+  },
+  {
+   "source": "Ajani",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "ever loyal evangel",
+   "paragraph": 109,
+   "quote": "Ajani, ever loyal, does as he is told."
+  },
+  {
+   "source": "Lukka",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "evangel sent to Ikoria",
+   "paragraph": 47,
+   "quote": "And ever may it reign,"
+  },
+  {
+   "source": "Atraxa",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "calls herself bound to serve",
+   "paragraph": 112,
+   "quote": "I live to serve,"
+  },
+  {
+   "source": "Elesh Norn",
+   "relation": "created",
+   "target": "Atraxa",
+   "note": "she shaped Atraxa's body with her own hands",
+   "paragraph": 114,
+   "quote": "the woman who shaped Atraxa's body with her own two hands"
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "her lieutenant steering the tree",
+   "paragraph": 143,
+   "quote": "Norn's lieutenant is too preoccupied with managing the tree's growth to speak with her."
+  },
+  {
+   "source": "Tamiyo",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "favored new servant",
+   "paragraph": 34,
+   "quote": "she might overtake Tamiyo as Norn's favorite new servant"
+  },
+  {
+   "source": "Nahiri",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "evangel sent to Zendikar",
+   "paragraph": 39,
+   "quote": "You wear your new purpose as well as you wear your raiment."
+  }
+ ],
+ "rejected": []
+}
