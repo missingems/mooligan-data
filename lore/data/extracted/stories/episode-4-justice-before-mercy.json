@@ -1,0 +1,531 @@
+{
+ "page": "stories/episode-4-justice-before-mercy",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-4-justice-before-mercy",
+ "title": "Murders at Karlov Manor | Episode 4: Justice before Mercy",
+ "story_date": "2024-01-10",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:47:59Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and former Orzhov leader who takes the lead of the Agency's investigation after finding Teysa's body.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa",
+    "Master Teysa",
+    "Guildmaster Karlov"
+   ],
+   "description": "The murdered head of the Orzhov, whose body Kaya examines and whose ghost does not appear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [],
+   "description": "The archon head of the Agency who names Kaya head of the investigation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [
+    "Investigator Kellan",
+    "Inspector Kellan"
+   ],
+   "description": "A young half-fae Agency investigator who becomes Kaya's partner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Judith",
+   "type": "character",
+   "aliases": [],
+   "description": "The Rakdos guild representative who receives Kaya and Kellan at Hellbender and sends them to Vitu-Ghazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [
+    "Master Kos"
+   ],
+   "description": "A ghost and former top Boros investigator assigned to work alongside the Agency.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etrata",
+   "type": "character",
+   "aliases": [],
+   "description": "The missing Dimir assassin whose escape from Azorius custody throws the Agency into turmoil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [
+    "Detective Proft"
+   ],
+   "description": "An Agency detective some suspect of helping Etrata disappear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [],
+   "description": "The Boros leader who now directs the Legion's role in the investigation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [],
+   "description": "The murdered Simic guild leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "Kellan's fae planeswalker father.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild city-plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karlov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "The manor where Teysa's body lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agency headquarters",
+   "type": "location",
+   "aliases": [],
+   "description": "The Agency's floating building, in turmoil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellbender",
+   "type": "location",
+   "aliases": [],
+   "description": "A Rakdos nightclub in Plaza West.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [
+    "the tree"
+   ],
+   "description": "The tree that shelters the original Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The founding pact of the guilds, whose original form Judith says Kaya must read.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian note",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The note in Phyrexian script Kaya found at the scene and pocketed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "The guild led by Teysa, whose ghosts recognize Kaya's authority.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The law guild that seized the investigation and lost Etrata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "The enforcement guild that sends Agrus Kos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild of violence and joy led by Judith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "Zegana's guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "The unaffiliated investigators led by Ezrim.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kaya studies Teysa's body and the scene before the household arrives.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Teysa's body had yet to cool."
+  },
+  {
+   "summary": "Kaya calls Teysa's spirit, but only a ghost servant answers that Teysa is not entertaining guests.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Master Teysa is not entertaining guests at this time"
+  },
+  {
+   "summary": "The ghost reveals Teysa dismissed the living servants in anticipation of Kaya's arrival.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "Master Teysa gave the living servants the day off, in anticipation of your arrival."
+  },
+  {
+   "summary": "The Orzhov dead pledge to tell investigators that this was not a power struggle with Kaya.",
+   "participants": [
+    "Kaya",
+    "Orzhov Syndicate"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 23,
+   "quote": "We will tell the lawmages and investigators who are bound to come that this was not a power struggle between past and present leaders"
+  },
+  {
+   "summary": "Kaya pockets the crumpled Phyrexian note instead of leaving it at the scene.",
+   "participants": [
+    "Kaya",
+    "Phyrexian note"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 24,
+   "quote": "Kaya scoffed, stuffing the crumpled Phyrexian note into her pocket."
+  },
+  {
+   "summary": "Kaya arrives at an Agency in uproar after the Azorius lost Etrata.",
+   "participants": [
+    "Kaya",
+    "Ezrim"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "The Agency headquarters were in chaos when Kaya arrived"
+  },
+  {
+   "summary": "Ezrim rebukes his investigators over Etrata's disappearance.",
+   "participants": [
+    "Ezrim",
+    "Etrata",
+    "Azorius Senate"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 39,
+   "quote": "Etrata is still missing."
+  },
+  {
+   "summary": "Kaya pulls Kellan from an argument and he explains Etrata vanished from Azorius custody.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 49,
+   "quote": "Detective Proft went to speak with the prisoner in Azorius custody. When he got there, she was gone."
+  },
+  {
+   "summary": "Kaya tells Ezrim she now wants to lead the investigation.",
+   "participants": [
+    "Kaya",
+    "Ezrim",
+    "Kellan"
+   ],
+   "location": "Agency headquarters",
+   "importance": "major",
+   "paragraph": 61,
+   "quote": "I would like to take point on this investigation."
+  },
+  {
+   "summary": "Kaya tells Ezrim that Teysa Karlov has been murdered.",
+   "participants": [
+    "Kaya",
+    "Ezrim",
+    "Teysa Karlov",
+    "Kellan"
+   ],
+   "location": "Agency headquarters",
+   "importance": "major",
+   "paragraph": 67,
+   "quote": "Teysa Karlov has been murdered."
+  },
+  {
+   "summary": "Kaya explains she cannot summon Teysa's ghost, who has warded her own soul.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Teysa Karlov"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "Teysa will appear when she wants to."
+  },
+  {
+   "summary": "Ezrim gives Kaya leadership of the investigation and tells her to begin with Judith.",
+   "participants": [
+    "Ezrim",
+    "Kaya",
+    "Judith"
+   ],
+   "location": "Agency headquarters",
+   "importance": "major",
+   "paragraph": 88,
+   "quote": "You returned before I could locate someone else to head the investigation. The position's yours."
+  },
+  {
+   "summary": "Ezrim assigns Kellan to accompany Kaya.",
+   "participants": [
+    "Ezrim",
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "Inspector Kellan, you'll accompany her."
+  },
+  {
+   "summary": "Kellan shows Kaya the evidence vault, including the containment capsule holding the Gruul god.",
+   "participants": [
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 106,
+   "quote": "That's where we're containing the Gruul god we detained"
+  },
+  {
+   "summary": "Kaya senses a ghost entering the building.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 110,
+   "quote": "A ghost just entered the building."
+  },
+  {
+   "summary": "Agrus Kos arrives, assigned by the Boros to work alongside the Agency.",
+   "participants": [
+    "Agrus Kos",
+    "Kaya",
+    "Kellan",
+    "Aurelia"
+   ],
+   "location": "Agency headquarters",
+   "importance": "minor",
+   "paragraph": 119,
+   "quote": "The Boros Legion has asked me to work alongside the Agency doing whatever they feel is necessary to catch the party or parties responsible."
+  },
+  {
+   "summary": "Kaya and Kellan head to Hellbender to find Judith.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Judith"
+   ],
+   "location": "Hellbender",
+   "importance": "minor",
+   "paragraph": 126,
+   "quote": "If we're going to speak with Judith, we need to head for Hellbender."
+  },
+  {
+   "summary": "Kaya intimidates the Rakdos doorman by letting him stab her intangible form.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Hellbender",
+   "importance": "minor",
+   "paragraph": 139,
+   "quote": "Can't stab what's not solid"
+  },
+  {
+   "summary": "Judith makes a theatrical entrance on stage.",
+   "participants": [
+    "Judith",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Hellbender",
+   "importance": "minor",
+   "paragraph": 149,
+   "quote": "Judith herself stepped around the curtain to center stage."
+  },
+  {
+   "summary": "Judith denies the murder, citing her verity circle and a dispute over interest rates with Teysa.",
+   "participants": [
+    "Judith",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Hellbender",
+   "importance": "major",
+   "paragraph": 160,
+   "quote": "I hardly think an argument over interest rates gives me cause to murder a Simic guildmaster"
+  },
+  {
+   "summary": "Judith tells them to read the original Guildpact in Vitu-Ghazi.",
+   "participants": [
+    "Judith",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Hellbender",
+   "importance": "major",
+   "paragraph": 166,
+   "quote": "Go to Vitu-Ghazi. You need to read the Guildpact in its original form, and the tree shelters it."
+  },
+  {
+   "summary": "Kaya and Kellan leave as Judith looks smug.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Judith"
+   ],
+   "location": "Hellbender",
+   "importance": "minor",
+   "paragraph": 169,
+   "quote": "she looked smug, like everything was following her script once again."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "new partners on the investigation",
+   "paragraph": 93,
+   "quote": "I guess we're partners now"
+  },
+  {
+   "source": "Kellan",
+   "relation": "family",
+   "target": "Oko",
+   "note": "his fae father",
+   "paragraph": 157,
+   "quote": "According to Kellan, Oko was fey, making Kellan half-faerie."
+  },
+  {
+   "source": "Agrus Kos",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "former top investigator, now a ghost",
+   "paragraph": 118,
+   "quote": "He was one of the Boros's best investigators when he was alive"
+  },
+  {
+   "source": "Aurelia",
+   "relation": "leader_of",
+   "target": "Boros Legion",
+   "note": "running the show",
+   "paragraph": 119,
+   "quote": "now that Aurelia's running the show"
+  },
+  {
+   "source": "Judith",
+   "relation": "leader_of",
+   "target": "Rakdos",
+   "note": "guild leadership at the party",
+   "paragraph": 88,
+   "quote": "Judith of the Rakdos"
+  },
+  {
+   "source": "Teysa Karlov",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "remains guildmaster in death",
+   "paragraph": 21,
+   "quote": "Master Teysa remains our guildmaster"
+  },
+  {
+   "source": "Ezrim",
+   "relation": "leader_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "directs the Agency's response",
+   "paragraph": 90,
+   "quote": "We will solve this, and the Azorius will regret defaming us."
+  },
+  {
+   "source": "Judith",
+   "relation": "other",
+   "target": "Teysa Karlov",
+   "note": "admits a disagreement over interest rates",
+   "paragraph": 158,
+   "quote": "This is about my little disagreement with Teysa, then?"
+  }
+ ],
+ "rejected": []
+}
