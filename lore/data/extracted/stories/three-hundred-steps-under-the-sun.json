@@ -1,0 +1,657 @@
+{
+ "page": "stories/three-hundred-steps-under-the-sun",
+ "url": "https://magic.wizards.com/en/news/magic-story/three-hundred-steps-under-the-sun",
+ "title": "March of the Machine | Ixalan: Three Hundred Steps under the Sun",
+ "story_date": "2023-03-21",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:47:09Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [
+    "Huatli Poetmaster",
+    "warrior-poet",
+    "Poet",
+    "imperial conscience"
+   ],
+   "description": "A planeswalker and the warrior-poet of the Sun Empire who leads a desperate band to Orazca to summon the elder dinosaurs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inti",
+   "type": "character",
+   "aliases": [],
+   "description": "Huatli's cousin and a loyal lancer who holds the gate at the Winged Temple and is wounded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mavren Fein",
+   "type": "character",
+   "aliases": [
+    "Mavren"
+   ],
+   "description": "A vampire leader of the Legion of Dusk auxiliaries, released from imperial dungeons to fight, who helps hold the temple gate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temilo",
+   "type": "character",
+   "aliases": [],
+   "description": "A Sun Empire scout garrisoned in Orazca who leads the company to the Winged Temple.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [
+    "Saheeli"
+   ],
+   "description": "An engineer and planeswalker, Huatli's lover, who appears in Huatli's memory asking why fight what cannot be defeated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor Apatzec Intli III",
+   "type": "character",
+   "aliases": [
+    "the emperor",
+    "your grace"
+   ],
+   "description": "The emperor of the Sun Empire who loses his Dawn Fleet and authorizes Huatli's gambit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caparocti Sunborn",
+   "type": "character",
+   "aliases": [
+    "Caparocti"
+   ],
+   "description": "A commander of aerosaur fliers who questions Huatli's gambit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yolotzin",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior-poet from centuries ago whose story Huatli tells Saheeli.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Etali",
+   "type": "creature",
+   "aliases": [
+    "Etali",
+    "the storm"
+   ],
+   "description": "The elder dinosaur Etali, turned by Phyrexia into a storm of engines and lightning, who attacks the Winged Temple.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zetalpa",
+   "type": "creature",
+   "aliases": [
+    "elder of dawn"
+   ],
+   "description": "The elder dinosaur of dawn who tackles Etali and brings the sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zacama",
+   "type": "creature",
+   "aliases": [],
+   "description": "The three-headed elder dinosaur who answers last, kills Etali and communicates gratitude to Huatli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetzimoc",
+   "type": "creature",
+   "aliases": [],
+   "description": "The elder dinosaur of death who leads armored quetzacama.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghalta",
+   "type": "creature",
+   "aliases": [],
+   "description": "An elder dinosaur who fights giant Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nezahal",
+   "type": "creature",
+   "aliases": [
+    "elder of the tides"
+   ],
+   "description": "The elder dinosaur of the tides who crushes a Phyrexian giant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Sun Empire and the Legion of Dusk, now under Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent that the emperor's navy was intended to invade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [
+    "the golden city"
+   ],
+   "description": "A golden city of Ixalan that burns during the Phyrexian assault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pachatupa",
+   "type": "location",
+   "aliases": [
+    "the capital"
+   ],
+   "description": "The Sun Empire capital encircled by Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocatli",
+   "type": "location",
+   "aliases": [
+    "imperial citadel"
+   ],
+   "description": "The imperial citadel in Pachatupa converted to a war room.",
+   "presence": "appears"
+  },
+  {
+   "name": "Winged Temple of Orazca",
+   "type": "location",
+   "aliases": [
+    "Winged Temple",
+    "Three Hundred Steps"
+   ],
+   "description": "A temple in Orazca with three hundred steps leading to a recitation chamber.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fortress Leor",
+   "type": "location",
+   "aliases": [
+    "Miraldanor"
+   ],
+   "description": "A Legion fortress the Sun Empire captured, taking ships.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [
+    "the Invasion Tree"
+   ],
+   "description": "The Phyrexian World Tree whose branch descended onto Ixalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Sun Empire",
+   "type": "faction",
+   "aliases": [
+    "imperial forces",
+    "the empire"
+   ],
+   "description": "The empire of Ixalan led by the emperor from Pachatupa.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Legion of Dusk",
+   "type": "faction",
+   "aliases": [
+    "the Legion"
+   ],
+   "description": "The vampire legion of Torrezon whose auxiliaries aid Huatli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Huatli's lancers",
+   "type": "faction",
+   "aliases": [
+    "her company",
+    "lancers"
+   ],
+   "description": "Huatli's company of lancers.",
+   "presence": "appears"
+  },
+  {
+   "name": "The elder dinosaurs",
+   "type": "faction",
+   "aliases": [
+    "the elders"
+   ],
+   "description": "Ixalan's elder dinosaurs, embodiments of the plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia",
+    "the turned"
+   ],
+   "description": "The compleated horde invading Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Threefold Sun",
+   "type": "deity",
+   "aliases": [
+    "Kinjalli",
+    "Tilonalli",
+    "Ixalli"
+   ],
+   "description": "The Sun Empire's triune sun god, which has set and not risen.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Huatli waits atop the Winged Temple while Orazca burns and Ixalan is wreathed in fire.",
+   "participants": [
+    "Huatli",
+    "Orazca"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Huatli, alone, stood atop the Winged Temple of Orazca"
+  },
+  {
+   "summary": "Hours before, Huatli's company and the auxiliaries shelter in a barricaded hall, and Inti urges them to go.",
+   "participants": [
+    "Huatli",
+    "Inti",
+    "Huatli's lancers"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "I'm not confident the barricade or this hall will hold."
+  },
+  {
+   "summary": "Huatli tells Mavren the trap was part of her plan, since bait is necessary when hunting a great beast.",
+   "participants": [
+    "Huatli",
+    "Mavren Fein"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "Bait is necessary."
+  },
+  {
+   "summary": "The Sun Empire storms Fortress Leor, taking ships it will copy for an invasion of Torrezon.",
+   "participants": [
+    "The Sun Empire",
+    "The Legion of Dusk"
+   ],
+   "location": "Fortress Leor",
+   "importance": "minor",
+   "paragraph": 45,
+   "quote": "The empire moved in, taking Leor and splitting the Legion forces of Queen's Bay in half."
+  },
+  {
+   "summary": "A branch of Realmbreaker splits the sky over the Sun Coast and Phyrexians invade Ixalan.",
+   "participants": [
+    "Phyrexians",
+    "Realmbreaker"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 49,
+   "quote": "revealing a hideous, colossal metal branch of Realmbreaker, the Invasion Tree"
+  },
+  {
+   "summary": "The Phyrexians end the emperor's war and the Threefold Sun does not rise again.",
+   "participants": [
+    "Phyrexians",
+    "The Sun Empire",
+    "The Threefold Sun"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 50,
+   "quote": "The Phyrexians came to Ixalan and ended the emperor's war in its cradle."
+  },
+  {
+   "summary": "In the imperial war room, the emperor learns his fleet of ten thousand is lost and Caparocti warns of unnatural storms.",
+   "participants": [
+    "Emperor Apatzec Intli III",
+    "Caparocti Sunborn",
+    "Huatli"
+   ],
+   "location": "Tocatli",
+   "importance": "major",
+   "paragraph": 57,
+   "quote": "Where is my navy,"
+  },
+  {
+   "summary": "Commanders report the collapse of the empire's defenses as Phyrexians ring Pachatupa.",
+   "participants": [
+    "Emperor Apatzec Intli III",
+    "Huatli",
+    "Inti"
+   ],
+   "location": "Tocatli",
+   "importance": "major",
+   "paragraph": 68,
+   "quote": "This was not a war: it was a collapse, seeking its end point."
+  },
+  {
+   "summary": "Huatli proposes calling the elder dinosaurs to Orazca to draw the Phyrexians from Pachatupa.",
+   "participants": [
+    "Huatli",
+    "Emperor Apatzec Intli III",
+    "Inti",
+    "Caparocti Sunborn"
+   ],
+   "location": "Tocatli",
+   "importance": "major",
+   "paragraph": 86,
+   "quote": "I will call the elder dinosaurs to Orazca,"
+  },
+  {
+   "summary": "The emperor silences Caparocti's objections and approves Huatli's gambit.",
+   "participants": [
+    "Emperor Apatzec Intli III",
+    "Caparocti Sunborn",
+    "Huatli"
+   ],
+   "location": "Tocatli",
+   "importance": "major",
+   "paragraph": 92,
+   "quote": "Your desire to protect the heart of our empire is admirable, but be silent."
+  },
+  {
+   "summary": "Huatli's company and released vampire auxiliaries leave Pachatupa along the river while the army stages a diversion.",
+   "participants": [
+    "Huatli",
+    "Huatli's lancers",
+    "Mavren Fein",
+    "Inti"
+   ],
+   "location": "Pachatupa",
+   "importance": "minor",
+   "paragraph": 98,
+   "quote": "A diversion, a furious barrage and single attempt at breaking the Phyrexian encirclement."
+  },
+  {
+   "summary": "Mavren demands freedom as a reward, and Huatli says they never made a bargain.",
+   "participants": [
+    "Mavren Fein",
+    "Huatli",
+    "Inti"
+   ],
+   "location": "Pachatupa",
+   "importance": "minor",
+   "paragraph": 116,
+   "quote": "We never made a bargain,"
+  },
+  {
+   "summary": "At Orazca, scouts report a route to the temple and Temilo, a garrisoned soldier, joins them.",
+   "participants": [
+    "Huatli",
+    "Temilo",
+    "Inti"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 120,
+   "quote": "We have a route to the temple."
+  },
+  {
+   "summary": "Etali, an elder dinosaur turned by Phyrexia, appears on the horizon with a roar and a storm.",
+   "participants": [
+    "Phyrexian Etali",
+    "Huatli",
+    "Huatli's lancers"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 135,
+   "quote": "On the horizon opposite them, at the lip of the bowl in which Orazca was built, stood Etali, one of the elder dinosaurs."
+  },
+  {
+   "summary": "Huatli sees that nothing of Ixalan is left in Etali and flees with the company to Temilo's garrison.",
+   "participants": [
+    "Huatli",
+    "Phyrexian Etali",
+    "Temilo"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 138,
+   "quote": "Etali was the storm. The Phyrexians had turned the elder dinosaur"
+  },
+  {
+   "summary": "Huatli rejects the idea of being mere survivors and resolves to fight to the top of the Winged Temple to call the elders.",
+   "participants": [
+    "Huatli",
+    "Inti",
+    "Mavren Fein",
+    "Temilo"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 154,
+   "quote": "Then we will fight to the top and call upon the elders."
+  },
+  {
+   "summary": "Inti, Mavren and the company hold the temple gate as Huatli climbs three hundred steps to the recitation chamber.",
+   "participants": [
+    "Huatli",
+    "Inti",
+    "Mavren Fein",
+    "Huatli's lancers"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 164,
+   "quote": "We'll hold the gate,"
+  },
+  {
+   "summary": "A flood of Phyrexians climbs the temple's steps toward the line.",
+   "participants": [
+    "Phyrexians",
+    "Huatli's lancers"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "minor",
+   "paragraph": 168,
+   "quote": "In ones and twos, they started up the lowest steps of the temple"
+  },
+  {
+   "summary": "In a memory, Huatli tells Saheeli the story of the warrior-poet Yolotzin and tells her it will be alright.",
+   "participants": [
+    "Huatli",
+    "Saheeli Rai",
+    "Yolotzin"
+   ],
+   "location": "Pachatupa",
+   "importance": "major",
+   "paragraph": 186,
+   "quote": "What we face is no different than what she faced"
+  },
+  {
+   "summary": "Huatli recites to the hurricane and the powers of Ixalan, asking them to stand against the end.",
+   "participants": [
+    "Huatli",
+    "Phyrexian Etali"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 197,
+   "quote": "Huatli spoke to the hurricane."
+  },
+  {
+   "summary": "Etali's storm falters and the company's line holds against the Phyrexians.",
+   "participants": [
+    "Huatli",
+    "Phyrexian Etali",
+    "Huatli's lancers"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "minor",
+   "paragraph": 199,
+   "quote": "The storm faltered."
+  },
+  {
+   "summary": "Zetalpa, elder of dawn, pierces Etali's hurricane and slams into him, banishing the night.",
+   "participants": [
+    "Zetalpa",
+    "Phyrexian Etali"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 203,
+   "quote": "the titanic silhouette of Zetalpa, the elder of dawn, pierced Etali's hurricane"
+  },
+  {
+   "summary": "Tetzimoc, Ghalta and Nezahal answer Huatli's call and tear through the Phyrexians in the streets.",
+   "participants": [
+    "Tetzimoc",
+    "Ghalta",
+    "Nezahal",
+    "Phyrexians"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 206,
+   "quote": "Nezahal wrapped the giant up from legs to wrists"
+  },
+  {
+   "summary": "Huatli finds Inti wounded and Mavren having carried him from the line.",
+   "participants": [
+    "Huatli",
+    "Inti",
+    "Mavren Fein"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "A blood-slick and oil-stained Mavren limped toward Huatli, dragging a wounded Inti with him."
+  },
+  {
+   "summary": "Zacama, the last and greatest elder, arrives and her roar disintegrates the Phyrexian front ranks.",
+   "participants": [
+    "Zacama",
+    "Huatli",
+    "Phyrexians"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 219,
+   "quote": "Zacama, the final and greatest of the elders, loomed up from the shadows"
+  },
+  {
+   "summary": "Zacama kills the turned Etali by tearing off his head.",
+   "participants": [
+    "Zacama",
+    "Phyrexian Etali"
+   ],
+   "location": "Winged Temple of Orazca",
+   "importance": "major",
+   "paragraph": 227,
+   "quote": "Zacama tore his head from his body, then flung it into the city below."
+  },
+  {
+   "summary": "Zacama acknowledges Huatli before departing, and the sun breaks through over Orazca.",
+   "participants": [
+    "Zacama",
+    "Huatli"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 233,
+   "quote": "Dawn had arrived: the day, though not yet won, was here."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Huatli",
+   "relation": "romantic",
+   "target": "Saheeli Rai",
+   "note": "Huatli misses her love",
+   "paragraph": 100,
+   "quote": "She wanted to walk alongside this river with her love."
+  },
+  {
+   "source": "Huatli",
+   "relation": "family",
+   "target": "Inti",
+   "note": "cousins",
+   "paragraph": 13,
+   "quote": "indicating her cousin's bandage-wrapped head"
+  },
+  {
+   "source": "Mavren Fein",
+   "relation": "leader_of",
+   "target": "The Legion of Dusk",
+   "note": "leader of the Legion auxiliaries",
+   "paragraph": 25,
+   "quote": "the thin, patrician leader of the auxiliaries"
+  },
+  {
+   "source": "Huatli",
+   "relation": "serves",
+   "target": "Emperor Apatzec Intli III",
+   "note": "the emperor's warrior-poet",
+   "paragraph": 71,
+   "quote": "Do you have words for the dead, warrior-poet?"
+  },
+  {
+   "source": "Caparocti Sunborn",
+   "relation": "serves",
+   "target": "Emperor Apatzec Intli III",
+   "note": "commander of the emperor's aerosaur fliers",
+   "paragraph": 59,
+   "quote": "My aerosaur fliers stand ready to scour the oceans"
+  },
+  {
+   "source": "Zacama",
+   "relation": "killed",
+   "target": "Phyrexian Etali",
+   "note": "tore off his head",
+   "paragraph": 227,
+   "quote": "Zacama tore his head from his body, then flung it into the city below."
+  },
+  {
+   "source": "Phyrexians",
+   "relation": "enemy",
+   "target": "The Sun Empire",
+   "note": "ended the emperor's war and ring the capital",
+   "paragraph": 52,
+   "quote": "A ring of white stones surrounded Pachatupa"
+  },
+  {
+   "source": "Zetalpa",
+   "relation": "enemy",
+   "target": "Phyrexian Etali",
+   "note": "fights him",
+   "paragraph": 203,
+   "quote": "wrapping him up in her wings, her mighty jaws closed around Etali's neck"
+  },
+  {
+   "source": "Yolotzin",
+   "relation": "other",
+   "target": "Huatli",
+   "note": "earlier warrior-poet whose example Huatli follows",
+   "paragraph": 180,
+   "quote": "There was a warrior-poet before me,"
+  }
+ ],
+ "rejected": []
+}
