@@ -1,6 +1,6 @@
 import json
 
-from mtglore.build import build, text_fragment
+from mtglore.build import _shortening, build, text_fragment
 from mtglore.extract import check, locate, page_prompt, pending
 
 PAGE = {
@@ -91,3 +91,10 @@ def test_build_joins_names_across_pages(tmp_path):
     assert names["the mind sculptor"] == ["jace-beleren"]
     storylines = json.loads((tmp_path / "index" / "storylines.json").read_text())
     assert storylines[0]["name"] == "March of the Machine"
+
+
+def test_an_alias_joins_two_named_entities_only_when_it_shortens_the_name():
+    assert _shortening("jace", "jace beleren")
+    assert not _shortening("ashiok", "jace beleren")
+    assert not _shortening("nissa revane", "phyrexian nissa revane")
+    assert not _shortening("jace beleren", "jace beleren")

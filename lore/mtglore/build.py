@@ -52,6 +52,22 @@ def text_fragment(url: str, quote: str) -> str:
     return f"{url}#:~:text={encode(' '.join(words[:4]))},{encode(' '.join(words[-4:]))}"
 
 
+_PRONOUNS = {"he", "him", "his", "she", "her", "hers", "they", "them", "it", "you", "i", "me", "we", "us"}
+
+# Words that make a name a different version of someone ("Phyrexian Nissa"), not a longer name for them.
+_VARIANT_WORDS = {"phyrexian", "compleated", "young", "younger", "old", "elder", "past", "future", "ghost", "spirit", "alternate"}
+
+
+def _shortening(alias: str, name: str) -> bool:
+    """Whether `alias` is `name` with words left out: "jace" of "jace beleren", but not "nissa" of "phyrexian nissa".
+
+    An alias only joins two entities that each have pages of their own when it is this kind of shortening;
+    otherwise "Ashiok", given once as an alias of Jace (whom Ashiok was disguised as), would make them one.
+    """
+    alias_words, name_words = alias.split(), name.split()
+    return bool(alias_words) and set(alias_words) < set(name_words) and not (set(name_words) - set(alias_words)) & _VARIANT_WORDS
+
+
 class _Groups:
     """Union-find over folded names, which refuses to join two groups `apart` says differ."""
 
@@ -145,9 +161,17 @@ def build(directory: Path) -> dict:
             for alias in entity["aliases"]:
                 alias_owners[fold(alias)].add(fold(entity["name"]))
     shared = {alias: owners for alias, owners in alias_owners.items() if len(owners) > 1}
+    names = set(groups.groups())
+    name_pages = Counter(fold(entity["name"]) for extraction in extractions for entity in extraction["entities"])
     for alias, owners in alias_owners.items():
-        if len(owners) == 1:
-            groups.join(next(iter(owners)), alias)
+        owner = next(iter(owners))
+        if len(owners) == 1 and (alias not in names or _shortening(alias, owner)):
+            groups.join(owner, alias)
+        elif len(owners) > 1 and alias in names:
+            # "Jace" is short for "Jace Beleren" and for "Jace, Reality Sculptor": it goes with the one on most pages.
+            longer = [o for o in owners if _shortening(alias, o)]
+            if longer:
+                groups.join(max(longer, key=lambda o: (name_pages[o], o)), alias)
     for same in merges.get("same", []):
         for other in same[1:]:
             if not groups.join(fold(same[0]), fold(other)):
@@ -177,7 +201,11 @@ def build(directory: Path) -> dict:
         while entity_id in used:
             entity_id, suffix = f"{slugify(name)}-{suffix}", suffix + 1
         used.add(entity_id)
-        aliases = sorted({n for n in list(counted) + list(spellings[root]) if fold(n) != fold(name)}, key=str.lower)
+        # Not another entity's own name (a page that called Ashiok "Jace" in disguise), and not a pronoun.
+        aliases = sorted({
+            n for n in list(counted) + list(spellings[root])
+            if fold(n) != fold(name) and fold(n) not in _PRONOUNS and (fold(n) not in names or groups.find(fold(n)) == root)
+        }, key=str.lower)
         entities[entity_id] = {
             "id": entity_id,
             "name": name,
@@ -261,7 +289,9 @@ def build(directory: Path) -> dict:
         entity["first_seen"] = dated[0]["story_date"] if dated else None
         entity["last_seen"] = dated[-1]["story_date"] if dated else None
         # A profile page is written to say who someone is; else the latest page where they appear.
-        profile = next((s for s in statements if s["page"].startswith("profiles/")), None)
+        own_names = {fold(n) for n in [entity["name"], *entity["aliases"]]}
+        profile = next((s for s in statements if s["page"].startswith("profiles/")
+                        and fold(pages.get(s["page"], {}).get("title", "").split("|")[0]) in own_names), None)
         appears = [s for s in statements if s["presence"] == "appears"] or statements
         entity["description"] = (profile or appears[-1])["description"]
 
