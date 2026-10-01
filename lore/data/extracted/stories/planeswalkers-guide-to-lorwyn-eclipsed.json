@@ -1,0 +1,682 @@
+{
+ "page": "stories/planeswalkers-guide-to-lorwyn-eclipsed",
+ "url": "https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-to-lorwyn-eclipsed",
+ "title": "Planeswalker's Guide to Lorwyn Eclipsed",
+ "story_date": "2025-09-26",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:37:25Z",
+ "storyline": "Lorwyn Eclipsed",
+ "entities": [
+  {
+   "name": "Lorwyn-Shadowmoor",
+   "type": "plane",
+   "aliases": [
+    "the plane of light and shadow"
+   ],
+   "description": "A twinned plane with a daytime aspect, Lorwyn, and a nighttime aspect, Shadowmoor, whose aspects now bleed into one another.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "location",
+   "aliases": [
+    "Blessed Nation"
+   ],
+   "description": "The daytime aspect of the plane, a world of idyllic meadows and verdant forests where the sun never fully sets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "location",
+   "aliases": [],
+   "description": "The nighttime aspect of the plane, a land of dark forests, brambles and eternal night under a cycling moon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Primal Beyond",
+   "type": "location",
+   "aliases": [],
+   "description": "The areas beyond the known and tamed expanse of Lorwyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eclipsed realms",
+   "type": "location",
+   "aliases": [
+    "eclipsed realm"
+   ],
+   "description": "Pockets that emerge where the boundaries of Lorwyn and Shadowmoor grind together, a third state of neither light nor shadow that slowly transforms those who stay in them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "The magical convergence orchestrated by Oona that shifted the whole plane between Lorwyn and Shadowmoor about every three hundred years.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pendulum Year",
+   "type": "event",
+   "aliases": [],
+   "description": "The period after Oona's reign ended when the plane began to fuse together.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [
+    "the Mending"
+   ],
+   "description": "An event over forty years ago that healed the entire Multiverse of damage from accumulated time rifts and disrupted the Great Aurora cycle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [
+    "the Invasion"
+   ],
+   "description": "The Phyrexian assault that destroyed the plane's fragile power balance and forced its species to cooperate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [
+    "Great Faerie Oona",
+    "queen and mother of all faeries"
+   ],
+   "description": "The ancient faerie queen who once ruled Lorwyn-Shadowmoor in secret; she was defeated and her body destroyed, but her consciousness remains hidden and recovering.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [
+    "Maralen of the Mornsong"
+   ],
+   "description": "A Mornsong elf created by Oona as a duplicate, who gained sentience, helped defeat Oona and became the new queen of the fae.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf who helped defeat Oona, bound to Maralen by a death pact; he must kill her if Oona returns and can never die until then.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brigid",
+   "type": "character",
+   "aliases": [],
+   "description": "A kithkin who was part of the coalition that defeated Oona.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sygg",
+   "type": "character",
+   "aliases": [],
+   "description": "A merrow who was part of the coalition that defeated Oona.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "A flamekin who was part of the coalition that defeated Oona.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [],
+   "description": "A treefolk sapling who was part of the coalition that defeated Oona.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eirdu",
+   "type": "deity",
+   "aliases": [
+    "incarnation of the sun",
+    "incarnation of Lorwyn"
+   ],
+   "description": "The living embodiment of Lorwyn and symbol of the sun, a massive being that wanders the plane and is worshiped by many.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isilu",
+   "type": "deity",
+   "aliases": [
+    "incarnation of the moon",
+    "incarnation of Shadowmoor"
+   ],
+   "description": "The living embodiment of Shadowmoor and symbol of the moon, a massive being that wanders the plane and is worshiped by many.",
+   "presence": "appears"
+  },
+  {
+   "name": "Worshipers of Eirdu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers who wear sunburst armor and seek to convert the entire plane into Lorwyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Worshipers of Isilu",
+   "type": "faction",
+   "aliases": [
+    "adherents of the moon"
+   ],
+   "description": "Followers who wear moon-motif armor, hold vigils over their dead and seek to convert the entire plane into Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reliquaries",
+   "type": "artifact",
+   "aliases": [
+    "Reliquary of Dawn",
+    "Reliquary of Twilight"
+   ],
+   "description": "Rare sacred items made from pieces of Eirdu or Isilu that let a bearer keep their form and memories across aspects.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crescent of Morningtide",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An ancient relic, empowered by a great elemental, that could bridge the gap between aspects without changing the bearer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kithkin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Small humanoids bound together by the thoughtweft; communal farmers in Lorwyn and insular, paranoid villagers in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thoughtweft",
+   "type": "concept",
+   "aliases": [
+    "mindweft"
+   ],
+   "description": "The empathetic web connecting the minds of all kithkin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hound of Bristlebane",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Shadowmoor kithkin woman who rode a springjack and drove a spear through a Dominus during the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boggarts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin creatures who pursue novel sensations; playful in Lorwyn and ravenous and volatile in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merrow",
+   "type": "faction",
+   "aliases": [],
+   "description": "Merfolk who work as merchants and intermediaries and use glamers; aristocratic in Lorwyn and con artists in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Idealistic lovers of beauty; cruel eugenicists in Lorwyn and protectors of beauty in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Morcant",
+   "type": "character",
+   "aliases": [
+    "High Perfect Morcant"
+   ],
+   "description": "The High Perfect of the Lorwyn elves, who seeks to rally people under elvish authority to end the existence of Shadowmoor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flamekin",
+   "type": "faction",
+   "aliases": [
+    "rimekin",
+    "cinders"
+   ],
+   "description": "Passionate elementals of flame and living stone; rimekin emerged from flamekin after the invasion and cinders are their Shadowmoor form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Faeries",
+   "type": "faction",
+   "aliases": [
+    "fae"
+   ],
+   "description": "Fickle, mischievous pranksters born from Oona who use illusion magic and sustain themselves with dreamstuff.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen Oura",
+   "type": "character",
+   "aliases": [],
+   "description": "A faerie who proclaimed herself queen by mimicking Oona and is worshiped by many Lorwyn faeries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Massive, ancient humanoids who spend much of their time asleep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Treefolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sentient trees with humanoid features, the oldest creatures native to the plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greater elementals",
+   "type": "creature",
+   "aliases": [],
+   "description": "Massive embodiments of ideas and concepts, untamable and beyond good and evil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Changelings",
+   "type": "faction",
+   "aliases": [],
+   "description": "Shapeshifters born in the crystalline cavern Velis Vel; in Shadowmoor they become cruel mimics.",
+   "presence": "appears"
+  },
+  {
+   "name": "Firdoch",
+   "type": "creature",
+   "aliases": [],
+   "description": "Stone creatures that wander the lands, serving the elemental guardians and managing the boundaries between Lorwyn and Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where the untainted elves and allied species made a stand against the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "A narrow mountain valley shielded by glamers where faeries have historically lived and where Maralen now rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawn's Light Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The palace where Perfects cultivate moonglow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilt-Leaf",
+   "type": "location",
+   "aliases": [],
+   "description": "The seat to which elvish fiefdoms are connected as a means of survival.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders who attacked the plane, compleated elves and infected kithkin and faeries.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Oona is defeated and destroyed, ending her control over the cycle of day and night, but her meddling leaves the plane's aspects bleeding into one another.",
+   "participants": [
+    "Oona",
+    "Lorwyn-Shadowmoor"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the queen and mother of all faeries, Oona, had been defeated and destroyed, and her control over the cycle of day and night had ended."
+  },
+  {
+   "summary": "The Great Mending disrupts the Great Aurora cycle, making Oona fear she might be affected.",
+   "participants": [
+    "Oona",
+    "Great Mending",
+    "Great Aurora"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 31,
+   "quote": "This continued until the cycle was disrupted over forty years ago by the Great Mending"
+  },
+  {
+   "summary": "Oona creates a duplicate Maralen and gives it a piece of her soul to preserve her memories.",
+   "participants": [
+    "Oona",
+    "Maralen"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 31,
+   "quote": "she created a duplicate Maralen, a Mornsong elf, and instilled this duplicate with a piece of her soul"
+  },
+  {
+   "summary": "After the Great Aurora turns the plane to Shadowmoor, a coalition of Maralen, Rhys, Brigid, Sygg, Ashling and Colfenor defeats Oona.",
+   "participants": [
+    "Maralen",
+    "Rhys",
+    "Brigid",
+    "Sygg",
+    "Ashling",
+    "Colfenor",
+    "Oona"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 31,
+   "quote": "Oona was defeated by a coalition consisting of Maralen, an elf named Rhys, a kithkin named Brigid, a merrow named Sygg, a flamekin named Ashling, and a treefolk sapling named Colfenor."
+  },
+  {
+   "summary": "Maralen becomes queen of the fae and binds herself to Rhys with a death pact.",
+   "participants": [
+    "Maralen",
+    "Rhys"
+   ],
+   "location": "Glen Elendra",
+   "importance": "major",
+   "paragraph": 31,
+   "quote": "Maralen took on the mantle of queen of the fae and bound herself to Rhys with a death pact."
+  },
+  {
+   "summary": "Pockets of Lorwyn sprout across Shadowmoor, splitting villages and throwing the plane into turmoil.",
+   "participants": [
+    "Lorwyn",
+    "Shadowmoor"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 32,
+   "quote": "Across Shadowmoor, pockets of Lorwyn sprouted up in the darkness."
+  },
+  {
+   "summary": "Eirdu and Isilu awaken from the firmament as the aspects merge.",
+   "participants": [
+    "Eirdu",
+    "Isilu"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 20,
+   "quote": "two great beings awoke from the firmament above the plane: Eirdu, the incarnation of the sun, and Isilu, the incarnation of the moon."
+  },
+  {
+   "summary": "Eclipsed realms begin to appear, as tales emerge of places caught between light and darkness.",
+   "participants": [
+    "Eclipsed realms"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "These areas came to be known as eclipsed realms."
+  },
+  {
+   "summary": "The Phyrexian invasion destroys the plane's power balance and nearly decimates the Lorwyn elves, whose networks of power are turned to Phyrexian use.",
+   "participants": [
+    "Phyrexians",
+    "Elves"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 35,
+   "quote": "The Phyrexian invasion destroyed the fragile power balance of the plane"
+  },
+  {
+   "summary": "Untainted Lorwyn elves ally with the other species and make a stand at Lys Alana.",
+   "participants": [
+    "Elves",
+    "Lys Alana"
+   ],
+   "location": "Lys Alana",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "they were finally able to gain ground and make a stand at Lys Alana."
+  },
+  {
+   "summary": "Shadowmoor boggarts form the vanguard against the invaders, riding cavalry into enemy lines at great cost.",
+   "participants": [
+    "Boggarts",
+    "Phyrexians"
+   ],
+   "location": "Shadowmoor",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "The boggarts formed the vanguard, riding their cavalry into the enemy lines and gutting them from within."
+  },
+  {
+   "summary": "Shadowmoor kithkin lead the last charge that destroys the Phyrexian invaders, then shut themselves in their homes.",
+   "participants": [
+    "Kithkin",
+    "Phyrexians"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "it was the isolationist Shadowmoor kithkin that led the last charge to destroy the invaders."
+  },
+  {
+   "summary": "The Hound of Bristlebane skewers a Dominus with a spear along a branch of the Invasion Tree.",
+   "participants": [
+    "Hound of Bristlebane",
+    "Phyrexians"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 52,
+   "quote": "singlehandedly drove a spear through the body of a Dominus, skewering it from neck to knee"
+  },
+  {
+   "summary": "Lorwyn merrow flee into the deepest parts of the Wanderwine when the Phyrexians attack the water.",
+   "participants": [
+    "Merrow",
+    "Phyrexians"
+   ],
+   "location": "Lorwyn",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "Many were forced to flee into the deepest parts of the Wanderwine."
+  },
+  {
+   "summary": "Shadowmoor merrow escape to the Dark Meanders to wait out the invasion and adapt to their new environment.",
+   "participants": [
+    "Merrow",
+    "Phyrexians"
+   ],
+   "location": "Shadowmoor",
+   "importance": "minor",
+   "paragraph": 84,
+   "quote": "they escaped to the Dark Meanders, tunnels deep under the plane, hoping to wait out the invasion beneath the water."
+  },
+  {
+   "summary": "Many flamekin disappear underground and hibernate; around half later return as rimekin.",
+   "participants": [
+    "Flamekin"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 110,
+   "quote": "with around half of them having returned as rimekin, their hibernation causing a change in forms."
+  },
+  {
+   "summary": "Elvish authority in Lorwyn collapses as the invasion destroys the infrastructure of the power imbalance, letting other species reclaim sovereignty.",
+   "participants": [
+    "Elves",
+    "Phyrexians"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 94,
+   "quote": "This vacuum allowed the other species on the plane to gain ground, clawing back ancestral lands and reclaiming sovereignty."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oona",
+   "relation": "created",
+   "target": "Maralen",
+   "note": "Maralen was created as a duplicate avatar of Oona.",
+   "paragraph": 123,
+   "quote": "Maralen—an avatar of Oona that gained self-awareness—was created"
+  },
+  {
+   "source": "Maralen",
+   "relation": "killed",
+   "target": "Oona",
+   "note": "Maralen defied Oona and ultimately killed her.",
+   "paragraph": 123,
+   "quote": "Maralen defied and ultimately killed Oona to become the new queen of the fae."
+  },
+  {
+   "source": "Maralen",
+   "relation": "leader_of",
+   "target": "Faeries",
+   "note": "Maralen is the new queen of the fae ruling from Glen Elendra.",
+   "paragraph": 124,
+   "quote": "Maralen is the new great faerie who rules from Glen Elendra and stewards the plane."
+  },
+  {
+   "source": "Maralen",
+   "relation": "ally",
+   "target": "Rhys",
+   "note": "Bound by a death pact; Rhys must kill her if Oona returns.",
+   "paragraph": 31,
+   "quote": "If there is ever a sign that Oona might return, Rhys is to kill Maralen."
+  },
+  {
+   "source": "Faeries",
+   "relation": "serves",
+   "target": "Oona",
+   "note": "All faeries came from Oona and gathered secrets and dreamstuff to empower her.",
+   "paragraph": 120,
+   "quote": "Faeries would empower and sustain her by gathering secrets and dreamstuff"
+  },
+  {
+   "source": "Eirdu",
+   "relation": "other",
+   "target": "Lorwyn",
+   "note": "Eirdu is the living embodiment of Lorwyn.",
+   "paragraph": 22,
+   "quote": "Eirdu is the living embodiment of Lorwyn and a symbol of the sun."
+  },
+  {
+   "source": "Isilu",
+   "relation": "other",
+   "target": "Shadowmoor",
+   "note": "Isilu is the living embodiment of Shadowmoor.",
+   "paragraph": 25,
+   "quote": "Isilu is the living embodiment of Shadowmoor and a symbol of the moon."
+  },
+  {
+   "source": "Worshipers of Eirdu",
+   "relation": "serves",
+   "target": "Eirdu",
+   "note": "They worship Eirdu and rally behind its symbols.",
+   "paragraph": 23,
+   "quote": "The worshipers of Eirdu lay claim to all of Lorwyn-Shadowmoor and seek to convert the entire plane into Lorwyn."
+  },
+  {
+   "source": "Worshipers of Isilu",
+   "relation": "serves",
+   "target": "Isilu",
+   "note": "They worship Isilu and rally behind its symbols.",
+   "paragraph": 26,
+   "quote": "The worshipers of Isilu lay claim to all Lorwyn-Shadowmoor and seek to convert the entire plane into Shadowmoor."
+  },
+  {
+   "source": "Worshipers of Eirdu",
+   "relation": "enemy",
+   "target": "Worshipers of Isilu",
+   "note": "Each side seeks to convert the whole plane to its own aspect.",
+   "paragraph": 26,
+   "quote": "seek to convert the entire plane into Shadowmoor"
+  },
+  {
+   "source": "Reliquaries",
+   "relation": "other",
+   "target": "Eirdu",
+   "note": "A Reliquary of Dawn is fashioned from a piece of Eirdu.",
+   "paragraph": 29,
+   "quote": "you must carry a Reliquary of Dawn fashioned from a piece of Eirdu"
+  },
+  {
+   "source": "Kithkin",
+   "relation": "other",
+   "target": "Thoughtweft",
+   "note": "Kithkin minds are bound together by the thoughtweft.",
+   "paragraph": 42,
+   "quote": "They are mentally bound together by the magical thoughtweft."
+  },
+  {
+   "source": "Hound of Bristlebane",
+   "relation": "member_of",
+   "target": "Kithkin",
+   "note": "A young Shadowmoor kithkin woman.",
+   "paragraph": 52,
+   "quote": "The Hound of Bristlebane, a young kithkin woman who rode a springjack mount into battle"
+  },
+  {
+   "source": "Morcant",
+   "relation": "leader_of",
+   "target": "Elves",
+   "note": "High Perfect Morcant is the head of the Lorwyn elves' fiefdoms, who pay tribute to him.",
+   "paragraph": 96,
+   "quote": "each with their own leader at the head who is expected to pay tribute to High Perfect Morcant."
+  },
+  {
+   "source": "Elves",
+   "relation": "enemy",
+   "target": "Boggarts",
+   "note": "Elves slaughtered boggarts for sport.",
+   "paragraph": 61,
+   "quote": "elves frequently and cruelly slaughtered boggarts for sport."
+  },
+  {
+   "source": "Phyrexians",
+   "relation": "enemy",
+   "target": "Kithkin",
+   "note": "Phyrexians infected kithkin and exploited the thoughtweft.",
+   "paragraph": 36,
+   "quote": "infecting kithkin and using the thoughtweft to poison their comrades' minds"
+  },
+  {
+   "source": "Firdoch",
+   "relation": "serves",
+   "target": "Eirdu",
+   "note": "Firdoch serve the elemental guardians of the plane.",
+   "paragraph": 141,
+   "quote": "They serve the elemental guardians of the plane in mysterious ways"
+  },
+  {
+   "source": "Eclipsed realms",
+   "relation": "located_in",
+   "target": "Lorwyn-Shadowmoor",
+   "note": "They form along the borders between aspects.",
+   "paragraph": 18,
+   "quote": "They exist along the borders between aspects"
+  }
+ ],
+ "rejected": []
+}
