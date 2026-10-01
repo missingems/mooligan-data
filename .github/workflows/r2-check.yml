@@ -2,6 +2,8 @@ name: Check R2 access
 
 # Writes a small file with the R2 secrets and reads it back through the
 # public domain, to confirm the token, bucket and custom domain line up.
+# Each run uses its own path: the cache ignores query strings, so ?run= would
+# be served the previous run's copy.
 on: workflow_dispatch
 
 jobs:
@@ -12,14 +14,18 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: auto
       ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      KEY: r2-check/${{ github.run_id }}.json
     steps:
       - name: Upload a check file
         run: |
           echo "{\"checked_at\": \"$(date -u +%FT%TZ)\", \"run\": \"${{ github.run_id }}\"}" > check.json
-          aws s3 cp check.json s3://mtg-meta-data/check.json --endpoint-url "$ENDPOINT" \
+          aws s3 cp check.json "s3://mtg-meta-data/$KEY" --endpoint-url "$ENDPOINT" \
             --content-type application/json --cache-control "no-cache"
       - name: Read it back from data.mooligan.com
         run: |
-          body=$(curl -fsS "https://data.mooligan.com/check.json?run=${{ github.run_id }}")
+          body=$(curl -fsS "https://data.mooligan.com/$KEY")
           echo "$body"
           echo "$body" | grep -q "${{ github.run_id }}"
+      - name: Remove it
+        if: always()
+        run: aws s3 rm "s3://mtg-meta-data/$KEY" --endpoint-url "$ENDPOINT"

@@ -1,0 +1,39 @@
+name: Cloudflare edge
+
+# Puts data.mooligan.com's cost guards in place: the cache rule, Tiered Cache,
+# the rate limit, the state/ block, and r2.dev off (see cloudflare/edge.py).
+# A dry run unless "apply" is ticked. Then checks the guards from outside.
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Make the changes (otherwise only print them)
+        type: boolean
+        default: false
+      requests_per_10s:
+        description: Rate limit per IP, requests per 10 seconds
+        default: "200"
+
+jobs:
+  edge:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Configure
+        run: python cloudflare/edge.py --requests-per-10s "${{ inputs.requests_per_10s }}" ${{ inputs.apply && '--apply' || '' }}
+
+      - name: Check from outside
+        # A second request for the same file should be a cache HIT, with or without a query string,
+        # and state/ should be refused. Rules take a few seconds to reach every data centre.
+        run: |
+          sleep 15
+          status() { curl -sS -o /dev/null -D - "https://data.mooligan.com/$1" | tr -d '\r' | awk -v p="$1" 'NR==1{code=$2} tolower($1)=="cf-cache-status:"{cache=$2} END{printf "%-45s %s %s\n", p, code, cache}'; }
+          status index.json; status index.json
+          status "index.json?x=$RANDOM"
+          status state/deck-ids.json

@@ -20,6 +20,7 @@ GitHub Actions (02:00, 14:00 UTC)
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
 | `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
+| `cloudflare/edge.py`, `.github/workflows/edge.yml` | Manual: puts the domain's cost guards in place on Cloudflare (cache, rate limit, `state/` block, r2.dev off) |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
 ## Published data
@@ -72,6 +73,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 
 - **R2:** the bucket is `mtg-meta-data`, with custom domain `data.mooligan.com` and CORS allowing `https://missingems.github.io` and `http://localhost:8765`.
 - **GitHub secrets:** `R2_ACCOUNT_ID`, and `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` from an account API token with Object Read & Write on that bucket only.
+- **Cost guards:** R2 bills each read that reaches the bucket (10M a month free, then $0.36 a million) and nothing the cache answers. Cloudflare doesn't cache JSON by default, and a query string makes a new cache entry, so `cloudflare/edge.py` adds a cache rule for the host that caches everything, honours each file's `Cache-Control` and ignores query strings; turns on Tiered Cache; limits each IP to 200 requests per 10 seconds; blocks `state/`, which only the scraper reads, through the S3 API; and turns off the bucket's r2.dev URL. Run the **Cloudflare edge** workflow, first as a dry run, then with *apply*. It needs the secret `CLOUDFLARE_API_TOKEN`: a token with Zone Read, Cache Rules Edit, Zone WAF Edit and Zone Settings Edit on `mooligan.com`, and Workers R2 Storage Edit on the account. It changes only the rules it made, found by their `mooligan-data-` ref. R2 has no spending cap, so also set a usage alert under Notifications → Billing in the dashboard.
 - **Website:** GitHub Pages, deployed from `web/` on each push to `main`. It's at https://missingems.github.io/mooligan-data/.
 
 ## Running locally
