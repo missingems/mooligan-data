@@ -1,0 +1,669 @@
+{
+ "page": "stories/side-freedom-2022-03-30",
+ "url": "https://magic.wizards.com/en/news/magic-story/side-freedom-2022-03-30",
+ "title": "The Side of Freedom",
+ "story_date": "2022-03-30",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:35:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien",
+    "Arrow"
+   ],
+   "description": "A planeswalker and hunter who wields an arkbow and is living on New Capenna as an informant for an Obscura spy; she agrees to help Urabrask.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker largely encased in metal who ferries Phyrexian troops and praetors with the Planar Bridge for Elesh Norn while secretly playing both sides.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [
+    "Praetor of the Quiet Furnace"
+   ],
+   "description": "A wounded Phyrexian praetor hiding beneath New Capenna who refuses to submit to Elesh Norn and plans a challenge to her control.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Norn"
+   ],
+   "description": "The praetor who has come to dominate New Phyrexia and wants all life to become Phyrexian under her rule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tyrel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker laboring in New Capenna and joining the Maestros to learn the plane's history; sent by Ajani and feared by Elesh Norn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Navy",
+   "type": "character",
+   "aliases": [],
+   "description": "An Obscura spy who trades information with Vivien in the Mezzio, but is secretly a double agent for the Adversary and tries to kill her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire of the Maestros who recruits Elspeth and takes her to the family's museum.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Adversary",
+   "type": "character",
+   "aliases": [
+    "the boss",
+    "the demon"
+   ],
+   "description": "A planeswalker demon who holds real control over New Capenna's shadows and runs a lounge as a base of operations; this page does not name him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A planeswalker of the Gatewatch who sent Elspeth to New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who fought a Phyrexian praetor on Kaldheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who has pledged himself and his sphere to Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who has pledged himself and his sphere to Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [
+    "Capenna"
+   ],
+   "description": "A plane dominated by a vertical industrial city with three levels (the Caldaia, the Mezzio and Park Heights), ruled by competing crime families and built atop the ruins of an older Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The Phyrexian regime led by the praetors, spreading through the Multiverse and seen as a virus by Vivien.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Praetors",
+   "type": "faction",
+   "aliases": [
+    "the praetors",
+    "praetor"
+   ],
+   "description": "The leaders of New Phyrexia, ferried across planes by Tezzeret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Thanes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian leaders, many of whom have pledged themselves and their spheres to Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Bridge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The glowing, plasma-like device within Tezzeret's chest that transports Phyrexians across planes and wounds them in transit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halo",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A magic substance of New Capenna that grants wild power; Urabrask needs it to study.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Font",
+   "type": "artifact",
+   "aliases": [
+    "Font"
+   ],
+   "description": "A source of Halo guarded by the Cabaretti and moved regularly.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [
+    "Maestro"
+   ],
+   "description": "A vampire crime family of New Capenna; Elspeth joins it and young members begin in its museum in Park Heights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [],
+   "description": "A crime family of New Capenna claiming to rule the shadows and govern the city's secrets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna family that guards the Font and supplies Halo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The group of planeswalkers Ajani represents and that Elspeth is gathering information for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mezzio",
+   "type": "location",
+   "aliases": [],
+   "description": "The middle level of New Capenna, all commotion and indulgence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caldaia",
+   "type": "location",
+   "aliases": [],
+   "description": "The lowest, industrial level of New Capenna, laden with haze and the thrum of industry.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "The top level of New Capenna, of manicured nature and parks; home to the Maestros' museum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quiet Furnace",
+   "type": "location",
+   "aliases": [],
+   "description": "Urabrask's sphere of New Phyrexia, which he refuses to give to Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Angel's Breath",
+   "type": "location",
+   "aliases": [],
+   "description": "A bar on the lower west side of New Capenna that was due a restock of Halo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Crescendo",
+   "type": "event",
+   "aliases": [
+    "Crescendo"
+   ],
+   "description": "An upcoming gathering in New Capenna that Maestros loyal to the Adversary plan to infiltrate and that Vivien expects to start the end of the city as it was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The war in which Vivien and Tezzeret fought on opposite sides.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vivien follows Tezzeret down through the girders beneath New Capenna, wary of him but trusting her gut.",
+   "participants": [
+    "Vivien Reid",
+    "Tezzeret"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Vivien trusted her gut and followed him deeper into the underbelly of this strange, new plane."
+  },
+  {
+   "summary": "At the bottom of the city Vivien notices the ruins of the first Capenna, with claw marks gouged into the stone.",
+   "participants": [
+    "Vivien Reid"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "These ruins must have been the first Capenna."
+  },
+  {
+   "summary": "Tezzeret reveals the glowing Planar Bridge in his chest as a show of trust, and admits it corrupted after carrying the praetors.",
+   "participants": [
+    "Tezzeret",
+    "Vivien Reid",
+    "Planar Bridge"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "\"A show of trust and good faith.\""
+  },
+  {
+   "summary": "Tezzeret tells Vivien he works for Elesh Norn, and Vivien draws her bow on him in hostility.",
+   "participants": [
+    "Tezzeret",
+    "Vivien Reid",
+    "Elesh Norn"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "The bowstring was at her cheek in a breath, her opposite arm outstretched."
+  },
+  {
+   "summary": "Tezzeret admits he is playing both sides: he needs what Norn promised but does not want life destroyed or himself transformed, and Vivien relaxes.",
+   "participants": [
+    "Tezzeret",
+    "Vivien Reid"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "He was playing both sides."
+  },
+  {
+   "summary": "Tezzeret leads Vivien to a wounded Phyrexian, Urabrask, praetor of the Quiet Furnace, in a cavern below the city.",
+   "participants": [
+    "Tezzeret",
+    "Vivien Reid",
+    "Urabrask"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "\"Vivien, meet Urabrask,\" Tezzeret said."
+  },
+  {
+   "summary": "Urabrask accuses Tezzeret of betraying him, and Tezzeret says he has brought a new ally.",
+   "participants": [
+    "Urabrask",
+    "Tezzeret",
+    "Vivien Reid"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "\"You betrayed me,\" Urabrask hissed to Tezzeret."
+  },
+  {
+   "summary": "Urabrask explains he serves no one and will not give Elesh Norn the Quiet Furnace, and says he will lead a challenge to her control.",
+   "participants": [
+    "Urabrask",
+    "Elesh Norn",
+    "Vivien Reid"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 59,
+   "quote": "\"Yes. I will lead a necessary challenge to Norn's control.\""
+  },
+  {
+   "summary": "Vivien agrees to fetch Halo for the recovering Urabrask in exchange for his plan to bring Norn down, and learns the Planar Bridge wounded him.",
+   "participants": [
+    "Vivien Reid",
+    "Urabrask",
+    "Tezzeret"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 68,
+   "quote": "\"You have a deal.\""
+  },
+  {
+   "summary": "Urabrask asks Vivien to find Elspeth, a planeswalker whom Norn fears.",
+   "participants": [
+    "Urabrask",
+    "Vivien Reid",
+    "Elspeth Tyrel",
+    "Elesh Norn"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 73,
+   "quote": "\"Norn fears her. That is all I know.\""
+  },
+  {
+   "summary": "Vivien meets her Obscura contact Navy in the Mezzio, trading information about the Font and the Adversary's lounge while hiding what she knows.",
+   "participants": [
+    "Vivien Reid",
+    "Navy",
+    "The Adversary"
+   ],
+   "location": "Mezzio",
+   "importance": "minor",
+   "paragraph": 92,
+   "quote": "\"Not yet, but I'll find out,\" Vivien lied."
+  },
+  {
+   "summary": "Navy gives Vivien a lead that a woman named Elspeth is taking odd jobs in the Mezzio.",
+   "participants": [
+    "Navy",
+    "Vivien Reid",
+    "Elspeth Tyrel"
+   ],
+   "location": "Mezzio",
+   "importance": "minor",
+   "paragraph": 96,
+   "quote": "\"Oh, I got a lead on your Elspeth character, however.\""
+  },
+  {
+   "summary": "Vivien sees a woman fight off Maestro enforcers in the street and then watches her give her name to the vampire Anhelo.",
+   "participants": [
+    "Vivien Reid",
+    "Elspeth Tyrel",
+    "Anhelo",
+    "Maestros"
+   ],
+   "location": "Mezzio",
+   "importance": "major",
+   "paragraph": 103,
+   "quote": "The woman ignored the gesture, continuing to walk before she said, \"Elspeth.\""
+  },
+  {
+   "summary": "Anhelo takes Elspeth to the Maestros' museum after she agrees to join the family.",
+   "participants": [
+    "Anhelo",
+    "Elspeth Tyrel",
+    "Maestros"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 107,
+   "quote": "Anhelo had taken her right to the Maestros' museum after Elspeth had agreed to join the family"
+  },
+  {
+   "summary": "Vivien goes to the Adversary's lounge hoping Elspeth will arrive as a Maestro, refuses to drink Halo, and sneaks some into a vial.",
+   "participants": [
+    "Vivien Reid",
+    "The Adversary"
+   ],
+   "location": "Mezzio",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "Vivien could sneak some of the Halo out of the lounge and back to Urabrask without arousing suspicion."
+  },
+  {
+   "summary": "Vivien spots Navy slipping out the back and overhears her as a double agent arranging with a Maestro for the Crescendo.",
+   "participants": [
+    "Vivien Reid",
+    "Navy",
+    "Maestros",
+    "The Crescendo"
+   ],
+   "location": "Mezzio",
+   "importance": "major",
+   "paragraph": 127,
+   "quote": "Navy was a double agent."
+  },
+  {
+   "summary": "Vivien hears a deep, vaguely familiar chuckle from a hidden room revealed in the lounge.",
+   "participants": [
+    "Vivien Reid",
+    "The Adversary"
+   ],
+   "location": "Mezzio",
+   "importance": "minor",
+   "paragraph": 128,
+   "quote": "She heard a deep chuckle echo from the back somewhere."
+  },
+  {
+   "summary": "Navy ambushes Vivien outside the lounge with a dagger, saying the boss does not like people sniffing near his doorstep.",
+   "participants": [
+    "Navy",
+    "Vivien Reid",
+    "The Adversary"
+   ],
+   "location": "Mezzio",
+   "importance": "major",
+   "paragraph": 137,
+   "quote": "\"And the boss doesn't like people sniffing this close to his doorstep.\""
+  },
+  {
+   "summary": "Vivien stabs Navy in the gut, tells her to seek the Obscura for help, and takes her notebook.",
+   "participants": [
+    "Vivien Reid",
+    "Navy"
+   ],
+   "location": "Mezzio",
+   "importance": "major",
+   "paragraph": 138,
+   "quote": "with one hand she caught Navy by her forearm."
+  },
+  {
+   "summary": "Using the notebook's note, Vivien waits at a Halo drop-off point in a park for the Maestro collector.",
+   "participants": [
+    "Vivien Reid"
+   ],
+   "location": "Park Heights",
+   "importance": "minor",
+   "paragraph": 147,
+   "quote": "This was the drop off point for Halo, and the bag was waiting just as the memo said it would be."
+  },
+  {
+   "summary": "Vivien intercepts Elspeth at the drop-off and catches her wrist; Elspeth admits she is learning the plane's history and is there on Ajani's behalf.",
+   "participants": [
+    "Vivien Reid",
+    "Elspeth Tyrel",
+    "Ajani Goldmane"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 164,
+   "quote": "\"Ajani sent me.\""
+  },
+  {
+   "summary": "Elspeth says New Capenna might be her home and that she wants to learn how its people beat a threat before.",
+   "participants": [
+    "Elspeth Tyrel",
+    "Vivien Reid"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 158,
+   "quote": "\"It might be my home.\""
+  },
+  {
+   "summary": "Vivien declines to bring Elspeth to Urabrask yet, promising to share information when she has more, and leaves.",
+   "participants": [
+    "Vivien Reid",
+    "Elspeth Tyrel",
+    "Urabrask"
+   ],
+   "location": "Park Heights",
+   "importance": "minor",
+   "paragraph": 173,
+   "quote": "\"When I have something worthwhile.\""
+  },
+  {
+   "summary": "Vivien tells Urabrask she found Elspeth; Urabrask says she is the key and he will wait for her, her spark igniting his people and the Mirrans.",
+   "participants": [
+    "Vivien Reid",
+    "Urabrask",
+    "Elspeth Tyrel"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 181,
+   "quote": "\"She is the key to our success.\""
+  },
+  {
+   "summary": "Vivien resolves to be at the Crescendo where Elspeth will likely be, and learns from Urabrask that the Adversary is a demon planeswalker.",
+   "participants": [
+    "Vivien Reid",
+    "Urabrask",
+    "The Adversary",
+    "The Crescendo"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 188,
+   "quote": "\"Tezzeret mentioned he is a planeswalker, too.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tezzeret",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Works for New Phyrexia under Norn, though secretly playing both sides.",
+   "paragraph": 28,
+   "quote": "\"I was,\" Tezzeret said. \"I am."
+  },
+  {
+   "source": "Urabrask",
+   "relation": "enemy",
+   "target": "Elesh Norn",
+   "note": "Refuses to serve Norn and plans to challenge her control.",
+   "paragraph": 54,
+   "quote": "But I serve no one, and those I lead wish to be left alone."
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "ally",
+   "target": "Urabrask",
+   "note": "Agrees to a deal to help him against Norn.",
+   "paragraph": 68,
+   "quote": "\"You have a deal.\""
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "enemy",
+   "target": "New Phyrexia",
+   "note": "Considers Phyrexia the antithesis of everything she stands for.",
+   "paragraph": 55,
+   "quote": "Phyrexia was the antithesis to all she stood for"
+  },
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Has pledged himself and his sphere to her.",
+   "paragraph": 54,
+   "quote": "Jin-Gitaxias, Vorinclex, and many of the Black Thanes have pledged themselves and their spheres to her grand vision."
+  },
+  {
+   "source": "Urabrask",
+   "relation": "member_of",
+   "target": "Praetors",
+   "note": "Introduced by Tezzeret as a praetor.",
+   "paragraph": 44,
+   "quote": "Praetor of the Quiet Furnace."
+  },
+  {
+   "source": "Navy",
+   "relation": "serves",
+   "target": "The Adversary",
+   "note": "Revealed as a double agent working for the boss.",
+   "paragraph": 127,
+   "quote": "Navy was a double agent."
+  },
+  {
+   "source": "Navy",
+   "relation": "enemy",
+   "target": "Vivien Reid",
+   "note": "Attacks Vivien with a dagger on the boss's behalf.",
+   "paragraph": 137,
+   "quote": "She brought the dagger down toward Vivien's head."
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "other",
+   "target": "Navy",
+   "note": "Stabs Navy in the gut but leaves her a chance to survive.",
+   "paragraph": 138,
+   "quote": "plunged it into the woman's gut."
+  },
+  {
+   "source": "Elspeth Tyrel",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "Joins the Maestros family.",
+   "paragraph": 107,
+   "quote": "after Elspeth had agreed to join the family"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "A vampire who recruits Elspeth.",
+   "paragraph": 102,
+   "quote": "he was part of the Maestros."
+  },
+  {
+   "source": "Elspeth Tyrel",
+   "relation": "serves",
+   "target": "Ajani Goldmane",
+   "note": "Sent by Ajani to gather information about the threat.",
+   "paragraph": 164,
+   "quote": "\"Ajani sent me."
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "ally",
+   "target": "Elspeth Tyrel",
+   "note": "They share motivations about the looming threat.",
+   "paragraph": 159,
+   "quote": "\"And we share motivations.\""
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "other",
+   "target": "Planar Bridge",
+   "note": "The Planar Bridge is within Tezzeret and he uses it to transport Phyrexians across planes.",
+   "paragraph": 18,
+   "quote": "\"The Planar Bridge.\""
+  },
+  {
+   "source": "Mezzio",
+   "relation": "located_in",
+   "target": "New Capenna",
+   "note": "One of the three levels of the city.",
+   "paragraph": 75,
+   "quote": "Of the three levels of New Capenna, the Mezzio was Vivien's least favorite."
+  }
+ ],
+ "rejected": []
+}
