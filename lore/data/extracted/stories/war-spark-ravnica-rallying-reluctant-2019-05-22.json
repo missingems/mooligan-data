@@ -1,0 +1,828 @@
+{
+ "page": "stories/war-spark-ravnica-rallying-reluctant-2019-05-22",
+ "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-rallying-reluctant-2019-05-22",
+ "title": "War of the Spark: Ravnica – Rallying the Reluctant",
+ "story_date": "2019-05-22",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:36:39Z",
+ "storyline": "War of the Spark",
+ "entities": [
+  {
+   "name": "Rat",
+   "type": "character",
+   "aliases": [
+    "Araithia"
+   ],
+   "description": "A small Gateless thief and eavesdropper who follows Kaya and Teyo and still mourns Hekara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Mistress Kaya"
+   ],
+   "description": "The Orzhov guildmaster and planeswalker, who fails to win her guild's full support but gains an honor guard and Bilagru's enforcers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teyo Verada",
+   "type": "character",
+   "aliases": [
+    "Teyo"
+   ],
+   "description": "A young planeswalker and Shieldmage acolyte who stays by Rat and Kaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madame Blaise",
+   "type": "character",
+   "aliases": [],
+   "description": "Kaya's chief servitor at Orzhova.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Matriarch Teysa Karlov",
+    "Matriarch Karlov"
+   ],
+   "description": "The matriarch of the Orzhov's leading oligarch family, who stays in her quarters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Armin Morov",
+   "type": "character",
+   "aliases": [
+    "Pontiff Morov",
+    "Pontiff Armin Morov"
+   ],
+   "description": "A very old human pontiff and Orzhov Triumvirate member who evades Kaya's call to fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slavomir Zoltan",
+   "type": "character",
+   "aliases": [
+    "Tithe-Master Zoltan",
+    "Tithe-Master Slavomir Zoltan"
+   ],
+   "description": "A handsome vampire tithe-master and Triumvirate member who avoids the cost of war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maladola",
+   "type": "character",
+   "aliases": [
+    "Mistress Maladola"
+   ],
+   "description": "An angel, former Boros member and Orzhov chief warrior-executioner who offers an honor guard but defers to the others.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bilagru",
+   "type": "character",
+   "aliases": [
+    "Chief Enforcer Bilagru"
+   ],
+   "description": "A twelve-foot armored giant, chief enforcer of the Church Militant, who commits his enforcers and military to protect Orzhov interests against the Eternals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomik Vrona",
+   "type": "character",
+   "aliases": [
+    "Mister Vrona"
+   ],
+   "description": "Matriarch Karlov's assistant and Kaya's friend, who cannot be found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Master Zarek"
+   ],
+   "description": "The Izzet guildmaster who proposes Operation Desperation and the reconstitution of the Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maree",
+   "type": "character",
+   "aliases": [
+    "Chamberlain Maree"
+   ],
+   "description": "Zarek's goblin second-in-command who says even ninety percent of the guilds is not enough.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Mister Beleren",
+    "the former Living Guildpact"
+   ],
+   "description": "A Gatewatch planeswalker and former Living Guildpact who leads the summit and lays out the problems.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Mister Jura"
+   ],
+   "description": "A Gatewatch planeswalker who rallies the crowd with his vow to retake Ravnica using Blackblade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Mister Goldmane"
+   ],
+   "description": "A Gatewatch planeswalker who reminds Gideon of the Oath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dack Fayden",
+   "type": "character",
+   "aliases": [
+    "Mister Fayden",
+    "Mister Pencil-Mustache-Planeswalker"
+   ],
+   "description": "A psychometrist thief and planeswalker whom Rat has been studying and who attempts to touch Kiora's bident.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [
+    "Miss Rai"
+   ],
+   "description": "A planeswalker in a gold-filigreed dress whom Dack flirts with.",
+   "presence": "appears"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [
+    "Miss Huatli"
+   ],
+   "description": "A planeswalker who counters a minotaur's mockery.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [
+    "Miss Samut"
+   ],
+   "description": "A planeswalker from Amonkhet who volunteers to go back through the portal and warns Bolas is never sated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiora",
+   "type": "character",
+   "aliases": [
+    "Miss Kiora"
+   ],
+   "description": "A planeswalker with a shiny bident.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [
+    "Miss Ballard"
+   ],
+   "description": "A planeswalker who scoffs at the plan to use the portal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [
+    "Mister Ugly-Ob"
+   ],
+   "description": "A sarcastic demon planeswalker whom most avoid, who mocks Jace and Gideon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Miss Longbow",
+   "type": "character",
+   "aliases": [
+    "the archer"
+   ],
+   "description": "A planeswalker with a longbow, from Skalla, who insists that Bolas is never sated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Miss Raven-Hair"
+   ],
+   "description": "The planeswalker controlling the Eternals for Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas",
+    "the dragon"
+   ],
+   "description": "The elder dragon planeswalker invading Ravnica and harvesting planeswalker Sparks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [
+    "Baan"
+   ],
+   "description": "The Azorius guildmaster who has been working with Bolas and guards the Immortal Sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [
+    "Mistress Isperia"
+   ],
+   "description": "The former Azorius guildmaster who was turned to stone and is now a statue.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [
+    "Mistress Vraska"
+   ],
+   "description": "The Golgari guildmaster, absent, who turned Isperia to stone and worked with Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hekara",
+   "type": "character",
+   "aliases": [
+    "Emissary Hekara"
+   ],
+   "description": "The Rakdos emissary who died, for which Rakdos blames the summit leaders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Domri Rade",
+   "type": "character",
+   "aliases": [
+    "Dumb Domri"
+   ],
+   "description": "The Gruul guildmaster and planeswalker harvested by an Eternal after trying to join Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "the Firemind",
+    "Master Niv-Mizzet"
+   ],
+   "description": "The Izzet dragon guildmaster who is dead and left a final stratagem.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorel",
+   "type": "character",
+   "aliases": [
+    "Mister Vorel"
+   ],
+   "description": "The Simic leader who angrily argues planeswalkers brought Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vannifar",
+   "type": "character",
+   "aliases": [
+    "Prime Speaker Vannifar"
+   ],
+   "description": "The Simic guildmaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [
+    "Mistress Aurelia"
+   ],
+   "description": "The Boros guildmaster who agrees that Ravnica must not share Amonkhet's fate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lavinia",
+   "type": "character",
+   "aliases": [
+    "Miss Lavinia"
+   ],
+   "description": "An Azorius officer who disavowed Baan and urges unity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [
+    "Lord Rakdos"
+   ],
+   "description": "The Rakdos guildmaster who declined to send representatives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Triumvirate",
+   "type": "faction",
+   "aliases": [
+    "the Triumvirate"
+   ],
+   "description": "Three Orzhov leaders (Morov, Zoltan, Maladola) who assumed power after the Obzedat's fall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obzedat",
+   "type": "faction",
+   "aliases": [
+    "the Obzedat ghost council"
+   ],
+   "description": "The former Orzhov rulers assassinated by Kaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov",
+    "the Syndicate",
+    "Church Militant"
+   ],
+   "description": "The guild Kaya leads, whose leaders resist her call.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "A guild that attends the summit in force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "A guild that attends the summit in force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "A guild that attends the summit in force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [
+    "the Gatewatch"
+   ],
+   "description": "A league of planeswalkers, led here by Jace and Gideon, sworn to the Oath to stay and fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [
+    "the Eternals",
+    "creepies"
+   ],
+   "description": "Bolas's undead soldiers and God-Eternals marching on the Senate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [
+    "Rakdos"
+   ],
+   "description": "A guild that sends no representative.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "A leaderless guild absent from the summit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "A leaderless guild absent from the summit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "A guild that did not attend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnya"
+   ],
+   "description": "A guild that retreated behind its borders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The guild whose Senate House hosts the summit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cathedral Opulent",
+   "type": "location",
+   "aliases": [
+    "Orzhova"
+   ],
+   "description": "The Orzhov guildhall where Kaya meets the Triumvirate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Senate House",
+   "type": "location",
+   "aliases": [
+    "Senate Hall",
+    "Azorius Senate"
+   ],
+   "description": "The Azorius building hosting the planeswalker and guild summit.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Beacon",
+   "type": "artifact",
+   "aliases": [
+    "Beacon",
+    "Beacon Tower"
+   ],
+   "description": "The Izzet device luring planeswalkers to Ravnica, guarded in Beacon Tower.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Immortal Sun",
+   "type": "artifact",
+   "aliases": [
+    "Immortal Sun"
+   ],
+   "description": "An artifact that traps planeswalkers on Ravnica, in a New Prahv tower guarded by Baan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Gideon's black broadsword, said to have slain one Elder Dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planar Bridge",
+   "type": "concept",
+   "aliases": [
+    "the portal"
+   ],
+   "description": "The portal from Amonkhet that lets an endless Eternal army reach Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Operation Desperation",
+   "type": "concept",
+   "aliases": [],
+   "description": "Niv-Mizzet's final stratagem requiring cooperation from all ten guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The founding pact binding Ravnica's ten guilds, which Zarek wants reconstituted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Samut's home plane, desolated by Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skalla",
+   "type": "plane",
+   "aliases": [],
+   "description": "The archer's home plane, completely destroyed by Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city plane under siege.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kaya reaches Orzhova and asks her chief servitor to rally the Orzhov against Bolas.",
+   "participants": [
+    "Kaya",
+    "Madame Blaise",
+    "Rat",
+    "Teyo Verada"
+   ],
+   "location": "Cathedral Opulent",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "In an attempt to rally the Orzhov to fight Bolas and his Eternals"
+  },
+  {
+   "summary": "Kaya meets the Orzhov Triumvirate, who refuse to commit forces and only offer an honor guard to the Senate.",
+   "participants": [
+    "Kaya",
+    "Armin Morov",
+    "Slavomir Zoltan",
+    "Maladola",
+    "Triumvirate"
+   ],
+   "location": "Cathedral Opulent",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "If our new guildmaster would lead the charge, I'm sure the church executioners would be pleased to provide her with an honor guard"
+  },
+  {
+   "summary": "Chief Enforcer Bilagru offers his enforcers and the Syndicate's military to protect Orzhov investments from the Eternals, and Kaya threatens to forgive all debts.",
+   "participants": [
+    "Bilagru",
+    "Kaya",
+    "Armin Morov"
+   ],
+   "location": "Cathedral Opulent",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "I can render all debt collection moot, by forgiving every single debt this instant."
+  },
+  {
+   "summary": "At the Senate House summit, Rat notes that most guilds are absent, and Rakdos blames the leaders for Hekara's death.",
+   "participants": [
+    "Rat",
+    "Kaya",
+    "Teyo Verada"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "Lord Rakdos blamed Master Zarek, Mistress Kaya, Miss Lavinia, and Mistress Vraska"
+  },
+  {
+   "summary": "Rat learns Domri Rade is dead after his Spark was harvested and that Niv-Mizzet is dead.",
+   "participants": [
+    "Rat",
+    "Domri Rade",
+    "Niv-Mizzet"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 45,
+   "quote": "Turns out he was a Planeswalker and got his Spark harvested by an Eternal."
+  },
+  {
+   "summary": "Zarek and Maree discuss Operation Desperation, requiring all ten guilds.",
+   "participants": [
+    "Ral Zarek",
+    "Maree",
+    "Niv-Mizzet"
+   ],
+   "location": "Senate House",
+   "importance": "minor",
+   "paragraph": 58,
+   "quote": "you'll need cooperation from ten of ten guilds. There can be no exceptions."
+  },
+  {
+   "summary": "Rat overhears Jace defend Vraska's act against Isperia and thinks he may be in love with her; Gideon and Jace affirm their friendship.",
+   "participants": [
+    "Jace Beleren",
+    "Gideon Jura",
+    "Vraska",
+    "Isperia",
+    "Rat"
+   ],
+   "location": "Senate House",
+   "importance": "minor",
+   "paragraph": 71,
+   "quote": "Vraska's vengeance was well earned!"
+  },
+  {
+   "summary": "Jace lays out five problems: the Beacon, the Immortal Sun, the Planar Bridge, Liliana Vess, and Bolas himself.",
+   "participants": [
+    "Jace Beleren",
+    "Gideon Jura",
+    "Samut",
+    "Liliana Vess",
+    "Nicol Bolas"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 91,
+   "quote": "We face a number of problems. Five to be exact."
+  },
+  {
+   "summary": "Jace identifies Liliana Vess as controlling the Eternals for Bolas and says she must be stopped forever, to Gideon's silence.",
+   "participants": [
+    "Jace Beleren",
+    "Liliana Vess",
+    "Gideon Jura"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 105,
+   "quote": "Liliana Vess. She's clearly controlling the Eternals for Bolas."
+  },
+  {
+   "summary": "Gideon adds a sixth problem, protecting ordinary Ravnicans, and Zarek adds a seventh, reconstituting the Guildpact.",
+   "participants": [
+    "Gideon Jura",
+    "Ral Zarek",
+    "Jace Beleren"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 113,
+   "quote": "We need to reconstitute the Guildpact by uniting all ten guilds."
+  },
+  {
+   "summary": "Attendees argue about surrender or hiding, and Vorel blames planeswalkers while the archer and Samut insist Bolas is never sated.",
+   "participants": [
+    "Vorel",
+    "Samut",
+    "Miss Longbow",
+    "Dack Fayden"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 129,
+   "quote": "There is literally nothing left of my world, Skalla, thanks to him."
+  },
+  {
+   "summary": "Gideon, encouraged by Ajani's reminder of the Oath, vows to retake Ravnica with Blackblade and the crowd gathers around him.",
+   "participants": [
+    "Gideon Jura",
+    "Ajani Goldmane",
+    "Blackblade",
+    "Kaya",
+    "Rat",
+    "Teyo Verada"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 135,
+   "quote": "With it, I hereby vow to take back this world. Who's with me?"
+  },
+  {
+   "summary": "An Izzet goblin warns that a God-Eternal with an army is approaching; Jace calls for volunteers for six missions while Zarek asks Kaya to help with Operation Desperation.",
+   "participants": [
+    "Jace Beleren",
+    "Ral Zarek",
+    "Kaya"
+   ],
+   "location": "Senate House",
+   "importance": "major",
+   "paragraph": 139,
+   "quote": "one a' them God-Eternals approaches, at the head of a small army of those undead creepies!"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kaya",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "New guildmaster.",
+   "paragraph": 13,
+   "quote": "his new planeswalking guildmaster"
+  },
+  {
+   "source": "Kaya",
+   "relation": "killed",
+   "target": "Obzedat",
+   "note": "Kaya assassinated the former rulers.",
+   "paragraph": 8,
+   "quote": "Kaya had assassinated its former rulers, the Obzedat ghost council"
+  },
+  {
+   "source": "Bilagru",
+   "relation": "serves",
+   "target": "Kaya",
+   "note": "Pledges his enforcers.",
+   "paragraph": 37,
+   "quote": "I live to serve."
+  },
+  {
+   "source": "Armin Morov",
+   "relation": "member_of",
+   "target": "Triumvirate",
+   "note": "Triumvirate member.",
+   "paragraph": 9,
+   "quote": "Pontiff Armin Morov was a human, the patriarch of the Morov oligarchs."
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Baan is Bolas's pawn.",
+   "paragraph": 98,
+   "quote": "Dovin Baan, who we've learned is a pawn of Nicol Bolas."
+  },
+  {
+   "source": "Aurelia",
+   "relation": "leader_of",
+   "target": "Boros Legion",
+   "note": "Guildmaster.",
+   "paragraph": 51,
+   "quote": "the Boros Legion (led by its guildmaster, Mistress Aurelia)"
+  },
+  {
+   "source": "Vannifar",
+   "relation": "leader_of",
+   "target": "Simic Combine",
+   "note": "Guildmaster, with Vorel leading in the field.",
+   "paragraph": 51,
+   "quote": "his guildmaster, Prime Speaker Vannifar"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "romantic",
+   "target": "Vraska",
+   "note": "Rat suspects he loves her.",
+   "paragraph": 73,
+   "quote": "Mister Beleren was at least a little bit in love with Mistress Vraska."
+  },
+  {
+   "source": "Vraska",
+   "relation": "killed",
+   "target": "Isperia",
+   "note": "She turned Isperia to stone.",
+   "paragraph": 70,
+   "quote": "if Vraska hadn't turned her to stone"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Gideon Jura",
+   "note": "Old friends in the Gatewatch.",
+   "paragraph": 77,
+   "quote": "I'm a little bit ashamed you beat me to it . . . old friend."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "She controls the Eternals for him.",
+   "paragraph": 105,
+   "quote": "She's clearly controlling the Eternals for Bolas."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "killed",
+   "target": "Skalla",
+   "note": "Bolas destroyed the archer's home plane.",
+   "paragraph": 129,
+   "quote": "There is literally nothing left of my world, Skalla, thanks to him."
+  }
+ ],
+ "rejected": []
+}
