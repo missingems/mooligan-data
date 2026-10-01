@@ -128,7 +128,8 @@ def card_pages(cards: Iterable[dict]) -> Dict[str, dict]:
 def scryfall_cards(fetcher: Fetcher) -> Iterator[dict]:
     """Every printing of every card, from Scryfall's default_cards bulk file, streamed a card at a time."""
     listing = json.loads(fetcher.get("https://api.scryfall.com/bulk-data", accept="application/json"))
-    uri = next(item["download_uri"] for item in listing["data"] if item["type"] == "default_cards")
+    item = next(item for item in listing["data"] if item["type"] == "default_cards")
+    uri = item.get("jsonl_download_uri") or item.get("download_uri")
     request = urllib.request.Request(uri, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
     with urllib.request.urlopen(request, timeout=600) as response:
         stream = gzip.GzipFile(fileobj=response) if uri.endswith(".gz") else response

@@ -9,10 +9,6 @@ on:
     branches: [claude/lucid-allen-jjvx9l]
     paths: [lore/sources.json]
 
-concurrency:
-  group: lore-sources
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
@@ -20,6 +16,10 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    # One run per source at a time; a new run of one source doesn't wait on the others.
+    concurrency:
+      group: lore-sources-${{ matrix.source }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
