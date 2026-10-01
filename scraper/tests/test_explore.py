@@ -77,12 +77,12 @@ def test_formats_come_in_the_apps_order_and_skip_what_is_missing():
     assert [(f["format"], f["name"]) for f in explore["formats"]] == [("standard", "Standard"), ("modern", "Modern"), ("vintage", "Vintage")]
 
 
-def test_standings_are_the_top_eight_by_thirty_day_share():
-    entries = [archetype(f"a{n}", n / 10) for n in range(1, 13)]  # 0.1 ... 1.2, in a scrambled order
+def test_standings_are_the_top_sixteen_by_thirty_day_share():
+    entries = [archetype(f"a{n}", n / 10) for n in range(1, 21)]  # 0.1 ... 2.0, in a scrambled order
     entries = entries[6:] + entries[:6]
     standings = modern(meta30=entries)["standings"]
-    assert [s["id"] for s in standings] == ["a12", "a11", "a10", "a9", "a8", "a7", "a6", "a5"]
-    assert standings[0]["share_30d"] == 1.2
+    assert [s["id"] for s in standings] == [f"a{n}" for n in range(20, 4, -1)]
+    assert standings[0]["share_30d"] == 2.0
 
 
 def test_share_is_one_decimal_and_the_seven_day_share_is_null_without_data():
@@ -92,18 +92,18 @@ def test_share_is_one_decimal_and_the_seven_day_share_is_null_without_data():
     assert modern(meta30=[archetype("a", 9.0)])["standings"][0]["share_7d"] is None  # no 7-day window at all
 
 
-def test_each_window_lists_its_own_top_eight_by_its_own_share():
-    month = [archetype(f"a{n}", n / 10, deck_count=n) for n in range(1, 13)]
-    week = [archetype(f"a{n}", (13 - n) / 10, deck_count=100 + n) for n in range(1, 13)]  # the reverse order
+def test_each_window_lists_its_own_top_sixteen_by_its_own_share():
+    month = [archetype(f"a{n}", n / 10, deck_count=n) for n in range(1, 21)]
+    week = [archetype(f"a{n}", (21 - n) / 10, deck_count=100 + n) for n in range(1, 21)]  # the reverse order
     fortnight = week[6:] + week[:6]
     by_window = modern(meta30=month, meta14=fortnight, meta7=week)["standings_by_window"]
     assert list(by_window) == ["7d", "14d", "30d"]
-    assert [s["id"] for s in by_window["30d"]] == ["a12", "a11", "a10", "a9", "a8", "a7", "a6", "a5"]
-    assert [s["id"] for s in by_window["7d"]] == ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
-    assert [s["id"] for s in by_window["14d"]] == ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
+    assert [s["id"] for s in by_window["30d"]] == [f"a{n}" for n in range(20, 4, -1)]
+    assert [s["id"] for s in by_window["7d"]] == [f"a{n}" for n in range(1, 17)]
+    assert [s["id"] for s in by_window["14d"]] == [f"a{n}" for n in range(1, 17)]
     # A window's own share and deck count, never the month's.
-    assert (by_window["7d"][0]["share"], by_window["7d"][0]["deck_count"]) == (1.2, 101)
-    assert (by_window["30d"][0]["share"], by_window["30d"][0]["deck_count"]) == (1.2, 12)
+    assert (by_window["7d"][0]["share"], by_window["7d"][0]["deck_count"]) == (2.0, 101)
+    assert (by_window["30d"][0]["share"], by_window["30d"][0]["deck_count"]) == (2.0, 20)
 
 
 def test_the_thirty_day_list_matches_the_older_standings_field_and_the_field_stays_as_it_was():

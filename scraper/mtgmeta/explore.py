@@ -23,7 +23,7 @@ FORMATS = (
     ("pauper", "Pauper"),
     ("vintage", "Vintage"),
 )
-STANDINGS = 8
+STANDINGS = 16
 KEY_CARDS = 2
 # Results listed in an event's `top`.
 TOP_RESULTS = 3
