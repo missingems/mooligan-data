@@ -1,0 +1,128 @@
+{
+ "page": "profiles/tarkir-plane",
+ "url": "https://magic.wizards.com/en/story/tarkir-plane",
+ "title": "Tarkir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:42:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose present belongs to the dragons, ruled by five legendary dragonlords after Sarkhan Vol changed history.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who travelled back in time and saved Ugin, ensuring dragons' continued existence on Tarkir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "the Spirit Dragon"
+   ],
+   "description": "A planeswalker spirit dragon saved from death by Sarkhan; the dragon tempests feed on his magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Dragon Tempests",
+   "type": "concept",
+   "aliases": [
+    "dragon tempests"
+   ],
+   "description": "Storms that feed on Ugin's magic and birth dragons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Khans",
+   "type": "faction",
+   "aliases": [
+    "khans"
+   ],
+   "description": "The five powerful clan leaders who would have ruled Tarkir in a different present; the dragons hunted them down and destroyed them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Dragonlords",
+   "type": "faction",
+   "aliases": [
+    "five legendary dragonlords"
+   ],
+   "description": "Five legendary dragons who now rule the defeated clans.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sarkhan travels back in time more than a thousand years and saves Ugin from death, ensuring the dragon tempests and thus dragons continue.",
+   "participants": [
+    "Sarkhan Vol",
+    "Ugin",
+    "The Dragon Tempests"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he travelled back in time more than a thousand years to a crucial turning point, and there he saved Planeswalker Ugin, the Spirit Dragon, from death."
+  },
+  {
+   "summary": "With dragons secured, their numbers grow and the tide of the war turns.",
+   "participants": [
+    "The Dragonlords",
+    "The Khans"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "With the dragons' presence secured, draconic numbers grew and soon, the tide of the war turned."
+  },
+  {
+   "summary": "The dragons hunt down and destroy the khans and claim the vacant thrones.",
+   "participants": [
+    "The Dragonlords",
+    "The Khans"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ultimately, the dragons were able to hunt down the khans and destroy them."
+  },
+  {
+   "summary": "The defeated clans come to be ruled by five legendary dragonlords and battle for control of Tarkir on their behalf.",
+   "participants": [
+    "The Dragonlords"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "In this present, the defeated clans are ruled by five legendary dragonlords."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Ugin",
+   "note": "He saved Ugin from death.",
+   "paragraph": 1,
+   "quote": "he saved Planeswalker Ugin, the Spirit Dragon, from death."
+  },
+  {
+   "source": "The Dragonlords",
+   "relation": "enemy",
+   "target": "The Khans",
+   "note": "The dragons destroyed the khans.",
+   "paragraph": 2,
+   "quote": "Ultimately, the dragons were able to hunt down the khans and destroy them."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,526 @@
+{
+ "page": "stories/episode-2-holding-your-breath",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-2-holding-your-breath",
+ "title": "March of the Machine | Episode 2: Holding Your Breath",
+ "story_date": "2023-03-16",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:42:47Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A pyromancer planeswalker who hates waiting and, against the group's advice, decides to go back to New Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "A dryad planeswalker with a fire within her whom Chandra tutors, and who volunteers to help her reach Teferi and the World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seven",
+   "type": "creature",
+   "aliases": [
+    "Seven Trees"
+   ],
+   "description": "Wrenn's tree companion, who cannot lend her the power she needs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A necromancer planeswalker who hosts the safe house and leaves rather than join Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "A planeswalker who coordinates the plan to warn the planes and opposes Chandra's idea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who returned from New Phyrexia and tries to stop Chandra from going back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [
+    "Kaito"
+   ],
+   "description": "A planeswalker who returned from New Phyrexia wounded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tyvar Kell",
+   "type": "character",
+   "aliases": [
+    "Tyvar"
+   ],
+   "description": "A planeswalker who returned from New Phyrexia and describes the corrupted World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker who did not return; Kaito says he became one of them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elf planeswalker whom Chandra loves, reported captured by the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A lithomancer planeswalker taken by the Phyrexians and heading to Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker who ran Jace through and carried the sylex into the Blind Eternities.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker lost to Phyrexia, who killed Jaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker lost to Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [
+    "Jaya"
+   ],
+   "description": "Chandra's mentor, who taught her to control her fire through breathing and who was killed by Ajani.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A time-manipulating planeswalker who is missing but whom Wrenn believes can be reached.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Norn"
+   ],
+   "description": "The Phyrexian leader whose fleshless legions lead the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wanderer",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who is thought to have escaped home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Safe house",
+   "type": "location",
+   "aliases": [
+    "Liliana's cabin"
+   ],
+   "description": "A warded cabin on Dominaria where the planeswalkers wait for news.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vess Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Liliana's manor to be reconstructed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the safe house marsh is.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The compleated plane from which the invasion is launched.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Chandra's home plane of vibrant skies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Roil once showed Chandra nature's turbulent growth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane from which the World Tree essence was stolen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The school Liliana will send word to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [
+    "the tree",
+    "the World Tree",
+    "corrupted World Tree"
+   ],
+   "description": "The Phyrexian World Tree made from stolen Kaldheim essence, used to invade planes; Wrenn insists it is alive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A bomb Elspeth took into the Blind Eternities.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Phyrexian invasion",
+   "type": "event",
+   "aliases": [
+    "the invasion"
+   ],
+   "description": "The Phyrexian assault on the Multiverse that has begun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The compleated horde invading the Multiverse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The planeswalkers wait in Liliana's safe house on Dominaria for two weeks of word from the strike team.",
+   "participants": [
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Vivien Reid",
+    "Wrenn"
+   ],
+   "location": "Safe house",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "For two weeks they'll wait here in one of Liliana's cabins on Dominaria."
+  },
+  {
+   "summary": "Chandra coaches Wrenn on controlling her inner fire and recalls Jaya's teachings and Ajani's killing of Jaya.",
+   "participants": [
+    "Chandra Nalaar",
+    "Wrenn",
+    "Jaya Ballard",
+    "Ajani"
+   ],
+   "location": "Safe house",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "Jaya's dead, Ajani killed her"
+  },
+  {
+   "summary": "Tyvar's arrival heralds the return of survivors from New Phyrexia.",
+   "participants": [
+    "Tyvar Kell",
+    "Kaya",
+    "Kaito Shizuki",
+    "Chandra Nalaar",
+    "Wrenn"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 26,
+   "quote": "the brash war-horn boom of Tyvar's arrival falls like an axe between them"
+  },
+  {
+   "summary": "Kaya, Kaito and Tyvar report that Phyrexia has corrupted the World Tree and is using it to invade the planes.",
+   "participants": [
+    "Kaya",
+    "Kaito Shizuki",
+    "Tyvar Kell",
+    "Chandra Nalaar",
+    "Liliana Vess"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 40,
+   "quote": "They're using it to invade the other planes."
+  },
+  {
+   "summary": "Kaya tells Chandra that the Phyrexians got Nissa.",
+   "participants": [
+    "Kaya",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "They got Nissa."
+  },
+  {
+   "summary": "The survivors reveal Jace did not return, having become one of them, and Nahiri was taken.",
+   "participants": [
+    "Kaito Shizuki",
+    "Kaya",
+    "Tyvar Kell",
+    "Liliana Vess",
+    "Vivien Reid",
+    "Jace Beleren",
+    "Nahiri"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 57,
+   "quote": "He became one of them,"
+  },
+  {
+   "summary": "Kaya explains that Elspeth ran Jace through and took the sylex into the Blind Eternities.",
+   "participants": [
+    "Kaya",
+    "Tyvar Kell",
+    "Elspeth Tirel",
+    "Jace Beleren",
+    "Liliana Vess"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 64,
+   "quote": "Elspeth ran him through, picked up the sylex and planeswalked into the Blind Eternities."
+  },
+  {
+   "summary": "Liliana leaves to send word to Strixhaven, rejecting the story of noble sacrifice.",
+   "participants": [
+    "Liliana Vess"
+   ],
+   "location": "Safe house",
+   "importance": "minor",
+   "paragraph": 69,
+   "quote": "I'm going to send word to Strixhaven."
+  },
+  {
+   "summary": "Chandra proposes returning to New Phyrexia to take down the World Tree, and Kaya, Vivien, Tyvar and Kaito refuse.",
+   "participants": [
+    "Chandra Nalaar",
+    "Kaya",
+    "Vivien Reid",
+    "Tyvar Kell",
+    "Kaito Shizuki"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "There must be some other way to take the World Tree down."
+  },
+  {
+   "summary": "Kaya forbids Chandra from going, warning she would be compleated.",
+   "participants": [
+    "Kaya",
+    "Chandra Nalaar"
+   ],
+   "location": "Safe house",
+   "importance": "minor",
+   "paragraph": 76,
+   "quote": "I can't let you go back."
+  },
+  {
+   "summary": "Chandra erupts in anger when told to abandon people stuck on New Phyrexia and leaves.",
+   "participants": [
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Kaya",
+    "Vivien Reid"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 104,
+   "quote": "I'm not leaving our friends behind."
+  },
+  {
+   "summary": "Chandra confronts Liliana, who says she knows funeral bells and leaves in a blink of inky vapor.",
+   "participants": [
+    "Chandra Nalaar",
+    "Liliana Vess"
+   ],
+   "location": "Safe house",
+   "importance": "major",
+   "paragraph": 113,
+   "quote": "I just know funeral bells when I hear them."
+  },
+  {
+   "summary": "Chandra walks into the marsh and weeps, afraid to planeswalk alone to New Phyrexia.",
+   "participants": [
+    "Chandra Nalaar"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 124,
+   "quote": "Going to New Phyrexia is the right thing to do."
+  },
+  {
+   "summary": "Wrenn joins Chandra, saying the World Tree is alive and that she can reach Teferi with Chandra's fire and the World Tree's power.",
+   "participants": [
+    "Wrenn",
+    "Chandra Nalaar",
+    "Seven",
+    "Teferi"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 146,
+   "quote": "The others were wrong—that tree is alive."
+  },
+  {
+   "summary": "Chandra, Wrenn and Seven leave to head for New Phyrexia while unseen watchers observe them.",
+   "participants": [
+    "Chandra Nalaar",
+    "Wrenn",
+    "Seven"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 150,
+   "quote": "Let's head out."
+  },
+  {
+   "summary": "Unseen watchers declare they are there to witness the beginning of the end.",
+   "participants": [
+    "Chandra Nalaar",
+    "Wrenn"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 156,
+   "quote": "We are here to witness the beginning of the end."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandra Nalaar",
+   "relation": "mentor_of",
+   "target": "Wrenn",
+   "note": "Chandra coaches Wrenn on controlling her fire",
+   "paragraph": 20,
+   "quote": "feeling like it's the thing a mentor should do"
+  },
+  {
+   "source": "Jaya Ballard",
+   "relation": "mentor_of",
+   "target": "Chandra Nalaar",
+   "note": "taught her breathing to control fire",
+   "paragraph": 15,
+   "quote": "Jaya used to tell her that to calm her down when things got bad"
+  },
+  {
+   "source": "Ajani",
+   "relation": "killed",
+   "target": "Jaya Ballard",
+   "note": "Chandra says Ajani killed Jaya",
+   "paragraph": 16,
+   "quote": "Jaya's dead, Ajani killed her"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "ally",
+   "target": "Nissa Revane",
+   "note": "close friend whom Chandra refuses to give up on",
+   "paragraph": 92,
+   "quote": "It's as easy to imagine Nissa here as it is to call fire."
+  },
+  {
+   "source": "Wrenn",
+   "relation": "ally",
+   "target": "Seven",
+   "note": "Seven is her companion who has done so much for her",
+   "paragraph": 141,
+   "quote": "Seven has done so much for me"
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "killed",
+   "target": "Jace Beleren",
+   "note": "ran him through to stop the sylex",
+   "paragraph": 64,
+   "quote": "Elspeth ran him through"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "the two have a mutual understanding",
+   "paragraph": 117,
+   "quote": "the two of them had always understood not to ask that of each other"
+  }
+ ],
+ "rejected": []
+}
