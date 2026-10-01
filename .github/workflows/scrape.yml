@@ -113,6 +113,9 @@ jobs:
           if [ -d work/popular-cards ]; then
             cp work/popular-cards "$R2/popular-cards" --recursive --cache-control "public, max-age=300"
           fi
+          if [ -d work/breakouts ]; then
+            cp work/breakouts "$R2/breakouts" --recursive --cache-control "public, max-age=300"
+          fi
           # From the catalog's price history and Scryfall's printings, with nothing pointing at them.
           if [ -d work/movers ]; then
             cp work/movers "$R2/movers" --recursive --cache-control "public, max-age=300"
