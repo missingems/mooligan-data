@@ -32,6 +32,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
 - `decks/{id}.json` holds one decklist per file, cached for good.
 - `cards/{slug}.json` says where a card is played, across every format, with links to decks, plus its Commander usage from EDHREC.
+- `popular-cards/{format}.json` ranks the cards a format's dated decks play over the last 7, 14 and 30 days, mainboard by kind of card and sideboard apart, basics left out, with each card's trend.
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
 

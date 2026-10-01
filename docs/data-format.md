@@ -12,6 +12,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `decks/{deck_id}.json` | One decklist. Never changes once published | `max-age=31536000, immutable` |
 | `cards/{slug}.json` | Where one card is played, across every format | `max-age=300` |
 | `cards/index.json` | Every card played, with the formats it appears in | `max-age=300` |
+| `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
@@ -330,6 +331,44 @@ A card also carries an `edh` section when EDHREC has Commander data for it:
 ```
 
 Each entry also carries `"edh": true` when that card has Commander data. Useful for showing "played in Modern and Legacy" without fetching each card page, and for knowing whether a card page exists at all.
+
+## `popular-cards/{format}.json`
+
+One file per format a run built, written with the snapshots: the cards that format's decks play most over the last 7, 14 and 30 days, for a "popular cards" screen. Built from the stored decklists and the snapshot's dates, so it is as fresh as the snapshot.
+
+```json
+{
+  "schema": 1,
+  "format": "modern",
+  "generated_at": "2026-10-01T00:52:13Z",
+  "windows": {
+    "7d": {
+      "deck_count": 744,
+      "lists": [
+        {
+          "kind": "all",
+          "cards": [
+            { "name": "Arid Mesa", "oracle_id": "c5acf2a5-…", "type": "land", "decks": 244, "share": 32.8, "copies": 3.0, "trend": null }
+          ]
+        },
+        { "kind": "creature", "cards": [ { "name": "Solitude", "oracle_id": "dcb9c2a7-…", "type": "creature", "decks": 166, "share": 22.3, "copies": 3.8, "trend": null } ] }
+      ]
+    },
+    "14d": { "deck_count": 1670, "lists": [ … ] },
+    "30d": { "deck_count": 7620, "lists": [ … ] }
+  }
+}
+```
+
+- **What counts.** Every stored decklist dated inside the window, once each and unweighted, and `deck_count` is how many that is. A deck's date is its event's (`events[].date` in the snapshot), else its archetype result's (`archetypes[].results[].date`), so decks that only an archetype lists count too; big paper events are published there only. An archetype's featured deck has no date and is left out, and so is a deck dated after today (MTGGoldfish lists events still to be played). A window runs from `generated_at` minus 7, 14 or 30 days to the end of today, the rule behind the top 8s and wins in `explore.json`: as events are dated at midnight UTC, `7d` is today and the six days before it.
+- **Boards.** `all` and every kind list rank by the mainboard, and `sideboard` by the sideboard. A card's **`decks`** is how many decks have at least one copy of it on that board, **`share`** that as a percent of `deck_count` (to one decimal) and **`copies`** the average number of copies in those decks (to one decimal; a card a list names twice is added up).
+- **Basics are left out.** Every card whose front face has the Basic supertype: the five basic lands, Wastes and every Snow-Covered one. Other lands stay.
+- **Lists.** In this order: `all`, `creature`, `planeswalker`, `instant`, `sorcery`, `artifact`, `enchantment`, `battle`, `land`, `sideboard`. A list with no card is left out, so a window with no decks has `"deck_count": 0` and `"lists": []`. `all` has at most 50 cards and every other list at most 25, most **`decks`** first, then most `copies` (as shown), then `name`. A card needs at least 2 decks and at least 1% of `deck_count` on the board the list ranks; a card the scraper's catalog doesn't know isn't listed.
+- **`type`** is the list a card belongs to, from its front face's type line: the first of creature, planeswalker, battle, land, instant, sorcery, artifact and enchantment among the types before the "—". An Artifact, Enchantment or Land Creature is a creature, and an Artifact or Enchantment Land is a land. A double-faced card is its front face: a spell with a land on the back is a spell, an adventure or transform card is its front, "Kindred Instant" is an instant, and a split card is its first half. A card with none of these types is left out.
+- **`name`** is Scryfall's, the front face of any double-faced or adventure card ("Fable of the Mirror-Breaker"), and both halves of a split card ("Fire // Ice"). `oracle_id` is Scryfall's. The slug for `cards/{slug}.json` is built from `name` as in the suggested app flow.
+- **`trend`** is `"up"` or `"down"` when the card's share of the decks on that board has moved against the period just before, and `null` when it has not, or when there are no decks in that earlier period. `7d` is set against days 8 to 14, `14d` against days 15 to 28, and `30d` sets its last 7 days against days 8 to 30. It moved when the share changed by more than 5 points and a two-proportion z-score is above 3, so a card in a handful of decks does not trend on chance.
+- **Against `cards/{slug}.json`.** That page counts every stored deck of the last 30 days, featured decks included, adds the mainboard and sideboard together, and has one window. This file counts only decks with a date, keeps the boards apart, and has the three windows, so a card's `decks` here will not match its `decks` there.
+- A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.
 
 ## `edh/commanders/{slug}.json`
 
