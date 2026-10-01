@@ -19,7 +19,7 @@ CARDS = [
     {"name": "Unpriced Thing", "oracle_id": "unpriced-oracle", "layout": "normal", "cmc": 0.0, "prices": {"usd": None, "usd_foil": None, "usd_etched": None}},
     {"name": "Lightning Bolt Elemental", "oracle_id": "elemental-oracle", "layout": "normal", "type_line": "Creature — Elemental Landwalker"},
     {"name": "Counterspell", "oracle_id": "counter-oracle", "layout": "normal", "mana_cost": "{U}{U}"},
-    {"name": "Fire // Ice", "oracle_id": "fire-oracle", "layout": "split", "mana_cost": "{1}{R} // {1}{U}",
+    {"name": "Fire // Ice", "oracle_id": "fire-oracle", "layout": "split", "mana_cost": "{1}{R} // {1}{U}", "type_line": "Instant // Instant",
      "card_faces": [{"mana_cost": "{1}{R}"}, {"mana_cost": "{1}{U}"}]},
     {"name": "Bonecrusher Giant // Stomp", "oracle_id": "giant-oracle", "layout": "adventure", "mana_cost": "{2}{R} // {1}{R}",
      "card_faces": [{"mana_cost": "{2}{R}"}, {"mana_cost": "{1}{R}"}]},
@@ -38,7 +38,7 @@ def test_the_catalog_keys_real_cards_by_slug(tmp_path: Path):
 
     catalog = card_catalog(path.as_uri())
 
-    assert catalog["lightning-bolt"] == {"name": "Lightning Bolt", "oracle_id": "bolt-oracle"}
+    assert catalog["lightning-bolt"] == {"name": "Lightning Bolt", "oracle_id": "bolt-oracle", "type_line": "", "layout": "normal"}
     # A double-faced card is keyed by its front face, as decklists write it.
     assert catalog["fable-of-the-mirror-breaker"]["oracle_id"] == "fable-oracle"
     # A reversible card keeps its oracle id on the face.
@@ -52,7 +52,7 @@ def test_the_catalog_marks_a_card_whose_front_face_is_a_land(tmp_path: Path):
 
     catalog = card_catalog(path.as_uri())
 
-    assert catalog["mountain"] == {"name": "Mountain", "oracle_id": "mountain-oracle", "land": True}
+    assert catalog["mountain"] == {"name": "Mountain", "oracle_id": "mountain-oracle", "type_line": "Basic Land — Mountain", "layout": "normal", "land": True}
     assert catalog["dryad-arbor"]["land"] is True  # a creature land is a land
     assert catalog["blightstep-pathway"]["land"] is True
     assert catalog["reversible-land"]["land"] is True  # the type line sits on the face
@@ -68,7 +68,9 @@ def test_the_catalog_keeps_the_price_and_mana_value_that_rank_a_decks_cards(tmp_
 
     catalog = card_catalog(path.as_uri())
 
-    assert catalog["shivan-dragon"] == {"name": "Shivan Dragon", "oracle_id": "dragon-oracle", "price": 12.5, "mana_value": 6.0}
+    assert catalog["shivan-dragon"] == {
+        "name": "Shivan Dragon", "oracle_id": "dragon-oracle", "type_line": "", "layout": "normal", "price": 12.5, "mana_value": 6.0
+    }
     assert catalog["foil-only"]["price"] == 3.25  # no regular price, so the foil one
     assert "price" not in catalog["unpriced-thing"] and catalog["unpriced-thing"]["mana_value"] == 0.0
     assert "price" not in catalog["lightning-bolt"] and "mana_value" not in catalog["lightning-bolt"]  # a record without them
@@ -91,3 +93,22 @@ def test_the_catalog_keeps_the_mana_cost_that_gives_a_card_its_colours(tmp_path:
     # A cost of {0} is a cost; a land or a card with none has no key at all.
     assert catalog["ornithopter"]["mana_cost"] == "{0}"
     assert "mana_cost" not in catalog["mountain"] and "mana_cost" not in catalog["lightning-bolt"]
+
+
+def test_the_catalog_keeps_the_front_faces_type_line_and_the_layout_that_group_popular_cards(tmp_path: Path):
+    path = tmp_path / "oracle-cards.jsonl.gz"
+    path.write_bytes(gzip.compress(b"\n".join(json.dumps(card).encode() for card in CARDS)))
+
+    catalog = card_catalog(path.as_uri())
+
+    assert catalog["dryad-arbor"]["type_line"] == "Land Creature — Forest Dryad"
+    # Only the front face's, as the deck plays it: a spell with a land on the back, or two lands.
+    assert catalog["shatterskull-smashing"]["type_line"] == "Sorcery"
+    assert catalog["blightstep-pathway"]["type_line"] == "Land"
+    assert catalog["fire"]["type_line"] == "Instant"
+    # A card with none on it takes its front face's, and a card with no type line anywhere has "".
+    assert catalog["reversible-land"]["type_line"] == "Land"
+    assert catalog["lightning-bolt"]["type_line"] == ""
+    # The layout is what tells "Fire // Ice" (a split card, both halves) from "Fable // Reflection" (a front face).
+    assert (catalog["fire"]["layout"], catalog["fable-of-the-mirror-breaker"]["layout"]) == ("split", "transform")
+    assert catalog["bonecrusher-giant"]["layout"] == "adventure"

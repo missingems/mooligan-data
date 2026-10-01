@@ -30,7 +30,9 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
 
     What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
     a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any), `"mana_value"`, and
-    `"mana_cost"` (see `_mana_cost`) when the card has one.
+    `"mana_cost"` (see `_mana_cost`) when the card has one. What the popular cards lists group by is always
+    there: `"type_line"` of the front face, which is what a decklist plays ("" for a card with none), and the
+    `"layout"`, which says whether "Fire // Ice" is a split card (both halves are its name) or a double-faced one.
     """
     download = url or _bulk_download_uri()
     catalog: Dict[str, dict] = {}
@@ -48,10 +50,11 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
             # Decklists name a double-faced card by its front face, which is how the slug reads.
             key = slug(card["name"].split("//")[0])
             if key and key not in catalog:
-                entry = {"name": card["name"], "oracle_id": oracle_id}
-                # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
                 front_type = card.get("type_line") or (card.get("card_faces") or [{}])[0].get("type_line") or ""
-                if re.search(r"\bLand\b", front_type.split("//")[0]):
+                front_type = front_type.split("//")[0].strip()
+                entry = {"name": card["name"], "oracle_id": oracle_id, "type_line": front_type, "layout": card.get("layout") or ""}
+                # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
+                if re.search(r"\bLand\b", front_type):
                     entry["land"] = True
                 price = _price(card.get("prices") or {})
                 if price is not None:
