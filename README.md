@@ -27,7 +27,7 @@ GitHub Actions (02:00, 14:00 UTC)
 See [docs/data-format.md](docs/data-format.md). In short:
 
 - `index.json` gives each format's snapshot with a hash, so clients download only when something changed.
-- `explore.json` is a small summary for a landing screen: the top archetypes and the latest events of the six main formats, built from the snapshots.
+- `explore.json` is a small summary for a landing screen: the top archetypes, the colour shares of the whole metagame and the latest events of the six main formats, built from the snapshots.
 - `archetypes/{id}.json` and `events/{id}.json` are one level below `explore.json`: an archetype's shares and recent decks, and an event's whole standings, each row linking to a `decks/{id}.json`.
 - `snapshots/{format}.json` holds the metagame, the last 30 days of events, and every archetype's results.
 - `decks/{id}.json` holds one decklist per file, cached for good.
@@ -43,7 +43,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
    - reads the metagame page (30-day window);
    - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so an archetype stops at the first page with nothing new;
-   - reads every event of the window from MTGGoldfish's tournament search (20 a page, `MAX_SEARCH_PAGES` at most), plus the archetype lists' mentions for multi-format events, and reads up to `MAX_NEW_EVENTS` not yet stored, newest first. Each event is classed by name (Pro Tour, Regional Championship, RCQ, Store Championship, MTGO Challenge or League, other);
+   - reads every event of the window from MTGGoldfish's tournament search (20 a page, `MAX_SEARCH_PAGES` at most), plus the archetype lists' mentions for multi-format events, and reads up to `MAX_NEW_EVENTS` not yet stored, newest first. Each event is classed by name and source (Pro Tour, Regional Championship, RCQ, Store Championship, MTGO Challenge or League, other; a League is MTGO's only when its results came from mtgo.com), and each result keeps the colour pips MTGGoldfish shows beside its deck;
    - downloads new decklists, up to `MAX_NEW_DECKS` a run. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
 
    Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. A refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
