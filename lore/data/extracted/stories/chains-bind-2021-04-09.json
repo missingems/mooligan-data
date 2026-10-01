@@ -1,0 +1,677 @@
+{
+ "page": "stories/chains-bind-2021-04-09",
+ "url": "https://magic.wizards.com/en/news/magic-story/chains-bind-2021-04-09",
+ "title": "The Chains That Bind",
+ "story_date": "2021-04-09",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:36:11Z",
+ "storyline": "Strixhaven: School of Mages",
+ "entities": [
+  {
+   "name": "Dina",
+   "type": "character",
+   "aliases": [],
+   "description": "A dryad Witherbloom student and tutor, the last of her glade after the Brittleblight, who secretly attempts a forbidden resurrection ritual from a chained tome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Killian Lu",
+   "type": "character",
+   "aliases": [
+    "Killian",
+    "young Mister Lu"
+   ],
+   "description": "A Silverquill student, son of Dean Lu, serving detention in Detention Bog, who helps Dina fight the creature she creates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lisette",
+   "type": "character",
+   "aliases": [
+    "Dean Lisette",
+    "Professor Lisette"
+   ],
+   "description": "A dean of Witherbloom College who rescued Dina from the blight-struck glade and mentors her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valentin",
+   "type": "character",
+   "aliases": [
+    "Dean Valentin",
+    "Professor Valentin"
+   ],
+   "description": "A huffy dean of Witherbloom College who lets Dina stay at Strixhaven after her failed experiment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Professor Onyx",
+    "Professor Serafina Onyx",
+    "Onyx"
+   ],
+   "description": "A necromancer teaching at Strixhaven as Professor Onyx, who recovers the book of failed resurrection spells and rots it away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maraff",
+   "type": "character",
+   "aliases": [],
+   "description": "A boastful first-year Quandrix hopeful tutored by Dina, who is made to endure an attercop charm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tivash",
+   "type": "character",
+   "aliases": [
+    "Professor Tivash"
+   ],
+   "description": "A professor whose notes about Maraff Dina reads and whose notebook Dina returns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dean Lu",
+   "type": "character",
+   "aliases": [],
+   "description": "The vocal, charismatic dean of Silverquill and Killian's father.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Ana",
+   "type": "character",
+   "aliases": [],
+   "description": "A strict healing mentor whose life ended in betrayal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vineclinger",
+   "type": "creature",
+   "aliases": [],
+   "description": "A hulking, long-haired, musk-smelling creature that is wounded by the bog creature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bog creature",
+   "type": "creature",
+   "aliases": [
+    "the creature",
+    "the abomination"
+   ],
+   "description": "A newly born wurm-like monster made of swamp matter with an ink-magic heart, created when Dina's ritual is corrupted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pests",
+   "type": "creature",
+   "aliases": [
+    "Bastion",
+    "Vedredi",
+    "Kiara",
+    "Nenioc"
+   ],
+   "description": "A family of wart-ridden creatures who are repositories of magical energy and trust Dina; they are lost in the ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brittleblight",
+   "type": "concept",
+   "aliases": [
+    "the blight"
+   ],
+   "description": "A disease that drains color and life from habitats across Arcavios and destroyed Dina's glade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esis tree",
+   "type": "concept",
+   "aliases": [
+    "esis"
+   ],
+   "description": "A tree with ghostly white feathery leaves required by the ritual, found only as a seedling in Onyx's classroom terrarium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chained tome",
+   "type": "artifact",
+   "aliases": [
+    "the spellbook"
+   ],
+   "description": "A metal-plated book bound by delicate chains holding a mage's failed rituals for life from lifelessness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Witherbloom College",
+   "type": "faction",
+   "aliases": [
+    "Witherbloom"
+   ],
+   "description": "The Strixhaven college of life and death magic, housed in living trees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [
+    "Silverquill College"
+   ],
+   "description": "The ink-magic college of Strixhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prismari",
+   "type": "faction",
+   "aliases": [
+    "Prismari College"
+   ],
+   "description": "The college hosting a party that Dina skips.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The university of mages on Arcavios.",
+   "presence": "appears"
+  },
+  {
+   "name": "Widdershins Hall",
+   "type": "location",
+   "aliases": [
+    "Widdershins"
+   ],
+   "description": "The living-tree main hall of Witherbloom College with labs and an infirmary.",
+   "presence": "appears"
+  },
+  {
+   "name": "Detention Bog",
+   "type": "location",
+   "aliases": [
+    "Sedgemoor",
+    "the bog"
+   ],
+   "description": "A bog where students serve detention and where Dina hides her workshop in the Asenath tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [],
+   "description": "Strixhaven's vast archive of magic where Dina found the tome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Strixhaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dina tutors the arrogant first-year Maraff over tea and he suffers a spider charm.",
+   "participants": [
+    "Dina",
+    "Maraff"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Approximately three and a half minutes later, Maraff was on the ground showing no signs of his earlier braggadocio."
+  },
+  {
+   "summary": "Dina visits Deans Lisette and Valentin in their lab, where they work on a crucible.",
+   "participants": [
+    "Dina",
+    "Lisette",
+    "Valentin"
+   ],
+   "location": "Widdershins Hall",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "Dina entered the laboratory where the deans of Witherbloom College, Professors Lisette and Valentin, gazed into a crucible being heated by a floating blue flame."
+  },
+  {
+   "summary": "Dina declines to attend the Prismari party and says she has work to do.",
+   "participants": [
+    "Dina",
+    "Lisette"
+   ],
+   "location": "Widdershins Hall",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "I have work to do."
+  },
+  {
+   "summary": "Dina goes to her secret workshop in a hollow tree deep in the bog.",
+   "participants": [
+    "Dina"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "It had been one month since she'd first discovered this particular tree, one month since she'd started on her own secret project."
+  },
+  {
+   "summary": "Dina recalls finding the tome in the Biblioplex, the meditations of a mage fascinated by life and death (flashback).",
+   "participants": [
+    "Dina",
+    "Chained tome"
+   ],
+   "location": "Biblioplex",
+   "importance": "minor",
+   "paragraph": 52,
+   "quote": "Part manual, part journal, it captured the meditations of an unnamed mage fascinated by life, death, and the realms locked between them."
+  },
+  {
+   "summary": "Dina finds an esis seedling in Professor Onyx's classroom and takes a root sliver for the ritual.",
+   "participants": [
+    "Dina",
+    "Liliana Vess"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 60,
+   "quote": "Among them was a single seedling whose ghostly white leaves matched that of the esis tree."
+  },
+  {
+   "summary": "Dina remembers the Brittleblight destroying her glade and killing its dryads (flashback).",
+   "participants": [
+    "Dina"
+   ],
+   "location": "Arcavios",
+   "importance": "major",
+   "paragraph": 63,
+   "quote": "When the Brittleblight came for her glade, like it had done for many across Arcavios, few noticed its effects."
+  },
+  {
+   "summary": "Dina recalls that Lisette rescued her from the dying glade (flashback).",
+   "participants": [
+    "Dina",
+    "Lisette"
+   ],
+   "location": "Arcavios",
+   "importance": "minor",
+   "paragraph": 69,
+   "quote": "it was she who had arrived at Dina's glade to rescue her before the sickness could take a permanent hold"
+  },
+  {
+   "summary": "Dina applies her poultice to the pests, asking them to take a short trip for her.",
+   "participants": [
+    "Dina",
+    "Pests"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 71,
+   "quote": "I need you to take a short trip for me."
+  },
+  {
+   "summary": "Dina traces spirals on the pests and begins reciting the ritual.",
+   "participants": [
+    "Dina",
+    "Pests",
+    "Chained tome"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 72,
+   "quote": "She placed the spellbook on the ground, and on each pest, she traced a spiral"
+  },
+  {
+   "summary": "Killian's ink magic cuts a tree and interrupts her concentration.",
+   "participants": [
+    "Killian Lu",
+    "Dina"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 74,
+   "quote": "A snap broke her concentration."
+  },
+  {
+   "summary": "Killian's wave of ink knocks Dina down before he helps her up.",
+   "participants": [
+    "Killian Lu",
+    "Dina"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 80,
+   "quote": "a wave of inky force was rolling toward Dina"
+  },
+  {
+   "summary": "The corrupted ritual turns the pests into a quivering orb of ink magic, which sprouts tendrils into the ground.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Pests",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "major",
+   "paragraph": 85,
+   "quote": "But instead of dead pests, sitting on the ground was a jet-black sphere of ink magic quivering as if alive."
+  },
+  {
+   "summary": "Dina drags Killian away as the trees wail from the corrupted spell.",
+   "participants": [
+    "Dina",
+    "Killian Lu"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "she took the young man's wrist, pulled as hard as she could, and ran away from the site"
+  },
+  {
+   "summary": "Dina recognizes Killian as Dean Lu's son and shows him the forbidden tome.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Dean Lu"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 94,
+   "quote": "Up close, Dina recognized the young man as the son of Dean Lu"
+  },
+  {
+   "summary": "Returning, they find the pest den destroyed and the pests gone.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Pests"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 107,
+   "quote": "There were no signs of the pests, and the only remnants of their den were splinters floating on the surface of the creek."
+  },
+  {
+   "summary": "Killian explains his detention token and that Silverquill lost the Mage Tower match.",
+   "participants": [
+    "Killian Lu"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 109,
+   "quote": "I cost my team that point, and Silverquill lost the Mage Tower match."
+  },
+  {
+   "summary": "Dina and Killian bond over losing their mothers; Dina's glade is gone.",
+   "participants": [
+    "Dina",
+    "Killian Lu"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 128,
+   "quote": "My mother died when I was very young."
+  },
+  {
+   "summary": "They find a wounded vineclinger, and Killian saves Dina from its swipe with ink barbs.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Vineclinger"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 147,
+   "quote": "Acting quickly, Killian pulled her away with one arm"
+  },
+  {
+   "summary": "Dina sees through the vineclinger's memories the new creature that fought and wounded it.",
+   "participants": [
+    "Dina",
+    "Vineclinger",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 150,
+   "quote": "It moved like a great wurm, gouging a path in the soft ground."
+  },
+  {
+   "summary": "Dina deduces the creature is headed toward Sedgemoor and is just newly born.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 153,
+   "quote": "Toward Sedgemoor."
+  },
+  {
+   "summary": "They find the monster coiled around ancient trees, and Killian proposes breaking the ink-magic heart.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 165,
+   "quote": "If we could just access its heart again, we could break the spell"
+  },
+  {
+   "summary": "Dina feeds Killian lionspaw leaves so he can see in the dark.",
+   "participants": [
+    "Dina",
+    "Killian Lu"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 172,
+   "quote": "Lionspaw has side effects on humans,"
+  },
+  {
+   "summary": "Dina uses a balancing spell on the creature, making it brittle and slow at great cost to herself.",
+   "participants": [
+    "Dina",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 181,
+   "quote": "Dina sunk her hand into the dirt a few steps away from the creature and began reciting one of the first spells she learned at Strixhaven."
+  },
+  {
+   "summary": "Killian attacks the weakened creature with ink blades and hammers.",
+   "participants": [
+    "Killian Lu",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "minor",
+   "paragraph": 187,
+   "quote": "With Killian's yell came two sickle-shaped blades of pure ink magic slicing into the body of the creature."
+  },
+  {
+   "summary": "The creature rakes Killian across the chest.",
+   "participants": [
+    "Killian Lu",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "major",
+   "paragraph": 189,
+   "quote": "close enough for it to shift its mass and rake him across the chest with a pair of shadowy claws"
+  },
+  {
+   "summary": "Dina binds Killian with roots, then faces the creature as it crashes down on her.",
+   "participants": [
+    "Dina",
+    "Killian Lu",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "major",
+   "paragraph": 191,
+   "quote": "And then, like a great tidal wave, the creature crashed down upon her."
+  },
+  {
+   "summary": "In a vision of her glade, a dryad asks whether Dina's lost ones would want to be brought back.",
+   "participants": [
+    "Dina"
+   ],
+   "location": "Detention Bog",
+   "importance": "major",
+   "paragraph": 206,
+   "quote": "And how do you know that they want that?"
+  },
+  {
+   "summary": "Dina touches the drop of her blood that bound the spell, breaking it.",
+   "participants": [
+    "Dina",
+    "Bog creature"
+   ],
+   "location": "Detention Bog",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "Dina focused on the single drop of her own blood that had bound the spell together."
+  },
+  {
+   "summary": "Dina wakes in the Widdershins infirmary and learns Killian dragged her there.",
+   "participants": [
+    "Dina",
+    "Valentin",
+    "Killian Lu"
+   ],
+   "location": "Widdershins Hall",
+   "importance": "minor",
+   "paragraph": 219,
+   "quote": "The boy is tenacious, dragging you all the way from the bog with a festering wound."
+  },
+  {
+   "summary": "Valentin lets Dina stay at Strixhaven as a place of second chances.",
+   "participants": [
+    "Valentin",
+    "Dina"
+   ],
+   "location": "Widdershins Hall",
+   "importance": "major",
+   "paragraph": 228,
+   "quote": "Strixhaven is a place for new beginnings."
+  },
+  {
+   "summary": "Professor Onyx grades exams and recalls her strict mentor Lady Ana.",
+   "participants": [
+    "Liliana Vess",
+    "Lady Ana"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 229,
+   "quote": "Professor Serafina Onyx blew air at the flame, causing it to dance."
+  },
+  {
+   "summary": "Lisette returns the chained tome to Onyx, furious.",
+   "participants": [
+    "Lisette",
+    "Liliana Vess",
+    "Chained tome"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 231,
+   "quote": "I believe this is yours"
+  },
+  {
+   "summary": "Lisette threatens to remove Onyx from the school, and Onyx says it can be arranged.",
+   "participants": [
+    "Lisette",
+    "Liliana Vess"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 235,
+   "quote": "And I'll die before I stop trying to get you as far away from this school as I can."
+  },
+  {
+   "summary": "Onyx traces the esis leaf and the tome rots away, leaving only its chains.",
+   "participants": [
+    "Liliana Vess",
+    "Chained tome"
+   ],
+   "location": "Strixhaven",
+   "importance": "major",
+   "paragraph": 238,
+   "quote": "A black rot spread outward from where she touched it, consuming all the pages in the book, leaving nothing but the chains that had bound them."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lisette",
+   "relation": "mentor_of",
+   "target": "Dina",
+   "note": "Lisette brought Dina to Strixhaven and guides her.",
+   "paragraph": 38,
+   "quote": "Ever since she'd brought Dina to Strixhaven two years ago"
+  },
+  {
+   "source": "Dina",
+   "relation": "mentor_of",
+   "target": "Maraff",
+   "note": "Dina tutors Maraff.",
+   "paragraph": 0,
+   "quote": "I don't need tutoring, and definitely not from another student"
+  },
+  {
+   "source": "Lisette",
+   "relation": "leader_of",
+   "target": "Witherbloom College",
+   "note": "A dean of Witherbloom.",
+   "paragraph": 16,
+   "quote": "the deans of Witherbloom College, Professors Lisette and Valentin"
+  },
+  {
+   "source": "Valentin",
+   "relation": "leader_of",
+   "target": "Witherbloom College",
+   "note": "A dean of Witherbloom.",
+   "paragraph": 16,
+   "quote": "the deans of Witherbloom College, Professors Lisette and Valentin"
+  },
+  {
+   "source": "Killian Lu",
+   "relation": "family",
+   "target": "Dean Lu",
+   "note": "Killian is the dean's son.",
+   "paragraph": 94,
+   "quote": "Up close, Dina recognized the young man as the son of Dean Lu"
+  },
+  {
+   "source": "Dina",
+   "relation": "ally",
+   "target": "Killian Lu",
+   "note": "They fight the creature together and call each other friends.",
+   "paragraph": 210,
+   "quote": "We've only just met,"
+  },
+  {
+   "source": "Dina",
+   "relation": "created",
+   "target": "Bog creature",
+   "note": "Her corrupted ritual birthed it.",
+   "paragraph": 190,
+   "quote": "this adversary of her own making"
+  },
+  {
+   "source": "Lisette",
+   "relation": "enemy",
+   "target": "Liliana Vess",
+   "note": "Lisette vows to drive Onyx away.",
+   "paragraph": 235,
+   "quote": "And I'll die before I stop trying to get you as far away from this school as I can."
+  }
+ ],
+ "rejected": []
+}
