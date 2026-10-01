@@ -1,0 +1,177 @@
+{
+ "page": "profiles/alara-plane",
+ "url": "https://magic.wizards.com/en/story/alara-plane",
+ "title": "Alara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:38:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose five shards, once separate worlds each flowing with three colors of mana, have converged into one plane flowing with all five colors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara: an orderly, sunlit kingdom defended in the name of its guardian angels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara: a hegemony of wizards and sphinxes whose forces seek carmot to create more etherium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara: an undead-infested hellscape whose hordes assault other shards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara: a primordial hunting-ground ruled by dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara: a lush jungle paradise whose forces follow the elves' decrees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "An ancient dragon planeswalker who planned the convergence of Alara to feed on its mana and restore his lost power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carmot",
+   "type": "concept",
+   "aliases": [],
+   "description": "An element Esper needs to create more of its dwindling etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Anima",
+   "type": "concept",
+   "aliases": [],
+   "description": "Source of prophetic visions that Naya's forces march out of the jungle to answer.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alara's five shards converge into one plane flowing with all five colors of mana.",
+   "participants": [
+    "Alara",
+    "Bant",
+    "Esper",
+    "Grixis",
+    "Jund",
+    "Naya"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "But now they have converged into one, and the rejoined plane flows with all five colors of mana once more."
+  },
+  {
+   "summary": "As the boundaries dissolve, cultures clash and wars break out between the shards.",
+   "participants": [
+    "Bant",
+    "Esper",
+    "Grixis",
+    "Jund",
+    "Naya"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "As the boundaries between the shards dissolve, cultures clash and wars ensue."
+  },
+  {
+   "summary": "Esper's forces invade the other shards looking for carmot.",
+   "participants": [
+    "Esper",
+    "Carmot"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The forces of Esper invade the other shards looking for carmot, an element necessary to create more of their dwindling etherium."
+  },
+  {
+   "summary": "Grixis undead assault other shards to maim, enslave and drain life energy.",
+   "participants": [
+    "Grixis"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Hordes of Grixis undead mount an assault to maim, enslave, and drain the life energy from other shards."
+  },
+  {
+   "summary": "Naya's forces march out of the jungle searching for answers to the Anima's visions, and Bant's armies fight the horrors crossing their borders.",
+   "participants": [
+    "Naya",
+    "Bant",
+    "The Anima"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "And the armies of Bant clash with the horrors swarming over their borders, defending their homeland in the name of their guardian angels."
+  },
+  {
+   "summary": "Nicol Bolas, who planned the convergence all along, came to Alara to feed on its mana and restore its lost power in one massive ritual.",
+   "participants": [
+    "Nicol Bolas"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "He came to Alara to feed on its rich mana and, in one massive ritual, restore its lost power as part of his multiplanar plan."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bant",
+   "relation": "located_in",
+   "target": "Alara",
+   "note": "One of Alara's five shards.",
+   "paragraph": 1,
+   "quote": "The five shards of Alara were separate worlds for centuries"
+  },
+  {
+   "source": "Esper",
+   "relation": "enemy",
+   "target": "Bant",
+   "note": "Esper invades the other shards, and the shards' legions pummel one another.",
+   "paragraph": 5,
+   "quote": "At each front, the shards' legions pummel one another with powerful magics"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "other",
+   "target": "Alara",
+   "note": "Bolas planned the convergence of Alara and came to feed on its mana.",
+   "paragraph": 6,
+   "quote": "Nicol Bolas, the ancient dragon Planeswalker, planned this all along."
+  }
+ ],
+ "rejected": []
+}
