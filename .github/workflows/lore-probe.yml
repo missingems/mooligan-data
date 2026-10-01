@@ -1,0 +1,33 @@
+name: Lore probe
+
+# Temporary: saves a few pages of the story site so the parser can be written against real HTML.
+on:
+  push:
+    branches: [claude/lucid-allen-jjvx9l]
+    paths: [.github/workflows/lore-probe.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pages
+        run: |
+          mkdir -p lore/probe
+          ua="mooligan-lore/0.1 (+https://data.mooligan.com)"
+          get() { curl -sSL -A "$ua" -o "lore/probe/$1" -w "$1 %{http_code} %{size_download} %{url_effective}\n" "$2" || echo "$1 failed"; }
+          get robots.txt https://magic.wizards.com/robots.txt
+          get sitemap.xml https://magic.wizards.com/sitemap.xml
+          get story.html https://magic.wizards.com/en/story
+          get news-magic-story.html https://magic.wizards.com/en/news/magic-story
+          for f in lore/probe/robots.txt lore/probe/sitemap.xml; do echo "== $f"; head -c 3000 "$f"; echo; done
+          grep -oE 'href="[^"]*"' lore/probe/story.html | sort -u | head -150
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add lore/probe
+          git commit -m "Lore probe: sample pages from the story site" && git push || echo "nothing to commit"
