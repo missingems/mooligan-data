@@ -184,10 +184,11 @@ class SnapshotStore:
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
             duplicates = self._duplicates
-            # The tier comes from the name, so events stored before it existed get it here.
+            # The tier comes from the name and the source, so it is worked out again here for every stored event:
+            # one stored before the tier existed gets it, and one stored under an older rule is put right.
             for event in snapshot["events"].values():
-                event.setdefault("kind", event_kind(event["event_name"]))
                 event.setdefault("source", None)
+                event["kind"] = event_kind(event["event_name"], event["source"])
             events = sorted(
                 (
                     event

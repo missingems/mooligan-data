@@ -209,8 +209,27 @@ def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp
     second.mark_empty_events(["9"])
     second.finish()
     published = json.loads(path.read_text())["events"][0]
-    assert (published["kind"], published["source"]) == ("mtgo_league", None)
+    # A League is Magic Online's only when the source says so, and this one's isn't known yet.
+    assert (published["kind"], published["source"]) == ("other", None)
     assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"9"}
+
+
+def test_finish_puts_the_kind_of_every_stored_event_right_by_the_current_rules(tmp_path):
+    cyrillic_es = "\u0421"
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    for event_id, name, source, kind in (
+        ("1", "Modern League 2026-09-20", "mtgo.com", "mtgo_league"),
+        ("2", "Charlotte Legacy League Season 3 Week 13", "melee.gg", "mtgo_league"),  # stored when every League was Magic Online's
+        ("3", f"Modern Store {cyrillic_es}hampionship", "melee.gg", "other"),  # stored when the lookalike hid "Championship"
+        ("4", "Modern Challenge 32 2026-09-20", "mtgo.com", "mtgo_challenge"),
+    ):
+        first.save_event(Event(event_id, name, "modern", day("2026-09-20"), [EventResult("p", "Eldrazi", "5-0", "1")], "url", kind=kind, source=source))
+    first.finish()
+
+    # A second run reads them back, and publishes them under the rules as they are now.
+    SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).finish()
+    published = json.loads((tmp_path / "snapshots" / "modern.json").read_text())["events"]
+    assert {e["event_id"]: e["kind"] for e in published} == {"1": "mtgo_league", "2": "other", "3": "store_championship", "4": "mtgo_challenge"}
 
 
 def test_decklist_entries_carry_their_oracle_id(tmp_path):

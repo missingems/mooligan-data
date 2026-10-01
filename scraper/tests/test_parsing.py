@@ -157,8 +157,35 @@ def test_event_kinds_come_from_the_name():
     assert event_kind("Modern Store Championship") == "store_championship"
     assert event_kind("Modern Challenge 32 2026-09-21") == "mtgo_challenge"
     assert event_kind("Pauper RC Super Qualifier 2026-09-20") == "rcq"
-    assert event_kind("Modern League 2026-09-22") == "mtgo_league"
+    assert event_kind("Modern League 2026-09-22", "mtgo.com") == "mtgo_league"
     assert event_kind("3ª Etapa CLM Modern") == "other"
+
+
+def test_a_league_is_a_magic_online_league_only_when_the_results_came_from_mtgo_com():
+    from mtgmeta.parsing import event_kind
+
+    assert event_kind("Modern League 2026-09-22", "mtgo.com") == "mtgo_league"
+    # Paper leagues imported from melee.gg are local events, and a league with no known source can't be told.
+    assert event_kind("Charlotte Legacy League Season 3 Week 13", "melee.gg") == "other"
+    assert event_kind("1° TAPPA TIGULLIO LEGACY LEAGUE 2026/27", "melee.gg") == "other"
+    assert event_kind("Modern League 2026-09-22") == "other"
+    # The source decides only the League tier: the others still come from the name.
+    assert event_kind("Modern Challenge 32 2026-09-21", "melee.gg") == "mtgo_challenge"
+    assert event_kind("Legacy League Qualifier", "melee.gg") == "rcq"
+    assert event_kind("Modern Store Championship", "melee.gg") == "store_championship"
+
+
+def test_lookalike_cyrillic_letters_do_not_change_an_events_kind():
+    from mtgmeta.parsing import event_kind, latin_lookalikes
+
+    cyrillic_es = "\u0421"
+    assert cyrillic_es != "C"
+    assert event_kind(f"Modern Store {cyrillic_es}hampionship") == "store_championship"
+    assert event_kind(f"Legacy {cyrillic_es}hallenge 32 2026-09-21") == "mtgo_challenge"
+    assert event_kind("\u0420r\u043e Tour Seattle") == "pro_tour"  # Cyrillic er and o inside "Pro"
+    assert event_kind("\uff33tore Championship") == "store_championship"  # a full-width S
+    assert latin_lookalikes(f"Store {cyrillic_es}hampionship") == "Store Championship"
+    assert latin_lookalikes("Étape 3 Бдзж") == "Étape 3 Бдзж"  # letters with no Latin twin are left alone
 
 
 def test_the_tournament_page_gives_its_kind_and_source():
