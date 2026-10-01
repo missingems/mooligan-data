@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from mtgmeta.explore import build_explore, deck_key_cards
+from mtgmeta.explore import build_explore, deck_key_cards, prestige
 
 NOW = datetime(2026, 9, 30, 2, tzinfo=timezone.utc)
 
@@ -200,7 +200,7 @@ def test_an_event_lists_its_winner_and_publishes_no_deck_lists():
     challenge = event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
     league = event("8", "Modern League 2026-09-29", "2026-09-29", ["5-0", "5-0"], kind="mtgo_league")
     recent = modern(meta30=[archetype("a", 1.0)], events=[challenge, league])["recent_events"]
-    assert set(recent[0]) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "winner_player", "lead", "top"}
+    assert set(recent[0]) == {"id", "name", "date", "kind", "prestige", "source", "url", "deck_count", "result_count", "winner_archetype", "winner_player", "lead", "top"}
     by_url = {e["url"].rsplit("/", 1)[1]: e for e in recent}
     assert by_url["7"]["winner_archetype"] == "Boros Energy" and by_url["7"]["winner_player"] == "player0" and by_url["7"]["deck_count"] == 3
     assert by_url["8"]["winner_archetype"] is None and by_url["8"]["winner_player"] is None and by_url["8"]["deck_count"] == 2
@@ -225,7 +225,7 @@ def test_latest_event_is_the_newest_with_a_winner_else_the_first_else_null():
     challenge = event("5", "Modern Challenge 32 2026-09-28", "2026-09-28", ["1st Place", "2nd Place"])
     latest = modern(meta30=[archetype("a", 1.0)], events=[league, challenge])["latest_event"]
     assert latest["name"] == "Modern Challenge 32" and latest["winner_archetype"] == "Boros Energy"
-    assert set(latest) == {"id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top"}  # no winner_player
+    assert set(latest) == {"id", "name", "date", "kind", "prestige", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top"}  # no winner_player
 
     only_league = modern(meta30=[archetype("a", 1.0)], events=[league])["latest_event"]
     assert only_league["name"] == "Modern League" and only_league["winner_archetype"] is None
@@ -438,6 +438,41 @@ def test_top8_and_wins_of_a_window_are_zero_without_results():
     by_window = modern(meta30=[archetype("a", 5.0)], meta7=[archetype("a", 5.0)])["standings_by_window"]
     assert (by_window["7d"][0]["top8"], by_window["7d"][0]["wins"]) == (0, 0)
     assert (by_window["30d"][0]["top8"], by_window["30d"][0]["wins"]) == (0, 0)
+
+
+def event_of(kind, name, results=8):
+    return {"kind": kind, "event_name": name, "results": [{}] * results}
+
+
+def test_prestige_runs_from_one_to_four():
+    # 4: the top of the game.
+    assert prestige(event_of("pro_tour", "Pro Tour Marvel Super Heroes")) == 4
+    assert prestige(event_of("regional_championship", "Regional Championship - SCG CON Baltimore - Saturday")) == 4
+    # 3: qualifiers, Showcases and the big Challenges.
+    assert prestige(event_of("rcq", "$uper $unday RCQ - Modern - SCG CON Baltimore")) == 3
+    assert prestige(event_of("mtgo_challenge", "Modern Showcase Challenge 2026-09-27")) == 3
+    assert prestige(event_of("mtgo_challenge", "Modern Super Qualifier 2026-09-27")) == 3
+    assert prestige(event_of("mtgo_challenge", "Modern Challenge 64 2026-09-28")) == 3
+    assert prestige(event_of("mtgo_challenge", "Legacy Challenge 96 2026-09-28")) == 3
+    assert prestige(event_of("mtgo_challenge", "Pioneer Challenge 128 2026-09-28")) == 3
+    # 2: the regular Challenges, Store Championships and big local events.
+    assert prestige(event_of("mtgo_challenge", "Modern Challenge 32 2026-09-28")) == 2
+    assert prestige(event_of("mtgo_challenge", "Modern Prelim 2026-09-28")) == 2
+    assert prestige(event_of("mtgo_challenge", "Modern Challenge 640 2026-09-28")) == 2  # not a 64
+    assert prestige(event_of("store_championship", "Modern Store Championship", results=4)) == 2
+    assert prestige(event_of("other", "Big Local Open", results=64)) == 2
+    # 1: everything else, every League included.
+    assert prestige(event_of("other", "Big Local Open", results=63)) == 1
+    assert prestige(event_of("mtgo_league", "Modern League 2026-09-28", results=100)) == 1
+    assert prestige({"event_name": "Charlotte Legacy League", "results": []}) == 1  # no kind is "other"
+
+
+def test_prestige_is_published_on_recent_events_and_the_latest_event():
+    big = event("1", "Modern Challenge 64 2026-09-29", "2026-09-29", ["1st Place"] * 4)
+    league = event("2", "Modern League 2026-09-28", "2026-09-28", ["5-0"], kind="mtgo_league")
+    document = modern(meta30=[archetype("a", 1.0)], events=[big, league])
+    assert {e["id"]: e["prestige"] for e in document["recent_events"]} == {"1": 3, "2": 1}
+    assert document["latest_event"]["prestige"] == 3
 
 
 # Costs for the colour tests: the catalog's `mana_cost`, and "land" for a land.

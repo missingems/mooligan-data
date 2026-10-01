@@ -10,7 +10,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Dict, Optional, Set
 
-from .explore import WINDOWS, Previews, archetype_tiles, deck_key_cards, key_cards, name_without_date
+from .explore import WINDOWS, Previews, archetype_tiles, deck_key_cards, key_cards, name_without_date, prestige
 
 ARCHETYPE_DECKS = 60
 ARCHETYPE_KEY_CARDS = 3
@@ -97,6 +97,7 @@ def build_event_pages(
             "name": name_without_date(event["event_name"], event["date"][:10]),
             "date": event["date"][:10],
             "kind": event.get("kind", "other"),
+            "prestige": prestige(event),
             "source": event.get("source"),
             "url": event["url"],
             "format": snapshot["format"],

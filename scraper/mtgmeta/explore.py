@@ -12,6 +12,7 @@ from typing import Dict, List, Optional, Sequence
 
 from .cards import slug
 from .colors import deck_colors
+from .parsing import latin_lookalikes
 
 # In the order the tab shows them.
 FORMATS = (
@@ -45,7 +46,7 @@ TREND_TENTHS = 10
 # "1st Place" and so on: a league's "5-0" is a record, not a placing.
 _PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
 # The latest event is a recent one without the winner's player.
-_LATEST_KEYS = ("id", "name", "date", "kind", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top")
+_LATEST_KEYS = ("id", "name", "date", "kind", "prestige", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top")
 # Which window's tile an archetype's colours and key cards are read from: the longest first.
 TILE_WINDOWS = ("30d", "14d", "7d")
 
@@ -295,6 +296,25 @@ def _words(text: str) -> set:
     return {word.lower() for word in re.findall(r"[^\W\d_]{4,}", text)}
 
 
+def prestige(event: dict) -> int:
+    """How much an event weighs, from 1 (a League or a small local event) to 4 (a Pro Tour or Regional Championship).
+
+    4 for a Pro Tour, Worlds or Regional Championship; 3 for an RCQ, a Showcase or Super Qualifier, and a
+    Magic Online Challenge of 64, 96 or 128; 2 for the smaller Challenges, a Store Championship, and an event
+    of another kind with 64 results or more; 1 for the rest, which includes every League.
+    """
+    kind, name = event.get("kind", "other"), latin_lookalikes(event["event_name"])
+    if kind in ("pro_tour", "regional_championship"):
+        return 4
+    if kind == "rcq" or re.search(r"\bshowcase\b|\bsuper qualifier\b", name, re.I):
+        return 3
+    if kind == "mtgo_challenge":
+        return 3 if re.search(r"\bchallenge (64|96|128)\b", name, re.I) else 2
+    if kind == "store_championship" or (kind == "other" and len(event["results"]) >= 64):
+        return 2
+    return 1
+
+
 def _places(results: List[dict], since: datetime, now: datetime) -> List[int]:
     """The placings among an archetype's results in the window, leaving out league records and dates yet to come."""
     places = []
@@ -319,6 +339,7 @@ def _recent_events(events: List[dict], now: datetime, previews: Previews) -> Lis
                 "name": name_without_date(event["event_name"], event["date"][:10]),
                 "date": event["date"][:10],
                 "kind": event.get("kind", "other"),
+                "prestige": prestige(event),
                 "source": event.get("source"),
                 "url": event["url"],
                 "deck_count": len(event["results"]),

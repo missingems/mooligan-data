@@ -99,9 +99,9 @@ def test_an_event_page_lists_its_results_in_order_with_two_key_cards_each():
     pages = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=[event]), NOW, {"10"})
     assert list(pages) == ["66947"]
     page = pages["66947"]
-    assert list(page) == ["id", "name", "date", "kind", "source", "url", "format", "results"]
-    assert (page["id"], page["name"], page["date"], page["kind"], page["source"], page["format"]) == (
-        "66947", "Modern Challenge 32", "2026-09-29", "mtgo_challenge", "mtgo.com", "modern",
+    assert list(page) == ["id", "name", "date", "kind", "prestige", "source", "url", "format", "results"]
+    assert (page["id"], page["name"], page["date"], page["kind"], page["prestige"], page["source"], page["format"]) == (
+        "66947", "Modern Challenge 32", "2026-09-29", "mtgo_challenge", 2, "mtgo.com", "modern",
     )
     assert page["url"] == "https://www.mtggoldfish.com/tournament/66947"
     first, second, third = page["results"]
@@ -167,6 +167,17 @@ PIPS = {
     "path-to-exile": {"name": "Path to Exile", "oracle_id": "o-path", "mana_cost": "{W}"},
     "sol-ring": {"name": "Sol Ring", "oracle_id": "o-ring", "mana_cost": "{1}"},
 }
+
+
+def test_an_event_has_its_prestige_by_its_kind_and_name():
+    events = [
+        source_event("1", "2026-09-29", [entry("1st Place", "1")], "Pro Tour Marvel Super Heroes 2026-09-29", "pro_tour"),
+        source_event("2", "2026-09-29", [entry("1st Place", "2")], "Modern Challenge 64 2026-09-29"),
+        source_event("3", "2026-09-29", [entry("1st Place", "3")]),
+        source_event("4", "2026-09-29", [entry("5-0", "4")], "Modern League 2026-09-29", "mtgo_league"),
+    ]
+    pages = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=events), NOW, set())
+    assert {event_id: page["prestige"] for event_id, page in pages.items()} == {"1": 4, "2": 3, "3": 2, "4": 1}
 
 
 def test_an_event_results_colours_are_the_pages_then_the_decks_then_the_archetypes_else_null():
