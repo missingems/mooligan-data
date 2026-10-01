@@ -11,6 +11,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Sequence
 
 from .cards import slug
+from .colors import deck_colors
 
 # In the order the tab shows them.
 FORMATS = (
@@ -58,15 +59,17 @@ def build_explore(
     """The document for every format in `snapshots` (format -> the snapshot's own document).
 
     `decks` (format -> deck id -> the stored `{"m": [[quantity, name], ...], "s": ...}`) and
-    `catalog` (slug -> `{"name", "oracle_id", "land"}`) give a result its key cards from its own
-    deck when its archetype has none; without them that result's `key_cards` stay empty.
+    `catalog` (slug -> `{"name", "oracle_id", "land", "mana_cost", ...}`) give a result its key cards and
+    colours from its own deck when its archetype has none; without them the key cards stay empty and a
+    result's colours come from its archetype's tile.
     """
     formats = []
     for format, name in FORMATS:
         snapshot = snapshots.get(format)
         if snapshot is None:
             continue
-        previews = Previews(snapshot.get("meta", {}), (decks or {}).get(format), catalog)
+        format_decks = (decks or {}).get(format)
+        previews = Previews(snapshot.get("meta", {}), format_decks, catalog, snapshot.get("archetypes", {}))
         events = _recent_events(snapshot.get("events", []), now, previews)
         latest = next((event for event in events if event["winner_archetype"]), events[0] if events else None)
         formats.append(
@@ -74,15 +77,15 @@ def build_explore(
                 "format": format,
                 "name": name,
                 "latest_event": {key: latest[key] for key in _LATEST_KEYS} if latest else None,
-                "standings": _standings(snapshot, now),
-                "standings_by_window": _standings_by_window(snapshot.get("meta", {})),
+                "standings": _standings(snapshot, now, previews),
+                "standings_by_window": _standings_by_window(snapshot.get("meta", {}), previews),
                 "recent_events": events,
             }
         )
     return {"generated_at": _iso(now), "formats": formats}
 
 
-def _standings(snapshot: dict, now: datetime) -> List[dict]:
+def _standings(snapshot: dict, now: datetime, previews: "Previews") -> List[dict]:
     meta = snapshot.get("meta", {})
     month = meta.get("30d", {}).get("archetypes", [])
     week = {archetype["id"]: archetype for archetype in meta.get("7d", {}).get("archetypes", [])}
@@ -101,14 +104,14 @@ def _standings(snapshot: dict, now: datetime) -> List[dict]:
                 "deck_count_30d": archetype.get("deck_count"),
                 "top8_30d": sum(1 for place in places if place <= 8),
                 "wins_30d": sum(1 for place in places if place == 1),
-                "colors": list(archetype.get("colors", [])),
+                "colors": previews.tile_colors(archetype),
                 "key_cards": key_cards(archetype),
             }
         )
     return standings
 
 
-def _standings_by_window(meta: dict) -> Dict[str, List[dict]]:
+def _standings_by_window(meta: dict, previews: "Previews") -> Dict[str, List[dict]]:
     """The top archetypes of each window by that window's own share, and which way each is moving."""
     shares = {
         window: {archetype["id"]: archetype["percentage"] for archetype in meta.get(window, {}).get("archetypes", [])}
@@ -124,7 +127,7 @@ def _standings_by_window(meta: dict) -> Dict[str, List[dict]]:
                 "share": round(archetype["percentage"], 1),
                 "deck_count": archetype.get("deck_count"),
                 "trend": _trend(shares[recent].get(archetype["id"]), shares[baseline].get(archetype["id"])),
-                "colors": list(archetype.get("colors", [])),
+                "colors": previews.tile_colors(archetype),
                 "key_cards": key_cards(archetype),
             }
             for archetype in sorted(archetypes, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]
@@ -166,17 +169,29 @@ def key_cards(archetype: dict, limit: int = KEY_CARDS) -> List[dict]:
 
 
 class Previews:
-    """The key cards a result shows: two cards, so every result has something to draw.
+    """What a result shows of its deck: two key cards, so every result has something to draw, and its colours.
 
-    They are the first two of the result's archetype's tile in the format's metagame. A result
+    The key cards are the first two of the result's archetype's tile in the format's metagame. A result
     whose archetype is untracked, has left the metagame or has no tile gets two cards of its own
     deck instead (see `deck_key_cards`), when that deck's contents are known.
+
+    The colours are the first of: the pips MTGGoldfish showed beside the deck on the event page (stored on the
+    result); the colours its own stored decklist is built in (see `colors.deck_colors`); its archetype's
+    tile colours. See `colors`.
     """
 
-    def __init__(self, meta: dict, decks: Optional[Dict[str, dict]] = None, catalog: Optional[Dict[str, dict]] = None) -> None:
+    def __init__(
+        self,
+        meta: dict,
+        decks: Optional[Dict[str, dict]] = None,
+        catalog: Optional[Dict[str, dict]] = None,
+        archetypes: Optional[Dict[str, dict]] = None,
+    ) -> None:
         self._tiles = archetype_tiles(meta)
         self._decks = decks or {}
         self._catalog = catalog or {}
+        # The snapshot's archetypes by id, for each one's featured deck.
+        self._archetypes = archetypes or {}
 
     def key_cards(self, result: dict) -> List[dict]:
         archetype_id = result.get("archetype_id")
@@ -186,6 +201,48 @@ class Previews:
             return cards
         deck = self._decks.get(result["deck_id"])
         return deck_key_cards(deck.get("m", []), self._catalog, result.get("archetype") or "") if deck else []
+
+    def colors(self, result: dict) -> Optional[List[str]]:
+        """The colours of a result's deck as WUBRG letters in that order; `[]` for a colourless deck, None when unknown.
+
+        In order of preference: the colours scraped from the event page, then those of its stored decklist,
+        then its archetype's (the tile's, or its featured deck's when the tile shows none). A tile with no
+        pips and no featured deck to ask says `[]` when the tile has a `colors` list, and None for a tile
+        from before colours were read.
+        """
+        scraped = result.get("colors")
+        if scraped:
+            return list(scraped)
+        derived = self._deck_colors(result["deck_id"])
+        if derived is not None:
+            return derived
+        archetype_id = result.get("archetype_id")
+        tile = self._tiles.get(archetype_id) if archetype_id else None
+        if tile is None:
+            return None
+        shown = tile.get("colors")
+        if shown:
+            return list(shown)
+        featured = self._featured_colors(archetype_id)
+        if featured is not None:
+            return featured
+        return None if shown is None else []
+
+    def tile_colors(self, tile: dict) -> List[str]:
+        """The colours of an archetype's tile; when it shows none, those its featured deck is built in (which may be `[]`)."""
+        shown = list(tile.get("colors", []))
+        if shown:
+            return shown
+        featured = self._featured_colors(tile["id"])
+        return shown if featured is None else featured
+
+    def _featured_colors(self, archetype_id: str) -> Optional[List[str]]:
+        featured = self._archetypes.get(archetype_id, {}).get("deck_id")
+        return self._deck_colors(featured) if featured else None
+
+    def _deck_colors(self, deck_id: str) -> Optional[List[str]]:
+        deck = self._decks.get(deck_id)
+        return deck_colors(deck.get("m", []) + deck.get("s", []), self._catalog) if deck else None
 
 
 def deck_key_cards(mainboard: Sequence[Sequence], catalog: Dict[str, dict], archetype: str = "", limit: int = KEY_CARDS) -> List[dict]:
@@ -272,6 +329,7 @@ def _top(results: List[dict], previews: Previews) -> List[dict]:
             "archetype_id": result.get("archetype_id"),
             "player": result["player"],
             "deck_id": result["deck_id"],
+            "colors": previews.colors(result),
             "key_cards": previews.key_cards(result),
         }
         for result in ordered

@@ -27,9 +27,11 @@ def build_archetype_pages(
 
     `deck_ids` are the decklists published, which is what each deck's `published` says. A tile
     that shows no key cards takes them from the archetype's featured deck instead, when `decks`
-    (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards.
+    (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards, and
+    one that shows no colours takes the colours of that deck.
     """
     meta = snapshot.get("meta", {})
+    previews = Previews(meta, decks, catalog, snapshot.get("archetypes", {}))
     shares = {
         window: {tile["id"]: tile["percentage"] for tile in meta.get(window, {}).get("archetypes", [])}
         for window, _, _ in WINDOWS
@@ -49,7 +51,7 @@ def build_archetype_pages(
             "id": archetype_id,
             "name": tile["name"],
             "format": snapshot["format"],
-            "colors": list(tile.get("colors", [])),
+            "colors": previews.tile_colors(tile),
             "key_cards": cards,
             "shares": {
                 window: round(shares[window][archetype_id], 1) if archetype_id in shares[window] else None
@@ -81,9 +83,10 @@ def build_event_pages(
     """A page per event in the snapshot dated today or earlier, by event id.
 
     `decks` is the format's stored deck contents and `catalog` the card catalog, as in
-    `build_explore`: a result whose archetype has no key cards takes its own deck's.
+    `build_explore`: a result whose archetype has no key cards takes its own deck's, and its
+    `colors` are the event page's, else its deck's, else its archetype's.
     """
-    previews = Previews(snapshot.get("meta", {}), decks, catalog)
+    previews = Previews(snapshot.get("meta", {}), decks, catalog, snapshot.get("archetypes", {}))
     today = _today(now)
     pages = {}
     for event in snapshot.get("events", []):
@@ -105,6 +108,7 @@ def build_event_pages(
                     "archetype_id": result.get("archetype_id"),
                     "deck_id": result["deck_id"],
                     "published": result["deck_id"] in deck_ids,
+                    "colors": previews.colors(result),
                     "key_cards": previews.key_cards(result),
                 }
                 for result in event["results"]

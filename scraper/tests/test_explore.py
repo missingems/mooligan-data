@@ -250,6 +250,7 @@ def test_the_lead_of_an_event_is_its_winner_with_the_first_two_key_cards_of_its_
         "archetype_id": "a",
         "player": "player0",
         "deck_id": "0",
+        "colors": ["R", "W"],  # its archetype's tile, as no deck is stored
         "key_cards": [{"name": "Card 0", "oracle_id": "o0"}, {"name": "Card 1", "oracle_id": "o1"}],
     }
 
@@ -298,7 +299,7 @@ def test_top_is_the_first_three_results_in_finish_order_and_its_first_is_the_lea
     recent = modern(meta30=metas, events=[challenge])["recent_events"][0]
     top = recent["top"]
     assert [(r["finish"], r["player"], r["deck_id"]) for r in top] == [("1st Place", "player0", "0"), ("2nd Place", "player1", "1"), ("3rd Place", "player2", "2")]
-    assert set(top[0]) == {"finish", "player", "archetype", "archetype_id", "deck_id", "key_cards"}
+    assert set(top[0]) == {"finish", "player", "archetype", "archetype_id", "deck_id", "colors", "key_cards"}
     assert (top[1]["archetype"], top[1]["archetype_id"], top[1]["key_cards"]) == ("Bee", "b", [{"name": "Bee Card", "oracle_id": "b0"}])
     assert (top[2]["archetype"], top[2]["archetype_id"], top[2]["key_cards"]) == ("Other Deck", None, [])  # untracked, and no deck stored
     assert recent["lead"] == top[0] and recent["winner_player"] == "player0"
@@ -410,3 +411,90 @@ def test_a_result_previews_its_deck_with_the_namesake_of_its_archetype_title():
     decks = {"0": stored((4, "Lightning Bolt"), (1, "Amulet of Vigor"), (2, "Primeval Titan"))}
     lead = modern(meta30=[archetype("a", 1.0)], events=[league], decks=decks, catalog=PRICED)["recent_events"][0]["lead"]
     assert [c["oracle_id"] for c in lead["key_cards"]] == ["o-titan", "o-bolt"]
+
+
+# Costs for the colour tests: the catalog's `mana_cost`, and "land" for a land.
+PIPS = {
+    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "o-bolt", "mana_cost": "{R}"},
+    "path-to-exile": {"name": "Path to Exile", "oracle_id": "o-path", "mana_cost": "{W}"},
+    "counterspell": {"name": "Counterspell", "oracle_id": "o-counter", "mana_cost": "{U}{U}"},
+    "sol-ring": {"name": "Sol Ring", "oracle_id": "o-ring", "mana_cost": "{1}"},
+    "mountain": {"name": "Mountain", "oracle_id": "o-mountain", "land": True},
+}
+RED = stored((4, "Lightning Bolt"), (20, "Mountain"))
+WHITE = stored((4, "Path to Exile"))
+BLUE = stored((2, "Counterspell"))
+COLOURLESS = stored((4, "Sol Ring"), (20, "Mountain"))
+
+
+def history(deck_ids, featured=None):
+    """An archetype of the snapshot: its featured deck and one result per deck id."""
+    return {"deck_id": featured, "results": [result("2026-09-28", "1st Place", deck_id=deck_id) for deck_id in deck_ids]}
+
+
+def with_results(*entries):
+    """A Challenge whose results are the given dicts, in finish order, with the fields every result has."""
+    results = [
+        {"finish": f"{n + 1}st Place", "player": f"p{n}", "archetype": "Deck", "archetype_id": None, "deck_id": str(n), **entry}
+        for n, entry in enumerate(entries)
+    ]
+    return {**event("7", "Modern Challenge 32 2026-09-29", "2026-09-29", []), "results": results}
+
+
+def test_a_results_colours_come_from_the_event_page_then_its_decklist_then_its_tile_else_null():
+    challenge = with_results(
+        {"colors": ["U", "B"]},  # the page's pips win over everything below
+        {},  # its decklist: Bolt and Path
+        {},  # a decklist of colourless cards: colourless, not "go and look at the tile"
+        {"archetype_id": "a"},  # no deck stored: its archetype's tile
+        {},  # nothing at all
+    )
+    decks = {"0": RED, "1": stored((4, "Lightning Bolt"), (4, "Path to Exile")), "2": COLOURLESS}
+    recent = modern(meta30=[archetype("a", 5.0, colors=["R", "W"])], events=[challenge], decks=decks, catalog=PIPS)["recent_events"][0]
+    assert [r["colors"] for r in recent["top"]] == [["U", "B"], ["W", "R"], []]
+    assert recent["lead"]["colors"] == ["U", "B"]
+    # The fourth and fifth are past the top three, so look at them through the event page's results.
+    challenge["results"] = challenge["results"][3:]
+    deeper = modern(meta30=[archetype("a", 5.0, colors=["R", "W"])], events=[challenge], decks=decks, catalog=PIPS)["recent_events"][0]["top"]
+    assert [r["colors"] for r in deeper] == [["R", "W"], None]
+
+
+def test_the_page_colours_of_a_result_are_used_as_they_are_and_an_empty_list_there_is_ignored():
+    challenge = with_results({"colors": ["W", "B", "G"], "archetype_id": "a"}, {"colors": []})
+    top = modern(meta30=[archetype("a", 5.0, colors=["R"])], events=[challenge], decks={"1": RED}, catalog=PIPS)["recent_events"][0]["top"]
+    assert top[0]["colors"] == ["W", "B", "G"]
+    assert top[1]["colors"] == ["R"]  # an empty list is no pips shown, so the decklist says
+
+
+def test_a_result_with_a_tile_that_shows_no_colours_takes_its_archetypes_featured_deck_and_else_says_so():
+    challenge = with_results(
+        {"archetype_id": "bare"},
+        {"archetype_id": "plain"},
+        {"archetype_id": "old"},
+    )
+    metas = [archetype("bare", 5.0, colors=[]), archetype("plain", 4.0, colors=[]), {"name": "Old", "id": "old", "percentage": 1.0}]
+    archetypes = {"bare": history([], featured="50"), "plain": history([], featured="51")}
+    decks = {"50": RED}  # "plain"'s featured deck is not stored
+    top = modern(meta30=metas, events=[challenge], decks=decks, catalog=PIPS, archetypes=archetypes)["recent_events"][0]["top"]
+    # The featured deck is red; the tile shows none and there is no deck to ask, so colourless; a tile from before colours were read, unknown.
+    assert [r["colors"] for r in top] == [["R"], [], None]
+
+
+def test_standings_take_the_featured_decks_colours_when_the_tile_shows_none():
+    metas = [
+        archetype("bare", 9.0, colors=[]),
+        archetype("artifacts", 8.0, colors=[]),
+        archetype("shown", 7.0, colors=["U"]),
+        archetype("unstored", 6.0, colors=[]),
+    ]
+    archetypes = {
+        "bare": history([], featured="50"),
+        "artifacts": history([], featured="51"),
+        "shown": history([], featured="50"),  # the tile's colours stay when it has some
+        "unstored": history([], featured="99"),
+    }
+    document = modern(meta30=metas, meta7=metas, archetypes=archetypes, decks={"50": RED, "51": COLOURLESS}, catalog=PIPS)
+    expected = {"bare": ["R"], "artifacts": [], "shown": ["U"], "unstored": []}
+    assert {s["id"]: s["colors"] for s in document["standings"]} == expected
+    assert {s["id"]: s["colors"] for s in document["standings_by_window"]["7d"]} == expected
+    assert {s["id"]: s["colors"] for s in document["standings_by_window"]["30d"]} == expected

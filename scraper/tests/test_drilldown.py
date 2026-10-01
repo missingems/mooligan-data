@@ -105,7 +105,7 @@ def test_an_event_page_lists_its_results_in_order_with_two_key_cards_each():
     )
     assert page["url"] == "https://www.mtggoldfish.com/tournament/66947"
     first, second, third = page["results"]
-    assert list(first) == ["finish", "player", "archetype", "archetype_id", "deck_id", "published", "key_cards"]
+    assert list(first) == ["finish", "player", "archetype", "archetype_id", "deck_id", "published", "colors", "key_cards"]
     assert (first["finish"], first["archetype_id"], first["deck_id"], first["published"]) == ("1st Place", "a", "10", True)
     assert first["key_cards"] == [{"name": "a card 0", "oracle_id": "a-o0"}, {"name": "a card 1", "oracle_id": "a-o1"}]
     # A deck outside a tracked archetype keeps the pilot's title and has no key cards; so does one that left the metagame.
@@ -160,3 +160,41 @@ def test_an_archetype_tile_with_no_key_cards_takes_its_featured_decks_three_card
     assert [c["oracle_id"] for c in pages["b"]["key_cards"]] == ["b-o0", "b-o1", "b-o2"]
     assert pages["c"]["key_cards"] == []
     assert build_archetype_pages(document, NOW, set())["beanstalk-control"]["key_cards"] == []  # without decks and a catalog, as before
+
+
+PIPS = {
+    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "o-bolt", "mana_cost": "{R}"},
+    "path-to-exile": {"name": "Path to Exile", "oracle_id": "o-path", "mana_cost": "{W}"},
+    "sol-ring": {"name": "Sol Ring", "oracle_id": "o-ring", "mana_cost": "{1}"},
+}
+
+
+def test_an_event_results_colours_are_the_pages_then_the_decks_then_the_archetypes_else_null():
+    event = source_event(
+        "66947",
+        "2026-09-29",
+        [
+            {**entry("1st Place", "10"), "colors": ["U", "B"]},  # what the event page showed
+            entry("2nd Place", "11", None, "Rakdos"),  # its decklist
+            entry("3rd Place", "12", None, "Artifacts"),  # a colourless decklist
+            entry("4th Place", "13"),  # no deck stored: its archetype's tile
+            entry("5th Place", "14", None, "Brew"),  # nothing known
+        ],
+    )
+    decks = {"10": {"m": [[4, "Lightning Bolt"]], "s": []}, "11": {"m": [[4, "Lightning Bolt"]], "s": [[2, "Path to Exile"]]}, "12": {"m": [[4, "Sol Ring"]], "s": []}}
+    page = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=[event]), NOW, set(), decks, PIPS)["66947"]
+    assert [r["colors"] for r in page["results"]] == [["U", "B"], ["W", "R"], [], ["R", "W"], None]
+    # Without decks or a catalog the tile and the page are all there is.
+    bare = build_event_pages(snapshot({"30d": [tile("a", 5.0)]}, events=[event]), NOW, set())["66947"]
+    assert [r["colors"] for r in bare["results"]] == [["U", "B"], None, None, ["R", "W"], None]
+
+
+def test_an_archetype_page_takes_its_featured_decks_colours_when_its_tile_shows_none():
+    document = snapshot({"30d": [tile("bare", 5.0, colors=[]), tile("shown", 4.0, colors=["U"]), tile("unstored", 3.0, colors=[])]}, {"bare": [], "shown": [], "unstored": []})
+    document["archetypes"]["bare"]["deck_id"] = "9"
+    document["archetypes"]["shown"]["deck_id"] = "9"
+    document["archetypes"]["unstored"]["deck_id"] = "8"
+    decks = {"9": {"m": [[4, "Lightning Bolt"]], "s": []}}
+    pages = build_archetype_pages(document, NOW, set(), decks, PIPS)
+    assert (pages["bare"]["colors"], pages["shown"]["colors"], pages["unstored"]["colors"]) == (["R"], ["U"], [])
+    assert build_archetype_pages(document, NOW, set())["bare"]["colors"] == []  # without decks and a catalog, as before
