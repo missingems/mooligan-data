@@ -1,0 +1,753 @@
+{
+ "page": "stories/sabotage-2018-01-31",
+ "url": "https://magic.wizards.com/en/news/magic-story/sabotage-2018-01-31",
+ "title": "Sabotage",
+ "story_date": "2018-01-31",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:34:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "the Spirit Dragon",
+    "Spirit Dragon"
+   ],
+   "description": "An ancient planeswalker dragon who plots with Azor to trap Nicol Bolas and is defeated by him on Tarkir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azor",
+   "type": "character",
+   "aliases": [
+    "the Arbiter of Law",
+    "the lawbringer",
+    "the sphinx"
+   ],
+   "description": "A 10,000-year-old sphinx hieromancer who severs his spark to create the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas",
+    "the golden dragon",
+    "the destroyer"
+   ],
+   "description": "An elder dragon planeswalker who defeats Ugin, hunts for Azor's agenda and plans to conquer Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [
+    "Captain"
+   ],
+   "description": "A gorgon planeswalker working for Bolas who sets up a sabotage by having Jace hide her memories.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "the Living Guildpact"
+   ],
+   "description": "A telepath and Living Guildpact who hides Vraska's memories of him to sabotage Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [
+    "the man with the arm"
+   ],
+   "description": "One of Bolas's associates who uses the Planar Bridge and whom Vraska is to call.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon on Ravnica whom Jace suggests to plan the sabotage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alhammarret",
+   "type": "character",
+   "aliases": [],
+   "description": "The sphinx who taught Jace the technique Oubevir's Maneuver.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malcolm",
+   "type": "character",
+   "aliases": [],
+   "description": "A crew member of the Belligerent to whom Jace sends a message.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "A crew member of the Belligerent to whom Jace sends a message.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amelia",
+   "type": "character",
+   "aliases": [],
+   "description": "The crew member Vraska leaves in charge of the Belligerent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Sun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The artifact Azor made by severing his spark, a lock to trap planeswalkers, taken off Ixalan through the Planar Bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planar Bridge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A portal that can transport objects across planes, used by Bolas's agents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaumatic Compass",
+   "type": "artifact",
+   "aliases": [
+    "the compass"
+   ],
+   "description": "The compass Vraska uses to find the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Belligerent",
+   "type": "artifact",
+   "aliases": [
+    "Belligerent"
+   ],
+   "description": "Vraska's ship.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "The city in which Azor sealed himself with the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Azor built the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent where Azor built the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Ugin lured Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Bolas's goal and the home of Jace and Vraska.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Bolas built an army of Eternals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane to which Bolas sent Tezzeret for a portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Jace's friends are.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palace of Justice",
+   "type": "location",
+   "aliases": [],
+   "description": "The building in Azor's city where he and Ugin plotted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tin Street Market",
+   "type": "location",
+   "aliases": [],
+   "description": "A Ravnican market Vraska wants to show Jace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jace's group of planeswalkers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [
+    "army of Eternals"
+   ],
+   "description": "Zombie soldiers treated with lazotep to survive interplanar travel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "Vraska's guild, whom she fears will suffer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "The conquerors who arose from the monastery that first had the Sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "A kingdom to which Azor gifted the Immortal Sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "The people Azor charged with guarding Orazca.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ugin arrives on Azor's newest plane, welcomed by crowds, to meet his associate.",
+   "participants": [
+    "Ugin",
+    "Azor"
+   ],
+   "location": "Palace of Justice",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "His name was Ugin, and his purpose was, and always had been, singular."
+  },
+  {
+   "summary": "Ugin tells Azor he has a plan to free the Multiverse of Nicol Bolas.",
+   "participants": [
+    "Ugin",
+    "Azor",
+    "Nicol Bolas"
+   ],
+   "location": "Palace of Justice",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "Together we will rid the Multiverse of Nicol Bolas."
+  },
+  {
+   "summary": "Azor outlines creating the Immortal Sun on Ixalan to summon Bolas, at the cost of his spark.",
+   "participants": [
+    "Azor",
+    "Ugin",
+    "Immortal Sun"
+   ],
+   "location": "Palace of Justice",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "I will build the Immortal Sun there, on the continent of Torrezon."
+  },
+  {
+   "summary": "Ugin says he will lure Bolas to Tarkir.",
+   "participants": [
+    "Ugin",
+    "Azor",
+    "Tarkir"
+   ],
+   "location": "Palace of Justice",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "I will lure him to Tarkir."
+  },
+  {
+   "summary": "Nicol Bolas interrogates an elf bureaucrat about the lawbringer and learns of Azor.",
+   "participants": [
+    "Nicol Bolas",
+    "Azor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "The sphinx was called Azor."
+  },
+  {
+   "summary": "On another plane Bolas absorbs a lawmage's mind, learning of the plot and killing her.",
+   "participants": [
+    "Nicol Bolas",
+    "Azor",
+    "Ugin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 26,
+   "quote": "listening to him and the Spirit Dragon plot the end of the True Evil"
+  },
+  {
+   "summary": "Azor severs his spark on the shores of Torrezon to create the Immortal Sun.",
+   "participants": [
+    "Azor",
+    "Immortal Sun"
+   ],
+   "location": "Torrezon",
+   "importance": "major",
+   "paragraph": 29,
+   "quote": "severing his spark to create the artifact he called the Immortal Sun."
+  },
+  {
+   "summary": "Bolas appears before Ugin on Tarkir, having followed Azor's clues.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 32,
+   "quote": "when his nemesis appeared before him"
+  },
+  {
+   "summary": "Bolas mocks Azor's statues as the reason he was found.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin",
+    "Azor"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "Your idiot cat is too fond of statues of himself,"
+  },
+  {
+   "summary": "Bolas overpowers Ugin with a swarm of dragon eyes and attackers.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "The Spirit Dragon tried to escape, but was caught in a tempest of fire and claws."
+  },
+  {
+   "summary": "A man out of time preserves Ugin's body in a cocoon of stone.",
+   "participants": [
+    "Ugin"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 39,
+   "quote": "That man preserved Ugin's body in a cocoon of stone and vanished."
+  },
+  {
+   "summary": "Bolas planeswalks away, believing he has won.",
+   "participants": [
+    "Nicol Bolas"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "And Nicol Bolas planeswalked away, never to return, for he had won."
+  },
+  {
+   "summary": "Azor waits in vain for Ugin's signal, left without a spark and a prisoner.",
+   "participants": [
+    "Azor",
+    "Ugin",
+    "Immortal Sun"
+   ],
+   "location": "Torrezon",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "Azor was left without a spark, and his prison without a prisoner."
+  },
+  {
+   "summary": "Azor gifts the Immortal Sun to a monastery and then to the Sun Empire, reclaiming it each time.",
+   "participants": [
+    "Azor",
+    "Legion of Dusk",
+    "Sun Empire",
+    "Immortal Sun"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "He gifted the Immortal Sun to a monastery that would later give rise to the Legion of Dusk"
+  },
+  {
+   "summary": "Azor seals himself in Orazca and charges the River Heralds to guard it.",
+   "participants": [
+    "Azor",
+    "River Heralds",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "this time sealing himself within the walls of Orazca and charging the River Heralds"
+  },
+  {
+   "summary": "Jace and Vraska share everything they know about Bolas.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Nicol Bolas"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 50,
+   "quote": "Jace told Vraska everything he knew about Nicol Bolas."
+  },
+  {
+   "summary": "Jace realizes Vraska is meant to call Tezzeret to retrieve the Immortal Sun through the Planar Bridge.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Tezzeret",
+    "Planar Bridge"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 54,
+   "quote": "It's Tezzeret. He's the one you're meant to call."
+  },
+  {
+   "summary": "They deduce Bolas made a transportable army of Eternals and the Sun would trap anyone who arrives.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Nicol Bolas",
+    "Eternals"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 60,
+   "quote": "He made an army he could transport across the Multiverse."
+  },
+  {
+   "summary": "Jace shows Vraska his memory of breaking into Bolas's mind on Amonkhet.",
+   "participants": [
+    "Jace Beleren",
+    "Nicol Bolas",
+    "Vraska",
+    "Amonkhet"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 68,
+   "quote": "He was trying to break into Nicol Bolas's mind."
+  },
+  {
+   "summary": "Jace saw that Ravnica was Bolas's goal.",
+   "participants": [
+    "Jace Beleren",
+    "Nicol Bolas",
+    "Ravnica"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 69,
+   "quote": "Ravnica was writ large upon the ambition in Nicol Bolas's mind."
+  },
+  {
+   "summary": "Bolas scrambles Jace's memories, but a trap Jace's mind carried sends him to Ixalan.",
+   "participants": [
+    "Nicol Bolas",
+    "Jace Beleren"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 71,
+   "quote": "a part of Jace's mind propelled him from Amonkhet to Ixalan."
+  },
+  {
+   "summary": "Vraska realizes Bolas wants her help to unleash an army on Ravnica.",
+   "participants": [
+    "Vraska",
+    "Nicol Bolas",
+    "Ravnica"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 76,
+   "quote": "He wants to unleash an army."
+  },
+  {
+   "summary": "Vraska asks Jace to take and hide her memories of him so Bolas will not see them.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 94,
+   "quote": "I need you to temporarily take my memories of you."
+  },
+  {
+   "summary": "Jace recognizes the plan is to betray Bolas.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Nicol Bolas"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 99,
+   "quote": "You want to betray Nicol Bolas."
+  },
+  {
+   "summary": "Vraska lays out the plan to accept Bolas's offer of guild leader and wait until Jace restores her memories.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Nicol Bolas"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 103,
+   "quote": "He promised me the title of guild leader."
+  },
+  {
+   "summary": "Jace explains Oubevir's Maneuver can hide the gap in Vraska's memories.",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 109,
+   "quote": "It's a way to smooth over evidence of mental tampering."
+  },
+  {
+   "summary": "They choose Niv-Mizzet as the one to help devise the plan.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Niv-Mizzet"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 113,
+   "quote": "He could challenge Nicol Bolas both physically and mentally"
+  },
+  {
+   "summary": "Jace and Vraska swear oaths to keep her memories safe and to sabotage Bolas when they are returned.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 120,
+   "quote": "I swear to commit my conscious self to his destruction."
+  },
+  {
+   "summary": "Jace says he must meet his friends on Dominaria.",
+   "participants": [
+    "Jace Beleren",
+    "Dominaria"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 126,
+   "quote": "I need to meet my friends on Dominaria."
+  },
+  {
+   "summary": "Jace sends Vraska's message to her crew, leaving Amelia in charge.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Amelia",
+    "Malcolm",
+    "Breeches"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 137,
+   "quote": "Tell them to return to the ship, Amelia's in charge"
+  },
+  {
+   "summary": "Jace promises to call Vraska Captain before restoring her memories.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 146,
+   "quote": "I'll call you Captain."
+  },
+  {
+   "summary": "Vraska invites Jace to a date at Tin Street Market and he accepts.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Tin Street Market"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 157,
+   "quote": "It's a date."
+  },
+  {
+   "summary": "Jace seals Vraska's memories of him in a warded box hidden in her mind.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 168,
+   "quote": "She saw her memories of Jace tied up in a bundle, placed within a box, sealed with an unbreakable ward."
+  },
+  {
+   "summary": "Vraska wakes without her memories of Jace in the empty throne room.",
+   "participants": [
+    "Vraska"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 179,
+   "quote": "How did I get here?"
+  },
+  {
+   "summary": "Vraska casts the spell that opens a violet portal beneath the Immortal Sun, which is pulled to another plane.",
+   "participants": [
+    "Vraska",
+    "Immortal Sun",
+    "Thaumatic Compass"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 184,
+   "quote": "when a violet circle opened up directly beneath the Immortal Sun"
+  },
+  {
+   "summary": "The Immortal Sun is pulled away and Vraska planeswalks off Ixalan.",
+   "participants": [
+    "Vraska",
+    "Immortal Sun",
+    "Ixalan"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 185,
+   "quote": "As the portal closed, Vraska planeswalked away."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ugin",
+   "relation": "ally",
+   "target": "Azor",
+   "note": "Ugin calls Azor his friend and plots with him.",
+   "paragraph": 5,
+   "quote": "Ugin, my friend,"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Ugin",
+   "note": "Bolas defeats Ugin on Tarkir.",
+   "paragraph": 14,
+   "quote": "Together we will rid the Multiverse of Nicol Bolas."
+  },
+  {
+   "source": "Azor",
+   "relation": "created",
+   "target": "Immortal Sun",
+   "note": "Created by severing his spark.",
+   "paragraph": 29,
+   "quote": "severing his spark to create the artifact he called the Immortal Sun."
+  },
+  {
+   "source": "Vraska",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "She works for Bolas for the power promised for her service.",
+   "paragraph": 88,
+   "quote": "allowed her the power he had promised her in return for her service"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Bolas sent Tezzeret on missions.",
+   "paragraph": 57,
+   "quote": "Bolas sent Tezzeret to Kaladesh to retrieve a portal that can transport objects."
+  },
+  {
+   "source": "Alhammarret",
+   "relation": "mentor_of",
+   "target": "Jace Beleren",
+   "note": "Alhammarret taught him mental techniques.",
+   "paragraph": 109,
+   "quote": "There's a technique Alhammarret taught me,"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "romantic",
+   "target": "Vraska",
+   "note": "They agree to a date after the plan.",
+   "paragraph": 157,
+   "quote": "It's a date."
+  },
+  {
+   "source": "Vraska",
+   "relation": "leader_of",
+   "target": "The Belligerent",
+   "note": "She is captain of the Belligerent.",
+   "paragraph": 120,
+   "quote": "You have my word as captain of the Belligerent"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "They pledge to sabotage Bolas together.",
+   "paragraph": 121,
+   "quote": "The pact was made."
+  }
+ ],
+ "rejected": []
+}
