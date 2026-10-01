@@ -65,6 +65,8 @@ Quotes: copy them exactly, character for character, from a single paragraph, and
 Keep them short (one sentence or a clause, under 40 words) and never join, trim the middle of, or paraphrase a \
 quote. If nothing in the page supports a fact word for word, leave the fact out.
 
+Leave out what is not story: editor's notes, credits, links and promotions.
+
 Storyline: the name of the story arc or set this page belongs to ("March of the Machine"), from the page, or "" if \
 the page doesn't say."""
 

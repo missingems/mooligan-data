@@ -8,7 +8,7 @@ python -m mtglore extract   # Claude reads each page → data/extracted (Message
 python -m mtglore build     # one index → data/index
 ```
 
-Each step only does what is new: scrape skips pages already saved, extract skips pages already extracted with the current `PROMPT_VERSION`, and build is rebuilt from scratch. The `Lore` workflow (`.github/workflows/lore.yml`) runs all three and commits `data/`. It runs every Monday, on demand, and on any push to the branch that edits `run.json`, which sets how many pages to extract (`extract_limit`, `null` for all) and Claude's effort; bump `run` to start one with nothing else changed. Extraction needs an `ANTHROPIC_API_KEY` repository secret.
+Each step only does what is new: scrape skips pages already saved, extract skips pages already extracted with the current `PROMPT_VERSION`, and build is rebuilt from scratch. The `Lore` workflow (`.github/workflows/lore.yml`) runs all three and commits `data/`. It runs every Monday, on demand, and on any push to the branch that edits `run.json`, which sets how many pages to extract (`extract_limit`, `null` for all) and Claude's effort (`refresh: true` fetches every page again, for after a parser change); bump `run` to start one with nothing else changed. Extraction needs an `ANTHROPIC_API_KEY` repository secret.
 
 ## What is in data/
 

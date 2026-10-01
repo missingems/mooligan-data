@@ -21,7 +21,7 @@ SITE = "https://magic.wizards.com"
 # Text the profile pages end with, under every bio.
 _PROFILE_BOILERPLATE = ("EXPLORE THE LORE", "Take off on your next adventure with stories from across the Magic multiverse!")
 # "Affa Protector | Art by Izzy": the caption under a card's art.
-_ART_CAPTION = re.compile(r"\|\s*Art by\b", re.I)
+_ART_CAPTION = re.compile(r"(^|\|)\s*Art by\b", re.I)
 # "Editor's Note: This story was originally published on February 24, 2016."
 _ORIGINALLY = re.compile(r"originally published on ([A-Z][a-z]+ \d{1,2}, \d{4})")
 # "zendikars-last-stand-2016-02-17": old stories kept their date in the slug when they moved.
@@ -64,9 +64,15 @@ def _meta(soup: BeautifulSoup, key: str) -> str:
 
 
 def _is_link_only(p: Tag) -> bool:
-    """A paragraph that is nothing but a link, like the "Planeswalker Profile: Jace Beleren" list under old stories."""
+    """A paragraph that is nothing but links, like the "Kaladesh Story Archive Planeswalker Profile: Chandra
+    Nalaar" list under old stories."""
     links = p.find_all("a")
-    return len(links) == 1 and text_of(links[0]) == text_of(p)
+    if not links:
+        return False
+    rest = text_of(p)
+    for link in links:
+        rest = rest.replace(text_of(link), "", 1)
+    return not re.sub(r"[\s|·•,;:/-]+", "", rest)
 
 
 def _chapter_nav(p: Tag, url: str) -> Optional[dict]:

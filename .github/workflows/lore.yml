@@ -50,11 +50,15 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ]; then limit=$(jq -r '.extract_limit // ""' run.json); fi
           echo "limit=$limit" >> "$GITHUB_OUTPUT"
           echo "effort=$(jq -r '.effort // "medium"' run.json)" >> "$GITHUB_OUTPUT"
+          # Fetch every page again, for when the parser changes; only from a push that asks for it.
+          refresh=""
+          if [ "${{ github.event_name }}" = "push" ] && [ "$(jq -r '.refresh // false' run.json)" = "true" ]; then refresh="--refresh"; fi
+          echo "refresh=$refresh" >> "$GITHUB_OUTPUT"
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
 
       - name: Scrape
-        run: python -m mtglore scrape
+        run: python -m mtglore scrape ${{ steps.settings.outputs.refresh }}
       - run: bash commit.sh 'Lore - scrape the story archive'
 
       - name: Extract
