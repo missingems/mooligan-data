@@ -1,0 +1,53 @@
+name: Lore probe
+
+# Temporary: checks the sources for the 1990s-2000s story before the scrapers are written.
+on:
+  push:
+    branches: [claude/lucid-allen-jjvx9l]
+    paths: [.github/workflows/lore-probe.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        run: |
+          mkdir -p lore/probe && cd lore/probe
+          ua="mooligan-lore/1.0 (+https://data.mooligan.com)"
+          get() { curl -sSL -A "$ua" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" || echo "$1 failed"; sleep 1; }
+          # MTG Wiki: licence, size, and the shape of a character and a novel page.
+          get wiki-siteinfo.json "https://mtg.wiki/api.php?action=query&meta=siteinfo&siprop=general|rightsinfo|statistics&format=json"
+          get wiki-yawgmoth.json "https://mtg.wiki/api.php?action=parse&page=Yawgmoth&prop=text|categories|sections&format=json"
+          get wiki-novel.json "https://mtg.wiki/api.php?action=parse&page=The_Thran_(novel)&prop=text|categories|sections&format=json"
+          for c in Characters Novels Planeswalkers Storylines Locations Short_stories; do
+            get "wiki-cat-$c.json" "https://mtg.wiki/api.php?action=query&list=categorymembers&cmtitle=Category:$c&cmlimit=500&format=json"
+          done
+          get wiki-cat-info.json "https://mtg.wiki/api.php?action=query&prop=categoryinfo&titles=Category:Characters|Category:Novels|Category:Planeswalkers|Category:Storylines|Category:Locations|Category:Short_stories|Category:Sets&format=json"
+          # Scryfall bulk data list.
+          get scryfall-bulk.json https://api.scryfall.com/bulk-data
+          # Internet Archive: old wizards.com article URLs.
+          for p in "wizards.com/magic/magazine/article.aspx" "wizards.com/Magic/Magazine/Article.aspx" "wizards.com/magic/magazine/archive.aspx" "magic.wizards.com/en/articles/archive/uncharted-realms" "magic.wizards.com/en/articles/archive/savor-flavor" "magic.wizards.com/en/articles/archive/magic-story"; do
+            f="cdx-$(echo "$p" | tr '/.' '__').txt"
+            get "$f" "https://web.archive.org/cdx/search/cdx?url=$p*&output=txt&fl=original,timestamp,statuscode&filter=statuscode:200&collapse=urlkey&limit=20000"
+            echo "$f: $(wc -l < "$f") urls"; head -5 "$f"
+          done
+          python3 - <<'PY'
+          import json
+          s=json.load(open('wiki-siteinfo.json'))['query']
+          print('rights', s.get('rightsinfo')); print('stats', s.get('statistics'))
+          print(json.dumps(json.load(open('wiki-cat-info.json')).get('query',{}).get('pages',{}), indent=0)[:1500])
+          print([ (b['type'], b['size']) for b in json.load(open('scryfall-bulk.json'))['data']])
+          PY
+          # Keep the commit small: big cdx lists are trimmed.
+          for f in cdx-*.txt; do head -3000 "$f" > "$f.tmp" && mv "$f.tmp" "$f"; done
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          rm -f lore/probe/scryfall-bulk.json.big
+          git add lore/probe
+          git commit -qm "Lore probe: sources for the 1990s-2000s story" && git push || echo "nothing to commit"
