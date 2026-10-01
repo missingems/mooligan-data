@@ -1,6 +1,6 @@
 name: Lore probe
 
-# Temporary: checks the sources for the 1990s-2000s story before the scrapers are written.
+# Temporary (round 2): checks the sources for the 1990s-2000s story before the scrapers are written.
 on:
   push:
     branches: [claude/lucid-allen-jjvx9l]
@@ -35,16 +35,17 @@ jobs:
             get "$f" "https://web.archive.org/cdx/search/cdx?url=$p*&output=txt&fl=original,timestamp,statuscode&filter=statuscode:200&collapse=urlkey&limit=20000"
             echo "$f: $(wc -l < "$f") urls"; head -5 "$f"
           done
-          python3 - <<'PY'
+          python3 - <<'PY' || true
           import json
           s=json.load(open('wiki-siteinfo.json'))['query']
           print('rights', s.get('rightsinfo')); print('stats', s.get('statistics'))
           print(json.dumps(json.load(open('wiki-cat-info.json')).get('query',{}).get('pages',{}), indent=0)[:1500])
-          print([ (b['type'], b['size']) for b in json.load(open('scryfall-bulk.json'))['data']])
+          print([ (b.get('type'), b.get('size') or b.get('compressed_size'), b.get('updated_at')) for b in json.load(open('scryfall-bulk.json')).get('data', [])])
           PY
           # Keep the commit small: big cdx lists are trimmed.
           for f in cdx-*.txt; do head -3000 "$f" > "$f.tmp" && mv "$f.tmp" "$f"; done
       - name: Commit
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
