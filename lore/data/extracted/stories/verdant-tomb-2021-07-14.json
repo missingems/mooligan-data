@@ -1,0 +1,104 @@
+{
+ "page": "stories/verdant-tomb-2021-07-14",
+ "url": "https://magic.wizards.com/en/news/magic-story/verdant-tomb-2021-07-14",
+ "title": "A Verdant Tomb",
+ "story_date": "2021-07-14",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sylvene",
+   "type": "character",
+   "aliases": [],
+   "description": "A powerful wizard from Ravnica who explored the Sword Coast decades ago, made allies there, and left with her young son.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tyreus",
+   "type": "character",
+   "aliases": [],
+   "description": "Sylvene's grandson, whose greed for power knows no bounds and who is drawn to her hidden treasures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Sylvene's home plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sword Coast",
+   "type": "location",
+   "aliases": [],
+   "description": "The region of Faerun where Sylvene adventured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvene's crypt",
+   "type": "location",
+   "aliases": [
+    "grand crypt"
+   ],
+   "description": "A grand crypt built in a verdant land to commemorate her allies, where she hid valuable treasures.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sylvene adventures on the Sword Coast and eventually returns with her young son to Ravnica.",
+   "participants": [
+    "Sylvene",
+    "Ravnica"
+   ],
+   "location": "Sword Coast",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "eventually departed with her young son, back to their home plane of Ravnica"
+  },
+  {
+   "summary": "A grand crypt is built in a verdant land to commemorate her allies, and Sylvene hides valuable treasures in it.",
+   "participants": [
+    "Sylvene",
+    "Sylvene's crypt"
+   ],
+   "location": "Sword Coast",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Many of those memories were celebrated and commemorated with the construction of a grand crypt in a verdant land"
+  },
+  {
+   "summary": "The crypt's treasures attract adventurers and Sylvene's greedy grandson Tyreus.",
+   "participants": [
+    "Tyreus",
+    "Sylvene's crypt"
+   ],
+   "location": "Sword Coast",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "the attention of her grandson, Tyreus, whose greed for power knows no bounds"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tyreus",
+   "relation": "family",
+   "target": "Sylvene",
+   "note": "Tyreus is Sylvene's grandson.",
+   "paragraph": 0,
+   "quote": "the attention of her grandson, Tyreus, whose greed for power knows no bounds"
+  },
+  {
+   "source": "Sylvene's crypt",
+   "relation": "located_in",
+   "target": "Sword Coast",
+   "note": "The crypt commemorates her allies on the Sword Coast.",
+   "paragraph": 0,
+   "quote": "Many of those memories were celebrated and commemorated with the construction of a grand crypt in a verdant land"
+  }
+ ],
+ "rejected": []
+}

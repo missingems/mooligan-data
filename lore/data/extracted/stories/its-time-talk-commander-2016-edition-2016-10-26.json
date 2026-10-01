@@ -1,0 +1,929 @@
+{
+ "page": "stories/its-time-talk-commander-2016-edition-2016-10-26",
+ "url": "https://magic.wizards.com/en/news/magic-story/its-time-talk-commander-2016-edition-2016-10-26",
+ "title": "It's Time to Talk Commander (2016 Edition)!",
+ "story_date": "2016-10-26",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:41:03Z",
+ "storyline": "Commander (2016 Edition)",
+ "entities": [
+  {
+   "name": "Kynaios",
+   "type": "character",
+   "aliases": [],
+   "description": "A Theran human who, with Tiro, led the people against the immortal archon Agnomakhos and became a guardian of the polis of Meletis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tiro",
+   "type": "character",
+   "aliases": [],
+   "description": "A Theran human bound to Kynaios by love for him and for freedom, who helped defeat Agnomakhos and guards Meletis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agnomakhos",
+   "type": "character",
+   "aliases": [],
+   "description": "An immortal archon and tyrant of antiquity whose empire was ended by Kynaios and Tiro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ludevic",
+   "type": "character",
+   "aliases": [
+    "Ludevic, Necro-Alchemist"
+   ],
+   "description": "A necro-alchemist of Nephalia who builds monsters from animated dead tissue and studies the horror they inspire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kraum",
+   "type": "creature",
+   "aliases": [
+    "Kraum, Ludevic's Opus"
+   ],
+   "description": "Ludevic's flying, multi-headed creation, heralded by static pops and cackling, regularly seen over Selhoff.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sidar Kondo",
+   "type": "character",
+   "aliases": [
+    "Sidar Kondo of Jamuraa",
+    "Kondo"
+   ],
+   "description": "A knight and horseman from Jamuraa on Dominaria who led in the Mirage War and was killed by his own son Vuel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vuel",
+   "type": "character",
+   "aliases": [],
+   "description": "Sidar Kondo's blood son, consumed by envy and bitterness, who killed him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "A refugee adopted by Sidar Kondo with a heroic destiny.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yidris",
+   "type": "character",
+   "aliases": [],
+   "description": "A Grixis ogre mage afflicted by unstable mutations who was driven into the Maelstrom, which stabilized him as a conduit of chaos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kydele",
+   "type": "character",
+   "aliases": [
+    "Kydele, Chosen of Kruphix"
+   ],
+   "description": "The primary oracle of Kruphix who has seen truths about the gods and Theros's place in the Multiverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kruphix",
+   "type": "deity",
+   "aliases": [],
+   "description": "Theros's enigmatic god of horizons and mysteries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thrasios",
+   "type": "character",
+   "aliases": [
+    "Thrasios, Triton Hero"
+   ],
+   "description": "A triton of Meletis who believes he has Thassa's blessing and pilgrimages to the ocean's depths, claiming to have visited Olantin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thassa",
+   "type": "deity",
+   "aliases": [],
+   "description": "Theros's god of the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vial Smasher the Fierce",
+   "type": "character",
+   "aliases": [
+    "Vial Smasher"
+   ],
+   "description": "A brash goblin of the Kolaghan clan on Tarkir who handles and smashes vials of dragonfire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who in another timeline considered Vial Smasher a clan-mate and friend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saskia",
+   "type": "character",
+   "aliases": [],
+   "description": "The sole survivor of a massacre of her village who built a monument for ten years and then led a host to wage war on her enemies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymna the Weaver",
+   "type": "character",
+   "aliases": [
+    "Tymna"
+   ],
+   "description": "A blind Theran mortal who mastered the magic of the Fates after a career as one of the Battlewise of Meletis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravos",
+   "type": "character",
+   "aliases": [
+    "Ravos, Soultender"
+   ],
+   "description": "An oracle of Athreos who guides the dead to the Underworld to see his dead lover yearly while secretly defying the god.",
+   "presence": "appears"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "The Theran god of passage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tana",
+   "type": "character",
+   "aliases": [
+    "Tana, the Bloodsower"
+   ],
+   "description": "An elf abandoned as a child and raised by fungal saprolings, who now hunts trespassers to feed them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "A formerly Mirran angel captured and compleated by the praetors, marking Phyrexia's final victory over Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who honored Atraxa with compleation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who declined to contribute to Atraxa's compleation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who joined Elesh Norn's effort to create Atraxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who joined Elesh Norn's effort to create Atraxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who joined Elesh Norn's effort to create Atraxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikra Shidiqi",
+   "type": "character",
+   "aliases": [
+    "Ikra Shidiqi, the Usurper"
+   ],
+   "description": "A naga advisor who betrayed the Sultai's last khan Tasigur to the dragonlord Silumgar and became his first dragonspeaker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tasigur",
+   "type": "character",
+   "aliases": [],
+   "description": "The last khan of the Sultai, betrayed by Ikra Shidiqi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silumgar",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragonlord who rewarded Ikra's treachery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reyhan",
+   "type": "character",
+   "aliases": [
+    "Reyhan, Last of the Abzan"
+   ],
+   "description": "A military commander who refused to kneel to a dragon, became the last khan of the Abzan, and died protecting other khans in the khanfall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dromoka",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragonlord to whom the Abzan khan surrendered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ishai",
+   "type": "character",
+   "aliases": [
+    "Ishai, Ojutai Dragonspeaker"
+   ],
+   "description": "The personal attendant of the dragonlord Ojutai, whose word carries his full authority.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai",
+   "type": "character",
+   "aliases": [],
+   "description": "A wise and ancient dragonlord of Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breya",
+   "type": "character",
+   "aliases": [],
+   "description": "An Esper artificer who discovered carmot in Jund and replaced most of her body with etherium she created, gaining Jund's wild magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akiri",
+   "type": "character",
+   "aliases": [
+    "Akiri, Line-Slinger"
+   ],
+   "description": "A kor line-slinger on Zendikar who left her band after an Eldrazi attack and now protects travelers from Ulamog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bruse Tarl",
+   "type": "character",
+   "aliases": [
+    "Bruse Tarl, Boorish Herder"
+   ],
+   "description": "A Zendikari nomad herder who organized a resistance against the Eldrazi on Akoum and is famed for his insults.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silas Renn",
+   "type": "character",
+   "aliases": [
+    "Silas Renn, Seeker Adept"
+   ],
+   "description": "The heir of the House of Renn on Esper, a mage among the Seekers of Carmot honored with the first etherium heart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi titan that Akiri protects travelers from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of gods, home to Meletis, Kynaios, Kydele, Thrasios, Tymna and Ravos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Jamuraa and Sidar Kondo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of five shards united by the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of clans and dragonlords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane conquered by Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane ravaged by Eldrazi, home of Akiri and Bruse Tarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest polis on Theros, founded on the ruins of Agnomakhos's empire as a beacon of freedom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "The region of Ludevic's remote laboratory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selhoff",
+   "type": "location",
+   "aliases": [],
+   "description": "A seaside town terrorized by Kraum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "The homeland of Sidar Kondo on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maelstrom",
+   "type": "location",
+   "aliases": [],
+   "description": "A volatile storm of raw mana at the center of Alara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Zendikar overrun by Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kolaghan clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "A goblin clan on Tarkir that Vial Smasher belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sultai",
+   "type": "faction",
+   "aliases": [
+    "Sultai clan"
+   ],
+   "description": "A Tarkir clan that revered ruthlessness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [
+    "Abzan clan"
+   ],
+   "description": "A Tarkir clan whose last khan was Reyhan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battlewise of Meletis",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order whose members shape the flow of battle through tactics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order of mages claiming to know the true nature of etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Incurables",
+   "type": "faction",
+   "aliases": [],
+   "description": "Grixis mages afflicted with unstable mutations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "The plane-spanning event that united Alara's shards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war on Jamuraa in which Sidar Kondo led.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khanfall",
+   "type": "event",
+   "aliases": [],
+   "description": "The last battle against the dragons on Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian compleation",
+   "type": "concept",
+   "aliases": [
+    "compleation"
+   ],
+   "description": "The blessed gift of Phyrexian transformation given to Atraxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Etherium",
+   "type": "concept",
+   "aliases": [],
+   "description": "An aether-infused alloy that Esper uses to augment living things.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Carmot",
+   "type": "concept",
+   "aliases": [],
+   "description": "A red stone found on Jund needed to create etherium.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kynaios and Tiro rise together to challenge the tyrant Agnomakhos and rally the people.",
+   "participants": [
+    "Kynaios",
+    "Tiro",
+    "Agnomakhos"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kynaios and Tiro, joined by their love for one another and for freedom, rose to challenge him."
+  },
+  {
+   "summary": "Meletis is founded on the ruins of Agnomakhos's empire with Kynaios and Tiro as guardians.",
+   "participants": [
+    "Kynaios",
+    "Tiro",
+    "Agnomakhos",
+    "Meletis"
+   ],
+   "location": "Meletis",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The polis of Meletis was founded on the ruins of Agnomakhos's empire as a beacon of freedom and enlightenment"
+  },
+  {
+   "summary": "Ludevic becomes the most prolific builder of monsters from animated dead tissue in Nephalia.",
+   "participants": [
+    "Ludevic",
+    "Nephalia"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "From his remote laboratory in Nephalia, Ludevic has established himself as the most prolific practitioner of a terrifying tradition"
+  },
+  {
+   "summary": "Ludevic spends nearly a decade trying to replicate Kraum, which terrorizes Selhoff.",
+   "participants": [
+    "Ludevic",
+    "Kraum",
+    "Selhoff"
+   ],
+   "location": "Selhoff",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Since creating Kraum, the necro-alchemist Ludevic has spent almost a decade trying to replicate that singular work of genius."
+  },
+  {
+   "summary": "Sidar Kondo is killed by his own son Vuel, consumed by envy.",
+   "participants": [
+    "Sidar Kondo",
+    "Vuel",
+    "Gerrard Capashen"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Kondo died by his own son's hands."
+  },
+  {
+   "summary": "Knights from Bant drive Yidris into the Maelstrom, which stabilizes his mutations.",
+   "participants": [
+    "Yidris",
+    "Maelstrom"
+   ],
+   "location": "Maelstrom",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "Knights from Bant drove Yidris into the Maelstrom, a volatile storm of raw mana at the plane's center."
+  },
+  {
+   "summary": "Kruphix reveals to Kydele the nature of the gods and Theros's place in the Multiverse.",
+   "participants": [
+    "Kydele",
+    "Kruphix",
+    "Theros"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "Kruphix himself revealed to Kydele the true nature of the gods and Theros's place in the Multiverse, a sight she can never unsee."
+  },
+  {
+   "summary": "Thrasios leaves Meletis on a pilgrimage to explore the ocean's depths.",
+   "participants": [
+    "Thrasios",
+    "Thassa",
+    "Meletis"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "Thrasios has left his home and embarked on a pilgrimage to explore the ocean's depths at the edge of the world."
+  },
+  {
+   "summary": "Vial Smasher spends a lifetime handling and smashing vials of dragonfire in the Kolaghan clan.",
+   "participants": [
+    "Vial Smasher the Fierce",
+    "Kolaghan clan",
+    "Sarkhan Vol"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "she has spent a lifetime handling—and smashing—vials of this dangerous substance"
+  },
+  {
+   "summary": "Saskia survives a massacre, builds a stone monument alone for years, then leads thousands to war on her enemies.",
+   "participants": [
+    "Saskia"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "Saskia was the sole survivor of a massacre conducted against her village by an invading army from across the sea."
+  },
+  {
+   "summary": "A chariot accident blinds Tymna and ends her career among the Battlewise of Meletis.",
+   "participants": [
+    "Tymna the Weaver",
+    "Battlewise of Meletis"
+   ],
+   "location": "Meletis",
+   "importance": "major",
+   "paragraph": 24,
+   "quote": "A career filled with victories was cut short by a chariot accident, leaving her blind."
+  },
+  {
+   "summary": "Ravos strikes a deal with Athreos to guide the dead in exchange for yearly visits with his lover.",
+   "participants": [
+    "Ravos",
+    "Athreos"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 26,
+   "quote": "Ravos swore to help Athreos guide the dead to the Underworld in exchange for seeing his dead lover once each year."
+  },
+  {
+   "summary": "Saprolings take in the abandoned child Tana and she grows into a feral hunter.",
+   "participants": [
+    "Tana"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 28,
+   "quote": "a pod of fungal saprolings took her in and protected her from the wild"
+  },
+  {
+   "summary": "Atraxa, a captured Mirran angel, is compleated by Elesh Norn and the other praetors except Urabrask.",
+   "participants": [
+    "Atraxa",
+    "Elesh Norn",
+    "Urabrask",
+    "Jin-Gitaxias",
+    "Sheoldred",
+    "Vorinclex",
+    "Phyrexian compleation"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 30,
+   "quote": "The praetor Elesh Norn honored the angel's tenacity with the blessed gift of Phyrexian compleation"
+  },
+  {
+   "summary": "Ikra Shidiqi betrays the Sultai khan Tasigur to the dragonlord Silumgar and becomes his dragonspeaker.",
+   "participants": [
+    "Ikra Shidiqi",
+    "Tasigur",
+    "Silumgar",
+    "Sultai"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 33,
+   "quote": "Ikra Shidiqi, his naga advisor, betrayed him to the dragonlord Silumgar."
+  },
+  {
+   "summary": "Reyhan refuses to kneel to the dragon Dromoka, rallies the Abzan as their final khan, and dies in the khanfall.",
+   "participants": [
+    "Reyhan",
+    "Dromoka",
+    "Abzan",
+    "Khanfall"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 35,
+   "quote": "Reyhan refused to kneel to a dragon."
+  },
+  {
+   "summary": "Ishai gains autonomy and authority as Ojutai's attendant.",
+   "participants": [
+    "Ishai",
+    "Ojutai"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "Ishai's word carries the full authority of Ojutai"
+  },
+  {
+   "summary": "Breya discovers carmot in Jund and replaces most of her body with etherium she created herself.",
+   "participants": [
+    "Breya",
+    "Carmot",
+    "Etherium"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 39,
+   "quote": "To prove her achievement, Breya replaced the majority of her organic body with etherium she created herself."
+  },
+  {
+   "summary": "Akiri leaves her kor band after an Eldrazi attack kills her comrades.",
+   "participants": [
+    "Akiri",
+    "Ulamog"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 42,
+   "quote": "she struck out on her own when an Eldrazi attack killed her comrades"
+  },
+  {
+   "summary": "Bruse Tarl organizes a nomad resistance against the Eldrazi on Akoum.",
+   "participants": [
+    "Bruse Tarl",
+    "Akoum"
+   ],
+   "location": "Akoum",
+   "importance": "minor",
+   "paragraph": 44,
+   "quote": "Bruse organized a resistance force of nomads."
+  },
+  {
+   "summary": "Silas Renn rises in the Seekers of Carmot and receives the first etherium heart.",
+   "participants": [
+    "Silas Renn",
+    "Seekers of Carmot",
+    "Etherium"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "he was honored with the first etherium heart ever produced"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kynaios",
+   "relation": "romantic",
+   "target": "Tiro",
+   "note": "They are joined by love for each other and for freedom.",
+   "paragraph": 3,
+   "quote": "Kynaios and Tiro, joined by their love for one another and for freedom, rose to challenge him."
+  },
+  {
+   "source": "Kynaios",
+   "relation": "enemy",
+   "target": "Agnomakhos",
+   "note": "They defeated the tyrant.",
+   "paragraph": 3,
+   "quote": "Kynaios and Tiro, joined by their love for one another and for freedom, rose to challenge him."
+  },
+  {
+   "source": "Tiro",
+   "relation": "enemy",
+   "target": "Agnomakhos",
+   "note": "They defeated the tyrant.",
+   "paragraph": 3,
+   "quote": "Kynaios and Tiro, joined by their love for one another and for freedom, rose to challenge him."
+  },
+  {
+   "source": "Ludevic",
+   "relation": "created",
+   "target": "Kraum",
+   "note": "Kraum is Ludevic's singular creation.",
+   "paragraph": 8,
+   "quote": "Since creating Kraum, the necro-alchemist Ludevic has spent almost a decade trying to replicate that singular work of genius."
+  },
+  {
+   "source": "Sidar Kondo",
+   "relation": "family",
+   "target": "Vuel",
+   "note": "Vuel is his blood son.",
+   "paragraph": 10,
+   "quote": "Kondo raised two sons—Vuel, his own blood, and Gerrard Capashen, an adopted refugee with a heroic destiny."
+  },
+  {
+   "source": "Sidar Kondo",
+   "relation": "family",
+   "target": "Gerrard Capashen",
+   "note": "He adopted the refugee Gerrard.",
+   "paragraph": 10,
+   "quote": "Kondo raised two sons—Vuel, his own blood, and Gerrard Capashen, an adopted refugee with a heroic destiny."
+  },
+  {
+   "source": "Vuel",
+   "relation": "killed",
+   "target": "Sidar Kondo",
+   "note": "Kondo died at his own son's hands.",
+   "paragraph": 10,
+   "quote": "Kondo died by his own son's hands."
+  },
+  {
+   "source": "Yidris",
+   "relation": "member_of",
+   "target": "Incurables",
+   "note": "He was one of the Incurables.",
+   "paragraph": 12,
+   "quote": "Yidris was one of the Incurables afflicted with unstable mutations"
+  },
+  {
+   "source": "Kydele",
+   "relation": "serves",
+   "target": "Kruphix",
+   "note": "She is his primary oracle.",
+   "paragraph": 15,
+   "quote": "Kydele serves as the primary oracle to Kruphix"
+  },
+  {
+   "source": "Thrasios",
+   "relation": "serves",
+   "target": "Thassa",
+   "note": "He believes he has her divine sanction.",
+   "paragraph": 17,
+   "quote": "Believing he possesses the divine sanction of Thassa, god of the sea"
+  },
+  {
+   "source": "Vial Smasher the Fierce",
+   "relation": "member_of",
+   "target": "Kolaghan clan",
+   "note": "She is a goblin of the clan.",
+   "paragraph": 19,
+   "quote": "a goblin of the Kolaghan clan"
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Vial Smasher the Fierce",
+   "note": "In another timeline he counted her a clan-mate and friend.",
+   "paragraph": 19,
+   "quote": "In another timeline, with another name, the Planeswalker Sarkhan Vol considered her a clan-mate and a friend."
+  },
+  {
+   "source": "Tymna the Weaver",
+   "relation": "member_of",
+   "target": "Battlewise of Meletis",
+   "note": "She once served among them.",
+   "paragraph": 24,
+   "quote": "She once served among the Battlewise of Meletis"
+  },
+  {
+   "source": "Ravos",
+   "relation": "serves",
+   "target": "Athreos",
+   "note": "He is his oracle and guides the dead for him.",
+   "paragraph": 26,
+   "quote": "As an oracle of Athreos, the god of passage"
+  },
+  {
+   "source": "Elesh Norn",
+   "relation": "created",
+   "target": "Atraxa",
+   "note": "She honored the captured angel with compleation.",
+   "paragraph": 30,
+   "quote": "The praetor Elesh Norn honored the angel's tenacity with the blessed gift of Phyrexian compleation"
+  },
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "created",
+   "target": "Atraxa",
+   "note": "He joined Elesh Norn's effort.",
+   "paragraph": 30,
+   "quote": "Jin-Gitaxias, Sheoldred, and Vorinclex all agreed to join Elesh Norn's efforts, and Atraxa was born"
+  },
+  {
+   "source": "Sheoldred",
+   "relation": "created",
+   "target": "Atraxa",
+   "note": "She joined Elesh Norn's effort.",
+   "paragraph": 30,
+   "quote": "Jin-Gitaxias, Sheoldred, and Vorinclex all agreed to join Elesh Norn's efforts, and Atraxa was born"
+  },
+  {
+   "source": "Vorinclex",
+   "relation": "created",
+   "target": "Atraxa",
+   "note": "He joined Elesh Norn's effort.",
+   "paragraph": 30,
+   "quote": "Jin-Gitaxias, Sheoldred, and Vorinclex all agreed to join Elesh Norn's efforts, and Atraxa was born"
+  },
+  {
+   "source": "Ikra Shidiqi",
+   "relation": "enemy",
+   "target": "Tasigur",
+   "note": "She betrayed him to Silumgar.",
+   "paragraph": 33,
+   "quote": "Ikra Shidiqi, his naga advisor, betrayed him to the dragonlord Silumgar."
+  },
+  {
+   "source": "Ikra Shidiqi",
+   "relation": "serves",
+   "target": "Silumgar",
+   "note": "He made her his first dragonspeaker.",
+   "paragraph": 33,
+   "quote": "Silumgar rewarded her act of treachery by making Ikra his first dragonspeaker."
+  },
+  {
+   "source": "Reyhan",
+   "relation": "enemy",
+   "target": "Dromoka",
+   "note": "She refused to kneel to the dragonlord.",
+   "paragraph": 35,
+   "quote": "Reyhan refused to kneel to a dragon."
+  },
+  {
+   "source": "Ishai",
+   "relation": "serves",
+   "target": "Ojutai",
+   "note": "She is his personal attendant.",
+   "paragraph": 37,
+   "quote": "Ishai is the personal attendant of Ojutai"
+  },
+  {
+   "source": "Akiri",
+   "relation": "enemy",
+   "target": "Ulamog",
+   "note": "She safeguards travelers from the titan.",
+   "paragraph": 42,
+   "quote": "Now she uses her line-slinging expertise to safeguard travelers from Ulamog."
+  },
+  {
+   "source": "Silas Renn",
+   "relation": "member_of",
+   "target": "Seekers of Carmot",
+   "note": "He trained to join the order and rose in its ranks.",
+   "paragraph": 46,
+   "quote": "Silas trained to join the Seekers of Carmot"
+  }
+ ],
+ "rejected": []
+}

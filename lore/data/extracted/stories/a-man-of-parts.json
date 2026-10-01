@@ -1,0 +1,648 @@
+{
+ "page": "stories/a-man-of-parts",
+ "url": "https://magic.wizards.com/en/news/magic-story/a-man-of-parts",
+ "title": "Phyrexia: All Will Be One | A Man of Parts",
+ "story_date": "2023-01-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:19Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [
+    "Tezzeret the Seeker"
+   ],
+   "description": "An artificer planeswalker and leader of the Infinite Consortium who deceives Elesh Norn into granting him a darksteel body, then escapes and schemes in the shadows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Mother",
+    "Mother of Machines",
+    "Norn",
+    "Honored Mother"
+   ],
+   "description": "The Phyrexian ruler on her throne in the Fair Basilica who grants Tezzeret his reward and is afraid of Elspeth Tirel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [
+    "the praetor"
+   ],
+   "description": "A Phyrexian praetor and scientist who builds Tezzeret's darksteel body and knows of Urabrask's plots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rona",
+   "type": "character",
+   "aliases": [],
+   "description": "A traitor who arrived with Tezzeret and was struck down by Elspeth's weapon; Tezzeret blames her for his failures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian thane whom Elesh Norn calls an apostate for moving against her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "the Planeswalkers' new leader"
+   ],
+   "description": "A planeswalker whose weapon struck Rona and whom Tezzeret presents as the leader of the enemy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who was compleated; Tezzeret recalls her flayed in Jin-Gitaxias's laboratory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nashi",
+   "type": "character",
+   "aliases": [],
+   "description": "A young nezumi and Tamiyo's son who ambushes Tezzeret in Towashi and is spared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estel",
+   "type": "character",
+   "aliases": [
+    "the boy"
+   ],
+   "description": "A young boy of Tidehollow whom Tezzeret sends to Bant with a box of etherium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baltrice",
+   "type": "character",
+   "aliases": [],
+   "description": "Tezzeret's second-in-command in the Infinite Consortium who set up safehouses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Beleren"
+   ],
+   "description": "The planeswalker who scraped out Tezzeret's mind and keeps the location of his tower from him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "A silver golem whose dismembered body Tezzeret brought to Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rafiq",
+   "type": "character",
+   "aliases": [
+    "Knight-General Rafiq"
+   ],
+   "description": "A Bant knight-general to whom Estel is told to bring the box.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor in rebellion whose domain produces darksteel and whom Jin-Gitaxias knows about.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon planeswalker who saved Tezzeret from the brink of death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A planeswalker now compleated, cited with Tamiyo as an example of servitude.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "The compleated plane Tezzeret returns to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fair Basilica",
+   "type": "location",
+   "aliases": [
+    "Elesh Norn's cathedral"
+   ],
+   "description": "Elesh Norn's cathedral with aspirants, angels, chancellors and the Alabaster Host.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tidehollow",
+   "type": "location",
+   "aliases": [],
+   "description": "The forsaken underground of Esper where Tezzeret was born.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Tezzeret's home shard, with an elite that relegated the poor to Tidehollow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [
+    "Towashi Undercity",
+    "Dragon's Well"
+   ],
+   "description": "A Kamigawan city whose undercity hides one of Baltrice's safehouses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Towashi, where Tezzeret is unwelcome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [
+    "Alara"
+   ],
+   "description": "The shard to which Estel is sent to warn the Knights of Bant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Tezzeret abandoned after his forces were overwhelmed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Infinite Consortium",
+   "type": "faction",
+   "aliases": [
+    "Consortium"
+   ],
+   "description": "Tezzeret's shadowy organization with safehouses across the Multiverse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Alabaster Host",
+   "type": "faction",
+   "aliases": [],
+   "description": "Armored legions of the Fair Basilica that guard its avenues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The compleated horde now invading plane after plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Planar Bridge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device in Tezzeret's body that burns his flesh and requires treatment.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Reality Chip",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A module dripping with glistening oil that Jin-Gitaxias uses against Tezzeret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Darksteel",
+   "type": "concept",
+   "aliases": [
+    "blightsteel"
+   ],
+   "description": "An indestructible metal that Tezzeret receives as a body.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etherium",
+   "type": "concept",
+   "aliases": [],
+   "description": "A rare metal that Tezzeret reshapes into a message and gives to Estel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [
+    "great work"
+   ],
+   "description": "Elesh Norn's invasion of the Multiverse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tezzeret arrives at the Fair Basilica through the Planar Bridge carrying Rona's remains and demands to see Elesh Norn.",
+   "participants": [
+    "Tezzeret",
+    "Rona"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "I must see Mother,"
+  },
+  {
+   "summary": "Elesh Norn summons Tezzeret and orders Rona's remains sent to Jin-Gitaxias.",
+   "participants": [
+    "Elesh Norn",
+    "Tezzeret",
+    "Rona",
+    "Jin-Gitaxias"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Send the other to Jin-Gitaxias for reconditioning."
+  },
+  {
+   "summary": "Tezzeret blames his failure on Rona and Sheoldred's treachery, and Norn accepts it.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn",
+    "Sheoldred",
+    "Rona"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "We were routed when our own troops turned on us."
+  },
+  {
+   "summary": "Elesh Norn questions Tezzeret's love for her, while Tezzeret restrains his urge to kill her.",
+   "participants": [
+    "Elesh Norn",
+    "Tezzeret"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "One well-placed thrust of his sharpened arm could impale her head or take it right off."
+  },
+  {
+   "summary": "Tezzeret tells Norn that the Planeswalkers' new leader is Elspeth Tirel, wielding a blade of white light, and Norn grows fearful.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn",
+    "Elspeth Tirel"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 22,
+   "quote": "The leader's name is Elspeth Tirel."
+  },
+  {
+   "summary": "Tezzeret asks for his promised darksteel body and collapses, and Norn declares a promise is a promise.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 28,
+   "quote": "A promise is a promise."
+  },
+  {
+   "summary": "Tezzeret wakes bound in Jin-Gitaxias's laboratory, where Tamiyo was compleated.",
+   "participants": [
+    "Tezzeret",
+    "Jin-Gitaxias"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "So it was happening. His reward, finally here."
+  },
+  {
+   "summary": "Jin-Gitaxias melts Tezzeret's etherium arm to bond his spine to the darksteel body.",
+   "participants": [
+    "Jin-Gitaxias",
+    "Tezzeret"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 40,
+   "quote": "Tezzeret watched as the embodiment of his own exceptionalism melted into slag."
+  },
+  {
+   "summary": "Tezzeret's head and spine are transferred into the darksteel body and he has a vision of a clock and an island of metal.",
+   "participants": [
+    "Tezzeret",
+    "Jin-Gitaxias"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 45,
+   "quote": "Then his head and spine were separated from his body"
+  },
+  {
+   "summary": "Tezzeret awakens in his new body but cannot planeswalk because the slab is inlaid with silver.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 51,
+   "quote": "Tezzeret had fallen into the same trap."
+  },
+  {
+   "summary": "Jin-Gitaxias reveals a new Reality Chip and says he knows of Urabrask and the Mirran attacks and will let them unfold.",
+   "participants": [
+    "Jin-Gitaxias",
+    "Tezzeret",
+    "Urabrask"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 56,
+   "quote": "There is no violating an agreement already broken."
+  },
+  {
+   "summary": "Tezzeret uses a telemin bond to take control of a captive scrapchief in a tank.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 62,
+   "quote": "Give me control , Phyrexian , thought Tezzeret."
+  },
+  {
+   "summary": "Tezzeret smashes the tank and the slab through the scrapchief, but Jin-Gitaxias kills it, so Tezzeret planeswalks away.",
+   "participants": [
+    "Tezzeret",
+    "Jin-Gitaxias"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 66,
+   "quote": "Tezzeret planeswalked away."
+  },
+  {
+   "summary": "Tezzeret arrives in Tidehollow, the slum where he grew up, and laughs.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Tidehollow",
+   "importance": "minor",
+   "paragraph": 68,
+   "quote": "For Tezzeret, there was only one word associated with Tidehollow that truly resonated."
+  },
+  {
+   "summary": "Tezzeret drives off a gang of children by animating a knife into its owner's hand, leaving the boy Estel behind.",
+   "participants": [
+    "Tezzeret",
+    "Estel"
+   ],
+   "location": "Tidehollow",
+   "importance": "minor",
+   "paragraph": 79,
+   "quote": "he turned, stood, and cast a spell to animate the knife in the leader's hand"
+  },
+  {
+   "summary": "Tezzeret retrieves his mother's box of etherium from the ruins of his childhood home.",
+   "participants": [
+    "Tezzeret",
+    "Estel"
+   ],
+   "location": "Tidehollow",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "This was his mother's handiwork, the last remnant of the hobby that gave her solace amid the squalor."
+  },
+  {
+   "summary": "Phyrexians break through the cave ceiling, invading Tidehollow.",
+   "participants": [
+    "Phyrexians",
+    "Tezzeret",
+    "Estel"
+   ],
+   "location": "Tidehollow",
+   "importance": "major",
+   "paragraph": 98,
+   "quote": "Bone-white metal. The Phyrexians had arrived."
+  },
+  {
+   "summary": "Tezzeret sends Estel with the box and an enchanted knife to Bant, telling him to say an ally of Elspeth Tirel sent him.",
+   "participants": [
+    "Tezzeret",
+    "Estel",
+    "Rafiq",
+    "Elspeth Tirel"
+   ],
+   "location": "Tidehollow",
+   "importance": "major",
+   "paragraph": 109,
+   "quote": "When you see Rafiq, tell him that an ally of Elspeth Tirel sent you."
+  },
+  {
+   "summary": "Tezzeret leaves for the Blind Eternities in his father's cloak as Tidehollow is slaughtered.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Tidehollow",
+   "importance": "minor",
+   "paragraph": 114,
+   "quote": "A fitting goodbye"
+  },
+  {
+   "summary": "Tezzeret travels across planes already overrun by Phyrexians, finding Baltrice's safehouses compromised.",
+   "participants": [
+    "Tezzeret",
+    "Baltrice",
+    "Phyrexians"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 116,
+   "quote": "Elesh Norn's \"great work\" was unfolding faster than Tezzeret could have imagined."
+  },
+  {
+   "summary": "Nashi shoots Tezzeret in Towashi's undercity and demands to know where Tamiyo is.",
+   "participants": [
+    "Nashi",
+    "Tezzeret",
+    "Tamiyo"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 125,
+   "quote": "Tell me where she is."
+  },
+  {
+   "summary": "Tezzeret turns on Nashi's gang and crushes their motorbikes.",
+   "participants": [
+    "Tezzeret",
+    "Nashi"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 137,
+   "quote": "lifting the bikes into the air and then slamming them together with a gruesome crunch"
+  },
+  {
+   "summary": "Tezzeret tells the wounded Nashi that his mother still lives and will come for him.",
+   "participants": [
+    "Tezzeret",
+    "Nashi",
+    "Tamiyo"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 140,
+   "quote": "Your mother still lives."
+  },
+  {
+   "summary": "Tezzeret finds Baltrice's safehouse behind a gaming parlor and gathers supplies.",
+   "participants": [
+    "Tezzeret",
+    "Baltrice"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 144,
+   "quote": "Inside, he found exactly what he was looking for."
+  },
+  {
+   "summary": "Tezzeret travels to the ruins of his tower and resolves to wait for the winner of the war to weaken before making his move.",
+   "participants": [
+    "Tezzeret",
+    "Jace Beleren",
+    "Elesh Norn"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 147,
+   "quote": "Then—and only then—would he make his move."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Elesh Norn",
+   "note": "he hates her while pretending loyalty",
+   "paragraph": 27,
+   "quote": "the one being he hated most in the Multiverse"
+  },
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "created",
+   "target": "Tezzeret",
+   "note": "builds Tezzeret's darksteel body",
+   "paragraph": 43,
+   "quote": "Commence with the procedure."
+  },
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "does her bidding on Tezzeret's reward",
+   "paragraph": 33,
+   "quote": "Long enough to prepare for the task delegated to me,"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "leader_of",
+   "target": "The Infinite Consortium",
+   "note": "shadowy leader",
+   "paragraph": 145,
+   "quote": "as the shadowy leader of the Infinite Consortium"
+  },
+  {
+   "source": "Baltrice",
+   "relation": "serves",
+   "target": "Tezzeret",
+   "note": "second-in-command",
+   "paragraph": 116,
+   "quote": "Baltrice, his second-in-command in the Infinite Consortium"
+  },
+  {
+   "source": "Nashi",
+   "relation": "family",
+   "target": "Tamiyo",
+   "note": "Tamiyo is his mother",
+   "paragraph": 127,
+   "quote": "My mother."
+  },
+  {
+   "source": "Nashi",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "saw him burn his village and tries to kill him",
+   "paragraph": 127,
+   "quote": "I saw you die once for burning my village to the ground,"
+  },
+  {
+   "source": "Elesh Norn",
+   "relation": "enemy",
+   "target": "Sheoldred",
+   "note": "calls her an apostate",
+   "paragraph": 11,
+   "quote": "Sheoldred, who is an apostate in our eyes!"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "scraped out Tezzeret's mind",
+   "paragraph": 116,
+   "quote": "when he scraped out Tezzeret's mind in the Nezumi swamps"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Jin-Gitaxias",
+   "note": "fights him and escapes",
+   "paragraph": 65,
+   "quote": "both praetor and Planeswalker understood this"
+  },
+  {
+   "source": "Tidehollow",
+   "relation": "located_in",
+   "target": "Esper",
+   "note": "Esper's underground slum",
+   "paragraph": 67,
+   "quote": "the forsaken underground where the Esper elite relegated the dregs"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,183 @@
+{
+ "page": "profiles/kamigawa-plane",
+ "url": "https://magic.wizards.com/en/story/kamigawa-plane",
+ "title": "Kamigawa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane reminiscent of sengoku-era Japan with two symbiotic worlds, the material utsushiyo and the kami spirit realm kakuriyo.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Kami",
+   "type": "deity",
+   "aliases": [
+    "kami"
+   ],
+   "description": "Divine spirits worshipped by Kamigawa's people who began to take form in the material world and attacked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takeshi Konda",
+   "type": "character",
+   "aliases": [
+    "Konda"
+   ],
+   "description": "The proud daimyo and most powerful warlord, who ruled the Towabara Plains from Eiganjo and secretly began the war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [
+    "Eiganjo Castle"
+   ],
+   "description": "Konda's stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Towabara Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "The plains ruled by Konda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reito",
+   "type": "location",
+   "aliases": [],
+   "description": "A town a few miles from Eiganjo Castle, attacked by the kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war begun when kami set upon Reito, lasting twenty years as spirits ravaged the plains.",
+   "presence": "appears"
+  },
+  {
+   "name": "The moonfolk",
+   "type": "faction",
+   "aliases": [
+    "moonfolk allies"
+   ],
+   "description": "Allies who helped Konda kidnap a kami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "deity",
+   "aliases": [],
+   "description": "The great kami of all things, outraged by Konda's kidnapping.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Michiko",
+   "type": "character",
+   "aliases": [],
+   "description": "Konda's daughter, one of two with hope of placating the kami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kyodai",
+   "type": "character",
+   "aliases": [],
+   "description": "A stolen kami who calls herself Kyodai, with hope of restoring peace.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The kami begin to take form in the material world while Konda's armies secure territory.",
+   "participants": [
+    "The Kami",
+    "Takeshi Konda"
+   ],
+   "location": "The Towabara Plains",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Even as his armies and samurai secured more territory in Konda's name, the kami manifested in ever-greater numbers."
+  },
+  {
+   "summary": "The kami set upon the town of Reito, killing nearly every living thing, and the Kami War begins.",
+   "participants": [
+    "The Kami",
+    "Reito",
+    "The Kami War"
+   ],
+   "location": "Reito",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "A few miles from Eiganjo Castle, the kami set upon the town of Reito."
+  },
+  {
+   "summary": "Konda remains mysteriously safe within his stronghold throughout the siege.",
+   "participants": [
+    "Takeshi Konda",
+    "Eiganjo"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Throughout this siege, Konda remained within his stronghold, mysteriously safe from harm."
+  },
+  {
+   "summary": "It is revealed that Konda began the war by kidnapping a kami, with moonfolk aid, to secure his own power and immortality.",
+   "participants": [
+    "Takeshi Konda",
+    "The moonfolk",
+    "The Kami"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "With aid from moonfolk allies, Konda kidnapped a kami to secure his own power and immortality."
+  },
+  {
+   "summary": "The kidnapping outrages O-Kagachi, igniting an ire that claims countless lives.",
+   "participants": [
+    "O-Kagachi"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "This outraged the great O-Kagachi, kami of all things, igniting an ire that would claim countless lives."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Takeshi Konda",
+   "relation": "family",
+   "target": "Michiko",
+   "note": "Michiko is Konda's daughter.",
+   "paragraph": 8,
+   "quote": "Only Konda's daughter Michiko and a stolen kami"
+  },
+  {
+   "source": "The moonfolk",
+   "relation": "ally",
+   "target": "Takeshi Konda",
+   "note": "Aided him in kidnapping a kami.",
+   "paragraph": 7,
+   "quote": "With aid from moonfolk allies, Konda kidnapped a kami"
+  },
+  {
+   "source": "O-Kagachi",
+   "relation": "enemy",
+   "target": "Takeshi Konda",
+   "note": "Outraged by his kidnapping of a kami.",
+   "paragraph": 7,
+   "quote": "This outraged the great O-Kagachi, kami of all things"
+  }
+ ],
+ "rejected": []
+}

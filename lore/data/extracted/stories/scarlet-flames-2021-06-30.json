@@ -1,0 +1,79 @@
+{
+ "page": "stories/scarlet-flames-2021-06-30",
+ "url": "https://magic.wizards.com/en/news/magic-story/scarlet-flames-2021-06-30",
+ "title": "In Scarlet Flames",
+ "story_date": "2021-06-30",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Red Wizards of Thay",
+   "type": "faction",
+   "aliases": [
+    "the Red Wizards"
+   ],
+   "description": "Two Red Wizards on a secret mission into the High Moors, searching for something or someone.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Moors",
+   "type": "location",
+   "aliases": [],
+   "description": "Cold, windswept hills east of the Sword Coast in Faerun where the Red Wizards search and a barrow mound stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrow mound",
+   "type": "location",
+   "aliases": [
+    "the barrow"
+   ],
+   "description": "A mound in the wild grasses of the High Moors holding the remnants of a wizards' sanctum that is still being plundered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sword Coast",
+   "type": "location",
+   "aliases": [],
+   "description": "The coast west of the High Moors in Faerun.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Two Red Wizards of Thay undertake a secret mission into the High Moors, escorted by mercenaries who think they should be stopped.",
+   "participants": [
+    "Red Wizards of Thay"
+   ],
+   "location": "High Moors",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Two Red Wizards of Thay have undertaken a secret mission into the High Moors east of the Sword Coast."
+  },
+  {
+   "summary": "Pursuing the wizards leads the adventurers to a barrow mound where a wizards' sanctum is being plundered.",
+   "participants": [
+    "Red Wizards of Thay",
+    "Barrow mound"
+   ],
+   "location": "High Moors",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "At the barrow, they discover the remnants of a wizards' sanctum still being plundered."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Barrow mound",
+   "relation": "located_in",
+   "target": "High Moors",
+   "note": "The barrow stands in the wild grasses of the High Moors.",
+   "paragraph": 1,
+   "quote": "a barrow mound in the wild grasses of the High Moors"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,604 @@
+{
+ "page": "stories/episode-2-sand-hourglass-2022-08-11",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-2-sand-hourglass-2022-08-11",
+ "title": "Episode 2: Sand in the Hourglass",
+ "story_date": "2022-08-11",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Urza's creation"
+   ],
+   "description": "A silver golem planeswalker, immune to Phyrexian influence, who has been buried for months and now tries to warn Dominaria about Sheoldred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A leonin planeswalker who digs Karn out of the cave-in and helps him warn the leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [
+    "Jaya"
+   ],
+   "description": "A fire-wielding planeswalker who helps Jodah negotiate the Keldon-Benalish peace and fights the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [
+    "Archmage",
+    "old man"
+   ],
+   "description": "An ancient planeswalker and archmage who mediates the peace summit and creates a portal to escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who arrives with news that Phyrexians were on Kamigawa and that Tamiyo has been taken.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "Karn's friend who sent Ajani to find him and works in her workshop on the Mana Rig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stenn",
+   "type": "character",
+   "aliases": [],
+   "description": "A young nobleman from New Argive, tasked by King Darien to find Phyrexian agents, who pledges New Argive's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aron Capashen",
+   "type": "character",
+   "aliases": [
+    "Aron"
+   ],
+   "description": "The leader of New Benalia's knights, whose negotiations are broken when his knights reveal themselves as Phyrexian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Radha",
+   "type": "character",
+   "aliases": [
+    "warlord"
+   ],
+   "description": "The Keldon warlord, who is part Skyshroud elf and who reforged Keld into a military force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shanna",
+   "type": "character",
+   "aliases": [],
+   "description": "A descendant of Sisay who now captains the Weatherlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "A former captain of the Weatherlight with whom Karn served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raff",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who placed a tracking spell on Jhoira's letters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niambi",
+   "type": "character",
+   "aliases": [],
+   "description": "Teferi's daughter, who provides medical aid in Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who has been taken by the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who saw Phyrexians on Kaldheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor whose staging ground Karn found on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rona",
+   "type": "character",
+   "aliases": [],
+   "description": "Sheoldred's Tolarian aide who trapped Karn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Karn's creator, who never let him recuperate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Darien",
+   "type": "character",
+   "aliases": [],
+   "description": "The ruler of New Argive who tasked Stenn with finding Phyrexian agents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian thrush",
+   "type": "creature",
+   "aliases": [
+    "the thrush",
+    "the Phyrexian bird"
+   ],
+   "description": "A varied thrush that is a Phyrexian spy; it attacks Karn with corrosive cables and is caged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia",
+    "New Phyrexia"
+   ],
+   "description": "The invaders now infiltrating Dominaria and compleating its people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Society of Mishra",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human acolytes serving Sheoldred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [
+    "Keld"
+   ],
+   "description": "The Keldon warriors led by Radha, who sign a peace with the Benalish.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Capashen",
+   "type": "faction",
+   "aliases": [
+    "New Benalia",
+    "Benalish",
+    "Capashens"
+   ],
+   "description": "The Benalish nobility and knights led by Aron Capashen.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Argive",
+   "type": "faction",
+   "aliases": [
+    "Argive",
+    "Argivians"
+   ],
+   "description": "The nation of Stenn that pledges to mobilize against the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A resurgent group fought by the Benalish.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An airship captained by Shanna, which Ajani can summon with an amulet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A Thran artifact Karn hopes to use against New Phyrexia and hides in Jhoira's workshop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mana Rig",
+   "type": "location",
+   "aliases": [],
+   "description": "A city-sized metal structure on a cliff in Shiv where Jhoira works.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oyster Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "A seaport carved into white chalk cliffs where the peace summit takes place.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Argive's watchtower",
+   "type": "location",
+   "aliases": [
+    "watchtower"
+   ],
+   "description": "A watchtower with a lockdown mechanism where the group portals to escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caves of Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "The caves where Karn was buried.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane threatened by the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes through which planeswalkers travel.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ajani digs Karn out of the cave-in, explaining Jhoira had a tracking spell on her letters, and tells Karn he has been buried for months.",
+   "participants": [
+    "Ajani Goldmane",
+    "Karn",
+    "Jhoira",
+    "Raff"
+   ],
+   "location": "Caves of Koilos",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "She asked Raff to place a tracking spell on the letters"
+  },
+  {
+   "summary": "Karn and Ajani return to Karn's camp, and Karn tells Ajani what he saw of Sheoldred.",
+   "participants": [
+    "Karn",
+    "Ajani Goldmane",
+    "Sheoldred"
+   ],
+   "location": "Caves of Koilos",
+   "importance": "minor",
+   "paragraph": 43,
+   "quote": "Karn set the box aside. He faced Ajani and related all he had seen."
+  },
+  {
+   "summary": "Ajani proposes speaking to the leaders at the Keldon-Benalish peace summit, and the two planeswalk to Oyster Bay.",
+   "participants": [
+    "Ajani Goldmane",
+    "Karn",
+    "Keldons",
+    "House Capashen"
+   ],
+   "location": "Oyster Bay",
+   "importance": "minor",
+   "paragraph": 48,
+   "quote": "there is a peace summit between the Keldons and the Benalish."
+  },
+  {
+   "summary": "Karn and Ajani warn Jodah, Jaya and the summit leaders that the Phyrexians have returned, but are met with doubt.",
+   "participants": [
+    "Karn",
+    "Ajani Goldmane",
+    "Jodah",
+    "Jaya Ballard",
+    "Aron Capashen",
+    "Radha",
+    "Stenn"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 70,
+   "quote": "The Phyrexians have returned to Dominaria."
+  },
+  {
+   "summary": "Jodah and Jaya refuse to halt negotiations without a location for the Phyrexians but promise to help afterward.",
+   "participants": [
+    "Jodah",
+    "Jaya Ballard",
+    "Karn"
+   ],
+   "location": "Oyster Bay",
+   "importance": "minor",
+   "paragraph": 94,
+   "quote": "\"We will go with you, Karn,\" said Jaya."
+  },
+  {
+   "summary": "Karn builds a scrying device and finds he cannot scry Sheoldred; Ajani gives him a copy of the amulet to summon the Weatherlight.",
+   "participants": [
+    "Karn",
+    "Ajani Goldmane",
+    "Jhoira",
+    "Weatherlight"
+   ],
+   "location": "Oyster Bay",
+   "importance": "minor",
+   "paragraph": 107,
+   "quote": "They must have protections in place to prevent us from scrying them."
+  },
+  {
+   "summary": "Radha and Aron are about to sign the peace when Teferi arrives with news that the Phyrexians were on Kamigawa.",
+   "participants": [
+    "Teferi",
+    "Radha",
+    "Aron Capashen",
+    "Jodah",
+    "Jaya Ballard"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 127,
+   "quote": "\"It's the Phyrexians—they were on Kamigawa.\""
+  },
+  {
+   "summary": "The news of the Phyrexian threat unsettles the summit, and the signing of the peace is left uncertain.",
+   "participants": [
+    "Radha",
+    "Aron Capashen",
+    "Jodah",
+    "Jaya Ballard",
+    "Stenn"
+   ],
+   "location": "Oyster Bay",
+   "importance": "minor",
+   "paragraph": 137,
+   "quote": "Radha and Aron had not signed—and this made it seem like they wouldn't."
+  },
+  {
+   "summary": "Teferi tells Karn and Ajani that the Phyrexians have taken Tamiyo.",
+   "participants": [
+    "Teferi",
+    "Ajani Goldmane",
+    "Karn",
+    "Tamiyo"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 150,
+   "quote": "\"but they took Tamiyo."
+  },
+  {
+   "summary": "Karn secretly moves the sylex from his room to Jhoira's workshop on the Mana Rig.",
+   "participants": [
+    "Karn",
+    "Sylex",
+    "Jhoira",
+    "Mana Rig"
+   ],
+   "location": "Mana Rig",
+   "importance": "major",
+   "paragraph": 161,
+   "quote": "He stowed the sylex and its case on the lowest shelf behind lengths of pipe"
+  },
+  {
+   "summary": "Stenn meets Karn on a hill, telling him King Darien tasked him with finding Phyrexian agents and that New Argive will mobilize.",
+   "participants": [
+    "Stenn",
+    "Karn",
+    "King Darien",
+    "New Argive"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 180,
+   "quote": "New Argive will mobilize."
+  },
+  {
+   "summary": "Karn seizes a thrush that is a Phyrexian spy, which attacks him with corrosive cables, and the group traps it in a cage.",
+   "participants": [
+    "Karn",
+    "Phyrexian thrush",
+    "Ajani Goldmane",
+    "Teferi",
+    "Jaya Ballard"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 199,
+   "quote": "Karn seized the bird. \"I know what you are.\""
+  },
+  {
+   "summary": "Karn presents the caged Phyrexian bird to the negotiators; three Benalish knights burst open into Phyrexian monsters and break the table.",
+   "participants": [
+    "Karn",
+    "Aron Capashen",
+    "Radha",
+    "Jodah",
+    "Phyrexians"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "Three of the Benalish knights exploded outward from their armor."
+  },
+  {
+   "summary": "A Phyrexian knight seizes Aron Capashen and bounds away with Ajani in pursuit.",
+   "participants": [
+    "Aron Capashen",
+    "Ajani Goldmane",
+    "Phyrexians"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 220,
+   "quote": "It rolled its body around Aron and bounded onto a neighboring balcony."
+  },
+  {
+   "summary": "Radha and the Keldons withdraw and lock the Phyrexians into the room with the planeswalkers, who fight them.",
+   "participants": [
+    "Radha",
+    "Keldons",
+    "Karn",
+    "Jaya Ballard",
+    "Jodah",
+    "Teferi"
+   ],
+   "location": "Oyster Bay",
+   "importance": "major",
+   "paragraph": 228,
+   "quote": "The brass double doors slammed shut"
+  },
+  {
+   "summary": "Jodah opens a portal to New Argive's watchtower; Karn, Teferi, Stenn and Jodah escape while Jaya burns the room.",
+   "participants": [
+    "Jodah",
+    "Jaya Ballard",
+    "Karn",
+    "Teferi",
+    "Stenn"
+   ],
+   "location": "New Argive's watchtower",
+   "importance": "major",
+   "paragraph": 239,
+   "quote": "Jaya grinned in triumph as she raised her hands in a blaze of fire and set the whole room alight."
+  },
+  {
+   "summary": "A Phyrexian creature follows through the portal; Stenn locks down the watchtower and gives Karn the key, as they realize they cannot trust anyone.",
+   "participants": [
+    "Stenn",
+    "Karn",
+    "Jodah",
+    "Jaya Ballard",
+    "Teferi",
+    "Phyrexians"
+   ],
+   "location": "New Argive's watchtower",
+   "importance": "major",
+   "paragraph": 246,
+   "quote": "Stenn handed Karn the key."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Karn",
+   "note": "Karn thinks of Urza as designing him.",
+   "paragraph": 29,
+   "quote": "Karn had never been permitted to \"recuperate\" when Urza had loosed him as a war machine."
+  },
+  {
+   "source": "Ajani Goldmane",
+   "relation": "ally",
+   "target": "Karn",
+   "note": "Ajani rescues Karn and backs his warning.",
+   "paragraph": 88,
+   "quote": "\"When has Karn ever lied?\" Ajani growled."
+  },
+  {
+   "source": "Jhoira",
+   "relation": "ally",
+   "target": "Karn",
+   "note": "She worries about him and sent Ajani.",
+   "paragraph": 19,
+   "quote": "she grew concerned. And here I am."
+  },
+  {
+   "source": "Shanna",
+   "relation": "family",
+   "target": "Sisay",
+   "note": "Shanna is Sisay's descendant.",
+   "paragraph": 24,
+   "quote": "to see the airship in her descendant's hands"
+  },
+  {
+   "source": "Radha",
+   "relation": "leader_of",
+   "target": "Keldons",
+   "note": "Radha is the Keldon warlord who reforged the nation.",
+   "paragraph": 49,
+   "quote": "Radha, the leader of the Keldons"
+  },
+  {
+   "source": "Aron Capashen",
+   "relation": "leader_of",
+   "target": "House Capashen",
+   "note": "Leads New Benalia's knights.",
+   "paragraph": 49,
+   "quote": "Aron Capashen led New Benalia's knights"
+  },
+  {
+   "source": "Stenn",
+   "relation": "serves",
+   "target": "King Darien",
+   "note": "King Darien tasked Stenn with discovering Phyrexian agents.",
+   "paragraph": 171,
+   "quote": "King Darien has tasked me with discovering Phyrexian agents."
+  },
+  {
+   "source": "Teferi",
+   "relation": "family",
+   "target": "Niambi",
+   "note": "Niambi is Teferi's daughter.",
+   "paragraph": 147,
+   "quote": "Teferi's pride in his daughter radiated from him."
+  },
+  {
+   "source": "Karn",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "Karn is determined to stop them.",
+   "paragraph": 195,
+   "quote": "eradicate the Phyrexian threat at its source"
+  },
+  {
+   "source": "Rona",
+   "relation": "serves",
+   "target": "Sheoldred",
+   "note": "Rona, Sheoldred's aide, is remembered by Karn.",
+   "paragraph": 34,
+   "quote": "Rona as well, he was sure."
+  },
+  {
+   "source": "Mana Rig",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "A structure in Shiv.",
+   "paragraph": 104,
+   "quote": "Perched upon a cliff's edge in Shiv's brutal desert"
+  }
+ ],
+ "rejected": []
+}

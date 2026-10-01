@@ -1,0 +1,551 @@
+{
+ "page": "stories/the-brothers-war-chapter-3-nemesis",
+ "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-chapter-3-nemesis",
+ "title": "The Brothers' War | Chapter 3: Nemesis",
+ "story_date": "2022-10-25",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:48Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [
+    "herald on Dominaria"
+   ],
+   "description": "A planeswalker with an etherium arm and the Planar Bridge in his chest, serving the Phyrexians for the promise of a darksteel body, who secretly turns against Elesh Norn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Father of Machines",
+    "Father"
+   ],
+   "description": "The silver golem planeswalker, held captive and dismantled by Phyrexian priests, who still keeps his mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A leonin planeswalker, now a compleated follower of Elesh Norn who quotes her scripture and wears Elspeth's old cloak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Mother",
+    "the Mother of Machines",
+    "Mother of Machines"
+   ],
+   "description": "The Phyrexian praetor who has barred access to New Phyrexia's core and welcomes Karn as Father; she promises Tezzeret a reward but means to use him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rona",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian left in charge of operations on Shiv by Sheoldred, who is forced to report to Tezzeret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor who interfered with Karn's planeswalking and was helped back to her lair by Tezzeret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [
+    "praetor of the Quiet Furnace"
+   ],
+   "description": "An ill-tempered praetor with whom Tezzeret has a loose partnership and who hides his domain from the Darksteel Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [
+    "master of the Progress Engine"
+   ],
+   "description": "A praetor who developed compleation, first using it on Tamiyo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "The first planeswalker compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas",
+    "god-pharaoh"
+   ],
+   "description": "An elder dragon planeswalker, killed, whom Tezzeret once served and hated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker whose former cloak Ajani now wears.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "Beleren"
+   ],
+   "description": "A planeswalker whose group on Ravnica receives Tezzeret's information and who left Tezzeret a hollow shell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian whose endoskeleton carried the essence of Kaldheim's World Tree through Tezzeret's portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "Karn's best friend, who named him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "A previous lord of Mirrodin whom Jin-Gitaxias called a valuable mistake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [
+    "Evincar of Rath"
+   ],
+   "description": "The speaker of the epigraph.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Mirrodin"
+   ],
+   "description": "The Phyrexian-controlled plane, formerly Mirrodin, where Tezzeret descends into its core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fair Basilica",
+   "type": "location",
+   "aliases": [],
+   "description": "Elesh Norn's basilica of ossified Phyrexian corpses where Karn is dissected.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mycosynth Garden",
+   "type": "location",
+   "aliases": [
+    "Mycosynth"
+   ],
+   "description": "The metallic lattice that grows over the plane's core and merges metal and flesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Panopticon",
+   "type": "location",
+   "aliases": [
+    "Memnarch's tower"
+   ],
+   "description": "A darksteel tower in the Mycosynth Garden housing the Darksteel Eye.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shiv",
+   "type": "location",
+   "aliases": [
+    "Cometia Crater"
+   ],
+   "description": "Dominaria's red region where Phyrexian troops hide in the Cometia Crater cave complex.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "A settlement to which the Planeswalkers were tracked back.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Tezzeret is told to lead the effort against the interlopers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Seekers of Carmot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Bridge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The artifact in Tezzeret's chest that is eating him alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Darksteel Eye",
+   "type": "artifact",
+   "aliases": [
+    "the eye"
+   ],
+   "description": "A diamond-shaped monolith in the Panopticon that views any part of New Phyrexia but cannot see Urabrask's domain or Elesh Norn's sanctum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device made by the Phyrexians with the essence of Kaldheim's World Tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Machine Orthodoxy",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "Elesh Norn's religious order of Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Suture Bishops",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian priests who dissect Karn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [],
+   "description": "A fraudulent order on Esper that Tezzeret belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrans",
+   "type": "faction",
+   "aliases": [],
+   "description": "The few remaining partially metallic natives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn lies bound on a slab as Suture Bishops dissect him, offering no resistance, while Tezzeret watches.",
+   "participants": [
+    "Karn",
+    "Tezzeret",
+    "Suture Bishops"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "But Karn gave no resistance to the team of aspirants as they bound him into place"
+  },
+  {
+   "summary": "Ajani, compleated, quotes Elesh Norn's scripture over Karn as the priests dismantle him.",
+   "participants": [
+    "Ajani Goldmane",
+    "Karn",
+    "Tezzeret"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "Only in her grace are we saved,"
+  },
+  {
+   "summary": "An angel blocks Tezzeret from leaving and orders him to carry the pieces of Karn to Elesh Norn for his reward.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "you will bring the pieces of Father to our Mother."
+  },
+  {
+   "summary": "Ajani gives Tezzeret his cloak, once worn by Elspeth, and Tezzeret suspects the true Ajani remains suppressed within.",
+   "participants": [
+    "Ajani Goldmane",
+    "Tezzeret",
+    "Elspeth Tirel"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 30,
+   "quote": "it was the same cloak once worn by Elspeth Tirel."
+  },
+  {
+   "summary": "Tezzeret feigns obedience and sets out through the Fair Basilica toward the core pushing Karn's pieces.",
+   "participants": [
+    "Tezzeret",
+    "Karn"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 33,
+   "quote": "As our Mother wishes,"
+  },
+  {
+   "summary": "Tezzeret suspects a trap, kills the Phyrexian guide with a thrust and heads into the Mycosynth alone.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Mycosynth Garden",
+   "importance": "major",
+   "paragraph": 54,
+   "quote": "with a single well-placed thrust, ran it through."
+  },
+  {
+   "summary": "Tezzeret reaches Memnarch's restored darksteel Panopticon and cannot open its door.",
+   "participants": [
+    "Tezzeret",
+    "Karn",
+    "Panopticon"
+   ],
+   "location": "Mycosynth Garden",
+   "importance": "minor",
+   "paragraph": 63,
+   "quote": "darksteel, as a matter of fact"
+  },
+  {
+   "summary": "Karn speaks, explaining he is tethered to the plane and offering to open the tower, since it was once his realm.",
+   "participants": [
+    "Karn",
+    "Tezzeret"
+   ],
+   "location": "Mycosynth Garden",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "I can take you inside. This was my realm once, after all."
+  },
+  {
+   "summary": "Tezzeret detaches Karn's head and Karn uses it to open the darksteel door.",
+   "participants": [
+    "Tezzeret",
+    "Karn"
+   ],
+   "location": "Mycosynth Garden",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "Karn's efforts caused the door to slide open."
+  },
+  {
+   "summary": "In the Darksteel Eye, Tezzeret sees vast Phyrexian legions assembling but cannot view Urabrask's domain or Elesh Norn's sanctum.",
+   "participants": [
+    "Tezzeret",
+    "Darksteel Eye",
+    "Urabrask",
+    "Elesh Norn"
+   ],
+   "location": "Panopticon",
+   "importance": "major",
+   "paragraph": 90,
+   "quote": "he discovered that two locations managed to defy the eye's intrusion."
+  },
+  {
+   "summary": "Tezzeret and Karn argue over Karn's responsibility for New Phyrexia and Bolas's threat, and Tezzeret reveals he suggested eliminating the plane to Bolas.",
+   "participants": [
+    "Tezzeret",
+    "Karn",
+    "Nicol Bolas"
+   ],
+   "location": "Panopticon",
+   "importance": "major",
+   "paragraph": 101,
+   "quote": "His first act as god-emperor would have been to obliterate New Phyrexia from existence."
+  },
+  {
+   "summary": "Karn admits he hears the same oil voices as Tezzeret, and Tezzeret threatens him but relents, fearing compleation.",
+   "participants": [
+    "Karn",
+    "Tezzeret"
+   ],
+   "location": "Panopticon",
+   "importance": "major",
+   "paragraph": 107,
+   "quote": "The same voices I heard when the oil had command of my heart."
+  },
+  {
+   "summary": "Tezzeret reaches Elesh Norn at the heart of the plane, where she takes Karn's torso and welcomes him to the great work.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn",
+    "Karn"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 118,
+   "quote": "We welcome you to our great work."
+  },
+  {
+   "summary": "Elesh Norn tells Tezzeret he will be herald on Dominaria; he realizes she will not give him his body and resolves to wage war on her.",
+   "participants": [
+    "Tezzeret",
+    "Elesh Norn",
+    "Urabrask"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 128,
+   "quote": "Elesh Norn had no intention of fulfilling her promise."
+  },
+  {
+   "summary": "Karn speaks of Jhoira and is cut off by Elesh Norn; Tezzeret sees it as a good move on his part.",
+   "participants": [
+    "Karn",
+    "Elesh Norn",
+    "Jhoira"
+   ],
+   "location": "New Phyrexia",
+   "importance": "minor",
+   "paragraph": 132,
+   "quote": "Jhoira . . . Jhoira is my friend . . . my best friend."
+  },
+  {
+   "summary": "Elesh Norn dismisses Tezzeret, who leaves angrily.",
+   "participants": [
+    "Elesh Norn",
+    "Tezzeret"
+   ],
+   "location": "New Phyrexia",
+   "importance": "minor",
+   "paragraph": 136,
+   "quote": "With a growl, Tezzeret turned and walked away."
+  },
+  {
+   "summary": "Tezzeret enters Shiv's cave complex and brutally forces Rona to give a status report.",
+   "participants": [
+    "Tezzeret",
+    "Rona"
+   ],
+   "location": "Shiv",
+   "importance": "major",
+   "paragraph": 142,
+   "quote": "I've been told that unprotected flesh takes a few seconds to vaporize in the Blind Eternities."
+  },
+  {
+   "summary": "Rona reports the Phyrexians' losses and that the Planeswalkers have been tracked to New Argive.",
+   "participants": [
+    "Rona",
+    "Tezzeret"
+   ],
+   "location": "Shiv",
+   "importance": "major",
+   "paragraph": 152,
+   "quote": "But we have been able to track them back to New Argive."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elesh Norn",
+   "relation": "leader_of",
+   "target": "Machine Orthodoxy",
+   "note": "Elesh Norn is the Mother of the Machine Orthodoxy.",
+   "paragraph": 6,
+   "quote": "Hated anything to do with the Machine Orthodoxy."
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Tezzeret serves her for a promised reward while planning betrayal.",
+   "paragraph": 18,
+   "quote": "Then you will receive what has been promised to you."
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "ally",
+   "target": "Urabrask",
+   "note": "A loose partnership.",
+   "paragraph": 50,
+   "quote": "Ever since aligning himself with Urabrask"
+  },
+  {
+   "source": "Ajani Goldmane",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Ajani is her compleated follower.",
+   "paragraph": 14,
+   "quote": "Our old forms are cages that the Mother melts down and reforges into destiny."
+  },
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "New Phyrexia",
+   "note": "Karn created Mirrodin and its passageways.",
+   "paragraph": 34,
+   "quote": "Some of these passageways had been extant ever since Karn created them"
+  },
+  {
+   "source": "Elesh Norn",
+   "relation": "enemy",
+   "target": "Karn",
+   "note": "Elesh Norn holds Karn captive.",
+   "paragraph": 120,
+   "quote": "Things have been difficult between us,"
+  },
+  {
+   "source": "Karn",
+   "relation": "ally",
+   "target": "Jhoira",
+   "note": "Karn calls Jhoira his best friend.",
+   "paragraph": 132,
+   "quote": "Jhoira . . . Jhoira is my friend . . . my best friend."
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "Tezzeret says he hated Bolas.",
+   "paragraph": 99,
+   "quote": "I hated him, you know,"
+  },
+  {
+   "source": "Rona",
+   "relation": "serves",
+   "target": "Sheoldred",
+   "note": "Sheoldred left Rona in charge on Shiv.",
+   "paragraph": 140,
+   "quote": "Sheoldred left me in charge."
+  }
+ ],
+ "rejected": []
+}

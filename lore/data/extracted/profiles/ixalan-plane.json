@@ -1,0 +1,121 @@
+{
+ "page": "profiles/ixalan-plane",
+ "url": "https://magic.wizards.com/en/story/ixalan-plane",
+ "title": "Ixalan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with a verdant jungle continent where all peoples seek the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "The ancient golden city in Ixalan's jungle where the Immortal Sun lies secure.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Immortal Sun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact of mythic power promising boundless wealth, strength of empire, command over nature and eternal life.",
+   "presence": "appears"
+  },
+  {
+   "name": "The River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "The merfolk of Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The humans of Ixalan whose ancient ruins lie in the jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Brazen Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Treasure-hungry pirates who arrived on Ixalan as outsiders.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "A sinister fleet of vampires seeking to conquer Ixalan.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Immortal Sun passes from legend to reality and all the peoples of Ixalan seek its power.",
+   "participants": [
+    "The Immortal Sun",
+    "Ixalan"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "now legend has become reality, and all the peoples of Ixalan seek the Immortal Sun and the power it promises."
+  },
+  {
+   "summary": "The pirates of the Brazen Coalition and then the Legion of Dusk disrupt the balance between the merfolk and humans.",
+   "participants": [
+    "The Brazen Coalition",
+    "The Legion of Dusk",
+    "The River Heralds",
+    "The Sun Empire"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "But outsiders—first the treasure-hungry pirates of the Brazen Coalition and now the sinister fleets of the Legion of Dusk—have disrupted that delicate balance of power."
+  },
+  {
+   "summary": "As the Legion of Dusk seeks to conquer Ixalan, all four peoples search desperately for the golden city.",
+   "participants": [
+    "The Legion of Dusk",
+    "The River Heralds",
+    "The Sun Empire",
+    "The Brazen Coalition",
+    "Orazca"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "And as the Legion of Dusk seeks to conquer Ixalan, all four peoples are catapulted into a desperate search for the golden city and the treasure it holds."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Immortal Sun",
+   "relation": "located_in",
+   "target": "Orazca",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Secure in the ancient golden city of Orazca, the Immortal Sun is an artifact of mythic power"
+  },
+  {
+   "source": "The River Heralds",
+   "relation": "enemy",
+   "target": "The Sun Empire",
+   "note": "They have shared the continent for ages, sometimes warring, sometimes in uneasy peace.",
+   "paragraph": 1,
+   "quote": "sometimes warring, sometimes in an uneasy peace."
+  }
+ ],
+ "rejected": []
+}
