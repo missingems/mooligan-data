@@ -85,8 +85,8 @@ def build_popular_cards(document: dict, deck_cards: Dict[str, dict], catalog: Di
     """The file for one format: `document` is its snapshot, `deck_cards` its stored decklists (deck id -> `{"m": [[quantity, name], ...], "s": ...}`).
 
     `catalog` (slug -> `{"name", "oracle_id", "type_line", "layout", ...}`, see `scryfall.card_catalog`) names each
-    card and says what it is. A card it doesn't know is left out, and so is a basic, and a card whose type line is
-    none of the `KINDS`.
+    card and says what it is. A card it doesn't know is left out, and so is a basic. A card whose type line is none
+    of the `KINDS` (Scryfall gives a few "Card" or "Hero") is still played, so it is in `all` with the type "other", and in no list of a kind.
     """
     dates = {deck_id: played for deck_id, played in deck_dates(document).items() if deck_id in deck_cards}
     counts = {deck_id: (_copies(deck_cards[deck_id].get("m", [])), _copies(deck_cards[deck_id].get("s", []))) for deck_id in dates}
@@ -153,8 +153,7 @@ def _rows(
         if known is None:
             continue
         type_line = known.get("type_line", "")
-        kind = card_kind(type_line)
-        if kind is None or is_basic(type_line):
+        if is_basic(type_line):
             continue
         name = known["name"]
         rows.append(
@@ -162,7 +161,7 @@ def _rows(
                 # A split card is both its halves, "Fire // Ice"; any other double-faced or adventure card is its front face.
                 "name": name if known.get("layout") == "split" else name.split(" // ")[0],
                 "oracle_id": known.get("oracle_id"),
-                "type": kind,
+                "type": card_kind(type_line) or "other",
                 "decks": decks,
                 "share": round(100 * decks / total, 1),
                 "copies": round(copies / decks, 1),

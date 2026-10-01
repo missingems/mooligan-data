@@ -335,10 +335,15 @@ def test_a_name_the_catalog_does_not_know_is_skipped_but_its_decks_still_count()
     assert empty["windows"]["7d"] == {"deck_count": 3, "lists": []}
 
 
-def test_a_card_with_no_known_kind_is_skipped_as_well():
-    catalog = {**CATALOG, "the-harvester": card("The Harvester", "Hero"), "old-card": {"name": "Old Card", "oracle_id": "o"}}
-    file = popular([(1, [(4, "The Harvester"), (4, "Old Card"), (4, "Lightning Bolt")])] * 2, catalog=catalog)
-    assert cards(file, "7d", "all") == ["Lightning Bolt"]
+def test_a_card_of_no_known_kind_is_in_all_as_other_and_in_no_list_of_a_kind():
+    catalog = {**CATALOG, "pym-particles": card("Pym Particles", "Card", layout="front_card"), "old-card": {"name": "Old Card", "oracle_id": "o"}}
+    file = popular([(1, [(4, "Pym Particles"), (4, "Old Card"), (4, "Lightning Bolt")])] * 2, catalog=catalog)
+    assert [(row["name"], row["type"]) for row in file["windows"]["7d"]["lists"][0]["cards"]] == [
+        ("Lightning Bolt", "instant"),
+        ("Old Card", "other"),  # a catalog entry with no type line
+        ("Pym Particles", "other"),
+    ]
+    assert [one["kind"] for one in file["windows"]["7d"]["lists"]] == ["all", "instant"]
 
 
 def test_a_split_card_keeps_both_halves_and_any_other_two_faced_card_is_its_front_face():
