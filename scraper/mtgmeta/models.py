@@ -40,6 +40,9 @@ class EventResult:
     # Set when the deck appears in an archetype's list, whose name then replaces
     # the pilot's own deck title (leagues show titles like "UR").
     archetype_id: Optional[str] = None
+    # WUBRG letters in WUBRG order, from the pips MTGGoldfish shows beside the deck on the event page.
+    # None when it shows none (a colourless deck, or an event page read before this was kept).
+    colors: Optional[List[str]] = None
 
 
 @dataclass

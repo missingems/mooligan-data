@@ -121,12 +121,17 @@ def parse_meta(html: str, format: str, timeframe: str) -> Meta:
 
 
 def _tile_colors(tile) -> List[str]:
-    """The colours a tile shows, as WUBRG letters in WUBRG order; empty for colourless or no pips.
+    """The colours a tile shows, as WUBRG letters in WUBRG order; empty for colourless or no pips."""
+    return _manacost_colors(tile.select_one(".manacost-container .manacost"))
 
-    The pips are a `manacost` span labelled "colors: blue red", with an `ms-u ms-r`
-    icon each. The label is read first, and the icons only when it names no colour.
+
+def _manacost_colors(manacost) -> List[str]:
+    """The colours of a `manacost` span, as WUBRG letters in WUBRG order; empty for colourless, no pips or no span.
+
+    The pips are a span labelled "colors: blue red" on a metagame tile and "mana cost: white black green" on
+    a tournament page, with an `ms-u ms-r` icon each. The label is read first, and the icons only when it
+    names no colour.
     """
-    manacost = tile.select_one(".manacost-container .manacost")
     if manacost is None:
         return []
     words = re.findall(r"[a-z]+", (manacost.get("aria-label") or "").lower())
@@ -213,6 +218,8 @@ def parse_tournament(html: str, event_id: str, format: str, summary: Optional[Ev
                 archetype=deck_link.get_text(strip=True),
                 finish=_finish(cells[0].get_text(" ", strip=True)),
                 deck_id=_DECK_HREF.search(deck_link["href"]).group(1),
+                # Only when the row shows pips: a deck with none is colourless or unknown, which the page can't tell.
+                colors=_manacost_colors(cells[1].select_one(".manacost")) or None,
             )
         )
 

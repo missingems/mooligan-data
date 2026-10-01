@@ -100,6 +100,10 @@ class SnapshotStore:
 
     def save_event(self, event: Event) -> None:
         document = _jsonable(to_document(event, drop=("format",)))
+        for result in document["results"]:
+            # A result's colours are there only when the event page showed some, as before they were read.
+            if result.get("colors") is None:
+                result.pop("colors", None)
         document["last_updated"] = self._stamp()
         self._snapshot(event.format)["events"][event.event_id] = document
 

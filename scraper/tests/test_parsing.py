@@ -191,3 +191,28 @@ def test_lookalike_cyrillic_letters_do_not_change_an_events_kind():
 def test_the_tournament_page_gives_its_kind_and_source():
     event = parse_tournament(fixture("tournament_66753.html"), "66753", "modern")
     assert (event.kind, event.source) == ("mtgo_challenge", "mtgo.com")
+
+
+def test_the_tournament_page_gives_each_results_colours_from_its_mana_cost_pips():
+    event = parse_tournament(fixture("tournament_66753.html"), "66753", "modern")
+    by_finish = {result.finish: result for result in event.results}
+    assert by_finish["1st Place"].colors == ["G"]  # aria-label="mana cost: green"
+    assert by_finish["3rd Place"].colors == ["W", "B", "G"]  # "white black green", in WUBRG order
+    assert all(result.colors is None or result.colors == sorted(result.colors, key="WUBRG".index) for result in event.results)
+    assert sum(1 for result in event.results if result.colors) >= 30
+
+
+def _event_page(row_pips: str) -> str:
+    return f"""
+    <h2>Modern Challenge 32 2026-09-29</h2>
+    <table class="table-tournament">
+      <tr><td class="text-end">1st</td><td><a href="/deck/1">Affinity</a>{row_pips}</td><td><a href="/player/p">p</a></td></tr>
+    </table>"""
+
+
+def test_a_result_with_no_pips_has_no_colours_rather_than_an_empty_list():
+    assert parse_tournament(_event_page(""), "1", "modern").results[0].colors is None
+    empty = '<span aria-label="mana cost: " class="manacost"></span>'
+    assert parse_tournament(_event_page(empty), "1", "modern").results[0].colors is None
+    icons = '<span class="manacost"><i class="ms ms-r ms-cost"></i><i class="ms ms-u ms-cost"></i></span>'
+    assert parse_tournament(_event_page(icons), "1", "modern").results[0].colors == ["U", "R"]  # the icons stand in for a missing label

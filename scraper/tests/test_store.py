@@ -232,6 +232,19 @@ def test_finish_puts_the_kind_of_every_stored_event_right_by_the_current_rules(t
     assert {e["event_id"]: e["kind"] for e in published} == {"1": "mtgo_league", "2": "other", "3": "store_championship", "4": "mtgo_challenge"}
 
 
+def test_a_results_colours_are_stored_only_when_the_event_page_showed_some(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    results = [
+        EventResult("p1", "Eldrazi", "1st Place", "1", colors=["G"]),
+        EventResult("p2", "Affinity", "2nd Place", "2"),  # no pips on the page
+    ]
+    store.save_event(Event("1", "Modern Challenge 32 2026-09-20", "modern", day("2026-09-20"), results, "url", kind="mtgo_challenge", source="mtgo.com"))
+    store.finish()
+    first, second = json.loads((tmp_path / "snapshots" / "modern.json").read_text())["events"][0]["results"]
+    assert first["colors"] == ["G"]
+    assert "colors" not in second  # absent, as in an event stored before they were read: unknown, not colourless
+
+
 def test_decklist_entries_carry_their_oracle_id(tmp_path):
     from mtgmeta.models import Deck, DeckCard
 
