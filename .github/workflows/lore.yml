@@ -52,21 +52,10 @@ jobs:
           echo "effort=$(jq -r '.effort // "medium"' run.json)" >> "$GITHUB_OUTPUT"
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          cat > /tmp/commit.sh <<'SH'
-          # Commits lore/data and pushes, rebasing over anything pushed meanwhile.
-          git add data
-          git diff --cached --quiet && exit 0
-          git commit -q -m "$1"
-          for attempt in 1 2 3 4; do
-            git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && exit 0
-            sleep $((attempt * 5))
-          done
-          exit 1
-          SH
 
       - name: Scrape
         run: python -m mtglore scrape
-      - run: bash /tmp/commit.sh "Lore: scrape the story archive"
+      - run: bash commit.sh 'Lore - scrape the story archive'
 
       - name: Extract
         if: env.ANTHROPIC_API_KEY != ''
@@ -76,8 +65,8 @@ jobs:
         run: echo "::warning::No ANTHROPIC_API_KEY secret, so nothing was extracted. Add it under Settings > Secrets and variables > Actions."
       # The batch state is committed too, so a run that timed out leaves the next one the batch to collect.
       - if: always()
-        run: bash /tmp/commit.sh "Lore: extract with Claude"
+        run: bash commit.sh 'Lore - extract with Claude'
 
       - name: Build the index
         run: python -m mtglore build
-      - run: bash /tmp/commit.sh "Lore: build the index"
+      - run: bash commit.sh 'Lore - build the index'
