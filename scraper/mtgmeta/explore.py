@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Sequence
 
 from .cards import slug
-from .colors import deck_colors
+from .colors import color_weights, deck_colors
 from .parsing import latin_lookalikes
 
 # In the order the tab shows them.
@@ -42,6 +42,8 @@ WINDOWS = (
 )
 # A move of more than this many points of share (in tenths, as shown) is a trend.
 TREND_TENTHS = 10
+# The colours a share is split into: the five, and colourless.
+SHARE_COLORS = ("W", "U", "B", "R", "G", "C")
 
 # "1st Place" and so on: a league's "5-0" is a record, not a placing.
 _PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
@@ -61,8 +63,9 @@ def build_explore(
 
     `decks` (format -> deck id -> the stored `{"m": [[quantity, name], ...], "s": ...}`) and
     `catalog` (slug -> `{"name", "oracle_id", "land", "mana_cost", ...}`) give a result its key cards and
-    colours from its own deck when its archetype has none; without them the key cards stay empty and a
-    result's colours come from its archetype's tile.
+    colours from its own deck when its archetype has none, and the format's `color_shares` the colours of
+    the decks themselves; without them the key cards stay empty, a result's colours come from its archetype's
+    tile, and the shares are split by each archetype's tile colours.
     """
     formats = []
     for format, name in FORMATS:
@@ -80,6 +83,7 @@ def build_explore(
                 "latest_event": {key: latest[key] for key in _LATEST_KEYS} if latest else None,
                 "standings": _standings(snapshot, now, previews),
                 "standings_by_window": _standings_by_window(snapshot, now, previews),
+                "color_shares": color_shares(snapshot, format_decks, catalog),
                 "recent_events": events,
             }
         )
@@ -313,6 +317,65 @@ def prestige(event: dict) -> int:
     if kind == "store_championship" or (kind == "other" and len(event["results"]) >= 64):
         return 2
     return 1
+
+
+def color_shares(snapshot: dict, decks: Optional[Dict[str, dict]] = None, catalog: Optional[Dict[str, dict]] = None) -> Dict[str, Dict[str, float]]:
+    """How the whole metagame divides among the colours, per window: `{"7d": {"W": 21.3, ..., "C": 6.0}}`.
+
+    Each archetype's weight over the six colours (W, U, B, R, G and C for colourless) is the average of
+    `color_weights` over its stored decks: its results' decks and its featured one, whichever of them
+    `decks` (deck id -> `{"m": [...], "s": [...]}`) has, read with `catalog`. An archetype with no deck it
+    can read splits its tile's colours evenly instead, and a colourless tile is all `C`. A window's colour is
+    then the sum over every archetype of that window, not only its top eight, of the archetype's share times
+    its weight in that colour, scaled so the colours sum to 100 and given to one decimal (the tenths are
+    rounded so that they add up to exactly 100.0). All six keys are in every window; a window with no
+    archetypes is left out.
+    """
+    meta = snapshot.get("meta", {})
+    tiles = archetype_tiles(meta)
+    stored = snapshot.get("archetypes", {})
+    decks = decks or {}
+    catalog = catalog or {}
+    weights: Dict[str, Dict[str, float]] = {}
+
+    def archetype_weights(archetype: dict) -> Dict[str, float]:
+        archetype_id = archetype["id"]
+        if archetype_id not in weights:
+            history = stored.get(archetype_id, {})
+            deck_ids = {result["deck_id"] for result in history.get("results", [])}
+            if history.get("deck_id"):
+                deck_ids.add(history["deck_id"])
+            # Sorted, so the sums come out the same on every run.
+            read = [color_weights(decks[deck_id].get("m", []), catalog) for deck_id in sorted(deck_ids) if deck_id in decks]
+            read = [weight for weight in read if weight is not None]
+            if read:
+                weights[archetype_id] = {color: sum(weight.get(color, 0.0) for weight in read) / len(read) for color in SHARE_COLORS}
+            else:
+                shown = tiles.get(archetype_id, archetype).get("colors", [])
+                weights[archetype_id] = {color: 1 / len(shown) for color in shown} if shown else {"C": 1.0}
+        return weights[archetype_id]
+
+    shares = {}
+    for window, _, _ in WINDOWS:
+        total = {color: 0.0 for color in SHARE_COLORS}
+        for archetype in meta.get(window, {}).get("archetypes", []):
+            for color, weight in archetype_weights(archetype).items():
+                total[color] += archetype["percentage"] * weight
+        whole = sum(total.values())
+        if whole > 0:
+            shares[window] = _tenths_of_a_hundred(total, whole)
+    return shares
+
+
+def _tenths_of_a_hundred(amounts: Dict[str, float], whole: float) -> Dict[str, float]:
+    """Each amount as a percent of `whole`, to one decimal, with the largest remainders rounded up so they total 100.0."""
+    exact = {color: amounts[color] / whole * 1000 for color in SHARE_COLORS}
+    tenths = {color: int(exact[color]) for color in SHARE_COLORS}
+    short = 1000 - sum(tenths.values())
+    # The colours with the biggest part left over take the missing tenths; a tie goes to the earlier colour.
+    for color in sorted(SHARE_COLORS, key=lambda color: exact[color] - tenths[color], reverse=True)[:short]:
+        tenths[color] += 1
+    return {color: tenths[color] / 10 for color in SHARE_COLORS}
 
 
 def _places(results: List[dict], since: datetime, now: datetime) -> List[int]:

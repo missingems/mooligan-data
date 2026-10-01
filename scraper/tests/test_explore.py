@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from mtgmeta.explore import build_explore, deck_key_cards, prestige
+from mtgmeta.explore import build_explore, color_shares, deck_key_cards, prestige
 
 NOW = datetime(2026, 9, 30, 2, tzinfo=timezone.utc)
 
@@ -492,6 +492,88 @@ COLOURLESS = stored((4, "Sol Ring"), (20, "Mountain"))
 def history(deck_ids, featured=None):
     """An archetype of the snapshot: its featured deck and one result per deck id."""
     return {"deck_id": featured, "results": [result("2026-09-28", "1st Place", deck_id=deck_id) for deck_id in deck_ids]}
+
+
+def shares(meta30, archetypes=None, decks=None, catalog=PIPS, **windows):
+    return modern(meta30=meta30, archetypes=archetypes, decks=decks, catalog=catalog, **windows)["color_shares"]
+
+
+def test_colour_shares_weigh_every_archetype_by_its_share_and_the_colours_of_its_decks():
+    meta = [archetype("burn", 60.0, colors=["R"]), archetype("white", 30.0, colors=["W"]), archetype("tron", 10.0, colors=[])]
+    archetypes = {"burn": history(["1"]), "white": history(["2"]), "tron": history(["3"])}
+    result = shares(meta, archetypes, {"1": RED, "2": WHITE, "3": COLOURLESS})
+    assert result == {"30d": {"W": 30.0, "U": 0.0, "B": 0.0, "R": 60.0, "G": 0.0, "C": 10.0}}
+
+
+def test_colour_shares_are_scaled_to_a_hundred_and_always_have_all_six_colours():
+    # MTGGoldfish's shares don't add up to 100 (the archetypes listed cover about 97% of the format).
+    meta = [archetype("burn", 45.0, colors=["R"]), archetype("white", 15.0, colors=["W"])]
+    month = shares(meta, {"burn": history(["1"]), "white": history(["2"])}, {"1": RED, "2": WHITE})["30d"]
+    assert month == {"W": 25.0, "U": 0.0, "B": 0.0, "R": 75.0, "G": 0.0, "C": 0.0}
+    assert list(month) == ["W", "U", "B", "R", "G", "C"]
+
+
+def test_colour_shares_to_one_decimal_always_add_up_to_exactly_a_hundred():
+    # A third each rounds to 33.3 three times, which is 99.9: the missing tenth goes to the first of the equal remainders.
+    thirds = shares([archetype("w", 10.0, colors=["W"]), archetype("u", 10.0, colors=["U"]), archetype("b", 10.0, colors=["B"])])["30d"]
+    assert (thirds["W"], thirds["U"], thirds["B"]) == (33.4, 33.3, 33.3)
+    for percentages in ([7.7, 19.1, 3.3, 11.9, 2.2, 6.0, 8.8], [1.0] * 7, [13.37, 0.01, 99.0, 4.2]):
+        colours = [["W"], ["U"], ["B"], ["R"], ["G"], [], ["W", "U"]]
+        entries = [archetype(f"a{n}", percentage, colors=colours[n]) for n, percentage in enumerate(percentages)]
+        values = shares(entries)["30d"].values()
+        assert round(sum(values), 6) == 100.0
+        assert all(round(value, 1) == value for value in values)
+
+
+def test_an_archetypes_weights_are_the_average_over_its_results_decks_and_its_featured_deck():
+    meta = [archetype("mix", 100.0, colors=["R", "W"])]
+    # Two red decks and one white: the featured deck counts too, a deck that isn't stored doesn't, and a deck is one deck however big.
+    archetypes = {"mix": history(["1", "2", "99"], featured="3")}
+    month = shares(meta, archetypes, {"1": RED, "2": WHITE, "3": stored((1, "Lightning Bolt"))})["30d"]
+    assert (month["R"], month["W"]) == (66.7, 33.3)
+    # An archetype's deck can be in the average once only: its featured deck is usually one of its results too.
+    twice = shares(meta, {"mix": history(["1", "2"], featured="1")}, {"1": RED, "2": WHITE})["30d"]
+    assert (twice["R"], twice["W"]) == (50.0, 50.0)
+
+
+def test_an_archetype_with_no_stored_deck_falls_back_to_its_tiles_colours_split_evenly():
+    meta = [archetype("izzet", 50.0, colors=["U", "R"]), archetype("artifacts", 25.0, colors=[]), archetype("mono-green", 25.0, colors=["G"])]
+    for decks in (None, {}, {"9": RED}):  # nothing stored, or only some other archetype's deck
+        month = shares(meta, {"izzet": history(["1", "2"]), "artifacts": history(["3"], featured="4")}, decks)["30d"]
+        assert month == {"W": 0.0, "U": 25.0, "B": 0.0, "R": 25.0, "G": 25.0, "C": 25.0}
+    # So does one whose decks the catalog can't read, and a snapshot with no catalog at all.
+    unreadable = {"1": stored((4, "Made-up Card"))}
+    assert shares(meta, {"izzet": history(["1"])}, unreadable)["30d"]["U"] == 25.0
+    assert shares(meta, {"izzet": history(["1"])}, {"1": RED}, catalog=None)["30d"]["U"] == 25.0
+
+
+def test_a_decks_colours_win_over_its_archetypes_tile_when_they_are_stored():
+    meta = [archetype("izzet", 100.0, colors=["U", "R"])]
+    month = shares(meta, {"izzet": history(["1"])}, {"1": RED})["30d"]
+    assert (month["R"], month["U"]) == (100.0, 0.0)
+
+
+def test_colour_shares_count_every_archetype_of_a_window_not_only_its_top_eight():
+    meta = [archetype(f"red{n}", 10.0, colors=["R"]) for n in range(8)] + [archetype("small-white", 5.0, colors=["W"])]
+    month = shares(meta)["30d"]
+    assert month["W"] == 5.9  # 5 of the 85 points, though the ninth archetype is not in the standings
+    assert month["R"] == 94.1
+
+
+def test_each_window_has_its_own_colour_shares_and_a_window_with_no_meta_is_left_out():
+    month = [archetype("burn", 50.0, colors=["R"]), archetype("white", 50.0, colors=["W"])]
+    week = [archetype("white", 80.0, colors=["W"]), archetype("burn", 20.0, colors=["R"])]
+    result = shares(month, meta7=week)
+    assert list(result) == ["7d", "30d"]  # no 14-day window was scraped
+    assert (result["7d"]["W"], result["7d"]["R"]) == (80.0, 20.0)
+    assert (result["30d"]["W"], result["30d"]["R"]) == (50.0, 50.0)
+    assert shares([]) == {}
+    assert build_explore({"modern": snapshot(meta30=[])}, NOW)["formats"][0]["color_shares"] == {}
+
+
+def test_colour_shares_are_built_without_decks_or_a_catalog_from_the_tiles():
+    document = build_explore({"modern": snapshot(meta30=[archetype("a", 10.0, colors=["U", "R"])])}, NOW)["formats"][0]
+    assert document["color_shares"] == {"30d": {"W": 0.0, "U": 50.0, "B": 0.0, "R": 50.0, "G": 0.0, "C": 0.0}}
 
 
 def with_results(*entries):
