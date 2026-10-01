@@ -1,9 +1,9 @@
 """Short "who is X" bios for the entities the index mentions most, as data/bios/<id>.json.
 
 A bio is written from what the index already holds on the entity (what each page says of it, its timeline,
-its relations), not from memory, and every sentence cites the events or relations it rests on. A sentence
-citing nothing, or an id that is not in the entity's own timeline or relations, is dropped, so a bio can
-say no more than the quotes behind it.
+its relations), not from memory, and every sentence cites the events, relations or pages it rests on. A
+sentence citing nothing, or an id that is not in the entity's own material, is dropped, so a bio can say no
+more than the quotes and pages behind it.
 
     python -m mtglore bio-input <id>          what to write a bio from
     python -m mtglore bio-ingest <id> raw.json   check one and save it
@@ -33,8 +33,8 @@ Return JSON:
 - bio: 3 to 8 sentences telling the story in order, the turning points first among equals; fewer for a minor entity.
 - status: one sentence on where things stand as of the latest story that mentions it (alive, dead, compleated,
   missing, ruling somewhere...). If the material does not say, say what the last event shows, plainly.
-- cites: the ids in square brackets from the material (events like "some-page-e4", relations like "some-page-r2")
-  that support the sentence. Every sentence needs at least one; a sentence the ids don't support will be dropped.
+- cites: the ids in square brackets from the material (events like "some-page-e4", relations like "some-page-r2",
+  what a page says like "p:stories/some-page") that support the sentence. Every sentence needs at least one; a sentence the ids don't support will be dropped.
 - Plain, neutral prose; no headings, no lists inside text."""
 
 
@@ -48,7 +48,7 @@ def material(index: Path, entity_id: str) -> str:
     lines.append("")
     lines.append("What each page says of it:")
     for said in entity["pages_say"]:
-        lines.append(f"- {said['story_date'] or 'profile'} | {titles.get(said['page'], said['page'])} | {said['presence']} | {said['description']}")
+        lines.append(f"[p:{said['page']}] {said['story_date'] or 'profile'} | {titles.get(said['page'], said['page'])} | {said['presence']} | {said['description']}")
     events = entity["timeline"]
     if len(events) > MAX_EVENTS:
         events = [event for event in events if event["importance"] == "major"]
@@ -69,10 +69,14 @@ def material(index: Path, entity_id: str) -> str:
     return "\n".join(lines)
 
 
-def check(entity: dict, raw: dict) -> dict:
-    """Keeps the sentences whose cites are all the entity's own events or relations, with links to their quotes."""
+def check(entity: dict, raw: dict, urls: Dict[str, str]) -> dict:
+    """Keeps the sentences whose cites are all the entity's own events, relations or pages, with links to them.
+
+    An event or relation links to its quote; a page ("p:stories/<slug>") links to the page.
+    """
     known: Dict[str, dict] = {event["id"]: event for event in entity["timeline"]}
     known.update({relation["id"]: relation for relation in entity["relations"]})
+    known.update({f"p:{said['page']}": {"link": urls.get(said["page"], "")} for said in entity["pages_say"]})
     rejected: List[dict] = []
 
     def sentence(item: dict, part: str):
@@ -90,7 +94,8 @@ def check(entity: dict, raw: dict) -> dict:
 
 def ingest(data: Path, entity_id: str, raw: dict, model: str) -> dict:
     entity = json.loads((data / "index" / "entity" / f"{entity_id}.json").read_text())
-    checked = check(entity, raw)
+    urls = {page["page"]: page["url"] for page in json.loads((data / "index" / "pages.json").read_text())}
+    checked = check(entity, raw, urls)
     document = {
         "id": entity_id,
         "name": entity["name"],

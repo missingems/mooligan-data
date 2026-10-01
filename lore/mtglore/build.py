@@ -306,7 +306,8 @@ def build(directory: Path) -> dict:
 
     by_entity: Dict[str, Dict[str, list]] = defaultdict(lambda: {"events": [], "relations": []})
     for event in events:
-        for entity_id in event["participants"]:
+        # A place's timeline is what happens there, as a character's is what they take part in.
+        for entity_id in dict.fromkeys([*event["participants"], *([event["location"]] if event["location"] else [])]):
             by_entity[entity_id]["events"].append(event)
     for relation in relations:
         for entity_id in (relation["source"], relation["target"]):
