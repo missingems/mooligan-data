@@ -1,0 +1,138 @@
+{
+ "page": "wiki/urza-s-legacy",
+ "url": "https://mtg.wiki/page/Urza%27s_Legacy",
+ "title": "Urza's Legacy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:17Z",
+ "storyline": "Urza's block",
+ "entities": [
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who builds artifacts and the skyship Weatherlight to defeat the Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's student who assists him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "The silver golem who assists Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "skyship"
+   ],
+   "description": "The skyship Urza creates to defeat the Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran Mana Rig",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A Thran structure in Shiv whose primary purpose Urza uncovers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shiv",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where the Thran Mana Rig stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Urza's academy, whose people battle a Phyrexian infestation on the island while he is away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion Urza prepares to defeat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the invaders, which Urza experiments to find a means of defeating.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With Jhoira and Karn's help, Urza surveys the Thran Mana Rig in Shiv and uncovers its primary purpose.",
+   "participants": [
+    "Urza",
+    "Jhoira",
+    "Karn",
+    "Thran Mana Rig"
+   ],
+   "location": "Shiv",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "With the assistance of his student Jhoira and Karn , the silver golem , Urza surveys the Thran Mana Rig in Shiv and uncovers its primary purpose."
+  },
+  {
+   "summary": "While Urza is away, the people of the Tolarian Academy battle a Phyrexian infestation on the island.",
+   "participants": [
+    "Tolarian Academy"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the people of his Tolarian Academy have to battle a Phyrexian infestation on the island itself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "mentor_of",
+   "target": "Jhoira",
+   "note": "Jhoira is his student.",
+   "paragraph": 4,
+   "quote": "his student Jhoira"
+  },
+  {
+   "source": "Karn",
+   "relation": "ally",
+   "target": "Urza",
+   "note": "Assists Urza in surveying the Thran Mana Rig.",
+   "paragraph": 4,
+   "quote": "With the assistance of his student Jhoira and Karn , the silver golem"
+  },
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Weatherlight",
+   "note": "Creates the skyship and other artifacts to defeat the Invasion.",
+   "paragraph": 0,
+   "quote": "The storyline covers Urza 's creation of the skyship Weatherlight and other artifacts to defeat the Phyrexian Invasion ."
+  },
+  {
+   "source": "Thran Mana Rig",
+   "relation": "located_in",
+   "target": "Shiv",
+   "note": "Stands in Shiv.",
+   "paragraph": 4,
+   "quote": "surveys the Thran Mana Rig in Shiv"
+  }
+ ],
+ "rejected": []
+}

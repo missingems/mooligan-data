@@ -1,0 +1,143 @@
+{
+ "page": "wiki/captain-dapplewing-s-manor",
+ "url": "https://mtg.wiki/page/Captain_Dapplewing%27s_Manor",
+ "title": "Captain Dapplewing's Manor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:44Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Captain Dapplewing's Manor",
+   "type": "location",
+   "aliases": [
+    "the manor"
+   ],
+   "description": "A two-story residence on the Central Campus of Strixhaven University, now a faculty annex used for academic counseling and social functions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "The university on Arcavios that inherited the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Strixhaven University stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raymous Dapplewing",
+   "type": "character",
+   "aliases": [
+    "Captain Dapplewing"
+   ],
+   "description": "An owlin mage and military officer who served on the faculties of Lorehold and Silverquill and built the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorehold College",
+   "type": "faction",
+   "aliases": [],
+   "description": "A college of Strixhaven where Dapplewing served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill College",
+   "type": "faction",
+   "aliases": [],
+   "description": "A college of Strixhaven where Dapplewing served; its professors help provide campus security.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quandrix College",
+   "type": "faction",
+   "aliases": [],
+   "description": "A college whose security professors respond to vandalism at the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Earl",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A clockwork butler that guards the Grand Hall at night.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Captain Dapplewing builds the manor with his pension as a place to retire and host dinner parties.",
+   "participants": [
+    "Raymous Dapplewing",
+    "Captain Dapplewing's Manor"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Using his generous pension, he built the home as a place to retire and host lavish dinner parties that often turned into late-night academic colloquiums."
+  },
+  {
+   "summary": "On his death Dapplewing bequeaths the manor to Strixhaven University, which repurposes it as a faculty annex.",
+   "participants": [
+    "Raymous Dapplewing",
+    "Strixhaven University",
+    "Captain Dapplewing's Manor"
+   ],
+   "location": "Captain Dapplewing's Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Upon his passing, Captain Dapplewing bequeathed the manor to Strixhaven University."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raymous Dapplewing",
+   "relation": "created",
+   "target": "Captain Dapplewing's Manor",
+   "note": "He built the manor.",
+   "paragraph": 1,
+   "quote": "The house was constructed by Captain Raymous Dapplewing , an owlin mage and military officer"
+  },
+  {
+   "source": "Raymous Dapplewing",
+   "relation": "member_of",
+   "target": "Lorehold College",
+   "note": "Served on the faculty.",
+   "paragraph": 1,
+   "quote": "who served on the faculties of both Lorehold College and Silverquill College."
+  },
+  {
+   "source": "Raymous Dapplewing",
+   "relation": "member_of",
+   "target": "Silverquill College",
+   "note": "Served on the faculty.",
+   "paragraph": 1,
+   "quote": "who served on the faculties of both Lorehold College and Silverquill College."
+  },
+  {
+   "source": "Captain Dapplewing's Manor",
+   "relation": "located_in",
+   "target": "Strixhaven University",
+   "note": "On the Central Campus.",
+   "paragraph": 0,
+   "quote": "is a two-story residence on the Central Campus of Strixhaven University on the plane of Arcavios ."
+  },
+  {
+   "source": "The Earl",
+   "relation": "located_in",
+   "target": "Captain Dapplewing's Manor",
+   "note": "Guards the Grand Hall at night.",
+   "paragraph": 13,
+   "quote": "guarded at night by \"the Earl,\" a clockwork butler."
+  }
+ ],
+ "rejected": []
+}
