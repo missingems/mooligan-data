@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-02T05:45:06Z",
+ "extracted_at": "2026-10-02T05:46:10Z",
  "storyline": "Portal Second Age",
  "entities": [
   {
@@ -70,6 +70,15 @@
    "aliases": [],
    "description": "The plane where Caliman lies.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Four little goblins",
+   "type": "creature",
+   "aliases": [
+    "goblins"
+   ],
+   "description": "Four goblins in a card-flavor rhyme, lost one by one to a serpent, an ogre, a griffin and a tremor.",
+   "presence": "appears"
   }
  ],
  "events": [
@@ -84,6 +93,16 @@
    "importance": "major",
    "paragraph": 5,
    "quote": "The main focus was on the increasing Nightstalker attacks on the Alaborn due to the influence of the sorceress Tojira ."
+  },
+  {
+   "summary": "Four goblins are lost one by one to a serpent, an ogre, a griffin and a tremor.",
+   "participants": [
+    "Four little goblins"
+   ],
+   "location": "Caliman",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "One little goblin shook up the ground. When the dust cleared, no one was found."
   }
  ],
  "relations": [
@@ -104,16 +123,5 @@
    "quote": "the sorceress probably represents Tojira , the Swamp Queen, from the story."
   }
  ],
- "rejected": [
-  {
-   "kind": "event",
-   "reason": "unlisted participant",
-   "summary": "Four goblins are lost one by one to a serpent, an ogre, a griffin and a tremor.",
-   "participants": [],
-   "location": "Caliman",
-   "importance": "minor",
-   "paragraph": 11,
-   "quote": "One little goblin shook up the ground. When the dust cleared, no one was found."
-  }
- ]
+ "rejected": []
 }

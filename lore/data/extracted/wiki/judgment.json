@@ -1,0 +1,172 @@
+{
+ "page": "wiki/judgment",
+ "url": "https://mtg.wiki/page/Judgment",
+ "title": "Judgment",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:27Z",
+ "storyline": "Mirari Saga",
+ "entities": [
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "The guardian of the Mirari who keeps his promise to a dying Chainer to keep the orb safe from others and himself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [
+    "the orb"
+   ],
+   "description": "A potent orb that corrupts Kamahl and is ultimately implanted into the Krosan Forest, causing flora and fauna to grow larger and wilder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "A dying figure to whom Kamahl made a promise to keep the Mirari safe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who attempts to obtain the Mirari; his corpse is used to implant the orb in the Krosan Forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eesha",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who attempts to obtain the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's sister, who endeavors to separate the Mirari from Kamahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balthor",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's mentor, who endeavors to separate the Mirari from Kamahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krosan Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest into which the Mirari is implanted, making its fauna and flora grow larger and wilder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent on Dominaria where Judgment takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Judgment takes place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kamahl keeps the Mirari safe from others and himself, keeping his promise to a dying Chainer.",
+   "participants": [
+    "Kamahl",
+    "Mirari",
+    "Chainer"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "keeps the Mirari safe from others and himself"
+  },
+  {
+   "summary": "Laquatus and Eesha try to obtain the Mirari while Jeska and Balthor try to separate it from Kamahl for fear of its corrupting influence.",
+   "participants": [
+    "Laquatus",
+    "Eesha",
+    "Jeska",
+    "Balthor",
+    "Kamahl",
+    "Mirari"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "attempt to obtain the potent orb for themselves"
+  },
+  {
+   "summary": "After politics and war, the Mirari, attached to Kamahl's sword, is implanted through Laquatus's corpse into the Krosan Forest, channeling its magic into the land.",
+   "participants": [
+    "Mirari",
+    "Kamahl",
+    "Laquatus",
+    "Krosan Forest"
+   ],
+   "location": "Krosan Forest",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "is implanted through the corpse of Laquatus and into the Krosan Forest"
+  },
+  {
+   "summary": "A majority of the characters are killed and the influence of the Mirari on individuals is diminished.",
+   "participants": [
+    "Mirari"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "A majority of the characters are killed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kamahl",
+   "relation": "serves",
+   "target": "Chainer",
+   "note": "Keeps a promise made to the dying Chainer.",
+   "paragraph": 3,
+   "quote": "in keeping truth to his promise made to a dying Chainer"
+  },
+  {
+   "source": "Jeska",
+   "relation": "family",
+   "target": "Kamahl",
+   "note": "Kamahl's sister.",
+   "paragraph": 3,
+   "quote": "Kamahl's sister and mentor, Jeska and Balthor"
+  },
+  {
+   "source": "Balthor",
+   "relation": "mentor_of",
+   "target": "Kamahl",
+   "note": "Kamahl's mentor.",
+   "paragraph": 3,
+   "quote": "Kamahl's sister and mentor, Jeska and Balthor"
+  },
+  {
+   "source": "Laquatus",
+   "relation": "enemy",
+   "target": "Kamahl",
+   "note": "Attempts to obtain the Mirari from him.",
+   "paragraph": 3,
+   "quote": "including Laquatus and Eesha"
+  }
+ ],
+ "rejected": []
+}

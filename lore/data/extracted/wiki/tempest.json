@@ -1,0 +1,95 @@
+{
+ "page": "wiki/tempest",
+ "url": "https://mtg.wiki/page/Tempest",
+ "title": "Tempest",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:06Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The stormy plane on which the Tempest story takes place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard Capashen"
+   ],
+   "description": "Hero who with the crew of the Skyship Weatherlight sets out to find Volrath's stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "The skyship whose heroes set out to find Volrath's stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of a stronghold on Rath that the heroes seek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath's Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Volrath's fortress on Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [
+    "Commander Greven il-Vec"
+   ],
+   "description": "Commander featured in the Tempest artwork.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gerrard and the heroes of the Skyship Weatherlight set out on stormy Rath to find Volrath's stronghold.",
+   "participants": [
+    "Gerrard",
+    "Weatherlight",
+    "Volrath",
+    "Rath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "where Gerrard and the heroes of the Skyship Weatherlight set out to find Volrath 's stronghold"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gerrard",
+   "relation": "enemy",
+   "target": "Volrath",
+   "note": "Gerrard and the heroes set out to find Volrath's stronghold.",
+   "paragraph": 4,
+   "quote": "set out to find Volrath 's stronghold"
+  },
+  {
+   "source": "Gerrard",
+   "relation": "member_of",
+   "target": "Weatherlight",
+   "note": "Among the heroes of the Skyship Weatherlight.",
+   "paragraph": 4,
+   "quote": "Gerrard and the heroes of the Skyship Weatherlight"
+  }
+ ],
+ "rejected": []
+}
