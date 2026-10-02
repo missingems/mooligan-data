@@ -1,0 +1,105 @@
+{
+ "page": "wiki/zendikar-rising",
+ "url": "https://mtg.wiki/page/Zendikar_Rising",
+ "title": "Zendikar Rising",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:36:48Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A dangerous adventure world of ancient ruins and lethal risks, where the Roil still continues; the setting of Zendikar Rising.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who has returned to Zendikar and is willing to do anything to get rid of the Roil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A planeswalker who has also returned home to Zendikar for reasons of her own.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A returning planeswalker of the Zendikar Rising set, featured on its Draft Booster artwork.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Roil",
+   "type": "concept",
+   "aliases": [
+    "Roil"
+   ],
+   "description": "The unpredictable ripples of change that wash through the land of Zendikar and still continue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "The titanic beings absent from this storyline, though their ruin is seen.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nahiri returns to Zendikar, determined to rid it of the Roil.",
+   "participants": [
+    "Nahiri",
+    "Zendikar",
+    "The Roil"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Nahiri has returned to Zendikar, and is willing to do anything to get rid of the Roil."
+  },
+  {
+   "summary": "Nissa also returns to Zendikar, for reasons of her own.",
+   "participants": [
+    "Nissa Revane",
+    "Zendikar"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Nissa has also returned home, but for reasons of her own."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nissa Revane",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "Zendikar is her home world",
+   "paragraph": 4,
+   "quote": "Nissa has also returned home, but for reasons of her own."
+  },
+  {
+   "source": "Nahiri",
+   "relation": "enemy",
+   "target": "The Roil",
+   "note": "Nahiri wants to get rid of it",
+   "paragraph": 4,
+   "quote": "Nahiri has returned to Zendikar, and is willing to do anything to get rid of the Roil."
+  }
+ ],
+ "rejected": []
+}
