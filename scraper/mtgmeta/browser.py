@@ -57,7 +57,7 @@ class GoldfishBrowser:
 
         A format without one (Duel Commander) has a single, unwindowed page.
         """
-        html = self.page(f"/metagame/{format}/full")
+        html = self._loaded_metagame(format)
         window = selected_period(html)
         if window is None:
             log.info("The %s metagame has no window selector; taking the page as it comes", format)
@@ -132,6 +132,28 @@ class GoldfishBrowser:
             return json.loads(self._sb.execute_async_script(script, timeout=90))
         except Exception as error:  # noqa: BLE001 - a hung request times out the whole script
             return [{"status": 0, "body": str(error)} for _ in paths]
+
+    def _loaded_metagame(self, format: str, attempts: int = 2) -> str:
+        """The metagame page once its archetype tiles are in, loaded again if they never come.
+
+        The tiles can land after the page has cleared the challenge, and a page read before them parses
+        as having none. Still without tiles after every attempt, the page is returned as it is.
+        """
+        path = f"/metagame/{format}/full"
+        for attempt in range(1, attempts + 1):
+            self.page(path)
+            if self._tiles_landed(wait=15):
+                return self._sb.get_page_source()
+            log.warning("No archetype tiles on the %s metagame page yet (attempt %d/%d)", format, attempt, attempts)
+        return self._sb.get_page_source()
+
+    def _tiles_landed(self, wait: float) -> bool:
+        """Whether the metagame page shows its archetype tiles, giving them `wait` seconds to arrive."""
+        for _ in range(int(wait / 0.5) + 1):
+            if self._tile_statistics():
+                return True
+            time.sleep(0.5)
+        return False
 
     def _cleared(self, wait: float) -> bool:
         """Whether the real page is showing, giving an automatic challenge `wait` seconds to pass."""
