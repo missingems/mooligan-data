@@ -1,0 +1,207 @@
+{
+ "page": "wiki/star-trek-species",
+ "url": "https://mtg.wiki/page/Star_Trek_species",
+ "title": "Star Trek species",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:56Z",
+ "storyline": "Star Trek",
+ "entities": [
+  {
+   "name": "Borg",
+   "type": "faction",
+   "aliases": [
+    "Borg Collective"
+   ],
+   "description": "A pseudo-species of cybernetic humanoids from the Delta Quadrant who seek perfection through assimilation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klingons",
+   "type": "faction",
+   "aliases": [
+    "Klingon"
+   ],
+   "description": "An aggressive humanoid warrior race with a strict warrior code.",
+   "presence": "appears"
+  },
+  {
+   "name": "Romulans",
+   "type": "faction",
+   "aliases": [
+    "Romulan",
+    "Romulan Star Empire"
+   ],
+   "description": "A militaristic humanoid race, biological cousins of the Vulcans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vulcans",
+   "type": "faction",
+   "aliases": [
+    "Vulcan"
+   ],
+   "description": "A stoic humanoid race defined by strict logic and emotional control.",
+   "presence": "appears"
+  },
+  {
+   "name": "Surak",
+   "type": "character",
+   "aliases": [],
+   "description": "An ancient teacher who founded the Vulcan philosophy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Q",
+   "type": "creature",
+   "aliases": [
+    "the Q"
+   ],
+   "description": "A species of nigh-omnipotent, immortal non-corporeal entities living in the Q Continuum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Q Continuum",
+   "type": "location",
+   "aliases": [],
+   "description": "An alternate dimension accessible only to the Q and their invited guests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gorn",
+   "type": "creature",
+   "aliases": [],
+   "description": "A bipedal reptilian species from the Beta Quadrant that hatches from parasitic eggs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Andorians",
+   "type": "faction",
+   "aliases": [
+    "Andorian"
+   ],
+   "description": "A blue-skinned militaristic species and founding members of the United Federation of Planets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tellarites",
+   "type": "faction",
+   "aliases": [
+    "Tellarite"
+   ],
+   "description": "A pig-like humanoid species whose homeworld founded the United Federation of Planets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talosians",
+   "type": "faction",
+   "aliases": [
+    "Talosian"
+   ],
+   "description": "A telepathic species who survive underground after a nuclear holocaust and experiment with humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vorta",
+   "type": "faction",
+   "aliases": [],
+   "description": "A species genetically engineered by the Founders of the Dominion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xindi",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of six alien species that developed on the same planet.",
+   "presence": "appears"
+  },
+  {
+   "name": "United Federation of Planets",
+   "type": "faction",
+   "aliases": [
+    "Federation"
+   ],
+   "description": "The interstellar union founded by species including the Andorians and Tellarites.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Romulans split from the Vulcans, descended from those who rejected Surak's reforms during the Time of Awakening.",
+   "participants": [
+    "Romulans",
+    "Vulcans",
+    "Surak"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "descended from those who rejected Surak 's reforms during the \"Time of Awakening\"."
+  },
+  {
+   "summary": "A nuclear holocaust leaves the Talosian planet uninhabitable and kills most of the species; survivors move underground.",
+   "participants": [
+    "Talosians"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "a nuclear holocaust left their planet virtually uninhabitable and killed most of the species."
+  },
+  {
+   "summary": "A brutal civil war between the six Xindi species destroys their planet and leaves the Xindi-Avians believed extinct.",
+   "participants": [
+    "Xindi"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 37,
+   "quote": "as the result of a brutal civil war between the six species that destroyed the planet."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Romulans",
+   "relation": "family",
+   "target": "Vulcans",
+   "note": "biological cousins",
+   "paragraph": 23,
+   "quote": "The Romulans are biological cousins of the Vulcans"
+  },
+  {
+   "source": "Andorians",
+   "relation": "member_of",
+   "target": "United Federation of Planets",
+   "note": "founding member",
+   "paragraph": 1,
+   "quote": "The race is a founding member of the United Federation of Planets ."
+  },
+  {
+   "source": "Tellarites",
+   "relation": "member_of",
+   "target": "United Federation of Planets",
+   "note": "their homeworld is a founding member",
+   "paragraph": 26,
+   "quote": "Their homeworld became a founding member of the United Federation of Planets ."
+  },
+  {
+   "source": "Q",
+   "relation": "located_in",
+   "target": "Q Continuum",
+   "note": "the realm they live in",
+   "paragraph": 20,
+   "quote": "The Q live in the \" Q Continuum \""
+  },
+  {
+   "source": "Surak",
+   "relation": "created",
+   "target": "Vulcans",
+   "note": "founded the Vulcan core philosophy",
+   "paragraph": 35,
+   "quote": "Their core philosophy was founded by an ancient teacher named Surak ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,140 @@
+{
+ "page": "wiki/lorehold",
+ "url": "https://mtg.wiki/page/Lorehold",
+ "title": "Lorehold",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:05Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Lorehold",
+   "type": "faction",
+   "aliases": [
+    "Lorehold College",
+    "College of Archaeomancy"
+   ],
+   "description": "The College of Archaeomancy at Strixhaven University, whose mages study history and summon spirits; aligned with red and white.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "University on Arcavios that houses Lorehold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Strixhaven University.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Velomachus Lorehold",
+   "type": "character",
+   "aliases": [],
+   "description": "The elder dragon who founded the college.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Plargg",
+   "type": "character",
+   "aliases": [],
+   "description": "The red-aligned Orc dean of Lorehold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Augusta",
+   "type": "character",
+   "aliases": [],
+   "description": "Lorehold's white-aligned dean (interim).",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kollema",
+   "type": "character",
+   "aliases": [],
+   "description": "A wise monk, one of the first Lorehold professors at Strixhaven's founding; honored by a statue.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [
+    "Silverquill College"
+   ],
+   "description": "Rival college whose magic is self-written and spoken.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pillardrop",
+   "type": "location",
+   "aliases": [],
+   "description": "A blend of natural chasm, archaeological dig site and modern construction housing Lorehold classes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Effigy Row",
+   "type": "location",
+   "aliases": [],
+   "description": "Center of Lorehold, lined with monuments of historical figures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kollema Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "A grand multi-tiered gallery and lecture hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blood Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era of wars whose magic warlores get excited about.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Velomachus Lorehold",
+   "relation": "created",
+   "target": "Lorehold",
+   "note": "Founder of the college.",
+   "paragraph": 0,
+   "quote": "The founder of the college is the elder dragon Velomachus Lorehold ."
+  },
+  {
+   "source": "Plargg",
+   "relation": "leader_of",
+   "target": "Lorehold",
+   "note": "Red-aligned dean.",
+   "paragraph": 9,
+   "quote": "Plargg is the red-aligned Orc dean of Lorehold."
+  },
+  {
+   "source": "Augusta",
+   "relation": "leader_of",
+   "target": "Lorehold",
+   "note": "White-aligned dean.",
+   "paragraph": 10,
+   "quote": "Augusta is Lorehold's white-aligned dean."
+  },
+  {
+   "source": "Lorehold",
+   "relation": "located_in",
+   "target": "Strixhaven University",
+   "note": "A college of the university.",
+   "paragraph": 0,
+   "quote": "Lorehold is the College of Archaeomancy at Strixhaven University"
+  }
+ ],
+ "rejected": []
+}

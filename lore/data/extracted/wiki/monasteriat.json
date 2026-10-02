@@ -1,0 +1,202 @@
+{
+ "page": "wiki/monasteriat",
+ "url": "https://mtg.wiki/page/Monasteriat",
+ "title": "Monasteriat",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Monasteriat",
+   "type": "faction",
+   "aliases": [
+    "Monoists"
+   ],
+   "description": "An insular and esoteric governing body of hundreds of elector monks in the Edge that administers Monoist doctrine from the Lip of Susur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monoism",
+   "type": "concept",
+   "aliases": [
+    "the True Faith"
+   ],
+   "description": "An ancient unitary faith practiced by multiple species that holds the Immortal Faller approaches every supervoid and INEVITA is the perfect future beyond it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Summism",
+   "type": "concept",
+   "aliases": [],
+   "description": "The rival faith that competes with Monoism as the most widespread in Pinnacle space.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Summist Celestial Palatinate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Summist power engaged with the Monasteriat in the Entropy War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Entropy War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war between the Monasteriat and the Summist Celestial Palatinate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Faller",
+   "type": "character",
+   "aliases": [
+    "the Faller"
+   ],
+   "description": "The savior and first prophet of the Monoist faith, observed approaching the center of every supervoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Described the Monasteriat as an entropic death cult and questioned the existence of the Faller.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Point Prime",
+   "type": "location",
+   "aliases": [],
+   "description": "The first and most holy supervoid of the Monoist faith, formed from the collapsed star Susur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lip of Susur",
+   "type": "location",
+   "aliases": [],
+   "description": "The photon collar ringing Point Prime and capital of the faith, what remains of the star that birthed Point Prime.",
+   "presence": "appears"
+  },
+  {
+   "name": "Susurians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The native species of the Susur system who divined the first tenets of Monoism.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [],
+   "description": "The one-thousandth supervoid created by the Monoists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Plummet Record",
+   "type": "artifact",
+   "aliases": [
+    "Plummet Record"
+   ],
+   "description": "The Monoist religious text in two volumes, believed to come from the Faller.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "INEVITA",
+   "type": "concept",
+   "aliases": [
+    "Next Eternity",
+    "World to Come"
+   ],
+   "description": "The promised, inevitable end of the universe, believed to be an Elysian paradise.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gravkill paladins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the Monasteriat's volunteer military, clad in alabile gravkill suits.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In ancient times the star Susur collapses into a supervoid, later called Point Prime, and the Susurians found Monoism.",
+   "participants": [
+    "Susurians",
+    "Point Prime",
+    "Monoism"
+   ],
+   "location": "Point Prime",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "In ancient times, the star Susur collapsed into a supervoid, later called Point Prime."
+  },
+  {
+   "summary": "The Monoists create nine hundred ninety-nine supervoids since Point Prime, Sothera being the thousandth.",
+   "participants": [
+    "Monasteriat",
+    "Sothera"
+   ],
+   "location": "Point Prime",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "The Monoists have created nine hundred ninety-nine supervoids since Point Prime, with Sothera as their one-thousandth."
+  },
+  {
+   "summary": "The Monasteriat and the Summist Celestial Palatinate are engaged in the Entropy War.",
+   "participants": [
+    "Monasteriat",
+    "Summist Celestial Palatinate",
+    "Entropy War"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "The Monasteriat and the Summist Celestial Palatinate are engaged in the Entropy War ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Monasteriat",
+   "relation": "enemy",
+   "target": "Summist Celestial Palatinate",
+   "note": "Engaged in the Entropy War.",
+   "paragraph": 10,
+   "quote": "The Monasteriat and the Summist Celestial Palatinate are engaged in the Entropy War ."
+  },
+  {
+   "source": "Monoism",
+   "relation": "enemy",
+   "target": "Summism",
+   "note": "Competes with Summism; Monoists protect supervoids from the Summists.",
+   "paragraph": 1,
+   "quote": "It competes with Summism as the most widespread faith in Pinnacle space"
+  },
+  {
+   "source": "Monasteriat",
+   "relation": "serves",
+   "target": "Immortal Faller",
+   "note": "The faith revolves around the Faller's transmissions.",
+   "paragraph": 2,
+   "quote": "The Immortal Faller is the name of the savior and first prophet of the Monoist faith."
+  },
+  {
+   "source": "Lip of Susur",
+   "relation": "located_in",
+   "target": "Point Prime",
+   "note": "The photon collar that rings Point Prime.",
+   "paragraph": 0,
+   "quote": "the photon collar that rings Point Prime"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Monasteriat",
+   "note": "Described them as an entropic death cult.",
+   "paragraph": 0,
+   "quote": "Tezzeret described the Monasteriat as entropic death cult"
+  }
+ ],
+ "rejected": []
+}
