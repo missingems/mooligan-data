@@ -1,0 +1,111 @@
+{
+ "page": "wiki/alliances",
+ "url": "https://mtg.wiki/page/Alliances",
+ "title": "Alliances",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:39:59Z",
+ "storyline": "Ice Age block",
+ "entities": [
+  {
+   "name": "Alliances",
+   "type": "concept",
+   "aliases": [],
+   "description": "The eighth Magic expansion, released June 1996 as the second set of the Ice Age block, whose story shows civilizations adjusting to the end of the Ice Age and allying against Lim-Dûl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer who builds an army of undead bent on world domination after the Ice Age ends.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who cast her World Spell, ending the Ice Age; character is a planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "concept",
+   "aliases": [],
+   "description": "The spell Freyalise cast to end the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Ice Age",
+   "type": "event",
+   "aliases": [
+    "Ice Age"
+   ],
+   "description": "A long cold age ended by Freyalise's World Spell, after which populations had to adjust to warm weather.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alliance against Lim-Dûl",
+   "type": "faction",
+   "aliases": [],
+   "description": "An alliance formed between races to defeat Lim-Dûl and his undead army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Freyalise casts her World Spell, ending the Ice Age and forcing a cold-adapted population to adjust to warm weather.",
+   "participants": [
+    "Freyalise",
+    "World Spell",
+    "The Ice Age"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "After the planeswalker Freyalise cast her World Spell , thereby ending the Ice Age"
+  },
+  {
+   "summary": "The new climate brings floods and plagues, and the necromancer Lim-Dûl builds an undead army bent on world domination.",
+   "participants": [
+    "Lim-Dûl"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the necromancer Lim-Dûl has built an army of undead bent on world domination"
+  },
+  {
+   "summary": "The races form an alliance to defeat Lim-Dûl and his army.",
+   "participants": [
+    "Alliance against Lim-Dûl",
+    "Lim-Dûl"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "An alliance is formed between races to defeat Lim-Dûl and his army."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Freyalise",
+   "relation": "created",
+   "target": "World Spell",
+   "note": "Freyalise cast it to end the Ice Age.",
+   "paragraph": 6,
+   "quote": "After the planeswalker Freyalise cast her World Spell , thereby ending the Ice Age"
+  },
+  {
+   "source": "Alliance against Lim-Dûl",
+   "relation": "enemy",
+   "target": "Lim-Dûl",
+   "note": "The alliance is formed to defeat him and his army.",
+   "paragraph": 6,
+   "quote": "An alliance is formed between races to defeat Lim-Dûl and his army."
+  }
+ ],
+ "rejected": []
+}

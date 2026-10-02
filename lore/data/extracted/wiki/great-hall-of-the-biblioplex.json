@@ -1,0 +1,178 @@
+{
+ "page": "wiki/great-hall-of-the-biblioplex",
+ "url": "https://mtg.wiki/page/Great_Hall_of_the_Biblioplex",
+ "title": "Great Hall of the Biblioplex",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:41:17Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Great Hall of the Biblioplex",
+   "type": "location",
+   "aliases": [
+    "Great Hall"
+   ],
+   "description": "The main floor and largest open space in the Biblioplex at Strixhaven, a central hub and primary gathering place for students and faculty.",
+   "presence": "appears"
+  },
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [],
+   "description": "The library building at Strixhaven's Central Campus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The university on Arcavios whose Central Campus contains the Biblioplex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Strixhaven stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hall of Oracles",
+   "type": "location",
+   "aliases": [],
+   "description": "A hallowed chamber at the center of the Biblioplex, where first-day orientation is held; ruined in the Oriq Attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven Snarl",
+   "type": "concept",
+   "aliases": [],
+   "description": "A massive luminous tangle of pure mana and power that illuminates the Hall of Oracles like a magical sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq Attack on Strixhaven",
+   "type": "event",
+   "aliases": [],
+   "description": "An attack that ruined the Hall of Oracles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aisla Fitzbottom",
+   "type": "character",
+   "aliases": [],
+   "description": "The cheerfully energetic manager of the Biblioplex Cafe, well loved though disorganized.",
+   "presence": "appears"
+  },
+  {
+   "name": "Groff Lundquist",
+   "type": "character",
+   "aliases": [],
+   "description": "A friendly human commoner and staff member who manages the Student Store.",
+   "presence": "appears"
+  },
+  {
+   "name": "Biblioplex Cafe",
+   "type": "location",
+   "aliases": [
+    "Biblioplex Café"
+   ],
+   "description": "A cafe with a root mural and an illusory leaf canopy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Book Gardens",
+   "type": "location",
+   "aliases": [],
+   "description": "Two peaceful gardens cared for by Witherbloom students.",
+   "presence": "appears"
+  },
+  {
+   "name": "Witherbloom College",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Strixhaven college whose students care for the Book Gardens.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prismari College",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Strixhaven college whose students maintain the art gallery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Strixhaven college whose campus has the Rose Stage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Playactors Drama Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "A student group that frequently rehearses in the Amphitheater.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Hall of Oracles was ruined in the Oriq Attack on Strixhaven.",
+   "participants": [
+    "Hall of Oracles",
+    "Oriq Attack on Strixhaven"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The hall was ruined in the Oriq Attack on Strixhaven ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Great Hall of the Biblioplex",
+   "relation": "located_in",
+   "target": "Biblioplex",
+   "note": "The main floor of the Biblioplex.",
+   "paragraph": 0,
+   "quote": "is the main floor and largest open space within the Biblioplex"
+  },
+  {
+   "source": "Biblioplex",
+   "relation": "located_in",
+   "target": "Strixhaven",
+   "note": "In the Central Campus of Strixhaven.",
+   "paragraph": 0,
+   "quote": "located in the Central Campus of Strixhaven"
+  },
+  {
+   "source": "Aisla Fitzbottom",
+   "relation": "serves",
+   "target": "Biblioplex Cafe",
+   "note": "Its manager.",
+   "paragraph": 3,
+   "quote": "its manager — Aisla Fitzbottom — handles the space alone"
+  },
+  {
+   "source": "Groff Lundquist",
+   "relation": "member_of",
+   "target": "Strixhaven",
+   "note": "A Strixhaven staff member.",
+   "paragraph": 14,
+   "quote": "Groff Lundquist , a friendly human commoner and Strixhaven staff member"
+  },
+  {
+   "source": "Witherbloom College",
+   "relation": "other",
+   "target": "Book Gardens",
+   "note": "Its students typically care for the gardens.",
+   "paragraph": 5,
+   "quote": "Witherbloom College students typically care for the gardens"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,181 @@
+{
+ "page": "wiki/antiquities",
+ "url": "https://mtg.wiki/page/Antiquities",
+ "title": "Antiquities",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:40:19Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "Antiquities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The second Magic expansion, built around artifacts and telling the story of the Brothers' War between Mishra and Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "One of two brothers who discover a stone in the Caves of Koilos and fight the Brothers' War against Mishra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "One of two brothers who discover a stone in the Caves of Koilos and fight the Brothers' War against Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "An epic war between Urza and Mishra for control of both halves of the stone, fought with ancient Thran machines, ending in the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran Empire",
+   "type": "faction",
+   "aliases": [
+    "Thran"
+   ],
+   "description": "An ancient empire whose artifacts and advanced machines of war are discovered on Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent of Dominaria where ancient Thran artifacts are discovered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caves of Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where Urza and Mishra discover a stone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mightstone and Weakstone",
+   "type": "artifact",
+   "aliases": [
+    "Mightstone",
+    "Weakstone"
+   ],
+   "description": "The two halves into which the discovered stone splits when disturbed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The source of evil unleashed on Dominaria when the stone splits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Brothers' War takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "The culmination of the Brothers' War, plunging the world into the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The age into which the world is plunged after the Sylex Blast.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ancient artifacts and machines of war of the Thran Empire are discovered on Terisiare.",
+   "participants": [
+    "Thran Empire",
+    "Terisiare"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 21,
+   "quote": "Ancient artifacts of the Thran Empire are discovered on the continent of Terisiare"
+  },
+  {
+   "summary": "Urza and Mishra discover a stone in the Caves of Koilos; disturbed, it splits into Mightstone and Weakstone and unleashes Phyrexia's evil on Dominaria.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Caves of Koilos",
+    "Mightstone and Weakstone",
+    "Phyrexia",
+    "Dominaria"
+   ],
+   "location": "Caves of Koilos",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "unleashing the evil of Phyrexia on Dominaria"
+  },
+  {
+   "summary": "The Brothers' War erupts between Urza and Mishra for control of both halves of the stone, with ancient Thran machines used in battle.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Brothers' War",
+    "Thran Empire"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "an epic war between Urza and Mishra for control of both halves of the stone"
+  },
+  {
+   "summary": "The war culminates in the Sylex Blast, plunging the world into the Ice Age.",
+   "participants": [
+    "Sylex Blast",
+    "Ice Age"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "plunging the world into the Ice Age"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "family",
+   "target": "Mishra",
+   "note": "Brothers.",
+   "paragraph": 21,
+   "quote": "Two brothers"
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "Fight the Brothers' War over the stone.",
+   "paragraph": 21,
+   "quote": "an epic war between Urza and Mishra"
+  },
+  {
+   "source": "Terisiare",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "",
+   "paragraph": 21,
+   "quote": "the continent of Terisiare"
+  }
+ ],
+ "rejected": []
+}
