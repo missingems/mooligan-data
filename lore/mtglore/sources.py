@@ -149,16 +149,17 @@ def scrape_cards(fetcher: Fetcher, directory: Path) -> dict:
 # --- wizards.com on the Internet Archive ----------------------------------------------------------------
 
 # The story columns, by the URL prefix the Internet Archive knows them under.
+# The story columns first; Magic Arcana, mostly short notes, last.
 ARCHIVE_PREFIXES = [
     "wizards.com/magic/magazine/article.aspx?x=mtg/daily/stf/",      # Savor the Flavor, 2008-2014
     "wizards.com/magic/magazine/article.aspx?x=mtg/daily/ur/",       # Uncharted Realms, 2012-2014
-    "wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/",   # Magic Arcana, 2002-2014
-    "wizards.com/magic/magazine/article.aspx?x=mtgcom/arcana/",
-    "wizards.com/magic/magazine/article.aspx?x=mtgcom/feature/",     # early features, story ones among them
-    "wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/",
     "magic.wizards.com/en/articles/archive/savor-flavor/",
     "magic.wizards.com/en/articles/archive/uncharted-realms/",
     "magic.wizards.com/en/articles/archive/magic-story/",
+    "wizards.com/magic/magazine/article.aspx?x=mtgcom/feature/",     # early features, story ones among them
+    "wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/",
+    "wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/",   # Magic Arcana, 2002-2014
+    "wizards.com/magic/magazine/article.aspx?x=mtgcom/arcana/",
 ]
 _STORY_FEATURE = re.compile(r"story|tale|chronicle|planeswalker|guide|legend|lore|fiction|journal|diary|chapter|part", re.I)
 
@@ -237,10 +238,29 @@ def archive_page(html: str, original: str, stamp: str) -> Optional[dict]:
     }
 
 
-def scrape_archive(fetcher: Fetcher, directory: Path, known_titles: Set[str]) -> dict:
-    """Every story column the Archive holds, less what the current site already gave (matched by title)."""
-    report = {"listed": 0, "saved": 0, "skipped": 0, "not_story": 0, "failed": []}
+def scrape_archive(fetcher: Fetcher, directory: Path, known_titles: Set[str], deadline: float, workers: int = 4) -> dict:
+    """Every story column the Archive holds, less what the current site already gave (matched by title).
+
+    The Archive takes many seconds a page, so pages are fetched `workers` at a time, and the scrape stops at
+    `deadline` (a time.time()) so that a run commits what it has; the next run carries on from there.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    report = {"listed": 0, "saved": 0, "skipped": 0, "not_story": 0, "failed": [], "stopped_early": False}
+
+    def fetch(row):
+        stamp, original = row
+        try:
+            own = Fetcher(delay=fetcher._delay)
+            html = own.get(f"https://web.archive.org/web/{stamp}id_/{original}").decode("utf-8", "replace")
+            return original, archive_page(html, original, stamp), None
+        except Exception as error:  # noqa: BLE001
+            return original, None, error
+
     for prefix in ARCHIVE_PREFIXES:
+        if time.time() > deadline:
+            report["stopped_early"] = True
+            break
         try:
             snapshots = archive_snapshots(fetcher, prefix)
         except Exception as error:  # noqa: BLE001 - one listing must not stop the rest
@@ -248,32 +268,33 @@ def scrape_archive(fetcher: Fetcher, directory: Path, known_titles: Set[str]) ->
             continue
         log.info("Archive: %d pages under %s", len(snapshots), prefix)
         report["listed"] += len(snapshots)
+        todo = []
         for stamp, original in snapshots:
             key = _archive_key(original)
             if not key or "/" not in key:
                 continue
             if "feature/" in key and not _STORY_FEATURE.search(key):
                 report["not_story"] += 1
-                continue
-            if (directory / "archive" / f"{_slug(key)}.json").exists():
+            elif (directory / "archive" / f"{_slug(key)}.json").exists():
                 report["skipped"] += 1
-                continue
-            try:
-                html = fetcher.get(f"https://web.archive.org/web/{stamp}id_/{original}").decode("utf-8", "replace")
-                page = archive_page(html, original, stamp)
-            except Exception as error:  # noqa: BLE001
-                report["failed"].append(f"{original}: {error}")
-                continue
-            if page is None or len(page["paragraphs"]) < 3:
-                report["not_story"] += 1
-                continue
-            if page["title"].strip().lower() in known_titles:
-                report["skipped"] += 1
-                continue
-            _save(directory, "archive", page["slug"], page)
-            report["saved"] += 1
-            if report["saved"] % 50 == 0:
-                log.info("Archive: saved %d", report["saved"])
+            else:
+                todo.append((stamp, original))
+        for start in range(0, len(todo), workers * 4):
+            if time.time() > deadline:
+                report["stopped_early"] = True
+                break
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for original, page, error in pool.map(fetch, todo[start : start + workers * 4]):
+                    if error is not None:
+                        report["failed"].append(f"{original}: {error}")
+                    elif page is None or len(page["paragraphs"]) < 3:
+                        report["not_story"] += 1
+                    elif page["title"].strip().lower() in known_titles:
+                        report["skipped"] += 1
+                    else:
+                        _save(directory, "archive", page["slug"], page)
+                        report["saved"] += 1
+            log.info("Archive: %s, %d saved so far", prefix.rsplit("=", 1)[-1], report["saved"])
     return report
 
 
@@ -286,6 +307,8 @@ WIKI_ROOTS = [
     "Category:Novels", "Category:Short stories", "Category:Organizations", "Category:Events",
     "Category:Artifacts (storyline)", "Category:Deities",
 ]
+# Categories that are about the real world, not the story: writers, and other franchises' crossovers.
+WIKI_SKIP_CATEGORIES = {"Category:Storyline authors", "Category:External franchise lore"}
 # Sections that are lists, galleries or bookkeeping rather than story.
 WIKI_SKIP = re.compile(r"^(contents|gallery|references|notes|see also|external links|in-game references|"
                        r"story appearances|planes visited|card list|cards|trivia|appearances|other appearances|"
@@ -304,7 +327,7 @@ def wiki_titles(fetcher: Fetcher, roots: Iterable[str], depth: int) -> Dict[str,
     frontier = [(root, 0) for root in roots]
     while frontier:
         category, level = frontier.pop(0)
-        if category in seen:
+        if category in seen or category in WIKI_SKIP_CATEGORIES:
             continue
         seen.add(category)
         cont: dict = {}
@@ -374,7 +397,12 @@ def scrape_wiki(fetcher: Fetcher, directory: Path, depth: int, limit: Optional[i
             continue
         try:
             data = _wiki(fetcher, action="parse", page=title, prop="text", redirects="1")
-            page = wiki_page(title, data["parse"]["text"], category)
+            # A redirect ("Jace", "Pyromancer's Goggles") is saved under the article it leads to, once.
+            canonical = data["parse"].get("title") or title
+            if canonical != title and (directory / "wiki" / f"{_slug(canonical)}.json").exists():
+                report["skipped"] += 1
+                continue
+            page = wiki_page(canonical, data["parse"]["text"], category)
         except Exception as error:  # noqa: BLE001
             report["failed"].append(f"{title}: {error}")
             continue

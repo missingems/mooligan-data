@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import sys
+import time
 from pathlib import Path
 
 
@@ -42,7 +43,8 @@ def main() -> int:
             report = scrape_cards(fetcher, args.data)
         elif args.step == "scrape-archive":
             known = {page["title"].strip().lower() for page in load_pages(args.data).values()}
-            report = scrape_archive(fetcher, args.data, known)
+            minutes = float(os.environ.get("LORE_ARCHIVE_MINUTES", "300"))
+            report = scrape_archive(fetcher, args.data, known, deadline=time.time() + minutes * 60)
         else:
             report = scrape_wiki(fetcher, args.data, depth=int(os.environ.get("LORE_WIKI_DEPTH", "3")), limit=args.limit)
         failed = report.get("failed", [])

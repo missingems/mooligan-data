@@ -37,8 +37,15 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Scrape ${{ matrix.source }}
         env:
-          LORE_DELAY: ${{ matrix.source == 'archive' && '1.5' || '1.0' }}
-        run: python -m mtglore scrape-${{ matrix.source }}
+          LORE_DELAY: "1.0"
+          # The Archive is slow: stop in time for the commit below, and let the next run carry on.
+          LORE_ARCHIVE_MINUTES: "300"
+        run: |
+          # sources.json can name the sources to run ("only"); without it, all three run.
+          if jq -e --arg s "${{ matrix.source }}" '(.only // null) != null and (.only | index($s) | not)' sources.json > /dev/null; then
+            echo "Skipping ${{ matrix.source }}: not in sources.json's only"; exit 0
+          fi
+          python -m mtglore scrape-${{ matrix.source }}
       - name: Commit
         if: always()
         run: |
