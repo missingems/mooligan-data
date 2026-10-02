@@ -1,0 +1,140 @@
+{
+ "page": "wiki/shaman",
+ "url": "https://mtg.wiki/page/Shaman",
+ "title": "Shaman",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shaman",
+   "type": "concept",
+   "aliases": [
+    "shamans"
+   ],
+   "description": "A creature type of magic users whose power comes from rituals, lore and practice with an emotional and spiritual component.",
+   "presence": "appears"
+  },
+  {
+   "name": "Animists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Shamans who can communicate with all parts of land and nature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "The last animist of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flamespeakers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A shamanic order dedicated to Purphoros that worships eidolons said to inhabit the volcanoes of Akros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god of the forge worshipped by the Flamespeakers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shapers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Shamans who lead each tribe of the River Heralds, controlling wind, water and jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribes each led by a Shaper who shares the name of the tribe's river.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whisperers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Temur shamans of Tarkir who speak of the frozen memories and spirits of ancestors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atarka",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragonlord who ate the Temur clan's whisperers during her rule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Twice Whisperer",
+   "type": "character",
+   "aliases": [],
+   "description": "The Temur's spiritual leader after Atarka's overthrow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yamabushi",
+   "type": "faction",
+   "aliases": [],
+   "description": "The name for shamans on Kamigawa, meaning one who lies in mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Delina",
+   "type": "character",
+   "aliases": [],
+   "description": "A Sorcerer character in lore who is typed Shaman.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Atarka eats the Temur clan's whisperers during her rule, leaving only hunters; after her overthrow the whisperers return.",
+   "participants": [
+    "Atarka",
+    "Whisperers",
+    "Twice Whisperer"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "During her rule, dragonlord Atarka ate the clan's whisperers, leaving only hunters."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nissa Revane",
+   "relation": "member_of",
+   "target": "Animists",
+   "note": "the last animist of Zendikar",
+   "paragraph": 7,
+   "quote": "Nissa Revane was the last animist of Zendikar ."
+  },
+  {
+   "source": "Flamespeakers",
+   "relation": "serves",
+   "target": "Purphoros",
+   "note": "a shamanic order dedicated to him",
+   "paragraph": 8,
+   "quote": "Flamespeakers are a shamanic order dedicated to Purphoros , the god of the forge."
+  },
+  {
+   "source": "Twice Whisperer",
+   "relation": "leader_of",
+   "target": "Whisperers",
+   "note": "the Temur's spiritual leader",
+   "paragraph": 10,
+   "quote": "with the Twice Whisperer serving as the Temur's spiritual leader"
+  }
+ ],
+ "rejected": []
+}

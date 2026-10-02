@@ -1,0 +1,202 @@
+{
+ "page": "wiki/battle-for-zendikar",
+ "url": "https://mtg.wiki/page/Battle_for_Zendikar",
+ "title": "Battle for Zendikar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:19Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of adventure, treasures and potent mana, littered with floating hedrons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [
+    "Kor Lithomancer"
+   ],
+   "description": "The Kor lithomancer who created the hedrons and, with Ugin and Sorin, trapped the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who helped Nahiri and Sorin trap the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who helped Nahiri and Ugin trap the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose meeting in the Eye of Ugin loosened the Eldrazi's bonds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who met Sarkhan and Jace in the Eye of Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who met Sarkhan and Chandra in the Eye of Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "The elf who released the Eldrazi, thinking they would leave Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who leads a group facing the Eldrazi alongside Zendikar's residents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "A trapped planeswalker-turned-demon desperate for a way off Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi titan still around two years after the initial destruction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Horrendous colorless beings trapped on Zendikar by hedrons and later released.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eye of Ugin",
+   "type": "location",
+   "aliases": [],
+   "description": "A chamber where Sarkhan, Chandra and Jace met.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hedrons",
+   "type": "artifact",
+   "aliases": [
+    "hedron"
+   ],
+   "description": "Large floating polyhedron-shaped stones created by Nahiri to trap the Eldrazi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nahiri, Ugin and Sorin Markov use hedrons to trap the Eldrazi on Zendikar.",
+   "participants": [
+    "Nahiri",
+    "Ugin",
+    "Sorin Markov",
+    "Eldrazi",
+    "Hedrons"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Together with Ugin and Sorin Markov she used them to trap the horrendous Eldrazi on the plane."
+  },
+  {
+   "summary": "Thousands of years later, Sarkhan, Chandra and Jace meet in the Eye of Ugin chamber, unintentionally loosening the bonds on the Eldrazi.",
+   "participants": [
+    "Sarkhan Vol",
+    "Chandra Nalaar",
+    "Jace Beleren",
+    "Eldrazi"
+   ],
+   "location": "Eye of Ugin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "unintentionally loosened the bonds that kept the Eldrazi in torpor."
+  },
+  {
+   "summary": "Nissa releases the Eldrazi, thinking they would leave Zendikar behind; she is wrong.",
+   "participants": [
+    "Nissa Revane",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Eldrazi were finally released by the elf Nissa Revane , thinking that they would leave Zendikar far behind them."
+  },
+  {
+   "summary": "Gideon takes the lead of a group of planeswalkers facing the Eldrazi, while Ob Nixilis seeks a way off the plane.",
+   "participants": [
+    "Gideon Jura",
+    "Ob Nixilis",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Now, Gideon Jura takes the lead of a group of planeswalkers in facing the Eldrazi alongside the residents of Zendikar."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nahiri",
+   "relation": "created",
+   "target": "Hedrons",
+   "note": "created them to trap the Eldrazi",
+   "paragraph": 3,
+   "quote": "which were created by Nahiri , the Kor Lithomancer."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "enemy",
+   "target": "Eldrazi",
+   "note": "leads the fight against them",
+   "paragraph": 4,
+   "quote": "Gideon Jura takes the lead of a group of planeswalkers in facing the Eldrazi"
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "other",
+   "target": "Eldrazi",
+   "note": "released them",
+   "paragraph": 3,
+   "quote": "The Eldrazi were finally released by the elf Nissa Revane"
+  },
+  {
+   "source": "Ob Nixilis",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "trapped on the plane",
+   "paragraph": 4,
+   "quote": "the trapped planeswalker-turned-demon Ob Nixilis is desperate for a way off of the plane."
+  }
+ ],
+ "rejected": []
+}

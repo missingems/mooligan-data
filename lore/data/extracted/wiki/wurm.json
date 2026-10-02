@@ -1,0 +1,165 @@
+{
+ "page": "wiki/wurm",
+ "url": "https://mtg.wiki/page/Wurm",
+ "title": "Wurm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Wurm",
+   "type": "creature",
+   "aliases": [
+    "wurms"
+   ],
+   "description": "A creature type for large limbless terrestrial reptiles, mostly green-aligned forest dwellers that are preternaturally hungry.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "The Dominarian war in which defeated Elder Dragons were stripped of power, limbs and wings, becoming land wurms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elder Dragons",
+   "type": "creature",
+   "aliases": [],
+   "description": "Vastly powerful dragons defeated in the Elder Dragon War and turned into land wurms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhindle",
+   "type": "creature",
+   "aliases": [],
+   "description": "A very large scaled wurm that terrorized Kjeldor in the last decades of the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [
+    "Jeska"
+   ],
+   "description": "Under Ixidor's Nightmare spell she regurgitated beetles that became deathwurms; Jeska chose to absorb them back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "Cast the Nightmare spell that made Phage's deathwurms, and was devoured when his unmen betrayed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akroma",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel sent by Ixidor to battle the deathwurms, who could not stop them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Realized she had to absorb the wurms back into herself, becoming Phage again.",
+   "presence": "appears"
+  },
+  {
+   "name": "Deathwurms",
+   "type": "creature",
+   "aliases": [],
+   "description": "Enormous wurms embodying each of Phage's murders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zilgeth",
+   "type": "character",
+   "aliases": [],
+   "description": "Of Clan Ruby, killed by a Johtull Wurm.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Under Ixidor's Nightmare spell, Phage regurgitates beetles that become enormous deathwurms embodying her murders.",
+   "participants": [
+    "Ixidor",
+    "Phage",
+    "Deathwurms"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "These deathwurms were the embodiment of each of her murders."
+  },
+  {
+   "summary": "Ixidor sends Akroma to fight the deathwurms but even the angel cannot stop them.",
+   "participants": [
+    "Ixidor",
+    "Akroma",
+    "Deathwurms"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Ixidor sent Akroma to battle them but not even the angel was able to stop them."
+  },
+  {
+   "summary": "Ixidor flees with his unmen but some betray him and he is devoured.",
+   "participants": [
+    "Ixidor"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "some of them betrayed him and he was devoured"
+  },
+  {
+   "summary": "Jeska decides to absorb the wurms back into herself, even though it means becoming Phage again.",
+   "participants": [
+    "Jeska",
+    "Phage",
+    "Deathwurms"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "realized that she had to absorb them back in herself, even though that meant she would become Phage again"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ixidor",
+   "relation": "enemy",
+   "target": "Phage",
+   "note": "his Nightmare spell produced her deathwurms",
+   "paragraph": 6,
+   "quote": "Under the Nightmare spell of Ixidor , Phage 's unique constitution made it so that she regurgitated a swarm of beetles"
+  },
+  {
+   "source": "Ixidor",
+   "relation": "other",
+   "target": "Akroma",
+   "note": "sent her to battle the deathwurms",
+   "paragraph": 6,
+   "quote": "Ixidor sent Akroma to battle them"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "unlisted entity",
+   "source": "Johtull Wurm",
+   "relation": "killed",
+   "target": "Zilgeth",
+   "note": "one Johtull Wurm killed Zilgeth",
+   "paragraph": 5,
+   "quote": "One of them killed Zilgeth of Clan Ruby ."
+  }
+ ]
+}

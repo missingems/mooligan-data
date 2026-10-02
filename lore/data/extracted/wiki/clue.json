@@ -1,0 +1,134 @@
+{
+ "page": "wiki/clue",
+ "url": "https://mtg.wiki/page/Clue",
+ "title": "Clue",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Clue",
+   "type": "artifact",
+   "aliases": [
+    "Clue token"
+   ],
+   "description": "A predefined colorless artifact token that can be sacrificed to draw a card.",
+   "presence": "appears"
+  },
+  {
+   "name": "Investigate",
+   "type": "concept",
+   "aliases": [
+    "investigate keyword action"
+   ],
+   "description": "The keyword action that creates a Clue token.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadows over Innistrad",
+   "type": "event",
+   "aliases": [],
+   "description": "The set that introduced investigate and Clues in 2016.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murders at Karlov Manor",
+   "type": "event",
+   "aliases": [],
+   "description": "The set where investigate returned as a main set mechanic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Treasure",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A predefined artifact token that Clues paved the way for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Food",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A predefined artifact token that Clues paved the way for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blood",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A predefined artifact token.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cluestones",
+   "type": "artifact",
+   "aliases": [
+    "Ravnica Cluestones"
+   ],
+   "description": "Ravnican artifacts that could have been Clues had the type existed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Investigate and Clues are introduced in Shadows over Innistrad as the first major artifact-token set mechanic.",
+   "participants": [
+    "Investigate",
+    "Clue",
+    "Shadows over Innistrad"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Investigate and Clues were introduced in Shadows over Innistrad"
+  },
+  {
+   "summary": "Clue tokens are designed in 2016 after a more powerful impulsive draw version is replaced, inspired by cluestones.",
+   "participants": [
+    "Clue",
+    "Cluestones",
+    "Shadows over Innistrad"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Clue tokens were designed for Shadows over Innistrad (2016) to capture the flavor of investigating a mystery."
+  },
+  {
+   "summary": "Fae Offering and Academy Manufactor create Clues without investigating, making Clue a predefined token.",
+   "participants": [
+    "Clue",
+    "Investigate"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Clue became a predefined token"
+  },
+  {
+   "summary": "Investigate returns as a main set mechanic in Murders at Karlov Manor.",
+   "participants": [
+    "Investigate",
+    "Murders at Karlov Manor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Investigate appeared again in Murders at Karlov Manor as a main set mechanic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Investigate",
+   "relation": "created",
+   "target": "Clue",
+   "note": "the keyword action creates a Clue token",
+   "paragraph": 0,
+   "quote": "The investigate keyword action creates a Clue token and does nothing else."
+  }
+ ],
+ "rejected": []
+}

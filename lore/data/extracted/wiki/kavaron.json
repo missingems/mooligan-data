@@ -1,0 +1,192 @@
+{
+ "page": "wiki/kavaron",
+ "url": "https://mtg.wiki/page/Kavaron",
+ "title": "Kavaron",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:49Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Kavaron",
+   "type": "location",
+   "aliases": [
+    "Kfaron"
+   ],
+   "description": "The ruined homeworld of the Kav, a planet riven in two and crumbling into space near the supervoid Sothera.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kav",
+   "type": "faction",
+   "aliases": [
+    "Kavaronic Empire"
+   ],
+   "description": "The people of Kavaron who mined their world to ruin and are evacuating to space stations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [],
+   "description": "A supervoid in the Edge, near which Kavaron orbits; its impending supernova drove the Kav's mining.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kavaron Before",
+   "type": "location",
+   "aliases": [],
+   "description": "The stable remaining wedge of Kavaron held by tectonic anchors, where the imperial capital Vu stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron That Is",
+   "type": "location",
+   "aliases": [],
+   "description": "The shattered half of Kavaron, a gravitational storm of debris with no official government.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vu",
+   "type": "location",
+   "aliases": [],
+   "description": "The ancient capital of the Kavaronic Empire and last imperial city on the planet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guns of Kavaron",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Boost lasers that push debris higher into orbit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taro-duend",
+   "type": "location",
+   "aliases": [],
+   "description": "A strike town for Kav miners destroyed in a nuclear blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunstar Free Company Palestar Sundog",
+   "type": "faction",
+   "aliases": [],
+   "description": "The ship and company that destroyed Taro-duend under Syr Vondam.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Vondam",
+   "type": "character",
+   "aliases": [],
+   "description": "The commander under whom Palestar Sundog destroyed Taro-duend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tannuk",
+   "type": "character",
+   "aliases": [],
+   "description": "Who decelerated a Ring strike that hit a Rushdown village.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Ruin",
+   "type": "event",
+   "aliases": [
+    "the Break"
+   ],
+   "description": "The collapse of Kavaron after centuries of strip mining.",
+   "presence": "appears"
+  },
+  {
+   "name": "Exodus Day",
+   "type": "event",
+   "aliases": [],
+   "description": "The day the first Kav refugee shuttle left the surface.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Driven by the coming supernova, the Kav's mining collapses Kavaron, which crumbles into space during the Ruin.",
+   "participants": [
+    "Kav",
+    "Kavaron",
+    "The Ruin"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The planet finally crumbled after centuries of Kav industrial strip mining"
+  },
+  {
+   "summary": "On Exodus Day the first Kav shuttle lifts the first refugees off Kavaron.",
+   "participants": [
+    "Kav",
+    "Exodus Day"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "the first Kav shuttle lifted the first flight of refugees off Kavaron's unstable surface"
+  },
+  {
+   "summary": "A Ring strike decelerated by Tannuk hits a Rushdown village, killing most of its inhabitants.",
+   "participants": [
+    "Tannuk"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "killing 25,000 of its 30,000 inhabitants"
+  },
+  {
+   "summary": "The Palestar Sundog under Syr Vondam destroys Taro-duend, killing all 6,000 inhabitants and igniting its fusion engine in a nuclear blast.",
+   "participants": [
+    "Sunstar Free Company Palestar Sundog",
+    "Syr Vondam",
+    "Taro-duend"
+   ],
+   "location": "Taro-duend",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "After killing all 6,000 inhabitants, the ship ignited its fusion engine, wiping out the remains in a nuclear blast."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kav",
+   "relation": "located_in",
+   "target": "Kavaron",
+   "note": "Kavaron is their homeworld.",
+   "paragraph": 0,
+   "quote": "It is the homeworld of the Kav"
+  },
+  {
+   "source": "Kavaron",
+   "relation": "located_in",
+   "target": "Sothera",
+   "note": "Second-closest planet to the supervoid.",
+   "paragraph": 0,
+   "quote": "the second-closest planet to the supervoid Sothera in the Edge"
+  },
+  {
+   "source": "Syr Vondam",
+   "relation": "leader_of",
+   "target": "Sunstar Free Company Palestar Sundog",
+   "note": "Commanded the ship in the attack.",
+   "paragraph": 10,
+   "quote": "the Sunstar Free Company Palestar Sundog under Syr Vondam"
+  },
+  {
+   "source": "Kavaron Before",
+   "relation": "located_in",
+   "target": "Kavaron",
+   "note": "The remaining whole side of the planet.",
+   "paragraph": 1,
+   "quote": "The Kav regard Kavaron as split into two hemispheres"
+  }
+ ],
+ "rejected": []
+}

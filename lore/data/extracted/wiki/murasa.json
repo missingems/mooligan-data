@@ -1,0 +1,183 @@
+{
+ "page": "wiki/murasa",
+ "url": "https://mtg.wiki/page/Murasa",
+ "title": "Murasa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [
+    "The Walled Continent"
+   ],
+   "description": "One of Zendikar's seven continents, a steep-walled plateau drawing ships to its shores.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Murasa lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makindi Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The ancient empire that once held Murasa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorthos",
+   "type": "creature",
+   "aliases": [
+    "Lorthos, the Tidemaker"
+   ],
+   "description": "A sea monster, or its ancestor, that dragged the Murasa Skyclave into the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "A floating ruin of an ancient fortress toppled by Lorthos and since risen again.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazuul",
+   "type": "character",
+   "aliases": [],
+   "description": "An ogre slavemaster who controls the Cliffs of Kazuul and its mines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [
+    "Tajuru elves"
+   ],
+   "description": "Elves whose capital is the Tumbled Palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tumbled Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The Tajuru capital perched over a jurworrel tree, harboring remnants of Eldrazi corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A planeswalker who destroyed the Singing City with the Lithoform Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Singing City",
+   "type": "location",
+   "aliases": [],
+   "description": "A pre-Eldrazi kor-built maze on the Na Plateau, destroyed by Nissa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kor herders of the Pillar Plains who were massacred in 4537 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talib",
+   "type": "deity",
+   "aliases": [],
+   "description": "The kor god of the earth, depicted in the statue atop the Living Spire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Visimal",
+   "type": "location",
+   "aliases": [
+    "the Hidden City"
+   ],
+   "description": "An ancient diamond-shaped structure where vampires have lived for ages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kazandu",
+   "type": "location",
+   "aliases": [],
+   "description": "A vast collapsed region of canyons and jaddi trees.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A sea monster, perhaps Lorthos, drags the Murasa Skyclave into the sea, ending the Makindi reign.",
+   "participants": [
+    "Lorthos",
+    "Makindi Empire",
+    "Murasa Skyclave"
+   ],
+   "location": "Murasa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "dragged the Murasa Skyclave into the sea"
+  },
+  {
+   "summary": "The kor herders of the Pillar Plains are massacred in 4537 and their bodies hung over Thunder Gap.",
+   "participants": [
+    "Kor"
+   ],
+   "location": "Murasa",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "in 4537, they were all massacred"
+  },
+  {
+   "summary": "Nissa destroys the Singing City on the Na Plateau with the Lithoform Core.",
+   "participants": [
+    "Nissa Revane",
+    "Singing City"
+   ],
+   "location": "Murasa",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "It was destroyed when Nissa used the Lithoform Core ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Murasa",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "one of its seven continents",
+   "paragraph": 0,
+   "quote": "is one of the seven continents of Zendikar"
+  },
+  {
+   "source": "Kazuul",
+   "relation": "leader_of",
+   "target": "Murasa",
+   "note": "controls the Cliffs of Kazuul",
+   "paragraph": 7,
+   "quote": "controlled by Kazuul , an ogre slavemaster who demands tribute"
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "killed",
+   "target": "Singing City",
+   "note": "destroyed it with the Lithoform Core",
+   "paragraph": 8,
+   "quote": "It was destroyed when Nissa used the Lithoform Core ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,124 @@
+{
+ "page": "wiki/dissension",
+ "url": "https://mtg.wiki/page/Dissension",
+ "title": "Dissension",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:33Z",
+ "storyline": "Ravnica block",
+ "entities": [
+  {
+   "name": "Dissension",
+   "type": "event",
+   "aliases": [],
+   "description": "The third and final set of the Ravnica block, released May 2006, accompanied by a novel by Cory Herndon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "A dead man who still has a job to do and publicly arrests Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Dimir figure exposed along with House Dimir when Kos arrests him publicly.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "Ravnican guild exposed to the public through Szadek's arrest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "White/blue guild introduced in Dissension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Black/red guild introduced in Dissension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Green/blue guild introduced in Dissension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [
+    "the Guildpact's spell"
+   ],
+   "description": "The spell binding the guilds, finally broken in this set's story.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane where the guilds fight.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Guilds fight each other and monsters ravage Ravnica, revealing that the chaos was calculated.",
+   "participants": [
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Guild fights guild and horrifying monsters ravage the city, destroying all who stand in their way."
+  },
+  {
+   "summary": "Kos publicly arrests Szadek, finally breaking the Guildpact's spell and exposing House Dimir.",
+   "participants": [
+    "Kos",
+    "Szadek",
+    "House Dimir",
+    "Guildpact"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Guildpact's spell is finally broken when he publicly arrests Szadek , exposing him and House Dimir to the public."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kos",
+   "relation": "enemy",
+   "target": "Szadek",
+   "note": "Arrests him publicly.",
+   "paragraph": 3,
+   "quote": "when he publicly arrests Szadek"
+  },
+  {
+   "source": "Szadek",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "Exposed along with the house.",
+   "paragraph": 3,
+   "quote": "exposing him and House Dimir to the public."
+  }
+ ],
+ "rejected": []
+}

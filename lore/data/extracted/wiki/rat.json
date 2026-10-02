@@ -1,0 +1,239 @@
+{
+ "page": "wiki/rat",
+ "url": "https://mtg.wiki/page/Rat",
+ "title": "Rat",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rat",
+   "type": "creature",
+   "aliases": [
+    "Rats"
+   ],
+   "description": "Small omnivorous rodents found on many planes, often plague carriers and appearing in large numbers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ratfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "A race of sentient rats on Bloomburrow, isolationist keepers of secrets and ancient relics who worship the Fell Comet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of animalfolk where ratfolk live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley",
+   "type": "location",
+   "aliases": [],
+   "description": "The Bloomburrow region whose marshes hide the Knowledge Ossuaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knowledge Ossuaries",
+   "type": "location",
+   "aliases": [],
+   "description": "Cavernous tunnels beneath Valley's marshes where ratfolk store relics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The World Whorl",
+   "type": "concept",
+   "aliases": [],
+   "description": "The name ratfolk give the sum of their knowledge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fell Comet",
+   "type": "deity",
+   "aliases": [],
+   "description": "A floating comet above an underground pond beneath Valley that ratfolk worship.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beasts that a mischievous interloper nearly unleashed on Bloomburrow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oskar",
+   "type": "character",
+   "aliases": [],
+   "description": "A New Capenna figure who enjoys the company of rats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dominarian whose sister Init was killed by wharf rats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Init",
+   "type": "character",
+   "aliases": [],
+   "description": "Xarl's sister, killed by wharf rats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Skitter",
+   "type": "character",
+   "aliases": [],
+   "description": "A large intelligent demonic rat beneath Edgewall who ruled a horde of rats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edgewall",
+   "type": "location",
+   "aliases": [],
+   "description": "The Eldraine place Lord Skitter's rats failed to invade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nezumi",
+   "type": "faction",
+   "aliases": [
+    "nezumi-bito"
+   ],
+   "description": "A race of anthropomorphic rats native to Kamigawa who live in poverty and are often ninja.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane native to the nezumi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karumonix",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Phyrexian creature formed when rats ate each other and their bones fused; it can sense and manipulate rodents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oracle en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "A Rathi figure who used the rats of Rath to scrutinize entrails.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler whose dungeons were infested with Rabid Rats.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A mischievous interloper nearly causes an apocalypse by trying to control the Calamity Beasts, after which ratfolk become secretive.",
+   "participants": [
+    "Ratfolk",
+    "Calamity Beasts"
+   ],
+   "location": "Bloomburrow",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "a mischievous interloper nearly caused an apocalypse with an unsuccessful attempt to control the Calamity Beasts"
+  },
+  {
+   "summary": "Wharf rats cause the death of Xarl's sister Init.",
+   "participants": [
+    "Xarl",
+    "Init"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "Wharf Rats were found in port cities and other places in Golthonor"
+  },
+  {
+   "summary": "After failing to invade Edgewall, Lord Skitter's rats presumably devour him and the rats return to normal.",
+   "participants": [
+    "Lord Skitter",
+    "Edgewall"
+   ],
+   "location": "Edgewall",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "After failing to invade Edgewall, his rats presumably devoured him"
+  },
+  {
+   "summary": "Phyrexian rats grow so numerous that they eat each other and their bones fuse into Karumonix.",
+   "participants": [
+    "Karumonix"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 16,
+   "quote": "Eventually, rats became so numerous that some began to eat each other, and their bones began to fuse."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ratfolk",
+   "relation": "serves",
+   "target": "Fell Comet",
+   "note": "worship it",
+   "paragraph": 9,
+   "quote": "Ratfolk worship the Fell Comet"
+  },
+  {
+   "source": "Lord Skitter",
+   "relation": "leader_of",
+   "target": "Rat",
+   "note": "ruled a horde of rats",
+   "paragraph": 13,
+   "quote": "he ruled over a horde of rats"
+  },
+  {
+   "source": "Lord Skitter",
+   "relation": "located_in",
+   "target": "Edgewall",
+   "note": "inhabited ruins beneath it",
+   "paragraph": 13,
+   "quote": "inhabiting the ancient dwarven ruins beneath Edgewall"
+  },
+  {
+   "source": "Nezumi",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "native to the plane",
+   "paragraph": 14,
+   "quote": "a race of anthropomorphic rats native to Kamigawa"
+  },
+  {
+   "source": "Ratfolk",
+   "relation": "located_in",
+   "target": "Bloomburrow",
+   "note": "one of its animalfolk",
+   "paragraph": 6,
+   "quote": "one of the animalfolk of Bloomburrow"
+  },
+  {
+   "source": "Oskar",
+   "relation": "other",
+   "target": "Rat",
+   "note": "enjoys their company",
+   "paragraph": 10,
+   "quote": "Oskar enjoys their company."
+  }
+ ],
+ "rejected": []
+}

@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-02T05:47:44Z",
+ "extracted_at": "2026-10-02T05:48:16Z",
  "storyline": "Ravnica",
  "entities": [
   {
@@ -279,6 +279,14 @@
    "quote": "Domri Rade led the Gruul in a massive mob rampage through the city streets of the Tenth District, causing destruction and chaos to keep the guilds at each other's throats."
   },
   {
+   "source": "Vraska",
+   "relation": "other",
+   "target": "New Phyrexian Invasion",
+   "note": "led the Phyrexian force into the Tenth District",
+   "paragraph": 6,
+   "quote": "Vraska led the Phyrexian force into the Tenth District, attacking New Prahv and parts of the Undercity , raising them into sunlight for the first time in centuries."
+  },
+  {
    "source": "Azorius Senate",
    "relation": "located_in",
    "target": "Tenth District",
@@ -295,16 +303,5 @@
    "quote": "The Izzet League oversees the building and upkeep of public infrastructure, such as sewer lines and various piping networks."
   }
  ],
- "rejected": [
-  {
-   "kind": "relation",
-   "reason": "unlisted entity",
-   "source": "Vraska",
-   "relation": "leader_of",
-   "target": "Phyrexians",
-   "note": "led the Phyrexian force into the district",
-   "paragraph": 6,
-   "quote": "Vraska led the Phyrexian force into the Tenth District, attacking New Prahv and parts of the Undercity , raising them into sunlight for the first time in centuries."
-  }
- ]
+ "rejected": []
 }
