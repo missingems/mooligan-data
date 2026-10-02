@@ -71,9 +71,10 @@ def test_paths_still_refused_after_every_attempt_fail(monkeypatch):
 class MetagameSession(FakeSession):
     """A metagame page, optionally without the window selector some formats lack."""
 
-    def __init__(self, has_selector):
+    def __init__(self, has_selector, tiles_from_load=1):
         super().__init__([])
         self.scripts = []
+        self.tiles_from_load = tiles_from_load  # the load whose tiles land; None for a page that never shows any
         self.html = (
             '<select id="period"><option selected value="30">30 Days</option></select>' if has_selector else "<p>no selector</p>"
         )
@@ -82,6 +83,10 @@ class MetagameSession(FakeSession):
         return self.html
 
     def execute_script(self, script):
+        if "archetype-tile-statistic-value" in script and "dispatchEvent" not in script:
+            # Reading the tiles' statistics, as the page shows them after this many loads.
+            landed = self.tiles_from_load is not None and self.reloads >= self.tiles_from_load
+            return "12.3%|4.5%" if landed else ""
         self.scripts.append(script)
         return ""
 
@@ -98,3 +103,26 @@ def test_the_selected_window_is_returned_unchanged(monkeypatch):
     session = MetagameSession(has_selector=True)
     html, windowed = GoldfishBrowser(session, delay=0, concurrency=3).metagame("modern", "30")
     assert (html, windowed) == (session.html, True) and session.scripts == []
+
+
+def test_a_metagame_page_waits_for_its_tiles_without_loading_again(monkeypatch):
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = MetagameSession(has_selector=True)
+    GoldfishBrowser(session, delay=0, concurrency=3).metagame("legacy", "30")
+    assert session.reloads == 1
+
+
+def test_a_metagame_page_without_tiles_is_loaded_again(monkeypatch):
+    # Legacy's 30 day window on 2 October 2026: the page cleared the challenge before its tiles landed.
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = MetagameSession(has_selector=True, tiles_from_load=2)
+    html, windowed = GoldfishBrowser(session, delay=0, concurrency=3).metagame("legacy", "30")
+    assert session.reloads == 2 and (html, windowed) == (session.html, True)
+
+
+def test_a_metagame_page_that_never_shows_tiles_is_returned_after_two_loads(monkeypatch):
+    # Parsing it then reports the missing tiles, as before.
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = MetagameSession(has_selector=True, tiles_from_load=None)
+    html, _ = GoldfishBrowser(session, delay=0, concurrency=3).metagame("legacy", "30")
+    assert session.reloads == 2 and html == session.html
