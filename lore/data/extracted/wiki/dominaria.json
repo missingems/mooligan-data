@@ -1,0 +1,174 @@
+{
+ "page": "wiki/dominaria",
+ "url": "https://mtg.wiki/page/Dominaria",
+ "title": "Dominaria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:38:51Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the set, healing from its wounds sixty years after the Mending.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "The event sixty years before this story after which Dominaria has been healing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hour of Devastation",
+   "type": "event",
+   "aliases": [],
+   "description": "The earlier story whose events immediately precede Dominaria's story, including the Gatewatch's defeat by Nicol Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A planeswalker who arrives on Dominaria with Liliana after the Gatewatch's defeat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A planeswalker who arrives on Dominaria seeking to kill the demon holding her contract.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of planeswalkers defeated by Nicol Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "An elder dragon who defeated the Gatewatch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "The final demon holding Liliana's contract.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [
+    "Teferi, Hero of Dominaria"
+   ],
+   "description": "A returning legendary character.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [
+    "Jhoira, Weatherlight Captain"
+   ],
+   "description": "A returning legendary character.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [
+    "Jaya"
+   ],
+   "description": "A returning legendary character.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Karn, Scion of Urza"
+   ],
+   "description": "A returning legendary character.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "the Skyship Weatherlight"
+   ],
+   "description": "A skyship, now a Vehicle card, with a stowaway.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gideon and Liliana arrive on Dominaria after the Gatewatch's defeat by Nicol Bolas.",
+   "participants": [
+    "Gideon Jura",
+    "Liliana Vess",
+    "Gatewatch",
+    "Nicol Bolas"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Gideon and Liliana have arrived on Dominaria following the Gatewatch ’s defeat at the hands of Nicol Bolas ."
+  },
+  {
+   "summary": "Gideon and Liliana begin a mission to kill Belzenlok, the final demon holding Liliana's contract.",
+   "participants": [
+    "Gideon Jura",
+    "Liliana Vess",
+    "Belzenlok"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Together, they begin a mission to kill Belzenlok"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Liliana Vess",
+   "note": "they travel together on a mission",
+   "paragraph": 4,
+   "quote": "Together, they begin a mission to kill Belzenlok"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Gatewatch",
+   "note": "Bolas defeated the Gatewatch",
+   "paragraph": 4,
+   "quote": "defeat at the hands of Nicol Bolas"
+  },
+  {
+   "source": "Belzenlok",
+   "relation": "other",
+   "target": "Liliana Vess",
+   "note": "the final demon holding her contract",
+   "paragraph": 4,
+   "quote": "the final demon holding Liliana’s contract"
+  }
+ ],
+ "rejected": []
+}

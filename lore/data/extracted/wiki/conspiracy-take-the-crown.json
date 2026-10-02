@@ -1,0 +1,151 @@
+{
+ "page": "wiki/conspiracy-take-the-crown",
+ "url": "https://mtg.wiki/page/Conspiracy%3A_Take_the_Crown",
+ "title": "Conspiracy: Take the Crown",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:39:28Z",
+ "storyline": "Conspiracy: Take the Crown",
+ "entities": [
+  {
+   "name": "Brago, King Eternal",
+   "type": "character",
+   "aliases": [
+    "Brago",
+    "the King Eternal"
+   ],
+   "description": "The King Eternal who ruled the High City of Paliano on Fiora; after his death his spirit was kept as a figurehead and was later eliminated by Kaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "the High City of Paliano"
+   ],
+   "description": "The High City on the plane of Fiora ruled by Brago.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the High City of Paliano stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Custodi",
+   "type": "faction",
+   "aliases": [
+    "Custodi",
+    "the priesthood"
+   ],
+   "description": "The priesthood that kept Brago's spirit as a figurehead to retain their command.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Kaya, Ghost Assassin"
+   ],
+   "description": "A planeswalker who eliminated Brago's spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Queen Marchesa",
+   "type": "character",
+   "aliases": [
+    "The Black Rose",
+    "Her Majesty Queen Marchesa",
+    "Marchesa"
+   ],
+   "description": "The Black Rose, who confiscated the throne of Paliano and issued a proclamation as queen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Captain Adriana",
+   "type": "character",
+   "aliases": [
+    "Adriana"
+   ],
+   "description": "A captain who gave a revolutionary speech and later a response to Marchesa's proclamation.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Brago ruled Paliano on Fiora; after he died the Custodi kept his spirit as a figurehead to retain their command.",
+   "participants": [
+    "Brago, King Eternal",
+    "The Custodi",
+    "Paliano",
+    "Fiora"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "kept his spirit as a figurehead and were able to retain their command for a while."
+  },
+  {
+   "summary": "Kaya eliminates Brago's spirit and the Black Rose confiscates the throne.",
+   "participants": [
+    "Kaya",
+    "Brago, King Eternal",
+    "Queen Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Black Rose confiscated the throne after Brago's spirit was eliminated by the planeswalker Kaya"
+  },
+  {
+   "summary": "Queen Marchesa issues a proclamation and Captain Adriana answers it with a revolutionary speech.",
+   "participants": [
+    "Queen Marchesa",
+    "Captain Adriana"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "a revolutionary speech by Captain Adriana"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kaya",
+   "relation": "killed",
+   "target": "Brago, King Eternal",
+   "note": "Kaya eliminated Brago's spirit.",
+   "paragraph": 3,
+   "quote": "Brago's spirit was eliminated by the planeswalker Kaya"
+  },
+  {
+   "source": "Brago, King Eternal",
+   "relation": "leader_of",
+   "target": "Paliano",
+   "note": "Brago ruled the High City.",
+   "paragraph": 3,
+   "quote": "the King Eternal ruled the High City of Paliano on the plane of Fiora"
+  },
+  {
+   "source": "Paliano",
+   "relation": "located_in",
+   "target": "Fiora",
+   "note": "Paliano is on the plane of Fiora.",
+   "paragraph": 3,
+   "quote": "the High City of Paliano on the plane of Fiora"
+  },
+  {
+   "source": "Queen Marchesa",
+   "relation": "other",
+   "target": "Captain Adriana",
+   "note": "Marchesa's proclamation and Adriana's revolutionary response are opposed.",
+   "paragraph": 7,
+   "quote": "a proclamation by Her Majesty Queen Marchesa"
+  }
+ ],
+ "rejected": []
+}

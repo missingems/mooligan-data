@@ -1,0 +1,92 @@
+{
+ "page": "wiki/khans-of-tarkir",
+ "url": "https://mtg.wiki/page/Khans_of_Tarkir",
+ "title": "Khans of Tarkir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:39:43Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "An embattled world of ambitious warlords and powerful clans waging eternal war for supremacy, home plane of Sarkhan Vol, once inhabited by dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose home plane is Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragons of Tarkir",
+   "type": "creature",
+   "aliases": [
+    "dragons"
+   ],
+   "description": "The dragons that once inhabited Tarkir, all killed long before Sarkhan's time; each clan worships one aspect of them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clans of Tarkir",
+   "type": "faction",
+   "aliases": [
+    "Abzan",
+    "Jeskai",
+    "Sultai",
+    "Mardu",
+    "Temur"
+   ],
+   "description": "The powerful clans of Tarkir, each worshipping one aspect of the extinct dragons.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The clans of Tarkir wage a conflict for supremacy over the plane that spans a thousand years.",
+   "participants": [
+    "Clans of Tarkir",
+    "Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Tarkir is an embattled world of ambitious warlords and powerful clans that wage eternal war for supremacy over their plane in a conflict that spans a thousand years."
+  },
+  {
+   "summary": "Dragons, which once inhabited Tarkir, were all killed long before Sarkhan's time.",
+   "participants": [
+    "Dragons of Tarkir",
+    "Sarkhan Vol"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "all of whom were killed long before Sarkhan's time"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Clans of Tarkir",
+   "relation": "other",
+   "target": "Dragons of Tarkir",
+   "note": "each clan worships one aspect of the extinct dragons",
+   "paragraph": 4,
+   "quote": "The clans each worship one aspect of the extinct dragons."
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "located_in",
+   "target": "Tarkir",
+   "note": "Tarkir is his home plane",
+   "paragraph": 4,
+   "quote": "Tarkir is also the home plane of Sarkhan Vol ."
+  }
+ ],
+ "rejected": []
+}

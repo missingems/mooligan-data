@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-02T05:38:01Z",
+ "extracted_at": "2026-10-02T05:38:26Z",
  "storyline": "Lorwyn-Shadowmoor",
  "entities": [
   {
@@ -570,6 +570,14 @@
    "quote": "to serve as her guide as she departed the town"
   },
   {
+   "source": "Maralen",
+   "relation": "enemy",
+   "target": "Oona",
+   "note": "Maralen's party defeats Oona",
+   "paragraph": 14,
+   "quote": "helping Maralen's party defeat and destroy Oona"
+  },
+  {
    "source": "Ashling",
    "relation": "enemy",
    "target": "Greater elemental",
@@ -578,16 +586,5 @@
    "quote": "The elemental was absorbed by her"
   }
  ],
- "rejected": [
-  {
-   "kind": "relation",
-   "reason": "quote not in page",
-   "source": "Maralen",
-   "relation": "enemy",
-   "target": "Oona",
-   "note": "Maralen's party defeats Oona",
-   "paragraph": 14,
-   "quote": "help Maralen's party defeat and destroy Oona"
-  }
- ]
+ "rejected": []
 }
