@@ -1,0 +1,71 @@
+{
+ "page": "wiki/zagoth",
+ "url": "https://mtg.wiki/page/Zagoth",
+ "title": "Zagoth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:36Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Zagoth",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the five triomes of Ikoria, a wild region of rainforest, swamp and wetland aligned with green mana, home to monstrous beasts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane known for its wild, monster-dominated ecosystem; Zagoth is one of its five triomes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brokkos",
+   "type": "creature",
+   "aliases": [],
+   "description": "The powerful and ancient apex monster of Zagoth, a beast of titanic proportions both feared and awed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast clade",
+   "type": "creature",
+   "aliases": [
+    "beast monsters"
+   ],
+   "description": "The dominant monster clade in Zagoth, mostly herbivores resembling antelopes, elk, boars, horses, rhinos or camels.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Zagoth",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "One of the five triomes making up its continent.",
+   "paragraph": 0,
+   "quote": "Zagoth is one of the five triomes that make up the continent of Ikoria"
+  },
+  {
+   "source": "Brokkos",
+   "relation": "leader_of",
+   "target": "Beast clade",
+   "note": "Apex monster of the region.",
+   "paragraph": 8,
+   "quote": "The apex monster of Zagoth is the powerful and ancient Brokkos"
+  },
+  {
+   "source": "Brokkos",
+   "relation": "located_in",
+   "target": "Zagoth",
+   "note": "Its apex monster.",
+   "paragraph": 8,
+   "quote": "The apex monster of Zagoth is the powerful and ancient Brokkos"
+  }
+ ],
+ "rejected": []
+}

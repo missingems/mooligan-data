@@ -1,0 +1,165 @@
+{
+ "page": "wiki/starnheim",
+ "url": "https://mtg.wiki/page/Starnheim",
+ "title": "Starnheim",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:48Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [
+    "Light of Starnheim"
+   ],
+   "description": "One of the ten realms of Kaldheim, at the top of the World Tree, source of the plane's light and home of the Valkyries and the honored dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of ten realms that has no sun or moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hall of the Valkyries",
+   "type": "location",
+   "aliases": [
+    "Hall of Valkyries"
+   ],
+   "description": "A cavernous longhall woven from the living branches of the World Tree where worthy heroes feast eternally.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valkmir",
+   "type": "location",
+   "aliases": [],
+   "description": "The glassy black lake made from the blood of the first Valkyrie who died during the world's creation, from which all Valkyries were birthed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prismatic Path",
+   "type": "location",
+   "aliases": [],
+   "description": "A rainbow bridge flowing from a Valkyrie's wings, leading to the Hall of the Valkyries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yetta Docks",
+   "type": "location",
+   "aliases": [],
+   "description": "Wooden docks around the Hall of the Valkyries where twelve longships wait, one for each of the Skoti.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "The great tree whose top holds Starnheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valkyries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Winged beings of Starnheim who choose the heroes who feast forever in their hall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skoti",
+   "type": "faction",
+   "aliases": [],
+   "description": "The current reigning gods of Kaldheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niko Aris",
+   "type": "character",
+   "aliases": [
+    "Niko"
+   ],
+   "description": "A planeswalker who arrived at Starnheim and joined the valkyries in defending it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tibalt",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who instigated chaos on Kaldheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koma",
+   "type": "creature",
+   "aliases": [
+    "Cosmos serpent"
+   ],
+   "description": "The Cosmos serpent that attacked Starnheim.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Niko Aris arrives at Starnheim and sees a radiant plane atop black mirror-like waters.",
+   "participants": [
+    "Niko Aris"
+   ],
+   "location": "Starnheim",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "When Niko Aris arrived at Starnheim, they saw a mostly radiant plane as if before dawn, atop black mirror-like waters."
+  },
+  {
+   "summary": "During the chaos instigated by Tibalt, Koma attacks Starnheim and Niko joins the valkyries in its defense.",
+   "participants": [
+    "Koma",
+    "Niko Aris",
+    "Valkyries",
+    "Tibalt"
+   ],
+   "location": "Starnheim",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Starnheim was attacked by the the Cosmos serpent Koma and Niko joined a host of valkyries in defense of the realm."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Starnheim",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "One of the ten realms of the plane.",
+   "paragraph": 0,
+   "quote": "Starnheim is one of the ten realms of the plane of Kaldheim ."
+  },
+  {
+   "source": "Hall of the Valkyries",
+   "relation": "located_in",
+   "target": "Starnheim",
+   "note": "The longhall at the heart of Starnheim.",
+   "paragraph": 3,
+   "quote": "the longhall at the heart of Starnheim is awe-inspiring."
+  },
+  {
+   "source": "Niko Aris",
+   "relation": "ally",
+   "target": "Valkyries",
+   "note": "Joined the valkyries defending the realm from Koma.",
+   "paragraph": 4,
+   "quote": "Niko joined a host of valkyries in defense of the realm."
+  },
+  {
+   "source": "Koma",
+   "relation": "enemy",
+   "target": "Starnheim",
+   "note": "Attacked the realm.",
+   "paragraph": 4,
+   "quote": "Starnheim was attacked by the the Cosmos serpent Koma"
+  }
+ ],
+ "rejected": []
+}

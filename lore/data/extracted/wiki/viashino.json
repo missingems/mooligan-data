@@ -1,0 +1,161 @@
+{
+ "page": "wiki/viashino",
+ "url": "https://mtg.wiki/page/Viashino",
+ "title": "Viashino",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Viashino",
+   "type": "faction",
+   "aliases": [],
+   "description": "Humanoid lizard-folk descended from dragons who appear on many planes, including Jund, Capenna, Dominaria and Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Manytooth Thrash",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Jund viashino thrash that prides itself on the might and viciousness of its warriors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palehide Thrash",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Jund viashino thrash that prides itself on slaying humans, led by Igh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Igh",
+   "type": "character",
+   "aliases": [],
+   "description": "The old, brittle-scaled leader of the Palehide Thrash who claims to have slain three hundred humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pitch Thrash",
+   "type": "faction",
+   "aliases": [],
+   "description": "A viashino thrash ruling the tar pits known as the Seethe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "The Alaran shard where viashino have a crocodilian form and live in thrashes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shivan Nation",
+   "type": "faction",
+   "aliases": [],
+   "description": "The union formed by the viashino, goblins, Ghitu and Shivan dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terrent Amese",
+   "type": "character",
+   "aliases": [],
+   "description": "The figure said to have created the viashino of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Capennan crime family led by Ziatora that many viashino join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ziatora",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Riveteers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shiv",
+   "type": "location",
+   "aliases": [
+    "the Shivan sands"
+   ],
+   "description": "The main home of Dominarian viashino civilization.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Conflux the viashino of Jund confront their primitive counterparts on Naya.",
+   "participants": [
+    "Viashino",
+    "Jund"
+   ],
+   "location": "Jund",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "the Viashino of Jund were confronted by their primitive, beastly, counterparts on Naya"
+  },
+  {
+   "summary": "The Dominarian viashino survive the Ice Age by hiding within the Mana Rig.",
+   "participants": [
+    "Viashino"
+   ],
+   "location": "Shiv",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "the viashino survived the Ice Age by hiding within the Mana Rig"
+  },
+  {
+   "summary": "Viashino, goblins, Ghitu and Shivan dragons form the Shivan Nation.",
+   "participants": [
+    "Viashino",
+    "Shivan Nation"
+   ],
+   "location": "Shiv",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "The four species have now formed the Shivan Nation together."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Igh",
+   "relation": "leader_of",
+   "target": "Palehide Thrash",
+   "note": "Leader of the thrash.",
+   "paragraph": 7,
+   "quote": "Their leader is an old, brittle-scaled viashino named Igh"
+  },
+  {
+   "source": "Terrent Amese",
+   "relation": "created",
+   "target": "Viashino",
+   "note": "Said to have created the viashino of Dominaria.",
+   "paragraph": 17,
+   "quote": "viashino are said to have been created by Terrent Amese"
+  },
+  {
+   "source": "Viashino",
+   "relation": "ally",
+   "target": "Shivan Nation",
+   "note": "Viashino are one of the four species in the nation.",
+   "paragraph": 18,
+   "quote": "The four species have now formed the Shivan Nation together."
+  },
+  {
+   "source": "Pitch Thrash",
+   "relation": "located_in",
+   "target": "Jund",
+   "note": "Rules the Seethe on Jund.",
+   "paragraph": 8,
+   "quote": "This thrash rules a vast network of low-lying tar pits known as the Seethe."
+  }
+ ],
+ "rejected": []
+}

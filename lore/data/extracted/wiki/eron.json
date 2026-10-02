@@ -1,0 +1,214 @@
+{
+ "page": "wiki/eron",
+ "url": "https://mtg.wiki/page/Eron",
+ "title": "Eron",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:07Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [
+    "Eron",
+    "Lord Eron"
+   ],
+   "description": "The immortal king of the Goblins of the Koskun Mountains of Ulgrotha, once a street urchin and thief in Aysen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bernatheen",
+   "type": "character",
+   "aliases": [
+    "the Savant",
+    "Wizard Savant Bernatheen"
+   ],
+   "description": "A Wizard Savant of the Floating Island who made Eron immortal and was later twisted into a greater werewolf by Baron Sengir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grandmother Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "The owner of the library at Castle Sengir from which Eron stole a book.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [
+    "the Baron"
+   ],
+   "description": "An immortal who twisted Bernatheen into a werewolf and has tried to meet Eron, who fears him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandler",
+   "type": "character",
+   "aliases": [],
+   "description": "A thief who deprived Eron of his Ebony Rhino.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Joven",
+   "type": "character",
+   "aliases": [],
+   "description": "A thief who, with Chandler, deprived Eron of his Ebony Rhino.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins of the Koskun Mountains",
+   "type": "faction",
+   "aliases": [
+    "goblins"
+   ],
+   "description": "Goblins who accepted Eron as their king.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anaba minotaurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Minotaurs used by Eron as bodyguards; he seeks their hidden homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Eron's goblin stronghold, a refuge for criminals of the Homelands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Koskun Mountains lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "Eron's home city and a trade partner by treaty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Sengir",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Grandmother Sengir's library.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ebony Rhino",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A possession of Eron stolen by Chandler and Joven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Eron steals a dark magic book from Grandmother Sengir's library for the Savant Bernatheen and asks that the last spell in it be cast on him.",
+   "participants": [
+    "Eron the Relentless",
+    "Bernatheen",
+    "Grandmother Sengir"
+   ],
+   "location": "Castle Sengir",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Eron found Grandmother Sengir asleep near a tome and stole it."
+  },
+  {
+   "summary": "The spell makes Eron immortal and immune to aging.",
+   "participants": [
+    "Eron the Relentless",
+    "Bernatheen"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Eron discovered he was immortal and immune to aging."
+  },
+  {
+   "summary": "Baron Sengir finds out Bernatheen and twists him into a greater werewolf as punishment.",
+   "participants": [
+    "Baron Sengir",
+    "Bernatheen"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Bernatheen was later found out by Baron Sengir and twisted into a greater werewolf as punishment."
+  },
+  {
+   "summary": "Eron declares himself King of the Goblins at Koskun Keep, is killed and rises again, and the goblins accept him as king.",
+   "participants": [
+    "Eron the Relentless",
+    "Goblins of the Koskun Mountains"
+   ],
+   "location": "Koskun Keep",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He traveled to Koskun Keep , where he declared himself King of the Goblins."
+  },
+  {
+   "summary": "Eron forms a treaty with Aysen to keep his subordinates from invading in exchange for trade of food and goods.",
+   "participants": [
+    "Eron the Relentless"
+   ],
+   "location": "Aysen",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Eron formed a treaty with Aysen"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eron the Relentless",
+   "relation": "leader_of",
+   "target": "Goblins of the Koskun Mountains",
+   "note": "Immortal king of the goblins.",
+   "paragraph": 0,
+   "quote": "is the immortal king of the Goblins of the Koskun Mountains of Ulgrotha ."
+  },
+  {
+   "source": "Baron Sengir",
+   "relation": "enemy",
+   "target": "Bernatheen",
+   "note": "Punished Bernatheen by twisting him into a werewolf.",
+   "paragraph": 1,
+   "quote": "Bernatheen was later found out by Baron Sengir and twisted into a greater werewolf as punishment."
+  },
+  {
+   "source": "Eron the Relentless",
+   "relation": "enemy",
+   "target": "Chandler",
+   "note": "Has sworn to make the thieves pay for taking his Ebony Rhino.",
+   "paragraph": 5,
+   "quote": "he has taken a special dislike to the thieves Chandler and Joven"
+  },
+  {
+   "source": "Eron the Relentless",
+   "relation": "enemy",
+   "target": "Joven",
+   "note": "Has sworn to make the thieves pay for taking his Ebony Rhino.",
+   "paragraph": 5,
+   "quote": "he has taken a special dislike to the thieves Chandler and Joven"
+  },
+  {
+   "source": "Eron the Relentless",
+   "relation": "other",
+   "target": "Baron Sengir",
+   "note": "A fellow immortal who has tried to meet Eron; Eron refuses and fears the Baron is biding his time.",
+   "paragraph": 4,
+   "quote": "Baron Sengir has tried many times to meet Eron, a fellow immortal, but the latter has always refused."
+  }
+ ],
+ "rejected": []
+}
