@@ -1,0 +1,109 @@
+{
+ "page": "wiki/amonkhet",
+ "url": "https://mtg.wiki/page/Amonkhet",
+ "title": "Amonkhet",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:20Z",
+ "storyline": "Amonkhet block",
+ "entities": [
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "A desert plane ruled by Nicol Bolas, whose society trains warriors for the Trials of the Five Gods and is centered around death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas",
+    "God-Pharaoh"
+   ],
+   "description": "The elder dragon who rules Amonkhet and whose return the inhabitants prepare for as the God-Pharaoh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [
+    "The Gatewatch"
+   ],
+   "description": "The planeswalker group that arrives on Amonkhet to take out Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trials of the Five Gods",
+   "type": "event",
+   "aliases": [],
+   "description": "The trials the inhabitants train for to join the elite Worthy and claim a place in the Afterlife.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A Gatewatch planeswalker who shares an exchange with Nissa in the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A Gatewatch planeswalker who shares an exchange with Chandra in the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The inhabitants of Amonkhet train all their lives for the Trials of the Five Gods and prepare for the God-Pharaoh's return.",
+   "participants": [
+    "Amonkhet",
+    "Trials of the Five Gods",
+    "Nicol Bolas"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "They train their entire life for a chance to face the Trials of the Five Gods and join the elite ranks of the Worthy"
+  },
+  {
+   "summary": "The Gatewatch arrives to take out Bolas and meets fierce resistance in the desert and the city.",
+   "participants": [
+    "Gatewatch",
+    "Nicol Bolas",
+    "Amonkhet"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "When The Gatewatch arrives to take out Bolas, they meet with fierce resistance in the desert"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "leader_of",
+   "target": "Amonkhet",
+   "note": "the plane is ruled by Bolas",
+   "paragraph": 4,
+   "quote": "Amonkhet is a plane ruled by Nicol Bolas ."
+  },
+  {
+   "source": "Gatewatch",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "arrives to take him out",
+   "paragraph": 4,
+   "quote": "When The Gatewatch arrives to take out Bolas"
+  }
+ ],
+ "rejected": []
+}

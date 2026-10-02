@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-02T05:41:16Z",
+ "extracted_at": "2026-10-02T05:41:30Z",
  "storyline": "Weatherlight Saga",
  "entities": [
   {
@@ -203,6 +203,13 @@
    "aliases": [],
    "description": "A being who created a figurehead for the Weatherlight in Hanna's honor.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Squee",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who remained in Mercadia City with Hanna and helped the crew escape.",
+   "presence": "appears"
   }
  ],
  "events": [
@@ -293,6 +300,18 @@
    "quote": "proclaimed the Korvecdal by the Oracle en -Vec , leading to an alliance between the crew and the rebels."
   },
   {
+   "summary": "Lyna tells Hanna that Ertai has prepared the portal off Rath and the crew leaves.",
+   "participants": [
+    "Hanna",
+    "Lyna",
+    "Ertai"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "When the soltari Lyna appeared to inform her that Ertai had prepared the portal off of Rath and demanded that they leave"
+  },
+  {
    "summary": "The Weatherlight crash-lands on Mercadia, the Cho-Arrim attack, and Hanna and others are arrested.",
    "participants": [
     "Hanna",
@@ -303,6 +322,19 @@
    "importance": "major",
    "paragraph": 6,
    "quote": "The Weatherlight crash-landed on Mercadia after departing Rath."
+  },
+  {
+   "summary": "The crew escapes Mercadia City with the Cho-Arrim prisoners and learns of the myths of Ramos.",
+   "participants": [
+    "Hanna",
+    "Squee",
+    "Cho-Arrim",
+    "Orim"
+   ],
+   "location": "Mercadia",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Here, they learned of the myths of Ramos and why the Cho-Arrim had taken the Weatherlight to begin with"
   },
   {
    "summary": "The Power Matrix is stolen and the women are framed; Cho-Manno finds the real thief too late.",
@@ -438,47 +470,15 @@
    "note": "Orchestrated the crew's troubles on Mercadia.",
    "paragraph": 8,
    "quote": "Volrath , who had been disguised as a member of the crew, had orchestrated almost everything that the crew had been through"
-  }
- ],
- "rejected": [
-  {
-   "kind": "event",
-   "reason": "quote not in page",
-   "summary": "Lyna tells Hanna that Ertai has prepared the portal off Rath and the crew leaves.",
-   "participants": [
-    "Hanna",
-    "Lyna",
-    "Ertai"
-   ],
-   "location": "Rath",
-   "importance": "minor",
-   "paragraph": 5,
-   "quote": "When the soltari Lyna appeared to inform her that Ertai had prepared the portal off Rath and demanded that they leave"
   },
   {
-   "kind": "event",
-   "reason": "unlisted participant",
-   "summary": "The crew escapes Mercadia City with the Cho-Arrim prisoners and learns of the myths of Ramos.",
-   "participants": [
-    "Hanna",
-    "Squee",
-    "Cho-Arrim",
-    "Orim"
-   ],
-   "location": "Mercadia",
-   "importance": "minor",
-   "paragraph": 7,
-   "quote": "Here, they learned of the myths of Ramos and why the Cho-Arrim had taken the Weatherlight to begin with"
-  },
-  {
-   "kind": "relation",
-   "reason": "quote not in page",
    "source": "Hanna",
    "relation": "member_of",
    "target": "Weatherlight",
    "note": "Navigator and engineer of the ship.",
    "paragraph": 0,
-   "quote": "the human navigator and engineer of the Skyship Weatherlight"
+   "quote": "human navigator and engineer of the Skyship Weatherlight"
   }
- ]
+ ],
+ "rejected": []
 }

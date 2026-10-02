@@ -1,0 +1,203 @@
+{
+ "page": "wiki/aether-revolt",
+ "url": "https://mtg.wiki/page/Aether_Revolt",
+ "title": "Aether Revolt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:23Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where a revolt takes place against the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of Kaladesh, large portions of which the Renegades have seized.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Renegades' revolution against the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "A revolt aligned with aether-pirates, essence-drainers and weaponsmiths, whose symbol is the leaking spire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The ruling authority of Ghirapur that cracks down on the revolt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The band of planeswalkers who support the Renegades while hunting Tezzeret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who supports the Renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "The nefarious planeswalker the Gatewatch seeks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [],
+   "description": "A Consulate figure who taunts Chandra Nalaar to lure her from the Gatewatch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker of the Gatewatch whom Baral taunts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who fights Tezzeret in the final battle at the bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "The elder dragon whose upcoming role is foreshadowed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Led by Pia Nalaar, the Renegades revolt and seize large parts of Ghirapur to overthrow the Consulate.",
+   "participants": [
+    "Pia Nalaar",
+    "Renegades",
+    "Consulate",
+    "Ghirapur"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Renegades have seized control of large portions of Ghirapur"
+  },
+  {
+   "summary": "The Consulate responds with security, seizures of unregistered inventions, aether monitoring and a curfew.",
+   "participants": [
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Consulate responds with increased security and surveillance"
+  },
+  {
+   "summary": "The Gatewatch and Ajani support the Renegades while searching for Tezzeret.",
+   "participants": [
+    "Gatewatch",
+    "Ajani Goldmane",
+    "Renegades",
+    "Tezzeret"
+   ],
+   "location": "Kaladesh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Gatewatch and Ajani Goldmane support the renegades"
+  },
+  {
+   "summary": "Baral taunts Chandra Nalaar to lure her away from the rest of the Gatewatch.",
+   "participants": [
+    "Baral",
+    "Chandra Nalaar",
+    "Gatewatch"
+   ],
+   "location": "Kaladesh",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Disallow depicts Baral's taunting of Chandra Nalaar in an attempt to lure her away from the rest of the Gatewatch."
+  },
+  {
+   "summary": "Tezzeret and Liliana Vess fight their final battle at the bridge.",
+   "participants": [
+    "Tezzeret",
+    "Liliana Vess"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Battle at the Bridge depicts the final battle between Tezzeret and Liliana Vess ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "leader_of",
+   "target": "Renegades",
+   "note": "leads the revolt",
+   "paragraph": 2,
+   "quote": "Led by Pia Nalaar and aligned with aether-pirates"
+  },
+  {
+   "source": "Renegades",
+   "relation": "enemy",
+   "target": "Consulate",
+   "note": "seek to overthrow it",
+   "paragraph": 2,
+   "quote": "They seek to overthrow the authority of the Consulate ."
+  },
+  {
+   "source": "Gatewatch",
+   "relation": "ally",
+   "target": "Renegades",
+   "note": "support the revolt",
+   "paragraph": 2,
+   "quote": "The Gatewatch and Ajani Goldmane support the renegades"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Liliana Vess",
+   "note": "final battle",
+   "paragraph": 7,
+   "quote": "the final battle between Tezzeret and Liliana Vess"
+  },
+  {
+   "source": "Baral",
+   "relation": "enemy",
+   "target": "Chandra Nalaar",
+   "note": "taunts her to separate her from the Gatewatch",
+   "paragraph": 6,
+   "quote": "Baral's taunting of Chandra Nalaar"
+  }
+ ],
+ "rejected": []
+}
