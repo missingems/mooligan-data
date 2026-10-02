@@ -1,0 +1,70 @@
+{
+ "page": "wiki/wiltroot-hall",
+ "url": "https://mtg.wiki/page/Wiltroot_Hall",
+ "title": "Wiltroot Hall",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:47:48Z",
+ "storyline": "Strixhaven: School of Mages",
+ "entities": [
+  {
+   "name": "Wiltroot Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "A study site in the outer grounds of the Witherbloom Campus at Strixhaven, centered on the hollowed trunk of a huge dead tree in a swamp.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The magical university on Arcavios whose Witherbloom Campus includes Wiltroot Hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witherbloom Campus",
+   "type": "location",
+   "aliases": [
+    "Witherbloom"
+   ],
+   "description": "The Strixhaven campus whose students study the swamp life around Wiltroot Hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Strixhaven and Wiltroot Hall are located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lothannep",
+   "type": "creature",
+   "aliases": [],
+   "description": "A water weird that lives in the fountain of Observation Hut C.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Wiltroot Hall",
+   "relation": "located_in",
+   "target": "Strixhaven",
+   "note": "Part of the outer grounds of the Witherbloom Campus at Strixhaven.",
+   "paragraph": 0,
+   "quote": "Together, these features make Wiltroot Hall an essential hub for practical learning and magical fieldwork."
+  },
+  {
+   "source": "Lothannep",
+   "relation": "located_in",
+   "target": "Wiltroot Hall",
+   "note": "Lives in the fountain of Observation Hut C.",
+   "paragraph": 9,
+   "quote": "This fountain is home to the water weird"
+  }
+ ],
+ "rejected": []
+}
