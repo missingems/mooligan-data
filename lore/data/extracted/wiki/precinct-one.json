@@ -1,0 +1,181 @@
+{
+ "page": "wiki/precinct-one",
+ "url": "https://mtg.wiki/page/Precinct_One",
+ "title": "Precinct One",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Precinct One",
+   "type": "location",
+   "aliases": [],
+   "description": "The opulent heart of Ravnica in the Tenth District, where grand architecture and gardens display the city's wealth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane whose civilization Precinct One showcases.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "District of Ravnica containing Precinct One.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "Guild that staffs Precinct One with administrators, enforcers and lawmakers, keeping constant watch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "Guild that owns many clubs and dining establishments and the guildhall Orzhova and Vizkopa Bank.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnya"
+   ],
+   "description": "Guild that tends the precinct's grounds and acts as diplomatic intermediary.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhova",
+   "type": "location",
+   "aliases": [
+    "Church of Deals"
+   ],
+   "description": "The Syndicate's ornate guildhall, housing the Obzedat spirits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obzedat",
+   "type": "faction",
+   "aliases": [],
+   "description": "Influential spirits housed in Orzhova.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vizkopa Bank",
+   "type": "location",
+   "aliases": [],
+   "description": "The Orzhov's financial stronghold and mint, protected by gargoyles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chamber of the Guildpact",
+   "type": "location",
+   "aliases": [],
+   "description": "Grand hall where Ravnica's guilds meet; the Living Guildpact keeps an office here.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gateway Plaza",
+   "type": "location",
+   "aliases": [],
+   "description": "Open space created when the Planar Bridge destroyed buildings near the Chamber of the Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District Plaza",
+   "type": "location",
+   "aliases": [],
+   "description": "Neutral plaza at the heart of the precinct, once the site of Bolas's Citadel and the God-Pharaoh's Statue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellbender",
+   "type": "location",
+   "aliases": [],
+   "description": "Judith's popular Rakdos nightclub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Judith",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the Hellbender nightclub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bolas's Citadel",
+   "type": "location",
+   "aliases": [],
+   "description": "Structure located in Tenth District Plaza during the War of the Spark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which the Planar Bridge destroyed buildings around the Chamber of the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Agency with a floating headquarters shaped like an eye.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the War of the Spark the Planar Bridge destroys the buildings around the Chamber of the Guildpact, creating Gateway Plaza.",
+   "participants": [
+    "Gateway Plaza",
+    "Chamber of the Guildpact",
+    "War of the Spark"
+   ],
+   "location": "Precinct One",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "an open space created when the Planar Bridge destroyed the buildings around the Chamber of the Guildpact during the War of the Spark"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Orzhov Syndicate",
+   "relation": "other",
+   "target": "Orzhova",
+   "note": "Its guildhall in Precinct One.",
+   "paragraph": 10,
+   "quote": "Orzhova, the Syndicate's ornate guildhall, also called the Church of Deals"
+  },
+  {
+   "source": "Judith",
+   "relation": "other",
+   "target": "Hellbender",
+   "note": "Owns the Rakdos nightclub.",
+   "paragraph": 9,
+   "quote": "Judith 's popular Rakdos nightclub"
+  },
+  {
+   "source": "Precinct One",
+   "relation": "located_in",
+   "target": "Tenth District",
+   "note": "Mid-southern part of the district.",
+   "paragraph": 1,
+   "quote": "Located in the mid-southern part of the Tenth District"
+  }
+ ],
+ "rejected": []
+}

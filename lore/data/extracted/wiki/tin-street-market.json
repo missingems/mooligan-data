@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-02T05:43:55Z",
+ "extracted_at": "2026-10-02T05:44:33Z",
  "storyline": "Ravnica",
  "entities": [
   {
@@ -238,6 +238,13 @@
    "aliases": [],
    "description": "A dark alley adjoining the market where Luda was killed.",
    "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild from which Wyroon was ousted for insubordination.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -382,12 +389,8 @@
    "note": "Led Kos to the site of Luda's death.",
    "paragraph": 16,
    "quote": "Agrus was led by the spirit of Myczil Zunich to the site of her death"
-  }
- ],
- "rejected": [
+  },
   {
-   "kind": "relation",
-   "reason": "unlisted entity",
    "source": "Wyroon",
    "relation": "member_of",
    "target": "Boros Legion",
@@ -395,5 +398,6 @@
    "paragraph": 8,
    "quote": "who was ousted from the Boros Legion years ago for insubordination"
   }
- ]
+ ],
+ "rejected": []
 }

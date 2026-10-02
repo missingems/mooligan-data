@@ -1,0 +1,119 @@
+{
+ "page": "wiki/portal-second-age",
+ "url": "https://mtg.wiki/page/Portal_Second_Age",
+ "title": "Portal Second Age",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:06Z",
+ "storyline": "Portal Second Age",
+ "entities": [
+  {
+   "name": "Portal Second Age",
+   "type": "concept",
+   "aliases": [],
+   "description": "A starter-level set released June 1998, set on the Dominarian archipelago of Caliman.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caliman",
+   "type": "location",
+   "aliases": [],
+   "description": "The Dominarian archipelago where five peoples, one per color, conflict.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alaborn",
+   "type": "faction",
+   "aliases": [],
+   "description": "The white-aligned kingdom suffering nightstalker attacks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talas",
+   "type": "faction",
+   "aliases": [],
+   "description": "Blue-aligned merchants and pirates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Norwood",
+   "type": "faction",
+   "aliases": [
+    "elves of Norwood forest"
+   ],
+   "description": "The green-aligned elves of Norwood forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dakmor Nightstalkers",
+   "type": "faction",
+   "aliases": [
+    "Nightstalkers"
+   ],
+   "description": "Black-aligned nightstalkers whose attacks on Alaborn increase under Tojira's influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tojira",
+   "type": "character",
+   "aliases": [
+    "Tojira, the Swamp Queen"
+   ],
+   "description": "A sorceress whose influence drives the nightstalker attacks on the Alaborn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Caliman lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nightstalker attacks on the Alaborn increase due to the sorceress Tojira's influence.",
+   "participants": [
+    "Dakmor Nightstalkers",
+    "Alaborn",
+    "Tojira"
+   ],
+   "location": "Caliman",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The main focus was on the increasing Nightstalker attacks on the Alaborn due to the influence of the sorceress Tojira ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dakmor Nightstalkers",
+   "relation": "enemy",
+   "target": "Alaborn",
+   "note": "Nightstalkers increasingly attack the Alaborn.",
+   "paragraph": 5,
+   "quote": "the increasing Nightstalker attacks on the Alaborn"
+  },
+  {
+   "source": "Tojira",
+   "relation": "other",
+   "target": "Dakmor Nightstalkers",
+   "note": "Her influence drives their attacks; the Dakmor Sorceress probably represents her.",
+   "paragraph": 19,
+   "quote": "the sorceress probably represents Tojira , the Swamp Queen, from the story."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "Four goblins are lost one by one to a serpent, an ogre, a griffin and a tremor.",
+   "participants": [],
+   "location": "Caliman",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "One little goblin shook up the ground. When the dust cleared, no one was found."
+  }
+ ]
+}

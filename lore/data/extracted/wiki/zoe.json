@@ -1,0 +1,208 @@
+{
+ "page": "wiki/zoe",
+ "url": "https://mtg.wiki/page/Zoe",
+ "title": "Zoe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zoe",
+   "type": "character",
+   "aliases": [],
+   "description": "A Euphorean dryad, nymph of Nylea on Theros, born from the sadness of Polukranos's death, who journeys to understand other Euphoreans and humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "Zoe's master, god of the forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Polukranos",
+   "type": "creature",
+   "aliases": [],
+   "description": "A legendary hydra whose loss saddens Zoe at her creation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "Master of the fiery oread nymphs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "Master of the alseid nymph Zoe meets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oreads",
+   "type": "faction",
+   "aliases": [
+    "fiery oreads"
+   ],
+   "description": "Two fiery Euphorean nymphs serving Purphoros who consume a murderer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alseid",
+   "type": "character",
+   "aliases": [
+    "Euphorean alseid of Heliod"
+   ],
+   "description": "Nymph protecting her meadow's sheep from humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naiad",
+   "type": "character",
+   "aliases": [],
+   "description": "Water nymph who warns Zoe of the dangers of the water.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lampad",
+   "type": "character",
+   "aliases": [
+    "dark lampad"
+   ],
+   "description": "A sad dark nymph living in a cave, waiting for death, who takes the drowned hunter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Zoe explores.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nylea's forest",
+   "type": "location",
+   "aliases": [
+    "her forest"
+   ],
+   "description": "Zoe's home forest and olive grove.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Upon her creation Zoe feels the sadness of Polukranos's loss; Nylea tells her it will shape her course and bids her dance with her sisters.",
+   "participants": [
+    "Zoe",
+    "Nylea",
+    "Polukranos"
+   ],
+   "location": "Nylea's forest",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she was born from the sadness of a dying legend"
+  },
+  {
+   "summary": "Zoe witnesses a hunter killed by an arrow, and two fiery oreads consume the murderer.",
+   "participants": [
+    "Zoe",
+    "Oreads"
+   ],
+   "location": "Nylea's forest",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "two fiery oreads appeared and consumed her instantaneously."
+  },
+  {
+   "summary": "Zoe bids the oreads leave and, inspired, decides to learn from other Euphoreans.",
+   "participants": [
+    "Zoe",
+    "Oreads"
+   ],
+   "location": "Nylea's forest",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The encounter inspired Zoe, who wished to know more about other types of Euphoreans."
+  },
+  {
+   "summary": "Zoe meets an alseid of Heliod who explains how human warriors massacre her flocks.",
+   "participants": [
+    "Zoe",
+    "Alseid",
+    "Heliod"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "It seemed to Zoe that all of nature was harmed by humans."
+  },
+  {
+   "summary": "Zoe meets a naiad at a lake who warns of ships killing and stealing from the water.",
+   "participants": [
+    "Zoe",
+    "Naiad"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "yet far worse are ships floating on the waves, killing and stealing from the water."
+  },
+  {
+   "summary": "Zoe finds a dark lampad in a cave, who says she is waiting for death.",
+   "participants": [
+    "Zoe",
+    "Lampad"
+   ],
+   "location": "Nylea's forest",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "the nymph said that she was waiting for death."
+  },
+  {
+   "summary": "Zoe charms a hunter aiming at a sleeping wolf into drowning in a stream; the lampad takes the body into her cave.",
+   "participants": [
+    "Zoe",
+    "Lampad"
+   ],
+   "location": "Nylea's forest",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "He fell into the stream and stayed there, drowning."
+  },
+  {
+   "summary": "Zoe returns to her olive grove and sings her sisters the song of her journey.",
+   "participants": [
+    "Zoe"
+   ],
+   "location": "Nylea's forest",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "A morning later, Zoe was back in her olive grove."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zoe",
+   "relation": "serves",
+   "target": "Nylea",
+   "note": "Her master.",
+   "paragraph": 1,
+   "quote": "Her master Nylea told Zoe"
+  },
+  {
+   "source": "Oreads",
+   "relation": "serves",
+   "target": "Purphoros",
+   "note": "Euphorean oreads serving their master.",
+   "paragraph": 4,
+   "quote": "serving their master Purphoros"
+  }
+ ],
+ "rejected": []
+}

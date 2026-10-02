@@ -1,0 +1,487 @@
+{
+ "page": "wiki/sanar",
+ "url": "https://mtg.wiki/page/Sanar",
+ "title": "Sanar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:01Z",
+ "storyline": "Strixhaven: School of Mages",
+ "entities": [
+  {
+   "name": "Sanar",
+   "type": "character",
+   "aliases": [],
+   "description": "A short, blue-skinned goblin sorcerer-student at Strixhaven who joins Prismari College; smart but impulsive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "The university on Arcavios where Sanar studies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Strixhaven University stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prismari College",
+   "type": "faction",
+   "aliases": [
+    "Prismari"
+   ],
+   "description": "The Strixhaven college Sanar joins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dina",
+   "type": "character",
+   "aliases": [],
+   "description": "The teaching assistant who guides Sanar's class to Harrier's Wood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "A faerie planeswalker who lures the students through an Omenpath to Lorwyn-Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abigale",
+   "type": "character",
+   "aliases": [],
+   "description": "A Strixhaven student who flies her classmates across the Wanderwine River and returns with Eirdu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kirol",
+   "type": "character",
+   "aliases": [],
+   "description": "A Strixhaven student kidnapped by an elven hunter and forced to pick dawnglow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamira",
+   "type": "character",
+   "aliases": [
+    "Tam"
+   ],
+   "description": "A Strixhaven student who uses probability magic and is injured by moonglow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn-Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane the students are lured to, alternating between Lorwyn and Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "A portal between planes that takes the students to Lorwyn-Shadowmoor and back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isilu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A moon-headed, winged, six-armed night elemental that the students accidentally wake, plunging Lorwyn into Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eirdu",
+   "type": "deity",
+   "aliases": [],
+   "description": "Isilu's opposite, the sun-headed elemental, who returns with Abigale and embraces Isilu to restore balance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brigid Baeli",
+   "type": "character",
+   "aliases": [
+    "Brigid"
+   ],
+   "description": "A kithkin who meets the students, offers hospitality and directs them to Maralen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goldmeadow",
+   "type": "location",
+   "aliases": [],
+   "description": "The kithkin village Brigid brings the students to, plunged into Shadowmoor by Isilu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "The queen of the faeries who appears to be turning into Oona and enlists the students' help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "The faerie queen into whom Maralen appears to be turning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "Maralen's palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Maralen's aide, sworn to kill her if she turns into Oona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "An old companion of Maralen's found at the Stinkdrinker warren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A planeswalker enlisted by Liliana Vess to rescue the students.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "The students' professor, who enlists Ajani to rescue them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Morcant",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Lorwyn elves, who forced Kirol to pick dawnglow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lluwen",
+   "type": "character",
+   "aliases": [],
+   "description": "Kirol's new ally who helps steal the vial and later joins Strixhaven's cross-planar program.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dawning Archaic",
+   "type": "creature",
+   "aliases": [
+    "Archaic"
+   ],
+   "description": "An Archaic that kidnapped Oracle Jadzi and emits reality-warping magic, finally stopped by the students' unity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oracle Jadzi",
+   "type": "character",
+   "aliases": [
+    "Jadzi"
+   ],
+   "description": "An Oracle kidnapped by the Dawning Archaic, who performs a ritual to calm it and disappears into wild magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker who believes Jace's meddling disrupted the Archaics.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker blamed by Chandra for disrupting the Archaics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titan's Grave",
+   "type": "location",
+   "aliases": [],
+   "description": "The site where the Dawning Archaic appears and where the group falls into a chasm.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Oko lures Sanar, Abigale, Kirol and Tamira through an Omenpath to Lorwyn-Shadowmoor while they collect flowers at Harrier's Wood.",
+   "participants": [
+    "Sanar",
+    "Oko",
+    "Abigale",
+    "Kirol",
+    "Tamira",
+    "Dina"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the faerie planeswalker Oko appeared and lured Sanar"
+  },
+  {
+   "summary": "The students accidentally wake Isilu in a chamber beyond carvings, and darkness floods the world.",
+   "participants": [
+    "Sanar",
+    "Abigale",
+    "Kirol",
+    "Tamira",
+    "Isilu"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "accidentally woke it"
+  },
+  {
+   "summary": "Brigid Baeli meets the students and offers them hospitality as the night erases their Omenpath.",
+   "participants": [
+    "Brigid Baeli",
+    "Sanar",
+    "Tamira"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the kithkin offered them hospitality"
+  },
+  {
+   "summary": "Isilu walks past Goldmeadow, plunging it into Shadowmoor, and the students flee toward Glen Elendra.",
+   "participants": [
+    "Brigid Baeli",
+    "Isilu",
+    "Sanar",
+    "Abigale",
+    "Kirol",
+    "Tamira",
+    "Goldmeadow"
+   ],
+   "location": "Goldmeadow",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Isilu walked past the village, plunging a place that had been in Lorwyn for years into the darkness of Shadowmoor."
+  },
+  {
+   "summary": "Kirol is kidnapped by an elven hunter and Abigale falls into a tributary of the Wanderwine.",
+   "participants": [
+    "Kirol",
+    "Abigale"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Kirol was kidnapped by an elven hunter"
+  },
+  {
+   "summary": "Tamira and Sanar find Maralen turning into Oona; Tamira makes Rhys miss his attack and Maralen enlists their help.",
+   "participants": [
+    "Tamira",
+    "Sanar",
+    "Maralen",
+    "Rhys",
+    "Oona"
+   ],
+   "location": "Glen Elendra",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Tamira used probability magic to make him miss his attack and fall out a window"
+  },
+  {
+   "summary": "The group finds Ashling at the Stinkdrinker warren and sets out to track Isilu, but is halted by Brigid and the Shadowmoor kithkin.",
+   "participants": [
+    "Maralen",
+    "Tamira",
+    "Sanar",
+    "Ashling",
+    "Brigid Baeli"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "The four set out to track down Isilu"
+  },
+  {
+   "summary": "Lorwyn elves attack Isilu, kithkin join the fight, and Maralen and Tamira are poisoned with moonglow.",
+   "participants": [
+    "Maralen",
+    "Tamira",
+    "Isilu",
+    "Ashling",
+    "Sanar"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Maralen and Tamira were injured with the deadly poison moonglow"
+  },
+  {
+   "summary": "Ajani arrives with Kirol, and Kirol, Sanar and Lluwen steal the dawnglow vial, saving Maralen and Tamira.",
+   "participants": [
+    "Ajani Goldmane",
+    "Kirol",
+    "Sanar",
+    "Lluwen",
+    "Morcant",
+    "Maralen",
+    "Tamira"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "snuck into the elven lines, stole the vial, and brought it back, saving Maralen and Tamira's lives"
+  },
+  {
+   "summary": "Abigale returns with Eirdu, and the two gods embrace, restoring balance.",
+   "participants": [
+    "Abigale",
+    "Eirdu",
+    "Isilu"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The two gods embraced, and balance was restored to the plane."
+  },
+  {
+   "summary": "The students return to Arcavios via Shandalar with Ajani, and Lluwen joins the cross-planar program.",
+   "participants": [
+    "Ajani Goldmane",
+    "Lluwen",
+    "Sanar",
+    "Tamira"
+   ],
+   "location": "Arcavios",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Lluwen joined Strixhaven's cross-planar student program"
+  },
+  {
+   "summary": "Sanar joins Prismari College.",
+   "participants": [
+    "Sanar",
+    "Prismari College"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "The following semester, Sanar joined Prismari College."
+  },
+  {
+   "summary": "Chandra confronts the group at Titan's Grave blaming Jace; the Dawning Archaic returns and everyone falls into a chasm.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sanar",
+    "Lluwen",
+    "Dawning Archaic",
+    "Oracle Jadzi",
+    "Jace Beleren",
+    "Titan's Grave"
+   ],
+   "location": "Titan's Grave",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "the students and planeswalkers fell into a chasm beneath Titan's Grave along with it"
+  },
+  {
+   "summary": "Tam casts Jadzi and herself into wild magic, and Lluwen finishes the ritual with his friends, stopping the Archaic.",
+   "participants": [
+    "Tamira",
+    "Oracle Jadzi",
+    "Lluwen",
+    "Dawning Archaic",
+    "Sanar"
+   ],
+   "location": "Titan's Grave",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Lluwen was forced to finish the ritual himself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sanar",
+   "relation": "member_of",
+   "target": "Prismari College",
+   "note": "Joined the college.",
+   "paragraph": 0,
+   "quote": "He joined Prismari College."
+  },
+  {
+   "source": "Sanar",
+   "relation": "member_of",
+   "target": "Strixhaven University",
+   "note": "A student.",
+   "paragraph": 0,
+   "quote": "Sanar is a goblin sorcerer -student at Strixhaven University"
+  },
+  {
+   "source": "Sanar",
+   "relation": "ally",
+   "target": "Tamira",
+   "note": "Classmates travelling together.",
+   "paragraph": 6,
+   "quote": "Tamira and Sanar decided to continue on Brigid's directions to Glen Elendra"
+  },
+  {
+   "source": "Oko",
+   "relation": "enemy",
+   "target": "Sanar",
+   "note": "Lured him and his classmates to another plane.",
+   "paragraph": 2,
+   "quote": "lured Sanar, along with his classmates Abigale , Kirol , and Tamira , through an Omenpath"
+  },
+  {
+   "source": "Rhys",
+   "relation": "serves",
+   "target": "Maralen",
+   "note": "Her aide.",
+   "paragraph": 6,
+   "quote": "Rhys , her aid"
+  },
+  {
+   "source": "Isilu",
+   "relation": "other",
+   "target": "Eirdu",
+   "note": "Opposite gods who embrace and restore balance.",
+   "paragraph": 7,
+   "quote": "Abigale returned, with Isilu's opposite Eirdu in tow"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "mentor_of",
+   "target": "Sanar",
+   "note": "The class's professor.",
+   "paragraph": 7,
+   "quote": "the class's professor Liliana Vess"
+  }
+ ],
+ "rejected": []
+}
