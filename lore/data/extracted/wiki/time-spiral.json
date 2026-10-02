@@ -1,0 +1,136 @@
+{
+ "page": "wiki/time-spiral",
+ "url": "https://mtg.wiki/page/Time_Spiral",
+ "title": "Time Spiral",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:59Z",
+ "storyline": "Time Spiral block",
+ "entities": [
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane in ruins after its many cataclysms and the Phyrexian invasion, with salt rains and poisoned air, where time itself is in trouble.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane that invaded Dominaria over two hundred years earlier and was defeated with its god Yawgmoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "God of Phyrexia, defeated in the invasion of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose placement of the Skyshroud Forest drained green and red mana from Skyshroud and Keld; Teferi seeks her help to repair the plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who returns from his phased-out home and realizes the connection between land and mana is breaking.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest whose placement by Freyalise caused the Skyshroud rift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Region whose mountains caved in or withered after the Skyshroud rift drained its red mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion over two hundred years earlier that devastated Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Over two hundred years earlier Phyrexia invaded Dominaria; Phyrexia and Yawgmoth were defeated but only after devastating the plane.",
+   "participants": [
+    "Phyrexia",
+    "Yawgmoth",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "In the end Phyrexia and its god, Yawgmoth , were defeated, but not before they devastated Dominaria."
+  },
+  {
+   "summary": "Freyalise places the Skyshroud Forest by brute force, causing the Skyshroud rift to drain green and red mana from Skyshroud and Keld.",
+   "participants": [
+    "Freyalise",
+    "Skyshroud Forest",
+    "Keld"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "causing the Skyshroud rift to drain the green and red mana from Skyshroud and Keld"
+  },
+  {
+   "summary": "People, locations and objects from Dominaria's past appear and disappear on their own.",
+   "participants": [
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "people, locations and objects from the plane's past seem to appear and disappear on their own"
+  },
+  {
+   "summary": "Teferi returns from his phased-out home, realizes the land-mana connection is breaking, and seeks Freyalise's help.",
+   "participants": [
+    "Teferi",
+    "Freyalise",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "He seeks the help of Freyalise to repair the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teferi",
+   "relation": "ally",
+   "target": "Freyalise",
+   "note": "Seeks her help to repair the plane.",
+   "paragraph": 8,
+   "quote": "He seeks the help of Freyalise to repair the plane."
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "leader_of",
+   "target": "Phyrexia",
+   "note": "Phyrexia's god.",
+   "paragraph": 7,
+   "quote": "Phyrexia and its god, Yawgmoth"
+  }
+ ],
+ "rejected": []
+}

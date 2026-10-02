@@ -1,0 +1,226 @@
+{
+ "page": "wiki/precinct-six",
+ "url": "https://mtg.wiki/page/Precinct_Six",
+ "title": "Precinct Six",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Precinct Six",
+   "type": "location",
+   "aliases": [],
+   "description": "A bustling industrial and mercantile district in the Tenth District of Ravnica, known for warehouses, busy streets and working-class neighborhoods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "The Ravnican district containing Precinct Six.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that controls many warehouses and dominates commerce along Tin Street.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that moves through the edges of Deadbridge Chasm, the gateway to its underground domain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Guild that rents warehouse space and keeps a garrison at Kamen Fortress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [
+    "Rakdos"
+   ],
+   "description": "Guild that operates pain clubs and rowdy street performances in the precinct.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose arresters patrol warehouses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin gang leader whose territory includes Foundry Street.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Medori",
+   "type": "character",
+   "aliases": [],
+   "description": "An Orzhov pontiff who transformed Medori Park into warehouse lots.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nyoser",
+   "type": "character",
+   "aliases": [],
+   "description": "The viashino who runs the Gore House pain club.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falish",
+   "type": "character",
+   "aliases": [],
+   "description": "A renegade Izzet toolsmith with connections to Krenko who runs Falish's Workshop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wyroon",
+   "type": "character",
+   "aliases": [],
+   "description": "A male minotaur who runs The Millstone tavern and was ousted from the Boros Legion for insubordination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Noggra",
+   "type": "character",
+   "aliases": [],
+   "description": "A female goblin alchemist who runs Noggra's Remedies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Deadbridge Chasm",
+   "type": "location",
+   "aliases": [],
+   "description": "A vast fissure that serves as an entrance to the Golgari undercity and guildhall Korozda.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamen Fortress",
+   "type": "location",
+   "aliases": [],
+   "description": "Former headquarters of the Theater of Order, now a Boros garrison watching the Cult of Rakdos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Medori Park",
+   "type": "location",
+   "aliases": [],
+   "description": "A former city park turned warehouse lots, rife with undead at night.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tin Street",
+   "type": "location",
+   "aliases": [],
+   "description": "A long mercantile street, turf of the Shattergang Brothers in this part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gore House",
+   "type": "location",
+   "aliases": [],
+   "description": "A Cult of Rakdos pain club that hides the entrance to the Demon's Vestibule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shattergang Brothers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group whose turf includes this part of Tin Street.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Orzhov pontiff Medori transformed Medori Park from a city park into warehouse lots.",
+   "participants": [
+    "Medori",
+    "Medori Park",
+    "Orzhov Syndicate"
+   ],
+   "location": "Medori Park",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "once a city park transformed into warehouse lots by the Orzhov pontiff Medori"
+  },
+  {
+   "summary": "Wyroon is ousted from the Boros Legion years ago for insubordination.",
+   "participants": [
+    "Wyroon",
+    "Boros Legion"
+   ],
+   "location": "Precinct Six",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "who was ousted from the Boros Legion years ago for insubordination"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Precinct Six",
+   "relation": "located_in",
+   "target": "Tenth District",
+   "note": "In its southwestern part.",
+   "paragraph": 1,
+   "quote": "Located in the southwestern part of the Tenth District"
+  },
+  {
+   "source": "Orzhov Syndicate",
+   "relation": "other",
+   "target": "Precinct Six",
+   "note": "Controls many warehouses and dominates commerce along Tin Street.",
+   "paragraph": 3,
+   "quote": "The Orzhov Syndicate controls many warehouses and dominates commerce along Tin Street"
+  },
+  {
+   "source": "Boros Legion",
+   "relation": "enemy",
+   "target": "Cult of Rakdos",
+   "note": "The Kamen garrison monitors the Cult, causing frequent clashes.",
+   "paragraph": 8,
+   "quote": "resulting in frequent clashes between the Boros Legion, goblins, and Cult of Rakdos."
+  },
+  {
+   "source": "Nyoser",
+   "relation": "serves",
+   "target": "Cult of Rakdos",
+   "note": "Runs the Gore House pain club.",
+   "paragraph": 11,
+   "quote": "the Gore House is a Cult of Rakdos pain club run by the viashino Nyoser ."
+  },
+  {
+   "source": "Falish",
+   "relation": "ally",
+   "target": "Krenko",
+   "note": "Falish has connections to Krenko.",
+   "paragraph": 13,
+   "quote": "run by the renegade Izzet toolsmith Falish , who has connections to Krenko ."
+  },
+  {
+   "source": "Krenko",
+   "relation": "leader_of",
+   "target": "Precinct Six",
+   "note": "Leads goblin gangs on Foundry Street.",
+   "paragraph": 5,
+   "quote": "especially among goblin gangs led by figures like Krenko on Foundry Street"
+  }
+ ],
+ "rejected": []
+}

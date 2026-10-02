@@ -1,0 +1,194 @@
+{
+ "page": "wiki/exodus",
+ "url": "https://mtg.wiki/page/Exodus",
+ "title": "Exodus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:38Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The skyship whose crew must escape Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [
+    "Captain Sisay"
+   ],
+   "description": "The captain rescued by the Weatherlight crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Legacy",
+   "type": "artifact",
+   "aliases": [
+    "Legacy"
+   ],
+   "description": "The ancient artifacts that Volrath wishes to reclaim to oppose his hidden master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "The ruler of the Stronghold on Rath who seeks to destroy the crew and reclaim the artifacts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Volrath's main lieutenant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard Capashen"
+   ],
+   "description": "The leader who recently reunited the human tribes of the Kor, Vec and Dal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "A noble who accompanied the Weatherlight to Rath and whose newly formed bloodlust threatens the ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who stands alone, charged with opening the arcane portal off Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane the crew must leave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath's Stronghold",
+   "type": "location",
+   "aliases": [
+    "Stronghold"
+   ],
+   "description": "The fortress from which the crew must retreat and that is assaulted by elves and tribes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud elves",
+   "type": "faction",
+   "aliases": [
+    "elves of the Skyshroud Forest"
+   ],
+   "description": "Elves who assault Volrath's Stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor, Vec and Dal tribes",
+   "type": "faction",
+   "aliases": [
+    "Kor",
+    "Vec",
+    "Dal"
+   ],
+   "description": "Human tribes recently reunited by Gerrard who assault the Stronghold.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Weatherlight crew, having rescued Sisay and pieces of the Legacy, must retreat through Volrath's Stronghold to the portal off Rath.",
+   "participants": [
+    "Weatherlight",
+    "Sisay",
+    "Volrath",
+    "Greven il-Vec"
+   ],
+   "location": "Volrath's Stronghold",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The crew of the Weatherlight has rescued Captain Sisay and the pieces of the Legacy"
+  },
+  {
+   "summary": "The Skyshroud elves and the Kor, Vec and Dal tribes assault Volrath's Stronghold.",
+   "participants": [
+    "Skyshroud elves",
+    "Kor, Vec and Dal tribes",
+    "Volrath"
+   ],
+   "location": "Volrath's Stronghold",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they must also stave off the combined assault of Volrath's Stronghold by the elves of the Skyshroud Forest"
+  },
+  {
+   "summary": "A change comes over Crovax, whose bloodlust threatens the ship.",
+   "participants": [
+    "Crovax",
+    "Weatherlight"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "His newly-formed bloodlust and thirst for power threaten to destroy the entire ship."
+  },
+  {
+   "summary": "Ertai stands alone, focused on opening the arcane portal before his comrades return.",
+   "participants": [
+    "Ertai"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "He must open the arcane portal before his comrades return from the dark fortress"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Greven il-Vec",
+   "relation": "serves",
+   "target": "Volrath",
+   "note": "His main lieutenant.",
+   "paragraph": 3,
+   "quote": "Volrath and his main lieutenant Greven il-Vec"
+  },
+  {
+   "source": "Volrath",
+   "relation": "enemy",
+   "target": "Weatherlight",
+   "note": "Will stop at nothing to destroy the crew.",
+   "paragraph": 3,
+   "quote": "will stop at nothing to destroy the crew and reclaim the ancient artifacts"
+  },
+  {
+   "source": "Gerrard",
+   "relation": "leader_of",
+   "target": "Kor, Vec and Dal tribes",
+   "note": "The tribes were recently reunited by Gerrard.",
+   "paragraph": 3,
+   "quote": "recently reunited by Gerrard"
+  },
+  {
+   "source": "Crovax",
+   "relation": "member_of",
+   "target": "Weatherlight",
+   "note": "Accompanied the ship to Rath.",
+   "paragraph": 4,
+   "quote": "the noble who accompanied the Weatherlight to Rath"
+  }
+ ],
+ "rejected": []
+}
