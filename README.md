@@ -33,6 +33,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `popular-cards/{format}.json` ranks the cards a format's dated decks play over the last 7, 14 and 30 days, mainboard by kind of card and sideboard apart, basics left out, with each card's trend.
 - `breakouts/{format}.json` lists the cards new to a format's metagame: played by the last 7 days' decks and barely by the 23 days before, with their top 8s, wins and every recent deck that plays them.
 - `movers/{format}.json` lists the cards whose price rose or fell most over the last day, week and month, among the cards legal in a format, from the catalog's price history (a card costs its cheapest paper printing).
+- `today.json` is one response for Explore's Today carousel: one interesting card (a card new to a format's metagame, else a released card newly seeing play), the day's biggest price mover and loser from `movers/all.json`, and a preview slot.
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
 

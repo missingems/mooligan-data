@@ -15,6 +15,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
 | `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
+| `today.json` | One response for Explore's Today carousel: the interesting card, the day's biggest mover and loser, and a preview | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
@@ -444,9 +445,9 @@ One file per published format plus `all.json`, written every run: the cards whos
 - **`name`** is Scryfall's, both faces of a double-faced card ("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki"); `slug` is the card's `cards/{slug}.json`, which is a 404 for a card no tournament deck plays.
 - A run that could not read the price history or Scryfall's printings leaves the files as they were, and is marked failed.
 
-## `today.json` (proposed)
+## `today.json`
 
-**Not published yet.** One response for a Today carousel, so the app doesn't open a separate large file for each list. Where it is served waits on the decision on the database (a static file like the others, or a small server); its body stays the same either way, and it is not in the table of published files above. The scraper has the generator (`scraper/mtgmeta/today.py`), but nothing calls it.
+One response for Explore's Today carousel, so the app doesn't open a separate large file for each list. Built by `scraper/mtgmeta/today.py` at the end of each run from the `breakouts/` and `movers/all.json` just written, and uploaded with them (`max-age=300`). Published since 4 October 2026.
 
 ```json
 {

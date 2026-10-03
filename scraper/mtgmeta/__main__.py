@@ -113,6 +113,18 @@ def publish_movers(directory: Path, report, data_url: str) -> list:
     return [f"movers/{format}.json" for format in files]
 
 
+def publish_today(directory: Path, report) -> list:
+    """One response for Explore's Today carousel, from the breakouts and movers written above, as today.json."""
+    from .today import write_today
+
+    try:
+        return write_today(directory, datetime.now(timezone.utc))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Today failed")
+        report.errors.append(f"today: {error}")
+        return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
@@ -163,6 +175,7 @@ def main() -> int:
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
     written += publish_movers(args.directory, report, data_url)
+    written += publish_today(args.directory, report)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
