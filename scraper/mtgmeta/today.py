@@ -1,17 +1,18 @@
-"""today.json: what matters today in one response, for a Today carousel (not published yet).
+"""today.json: what matters today in one response, for a Today carousel, published each run.
 
-Built only from files already published: one interesting card from `breakouts/{format}.json` (a new card seeing
-play, else a released card suddenly seeing play) and the day's biggest mover and loser from `movers/all.json`. It
-waits on the decision on where /today is served, so nothing calls it yet. See docs/data-format.md.
+Built from files already published: one interesting card from `breakouts/{format}.json` (a new card seeing play,
+else a released card suddenly seeing play) and the day's biggest mover and loser from `movers/all.json`. Its
+preview is one of the printings Scryfall added since the last run (see previews.py). See docs/data-format.md.
 """
 from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Iterable, List, Optional, Tuple
 
 from .movers import FORMATS
+from .previews import NewPrintings, pick
 
 SCHEMA = 1
 
@@ -23,15 +24,17 @@ MOVER_FIELDS = ("name", "slug", "oracle_id", "scryfall_id", "set", "price", "pre
 FORMAT_ORDER = {format: place for place, format in enumerate(FORMATS)}
 
 
-def build_today(breakouts: Dict[str, dict], movers_all: Optional[dict], now: datetime) -> dict:
-    """The file: `breakouts` is each format's breakouts document by format id, `movers_all` is movers/all.json (None if missing)."""
+def build_today(breakouts: Dict[str, dict], movers_all: Optional[dict], now: datetime, new_printings: Iterable[dict] = ()) -> dict:
+    """The file: `breakouts` is each format's breakouts document by format id, `movers_all` is movers/all.json (None if missing).
+
+    `new_printings` are the printings new since the last run, as `NewPrintings.cards` has them.
+    """
     return {
         "schema": SCHEMA,
         "generated_at": now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "interesting_card": {"card": _interesting_card(breakouts)},
         "movers": _movers(movers_all),
-        # No source of card previews exists yet.
-        "preview": {"card": None},
+        "preview": {"card": pick(new_printings, now.astimezone(timezone.utc).date())},
     }
 
 
@@ -96,8 +99,17 @@ def read_published(directory: Path) -> Tuple[Dict[str, dict], Optional[dict]]:
     return breakouts, json.loads(path.read_text()) if path.exists() else None
 
 
-def write_today(directory: Path, now: datetime) -> List[str]:
-    """Builds today.json from the published files in `directory`, writes it there and returns its path."""
+def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrintings] = None) -> List[str]:
+    """Builds today.json from the published files in `directory`, writes it there and returns its path.
+
+    The preview needs `new_printings` read to the end of Scryfall's file. Without that (the movers were off, or the
+    file could not be read through) it is null and the saved printing ids stay as they were; with it, they move
+    on to this run's once the file is written.
+    """
     breakouts, movers_all = read_published(directory)
-    (directory / "today.json").write_text(json.dumps(build_today(breakouts, movers_all, now), ensure_ascii=False, separators=(",", ":")))
+    finished = new_printings if new_printings is not None and new_printings.complete else None
+    document = build_today(breakouts, movers_all, now, finished.cards if finished else ())
+    (directory / "today.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
+    if finished:
+        finished.save(directory)
     return ["today.json"]

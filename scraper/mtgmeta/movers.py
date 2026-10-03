@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 from itertools import accumulate
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Callable, Dict, Iterable, List, Optional, Tuple
 
 from .cards import slug
 from .scryfall import DEFAULT_CARDS_URL, HEADERS, SKIPPED_LAYOUTS, _bulk_download_uri, bulk_cards
@@ -277,9 +277,13 @@ def fetch_history(url: str) -> bytes:
         return gzip.decompress(response.read())
 
 
-def movers(history_url: str, now: datetime) -> Dict[str, dict]:
-    """Downloads the price history and Scryfall's printings, and builds every format's file."""
-    cards = printings(bulk_cards(_bulk_download_uri(DEFAULT_CARDS_URL)))
+def movers(history_url: str, now: datetime, watch: Optional[Callable[[Iterable[dict]], Iterable[dict]]] = None) -> Dict[str, dict]:
+    """Downloads the price history and Scryfall's printings, and builds every format's file.
+
+    `watch` sees Scryfall's printings on their way through, so the preview in today.json reads the same download.
+    """
+    stream = bulk_cards(_bulk_download_uri(DEFAULT_CARDS_URL))
+    cards = printings(watch(stream) if watch else stream)
     wanted = {printing for card in cards.values() for printing in card["printings"]}
     history = read_history(fetch_history(history_url), wanted)
     log.info("Movers: %d cards, %d printings priced up to %s", len(cards), len(history.prices), history.last_day)

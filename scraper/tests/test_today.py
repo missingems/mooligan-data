@@ -214,9 +214,24 @@ def test_empty_day_lists_are_nulls_and_one_side_can_be_empty():
     assert build_today({}, {"price_day": "2026-10-02", "windows": {}}, NOW)["movers"]["mover"] is None
 
 
-def test_the_preview_is_always_present_and_has_no_card():
+def test_without_new_printings_the_preview_is_present_and_has_no_card():
     assert build_today({}, None, NOW)["preview"] == {"card": None}
     assert build_today({"modern": breakouts("modern", row("A"))}, movers(gainers=[mover("Up")]), NOW)["preview"] == {"card": None}
+    assert build_today({}, None, NOW, [])["preview"] == {"card": None}
+
+
+def test_a_new_printing_fills_the_preview_and_leaves_the_rest_of_the_file_as_it_was():
+    files, file = {"modern": breakouts("modern", row("Psychic Frog"))}, movers(gainers=[mover("Up")], losers=[mover("Down", 1.0, 2.0)])
+    new = [{
+        "id": "p-1", "name": "Fresh Face", "oracle_id": "o-fresh", "set": "trk", "set_name": "Track Set",
+        "collector_number": "1", "released_at": "2026-09-01", "reprint": False,
+    }]
+    without, today = build_today(files, file, NOW), build_today(files, file, NOW, new)
+    assert today["preview"]["card"]["name"] == "Fresh Face"
+    assert today["preview"]["card"]["scryfall_id"] == "p-1"
+    assert today["interesting_card"] == without["interesting_card"] and today["movers"] == without["movers"]
+    assert list(today) == list(without) == ["schema", "generated_at", "interesting_card", "movers", "preview"]
+    assert json.loads(json.dumps(today, ensure_ascii=False)) == today
 
 
 def test_the_file_has_its_schema_and_time_and_round_trips_as_json():

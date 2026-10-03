@@ -22,7 +22,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times, and the Scryfall printings the last run saw (`state/printing-ids.json.gz`). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -447,7 +447,7 @@ One file per published format plus `all.json`, written every run: the cards whos
 
 ## `today.json`
 
-One response for Explore's Today carousel, so the app doesn't open a separate large file for each list. Built by `scraper/mtgmeta/today.py` at the end of each run from the `breakouts/` and `movers/all.json` just written, and uploaded with them (`max-age=300`). Published since 4 October 2026.
+One response for Explore's Today carousel, so the app doesn't open a separate large file for each list. Built by `scraper/mtgmeta/today.py` at the end of each run from the `breakouts/` and `movers/all.json` just written and the printings Scryfall added since the last run, and uploaded with them (`max-age=300`). Published since 4 October 2026.
 
 ```json
 {
@@ -470,11 +470,17 @@ One response for Explore's Today carousel, so the app doesn't open a separate la
     },
     "loser": { … }
   },
-  "preview": { "card": null }
+  "preview": {
+    "card": {
+      "name": "Overwrite the Multiverse", "oracle_id": "d037…", "scryfall_id": "c455…",
+      "set": "fra", "set_name": "Reality Fracture", "released_at": "2026-10-23",
+      "previewed_at": "2026-09-09", "source": "Wizards of the Coast", "source_uri": "https://magic.wizards.com/en/news/…"
+    }
+  }
 }
 ```
 
-Today is a carousel with three kinds of slot: the interesting card, the movers and the previews. It is built from files already published, so it adds no data of its own.
+Today is a carousel with three kinds of slot: the interesting card, the movers and the previews. The interesting card and the movers are built from files already published, so they add no data of their own. The preview comes from Scryfall's default-cards bulk file, which the movers read anyway.
 
 - **`interesting_card`** is always present and holds exactly one card, never a list. **`card`** is `null` when there is none. It is chosen in this order, stopping at the first step that has a card:
   1. **`"kind": "new_card"`**: a new card seeing play, a card of any format's `breakouts/{format}.json` with `new` true (no deck of the 23 earlier days played it).
@@ -483,7 +489,13 @@ Today is a carousel with three kinds of slot: the interesting card, the movers a
   There is no third kind. When several cards fit the step, one is published, ranked as a card and not as a row: a real release is new in several formats at once, while a card new in only one format may just be one that format's decks had not played lately. Cards are told apart by `oracle_id` (`name` when a row has none). The one that matches the step in the most formats comes first; then the most `decks` and then the most `top8` added up over those formats; then `name`. So a card new in two formats beats a card new in one with more decks, and a released card never wins over a new card, however many decks play it. The card is shown as its row in the format where it has the most `decks`, ties going to the format's place in the order of the formats above (`modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander`; a format not in it comes after, alphabetically), and that format is its **`format`**.
 - **The card** has **`kind`**, **`format`** (the breakouts file's) and the breakout card's **`name`**, **`oracle_id`**, **`type`**, **`decks`**, **`share`**, **`previous_share`**, **`first_seen`**, **`top8`** and **`wins`**, with **`price`** when the breakout card has one, as in `breakouts/{format}.json`. It leaves out `results`, `mainboard`, `best_prestige` and `new`; for the decks that played it, open `breakouts/{format}.json`.
 - **`movers`** is always present. **`mover`** is the first of `gainers` and **`loser`** the first of `losers` in the `1d` window of `movers/all.json`: the card that rose most and the card that fell most over the last day, with the fields of a card there (`name`, `slug`, `oracle_id`, `scryfall_id`, `set`, `price`, `previous`, `change`, `percent`), copied as published and without `history`. The `7d` and `30d` windows are not used, and nothing is recomputed. **`price_day`** is the movers file's. Either card is `null` when its list is empty, and all three are `null` when `movers/all.json` is missing.
-- **`preview`** is always present, and its **`card`** is `null`. It is for a newly released card preview; the pipeline has no source of previews yet, so it stays `null` until one is decided.
+- **`preview`** is always present and holds exactly one card, never a list: a printing Scryfall added since the last run. Each run saves the id of every printing in Scryfall's default-cards bulk file (`state/printing-ids.json.gz`), and a printing whose id the last run did not have is new. Tokens, art series cards, emblems and other memorabilia, minigame inserts, oversized cards and digital-only printings are never the preview. It is chosen in this order, stopping at the first step that has a card:
+  1. A printing from a set not released yet (`released_at` after the day of `generated_at`): a card Scryfall has a preview date for before one it has none for, the most recently previewed first, then the latest `released_at`.
+  2. A printing from a Secret Lair: the set `sld`, or a set whose name starts with "Secret Lair" (Scryfall has no set type for them), the latest `released_at` first.
+  3. Any other new printing, the latest `released_at` first.
+
+  In every step a card's first printing comes before a reprint (Scryfall's `reprint`), so a new card wins over a new printing of an old card, as most of what Scryfall lists ahead of a release is reprints and promos. Ties go to the set code, then the collector number. **`card`** is `null` when there is none: on a day Scryfall added no printing that can be one, on the first run (it only saves the ids to compare with), and on a run that could not read Scryfall's file to its end or skipped the movers (`MOVERS=0`). Those last two leave the saved ids as they were, so the next run still finds the printings they missed.
+- **The preview card** has Scryfall's **`name`** (both faces of a double-faced card, as in `movers/`), **`oracle_id`**, **`scryfall_id`** (the printing, which Scryfall's API and images are keyed on), **`set`**, **`set_name`** and **`released_at`** (`yyyy-MM-dd`), and, when Scryfall has them, **`previewed_at`**, **`source`** and **`source_uri`**: when the card was previewed, by whom and where. Show `source` and link to `source_uri` wherever the card is shown with them. Decode every field but `name` as optional.
 - **`generated_at`** is when the file was built. A decoder should treat `interesting_card.card`, `mover`, `loser` and `preview.card` as optional, and ignore keys it doesn't know.
 
 ## `edh/commanders/{slug}.json`
