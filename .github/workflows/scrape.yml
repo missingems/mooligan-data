@@ -121,6 +121,10 @@ jobs:
           if [ -d work/movers ]; then
             cp work/movers "$R2/movers" --recursive --cache-control "public, max-age=300"
           fi
+          # Composed from the breakouts and movers above for Explore's Today carousel.
+          if [ -f work/today.json ]; then
+            cp work/today.json "$R2/today.json" --cache-control "public, max-age=300"
+          fi
           cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
           # Built from the snapshots above, so it goes up after them.
           if [ -f work/explore.json ]; then

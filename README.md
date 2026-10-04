@@ -33,6 +33,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `popular-cards/{format}.json` ranks the cards a format's dated decks play over the last 7, 14 and 30 days, mainboard by kind of card and sideboard apart, basics left out, with each card's trend.
 - `breakouts/{format}.json` lists the cards new to a format's metagame: played by the last 7 days' decks and barely by the 23 days before, with their top 8s, wins and every recent deck that plays them.
 - `movers/{format}.json` lists the cards whose price rose or fell most over the last day, week and month, among the cards legal in a format, from the catalog's price history (a card costs its cheapest paper printing).
+- `today.json` is one response for Explore's Today carousel: one interesting card (a card new to a format's metagame, else a released card newly seeing play), the day's biggest price mover and loser from `movers/all.json`, and one preview: a printing Scryfall added since the last run, from a set still to be released first, else from a Secret Lair, else any new printing.
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
 
@@ -90,6 +91,8 @@ A local run writes into `scraper/work/` and publishes nothing.
 ## Price movers
 
 Each run also builds `movers/{format}.json` from `catalog/prices/history.bin.gz`, which the card catalog workflow publishes, and Scryfall's default-cards bulk file, which says which printings are one card and where it is legal. Set `MOVERS=0` to skip it, or `MOVERS_PRICES_URL` to read another price history.
+
+The same read of the default-cards file finds the preview in `today.json`. Each run saves the id of every printing in it to `state/printing-ids.json.gz`, a sorted, gzipped JSON array of about 2.4 MB, and a printing whose id the last run did not save is new. Ids, because a printing's Scryfall id never changes; a count and hash per set would say that a set changed but not which of its printings are new. A first run only saves the ids, so it has no preview. A run with `MOVERS=0`, or one that could not read the file to its end, has none either and leaves the saved ids as they were, so the next run still finds the printings it missed.
 
 ## Premier play calendar
 

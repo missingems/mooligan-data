@@ -12,10 +12,12 @@ import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 from .browser import open_browser
 from .edhrec import Edhrec
 from .locator import Locator, place_page
+from .previews import NewPrintings, read_seen
 from .published import fetch_published_decks
 from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
@@ -95,14 +97,17 @@ def publish_locator(directory: Path, report) -> list:
     return written
 
 
-def publish_movers(directory: Path, report, data_url: str) -> list:
-    """The cards whose price moved most, from the published price catalog, as movers/{format}.json."""
+def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
+    """The cards whose price moved most, from the published price catalog, as movers/{format}.json.
+
+    `watch` sees Scryfall's printings on the way (see `movers`).
+    """
     if os.environ.get("MOVERS", "1") != "1":
         return []
     from .movers import movers
 
     try:
-        files = movers(os.environ.get("MOVERS_PRICES_URL", f"{data_url}/catalog/prices/history.bin.gz"), datetime.now(timezone.utc))
+        files = movers(os.environ.get("MOVERS_PRICES_URL", f"{data_url}/catalog/prices/history.bin.gz"), datetime.now(timezone.utc), watch)
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
         logging.exception("Price movers failed")
         report.errors.append(f"price movers: {error}")
@@ -111,6 +116,21 @@ def publish_movers(directory: Path, report, data_url: str) -> list:
     for format, document in files.items():
         (directory / "movers" / f"{format}.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
     return [f"movers/{format}.json" for format in files]
+
+
+def publish_today(directory: Path, report, new_printings: Optional[NewPrintings] = None) -> list:
+    """One response for Explore's Today carousel, from the breakouts and movers written above, as today.json.
+
+    `new_printings` is what the movers' read of Scryfall's printings found new, for its preview.
+    """
+    from .today import write_today
+
+    try:
+        return write_today(directory, datetime.now(timezone.utc), new_printings)
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Today failed")
+        report.errors.append(f"today: {error}")
+        return []
 
 
 def main() -> int:
@@ -162,7 +182,10 @@ def main() -> int:
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
-    written += publish_movers(args.directory, report, data_url)
+    # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview.
+    new_printings = NewPrintings(read_seen(args.directory))
+    written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
+    written += publish_today(args.directory, report, new_printings)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
