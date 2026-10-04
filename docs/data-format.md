@@ -1,10 +1,11 @@
 # Published data format
 
-Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper once a day at 14:00 UTC. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
+Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper once a day. The run is scheduled for 14:00 UTC, but GitHub's scheduler has been starting it hours late (the scheduled runs of 30 September and 1, 2 and 3 October 2026 started at 19:01, 19:24, 19:08 and 17:52 UTC and finished at 19:35, 20:11, 19:55 and 18:46), and the files land about an hour after it starts. The `generated_at` of `explore.json`, `popular-cards/…` and `breakouts/…` is when the run started building them, and `today.json`'s is when it was built. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
 
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
+| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
@@ -22,13 +23,14 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times, and the Scryfall printings the last run saw (`state/printing-ids.json.gz`). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times, the Scryfall printings the last run saw (`state/printing-ids.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
 ## Suggested app flow
 
 0. For a landing screen (an Explore tab), fetch `explore.json` alone: it has each main format's top archetypes and latest events in a few tens of KB, so nothing else has to download first.
+   To keep the Explore files (`explore.json`, `today.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
@@ -62,6 +64,29 @@ A deck or event a snapshot mentions may not be published yet. The scraper downlo
 ```
 
 A format is missing from `formats` until its first scrape completes.
+
+## `explore-manifest.json`
+
+The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 20 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-04T19:52:10Z",
+  "files": {
+    "breakouts/legacy.json": { "sha256": "1b6e…" },
+    "explore.json": { "sha256": "9d40…" },
+    "popular-cards/modern.json": { "sha256": "e7a2…" },
+    "today.json": { "sha256": "04cf…" }
+  }
+}
+```
+
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
+- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
+- **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
+- **Using it.** Fetch `explore-manifest.json`, compare each `files[path].sha256` with the hash of the copy you hold, and download only the files that differ. For a path the manifest does not list, or when the manifest is a 404, ask for the file itself, for example with `If-None-Match`. A cache can hand out the previous copy of a file for up to its `max-age`, so if a download still differs from the manifest, keep it and check again at the next manifest.
 
 ## `snapshots/{format}.json`
 
