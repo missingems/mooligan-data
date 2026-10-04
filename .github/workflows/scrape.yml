@@ -131,6 +131,10 @@ jobs:
             cp work/explore.json "$R2/explore.json" --cache-control "public, max-age=300"
           fi
           cp work/state "$R2/state" --recursive --cache-control "no-cache"
+          # Lists the Explore files above by hash, so it goes up after them and the state it is carried over from.
+          if [ -f work/explore-manifest.json ]; then
+            cp work/explore-manifest.json "$R2/explore-manifest.json" --cache-control "public, max-age=60"
+          fi
           cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
           echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages, $(ls work/archetypes 2>/dev/null | wc -l) archetype pages, $(ls work/events 2>/dev/null | wc -l) event pages"
           cat work/index.json

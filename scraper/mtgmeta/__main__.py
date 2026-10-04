@@ -133,6 +133,18 @@ def publish_today(directory: Path, report, new_printings: Optional[NewPrintings]
         return []
 
 
+def publish_manifest(directory: Path, report) -> list:
+    """The SHA-256 of each Explore file written above or carried over from the last run, as explore-manifest.json."""
+    from .manifest import write_manifest
+
+    try:
+        return write_manifest(directory, datetime.now(timezone.utc))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Explore manifest failed")
+        report.errors.append(f"explore manifest: {error}")
+        return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
@@ -186,6 +198,8 @@ def main() -> int:
     new_printings = NewPrintings(read_seen(args.directory))
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
     written += publish_today(args.directory, report, new_printings)
+    # Last, after every file it lists.
+    written += publish_manifest(args.directory, report)
 
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
