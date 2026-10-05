@@ -13,7 +13,8 @@ from mtgmeta.manifest import PATH, STATE_PATH, build_manifest, is_explore_path, 
 
 NOW = datetime(2026, 10, 4, 19, 52, 10, tzinfo=timezone.utc)
 FORMATS = ["modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander"]
-WORKFLOW = Path(__file__).resolve().parents[2] / ".github" / "workflows" / "scrape.yml"
+# The upload the scrape workflow runs, which lives in the script it calls.
+UPLOAD = Path(__file__).resolve().parents[2] / "ops" / "scrape.sh"
 
 
 def put(directory, path, text="{}"):
@@ -198,8 +199,8 @@ def test_it_lists_the_explore_file_a_store_run_wrote_by_its_hash(tmp_path):
 
 
 def upload_lines():
-    """Each `cp` of the workflow's upload step, as (line number, what it copies)."""
-    lines = WORKFLOW.read_text().splitlines()
+    """Each `cp` of the upload step, as (line number, what it copies)."""
+    lines = UPLOAD.read_text().splitlines()
     return {match.group(1): number for number, line in enumerate(lines) if (match := re.match(r"\s*cp (work/\S+) ", line))}
 
 
@@ -213,7 +214,7 @@ def test_the_workflow_uploads_the_manifest_after_the_files_it_lists_and_the_stat
 
 
 def test_the_workflow_uploads_the_manifest_only_when_there_is_one_with_a_minute_of_cache():
-    lines = WORKFLOW.read_text().splitlines()
+    lines = UPLOAD.read_text().splitlines()
     number = upload_lines()["work/explore-manifest.json"]
     assert lines[number - 1].strip() == "if [ -f work/explore-manifest.json ]; then"
     assert lines[number + 1].strip() == "fi"
