@@ -4,7 +4,7 @@ Built from files already published: up to three breakout cards from `breakouts/{
 where three have one (new cards seeing play first, then released cards suddenly seeing play), the day's biggest mover
 and loser from `movers/all.json` with their price history, the EDH commander whose deck count rose fastest since
 EDHREC was last asked about it (from the commander check times in `state/edhrec-commanders.json` and the snapshot
-this file keeps of them), and a preview, one of the printings Scryfall added since the last run (see previews.py).
+this file keeps of them), and a preview, one of the printings Scryfall added since the last run, from a set not released yet (see previews.py).
 See docs/data-format.md.
 """
 from __future__ import annotations

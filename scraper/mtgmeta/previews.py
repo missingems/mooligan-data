@@ -1,4 +1,4 @@
-"""today.json's preview: one card Scryfall added since the last run.
+"""today.json's preview: one card Scryfall added since the last run, from a set not released yet.
 
 It is found by comparing the printings of Scryfall's default-cards bulk file with the ids the last run saved. The
 movers already stream that file once a run, so the preview watches the same stream. See docs/data-format.md.
@@ -110,25 +110,21 @@ def _trimmed(card: dict) -> dict:
 
 
 def pick(cards: Iterable[dict], today: date) -> Optional[dict]:
-    """The one preview card, as published, from the new printings (`NewPrintings.cards`); None when there are none.
+    """The one preview card, as published, from the new printings (`NewPrintings.cards`); None when none is upcoming.
 
-    The first step with a printing decides: one not released yet (a first printing before a reprint, then one
-    Scryfall shows a preview for, newest first), else a Secret Lair one, else any other. Ties go to the newest
-    release, then the set code and collector number.
+    Only a printing released after `today` can be the preview, so one with no usable `released_at` cannot. Among those
+    a card's first printing comes before a reprint, then one Scryfall shows a preview for before one it does not
+    (the newest preview first), then the newest release, then the set code and collector number.
     """
-    cards = list(cards)
     upcoming = [card for card in cards if _day(card.get("released_at")) > today.toordinal()]
-    # Scryfall has no Secret Lair set type: `sld` is a "box" set, and the other drops (slc, slp, slu) are named for it.
-    secret_lair = [card for card in cards if card.get("set") == "sld" or (card.get("set_name") or "").startswith("Secret Lair")]
-    for found, previews in ((upcoming, True), (secret_lair, False), (cards, False)):
-        if found:
-            return _published(min(found, key=lambda card: _order(card, previews)))
-    return None
+    if not upcoming:
+        return None
+    return _published(min(upcoming, key=_order))
 
 
-def _order(card: dict, previews: bool) -> tuple:
-    """First printing before reprint, then (for an upcoming card) the newest preview, the newest release, set and collector number."""
-    previewed = _day((card.get("preview") or {}).get("previewed_at")) if previews else 0
+def _order(card: dict) -> tuple:
+    """First printing before reprint, then the newest preview, the newest release, set and collector number."""
+    previewed = _day((card.get("preview") or {}).get("previewed_at"))
     return (bool(card.get("reprint")), -previewed, -_day(card.get("released_at")), card.get("set") or "", _number(card.get("collector_number")))
 
 
