@@ -56,7 +56,7 @@ class Pacer:
         clock: Callable[[], float] = time.monotonic,
     ) -> None:
         self.pacing = pacing
-        self._rng = rng
+        self.rng = rng
         self._sleep = sleep
         self._clock = clock
         self.started = clock()
@@ -66,9 +66,9 @@ class Pacer:
         delay = self.pacing.delay
         if delay <= 0:
             return 0.0
-        seconds = min(max(self._rng.lognormvariate(math.log(delay), 0.5), 0.4 * delay), 5 * delay)
-        if self._rng.random() < LONG_PAUSE_CHANCE:
-            seconds += self._rng.uniform(*LONG_PAUSE)
+        seconds = min(max(self.rng.lognormvariate(math.log(delay), 0.5), 0.4 * delay), 5 * delay)
+        if self.rng.random() < LONG_PAUSE_CHANCE:
+            seconds += self.rng.uniform(*LONG_PAUSE)
         self._sleep(seconds)
         return seconds
 
@@ -76,13 +76,13 @@ class Pacer:
         """Sleeps the time a reader spends on a page before going to its decks."""
         if self.pacing.delay <= 0:
             return 0.0
-        seconds = self._rng.uniform(*DWELL)
+        seconds = self.rng.uniform(*DWELL)
         self._sleep(seconds)
         return seconds
 
     def backoff_seconds(self, refusals: int, retry_after: Optional[float] = None) -> float:
         """How long to wait after the `refusals`-th refusal in a row, without waiting."""
-        seconds = BACKOFF * 2 ** (refusals - 1) * self._rng.uniform(0.8, 1.2)
+        seconds = BACKOFF * 2 ** (refusals - 1) * self.rng.uniform(0.8, 1.2)
         if retry_after is not None and retry_after > seconds:
             seconds = retry_after
         return min(seconds, MAX_BACKOFF)

@@ -2,10 +2,11 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+import random
+from dataclasses import dataclass, field
 from urllib.parse import urlencode
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Protocol, Sequence, Tuple, Union
+from typing import Dict, List, Optional, Protocol, Sequence, Set, Tuple, Union
 
 from .models import (
     Archetype,
@@ -17,6 +18,8 @@ from .models import (
     Meta,
     RunReport,
 )
+from .browser import Fetched
+from .pacing import DeckPacing, Pacer, Visit, build_plan, deck_path, run_downloads
 from .parsing import (
     ParseError,
     parse_archetype,
@@ -36,6 +39,7 @@ class Browser(Protocol):
     def page(self, path: str) -> str: ...
     def metagame(self, format: str, days: str) -> Tuple[str, bool]: ...
     def fetch_pages(self, paths: Sequence[str]) -> Dict[str, Union[str, Exception]]: ...
+    def fetch_batch(self, paths: Sequence[str]) -> List[Fetched]: ...
 
 
 @dataclass
@@ -52,8 +56,10 @@ class ScrapeConfig:
     # Events not yet stored (from the search or archetype lists) read per format per run.
     max_new_events: int = 150
     # Per format. Decks never change once published, so each run only downloads
-    # new ones; the cap keeps a first run (or a backlog) from hammering the site.
+    # new ones; the cap keeps one format's backlog from starving the others.
     max_new_decks: int = 400
+    # How the downloads move, and how many a run may take in all formats together.
+    deck_pacing: DeckPacing = field(default_factory=DeckPacing)
     # Archetypes per format, most played first, whose results and featured deck are kept.
     archetype_decks: int = 100
     # How far back each archetype's results go.
@@ -74,9 +80,18 @@ class _WantedDeck:
     archetype_id: Optional[str] = None
 
 
-def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[datetime] = None) -> RunReport:
-    report = RunReport()
+def scrape(
+    browser: Browser,
+    store: Store,
+    config: ScrapeConfig,
+    now: Optional[datetime] = None,
+    pacer: Optional[Pacer] = None,
+    report: Optional[RunReport] = None,
+) -> RunReport:
+    """Reads every format, then downloads the new decks. Adds to `report` when the caller already has one."""
+    report = report or RunReport()
     cutoff = (now or datetime.now(timezone.utc)) - timedelta(days=config.history_days)
+    wanted: Dict[str, List[_WantedDeck]] = {}
     for format in config.formats:
         metas = _read_metas(browser, format, config.meta_days, report)
         histories = _read_archetypes(browser, store, format, _ranked_archetypes(metas)[: config.archetype_decks], config, cutoff, report)
@@ -98,11 +113,10 @@ def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[d
                     result.archetype, result.archetype_id = canonical[result.deck_id]
             if _save(report, f"event {event.event_id}", lambda: store.save_event(event)):
                 report.events.append(event.event_id)
+        wanted[format] = _wanted_decks(format, histories, events)
 
-        # Each format has its own allowance, so one big backlog can't starve the others.
-        left = _download_decks(browser, store, _wanted_decks(format, histories, events), config.max_new_decks, report)
-        if left <= 0:
-            log.warning("Stopped %s at the limit of %d new decks; the rest come next run", format, config.max_new_decks)
+    # The decks come last, once every format's pages are read, so the pace is set by the deck phase alone.
+    _download_decks(browser, store, wanted, config, report, pacer)
     return report
 
 
@@ -346,39 +360,83 @@ def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[E
     return sorted(wanted.values(), key=lambda deck: deck.date, reverse=True)
 
 
-def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], budget: int, report: RunReport) -> int:
-    existing = store.existing_deck_ids(deck.deck_id for deck in wanted)
+def _download_decks(
+    browser: Browser,
+    store: Store,
+    wanted: Dict[str, List[_WantedDeck]],
+    config: ScrapeConfig,
+    report: RunReport,
+    pacer: Optional[Pacer] = None,
+) -> None:
+    """Downloads the new decks of every format the way a reader would, saving each batch as it comes."""
+    everything = [want for decks in wanted.values() for want in decks]
+    existing = store.existing_deck_ids(want.deck_id for want in everything)
     report.decks_skipped += len(existing)
     gone = store.missing_deck_ids()
-    todo = [want for want in wanted if want.deck_id not in existing and want.deck_id not in gone][: max(budget, 0)]
+    allowance = max(config.max_new_decks, 0)
+    # Each format has its own allowance, so one big backlog can't starve the others.
+    todo: Dict[str, List[_WantedDeck]] = {}
+    chosen: Set[str] = set()
+    over_allowance = 0
+    for format, decks in wanted.items():
+        fresh = [want for want in decks if want.deck_id not in existing and want.deck_id not in gone and want.deck_id not in chosen]
+        todo[format] = fresh[:allowance]
+        chosen.update(want.deck_id for want in todo[format])
+        if len(fresh) > allowance:
+            over_allowance += len(fresh) - allowance
+            log.info("%d %s decks wait past the limit of %d new decks a format; they come next run", len(fresh) - allowance, format, allowance)
+    if not chosen:
+        return
+
+    pacer = pacer or Pacer(config.deck_pacing, random.Random())
+    plan = build_plan(todo, pacer.pacing, pacer.rng)
+    planned = sum(len(visit.decks) for visit in plan)
+    over_run = len(chosen) - planned
+    if over_run:
+        log.info("%d decks wait past the limit of %d new decks a run; they come next run", over_run, pacer.pacing.per_run)
+    by_path = {deck_path(want.deck_id): want for decks in todo.values() for want in decks}
     missing: List[str] = []
-    # Downloaded in chunks and saved after each, so a crash or timeout keeps what was fetched.
-    for start in range(0, len(todo), 50):
-        chunk = todo[start : start + 50]
-        texts = browser.fetch_pages([f"/deck/download/{want.deck_id}" for want in chunk])
+
+    def handle(visit: Visit, fetched: List[Fetched]) -> None:
         pending: List[Deck] = []
-        for want in chunk:
+        for answer in fetched:
+            want = by_path[answer.path]
+            if answer.status != 200:
+                _fail(report, f"deck {want.deck_id}", RuntimeError(f"HTTP {answer.status} on {answer.path}"))
+                continue
             try:
-                mainboard, sideboard = parse_decklist(_body(texts[f"/deck/download/{want.deck_id}"]))
+                mainboard, sideboard = parse_decklist(answer.body)
             except ParseError:
                 # MTGGoldfish redirects a deleted deck to its metagame page.
                 log.info("Deck %s is no longer on MTGGoldfish", want.deck_id)
                 missing.append(want.deck_id)
                 continue
-            except Exception as error:  # noqa: BLE001
-                _fail(report, f"deck {want.deck_id}", error)
-                continue
-            budget -= 1
             pending.append(
-                Deck(
-                    want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id
-                )
+                Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id)
             )
         _flush_decks(store, pending, report)
+
+    outcome = run_downloads(browser, plan, pacer, handle)
     if missing:
         store.mark_missing_decks(missing)
         log.info("%d decks are no longer on MTGGoldfish; later runs skip them", len(missing))
-    return budget
+
+    report.decks_deferred = over_allowance + over_run + outcome.left
+    minutes = pacer.elapsed() / 60
+    if outcome.reason == "blocked":
+        report.deck_block = outcome.refusal
+        warning = (
+            f"Deck downloads blocked after {outcome.downloaded_attempted} ({outcome.refusal}); "
+            f"{report.decks_deferred} left for the next run"
+        )
+        report.warnings.append(warning)
+    elif outcome.reason == "time":
+        log.info(
+            "Deck downloads stopped at the %.0f-minute budget after %d; %d left for the next run",
+            pacer.pacing.minutes, outcome.downloaded_attempted, report.decks_deferred,
+        )
+    else:
+        log.info("Downloaded %d new decks in %.0f min; %d wait for the next run", report.decks_written, minutes, report.decks_deferred)
 
 
 def _body(result: Union[str, Exception]) -> str:

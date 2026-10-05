@@ -136,4 +136,10 @@ class RunReport:
     events: List[str] = field(default_factory=list)
     decks_written: int = 0
     decks_skipped: int = 0
+    # Decks wanted but left for the next run: past an allowance, or not reached before the downloads stopped.
+    decks_deferred: int = 0
+    # What MTGGoldfish's refusal looked like, when it ended the deck downloads.
+    deck_block: Optional[str] = None
     errors: List[str] = field(default_factory=list)
+    # Things worth a look that do not fail the run.
+    warnings: List[str] = field(default_factory=list)
