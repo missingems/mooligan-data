@@ -2,7 +2,7 @@ import json
 import re
 
 from mtgmeta import browser as browser_module
-from mtgmeta.browser import BlockedError, GoldfishBrowser
+from mtgmeta.browser import BlockedError, Fetched, GoldfishBrowser
 
 
 class FakeSession:
@@ -66,6 +66,63 @@ def test_paths_still_refused_after_every_attempt_fail(monkeypatch):
     browser, session = make([[403]] * 10, concurrency=1, monkeypatch=monkeypatch)
     results = browser.fetch_pages(["/a"], attempts=2)
     assert isinstance(results["/a"], BlockedError) and session.reloads == 2
+
+
+class HeaderSession(FakeSession):
+    """Answers a batch with the headers the real script reads, or with none."""
+
+    def __init__(self, responses):
+        super().__init__([])
+        self.responses = responses
+
+    def execute_async_script(self, script, timeout=None):
+        super().execute_async_script(script, timeout)
+        return json.dumps(self.responses)
+
+
+def test_fetch_batch_reads_the_status_and_the_headers(monkeypatch):
+    monkeypatch.setattr(browser_module.time, "sleep", lambda seconds: None)
+    session = HeaderSession([
+        {"status": 403, "body": "<title>Just a moment...</title>", "retryAfter": "120", "mitigated": "challenge",
+         "url": "https://www.mtggoldfish.com/deck/download/1"},
+        {"status": 200, "body": "4 Bolt", "retryAfter": None, "mitigated": None, "url": "https://www.mtggoldfish.com/deck/download/2"},
+        {"status": 429, "body": "slow down", "retryAfter": "Wed, 21 Oct 2026 07:28:00 GMT"},
+    ])
+    first, second, third = GoldfishBrowser(session, delay=0, concurrency=3).fetch_batch(
+        ["/deck/download/1", "/deck/download/2", "/deck/download/3"]
+    )
+    assert (first.status, first.retry_after, first.mitigated, first.refused) == (403, 120.0, "challenge", True)
+    assert (second.status, second.retry_after, second.mitigated, second.refused) == (200, None, "", False)
+    # An HTTP-date is not a number of seconds.
+    assert (third.status, third.retry_after, third.refused) == (429, None, True)
+
+
+def test_fetch_batch_is_one_attempt_with_no_pause_or_renewal(monkeypatch):
+    slept = []
+    monkeypatch.setattr(browser_module.time, "sleep", slept.append)
+    session = FakeSession([[403, 403]])
+    results = GoldfishBrowser(session, delay=5, concurrency=2).fetch_batch(["/a", "/b"])
+    assert [r.refused for r in results] == [True, True]
+    assert session.batches == [["/a", "/b"]] and session.reloads == 0 and slept == []
+
+
+def test_a_challenge_page_is_refused_whatever_its_status():
+    assert Fetched("/a", 200, "<html><title>Just a moment...</title></html>").refused
+    assert Fetched("/a", 0, "TimeoutError").refused
+    assert not Fetched("/a", 404, "Not found").refused and not Fetched("/a", 200, "4 Bolt").refused
+
+
+def test_describe_is_one_line_with_the_status_and_headers():
+    fetched = Fetched("/deck/download/1", 403, "<html><head><title>Just a moment...</title></head></html>", None, "challenge")
+    assert fetched.describe() == "HTTP 403, cf-mitigated=challenge, retry-after=none, title 'Just a moment...'"
+    assert Fetched("/a", 429, "slow down", 30.0).describe() == "HTTP 429, cf-mitigated=none, retry-after=30s, title 'slow down'"
+
+
+def test_describe_names_the_page_a_redirect_ended_on():
+    url = "https://www.mtggoldfish.com/metagame/modern"
+    assert Fetched("/deck/download/1", 200, "x", final_url=url).describe().endswith("redirected to /metagame/modern")
+    same = Fetched("/deck/download/1", 200, "x", final_url="https://www.mtggoldfish.com/deck/download/1")
+    assert "redirected" not in same.describe()
 
 
 class MetagameSession(FakeSession):

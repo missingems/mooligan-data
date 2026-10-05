@@ -17,6 +17,8 @@ from typing import Optional
 from .browser import open_browser
 from .edhrec import Edhrec
 from .locator import Locator, place_page
+from .models import RunReport
+from .pacing import DeckPacing, note_deck_block
 from .previews import NewPrintings, read_seen
 from .published import fetch_published_decks
 from .scryfall import card_catalog
@@ -149,6 +151,31 @@ def publish_manifest(directory: Path, report) -> list:
         return []
 
 
+def load_catalog(report: RunReport) -> dict:
+    """Every card Magic has: oracle ids for the card pages, and the Commander rotation.
+
+    A failure goes in the report and the run carries on without the catalog.
+    """
+    if os.environ.get("SCRYFALL_CATALOG", "1") != "1":
+        return {}
+    try:
+        return card_catalog()
+    except Exception as error:  # noqa: BLE001 - the run still publishes without it
+        logging.exception("Could not read Scryfall's card catalog")
+        report.errors.append(f"scryfall catalog: {error}")
+        return {}
+
+
+def exit_code(report: RunReport, blocked_runs: int) -> int:
+    """1 when the run logged errors, or when MTGGoldfish blocked the deck downloads this run and the run before."""
+    if report.errors:
+        return 1
+    if report.deck_block is not None and blocked_runs >= 2:
+        report.errors.append(f"deck downloads blocked {blocked_runs} runs in a row: {report.deck_block}")
+        return 1
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
@@ -165,14 +192,16 @@ def main() -> int:
         max_search_pages=int(os.environ.get("MAX_SEARCH_PAGES", "25")),
         history_days=int(os.environ.get("HISTORY_DAYS", "30")),
         max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
+        # The decklists are paced like a reader: see pacing.py. CONCURRENCY and REQUEST_DELAY are for the other pages.
+        deck_pacing=DeckPacing(
+            concurrency=int(os.environ.get("DECK_CONCURRENCY", "2")),
+            delay=float(os.environ.get("DECK_DELAY", "2")),
+            minutes=float(os.environ.get("DECK_MINUTES", "40")),
+            per_run=int(os.environ.get("DECKS_PER_RUN", "800")),
+        ),
     )
-    # Every card Magic has: oracle ids for the card pages, and the Commander rotation.
-    try:
-        catalog = card_catalog() if os.environ.get("SCRYFALL_CATALOG", "1") == "1" else {}
-    except Exception as error:  # noqa: BLE001 - the run still publishes without it
-        logging.exception("Could not read Scryfall's card catalog")
-        report.errors.append(f"scryfall catalog: {error}")
-        catalog = {}
+    report = RunReport()
+    catalog = load_catalog(report)
     store = SnapshotStore(args.directory, config.formats, config.history_days, catalog=catalog)
     headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
     with open_browser(
@@ -180,7 +209,10 @@ def main() -> int:
         delay=float(os.environ.get("REQUEST_DELAY", "1.5")),
         concurrency=int(os.environ.get("CONCURRENCY", "6")),
     ) as browser:
-        report = scrape(browser, store, config)
+        scrape(browser, store, config, report=report)
+    blocked_runs = note_deck_block(
+        args.directory / "state" / "deck-downloads.json", report.deck_block is not None, report.deck_block, datetime.now(timezone.utc)
+    )
     data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
     # EDHREC is read with their permission: a slice of the cards each run, at a low rate.
     edhrec = Edhrec(
@@ -205,14 +237,21 @@ def main() -> int:
     # Last, after every file it lists.
     written += publish_manifest(args.directory, report)
 
+    # Blocked deck downloads are a warning; two runs in a row fail the run (see exit_code).
+    code = exit_code(report, blocked_runs)
     logging.info(
-        "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d errors",
-        len(report.meta), len(report.archetypes), len(report.events), report.decks_written, report.decks_skipped, len(report.errors),
+        "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d decks left for the next run, %d errors",
+        len(report.meta), len(report.archetypes), len(report.events), report.decks_written, report.decks_skipped,
+        report.decks_deferred, len(report.errors),
     )
+    for warning in report.warnings:
+        logging.warning("%s", warning)
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            print(f"::warning::{warning}", flush=True)
     for error in report.errors:
         logging.error("  %s", error)
     # A partial run still publishes what it saved; the exit code flags the errors.
-    return 1 if report.errors else 0
+    return code
 
 
 if __name__ == "__main__":

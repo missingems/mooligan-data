@@ -1,7 +1,10 @@
 import json
+import random
 from datetime import datetime, timezone
 from pathlib import Path
 
+from mtgmeta.browser import Fetched
+from mtgmeta.pacing import Pacer
 from mtgmeta.scrape import ScrapeConfig, scrape
 from mtgmeta.store import SnapshotStore
 
@@ -43,6 +46,16 @@ class FixtureBrowser:
     def metagame(self, format, days):
         return (FIXTURES / "metagame_modern.html").read_text(), True
 
+    def fetch_batch(self, paths):
+        """What the browser's fetch() gives: a body for a page, and a 503 for a path that raises."""
+        answers = []
+        for path in paths:
+            try:
+                answers.append(Fetched(path, 200, self.page(path)))
+            except Exception as error:
+                answers.append(Fetched(path, 503, str(error)))
+        return answers
+
     def fetch_pages(self, paths):
         results = {}
         for path in paths:
@@ -53,10 +66,15 @@ class FixtureBrowser:
         return results
 
 
+def quiet_pacer(cfg):
+    """A pacer that skips its waiting, so a scrape takes no time."""
+    return Pacer(cfg.deck_pacing, random.Random(7), sleep=lambda seconds: None)
+
+
 def run(root, browser, cfg):
     """One scrape as the workflow runs it: load the directory, scrape, publish."""
     store = SnapshotStore(root, cfg.formats, cfg.history_days, now=NOW)
-    report = scrape(browser, store, cfg, now=NOW)
+    report = scrape(browser, store, cfg, now=NOW, pacer=quiet_pacer(cfg))
     store.finish()
     return report
 
@@ -107,9 +125,9 @@ def test_scrape_publishes_meta_archetypes_events_and_decks(tmp_path):
     xsper = next(r for r in event["results"] if r["deck_id"] == "7966110")
     assert (xsper["archetype"], xsper["archetype_id"]) == ("Izzet Prowess", "modern-izzet-prowess")
 
-    # Featured decks come first, then the newest results, up to the budget.
+    # Featured decks rank first, so they are in the first visits; the rest are the newest, up to the budget.
     assert report.decks_written == 10
-    assert browser.deck_downloads[:2] == ["9000001", "9000002"]
+    assert {"9000001", "9000002"} <= set(browser.deck_downloads[:6])
     assert deck(tmp_path, "9000001")["event_id"] is None
     assert deck(tmp_path, "7966110")["archetype"] == "Izzet Prowess"
     # A deck carries its archetype's id, so the app can open the archetype from the deck.
@@ -257,3 +275,63 @@ def test_events_without_decklists_are_skipped_and_remembered(tmp_path):
     second = FixtureBrowser(event_pages=("66753",))
     run(tmp_path, second, config(max_new_events=1, max_new_decks=0))
     assert "/tournament/66742" not in second.requests
+
+
+def refusing(browser, status=403):
+    """Makes every deck download come back refused, as on 5 October 2026."""
+    fetch_batch = browser.fetch_batch
+
+    def refuse(paths):
+        if paths and paths[0].startswith("/deck/download/"):
+            return [Fetched(path, status, "<title>Just a moment...</title>", None, "challenge") for path in paths]
+        return fetch_batch(paths)
+
+    browser.fetch_batch = refuse
+
+
+def test_deck_downloads_that_are_all_refused_are_a_warning_not_an_error(tmp_path):
+    browser = FixtureBrowser()
+    refusing(browser)
+
+    report = run(tmp_path, browser, config())
+
+    # The pages before the decks were published as usual; only the 66764 page fails, as in every run here.
+    assert report.meta == ["modern_30d"] and report.events == ["66753"] and len(report.archetypes) == 2
+    assert [error for error in report.errors if "deck" in error] == []
+    assert report.decks_written == 0
+    assert report.deck_block.startswith("HTTP 403, cf-mitigated=challenge")
+    assert len(report.warnings) == 1 and report.warnings[0].startswith("Deck downloads blocked after 0 (HTTP 403")
+    # Everything wanted waits for the next run: 44 decks, 10 of them within the format's allowance.
+    assert report.decks_deferred == 44
+    assert browser.deck_downloads == []
+    assert not (tmp_path / "decks").exists()
+
+
+def test_a_run_that_downloads_every_deck_has_no_warning_and_nothing_deferred(tmp_path):
+    report = run(tmp_path, FixtureBrowser(), config(max_new_decks=1000))
+    assert (report.warnings, report.deck_block, report.decks_deferred) == ([], None, 0)
+    assert report.decks_written == 44
+
+
+def test_decks_past_an_allowance_are_deferred(tmp_path):
+    cfg = config(max_new_decks=8)
+    cfg.deck_pacing.per_run = 6
+    report = run(tmp_path, FixtureBrowser(), cfg)
+    stored = len(list((tmp_path / "decks").glob("*.json")))
+    assert report.decks_written == stored == 6
+    # 44 are wanted, 8 are within the format's allowance and the run's allowance of 6 is the tighter.
+    assert report.decks_deferred == 44 - 6
+
+
+def test_a_deck_error_that_is_not_a_refusal_is_still_an_error(tmp_path):
+    browser = FixtureBrowser()
+    fetch_batch = browser.fetch_batch
+
+    def fetch(paths):
+        return [Fetched(a.path, 404, "Not found") if a.path.endswith("/7966110") else a for a in fetch_batch(paths)]
+
+    browser.fetch_batch = fetch
+    report = run(tmp_path, browser, config())
+    assert "deck 7966110: HTTP 404 on /deck/download/7966110" in report.errors
+    assert report.deck_block is None and report.warnings == []
+    assert not (tmp_path / "decks" / "7966110.json").exists()
