@@ -655,7 +655,7 @@ def test_a_new_printing_fills_the_preview_and_leaves_the_rest_of_the_file_as_it_
     files, file = {"modern": breakouts("modern", row("Psychic Frog"))}, movers(gainers=[mover("Up")], losers=[mover("Down", 1.0, 2.0)])
     new = [{
         "id": "p-1", "name": "Fresh Face", "oracle_id": "o-fresh", "set": "trk", "set_name": "Track Set",
-        "collector_number": "1", "released_at": "2026-09-01", "reprint": False,
+        "collector_number": "1", "released_at": "2026-11-20", "reprint": False,
     }]
     without, today = build_today(files, file, NOW), build_today(files, file, NOW, new)
     assert today["preview"]["card"]["name"] == "Fresh Face"

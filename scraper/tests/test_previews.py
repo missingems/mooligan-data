@@ -16,8 +16,8 @@ TODAY = NOW.date()
 LATER = "2026-11-20"  # after NOW: not released yet
 
 
-def printing(name, set="trk", number="1", released="2026-09-01", **extra):
-    """A minimal Scryfall card: a paper printing of a normal card, with a stable id from its name, set and number."""
+def printing(name, set="trk", number="1", released=LATER, **extra):
+    """A minimal Scryfall card: a paper printing of a normal card, upcoming unless `released` says otherwise, with a stable id from its name, set and number."""
     return {
         "id": str(uuid.uuid5(uuid.NAMESPACE_URL, f"{set}/{number}/{name}")), "oracle_id": "o-" + name.lower().replace(" ", "-"),
         "name": name, "set": set, "set_name": "Set " + set.upper(), "set_type": "expansion", "collector_number": number,
@@ -49,6 +49,8 @@ def ranking(*cards):
     left, order = list(cards), []
     while left:
         winner = chosen(*left)
+        if winner is None:
+            break
         order.append(winner["name"])
         left = [card for card in left if card["name"] != winner["name"]]
     return order
@@ -101,35 +103,48 @@ def test_a_new_printing_keeps_only_what_the_pick_needs():
     assert "preview" not in watched(printing("Plain")).cards[0]
 
 
-def test_a_previewed_card_of_an_upcoming_set_beats_a_secret_lair_card_which_beats_any_other_new_printing():
+def test_a_released_printing_next_to_an_upcoming_one_loses_whatever_its_preview_release_or_kind():
     cards = [
-        printing("Other", set="mh3", released="2026-10-01"),
-        lair("Drop"),
-        printing("Headliner", set="new", released=LATER, **previewed("2026-10-01")),
+        printing("Other", set="mh3", released="2026-10-01", **previewed("2026-10-02")),
+        lair("Drop", released="2026-10-03"),
+        printing("Headliner", set="new", released=LATER, reprint=True),
     ]
-    assert ranking(*cards) == ["Headliner", "Drop", "Other"]
+    assert chosen(*cards)["name"] == "Headliner"
+    assert ranking(*cards) == ["Headliner"]
 
 
-def test_an_upcoming_card_with_no_preview_still_beats_a_secret_lair_card():
-    assert ranking(lair("Drop"), printing("Unannounced", set="new", released=LATER)) == ["Unannounced", "Drop"]
+def test_a_secret_lair_printing_is_no_different_from_any_other_and_a_released_one_is_not_a_preview():
+    assert chosen(lair("Drop", released="2026-10-03")) is None
+    assert chosen(lair("Upcoming Drop", released=LATER))["name"] == "Upcoming Drop"
+    assert chosen(printing("Countdown", set="slc", set_name="Secret Lair Countdown Kit", set_type="box", released="2026-10-03")) is None
 
 
-def test_a_set_named_secret_lair_counts_as_secret_lair_whatever_its_code():
-    countdown = printing("Countdown", set="slc", set_name="Secret Lair Countdown Kit", set_type="box")
-    assert ranking(printing("Newer", set="mh3", released="2026-10-01"), countdown) == ["Countdown", "Newer"]
-    assert ranking(printing("Newer", set="mh3", released="2026-10-01"), lair("Drop", set="sld")) == ["Drop", "Newer"]
-    assert ranking(printing("Newer", set="mh3", released="2026-10-01"), printing("Not Lair", set="lsd", set_name="Secret Society")) == ["Newer", "Not Lair"]
-
-
-def test_a_card_released_today_is_not_upcoming_and_the_day_is_the_utc_day():
-    cards = [printing("Today", set="new", released="2026-10-04"), lair("Drop")]
-    assert ranking(*cards) == ["Drop", "Today"]
-    assert ranking(printing("Tomorrow", set="new", released="2026-10-05"), lair("Drop")) == ["Tomorrow", "Drop"]
-    # 22:00 on October 4 at UTC-8 is already October 5 in UTC.
+def test_a_card_released_today_is_not_upcoming_and_tomorrow_is_and_the_day_is_the_utc_day():
+    assert chosen(printing("Today", set="new", released="2026-10-04")) is None
+    assert chosen(printing("Tomorrow", set="new", released="2026-10-05"))["name"] == "Tomorrow"
+    # 22:00 on October 4 at UTC-8 is already October 5 in UTC, so a card released on October 5 is released that day.
     late = datetime(2026, 10, 4, 22, tzinfo=timezone(timedelta(hours=-8)))
-    new = watched(printing("Tomorrow", set="new", released="2026-10-05"), lair("Drop"))
-    assert build_today({}, None, late, new.cards)["preview"]["card"]["name"] == "Drop"
-    assert build_today({}, None, NOW, new.cards)["preview"]["card"]["name"] == "Tomorrow"
+    new = watched(printing("Fifth", set="new", released="2026-10-05"))
+    assert build_today({}, None, late, new.cards)["preview"] == {"card": None}
+    assert build_today({}, None, NOW, new.cards)["preview"]["card"]["name"] == "Fifth"
+
+
+def test_only_released_new_printings_give_no_preview(tmp_path):
+    new = watched(
+        printing("Yesterday", set="aaa", released="2026-10-03"), printing("Today", set="bbb", released="2026-10-04"),
+        printing("Long Ago", set="ccc", released="2025-01-01"), lair("Drop", released="2026-09-01"),
+    )
+    assert len(new.cards) == 4 and pick(new.cards, TODAY) is None
+    assert write_today(tmp_path, NOW, new) == ["today.json"]
+    assert json.loads((tmp_path / "today.json").read_text())["preview"] == {"card": None}
+    assert read_seen(tmp_path) == new.ids
+
+
+@pytest.mark.parametrize("released", [None, "", "soon", "2026-13-45", "2026-10", 20261120], ids=repr)
+def test_a_printing_with_a_missing_or_unparseable_release_date_is_not_a_preview(released):
+    assert chosen(printing("Undated", set="new", released=released)) is None
+    assert chosen(printing("Undated", set="new", released=released), printing("Dated", set="zzz", released=LATER))["name"] == "Dated"
+    assert chosen({k: v for k, v in printing("Gone", set="new", released=LATER).items() if k != "released_at"}) is None
 
 
 def test_with_no_new_printings_there_is_no_card():
@@ -161,22 +176,6 @@ def test_ties_go_to_the_lower_set_code_then_the_lower_collector_number():
     assert tied(("Zed", "zzz", "1"), ("Abe", "aaa", "1")) == ["Abe", "Zed"]
     assert tied(("Ten", "trk", "10"), ("Nine", "trk", "9"), ("TenA", "trk", "10a"), ("Hundred", "trk", "100")) == ["Nine", "Ten", "TenA", "Hundred"]
     assert tied(("Starred", "trk", "★"), ("Nine", "trk", "9")) == ["Starred", "Nine"]
-    released = [printing("Ten", number="10"), printing("Nine", number="9")]
-    assert ranking(*released) == ["Nine", "Ten"]
-
-
-def test_among_released_printings_the_newest_release_wins_and_a_first_printing_beats_a_reprint():
-    old = printing("Old", set="aaa", released="2026-06-01")
-    new = printing("New", set="zzz", released="2026-09-30")
-    assert ranking(old, new) == ["New", "Old"]
-    reprint = printing("Reprint", set="zzz", released="2026-09-30", reprint=True)
-    assert ranking(reprint, old) == ["Old", "Reprint"]
-    drops = [
-        lair("Old Drop", number="1", released="2026-05-01"),
-        lair("New Drop", number="2", released="2026-08-01"),
-        lair("Reprint Drop", number="3", released="2026-09-01", reprint=True),
-    ]
-    assert ranking(*drops) == ["New Drop", "Old Drop", "Reprint Drop"]
 
 
 SKIPPED = {
@@ -210,11 +209,11 @@ def test_a_card_with_no_name_is_never_a_preview():
 
 
 def test_the_published_card_has_these_keys_in_this_order():
-    card = chosen(printing("Fresh Face", set="trk", number="7", released="2026-09-01"))
+    card = chosen(printing("Fresh Face", set="trk", number="7", released=LATER))
     assert list(card) == ["name", "oracle_id", "scryfall_id", "set", "set_name", "released_at"]
     assert card == {
         "name": "Fresh Face", "oracle_id": "o-fresh-face", "scryfall_id": printing("Fresh Face", number="7")["id"], "set": "trk",
-        "set_name": "Set TRK", "released_at": "2026-09-01",
+        "set_name": "Set TRK", "released_at": LATER,
     }
 
 
