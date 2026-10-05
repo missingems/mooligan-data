@@ -16,6 +16,7 @@ GitHub Actions (14:00 UTC)
 | `generators/` | Swift generators for the card catalog: image feature prints, pull odds, price catalog (from the MTGImageHash repository; see `generators/README.md`) |
 | `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
+| `ops/` | The scrape and catalog jobs as scripts (`scrape.sh`, `catalog.sh`), which the workflows call and which run the same on a Mac |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
 | `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
@@ -40,7 +41,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 
 ## How a run works
 
-`.github/workflows/scrape.yml` runs once a day, scheduled for 14:00 UTC after the card catalog's 10:17 build, so the price movers read that day's prices. GitHub's scheduler has been starting it hours late (between 17:52 and 19:24 UTC on 30 September to 3 October 2026), and the files land about an hour after it starts, so read a file's own `generated_at`. It can be started by hand from the Actions tab. Once a day matches its sources: MTGJSON builds its prices daily, Scryfall's bulk files and prices change about daily, and EDHREC's numbers about once a day. MTGGoldfish adds results through the day, so a day's later events show up the next day.
+`.github/workflows/scrape.yml` runs once a day, scheduled for 14:00 UTC after the card catalog's 10:17 build, so the price movers read that day's prices. GitHub's scheduler has been starting it hours late (between 17:52 and 19:24 UTC on 30 September to 3 October 2026), and the files land about an hour after it starts, so read a file's own `generated_at`. It can be started by hand from the Actions tab, though a change is better tried on a Mac first (see [Running locally](#running-locally)), since this private repository's Actions minutes are paid for. The workflow runs `ops/scrape.sh` with `PUBLISH=1`. Once a day matches its sources: MTGJSON builds its prices daily, Scryfall's bulk files and prices change about daily, and EDHREC's numbers about once a day. MTGGoldfish adds results through the day, so a day's later events show up the next day.
 
 1. **Download.** It downloads `snapshots/` and `state/` from R2. They are the previous run's output, and the only state the scraper keeps.
 2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
@@ -50,7 +51,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
    - downloads new decklists, up to `MAX_NEW_DECKS` a run. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
 
    Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. A refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
-3. **Publish.** `SnapshotStore.finish()` builds a page per card from every decklist in the window (reading back from `data.mooligan.com` the ones this run didn't download) (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, `explore.json`, a page per archetype in the metagame and per event, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet. `explore-manifest.json` goes up just before it, after the Explore files it lists and the state, so it never names a hash a file doesn't have yet.
+3. **Publish.** `SnapshotStore.finish()` builds a page per card from every decklist in the window (reading back from `data.mooligan.com` the ones this run didn't download) (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, `explore.json`, a page per archetype in the metagame and per event, the deck id list and `index.json`. `ops/scrape.sh` uploads decks first and `index.json` last, so the index never points at a file that isn't there yet. `explore-manifest.json` goes up just before it, after the Explore files it lists and the state, so it never names a hash a file doesn't have yet.
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
@@ -59,16 +60,16 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | Variable | Default | Meaning |
 | --- | --- | --- |
 | `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
-| `META_DAYS` | `30,14,7` in the workflow | Metagame windows to publish |
+| `META_DAYS` | `30,14,7` in `ops/scrape.sh` | Metagame windows to publish |
 | `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
 | `MAX_NEW_EVENTS` | `150` | Events not yet stored read per format per run |
 | `MAX_SEARCH_PAGES` | `25` | Tournament-search pages read per format, 20 events each |
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |
 | `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results are kept |
 | `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |
-| `MAX_NEW_DECKS` | `1500` in the workflow | New decklists per format per run |
+| `MAX_NEW_DECKS` | `1500` in `ops/scrape.sh` | New decklists per format per run |
 | `CONCURRENCY` | `6` | Requests fetched at once from inside the page |
-| `REQUEST_DELAY` | `1` in the workflow | Base seconds between batches, plus up to 50% random extra |
+| `REQUEST_DELAY` | `1` in `ops/scrape.sh` | Base seconds between batches, plus up to 50% random extra |
 
 ## Setup
 
@@ -83,11 +84,58 @@ cd scraper && python3 -m venv .venv && .venv/bin/pip install -r requirements-dev
 FORMATS=modern ARCHETYPE_DECKS=5 HISTORY_DAYS=3 MAX_NEW_DECKS=5 .venv/bin/python -m mtgmeta work
 ```
 
-A local run writes into `scraper/work/` and publishes nothing.
+A local run writes into `scraper/work/` and publishes nothing. To run the whole job the way the workflow does, use `ops/scrape.sh` below.
+
+### The whole job on a Mac, for development
+
+`ops/scrape.sh` and `ops/catalog.sh` are the whole jobs. The workflows call them with `PUBLISH=1`; run them on the Mac to try a change without spending Actions minutes. Locally they publish nothing unless told to: everything lands in `scraper/work/` (or `generators/work/catalog/`) to look at.
+
+One-time setup (the scripts also create and repair the venv themselves):
+
+```bash
+mise install python@3.12
+"$(mise where python@3.12)/bin/python3.12" -m venv scraper/.venv
+scraper/.venv/bin/pip install -r scraper/requirements-dev.txt -r ops/requirements.txt
+```
+
+No keys are needed. With none, a run starts from the live data: it downloads `snapshots/` and `state/` read-only from `https://data.mooligan.com`, as the workflow syncs them from R2. Chrome opens a window on the Mac (UC mode runs headed; Linux uses Xvfb instead).
+
+```bash
+QUICK=1 ops/scrape.sh                                   # modern only, few decks, no EDHREC, locator, premier or movers
+QUICK=1 FORMATS=pauper,vintage MAX_NEW_DECKS=50 ops/scrape.sh  # any setting overrides the preset
+QUICK=1 MOVERS=1 ops/scrape.sh                          # with price movers and today.json's preview (downloads Scryfall's bulk file)
+ops/scrape.sh                                           # the full daily run, without the upload
+SYNC=none QUICK=1 ops/scrape.sh                         # from nothing, like a first run
+```
+
+`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0` and `MOVERS=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
+
+**In the app.** A Debug build reads the Explore files from a folder instead of the feed when launched with `-exploreFixture <path to explore.json>`; the folder must hold the files where the feed does, as `scraper/work/` does after a run. The simulator reads the Mac's files, so give the absolute path. In Xcode, add it under the scheme's Run > Arguments Passed On Launch, or launch an installed build with:
+
+```bash
+xcrun simctl launch booted com.missingems.mooligan -exploreFixture "$PWD/scraper/work/explore.json"
+```
+
+The fixture never falls back to the feed, so a file the run did not write shows as missing. `explore.json` covers every format, from the downloaded snapshots, but a `QUICK` run writes the archetype, event, popular-card and breakout pages of its own formats only, `decks/` holds only the decks it downloaded (the rest stay on R2), and without movers `today.json` has no price cards. Run the formats you are looking at, and `MOVERS=1` for Today.
+
+The catalog runs the same way and needs no keys either; the generators read the published catalog from `data.mooligan.com` as their previous state. `MTG_LIMIT=300` caps the faces the indexer processes:
+
+```bash
+MTG_LIMIT=300 ops/catalog.sh
+```
+
+**Publishing from a Mac** is the exception, for when Actions cannot run. Put the three R2 keys in `~/.config/mooligan-data/env` (mode 600; `ops/env.example` is the template; variables already set in the environment win over the file) and set `PUBLISH=1`:
+
+```bash
+mkdir -p ~/.config/mooligan-data && cp ops/env.example ~/.config/mooligan-data/env && chmod 600 ~/.config/mooligan-data/env
+PUBLISH=1 ops/scrape.sh
+```
+
+A publishing run always starts from R2 itself, never from the HTTPS copy. Nothing stops it overlapping a scheduled workflow, so don't run it near 10:17 or 14:00 UTC, and run the catalog before the scrape.
 
 ## Card catalog
 
-`generators/` holds the three Swift programs that used to live in the MTGImageHash repository, unchanged: `ImageHashIndexer` (Vision feature prints of every card face, incremental patches over a master), `PullOdds` (MTGJSON booster odds) and `Prices` (the MTGJSON price catalog). `.github/workflows/catalog.yml` runs them once a day at 10:17 UTC on a macOS runner and publishes to `catalog/` on R2, so the app's base URL becomes `https://data.mooligan.com/catalog`. The file layout is documented in `generators/README.md`. Run the workflow once with `seed_from_pages` to copy the current GitHub Pages output into R2 first, so the indexer's first run is incremental. The MTGImageHash workflow keeps GitHub Pages current until the app has switched.
+`generators/` holds the three Swift programs that used to live in the MTGImageHash repository, unchanged: `ImageHashIndexer` (Vision feature prints of every card face, incremental patches over a master), `PullOdds` (MTGJSON booster odds) and `Prices` (the MTGJSON price catalog). `.github/workflows/catalog.yml` runs them once a day at 10:17 UTC on a macOS runner, through `ops/catalog.sh`, and publishes to `catalog/` on R2, so the app's base URL becomes `https://data.mooligan.com/catalog`. The file layout is documented in `generators/README.md`. Run the workflow once with `seed_from_pages` to copy the current GitHub Pages output into R2 first, so the indexer's first run is incremental. The MTGImageHash workflow keeps GitHub Pages current until the app has switched.
 
 ## Price movers
 
@@ -105,7 +153,7 @@ The same read of the default-cards file finds the preview in `today.json`. Each 
 
 ## EDHREC
 
-Commander usage on each card page comes from EDHREC, used with their permission. A run refreshes `EDHREC_CARDS_PER_RUN` cards (800 by default, 1600 in the workflow) and `EDHREC_COMMANDERS_PER_RUN` commanders (150, 300 in the workflow, so a daily run reads as many as two runs a day did), at `EDHREC_DELAY` seconds apart, longest unchecked first, so the set comes round over days and the rate stays low. A commander page carries what that commander's decks play and its average decklist, so a reader never has to leave for the numbers. Their numbers move about once a day. Anything showing this data must credit EDHREC and link back to the `url` on each entry.
+Commander usage on each card page comes from EDHREC, used with their permission. A run refreshes `EDHREC_CARDS_PER_RUN` cards (800 by default, 1600 in `ops/scrape.sh`) and `EDHREC_COMMANDERS_PER_RUN` commanders (150, 300 in `ops/scrape.sh`, so a daily run reads as many as two runs a day did), at `EDHREC_DELAY` seconds apart, longest unchecked first, so the set comes round over days and the rate stays low. A commander page carries what that commander's decks play and its average decklist, so a reader never has to leave for the numbers. Their numbers move about once a day. Anything showing this data must credit EDHREC and link back to the `url` on each entry.
 
 ## Caveats
 
