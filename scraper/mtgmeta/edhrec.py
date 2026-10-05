@@ -144,6 +144,8 @@ def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional
         "decks": decks,
         "salt": round(card["salt"], 2) if isinstance(card.get("salt"), (int, float)) else None,
         "url": f"{SITE_COMMANDER_URL}/{slug}",
+        "color_identity": card.get("color_identity"),
+        "scryfall_id": card.get("id"),
         "sections": sections,
         "average_deck": _average_deck(average),
     }

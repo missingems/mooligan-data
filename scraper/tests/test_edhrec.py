@@ -51,6 +51,40 @@ def test_a_card_entry_keeps_the_commanders_and_the_inclusion(monkeypatch):
     ]
 
 
+def test_a_commander_entry_keeps_its_colour_identity_and_scryfall_id(monkeypatch):
+    from mtgmeta import edhrec as module
+
+    def page(card):
+        return {"container": {"json_dict": {"card": card, "cardlists": [
+            {"tag": "topcards", "cardviews": [{"name": "Brainstorm", "num_decks": 28385, "synergy": 0.281}]}]}}}
+
+    bodies = {
+        "https://json.edhrec.com/pages/commanders/vivi-ornitier.json": page(
+            {"num_decks": 40779, "color_identity": ["U", "R"], "id": "ecc1027a-8c07-44a0-bdde-fa2844cff694"}),
+        "https://json.edhrec.com/pages/commanders/no-identity.json": page({"num_decks": 12}),
+    }
+
+    class Response:
+        def __init__(self, body):
+            self._body = body
+
+        def read(self):
+            return json.dumps(self._body).encode()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+    monkeypatch.setattr(module.urllib.request, "urlopen", lambda request, timeout=None: Response(bodies.get(request.full_url, {})))
+    vivi = Edhrec("test").commander("vivi-ornitier")
+    assert vivi["color_identity"] == ["U", "R"] and vivi["scryfall_id"] == "ecc1027a-8c07-44a0-bdde-fa2844cff694"
+    # EDHREC without either leaves them null, not missing.
+    bare = Edhrec("test").commander("no-identity")
+    assert bare["color_identity"] is None and bare["scryfall_id"] is None
+
+
 def test_a_card_edhrec_does_not_have_is_none(monkeypatch):
     from mtgmeta import edhrec as module
 

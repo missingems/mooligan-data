@@ -14,7 +14,7 @@ CATALOG = {
     slug(entry["name"]): entry
     for entry in [
         card("Lightning Bolt", "Instant", price=1.5),
-        card("Psychic Frog", "Creature — Frog", price=18.0),
+        card("Psychic Frog", "Creature — Frog", price=18.0, scryfall_id="s-psychic-frog"),
         card("Consign to Memory", "Instant"),
         card("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", "Enchantment — Saga", layout="transform"),
         card("Mountain", "Basic Land — Mountain"),
@@ -59,6 +59,7 @@ def test_a_card_the_last_week_plays_and_the_weeks_before_did_not_breaks_out():
     assert row == {
         "name": "Psychic Frog",
         "oracle_id": "o-psychic-frog",
+        "scryfall_id": "s-psychic-frog",
         "type": "creature",
         "decks": 4,
         "share": 80.0,
@@ -73,6 +74,8 @@ def test_a_card_the_last_week_plays_and_the_weeks_before_did_not_breaks_out():
         "results": row["results"],
     }
     assert "archetypes" not in row
+    # The printing the price is of sits right after the oracle id.
+    assert list(row)[:3] == ["name", "oracle_id", "scryfall_id"]
     assert [(r["deck_id"], r["finish"], r["top8"], r["archetype_id"], r["archetype"], r["copies"], r["mainboard"]) for r in row["results"]] == [
         ("r0", "1st Place", True, "dimir", "Dimir", 4, True),
         ("r1", "2nd Place", True, "dimir", "Dimir", 4, True),

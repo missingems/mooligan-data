@@ -30,6 +30,9 @@ SKIPPED_LAYOUTS = {"token", "double_faced_token", "art_series", "emblem", "vangu
 def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
     """Maps a card's slug to its name and oracle id, streaming the file a line at a time.
 
+    `"scryfall_id"` is the id of the printing the oracle-cards file picks for the card (the one `"price"` is
+    of), kept when the card has an `id`.
+
     What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
     a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any), `"mana_value"`, and
     `"mana_cost"` (see `_mana_cost`) when the card has one. What the popular cards lists group by is always
@@ -47,6 +50,8 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
             front_type = card.get("type_line") or (card.get("card_faces") or [{}])[0].get("type_line") or ""
             front_type = front_type.split("//")[0].strip()
             entry = {"name": card["name"], "oracle_id": oracle_id, "type_line": front_type, "layout": card.get("layout") or ""}
+            if card.get("id"):
+                entry["scryfall_id"] = card["id"]
             # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
             if re.search(r"\bLand\b", front_type):
                 entry["land"] = True
