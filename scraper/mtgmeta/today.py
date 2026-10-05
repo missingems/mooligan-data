@@ -54,16 +54,18 @@ def build_today(
     now: datetime,
     new_printings: Iterable[dict] = (),
     commander: Optional[dict] = None,
+    archetype_pages=None,
 ) -> dict:
     """The file: `breakouts` is each format's breakouts document by format id, `movers_all` is movers/all.json (None if missing).
 
     `new_printings` are the printings new since the last run, as `NewPrintings.cards` has them; `commander` is the
-    rising commander as `rising_commander` gives it.
+    rising commander as `rising_commander` gives it; `archetype_pages` reads an archetype's `archetypes/{id}.json` (a
+    mapping, or anything with `get`), for its colours.
     """
     return {
         "schema": SCHEMA,
         "generated_at": now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "breakouts": _breakouts(breakouts),
+        "breakouts": _breakouts(breakouts, archetype_pages or {}),
         "movers": _movers(movers_all),
         "commander": commander,
         "preview": {"card": pick(new_printings, now.astimezone(timezone.utc).date())},
@@ -73,7 +75,7 @@ def build_today(
 # ---- Breakouts
 
 
-def _breakouts(breakouts: Dict[str, dict]) -> List[dict]:
+def _breakouts(breakouts: Dict[str, dict], archetype_pages) -> List[dict]:
     """Up to three cards, from three different formats where three formats have one.
 
     The cards are ranked as one list (new cards seeing play first, then released cards that suddenly see play, one
@@ -111,7 +113,7 @@ def _breakouts(breakouts: Dict[str, dict]) -> List[dict]:
             break
         if place not in places:
             places.append(place)
-    return [_card(format, row, everywhere[identity]) for format, row, identity in (ranked[place] for place in sorted(places))]
+    return [_card(format, row, everywhere[identity], archetype_pages) for format, row, identity in (ranked[place] for place in sorted(places))]
 
 
 def _identity(row: dict) -> str:
@@ -139,27 +141,59 @@ def _format_place(format: str) -> tuple:
     return (FORMAT_ORDER.get(format, len(FORMAT_ORDER)), format if format not in FORMAT_ORDER else "")
 
 
-def _card(format: str, row: dict, formats: List[str]) -> dict:
+def _card(format: str, row: dict, formats: List[str], archetype_pages) -> dict:
     """The card as its busiest format's row has it, with every format it breaks out in and the archetypes playing it there."""
     others = sorted(set(formats) - {format}, key=_format_place)
     return {
         "format": format,
         "formats": [format, *others],
         **{field: row[field] for field in CARD_FIELDS if field in row},
-        "archetypes": _archetypes(row.get("results") or []),
+        "archetypes": _archetypes(row.get("results") or [], archetype_pages),
     }
 
 
-def _archetypes(results: List[dict]) -> List[dict]:
-    """The tracked archetypes of the decks that play the card, most decks first, then name; a deck outside the tracked
-    archetypes (one with no `archetype_id`, named by its pilot) is left out."""
+def _archetypes(results: List[dict], archetype_pages) -> List[dict]:
+    """The tracked archetypes of the decks that play the card, most decks first, then name, with their colours; a deck
+    outside the tracked archetypes (one with no `archetype_id`, named by its pilot) is left out."""
     decks: Dict[Tuple[str, str], int] = {}
     for result in results:
         if result.get("archetype_id") and result.get("archetype"):
             key = (result["archetype_id"], result["archetype"])
             decks[key] = decks.get(key, 0) + 1
     ordered = sorted(decks, key=lambda key: (-decks[key], key[1], key[0]))
-    return [{"name": name, "id": archetype_id, "decks": decks[(archetype_id, name)]} for archetype_id, name in ordered[:MAX_ARCHETYPES]]
+    archetypes = []
+    for archetype_id, name in ordered[:MAX_ARCHETYPES]:
+        archetype = {"name": name, "id": archetype_id, "decks": decks[(archetype_id, name)]}
+        colors = _archetype_colors(archetype_id, results, archetype_pages)
+        if colors is not None:
+            archetype["colors"] = colors
+        archetypes.append(archetype)
+    return archetypes
+
+
+def _archetype_colors(archetype_id: str, results: List[dict], archetype_pages) -> Optional[List[str]]:
+    """An archetype's colours as WUBRG letters in that order, `[]` for colourless; None when unknown.
+
+    Its tracked colours first: those of its `archetypes/{id}.json` (its tile's, else its featured deck's, as in
+    `explore.json`'s standings). Else the colours most of its decks among `results` have (ties to the one listed first).
+    """
+    page = archetype_pages.get(archetype_id) or {}
+    if isinstance(page.get("colors"), list):
+        return _wubrg(page["colors"])
+    counts: Dict[Tuple[str, ...], int] = {}
+    for result in results:
+        if result.get("archetype_id") == archetype_id and isinstance(result.get("colors"), list):
+            colors = tuple(_wubrg(result["colors"]))
+            counts[colors] = counts.get(colors, 0) + 1
+    if not counts:
+        return None
+    # max() keeps the first of equal counts, and a dict keeps the order the results list them in.
+    return list(max(counts, key=lambda colors: counts[colors]))
+
+
+def _wubrg(colors: Iterable[str]) -> List[str]:
+    """The colour letters among `colors`, once each, in WUBRG order."""
+    return [color for color in "WUBRG" if color in set(colors)]
 
 
 # ---- Movers
@@ -286,17 +320,19 @@ def write_commander_snapshot(directory: Path, checked: Dict[str, dict]) -> None:
 
 
 class _Pages:
-    """Reads `edh/commanders/{slug}.json` from the work directory when asked, None for a page that isn't there."""
+    """Reads the pages of one folder of the work directory when asked (`edh/commanders/{slug}.json`,
+    `archetypes/{id}.json`), None for a page that isn't there or can't be read."""
 
-    def __init__(self, directory: Path) -> None:
-        self._directory = directory
+    def __init__(self, folder: Path) -> None:
+        self._folder = folder
 
-    def get(self, slug: str) -> Optional[dict]:
-        path = self._directory / "edh" / "commanders" / f"{slug}.json"
+    def get(self, name: str) -> Optional[dict]:
+        path = self._folder / f"{name}.json"
         try:
-            return json.loads(path.read_text()) if path.exists() else None
+            page = json.loads(path.read_text()) if path.exists() else None
         except ValueError:
             return None
+        return page if isinstance(page, dict) else None
 
 
 # ---- Reading and writing
@@ -318,9 +354,9 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
     """
     breakouts, movers_all = read_published(directory)
     checked, snapshot = read_commanders(directory)
-    commander = rising_commander(checked, snapshot, _Pages(directory))
+    commander = rising_commander(checked, snapshot, _Pages(directory / "edh" / "commanders"))
     finished = new_printings if new_printings is not None and new_printings.complete else None
-    document = build_today(breakouts, movers_all, now, finished.cards if finished else (), commander)
+    document = build_today(breakouts, movers_all, now, finished.cards if finished else (), commander, _Pages(directory / "archetypes"))
     (directory / "today.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
     if finished:
         finished.save(directory)

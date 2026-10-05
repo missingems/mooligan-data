@@ -268,8 +268,9 @@ def result(archetype, archetype_id=None):
     return {"deck_id": "d", "archetype": archetype, "archetype_id": archetype_id}
 
 
-def archetypes(*results):
-    return pick(breakouts("modern", row("A", results=list(results))))["archetypes"]
+def archetypes(*results, pages=None):
+    document = build_today({"modern": breakouts("modern", row("A", results=list(results)))}, None, NOW, archetype_pages=pages)
+    return document["breakouts"][0]["archetypes"]
 
 
 def test_archetypes_count_the_decks_of_the_results_most_decks_first_then_name():
@@ -303,6 +304,78 @@ def test_results_without_an_archetype_are_skipped_and_none_leaves_an_empty_list(
     assert archetypes(result(None), result("")) == []
     assert archetypes() == []
     assert pick(breakouts("modern", {key: value for key, value in row("A").items() if key != "results"}))["archetypes"] == []
+
+
+def colored(archetype_id, colors, archetype=None):
+    return {"deck_id": "d", "archetype": archetype or (archetype_id or "None").title(), "archetype_id": archetype_id, "colors": colors}
+
+
+def test_an_archetype_has_the_colours_of_its_page():
+    found = archetypes(result("Burn", "burn"), colored("zoo", ["R"]), pages={"burn": {"colors": ["R"]}, "zoo": {"colors": ["R", "G", "W"]}})
+    assert found == [{"name": "Burn", "id": "burn", "decks": 1, "colors": ["R"]}, {"name": "Zoo", "id": "zoo", "decks": 1, "colors": ["W", "R", "G"]}]
+
+
+def test_the_colours_of_a_page_come_before_those_of_the_results():
+    assert archetypes(colored("burn", ["U"]), colored("burn", ["U"]), pages={"burn": {"colors": ["R"]}})[0]["colors"] == ["R"]
+
+
+def test_the_colours_of_a_page_are_put_in_wubrg_order_once_each():
+    page = {"colors": ["G", "U", "R", "U", "W", "G", "X", 5]}
+    assert archetypes(result("Zoo", "zoo"), pages={"zoo": page})[0]["colors"] == ["W", "U", "R", "G"]
+
+
+def test_no_colours_on_a_page_is_colourless_and_not_a_reason_to_look_further():
+    found = archetypes(colored("eldrazi", ["R"]), colored("eldrazi", ["R"]), pages={"eldrazi": {"colors": []}})
+    assert found == [{"name": "Eldrazi", "id": "eldrazi", "decks": 2, "colors": []}]
+
+
+def test_without_a_page_the_most_common_colours_of_the_results_are_taken():
+    found = archetypes(colored("zoo", ["R"]), colored("zoo", ["G", "R", "W"]), colored("zoo", ["R"]), colored("zoo", ["W", "G", "R"]), colored("zoo", ["R"]))
+    assert found[0]["colors"] == ["R"]
+    found = archetypes(colored("zoo", ["R", "W"]), colored("zoo", ["W", "R"]), colored("zoo", ["R"]))
+    assert found[0]["colors"] == ["W", "R"]
+    assert archetypes(colored("zoo", []), colored("zoo", []), colored("zoo", ["R"]))[0]["colors"] == []
+
+
+def test_a_page_without_a_colours_list_or_that_cannot_be_read_falls_back_to_the_results():
+    for page in ({}, {"name": "Zoo"}, {"colors": None}, {"colors": "RG"}, {"colors": {"R": 1}}, None):
+        assert archetypes(colored("zoo", ["R", "G"]), pages={"zoo": page})[0]["colors"] == ["R", "G"]
+    assert archetypes(colored("zoo", ["R", "G"]), pages={})[0]["colors"] == ["R", "G"]
+
+
+def test_a_tie_goes_to_the_colours_listed_first_in_the_results():
+    assert archetypes(colored("zoo", ["G"]), colored("zoo", ["R"]))[0]["colors"] == ["G"]
+    assert archetypes(colored("zoo", ["R"]), colored("zoo", ["G"]), colored("zoo", ["G"]), colored("zoo", ["R"]))[0]["colors"] == ["R"]
+    assert archetypes(colored("zoo", []), colored("zoo", ["R"]))[0]["colors"] == []
+
+
+def test_the_results_of_other_archetypes_and_of_no_colours_are_not_counted():
+    found = archetypes(
+        colored("zoo", ["R"]), colored("burn", ["U"]), colored("burn", ["U"]), colored("zoo", None), colored("zoo", None),
+        {"deck_id": "d", "archetype": "Zoo", "archetype_id": "zoo"}, colored("zoo", "R"), colored(None, ["W"]), colored("", ["W"]),
+    )
+    assert [(archetype["id"], archetype["colors"]) for archetype in found] == [("zoo", ["R"]), ("burn", ["U"])]
+
+
+def test_colours_are_left_out_when_nothing_is_known_of_them():
+    assert archetypes(result("Zoo", "zoo"), colored("burn", None), pages={"zoo": {}}) == [
+        {"name": "Burn", "id": "burn", "decks": 1},
+        {"name": "Zoo", "id": "zoo", "decks": 1},
+    ]
+
+
+def test_write_today_reads_the_archetype_pages_from_the_archetypes_folder(tmp_path):
+    (tmp_path / "breakouts").mkdir()
+    (tmp_path / "archetypes").mkdir()
+    (tmp_path / "breakouts" / "modern.json").write_text(json.dumps(breakouts("modern", row(
+        "A", results=[result("Burn", "burn"), result("Zoo", "zoo"), colored("amulet", ["G"]), colored("amulet", ["G"])]
+    ))))
+    (tmp_path / "archetypes" / "burn.json").write_text(json.dumps({"colors": ["R"]}))
+    (tmp_path / "archetypes" / "zoo.json").write_text("{not json")
+    (tmp_path / "archetypes" / "amulet.json").write_text(json.dumps({"colors": ["U", "G"]}))
+    write_today(tmp_path, NOW)
+    found = read_today(tmp_path)["breakouts"][0]["archetypes"]
+    assert [(archetype["id"], archetype.get("colors")) for archetype in found] == [("amulet", ["U", "G"]), ("burn", ["R"]), ("zoo", None)]
 
 
 # ---- Movers
