@@ -486,9 +486,9 @@ This example is the generator's real output for the files of the 4 October run, 
       "name": "Pompous Battlemage", "oracle_id": "33e3793c-098f-4897-88f3-9f9ce9081e0f", "type": "creature",
       "decks": 41, "share": 3.3, "previous_share": 0.0, "new": true, "first_seen": "2026-09-30", "top8": 5, "wins": 0, "price": 2.3,
       "archetypes": [
-        {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 18},
-        {"name": "Grixis Prowess", "id": "modern-grixis-prowess", "decks": 1},
-        {"name": "Jeskai Prowess", "id": "modern-jeskai-prowess", "decks": 1}
+        {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 18, "colors": ["U", "R"]},
+        {"name": "Grixis Prowess", "id": "modern-grixis-prowess", "decks": 1, "colors": ["U", "B", "R"]},
+        {"name": "Jeskai Prowess", "id": "modern-jeskai-prowess", "decks": 1, "colors": ["W", "U", "R"]}
       ]
     },
     {
@@ -496,7 +496,7 @@ This example is the generator's real output for the files of the 4 October run, 
       "name": "Liliana the Faultless", "oracle_id": "22c2e66d-a2a1-46db-a70a-dff5ad5d6c14", "type": "creature",
       "decks": 17, "share": 8.5, "previous_share": 0.0, "new": true, "first_seen": "2026-09-29", "top8": 4, "wins": 0, "price": 4.13,
       "archetypes": [
-        {"name": "Lifegain", "id": "standard-lifegain-woe", "decks": 16}
+        {"name": "Lifegain", "id": "standard-lifegain-woe", "decks": 16, "colors": ["W", "B"]}
       ]
     },
     {
@@ -504,7 +504,7 @@ This example is the generator's real output for the files of the 4 October run, 
       "name": "Avatar of Burgeoning Echoes", "oracle_id": "08e8a63c-9fcc-48cf-a9af-15cbaeec943f", "type": "creature",
       "decks": 9, "share": 6.9, "previous_share": 0.0, "new": true, "first_seen": "2026-10-02", "top8": 1, "wins": 0, "price": 3.31,
       "archetypes": [
-        {"name": "Lurrus DRS", "id": "vintage-lurrus-drs", "decks": 3}
+        {"name": "Lurrus DRS", "id": "vintage-lurrus-drs", "decks": 3, "colors": ["U", "B", "G"]}
       ]
     }
   ],
@@ -559,7 +559,7 @@ Each card is shown as its row in its busiest format: the format (among the rows 
 
 - **`format`**: that busiest format, the one whose numbers the card shows. **`formats`**: every format whose `breakouts/` file lists the card, new or not, `format` first and the rest in the order above.
 - From that format's breakout row, as in `breakouts/{format}.json`: **`name`**, **`oracle_id`**, **`scryfall_id`** (the printing Scryfall's oracle-cards file picks for the card, whose price `price` is; present from the first run after 5 October 2026, so the example has none, and missing for a card it has no printing for), **`type`**, **`decks`**, **`share`**, **`previous_share`**, **`new`**, **`first_seen`**, **`top8`** and **`wins`**, and **`price`** when the row has one. `results`, `mainboard` and `best_prestige` are left out.
-- **`archetypes`**: which decks play it, for "played in Izzet Prowess": the tracked archetypes of the row's `results` (the decks of the last 7 days that play it), counted by deck, most `decks` first, then `name`; at most 3. **`id`** is the archetype's `archetypes/{id}.json`, never null. A deck outside the tracked archetypes (a null `archetype_id` in `results`, named by its pilot) is left out, so `decks` can add up to less than the card's, and `archetypes` is `[]` when no deck playing it is in a tracked archetype.
+- **`archetypes`**: which decks play it, for "played in Izzet Prowess": the tracked archetypes of the row's `results` (the decks of the last 7 days that play it), counted by deck, most `decks` first, then `name`; at most 3. **`id`** is the archetype's `archetypes/{id}.json`, never null. A deck outside the tracked archetypes (a null `archetype_id` in `results`, named by its pilot) is left out, so `decks` can add up to less than the card's, and `archetypes` is `[]` when no deck playing it is in a tracked archetype. Each archetype's **`colors`** are its colour identity as letters (`W`, `U`, `B`, `R`, `G`) in that fixed order, `[]` for a colourless deck: the archetype's own, as its `archetypes/{id}.json` and `explore.json`'s standings show them (its tile's, else its featured deck's), else the colours most of the card's decks of that archetype have (the first listed in `results` on a tie). `colors` is left out when neither is known. Added on 5 October 2026, so decode it as optional.
 
 ### `movers`
 
