@@ -486,28 +486,25 @@ This example is the generator's real output for the files of the 4 October run, 
       "name": "Pompous Battlemage", "oracle_id": "33e3793c-098f-4897-88f3-9f9ce9081e0f", "type": "creature",
       "decks": 41, "share": 3.3, "previous_share": 0.0, "new": true, "first_seen": "2026-09-30", "top8": 5, "wins": 0, "price": 2.3,
       "archetypes": [
-        {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 22},
-        {"name": "UR", "id": null, "decks": 16},
-        {"name": "Grixis Prowess", "id": "modern-grixis-prowess", "decks": 1}
+        {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 18},
+        {"name": "Grixis Prowess", "id": "modern-grixis-prowess", "decks": 1},
+        {"name": "Jeskai Prowess", "id": "modern-jeskai-prowess", "decks": 1}
       ]
     },
     {
-      "format": "modern", "formats": ["modern"],
-      "name": "Roiling Canopy", "oracle_id": "c6e87760-4cd0-4281-82d4-7a377ea960ad", "type": "land",
-      "decks": 45, "share": 3.7, "previous_share": 0.0, "new": true, "first_seen": "2026-09-29", "top8": 1, "wins": 0, "price": 1.1,
+      "format": "standard", "formats": ["standard"],
+      "name": "Liliana the Faultless", "oracle_id": "22c2e66d-a2a1-46db-a70a-dff5ad5d6c14", "type": "creature",
+      "decks": 17, "share": 8.5, "previous_share": 0.0, "new": true, "first_seen": "2026-09-29", "top8": 4, "wins": 0, "price": 4.13,
       "archetypes": [
-        {"name": "Amulet Titan", "id": "amulet-titan", "decks": 39},
-        {"name": "Titan Shift", "id": "modern-titan-shift", "decks": 6}
+        {"name": "Lifegain", "id": "standard-lifegain-woe", "decks": 16}
       ]
     },
     {
-      "format": "modern", "formats": ["modern"],
-      "name": "Theorist's Sanctum", "oracle_id": "37513bd8-7303-4ac6-a7a7-224184faf758", "type": "land",
-      "decks": 30, "share": 2.4, "previous_share": 0.0, "new": true, "first_seen": "2026-09-29", "top8": 7, "wins": 1, "price": 0.7,
+      "format": "vintage", "formats": ["vintage"],
+      "name": "Avatar of Burgeoning Echoes", "oracle_id": "08e8a63c-9fcc-48cf-a9af-15cbaeec943f", "type": "creature",
+      "decks": 9, "share": 6.9, "previous_share": 0.0, "new": true, "first_seen": "2026-10-02", "top8": 1, "wins": 0, "price": 3.31,
       "archetypes": [
-        {"name": "Jeskai Energy", "id": "modern-jeskai-energy", "decks": 11},
-        {"name": "Izzet Murktide", "id": "modern-izzet-murktide", "decks": 5},
-        {"name": "Dimir Midrange", "id": "modern-dimir-midrange", "decks": 4}
+        {"name": "Lurrus DRS", "id": "vintage-lurrus-drs", "decks": 3}
       ]
     }
   ],
@@ -527,6 +524,7 @@ This example is the generator's real output for the files of the 4 October run, 
   "commander": {
     "slug": "avacyn-angel-of-horror", "name": "Avacyn, Angel of Horror", "scryfall_id": "ff65f46b-0f82-49b8-93b9-7ac0243ce941", "color_identity": ["B"],
     "decks": 1722, "previous_decks": 1147, "rise": 575, "rise_percent": 50.1, "since": "2026-09-30",
+    "days": 5, "rise_per_day": 115.0, "rise_percent_per_day": 10.03,
     "url": "https://edhrec.com/commanders/avacyn-angel-of-horror",
     "top_cards": [
       {"name": "Dark Ritual", "decks": 1459, "share": 84.7, "synergy": 0.17},
@@ -548,18 +546,20 @@ Today is a row of widgets of four kinds: up to three breakout cards, the movers,
 
 ### `breakouts`
 
-A list of **1 to 3 cards**, fewer when fewer exist and `[]` when no format has a breakout. They are the top of one ranking, in this order:
+A list of **1 to 3 cards**, fewer when fewer exist and `[]` when no format has a breakout. They are taken from one ranking, in this order:
 
 1. **New cards seeing play**: cards of any format's `breakouts/{format}.json` with `new` true (no deck of the 23 earlier days played it).
 2. **Released cards that suddenly see play**: cards with `new` false, after every new card.
 
-Within each step cards are ranked as cards, not as rows: a real release is new in several formats at once, while a card new in only one format may just be one that format's decks had not played lately. Cards are told apart by `oracle_id` (`name` when a row has none), and a card is listed once. The card that matches the step in the most formats comes first; then the most `decks` and then the most `top8` added up over those formats; then `name`. So a card new in two formats beats a card new in one with more decks, and a released card never comes before a new card, however many decks play it. A card listed in step 1 is not listed again in step 2.
+Within each step cards are ranked as cards, not as rows: a real release is new in several formats at once, while a card new in only one format may just be one that format's decks had not played lately. Cards are told apart by `oracle_id` (`name` when a row has none), and a card is listed once. The card that matches the step in the most formats comes first; then the most `decks` and then the most `top8` added up over those formats; then `name`. So a card new in two formats beats a card new in one with more decks, and in the ranking a released card never comes before a new card, however many decks play it (though a released card can be listed before a second card of a format already listed: see below). A card listed in step 1 is not listed again in step 2.
+
+**Three formats where it can.** The three cards come from three different formats when three formats have a breakout: going down the ranking, a card is taken when no card taken so far has its busiest format (below), until there are three. Only when fewer than three formats have one is the list filled up with the next best cards whatever their format. The cards are listed in their ranked order. So a released card from a third format comes before a second new card of a format already listed: on 4 October Modern's second- and third-ranked new cards (Roiling Canopy, Theorist's Sanctum) gave way to the best of Standard and Vintage.
 
 Each card is shown as its row in its busiest format: the format (among the rows that matched its step) where it has the most `decks`, ties going to the format's place in the order of the formats above (`modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander`; a format not in it comes after, alphabetically). It has:
 
 - **`format`**: that busiest format, the one whose numbers the card shows. **`formats`**: every format whose `breakouts/` file lists the card, new or not, `format` first and the rest in the order above.
 - From that format's breakout row, as in `breakouts/{format}.json`: **`name`**, **`oracle_id`**, **`scryfall_id`** (the printing Scryfall's oracle-cards file picks for the card, whose price `price` is; present from the first run after 5 October 2026, so the example has none, and missing for a card it has no printing for), **`type`**, **`decks`**, **`share`**, **`previous_share`**, **`new`**, **`first_seen`**, **`top8`** and **`wins`**, and **`price`** when the row has one. `results`, `mainboard` and `best_prestige` are left out.
-- **`archetypes`**: which decks play it, for "played in Izzet Prowess": the archetypes of the row's `results` (the decks of the last 7 days that play it), counted by deck, most `decks` first, then `name`; at most 3. **`id`** is the archetype's `archetypes/{id}.json`. A deck outside the tracked archetypes counts under the tracked archetype of the same name when the card has one, else under its pilot's own deck title (such as `"UR"`) with a null `id`. `[]` when no result names an archetype.
+- **`archetypes`**: which decks play it, for "played in Izzet Prowess": the tracked archetypes of the row's `results` (the decks of the last 7 days that play it), counted by deck, most `decks` first, then `name`; at most 3. **`id`** is the archetype's `archetypes/{id}.json`, never null. A deck outside the tracked archetypes (a null `archetype_id` in `results`, named by its pilot) is left out, so `decks` can add up to less than the card's, and `archetypes` is `[]` when no deck playing it is in a tracked archetype.
 
 ### `movers`
 
@@ -568,12 +568,13 @@ Each card is shown as its row in its busiest format: the format (among the rows 
 
 ### `commander`
 
-The uprising EDH commander: the commander whose deck count on EDHREC rose most, as a percent, since EDHREC was last asked about it. **This is EDHREC's data, used with their permission: an app showing it must credit EDHREC (`attribution`) and link to the commander's page (`url`).**
+The uprising EDH commander: the commander whose deck count on EDHREC rose fastest, as a percent a day, since EDHREC was last asked about it. **This is EDHREC's data, used with their permission: an app showing it must credit EDHREC (`attribution`) and link to the commander's page (`url`).**
 
 - **How a rise is seen.** Each run refreshes a slice of the commanders, longest unchecked first (`edh/commanders/{slug}.json`; 300 a run over about 4,200 commanders, so each comes round about every two weeks), and `edh/commanders/index.json` has only each one's latest count. So the run that builds `today.json` keeps, in `state/today-commanders.json`, every commander's count and when EDHREC gave it, and the next run compares: a commander EDHREC was asked about again since then can have risen, from **`previous_decks`** (its count then) to **`decks`** (its count now). Commanders not refreshed this run, and commanders refreshed for the first time, have no rise.
-- **The floor.** A rise counts only with at least **50 `decks`** now, a **`rise`** of at least **10 decks** and a **`rise_percent`** of at least **10**. Most commanders barely move between two checks: of 100 commanders checked on 30 September and again on 5 October, half had the same count and the median change was 0%; a small commander swings by several percent on a deck or two (20 to 22 decks is +10%), which the deck floors keep out; and the three that cleared the floor rose 25% to 50% (Avacyn, Angel of Horror 1,147 → 1,722; Aerid Konstrari 2,184 → 2,893; Ghalta, the Immovable 330 → 414). Ties on `rise_percent` go to the larger `rise`, then the slug.
+- **The floor.** A rise counts only with at least **50 `decks`** now, a **`rise`** of at least **10 decks** and a **`rise_percent`** of at least **10**. Most commanders barely move between two checks: of 100 commanders checked on 30 September and again on 5 October, half had the same count and the median change was 0%; a small commander swings by several percent on a deck or two (20 to 22 decks is +10%), which the deck floors keep out; and the three that cleared the floor rose 25% to 50% (Avacyn, Angel of Horror 1,147 → 1,722; Aerid Konstrari 2,184 → 2,893; Ghalta, the Immovable 330 → 414).
+- **The ranking.** The checks of two commanders can be days or weeks apart (each run refreshes the longest unchecked, and a run can refresh more or fewer), so the commanders that clear the floor are ranked by their rise a day: **`rise_percent_per_day`**, the percent rise over the **`days`** between the dates of the two checks (at least 1). Ties go to the larger `rise_per_day`, then the larger `rise`, then the slug. The floor is on the whole rise, not the rise a day.
 - **`null`** when no commander clears the floor, on the first run (there is no snapshot to compare with yet), and on a run that refreshed no commanders (`EDHREC_COMMANDERS_PER_RUN=0` or EDHREC unreachable).
-- **The fields.** **`slug`** (its `edh/commanders/{slug}.json`), **`name`**; **`scryfall_id`** (the printing EDHREC shows) and **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) as EDHREC has them, `null` when the run has no page for it; **`decks`**, **`previous_decks`**, **`rise`** (`decks` less `previous_decks`) and **`rise_percent`** (to one decimal); **`since`**, the day (`yyyy-MM-dd`) EDHREC gave `previous_decks`, so the rise is "since 30 September" (the gap varies with how many commanders the runs in between refreshed); **`url`**, its page on EDHREC; **`attribution`**, `{"name": "EDHREC", "url": "https://edhrec.com"}`.
+- **The fields.** **`slug`** (its `edh/commanders/{slug}.json`), **`name`**; **`scryfall_id`** (the printing EDHREC shows) and **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) as EDHREC has them, `null` when the run has no page for it; **`decks`**, **`previous_decks`**, **`rise`** (`decks` less `previous_decks`) and **`rise_percent`** (to one decimal); **`since`**, the day (`yyyy-MM-dd`) EDHREC gave `previous_decks`, so the rise is "since 30 September"; **`days`**, the days from `since` to this run's check (at least 1); **`rise_per_day`** (`rise` over `days`, to one decimal) and **`rise_percent_per_day`** (`rise_percent` over `days`, unrounded first, to two decimals), added on 5 October 2026, so decode them as optional; **`url`**, its page on EDHREC; **`attribution`**, `{"name": "EDHREC", "url": "https://edhrec.com"}`.
 - **The decks' breakdown**, from the commander's `edh/commanders/{slug}.json`: **`top_cards`**, the first three cards of its Top Cards (the cards most of its decks play), and **`synergy_cards`**, the first three of its High Synergy Cards (the cards its decks play far more than other decks of its colours; EDHREC now calls the section High Lift Cards, and either is used). Each has **`name`**, **`decks`** (how many of the commander's decks play it), **`share`** (that as a percent of the commander's decks, to one decimal) and **`synergy`** (EDHREC's score, as in `edh/commanders/{slug}.json`; `null` when it has none). Either list is `[]` when the page has no such section.
 
 ### `preview`
