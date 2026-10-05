@@ -119,7 +119,11 @@ def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
 
 
 def publish_today(directory: Path, report, new_printings: Optional[NewPrintings] = None) -> list:
-    """One response for Explore's Today carousel, from the breakouts and movers written above, as today.json.
+    """One response for Explore's Today widgets, from the breakouts and movers written above, as today.json.
+
+    It also reads the EDHREC commander state and pages this run's `store.finish` wrote (`state/edhrec-commanders.json`,
+    `edh/commanders/{slug}.json`) to find the uprising commander, and keeps its counts in `state/today-commanders.json`
+    for the next run, so it runs after `finish`.
 
     `new_printings` is what the movers' read of Scryfall's printings found new, for its preview.
     """
