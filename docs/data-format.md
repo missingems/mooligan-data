@@ -411,7 +411,7 @@ One file per format a run built, written with `popular-cards/{format}.json` from
   "baseline_deck_count": 2410,
   "cards": [
     {
-      "name": "Psychic Frog", "oracle_id": "0f1d…", "type": "creature",
+      "name": "Psychic Frog", "oracle_id": "0f1d…", "scryfall_id": "3c9a…", "type": "creature",
       "decks": 61, "share": 8.2, "previous_share": 0.4, "new": false, "first_seen": "2026-09-12", "mainboard": 58,
       "top8": 19, "wins": 3, "best_prestige": 3,
       "results": [
@@ -431,7 +431,7 @@ One file per format a run built, written with `popular-cards/{format}.json` from
 - **How the decks did.** **`top8`** and **`wins`** count the card's recent decks that placed 8th or better, or 1st (a League record such as `5-0` is no placing). **`best_prestige`** is the highest `prestige` (1 to 4, as in `explore.json`) of the events those decks were played in, so a card a Regional Championship deck played shows 4. A deck only an archetype's results list, from an event not stored, counts as 1.
 - **`results`** lists every deck of the last 7 days that plays the card (so it has `decks` entries, with no cap), for showing which decks justify the call and which made top 8. Each has **`deck_id`** (which names `decks/{deck_id}.json` when that deck is published), **`date`** (`yyyy-MM-dd`), **`event_id`** and **`event_name`** (the name without its date, as in `events/{id}.json`; both null when the deck's event isn't stored), **`prestige`** (as in `explore.json`; 1 when the event isn't stored), **`finish`** (as the event lists it, such as `"2nd Place"` or a League's `"5-0"`; null if unknown), **`top8`** (true when the finish is a placing from 1st to 8th, so a League record is false), **`player`** (null if unknown), **`archetype`**, **`archetype_id`** and **`colors`**, **`copies`** (the card's copies in the deck, mainboard and sideboard together) and **`mainboard`** (whether it is played main). A deck outside the tracked archetypes is listed too, with a null `archetype_id` and the pilot's own deck title as its `archetype`. `colors` are those of a result in `events/{id}.json`: `[]` is colourless and `null` unknown (see *Colours of a result* above). The list is in order: top 8 decks first, then the rest; within each group higher `prestige` first, then better placing (placings before League records and unknown finishes), then newer `date`, then `deck_id`. This replaces the card's `archetypes`, which was removed on 2 October 2026; app decoders should treat it as gone.
 - **`first_seen`** is the date of the earliest deck of the last 30 days that plays the card.
-- **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
+- **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`scryfall_id`** is the printing Scryfall's oracle-cards file picks for the card, the one `price` is of; it is missing when the catalog has none, and present from 5 October 2026. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
 - A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.
 
 ## `movers/{format}.json`

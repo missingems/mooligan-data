@@ -151,6 +151,7 @@ def _row(card, known, decks, earlier, share, previous_share, played, results, da
         # Named as in popular-cards: a split card is both its halves, any other double-faced card its front face.
         "name": name if known.get("layout") == "split" else name.split(" // ")[0],
         "oracle_id": known.get("oracle_id"),
+        **({"scryfall_id": known["scryfall_id"]} if known.get("scryfall_id") else {}),
         "type": card_kind(known.get("type_line", "")) or "other",
         "decks": len(decks),
         "share": round(share, 1),
