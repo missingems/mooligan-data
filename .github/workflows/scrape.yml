@@ -1,7 +1,8 @@
 name: Scrape MTGGoldfish
 
 # Downloads the published snapshots from R2, scrapes what is new, and uploads
-# the result. See docs/data-format.md for the files.
+# the result. See docs/data-format.md for the files. The whole job is ops/scrape.sh,
+# which also runs on a Mac for development (see the README, "Running locally").
 on:
   schedule:
     # Once a day, after the card catalog's 10:17 build, so the price movers read that day's prices.
@@ -20,128 +21,32 @@ concurrency:
   group: scrape
   cancel-in-progress: false
 
-env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: auto
-  R2: s3://mtg-meta-data
-  R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    defaults:
-      run:
-        working-directory: scraper
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: scraper/requirements.txt
+          cache-dependency-path: |
+            scraper/requirements.txt
+            ops/requirements.txt
       # The runner image ships Google Chrome; UC mode runs it headed inside Xvfb.
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
-      - run: pip install -r requirements.txt
-
-      - name: Download the previous snapshots and state
-        # sync succeeds on an empty bucket, so the first run starts from nothing.
-        # state holds what each stored deck plays, which the card pages are built from.
-        # Three tries: a dropped connection mid-sync failed a whole run once, and sync picks up
-        # where it left off.
-        run: |
-          sync() {
-            for attempt in 1 2 3; do
-              aws s3 sync "$1" "$2" --endpoint-url "$R2_ENDPOINT" && return 0
-              echo "::warning::sync of $1 failed (attempt $attempt of 3)"
-              sleep 15
-            done
-            return 1
-          }
-          sync "$R2/snapshots" work/snapshots
-          sync "$R2/state" work/state
-
-      - name: Scrape
-        id: scrape
-        continue-on-error: true
+      - name: Scrape and upload
+        run: ops/scrape.sh
         env:
-          FORMATS: ${{ inputs.formats || 'modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander' }}
-          MAX_NEW_DECKS: ${{ inputs.max_new_decks || '1500' }}
-          META_DAYS: "30,14,7"
-          REQUEST_DELAY: "1"
-          CONCURRENCY: "6"
-          # EDHREC is read with their permission: a slice of the cards each run.
-          EDHREC_CARDS_PER_RUN: "1600"
-          EDHREC_COMMANDERS_PER_RUN: "300"
-          # Upcoming events near these places, from Wizards' locator; semicolon-separated.
-          LOCATOR_PLACES: "Singapore"
-          LOCATOR_DISTANCE_MILES: "15"
-          LOCATOR_DAYS: "14"
-          EDHREC_DELAY: "0.4"
-        run: python -m mtgmeta work
-
-      # finish() writes index.json last, so its presence means the run got as far as publishing.
-      - name: Upload to R2
-        if: always() && hashFiles('scraper/work/index.json') != ''
-        run: |
-          cp() { aws s3 cp "$@" --endpoint-url "$R2_ENDPOINT" --content-type application/json --only-show-errors; }
-          # Decks first and the index last, so nothing published points at a file not yet uploaded.
-          if [ -d work/decks ]; then
-            cp work/decks "$R2/decks" --recursive --cache-control "public, max-age=31536000, immutable"
-          fi
-          if [ -d work/cards ]; then
-            cp work/cards "$R2/cards" --recursive --cache-control "public, max-age=300"
-          fi
-          if [ -d work/edh ]; then
-            cp work/edh "$R2/edh" --recursive --cache-control "public, max-age=300"
-          fi
-          if [ -d work/locator ]; then
-            cp work/locator "$R2/locator" --recursive --cache-control "public, max-age=300"
-          fi
-          if [ -d work/premier ]; then
-            cp work/premier "$R2/premier" --recursive --cache-control "public, max-age=300"
-          fi
-          # Written from the snapshots with the same max-age, and uploaded before them and explore.json,
-          # which link to them. Like the other prefixes these are only overwritten, never pruned.
-          if [ -d work/archetypes ]; then
-            cp work/archetypes "$R2/archetypes" --recursive --cache-control "public, max-age=300"
-          fi
-          if [ -d work/events ]; then
-            cp work/events "$R2/events" --recursive --cache-control "public, max-age=300"
-          fi
-          # Built from the same snapshots and the stored decklists, with the same max-age and the same rule: only overwritten.
-          if [ -d work/popular-cards ]; then
-            cp work/popular-cards "$R2/popular-cards" --recursive --cache-control "public, max-age=300"
-          fi
-          if [ -d work/breakouts ]; then
-            cp work/breakouts "$R2/breakouts" --recursive --cache-control "public, max-age=300"
-          fi
-          # From the catalog's price history and Scryfall's printings, with nothing pointing at them.
-          if [ -d work/movers ]; then
-            cp work/movers "$R2/movers" --recursive --cache-control "public, max-age=300"
-          fi
-          # Composed from the breakouts and movers above and the EDHREC commander pages (the uprising commander's counts
-          # are carried over in state/today-commanders.json, which goes up with the state below) for Explore's Today widgets.
-          if [ -f work/today.json ]; then
-            cp work/today.json "$R2/today.json" --cache-control "public, max-age=300"
-          fi
-          cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
-          # Built from the snapshots above, so it goes up after them.
-          if [ -f work/explore.json ]; then
-            cp work/explore.json "$R2/explore.json" --cache-control "public, max-age=300"
-          fi
-          cp work/state "$R2/state" --recursive --cache-control "no-cache"
-          # Lists the Explore files above by hash, so it goes up after them and the state it is carried over from.
-          if [ -f work/explore-manifest.json ]; then
-            cp work/explore-manifest.json "$R2/explore-manifest.json" --cache-control "public, max-age=60"
-          fi
-          cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
-          echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages, $(ls work/archetypes 2>/dev/null | wc -l) archetype pages, $(ls work/events 2>/dev/null | wc -l) event pages"
-          cat work/index.json
-
-      - name: Fail if the scrape reported errors
-        if: steps.scrape.outcome == 'failure'
-        run: |
-          echo "The scrape logged errors; what it did collect was published. See the Scrape step."
-          exit 1
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          # The script publishes nothing unless told to, so a local run never does by accident.
+          PUBLISH: "1"
+          SYNC: r2
+          # Empty on a scheduled run, which means the script's defaults.
+          FORMATS: ${{ inputs.formats }}
+          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
+          # setup-python's interpreter, which the script builds scraper/.venv from.
+          PYTHON: python
