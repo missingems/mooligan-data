@@ -193,7 +193,8 @@ def _archetype_colors(archetype_id: str, results: List[dict], archetype_pages) -
 
 def _wubrg(colors: Iterable[str]) -> List[str]:
     """The colour letters among `colors`, once each, in WUBRG order."""
-    return [color for color in "WUBRG" if color in set(colors)]
+    present = {color for color in colors if isinstance(color, str)}
+    return [color for color in "WUBRG" if color in present]
 
 
 # ---- Movers

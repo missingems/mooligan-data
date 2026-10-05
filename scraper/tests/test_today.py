@@ -784,3 +784,8 @@ def test_without_the_edhrec_state_there_is_no_commander_and_the_snapshot_is_left
     empty.mkdir()
     write_today(empty, NOW)
     assert not (empty / "state").exists()
+
+
+def test_colour_letters_that_are_not_strings_are_ignored():
+    from mtgmeta.today import _wubrg
+    assert _wubrg(["R", ["U"], None, 3, "W", "R"]) == ["W", "R"]
