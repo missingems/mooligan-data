@@ -1,15 +1,16 @@
 """today.json: what matters today in one response, for Explore's Today widgets, published each run.
 
-Built from files already published: up to three breakout cards from `breakouts/{format}.json` (new cards seeing
-play first, then released cards suddenly seeing play), the day's biggest mover and loser from `movers/all.json` with
-their price history, the EDH commander whose deck count rose most since EDHREC was last asked about it (from the
-commander check times in `state/edhrec-commanders.json` and the snapshot this file keeps of them), and a preview,
-one of the printings Scryfall added since the last run (see previews.py). See docs/data-format.md.
+Built from files already published: up to three breakout cards from `breakouts/{format}.json`, from three formats
+where three have one (new cards seeing play first, then released cards suddenly seeing play), the day's biggest mover
+and loser from `movers/all.json` with their price history, the EDH commander whose deck count rose fastest since
+EDHREC was last asked about it (from the commander check times in `state/edhrec-commanders.json` and the snapshot
+this file keeps of them), and a preview, one of the printings Scryfall added since the last run (see previews.py).
+See docs/data-format.md.
 """
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
@@ -73,7 +74,12 @@ def build_today(
 
 
 def _breakouts(breakouts: Dict[str, dict]) -> List[dict]:
-    """Up to three cards: new cards seeing play first, then released cards that suddenly see play, one entry per card."""
+    """Up to three cards, from three different formats where three formats have one.
+
+    The cards are ranked as one list (new cards seeing play first, then released cards that suddenly see play, one
+    entry per card), and the best-ranked card of each format comes first: a card whose busiest format already has a
+    card is taken only when fewer than three formats have a breakout. The cards keep their ranked order.
+    """
     found: Dict[bool, List[Tuple[str, dict]]] = {True: [], False: []}
     everywhere: Dict[str, List[str]] = {}
     for key, document in breakouts.items():
@@ -81,21 +87,31 @@ def _breakouts(breakouts: Dict[str, dict]) -> List[dict]:
         for row in document.get("cards") or []:
             found[bool(row.get("new"))].append((format, row))
             everywhere.setdefault(_identity(row), []).append(format)
-    chosen: List[dict] = []
+    ranked: List[Tuple[str, dict, str]] = []
     taken = set()
     for new in (True, False):
         cards: Dict[str, List[Tuple[str, dict]]] = {}
         for format, row in found[new]:
             cards.setdefault(_identity(row), []).append((format, row))
         for identity in sorted(cards, key=lambda card: _rank(card, cards[card])):
-            if len(chosen) == MAX_BREAKOUTS:
-                return chosen
             if identity in taken:
                 continue
             taken.add(identity)
             format, row = min(cards[identity], key=_home)
-            chosen.append(_card(format, row, everywhere[identity]))
-    return chosen
+            ranked.append((format, row, identity))
+    # The best card of each format, then, while there is room, the next best whatever its format.
+    places: List[int] = []
+    formats = set()
+    for place, (format, _, _) in enumerate(ranked):
+        if format not in formats and len(places) < MAX_BREAKOUTS:
+            formats.add(format)
+            places.append(place)
+    for place in range(len(ranked)):
+        if len(places) == MAX_BREAKOUTS:
+            break
+        if place not in places:
+            places.append(place)
+    return [_card(format, row, everywhere[identity]) for format, row, identity in (ranked[place] for place in sorted(places))]
 
 
 def _identity(row: dict) -> str:
@@ -135,21 +151,14 @@ def _card(format: str, row: dict, formats: List[str]) -> dict:
 
 
 def _archetypes(results: List[dict]) -> List[dict]:
-    """The archetypes of the decks that play the card, most decks first, then name. A deck outside the tracked
-    archetypes counts under the tracked archetype of the same name when there is one, else under its pilot's own
-    title with a null id."""
-    tracked: Dict[str, Tuple[str, str]] = {}
+    """The tracked archetypes of the decks that play the card, most decks first, then name; a deck outside the tracked
+    archetypes (one with no `archetype_id`, named by its pilot) is left out."""
+    decks: Dict[Tuple[str, str], int] = {}
     for result in results:
-        if result.get("archetype") and result.get("archetype_id"):
-            tracked.setdefault(result["archetype"].casefold(), (result["archetype_id"], result["archetype"]))
-    decks: Dict[Tuple[Optional[str], str], int] = {}
-    for result in results:
-        name = result.get("archetype")
-        if not name:
-            continue
-        key = (result["archetype_id"], name) if result.get("archetype_id") else tracked.get(name.casefold(), (None, name))
-        decks[key] = decks.get(key, 0) + 1
-    ordered = sorted(decks, key=lambda key: (-decks[key], key[1], key[0] or ""))
+        if result.get("archetype_id") and result.get("archetype"):
+            key = (result["archetype_id"], result["archetype"])
+            decks[key] = decks.get(key, 0) + 1
+    ordered = sorted(decks, key=lambda key: (-decks[key], key[1], key[0]))
     return [{"name": name, "id": archetype_id, "decks": decks[(archetype_id, name)]} for archetype_id, name in ordered[:MAX_ARCHETYPES]]
 
 
@@ -174,13 +183,14 @@ def _first(rows: Optional[list]) -> Optional[dict]:
 
 
 def rising_commander(checked: Dict[str, dict], snapshot: Optional[Dict[str, dict]], pages: Dict[str, dict]) -> Optional[dict]:
-    """The commander whose deck count rose most, as a percent, since EDHREC was last asked about it.
+    """The commander whose deck count rose fastest, as a percent a day, since EDHREC was last asked about it.
 
     `checked` is state/edhrec-commanders.json as this run left it, `snapshot` what the last run's file kept of it (None
     on a first run, when nothing can have risen), and `pages` reads a commander's `edh/commanders/{slug}.json` (a
     mapping, or anything with `get`). Only a commander checked again since the snapshot, which had a count then, can
-    rise; it must clear the floor (`MIN_DECKS`, `MIN_RISE`, `MIN_RISE_PERCENT`). Ties go to the larger rise in decks,
-    then the slug.
+    rise; it must clear the floor (`MIN_DECKS`, `MIN_RISE`, `MIN_RISE_PERCENT`). The commanders that do are ranked by
+    their percent rise a day, over the days between the dates of the two checks (at least 1), as the checks are
+    days or weeks apart; ties go to the larger rise in decks a day, then the larger rise, then the slug.
     """
     if not snapshot:
         return None
@@ -195,11 +205,14 @@ def rising_commander(checked: Dict[str, dict], snapshot: Optional[Dict[str, dict
         rise = decks - previous
         percent = rise * 100 / previous
         if decks >= MIN_DECKS and rise >= MIN_RISE and percent >= MIN_RISE_PERCENT:
-            rising.append((-percent, -rise, slug))
+            days = _days(before.get("checked_at"), now.get("checked_at"))
+            rising.append((-percent / days, -rise / days, -rise, slug))
     if not rising:
         return None
-    _, _, slug = min(rising)
+    slug = min(rising)[-1]
     now, before = checked[slug], snapshot[slug]
+    rise = now["decks"] - before["decks"]
+    days = _days(before.get("checked_at"), now.get("checked_at"))
     page = pages.get(slug) or {}
     return {
         "slug": slug,
@@ -208,14 +221,25 @@ def rising_commander(checked: Dict[str, dict], snapshot: Optional[Dict[str, dict
         "color_identity": page.get("color_identity"),
         "decks": now["decks"],
         "previous_decks": before["decks"],
-        "rise": now["decks"] - before["decks"],
-        "rise_percent": round((now["decks"] - before["decks"]) * 100 / before["decks"], 1),
+        "rise": rise,
+        "rise_percent": round(rise * 100 / before["decks"], 1),
         "since": (before.get("checked_at") or "")[:10] or None,
+        "days": days,
+        "rise_per_day": round(rise / days, 1),
+        "rise_percent_per_day": round(rise * 100 / before["decks"] / days, 2),
         "url": page.get("url") or f"https://edhrec.com/commanders/{slug}",
         "top_cards": _commander_cards(page, TOP_CARDS),
         "synergy_cards": _commander_cards(page, SYNERGY_CARDS),
         "attribution": ATTRIBUTION,
     }
+
+
+def _days(before: Optional[str], after: Optional[str]) -> int:
+    """The days between the dates of two check times, at least 1 (also when either is missing or not a date)."""
+    try:
+        return max(1, (date.fromisoformat(after[:10]) - date.fromisoformat(before[:10])).days)
+    except (TypeError, ValueError):
+        return 1
 
 
 def _commander_cards(page: dict, tags: Tuple[str, ...]) -> List[dict]:

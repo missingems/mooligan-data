@@ -61,6 +61,62 @@ def test_up_to_three_cards_are_published_and_fewer_when_fewer_exist():
     assert names(breakouts("modern", row("A"), row("B"))) == ["A", "B"]
 
 
+def test_the_best_card_of_each_of_three_formats_is_taken_before_a_second_card_of_one_format():
+    files = (
+        breakouts("modern", row("A", decks=50), row("B", decks=40)),
+        breakouts("legacy", row("C", decks=30)),
+        breakouts("pauper", row("D", decks=20)),
+    )
+    assert names(*files) == ["A", "C", "D"]
+
+
+def test_a_released_card_of_a_third_format_beats_a_second_new_card_of_a_format_already_listed():
+    files = (
+        breakouts("modern", row("A", decks=50), row("B", decks=40)),
+        breakouts("legacy", row("C", decks=30)),
+        breakouts("pauper", row("D", new=False, decks=90)),
+    )
+    assert names(*files) == ["A", "C", "D"]
+    assert [card["new"] for card in cards_of(*files)] == [True, True, False]
+
+
+def test_a_card_counts_for_its_busiest_format_when_the_formats_are_counted():
+    files = (
+        breakouts("modern", row("X", decks=10), row("Y", decks=8)),
+        breakouts("legacy", row("X", decks=30), row("Z", decks=6)),
+        breakouts("pauper", row("W", decks=7)),
+    )
+    # X is a legacy card, so Y is modern's best and W pauper's; Z would be a second legacy card.
+    assert names(*files) == ["X", "Y", "W"]
+    assert pick(*files)["format"] == "legacy"
+
+
+def test_a_format_is_repeated_only_when_fewer_than_three_formats_have_a_breakout():
+    two = (
+        breakouts("modern", row("A", decks=50), row("B", decks=40), row("C", decks=30)),
+        breakouts("legacy", row("D", decks=20)),
+    )
+    assert names(*two) == ["A", "B", "D"]
+    assert [card["format"] for card in cards_of(*two)] == ["modern", "modern", "legacy"]
+    one = breakouts("modern", row("A", decks=50), row("B", decks=40), row("C", decks=30), row("D", decks=20))
+    assert names(one) == ["A", "B", "C"]
+
+
+def test_the_cards_keep_their_ranked_order_when_a_later_format_adds_its_card():
+    files = (
+        breakouts("modern", row("A", decks=50), row("B", decks=40)),
+        breakouts("legacy", row("C", decks=30)),
+    )
+    assert names(*files) == ["A", "B", "C"]
+    # New cards rank before released ones and the chosen cards stay in that order: Old C (legacy) is a third format, Old A is not.
+    mixed = (
+        breakouts("modern", row("Old A", new=False, decks=90), row("New B", decks=5)),
+        breakouts("legacy", row("Old C", new=False, decks=80)),
+        breakouts("pauper", row("New D", decks=4)),
+    )
+    assert names(*mixed) == ["New B", "New D", "Old C"]
+
+
 def test_new_cards_come_before_released_cards_even_when_a_released_card_has_more_decks():
     today = build_today({"modern": breakouts("modern", row("Old Staple", new=False, decks=90), row("Fresh Face", new=True, decks=6))}, None, NOW)
     assert [card["name"] for card in today["breakouts"]] == ["Fresh Face", "Old Staple"]
@@ -231,19 +287,21 @@ def test_at_most_three_archetypes_are_kept():
     assert [archetype["name"] for archetype in found] == ["A", "B", "C"]
 
 
-def test_an_untracked_deck_joins_the_tracked_archetype_of_the_same_name_ignoring_case():
-    found = archetypes(result("Izzet Prowess", "modern-izzet-prowess"), result("izzet prowess"), result("IZZET PROWESS"))
-    assert found == [{"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 3}]
+def test_a_deck_with_no_archetype_id_is_left_out_even_when_a_tracked_archetype_has_its_name():
+    found = archetypes(result("Izzet Prowess", "modern-izzet-prowess"), result("izzet prowess"), result("IZZET PROWESS"), result("Izzet Prowess"))
+    assert found == [{"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 1}]
 
 
-def test_an_untracked_deck_otherwise_counts_under_its_own_title_with_no_id():
-    found = archetypes(result("UR"), result("UR"), result("Izzet Prowess", "modern-izzet-prowess"))
-    assert found == [{"name": "UR", "id": None, "decks": 2}, {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 1}]
+def test_decks_named_only_by_their_pilot_are_not_listed_whatever_their_number():
+    found = archetypes(result("UR"), result("UR"), result("UR"), result("Izzet Prowess", "modern-izzet-prowess"))
+    assert found == [{"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 1}]
+    assert archetypes(result("UR"), result("UR", None), result("UR", "")) == []
 
 
 def test_results_without_an_archetype_are_skipped_and_none_leaves_an_empty_list():
     assert archetypes(result("Burn", "burn"), result(None), result(""), {"deck_id": "x"}) == [{"name": "Burn", "id": "burn", "decks": 1}]
     assert archetypes(result(None), result("")) == []
+    assert archetypes() == []
     assert pick(breakouts("modern", {key: value for key, value in row("A").items() if key != "results"}))["archetypes"] == []
 
 
@@ -362,7 +420,7 @@ def test_a_commander_without_counts_to_compare_is_skipped():
     assert rising_commander({"c": state(100)}, {"c": {"checked_at": BEFORE}}, {}) is None
 
 
-def test_commanders_rank_by_percent_then_rise_then_slug():
+def test_commanders_rank_by_percent_then_rise_then_slug_over_the_same_days():
     snapshot = {slug: state(before, BEFORE) for slug, before in {"a": 100, "b": 100, "big": 1000, "small": 100, "c": 100}.items()}
     checked = {"a": state(130), "b": state(160), "big": state(1500), "small": state(150), "c": state(120)}
     # 60% (b), then 50% twice (big with the larger rise, then small), then 30% (a), then 20% (c).
@@ -376,6 +434,73 @@ def test_commanders_rank_by_percent_then_rise_then_slug():
     assert tied["slug"] == "abe"
 
 
+def between(slug_states):
+    """The rising commander for `{slug: (previous decks, check time, decks now, check time)}`."""
+    checked = {slug: state(decks, after) for slug, (_, _, decks, after) in slug_states.items()}
+    snapshot = {slug: state(previous, before) for slug, (previous, before, _, _) in slug_states.items()}
+    return rising_commander(checked, snapshot, {})
+
+
+def days_between(before, after):
+    return between({"c": (100, before, 200, after)})["days"]
+
+
+def test_the_days_are_those_between_the_dates_of_the_two_checks_at_least_one():
+    assert days_between("2026-09-30T10:17:45Z", "2026-10-04T18:05:07Z") == 4
+    assert days_between("2026-10-04T10:00:00Z", "2026-10-05T10:00:00Z") == 1
+    # Dates, not hours: a few minutes across midnight is a day, and nearly three days of hours is three days.
+    assert days_between("2026-10-04T23:59:00Z", "2026-10-05T00:01:00Z") == 1
+    assert days_between("2026-10-01T23:00:00Z", "2026-10-04T01:00:00Z") == 3
+    # The same day, however many hours apart, is one day.
+    assert days_between("2026-10-04T01:00:00Z", "2026-10-04T23:00:00Z") == 1
+    # Missing or unparseable check times are one day, and so is a check dated before the snapshot's.
+    assert days_between(None, AFTER) == 1
+    assert days_between("", AFTER) == 1
+    assert days_between("sometime", AFTER) == 1
+    assert days_between(BEFORE, "garbage") == 1
+    assert days_between("2026-10-06T00:00:00Z", "2026-10-04T00:00:00Z") == 1
+
+
+def test_a_smaller_percent_over_fewer_days_beats_a_larger_percent_over_many_days():
+    first = between({
+        "slow": (100, "2026-09-24T10:00:00Z", 160, AFTER),  # 60 percent over 10 days: 6 a day
+        "quick": (100, "2026-10-03T10:00:00Z", 130, AFTER),  # 30 percent over 1 day: 30 a day
+    })
+    assert first["slug"] == "quick"
+    assert (first["rise_percent"], first["days"], first["rise_percent_per_day"]) == (30.0, 1, 30.0)
+
+
+def test_commanders_with_the_same_percent_a_day_go_to_the_larger_rise_a_day_then_the_larger_rise_then_the_slug():
+    day = "2026-10-03T10:00:00Z"
+    # 50 percent a day each; 500 decks a day beats 50.
+    assert between({"small": (100, day, 150, AFTER), "big": (1000, day, 1500, AFTER)})["slug"] == "big"
+    # 50 percent and 50 decks a day each; the rise of 100 over two days beats the rise of 50 over one.
+    two_days = "2026-10-02T10:00:00Z"
+    assert between({"one": (100, day, 150, AFTER), "two": (100, two_days, 200, AFTER)})["slug"] == "two"
+    # Everything the same: the slug decides.
+    assert between({"zed": (100, day, 150, AFTER), "abe": (100, day, 150, AFTER)})["slug"] == "abe"
+
+
+def test_the_floors_apply_to_the_whole_rise_not_to_the_rise_a_day():
+    day = "2026-10-03T10:00:00Z"
+    # Under 10 percent in all (9 percent in one day), though the best a day.
+    assert between({"c": (1000, day, 1090, AFTER)}) is None
+    # Under 10 decks in all (9 decks and 16 percent in one day).
+    assert between({"c": (55, day, 64, AFTER)}) is None
+    # Over both floors in all, though the rise a day is small.
+    slow = between({"c": (100, "2026-09-24T10:00:00Z", 112, AFTER)})
+    assert (slow["slug"], slow["rise"], slow["days"], slow["rise_percent_per_day"]) == ("c", 12, 10, 1.2)
+    # The excluded commander never wins, however good its rise a day.
+    both = between({"excluded": (1000, day, 1090, AFTER), "slow": (100, "2026-09-24T10:00:00Z", 112, AFTER)})
+    assert both["slug"] == "slow"
+
+
+def test_the_rise_a_day_is_rounded_to_one_decimal_and_the_percent_a_day_to_two():
+    commander = between({"c": (100, "2026-10-01T10:00:00Z", 135, AFTER)})
+    assert (commander["days"], commander["rise"], commander["rise_percent"]) == (3, 35, 35.0)
+    assert (commander["rise_per_day"], commander["rise_percent_per_day"]) == (11.7, 11.67)
+
+
 def test_the_commander_has_its_fields_in_order():
     page = {
         "name": "Avacyn, Angel of Horror", "slug": "c", "decks": 1722, "url": "https://edhrec.com/commanders/avacyn-angel-of-horror",
@@ -383,13 +508,14 @@ def test_the_commander_has_its_fields_in_order():
     }
     commander = rise(1147, 1722, c=page)
     assert list(commander) == [
-        "slug", "name", "scryfall_id", "color_identity", "decks", "previous_decks", "rise", "rise_percent", "since", "url",
-        "top_cards", "synergy_cards", "attribution",
+        "slug", "name", "scryfall_id", "color_identity", "decks", "previous_decks", "rise", "rise_percent", "since", "days",
+        "rise_per_day", "rise_percent_per_day", "url", "top_cards", "synergy_cards", "attribution",
     ]
     assert commander["slug"] == "c" and commander["name"] == "Avacyn, Angel of Horror"
     assert (commander["scryfall_id"], commander["color_identity"]) == ("ff65", ["B"])
     assert (commander["decks"], commander["previous_decks"], commander["rise"], commander["rise_percent"]) == (1722, 1147, 575, 50.1)
     assert commander["since"] == "2026-09-30"
+    assert (commander["days"], commander["rise_per_day"], commander["rise_percent_per_day"]) == (4, 143.8, 12.53)
     assert commander["url"] == "https://edhrec.com/commanders/avacyn-angel-of-horror"
     assert commander["attribution"] == {"name": "EDHREC", "url": "https://edhrec.com"}
 
