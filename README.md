@@ -47,12 +47,16 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
    - reads the metagame page (30-day window);
    - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so an archetype stops at the first page with nothing new;
    - reads every event of the window from MTGGoldfish's tournament search (20 a page, `MAX_SEARCH_PAGES` at most), plus the archetype lists' mentions for multi-format events, and reads up to `MAX_NEW_EVENTS` not yet stored, newest first. Each event is classed by name and source (Pro Tour, Regional Championship, RCQ, Store Championship, MTGO Challenge or League, other; a League is MTGO's only when its results came from mtgo.com), and each result keeps the colour pips MTGGoldfish shows beside its deck;
-   - downloads new decklists, up to `MAX_NEW_DECKS` a run. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
+   - picks the new decklists to download, up to `MAX_NEW_DECKS` per format. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
 
-   Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. A refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
+   Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. For these pages, a refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
+
+   The decklists are downloaded after every format's pages, and slowly, like a reader. A run once downloaded 501 decks in two minutes, and the next run had every download refused. So the formats take turns, newest decks first within each, and every few decks follow a real visit to the event or archetype page they come from. Two download at a time, with random gaps (a median of `DECK_DELAY` seconds, and now and then 20 to 60), at most `DECKS_PER_RUN` decks a run and `DECK_MINUTES` minutes. When a download is refused, it waits 30 seconds, then 60, and visits the page again before retrying. After 3 refusals in a row it stops downloading decks for the run, logs one line with the HTTP status and headers, and leaves the rest for the next run.
 3. **Publish.** `SnapshotStore.finish()` builds a page per card from every decklist in the window (reading back from `data.mooligan.com` the ones this run didn't download) (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then writes the snapshots, `explore.json`, a page per archetype in the metagame and per event, the deck id list and `index.json`. The workflow uploads decks first and `index.json` last, so the index never points at a file that isn't there yet. `explore-manifest.json` goes up just before it, after the Explore files it lists and the state, so it never names a hash a file doesn't have yet.
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
+
+Blocked deck downloads are different: they are a warning, the run passes, and the decks wait for the next run. The run fails when the downloads are blocked two runs in a row. The count is in `state/deck-downloads.json`.
 
 A first run reads a month of history for every archetype. For Vintage (23 archetypes, 400 decklists) that took 4 minutes; Modern has about three times as many archetypes. Later runs usually read one page per archetype.
 
@@ -66,9 +70,13 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |
 | `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results are kept |
 | `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |
-| `MAX_NEW_DECKS` | `1500` in the workflow | New decklists per format per run |
-| `CONCURRENCY` | `6` | Requests fetched at once from inside the page |
-| `REQUEST_DELAY` | `1` in the workflow | Base seconds between batches, plus up to 50% random extra |
+| `MAX_NEW_DECKS` | `400`, `1500` in the workflow | New decklists per format per run. `DECKS_PER_RUN` caps the total |
+| `DECKS_PER_RUN` | `800` | New decklists per run, all formats together |
+| `DECK_CONCURRENCY` | `2` | Decklists downloaded at once |
+| `DECK_DELAY` | `2` | Median seconds between decklist batches, randomised, with a long pause now and then |
+| `DECK_MINUTES` | `40` | Minutes the decklist downloads may take, all formats together |
+| `CONCURRENCY` | `6` | Requests fetched at once from inside the page, for the pages other than decklists |
+| `REQUEST_DELAY` | `1` in the workflow | Base seconds between those batches, plus up to 50% random extra |
 
 ## Setup
 
@@ -110,6 +118,6 @@ Commander usage on each card page comes from EDHREC, used with their permission.
 ## Caveats
 
 - MTGGoldfish sits behind Cloudflare, and its markup can change. The parsers raise `ParseError` rather than write empty data, so a layout change shows up as a failed run.
-- Cloudflare challenges an address that scrapes a lot. GitHub's runners have got through so far. If runs start failing with "Blocked on …", lower `CONCURRENCY` or raise `REQUEST_DELAY`.
+- Cloudflare challenges an address that scrapes a lot. GitHub's runners have got through so far. If runs start failing with "Blocked on …", lower `CONCURRENCY` or raise `REQUEST_DELAY`. If decklists are refused, the log says with which HTTP status; raise `DECK_DELAY`, lower `DECK_CONCURRENCY` or `DECKS_PER_RUN`.
 - GitHub disables scheduled workflows in a public repo after 60 days without commits. If the schedule stops, re-enable it from the Actions tab.
 - Scraping may conflict with MTGGoldfish's terms of use. Keep the rate low, and don't redistribute the data commercially.
