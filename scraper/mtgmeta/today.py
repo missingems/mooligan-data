@@ -187,7 +187,7 @@ def rising_commander(checked: Dict[str, dict], snapshot: Optional[Dict[str, dict
     rising = []
     for slug, now in checked.items():
         before = snapshot.get(slug)
-        if not before or before.get("checked_at") == now.get("checked_at"):
+        if not isinstance(before, dict) or not isinstance(now, dict) or before.get("checked_at") == now.get("checked_at"):
             continue
         decks, previous = now.get("decks"), before.get("decks")
         if not isinstance(decks, int) or not isinstance(previous, int) or previous <= 0:
@@ -243,9 +243,10 @@ def read_commanders(directory: Path) -> Tuple[Dict[str, dict], Optional[Dict[str
     snapshot_path = directory / COMMANDER_SNAPSHOT
     try:
         snapshot = json.loads(snapshot_path.read_text()).get("commanders") if snapshot_path.exists() else None
-    except ValueError:
+    except (ValueError, AttributeError):
         snapshot = None
-    return checked, snapshot
+    # A snapshot of some other shape is no snapshot, so the run still publishes, with no commander.
+    return checked if isinstance(checked, dict) else {}, snapshot if isinstance(snapshot, dict) else None
 
 
 def write_commander_snapshot(directory: Path, checked: Dict[str, dict]) -> None:

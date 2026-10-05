@@ -566,6 +566,14 @@ def test_an_unreadable_snapshot_is_no_commander_and_is_replaced(tmp_path):
     assert read_snapshot(tmp_path)["commanders"] == {"avacyn": state(1722)}
 
 
+def test_a_snapshot_of_another_shape_is_no_commander_and_is_replaced(tmp_path):
+    for text in ("[]", '{"commanders": []}', '{"commanders": {"avacyn": 1147}}'):
+        write_state(tmp_path, checked={"avacyn": state(1722)}, snapshot=text)
+        write_today(tmp_path, NOW)
+        assert read_today(tmp_path)["commander"] is None
+        assert read_snapshot(tmp_path)["commanders"] == {"avacyn": state(1722)}
+
+
 def test_without_the_edhrec_state_there_is_no_commander_and_the_snapshot_is_left_alone(tmp_path):
     write_state(tmp_path, snapshot={"avacyn": state(1147, BEFORE)})
     before = (tmp_path / "state" / "today-commanders.json").read_text()
