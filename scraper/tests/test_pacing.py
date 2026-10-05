@@ -308,7 +308,7 @@ def test_the_time_budget_ends_the_phase():
 def test_a_wait_longer_than_the_time_left_ends_the_phase_at_once():
     browser = FakeBrowser({deck_path("a"): [429]})  # Retry-After: 120 s
     outcome, _, clock = download(browser, visits_of(("/tournament/1", ["a", "b"])), minutes=1)
-    assert (outcome.reason, outcome.left, outcome.refusals_total) == ("blocked", 1, 1)  # b was answered; a was not
+    assert (outcome.reason, outcome.left, outcome.refusals_total) == ("time", 1, 1)  # b was answered; a was not
     assert outcome.refusal.startswith("HTTP 429") and "retry-after=120s" in outcome.refusal
     # Only the dwell was slept: it did not wait for a minute it does not have.
     assert max(clock.slept) <= DWELL[1] and len(browser.batches) == 1

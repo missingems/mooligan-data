@@ -402,7 +402,9 @@ def _download_decks(
         for answer in fetched:
             want = by_path[answer.path]
             if answer.status != 200:
-                _fail(report, f"deck {want.deck_id}", RuntimeError(f"HTTP {answer.status} on {answer.path}"))
+                # Not inside an except, so logged without a traceback.
+                log.error("Failed on deck %s: HTTP %d", want.deck_id, answer.status)
+                report.errors.append(f"deck {want.deck_id}: HTTP {answer.status} on {answer.path}")
                 continue
             try:
                 mainboard, sideboard = parse_decklist(answer.body)

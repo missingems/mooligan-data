@@ -215,7 +215,8 @@ class _Downloads:
             return False
         seconds = self.pacer.backoff_seconds(self.consecutive, retry_after)
         if seconds > self.pacer.time_left():
-            self.stop("blocked")
+            # Near the end of the budget, one refusal is not a block: the run is out of time, not refused for good.
+            self.stop("time")
             return False
         log.info("Waiting %.0f s before trying again", seconds)
         self.pacer.wait(seconds)
