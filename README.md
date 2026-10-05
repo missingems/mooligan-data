@@ -88,7 +88,7 @@ A local run writes into `scraper/work/` and publishes nothing. To run the whole 
 
 ### The whole job on a Mac, for development
 
-`ops/scrape.sh` and `ops/catalog.sh` are the whole jobs. The workflows call them with `PUBLISH=1`; run them on the Mac to try a change without spending Actions minutes. Locally they publish nothing unless told to: everything lands in `scraper/work/` (or `generators/work/catalog/`) to look at.
+`ops/scrape.sh` and `ops/catalog.sh` are the whole jobs. The workflows call them with `PUBLISH=1`; run them on the Mac to try a change without spending Actions minutes. Locally they publish nothing unless told to: everything lands in `scraper/work/` (or `generators/work/catalog/`) to look at. Each run starts by emptying that folder, as a fresh Actions checkout would, so copy a run's output elsewhere first to compare it with the next.
 
 One-time setup (the scripts also create and repair the venv themselves):
 

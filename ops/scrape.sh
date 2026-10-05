@@ -36,13 +36,14 @@ fi
 
 ensure_venv || exit 1
 
-# Each lifted step is a function whose body is a subshell, so it runs under `set -e` like an Actions
-# step (bash -e -o pipefail). Call them as plain statements, never in an `if` or after `||`: bash
+# Each lifted step is a function whose body is a subshell, so it runs like an Actions step, which is
+# `bash -e`: no pipefail and no -u, which a lifted block may rely on (the catalog prune ends in a
+# grep that can match nothing). Call them as plain statements, never in an `if` or after `||`: bash
 # ignores -e inside anything called that way.
 
 # sync succeeds on an empty bucket, so the first run starts from nothing.
 step_download() (
-    set -e
+    set -e +u +o pipefail
     sync() {
       for attempt in 1 2 3; do
         aws s3 sync "$1" "$2" --endpoint-url "$R2_ENDPOINT" && return 0
@@ -57,7 +58,7 @@ step_download() (
 
 # finish() writes index.json last, so its presence means the run got as far as publishing.
 step_upload() (
-    set -e
+    set -e +u +o pipefail
     cp() { aws s3 cp "$@" --endpoint-url "$R2_ENDPOINT" --content-type application/json --only-show-errors; }
     # Decks first and the index last, so nothing published points at a file not yet uploaded.
     if [ -d work/decks ]; then

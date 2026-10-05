@@ -15,25 +15,26 @@ require_credentials_to_publish
 # The upload block needs the pinned aws and a python3 on PATH.
 if [ "$PUBLISH" = 1 ]; then ensure_venv || exit 1; fi
 
-# Each lifted step is a function whose body is a subshell, so it runs under `set -e` like an Actions
-# step (bash -e -o pipefail). Call them as plain statements, never in an `if` or after `||`: bash
+# Each lifted step is a function whose body is a subshell, so it runs like an Actions step, which is
+# `bash -e`: no pipefail and no -u, which a lifted block may rely on (the catalog prune ends in a
+# grep that can match nothing). Call them as plain statements, never in an `if` or after `||`: bash
 # ignores -e inside anything called that way.
 
 step_indexer() (
-  set -e
+  set -e +u +o pipefail
   export OUTPUT_DIR=work/catalog STATE_BASE_URL=https://data.mooligan.com/catalog FULL_REBUILD="${FULL_REBUILD:-0}"
   .build/release/ImageHashIndexer
   cp visualizer.html work/catalog/index.html
 )
 
 step_pull_odds() (
-  set -e
+  set -e +u +o pipefail
   export OUTPUT_DIR=work/catalog
   .build/release/PullOdds
 )
 
 step_prices() (
-  set -e
+  set -e +u +o pipefail
   export OUTPUT_DIR=work/catalog
   .build/release/Prices
 )
@@ -43,7 +44,7 @@ step_prices() (
 # the phones downloaded parts of patch 6 under a manifest that said 9. The master chunks
 # are matched by size, since they only change with a rebase and are 200 MB.
 step_upload() (
-    set -e
+    set -e +u +o pipefail
     previous=$(aws s3 cp "$R2/index.json" - --endpoint-url "$R2_ENDPOINT" 2>/dev/null || echo '{}')
     aws s3 sync work/catalog "$R2" --endpoint-url "$R2_ENDPOINT" --size-only --only-show-errors \
       --exclude "*" --include "MTG_Hashes_Master_*.lzfse" --cache-control "public, max-age=3600"
