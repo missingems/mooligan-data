@@ -16,7 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
 from .drilldown import build_archetype_pages, build_event_pages
-from .edhrec import due_slugs, edhrec_slug
+from .edhrec import due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
@@ -74,6 +74,9 @@ class SnapshotStore:
         self._empty_events: Set[str] = set(json.loads(empty_path.read_text())) if empty_path.exists() else set()
         missing_path = root / "state" / "missing-deck-ids.json"
         self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
+        unresolved_path = root / "state" / "unresolved-deck-ids.json"
+        self._unresolved: Dict[str, dict] = json.loads(unresolved_path.read_text()) if unresolved_path.exists() else {}
+        self._saved: Set[str] = set()
         # What each stored deck plays, so card pages can be built without downloading every deck again.
         self._wanted_commanders: Dict[str, str] = {}
         self._deck_cards: Dict[str, Dict[str, dict]] = {}
@@ -120,6 +123,12 @@ class SnapshotStore:
                     card["oracle_id"] = self._catalog.get(slug(card["card_name"]), {}).get("oracle_id")
             path.write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
             self._deck_ids.add(deck.deck_id)
+            self._saved.add(deck.deck_id)
+            names = _unresolved_names(document)
+            if names:
+                self._unresolved[deck.deck_id] = {"attempts": 0, "names": names}
+            else:
+                self._unresolved.pop(deck.deck_id, None)
             self._deck_cards.setdefault(deck.format, {})[deck.deck_id] = {
                 "m": [[card.quantity, card.card_name] for card in deck.mainboard],
                 "s": [[card.quantity, card.card_name] for card in deck.sideboard],
@@ -172,6 +181,7 @@ class SnapshotStore:
         catalog: Optional[Dict[str, dict]] = None,
         fetch_commanders=None,
         commander_limit: int = 0,
+        deck_resolve_limit: int = 300,
     ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
@@ -180,13 +190,17 @@ class SnapshotStore:
         `fetch_edh(slugs) -> {slug: entry}` reads Commander usage for at most
         `edh_limit` cards, the longest unchecked first. `catalog` is every card
         Magic has, keyed by slug, which gives pages their oracle id and widens
-        the Commander refresh past the cards tournaments play.
+        the Commander refresh past the cards tournaments play. Decklist entries
+        the catalog could not name are looked up again for at most
+        `deck_resolve_limit` decks.
         """
         written = []
         formats = {}
         documents: Dict[str, dict] = {}
         card_decks: Dict[str, FormatDecks] = {}
         catalog = catalog or self._catalog
+        if catalog and fetch_decks:
+            self._resolve_decks_again(fetch_decks, catalog, deck_resolve_limit)
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
             duplicates = self._duplicates
@@ -261,15 +275,54 @@ class SnapshotStore:
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
-        written += self._write_commander_pages(fetch_commanders, commander_limit)
+        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
+        self._write("state/unresolved-deck-ids.json", json.dumps(self._unresolved, sort_keys=True).encode())
         self._write("state/empty-event-ids.json", json.dumps(sorted(self._empty_events)).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
+
+    def _resolve_decks_again(self, fetch_decks, catalog: Dict[str, dict], limit: int = 300) -> None:
+        """Gives oracle ids to decklist entries the catalog could not name when their deck was saved.
+
+        Reads at most `limit` of the decks in `state/unresolved-deck-ids.json` that
+        have been tried fewer than 3 times, fewest tries first, and not the ones saved
+        this run. A deck that is fully named leaves the list; the others, and those
+        that could not be fetched, count a try.
+        Their files are rewritten for the workflow to upload, not listed as written.
+        """
+        due = sorted(
+            (deck_id for deck_id, state in self._unresolved.items() if state["attempts"] < 3 and deck_id not in self._saved),
+            key=lambda deck_id: (self._unresolved[deck_id]["attempts"], deck_id),
+        )[:limit]
+        fetched = fetch_decks(due) if due else {}
+        for deck_id in due:
+            if deck_id not in fetched:
+                self._unresolved[deck_id] = {**self._unresolved[deck_id], "attempts": self._unresolved[deck_id]["attempts"] + 1}
+        for deck_id, deck in fetched.items():
+            if deck_id not in self._unresolved:
+                continue
+            changed = False
+            for board in ("mainboard", "sideboard"):
+                for card in deck.get(board, []):
+                    if card.get("oracle_id") is None:
+                        oracle_id = catalog.get(slug(card["card_name"]), {}).get("oracle_id")
+                        if oracle_id is not None:
+                            card["oracle_id"] = oracle_id
+                            changed = True
+            if changed:
+                path = self._root / "decks" / f"{deck_id}.json"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(deck, ensure_ascii=False, separators=(",", ":")))
+            names = _unresolved_names(deck)
+            if names:
+                self._unresolved[deck_id] = {"attempts": self._unresolved[deck_id]["attempts"] + 1, "names": names}
+            else:
+                del self._unresolved[deck_id]
 
     def _write_explore(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> List[str]:
         """Writes explore.json from the snapshots just built, and from the published ones for formats this run skipped.
@@ -362,7 +415,7 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
-    def _write_commander_pages(self, fetch_commanders, limit: int) -> List[str]:
+    def _write_commander_pages(self, fetch_commanders, limit: int, catalog: Dict[str, dict]) -> List[str]:
         """Refreshes a slice of the commanders a card page names, and publishes their pages."""
         wanted = {slug: name for slug, name in self._wanted_commanders.items()}
         if fetch_commanders and limit > 0 and wanted:
@@ -371,7 +424,7 @@ class SnapshotStore:
             for slug, entry in entries.items():
                 if not entry:
                     continue
-                self._write(f"edh/commanders/{slug}.json", _json_bytes({**entry, "schema": SCHEMA, "generated_at": self._stamp()}))
+                self._write(f"edh/commanders/{slug}.json", _json_bytes({**entry, "oracle_ids": oracle_ids(entry, catalog), "schema": SCHEMA, "generated_at": self._stamp()}))
                 self._commanders[slug] = {"checked_at": self._stamp(), "name": entry["name"], "decks": entry["decks"]}
         self._write("state/edhrec-commanders.json", json.dumps(self._commanders, sort_keys=True, separators=(",", ":")).encode())
         if not self._commanders:
@@ -428,6 +481,15 @@ class SnapshotStore:
 
 def _json_bytes(document: dict) -> bytes:
     return json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+def _unresolved_names(deck: dict) -> List[str]:
+    names: List[str] = []
+    for board in ("mainboard", "sideboard"):
+        for card in deck.get(board, []):
+            if card.get("oracle_id") is None and card["card_name"] not in names:
+                names.append(card["card_name"])
+    return names
 
 
 def _duplicate_event_ids(events: Iterable[Dict[str, Any]]) -> Set[str]:

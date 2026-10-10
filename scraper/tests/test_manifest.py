@@ -228,7 +228,8 @@ def written_after_each_step():
 
 def test_main_publishes_the_manifest_after_today_and_after_everything_else_it_writes():
     steps = written_after_each_step()
-    assert steps.index("publish_manifest") == steps.index("publish_today") + 1
+    assert steps.index("publish_localized") == steps.index("publish_today") + 1
+    assert steps.index("publish_manifest") == steps.index("publish_localized") + 1
     assert steps[-1] == "publish_manifest" and steps.count("publish_manifest") == 1
     source = inspect.getsource(entry.main)
     assert source.index("publish_today(") < source.index("publish_manifest(") < source.index('logging.info(\n        "Done')

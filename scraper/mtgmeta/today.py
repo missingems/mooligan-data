@@ -10,12 +10,16 @@ See docs/data-format.md.
 from __future__ import annotations
 
 import json
+import logging
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
+from .cards import slug as card_slug
 from .movers import FORMATS
 from .previews import NewPrintings, pick
+
+log = logging.getLogger(__name__)
 
 SCHEMA = 2
 
@@ -336,6 +340,54 @@ class _Pages:
         return page if isinstance(page, dict) else None
 
 
+# ---- Oracle ids
+
+
+def _with_oracle_ids(document: dict, catalog: Optional[Dict[str, dict]]) -> None:
+    """Adds the oracle ids `catalog` knows by card name, in place; the names it doesn't know are logged.
+
+    The commander and its top and synergy cards get an `oracle_id` (null when unknown), as EDHREC has none. A
+    breakout, the mover, the loser and the preview card keep the one they have and get one only when theirs is null.
+    """
+    if not catalog:
+        return
+    missing: List[str] = []
+    commander = document.get("commander")
+    if commander:
+        document["commander"] = _placed(commander, catalog, missing)
+        for key in ("top_cards", "synergy_cards"):
+            document["commander"][key] = [_placed(card, catalog, missing) for card in commander.get(key) or []]
+    movers = document.get("movers") or {}
+    cards = [*(document.get("breakouts") or []),movers.get("mover"), movers.get("loser"), (document.get("preview") or {}).get("card")]
+    for card in cards:
+        if card and not card.get("oracle_id"):
+            oracle_id = _oracle_id(card.get("name"), catalog)
+            if oracle_id:
+                card["oracle_id"] = oracle_id
+            else:
+                missing.append(card.get("name") or "")
+    if missing:
+        log.warning("Today: no oracle id for %s", ", ".join(sorted(set(missing))))
+
+
+def _oracle_id(name: Optional[str], catalog: Dict[str, dict]) -> Optional[str]:
+    return catalog.get(card_slug(name or ""), {}).get("oracle_id")
+
+
+def _placed(entry: dict, catalog: Dict[str, dict], missing: List[str]) -> dict:
+    """The commander or card with `oracle_id` right after its `name`."""
+    oracle_id = _oracle_id(entry.get("name"), catalog)
+    if not oracle_id:
+        missing.append(entry.get("name") or "")
+    placed: dict = {}
+    for key, value in entry.items():
+        if key != "oracle_id":
+            placed[key] = value
+        if key == "name":
+            placed["oracle_id"] = oracle_id
+    return placed
+
+
 # ---- Reading and writing
 
 
@@ -346,8 +398,11 @@ def read_published(directory: Path) -> Tuple[Dict[str, dict], Optional[dict]]:
     return breakouts, json.loads(path.read_text()) if path.exists() else None
 
 
-def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrintings] = None) -> List[str]:
+def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrintings] = None, catalog: Optional[Dict[str, dict]] = None) -> List[str]:
     """Builds today.json from the published files in `directory`, writes it there and returns its path.
+
+    `catalog` is the card catalog by slug (see `scryfall.card_catalog`): with it, the commander and its cards get
+    an `oracle_id`, and a breakout, mover, loser or preview with none gets the one its name has there.
 
     The preview needs `new_printings` read to the end of Scryfall's file. Without that (the movers were off, or the
     file could not be read through) it is null and the saved printing ids stay as they were; with it, they move
@@ -358,6 +413,7 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
     commander = rising_commander(checked, snapshot, _Pages(directory / "edh" / "commanders"))
     finished = new_printings if new_printings is not None and new_printings.complete else None
     document = build_today(breakouts, movers_all, now, finished.cards if finished else (), commander, _Pages(directory / "archetypes"))
+    _with_oracle_ids(document, catalog)
     (directory / "today.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
     if finished:
         finished.save(directory)
