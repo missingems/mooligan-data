@@ -41,7 +41,7 @@ def build_archetype_pages(
     for archetype_id, tile in archetype_tiles(meta).items():
         archetype = snapshot.get("archetypes", {}).get(archetype_id, {})
         results = archetype.get("results", [])
-        cards = key_cards(tile, ARCHETYPE_KEY_CARDS)
+        cards = key_cards(tile, ARCHETYPE_KEY_CARDS, previews.catalog)
         featured = (decks or {}).get(archetype.get("deck_id"))
         if not cards and featured:
             cards = deck_key_cards(featured.get("m", []), catalog or {}, tile["name"], ARCHETYPE_KEY_CARDS)

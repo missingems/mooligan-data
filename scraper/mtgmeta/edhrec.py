@@ -15,6 +15,8 @@ import urllib.error
 import urllib.request
 from typing import Dict, List, Optional, Sequence, Tuple
 
+from .cards import slug as card_slug
+
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://json.edhrec.com/pages/cards"
@@ -149,6 +151,21 @@ def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional
         "sections": sections,
         "average_deck": _average_deck(average),
     }
+
+
+def oracle_ids(entry: dict, catalog: Optional[Dict[str, dict]]) -> Dict[str, str]:
+    """The oracle id of the commander and of every card its page names, by name; names the catalog lacks are left out."""
+    if not catalog:
+        return {}
+    names = [entry.get("name", "")]
+    names += [card.get("name", "") for section in entry.get("sections", []) for card in section.get("cards", [])]
+    names += [name for section in entry.get("average_deck", []) for name in section.get("cards", [])]
+    ids: Dict[str, str] = {}
+    for name in names:
+        oracle_id = catalog.get(card_slug(name), {}).get("oracle_id") if name else None
+        if oracle_id:
+            ids[name] = oracle_id
+    return ids
 
 
 def _average_deck(average: Optional[dict]) -> List[dict]:

@@ -143,7 +143,7 @@ if [ "$rc" -ne 0 ]; then
   exit 3
 fi
 
-# A small, fast run: one format, a few decks, no EDHREC, locator, premier schedule or movers.
+# A small, fast run: one format, a few decks, no EDHREC, locator, premier schedule, movers or localized names.
 if [ "${QUICK:-0}" = 1 ]; then
   : "${FORMATS:=modern}"
   : "${MAX_NEW_DECKS:=20}"
@@ -154,7 +154,8 @@ if [ "${QUICK:-0}" = 1 ]; then
   : "${LOCATOR_PLACES=}"
   : "${PREMIER_SCHEDULE=0}"
   : "${MOVERS=0}"
-  export MAX_NEW_EVENTS MAX_SEARCH_PAGES PREMIER_SCHEDULE MOVERS
+  : "${LOCALIZE=0}"
+  export MAX_NEW_EVENTS MAX_SEARCH_PAGES PREMIER_SCHEDULE MOVERS LOCALIZE
 fi
 
 # The defaults are the workflow's. FORMATS and MAX_NEW_DECKS also fall back when empty, because the

@@ -23,7 +23,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -225,7 +225,37 @@ A summary of the six main formats for a landing screen, written with the snapsho
 
     Added on 1 October 2026 (before it a result had no `colors`), so decode it as optional.
 - **`latest_event`** is the first of `recent_events` that has a winner, or the first if none has, or null when there are no events. It has the fields of a recent event except `winner_player` (so it has `top` too).
+- **`localized`** is the printed name and picture of every card in the file, in Japanese, French, Italian, Spanish and German, so the app can show Explore in the card language without asking Scryfall. See *`localized`* below. Added on 11 October 2026, so decode it as optional.
 - An `explore.json` run for some formats only keeps the rest from the snapshots already published, and it isn't written at all when there is nothing to summarise.
+
+### `localized`
+
+`today.json` and `explore.json` have a top-level **`localized`**, keyed by the `oracle_id` of every card in the file (wherever an `oracle_id` appears in it), then by language code (`ja`, `fr`, `it`, `es`, `de`), then the card as printed in that language:
+
+```json
+"localized": {
+  "33e3793c-098f-4897-88f3-9f9ce9081e0f": {
+    "ja": { "name": "驕慢な戦闘魔道士", "image": "https://cards.scryfall.io/normal/front/1/7/174c608e-9086-4de8-ae28-51f537884b07.jpg?1790683523" },
+    "fr": { "name": "Mage de bataille pompeux", "image": "https://cards.scryfall.io/normal/front/0/d/0d05d177-8b79-4717-9f16-ff3230101c4d.jpg?1790683507" }
+  },
+  "<double-faced oracle id>": {
+    "ja": {
+      "name": "秘密を掘り下げる者 // 昆虫の逸脱者",
+      "image": "https://cards.scryfall.io/normal/front/…jpg?…", "back_image": "https://cards.scryfall.io/normal/back/…jpg?…",
+      "faces": [{ "name": "秘密を掘り下げる者" }, { "name": "昆虫の逸脱者" }]
+    }
+  }
+}
+```
+
+- **A key is left out when there is no value.** A card with no printing in a language has no entry for it (and one with none in any language has no entry at all), so an app shows the English card for what is missing. Every key of an entry is optional.
+- **`name`** is the printed name: the card's `printed_name`; for a card with faces and none of its own, the faces' printed names joined with `" // "`, when every face has one; else the front face's.
+- **`image`** is the `normal`-size picture (`https://cards.scryfall.io/normal/…`) of the printing. The path never changes for a printing; the `?` timestamp changes when Scryfall replaces the scan. **`back_image`** is the back face's picture, present only for a double-faced card whose two faces both have one; a double-faced card with only one of them has neither `image` nor `back_image`. A scan Scryfall marks `missing` or `placeholder` is never published.
+- **`faces`** is there for a card with more than one face, one object per face in order, with the face's `name` (and, in `today.json`, its text); a face with nothing to say is `{}`.
+- **The printing** is normally the same for every language of a card, and is chosen so the picture matches the card the app shows. The English printing is the newest paper printing (by `released_at`), then the lowest collector number (compared as a number where it has digits), then the set code. For each language the entry comes from that language's printing of the **same set and collector number** when it has one with a usable picture; otherwise (so that language does not share the printing) from that language's own newest paper printing with a usable picture. Tokens, art series cards, emblems, vanguard, scheme and planar cards, and printings not available in paper are never chosen.
+- **Text, `today.json` only.** There the entry also has **`type_line`**, **`text`** and **`flavor_text`** (the printed type line, rules text and flavour text; each left out when the printing has none), and each of `faces` has the same three, so a card opened from Today reads in full offline. `explore.json` has the name and pictures only, as it holds many more cards.
+- **Size.** About 55 KB gzipped in `explore.json` (175 KB raw, over about 1,200 entries) and 10 KB gzipped in `today.json` (33 KB raw) added to the figures above. They change with the file, which is about daily.
+- **Missing.** A run with `LOCALIZE=0`, or one that could not read Scryfall's file and has no saved cards, publishes the file without `localized`. A run that could not read it but has the last good run's cards (`state/localized.json.gz`) publishes those instead, so a card new that day may be missing from it. Decode a missing `localized` as empty, and skip an entry that cannot be read rather than failing the file.
 
 ## `archetypes/{archetype_id}.json`
 
@@ -522,23 +552,29 @@ This example is the generator's real output for the files of the 4 October run, 
     }
   },
   "commander": {
-    "slug": "avacyn-angel-of-horror", "name": "Avacyn, Angel of Horror", "scryfall_id": "ff65f46b-0f82-49b8-93b9-7ac0243ce941", "color_identity": ["B"],
+    "slug": "avacyn-angel-of-horror", "name": "Avacyn, Angel of Horror", "oracle_id": "…", "scryfall_id": "ff65f46b-0f82-49b8-93b9-7ac0243ce941", "color_identity": ["B"],
     "decks": 1722, "previous_decks": 1147, "rise": 575, "rise_percent": 50.1, "since": "2026-09-30",
     "days": 5, "rise_per_day": 115.0, "rise_percent_per_day": 10.03,
     "url": "https://edhrec.com/commanders/avacyn-angel-of-horror",
     "top_cards": [
-      {"name": "Dark Ritual", "decks": 1459, "share": 84.7, "synergy": 0.17},
-      {"name": "Gray Merchant of Asphodel", "decks": 1445, "share": 83.9, "synergy": 0.34},
-      {"name": "Jet Medallion", "decks": 1315, "share": 76.4, "synergy": 0.14}
+      {"name": "Dark Ritual", "oracle_id": "…", "decks": 1459, "share": 84.7, "synergy": 0.17},
+      {"name": "Gray Merchant of Asphodel", "oracle_id": "…", "decks": 1445, "share": 83.9, "synergy": 0.34},
+      {"name": "Jet Medallion", "oracle_id": "…", "decks": 1315, "share": 76.4, "synergy": 0.14}
     ],
     "synergy_cards": [
-      {"name": "The Sibsig Ceremony", "decks": 1118, "share": 64.9, "synergy": 0.63},
-      {"name": "Blood Vassal", "decks": 223, "share": 13.0, "synergy": 0.13},
-      {"name": "H.E.R.B.I.E. Scout Unit", "decks": 117, "share": 6.8, "synergy": 0.06}
+      {"name": "The Sibsig Ceremony", "oracle_id": "…", "decks": 1118, "share": 64.9, "synergy": 0.63},
+      {"name": "Blood Vassal", "oracle_id": "…", "decks": 223, "share": 13.0, "synergy": 0.13},
+      {"name": "H.E.R.B.I.E. Scout Unit", "oracle_id": "…", "decks": 117, "share": 6.8, "synergy": 0.06}
     ],
     "attribution": {"name": "EDHREC", "url": "https://edhrec.com"}
   },
-  "preview": { "card": null }
+  "preview": { "card": null },
+  "localized": {
+    "33e3793c-098f-4897-88f3-9f9ce9081e0f": {
+      "ja": { "name": "驕慢な戦闘魔道士", "image": "https://cards.scryfall.io/normal/front/1/7/174c608e-9086-4de8-ae28-51f537884b07.jpg?1790683523", "type_line": "…", "text": "…" },
+      "fr": { "name": "Mage de bataille pompeux", "image": "https://cards.scryfall.io/normal/front/0/d/0d05d177-8b79-4717-9f16-ff3230101c4d.jpg?1790683507", "type_line": "…", "text": "…" }
+    }
+  }
 }
 ```
 
@@ -575,6 +611,7 @@ The uprising EDH commander: the commander whose deck count on EDHREC rose fastes
 - **The ranking.** The checks of two commanders can be days or weeks apart (each run refreshes the longest unchecked, and a run can refresh more or fewer), so the commanders that clear the floor are ranked by their rise a day: **`rise_percent_per_day`**, the percent rise over the **`days`** between the dates of the two checks (at least 1). Ties go to the larger `rise_per_day`, then the larger `rise`, then the slug. The floor is on the whole rise, not the rise a day.
 - **`null`** when no commander clears the floor, on the first run (there is no snapshot to compare with yet), and on a run that refreshed no commanders (`EDHREC_COMMANDERS_PER_RUN=0` or EDHREC unreachable).
 - **The fields.** **`slug`** (its `edh/commanders/{slug}.json`), **`name`**; **`scryfall_id`** (the printing EDHREC shows) and **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) as EDHREC has them, `null` when the run has no page for it; **`decks`**, **`previous_decks`**, **`rise`** (`decks` less `previous_decks`) and **`rise_percent`** (to one decimal); **`since`**, the day (`yyyy-MM-dd`) EDHREC gave `previous_decks`, so the rise is "since 30 September"; **`days`**, the days from `since` to this run's check (at least 1); **`rise_per_day`** (`rise` over `days`, to one decimal) and **`rise_percent_per_day`** (`rise_percent` over `days`, unrounded first, to two decimals), added on 5 October 2026, so decode them as optional; **`url`**, its page on EDHREC; **`attribution`**, `{"name": "EDHREC", "url": "https://edhrec.com"}`.
+- **`oracle_id`** is on the commander and on each of its `top_cards` and `synergy_cards`, matched from the name against Scryfall's oracle cards, so `localized` and Scryfall can be joined on it. It is `null` when Scryfall's catalog has no card of that name, or when the run could not load the catalog. Added on 11 October 2026, so decode it as optional.
 - **The decks' breakdown**, from the commander's `edh/commanders/{slug}.json`: **`top_cards`**, the first three cards of its Top Cards (the cards most of its decks play), and **`synergy_cards`**, the first three of its High Synergy Cards (the cards its decks play far more than other decks of its colours; EDHREC now calls the section High Lift Cards, and either is used). Each has **`name`**, **`decks`** (how many of the commander's decks play it), **`share`** (that as a percent of the commander's decks, to one decimal) and **`synergy`** (EDHREC's score, as in `edh/commanders/{slug}.json`; `null` when it has none). Either list is `[]` when the page has no such section.
 
 ### `preview`
@@ -627,13 +664,15 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
       "cards": [{ "name": "Brainstorm", "decks": 28385, "of_decks": 40779, "synergy": 0.28 }]
     }
   ],
-  "average_deck": [{ "header": "Lands", "cards": ["Island"] }]
+  "average_deck": [{ "header": "Lands", "cards": ["Island"] }],
+  "oracle_ids": { "Vivi Ornitier": "…", "Brainstorm": "…", "Island": "…" }
 }
 ```
 
 - **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) and **`scryfall_id`** (the printing EDHREC shows for the commander) are EDHREC's, on a page written from 5 October 2026; an older page has neither, and either is `null` when EDHREC has none.
 - **`sections`** are EDHREC's own groupings: `newcards`, `highsynergycards` (which EDHREC renamed `highliftcards`, High Lift Cards, in October 2026), `topcards`, `gamechangers`, then by card type. A card's `decks` of `of_decks` is how many of this commander's decks play it, and `synergy` is EDHREC's synergy score (0.28 means 28 percentage points more than other decks of the same colours would play it).
 - **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
+- **`oracle_ids`** maps the commander's `name`, every card name in `sections` and every name in `average_deck` to its Scryfall oracle id. A name the catalog doesn't know is left out, so the object is `{}` on a page written by a run that couldn't load the catalog, and a page written before 11 October 2026 has none: decode it as optional and look a missing name up by name.
 - Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
 - Each run refreshes `EDHREC_COMMANDERS_PER_RUN` commanders (150 by default; the scheduled workflow sets 300, over about 4,200 commanders, so each comes round about every two weeks), longest unchecked first, so a commander may be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
 

@@ -73,11 +73,14 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |
 | `MAX_NEW_DECKS` | `400`, `1500` in `ops/scrape.sh` | New decklists per format per run. `DECKS_PER_RUN` caps the total |
 | `DECKS_PER_RUN` | `800` | New decklists per run, all formats together |
+| `DECK_RESOLVE_PER_RUN` | `300` | Published decklists read again per run to name entries the card catalog could not name when they were saved; each deck is tried 3 times |
 | `DECK_CONCURRENCY` | `2` | Decklists downloaded at once |
 | `DECK_DELAY` | `2` | Median seconds between decklist batches, randomised, with a long pause now and then |
 | `DECK_MINUTES` | `40` | Minutes the decklist downloads may take, all formats together |
 | `CONCURRENCY` | `6` | Requests fetched at once from inside the page, for the pages other than decklists |
 | `REQUEST_DELAY` | `1` in `ops/scrape.sh` | Base seconds between those batches, plus up to 50% random extra |
+| `LOCALIZE` | `1`, `0` with `QUICK=1` | Add the `localized` map (printed names and pictures in ja, fr, it, es and de) to `today.json` and `explore.json`. It streams Scryfall's every-printing file, about 400 MB gzipped, so it adds a minute or two to a run; `0` skips it |
+| `LOCALIZE_ALL_CARDS_URL` | Scryfall's `all_cards` bulk file | Read another file instead; a `file://` URL works |
 
 ## Setup
 
@@ -112,11 +115,21 @@ No keys are needed. With none, a run starts from the live data: it downloads `sn
 QUICK=1 ops/scrape.sh                                   # modern only, few decks, no EDHREC, locator, premier or movers
 QUICK=1 FORMATS=pauper,vintage MAX_NEW_DECKS=50 ops/scrape.sh  # any setting overrides the preset
 QUICK=1 MOVERS=1 ops/scrape.sh                          # with price movers and today.json's preview (downloads Scryfall's bulk file)
+QUICK=1 LOCALIZE=1 ops/scrape.sh                        # with the localized names (downloads Scryfall's 400 MB all_cards file)
 ops/scrape.sh                                           # the full daily run, without the upload
 SYNC=none QUICK=1 ops/scrape.sh                         # from nothing, like a first run
 ```
 
-`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0` and `MOVERS=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
+`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0`, `MOVERS=0` and `LOCALIZE=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
+
+`ops/backfill_oracle_ids.py DIR` is a one-off: it reads the published decks listed in `DIR/state/deck-ids.json` (from `DATA_URL`) and adds those with an entry lacking an `oracle_id` to `DIR/state/unresolved-deck-ids.json`, for the next run to name. Run it against a work dir freshly populated from the live state, so the merge keeps the tries already recorded, then upload the result to R2 before the next scheduled run, because that run syncs `state/` down from R2 and would overwrite a file that only exists locally:
+
+```bash
+python3 ops/fetch_live.py DIR
+scraper/.venv/bin/python ops/backfill_oracle_ids.py DIR
+aws s3 cp DIR/state/unresolved-deck-ids.json "s3://$R2_BUCKET/state/unresolved-deck-ids.json" \
+  --endpoint-url "$R2_ENDPOINT" --content-type application/json --cache-control "no-cache"
+```
 
 **In the app.** A Debug build reads the Explore files from a folder instead of the feed when launched with `-exploreFixture <path to explore.json>`; the folder must hold the files where the feed does, as `scraper/work/` does after a run. The simulator reads the Mac's files, so give the absolute path. In Xcode, add it under the scheme's Run > Arguments Passed On Launch, or launch an installed build with:
 
@@ -144,6 +157,10 @@ A publishing run always starts from R2 itself, never from the HTTPS copy. Nothin
 ## Card catalog
 
 `generators/` holds the three Swift programs that used to live in the MTGImageHash repository, unchanged: `ImageHashIndexer` (Vision feature prints of every card face, incremental patches over a master), `PullOdds` (MTGJSON booster odds) and `Prices` (the MTGJSON price catalog). `.github/workflows/catalog.yml` runs them once a day at 10:17 UTC on a macOS runner, through `ops/catalog.sh`, and publishes to `catalog/` on R2, so the app's base URL becomes `https://data.mooligan.com/catalog`. The file layout is documented in `generators/README.md`. Run the workflow once with `seed_from_pages` to copy the current GitHub Pages output into R2 first, so the indexer's first run is incremental. The MTGImageHash workflow keeps GitHub Pages current until the app has switched.
+
+## Localized names
+
+After `today.json` is built, each run adds a `localized` map to it and to `explore.json`: the printed name and picture of each card they show, in Japanese, French, Italian, Spanish and German (`today.json` also gets the type line and rules text). It reads Scryfall's every-printing file (`all_cards`, about 400 MB gzipped, 2.5 to 3 GB unpacked) once, as a stream, so a run takes one to two minutes longer and holds under 100 MB; `LOCALIZE=0` skips it. A run saves the cards it found, with their text, to `state/localized.json.gz` (tens of KB). When Scryfall's file cannot be read, the run fills the map from that file instead and logs a warning; with no saved file the two files go out without `localized`, with a warning too. Neither fails the run. See `docs/data-format.md`.
 
 ## Price movers
 

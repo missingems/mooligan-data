@@ -20,6 +20,8 @@ log = logging.getLogger(__name__)
 BULK_DATA_URL = "https://api.scryfall.com/bulk-data/oracle-cards"
 # Every printing, for the price movers, which are priced per printing.
 DEFAULT_CARDS_URL = "https://api.scryfall.com/bulk-data/default-cards"
+# Every printing in every language, for the localized names and pictures Explore shows.
+ALL_CARDS_URL = "https://api.scryfall.com/bulk-data/all-cards"
 # Scryfall asks every client for a descriptive User-Agent and an Accept header.
 HEADERS = {"User-Agent": "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)", "Accept": "application/json"}
 
@@ -68,15 +70,21 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
     return catalog
 
 
-def bulk_cards(download: str) -> Iterator[dict]:
-    """Each card of a Scryfall bulk file, streamed a line at a time so the file is never held whole."""
+def bulk_lines(download: str) -> Iterator[bytes]:
+    """Each line of a Scryfall bulk file as raw bytes, streamed so the file is never held whole."""
     request = urllib.request.Request(download, headers=HEADERS)
     with urllib.request.urlopen(request, timeout=120) as response:
         stream = gzip.GzipFile(fileobj=response) if download.endswith(".gz") else response
         for line in stream:
             line = line.strip()
             if line:
-                yield json.loads(line)
+                yield line
+
+
+def bulk_cards(download: str) -> Iterator[dict]:
+    """Each card of a Scryfall bulk file, streamed a line at a time so the file is never held whole."""
+    for line in bulk_lines(download):
+        yield json.loads(line)
 
 
 def _mana_cost(card: dict) -> str:

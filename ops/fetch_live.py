@@ -27,12 +27,14 @@ STATE_FILES = [
     "state/duplicate-event-ids.json",
     "state/empty-event-ids.json",
     "state/missing-deck-ids.json",
+    "state/unresolved-deck-ids.json",
     "state/edhrec.json",
     "state/edhrec-commanders.json",
     "state/card-hashes.json",
     "state/explore-manifest.json",
     "state/printing-ids.json.gz",
     "state/today-commanders.json",
+    "state/localized.json.gz",
 ]
 
 

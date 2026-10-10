@@ -120,23 +120,44 @@ def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
     return [f"movers/{format}.json" for format in files]
 
 
-def publish_today(directory: Path, report, new_printings: Optional[NewPrintings] = None) -> list:
+def publish_today(directory: Path, report, new_printings: Optional[NewPrintings] = None, catalog: Optional[dict] = None) -> list:
     """One response for Explore's Today widgets, from the breakouts and movers written above, as today.json.
 
     It also reads the EDHREC commander state and pages this run's `store.finish` wrote (`state/edhrec-commanders.json`,
     `edh/commanders/{slug}.json`) to find the uprising commander, and keeps its counts in `state/today-commanders.json`
     for the next run, so it runs after `finish`.
 
-    `new_printings` is what the movers' read of Scryfall's printings found new, for its preview.
+    `new_printings` is what the movers' read of Scryfall's printings found new, for its preview. `catalog` is the
+    card catalog the run loaded, for the oracle ids of the commander and its cards.
     """
     from .today import write_today
 
     try:
-        return write_today(directory, datetime.now(timezone.utc), new_printings)
+        return write_today(directory, datetime.now(timezone.utc), new_printings, catalog)
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
         logging.exception("Today failed")
         report.errors.append(f"today: {error}")
         return []
+
+
+def publish_localized(directory: Path, report) -> list:
+    """The printed names and pictures of the cards in today.json and explore.json, as their `localized` map; it adds no files.
+
+    It rewrites those two files, so it runs after the last step that writes them. A failure is a warning, not an
+    error: the files stay as they were (or carry the last good run's cards, see `localized.localize`).
+    """
+    if os.environ.get("LOCALIZE", "1") != "1":
+        return []
+    from .localized import localize
+
+    try:
+        problems = localize(directory, os.environ.get("LOCALIZE_ALL_CARDS_URL") or None)
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("Localized failed")
+        report.warnings.append(f"localized: {error}")
+        return []
+    report.warnings.extend(problems)
+    return []
 
 
 def publish_manifest(directory: Path, report) -> list:
@@ -226,6 +247,7 @@ def main() -> int:
         catalog=catalog,
         fetch_commanders=edhrec.commanders,
         commander_limit=int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150")),
+        deck_resolve_limit=int(os.environ.get("DECK_RESOLVE_PER_RUN", "300")),
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
@@ -233,7 +255,8 @@ def main() -> int:
     # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview.
     new_printings = NewPrintings(read_seen(args.directory))
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
-    written += publish_today(args.directory, report, new_printings)
+    written += publish_today(args.directory, report, new_printings, catalog)
+    written += publish_localized(args.directory, report)
     # Last, after every file it lists.
     written += publish_manifest(args.directory, report)
 
