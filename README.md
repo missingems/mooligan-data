@@ -115,7 +115,7 @@ No keys are needed. With none, a run starts from the live data: it downloads `sn
 ```bash
 QUICK=1 ops/scrape.sh                                   # modern only, few decks, no EDHREC, locator, premier or movers
 QUICK=1 FORMATS=pauper,vintage MAX_NEW_DECKS=50 ops/scrape.sh  # any setting overrides the preset
-QUICK=1 MOVERS=1 ops/scrape.sh                          # with price movers and today.json's preview (downloads Scryfall's bulk file)
+QUICK=1 MOVERS=1 ops/scrape.sh                          # with price movers, today.json's preview and previews.json (downloads Scryfall's bulk file)
 QUICK=1 LOCALIZE=1 ops/scrape.sh                        # with the localized names (downloads Scryfall's 400 MB all_cards file)
 ops/scrape.sh                                           # the full daily run, without the upload
 SYNC=none QUICK=1 ops/scrape.sh                         # from nothing, like a first run
