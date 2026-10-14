@@ -33,6 +33,7 @@ STATE_FILES = [
     "state/card-hashes.json",
     "state/explore-manifest.json",
     "state/printing-ids.json.gz",
+    "state/printing-first-seen.json.gz",
     "state/today-commanders.json",
     "state/localized.json.gz",
 ]

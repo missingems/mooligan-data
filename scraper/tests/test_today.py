@@ -70,14 +70,14 @@ def test_the_best_card_of_each_of_three_formats_is_taken_before_a_second_card_of
     assert names(*files) == ["A", "C", "D"]
 
 
-def test_a_released_card_of_a_third_format_beats_a_second_new_card_of_a_format_already_listed():
+def test_a_strong_card_of_a_third_format_beats_a_second_card_of_a_format_already_listed():
     files = (
         breakouts("modern", row("A", decks=50), row("B", decks=40)),
         breakouts("legacy", row("C", decks=30)),
         breakouts("pauper", row("D", new=False, decks=90)),
     )
-    assert names(*files) == ["A", "C", "D"]
-    assert [card["new"] for card in cards_of(*files)] == [True, True, False]
+    assert names(*files) == ["D", "A", "C"]
+    assert [card["new"] for card in cards_of(*files)] == [False, True, True]
 
 
 def test_a_card_counts_for_its_busiest_format_when_the_formats_are_counted():
@@ -108,27 +108,29 @@ def test_the_cards_keep_their_ranked_order_when_a_later_format_adds_its_card():
         breakouts("legacy", row("C", decks=30)),
     )
     assert names(*files) == ["A", "B", "C"]
-    # New cards rank before released ones and the chosen cards stay in that order: Old C (legacy) is a third format, Old A is not.
+    # Old A is modern's best and Old C legacy's; New B is a second modern card, so New D (pauper) takes the third place.
     mixed = (
         breakouts("modern", row("Old A", new=False, decks=90), row("New B", decks=5)),
         breakouts("legacy", row("Old C", new=False, decks=80)),
         breakouts("pauper", row("New D", decks=4)),
     )
-    assert names(*mixed) == ["New B", "New D", "Old C"]
+    assert names(*mixed) == ["Old A", "Old C", "New D"]
 
 
-def test_new_cards_come_before_released_cards_even_when_a_released_card_has_more_decks():
+def test_a_released_card_with_more_decks_comes_before_a_new_card_and_new_only_breaks_a_tie():
     today = build_today({"modern": breakouts("modern", row("Old Staple", new=False, decks=90), row("Fresh Face", new=True, decks=6))}, None, NOW)
-    assert [card["name"] for card in today["breakouts"]] == ["Fresh Face", "Old Staple"]
-    assert [card["new"] for card in today["breakouts"]] == [True, False]
+    assert [card["name"] for card in today["breakouts"]] == ["Old Staple", "Fresh Face"]
+    assert [card["new"] for card in today["breakouts"]] == [False, True]
+    tie = breakouts("modern", row("Abe Old", new=False, previous_share=0.0), row("Zed Fresh", new=True))
+    assert names(tie) == ["Zed Fresh", "Abe Old"]
 
 
-def test_released_cards_fill_the_places_the_new_cards_leave():
+def test_the_strongest_cards_fill_the_places_whether_or_not_they_are_new():
     files = (
         breakouts("modern", row("New A", decks=5), row("Old A", new=False, decks=50), row("Old B", new=False, decks=40)),
         breakouts("legacy", row("New B", decks=6), row("Old C", new=False, decks=60)),
     )
-    assert names(*files) == ["New B", "New A", "Old C"]
+    assert names(*files) == ["Old C", "Old A", "Old B"]
 
 
 def test_cards_of_every_format_compete_and_the_decks_decide_when_each_is_in_one_format():
@@ -140,32 +142,40 @@ def test_cards_of_every_format_compete_and_the_decks_decide_when_each_is_in_one_
     assert pick(*files)["format"] == "modern"
 
 
-def test_a_card_new_in_two_formats_beats_a_card_new_in_one_format_with_more_decks():
+def test_a_card_breaking_out_in_two_formats_counts_its_decks_in_both():
     chosen = pick(
-        breakouts("vintage", row("Fetchland", decks=47, top8=8)),
-        breakouts("pioneer", row("Release", decks=5)),
-        breakouts("standard", row("Release", decks=6)),
+        breakouts("vintage", row("Fetchland", decks=47, top8=0)),
+        breakouts("pioneer", row("Release", decks=30)),
+        breakouts("standard", row("Release", decks=25)),
     )
-    assert chosen["name"] == "Release"
-    assert chosen["new"] is True
+    assert (chosen["name"], chosen["format"], chosen["decks"], chosen["new"]) == ("Release", "pioneer", 30, True)
+    # Neither format alone has more decks than the one-format card, and the sum does.
+    assert names(
+        breakouts("vintage", row("Fetchland", decks=47)),
+        breakouts("pioneer", row("Release", decks=30)),
+        breakouts("standard", row("Release", decks=10)),
+    ) == ["Fetchland", "Release"]
 
 
-def test_more_formats_win_first_then_summed_decks_then_summed_top8_then_name():
+def test_summed_decks_and_top8_win_first_then_the_gain_in_share_then_new_then_name():
+    # Decks over the formats decide, so 90 + 90 beats three formats of one deck each.
     assert names(
         breakouts("modern", row("Three", decks=1), row("Two", decks=90)),
         breakouts("legacy", row("Three", decks=1), row("Two", decks=90)),
         breakouts("pauper", row("Three", decks=1)),
-    ) == ["Three", "Two"]
+    ) == ["Two", "Three"]
     # Equal formats: the decks over both decide, so 9 + 9 beats 12 + 5.
     assert names(
         breakouts("modern", row("Even", decks=9), row("Lopsided", decks=12)),
         breakouts("legacy", row("Even", decks=9), row("Lopsided", decks=5)),
     ) == ["Even", "Lopsided"]
-    # Equal formats and decks: the top 8s over both decide.
+    # Equal decks: the top 8s over both decide.
     assert names(
         breakouts("modern", row("Few", decks=9, top8=1), row("Many", decks=9, top8=3)),
         breakouts("legacy", row("Few", decks=9, top8=1), row("Many", decks=9, top8=2)),
     ) == ["Many", "Few"]
+    # Equal decks and top 8s: the larger gain in share decides, whatever the name.
+    assert names(breakouts("modern", row("Narrow", share=5.0, previous_share=4.0), row("Wide", share=9.0, previous_share=0.0))) == ["Wide", "Narrow"]
     # All equal: the name decides.
     assert names(breakouts("modern", row("Zed"), row("Abe"))) == ["Abe", "Zed"]
 
@@ -203,7 +213,7 @@ def test_the_formats_list_every_format_that_has_the_card_with_the_busiest_first(
 
 
 def test_a_card_is_the_same_card_by_oracle_id_or_by_name_when_it_has_none():
-    fetchland = breakouts("vintage", row("Fetchland", decks=47))
+    fetchland = breakouts("vintage", row("Fetchland", decks=7))
     assert pick(breakouts("modern", row("Release", decks=5)), breakouts("legacy", row("Release", decks=6)), fetchland)["name"] == "Release"
     nameless = [{key: value for key, value in row("Release", decks=5).items() if key != "oracle_id"} for _ in range(2)]
     assert pick(breakouts("modern", nameless[0]), breakouts("legacy", nameless[1]), fetchland)["name"] == "Release"
@@ -217,23 +227,26 @@ def test_a_card_in_two_formats_is_listed_once():
     assert [card["name"] for card in listed] == ["Release"]
 
 
-def test_a_card_listed_among_the_new_cards_is_not_listed_again_among_the_released_ones():
+def test_a_card_is_listed_once_as_its_busiest_format_whether_or_not_it_is_new_there():
     listed = cards_of(
         breakouts("modern", row("Release", decks=5)),
         breakouts("legacy", row("Release", new=False, decks=50), row("Other Old", new=False, decks=10)),
     )
     assert [card["name"] for card in listed] == ["Release", "Other Old"]
-    # It shows the numbers of the format where it is new, and still lists the format where it is not.
-    assert (listed[0]["format"], listed[0]["decks"], listed[0]["new"], listed[0]["formats"]) == ("modern", 5, True, ["modern", "legacy"])
+    assert (listed[0]["format"], listed[0]["decks"], listed[0]["new"], listed[0]["formats"]) == ("legacy", 50, False, ["legacy", "modern"])
 
 
-def test_the_released_card_step_ranks_the_same_way():
-    chosen = pick(
-        breakouts("vintage", row("Staple", new=False, decks=47)),
-        breakouts("modern", row("Spread", new=False, decks=5)),
-        breakouts("legacy", row("Spread", new=False, decks=5)),
+def test_four_deck_techs_do_not_outrank_a_card_seeing_play_in_several_formats():
+    files = (
+        breakouts("standard", row("Cryomancer", new=False, decks=26, top8=4, share=13.5, previous_share=0.6)),
+        breakouts("pioneer", row("Cryomancer", new=False, decks=13, top8=3, share=9.4, previous_share=1.8)),
+        breakouts("modern", row("Cryomancer", new=False, decks=6, share=5.7, previous_share=0.6)),
+        breakouts("pauper", row("Tinder Farm", decks=4, share=1.7), row("Aqueduct", new=False, decks=36, top8=9, share=10.3, previous_share=3.2)),
+        breakouts("duel_commander", row("Solitary Cell", decks=4, share=9.1)),
     )
-    assert (chosen["new"], chosen["name"], chosen["format"]) == (False, "Spread", "modern")
+    listed = cards_of(*files)
+    assert [card["name"] for card in listed] == ["Cryomancer", "Aqueduct", "Solitary Cell"]
+    assert (listed[0]["format"], listed[0]["formats"], listed[0]["decks"]) == ("standard", ["standard", "modern", "pioneer"], 26)
 
 
 def test_released_cards_are_shown_even_when_no_format_has_a_new_card():

@@ -50,7 +50,7 @@ def test_each_listed_hash_is_the_sha256_of_that_files_bytes(tmp_path):
 
 
 def test_the_four_kinds_are_listed_and_nothing_else(tmp_path):
-    for path in ("explore.json", "today.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
+    for path in ("explore.json", "today.json", "previews.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
         put(tmp_path, path)
     for path in (
         "movers/all.json", "movers/modern.json", "snapshots/modern.json", "archetypes/modern-izzet-prowess.json", "events/66753.json",
@@ -61,12 +61,12 @@ def test_the_four_kinds_are_listed_and_nothing_else(tmp_path):
         put(tmp_path, path)
     write_manifest(tmp_path, NOW)
     assert list(listed(tmp_path)) == [
-        "breakouts/legacy.json", "breakouts/modern.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json", "today.json",
+        "breakouts/legacy.json", "breakouts/modern.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json", "previews.json", "today.json",
     ]
 
 
 def test_is_explore_path_names_exactly_the_four_kinds():
-    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
+    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
     assert not any(
         is_explore_path(path)
         for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "")

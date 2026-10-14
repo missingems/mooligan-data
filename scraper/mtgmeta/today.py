@@ -1,7 +1,7 @@
 """today.json: what matters today in one response, for Explore's Today widgets, published each run.
 
 Built from files already published: up to three breakout cards from `breakouts/{format}.json`, from three formats
-where three have one (new cards seeing play first, then released cards suddenly seeing play), the day's biggest mover
+where three have one (the strongest first: most decks and top 8s over the formats), the day's biggest mover
 and loser from `movers/all.json` with their price history, the EDH commander whose deck count rose fastest since
 EDHREC was last asked about it (from the commander check times in `state/edhrec-commanders.json` and the snapshot
 this file keeps of them), and a preview, one of the printings Scryfall added since the last run, from a set not released yet (see previews.py).
@@ -17,7 +17,7 @@ from typing import Dict, Iterable, List, Optional, Tuple
 
 from .cards import slug as card_slug
 from .movers import FORMATS
-from .previews import NewPrintings, pick
+from .previews import NewPrintings, pick, write_previews
 
 log = logging.getLogger(__name__)
 
@@ -82,29 +82,19 @@ def build_today(
 def _breakouts(breakouts: Dict[str, dict], archetype_pages) -> List[dict]:
     """Up to three cards, from three different formats where three formats have one.
 
-    The cards are ranked as one list (new cards seeing play first, then released cards that suddenly see play, one
-    entry per card), and the best-ranked card of each format comes first: a card whose busiest format already has a
-    card is taken only when fewer than three formats have a breakout. The cards keep their ranked order.
+    The cards are ranked as one list by strength (see `_rank`; a card new to a format only breaks a tie), one entry
+    per card, and the best-ranked card of each format comes first: a card whose busiest format already has a card is
+    taken only when fewer than three formats have a breakout. The cards keep their ranked order.
     """
-    found: Dict[bool, List[Tuple[str, dict]]] = {True: [], False: []}
-    everywhere: Dict[str, List[str]] = {}
+    cards: Dict[str, List[Tuple[str, dict]]] = {}
     for key, document in breakouts.items():
         format = document.get("format") or key
         for row in document.get("cards") or []:
-            found[bool(row.get("new"))].append((format, row))
-            everywhere.setdefault(_identity(row), []).append(format)
-    ranked: List[Tuple[str, dict, str]] = []
-    taken = set()
-    for new in (True, False):
-        cards: Dict[str, List[Tuple[str, dict]]] = {}
-        for format, row in found[new]:
             cards.setdefault(_identity(row), []).append((format, row))
-        for identity in sorted(cards, key=lambda card: _rank(card, cards[card])):
-            if identity in taken:
-                continue
-            taken.add(identity)
-            format, row = min(cards[identity], key=_home)
-            ranked.append((format, row, identity))
+    ranked: List[Tuple[str, dict, str]] = []
+    for identity in sorted(cards, key=lambda card: _rank(card, cards[card])):
+        format, row = min(cards[identity], key=_home)
+        ranked.append((format, row, identity))
     # The best card of each format, then, while there is room, the next best whatever its format.
     places: List[int] = []
     formats = set()
@@ -117,7 +107,7 @@ def _breakouts(breakouts: Dict[str, dict], archetype_pages) -> List[dict]:
             break
         if place not in places:
             places.append(place)
-    return [_card(format, row, everywhere[identity], archetype_pages) for format, row, identity in (ranked[place] for place in sorted(places))]
+    return [_card(format, row, [found for found, _ in cards[identity]], archetype_pages) for format, row, identity in (ranked[place] for place in sorted(places))]
 
 
 def _identity(row: dict) -> str:
@@ -125,11 +115,18 @@ def _identity(row: dict) -> str:
 
 
 def _rank(identity: str, rows: List[Tuple[str, dict]]) -> tuple:
-    """Most formats, then most decks and top 8s over them, then name."""
+    """Strongest first: the decks and top 8s added up over the formats the card breaks out in, then its largest
+    gain in share, then a card new to its busiest format before one that is not, then name.
+
+    A top 8 is a deck too, so it counts twice. Decks over the formats make a card that breaks out in several formats
+    strong and a four-deck card weak whatever its share; `new` says only that no deck of the weeks before played the
+    card, which a few decks of an obscure format do as easily as a release.
+    """
+    home = min(rows, key=_home)[1]
     return (
-        -len({format for format, _ in rows}),
-        -sum(row.get("decks", 0) for _, row in rows),
-        -sum(row.get("top8", 0) for _, row in rows),
+        -sum(row.get("decks", 0) + row.get("top8", 0) for _, row in rows),
+        -max(row.get("share", 0) - row.get("previous_share", 0) for _, row in rows),
+        not home.get("new"),
         rows[0][1].get("name", ""),
         identity,
     )
@@ -406,7 +403,8 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
 
     The preview needs `new_printings` read to the end of Scryfall's file. Without that (the movers were off, or the
     file could not be read through) it is null and the saved printing ids stay as they were; with it, they move
-    on to this run's once the file is written. The commander snapshot moves on to this run's every time.
+    on to this run's once the file is written, and previews.json is written next to it. The commander snapshot moves
+    on to this run's every time.
     """
     breakouts, movers_all = read_published(directory)
     checked, snapshot = read_commanders(directory)
@@ -415,8 +413,10 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
     document = build_today(breakouts, movers_all, now, finished.cards if finished else (), commander, _Pages(directory / "archetypes"))
     _with_oracle_ids(document, catalog)
     (directory / "today.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
+    written = ["today.json"]
     if finished:
+        written += write_previews(directory, now, finished)
         finished.save(directory)
     if checked:
         write_commander_snapshot(directory, checked)
-    return ["today.json"]
+    return written

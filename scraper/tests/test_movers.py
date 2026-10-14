@@ -88,19 +88,53 @@ def names(file, window, side):
     return [row["name"] for row in file["windows"][window][side]]
 
 
-def test_a_card_costs_its_cheapest_printing_each_day():
+def test_a_card_costs_its_cheapest_printing_among_those_priced_at_both_ends():
     cards = {"o1": card("Ragavan", pid(1), pid(2))}
-    # The old printing climbs; a reprint arrives a week ago, cheaper, and the card is cheaper to play.
+    # The old printing climbs; a reprint arrives a week ago, cheaper. It was not priced a week or a month ago, so it is no move then.
     prices = {pid(1): daily(*[1000] * 24 + [1500] * 7), pid(2): daily(*[800] * 7)}
     file = movers(cards, prices)["all"]
-    assert names(file, "30d", "losers") == ["Ragavan"]
-    row = file["windows"]["30d"]["losers"][0]
-    assert (row["price"], row["previous"], row["change"], row["percent"]) == (8.0, 10.0, -2.0, -20.0)
-    assert row["scryfall_id"] == pid(2) and row["set"] == "set2" and row["slug"] == "ragavan"
-    assert len(row["history"]) == 30 and row["history"][-1] == 8.0
-    # A week back the reprint wasn't out yet, and the old printing still cost 10.
-    assert file["windows"]["7d"]["losers"][0]["previous"] == 10.0
-    assert file["windows"]["1d"]["losers"] == []  # 8 both days, though the old printing went up
+    for window in ("7d", "30d"):
+        assert names(file, window, "losers") == []
+        [row] = file["windows"][window]["gainers"]
+        assert (row["name"], row["price"], row["previous"], row["change"], row["percent"]) == ("Ragavan", 15.0, 10.0, 5.0, 50.0)
+        assert row["scryfall_id"] == pid(1) and row["set"] == "set1" and row["slug"] == "ragavan"
+        assert len(row["history"]) == 30 and row["history"][-1] == 15.0
+    # Yesterday both were priced and the reprint was the cheaper, at 8 both days.
+    assert file["windows"]["1d"] == {"gainers": [], "losers": []}
+
+
+def test_a_card_whose_cheapest_printing_switches_between_days_moves_by_the_cheapest_of_each_day():
+    cards = {"o1": card("Ragavan", pid(1), pid(2))}
+    file = movers(cards, {pid(1): daily(1000, 1200), pid(2): daily(1100, 900)})["all"]
+    [row] = file["windows"]["1d"]["losers"]
+    assert (row["price"], row["previous"], row["percent"], row["scryfall_id"], row["set"]) == (9.0, 10.0, -10.0, pid(2), "set2")
+    assert row["history"][-2:] == [10.0, 9.0]
+    assert file["windows"]["1d"]["gainers"] == []
+
+
+def test_a_printing_priced_for_the_first_time_does_not_move_the_card():
+    cards = {"o1": card("Fatespinner", pid(1), pid(2))}
+    file = movers(cards, {pid(1): daily(1045, 1045, 1045), pid(2): daily(None, None, 95)})["all"]
+    assert names(file, "1d", "losers") == [] and names(file, "7d", "losers") == []
+    # Priced on both days, it is the card's price on both, and the card did not move.
+    file = movers(cards, {pid(1): daily(1045, 1045, 1045), pid(2): daily(None, 95, 95)})["all"]
+    assert names(file, "1d", "losers") == []
+
+
+def test_a_foil_only_printing_is_not_a_printing_of_the_card():
+    cards = printings(
+        [
+            scryfall("Fatespinner", pid(1), set="mrd"),
+            scryfall("Fatespinner", pid(2), set="plst", finishes=["foil"]),
+            scryfall("Foil Only Promo", pid(3), oracle="o2", finishes=["foil"]),
+            scryfall("Both Finishes", pid(4), oracle="o3", finishes=["nonfoil", "foil"]),
+        ]
+    )
+    assert cards["o1"]["printings"] == {pid(1): "mrd"}
+    assert set(cards) == {"o1", "o3"}
+    # The foil-only printing gets a 95 cent regular price: the card does not fall from 10.45 to 0.95.
+    file = movers(cards, {pid(1): daily(1045, 1045), pid(2): daily(None, 95)})["all"]
+    assert names(file, "1d", "losers") == [] and names(file, "7d", "losers") == []
 
 
 def test_gainers_and_losers_rank_by_percent_and_bulk_prices_stay_out():
@@ -144,7 +178,7 @@ def test_a_list_holds_at_most_the_limit():
 
 
 def scryfall(name, id, oracle="o1", **extra):
-    return {"id": id, "oracle_id": oracle, "name": name, "games": ["paper", "mtgo"], "layout": "normal", "set": "abc", "set_type": "expansion",
+    return {"id": id, "oracle_id": oracle, "name": name, "games": ["paper", "mtgo"], "finishes": ["nonfoil", "foil"], "layout": "normal", "set": "abc", "set_type": "expansion",
             "legalities": {"modern": "legal", "vintage": "restricted", "legacy": "banned", "penny": "legal", "duel": "not_legal"}, **extra}
 
 
@@ -157,7 +191,7 @@ def test_only_paper_printings_of_real_cards_count_and_legal_means_legal_or_restr
             scryfall("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", pid(4), oversized=True),
             scryfall("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", pid(5), set="xyz"),
             scryfall("Goblin", pid(6), oracle="o2", layout="token"),
-            {"id": pid(7), "name": "Delver of Secrets // Insectile Aberration", "games": ["paper"], "layout": "transform",
+            {"id": pid(7), "name": "Delver of Secrets // Insectile Aberration", "games": ["paper"], "finishes": ["nonfoil"], "layout": "transform",
              "card_faces": [{"oracle_id": "o3"}], "legalities": {}},
         ]
     )

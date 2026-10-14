@@ -35,7 +35,7 @@ def previewed(day, **extra):
 
 def watched(*cards, seen=("previous",)):
     """A NewPrintings that has watched `cards` go by, with the ids in `seen` known from the last run."""
-    new = NewPrintings(set(seen))
+    new = NewPrintings(set(seen), today=TODAY)
     list(new.watch(cards))
     return new
 
@@ -63,7 +63,7 @@ def test_a_first_run_finds_nothing_new_and_saves_every_id_it_saw(tmp_path):
     list(new.watch(stream))
     assert new.cards == [] and new.complete
     assert build_today({}, None, NOW, new.cards)["preview"] == {"card": None}
-    assert write_today(tmp_path, NOW, new) == ["today.json"]
+    assert write_today(tmp_path, NOW, new) == ["today.json", "previews.json"]
     assert json.loads((tmp_path / "today.json").read_text())["preview"] == {"card": None}
     assert read_seen(tmp_path) == {card["id"] for card in stream}
 
@@ -135,7 +135,7 @@ def test_only_released_new_printings_give_no_preview(tmp_path):
         printing("Long Ago", set="ccc", released="2025-01-01"), lair("Drop", released="2026-09-01"),
     )
     assert len(new.cards) == 4 and pick(new.cards, TODAY) is None
-    assert write_today(tmp_path, NOW, new) == ["today.json"]
+    assert write_today(tmp_path, NOW, new) == ["today.json", "previews.json"]
     assert json.loads((tmp_path / "today.json").read_text())["preview"] == {"card": None}
     assert read_seen(tmp_path) == new.ids
 
@@ -165,8 +165,19 @@ def test_among_upcoming_cards_a_previewed_card_beats_an_unpreviewed_one_and_the_
     assert ranking(plain, older, newer) == ["Newer", "Older", "Plain"]
 
 
-def test_among_upcoming_cards_without_previews_the_newest_release_wins():
-    assert ranking(printing("Soon", set="a", released="2026-10-20"), printing("Later", set="b", released="2026-12-01")) == ["Later", "Soon"]
+def test_among_upcoming_cards_the_release_date_does_not_rank():
+    soon = printing("Soon", set="b", released="2026-10-20")
+    later = printing("Later", set="a", released="2026-12-01")
+    assert ranking(soon, later) == ["Later", "Soon"]
+    assert ranking(later, soon) == ["Later", "Soon"]
+    assert ranking(printing("Soon", set="a", released="2026-10-20"), printing("Later", set="b", released="2026-12-01")) == ["Soon", "Later"]
+
+
+def test_a_card_previewed_today_with_a_far_release_beats_one_previewed_earlier_with_a_sooner_release():
+    earlier = printing("Earlier", set="aaa", released="2026-10-10", **previewed("2026-09-15"))
+    today = printing("Today", set="zzz", released="2027-03-01", **previewed("2026-10-04"))
+    assert ranking(earlier, today) == ["Today", "Earlier"]
+    assert ranking(today, earlier) == ["Today", "Earlier"]
 
 
 def test_ties_go_to_the_lower_set_code_then_the_lower_collector_number():
