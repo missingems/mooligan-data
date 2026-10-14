@@ -112,9 +112,10 @@ def _trimmed(card: dict) -> dict:
 def pick(cards: Iterable[dict], today: date) -> Optional[dict]:
     """The one preview card, as published, from the new printings (`NewPrintings.cards`); None when none is upcoming.
 
-    Only a printing released after `today` can be the preview, so one with no usable `released_at` cannot. Among those
-    a card's first printing comes before a reprint, then one Scryfall shows a preview for before one it does not
-    (the newest preview first), then the newest release, then the set code and collector number.
+    Only a printing released after `today` can be the preview, so one with no usable `released_at` cannot. That is
+    eligibility only: the release date does not rank. Among the eligible, a card's first printing comes before a
+    reprint, then the most recently previewed card first (a card with no preview date after those with one, since it was
+    added since the last run all the same), then the set code and collector number.
     """
     upcoming = [card for card in cards if _day(card.get("released_at")) > today.toordinal()]
     if not upcoming:
@@ -123,9 +124,9 @@ def pick(cards: Iterable[dict], today: date) -> Optional[dict]:
 
 
 def _order(card: dict) -> tuple:
-    """First printing before reprint, then the newest preview, the newest release, set and collector number."""
+    """First printing before reprint, then the newest preview, set and collector number."""
     previewed = _day((card.get("preview") or {}).get("previewed_at"))
-    return (bool(card.get("reprint")), -previewed, -_day(card.get("released_at")), card.get("set") or "", _number(card.get("collector_number")))
+    return (bool(card.get("reprint")), -previewed, card.get("set") or "", _number(card.get("collector_number")))
 
 
 def _published(card: dict) -> dict:

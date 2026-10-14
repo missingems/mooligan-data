@@ -165,8 +165,19 @@ def test_among_upcoming_cards_a_previewed_card_beats_an_unpreviewed_one_and_the_
     assert ranking(plain, older, newer) == ["Newer", "Older", "Plain"]
 
 
-def test_among_upcoming_cards_without_previews_the_newest_release_wins():
-    assert ranking(printing("Soon", set="a", released="2026-10-20"), printing("Later", set="b", released="2026-12-01")) == ["Later", "Soon"]
+def test_among_upcoming_cards_the_release_date_does_not_rank():
+    soon = printing("Soon", set="b", released="2026-10-20")
+    later = printing("Later", set="a", released="2026-12-01")
+    assert ranking(soon, later) == ["Later", "Soon"]
+    assert ranking(later, soon) == ["Later", "Soon"]
+    assert ranking(printing("Soon", set="a", released="2026-10-20"), printing("Later", set="b", released="2026-12-01")) == ["Soon", "Later"]
+
+
+def test_a_card_previewed_today_with_a_far_release_beats_one_previewed_earlier_with_a_sooner_release():
+    earlier = printing("Earlier", set="aaa", released="2026-10-10", **previewed("2026-09-15"))
+    today = printing("Today", set="zzz", released="2027-03-01", **previewed("2026-10-04"))
+    assert ranking(earlier, today) == ["Today", "Earlier"]
+    assert ranking(today, earlier) == ["Today", "Earlier"]
 
 
 def test_ties_go_to_the_lower_set_code_then_the_lower_collector_number():
