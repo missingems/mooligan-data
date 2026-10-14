@@ -35,7 +35,7 @@ def previewed(day, **extra):
 
 def watched(*cards, seen=("previous",)):
     """A NewPrintings that has watched `cards` go by, with the ids in `seen` known from the last run."""
-    new = NewPrintings(set(seen))
+    new = NewPrintings(set(seen), today=TODAY)
     list(new.watch(cards))
     return new
 
@@ -63,7 +63,7 @@ def test_a_first_run_finds_nothing_new_and_saves_every_id_it_saw(tmp_path):
     list(new.watch(stream))
     assert new.cards == [] and new.complete
     assert build_today({}, None, NOW, new.cards)["preview"] == {"card": None}
-    assert write_today(tmp_path, NOW, new) == ["today.json"]
+    assert write_today(tmp_path, NOW, new) == ["today.json", "previews.json"]
     assert json.loads((tmp_path / "today.json").read_text())["preview"] == {"card": None}
     assert read_seen(tmp_path) == {card["id"] for card in stream}
 
@@ -135,7 +135,7 @@ def test_only_released_new_printings_give_no_preview(tmp_path):
         printing("Long Ago", set="ccc", released="2025-01-01"), lair("Drop", released="2026-09-01"),
     )
     assert len(new.cards) == 4 and pick(new.cards, TODAY) is None
-    assert write_today(tmp_path, NOW, new) == ["today.json"]
+    assert write_today(tmp_path, NOW, new) == ["today.json", "previews.json"]
     assert json.loads((tmp_path / "today.json").read_text())["preview"] == {"card": None}
     assert read_seen(tmp_path) == new.ids
 

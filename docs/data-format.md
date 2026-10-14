@@ -5,7 +5,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
-| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
+| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
@@ -17,20 +17,21 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
 | `today.json` | One response for Explore's Today widgets: up to three breakout cards, the day's biggest mover and loser with their price history, the uprising EDH commander, and a preview | `max-age=300` |
+| `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
 ## Suggested app flow
 
 0. For a landing screen (an Explore tab), fetch `explore.json` alone: it has each main format's top archetypes and latest events in a few tens of KB, so nothing else has to download first.
-   To keep the Explore files (`explore.json`, `today.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
+   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
@@ -77,14 +78,15 @@ The SHA-256 of each Explore file, so an app that keeps them can tell from one sm
     "breakouts/legacy.json": { "sha256": "1b6e…" },
     "explore.json": { "sha256": "9d40…" },
     "popular-cards/modern.json": { "sha256": "e7a2…" },
+    "previews.json": { "sha256": "52b9…" },
     "today.json": { "sha256": "04cf…" }
   }
 }
 ```
 
-- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
 - **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
-- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
+- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
 - **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
 - **Using it.** Fetch `explore-manifest.json`, compare each `files[path].sha256` with the hash of the copy you hold, and download only the files that differ. For a path the manifest does not list, or when the manifest is a 404, ask for the file itself, for example with `If-None-Match`. A cache can hand out the previous copy of a file for up to its `max-age`, so if a download still differs from the manifest, keep it and check again at the next manifest.
 
@@ -619,7 +621,7 @@ The uprising EDH commander: the commander whose deck count on EDHREC rose fastes
 
 ### `preview`
 
-Unchanged from schema 1. **`preview`** holds exactly one card, never a list: a printing Scryfall added since the last run, from a set not released yet. Each run saves the id of every printing in Scryfall's default-cards bulk file (`state/printing-ids.json.gz`), and a printing whose id the last run did not have is new. Tokens, art series cards, emblems and other memorabilia, minigame inserts, oversized cards and digital-only printings are never the preview. Of the rest, only a new printing whose `released_at` is after the day of `generated_at` (in UTC) can be it; a printing released that day or earlier, or with no `released_at` or one that is not a date, cannot. Among those, the order is: a card's first printing before a reprint (Scryfall's `reprint`), so a new card wins over a new printing of an old card, as most of what Scryfall lists ahead of a release is reprints and promos; then the most recently previewed first (`previewed_at`), with one Scryfall has no preview date for after those it has, since it was added since the last run all the same; and ties go to the set code, then the collector number. The release date only decides who is eligible, never the order: a card previewed today beats one previewed earlier, however much later it is released.
+Unchanged from schema 1. **`preview`** holds exactly one card, never a list: a printing Scryfall added since the last run, from a set not released yet. (The whole list of what was added in the last 7 days is [`previews.json`](#previewsjson).) Each run saves the id of every printing in Scryfall's default-cards bulk file (`state/printing-ids.json.gz`), and a printing whose id the last run did not have is new. Tokens, art series cards, emblems and other memorabilia, minigame inserts, oversized cards and digital-only printings are never the preview. Of the rest, only a new printing whose `released_at` is after the day of `generated_at` (in UTC) can be it; a printing released that day or earlier, or with no `released_at` or one that is not a date, cannot. Among those, the order is: a card's first printing before a reprint (Scryfall's `reprint`), so a new card wins over a new printing of an old card, as most of what Scryfall lists ahead of a release is reprints and promos; then the most recently previewed first (`previewed_at`), with one Scryfall has no preview date for after those it has, since it was added since the last run all the same; and ties go to the set code, then the collector number. The release date only decides who is eligible, never the order: a card previewed today beats one previewed earlier, however much later it is released.
 
 **`card`** is `null` when there is none (as in the example): on a day Scryfall added no printing from a set not released yet, on the first run (it only saves the ids to compare with), and on a run that could not read Scryfall's file to its end or skipped the movers (`MOVERS=0`). Those last two leave the saved ids as they were, so the next run still finds the printings they missed. A printing that was new on a day with no card is not offered again, since the next run saves its id; so `card` is often `null`, and an app should show nothing for it rather than an older preview.
 
@@ -644,6 +646,39 @@ It has Scryfall's **`name`** (both faces of a double-faced card, as in `movers/`
 ### Schema 1
 
 The files of 4 and 5 October 2026 before the change are `"schema": 1`. They have no `breakouts`, `commander` or movers' `history`, and have instead an **`interesting_card`** object holding one `card` (or `null`): the first card of the ranking then (new cards first), with **`kind`** `"new_card"` (step 1) or `"released_card"` (step 2), `format`, and the row's `name`, `oracle_id`, `type`, `decks`, `share`, `previous_share`, `first_seen`, `top8`, `wins` and `price`. Schema 2 drops `interesting_card`. An app holding a stored schema-1 copy can read its card as a one-card `breakouts` (`new` is `kind == "new_card"`, no `archetypes`) until the next download replaces it.
+
+## `previews.json`
+
+The cards being previewed: every printing Scryfall added to its default-cards bulk file in the last 7 days that is from a set not released yet. It is the list behind a "View N more" link, in place of every unreleased card on Scryfall (about 800 printings, most of them listed months before their release). It is built from the same read of Scryfall's file as `today.json`'s [`preview`](#preview), whose one card is always one of these (when it is picked at all), and uploaded next to it with the same `max-age`. It is published as compact JSON.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-14T06:12:40Z",
+  "window_days": 7,
+  "count": 2,
+  "cards": [
+    {
+      "name": "Overwrite the Multiverse", "oracle_id": "d037…", "scryfall_id": "c455…",
+      "set": "fra", "set_name": "Reality Fracture", "collector_number": "88", "released_at": "2026-10-23",
+      "first_seen": "2026-10-14", "previewed_at": "2026-10-13"
+    },
+    {
+      "name": "Marsh Flats", "oracle_id": "9a1c…", "scryfall_id": "01b7…",
+      "set": "fra", "set_name": "Reality Fracture", "collector_number": "311", "released_at": "2026-10-23",
+      "first_seen": "2026-10-11", "previewed_at": null
+    }
+  ]
+}
+```
+
+- **`cards`** holds a card for each printing (`scryfall_id`) that is eligible, was first seen within the last **`window_days`** (7) days and is not released yet. Eligible is as for `preview`: a paper card, not a token, art series card, emblem, other memorabilia, minigame insert, oversized card or digital-only printing. Not released yet means `released_at` is after the day of `generated_at` in UTC. A printing with no `released_at` or one that is not a date is not listed. A card leaves the list on the day it is released and 8 days after it was first seen: a printing first seen on 7 October is still listed on 14 October (`first_seen` is not more than 7 days before the day of `generated_at`) and gone on 15 October. **`count`** is `cards.length`. An empty list is a valid file: `{"cards": [], "count": 0}`.
+- **Order** is fixed, so the same data gives the same bytes: the newest **`first_seen`** first, then the most recent **`previewed_at`** (a card with none after those with one), then `set` and `collector_number` (natural order: 9 before 10 before 10a), then `scryfall_id`. The release date is never used to order the cards; it only decides who is listed.
+- **`first_seen`** (`yyyy-MM-dd`, UTC) is the day a run first saw the printing's id in Scryfall's file. It is the day the printing was added to Scryfall, to the day, as the scraper runs once a day. **`previewed_at`** is Scryfall's own preview date (`preview.previewed_at`), or `null`; it can be earlier than `first_seen`, as Scryfall adds some cards after a reveal. **`name`**, **`oracle_id`**, **`scryfall_id`**, **`set`**, **`set_name`**, **`collector_number`** and **`released_at`** are Scryfall's, as in `preview.card`. Decode every field but `name` and `scryfall_id` as optional.
+- **How it is kept.** Each run saves the id of every printing in the file (`state/printing-ids.json.gz`), and an eligible printing whose id the last run did not have gets today's date as its first-seen date, in `state/printing-first-seen.json.gz` (a gzipped JSON object of id to `yyyy-MM-dd`). Old dates are kept. An entry is dropped once its date is more than 30 days old or its printing was released more than 30 days ago, or the printing is no longer in Scryfall's file. Dropping an entry never makes a printing new again, since new means "not in `state/printing-ids.json.gz`", which is never pruned.
+- **Bootstrap.** The first run with no `state/printing-first-seen.json.gz` (the deploy of this file, or a lost state) cannot tell old printings from new ones, so every printing in the file counts as old, with no first-seen date, but for two kinds. An eligible printing whose id the previous run did not have is new, and gets today's date. An eligible, unreleased printing that has a Scryfall `preview.previewed_at` in the last 7 days (and not in the future) takes that date as its `first_seen`. So the list holds the cards revealed in the last week at once, rather than being empty for a week. After that run, nothing uses `previewed_at` to date a printing again. The first-ever run, with no ids saved either, bootstraps the same way. A run with a corrupt first-seen file bootstraps again.
+- **When it is not written.** On a run that skips the movers (`MOVERS=0`) or could not read Scryfall's file to its end, `previews.json` is not rewritten and the state is not moved on, so the file stays as published by the last run that read the file; check its `generated_at`. The next complete run finds the printings the failed run missed.
+- **App.** Fetch `previews.json` separately from `today.json` (it is listed in `explore-manifest.json`, so the manifest says when it changed) and show `count` and the cards. It is `max-age=300`, so a CDN or `URLSession` cache can serve an older copy for up to 5 minutes. A card's image and details are Scryfall's, keyed on `scryfall_id`.
 
 ## `edh/commanders/{slug}.json`
 

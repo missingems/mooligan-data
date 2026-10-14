@@ -19,7 +19,7 @@ from .edhrec import Edhrec
 from .locator import Locator, place_page
 from .models import RunReport
 from .pacing import DeckPacing, note_deck_block
-from .previews import NewPrintings, read_seen
+from .previews import NewPrintings, read_first_seen, read_seen
 from .published import fetch_published_decks
 from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
@@ -127,8 +127,8 @@ def publish_today(directory: Path, report, new_printings: Optional[NewPrintings]
     `edh/commanders/{slug}.json`) to find the uprising commander, and keeps its counts in `state/today-commanders.json`
     for the next run, so it runs after `finish`.
 
-    `new_printings` is what the movers' read of Scryfall's printings found new, for its preview. `catalog` is the
-    card catalog the run loaded, for the oracle ids of the commander and its cards.
+    `new_printings` is what the movers' read of Scryfall's printings found new, for its preview and for previews.json.
+    `catalog` is the card catalog the run loaded, for the oracle ids of the commander and its cards.
     """
     from .today import write_today
 
@@ -252,8 +252,8 @@ def main() -> int:
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
-    # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview.
-    new_printings = NewPrintings(read_seen(args.directory))
+    # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
+    new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
     written += publish_today(args.directory, report, new_printings, catalog)
     written += publish_localized(args.directory, report)

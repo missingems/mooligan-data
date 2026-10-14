@@ -17,7 +17,7 @@ from typing import Dict, Iterable, List, Optional, Tuple
 
 from .cards import slug as card_slug
 from .movers import FORMATS
-from .previews import NewPrintings, pick
+from .previews import NewPrintings, pick, write_previews
 
 log = logging.getLogger(__name__)
 
@@ -403,7 +403,8 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
 
     The preview needs `new_printings` read to the end of Scryfall's file. Without that (the movers were off, or the
     file could not be read through) it is null and the saved printing ids stay as they were; with it, they move
-    on to this run's once the file is written. The commander snapshot moves on to this run's every time.
+    on to this run's once the file is written, and previews.json is written next to it. The commander snapshot moves
+    on to this run's every time.
     """
     breakouts, movers_all = read_published(directory)
     checked, snapshot = read_commanders(directory)
@@ -412,8 +413,10 @@ def write_today(directory: Path, now: datetime, new_printings: Optional[NewPrint
     document = build_today(breakouts, movers_all, now, finished.cards if finished else (), commander, _Pages(directory / "archetypes"))
     _with_oracle_ids(document, catalog)
     (directory / "today.json").write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
+    written = ["today.json"]
     if finished:
+        written += write_previews(directory, now, finished)
         finished.save(directory)
     if checked:
         write_commander_snapshot(directory, checked)
-    return ["today.json"]
+    return written
