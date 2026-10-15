@@ -36,6 +36,7 @@ STATE_FILES = [
     "state/printing-first-seen.json.gz",
     "state/today-commanders.json",
     "state/localized.json.gz",
+    "state/rules-keywords.json",
 ]
 
 

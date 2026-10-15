@@ -36,7 +36,8 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `movers/{format}.json` lists the cards whose price rose or fell most over the last day, week and month, among the cards legal in a format, from the catalog's price history (a card costs its cheapest paper printing in the regular finish, compared like for like: a printing priced for the first time is no move).
 - `today.json` is one response for Explore's Today widgets: up to three breakouts (the strongest by decks and top 8s over the formats, `new` only breaking a tie) with the decks that play them, the day's biggest price mover and loser from `movers/all.json` with their price history, the uprising EDH commander (the one whose deck count on EDHREC rose most since EDHREC was last asked; EDHREC's data, used with their permission, so an app must credit them), and one preview: a printing Scryfall added since the last run from a set not released yet, or none on a day it added no such printing.
 - `previews.json` lists the printings Scryfall added in the last 7 days from sets not released yet (`window_days`, `count`, `cards`), ordered by the day each was first seen; it is the list behind Explore's "View N more", and its format is in `docs/data-format.md`.
-- `explore-manifest.json` lists the SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`), so the app fetches it first and downloads only the files whose hash differs. A file a run does not rewrite keeps its entry from the last manifest, which is kept in `state/explore-manifest.json`.
+- `rules/keywords.json` holds what Magic's Comprehensive Rules say about each keyword action and keyword ability, and the ability words, read from the text file Wizards links on magic.wizards.com/en/rules. Every run reads it, but the file changes only when Wizards publishes new rules.
+- `explore-manifest.json` lists the SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`), so the app fetches it first and downloads only the files whose hash differs. A file a run does not rewrite keeps its entry from the last manifest, which is kept in `state/explore-manifest.json`.
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
 
@@ -82,6 +83,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `REQUEST_DELAY` | `1` in `ops/scrape.sh` | Base seconds between those batches, plus up to 50% random extra |
 | `LOCALIZE` | `1`, `0` with `QUICK=1` | Add the `localized` map (printed names and pictures in ja, fr, it, es and de) to `today.json` and `explore.json`. It streams Scryfall's every-printing file, about 400 MB gzipped, so it adds a minute or two to a run; `0` skips it |
 | `LOCALIZE_ALL_CARDS_URL` | Scryfall's `all_cards` bulk file | Read another file instead; a `file://` URL works |
+| `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json`, which reads the Comprehensive Rules from Wizards' site |
 
 ## Setup
 
@@ -168,6 +170,10 @@ After `today.json` is built, each run adds a `localized` map to it and to `explo
 Each run also builds `movers/{format}.json` from `catalog/prices/history.bin.gz`, which the card catalog workflow publishes, and Scryfall's default-cards bulk file, which says which printings are one card and where it is legal. Set `MOVERS=0` to skip it, or `MOVERS_PRICES_URL` to read another price history.
 
 The same read of the default-cards file finds the preview in `today.json`. Each run saves the id of every printing in it to `state/printing-ids.json.gz`, a sorted, gzipped JSON array of about 2.4 MB, and a printing whose id the last run did not save is new. Ids, because a printing's Scryfall id never changes; a count and hash per set would say that a set changed but not which of its printings are new. A first run only saves the ids, so it has no preview. The same read also keeps `state/printing-first-seen.json.gz` (id to the day a run first saw an eligible printing, pruned after 30 days), from which `previews.json` lists the unreleased printings first seen in the last 7 days; the first run without that file counts every existing printing as old, except unreleased ones Scryfall says were previewed in the last 7 days. A run with `MOVERS=0`, or one that could not read the file to its end, has none either and leaves the saved ids as they were, so the next run still finds the printings it missed.
+
+## Keyword rules
+
+Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds the link to the text file on <https://magic.wizards.com/en/rules> (the file name carries its date, so the link is never hard-coded), downloads it, and keeps rule 701 (keyword actions), rule 702 (keyword abilities) and the ability words of rule 207.2c. The state keeps a fingerprint of what was published (`state/rules-keywords.json`), and a run that finds the same rules writes nothing, so the file, its hash in the manifest and its ETag stay as they were until Wizards publishes new rules. When Wizards' site cannot be read, or its page or text has changed shape, the run logs a warning and carries on, and the published file stays as it was. See `scraper/mtgmeta/rules.py` and `docs/data-format.md`.
 
 ## Premier play calendar
 

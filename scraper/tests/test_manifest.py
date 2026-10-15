@@ -49,27 +49,29 @@ def test_each_listed_hash_is_the_sha256_of_that_files_bytes(tmp_path):
     assert all(list(entry) == ["sha256"] for entry in listed(tmp_path).values())
 
 
-def test_the_four_kinds_are_listed_and_nothing_else(tmp_path):
-    for path in ("explore.json", "today.json", "previews.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
+def test_the_explore_files_are_listed_and_nothing_else(tmp_path):
+    for path in ("explore.json", "today.json", "previews.json", "rules/keywords.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
         put(tmp_path, path)
     for path in (
         "movers/all.json", "movers/modern.json", "snapshots/modern.json", "archetypes/modern-izzet-prowess.json", "events/66753.json",
         "decks/7966104.json", "cards/lightning-bolt.json", "cards/index.json", "edh/commanders/atraxa.json", "index.json",
         "locator/singapore.json", "premier/schedule.json", "state/deck-ids.json", "state/deck-cards/modern.json",
         "popular-cards/readme.txt", "popular-cards/nested/modern.json", "explore.json.bak", "other/today.json", "breakouts.json",
+        "rules/keywords.json.bak", "rules/other.json", "state/rules-keywords.json",
     ):
         put(tmp_path, path)
     write_manifest(tmp_path, NOW)
     assert list(listed(tmp_path)) == [
-        "breakouts/legacy.json", "breakouts/modern.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json", "previews.json", "today.json",
+        "breakouts/legacy.json", "breakouts/modern.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json",
+        "previews.json", "rules/keywords.json", "today.json",
     ]
 
 
-def test_is_explore_path_names_exactly_the_four_kinds():
-    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
+def test_is_explore_path_names_exactly_the_explore_files():
+    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "rules/keywords.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
     assert not any(
         is_explore_path(path)
-        for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "")
+        for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "rules/other.json", "rules/keywords.json.bak", "rules/", "")
     )
 
 
@@ -100,6 +102,21 @@ def test_the_previous_manifest_brings_only_explore_files_with_well_formed_hashes
         "breakouts/premodern.json": "nope",
     })
     assert read_previous(tmp_path) == {"today.json": {"sha256": good}}
+
+
+def test_the_previous_manifest_brings_the_keyword_rules_entry_when_the_run_wrote_no_rules(tmp_path):
+    put_state(tmp_path, {"rules/keywords.json": {"sha256": "f" * 64}, "rules/other.json": {"sha256": "f" * 64}})
+    assert read_previous(tmp_path) == {"rules/keywords.json": {"sha256": "f" * 64}}
+    put(tmp_path, "today.json")
+    write_manifest(tmp_path, NOW)
+    assert listed(tmp_path)["rules/keywords.json"] == {"sha256": "f" * 64}
+
+
+def test_a_rewritten_keyword_rules_file_is_hashed_over_its_previous_entry(tmp_path):
+    put_state(tmp_path, {"rules/keywords.json": {"sha256": "f" * 64}})
+    body = put(tmp_path, "rules/keywords.json", '{"schema":1,"keywords":{}}')
+    write_manifest(tmp_path, NOW)
+    assert listed(tmp_path) == {"rules/keywords.json": {"sha256": sha(body)}}
 
 
 def test_extra_keys_of_a_previous_entry_are_not_carried_over(tmp_path):
@@ -175,15 +192,16 @@ def test_the_time_is_utc_whatever_the_zone_it_is_given_in(tmp_path):
     assert build_manifest(tmp_path, datetime(2026, 10, 5, 3, 52, 10, tzinfo=zone), {})["generated_at"] == "2026-10-04T19:52:10Z"
 
 
-def test_a_full_feed_of_20_files_stays_small(tmp_path):
+def test_a_full_feed_of_21_files_stays_small(tmp_path):
     put(tmp_path, "explore.json", "x" * 1000)
     put(tmp_path, "today.json", "y" * 1000)
+    put(tmp_path, "rules/keywords.json", "z" * 1000)
     for format in FORMATS:
         put(tmp_path, f"popular-cards/{format}.json", format * 50)
         put(tmp_path, f"breakouts/{format}.json", format * 70)
     write_manifest(tmp_path, NOW)
-    assert len(listed(tmp_path)) == 20
-    assert (tmp_path / PATH).stat().st_size < 2300
+    assert len(listed(tmp_path)) == 21
+    assert (tmp_path / PATH).stat().st_size < 2350
 
 
 def test_it_lists_the_explore_file_a_store_run_wrote_by_its_hash(tmp_path):
@@ -207,7 +225,7 @@ def upload_lines():
 def test_the_workflow_uploads_the_manifest_after_the_files_it_lists_and_the_state_and_before_the_index():
     lines = upload_lines()
     manifest = lines["work/explore-manifest.json"]
-    for before in ("work/popular-cards", "work/breakouts", "work/today.json", "work/explore.json", "work/state"):
+    for before in ("work/popular-cards", "work/breakouts", "work/today.json", "work/rules/keywords.json", "work/explore.json", "work/state"):
         assert lines[before] < manifest, before
     assert manifest < lines["work/index.json"]
     assert lines["work/index.json"] == max(lines.values())
@@ -221,6 +239,17 @@ def test_the_workflow_uploads_the_manifest_only_when_there_is_one_with_a_minute_
     assert '"$R2/explore-manifest.json" --cache-control "public, max-age=60"' in lines[number]
 
 
+def test_the_workflow_uploads_the_keyword_rules_only_when_the_run_wrote_them_like_the_other_json_files():
+    lines = UPLOAD.read_text().splitlines()
+    number = upload_lines()["work/rules/keywords.json"]
+    assert lines[number - 1].strip() == "if [ -f work/rules/keywords.json ]; then"
+    assert lines[number + 1].strip() == "fi"
+    assert '"$R2/rules/keywords.json" --cache-control "public, max-age=300"' in lines[number]
+    # The cp wrapper gives every upload the JSON content type.
+    assert "--content-type application/json" in next(line for line in lines if line.strip().startswith("cp() {"))
+    assert "rules/keywords.json" in UPLOAD.read_text().split("PUBLISH=0: nothing was uploaded")[1]
+
+
 def written_after_each_step():
     """The functions main() adds to `written`, in the order it calls them."""
     return re.findall(r"written \+= (\w+)\(", inspect.getsource(entry.main))
@@ -231,6 +260,7 @@ def test_main_publishes_the_manifest_after_today_and_after_everything_else_it_wr
     assert steps.index("publish_localized") == steps.index("publish_today") + 1
     assert steps.index("publish_manifest") == steps.index("publish_localized") + 1
     assert steps[-1] == "publish_manifest" and steps.count("publish_manifest") == 1
+    assert steps.count("publish_rules") == 1 and steps.index("publish_rules") < steps.index("publish_today")
     source = inspect.getsource(entry.main)
     assert source.index("publish_today(") < source.index("publish_manifest(") < source.index('logging.info(\n        "Done')
 

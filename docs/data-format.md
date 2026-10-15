@@ -5,7 +5,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
-| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
+| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
@@ -18,20 +18,21 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
 | `today.json` | One response for Explore's Today widgets: up to three breakout cards, the day's biggest mover and loser with their price history, the uprising EDH commander, and a preview | `max-age=300` |
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
+| `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), and the last run's manifest (`state/explore-manifest.json`). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
 ## Suggested app flow
 
 0. For a landing screen (an Explore tab), fetch `explore.json` alone: it has each main format's top archetypes and latest events in a few tens of KB, so nothing else has to download first.
-   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
+   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
@@ -68,7 +69,7 @@ A format is missing from `formats` until its first scrape completes.
 
 ## `explore-manifest.json`
 
-The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 20 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
+The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 21 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
 
 ```json
 {
@@ -84,9 +85,9 @@ The SHA-256 of each Explore file, so an app that keeps them can tell from one sm
 }
 ```
 
-- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
 - **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
-- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
+- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings, and `rules/keywords.json` is written only on a run that finds new rules. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
 - **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
 - **Using it.** Fetch `explore-manifest.json`, compare each `files[path].sha256` with the hash of the copy you hold, and download only the files that differ. For a path the manifest does not list, or when the manifest is a 404, ask for the file itself, for example with `If-None-Match`. A cache can hand out the previous copy of a file for up to its `max-age`, so if a download still differs from the manifest, keep it and check again at the next manifest.
 
@@ -785,3 +786,40 @@ Wizards' premier play calendar, read from magic.gg's schedule page each run: eve
 - **`url`** is where magic.gg sends readers, usually an announcement article or the organiser's site.
 
 Regional Championship Qualifiers (RCQs) are store events and are not in this calendar: they appear in `locator/{place}.json` with `rules_level` of `COMPETITIVE`, and in the tournament feed's `events` with `kind` of `rcq` once results are posted.
+
+
+## `rules/keywords.json`
+
+What the Comprehensive Rules say about each keyword, so an app can show the rule behind a word on a card. Wizards publishes the rules as a text file a few times a year (on <https://magic.wizards.com/en/rules>); each run finds the link on that page, reads the file and keeps the keyword actions (rule 701), the keyword abilities (rule 702) and the ability words (rule 207.2c), and nothing else. The file is built on every daily scrape but **changes only when Wizards publishes new rules**: a run that finds the same rules writes nothing, so the file keeps its `generated_at`, its bytes, its hash in `explore-manifest.json` and its ETag, and `generated_at` is when the rules last changed here. It is compact JSON, about 200 KB (45 KB gzipped).
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-12T14:00:07Z",
+  "effective_date": "2026-09-25",
+  "source_url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020260925.txt",
+  "keywords": {
+    "flying": {
+      "name": "Flying",
+      "number": "702.9",
+      "rules": [
+        "Flying is an evasion ability.",
+        "A creature with flying can’t be blocked except by creatures with flying and/or reach. A creature with flying can block a creature with or without flying.",
+        "Multiple instances of flying on the same creature are redundant."
+      ]
+    }
+  },
+  "ability_words": {
+    "number": "207.2c",
+    "text": "An ability word appears in italics at the beginning of some abilities. Ability words are similar to keywords in that they tie together cards that have similar functionality, but they have no special rules meaning and no individual entries in the Comprehensive Rules.",
+    "words": ["adamant", "addendum", "alliance", "…", "will of the council"]
+  }
+}
+```
+
+- **`effective_date`** is the date from "These rules are effective as of …", as `YYYY-MM-DD`: show it as the version of the rules.
+- **`source_url`** is the text file the rules were read from, the link found on Wizards' rules page (the file name carries its date, so it changes with every edition).
+- **`keywords`** holds every named entry of rule 701 (keyword actions) and rule 702 (keyword abilities), about 260, keyed by the **lower-cased name** and in the order of the rules. The introductions of the two sections (701.1, 702.1) are not entries. **`name`** is the name as the rules write it, **`number`** is the rule's number (`702.9`), and **`rules`** are its subrules (`702.9a`, `702.9b`, …) in order, without their letters. Cross references in parentheses are removed ("(See rule 509, “Declare Blockers Step,” and rule 702.17, “Reach.”)"), and so are the examples. A cross reference written as a sentence stays ("See rule 701.28, “Convert.”"), and so does reminder text. Text uses the rules' curly quotes and apostrophes.
+- **`ability_words`** is rule 207.2c: **`text`** is its sentences before the list (what an ability word is), and **`words`** are the listed ability words, lower-cased as the rules write them and in their order (about 60; "descend 4" and "descend 8" are two words). An ability word has no entry of its own in the rules, so an app that shows 207.2c for it names the word itself.
+- **Looking a word up.** Keys are lower-cased and spelled as the rules spell them, curly apostrophes included (`council’s dilemma`), so lower-case a card's keyword and compare apostrophes the same way. The rules describe a family of keywords in one entry: every “[type]walk” (islandwalk, snow swampwalk) is under `landwalk`, and the typecycling variants (plainscycling, swampcycling) are under `cycling`. An ability word has no entry of its own: `ability_words` is all the rules say about it.
+- **When it is missing.** A run that cannot read Wizards' page or file (the site is down, the link or the text changed shape) logs a warning and does not fail; the file stays as last published, and the next run tries again. Until the first successful run the file is a 404.
