@@ -99,6 +99,25 @@ def publish_locator(directory: Path, report) -> list:
     return written
 
 
+def publish_rules(directory: Path, report) -> list:
+    """The keyword actions, keyword abilities and ability words of the Comprehensive Rules, as rules/keywords.json.
+
+    Nothing is written when the rules are the same as the last run's, or when Wizards' site cannot be read or its
+    rules cannot be parsed: the file stays published as it was. That is a warning, not an error, so the run passes.
+    """
+    if os.environ.get("KEYWORD_RULES", "1") != "1":
+        return []
+    from .rules import fetch, write_rules
+
+    user_agent = os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)")
+    try:
+        return write_rules(directory, datetime.now(timezone.utc), lambda url: fetch(url, user_agent))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Keyword rules failed", exc_info=True)
+        report.warnings.append(f"keyword rules: {error}")
+        return []
+
+
 def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
     """The cards whose price moved most, from the published price catalog, as movers/{format}.json.
 
@@ -252,6 +271,7 @@ def main() -> int:
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
+    written += publish_rules(args.directory, report)
     # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
     new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
