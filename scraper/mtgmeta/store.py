@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
-from .clusters import apply as apply_merging, plan as plan_merging
+from .clusters import apply as apply_merging, colors_by_deck, load_overrides, plan as plan_merging
 from .drilldown import build_archetype_pages, build_event_pages
 from .edhrec import due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
@@ -292,9 +292,14 @@ class SnapshotStore:
             log.warning("No card catalog: the archetypes of %s were not merged", format)
             return document
         lands = {key for key, card in catalog.items() if card.get("land")}
-        merging = plan_merging(document, self._deck_cards.get(format, {}), lands)
+        decks = self._deck_cards.get(format, {})
+        groups_path = self._root / "state" / "archetype-groups" / f"{format}.json"
+        previous = json.loads(groups_path.read_text()) if groups_path.exists() else {}
+        merging = plan_merging(document, decks, lands, overrides=load_overrides(format), previous=previous)
         log.info("Archetypes of %s: %d merged into others, %d results joined one", format, len(merging.leaders), len(merging.assigned))
-        return apply_merging(document, merging)
+        groups = {member: leader for member, (leader, _, _) in sorted(merging.leaders.items())}
+        self._write(f"state/archetype-groups/{format}.json", json.dumps(groups, sort_keys=True).encode())
+        return apply_merging(document, merging, colors_by_deck(document, decks, catalog))
 
     def _resolve_decks_again(self, fetch_decks, catalog: Dict[str, dict], limit: int = 300) -> None:
         """Gives oracle ids to decklist entries the catalog could not name when their deck was saved.

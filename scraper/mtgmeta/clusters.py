@@ -4,7 +4,8 @@
 group (see docs/data-format.md). `python -m mtgmeta clusters DIR --format modern --days 7` is a dry run: it reads DIR's
 unmerged snapshots (`state/snapshots/`, else `snapshots/`) and `state/deck-cards`, and prints the pairs of archetypes
 whose average lists look alike, the groups each window would merge into, which results with no archetype would join a
-group, and the groups `plan` publishes. See `similarity` for how two lists are compared.
+group, and the groups `plan` publishes with the overrides of `archetype_overrides.json` and the last run's groups
+(`state/archetype-groups/`). See `similarity` for how two lists are compared.
 """
 from __future__ import annotations
 
@@ -16,14 +17,20 @@ from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 from .cards import slug
+from .colors import COLORS, deck_colors
 from .explore import archetype_tiles
 from .popular import _deck_ids, _parse, deck_dates
 
 MAX_COPIES = 4
 THRESHOLD = 0.8
+# A member of the last run's group stays in it at this score; a new one needs `THRESHOLD`.
+STICKY_THRESHOLD = 0.75
+# A member takes over its group from the last run's leader only with this many times the leader's 30-day decks.
+LEADER_MARGIN = 1.2
 REPORT_THRESHOLD = 0.6
-# The windows a merge is looked for in, shortest first: the order that also ranks a group's leader.
+# The windows a merge is looked for in; the longest ranks a group's leader first.
 WINDOW_DAYS = (7, 14, 30)
+OVERRIDES = Path(__file__).with_name("archetype_overrides.json")
 
 Profile = Dict[str, float]
 
@@ -221,14 +228,44 @@ def window(document: dict, deck_cards: Dict[str, dict], lands: Set[str], days: i
 
 
 @dataclass
+class Overrides:
+    """A format's hand-kept rules from `archetype_overrides.json`, which win over the scores.
+
+    Two ids of one `keep_apart` set are never in one group, whether one would join the other or both one leader.
+    An archetype of an `always_merge` set joins the group of the first of its set placed (the biggest), whatever it
+    scores. `disabled` publishes the format unmerged.
+    """
+
+    keep_apart: List[Set[str]] = field(default_factory=list)
+    always_merge: List[Set[str]] = field(default_factory=list)
+    disabled: bool = False
+
+    def apart(self, a: str, b: str) -> bool:
+        return any(a in ids and b in ids for ids in self.keep_apart)
+
+
+def load_overrides(format: str, path: Path = OVERRIDES) -> Overrides:
+    """The overrides of one format: `{"disabled": [format, ...], "keep_apart": {format: [[id, ...], ...]}, "always_merge": {...}}`."""
+    data = json.loads(path.read_text()) if path.exists() else {}
+    return Overrides(
+        [set(ids) for ids in data.get("keep_apart", {}).get(format, [])],
+        [set(ids) for ids in data.get("always_merge", {}).get(format, [])],
+        format in data.get("disabled", []),
+    )
+
+
+@dataclass
 class Merging:
     """What `plan` decided for a snapshot: `leaders` maps each merged-away archetype id to `(leader id, score, days)`,
     the window `days` being the one it scored best in; `assigned` maps the deck id of a result with no archetype to
-    `(leader id, score)`; `names` is every archetype's name by id."""
+    `(leader id, score)`; `names` is every archetype's name by id. `kept` are the members that stayed in the last
+    run's group only by `STICKY_THRESHOLD` (scoring below `THRESHOLD`), and `forced` those an `always_merge` override joined."""
 
     leaders: Dict[str, Tuple[str, float, int]]
     assigned: Dict[str, Tuple[str, float]]
     names: Dict[str, str]
+    kept: Set[str] = field(default_factory=set)
+    forced: Set[str] = field(default_factory=set)
 
 
 def plan(
@@ -237,23 +274,32 @@ def plan(
     lands: Set[str],
     threshold: float = THRESHOLD,
     days: Sequence[int] = WINDOW_DAYS,
+    overrides: Optional[Overrides] = None,
+    previous: Optional[Dict[str, str]] = None,
 ) -> Merging:
     """One set of groups for a snapshot, used in every window, so an id means the same thing on every window's list.
 
     Each window's average lists are built from its own decks. The archetypes are taken biggest first, ranked by their
-    decks in the shortest window, then the next, then the longest (so a group carries the name the format plays now),
-    and each joins the leader it scores highest against in any window where both have lists, at `threshold` or more.
+    decks in the longest window, then the next, then the shortest. `previous` is the last run's groups (member id ->
+    leader id): each keeps its leader, unless a member now has more than `LEADER_MARGIN` times the leader's decks in
+    the longest window, and each of its members stays while it scores at least `STICKY_THRESHOLD` against the leader.
+    Any other archetype joins the leader it scores highest against in any window where both have lists, at
+    `threshold` or more, and otherwise leads its own group. `overrides` win over every score (see `Overrides`).
     A result with no archetype joins the leader whose own list over the longest window it scores highest against, at
     `threshold` or more.
     """
+    rules = overrides or Overrides()
     ordered = sorted(days)
     windows = {length: window(document, deck_cards, lands, length) for length in ordered}
     found = {length: {archetype.archetype_id: archetype for archetype in windows[length].archetypes} for length in ordered}
+    names = {key: archetype.name for length in ordered for key, archetype in found[length].items()}
+    if rules.disabled:
+        return Merging({}, {}, names)
     keys = set().union(*(set(archetypes) for archetypes in found.values()))
     longest = ordered[-1]
 
     def size(key: str) -> tuple:
-        counts = tuple(found[length][key].decks if key in found[length] else 0 for length in ordered)
+        counts = tuple(found[length][key].decks if key in found[length] else 0 for length in reversed(ordered))
         return counts + (found[longest][key].lists if key in found[longest] else 0, key)
 
     def score(member: str, leader: str) -> Tuple[float, int]:
@@ -264,30 +310,106 @@ def plan(
         ]
         return max(scored, key=lambda item: item[0]) if scored else (0.0, 0)
 
-    order = sorted(keys, key=size, reverse=True)
-    leaders = _leaders(order, score, threshold)
-    profiles = [(key, found[longest][key].profile) for key in order if key not in leaders and key in found[longest]]
+    last: Dict[str, List[str]] = {}
+    for member, leader in (previous or {}).items():
+        last.setdefault(leader, []).append(member)
+    groups: Dict[str, List[str]] = {}
+    stay: Dict[str, str] = {}
+    for leader, members in last.items():
+        present = [member for member in members if member in keys]
+        if leader not in keys or not present:
+            continue
+        biggest = max(present, key=size)
+        kept_leader = biggest if size(biggest)[0] > LEADER_MARGIN * size(leader)[0] else leader
+        groups[kept_leader] = [kept_leader]
+        for key in [leader] + present:
+            if key != kept_leader:
+                stay[key] = kept_leader
+
+    def allowed(key: str, leader: str) -> bool:
+        return not any(rules.apart(key, other) for other in groups[leader])
+
+    joined: Dict[str, Tuple[str, float, int]] = {}
+    kept: Set[str] = set()
+    forced: Set[str] = set()
+    for key in sorted(keys, key=size, reverse=True):
+        if key in groups:
+            continue
+        placed = [
+            joined[other][0] if other in joined else other
+            for ids in rules.always_merge
+            if key in ids
+            for other in sorted(ids - {key}, key=lambda other: size(other) if other in keys else (), reverse=True)
+            if other in joined or other in groups
+        ]
+        leader: Optional[str] = next((leader for leader in placed if allowed(key, leader)), None)
+        if leader is not None:
+            forced.add(key)
+        elif key in stay and stay[key] in groups and allowed(key, stay[key]) and score(key, stay[key])[0] >= STICKY_THRESHOLD:
+            leader = stay[key]
+            if score(key, leader)[0] < threshold:
+                kept.add(key)
+        else:
+            best: Optional[Tuple[str, float]] = None
+            for candidate in groups:
+                if allowed(key, candidate):
+                    value = score(key, candidate)[0]
+                    if best is None or value > best[1]:
+                        best = (candidate, value)
+            if best is not None and best[1] >= threshold:
+                leader = best[0]
+        if leader is None:
+            groups[key] = [key]
+            continue
+        joined[key] = (leader, *score(key, leader))
+        groups[leader].append(key)
+
+    profiles = [(key, found[longest][key].profile) for key in sorted(groups, key=size, reverse=True) if key in found[longest]]
     assigned: Dict[str, Tuple[str, float]] = {}
     for deck_id, (_, vector) in windows[longest].unassigned.items():
         if vector is None:
             continue
-        best: Optional[Tuple[str, float]] = None
+        best = None
         for key, leader_profile in profiles:
             value = similarity(vector, leader_profile)
             if best is None or value > best[1]:
                 best = (key, value)
         if best is not None and best[1] >= threshold:
             assigned[deck_id] = best
-    names = {key: archetype.name for length in ordered for key, archetype in found[length].items()}
-    return Merging(leaders, assigned, names)
+    return Merging(joined, assigned, names, kept, forced)
 
 
-def apply(document: dict, merging: Merging) -> dict:
+def colors_by_deck(document: dict, deck_cards: Dict[str, dict], catalog: Dict[str, dict]) -> Dict[str, List[str]]:
+    """The colours of every deck of the snapshot that has known ones: the pips its event page showed, else its stored list's."""
+    known: Dict[str, List[str]] = {}
+    for event in document.get("events", []):
+        for result in event.get("results", []):
+            if result.get("colors"):
+                known.setdefault(result["deck_id"], list(result["colors"]))
+    for deck_id, deck in deck_cards.items():
+        if deck_id not in known:
+            colors = deck_colors(deck.get("m", []) + deck.get("s", []), catalog)
+            if colors is not None:
+                known[deck_id] = colors
+    return known
+
+
+def majority_colors(deck_ids: Iterable[str], colors: Dict[str, List[str]]) -> Optional[List[str]]:
+    """The colours at least half of the decks with known colours play, in WUBRG order; None when no deck's are known."""
+    known = [colors[deck_id] for deck_id in deck_ids if deck_id in colors]
+    if not known:
+        return None
+    return [color for color in COLORS if 2 * sum(1 for deck in known if color in deck) >= len(known)]
+
+
+def apply(document: dict, merging: Merging, colors: Optional[Dict[str, List[str]]] = None) -> dict:
     """The snapshot as published: one archetype per group, under its leader's id and name.
 
     In each window's metagame a group is one tile: its members' shares and deck counts added up (the deck count null
-    when a member's is), and the leader's colours, key cards and featured deck (from the leader's tile in that window,
-    else its tile in the longest window that has one, else the biggest member's). The list is then in order of share.
+    when a member's is), and the leader's key cards and featured deck (from the leader's tile in that window, else its
+    tile in the longest window that has one, else the biggest member's). A group that merged anything has the colours
+    at least half of its decks with known colours play (`colors`, deck id -> colours; see `majority_colors`), over
+    every result of the group, and the leader's tile colours when none is known. The list is then in order of share.
     The leader's results are every member's, and the results with no archetype that joined it; an event result of a
     member, or one that joined, takes the leader's id and name. `merges` maps each merged-away id to its leader.
     The document is not changed; the one returned shares what it leaves alone with it.
@@ -298,6 +420,18 @@ def apply(document: dict, merging: Merging) -> dict:
         return merging.names.get(key, fallback)
 
     tiles = archetype_tiles(document.get("meta", {}))
+    group_decks: Dict[str, Set[str]] = {}
+    for key, history in document.get("archetypes", {}).items():
+        group_decks.setdefault(leader_of.get(key, key), set()).update(result["deck_id"] for result in history.get("results", []))
+    for event in document.get("events", []):
+        for result in event.get("results", []):
+            key = result.get("archetype_id")
+            if key:
+                group_decks.setdefault(leader_of.get(key, key), set()).add(result["deck_id"])
+            elif result["deck_id"] in merging.assigned:
+                group_decks.setdefault(merging.assigned[result["deck_id"]][0], set()).add(result["deck_id"])
+    merged_groups = set(leader_of.values()) | {leader for leader, _ in merging.assigned.values()}
+    group_colors = {key: majority_colors(group_decks.get(key, ()), colors or {}) for key in merged_groups}
     meta = {}
     for timeframe, listing in document.get("meta", {}).items():
         grouped: Dict[str, List[dict]] = {}
@@ -305,7 +439,8 @@ def apply(document: dict, merging: Merging) -> dict:
             grouped.setdefault(leader_of.get(tile["id"], tile["id"]), []).append(tile)
         merged = []
         for key, members in grouped.items():
-            if len(members) == 1 and members[0]["id"] == key:
+            shown = group_colors.get(key)
+            if len(members) == 1 and members[0]["id"] == key and shown is None:
                 merged.append(members[0])
                 continue
             base = next((tile for tile in members if tile["id"] == key), None) or tiles.get(key) or members[0]
@@ -317,6 +452,7 @@ def apply(document: dict, merging: Merging) -> dict:
                     "name": name(key, base["name"]),
                     "percentage": round(sum(tile["percentage"] for tile in members), 1),
                     "deck_count": None if any(count is None for count in counts) else sum(counts),
+                    "colors": shown if shown is not None else base.get("colors", []),
                 }
             )
         # sorted() is stable, so equal shares keep MTGGoldfish's order.
@@ -424,17 +560,32 @@ def report(format: str, days: int, document: dict, deck_cards: Dict[str, dict], 
     return lines
 
 
-def report_plan(format: str, document: dict, deck_cards: Dict[str, dict], lands: Set[str], threshold: float) -> List[str]:
+def report_plan(
+    format: str,
+    document: dict,
+    deck_cards: Dict[str, dict],
+    lands: Set[str],
+    threshold: float,
+    overrides: Optional[Overrides] = None,
+    previous: Optional[Dict[str, str]] = None,
+) -> List[str]:
     """The dry run's lines for the groups published, which hold in every window."""
-    merging = plan(document, deck_cards, lands, threshold)
-    lines = [f"== {format} published groups at {threshold:.2f}, every window: {len(merging.leaders)} archetypes merged away"]
+    rules = overrides or Overrides()
+    merging = plan(document, deck_cards, lands, threshold, overrides=rules, previous=previous)
+    lines = [f"== {format} published groups at {threshold:.2f} (members of the last run's {len(previous or {})} stay at {STICKY_THRESHOLD:.2f})"]
+    lines.append("-- Overrides" + (": merging disabled for this format" if rules.disabled else ""))
+    for label, sets in (("keep apart", rules.keep_apart), ("always merge", rules.always_merge)):
+        for ids in sets:
+            lines.append(f"  {label}: " + ", ".join(f"{merging.names.get(key, '?')} [{key}]" for key in sorted(ids)))
+    lines.append(f"-- {len(merging.leaders)} archetypes merged away")
     by_leader: Dict[str, List[Tuple[str, float, int]]] = {}
     for member, (leader, score, days) in merging.leaders.items():
         by_leader.setdefault(leader, []).append((member, score, days))
     for leader, members in sorted(by_leader.items(), key=lambda item: (-len(item[1]), merging.names[item[0]])):
         lines.append(f"  {merging.names[leader]} [{leader}]")
         for member, score, days in sorted(members, key=lambda item: -item[1]):
-            lines.append(f"      <- {merging.names[member]} [{member}]  {score:.3f} in {days}d")
+            how = " (always merge)" if member in merging.forced else " (kept from the last run)" if member in merging.kept else ""
+            lines.append(f"      <- {merging.names[member]} [{member}]  {score:.3f} in {days}d{how}")
     counts: Dict[str, int] = {}
     for leader, _ in merging.assigned.values():
         counts[leader] = counts.get(leader, 0) + 1
@@ -464,5 +615,7 @@ def main(argv: Optional[Sequence[str]] = None, catalog: Optional[Dict[str, dict]
         deck_cards = json.loads(cards_path.read_text()) if cards_path.exists() else {}
         for days in (int(item) for item in args.days.split(",") if item.strip()):
             print("\n".join(report(format, days, document, deck_cards, lands, args.threshold, args.report)), flush=True)
-        print("\n".join(report_plan(format, document, deck_cards, lands, args.threshold)), flush=True)
+        groups_path = args.directory / "state" / "archetype-groups" / f"{format}.json"
+        previous = json.loads(groups_path.read_text()) if groups_path.exists() else {}
+        print("\n".join(report_plan(format, document, deck_cards, lands, args.threshold, load_overrides(format), previous)), flush=True)
     return 0

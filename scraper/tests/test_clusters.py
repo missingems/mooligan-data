@@ -1,6 +1,6 @@
 import pytest
 
-from mtgmeta.clusters import Archetype, Merging, apply, assign, deck_vector, merge, plan, profile, similarity, window
+from mtgmeta.clusters import Archetype, Merging, Overrides, apply, assign, deck_vector, load_overrides, majority_colors, merge, plan, profile, similarity, window
 
 LANDS = {"forest", "mountain", "misty-rainforest"}
 
@@ -130,7 +130,7 @@ def snapshot(archetypes, events, generated_at="2026-10-16T12:00:00Z"):
     }
 
 
-def test_one_set_of_groups_holds_in_every_window_led_by_the_most_decks_this_week():
+def test_one_set_of_groups_holds_in_every_window_led_by_the_most_decks_over_the_month():
     # "old" has more decks over the month, "new" more this week; they play one deck only lately.
     archetypes = {
         "old": [("o1", "2026-10-15T00:00:00Z")] + [(f"o{n}", "2026-09-20T00:00:00Z") for n in range(2, 8)],
@@ -156,8 +156,8 @@ def test_one_set_of_groups_holds_in_every_window_led_by_the_most_decks_this_week
 
     merging = plan(snapshot(archetypes, events), decks, set(), threshold=0.8)
 
-    assert {member: (leader, days) for member, (leader, _, days) in merging.leaders.items()} == {"old": ("new", 7)}
-    assert {deck_id: leader for deck_id, (leader, _) in merging.assigned.items()} == {"brew": "new"}
+    assert {member: (leader, days) for member, (leader, _, days) in merging.leaders.items()} == {"new": ("old", 7)}
+    assert {deck_id: leader for deck_id, (leader, _) in merging.assigned.items()} == {}  # "old"'s month is mostly another list
 
 
 def tile(key, percentage, deck_count, colors):
@@ -191,7 +191,9 @@ def test_the_published_snapshot_has_one_archetype_per_group_under_its_leader():
     merging = Merging({"brood": ("ramp", 0.9, 7)}, {"3": ("ramp", 0.85)}, {"ramp": "Ramp", "brood": "Brood", "burn": "Burn"})
 
     published = apply(document, merging)
+    coloured = apply(document, merging, {"1": ["G"], "2": ["R", "G"], "3": ["R", "G"], "4": ["R"]})
 
+    assert [(t["id"], t["colors"]) for t in coloured["meta"]["7d"]["archetypes"]] == [("ramp", ["R", "G"]), ("burn", ["R"])]  # an unmerged tile keeps its own
     week = published["meta"]["7d"]["archetypes"]
     assert [(t["id"], t["name"], t["percentage"], t["deck_count"], t["colors"], t["deck_id"]) for t in week] == [
         ("ramp", "Ramp", 6.6, None, ["G"], "ramp-featured"),  # a member's unknown deck count makes the sum unknown
@@ -205,3 +207,78 @@ def test_the_published_snapshot_has_one_archetype_per_group_under_its_leader():
     assert [(r["archetype_id"], r["archetype"]) for r in published["events"][0]["results"]] == [("ramp", "Ramp"), ("ramp", "Ramp"), ("burn", "Burn")]
     assert published["merges"] == {"brood": "ramp"}
     assert document["events"][0]["results"][0]["archetype_id"] == "brood"  # the scraped snapshot is left as it was
+
+
+def decks_of(archetypes):
+    """A snapshot and its decklists: each archetype's decks, all of this week, as (count, cards) pairs."""
+    results, deck_cards = {}, {}
+    for key, lists in archetypes.items():
+        results[key] = []
+        for index, (count, letters) in enumerate(lists):
+            for n in range(count):
+                deck_id = f"{key}-{index}-{n}"
+                results[key].append((deck_id, "2026-10-15T00:00:00Z"))
+                deck_cards[deck_id] = {"m": board(letters)}
+    return snapshot(results, []), deck_cards
+
+
+TWENTY = "abcdefghijklmnopqrst"
+CLOSE = "abcdefghijklmnuv"  # 14 of 16 cards shared with TWENTY: 0.78, past the sticky 0.75 but short of 0.8
+
+
+def merged(merging):
+    return {member: leader for member, (leader, _, _) in merging.leaders.items()}
+
+
+def test_keep_apart_blocks_a_pair_even_through_a_leader_and_always_merge_joins_whatever_the_score():
+    document, deck_cards = decks_of({
+        "lead": [(10, "abcdefghij")],
+        "near": [(5, "abcdefghik")],
+        "also": [(4, "abcdefghil")],
+        "far": [(3, "uvwxyz")],
+    })
+    assert merged(plan(document, deck_cards, set())) == {"near": "lead", "also": "lead"}
+
+    rules = Overrides(keep_apart=[{"near", "also"}], always_merge=[{"lead", "far"}])
+    merging = plan(document, deck_cards, set(), overrides=rules)
+
+    assert merged(merging) == {"near": "lead", "far": "lead"}  # "also" may not share a group with "near"
+    assert merging.forced == {"far"}
+    assert merged(plan(document, deck_cards, set(), overrides=Overrides(keep_apart=[{"lead", "near"}]))) == {"also": "lead"}
+
+
+def test_a_disabled_format_merges_nothing():
+    document, deck_cards = decks_of({"lead": [(10, "abcdefghij")], "near": [(5, "abcdefghik")]})
+    assert plan(document, deck_cards, set(), overrides=Overrides(disabled=True)).leaders == {}
+
+
+def test_the_seeded_overrides_keep_4c_energy_from_azorius_control_and_leave_duel_commander_alone():
+    assert load_overrides("modern").apart("modern-4c-energy-d4762aac-7d2e-4a0e-95d3-3ca4f4dd535b", "wu-68d6e340-6601-4aab-9a70-4bdccc013e7e")
+    assert load_overrides("duel_commander").disabled and not load_overrides("modern").disabled
+
+
+def test_a_member_of_the_last_runs_group_stays_at_a_lower_score_than_a_new_one_needs():
+    document, deck_cards = decks_of({"lead": [(10, TWENTY)], "drifting": [(5, CLOSE)]})
+    assert 0.75 <= similarity(profile([{c: 4 for c in CLOSE}]), profile([{c: 4 for c in TWENTY}])) < 0.8
+
+    assert merged(plan(document, deck_cards, set())) == {}
+    merging = plan(document, deck_cards, set(), previous={"drifting": "lead"})
+    assert merged(merging) == {"drifting": "lead"} and merging.kept == {"drifting"}
+    gone, cards = decks_of({"lead": [(10, TWENTY)], "drifting": [(5, "abcdefghijuvwxyz")]})  # 0.56: it leaves
+    assert merged(plan(gone, cards, set(), previous={"drifting": "lead"})) == {}
+
+
+def test_the_last_runs_leader_keeps_its_group_until_a_member_has_a_fifth_more_decks():
+    document, deck_cards = decks_of({"eldrazi-tron": [(10, "abcdefghij")], "tron": [(11, "abcdefghik")]})
+    assert merged(plan(document, deck_cards, set())) == {"eldrazi-tron": "tron"}
+    assert merged(plan(document, deck_cards, set(), previous={"tron": "eldrazi-tron"})) == {"tron": "eldrazi-tron"}
+
+    document, deck_cards = decks_of({"eldrazi-tron": [(10, "abcdefghij")], "tron": [(13, "abcdefghik")]})
+    assert merged(plan(document, deck_cards, set(), previous={"tron": "eldrazi-tron"})) == {"eldrazi-tron": "tron"}
+
+
+def test_a_groups_colours_are_those_at_least_half_its_known_decks_play():
+    colors = {"1": ["G"], "2": ["R", "G"], "3": ["R", "G"], "4": ["G"], "5": ["U", "G"]}
+    assert majority_colors(["1", "2", "3", "4", "unknown"], colors) == ["R", "G"]  # red in two of four
+    assert majority_colors(["1", "2", "3", "4", "5"], colors) == ["G"]  # two of five is short of half
+    assert majority_colors(["unknown"], colors) is None

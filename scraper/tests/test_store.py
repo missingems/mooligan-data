@@ -510,8 +510,8 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
     from mtgmeta.models import Deck, DeckCard
 
     catalog = {
-        "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "oracle-bolt", "type_line": "Instant", "layout": "normal"},
-        "lava-spike": {"name": "Lava Spike", "oracle_id": "oracle-spike", "type_line": "Sorcery", "layout": "normal"},
+        "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "oracle-bolt", "type_line": "Instant", "layout": "normal", "mana_cost": "{R}"},
+        "lava-spike": {"name": "Lava Spike", "oracle_id": "oracle-spike", "type_line": "Sorcery", "layout": "normal", "mana_cost": "{R}"},
         "mountain": {"name": "Mountain", "oracle_id": "oracle-mountain", "type_line": "Basic Land — Mountain", "layout": "normal", "land": True},
     }
     store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
@@ -535,6 +535,7 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
     assert [(c["name"], c["share"], c["copies"]) for c in page["cards"]["main"]] == [("Mountain", 100.0, 20.0), ("Lava Spike", 100.0, 4.0), ("Lightning Bolt", 100.0, 4.0)]
     assert [c["name"] for c in page["hand"]] == ["Lava Spike", "Lightning Bolt"]
     assert json.loads((tmp_path / "archetypes" / "rakdos-burn.json").read_text())["merged_into"] == "burn"
+    assert json.loads((tmp_path / "state" / "archetype-groups" / "modern.json").read_text()) == {"rakdos-burn": "burn"}
     explore = json.loads((tmp_path / "explore.json").read_text())
     assert [row["id"] for row in explore["formats"][0]["standings_by_window"]["7d"]] == ["burn"]
 
