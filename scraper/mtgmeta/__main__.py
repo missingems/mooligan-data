@@ -2,6 +2,8 @@
 
 DIR holds the previous snapshots and deck id list on the way in, and the files
 to publish on the way out.
+
+`python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
 """
 from __future__ import annotations
 
@@ -217,6 +219,10 @@ def exit_code(report: RunReport, blocked_runs: int) -> int:
 
 
 def main() -> int:
+    if sys.argv[1:2] == ["clusters"]:
+        from .clusters import main as clusters
+
+        return clusters(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
     args = parser.parse_args()
