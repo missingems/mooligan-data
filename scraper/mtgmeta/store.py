@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
+from .clusters import apply as apply_merging, plan as plan_merging
 from .drilldown import build_archetype_pages, build_event_pages
 from .edhrec import due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
@@ -59,7 +60,10 @@ class SnapshotStore:
         self._cutoff = self._now - timedelta(days=history_days)
         self._snapshots: Dict[str, Dict[str, Any]] = {}
         for format in formats:
-            path = root / "snapshots" / f"{format}.json"
+            # The published snapshot has its archetypes merged (see clusters.py); the store keeps them as scraped.
+            path = root / "state" / "snapshots" / f"{format}.json"
+            if not path.exists():
+                path = root / "snapshots" / f"{format}.json"
             previous = json.loads(path.read_text()) if path.exists() else {}
             self._snapshots[format] = {
                 "meta": previous.get("meta", {}),
@@ -234,17 +238,7 @@ class SnapshotStore:
                 "events": events,
                 "archetypes": archetypes,
             }
-            # Decks of this format still in the window, newest first, with their archetype.
-            membership: Dict[str, tuple] = {}
-            for archetype in archetypes.values():
-                if archetype["deck_id"]:
-                    membership.setdefault(archetype["deck_id"], (archetype["archetype_id"], archetype["name"]))
-                for result in archetype["results"]:
-                    membership.setdefault(result["deck_id"], (archetype["archetype_id"], archetype["name"]))
-            # Decks seen only in an event still count, under the name that event gave them.
-            for event in events:
-                for result in event["results"]:
-                    membership.setdefault(result["deck_id"], (result.get("archetype_id") or "", result.get("archetype") or "Other"))
+            membership = _membership(document)
             stored = self._deck_cards.get(format, {})
             if fetch_decks:
                 missing = [deck_id for deck_id in membership if deck_id not in stored and deck_id in self._deck_ids]
@@ -254,20 +248,22 @@ class SnapshotStore:
                         "s": [[card["quantity"], card["card_name"]] for card in deck.get("sideboard", [])],
                     }
             self._deck_cards[format] = {deck_id: stored[deck_id] for deck_id in membership if deck_id in stored}
-            card_decks[format] = FormatDecks(self._deck_cards[format], membership)
+            self._write(f"state/snapshots/{format}.json", _json_bytes(document))
+            published = self._merged(format, document, catalog)
+            card_decks[format] = FormatDecks(self._deck_cards[format], _membership(published))
 
-            body = json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
+            body = _json_bytes(published)
             relative = f"snapshots/{format}.json"
             self._write(relative, body)
             written.append(relative)
-            documents[format] = document
+            documents[format] = published
             formats[format] = {
                 "path": relative,
                 "sha256": hashlib.sha256(body).hexdigest(),
                 "bytes": len(body),
-                "generated_at": document["generated_at"],
+                "generated_at": published["generated_at"],
                 "events": len(events),
-                "archetypes": len(archetypes),
+                "archetypes": len(published["archetypes"]),
             }
         written += self._write_explore(documents, catalog)
         self._write_popular_cards(documents, catalog)
@@ -285,6 +281,20 @@ class SnapshotStore:
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
+
+    def _merged(self, format: str, document: dict, catalog: Dict[str, dict]) -> dict:
+        """The snapshot to publish: its archetypes that play one deck merged (see clusters.py).
+
+        Without a catalog no card can be told from a land, which the lists are compared without, so the
+        snapshot is published as scraped.
+        """
+        if not catalog:
+            log.warning("No card catalog: the archetypes of %s were not merged", format)
+            return document
+        lands = {key for key, card in catalog.items() if card.get("land")}
+        merging = plan_merging(document, self._deck_cards.get(format, {}), lands)
+        log.info("Archetypes of %s: %d merged into others, %d results joined one", format, len(merging.leaders), len(merging.assigned))
+        return apply_merging(document, merging)
 
     def _resolve_decks_again(self, fetch_decks, catalog: Dict[str, dict], limit: int = 300) -> None:
         """Gives oracle ids to decklist entries the catalog could not name when their deck was saved.
@@ -481,6 +491,23 @@ class SnapshotStore:
 
 def _json_bytes(document: dict) -> bytes:
     return json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+def _membership(document: dict) -> Dict[str, tuple]:
+    """Each deck of the snapshot (its archetypes' featured decks and results, then its events'), with its archetype's id and name.
+
+    A deck seen only in an event counts under the name that event gave it, with an id of "" for no archetype.
+    """
+    membership: Dict[str, tuple] = {}
+    for archetype in document["archetypes"].values():
+        if archetype.get("deck_id"):
+            membership.setdefault(archetype["deck_id"], (archetype["archetype_id"], archetype["name"]))
+        for result in archetype["results"]:
+            membership.setdefault(result["deck_id"], (archetype["archetype_id"], archetype["name"]))
+    for event in document["events"]:
+        for result in event["results"]:
+            membership.setdefault(result["deck_id"], (result.get("archetype_id") or "", result.get("archetype") or "Other"))
+    return membership
 
 
 def _unresolved_names(deck: dict) -> List[str]:

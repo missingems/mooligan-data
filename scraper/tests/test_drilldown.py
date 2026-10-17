@@ -42,14 +42,14 @@ def test_an_archetype_page_has_its_tile_its_shares_and_its_decks_newest_first():
         {"a": [result("3", "2026-09-29"), result("2", "2026-09-28", "5-0", "2", "Modern League 2026-09-28 (1)"), result("1", "2026-09-20", "8th Place", None, "Local")]},
     )
     page = build_archetype_pages(document, NOW, {"3", "1"})["a"]
-    assert list(page) == ["id", "name", "format", "colors", "key_cards", "shares", "decks"]
+    assert list(page) == ["id", "name", "format", "colors", "key_cards", "shares", "decks", "cards", "hand"]
     assert (page["id"], page["name"], page["format"], page["colors"]) == ("a", "A", "modern", ["U"])
     assert [c["oracle_id"] for c in page["key_cards"]] == ["a-o0", "a-o1", "a-o2"]  # up to three
     assert page["shares"] == {"7d": 9.1, "14d": None, "30d": 14.6}  # one decimal, null where the window has none of it
     assert page["decks"] == [
-        {"deck_id": "3", "date": "2026-09-29", "event_id": "1", "event_name": "Modern Challenge 32", "finish": "1st Place", "player": "p3", "published": True},
-        {"deck_id": "2", "date": "2026-09-28", "event_id": "2", "event_name": "Modern League (1)", "finish": "5-0", "player": "p2", "published": False},
-        {"deck_id": "1", "date": "2026-09-20", "event_id": None, "event_name": "Local", "finish": "8th Place", "player": "p1", "published": True},
+        {"deck_id": "3", "date": "2026-09-29", "event_id": "1", "event_name": "Modern Challenge 32", "finish": "1st Place", "player": "p3", "published": True, "event": None},
+        {"deck_id": "2", "date": "2026-09-28", "event_id": "2", "event_name": "Modern League (1)", "finish": "5-0", "player": "p2", "published": False, "event": None},
+        {"deck_id": "1", "date": "2026-09-20", "event_id": None, "event_name": "Local", "finish": "8th Place", "player": "p1", "published": True, "event": None},
     ]
 
 
@@ -209,3 +209,66 @@ def test_an_archetype_page_takes_its_featured_decks_colours_when_its_tile_shows_
     pages = build_archetype_pages(document, NOW, set(), decks, PIPS)
     assert (pages["bare"]["colors"], pages["shown"]["colors"], pages["unstored"]["colors"]) == (["R"], ["U"], [])
     assert build_archetype_pages(document, NOW, set())["bare"]["colors"] == []  # without decks and a catalog, as before
+
+
+TALLY = {
+    "ugin-s-labyrinth": {"name": "Ugin's Labyrinth", "oracle_id": "o-lab", "type_line": "Land", "land": True},
+    "kozilek-s-command": {"name": "Kozilek's Command", "oracle_id": "o-command", "type_line": "Kindred Instant — Eldrazi"},
+    "thought-knot-seer": {"name": "Thought-Knot Seer", "oracle_id": "o-tks", "type_line": "Creature — Eldrazi"},
+    "emrakul-the-promised-end": {"name": "Emrakul, the Promised End", "oracle_id": "o-emrakul", "type_line": "Legendary Creature — Eldrazi"},
+    "devourer-of-destiny": {"name": "Devourer of Destiny", "oracle_id": "o-devourer", "type_line": "Creature — Eldrazi"},
+    "ancient-stirrings": {"name": "Ancient Stirrings", "oracle_id": "o-stirrings", "type_line": "Sorcery"},
+    "trinisphere": {"name": "Trinisphere", "oracle_id": "o-trini", "type_line": "Artifact"},
+    "fire": {"name": "Fire // Ice", "oracle_id": "o-fire", "type_line": "Instant", "layout": "split"},
+}
+
+
+def test_an_archetype_page_tallies_its_weeks_lists_and_picks_its_hand():
+    document = snapshot(
+        {"7d": [tile("a", 9.0)]},
+        {"a": [result("1", "2026-09-29"), result("2", "2026-09-28"), result("3", "2026-09-27"), result("4", "2026-09-27"), result("old", "2026-09-10")]},
+    )
+    decks = {
+        "1": {"m": [[4, "Ugin's Labyrinth"], [4, "Kozilek's Command"], [2, "Thought-Knot Seer"], [2, "Thought-Knot Seer"], [1, "Emrakul, the Promised End"], [4, "Ancient Stirrings"], [1, "Fire/Ice"]], "s": [[2, "Trinisphere"]]},
+        "2": {"m": [[4, "Ugin's Labyrinth"], [4, "Kozilek's Command"], [3, "Thought-Knot Seer"], [2, "Devourer of Destiny"], [1, "Unknown Card"]], "s": []},
+        "3": {"m": [[3, "Ugin's Labyrinth"], [4, "Kozilek's Command"], [4, "Devourer of Destiny"]], "s": [[3, "Trinisphere"]]},
+        "old": {"m": [[4, "Ancient Stirrings"]], "s": []},
+    }  # deck 4 has no stored list; "old" is outside the week
+
+    page = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]
+
+    assert {key: page["cards"][key] for key in ("window", "deck_count", "list_count")} == {"window": "7d", "deck_count": 4, "list_count": 3}
+    assert [(c["name"], c["oracle_id"], c["type"], c["decks"], c["share"], c["copies"]) for c in page["cards"]["main"]] == [
+        ("Kozilek's Command", "o-command", "instant", 3, 100.0, 4.0),
+        ("Ugin's Labyrinth", "o-lab", "land", 3, 100.0, 3.7),
+        ("Thought-Knot Seer", "o-tks", "creature", 2, 66.7, 3.5),
+        ("Devourer of Destiny", "o-devourer", "creature", 2, 66.7, 3.0),
+        ("Ancient Stirrings", "o-stirrings", "sorcery", 1, 33.3, 4.0),
+        ("Emrakul, the Promised End", "o-emrakul", "creature", 1, 33.3, 1.0),
+        ("Fire // Ice", "o-fire", "instant", 1, 33.3, 1.0),
+    ]
+    assert [(c["name"], c["share"], c["copies"]) for c in page["cards"]["side"]] == [("Trinisphere", 66.7, 2.5)]
+    # Share times copies: Command 4.0, Seer 0.667 x 3.5, Devourer 2.0, Stirrings 1.33, then Emrakul and Fire // Ice at 0.33 by name.
+    assert [c["oracle_id"] for c in page["hand"]] == ["o-command", "o-tks", "o-devourer", "o-stirrings", "o-emrakul"]
+    assert page["hand"][0] == {"name": "Kozilek's Command", "oracle_id": "o-command"}
+
+
+def test_an_archetype_with_no_stored_lists_has_an_empty_tally():
+    page = build_archetype_pages(snapshot({"7d": [tile("a", 9.0)]}, {"a": [result("1", "2026-09-29")]}), NOW, set())["a"]
+    assert page["cards"] == {"window": "7d", "deck_count": 1, "list_count": 0, "main": [], "side": []}
+    assert page["hand"] == []
+
+
+def test_each_deck_carries_its_events_header_and_a_merged_away_id_gets_its_leaders_page():
+    event = source_event("66947", "2026-09-29", [entry("1st Place", "3"), entry("2nd Place", "9", "b", "B")], name="Modern Challenge 64 2026-09-29")
+    document = snapshot({"7d": [tile("a", 9.0)]}, {"a": [result("3", "2026-09-29", event_id="66947"), result("1", "2026-09-20", event_id=None, event_name="Local")]}, [event])
+    document["merges"] = {"a-old": "a", "gone-old": "gone"}
+
+    pages = build_archetype_pages(document, NOW, set())
+
+    assert [deck["event"] for deck in pages["a"]["decks"]] == [
+        {"id": "66947", "name": "Modern Challenge 64", "kind": "mtgo_challenge", "prestige": 3, "source": "mtgo.com", "deck_count": 2},
+        None,
+    ]
+    assert pages["a-old"] == {**pages["a"], "merged_into": "a"}
+    assert "gone-old" not in pages  # its leader has no page

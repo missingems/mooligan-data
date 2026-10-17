@@ -89,6 +89,7 @@ def main():
             raise RuntimeError(f"unexpected format name {name!r} in index.json")
 
     paths = [f"snapshots/{name}.json" for name in formats] + STATE_FILES + [f"state/deck-cards/{name}.json" for name in formats]
+    paths += [f"state/snapshots/{name}.json" for name in formats]
     with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         saved = sum(pool.map(lambda path: save(base, directory, path), paths))
     print(f"Downloaded {saved} of {len(paths)} files from {base} into {directory}", flush=True)
