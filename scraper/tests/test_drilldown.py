@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from mtgmeta.drilldown import build_archetype_pages, build_event_pages
+from mtgmeta.drilldown import archetype_hands, build_archetype_pages, build_event_pages, hand_key_cards
 
 NOW = datetime(2026, 9, 30, 2, tzinfo=timezone.utc)
 
@@ -338,3 +338,28 @@ def test_a_deck_with_a_stored_list_shows_its_changes_from_the_consensus():
     page = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]
     assert page["consensus"] == {"main": [], "side": []}
     assert [deck["changes"] for deck in page["decks"]] == [None, None, None, None]
+
+
+def test_an_archetypes_key_cards_are_the_first_of_its_hand_and_its_tile_s_without_one():
+    document = snapshot(
+        {"30d": [tile("a", 9.0), tile("b", 4.0)], "7d": [tile("a", 8.0), tile("b", 3.0)]},
+        {"a": [result("1", "2026-09-29"), result("2", "2026-09-28")], "b": [result("3", "2026-09-29")]},
+    )
+    decks = {
+        "1": {"m": [[4, "Ugin's Labyrinth"], [4, "Kozilek's Command"], [4, "Thought-Knot Seer"], [2, "Devourer of Destiny"]], "s": []},
+        "2": {"m": [[4, "Kozilek's Command"], [3, "Thought-Knot Seer"], [4, "Devourer of Destiny"], [1, "Trinisphere"]], "s": []},
+    }  # b's deck has no stored list, so it has no hand
+
+    hands = archetype_hands(document, NOW, decks, TALLY)
+    published = hand_key_cards(document, hands)
+    pages = build_archetype_pages(published, NOW, set(), decks, TALLY, hands)
+
+    first = [{"name": "Kozilek's Command", "oracle_id": "o-command"}, {"name": "Thought-Knot Seer", "oracle_id": "o-tks"}, {"name": "Devourer of Destiny", "oracle_id": "o-devourer"}]
+    assert pages["a"]["hand"][:3] == first and pages["a"]["key_cards"] == first
+    for window in ("30d", "7d"):
+        tiles = {t["id"]: t for t in published["meta"][window]["archetypes"]}
+        assert tiles["a"]["key_cards"] == first
+        assert tiles["b"]["key_cards"] == tile("b", 0)["key_cards"]  # MTGGoldfish's, as scraped
+    assert pages["b"]["key_cards"] == [{"name": f"b card {n}", "oracle_id": f"b-o{n}"} for n in range(3)]
+    assert document["meta"]["30d"]["archetypes"][0]["key_cards"] == tile("a", 0)["key_cards"]  # the snapshot itself is left alone
+    assert build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]["key_cards"] == first  # the hand even when the tile still has its own

@@ -538,6 +538,9 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
     assert json.loads((tmp_path / "state" / "archetype-groups" / "modern.json").read_text()) == {"rakdos-burn": "burn"}
     explore = json.loads((tmp_path / "explore.json").read_text())
     assert [row["id"] for row in explore["formats"][0]["standings_by_window"]["7d"]] == ["burn"]
+    assert published["meta"]["7d"]["archetypes"][0]["key_cards"] == page["key_cards"] == page["hand"]  # its two non-lands
+    assert explore["formats"][0]["standings_by_window"]["7d"][0]["key_cards"] == page["hand"][:2]
+    assert explore["formats"][0]["recent_events"][0]["lead"]["key_cards"] == page["hand"][:2]
 
     scraped = json.loads((tmp_path / "state" / "snapshots" / "modern.json").read_text())
     assert "merges" not in scraped and [t["id"] for t in scraped["meta"]["7d"]["archetypes"]] == ["burn", "rakdos-burn"]

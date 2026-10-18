@@ -28,14 +28,17 @@ def build_archetype_pages(
     deck_ids: Set[str],
     decks: Optional[Dict[str, dict]] = None,
     catalog: Optional[Dict[str, dict]] = None,
+    hands: Optional[Dict[str, List[dict]]] = None,
 ) -> Dict[str, dict]:
     """A page per archetype in the format's metagame (any window), by archetype id.
 
-    `deck_ids` are the decklists published, which is what each deck's `published` says. A tile
+    `deck_ids` are the decklists published, which is what each deck's `published` says. The key cards are
+    the first `ARCHETYPE_KEY_CARDS` of the archetype's hand; with no hand, the tile's. A tile
     that shows no key cards takes them from the archetype's featured deck instead, when `decks`
     (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards, and
     one that shows no colours takes the colours of that deck. `cards` and `hand` are tallied from the
-    stored lists of the archetype's decks of the last `CARD_DAYS` days (see `card_tally`), as is its `consensus`
+    stored lists of the archetype's decks of the last `CARD_DAYS` days (see `card_tally`); `hands` are those of
+    `archetype_hands`, worked out here when not given. Its `consensus` is from the same lists
     (see `consensus`), and each deck carries its event's header and, when its list is stored and the archetype
     has a consensus to compare it with, its `changes` from that consensus (see `changes`). An archetype the
     snapshot's `merges` merged into another gets a page too: its leader's, with `merged_into` naming the leader.
@@ -49,11 +52,13 @@ def build_archetype_pages(
     today = _today(now)
     headers = {event["event_id"]: _event_header(event) for event in snapshot.get("events", [])}
     recent = _recent_decks(snapshot, now)
+    if hands is None:
+        hands = archetype_hands(snapshot, now, decks, catalog)
     pages = {}
     for archetype_id, tile in archetype_tiles(meta).items():
         archetype = snapshot.get("archetypes", {}).get(archetype_id, {})
         results = archetype.get("results", [])
-        cards = key_cards(tile, ARCHETYPE_KEY_CARDS, previews.catalog)
+        cards = hands.get(archetype_id, [])[:ARCHETYPE_KEY_CARDS] or key_cards(tile, ARCHETYPE_KEY_CARDS, previews.catalog)
         featured = (decks or {}).get(archetype.get("deck_id"))
         if not cards and featured:
             cards = deck_key_cards(featured.get("m", []), catalog or {}, tile["name"], ARCHETYPE_KEY_CARDS)
@@ -91,7 +96,7 @@ def build_archetype_pages(
             "list_count": len(lists),
             **card_tally(lists, catalog or {}),
         }
-        pages[archetype_id]["hand"] = hand(lists, catalog or {})
+        pages[archetype_id]["hand"] = hands.get(archetype_id, [])
         common = consensus(lists, catalog or {})
         pages[archetype_id]["consensus"] = {board: _ranked(common[board].values()) for board in common}
         for deck in pages[archetype_id]["decks"]:
@@ -101,6 +106,34 @@ def build_archetype_pages(
         if leader in pages:
             pages[member] = {**pages[leader], "merged_into": leader}
     return pages
+
+
+def archetype_hands(
+    snapshot: dict, now: datetime, decks: Optional[Dict[str, dict]] = None, catalog: Optional[Dict[str, dict]] = None
+) -> Dict[str, List[dict]]:
+    """Each archetype's `hand`, from the stored lists of its decks of the last `CARD_DAYS` days, by archetype id."""
+    return {
+        archetype_id: hand([(decks or {})[deck_id] for deck_id in week if deck_id in (decks or {})], catalog or {})
+        for archetype_id, week in _recent_decks(snapshot, now).items()
+    }
+
+
+def hand_key_cards(snapshot: dict, hands: Dict[str, List[dict]]) -> dict:
+    """The snapshot with each meta tile's key cards the first `ARCHETYPE_KEY_CARDS` of its archetype's hand.
+
+    A tile whose archetype has no hand keeps the key cards it has.
+    """
+    meta = {
+        window: {
+            **document,
+            "archetypes": [
+                {**tile, "key_cards": hands[tile["id"]][:ARCHETYPE_KEY_CARDS]} if hands.get(tile["id"]) else tile
+                for tile in document.get("archetypes", [])
+            ],
+        }
+        for window, document in snapshot.get("meta", {}).items()
+    }
+    return {**snapshot, "meta": meta}
 
 
 def card_tally(lists: Sequence[dict], catalog: Dict[str, dict]) -> Dict[str, List[dict]]:
