@@ -16,7 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
 from .clusters import apply as apply_merging, colors_by_deck, load_overrides, plan as plan_merging
-from .drilldown import build_archetype_pages, build_event_pages
+from .drilldown import archetype_hands, build_archetype_pages, build_event_pages, hand_key_cards
 from .edhrec import due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
@@ -84,6 +84,8 @@ class SnapshotStore:
         # What each stored deck plays, so card pages can be built without downloading every deck again.
         self._wanted_commanders: Dict[str, str] = {}
         self._deck_cards: Dict[str, Dict[str, dict]] = {}
+        # Each archetype's hand by format, worked out once a run for its key cards and its page.
+        self._hands: Dict[str, Dict[str, List[dict]]] = {}
         for format in formats:
             cards_path = root / "state" / "deck-cards" / f"{format}.json"
             self._deck_cards[format] = json.loads(cards_path.read_text()) if cards_path.exists() else {}
@@ -250,6 +252,8 @@ class SnapshotStore:
             self._deck_cards[format] = {deck_id: stored[deck_id] for deck_id in membership if deck_id in stored}
             self._write(f"state/snapshots/{format}.json", _json_bytes(document))
             published = self._merged(format, document, catalog)
+            self._hands[format] = archetype_hands(published, self._now, self._deck_cards[format], catalog)
+            published = hand_key_cards(published, self._hands[format])
             card_decks[format] = FormatDecks(self._deck_cards[format], _membership(published))
 
             body = _json_bytes(published)
@@ -392,7 +396,7 @@ class SnapshotStore:
         counts = {"archetypes": 0, "events": 0}
         for format, document in documents.items():
             for kind, pages in (
-                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
+                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog, self._hands.get(format))),
                 ("events", build_event_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
             ):
                 for page_id, page in pages.items():

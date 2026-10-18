@@ -19,6 +19,7 @@ ARCHETYPE_KEY_CARDS = 3
 # The days of decks an archetype's card tally counts, and the cards in its hand.
 CARD_DAYS = 7
 HAND = 5
+BOARDS = (("main", "m"), ("side", "s"))
 
 
 def build_archetype_pages(
@@ -27,16 +28,20 @@ def build_archetype_pages(
     deck_ids: Set[str],
     decks: Optional[Dict[str, dict]] = None,
     catalog: Optional[Dict[str, dict]] = None,
+    hands: Optional[Dict[str, List[dict]]] = None,
 ) -> Dict[str, dict]:
     """A page per archetype in the format's metagame (any window), by archetype id.
 
-    `deck_ids` are the decklists published, which is what each deck's `published` says. A tile
+    `deck_ids` are the decklists published, which is what each deck's `published` says. The key cards are
+    the first `ARCHETYPE_KEY_CARDS` of the archetype's hand; with no hand, the tile's. A tile
     that shows no key cards takes them from the archetype's featured deck instead, when `decks`
     (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards, and
     one that shows no colours takes the colours of that deck. `cards` and `hand` are tallied from the
-    stored lists of the archetype's decks of the last `CARD_DAYS` days (see `card_tally`), and each deck
-    carries its event's header. An archetype the snapshot's `merges` merged into another gets a page too:
-    its leader's, with `merged_into` naming the leader.
+    stored lists of the archetype's decks of the last `CARD_DAYS` days (see `card_tally`); `hands` are those of
+    `archetype_hands`, worked out here when not given. Its `consensus` is from the same lists
+    (see `consensus`), and each deck carries its event's header and, when its list is stored and the archetype
+    has a consensus to compare it with, its `changes` from that consensus (see `changes`). An archetype the
+    snapshot's `merges` merged into another gets a page too: its leader's, with `merged_into` naming the leader.
     """
     meta = snapshot.get("meta", {})
     previews = Previews(meta, decks, catalog, snapshot.get("archetypes", {}))
@@ -47,11 +52,13 @@ def build_archetype_pages(
     today = _today(now)
     headers = {event["event_id"]: _event_header(event) for event in snapshot.get("events", [])}
     recent = _recent_decks(snapshot, now)
+    if hands is None:
+        hands = archetype_hands(snapshot, now, decks, catalog)
     pages = {}
     for archetype_id, tile in archetype_tiles(meta).items():
         archetype = snapshot.get("archetypes", {}).get(archetype_id, {})
         results = archetype.get("results", [])
-        cards = key_cards(tile, ARCHETYPE_KEY_CARDS, previews.catalog)
+        cards = hands.get(archetype_id, [])[:ARCHETYPE_KEY_CARDS] or key_cards(tile, ARCHETYPE_KEY_CARDS, previews.catalog)
         featured = (decks or {}).get(archetype.get("deck_id"))
         if not cards and featured:
             cards = deck_key_cards(featured.get("m", []), catalog or {}, tile["name"], ARCHETYPE_KEY_CARDS)
@@ -89,11 +96,44 @@ def build_archetype_pages(
             "list_count": len(lists),
             **card_tally(lists, catalog or {}),
         }
-        pages[archetype_id]["hand"] = hand(lists, catalog or {})
+        pages[archetype_id]["hand"] = hands.get(archetype_id, [])
+        common = consensus(lists, catalog or {})
+        pages[archetype_id]["consensus"] = {board: _ranked(common[board].values()) for board in common}
+        for deck in pages[archetype_id]["decks"]:
+            stored = (decks or {}).get(deck["deck_id"])
+            deck["changes"] = changes(stored, common, catalog or {}) if stored is not None and lists else None
     for member, leader in snapshot.get("merges", {}).items():
         if leader in pages:
             pages[member] = {**pages[leader], "merged_into": leader}
     return pages
+
+
+def archetype_hands(
+    snapshot: dict, now: datetime, decks: Optional[Dict[str, dict]] = None, catalog: Optional[Dict[str, dict]] = None
+) -> Dict[str, List[dict]]:
+    """Each archetype's `hand`, from the stored lists of its decks of the last `CARD_DAYS` days, by archetype id."""
+    return {
+        archetype_id: hand([(decks or {})[deck_id] for deck_id in week if deck_id in (decks or {})], catalog or {})
+        for archetype_id, week in _recent_decks(snapshot, now).items()
+    }
+
+
+def hand_key_cards(snapshot: dict, hands: Dict[str, List[dict]]) -> dict:
+    """The snapshot with each meta tile's key cards the first `ARCHETYPE_KEY_CARDS` of its archetype's hand.
+
+    A tile whose archetype has no hand keeps the key cards it has.
+    """
+    meta = {
+        window: {
+            **document,
+            "archetypes": [
+                {**tile, "key_cards": hands[tile["id"]][:ARCHETYPE_KEY_CARDS]} if hands.get(tile["id"]) else tile
+                for tile in document.get("archetypes", [])
+            ],
+        }
+        for window, document in snapshot.get("meta", {}).items()
+    }
+    return {**snapshot, "meta": meta}
 
 
 def card_tally(lists: Sequence[dict], catalog: Dict[str, dict]) -> Dict[str, List[dict]]:
@@ -105,7 +145,7 @@ def card_tally(lists: Sequence[dict], catalog: Dict[str, dict]) -> Dict[str, Lis
     then most copies as shown, then name. Lands and basics are in; a card the catalog doesn't know is left out.
     """
     boards = {}
-    for board, key in (("main", "m"), ("side", "s")):
+    for board, key in BOARDS:
         rows = []
         for card, (count, copies) in _tally(lists, key).items():
             known = catalog.get(card)
@@ -140,6 +180,73 @@ def hand(lists: Sequence[dict], catalog: Dict[str, dict], limit: int = HAND) -> 
     return [card for _, card in ranked[:limit]]
 
 
+def consensus(lists: Sequence[dict], catalog: Dict[str, dict]) -> Dict[str, Dict[str, dict]]:
+    """The archetype's common list from some decklists, per board and by slug: `{"main": {slug: card}, "side": ...}`.
+
+    A card is in when at least half the lists play it on that board, at its average copies in the lists that play
+    it, rounded half up and at least 1: each `{"name", "oracle_id", "quantity"}`, named as in `card_tally`, or as
+    the first list writes it with a null `oracle_id` when the catalog doesn't know it.
+    """
+    boards = {}
+    for board, key in BOARDS:
+        written = {}
+        for deck in lists:
+            for card, (name, _) in _board(deck, key).items():
+                written.setdefault(card, name)
+        boards[board] = {
+            card: {**_named(card, written[card], catalog), "quantity": max(1, int(copies / count + 0.5))}
+            for card, (count, copies) in _tally(lists, key).items()
+            if 2 * count >= len(lists)
+        }
+    return boards
+
+
+def changes(deck: dict, common: Dict[str, Dict[str, dict]], catalog: Dict[str, dict]) -> dict:
+    """A decklist against a `consensus`: the copies it plays over the consensus's are `added`, those it plays under `removed`.
+
+    Each is `{"name", "oracle_id", "quantity", "board"}` with `board` `"main"` or `"side"`, mainboard first, then
+    most copies, then name; `added_count` and `removed_count` add up their quantities.
+    """
+    added: List[dict] = []
+    removed: List[dict] = []
+    for board, key in BOARDS:
+        played = _board(deck, key)
+        for card in sorted(set(played) | set(common[board])):
+            expected = common[board][card] if card in common[board] else None
+            difference = (played[card][1] if card in played else 0) - (expected["quantity"] if expected else 0)
+            if difference == 0:
+                continue
+            named = {"name": expected["name"], "oracle_id": expected["oracle_id"]} if expected else _named(card, played[card][0], catalog)
+            (added if difference > 0 else removed).append({**named, "quantity": abs(difference), "board": board})
+    order = {board: index for index, (board, _) in enumerate(BOARDS)}
+    for rows in (added, removed):
+        rows.sort(key=lambda row: (order[row["board"]], -row["quantity"], row["name"]))
+    return {
+        "added": added,
+        "removed": removed,
+        "added_count": sum(row["quantity"] for row in added),
+        "removed_count": sum(row["quantity"] for row in removed),
+    }
+
+
+def _ranked(cards) -> List[dict]:
+    return sorted(cards, key=lambda card: (-card["quantity"], card["name"]))
+
+
+def _named(card: str, written: str, catalog: Dict[str, dict]) -> dict:
+    known = catalog.get(card)
+    return _card(known) if known is not None else {"name": written, "oracle_id": None}
+
+
+def _board(deck: dict, board: str) -> Dict[str, list]:
+    """A list's board (`"m"` or `"s"`) by slug: `[the name as first written, copies]`."""
+    cards: Dict[str, list] = {}
+    for quantity, name in deck.get(board, []):
+        entry = cards.setdefault(slug(name), [name, 0])
+        entry[1] += quantity
+    return cards
+
+
 def _card(known: dict) -> dict:
     """A catalog card's name and oracle id: a split card is both halves, "Fire // Ice", any other its front face."""
     name = known["name"] if known.get("layout") == "split" else known["name"].split(" // ")[0]
@@ -150,11 +257,7 @@ def _tally(lists: Sequence[dict], board: str) -> Dict[str, List[int]]:
     """Each card on a board (`"m"` or `"s"`) of the lists by slug: `[lists that play it, copies in them]`."""
     tally: Dict[str, List[int]] = {}
     for deck in lists:
-        copies: Dict[str, int] = {}
-        for quantity, name in deck.get(board, []):
-            card = slug(name)
-            copies[card] = copies.get(card, 0) + quantity
-        for card, quantity in copies.items():
+        for card, (_, quantity) in _board(deck, board).items():
             entry = tally.setdefault(card, [0, 0])
             entry[0] += 1
             entry[1] += quantity
