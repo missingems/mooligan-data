@@ -253,6 +253,35 @@ def test_an_archetype_page_tallies_its_weeks_lists_and_picks_its_hand():
     assert page["hand"][0] == {"name": "Kozilek's Command", "oracle_id": "o-command"}
 
 
+def test_an_archetype_with_no_stored_list_in_the_week_counts_its_last_thirty_days_instead():
+    document = snapshot(
+        {"7d": [tile("quiet", 9.0), tile("busy", 8.0)]},
+        {
+            "quiet": [result("1", "2026-09-22"), result("2", "2026-09-10"), result("3", "2026-09-01"), result("old", "2026-08-20")],
+            "busy": [result("4", "2026-09-29"), result("5", "2026-09-10")],
+        },
+    )
+    decks = {
+        "1": {"m": [[4, "Kozilek's Command"], [4, "Thought-Knot Seer"]], "s": []},
+        "2": {"m": [[4, "Kozilek's Command"], [2, "Thought-Knot Seer"], [1, "Trinisphere"]], "s": []},
+        "3": {"m": [[4, "Kozilek's Command"], [3, "Devourer of Destiny"]], "s": []},
+        "old": {"m": [[4, "Ancient Stirrings"]], "s": []},
+        "4": {"m": [[4, "Thought-Knot Seer"]], "s": []},
+        "5": {"m": [[4, "Kozilek's Command"]], "s": []},
+    }
+
+    pages = build_archetype_pages(document, NOW, set(), decks, TALLY)
+    quiet, busy = pages["quiet"], pages["busy"]
+
+    assert {key: quiet["cards"][key] for key in ("window", "deck_count", "list_count")} == {"window": "30d", "deck_count": 3, "list_count": 3}
+    assert [c["oracle_id"] for c in quiet["hand"]] == ["o-command", "o-tks", "o-devourer", "o-trini"]
+    assert [(c["name"], c["quantity"]) for c in quiet["consensus"]["main"]] == [("Kozilek's Command", 4), ("Thought-Knot Seer", 3)]
+    assert {deck["deck_id"]: deck["changes"]["added_count"] for deck in quiet["decks"] if deck["changes"]} == {"1": 1, "2": 1, "3": 3, "old": 4}
+    assert {key: busy["cards"][key] for key in ("window", "deck_count", "list_count")} == {"window": "7d", "deck_count": 1, "list_count": 1}
+    assert [c["oracle_id"] for c in busy["hand"]] == ["o-tks"]
+    assert archetype_hands(document, NOW, decks, TALLY)["quiet"] == quiet["hand"]
+
+
 def test_an_archetype_with_no_stored_lists_has_an_empty_tally():
     page = build_archetype_pages(snapshot({"7d": [tile("a", 9.0)]}, {"a": [result("1", "2026-09-29")]}), NOW, set())["a"]
     assert page["cards"] == {"window": "7d", "deck_count": 1, "list_count": 0, "main": [], "side": []}
@@ -334,10 +363,12 @@ def test_a_deck_with_a_stored_list_shows_its_changes_from_the_consensus():
     }
 
     del decks["1"], decks["2"]
-    # With no list in the week there is no consensus, so no deck shows changes.
+    # With no list in the week the month's are the consensus, which "old" alone makes, so it differs from nothing.
     page = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]
-    assert page["consensus"] == {"main": [], "side": []}
-    assert [deck["changes"] for deck in page["decks"]] == [None, None, None, None]
+    assert page["cards"]["window"] == "30d"
+    by_id = {deck["deck_id"]: deck["changes"] for deck in page["decks"]}
+    assert by_id["old"] == {"added": [], "removed": [], "added_count": 0, "removed_count": 0}
+    assert [by_id[deck_id] for deck_id in ("1", "2", "3")] == [None, None, None]
 
 
 def test_an_archetypes_key_cards_are_the_first_of_its_hand_and_its_tile_s_without_one():

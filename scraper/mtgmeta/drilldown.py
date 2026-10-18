@@ -8,7 +8,7 @@ just wrote, so they are never older than it. See docs/data-format.md.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import Dict, List, Optional, Sequence, Set
+from typing import Dict, List, Optional, Sequence, Set, Tuple
 
 from .cards import slug
 from .explore import WINDOWS, Previews, archetype_tiles, deck_key_cards, key_cards, name_without_date, prestige
@@ -16,8 +16,10 @@ from .popular import _deck_ids, card_kind, deck_dates
 
 ARCHETYPE_DECKS = 60
 ARCHETYPE_KEY_CARDS = 3
-# The days of decks an archetype's card tally counts, and the cards in its hand.
+# The days of decks an archetype's card tally counts, the days it counts instead when none of those has a stored list,
+# and the cards in its hand.
 CARD_DAYS = 7
+CARD_FALLBACK_DAYS = 30
 HAND = 5
 BOARDS = (("main", "m"), ("side", "s"))
 
@@ -37,7 +39,8 @@ def build_archetype_pages(
     that shows no key cards takes them from the archetype's featured deck instead, when `decks`
     (the format's stored deck contents) has it and `catalog` (the card catalog) knows its cards, and
     one that shows no colours takes the colours of that deck. `cards` and `hand` are tallied from the
-    stored lists of the archetype's decks of the last `CARD_DAYS` days (see `card_tally`); `hands` are those of
+    stored lists of the archetype's decks of the last `CARD_DAYS` days, or of the last `CARD_FALLBACK_DAYS` when
+    none of those has one (see `card_tally`, `_card_decks`); `hands` are those of
     `archetype_hands`, worked out here when not given. Its `consensus` is from the same lists
     (see `consensus`), and each deck carries its event's header and, when its list is stored and the archetype
     has a consensus to compare it with, its `changes` from that consensus (see `changes`). An archetype the
@@ -51,7 +54,7 @@ def build_archetype_pages(
     }
     today = _today(now)
     headers = {event["event_id"]: _event_header(event) for event in snapshot.get("events", [])}
-    recent = _recent_decks(snapshot, now)
+    recent = _card_decks(snapshot, now, decks)
     if hands is None:
         hands = archetype_hands(snapshot, now, decks, catalog)
     pages = {}
@@ -88,10 +91,10 @@ def build_archetype_pages(
                 for result in past[:ARCHETYPE_DECKS]
             ],
         }
-        week = recent.get(archetype_id, [])
+        days, week = recent.get(archetype_id, (CARD_DAYS, []))
         lists = [(decks or {})[deck_id] for deck_id in week if deck_id in (decks or {})]
         pages[archetype_id]["cards"] = {
-            "window": f"{CARD_DAYS}d",
+            "window": f"{days}d",
             "deck_count": len(week),
             "list_count": len(lists),
             **card_tally(lists, catalog or {}),
@@ -111,10 +114,10 @@ def build_archetype_pages(
 def archetype_hands(
     snapshot: dict, now: datetime, decks: Optional[Dict[str, dict]] = None, catalog: Optional[Dict[str, dict]] = None
 ) -> Dict[str, List[dict]]:
-    """Each archetype's `hand`, from the stored lists of its decks of the last `CARD_DAYS` days, by archetype id."""
+    """Each archetype's `hand`, from the stored lists of its decks of the last `CARD_DAYS` days (`CARD_FALLBACK_DAYS` when none has one), by archetype id."""
     return {
         archetype_id: hand([(decks or {})[deck_id] for deck_id in week if deck_id in (decks or {})], catalog or {})
-        for archetype_id, week in _recent_decks(snapshot, now).items()
+        for archetype_id, (_, week) in _card_decks(snapshot, now, decks).items()
     }
 
 
@@ -264,8 +267,25 @@ def _tally(lists: Sequence[dict], board: str) -> Dict[str, List[int]]:
     return tally
 
 
-def _recent_decks(snapshot: dict, now: datetime) -> Dict[str, List[str]]:
-    """The decks of each archetype dated in the last `CARD_DAYS` days, by archetype id.
+def _card_decks(snapshot: dict, now: datetime, decks: Optional[Dict[str, dict]]) -> Dict[str, Tuple[int, List[str]]]:
+    """The days and the decks each archetype's cards are counted from, by archetype id.
+
+    The decks dated in the last `CARD_DAYS` days, or in the last `CARD_FALLBACK_DAYS` when none of those has a stored
+    list in `decks` and some of those do.
+    """
+    week = _recent_decks(snapshot, now, CARD_DAYS)
+    month = _recent_decks(snapshot, now, CARD_FALLBACK_DAYS)
+    stored = decks or {}
+    return {
+        archetype_id: (CARD_DAYS, week.get(archetype_id, []))
+        if any(deck_id in stored for deck_id in week.get(archetype_id, [])) or not any(deck_id in stored for deck_id in month_ids)
+        else (CARD_FALLBACK_DAYS, month_ids)
+        for archetype_id, month_ids in month.items()
+    }
+
+
+def _recent_decks(snapshot: dict, now: datetime, days: int) -> Dict[str, List[str]]:
+    """The decks of each archetype dated in the last `days` days, by archetype id.
 
     A deck belongs to the archetype whose results list it, else to the one its event result names.
     """
@@ -278,7 +298,7 @@ def _recent_decks(snapshot: dict, now: datetime) -> Dict[str, List[str]]:
             if result.get("archetype_id"):
                 membership.setdefault(result["deck_id"], result["archetype_id"])
     recent: Dict[str, List[str]] = {}
-    for deck_id in sorted(_deck_ids(deck_dates(snapshot), now, CARD_DAYS)):
+    for deck_id in sorted(_deck_ids(deck_dates(snapshot), now, days)):
         if deck_id in membership:
             recent.setdefault(membership[deck_id], []).append(deck_id)
     return recent
