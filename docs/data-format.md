@@ -295,7 +295,15 @@ One file per archetype in each format's current metagame (any of the `7d`, `14d`
   "decks": [
     {
       "deck_id": "7977623", "date": "2026-09-29", "event_id": "66952", "event_name": "Modern Challenge 64", "finish": "15th Place", "player": "Uagli1", "published": true,
-      "event": { "id": "66952", "name": "Modern Challenge 64", "kind": "mtgo_challenge", "prestige": 3, "source": "mtgo.com", "deck_count": 64 }
+      "event": { "id": "66952", "name": "Modern Challenge 64", "kind": "mtgo_challenge", "prestige": 3, "source": "mtgo.com", "deck_count": 64 },
+      "changes": {
+        "added": [{ "name": "Forest", "oracle_id": "…", "quantity": 2, "board": "main" }],
+        "removed": [
+          { "name": "Devourer of Destiny", "oracle_id": "…", "quantity": 1, "board": "main" },
+          { "name": "Trinisphere", "oracle_id": "…", "quantity": 1, "board": "side" }
+        ],
+        "added_count": 2, "removed_count": 2
+      }
     }
   ],
   "cards": {
@@ -311,7 +319,14 @@ One file per archetype in each format's current metagame (any of the `7d`, `14d`
   "hand": [
     { "name": "Kozilek's Command", "oracle_id": "2f2c549d-…" },
     { "name": "Sowing Mycospawn", "oracle_id": "…" }
-  ]
+  ],
+  "consensus": {
+    "main": [
+      { "name": "Forest", "oracle_id": "…", "quantity": 6 },
+      { "name": "Kozilek's Command", "oracle_id": "2f2c549d-…", "quantity": 4 }
+    ],
+    "side": [{ "name": "Trinisphere", "oracle_id": "…", "quantity": 3 }]
+  }
 }
 ```
 
@@ -323,6 +338,8 @@ One file per archetype in each format's current metagame (any of the `7d`, `14d`
 - An archetype with no results yet has `decks: []`.
 - **`cards`** is the archetype's card tally from our stored decklists of its decks of the last 7 days (`window` is `"7d"`), counted back from the run as `explore.json`'s top 8s are. `deck_count` is its decks in those days and `list_count` how many of them have a stored list, which is what the tally counts. `main` and `side` are the mainboard's and sideboard's cards, each `{ "name", "oracle_id", "type", "decks", "share", "copies" }` as in `popular-cards/{format}.json`: `type` is the kind of card from the front face's type line (`creature`, `planeswalker`, `battle`, `land`, `instant`, `sorcery`, `artifact`, `enchantment`, in that order of precedence, or `other`), `decks` the lists that play it, **`share`** their percent of `list_count` to one decimal (0 to 100, as every share in these files), and **`copies`** the average copies in the lists that play it, to one decimal. Lands and basics are in; a card Scryfall's catalog doesn't know is left out. Sorted by `decks` (so by share), then `copies`, then name. With no stored list, both are `[]`. Added on 17 October 2026, so decode it as optional.
 - **`hand`** is the five mainboard non-lands that most stand for the archetype, by share times average copies (the card's copies over all the lists, divided by `list_count`), a tie going to the name: each `{ "name", "oracle_id" }`. Fewer when the lists have fewer, `[]` with none. Added on 17 October 2026, so decode it as optional.
+- **`consensus`** is the archetype's common list, from the same lists as `cards` (its stored decklists of the last 7 days): every card that at least half of `list_count` play on that board, at its average copies in the lists that play it (`copies` in `cards`), rounded half up (2.5 is 3) and at least 1. `main` and `side` are each `[{ "name", "oracle_id", "quantity" }]`, most copies first, then name. Lands and basics count like any card. A card Scryfall's catalog doesn't know is in too, named as the first list writes it, with a null `oracle_id`. With no stored list in the week, both are `[]`. The quantities need not add up to 60 and 15. Added on 18 October 2026, so decode it as optional.
+- **`changes`** on a deck is how its list differs from `consensus`, card by card on each board: where it plays more copies than the consensus the difference is in `added`, where it plays fewer (or none) the difference is in `removed`, so a deck with two more Forests has `{ "name": "Forest", "quantity": 2, "board": "main" }` in `added`. Each is `{ "name", "oracle_id", "quantity", "board" }`, `board` being `"main"` or `"side"`, mainboard first, then most copies, then name; names are as in `consensus`. **`added_count`** and **`removed_count`** add up their `quantity`s. A deck as played as the consensus has both lists `[]` and both counts 0. Any deck of `decks` with a stored list has it, older decks too (compared with this week's consensus); it is null for a deck whose list isn't stored, and for every deck when the archetype has no stored list in the week (so `consensus` is empty). Added on 18 October 2026, so decode it as optional.
 - **`merged_into`** is there only in the file of an id merged into another: the leader's id, which is also the file's `id`. The rest of the file is the leader's.
 
 ## `events/{event_id}.json`

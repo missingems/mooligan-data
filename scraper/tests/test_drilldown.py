@@ -42,14 +42,14 @@ def test_an_archetype_page_has_its_tile_its_shares_and_its_decks_newest_first():
         {"a": [result("3", "2026-09-29"), result("2", "2026-09-28", "5-0", "2", "Modern League 2026-09-28 (1)"), result("1", "2026-09-20", "8th Place", None, "Local")]},
     )
     page = build_archetype_pages(document, NOW, {"3", "1"})["a"]
-    assert list(page) == ["id", "name", "format", "colors", "key_cards", "shares", "decks", "cards", "hand"]
+    assert list(page) == ["id", "name", "format", "colors", "key_cards", "shares", "decks", "cards", "hand", "consensus"]
     assert (page["id"], page["name"], page["format"], page["colors"]) == ("a", "A", "modern", ["U"])
     assert [c["oracle_id"] for c in page["key_cards"]] == ["a-o0", "a-o1", "a-o2"]  # up to three
     assert page["shares"] == {"7d": 9.1, "14d": None, "30d": 14.6}  # one decimal, null where the window has none of it
     assert page["decks"] == [
-        {"deck_id": "3", "date": "2026-09-29", "event_id": "1", "event_name": "Modern Challenge 32", "finish": "1st Place", "player": "p3", "published": True, "event": None},
-        {"deck_id": "2", "date": "2026-09-28", "event_id": "2", "event_name": "Modern League (1)", "finish": "5-0", "player": "p2", "published": False, "event": None},
-        {"deck_id": "1", "date": "2026-09-20", "event_id": None, "event_name": "Local", "finish": "8th Place", "player": "p1", "published": True, "event": None},
+        {"deck_id": "3", "date": "2026-09-29", "event_id": "1", "event_name": "Modern Challenge 32", "finish": "1st Place", "player": "p3", "published": True, "event": None, "changes": None},
+        {"deck_id": "2", "date": "2026-09-28", "event_id": "2", "event_name": "Modern League (1)", "finish": "5-0", "player": "p2", "published": False, "event": None, "changes": None},
+        {"deck_id": "1", "date": "2026-09-20", "event_id": None, "event_name": "Local", "finish": "8th Place", "player": "p1", "published": True, "event": None, "changes": None},
     ]
 
 
@@ -257,6 +257,7 @@ def test_an_archetype_with_no_stored_lists_has_an_empty_tally():
     page = build_archetype_pages(snapshot({"7d": [tile("a", 9.0)]}, {"a": [result("1", "2026-09-29")]}), NOW, set())["a"]
     assert page["cards"] == {"window": "7d", "deck_count": 1, "list_count": 0, "main": [], "side": []}
     assert page["hand"] == []
+    assert page["consensus"] == {"main": [], "side": []}
 
 
 def test_each_deck_carries_its_events_header_and_a_merged_away_id_gets_its_leaders_page():
@@ -272,3 +273,68 @@ def test_each_deck_carries_its_events_header_and_a_merged_away_id_gets_its_leade
     ]
     assert pages["a-old"] == {**pages["a"], "merged_into": "a"}
     assert "gone-old" not in pages  # its leader has no page
+
+
+def test_the_consensus_is_what_half_the_weeks_lists_play_at_their_average_copies_rounded_half_up():
+    document = snapshot({"7d": [tile("a", 9.0)]}, {"a": [result(str(n), "2026-09-29") for n in range(1, 5)]})
+    decks = {
+        "1": {"m": [[4, "Kozilek's Command"], [3, "Thought-Knot Seer"], [1, "Emrakul, the Promised End"], [1, "Mystery Card"]], "s": [[2, "Trinisphere"]]},
+        "2": {"m": [[4, "Kozilek's Command"], [2, "Thought-Knot Seer"], [1, "Mystery Card"]], "s": [[3, "Trinisphere"]]},
+        "3": {"m": [[4, "Kozilek's Command"], [1, "Devourer of Destiny"]], "s": []},
+        "4": {"m": [[2, "Kozilek's Command"], [4, "Ancient Stirrings"]], "s": []},
+    }
+
+    consensus = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]["consensus"]
+
+    # Command 14 / 4 = 3.5 and Seer 5 / 2 = 2.5 round up; Mystery Card is in two of four lists, Devourer and Stirrings in one.
+    assert consensus == {
+        "main": [
+            {"name": "Kozilek's Command", "oracle_id": "o-command", "quantity": 4},
+            {"name": "Thought-Knot Seer", "oracle_id": "o-tks", "quantity": 3},
+            {"name": "Mystery Card", "oracle_id": None, "quantity": 1},
+        ],
+        "side": [{"name": "Trinisphere", "oracle_id": "o-trini", "quantity": 3}],
+    }
+
+    decks["5"] = {"m": [[1, "Thought-Knot Seer"]], "s": []}
+    document["archetypes"]["a"]["results"].append(result("5", "2026-09-28"))
+    # Two of five lists is under half; Seer's 6 / 3 = 2.0 is now kept, and Trinisphere is out too.
+    assert build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]["consensus"] == {
+        "main": [{"name": "Kozilek's Command", "oracle_id": "o-command", "quantity": 4}, {"name": "Thought-Knot Seer", "oracle_id": "o-tks", "quantity": 2}],
+        "side": [],
+    }
+
+
+def test_a_deck_with_a_stored_list_shows_its_changes_from_the_consensus():
+    document = snapshot({"7d": [tile("a", 9.0)]}, {"a": [result("1", "2026-09-29"), result("2", "2026-09-29"), result("3", "2026-09-28"), result("old", "2026-09-01")]})
+    decks = {
+        "1": {"m": [[4, "Kozilek's Command"], [4, "Thought-Knot Seer"], [4, "Ugin's Labyrinth"]], "s": [[2, "Trinisphere"]]},
+        "2": {"m": [[4, "Kozilek's Command"], [4, "Thought-Knot Seer"], [4, "Ugin's Labyrinth"]], "s": [[2, "Trinisphere"]]},
+        "old": {"m": [[4, "Kozilek's Command"], [1, "Thought-Knot Seer"], [6, "Ugin's Labyrinth"], [2, "Ancient Stirrings"], [1, "Mystery Card"]], "s": [[1, "Trinisphere"], [3, "Fire/Ice"]]},
+    }  # deck 3 has no stored list; "old" is outside the week, so it is compared but not counted
+
+    page = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]
+    by_id = {deck["deck_id"]: deck["changes"] for deck in page["decks"]}
+
+    assert by_id["1"] == {"added": [], "removed": [], "added_count": 0, "removed_count": 0}
+    assert by_id["3"] is None
+    assert by_id["old"] == {
+        "added": [
+            {"name": "Ancient Stirrings", "oracle_id": "o-stirrings", "quantity": 2, "board": "main"},
+            {"name": "Ugin's Labyrinth", "oracle_id": "o-lab", "quantity": 2, "board": "main"},
+            {"name": "Mystery Card", "oracle_id": None, "quantity": 1, "board": "main"},
+            {"name": "Fire // Ice", "oracle_id": "o-fire", "quantity": 3, "board": "side"},
+        ],
+        "removed": [
+            {"name": "Thought-Knot Seer", "oracle_id": "o-tks", "quantity": 3, "board": "main"},
+            {"name": "Trinisphere", "oracle_id": "o-trini", "quantity": 1, "board": "side"},
+        ],
+        "added_count": 8,
+        "removed_count": 4,
+    }
+
+    del decks["1"], decks["2"]
+    # With no list in the week there is no consensus, so no deck shows changes.
+    page = build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]
+    assert page["consensus"] == {"main": [], "side": []}
+    assert [deck["changes"] for deck in page["decks"]] == [None, None, None, None]
