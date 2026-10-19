@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-19T22:21:46Z",
+ "extracted_at": "2026-10-19T22:22:28Z",
  "storyline": "Ravnica",
  "entities": [
   {
@@ -156,6 +156,14 @@
   },
   {
    "source": "Liana",
+   "relation": "romantic",
+   "target": "Jovan",
+   "note": "her love interest",
+   "paragraph": 3,
+   "quote": "to go see her love interest Jovan"
+  },
+  {
+   "source": "Liana",
    "relation": "member_of",
    "target": "Simic Combine",
    "note": "Simic researcher",
@@ -163,16 +171,5 @@
    "quote": "Liana is a Simic researcher"
   }
  ],
- "rejected": [
-  {
-   "kind": "relation",
-   "reason": "quote not in page",
-   "source": "Liana",
-   "relation": "romantic",
-   "target": "Jovan",
-   "note": "her love interest",
-   "paragraph": 3,
-   "quote": "Liana go see her love interest Jovan"
-  }
- ]
+ "rejected": []
 }

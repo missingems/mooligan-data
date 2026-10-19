@@ -1,0 +1,138 @@
+{
+ "page": "wiki/rhonas-s-monument",
+ "url": "https://mtg.wiki/page/Rhonas%27s_Monument",
+ "title": "Rhonas's Monument",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:30Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Rhonas's Monument",
+   "type": "location",
+   "aliases": [
+    "Monument of Strength"
+   ],
+   "description": "A revered artifact and holy site on Amonkhet shaped like a cobra head, where initiates face the Trial of Strength.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [
+    "the God-Pharaoh"
+   ],
+   "description": "Snake-headed god of strength to whom the monument is devoted; he reveals the poison to initiates and bestows the cartouche of strength.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the monument stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trial of Strength",
+   "type": "event",
+   "aliases": [],
+   "description": "Ordeal of the monument testing power, instincts and survival skills.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stairs of Rhonas",
+   "type": "location",
+   "aliases": [],
+   "description": "Ropes of living vines hanging from the open roof that initiates climb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Statues of the Highest",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Statues depicting legendary initiates from past crops.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fertile Holding",
+   "type": "location",
+   "aliases": [],
+   "description": "Complex where initiates make their final stay before completing training.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Luxa",
+   "type": "location",
+   "aliases": [
+    "Luxa river"
+   ],
+   "description": "River that feeds the monument.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "basilisk",
+   "type": "creature",
+   "aliases": [
+    "ancient basilisk"
+   ],
+   "description": "Color-shifting basilisk whose scale is the cure for the poison.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Initiates climb the Stairs of Rhonas and leap down the waterfall into the jungle.",
+   "participants": [
+    "Stairs of Rhonas",
+    "Trial of Strength"
+   ],
+   "location": "Rhonas's Monument",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "a climb up the treacherous Stairs of Rhonas , followed by a leap of faith to ride the thundering waterfall down into the jungle below"
+  },
+  {
+   "summary": "Rhonas appears to reveal that poison from the thorny vines runs through the initiates' veins, stripping their magic and clear thought.",
+   "participants": [
+    "Rhonas"
+   ],
+   "location": "Rhonas's Monument",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Rhonas appears to reveal that poison now runs through their veins"
+  },
+  {
+   "summary": "Initiates must claim a scale from the basilisk as a cure, then return to Rhonas, who bestows the cartouche of strength.",
+   "participants": [
+    "Rhonas",
+    "basilisk",
+    "Trial of Strength"
+   ],
+   "location": "Rhonas's Monument",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The final test demands that the initiate claim a single scale from the basilisk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rhonas's Monument",
+   "relation": "other",
+   "target": "Rhonas",
+   "note": "devoted to the god",
+   "paragraph": 0,
+   "quote": "devoted to the snake-headed god Rhonas"
+  },
+  {
+   "source": "Rhonas's Monument",
+   "relation": "located_in",
+   "target": "Amonkhet",
+   "note": "holy site on the plane",
+   "paragraph": 0,
+   "quote": "a revered artifact and holy site on the plane of Amonkhet"
+  }
+ ],
+ "rejected": []
+}

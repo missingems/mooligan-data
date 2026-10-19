@@ -1,0 +1,103 @@
+{
+ "page": "wiki/lorehold-deans-wing",
+ "url": "https://mtg.wiki/page/Lorehold_Deans%27_Wing",
+ "title": "Lorehold Deans' Wing",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:25Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Lorehold Deans' Wing",
+   "type": "location",
+   "aliases": [],
+   "description": "Reserved section of Archaeo Memorial Hall at Strixhaven's Lorehold Campus housing the deans' offices and records.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archaeo Memorial Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "Building on the Lorehold Campus containing the wing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorehold",
+   "type": "faction",
+   "aliases": [
+    "Lorehold Campus"
+   ],
+   "description": "College of Strixhaven University.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Plargg",
+   "type": "character",
+   "aliases": [
+    "Dean Plargg"
+   ],
+   "description": "Dean of Chaos at Lorehold with a focus on military history.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tullus",
+   "type": "character",
+   "aliases": [
+    "Dean Tullus"
+   ],
+   "description": "Dean of Order at Lorehold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Deans' Repository",
+   "type": "location",
+   "aliases": [],
+   "description": "Extradimensional library reachable via a concealed portal in the Deans' Records Room.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Plargg",
+   "relation": "member_of",
+   "target": "Lorehold",
+   "note": "Dean of Chaos",
+   "paragraph": 6,
+   "quote": "The personal office of the Dean of Chaos."
+  },
+  {
+   "source": "Tullus",
+   "relation": "member_of",
+   "target": "Lorehold",
+   "note": "Dean of Order",
+   "paragraph": 7,
+   "quote": "The office of the Dean of Order."
+  },
+  {
+   "source": "Lorehold Deans' Wing",
+   "relation": "located_in",
+   "target": "Archaeo Memorial Hall",
+   "note": "first floor",
+   "paragraph": 0,
+   "quote": "The wing is situated on the first floor of the Memorial Hall"
+  }
+ ],
+ "rejected": []
+}

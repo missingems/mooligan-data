@@ -1,0 +1,95 @@
+{
+ "page": "cards/fnm",
+ "url": "https://scryfall.com/sets/fnm",
+ "title": "Friday Night Magic 2000: card flavor text",
+ "story_date": "2000-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Afari",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of Tales, quoted on the snake's hiss for peace and the elephant's trumpeting of war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Roya",
+   "type": "character",
+   "aliases": [],
+   "description": "A Zhalfirin archer who vows to pin winged creatures to the skies over Tefemburu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tefemburu",
+   "type": "location",
+   "aliases": [],
+   "description": "Place whose skies Roya vows to defend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tahngarth",
+   "type": "character",
+   "aliases": [],
+   "description": "Crew member of the Weatherlight who orders defenders to hold position.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Airship on which Tahngarth serves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "People with a saying that lightning tethers souls to the world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Femeref",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who share a riddle about thunder and lightning.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Roya vows to pin any winged creature to the skies over Tefemburu.",
+   "participants": [
+    "Roya"
+   ],
+   "location": "Tefemburu",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "If it bears wings, I will pin it to the skies over Tefemburu."
+  },
+  {
+   "summary": "Tahngarth orders defenders to hold their position and leave doubt for the dying.",
+   "participants": [
+    "Tahngarth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Hold your position! Leave doubt for the dying!"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tahngarth",
+   "relation": "member_of",
+   "target": "Weatherlight",
+   "note": "Tahngarth is of the Weatherlight.",
+   "paragraph": 5,
+   "quote": "Tahngarth of the *Weatherlight*"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,197 @@
+{
+ "page": "wiki/elder-dragon-war",
+ "url": "https://mtg.wiki/page/Elder_Dragon_War",
+ "title": "Elder Dragon War",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:34Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Elder Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "Great conflict of Dominaria's Mythohistory among the Elder Dragons, after which only seven survived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Dragons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Powerful dragons who fought in the war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Elder dragon who manipulated the dragon clans and came to rule half of Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [
+    "Vaevictis"
+   ],
+   "description": "Elder dragon whose descendants raided Bolas's lands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rubra",
+   "type": "character",
+   "aliases": [],
+   "description": "Sibling of Vaevictis killed by a poisoned arrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravus",
+   "type": "character",
+   "aliases": [],
+   "description": "Sibling of Vaevictis killed by Bolas's sorcerers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lividus",
+   "type": "character",
+   "aliases": [],
+   "description": "Sibling whose mind Bolas overpowered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon easily influenced to join the fray.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "character",
+   "aliases": [],
+   "description": "Clever dragon who hid himself while pretending to be something he was not.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcades Sabboth",
+   "type": "character",
+   "aliases": [],
+   "description": "Wise dragon who joined the war while hearing Bolas's whispers; nearly defeated by Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose intervention saved Sabboth and ended the war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the last clash.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the war was fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragon-killers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "Earlier war preceding the Elder Dragon War.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Descendants of Vaevictis raid Bolas's lands, are defeated, then Vaevictis and his siblings defeat Bolas's army, which retreats.",
+   "participants": [
+    "Vaevictis Asmadi",
+    "Nicol Bolas",
+    "Rubra",
+    "Ravus",
+    "Lividus"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Bolas' army suffered a shattering defeat and had to retreat into the mountains"
+  },
+  {
+   "summary": "Bolas's sorcerers kill Ravus and Bolas overpowers Lividus's mind and turns him against Vaevictis, allowing escape.",
+   "participants": [
+    "Nicol Bolas",
+    "Ravus",
+    "Lividus",
+    "Vaevictis Asmadi"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the sorcerers of Bolas' army managed to kill Ravus"
+  },
+  {
+   "summary": "Bolas manipulates the dragon clans against each other.",
+   "participants": [
+    "Nicol Bolas",
+    "Palladia-Mors"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Manipulating the many dragon clans, he turned them against each other."
+  },
+  {
+   "summary": "The war spreads across the seas, and Arcades Sabboth joins, listening to Bolas's whispers.",
+   "participants": [
+    "Arcades Sabboth",
+    "Nicol Bolas"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Even the wise Arcades Sabboth threw his might into the great war"
+  },
+  {
+   "summary": "In the last clash on Jamuraa, Ugin's intervention saves Sabboth; Bolas's spark ignites in rage and envy and he planeswalks away, ending the war.",
+   "participants": [
+    "Nicol Bolas",
+    "Arcades Sabboth",
+    "Ugin"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Only the unexpected intervention of Ugin prevented the ultimate defeat of Sabboth."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Arcades Sabboth",
+   "note": "fought in last clash",
+   "paragraph": 6,
+   "quote": "between the troops of Nicol Bolas himself and Arcades Sabboth"
+  },
+  {
+   "source": "Ugin",
+   "relation": "ally",
+   "target": "Arcades Sabboth",
+   "note": "intervened to save him",
+   "paragraph": 6,
+   "quote": "Only the unexpected intervention of Ugin prevented the ultimate defeat of Sabboth."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,198 @@
+{
+ "page": "wiki/dromoka",
+ "url": "https://mtg.wiki/page/Dromoka",
+ "title": "Dromoka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:30Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Dromoka",
+   "type": "character",
+   "aliases": [
+    "Elder Dragonlord Dromoka"
+   ],
+   "description": "One of the five elder dragons of Tarkir, a patient but ruthless ankylosaur-like dragon who usurped the Abzan and was defeated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dromoka's Brood",
+   "type": "faction",
+   "aliases": [
+    "Dromoka brood"
+   ],
+   "description": "Armored dragons that emerged from Ugin's dragon tempests and breathe searing light.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Dromoka",
+   "type": "faction",
+   "aliases": [
+    "Abzan"
+   ],
+   "description": "The former Abzan clan, renamed under Dromoka's rule and organized around dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Spirit Dragon whose dragon tempests birthed the broods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Saved Ugin, allowing the brood to thrive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daghatar",
+   "type": "character",
+   "aliases": [],
+   "description": "Khan of the Abzan who surrendered to Dromoka and ended necromancy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anafenza",
+   "type": "character",
+   "aliases": [],
+   "description": "Defector who challenged the dragonlord and was killed for disobedience.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [],
+   "description": "Former planeswalker who uncovered the Stormnexus Ritual scroll and was convinced to use it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stormnexus Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual that called a massive dragonstorm and five spirit dragons, defeating the Dragonlords.",
+   "presence": "appears"
+  },
+  {
+   "name": "Khanfall of Tarkir",
+   "type": "event",
+   "aliases": [],
+   "description": "Event following Daghatar's surrender to Dromoka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that caused heavy dragon casualties and weakened dragonlords' power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane ruled by dragonlords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragonlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "The elder dragons ruling Tarkir's clans.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dromoka's brood massacres the Abzan over necromancy until Khan Daghatar is brought before her; he ends the kin-tree traditions and pacts with dragons.",
+   "participants": [
+    "Dromoka",
+    "Dromoka's Brood",
+    "Daghatar",
+    "Clan Dromoka"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he ordered the end of the Abzan kin-tree traditions, installing instead a pact with the dragons"
+  },
+  {
+   "summary": "Anafenza and other defectors challenge the dragonlord and are killed.",
+   "participants": [
+    "Anafenza",
+    "Dromoka"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Resistance to Dromoka grew from defectors like Anafenza who challenged the dragonlord and were ultimately killed for their disobedience."
+  },
+  {
+   "summary": "The New Phyrexian Invasion causes heavy dragon casualties; Dromoka's brood turn to ancestor spirits and rebel.",
+   "participants": [
+    "Dromoka's Brood",
+    "Dromoka",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "many among Dromoka's brood turned to their ancestors"
+  },
+  {
+   "summary": "Narset finds the Stormnexus Ritual scroll and is convinced by rebellion leaders to use it.",
+   "participants": [
+    "Narset",
+    "Stormnexus Ritual"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "she was convinced by the other rebellion leaders that this was the best way to ensure a unified Tarkir"
+  },
+  {
+   "summary": "The ritual raises five spirit dragons, who battle the Dragonlords; the Dragonlords are defeated and seemingly swallowed by the storm.",
+   "participants": [
+    "Dragonlords",
+    "Dromoka",
+    "Stormnexus Ritual"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "In the end, the Dragonlords were defeated and seemingly swallowed up by the massive storm."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dromoka",
+   "relation": "leader_of",
+   "target": "Clan Dromoka",
+   "note": "Elder Dragonlord",
+   "paragraph": 5,
+   "quote": "Under the Elder Dragonlord Dromoka, the Abzan name was forgotten, and the group became known as clan Dromoka."
+  },
+  {
+   "source": "Dromoka",
+   "relation": "enemy",
+   "target": "Daghatar",
+   "note": "usurped the Abzan clan from him",
+   "paragraph": 4,
+   "quote": "Dromoka usurped the Abzan clan from Daghatar"
+  },
+  {
+   "source": "Dromoka",
+   "relation": "killed",
+   "target": "Anafenza",
+   "note": "defector killed for disobedience",
+   "paragraph": 7,
+   "quote": "Resistance to Dromoka grew from defectors like Anafenza who challenged the dragonlord and were ultimately killed for their disobedience."
+  }
+ ],
+ "rejected": []
+}
