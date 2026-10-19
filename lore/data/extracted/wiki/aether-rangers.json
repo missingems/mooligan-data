@@ -1,0 +1,102 @@
+{
+ "page": "wiki/aether-rangers",
+ "url": "https://mtg.wiki/page/Aether_Rangers",
+ "title": "Aether Rangers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:22Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Aether Rangers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racing team from Avishkar in the Ghirapur Grand Prix, founded by Pia Nalaar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder, Chief Engineer and public representative of the Aether Rangers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spitfire",
+   "type": "character",
+   "aliases": [],
+   "description": "Star pilot and team captain; her vehicle was destroyed in the failed coup.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cloudspire Racing Team",
+   "type": "faction",
+   "aliases": [],
+   "description": "Main rival, winners of the inaugural Ghirapur Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-captain of Cloudspire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar Assembly",
+   "type": "faction",
+   "aliases": [],
+   "description": "Funds the Rangers' squadrons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Interplanar race.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Spitfire's vehicle was destroyed during the failed Avishkari coup in the final stage of the race.",
+   "participants": [
+    "Spitfire",
+    "Aether Rangers"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The vehicle was destroyed during the failed Avishkari coup"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "created",
+   "target": "Aether Rangers",
+   "note": "Founder",
+   "paragraph": 0,
+   "quote": "The team was founded by Pia Nalaar"
+  },
+  {
+   "source": "Aether Rangers",
+   "relation": "enemy",
+   "target": "Cloudspire Racing Team",
+   "note": "Main rival",
+   "paragraph": 2,
+   "quote": "The main rival of the Aether Rangers is the Cloudspire Racing Team"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "leader_of",
+   "target": "Cloudspire Racing Team",
+   "note": "Co-captain",
+   "paragraph": 2,
+   "quote": "Chandra Nalaar is the co-captain of Cloudspire"
+  }
+ ],
+ "rejected": []
+}

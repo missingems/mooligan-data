@@ -1,0 +1,134 @@
+{
+ "page": "wiki/arinos",
+ "url": "https://mtg.wiki/page/Arinos",
+ "title": "Arinos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:23Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Arinos",
+   "type": "character",
+   "aliases": [],
+   "description": "Superstitious farmer of Lambholt who summoned Old Stickfingers; presumed dead or possessed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "Village on Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Nightmarish guardian spirit summoned by Arinos that broke free and killed villagers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ariosa",
+   "type": "character",
+   "aliases": [],
+   "description": "Arinos's daughter who finished the ritual to restrain Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dein Salvasi",
+   "type": "character",
+   "aliases": [],
+   "description": "Wealthy neighbor Arinos had a debt dispute with.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Archmage from Nephalia who destroyed the mobile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "Monster-slaying inquisitor who confronted Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Vadrik.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Facing loss of his farm, Arinos summoned Old Stickfingers to eliminate Salvasi.",
+   "participants": [
+    "Arinos",
+    "Old Stickfingers",
+    "Dein Salvasi",
+    "Ariosa"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Arinos called forth Old Stickfingers"
+  },
+  {
+   "summary": "The summoning went wrong; Old Stickfingers broke free and attacked Arinos and the villagers.",
+   "participants": [
+    "Old Stickfingers",
+    "Arinos"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Old Stickfingers broke free, turning on his summoner"
+  },
+  {
+   "summary": "Vadrik and Rem Karolus confronted Old Stickfingers; Vadrik destroyed the mobile and Ariosa finished the ritual, ending its rampage.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus",
+    "Old Stickfingers",
+    "Ariosa"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Vadrik destroyed the mobile"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arinos",
+   "relation": "family",
+   "target": "Ariosa",
+   "note": "Father and daughter",
+   "paragraph": 1,
+   "quote": "He lived with his daughter, Ariosa"
+  },
+  {
+   "source": "Old Stickfingers",
+   "relation": "killed",
+   "target": "Arinos",
+   "note": "Possibly killed or possessed him",
+   "paragraph": 3,
+   "quote": "either killed or possessed by the very creature he sought to use as a protector"
+  }
+ ],
+ "rejected": []
+}

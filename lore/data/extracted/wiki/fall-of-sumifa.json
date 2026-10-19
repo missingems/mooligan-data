@@ -1,0 +1,194 @@
+{
+ "page": "wiki/fall-of-sumifa",
+ "url": "https://mtg.wiki/page/Fall_of_Sumifa",
+ "title": "Fall of Sumifa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:36Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Fall of Sumifa",
+   "type": "event",
+   "aliases": [],
+   "description": "Event of the Brothers' War that ended old Sumifa under a sandstorm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "A kingdom buried under sand by Porros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [
+    "Porros the sand wraith"
+   ],
+   "description": "Crown prince of Sumifa and songmage who betrays his order and is cursed into a sand wraith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor",
+   "type": "character",
+   "aliases": [
+    "Samos"
+   ],
+   "description": "Leader of the songmages of Sumifa and Porros's mentor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Absolute ruler over the kingdom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Songmages of Sumifa",
+   "type": "faction",
+   "aliases": [
+    "songmages"
+   ],
+   "description": "The order led by Samor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain beneath which the cockatrice was bound.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nessian Caves",
+   "type": "location",
+   "aliases": [],
+   "description": "Shelter to which the people fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Javin",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the archaeological team.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muni",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist on the team.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cheyne",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist on the team.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Porros flies to Samor's office, having betrayed his order to claim leadership by force.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "prompted him to betray his order and claim the leadership by force"
+  },
+  {
+   "summary": "Porros's discordant tone makes Samor bind the cockatrice beneath Sarraza, putting Samor in debt to Mishra.",
+   "participants": [
+    "Porros",
+    "Samor",
+    "Mishra"
+   ],
+   "location": "Sarraza",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This forced Samor to bind the beast beneath the mountain of Sarraza rather than kill it."
+  },
+  {
+   "summary": "Porros cuts Samor's throat with a mirror shard and Samor curses him to become a sand wraith.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Porros took a broken mirror shard and cut Samor's throat"
+  },
+  {
+   "summary": "Porros draws a cyclone of sand that buries Sumifa while its people flee to the Nessian Caves.",
+   "participants": [
+    "Porros",
+    "Sumifa"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Sumifa was buried under tons of sand"
+  },
+  {
+   "summary": "More than 3000 years later, an archaeological team rediscovers the buried city.",
+   "participants": [
+    "Javin",
+    "Muni",
+    "Cheyne",
+    "Sumifa"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "rediscovered the ancient, buried remains of the city"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor",
+   "relation": "mentor_of",
+   "target": "Porros",
+   "note": "Porros's mentor.",
+   "paragraph": 1,
+   "quote": "to the office of his mentor Samor"
+  },
+  {
+   "source": "Porros",
+   "relation": "killed",
+   "target": "Samor",
+   "note": "Cut his throat with a mirror shard.",
+   "paragraph": 3,
+   "quote": "Porros took a broken mirror shard and cut Samor's throat"
+  },
+  {
+   "source": "Samor",
+   "relation": "leader_of",
+   "target": "Songmages of Sumifa",
+   "note": "Leader of the songmages.",
+   "paragraph": 1,
+   "quote": "Samor was the leader of the songmages of Sumifa"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "quote not in page",
+   "source": "Mishra",
+   "relation": "leader_of",
+   "target": "Sumifa",
+   "note": "Absolute ruler over the kingdom.",
+   "paragraph": 2,
+   "quote": "Mishra, the current absolute ruler over the kingdom"
+  }
+ ]
+}

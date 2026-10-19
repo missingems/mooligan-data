@@ -1,0 +1,150 @@
+{
+ "page": "wiki/egon",
+ "url": "https://mtg.wiki/page/Egon",
+ "title": "Egon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:21Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Egon",
+   "type": "deity",
+   "aliases": [
+    "Bjorn"
+   ],
+   "description": "God of death from Kaldheim, one of the oldest Skoti, who ages backward and looks like a bitter teenage boy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skoti",
+   "type": "faction",
+   "aliases": [
+    "gods of Kaldheim"
+   ],
+   "description": "The gods of Kaldheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kolvori",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who shares Egon's concern about the Skoti's downfall but does not get along with him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narfi",
+   "type": "character",
+   "aliases": [
+    "King Narfi"
+   ],
+   "description": "King of Karfell tricked by Egon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Einir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemies of the Skoti in an ancient war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Istfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of the dead where Egon spends his time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm Egon has long tried to enter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Firja",
+   "type": "character",
+   "aliases": [],
+   "description": "Valkyrie who stops Egon's attempts to invade Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ranar",
+   "type": "character",
+   "aliases": [],
+   "description": "Warrior spirit appointed guardian of the passage between Istfell and Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Throne of Death",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary artifact Egon possesses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom ruled by Narfi.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Skoti's war with the Einir, Egon tricks King Narfi into giving him an army of the dead, turning the tide and making him god of the dead.",
+   "participants": [
+    "Egon",
+    "Narfi",
+    "Einir",
+    "Skoti"
+   ],
+   "location": "Karfell",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Egon tricked King Narfi"
+  },
+  {
+   "summary": "For centuries Egon tries to force his way into Starnheim and is stopped by Firja and Ranar.",
+   "participants": [
+    "Egon",
+    "Firja",
+    "Ranar"
+   ],
+   "location": "Starnheim",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Egon is stopped by Firja and the warrior spirit Ranar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Firja",
+   "relation": "enemy",
+   "target": "Egon",
+   "note": "Stops his invasions of Starnheim",
+   "paragraph": 3,
+   "quote": "Egon is stopped by Firja"
+  },
+  {
+   "source": "Ranar",
+   "relation": "serves",
+   "target": "Firja",
+   "note": "Appointed by the valkyrie as guardian",
+   "paragraph": 3,
+   "quote": "appointed by the valkyrie as guardian of the passage"
+  },
+  {
+   "source": "Egon",
+   "relation": "leader_of",
+   "target": "Istfell",
+   "note": "Proclaims himself Lord High Ruler",
+   "paragraph": 2,
+   "quote": "he proclaims himself the Lord High Ruler of the Lands of Istfell"
+  }
+ ],
+ "rejected": []
+}

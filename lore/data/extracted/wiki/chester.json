@@ -1,0 +1,203 @@
+{
+ "page": "wiki/chester",
+ "url": "https://mtg.wiki/page/Chester",
+ "title": "Chester",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:14Z",
+ "storyline": "Onslaught",
+ "entities": [
+  {
+   "name": "Chester",
+   "type": "creature",
+   "aliases": [],
+   "description": "A mule owned by Zagorka on Otaria, her trusted friend and companion, enlarged by Krosa's mutating power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zagorka",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman living on Otaria who owned Chester and died during the Rebirth of Karona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on Dominaria where Zagorka lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "City that needed mule drivers and charged an entrance fee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Resuscitated Chester with his newfound powers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krosa",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose mutating power enlarged Chester.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grand Coliseum",
+   "type": "location",
+   "aliases": [],
+   "description": "Structure for which Zagorka hauled materials.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [],
+   "description": "Befriended Zagorka; spawned the nightmare death wurms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nightmare War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war in which Zagorka rode Chester.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stonebrow",
+   "type": "character",
+   "aliases": [],
+   "description": "Companion who galloped south with Chester and Zagorka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Averru",
+   "type": "location",
+   "aliases": [
+    "Sanctum"
+   ],
+   "description": "Ancient city whose crumbled entrance Zagorka found and named Sanctum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corian Escarpment",
+   "type": "location",
+   "aliases": [],
+   "description": "Escarpment along which they galloped south.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glyphs",
+   "type": "concept",
+   "aliases": [],
+   "description": "Structures that began to rise in Averru and menace victims.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rebirth of Karona",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Zagorka perished.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A guard at Aphetto gives Chester a mortal wound as payment when Zagorka cannot afford the entrance fee.",
+   "participants": [
+    "Zagorka",
+    "Chester",
+    "Aphetto"
+   ],
+   "location": "Aphetto",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the guard gave Chester a mortal wound as payment"
+  },
+  {
+   "summary": "Kamahl resuscitates Chester, and Krosa's mutating power makes him far larger and stronger.",
+   "participants": [
+    "Kamahl",
+    "Chester",
+    "Krosa"
+   ],
+   "location": "Aphetto",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kamahl resuscitated Chester back to life with his newfound powers"
+  },
+  {
+   "summary": "Zagorka rides Chester in the Nightmare War, and he saves her life escaping Phage's death wurms.",
+   "participants": [
+    "Zagorka",
+    "Chester",
+    "Phage"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he saved her life when they escaped the terrible nightmare death wurms that were spawned by Phage"
+  },
+  {
+   "summary": "Chester, Zagorka and Stonebrow find the entrance to Averru, which Zagorka names Sanctum.",
+   "participants": [
+    "Chester",
+    "Zagorka",
+    "Stonebrow",
+    "Averru"
+   ],
+   "location": "Corian Escarpment",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "eventually stumbled over the crumbled entrance to the city of Averru"
+  },
+  {
+   "summary": "When the Glyphs rise, Chester helps victims escape by kicking down walls and destroying Glyphs; he is separated from Zagorka, who is trapped and dies.",
+   "participants": [
+    "Chester",
+    "Zagorka",
+    "Glyphs"
+   ],
+   "location": "Averru",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Zagorka perished during the Rebirth of Karona"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zagorka",
+   "relation": "ally",
+   "target": "Chester",
+   "note": "Owner and friend.",
+   "paragraph": 0,
+   "quote": "He was her trusted friend and companion."
+  },
+  {
+   "source": "Zagorka",
+   "relation": "ally",
+   "target": "Phage",
+   "note": "Befriended her at the Grand Coliseum.",
+   "paragraph": 1,
+   "quote": "there befriended Phage"
+  },
+  {
+   "source": "Kamahl",
+   "relation": "ally",
+   "target": "Chester",
+   "note": "Revived him.",
+   "paragraph": 1,
+   "quote": "Kamahl resuscitated Chester back to life"
+  }
+ ],
+ "rejected": []
+}

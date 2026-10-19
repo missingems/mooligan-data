@@ -1,0 +1,185 @@
+{
+ "page": "wiki/argivia",
+ "url": "https://mtg.wiki/page/Argivia",
+ "title": "Argivia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:39Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Argivia",
+   "type": "location",
+   "aliases": [
+    "Kjeld"
+   ],
+   "description": "Capital of New Argive, a fortified city ruined in the Phyrexian Invasion and rebuilt.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Part of the Terisian Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Argivia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [
+    "Phyrexian Invasion"
+   ],
+   "description": "Invasion that ruined the first Argivia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Godwyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated scholar who led the raid on Argivia and was killed by Kari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kari",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated woman who betrayed and killed Godwyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhammidarigaaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon who went to Argivia's ruined library.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rith",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon who went to Argivia's ruined library.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon Nations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dragons who flew from Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Treva",
+   "type": "creature",
+   "aliases": [],
+   "description": "Primeval dragon found cemented into the floor and awakened by a ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Origin of the dragons' flight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stenn",
+   "type": "character",
+   "aliases": [],
+   "description": "Sleeper agent who led the Phyrexians in the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Argivia was overrun.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Godwyn leads a raid that ruins Argivia, killing its inhabitants and destroying most of its books.",
+   "participants": [
+    "Godwyn",
+    "Argivia"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Godwyn killed all of the city's inhabitants and destroyed almost all of its books"
+  },
+  {
+   "summary": "Kari betrays and kills Godwyn.",
+   "participants": [
+    "Kari",
+    "Godwyn"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was betrayed and killed by the Compleated woman Kari"
+  },
+  {
+   "summary": "The dragons reach the ruined library and awaken Treva by a ritual draining four dragons.",
+   "participants": [
+    "Rhammidarigaaz",
+    "Rith",
+    "Dragon Nations",
+    "Treva"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Treva was awoken, joining them on their way to the next primeval"
+  },
+  {
+   "summary": "A second Argivia is built on the site during the Rift Era.",
+   "participants": [
+    "Argivia"
+   ],
+   "location": "Argivia",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "a second city carrying the same name, Argivia, was built on the former site of the fallen city"
+  },
+  {
+   "summary": "Argivia is overrun with Phyrexians led by the sleeper agent Stenn.",
+   "participants": [
+    "Stenn",
+    "Argivia"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Argivia again became overrun with Phyrexians led by the sleeper agent Stenn"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kari",
+   "relation": "killed",
+   "target": "Godwyn",
+   "note": "Betrayed and killed him.",
+   "paragraph": 3,
+   "quote": "he was betrayed and killed by the Compleated woman Kari"
+  },
+  {
+   "source": "Argivia",
+   "relation": "located_in",
+   "target": "New Argive",
+   "note": "Its capital.",
+   "paragraph": 0,
+   "quote": "Argivia is the capital of New Argive"
+  }
+ ],
+ "rejected": []
+}

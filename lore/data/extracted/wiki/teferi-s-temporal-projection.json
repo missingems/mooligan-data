@@ -1,0 +1,194 @@
+{
+ "page": "wiki/teferi-s-temporal-projection",
+ "url": "https://mtg.wiki/page/Teferi%27s_Temporal_Projection",
+ "title": "Teferi's Temporal Projection",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:10Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Teferi's Temporal Projection",
+   "type": "event",
+   "aliases": [],
+   "description": "A 4562 AR time travel mission at Urza's Tower to learn how Urza detonated the Golgothian Sylex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi Akosa",
+   "type": "character",
+   "aliases": [
+    "Teferi"
+   ],
+   "description": "Planeswalker whose consciousness was projected into the past and then lost in the timestream, ending on Zhalfir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [
+    "Saheeli"
+   ],
+   "description": "Designed the Temporal Anchor from Urza's blueprints.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who laid Sharaman to rest and later joined the New Coalition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Detonated the Golgothian Sylex in 64 AR; spoke with Teferi during his ascension.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sharaman",
+   "type": "character",
+   "aliases": [],
+   "description": "Ghost of Urza's former general who disrupted prototype tests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Stayed at Urza's Tower to help repair the Anchor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "Remained at Urza's Tower to help repair the Anchor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temporal Anchor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device designed by Saheeli to project Teferi's consciousness into the past.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [
+    "Sylex"
+   ],
+   "description": "Artifact Urza detonated in 64 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the mission on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Pocket-plane where Teferi's consciousness washed ashore.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alliance Kaya left to join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Second Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "The war that motivated the mission.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ghost of Sharaman disrupts prototype tests; Kaya lays him to rest and Saheeli repairs the damage.",
+   "participants": [
+    "Sharaman",
+    "Kaya",
+    "Saheeli Rai"
+   ],
+   "location": "Urza's Tower",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kaya laid Sharaman to rest"
+  },
+  {
+   "summary": "After missing earlier eras, Teferi arrives at the exact moment Urza sets off the Sylex Blast and learns from Urza that a person triggered the detonation.",
+   "participants": [
+    "Teferi Akosa",
+    "Urza",
+    "Golgothian Sylex"
+   ],
+   "location": "Urza's Tower",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "On the fourth attempt, Teferi arrived at the exact moment Urza set off the Sylex Blast"
+  },
+  {
+   "summary": "The powerstone implodes, overloading the Anchor and losing Teferi's consciousness in the timestream to Zhalfir.",
+   "participants": [
+    "Teferi Akosa",
+    "Temporal Anchor"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the powerstone powering the Anchor imploded, overloading the device"
+  },
+  {
+   "summary": "Saheeli, Wrenn and Jodah stay to repair the Anchor while Kaya leaves to join the New Coalition.",
+   "participants": [
+    "Saheeli Rai",
+    "Wrenn",
+    "Jodah",
+    "Kaya"
+   ],
+   "location": "Urza's Tower",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kaya departed to join the New Coalition with the information she had gained"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Saheeli Rai",
+   "relation": "created",
+   "target": "Temporal Anchor",
+   "note": "Designed from Urza's blueprints.",
+   "paragraph": 1,
+   "quote": "designed by Saheeli from Urza 's blueprints"
+  },
+  {
+   "source": "Urza",
+   "relation": "other",
+   "target": "Golgothian Sylex",
+   "note": "Detonated it in 64 AR.",
+   "paragraph": 0,
+   "quote": "Urza detonated the Golgothian Sylex in 64 AR"
+  },
+  {
+   "source": "Sharaman",
+   "relation": "serves",
+   "target": "Urza",
+   "note": "Was general of Urza's armies in life.",
+   "paragraph": 1,
+   "quote": "who in life had been general of Urza's armies"
+  }
+ ],
+ "rejected": []
+}

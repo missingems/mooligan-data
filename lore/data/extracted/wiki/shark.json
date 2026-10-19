@@ -1,0 +1,69 @@
+{
+ "page": "wiki/shark",
+ "url": "https://mtg.wiki/page/Shark",
+ "title": "Shark",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Chordatans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Humanoid sharks endemic to Avishkar's coastal regions with a strong affinity for aether.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [
+    "Kaladesh"
+   ],
+   "description": "Region of Kaladesh where chordatans live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Path through which chordatans arrived on Avishkar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether",
+   "type": "concept",
+   "aliases": [
+    "liquid aether"
+   ],
+   "description": "Substance important to chordatan rituals, used as fuel in aethercycles.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chordatans arrive on Avishkar through an instanced Omenpath and find themselves atop the food chain.",
+   "participants": [
+    "Chordatans",
+    "Omenpath"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "having arrived via an instanced Omenpath to find themselves immediately atop the food chain"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chordatans",
+   "relation": "located_in",
+   "target": "Avishkar",
+   "note": "Endemic to coastal regions",
+   "paragraph": 6,
+   "quote": "humanoid sharks now endemic to"
+  }
+ ],
+ "rejected": []
+}

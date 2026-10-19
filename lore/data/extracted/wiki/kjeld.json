@@ -1,0 +1,183 @@
+{
+ "page": "wiki/kjeld",
+ "url": "https://mtg.wiki/page/Kjeld",
+ "title": "Kjeld",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:13Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Kjeld",
+   "type": "location",
+   "aliases": [
+    "Argivia"
+   ],
+   "description": "A great port city and part-time capital of Kjeldor on Terisiare, ancestral holding of Darien's line; later renamed Argivia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "The kingdom whose capital Kjeld was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krov",
+   "type": "location",
+   "aliases": [],
+   "description": "Merchant city that took over as capital of Kjeldor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where Kjeld stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darien Kjeld",
+   "type": "character",
+   "aliases": [
+    "King Darien Kjeld",
+    "Darien"
+   ],
+   "description": "King who ruled Kjeld, a descendant of Oriel Kjeldos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oriel Kjeldos",
+   "type": "character",
+   "aliases": [
+    "Oriel"
+   ],
+   "description": "Led her people away from Storgard before its fall; died on the journey and is considered a founder of the nation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zaraya",
+   "type": "character",
+   "aliases": [],
+   "description": "Resident of Kjeld 500 years after its foundation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Knights based in Kjeld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rimewind",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemy fought by the Kjeldoran army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Took the Staff of Ice Lords and gave it to Jaeuhl Carthalion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of the Staff of Ice Lords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Staff of Ice Lords",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Staff atop the Winter Palace that repelled creatures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which the city was destroyed utterly.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Oriel Kjeldos leads her people away from Storgard before its fall and dies on the journey.",
+   "participants": [
+    "Oriel Kjeldos"
+   ],
+   "location": "Kjeld",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Although she died on the journey, she is considered one of the nation's founders"
+  },
+  {
+   "summary": "Kjeld remains capital until Krov takes over that position.",
+   "participants": [
+    "Kjeld",
+    "Krov"
+   ],
+   "location": "Kjeld",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "remained the capital until the expanding merchant city of Krov took over that position"
+  },
+  {
+   "summary": "The Kjeldoran army fights the Cult of Rimewind under King Darien Kjeld.",
+   "participants": [
+    "Darien Kjeld",
+    "Knights of Kjeldor",
+    "Cult of Rimewind"
+   ],
+   "location": "Kjeld",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "fought the Cult of Rimewind"
+  },
+  {
+   "summary": "The city, renamed Argivia, is destroyed utterly in the Phyrexian Invasion and later rebuilt.",
+   "participants": [
+    "Kjeld"
+   ],
+   "location": "Kjeld",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "It was destroyed utterly during the Phyrexian Invasion of Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Darien Kjeld",
+   "relation": "leader_of",
+   "target": "Kjeld",
+   "note": "ruled it",
+   "paragraph": 8,
+   "quote": "Kjeld was ruled by King Darien Kjeld"
+  },
+  {
+   "source": "Darien Kjeld",
+   "relation": "family",
+   "target": "Oriel Kjeldos",
+   "note": "descendant",
+   "paragraph": 8,
+   "quote": "a descendant of Oriel"
+  },
+  {
+   "source": "Freyalise",
+   "relation": "ally",
+   "target": "Jaeuhl Carthalion",
+   "note": "gave him the staff",
+   "paragraph": 4,
+   "quote": "taken by Freyalise and given to Jaeuhl Carthalion"
+  }
+ ],
+ "rejected": []
+}

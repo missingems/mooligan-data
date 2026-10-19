@@ -1,0 +1,148 @@
+{
+ "page": "wiki/travec",
+ "url": "https://mtg.wiki/page/Travec",
+ "title": "Travec",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:21Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Travec",
+   "type": "location",
+   "aliases": [],
+   "description": "Village on Rath planeshifted to Dominaria by the Rathi Overlay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Original location of Travec.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Travec ended up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tower of Travec",
+   "type": "location",
+   "aliases": [],
+   "description": "Reed tower with a bell, destroyed by the Laccolith Titan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Patwog en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman-in-training who released the titan and died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Milgen en-Dal",
+   "type": "character",
+   "aliases": [],
+   "description": "Rogue who sought power in the mountains and died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laccolith Titan",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beast released in 4206 AR that destroyed the tower and smithy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Retma en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Village Oracle killed by the titan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Salla en-Dal",
+   "type": "character",
+   "aliases": [],
+   "description": "Blacksmith and Milgen's sister who defeated the titan with the bell chain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that made Travec part of Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Patwog and Milgen released a Laccolith Titan which killed them and rampaged through Travec.",
+   "participants": [
+    "Patwog en-Vec",
+    "Milgen en-Dal",
+    "Laccolith Titan"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they saw and released a Laccolith Titan which killed them both"
+  },
+  {
+   "summary": "The titan destroyed the Tower and smithy, killing Oracle Retma.",
+   "participants": [
+    "Laccolith Titan",
+    "Retma en-Vec"
+   ],
+   "location": "Travec",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "killing the village's Oracle, Retma en-Vec"
+  },
+  {
+   "summary": "Salla bound the titan with the bell chain and chained it to the collapsing smithy, sending both into the Rootwater.",
+   "participants": [
+    "Salla en-Dal",
+    "Laccolith Titan"
+   ],
+   "location": "Travec",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "managed to defeat the creature by binding it"
+  },
+  {
+   "summary": "Travec was rebuilt and became part of Dominaria with the Rathi Overlay.",
+   "participants": [
+    "Travec"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Travec became part of Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Salla en-Dal",
+   "relation": "family",
+   "target": "Milgen en-Dal",
+   "note": "Sister",
+   "paragraph": 3,
+   "quote": "Salla en-Dal , sister of Milgen"
+  },
+  {
+   "source": "Laccolith Titan",
+   "relation": "killed",
+   "target": "Retma en-Vec",
+   "note": "",
+   "paragraph": 3,
+   "quote": "killing the village's Oracle, Retma en-Vec"
+  }
+ ],
+ "rejected": []
+}

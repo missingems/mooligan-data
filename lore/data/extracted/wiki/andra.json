@@ -1,0 +1,107 @@
+{
+ "page": "wiki/andra",
+ "url": "https://mtg.wiki/page/Andra",
+ "title": "Andra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:32Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Andra",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Bane Alley broker and member of House Dimir.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "The guild Andra belongs to, which wanted a dagger sold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bartek",
+   "type": "character",
+   "aliases": [],
+   "description": "A young man who bought the dagger from Andra and was mugged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bane Alley",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Andra had her stall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Andra sets up a stall in Bane Alley to broker a polished dagger that House Dimir wants sold.",
+   "participants": [
+    "Andra",
+    "House Dimir"
+   ],
+   "location": "Bane Alley",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "All she knew was that House Dimir wanted it sold to someone in particular"
+  },
+  {
+   "summary": "Bartek brings Andra a gift and buys the dagger for five zinos, thinking she is romantically interested.",
+   "participants": [
+    "Bartek",
+    "Andra"
+   ],
+   "location": "Bane Alley",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He bought the dagger off her for five zinos, believing she had an actual romantic interest in him"
+  },
+  {
+   "summary": "Andra arranges for Bartek to be mugged so the dagger is taken, sparing his life.",
+   "participants": [
+    "Andra",
+    "Bartek"
+   ],
+   "location": "Bane Alley",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she had arranged for him to receive a mugging the following day"
+  },
+  {
+   "summary": "Bartek returns bruised, ignorant of who mugged him; Andra tallies her earnings.",
+   "participants": [
+    "Bartek",
+    "Andra"
+   ],
+   "location": "Bane Alley",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The total earnings for the setup were 25 zinos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Andra",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "Broker and member.",
+   "paragraph": 0,
+   "quote": "Bane Alley broker and member of House Dimir"
+  }
+ ],
+ "rejected": []
+}

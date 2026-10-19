@@ -1,0 +1,234 @@
+{
+ "page": "wiki/malakir",
+ "url": "https://mtg.wiki/page/Malakir",
+ "title": "Malakir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:34Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Malakir",
+   "type": "location",
+   "aliases": [
+    "the Dark City"
+   ],
+   "description": "Swamp city on Guul Draz and capital of Zendikar's vampires, now a fortress and refuge of free vampires.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guul Draz",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar where Malakir stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Malakir lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kalastria District",
+   "type": "location",
+   "aliases": [],
+   "description": "Oldest and wealthiest district of Malakir on the highest ground; Drana's stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nirkana District",
+   "type": "location",
+   "aliases": [],
+   "description": "District of canals home to the Nirkana assassins and spies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urnaav District",
+   "type": "location",
+   "aliases": [],
+   "description": "Transitional district between Emevera and Kalastria where some vampires still live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emevera District",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined, flooded district that now forms a barrier against Eldrazi incursions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghet District",
+   "type": "location",
+   "aliases": [],
+   "description": "Abandoned, submerged district claimed by the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Emevera",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire house that sabotaged Ghet by diverting water to flood it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Ghet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire house that pledged allegiance to the Titans under Kalitas's command.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Kalastria",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire house led by Drana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nirkana",
+   "type": "faction",
+   "aliases": [],
+   "description": "Infamous assassins and spies of Malakir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drana",
+   "type": "character",
+   "aliases": [],
+   "description": "Bloodchief of House Kalastria who escaped the slaughter and reclaimed Malakir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kalitas",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire to whom House Ghet pledged allegiance under the Titans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [
+    "the titan"
+   ],
+   "description": "Eldrazi titan whose awakening turned half of Malakir's vampires against the rest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [
+    "the Titans"
+   ],
+   "description": "Alien beings that overran Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Makindi Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient empire to which Malakir once belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for Zendikar",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Malakir fell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ulamog awakens; half of Malakir's vampires fall under his sway and turn on the rest, sparking a civil war that ruins the city.",
+   "participants": [
+    "Ulamog",
+    "Malakir"
+   ],
+   "location": "Malakir",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "When Ulamog awoke, half the city’s vampire population fell under the titan’s sway and turned on the rest"
+  },
+  {
+   "summary": "The dikes of Emevera collapse when the city falls, and the swamp reclaims the district.",
+   "participants": [
+    "Emevera District",
+    "Battle for Zendikar"
+   ],
+   "location": "Emevera District",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "the dikes collapsed and the swamp reclaimed the district"
+  },
+  {
+   "summary": "Drana escapes the slaughter and returns with free survivors to reclaim Malakir and turn it into a fortress.",
+   "participants": [
+    "Drana",
+    "Malakir"
+   ],
+   "location": "Malakir",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "Together they reclaimed Malakir"
+  },
+  {
+   "summary": "House Ghet pledges allegiance to the Titans under Kalitas.",
+   "participants": [
+    "House Ghet",
+    "Kalitas"
+   ],
+   "location": "Ghet District",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "House Ghet itself pledged allegiance to the Titans under Kalitas ’s command."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malakir",
+   "relation": "located_in",
+   "target": "Guul Draz",
+   "note": "city on the continent",
+   "paragraph": 0,
+   "quote": "is a swamp city on the continent of Guul Draz on Zendikar"
+  },
+  {
+   "source": "Drana",
+   "relation": "leader_of",
+   "target": "House Kalastria",
+   "note": "bloodchief",
+   "paragraph": 11,
+   "quote": "Drana, bloodchief of House Kalastria"
+  },
+  {
+   "source": "House Emevera",
+   "relation": "enemy",
+   "target": "House Ghet",
+   "note": "sabotaged Ghet by flooding it",
+   "paragraph": 8,
+   "quote": "political sabotage by House Emevera"
+  },
+  {
+   "source": "House Ghet",
+   "relation": "serves",
+   "target": "Eldrazi",
+   "note": "pledged allegiance to the Titans",
+   "paragraph": 8,
+   "quote": "House Ghet itself pledged allegiance to the Titans"
+  },
+  {
+   "source": "Malakir",
+   "relation": "member_of",
+   "target": "Makindi Empire",
+   "note": "once belonged to it",
+   "paragraph": 9,
+   "quote": "Malakir once belonged to the ancient Makindi Empire before its fall."
+  }
+ ],
+ "rejected": []
+}

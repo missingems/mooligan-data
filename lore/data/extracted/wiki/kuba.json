@@ -1,0 +1,191 @@
+{
+ "page": "wiki/kuba",
+ "url": "https://mtg.wiki/page/Kuba",
+ "title": "Kuba",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kuba",
+   "type": "creature",
+   "aliases": [],
+   "description": "A former snapjaw lizard on Ravnica who, after being augmented by the Izzet and mutated by the Simic, became a thinking humanoid creature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruslan",
+   "type": "character",
+   "aliases": [],
+   "description": "A boy who bought Kuba as a hatchling at Tin Street Market.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a dog that Kuba could probably eat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kelen Jek",
+   "type": "character",
+   "aliases": [],
+   "description": "An Izzet mechanoaugmentation specialist who experimented on Kuba.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stanisil",
+   "type": "character",
+   "aliases": [
+    "Stanisil of Hull Clade"
+   ],
+   "description": "A Simic biomancer of Hull Clade who nursed Kuba back to health and taught him to read and write.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trifon",
+   "type": "character",
+   "aliases": [
+    "Speaker Trifon"
+   ],
+   "description": "A Speaker to whom Stanisil wrote about Kuba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kuba lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tin Street Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market on Ravnica where Ruslan bought Kuba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild whose Rot Farm Kuba entered and which herded him into Izzet territory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild whose specialist augmented Kuba.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild whose biomancer cared for Kuba.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ruslan buys the snapjaw hatchling Kuba at Tin Street Market.",
+   "participants": [
+    "Ruslan",
+    "Kuba"
+   ],
+   "location": "Tin Street Market",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kuba was purchased at Tin Street Market by the boy Ruslan"
+  },
+  {
+   "summary": "Kuba runs into the sewer and ends up in a Golgari Rot Farm, eating workers; the Golgari herd it into Izzet territory.",
+   "participants": [
+    "Kuba",
+    "Golgari"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "To get rid of it, the Golgari herded Kuba into Izzet territory."
+  },
+  {
+   "summary": "Kelen Jek augments Kuba with a mizzium framework and a neuroamplification serum, enhancing cognition and skeleton.",
+   "participants": [
+    "Kelen Jek",
+    "Kuba",
+    "Izzet"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "which resulted in both enhanced cognition as well as a reinforced skeletal system"
+  },
+  {
+   "summary": "Kuba escapes into Simic territory, where Stanisil nurses him back to health and an unexpected mutation expands his intellect.",
+   "participants": [
+    "Kuba",
+    "Stanisil",
+    "Simic"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The biomancer Stanisil of Hull Clade found Kuba in this state and nursed it back to health."
+  },
+  {
+   "summary": "Kuba becomes fully sapient and learns to read and write under Stanisil.",
+   "participants": [
+    "Kuba",
+    "Stanisil"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Kuba eventually developed sapience and full intelligence."
+  },
+  {
+   "summary": "Kuba remembers Ruslan and resolves to return home.",
+   "participants": [
+    "Kuba",
+    "Ruslan"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kuba would return home and even remembered the way."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ruslan",
+   "relation": "other",
+   "target": "Kuba",
+   "note": "bought Kuba as a pet",
+   "paragraph": 1,
+   "quote": "Kuba was purchased at Tin Street Market by the boy Ruslan"
+  },
+  {
+   "source": "Stanisil",
+   "relation": "mentor_of",
+   "target": "Kuba",
+   "note": "tutored Kuba to read and write",
+   "paragraph": 4,
+   "quote": "Kuba eventually learned to read and write under the careful tutelage of the biomancer"
+  },
+  {
+   "source": "Kelen Jek",
+   "relation": "member_of",
+   "target": "Izzet",
+   "note": "Izzet mechanoaugmentation specialist",
+   "paragraph": 2,
+   "quote": "the Izzet mechanoaugmentation specialist Kelen Jek"
+  }
+ ],
+ "rejected": []
+}

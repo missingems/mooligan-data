@@ -1,0 +1,138 @@
+{
+ "page": "wiki/mia",
+ "url": "https://mtg.wiki/page/Mia",
+ "title": "Mia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mia",
+   "type": "character",
+   "aliases": [],
+   "description": "A farmer and shepherd from Nephalia on Innistrad, daughter of Olgard, who becomes a servant of the Gitrog monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olgard",
+   "type": "character",
+   "aliases": [],
+   "description": "Monster slayer, Mia's father, away living among the Skiltfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wilbur",
+   "type": "character",
+   "aliases": [],
+   "description": "Mia's friend and romantic interest, her first sacrifice to the Gitrog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gitrog Monster",
+   "type": "creature",
+   "aliases": [
+    "the Gitrog"
+   ],
+   "description": "A monster living in Lake Zhava that the villagers sacrificed to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lake Zhava",
+   "type": "location",
+   "aliases": [],
+   "description": "Lake near Mia's village, home of the Gitrog monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad where Mia lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skiltfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "People among whom Olgard lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mia follows the tracks of her missing sheep to Lake Zhava and discovers the villagers sacrifice them to the Gitrog.",
+   "participants": [
+    "Mia",
+    "Gitrog Monster"
+   ],
+   "location": "Lake Zhava",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she discovered that the villagers had been stealing her sheep to give as sacrifice to the Gitrog monster"
+  },
+  {
+   "summary": "The Gitrog attacks and eats the villagers; Mia and Wilbur flee by swimming.",
+   "participants": [
+    "Mia",
+    "Wilbur",
+    "Gitrog Monster"
+   ],
+   "location": "Lake Zhava",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "One by one, it snapped the villagers into its mouth with its enormous tongue"
+  },
+  {
+   "summary": "Gazing into the Gitrog's eyes, Mia understands she was made to serve it and sacrifices Wilbur.",
+   "participants": [
+    "Mia",
+    "Wilbur",
+    "Gitrog Monster"
+   ],
+   "location": "Lake Zhava",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Her first sacrifice to the Gitrog was Wilbur."
+  },
+  {
+   "summary": "In spring Mia lures a messenger with a letter from her father onto the lake as her next sacrifice.",
+   "participants": [
+    "Mia"
+   ],
+   "location": "Lake Zhava",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mia smiled beautifully at her next sacrifice."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mia",
+   "relation": "family",
+   "target": "Olgard",
+   "note": "father and daughter",
+   "paragraph": 0,
+   "quote": "the daughter of the monster slayer Olgard"
+  },
+  {
+   "source": "Mia",
+   "relation": "serves",
+   "target": "Gitrog Monster",
+   "note": "became its servant",
+   "paragraph": 3,
+   "quote": "she was made to serve it with sacrifice"
+  },
+  {
+   "source": "Mia",
+   "relation": "romantic",
+   "target": "Wilbur",
+   "note": "romantic interest",
+   "paragraph": 1,
+   "quote": "with whom she had a romantic interest"
+  }
+ ],
+ "rejected": []
+}
