@@ -1,0 +1,127 @@
+{
+ "page": "wiki/arah",
+ "url": "https://mtg.wiki/page/Arah",
+ "title": "Arah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:50Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Arah",
+   "type": "character",
+   "aliases": [],
+   "description": "Yotian knight in the Brothers' War and leading member of the Church of Tal; one of Raddic's black knights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raddic",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Talites killed at Mishra's Forge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talites",
+   "type": "faction",
+   "aliases": [
+    "Church of Tal"
+   ],
+   "description": "Anti-machine crusaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Penregon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Penregon",
+   "type": "location",
+   "aliases": [],
+   "description": "City besieged by the Talites.",
+   "presence": "appears"
+  },
+  {
+   "name": "Siege of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "One-day battle in which Penregon repelled the Talites.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Raided and stripped by the Talites.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra's Forge",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Raddic died.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Talite procession reaches Penregon and issues an ultimatum after attacking an automaton.",
+   "participants": [
+    "Talites",
+    "Kayla bin-Kroog",
+    "Arah"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "cast out the machines or face destruction"
+  },
+  {
+   "summary": "Penregon repels the Talites' assault and defeats Raddic's infiltrators.",
+   "participants": [
+    "Talites",
+    "Kayla bin-Kroog",
+    "Raddic"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Penregon's defenders successfully repelled the Talite crusaders' assault on the city walls"
+  },
+  {
+   "summary": "The Second Talite Crusade raids Urza's Tower and fights at Mishra's Forge, where Raddic dies.",
+   "participants": [
+    "Talites",
+    "Raddic"
+   ],
+   "location": "Mishra's Forge",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "many of the faithful, including Raddic, were killed in the brutal conflict"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arah",
+   "relation": "serves",
+   "target": "Raddic",
+   "note": "one of his black knights",
+   "paragraph": 1,
+   "quote": "He was one of Raddic 's black knights"
+  },
+  {
+   "source": "Arah",
+   "relation": "member_of",
+   "target": "Talites",
+   "note": "",
+   "paragraph": 2,
+   "quote": "He eventually became part of the Talites"
+  }
+ ],
+ "rejected": []
+}

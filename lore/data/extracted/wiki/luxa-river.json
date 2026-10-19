@@ -1,0 +1,130 @@
+{
+ "page": "wiki/luxa-river",
+ "url": "https://mtg.wiki/page/Luxa_River",
+ "title": "Luxa River",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:40Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Luxa River",
+   "type": "location",
+   "aliases": [
+    "the Luxa"
+   ],
+   "description": "Source of life on Amonkhet, fertilizing the Oashra Valley around Naktamun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Luxa River.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who established the Fertile Holding to train initiates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kefnet",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose viziers calmed the Luxa's waters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fertile Holding",
+   "type": "location",
+   "aliases": [
+    "the Holding"
+   ],
+   "description": "Training ground on the Luxa's banks established by Rhonas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razaketh",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon revealed at the Gate to the Afterlife in the Hour of Revelation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sab-Sunen",
+   "type": "deity",
+   "aliases": [],
+   "description": "God, new mother of the Luxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City by the Luxa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hour of Revelation",
+   "type": "event",
+   "aliases": [],
+   "description": "When the Gate to the Afterlife opened and Razaketh appeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion whose end was followed by the Luxa running clear.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Hour of Revelation Razaketh was revealed and turned the Luxa to blood.",
+   "participants": [
+    "Razaketh",
+    "Luxa River"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "At the demon's command, the Luxa turned to blood."
+  },
+  {
+   "summary": "After the New Phyrexian Invasion the Luxa began to flow clear under Sab-Sunen.",
+   "participants": [
+    "Sab-Sunen",
+    "Luxa River"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "This was caused by the god Sab-Sunen , the new mother of the Luxa."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rhonas",
+   "relation": "created",
+   "target": "Fertile Holding",
+   "note": "training ground",
+   "paragraph": 3,
+   "quote": "Rhonas has established an intricate training ground called the Fertile Holding"
+  },
+  {
+   "source": "Fertile Holding",
+   "relation": "located_in",
+   "target": "Luxa River",
+   "note": "on its banks",
+   "paragraph": 3,
+   "quote": "Along the lush banks of the Luxa"
+  }
+ ],
+ "rejected": []
+}
