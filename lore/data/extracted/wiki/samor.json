@@ -1,0 +1,220 @@
+{
+ "page": "wiki/samor",
+ "url": "https://mtg.wiki/page/Samor",
+ "title": "Samor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:01Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Samor",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Sumifan songmages during the Brothers' War and Mishra's slave, historian and ambassador.",
+   "presence": "appears"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [
+    "the Raptor"
+   ],
+   "description": "A prince of Sumifa who became a songmage, secretly betrayed them and destroyed Sumifa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Urza, who held Samor as his slave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Mishra's brother, whom Mishra wished to threaten.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Claria",
+   "type": "character",
+   "aliases": [],
+   "description": "Samor's daughter, whose name song and handprint locked the cockatrice's release.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "Found Samor's skeleton and released and banished the Beast of the Hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "A rogue cockatrice that petrified Mishra's army and locals at Sarraza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifan songmages",
+   "type": "faction",
+   "aliases": [
+    "songmages",
+    "the Circe"
+   ],
+   "description": "Magic users of Sumifa led by Samor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City buried by sand when Porros raised a sandstorm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Beast of the Hours petrified Mishra's army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Sumifa",
+   "type": "event",
+   "aliases": [],
+   "description": "The burying of Sumifa under sand by Porros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Urza and Mishra.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samor finds young Porros tangled in a treetop and later accepts him into the songmages, naming him the Raptor.",
+   "participants": [
+    "Samor",
+    "Porros"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Samor gave Porros the title \"the Raptor\""
+  },
+  {
+   "summary": "Samor is summoned to Sarraza where the Beast of the Hours petrifies Mishra's army; a discordant note makes his spell one of imprisonment.",
+   "participants": [
+    "Samor",
+    "Mishra",
+    "Beast of the Hours"
+   ],
+   "location": "Sarraza",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Samor was summoned to Mishra at Sarraza"
+  },
+  {
+   "summary": "Mishra threatens Samor into learning a song of unbinding to threaten Urza.",
+   "participants": [
+    "Mishra",
+    "Samor",
+    "Urza"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mishra then gave Samor three days to learn a song of unbinding"
+  },
+  {
+   "summary": "Porros reveals himself as a traitor who summoned the cockatrice and sang the discordant tone.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It was Porros himself who had summoned the cockatrice to begin with"
+  },
+  {
+   "summary": "Samor locks the cockatrice's release into his daughter's name and handprint and transforms Porros into a raptor-like form.",
+   "participants": [
+    "Samor",
+    "Porros",
+    "Claria"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Samor secretly locked the music of the cockatrice's release into his daughter's name and handprint"
+  },
+  {
+   "summary": "Porros slashes Samor's throat and buries Sumifa in a sandstorm.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Porros slashed Samor's throat with a piece of broken mirror"
+  },
+  {
+   "summary": "Three thousand years later Samor's skeleton is found and his song magic lets Ogwater Rifkin banish the Beast of the Hours.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Samor",
+    "Beast of the Hours"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Samor's skeleton was found in the buried ruins of old Sumifa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor",
+   "relation": "leader_of",
+   "target": "Sumifan songmages",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Samor was a the leader of the Sumifan songmages during the Brothers' War"
+  },
+  {
+   "source": "Samor",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "as his slave",
+   "paragraph": 1,
+   "quote": "As his slave, he also worked as Mishra 's historian"
+  },
+  {
+   "source": "Porros",
+   "relation": "killed",
+   "target": "Samor",
+   "note": "slashed his throat",
+   "paragraph": 5,
+   "quote": "Porros slashed Samor's throat with a piece of broken mirror"
+  },
+  {
+   "source": "Samor",
+   "relation": "family",
+   "target": "Claria",
+   "note": "father and daughter",
+   "paragraph": 4,
+   "quote": "using his daughter Claria naming song as the melody"
+  }
+ ],
+ "rejected": []
+}

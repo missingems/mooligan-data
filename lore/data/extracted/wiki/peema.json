@@ -1,0 +1,113 @@
+{
+ "page": "wiki/peema",
+ "url": "https://mtg.wiki/page/Peema",
+ "title": "Peema",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:36Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Peema",
+   "type": "location",
+   "aliases": [],
+   "description": "A vast wild, aether-rich forest on Avishkar, home to the largest elven community.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [
+    "Kaladesh"
+   ],
+   "description": "The plane on which Peema lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The governing authority that treats Peema as a city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elves of Peema",
+   "type": "faction",
+   "aliases": [],
+   "description": "The largest elven community on Avishkar, living in the trees and following the Elegant Design.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elegant Design",
+   "type": "concept",
+   "aliases": [],
+   "description": "The elven belief in harmony between nature and the aether flowing through the Great Conduit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Conduit",
+   "type": "concept",
+   "aliases": [],
+   "description": "Through which aether flows in the elves' belief.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city to which Peema exports food and wood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aether Boom",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which shipments of refined aether fueled new technologies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vinday River",
+   "type": "location",
+   "aliases": [],
+   "description": "River up which humans first settled Peema.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Humans become the first non-elves to settle Peema, founding a riverside colony.",
+   "participants": [
+    "Peema",
+    "Vinday River"
+   ],
+   "location": "Peema",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Humans were the first non-elves to settle Peema, moving up the Vinday River and founding a riverside colony."
+  },
+  {
+   "summary": "Some elves collaborate with settlers while others return to resist outside influence.",
+   "participants": [
+    "Elves of Peema",
+    "Consulate"
+   ],
+   "location": "Peema",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "But not all elves welcomed the Consulate 's presence or the spread of urban life into their forest."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elves of Peema",
+   "relation": "located_in",
+   "target": "Peema",
+   "note": "Largest home of elves on Avishkar.",
+   "paragraph": 3,
+   "quote": "Peema is best known as the largest home of elves on Avishkar."
+  }
+ ],
+ "rejected": []
+}

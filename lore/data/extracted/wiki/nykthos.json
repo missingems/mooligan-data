@@ -1,0 +1,193 @@
+{
+ "page": "wiki/nykthos",
+ "url": "https://mtg.wiki/page/Nykthos",
+ "title": "Nykthos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:39Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Nykthos",
+   "type": "location",
+   "aliases": [
+    "Shrine to Nyx"
+   ],
+   "description": "A sacred shrine atop Mount Carian and also the first Nyxborn artisan, formed by Kruphix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nykthos (Nyxborn)",
+   "type": "character",
+   "aliases": [
+    "Nykthos"
+   ],
+   "description": "The first Nyxborn divine artisan, formed by Kruphix to craft altars, later murdered on the Four Winds Plateau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the shrine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nyx",
+   "type": "location",
+   "aliases": [],
+   "description": "The starry realm of the gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kruphix",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of horizons who formed Nykthos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xenagos",
+   "type": "character",
+   "aliases": [],
+   "description": "A satyr ascended to godhood who held the Great Revel at Nyx's Nykthos and was slain by Elspeth. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker who slew Xenagos and was killed by Heliod. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who confronted Xenagos. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "The goddess who aided the heroes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who betrayed and killed his champion Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Godsend",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The god-forged blade Elspeth used to slay Xenagos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Revel",
+   "type": "event",
+   "aliases": [],
+   "description": "Xenagos's cosmic celebration amid chaos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mount Carian",
+   "type": "location",
+   "aliases": [],
+   "description": "The summit crowned by the shrine, in the Oraniad Mountains.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kruphix forms the Nyxborn Nykthos as the first divine artisan; his greatest work is the Shrine to Nyx.",
+   "participants": [
+    "Kruphix",
+    "Nykthos (Nyxborn)"
+   ],
+   "location": "Mount Carian",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Nyxborn known as Nykthos was formed by Kruphix , the god of horizons, as the first divine artisan"
+  },
+  {
+   "summary": "Nykthos is murdered on the Four Winds Plateau.",
+   "participants": [
+    "Nykthos (Nyxborn)"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He was later murdered on the Four Winds Plateau"
+  },
+  {
+   "summary": "Elspeth and Ajani, aided by Nylea, confront Xenagos at the Nyx Nykthos; Elspeth slays him with Godsend.",
+   "participants": [
+    "Elspeth Tirel",
+    "Ajani Goldmane",
+    "Nylea",
+    "Xenagos",
+    "Godsend"
+   ],
+   "location": "Nyx",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Elspeth slew Xenagos with the god-forged blade Godsend"
+  },
+  {
+   "summary": "Heliod betrays and kills his champion Elspeth within Nykthos.",
+   "participants": [
+    "Heliod",
+    "Elspeth Tirel"
+   ],
+   "location": "Nykthos",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Heliod , driven by pride, betrayed his champion."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kruphix",
+   "relation": "created",
+   "target": "Nykthos (Nyxborn)",
+   "note": "Formed him as first divine artisan.",
+   "paragraph": 3,
+   "quote": "was formed by Kruphix"
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "killed",
+   "target": "Xenagos",
+   "note": "Slew him with Godsend.",
+   "paragraph": 5,
+   "quote": "Elspeth slew Xenagos with the god-forged blade Godsend"
+  },
+  {
+   "source": "Heliod",
+   "relation": "killed",
+   "target": "Elspeth Tirel",
+   "note": "Struck her down.",
+   "paragraph": 6,
+   "quote": "he struck Elspeth down, killing her as a final act of divine preservation"
+  },
+  {
+   "source": "Nylea",
+   "relation": "ally",
+   "target": "Elspeth Tirel",
+   "note": "Aided the heroes against Xenagos.",
+   "paragraph": 5,
+   "quote": "aided by the goddess Nylea"
+  }
+ ],
+ "rejected": []
+}

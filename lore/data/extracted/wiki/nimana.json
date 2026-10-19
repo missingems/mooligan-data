@@ -1,0 +1,138 @@
+{
+ "page": "wiki/nimana",
+ "url": "https://mtg.wiki/page/Nimana",
+ "title": "Nimana",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nimana",
+   "type": "location",
+   "aliases": [
+    "Free City of Nimana"
+   ],
+   "description": "Major port on Guul Draz, Zendikar, notorious as its principal slave port.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guul Draz",
+   "type": "location",
+   "aliases": [],
+   "description": "Swampy continent of Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Nimana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Septumvirate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Secretive seven-member council ruling Nimana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chromatic Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Influential order of mages in Nimana.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Ghet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire house allied covertly with the Septumvirate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malakir",
+   "type": "location",
+   "aliases": [],
+   "description": "Vampire territory of Guul Draz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose awakening collapsed the Septumvirate's ambitions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kalitas",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire corrupted by the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Titans and spawn that devastated Zendikar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Septumvirate allies covertly with House Ghet to extend into Malakir while Ghet seeks to absorb Nimana.",
+   "participants": [
+    "Septumvirate",
+    "House Ghet"
+   ],
+   "location": "Nimana",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "A covert alliance with House Ghet provided them sanctuary and leverage within Malakir’s vampiric strongholds."
+  },
+  {
+   "summary": "The awakening of Ulamog and corruption of Kalitas and House Ghet shatter the schemes and plunge Nimana into chaos.",
+   "participants": [
+    "Ulamog",
+    "Kalitas",
+    "House Ghet",
+    "Septumvirate"
+   ],
+   "location": "Nimana",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "plunging Nimana into chaos as the slave trade faltered and its power players turned on each other"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Septumvirate",
+   "relation": "leader_of",
+   "target": "Nimana",
+   "note": "rulers",
+   "paragraph": 3,
+   "quote": "The city is ruled by a secretive seven-member council known as the Septumvirate"
+  },
+  {
+   "source": "Septumvirate",
+   "relation": "ally",
+   "target": "House Ghet",
+   "note": "covert alliance",
+   "paragraph": 11,
+   "quote": "A covert alliance with House Ghet"
+  },
+  {
+   "source": "Nimana",
+   "relation": "located_in",
+   "target": "Guul Draz",
+   "note": "port",
+   "paragraph": 0,
+   "quote": "a major coastal settlement on the continent of Guul Draz on Zendikar"
+  }
+ ],
+ "rejected": []
+}

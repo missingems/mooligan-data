@@ -1,0 +1,192 @@
+{
+ "page": "wiki/amelia",
+ "url": "https://mtg.wiki/page/Amelia",
+ "title": "Amelia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:45Z",
+ "storyline": "The Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Quartermaster Amelia",
+   "type": "character",
+   "aliases": [
+    "Amelia"
+   ],
+   "description": "A human pirate, helmsmage and quartermaster of The Belligerent in the Brazen Coalition on Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Belligerent",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Pirate ship commanded by Vraska.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brazen Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Coalition of pirates on Ixalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of The Belligerent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edgar",
+   "type": "character",
+   "aliases": [],
+   "description": "Accompanied Vraska and Amelia to retrieve the castaway.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Castaway Vraska decided to keep aboard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire faction whose ship the crew encountered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [],
+   "description": "Trapped by Amelia with sail canvas and made to drop the Thaumatic Compass.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thaumatic Compass",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Compass followed south to Orazca.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "City that rose from the jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malcolm",
+   "type": "character",
+   "aliases": [],
+   "description": "Pirate who helped reclaim Orazca.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "Pirate who helped reclaim Orazca.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When Vraska follows the thaumatic compass south, Amelia relays the captain's orders to adjust course.",
+   "participants": [
+    "Quartermaster Amelia",
+    "Vraska",
+    "Thaumatic Compass"
+   ],
+   "location": "The Belligerent",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Amelia relayed the captain's orders to the crew"
+  },
+  {
+   "summary": "Amelia prepares the dinghy and accompanies Vraska and Edgar to retrieve a castaway, Jace Beleren.",
+   "participants": [
+    "Quartermaster Amelia",
+    "Vraska",
+    "Edgar",
+    "Jace Beleren"
+   ],
+   "location": "The Belligerent",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "who turned out to be Jace Beleren"
+  },
+  {
+   "summary": "Amelia raises the sails as the crew fights a Legion of Dusk vampire ship.",
+   "participants": [
+    "Quartermaster Amelia",
+    "Vraska",
+    "Legion of Dusk"
+   ],
+   "location": "The Belligerent",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "She used her magic to raise the sails and prepare the ship for battle."
+  },
+  {
+   "summary": "Amelia traps Huatli with sail canvas, making her drop the compass.",
+   "participants": [
+    "Quartermaster Amelia",
+    "Huatli",
+    "Thaumatic Compass"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Amelia used a piece of sail canvas to trap Huatli, making her drop the Thaumatic Compass"
+  },
+  {
+   "summary": "Orazca rises from the jungle; Vraska and Jace fall into a river, and Amelia marches into Orazca with the pirates.",
+   "participants": [
+    "Quartermaster Amelia",
+    "Vraska",
+    "Jace Beleren",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the city began to rise from the jungle, causing an earthquake and a flood"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Quartermaster Amelia",
+   "relation": "serves",
+   "target": "Vraska",
+   "note": "quartermaster following the captain's orders",
+   "paragraph": 3,
+   "quote": "Amelia relayed the captain's orders to the crew"
+  },
+  {
+   "source": "Quartermaster Amelia",
+   "relation": "member_of",
+   "target": "Brazen Coalition",
+   "note": "crew of The Belligerent, part of the coalition",
+   "paragraph": 0,
+   "quote": "part of the Brazen Coalition of pirates on Ixalan"
+  },
+  {
+   "source": "Quartermaster Amelia",
+   "relation": "enemy",
+   "target": "Huatli",
+   "note": "trapped her to take the compass",
+   "paragraph": 4,
+   "quote": "Amelia used a piece of sail canvas to trap Huatli, making her drop the Thaumatic Compass"
+  }
+ ],
+ "rejected": []
+}

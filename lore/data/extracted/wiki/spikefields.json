@@ -1,0 +1,143 @@
+{
+ "page": "wiki/spikefields",
+ "url": "https://mtg.wiki/page/Spikefields",
+ "title": "Spikefields",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:17Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Spikefields",
+   "type": "location",
+   "aliases": [
+    "The Spikefields"
+   ],
+   "description": "Perilous crystalline region of northern Akoum on Zendikar, part of the Teeth of Akoum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Zendikar continent containing the Spikefields.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Spikefields.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders whose passage uncovered ruins in the Spikefields.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makindi Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient empire whose ruined fortresses were unearthed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Havens",
+   "type": "location",
+   "aliases": [],
+   "description": "Shelters made from the ruins and bound to hedrons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghostwatch",
+   "type": "location",
+   "aliases": [],
+   "description": "Haven home to Mul Daya elves and kor clerics who invoke ghost guardians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [
+    "stoneforge mystics"
+   ],
+   "description": "People drawn to Akoum; stoneforge mystics carry on Nahiri's lithomancy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mul Daya elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Remnant elves in Ghostwatch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of the lithomantic tradition.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As the Eldrazi pass, volcanic rock crumbles, revealing buried fortresses of the Makindi Empire.",
+   "participants": [
+    "Eldrazi",
+    "Makindi Empire"
+   ],
+   "location": "Spikefields",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "ancient ruins long buried beneath the Spikefields have been revealed"
+  },
+  {
+   "summary": "Stoneforge mystics turn the ruins into Stone Havens bound to hedrons to ward off the Eldrazi.",
+   "participants": [
+    "Kor",
+    "Stone Havens",
+    "Eldrazi"
+   ],
+   "location": "Spikefields",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "These mystics have turned the exposed ruins into shelters known as Stone Havens"
+  },
+  {
+   "summary": "At Ghostwatch, Mul Daya elves and kor clerics invoke kor revenants and elf ghosts as guardians.",
+   "participants": [
+    "Mul Daya elves",
+    "Kor",
+    "Ghostwatch"
+   ],
+   "location": "Ghostwatch",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Together, they have invoked kor revenants and elf ghosts to guard the haven"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Spikefields",
+   "relation": "located_in",
+   "target": "Akoum",
+   "note": "northern region",
+   "paragraph": 0,
+   "quote": "a perilous region of northern Akoum on the plane of Zendikar"
+  },
+  {
+   "source": "Ghostwatch",
+   "relation": "located_in",
+   "target": "Spikefields",
+   "note": "a notable haven",
+   "paragraph": 4,
+   "quote": "One notable haven, Ghostwatch , is home to a remnant of Mul Daya elves"
+  }
+ ],
+ "rejected": []
+}

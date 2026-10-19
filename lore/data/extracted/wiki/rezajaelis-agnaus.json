@@ -1,0 +1,183 @@
+{
+ "page": "wiki/rezajaelis-agnaus",
+ "url": "https://mtg.wiki/page/Rezajaelis_Agnaus",
+ "title": "Rezajaelis Agnaus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:28Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Rezajaelis Agnaus",
+   "type": "character",
+   "aliases": [
+    "Reza"
+   ],
+   "description": "A vedalken lawmage of the Azorius Senate on Ravnica who learns to integrate diverse perspectives into the law.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The Ravnican guild of lawmages to which Reza belongs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tagan",
+   "type": "character",
+   "aliases": [],
+   "description": "A sphinx and Reza's mentor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hendrik",
+   "type": "character",
+   "aliases": [],
+   "description": "A large, friendly man of the Thinktank who helped Reza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Janin",
+   "type": "character",
+   "aliases": [],
+   "description": "Hendrik's companion, raised among vedalken.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thinktank",
+   "type": "location",
+   "aliases": [
+    "Thinktank Enclave"
+   ],
+   "description": "A chaotic, ungoverned area of inventors on Ravnica, later recognized by law.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "Azorius city where Reza works.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Laws Library",
+   "type": "location",
+   "aliases": [],
+   "description": "Library where Reza searched for Tagan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Azorius and the Thinktank.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tagan tells Reza that his law rune will be inscribed in the skies above New Prahv.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Tagan"
+   ],
+   "location": "Old Laws Library",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Tagan informed Reza that his latest law rune had been highly praised and would be inscribed in the skies above New Prahv ."
+  },
+  {
+   "summary": "On a first griffin flight Reza is startled by an electrical attack and falls into the Thinktank, where Hendrik offers help.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Hendrik",
+    "Thinktank"
+   ],
+   "location": "Thinktank",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "He landed in a pile of trash in the Thinktank, a chaotic and ungoverned area"
+  },
+  {
+   "summary": "Reza meets Janin, has a panic attack in the crowd and is mugged.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Janin",
+    "Hendrik"
+   ],
+   "location": "Thinktank",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Reza experienced a panic attack in the crowd, and while seeking solitude, he was mugged."
+  },
+  {
+   "summary": "Azorius arresters mistake Reza for a suspect; Hendrik and Janin help him escape in a stolen Azorius vehicle.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Hendrik",
+    "Janin",
+    "Azorius Senate"
+   ],
+   "location": "Thinktank",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "He narrowly escaped, thanks to Hendrik and Janin in a stolen Azorius vehicle."
+  },
+  {
+   "summary": "Reza conjures a law rune granting the Thinktank sovereignty so Azorius forces can subdue an electrical elemental.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Thinktank",
+    "Azorius Senate"
+   ],
+   "location": "Thinktank",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Reza conjured a law rune to grant the Thinktank sovereignty, allowing Azorius forces to intervene."
+  },
+  {
+   "summary": "Back in New Prahv Reza drafts a law recognizing the Thinktank Enclave, and Tagan challenges him to become a mentor.",
+   "participants": [
+    "Rezajaelis Agnaus",
+    "Tagan",
+    "Thinktank"
+   ],
+   "location": "New Prahv",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "His mentor, Tagan, challenged him to become a mentor himself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tagan",
+   "relation": "mentor_of",
+   "target": "Rezajaelis Agnaus",
+   "note": "sphinx mentor",
+   "paragraph": 3,
+   "quote": "searching for his sphinx mentor, Tagan"
+  },
+  {
+   "source": "Rezajaelis Agnaus",
+   "relation": "member_of",
+   "target": "Azorius Senate",
+   "note": "lawmage",
+   "paragraph": 0,
+   "quote": "part of the Azorius Senate on the plane of Ravnica"
+  },
+  {
+   "source": "Rezajaelis Agnaus",
+   "relation": "ally",
+   "target": "Hendrik",
+   "note": "bond solidified",
+   "paragraph": 6,
+   "quote": "The elemental was subdued, solidifying Reza’s bond with Hendrik and Janin."
+  }
+ ],
+ "rejected": []
+}

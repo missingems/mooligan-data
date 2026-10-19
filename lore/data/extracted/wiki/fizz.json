@@ -1,0 +1,112 @@
+{
+ "page": "wiki/fizz",
+ "url": "https://mtg.wiki/page/Fizz",
+ "title": "Fizz",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fizz",
+   "type": "character",
+   "aliases": [
+    "Field Chef Fizz"
+   ],
+   "description": "Goblin from an unknown plane recruited into a war against humans, who became a field chef.",
+   "presence": "appears"
+  },
+  {
+   "name": "General Razgar",
+   "type": "character",
+   "aliases": [
+    "Razgar"
+   ],
+   "description": "Orc general who recruited Fizz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yort",
+   "type": "character",
+   "aliases": [],
+   "description": "Razgar's adjutant.",
+   "presence": "appears"
+  },
+  {
+   "name": "99th Goblin Infantry",
+   "type": "faction",
+   "aliases": [
+    "Grag Ridge Expendables"
+   ],
+   "description": "Goblin unit Fizz first joined.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fizz is recruited into the war against humans by Razgar, joins the 99th Goblin Infantry, then moves to the field kitchens for her talents.",
+   "participants": [
+    "Fizz",
+    "General Razgar",
+    "99th Goblin Infantry"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she soon found herself in the relative safety of the field kitchens"
+  },
+  {
+   "summary": "Ordered to bring the General hot soup, Fizz dashes across the battlefield with the cauldron.",
+   "participants": [
+    "Fizz"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she picked up the soup cauldron and left the relative safety of her tent behind"
+  },
+  {
+   "summary": "In a human trench one human tastes her soup and dies; the other flees screaming of a chemical attack.",
+   "participants": [
+    "Fizz"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "One human tasted her soup and immediately died."
+  },
+  {
+   "summary": "Fizz reaches General Razgar and Yort by balloon; the soup is a hit and she is promoted to Field Chef, First Class.",
+   "participants": [
+    "Fizz",
+    "General Razgar",
+    "Yort"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Fizz immediately got promoted to Field Chef, First Class"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fizz",
+   "relation": "serves",
+   "target": "General Razgar",
+   "note": "recruited by and cooks for him",
+   "paragraph": 1,
+   "quote": "Fizz had been recruited into a war against the humans by the orc General Razgar"
+  },
+  {
+   "source": "Yort",
+   "relation": "serves",
+   "target": "General Razgar",
+   "note": "adjutant",
+   "paragraph": 6,
+   "quote": "General Razgar and his adjutant, Yort"
+  }
+ ],
+ "rejected": []
+}

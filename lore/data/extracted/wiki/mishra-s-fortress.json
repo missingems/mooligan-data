@@ -1,0 +1,177 @@
+{
+ "page": "wiki/mishra-s-fortress",
+ "url": "https://mtg.wiki/page/Mishra%27s_Fortress",
+ "title": "Mishra's Fortress",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:28Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Mishra's Fortress",
+   "type": "location",
+   "aliases": [],
+   "description": "Heavily fortified base Mishra built after the Fall of Kroog, a workshop and military stronghold in the Kher Ridges.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Builder of the fortress, whose industry is later corrupted by Phyrexian influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian who manipulates Mishra and decides to corrupt him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that brought Gix to the fortress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kher Ridges",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains of Terisiare where the fortress stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing the Kher Ridges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Desert",
+   "type": "location",
+   "aliases": [],
+   "description": "Arid land west of the fortress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "Fallen city whose palace wreckage furnished Mishra's workshop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of Kroog",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Mishra built his fortress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the fortress played a pivotal role.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Siege of Sarinth",
+   "type": "event",
+   "aliases": [],
+   "description": "Siege during which Gix came to the fortress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tomakul",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Mishra planned to relocate his headquarters to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weakstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stone that defends itself and its master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Side Gix wants to bring Mishra over to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mishra selects a site in the Kher Ridges and builds a fortress among great oaks, with a private workshop in a hollowed stump.",
+   "participants": [
+    "Mishra",
+    "Mishra's Fortress"
+   ],
+   "location": "Mishra's Fortress",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Mishra had the stump hollowed out and converted into his private workshop"
+  },
+  {
+   "summary": "During the siege of Sarinth the Brotherhood of Gix brings Gix to the fortress while Mishra plans to move his headquarters to Tomakul.",
+   "participants": [
+    "Gix",
+    "Brotherhood of Gix",
+    "Mishra",
+    "Tomakul"
+   ],
+   "location": "Mishra's Fortress",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gix was brought by the Brotherhood of Gix to the fortress"
+  },
+  {
+   "summary": "Gix finds he cannot murder Mishra and steal the Weakstone, and decides to corrupt Mishra for Phyrexia.",
+   "participants": [
+    "Gix",
+    "Mishra",
+    "Weakstone",
+    "Phyrexia"
+   ],
+   "location": "Mishra's Fortress",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gix decided to corrupt Mishra and bring him over to the side of Phyrexia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mishra",
+   "relation": "created",
+   "target": "Mishra's Fortress",
+   "note": "constructed it",
+   "paragraph": 0,
+   "quote": "the heavily fortified base constructed by Mishra"
+  },
+  {
+   "source": "Mishra's Fortress",
+   "relation": "located_in",
+   "target": "Kher Ridges",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Positioned in the Kher Ridges of Terisiare"
+  },
+  {
+   "source": "Gix",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "plans to corrupt him",
+   "paragraph": 3,
+   "quote": "Gix found that he could not murder Mishra"
+  }
+ ],
+ "rejected": []
+}

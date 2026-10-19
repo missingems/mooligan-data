@@ -1,0 +1,183 @@
+{
+ "page": "wiki/locthwain",
+ "url": "https://mtg.wiki/page/Locthwain",
+ "title": "Locthwain",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:48Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Locthwain",
+   "type": "faction",
+   "aliases": [
+    "court of Locthwain"
+   ],
+   "description": "The black-aligned court of the Realm on Eldraine, exemplifying the virtue of Persistence; its castle floats on clouds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Realm and its knightly courts exist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Locthwain",
+   "type": "location",
+   "aliases": [],
+   "description": "Floating castle of Locthwain that can be moved at its Queen's whim; later converted into a Phyrexian fortress and crashed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen Ayara",
+   "type": "character",
+   "aliases": [
+    "Ayara"
+   ],
+   "description": "Ancient elf from the days of the Elven Kingdom who rules Locthwain; compleated during the New Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cauldron of Eternity",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Lost cauldron that can return the dead to life if it deems them worthy; the court of Locthwain was established around it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blacklance Paragons",
+   "type": "faction",
+   "aliases": [
+    "Blacklances"
+   ],
+   "description": "Knights of Locthwain who travel deep into the Wilds in search of the lost Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Midnight",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite knights of Locthwain who fly on giant ravens.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wilds",
+   "type": "location",
+   "aliases": [
+    "Wilds"
+   ],
+   "description": "Wild region of Eldraine into which the elves withdrew and where the Blacklances seek the Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elven Lords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers who enslaved mankind until humans overthrew them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Phyrexian invasion during which Locthwain's court was compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rankle",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose love spell enchanted the court of Locthwain.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mankind overthrows the Elven Lords who enslaved them; the five knightly courts are created and Locthwain is established around the Cauldron of Eternity.",
+   "participants": [
+    "Elven Lords",
+    "Locthwain",
+    "Cauldron of Eternity"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "mankind rose and overthrew the Elven Lords that had enslaved them, and the five knightly courts were created"
+  },
+  {
+   "summary": "Locthwain's castle is forced aloft by the curse of losing the Cauldron of Eternity.",
+   "participants": [
+    "Castle Locthwain",
+    "Cauldron of Eternity"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Locthwain had been forced aloft long ago by the curse of having lost the embodiment of its precious virtue"
+  },
+  {
+   "summary": "Ayara and most of the court of Locthwain are compleated and the castle becomes a Phyrexian fortress.",
+   "participants": [
+    "Queen Ayara",
+    "Locthwain",
+    "Castle Locthwain"
+   ],
+   "location": "Castle Locthwain",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "During the New Phyrexian Invasion , Ayara and most of the court of Locthwain were compleated ."
+  },
+  {
+   "summary": "Rankle's love spell enchants the court and many fall to their deaths from the castle.",
+   "participants": [
+    "Rankle",
+    "Locthwain"
+   ],
+   "location": "Castle Locthwain",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "many fell to their deaths from the castle"
+  },
+  {
+   "summary": "Freed of Phyrexian control, the castle crashes to the ground.",
+   "participants": [
+    "Castle Locthwain"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Without the Phyrexians controlling it, the castle crashed into the ground"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Queen Ayara",
+   "relation": "leader_of",
+   "target": "Locthwain",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The court is ruled by Queen Ayara"
+  },
+  {
+   "source": "Blacklance Paragons",
+   "relation": "member_of",
+   "target": "Locthwain",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Blacklance Paragons and the Order of Midnight"
+  },
+  {
+   "source": "Castle Locthwain",
+   "relation": "located_in",
+   "target": "Eldraine",
+   "note": "seat of Locthwain",
+   "paragraph": 3,
+   "quote": "The magnificent Castle Locthwain floats aloft on a vast billow of clouds"
+  }
+ ],
+ "rejected": []
+}

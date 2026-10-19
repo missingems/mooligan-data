@@ -1,0 +1,143 @@
+{
+ "page": "wiki/augusta-tullus",
+ "url": "https://mtg.wiki/page/Augusta_Tullus",
+ "title": "Augusta Tullus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:30Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Augusta Tullus",
+   "type": "character",
+   "aliases": [
+    "Dean Augusta Tullus",
+    "Augusta"
+   ],
+   "description": "A human cleric and dean of Lorehold College who was killed in the New Phyrexian Invasion and returned as an animated spirit statue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorehold College",
+   "type": "faction",
+   "aliases": [
+    "Lorehold"
+   ],
+   "description": "College of Strixhaven University on Arcavios where Augusta teaches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "University on Arcavios.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dean Plargg",
+   "type": "character",
+   "aliases": [
+    "Plargg"
+   ],
+   "description": "Dean whose dangerous field trips Augusta disapproves of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murgaxor's orb",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A dangerous glass relic that let Murgaxor control Augusta's mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Murgaxor Grenshel",
+   "type": "character",
+   "aliases": [
+    "Murgaxor"
+   ],
+   "description": "A long-banished mage who controlled Augusta through the orb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Deans' Repository",
+   "type": "location",
+   "aliases": [],
+   "description": "Extradimensional archive reached through a hidden portal in the Deans' Wing.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Augusta was killed defending her school.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Augusta falls under Murgaxor Grenshel's control through his orb and withdraws into the Deans' Repository, spreading its curse by touch.",
+   "participants": [
+    "Augusta Tullus",
+    "Murgaxor Grenshel",
+    "Murgaxor's orb",
+    "Deans' Repository"
+   ],
+   "location": "Lorehold College",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the orb served as a conduit for the long-banished mage Murgaxor Grenshel"
+  },
+  {
+   "summary": "Augusta is incapacitated and freed when the orb is destroyed, and works quietly to contain the matter.",
+   "participants": [
+    "Augusta Tullus",
+    "Murgaxor's orb"
+   ],
+   "location": "Lorehold College",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "freeing her from Murgaxor's control when the orb was destroyed"
+  },
+  {
+   "summary": "Augusta is killed defending her school in the New Phyrexian Invasion and returns as an animated spirit statue.",
+   "participants": [
+    "Augusta Tullus",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Augusta was killed while defending her school in the New Phyrexian Invasion ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Augusta Tullus",
+   "relation": "member_of",
+   "target": "Lorehold College",
+   "note": "dean of order",
+   "paragraph": 0,
+   "quote": "Dean Augusta Tullus was a human cleric teacher at the Lorehold College of Strixhaven University"
+  },
+  {
+   "source": "Murgaxor Grenshel",
+   "relation": "enemy",
+   "target": "Augusta Tullus",
+   "note": "controlled her mind through the orb",
+   "paragraph": 4,
+   "quote": "who used it to exert control over Tullus's mind and actions"
+  }
+ ],
+ "rejected": []
+}

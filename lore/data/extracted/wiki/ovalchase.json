@@ -1,0 +1,80 @@
+{
+ "page": "wiki/ovalchase",
+ "url": "https://mtg.wiki/page/Ovalchase",
+ "title": "Ovalchase",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:44Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Ovalchase",
+   "type": "location",
+   "aliases": [],
+   "description": "One of Ghirapur's most iconic districts, centered on a high-speed racetrack frequented by pilots, inventors and gamblers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Kaladesh that contains Ovalchase.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Officials who maintain the racetrack and whose enforcers clash with renegades elsewhere in the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hall of Mechanists",
+   "type": "location",
+   "aliases": [],
+   "description": "Building near the track honoring racing legends, with a statue of an angel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of inventors on which Ghirapur lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A radiant sun angel appears and is said to have decided the outcome of a pivotal race, honored by a statue in the Hall of Mechanists.",
+   "participants": [
+    "Hall of Mechanists",
+    "Ovalchase"
+   ],
+   "location": "Ovalchase",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the miraculous appearance of a radiant sun angel was said to have decided the outcome of a pivotal race"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ovalchase",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "a district of Ghirapur",
+   "paragraph": 0,
+   "quote": "Ovalchase is one of Ghirapur 's most iconic districts"
+  },
+  {
+   "source": "Consulate",
+   "relation": "other",
+   "target": "Ovalchase",
+   "note": "officially maintains the racetrack",
+   "paragraph": 2,
+   "quote": "The racetrack itself is officially maintained by the Consulate"
+  }
+ ],
+ "rejected": []
+}

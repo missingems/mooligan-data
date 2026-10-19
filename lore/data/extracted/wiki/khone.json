@@ -1,0 +1,203 @@
+{
+ "page": "wiki/khone",
+ "url": "https://mtg.wiki/page/Khone",
+ "title": "Khone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Khone",
+   "type": "location",
+   "aliases": [
+    "Kanar",
+    "Kingdom of Khone"
+   ],
+   "description": "Swamp kingdom in Golthonor on Corondor, once an enchanted forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [
+    "Sol'Kanar the Swamp King"
+   ],
+   "description": "Bound spirit of Khone's forest who enforced tribute and retreated into the swamp.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [
+    "Dihada"
+   ],
+   "description": "Planeswalker who twisted Khone into a swamp and bound its spirit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dakkon Blackblade",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned to Sedouris; enslaved to Dihada's will.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carth",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned Dakkon Blackblade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chondaeh",
+   "type": "character",
+   "aliases": [],
+   "description": "Young sorceress of Shikar who boiled the swamp around Khone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gydolien Mor",
+   "type": "character",
+   "aliases": [],
+   "description": "Only survivor of Chondaeh's boiling.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sivitri Scarzam",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Sol'Kanar in an ancient war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sedouris",
+   "type": "location",
+   "aliases": [
+    "The Dead City"
+   ],
+   "description": "Ancient city destroyed by a Cosmic Horror and made Dihada's lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Jet",
+   "type": "faction",
+   "aliases": [
+    "House Khone"
+   ],
+   "description": "Ruling house of the rebuilt realm by 4196 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blackblade-Dihada War",
+   "type": "event",
+   "aliases": [],
+   "description": "War with first battles in Khone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that ended the tribute.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dihada twists Khone into a swamp and binds its spirit as Sol'Kanar.",
+   "participants": [
+    "Geyadrone Dihada",
+    "Sol'Kanar"
+   ],
+   "location": "Khone",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "until it was twisted into a swamp by Geyadrone Dihada and its spirit was bound to her service as Sol'Kanar the Swamp King"
+  },
+  {
+   "summary": "After five years of siege by Sol'Kanar, Dihada summons a Cosmic Horror to eradicate Sedouris.",
+   "participants": [
+    "Geyadrone Dihada",
+    "Sol'Kanar"
+   ],
+   "location": "Sedouris",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Dihada summoned a Cosmic Horror to eradicate the inhabitants of the city"
+  },
+  {
+   "summary": "Carth summons Dakkon to Sedouris; Dihada destroys the city, and Dakkon regains his shadow but is enslaved to her.",
+   "participants": [
+    "Carth",
+    "Dakkon Blackblade",
+    "Geyadrone Dihada"
+   ],
+   "location": "Sedouris",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Dakkon regaining his shadow but also becoming enslaved to Dihada's will"
+  },
+  {
+   "summary": "Sol'Kanar forces the kingdoms to send tribute until the Dragon War.",
+   "participants": [
+    "Sol'Kanar"
+   ],
+   "location": "Khone",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "forced the inhabitants to send slaves and goods on the Date of Tribute"
+  },
+  {
+   "summary": "Chondaeh boils the swamp, killing everyone in Khone but Gydolien Mor; Sol'Kanar retreats.",
+   "participants": [
+    "Chondaeh",
+    "Gydolien Mor",
+    "Sol'Kanar"
+   ],
+   "location": "Khone",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "killing everyone there, with Gydolien Mor as the only survivor"
+  },
+  {
+   "summary": "By 4196 AR Khone is rebuilt as a small realm ruled by House Jet.",
+   "participants": [
+    "House Jet"
+   ],
+   "location": "Khone",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Khone had been rebuilt as a small realm ruled by House Jet"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sol'Kanar",
+   "relation": "serves",
+   "target": "Geyadrone Dihada",
+   "note": "spirit bound to her service",
+   "paragraph": 4,
+   "quote": "its spirit was bound to her service as Sol'Kanar the Swamp King"
+  },
+  {
+   "source": "Dakkon Blackblade",
+   "relation": "serves",
+   "target": "Geyadrone Dihada",
+   "note": "enslaved to her will",
+   "paragraph": 5,
+   "quote": "also becoming enslaved to Dihada's will"
+  },
+  {
+   "source": "Chondaeh",
+   "relation": "enemy",
+   "target": "Sol'Kanar",
+   "note": "her boiling weakened him",
+   "paragraph": 6,
+   "quote": "Greatly weakened by the loss of much of his magic, Sol'Kanar retreated into the swamp to bide his time."
+  }
+ ],
+ "rejected": []
+}

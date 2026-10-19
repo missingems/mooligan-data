@@ -1,0 +1,156 @@
+{
+ "page": "wiki/rootwater",
+ "url": "https://mtg.wiki/page/Rootwater",
+ "title": "Rootwater",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:20Z",
+ "storyline": "Invasion Cycle",
+ "entities": [
+  {
+   "name": "Rootwater",
+   "type": "location",
+   "aliases": [],
+   "description": "Saltwater lake on Icehaven in Keld, transferred from Rath during the Rathi Overlay, later also the name of the forest above it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk of Rootwater",
+   "type": "faction",
+   "aliases": [
+    "merfolk"
+   ],
+   "description": "Once peaceable merfolk who became savage carnivores.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elves of Skyshroud",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who coexisted with the merfolk and later grew Skyshroud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest magically grown by the elves above the lake.",
+   "presence": "appears"
+  },
+  {
+   "name": "Evincars",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers who genetically altered the merfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who kept the forest warm and sacrificed herself to close the Time Rift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that brought Rath's regions to Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the lake and its peoples were taken to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Frozen region of Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A portal drags the merfolk and elves, with a massive body of water, to Rath.",
+   "participants": [
+    "Merfolk of Rootwater",
+    "Elves of Skyshroud"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The portal that dragged them to Rath snatched a massive body of water along with it."
+  },
+  {
+   "summary": "The alliance ends in a bloody battle as food dwindles; the elves magically grow Skyshroud.",
+   "participants": [
+    "Merfolk of Rootwater",
+    "Elves of Skyshroud",
+    "Skyshroud"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "their partnership ended abruptly in a bloody battle"
+  },
+  {
+   "summary": "The merfolk become savage carnivores and curse the elves and their forest, now called Rootwater.",
+   "participants": [
+    "Merfolk of Rootwater",
+    "Elves of Skyshroud",
+    "Evincars"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The merfolk cursed the elves and their new home, now named Rootwater ."
+  },
+  {
+   "summary": "Rootwater appears on Keld after the Rathi Overlay; Freyalise casts a spell to keep the forest warm.",
+   "participants": [
+    "Freyalise",
+    "Rootwater"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "it was saved by the planeswalker Freyalise , who cast a spell to keep the forest warm"
+  },
+  {
+   "summary": "After Freyalise sacrifices herself to close the Time Rift, the forest's mana weakens and its inhabitants move away.",
+   "participants": [
+    "Freyalise",
+    "Rootwater"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "After Freyalise sacrificed herself to close the Time Rift over Skyshroad"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Merfolk of Rootwater",
+   "relation": "enemy",
+   "target": "Elves of Skyshroud",
+   "note": "former allies turned enemies",
+   "paragraph": 2,
+   "quote": "their partnership ended abruptly in a bloody battle"
+  },
+  {
+   "source": "Freyalise",
+   "relation": "ally",
+   "target": "Elves of Skyshroud",
+   "note": "kept their forest warm",
+   "paragraph": 4,
+   "quote": "it was saved by the planeswalker Freyalise , who cast a spell to keep the forest warm"
+  }
+ ],
+ "rejected": []
+}
