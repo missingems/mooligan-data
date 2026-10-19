@@ -25,6 +25,7 @@ Each step only does what is new: scrape skips pages already saved, extract skips
 | `bios/<id>.json` | A short bio of one of the most-mentioned entities, every sentence citing what it rests on (see `mtglore/bios.py`) |
 | `extracted/{stories,profiles}/<slug>.json` | What Claude found on that page: entities, events and relations. Every event and relation carries a verbatim quote and its paragraph; ones whose quote is not in the page, or that name someone not listed, are under `rejected` |
 | `state/batch.json` | The batch in flight, while there is one, so the next run collects it rather than paying twice |
+| `eras.json` | When each MTG Wiki section's story is set, so the wiki's undated events can be put in order: `{page: {section: {era, label, date}}}`, where `era` is the set code of the set that told it (or a year), and `date` that set's release date (see `mtglore/eras.py`, `python -m mtglore era-ingest <file>`) |
 | `merges.json` | Hand-kept fixes to how names are grouped: `same` (lists of names for one entity), `different` (pairs to keep apart), `rename` (a name to the name the entity should go by), `storylines` (a storyline's name to the spelling to use) |
 | `index/entities.json` | Every entity, most pages first: id, name, type, aliases, description, pages, first and last seen |
 | `index/entity/<id>.json` | One entity with its `timeline` (events in story order), `relations`, and `pages_say` (what each page says of them) |
@@ -55,6 +56,8 @@ Every fact in the index says where it comes from. Each event, relation and entry
 
 `text` is a credit line ready to show. An app should show it, or at least the `work` and `publisher`, with every fact, and should keep `official` facts and fan-wiki facts apart.
 
-Story order is the day a page first came out, then its place in its storyline's chapter list.
+Story order is the day a page first came out, then its place in its storyline's chapter list. A wiki event has no day of its own, so it takes its section's era from `eras.json` (and carries it as `era`): the release of the set that told that part of the story, so the Brothers' War sorts with Antiquities and the Phyrexian invasion with Invasion. That is the order the story was told in, not in-world chronology.
+
+An old wizards.com column the Internet Archive holds under several dates is indexed once, from its earliest copy; `index/review.json` lists the copies left out.
 
 The text is Wizards of the Coast's. It is kept here, in a private repository, to build the index; what an app shows of it should be the short quotes and the links back.
