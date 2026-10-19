@@ -1,0 +1,174 @@
+{
+ "page": "wiki/parhelion",
+ "url": "https://mtg.wiki/page/Parhelion",
+ "title": "Parhelion",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:21Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Parhelion",
+   "type": "location",
+   "aliases": [
+    "The Parhelion"
+   ],
+   "description": "Floating golden castle, great hall of the Boros angels, destroyed after Szadek took it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parhelion II",
+   "type": "location",
+   "aliases": [
+    "Response Garrison",
+    "Floating Citadel"
+   ],
+   "description": "Rebuilt Boros flying fortress home to battle angels and griffin skyknights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "The guild whose angels reside in the Parhelion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunhome",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress with which the Parhelion docked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feather",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel restricted from the Parhelion and forced to serve the Wojek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Enslaved by Augustin IV, he killed the Parhelion's residents and planned to destroy Prahv and the Guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Augustin IV",
+   "type": "character",
+   "aliases": [],
+   "description": "Held Szadek enslaved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Stopped Szadek's plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemy army in the War of the Spark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Parhelion II served as a base.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Angels build the Parhelion as a skyship to seek the vanished planeswalkers and fly it to the edge of Ravnica's existence.",
+   "participants": [
+    "Boros Legion",
+    "Parhelion"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "they encountered only emptiness"
+  },
+  {
+   "summary": "Feather is restricted from the Parhelion and forced to serve the Wojek with bound wings.",
+   "participants": [
+    "Feather"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "her wings were bound and she was forced to serve the Wojek"
+  },
+  {
+   "summary": "Szadek gains access to the Parhelion, kills its residents and plans to destroy Prahv and the Guilds.",
+   "participants": [
+    "Szadek",
+    "Parhelion"
+   ],
+   "location": "Parhelion",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "managed to gain access to the Parhelion and managed to kill its residents"
+  },
+  {
+   "summary": "Agrus Kos stops the plan but the Parhelion is destroyed.",
+   "participants": [
+    "Agrus Kos",
+    "Parhelion",
+    "Szadek"
+   ],
+   "location": "Parhelion",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Although his plan was stopped by Agrus Kos , the Parhelion was destroyed."
+  },
+  {
+   "summary": "Parhelion II is steered to the Tenth District plaza in the War of the Spark and used to launch skyknights and angels against the Dreadhorde.",
+   "participants": [
+    "Parhelion II",
+    "Dreadhorde",
+    "Boros Legion"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "used as a base for launching skyknights and angels against the Dreadhorde"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agrus Kos",
+   "relation": "enemy",
+   "target": "Szadek",
+   "note": "Stopped Szadek's plan.",
+   "paragraph": 3,
+   "quote": "his plan was stopped by Agrus Kos"
+  },
+  {
+   "source": "Parhelion II",
+   "relation": "other",
+   "target": "Boros Legion",
+   "note": "Used as a flying fortress by the Boros.",
+   "paragraph": 4,
+   "quote": "is used by the Boros as a flying fortress"
+  }
+ ],
+ "rejected": []
+}

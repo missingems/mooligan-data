@@ -1,0 +1,164 @@
+{
+ "page": "wiki/allav-hask",
+ "url": "https://mtg.wiki/page/Allav_Hask",
+ "title": "Allav Hask",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:23Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Allav Hask",
+   "type": "character",
+   "aliases": [
+    "Captain Allav Hask",
+    "Hask"
+   ],
+   "description": "Captain, leader of four human soldiers on Dominaria, wielder of the Hand of Righteous Retribution.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trooper Fost",
+   "type": "character",
+   "aliases": [
+    "Fost"
+   ],
+   "description": "Human soldier in Hask's group.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boom",
+   "type": "character",
+   "aliases": [],
+   "description": "Golem in Hask's group.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hand of Righteous Retribution",
+   "type": "artifact",
+   "aliases": [
+    "the Hand"
+   ],
+   "description": "Powerful sword capable of channelling magical energy, said to be drawable only twice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Angelfire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church whose High Primate is said to have blessed the Hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serrans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction opposed by the Church of Angelfire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vaan",
+   "type": "character",
+   "aliases": [
+    "Pixie Vaan"
+   ],
+   "description": "Pixie who enlisted Hask to kill a dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tania Cayce",
+   "type": "character",
+   "aliases": [],
+   "description": "Group member who knew how to kill the dragon and took the Hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon",
+   "type": "creature",
+   "aliases": [
+    "the dragon"
+   ],
+   "description": "Dragon that killed some of Hask's men, linked to a draconic skeleton.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vaan enlists Hask to kill a dragon that had killed some of his men.",
+   "participants": [
+    "Vaan",
+    "Allav Hask",
+    "Dragon"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "He was enlisted by Vaan to kill a dragon."
+  },
+  {
+   "summary": "Hask damages the dragon with the Hand but is trapped under rubble when the lair collapses.",
+   "participants": [
+    "Allav Hask",
+    "Dragon",
+    "Hand of Righteous Retribution"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Hask was trapped under the rubble"
+  },
+  {
+   "summary": "Tania drugs Hask with a sleeping potion and takes the sword, apparently slaying the dragon.",
+   "participants": [
+    "Tania Cayce",
+    "Allav Hask",
+    "Dragon"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Tania gave Hask a sleeping potion and took the sword, apparently slaying the dragon with it"
+  },
+  {
+   "summary": "Hask survives, with only one soldier and Boom; the Hand disappears in the chaos.",
+   "participants": [
+    "Allav Hask",
+    "Boom",
+    "Hand of Righteous Retribution"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The Hand of Righteous Retribution had disappeared in the chaos."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Allav Hask",
+   "relation": "leader_of",
+   "target": "Boom",
+   "note": "Leader of the soldiers and golem.",
+   "paragraph": 0,
+   "quote": "Captain Allav Hask was the leader of a group of four human soldiers from Dominaria , including Trooper Fost , and the golem Boom ."
+  },
+  {
+   "source": "Allav Hask",
+   "relation": "ally",
+   "target": "Tania Cayce",
+   "note": "Fellow group member.",
+   "paragraph": 6,
+   "quote": "his fellow group member Tania Cayce"
+  },
+  {
+   "source": "Allav Hask",
+   "relation": "enemy",
+   "target": "Dragon",
+   "note": "It killed some of his men.",
+   "paragraph": 5,
+   "quote": "As this dragon had killed some of his men"
+  }
+ ],
+ "rejected": []
+}

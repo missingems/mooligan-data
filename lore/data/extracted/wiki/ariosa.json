@@ -1,0 +1,163 @@
+{
+ "page": "wiki/ariosa",
+ "url": "https://mtg.wiki/page/Ariosa",
+ "title": "Ariosa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:26Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Ariosa",
+   "type": "character",
+   "aliases": [],
+   "description": "A villager of Lambholt on Innistrad, daughter of Arinos, who appears to be an occultist involved in summoning Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arinos",
+   "type": "character",
+   "aliases": [],
+   "description": "Ariosa's superstitious father who summoned Old Stickfingers and disappeared; his corpse was never found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [
+    "Stickfingers"
+   ],
+   "description": "A supernatural being summoned by ritual that went on a killing spree in Lambholt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dein Salvasi",
+   "type": "character",
+   "aliases": [
+    "Salvasi"
+   ],
+   "description": "Wealthy neighbor of Arinos who tried to seize his home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [
+    "Varik"
+   ],
+   "description": "Investigator who, with Rem Karolus, looked into the killings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "Investigator who worked with Vadrik.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "Village on Innistrad terrorized by Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Lambholt lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arinos summons Old Stickfingers to protect his home from Dein Salvasi; the ritual goes wrong and Arinos disappears while murders begin.",
+   "participants": [
+    "Arinos",
+    "Old Stickfingers",
+    "Dein Salvasi"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This dark ritual went wrong, leading to Arinos's disappearance"
+  },
+  {
+   "summary": "Vadrik and Rem begin investigating and link Old Stickfingers to Ariosa's father; Ariosa gives Vadrik information.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus",
+    "Ariosa"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Ariosa provided crucial information to Vadrik"
+  },
+  {
+   "summary": "Vadrik and Rem destroy the mobile used in the summoning, which only unbinds Stickfingers from its hearth.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus",
+    "Old Stickfingers"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "destroying the mobile used in the summoning ritual"
+  },
+  {
+   "summary": "Ariosa performs the second part of the ritual, specifying Stickfingers should kill only those she marks; she knows all the words of the poem.",
+   "participants": [
+    "Ariosa",
+    "Old Stickfingers"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ariosa knew all the words of the poem that needed to be recited"
+  },
+  {
+   "summary": "Old Stickfingers takes his goats and vanishes into the woods; Vadrik and Rem leave Lambholt, troubled by two made beds and a green glow.",
+   "participants": [
+    "Old Stickfingers",
+    "Vadrik",
+    "Rem Karolus"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Old Stickfingers took his goats and vanished into the woods"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ariosa",
+   "relation": "family",
+   "target": "Arinos",
+   "note": "daughter and father",
+   "paragraph": 1,
+   "quote": "Ariosa, the daughter of Arinos"
+  },
+  {
+   "source": "Vadrik",
+   "relation": "ally",
+   "target": "Rem Karolus",
+   "note": "investigated together",
+   "paragraph": 3,
+   "quote": "When the two men began their investigation"
+  },
+  {
+   "source": "Arinos",
+   "relation": "enemy",
+   "target": "Dein Salvasi",
+   "note": "tension over Salvasi seizing his home",
+   "paragraph": 1,
+   "quote": "his wealthy neighbor, Dein Salvasi"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,122 @@
+{
+ "page": "wiki/tabernacle-at-pendrell-vale",
+ "url": "https://mtg.wiki/page/Tabernacle_at_Pendrell_Vale",
+ "title": "Tabernacle at Pendrell Vale",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tabernacle at Pendrell Vale",
+   "type": "location",
+   "aliases": [
+    "Tabernacle"
+   ],
+   "description": "One or two mystical buildings, one in Pendrell Vale on Tolaria and one in Scarwood in Jamuraa, a holy site of the cat warriors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scarwood",
+   "type": "location",
+   "aliases": [],
+   "description": "A place in Jamuraa containing a tabernacle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pendrell Vale",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Tolaria, shrouded in impenetrable mists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "An island blasted away by Barrin's Blare of Doom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terrent Amese",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the cat warriors, minotaurs, viashino and Ur-Drago, depicted in the vault murals; he abandoned the tabernacle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Rebuilt the tabernacle with his cat warrior followers after Johan's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cat warriors",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people created by Terrent Amese who hold the Scarwood tabernacle holy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Caster of the Blare of Doom that blasted Tolaria away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war after which the Scarwood tabernacle was rebuilt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After being abandoned by Terrent Amese and his creations, the Scarwood tabernacle falls into ruin for over 900 years.",
+   "participants": [
+    "Terrent Amese",
+    "Tabernacle at Pendrell Vale"
+   ],
+   "location": "Scarwood",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After being abandoned by both Terrent Amese and his creations, the tabernacle fell into ruin for over 900 years"
+  },
+  {
+   "summary": "After Johan's War, Jedit Ojanen and his cat warrior followers rebuild the tabernacle.",
+   "participants": [
+    "Jedit Ojanen",
+    "Cat warriors",
+    "Tabernacle at Pendrell Vale"
+   ],
+   "location": "Scarwood",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "it was rebuilt by Jedit Ojanen and his cat warrior followers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jedit Ojanen",
+   "relation": "leader_of",
+   "target": "Cat warriors",
+   "note": "Rebuilt the tabernacle with his cat warrior followers.",
+   "paragraph": 1,
+   "quote": "it was rebuilt by Jedit Ojanen and his cat warrior followers"
+  },
+  {
+   "source": "Terrent Amese",
+   "relation": "created",
+   "target": "Cat warriors",
+   "note": "The murals depict his creation of them.",
+   "paragraph": 1,
+   "quote": "the history of Terrent Amese and the creation of the cat warriors"
+  }
+ ],
+ "rejected": []
+}

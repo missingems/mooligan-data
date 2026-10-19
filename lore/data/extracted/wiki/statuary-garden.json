@@ -1,0 +1,131 @@
+{
+ "page": "wiki/statuary-garden",
+ "url": "https://mtg.wiki/page/Statuary_Garden",
+ "title": "Statuary Garden",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:25Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Statuary Garden",
+   "type": "location",
+   "aliases": [],
+   "description": "Ceremonial space within Aradara Station in Ghirapur where statues of the city's greatest inventors stand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aradara Station",
+   "type": "location",
+   "aliases": [],
+   "description": "Great rail hub of Ghirapur where four aether-propelled train lines converge, under a central dome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City of Wonders in Avishkar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Kaladesh whose people visit Ghirapur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aradaras",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary mother-and-son inventors who perfected the city's first aether-powered trains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dukhara Canal",
+   "type": "location",
+   "aliases": [],
+   "description": "Historic canal spanned by eleven bridges.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eleven Bridges",
+   "type": "location",
+   "aliases": [],
+   "description": "District with eleven grand bridges built to symbolize noble houses setting aside differences.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of Eleven",
+   "type": "event",
+   "aliases": [],
+   "description": "War waged by noble houses before they agreed to trade in peace.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Aradaras perfect the design for Ghirapur's first aether-powered trains.",
+   "participants": [
+    "Aradaras"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the legendary mother-and-son team of inventors who perfected the design for the city's first aether-powered trains"
+  },
+  {
+   "summary": "The Statuary Garden begins with statues of the Aradaras and later grows with other inventors.",
+   "participants": [
+    "Aradaras",
+    "Statuary Garden"
+   ],
+   "location": "Aradara Station",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Statuary Garden began with statues of the Aradaras themselves"
+  },
+  {
+   "summary": "Eleven bridges are built over the Dukhara Canal to symbolize the noble houses of the War of Eleven setting aside their differences.",
+   "participants": [
+    "Dukhara Canal",
+    "Eleven Bridges",
+    "War of Eleven"
+   ],
+   "location": "Eleven Bridges",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "spanned by eleven grand bridges built to symbolize the willingness of the noble houses who once waged the War of Eleven to set aside their differences"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Statuary Garden",
+   "relation": "located_in",
+   "target": "Aradara Station",
+   "note": "Beneath its central dome.",
+   "paragraph": 1,
+   "quote": "This revered garden lies directly beneath the soaring central dome of Aradara Station"
+  },
+  {
+   "source": "Aradara Station",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "Hub of its transport network.",
+   "paragraph": 1,
+   "quote": "the magnificent rail hub that serves as the beating heart of Ghirapur's transport network"
+  },
+  {
+   "source": "Aradaras",
+   "relation": "created",
+   "target": "Aradara Station",
+   "note": "The station is named in their honor.",
+   "paragraph": 1,
+   "quote": "The station itself is named in honor of the Aradaras"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,172 @@
+{
+ "page": "wiki/rushwood",
+ "url": "https://mtg.wiki/page/Rushwood",
+ "title": "Rushwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:15Z",
+ "storyline": "Mercadia",
+ "entities": [
+  {
+   "name": "Rushwood",
+   "type": "location",
+   "aliases": [
+    "The Rushwood"
+   ],
+   "description": "A large living forest southwest of Mercadia City, home to the Cho-Arrim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "The city to the northeast of Rushwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [],
+   "description": "A spiritual people living under the care of the forest, rebels against the magistrate's rule.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orim",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought to Rushwood by the Cho-Arrim in 4205 AR, where she stayed a month learning their culture.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drianan",
+   "type": "character",
+   "aliases": [],
+   "description": "Wounded man brought to Rushwood who died of his injuries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klaars",
+   "type": "character",
+   "aliases": [],
+   "description": "Wounded man brought to Rushwood who died of his injuries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "The skyship that brought Orim to Rushwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [
+    "Gerrard"
+   ],
+   "description": "Led Mercadian soldiers in attacking the Cho-Arrim village, then ordered hostilities to stop.",
+   "presence": "appears"
+  },
+  {
+   "name": "Is-Shada",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cho-Arrim killed in the attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Is-Meisha",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cho-Arrim killed in the attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ta-Spon",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cho-Arrim killed in the attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Manno",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cho-Arrim assumed killed who survived unseen.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4205 AR the Cho-Arrim bring Orim aboard the Weatherlight to Rushwood alongside the wounded Drianan and Klaars, who both die.",
+   "participants": [
+    "Orim",
+    "Drianan",
+    "Klaars",
+    "Cho-Arrim"
+   ],
+   "location": "Rushwood",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Orim was brought to the Rushwood aboard the Skyship Weatherlight by the Cho-Arrim"
+  },
+  {
+   "summary": "Mercadian soldiers led by Gerrard Capashen attack the Cho-Arrim village, slaughtering most of its inhabitants.",
+   "participants": [
+    "Gerrard Capashen",
+    "Cho-Arrim",
+    "Is-Shada",
+    "Is-Meisha",
+    "Ta-Spon"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "a contingent of Mercadian soldiers led by Gerrard Capashen attacked the village, slaughtering most of its inhabitants"
+  },
+  {
+   "summary": "Realizing he is on the wrong side, Gerrard orders hostilities to stop and kills his own troops.",
+   "participants": [
+    "Gerrard Capashen"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "When Gerrard realized he was working for the wrong side, he ordered hostilities to stop"
+  },
+  {
+   "summary": "Gerrard, Orim and the Weatherlight crew are arrested and brought to Mercadia City.",
+   "participants": [
+    "Gerrard Capashen",
+    "Orim"
+   ],
+   "location": "Mercadia City",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "brought to Mercadia City"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cho-Arrim",
+   "relation": "located_in",
+   "target": "Rushwood",
+   "note": "They live under the forest's care.",
+   "paragraph": 3,
+   "quote": "The Cho-Arrim , a spiritual and mystical people, live under the care and protection of the forest itself"
+  },
+  {
+   "source": "Gerrard Capashen",
+   "relation": "enemy",
+   "target": "Cho-Arrim",
+   "note": "His soldiers attacked their village.",
+   "paragraph": 4,
+   "quote": "a contingent of Mercadian soldiers led by Gerrard Capashen attacked the village"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,147 @@
+{
+ "page": "wiki/kit",
+ "url": "https://mtg.wiki/page/Kit",
+ "title": "Kit",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:14Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Kit",
+   "type": "creature",
+   "aliases": [],
+   "description": "A young golden wolf, companion of Lyana and child of the Cosmos Wolf Sarulf on Kaldheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lyana",
+   "type": "character",
+   "aliases": [],
+   "description": "A young girl, companion of Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukya",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kit's sister, a copper wolf companion of Lathril.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lathril",
+   "type": "character",
+   "aliases": [],
+   "description": "A queen of the elves who rescued Lyana and Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarulf",
+   "type": "deity",
+   "aliases": [
+    "Cosmos Wolf",
+    "Cosmos Beast"
+   ],
+   "description": "The immortal Cosmos Wolf, sire of Kit and Lukya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Draugr",
+   "type": "creature",
+   "aliases": [
+    "draugrs"
+   ],
+   "description": "Malevolent creatures that seized Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elves of Skemfar",
+   "type": "faction",
+   "aliases": [],
+   "description": "Lathril's people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kit lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Draugr encounter Lyana and Kit in the woods, and one seizes Kit and carries him off.",
+   "participants": [
+    "Draugr",
+    "Kit",
+    "Lyana"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "one of the draugr seized Kit and carried him off"
+  },
+  {
+   "summary": "Lathril and Lukya rescue Lyana and recover Kit, who is reunited with Lyana.",
+   "participants": [
+    "Lathril",
+    "Lukya",
+    "Lyana",
+    "Kit"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "she and her companion, Kit's sister Lukya stepped in to rescue Lyana and recover Kit"
+  },
+  {
+   "summary": "As a reward for Kit's rescue, Sarulf grants Lathril a bond between the elves of Skemfar and all wolves of Kaldheim.",
+   "participants": [
+    "Sarulf",
+    "Lathril"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "As a reward for Kit's rescue, Sarulf granted Lathril a bond"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kit",
+   "relation": "ally",
+   "target": "Lyana",
+   "note": "Her wolf companion and protector.",
+   "paragraph": 3,
+   "quote": "Kit was loyal and protective towards Lyana."
+  },
+  {
+   "source": "Kit",
+   "relation": "family",
+   "target": "Lukya",
+   "note": "Brother and sister.",
+   "paragraph": 1,
+   "quote": "his sister Lukya"
+  },
+  {
+   "source": "Sarulf",
+   "relation": "family",
+   "target": "Kit",
+   "note": "Sire and child.",
+   "paragraph": 0,
+   "quote": "a child of the Cosmos Wolf Sarulf"
+  },
+  {
+   "source": "Draugr",
+   "relation": "enemy",
+   "target": "Kit",
+   "note": "They abducted him.",
+   "paragraph": 5,
+   "quote": "one of the draugr seized Kit and carried him off"
+  }
+ ],
+ "rejected": []
+}

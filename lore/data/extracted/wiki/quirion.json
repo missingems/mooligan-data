@@ -1,0 +1,215 @@
+{
+ "page": "wiki/quirion",
+ "url": "https://mtg.wiki/page/Quirion",
+ "title": "Quirion",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Quirion Sovereign",
+   "type": "faction",
+   "aliases": [
+    "Quirion"
+   ],
+   "description": "Elven nation in the White Woods of Corondor founded by elf refugees from Terisiare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [
+    "White Woods"
+   ],
+   "description": "Land containing the White Woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amadis",
+   "type": "character",
+   "aliases": [
+    "Exarch Amadis"
+   ],
+   "description": "Short-tempered exarch of the Kieryn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Finovar",
+   "type": "character",
+   "aliases": [
+    "Exarch Finovar"
+   ],
+   "description": "Exarch of the Calthyn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liefellen",
+   "type": "character",
+   "aliases": [],
+   "description": "Notable Quirion exarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calthyn",
+   "type": "faction",
+   "aliases": [
+    "Calthyn Elves"
+   ],
+   "description": "Rival primary Quirion clan group.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kieryn",
+   "type": "faction",
+   "aliases": [
+    "Kiery",
+    "Kieryn Elves"
+   ],
+   "description": "Rival primary Quirion clan group.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Spirit",
+   "type": "creature",
+   "aliases": [
+    "Maro-Sorcerer"
+   ],
+   "description": "Force of nature of the forest met by both exarchs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Met the Great Spirit with the exarchs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [],
+   "description": "Met the Great Spirit with the exarchs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mangara",
+   "type": "character",
+   "aliases": [],
+   "description": "Allied with Quirion in the Mirage War and brought elves to settle in Uktabi Jungle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War following the meeting with the Great Spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that devastated Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estolade",
+   "type": "location",
+   "aliases": [
+    "river Estolade"
+   ],
+   "description": "River through the forest's center.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought by his Serra Angel to see Calthyn archers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elvish refugees from the Brothers' War found the Quirion Sovereign in the White Woods.",
+   "participants": [
+    "Quirion Sovereign",
+    "Brothers' War"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "elvish refugees traveled to Corondor and founded the Sovereign in its White Woods"
+  },
+  {
+   "summary": "Both exarchs meet the Great Spirit with Jared Carthalion and Kristina of the Woods.",
+   "participants": [
+    "Amadis",
+    "Finovar",
+    "Great Spirit",
+    "Jared Carthalion",
+    "Kristina of the Woods"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "both exarchs met with the force of nature together with Jared Carthalion and Kristina of the Woods"
+  },
+  {
+   "summary": "The Quirion ally with Mangara during the Mirage War.",
+   "participants": [
+    "Quirion Sovereign",
+    "Mangara"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The Quirion allied themselves with Mangara during the Mirage War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Amadis",
+   "relation": "leader_of",
+   "target": "Kieryn",
+   "note": "exarch",
+   "paragraph": 5,
+   "quote": "led by Exarchs Finovar and Amadis , respectively"
+  },
+  {
+   "source": "Finovar",
+   "relation": "leader_of",
+   "target": "Calthyn",
+   "note": "exarch",
+   "paragraph": 5,
+   "quote": "led by Exarchs Finovar and Amadis , respectively"
+  },
+  {
+   "source": "Calthyn",
+   "relation": "enemy",
+   "target": "Kieryn",
+   "note": "rival clans",
+   "paragraph": 5,
+   "quote": "the rival Calthyn and Kieryn Elves"
+  },
+  {
+   "source": "Quirion Sovereign",
+   "relation": "ally",
+   "target": "Mangara",
+   "note": "Mirage War",
+   "paragraph": 5,
+   "quote": "The Quirion allied themselves with Mangara during the Mirage War"
+  }
+ ],
+ "rejected": []
+}
