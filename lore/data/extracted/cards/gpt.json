@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-19T22:27:53Z",
+ "extracted_at": "2026-10-19T22:28:36Z",
  "storyline": "Guildpact",
  "entities": [
   {
@@ -386,6 +386,13 @@
    "aliases": [],
    "description": "Selesnya City-Tree.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Nephilim",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ancient guild-colored beings that awaken and shake the plane.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -554,6 +561,16 @@
    "quote": "Who truly runs this city?"
   },
   {
+   "summary": "Nephilim awaken, one after another, shaking the plane.",
+   "participants": [
+    "Nephilim"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 87,
+   "quote": "When it awoke, it shook the plane with the thunder of its craving."
+  },
+  {
    "summary": "Borborygmos orders his horde to crush.",
    "participants": [
     "Borborygmos"
@@ -562,6 +579,17 @@
    "importance": "minor",
    "paragraph": 107,
    "quote": "Crush them!"
+  },
+  {
+   "summary": "Myznar reports an experiment run through a lab-goblin's brain as a success.",
+   "participants": [
+    "Myznar",
+    "Izzet League"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 99,
+   "quote": "My burners' flames fell asleep while the beakers jumped about and shattered."
   },
   {
    "summary": "Otak shouts that the sky is being thrown at them.",
@@ -624,29 +652,5 @@
    "quote": "Ghut Rak, Gruul guildmage"
   }
  ],
- "rejected": [
-  {
-   "kind": "event",
-   "reason": "unlisted participant",
-   "summary": "Nephilim awaken, one after another, shaking the plane.",
-   "participants": [],
-   "location": "Ravnica",
-   "importance": "major",
-   "paragraph": 87,
-   "quote": "When it awoke, it shook the plane with the thunder of its craving."
-  },
-  {
-   "kind": "event",
-   "reason": "quote not in page",
-   "summary": "Myznar reports an experiment run through a lab-goblin's brain as a success.",
-   "participants": [
-    "Myznar",
-    "Izzet League"
-   ],
-   "location": "Ravnica",
-   "importance": "minor",
-   "paragraph": 99,
-   "quote": "Success!"
-  }
- ]
+ "rejected": []
 }

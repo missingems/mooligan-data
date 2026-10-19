@@ -209,6 +209,8 @@ def build(directory: Path) -> dict:
 
     # 3. Events, relations and what each page says of each entity, in story order.
     events, relations, storylines = [], [], {}
+    # Card flavor text is reprinted set after set; the same quote counts once, from its first printing.
+    reprinted: Set[tuple] = set()
     said: Dict[str, List[dict]] = defaultdict(list)
     page_index = []
     for order, extraction in enumerate(extractions):
@@ -255,6 +257,11 @@ def build(directory: Path) -> dict:
             return text_fragment(url or extraction["url"], quote)
 
         for number, event in enumerate(extraction["events"]):
+            if source == "card-text":
+                key = (fold(event["quote"]), "e")
+                if key in reprinted:
+                    continue
+                reprinted.add(key)
             events.append({
                 "id": f"{slug}-e{number}",
                 "summary": event["summary"],
@@ -268,6 +275,11 @@ def build(directory: Path) -> dict:
                 "citation": citation(page, event["paragraph"], event["quote"]),
             })
         for number, relation in enumerate(extraction["relations"]):
+            if source == "card-text":
+                key = (fold(relation["quote"]), relation["relation"], fold(relation["source"]), fold(relation["target"]))
+                if key in reprinted:
+                    continue
+                reprinted.add(key)
             relations.append({
                 "id": f"{slug}-r{number}",
                 "source": resolve(relation["source"]),
