@@ -1,0 +1,183 @@
+{
+ "page": "wiki/wezna",
+ "url": "https://mtg.wiki/page/Wezna",
+ "title": "Wezna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:22Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Wezna",
+   "type": "character",
+   "aliases": [
+    "Queen Wezna"
+   ],
+   "description": "The queen of Zhalfir, a wise leader who rallies her people against the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane ruled by Queen Wezna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker summoned to Aku by Wezna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jabari",
+   "type": "character",
+   "aliases": [],
+   "description": "Tasked by Wezna with leading the army until the general recovers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aku",
+   "type": "location",
+   "aliases": [],
+   "description": "The ancient city where Wezna summoned Teferi and Jabari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped his prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "General Mageta",
+   "type": "character",
+   "aliases": [],
+   "description": "Zhalfiri general who was injured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wanderer",
+   "type": "character",
+   "aliases": [
+    "Wanderer"
+   ],
+   "description": "A planeswalker who arrived in Zhalfir and was held in stasis in an amber prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "Opened a portal to Zhalfir with Eight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eight",
+   "type": "character",
+   "aliases": [],
+   "description": "Opened a portal to Zhalfir with Wrenn.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Phyrexian plane being invaded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amber Tombs",
+   "type": "location",
+   "aliases": [],
+   "description": "Site within Aku where tension rose.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wezna summons Teferi and Jabari to Aku; Teferi learns Kaervek escaped and General Mageta was injured.",
+   "participants": [
+    "Wezna",
+    "Teferi",
+    "Jabari",
+    "Kaervek",
+    "General Mageta"
+   ],
+   "location": "Aku",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Teferi learned that Kaervek had escaped his prison and that General Mageta had been injured"
+  },
+  {
+   "summary": "Wezna tasks Jabari with leading the army until the general recovers.",
+   "participants": [
+    "Wezna",
+    "Jabari"
+   ],
+   "location": "Aku",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she tasked Jabari with leading the army until the general's recovery"
+  },
+  {
+   "summary": "Wezna reveals the Wanderer to Teferi, releasing her from an amber prison.",
+   "participants": [
+    "Wezna",
+    "Teferi",
+    "The Wanderer"
+   ],
+   "location": "Aku",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "using an amber prison to release her from stasis"
+  },
+  {
+   "summary": "Wrenn and Eight open a portal to Zhalfir revealing New Phyrexia; Wezna is cautious but reassured by Teferi.",
+   "participants": [
+    "Wezna",
+    "Wrenn",
+    "Eight",
+    "Teferi"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "When Wrenn and Eight opened a portal to her plane"
+  },
+  {
+   "summary": "Wezna leads an army of warriors and mages through the portal to fight the Phyrexians.",
+   "participants": [
+    "Wezna",
+    "New Phyrexia"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "leading an army of warriors and mages through the portal to aid in the battle against the Phyrexians"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wezna",
+   "relation": "leader_of",
+   "target": "Zhalfir",
+   "note": "Queen of Zhalfir.",
+   "paragraph": 0,
+   "quote": "Wezna is the queen of Zhalfir ."
+  },
+  {
+   "source": "Jabari",
+   "relation": "serves",
+   "target": "Wezna",
+   "note": "Tasked with leading her army.",
+   "paragraph": 2,
+   "quote": "she tasked Jabari with leading the army"
+  }
+ ],
+ "rejected": []
+}

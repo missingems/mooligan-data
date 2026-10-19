@@ -1,0 +1,127 @@
+{
+ "page": "wiki/mevra",
+ "url": "https://mtg.wiki/page/Mevra",
+ "title": "Mevra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:16Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Mevra",
+   "type": "character",
+   "aliases": [],
+   "description": "A human whose visage Nicol Bolas used, likely after killing her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Illusory Mevra",
+   "type": "character",
+   "aliases": [
+    "Mevra, as portrayed by Nicol Bolas"
+   ],
+   "description": "An illusion of Mevra crafted by Nicol Bolas, appearing as a friendly pregnant woman, to deceive Naiva.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon who impersonated Mevra and likely killed her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naiva",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunter lulled by the illusion of Mevra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yasova",
+   "type": "character",
+   "aliases": [],
+   "description": "Person the illusory Mevra pretended to look for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khanfall",
+   "type": "event",
+   "aliases": [],
+   "description": "Event on Tarkir two generations before.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ayagor",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the annual gatherings.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nicol Bolas, in the guise of Mevra, engaged Naiva in friendly conversation to gain trust.",
+   "participants": [
+    "Illusory Mevra",
+    "Naiva",
+    "Yasova"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She engaged Naiva in conversation"
+  },
+  {
+   "summary": "The illusory Mevra transformed into Nicol Bolas himself.",
+   "participants": [
+    "Illusory Mevra",
+    "Nicol Bolas",
+    "Naiva"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "when she transformed into Nicol Bolas himself"
+  },
+  {
+   "summary": "Nicol Bolas likely killed the real Mevra.",
+   "participants": [
+    "Nicol Bolas",
+    "Mevra"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Nicol Bolas likely killed her to ensure she did not interrupt his charades"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "killed",
+   "target": "Mevra",
+   "note": "likely",
+   "paragraph": 4,
+   "quote": "Nicol Bolas likely killed her to ensure she did not interrupt his charades"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Naiva",
+   "note": "deceived and manipulated her",
+   "paragraph": 3,
+   "quote": "It initially lulled Naiva into a false sense of security and familiarity"
+  }
+ ],
+ "rejected": []
+}

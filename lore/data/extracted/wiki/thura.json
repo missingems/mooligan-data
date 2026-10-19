@@ -1,0 +1,150 @@
+{
+ "page": "wiki/thura",
+ "url": "https://mtg.wiki/page/Thura",
+ "title": "Thura",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:22Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Thura Sail-Rend",
+   "type": "character",
+   "aliases": [
+    "Thura Oathkeeper",
+    "Thura Curse-breaker",
+    "Splintmail"
+   ],
+   "description": "A human warrior of the Beskir clan who avenged her family, died, and now feasts in Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kinkiller",
+   "type": "character",
+   "aliases": [],
+   "description": "Thura's former brother and ally who betrayed her and was slain by her in a duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beskir",
+   "type": "faction",
+   "aliases": [
+    "Beskir clan"
+   ],
+   "description": "The clan Thura belonged to in life.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "The realm of the honored dead where heroic spirits feast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valkyries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who claimed Thura's soul after her death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niko Aris",
+   "type": "character",
+   "aliases": [],
+   "description": "Gave Thura the nickname Splintmail.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vígniút",
+   "type": "character",
+   "aliases": [],
+   "description": "A heroic spirit who drinks and trades tales with Thura.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gæller No-breath",
+   "type": "character",
+   "aliases": [],
+   "description": "A heroic spirit who drinks and trades tales with Thura.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Betrayed by her kin and poisoned in battle, Thura duels her traitorous brother Kinkiller.",
+   "participants": [
+    "Thura Sail-Rend",
+    "Kinkiller"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Thura confronted her former brother and ally turned traitor and enemy"
+  },
+  {
+   "summary": "Thura triumphs using Kinkiller's blade against him, avenging her family and sealing her death.",
+   "participants": [
+    "Thura Sail-Rend",
+    "Kinkiller"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ultimately, Thura triumphed, avenging her family's honor"
+  },
+  {
+   "summary": "The Valkyries claim Thura's soul and confer her titles; she enters Starnheim.",
+   "participants": [
+    "Thura Sail-Rend",
+    "Valkyries",
+    "Starnheim"
+   ],
+   "location": "Starnheim",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Thura's soul was claimed by the Valkyries"
+  },
+  {
+   "summary": "Thura feasts, banters and drinks with Vígniút, Gæller No-breath and others in Starnheim.",
+   "participants": [
+    "Thura Sail-Rend",
+    "Vígniút",
+    "Gæller No-breath"
+   ],
+   "location": "Starnheim",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "sharing drinks and tales with Vígniút, Gæller No-breath, and others"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thura Sail-Rend",
+   "relation": "member_of",
+   "target": "Beskir",
+   "note": "Of the Beskir clan in life.",
+   "paragraph": 2,
+   "quote": "In life, Thura was of the Beskir clan."
+  },
+  {
+   "source": "Thura Sail-Rend",
+   "relation": "killed",
+   "target": "Kinkiller",
+   "note": "Killed him with his own blade.",
+   "paragraph": 2,
+   "quote": "using Kinkiller's blade against him"
+  },
+  {
+   "source": "Thura Sail-Rend",
+   "relation": "located_in",
+   "target": "Starnheim",
+   "note": "Joined the honored dead there.",
+   "paragraph": 3,
+   "quote": "Her journey continued into Starnheim"
+  }
+ ],
+ "rejected": []
+}

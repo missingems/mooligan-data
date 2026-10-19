@@ -1,0 +1,229 @@
+{
+ "page": "wiki/terisia-city",
+ "url": "https://mtg.wiki/page/Terisia_City",
+ "title": "Terisia City",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:21Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Terisia City",
+   "type": "location",
+   "aliases": [
+    "The Ivory Towers"
+   ],
+   "description": "The oldest and most advanced city-state on Terisiare, sacked during the Brothers' War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Third Path",
+   "type": "faction",
+   "aliases": [
+    "Union of the Third Path"
+   ],
+   "description": "A newly formed arcane-studying organization seated in Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ivory Tower",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order of bookkeepers named after the city's towers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archimandrite",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of Terisia City and of the Third Path; their fate is unknown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Fallaji who became inclined to raze Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Banished from the Fallaji Empire by Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [
+    "Gixians"
+   ],
+   "description": "A faction whispering to Mishra, whose members had been welcomed into the Third Path and betrayed the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurkyl",
+   "type": "character",
+   "aliases": [],
+   "description": "Third Path source of magical knowledge who died defending the city casting Hurkyl's Recall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hajar",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander of the forces that sacked Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped through the secret tunnels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loran",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped through the secret tunnels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drafna",
+   "type": "character",
+   "aliases": [],
+   "description": "Fate unknown after the sack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji Empire",
+   "type": "faction",
+   "aliases": [
+    "Fallaji"
+   ],
+   "description": "Mishra's empire that besieged Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which Terisia City fell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Terisia City hosts the Union of the Third Path in 33 AR.",
+   "participants": [
+    "Third Path",
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "In 33 AR , Terisia City was host to the Union of the Third Path"
+  },
+  {
+   "summary": "After banishing Ashnod, Mishra, listening to the Brotherhood of Gix, becomes inclined to raze Terisia City.",
+   "participants": [
+    "Mishra",
+    "Ashnod",
+    "Brotherhood of Gix",
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mishra became inclined to raze Terisia City"
+  },
+  {
+   "summary": "Terisian defenses hold the Fallaji at bay for months while civilians are evacuated through secret passages.",
+   "participants": [
+    "Fallaji Empire",
+    "Third Path",
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Terisian defenses were implacable and held the Fallaji at bay for months"
+  },
+  {
+   "summary": "The Gixians betray the city and open the gates.",
+   "participants": [
+    "Brotherhood of Gix",
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They eventually betrayed the city and opened the gates to the onslaught."
+  },
+  {
+   "summary": "Hurkyl dies defending the city, casting a spell that makes three dragon engines vanish.",
+   "participants": [
+    "Hurkyl",
+    "Mishra"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hurkyl died as one of the defenders"
+  },
+  {
+   "summary": "Terisia City is sacked by forces under Hajar and burned; Feldon and Loran escape through tunnels.",
+   "participants": [
+    "Hajar",
+    "Terisia City",
+    "Feldon",
+    "Loran"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Terisia City was sacked by forces under the command of Hajar and burned to cinders."
+  },
+  {
+   "summary": "The ruined city is used as a military base and taken and retaken several times.",
+   "participants": [
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "This location was taken and retaken several times afterwards."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Archimandrite",
+   "relation": "leader_of",
+   "target": "Third Path",
+   "note": "Led the Third Path from the tallest ivory tower.",
+   "paragraph": 1,
+   "quote": "The Third Path was led from the tallest ivory tower by the Archimandrite"
+  },
+  {
+   "source": "Brotherhood of Gix",
+   "relation": "enemy",
+   "target": "Terisia City",
+   "note": "The Gixians betrayed the city.",
+   "paragraph": 3,
+   "quote": "They eventually betrayed the city and opened the gates to the onslaught."
+  },
+  {
+   "source": "Hajar",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "Commanded the Fallaji forces that sacked the city.",
+   "paragraph": 3,
+   "quote": "sacked by forces under the command of Hajar"
+  }
+ ],
+ "rejected": []
+}

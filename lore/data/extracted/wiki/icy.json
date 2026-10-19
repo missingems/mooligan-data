@@ -1,0 +1,109 @@
+{
+ "page": "wiki/icy",
+ "url": "https://mtg.wiki/page/Icy",
+ "title": "Icy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Icy",
+   "type": "character",
+   "aliases": [],
+   "description": "Nickname Garruk gave an unnamed planeswalker with powerful ice magic, hired by Vronos to capture Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [
+    "Garruk"
+   ],
+   "description": "Planeswalker hunter who beheaded Icy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vronos",
+   "type": "character",
+   "aliases": [],
+   "description": "Hired Icy; already slain by Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which Icy was to return Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Icy confronted Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Whom Garruk was supposedly to face.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Icy confronted Garruk in a forest clearing on Shandalar, hired by Vronos to return him to Innistrad.",
+   "participants": [
+    "Icy",
+    "Garruk Wildspeaker",
+    "Vronos"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Icy confronted Garruk Wildspeaker in a forest clearing on Shandalar"
+  },
+  {
+   "summary": "As Icy conjured an ice portal, Garruk decapitated him.",
+   "participants": [
+    "Garruk Wildspeaker",
+    "Icy"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Garruk decapitated him before the spell could complete"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Garruk Wildspeaker",
+   "relation": "killed",
+   "target": "Icy",
+   "note": "decapitated him",
+   "paragraph": 2,
+   "quote": "Garruk decapitated him before the spell could complete"
+  },
+  {
+   "source": "Garruk Wildspeaker",
+   "relation": "killed",
+   "target": "Vronos",
+   "note": "had already slain him",
+   "paragraph": 2,
+   "quote": "Garruk, who had already slain Vronos and taken his mask as a trophy"
+  },
+  {
+   "source": "Icy",
+   "relation": "serves",
+   "target": "Vronos",
+   "note": "hired by him",
+   "paragraph": 0,
+   "quote": "Hired by Vronos to capture Garruk and return him to Innistrad"
+  }
+ ],
+ "rejected": []
+}

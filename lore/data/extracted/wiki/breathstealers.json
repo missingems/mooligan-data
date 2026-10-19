@@ -1,0 +1,142 @@
+{
+ "page": "wiki/breathstealers",
+ "url": "https://mtg.wiki/page/Breathstealers",
+ "title": "Breathstealers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:23Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Breathstealers",
+   "type": "faction",
+   "aliases": [
+    "Breathstealers guild"
+   ],
+   "description": "An ancient cult of fanatical religious assassins and nightstalkers from Urborg organized into five major clans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Land the cult comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spirit of the Night",
+   "type": "creature",
+   "aliases": [
+    "Spirit of the Nightstalker"
+   ],
+   "description": "Dreaded demon spirit summoned by the Breathstealers, which killed the Femeref Council of Voices.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Femeref Council of Voices",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council killed by the Spirit of the Night.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark mage the Breathstealers aided in conquering Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent Kaervek tried to conquer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vizier Qhattib",
+   "type": "character",
+   "aliases": [],
+   "description": "Vizier of Amiqat killed by the Breathstealers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telim'Tor",
+   "type": "character",
+   "aliases": [],
+   "description": "Brute who succeeded the Pasha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War after which the Breathstealers infiltrated Suq'Atan society.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Breathstealers aid Kaervek's attempt to conquer Jamuraa.",
+   "participants": [
+    "Breathstealers",
+    "Kaervek"
+   ],
+   "location": "Jamuraa",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The Breathstealers aided the dark mage Kaervek in his attempt to conquer"
+  },
+  {
+   "summary": "After the Mirage War, the Breathstealers insinuate themselves into Suq'Atan society.",
+   "participants": [
+    "Breathstealers"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "they insinuated themselves into Suq'Atan society"
+  },
+  {
+   "summary": "The Breathstealers kill Vizier Qhattib, clearing the way for Telim'Tor.",
+   "participants": [
+    "Breathstealers",
+    "Vizier Qhattib",
+    "Telim'Tor"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "which cleared the way for the brute Telim'Tor to succeed the Pasha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Breathstealers",
+   "relation": "killed",
+   "target": "Vizier Qhattib",
+   "note": "Assassinated him.",
+   "paragraph": 4,
+   "quote": "They killed Vizier Qhattib of Amiqat"
+  },
+  {
+   "source": "Breathstealers",
+   "relation": "ally",
+   "target": "Kaervek",
+   "note": "Aided his conquest attempt.",
+   "paragraph": 4,
+   "quote": "The Breathstealers aided the dark mage Kaervek in his attempt to conquer"
+  },
+  {
+   "source": "Spirit of the Night",
+   "relation": "killed",
+   "target": "Femeref Council of Voices",
+   "note": "Responsible for the killing.",
+   "paragraph": 2,
+   "quote": "was responsible for the killing of the Femeref Council of Voices"
+  }
+ ],
+ "rejected": []
+}

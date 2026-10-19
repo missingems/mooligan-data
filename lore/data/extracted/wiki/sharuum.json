@@ -1,0 +1,153 @@
+{
+ "page": "wiki/sharuum",
+ "url": "https://mtg.wiki/page/Sharuum",
+ "title": "Sharuum",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:11Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Sharuum",
+   "type": "character",
+   "aliases": [
+    "Sharuum the Hegemon"
+   ],
+   "description": "A female sphinx and Hegemon of Esper on Alara, its de facto philosopher queen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara ruled by Sharuum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Esper.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crucius",
+   "type": "character",
+   "aliases": [],
+   "description": "Sharuum's lover who introduced etherium to the plane and disappeared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malfegor",
+   "type": "character",
+   "aliases": [],
+   "description": "Led a march against the shards during the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which many Esper leaders were slain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who convinced Sharuum that Crucius was alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kemuel",
+   "type": "character",
+   "aliases": [],
+   "description": "Sharuum's son.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Metal Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island made entirely of etherium.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Crucius disappeared, Sharuum devoted much of her life to finding him.",
+   "participants": [
+    "Sharuum",
+    "Crucius"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "After Crucius disappeared, Sharuum devoted much of her life to finding the whereabouts of her former partner."
+  },
+  {
+   "summary": "During the Conflux many Esper leaders were slain; Sharuum fled and secluded herself.",
+   "participants": [
+    "Sharuum",
+    "Malfegor"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she fled and secluded herself to prepare more stringent defenses"
+  },
+  {
+   "summary": "Tezzeret convinced Sharuum that Crucius lived; she traded him her possessions, power and throne for time with him.",
+   "participants": [
+    "Sharuum",
+    "Tezzeret",
+    "Crucius"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "He convinced her that Crucius was still alive"
+  },
+  {
+   "summary": "On the Metal Island Sharuum's etherium was stripped; Tezzeret treated her and reunited her with Crucius, then commanded her to return and rule.",
+   "participants": [
+    "Sharuum",
+    "Tezzeret",
+    "Crucius"
+   ],
+   "location": "Metal Island",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Tezzeret quickly treated Sharuum's wounds and reunited her with Crucius."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sharuum",
+   "relation": "romantic",
+   "target": "Crucius",
+   "note": "her lover",
+   "paragraph": 2,
+   "quote": "Her lover, Crucius , introduced etherium to the plane."
+  },
+  {
+   "source": "Sharuum",
+   "relation": "family",
+   "target": "Kemuel",
+   "note": "her son",
+   "paragraph": 5,
+   "quote": "These led him to Kemuel , Sharuum's son."
+  },
+  {
+   "source": "Sharuum",
+   "relation": "leader_of",
+   "target": "Esper",
+   "note": "Hegemon",
+   "paragraph": 0,
+   "quote": "Sharuum is a female sphinx and the Hegemon of Esper"
+  }
+ ],
+ "rejected": []
+}
