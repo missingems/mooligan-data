@@ -1,0 +1,166 @@
+{
+ "page": "wiki/kavaronic-federal-empire",
+ "url": "https://mtg.wiki/page/Kavaronic_Federal_Empire",
+ "title": "Kavaronic Federal Empire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:05:32Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Kavaronic Federal Empire",
+   "type": "faction",
+   "aliases": [
+    "Kavaronic Empire",
+    "Kav government"
+   ],
+   "description": "The Kav government on Kavaron in the Edge, which administers Kavaron Before and the Kav Memorial Navy and seeks new worlds to settle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kav",
+   "type": "faction",
+   "aliases": [],
+   "description": "An old empire forced to make a home among the stars by climate collapse and tectonic destabilization.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron",
+   "type": "plane",
+   "aliases": [
+    "Kavaron Before",
+    "Kavaron That Is"
+   ],
+   "description": "The Kav homeworld, torn apart by cataclysms; Kavaron Before is its stabilized half.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron Memorial Navy",
+   "type": "faction",
+   "aliases": [
+    "KMN",
+    "KMNTRAC"
+   ],
+   "description": "The interstellar navy of the Kavaronic Empire, of converted mining vessels, tasked with protecting and retrieving remains of Kavaron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monoists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Whose collapse of Sothera into a supervoid slowed the system's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [],
+   "description": "Star collapsed into a supervoid by the Monoists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vu",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient capital and last imperial city of the Kav, policed by memorial teams.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Evendo",
+   "type": "location",
+   "aliases": [],
+   "description": "World being remade by the Eumidians, which the Kav plan to invade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eumidians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Remaking Evendo through terrasymbiosis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Exodus Day",
+   "type": "event",
+   "aliases": [],
+   "description": "Day the first Kav shuttle lifted refugees off Kavaron.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Kav accelerate destructive mining to lift their species and biome off-world as cataclysms tear Kavaron apart.",
+   "participants": [
+    "Kav",
+    "Kavaron"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Kav accelerated their extensive yet destabilizing mining projects"
+  },
+  {
+   "summary": "The Monoists collapse Sothera into a supervoid, slowing the system's death.",
+   "participants": [
+    "Monoists",
+    "Sothera"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "giving the Kav time to leave their planet"
+  },
+  {
+   "summary": "On Exodus Day the first Kav shuttle lifts the first refugees off Kavaron.",
+   "participants": [
+    "Kav",
+    "Exodus Day"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the first Kav shuttle lifted the first flight of refugees off Kavaron's unstable surface"
+  },
+  {
+   "summary": "The Kavaronic Empire designs invasion plans to seize Evendo after the Eumidians finish remaking it.",
+   "participants": [
+    "Kavaronic Federal Empire",
+    "Eumidians",
+    "Evendo"
+   ],
+   "location": "Evendo",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "already designing invasion plans to take the world for its own"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kavaronic Federal Empire",
+   "relation": "leader_of",
+   "target": "Kavaron Memorial Navy",
+   "note": "administers it",
+   "paragraph": 0,
+   "quote": "It administers the affairs of Kavaron Before and the Kav Memorial Navy"
+  },
+  {
+   "source": "Kavaronic Federal Empire",
+   "relation": "enemy",
+   "target": "Eumidians",
+   "note": "plans to take Evendo from them",
+   "paragraph": 3,
+   "quote": "once the Eumidians have finished remaking it"
+  },
+  {
+   "source": "Vu",
+   "relation": "located_in",
+   "target": "Kavaron",
+   "note": "ancient capital",
+   "paragraph": 2,
+   "quote": "the ancient capital Vu"
+  }
+ ],
+ "rejected": []
+}
