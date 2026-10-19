@@ -1,0 +1,164 @@
+{
+ "page": "wiki/boar",
+ "url": "https://mtg.wiki/page/Boar",
+ "title": "Boar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Boar",
+   "type": "creature",
+   "aliases": [
+    "swine",
+    "hogs",
+    "vorracs",
+    "razorbacks"
+   ],
+   "description": "A stout-bodied, short-legged, omnivorous, hoofed mammal found on many planes; domesticated boars are pigs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ancestor",
+   "type": "deity",
+   "aliases": [],
+   "description": "A figure the Daru Plains nomads of Dominaria believe wrathfully incarnated as boars after witnessing human cruelty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daru Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Plains on Dominaria whose nomads hold beliefs about boars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Somberwald",
+   "type": "location",
+   "aliases": [],
+   "description": "A woodland on Innistrad home to large, monstrous boars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi whose arrival made Innistrad's boars more aggressive and monstrous.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorracs",
+   "type": "creature",
+   "aliases": [
+    "djeeruks"
+   ],
+   "description": "Large boar beasts with coppery tusks found in the Tangle on Mirrodin, used by elves as mounts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vulshok",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people of Mirrodin who tamed boars as livestock.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Zhur-Taa Clan",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "A Gruul clan on Ravnica that awaits the awakening of Ilharg and raids with Batterboars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ilharg, the Raze Boar",
+   "type": "deity",
+   "aliases": [
+    "Ilharg"
+   ],
+   "description": "An ancient boar god of the Gruul who will mount a fiery rampage and raze the over-civilized world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "End-Raze",
+   "type": "event",
+   "aliases": [],
+   "description": "The prophesied rampage of Ilharg to raze the over-civilized world of Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gore Swine",
+   "type": "creature",
+   "aliases": [],
+   "description": "Boars regarded in old Tarkir as exemplars of the virtues of the Mardu Horde.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yasharn, Implacable Earth",
+   "type": "creature",
+   "aliases": [
+    "Yasharn"
+   ],
+   "description": "A notable boar on Zendikar who is also an Elemental.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The arrival of Emrakul on Innistrad makes the boars more aggressive and monstrous.",
+   "participants": [
+    "Emrakul",
+    "Boar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "When Emrakul arrived, the boars became even more aggressive and monstrous."
+  },
+  {
+   "summary": "Some Vulshok-tamed boars on Mirrodin are phyrexianized and transformed into Razor Swine.",
+   "participants": [
+    "Vulshok",
+    "Boar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Several of these boars were phyrexianized, being transformed into Razor Swine"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gruul Zhur-Taa Clan",
+   "relation": "serves",
+   "target": "Ilharg, the Raze Boar",
+   "note": "the clan awaits his awakening",
+   "paragraph": 10,
+   "quote": "await the awakening of Ilharg, the Raze Boar"
+  },
+  {
+   "source": "Vulshok",
+   "relation": "other",
+   "target": "Boar",
+   "note": "tamed boars as livestock",
+   "paragraph": 9,
+   "quote": "Other boars were tamed by the Vulshok as livestock."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "unlisted entity",
+   "source": "Gore Swine",
+   "relation": "other",
+   "target": "Mardu",
+   "note": "regarded as exemplars of Mardu virtues",
+   "paragraph": 12,
+   "quote": "the Gore Swine were regarded as exemplars of the virtues"
+  }
+ ]
+}

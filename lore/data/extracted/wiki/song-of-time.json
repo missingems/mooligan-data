@@ -1,0 +1,197 @@
+{
+ "page": "wiki/song-of-time",
+ "url": "https://mtg.wiki/page/Song_of_Time",
+ "title": "Song of Time",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:16Z",
+ "storyline": "Song of Time",
+ "entities": [
+  {
+   "name": "Song of Time",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Eighth Magic novel, published 1996.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Circle",
+   "type": "faction",
+   "aliases": [],
+   "description": "Secret society of songmages led by Samor the Collector.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [
+    "Samor",
+    "the Collector"
+   ],
+   "description": "Songmage leader of the Circle, killed by Porros before finishing his song.",
+   "presence": "appears"
+  },
+  {
+   "name": "Porros the Raptor",
+   "type": "character",
+   "aliases": [
+    "the Raptor"
+   ],
+   "description": "Traitor in the Circle who killed Samor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Claimed dominion over Almaaz and charged Samor with crafting a song to control the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cockatrice terrorizing the countryside around Sarraza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Country Mishra claimed during the Brothers' War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cheyne",
+   "type": "character",
+   "aliases": [],
+   "description": "Young archaeologist, adopted son of Javin, seeking the truth of his birth parents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Javin",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist and last Circle member, Cheyne's adoptive father.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "Down-on-his-luck songmage who guides Cheyne and banishes the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Claria",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant of the Collector who sold a map.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riolla Hifrata",
+   "type": "character",
+   "aliases": [],
+   "description": "Crime boss working for the Raptor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Cheyne meets Ogwater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chimes",
+   "type": "location",
+   "aliases": [],
+   "description": "Magical valley of crystals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Armageddon Clock",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient object Cheyne seeks.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mishra summons the Circle to remove the Beast; a traitor sabotages the ritual so it is only trapped beneath the mountain.",
+   "participants": [
+    "Mishra",
+    "Circle",
+    "Beast of the Hours"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they can only trap it beneath the mountain"
+  },
+  {
+   "summary": "Porros the Raptor kills Samor before he finishes the releasing song.",
+   "participants": [
+    "Porros the Raptor",
+    "Samor the Collector"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "kills Samor before he can finish writing all the instructions"
+  },
+  {
+   "summary": "Cheyne befriends Ogwater Rifkin in Sumifa, who agrees to guide him to the Chimes.",
+   "participants": [
+    "Cheyne",
+    "Ogwater Rifkin"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he befriends a down-on-his-luck songmage named Ogwater Rifkin"
+  },
+  {
+   "summary": "Ogwater is forced to free the Beast of the Hours but banishes it with his song magic.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours"
+   ],
+   "location": "Chimes",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ogwater is forced to free the Beast of the Hours"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Porros the Raptor",
+   "relation": "killed",
+   "target": "Samor the Collector",
+   "note": "Killed him",
+   "paragraph": 3,
+   "quote": "comes in and kills Samor"
+  },
+  {
+   "source": "Javin",
+   "relation": "family",
+   "target": "Cheyne",
+   "note": "Adoptive father",
+   "paragraph": 4,
+   "quote": "his adopted son Cheyne"
+  },
+  {
+   "source": "Riolla Hifrata",
+   "relation": "serves",
+   "target": "Porros the Raptor",
+   "note": "Works for the Raptor",
+   "paragraph": 4,
+   "quote": "who is working for the Raptor"
+  }
+ ],
+ "rejected": []
+}

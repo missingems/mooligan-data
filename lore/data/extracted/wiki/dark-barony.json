@@ -1,0 +1,136 @@
+{
+ "page": "wiki/dark-barony",
+ "url": "https://mtg.wiki/page/Dark_Barony",
+ "title": "Dark Barony",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dark Barony",
+   "type": "location",
+   "aliases": [],
+   "description": "The swampy lands of Baron Sengir on Ulgrotha, ruled from Castle Sengir, whose human inhabitants are kept under Sengir's rule and turned into undead on death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [
+    "the Baron",
+    "Sengir"
+   ],
+   "description": "Demon-like ruler of the Dark Barony who dominated the An-Zerrin and took over a Dwarven castle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Sengir",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle at the center of the Dark Barony, taken from the dwarves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Dark Barony lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "An-Zerrin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Local peoples dominated by Baron Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sengir Autocrats",
+   "type": "faction",
+   "aliases": [],
+   "description": "Villagers chosen to pass on information and watch the villagers, with no real power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eron",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord of Koskun Keep who made a secret deal with the Baron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Keep reached via a windy road out of the Barony.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Stranded on the plane, Baron Sengir creates the barony, dominates the An-Zerrin and takes over a nearly completed Dwarven castle, driving the dwarves away.",
+   "participants": [
+    "Baron Sengir",
+    "An-Zerrin",
+    "Castle Sengir"
+   ],
+   "location": "Dark Barony",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Baron Sengir created the barony when he was first stranded on the plane."
+  },
+  {
+   "summary": "Sengir has subjects kidnap people from Aysen and steals a vessel of thirty-one families to populate his land.",
+   "participants": [
+    "Baron Sengir"
+   ],
+   "location": "Dark Barony",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He ordered his subjects to kidnap people from Aysen ."
+  },
+  {
+   "summary": "Sengir sets a rule that for any who flee, ten others will be murdered.",
+   "participants": [
+    "Baron Sengir"
+   ],
+   "location": "Dark Barony",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "if one person tried to flee the Barony, the Baron would murder ten people in their place"
+  },
+  {
+   "summary": "Eron and the Baron make a secret deal: Eron supplies the villagers while Sengir stops hostile actions against the Koskun Mountains.",
+   "participants": [
+    "Eron",
+    "Baron Sengir"
+   ],
+   "location": "Koskun Keep",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "When Eron became lord of Koskun Keep, he and the Baron worked out a secret deal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baron Sengir",
+   "relation": "leader_of",
+   "target": "Dark Barony",
+   "note": "Rules from Castle Sengir.",
+   "paragraph": 0,
+   "quote": "The Dark Barony are the lands of Baron Sengir"
+  },
+  {
+   "source": "Baron Sengir",
+   "relation": "ally",
+   "target": "Eron",
+   "note": "Secret deal of mutual restraint.",
+   "paragraph": 5,
+   "quote": "When Eron became lord of Koskun Keep, he and the Baron worked out a secret deal"
+  }
+ ],
+ "rejected": []
+}

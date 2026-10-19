@@ -1,0 +1,125 @@
+{
+ "page": "wiki/sandsteppe",
+ "url": "https://mtg.wiki/page/Sandsteppe",
+ "title": "Sandsteppe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:30Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Sandsteppe",
+   "type": "location",
+   "aliases": [
+    "central Sandsteppe"
+   ],
+   "description": "Central territory of the nomadic Mardu Horde, formerly of the Kolaghan brood, on Tarkir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mardu Horde",
+   "type": "faction",
+   "aliases": [
+    "Mardu"
+   ],
+   "description": "Nomadic clan living on the Sandsteppe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kolaghan",
+   "type": "character",
+   "aliases": [
+    "Kolaghan brood"
+   ],
+   "description": "Dragon who died smashed against a cliffside at the Wingthrone; Screamreach was his favored domain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Sandsteppe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan whose city Sandsteppe Gate was captured by the Mardu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sandsteppe Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "Former Abzan city captured by the Mardu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wingthrone",
+   "type": "location",
+   "aliases": [],
+   "description": "Mardu fortress where Kolaghan died in ancient times.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Screamreach",
+   "type": "location",
+   "aliases": [],
+   "description": "Bog system near Abzan, Mardu and Sultai territory, Kolaghan's favored domain.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Scour",
+   "type": "location",
+   "aliases": [],
+   "description": "Deep chasm into the Qal Sisma mountains and a frequent point of conflict.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragonsong Rock",
+   "type": "location",
+   "aliases": [],
+   "description": "Rock formation regarded as a peaceful meeting point for diplomacy.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Mardu capture the Abzan city of Sandsteppe Gate.",
+   "participants": [
+    "Mardu Horde",
+    "Abzan",
+    "Sandsteppe Gate"
+   ],
+   "location": "Sandsteppe Gate",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "A former Abzan city that has since been captured by the Mardu."
+  },
+  {
+   "summary": "In ancient times Kolaghan dies at the Wingthrone, smashed against a cliffside.",
+   "participants": [
+    "Kolaghan",
+    "Wingthrone"
+   ],
+   "location": "Wingthrone",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "the Mardu fortress where Kolaghan died in ancient times, smashed against a cliffside"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mardu Horde",
+   "relation": "located_in",
+   "target": "Sandsteppe",
+   "note": "their territory",
+   "paragraph": 0,
+   "quote": "is the territory of the nomadic Mardu Horde"
+  }
+ ],
+ "rejected": []
+}

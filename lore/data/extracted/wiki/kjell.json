@@ -1,0 +1,197 @@
+{
+ "page": "wiki/kjell",
+ "url": "https://mtg.wiki/page/Kjell",
+ "title": "Kjell",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:56Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Kjell",
+   "type": "character",
+   "aliases": [],
+   "description": "Human Kannah mystic, healer and storyteller from Kaldheim, friend and mentor of Niko Aris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niko Aris",
+   "type": "character",
+   "aliases": [
+    "Niko"
+   ],
+   "description": "Newcomer to Kaldheim mentored by Kjell who sets out for Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fynn",
+   "type": "character",
+   "aliases": [],
+   "description": "Kjell's leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Birgi",
+   "type": "character",
+   "aliases": [],
+   "description": "Stirred tension between the Kannah and Omenseeker clans; later acknowledged Kjell's storytelling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avtyr",
+   "type": "character",
+   "aliases": [],
+   "description": "Valkyrie captured in one of Niko's shards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rytva",
+   "type": "character",
+   "aliases": [],
+   "description": "Valkyrie who observed the brawl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orhaft Stoneback",
+   "type": "character",
+   "aliases": [
+    "Orhaft"
+   ],
+   "description": "Omenseeker Vedrune who has a portal to Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koma",
+   "type": "creature",
+   "aliases": [
+    "World Serpent"
+   ],
+   "description": "The World Serpent whose danger Niko will warn the Valkyries of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kannah",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan of Kjell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenseekers",
+   "type": "faction",
+   "aliases": [
+    "Omenseeker clan"
+   ],
+   "description": "Clan in tension with the Kannah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jutmaw",
+   "type": "location",
+   "aliases": [],
+   "description": "Neutral outpost between the sea and forests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of the Valkyries that Niko resolves to visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bretagard",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Kjell stays behind.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kjell mentors Niko at the Jutmaw outpost, guiding Niko to win a set of armor in a gambling game.",
+   "participants": [
+    "Kjell",
+    "Niko Aris"
+   ],
+   "location": "Jutmaw",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "During a gambling game, Niko won a set of armor thanks to Kjell's guidance."
+  },
+  {
+   "summary": "Tension between the Kannah and Omenseekers, spurred on by Birgi, becomes a brawl watched by the Valkyries Avtyr and Rytva.",
+   "participants": [
+    "Kannah",
+    "Omenseekers",
+    "Birgi",
+    "Kjell",
+    "Niko Aris",
+    "Avtyr",
+    "Rytva"
+   ],
+   "location": "Jutmaw",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "spurred on by Birgi , which led to an all-out brawl."
+  },
+  {
+   "summary": "Niko captures Avtyr in a shard to prevent bloodshed and asks Orhaft for help.",
+   "participants": [
+    "Niko Aris",
+    "Avtyr",
+    "Orhaft Stoneback"
+   ],
+   "location": "Jutmaw",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Niko captured Avtyr in one of his shards"
+  },
+  {
+   "summary": "Niko announces he will seek Starnheim to warn the Valkyries of Koma, backed by Orhaft and Fynn.",
+   "participants": [
+    "Niko Aris",
+    "Orhaft Stoneback",
+    "Fynn",
+    "Koma"
+   ],
+   "location": "Jutmaw",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "a decision supported by both Orhaft and Fynn."
+  },
+  {
+   "summary": "Kjell declines Niko's invitation to Starnheim, staying in Bretagard to manage the aftermath; Niko departs through Orhaft's portal.",
+   "participants": [
+    "Kjell",
+    "Niko Aris",
+    "Birgi"
+   ],
+   "location": "Bretagard",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Niko invited Kjell to join them on their journey to Starnheim, but Kjell declined"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kjell",
+   "relation": "mentor_of",
+   "target": "Niko Aris",
+   "note": "friend and mentor",
+   "paragraph": 0,
+   "quote": "who became a friend and mentor of Niko Aris ."
+  },
+  {
+   "source": "Kjell",
+   "relation": "serves",
+   "target": "Fynn",
+   "note": "Fynn is his leader",
+   "paragraph": 1,
+   "quote": "influence what his leader, Fynn , hears from his surroundings."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,115 @@
+{
+ "page": "wiki/oraniad-mountains",
+ "url": "https://mtg.wiki/page/Oraniad_Mountains",
+ "title": "Oraniad Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:51Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Oraniad Mountains",
+   "type": "location",
+   "aliases": [
+    "Oraniads"
+   ],
+   "description": "A volcanic mountain range east of Oreskos on Theros, said to be closer to Nyx than anywhere else.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oreskos",
+   "type": "location",
+   "aliases": [],
+   "description": "Region west of the Oraniad Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nykthos",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple at the summit of Mount Carian, a nexus between the mortal world and Nyx, with altars to every god.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nykthos (Nyxborn)",
+   "type": "character",
+   "aliases": [
+    "Nykthos"
+   ],
+   "description": "The first Nyxborn, who built the temple of Nykthos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Carian",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the tallest Oraniad peaks, housing Nykthos at its summit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Empty Eye",
+   "type": "location",
+   "aliases": [],
+   "description": "Extinct volcano on the western edge, said to conceal a passage to the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Phoenix Stairs",
+   "type": "location",
+   "aliases": [],
+   "description": "Volcanic peak reached by hexagonal basalt columns where a phoenix guards its nest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Winter's Heart",
+   "type": "location",
+   "aliases": [],
+   "description": "Glacial volcano in the northern Oraniads with a glass statue offering a diamond crown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Oraniad Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nyx",
+   "type": "concept",
+   "aliases": [],
+   "description": "Divine realm the mountains are said to rise close to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Oraniad Mountains",
+   "relation": "located_in",
+   "target": "Oreskos",
+   "note": "Stretch along its eastern edge.",
+   "paragraph": 1,
+   "quote": "The Oraniad Mountains stretch along the eastern edge of Oreskos"
+  },
+  {
+   "source": "Nykthos",
+   "relation": "located_in",
+   "target": "Mount Carian",
+   "note": "At its summit.",
+   "paragraph": 3,
+   "quote": "Mount Carian is best known for housing Nykthos at its summit."
+  },
+  {
+   "source": "Nykthos (Nyxborn)",
+   "relation": "created",
+   "target": "Nykthos",
+   "note": "Built the temple.",
+   "paragraph": 3,
+   "quote": "built by the first Nyxborn of the same name"
+  }
+ ],
+ "rejected": []
+}

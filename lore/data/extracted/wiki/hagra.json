@@ -1,0 +1,100 @@
+{
+ "page": "wiki/hagra",
+ "url": "https://mtg.wiki/page/Hagra",
+ "title": "Hagra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:07Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Hagra",
+   "type": "location",
+   "aliases": [
+    "Hagra Swamp"
+   ],
+   "description": "Vast fetid swamp in the Pelakka Karst on Guul Draz, Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malakir",
+   "type": "location",
+   "aliases": [],
+   "description": "Vampire capital of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hagra Cistern",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Merfolk-built structure meant to cleanse Eldrazi corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makindi Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient empire that held Hagra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Hagra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Titans and broods whose corruption the cistern fought.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Merfolk engineers and lullmages construct the Hagra cistern after the Eldrazi's first escape; its spells create the Pelakka Karst.",
+   "participants": [
+    "Hagra Cistern",
+    "Eldrazi"
+   ],
+   "location": "Hagra",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "merfolk engineers and lullmages constructed the Hagra cistern shortly after the Eldrazi’s first escape"
+  },
+  {
+   "summary": "The cistern's filters fail over centuries, leaving the swamp a mire of corruption.",
+   "participants": [
+    "Hagra Cistern",
+    "Hagra"
+   ],
+   "location": "Hagra",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "its filters and drains failed over centuries"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malakir",
+   "relation": "located_in",
+   "target": "Hagra",
+   "note": "",
+   "paragraph": 0,
+   "quote": "It is also home to Malakir , the vampire capital of Zendikar."
+  },
+  {
+   "source": "Hagra",
+   "relation": "member_of",
+   "target": "Makindi Empire",
+   "note": "Once part of it.",
+   "paragraph": 6,
+   "quote": "Hagra was once part of the ancient Makindi Empire."
+  }
+ ],
+ "rejected": []
+}

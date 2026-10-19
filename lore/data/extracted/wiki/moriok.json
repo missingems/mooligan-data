@@ -1,0 +1,193 @@
+{
+ "page": "wiki/moriok",
+ "url": "https://mtg.wiki/page/Moriok",
+ "title": "Moriok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:14Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Moriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human ethnic group of the Mephidross swamps of Mirrodin, nearly wiped out by the nim and Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [
+    "the Dross"
+   ],
+   "description": "Swamps of Mirrodin where the Moriok lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ish Sah",
+   "type": "location",
+   "aliases": [],
+   "description": "Moriok city, ruled by Geth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geth",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord of Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mayvar",
+   "type": "character",
+   "aliases": [],
+   "description": "Minion of Geth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nim",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead who attacked the Moriok after the Vanishing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nim Onslaught",
+   "type": "event",
+   "aliases": [
+    "Nim Massacre"
+   ],
+   "description": "Nim assault that decimated the Moriok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vanishing",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the Moriok were targeted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "Invaders who took over Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirran Resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance a minuscule minority of Moriok joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Disciples of Geth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Most influential Moriok clan, centered around Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghost Maw Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Moriok clan following ghostly leaders in reliquaries made by the Bleak Coven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bleak Coven",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampires who created reliquaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Blood Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan who ate Glistening Dunes sludge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gray Ladies Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Matriarchal clan trading sons to the undead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Veiled Eye Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan that blinded themselves ritualistically.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whisperer",
+   "type": "deity",
+   "aliases": [
+    "the black moon"
+   ],
+   "description": "Black moon of Mirrodin revered by the Moriok.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Vanishing the Nim Onslaught decimates the Moriok, leaving them easy prey for the New Phyrexians.",
+   "participants": [
+    "Moriok",
+    "Nim",
+    "Nim Onslaught",
+    "New Phyrexians"
+   ],
+   "location": "Mephidross",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Nim Onslaught or Nim Massacre decimated the Moriok so they became an easy target for the New Phyrexians ."
+  },
+  {
+   "summary": "Once Mirrodin becomes New Phyrexia, the Moriok are the first human race nearly extinct; compleated survivors are enslaved.",
+   "participants": [
+    "Moriok",
+    "New Phyrexians"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Moriok were the first human race to become nearly extinct"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Geth",
+   "relation": "leader_of",
+   "target": "Ish Sah",
+   "note": "lord of the city",
+   "paragraph": 10,
+   "quote": "Geth , lord of Ish Sah."
+  },
+  {
+   "source": "Mayvar",
+   "relation": "serves",
+   "target": "Geth",
+   "note": "minion",
+   "paragraph": 11,
+   "quote": "Mayvar, a minion of Geth."
+  },
+  {
+   "source": "Nim",
+   "relation": "enemy",
+   "target": "Moriok",
+   "note": "targeted them after the Vanishing",
+   "paragraph": 3,
+   "quote": "the Moriok found themselves targeted by Nim aggression"
+  }
+ ],
+ "rejected": []
+}

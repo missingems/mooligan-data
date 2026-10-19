@@ -1,0 +1,122 @@
+{
+ "page": "wiki/corruption-of-memnarch",
+ "url": "https://mtg.wiki/page/Corruption_of_Memnarch",
+ "title": "Corruption of Memnarch",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:31Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Corruption of Memnarch",
+   "type": "event",
+   "aliases": [
+    "Mirrodin Crisis"
+   ],
+   "description": "The event on Argentum and Mirrodin in which Memnarch was infected by Phyrexian oil and grew corrupt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "A sentient golem entrusted as warden of Argentum, who was corrupted by Phyrexian oil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argentum",
+   "type": "plane",
+   "aliases": [
+    "Mirrodin"
+   ],
+   "description": "The artificial metallic plane created by Karn, later renamed Mirrodin by Memnarch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker who created Argentum. Planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The power with which Argentum was infused.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexian"
+   ],
+   "description": "Origin of the black oil that infected Memnarch.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch touches a smear of Phyrexian black oil and becomes infected.",
+   "participants": [
+    "Memnarch"
+   ],
+   "location": "Argentum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Upon touching the oil, Memnarch became infected."
+  },
+  {
+   "summary": "Memnarch renames the plane Mirrodin and begins abducting organic beings from across the Multiverse.",
+   "participants": [
+    "Memnarch"
+   ],
+   "location": "Argentum",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Memnarch renamed the plane Mirrodin"
+  },
+  {
+   "summary": "Memnarch builds systems of surveillance and control and erases memory.",
+   "participants": [
+    "Memnarch"
+   ],
+   "location": "Argentum",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Memnarch built elaborate systems of surveillance and control."
+  },
+  {
+   "summary": "Memnarch becomes obsessed with igniting his own Planeswalker spark.",
+   "participants": [
+    "Memnarch"
+   ],
+   "location": "Argentum",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Memnarch became obsessed with replicating the conditions that would allow him to ignite his own Planeswalker spark"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Argentum",
+   "note": "Created the plane.",
+   "paragraph": 1,
+   "quote": "Created by the Planeswalker Karn as a world of mathematically precise, metallic order"
+  },
+  {
+   "source": "Memnarch",
+   "relation": "serves",
+   "target": "Karn",
+   "note": "Entrusted with the plane as warden.",
+   "paragraph": 1,
+   "quote": "Argentum was entrusted to the golem Memnarch"
+  }
+ ],
+ "rejected": []
+}

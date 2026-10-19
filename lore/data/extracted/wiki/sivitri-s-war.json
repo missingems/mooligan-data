@@ -1,0 +1,132 @@
+{
+ "page": "wiki/sivitri-s-war",
+ "url": "https://mtg.wiki/page/Sivitri%27s_War",
+ "title": "Sivitri's War",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:06Z",
+ "storyline": "Time of Legends",
+ "entities": [
+  {
+   "name": "Sivitri's War",
+   "type": "event",
+   "aliases": [],
+   "description": "A devastating conflict in the Time of Legends on Corondor in which Sivitri Scarzam's dragons ravaged southeastern Corondor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sivitri Scarzam",
+   "type": "character",
+   "aliases": [
+    "Sivitri"
+   ],
+   "description": "A planeswalker who rode dragons in a campaign of destruction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scarzam Dragons",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragons named for Sivitri with nearly impenetrable hides.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the war took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [],
+   "description": "An elemental guardian who created a new species of poppy; later corrupted by Dihada.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [
+    "Dihada"
+   ],
+   "description": "Arrived after the war, corrupted Sol'Kanar and set in motion the Forging of the Blackblade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item whose forging Dihada set in motion.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sivitri, astride her dragons, descends on southeastern Corondor with her horde, causing panic.",
+   "participants": [
+    "Sivitri Scarzam",
+    "Scarzam Dragons"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the planeswalker Sivitri Scarzam descended upon the lush lands of southeastern Corondor"
+  },
+  {
+   "summary": "An aged healer finds a new poppy created by Sol'Kanar that makes a poison killing Scarzam Dragons.",
+   "participants": [
+    "Sol'Kanar",
+    "Scarzam Dragons"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the poppies became an incredibly potent contact poison that could kill the Scarzam Dragons"
+  },
+  {
+   "summary": "Sivitri leaves the plane on the largest dragon and the last remaining dragons are destroyed.",
+   "participants": [
+    "Sivitri Scarzam",
+    "Scarzam Dragons"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "left the plane for other planar conquests"
+  },
+  {
+   "summary": "Geyadrone Dihada corrupts Sol'Kanar, making the poppies disappear, then sets the Forging of the Blackblade in action.",
+   "participants": [
+    "Geyadrone Dihada",
+    "Sol'Kanar",
+    "Blackblade"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Geyadrone Dihada showed up on Dominaria and corrupted Sol'Kanar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sivitri Scarzam",
+   "relation": "leader_of",
+   "target": "Scarzam Dragons",
+   "note": "She rode them.",
+   "paragraph": 1,
+   "quote": "Astride mighty dragons named for her"
+  },
+  {
+   "source": "Sol'Kanar",
+   "relation": "created",
+   "target": "Scarzam Dragons",
+   "note": "Created the poppy that kills them.",
+   "paragraph": 2,
+   "quote": "a new species of poppy created by the elemental guardian Sol'Kanar"
+  }
+ ],
+ "rejected": []
+}

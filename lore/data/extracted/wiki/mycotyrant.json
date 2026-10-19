@@ -1,0 +1,198 @@
+{
+ "page": "wiki/mycotyrant",
+ "url": "https://mtg.wiki/page/Mycotyrant",
+ "title": "Mycotyrant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:53Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Mycotyrant",
+   "type": "creature",
+   "aliases": [
+    "The Mycotyrant"
+   ],
+   "description": "An elder mycoid of Ixalan, the gestalt hive mind of the mycoid fungal network, which assimilates victims to gain knowledge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mycoids",
+   "type": "faction",
+   "aliases": [
+    "mycoid"
+   ],
+   "description": "Parasitic fungi that infest living beings, vehicles of the Mycotyrant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Mycotyrant lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Komon Winaq",
+   "type": "faction",
+   "aliases": [
+    "Komon"
+   ],
+   "description": "People who lived in the caverns near the Core, menaced by the Mycotyrant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malcolm Lee",
+   "type": "character",
+   "aliases": [
+    "Malcolm"
+   ],
+   "description": "Pirate who escaped the Mycotyrant with his hypnotic song.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "Pirate who exploded the Mycotyrant's nexus with a firearm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "character",
+   "aliases": [],
+   "description": "Controller of vampires fighting in the Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Sun Empire soldiers fighting in the Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oltec",
+   "type": "faction",
+   "aliases": [],
+   "description": "Native people of the Core who fought the Mycotyrant with spirits.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Core",
+   "type": "location",
+   "aliases": [
+    "Core of Ixalan"
+   ],
+   "description": "Central place of Ixalan where a battle took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Downtown",
+   "type": "location",
+   "aliases": [],
+   "description": "Mining town wiped out by the mycoids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunray Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Town the Mycotyrant took over.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "High and Dry",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Brazen Coalition.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fomori",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient people whose living relic the fungus may have been.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An outbreak of fungal disease strikes one of the Komon's grandest cities, the beginning of the mycoids.",
+   "participants": [
+    "Komon Winaq",
+    "Mycoids",
+    "Mycotyrant"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "This fungus was the beginning of the mycoids"
+  },
+  {
+   "summary": "Malcolm Lee and Breeches investigate Downtown's destruction and meet the Mycotyrant, who tries to assimilate them; Malcolm's hypnotic song lets them escape.",
+   "participants": [
+    "Malcolm Lee",
+    "Breeches",
+    "Mycotyrant"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Malcolm used his hypnotic song to get away."
+  },
+  {
+   "summary": "The Oltec fight off the Mycotyrant with spirits in the Core while Breeches explodes its nexus, killing subordinate mycoids.",
+   "participants": [
+    "Oltec",
+    "Breeches",
+    "Mycotyrant",
+    "Aclazotz",
+    "Huatli"
+   ],
+   "location": "The Core",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Breeches managed to explode its nexus with a powerful firearm"
+  },
+  {
+   "summary": "The Mycotyrant survives, takes over Sunray Bay and sails for High and Dry in a new body.",
+   "participants": [
+    "Mycotyrant"
+   ],
+   "location": "Sunray Bay",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "taking over the town of Sunray Bay to replenish its followers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mycotyrant",
+   "relation": "leader_of",
+   "target": "Mycoids",
+   "note": "Hive mind of the mycoids.",
+   "paragraph": 2,
+   "quote": "each mycoid, from the smallest spore to the largest primordium, is a vehicle for the Mycotyrant."
+  },
+  {
+   "source": "Mycotyrant",
+   "relation": "enemy",
+   "target": "Oltec",
+   "note": "Oltec fought it back.",
+   "paragraph": 6,
+   "quote": "The Oltec recognized the danger the Mycotyrant posed and fought it back with spirits."
+  },
+  {
+   "source": "Malcolm Lee",
+   "relation": "ally",
+   "target": "Breeches",
+   "note": "Pirate duo.",
+   "paragraph": 5,
+   "quote": "the pirates Malcolm Lee and Breeches ventured into the caverns to investigate"
+  }
+ ],
+ "rejected": []
+}

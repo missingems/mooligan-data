@@ -1,0 +1,186 @@
+{
+ "page": "wiki/thaddeus",
+ "url": "https://mtg.wiki/page/Thaddeus",
+ "title": "Thaddeus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:00Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Thaddeus",
+   "type": "character",
+   "aliases": [],
+   "description": "Metathran commander created by Urza, twin of Agnate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agnate",
+   "type": "character",
+   "aliases": [],
+   "description": "Thaddeus's twin and fellow Metathran commander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Metathran commanders in the Bloodline project.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Urza release the commanders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tsabo Tavoc",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian who captured and experimented on Thaddeus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "Replaced Thaddeus as commander of half the Metathran army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Metathran",
+   "type": "faction",
+   "aliases": [],
+   "description": "Artificial people created by Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Curtains of Time",
+   "type": "location",
+   "aliases": [],
+   "description": "Time bubbles on Tolaria where time passed extremely slowly.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [
+    "Caves of Koilos"
+   ],
+   "description": "Site of the Battle of Koilos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [
+    "Invasion"
+   ],
+   "description": "Invasion of Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Agnate and Thaddeus are placed in the Curtains of Time on Tolaria after their training.",
+   "participants": [
+    "Agnate",
+    "Thaddeus",
+    "Urza"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Agnate and Thaddeus were placed in the Curtains of Time"
+  },
+  {
+   "summary": "Urza and Barrin release the commanders; Agnate collapses and Thaddeus revives him with CPR.",
+   "participants": [
+    "Urza",
+    "Barrin",
+    "Agnate",
+    "Thaddeus"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Thaddeus used CPR to revive him"
+  },
+  {
+   "summary": "Each leads part of the army in a pincer attack on Tsabo Tavoc's Phyrexians at Koilos; Tsabo intercepts Thaddeus's bond and lures him into a trap.",
+   "participants": [
+    "Agnate",
+    "Thaddeus",
+    "Tsabo Tavoc"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Agnate and Thaddeus each led part of the army in a pincer attack against Tsabo Tavoc's Phyrexians"
+  },
+  {
+   "summary": "Thaddeus is captured and experimented upon by Tsabo Tavoc, confirming the Metathran and Phyrexians are alike.",
+   "participants": [
+    "Thaddeus",
+    "Tsabo Tavoc"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Metathran and Phyrexians were more alike than different"
+  },
+  {
+   "summary": "Agnate finds Thaddeus reduced to ribcage and head and, at his wish, ends his suffering.",
+   "participants": [
+    "Agnate",
+    "Thaddeus"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Agnate then fulfilled Thaddeus' last wish, delivering a coup-de-grace to him to end his suffering."
+  },
+  {
+   "summary": "Eladamri replaces Thaddeus as commander during the Battle of Koilos.",
+   "participants": [
+    "Eladamri",
+    "Thaddeus"
+   ],
+   "location": "Koilos",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Thaddeus was replaced by Eladamri as the commander of the other half of the Metathran army"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Thaddeus",
+   "note": "Bloodline project",
+   "paragraph": 0,
+   "quote": "created by Urza as part of his Bloodline project"
+  },
+  {
+   "source": "Thaddeus",
+   "relation": "family",
+   "target": "Agnate",
+   "note": "twin",
+   "paragraph": 0,
+   "quote": "He was the twin of Agnate"
+  },
+  {
+   "source": "Agnate",
+   "relation": "killed",
+   "target": "Thaddeus",
+   "note": "mercy killing",
+   "paragraph": 2,
+   "quote": "delivering a coup-de-grace to him to end his suffering."
+  }
+ ],
+ "rejected": []
+}

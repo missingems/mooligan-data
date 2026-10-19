@@ -1,0 +1,191 @@
+{
+ "page": "wiki/kolo-meha",
+ "url": "https://mtg.wiki/page/Kolo_Meha",
+ "title": "Kolo Meha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kolo Meha",
+   "type": "character",
+   "aliases": [],
+   "description": "Pyromancer from Bogardan, a sixth-circle mage on a pilgrimage who joined the Kentsu and later Tetsuo Umezawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bogardan",
+   "type": "location",
+   "aliases": [],
+   "description": "Kolo Meha's home, vibrant with red mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon warhost",
+   "type": "faction",
+   "aliases": [],
+   "description": "Warhost that Meha joined and which sold him to Marhault Elsdragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenary force Meha served as demolition expert.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marhault Elsdragon",
+   "type": "character",
+   "aliases": [
+    "General Elsdragon"
+   ],
+   "description": "General of the Kentsu to whom Meha was sold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jorgan Hage",
+   "type": "character",
+   "aliases": [
+    "Hage"
+   ],
+   "description": "Commander who nearly killed Meha, later killed Elsdragon and took his place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Planned to attack Emperor Nicol Bolas; trained Meha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Emperor of Madara targeted by Tetsuo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wasitora",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cat-dragon befriended by Meha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramses Overdark",
+   "type": "character",
+   "aliases": [],
+   "description": "Imperial regent whose keep Meha destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zalgadib",
+   "type": "creature",
+   "aliases": [],
+   "description": "Efreet defeated by Meha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empire of Madara",
+   "type": "location",
+   "aliases": [],
+   "description": "Empire Meha and Tetsuo sought to restore order to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Keldons sell Meha to Marhault Elsdragon and Meha joins the Kentsu.",
+   "participants": [
+    "Kolo Meha",
+    "Keldon warhost",
+    "Marhault Elsdragon",
+    "Kentsu"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Keldons sold Meha to Marhault Elsdragon"
+  },
+  {
+   "summary": "Meha creates a chasm to defend the Kentsu and is nearly killed by Hage.",
+   "participants": [
+    "Kolo Meha",
+    "Jorgan Hage",
+    "Kentsu"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Meha created a chasm to defend the Kentsu"
+  },
+  {
+   "summary": "Hage kills Elsdragon and Meha leaves to follow Tetsuo Umezawa.",
+   "participants": [
+    "Jorgan Hage",
+    "Marhault Elsdragon",
+    "Kolo Meha",
+    "Tetsuo Umezawa"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Meha left the Kentsu"
+  },
+  {
+   "summary": "Meha defeats Zalgadib and destroys Ramses Overdark's keep.",
+   "participants": [
+    "Kolo Meha",
+    "Zalgadib",
+    "Ramses Overdark"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he defeated the efreet Zalgadib"
+  },
+  {
+   "summary": "Meha completes his pilgrimage and stays with Tetsuo.",
+   "participants": [
+    "Kolo Meha",
+    "Tetsuo Umezawa"
+   ],
+   "location": "Empire of Madara",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "His pilgrimage was completed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kolo Meha",
+   "relation": "serves",
+   "target": "Tetsuo Umezawa",
+   "note": "Followed him",
+   "paragraph": 3,
+   "quote": "He then followed Tetsuo Umezawa"
+  },
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "mentor_of",
+   "target": "Kolo Meha",
+   "note": "Trained him in the Tsunami-nito school",
+   "paragraph": 4,
+   "quote": "Tetsuo trained him in the Tsunami-nito school"
+  },
+  {
+   "source": "Jorgan Hage",
+   "relation": "killed",
+   "target": "Marhault Elsdragon",
+   "note": "Killed and replaced him",
+   "paragraph": 3,
+   "quote": "Hage later killed General Elsdragon"
+  }
+ ],
+ "rejected": []
+}
