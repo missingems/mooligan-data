@@ -1,0 +1,160 @@
+{
+ "page": "wiki/spectacle-summit",
+ "url": "https://mtg.wiki/page/Spectacle_Summit",
+ "title": "Spectacle Summit",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:49Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Spectacle Summit",
+   "type": "location",
+   "aliases": [
+    "The Summit"
+   ],
+   "description": "Elementally charged rocky canyon on Arcavios where Prismari holds Summitfest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Spectacle Summit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prismari",
+   "type": "faction",
+   "aliases": [],
+   "description": "Strixhaven college that hosts Summitfest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Summitfest",
+   "type": "event",
+   "aliases": [],
+   "description": "Annual month-long Prismari arts festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rootha Squallheart",
+   "type": "character",
+   "aliases": [
+    "Rootha"
+   ],
+   "description": "Prismari student affected by trauma from the Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glassyk",
+   "type": "character",
+   "aliases": [],
+   "description": "First-year student who rescued Rootha and was inside the unstable skywhale.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dean Nassari",
+   "type": "character",
+   "aliases": [
+    "Nassari"
+   ],
+   "description": "Prismari dean who collaborated with Rootha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skywhale",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elemental whale that became unstable and flooded the festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Living Flame",
+   "type": "concept",
+   "aliases": [],
+   "description": "Spell Rootha channeled to neutralize the elemental.",
+   "presence": "appears"
+  },
+  {
+   "name": "Night of Flame",
+   "type": "event",
+   "aliases": [],
+   "description": "Name given to the 4565 AR incident, starting a tradition.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Muse",
+   "type": "location",
+   "aliases": [],
+   "description": "Rock formation shaped like a woman where artists contribute.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Source of Rootha's trauma.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At Summitfest in 4565 AR, Rootha suffers a near-fatal fall and is rescued by Glassyk.",
+   "participants": [
+    "Rootha Squallheart",
+    "Glassyk",
+    "Skywhale"
+   ],
+   "location": "Spectacle Summit",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "experienced a near-fatal fall from a ridge and was rescued by first-year student Glassyk"
+  },
+  {
+   "summary": "The skywhale becomes unstable and expands into a massive uncontrolled construct causing flooding and damage.",
+   "participants": [
+    "Skywhale",
+    "Glassyk"
+   ],
+   "location": "Spectacle Summit",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "became unstable and expanded into a massive, uncontrolled construct"
+  },
+  {
+   "summary": "Rootha and Dean Nassari channel the Living Flame, neutralizing the elemental; the event becomes the Night of Flame.",
+   "participants": [
+    "Rootha Squallheart",
+    "Dean Nassari",
+    "Living Flame",
+    "Night of Flame"
+   ],
+   "location": "Spectacle Summit",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "the event became known as the Night of Flame"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Prismari",
+   "relation": "located_in",
+   "target": "Spectacle Summit",
+   "note": "hosts Summitfest there",
+   "paragraph": 1,
+   "quote": "Prismari hosts its annual arts festival, Summitfest, at the canyon"
+  },
+  {
+   "source": "Rootha Squallheart",
+   "relation": "ally",
+   "target": "Dean Nassari",
+   "note": "cast together",
+   "paragraph": 8,
+   "quote": "collaborated with the dean by channeling a spell she called the Living Flame"
+  }
+ ],
+ "rejected": []
+}

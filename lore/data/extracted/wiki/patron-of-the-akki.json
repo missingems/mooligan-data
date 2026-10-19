@@ -1,0 +1,146 @@
+{
+ "page": "wiki/patron-of-the-akki",
+ "url": "https://mtg.wiki/page/Patron_of_the_Akki",
+ "title": "Patron of the Akki",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:52Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Patron of the Akki",
+   "type": "deity",
+   "aliases": [
+    "Patron Kami of the Akki"
+   ],
+   "description": "Great patron kami of the akki, a giant stony serpent that became malevolent and devours the akki who sacrifice themselves to it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akki",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin-like folk who revere and fear the Patron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ik-Uk",
+   "type": "character",
+   "aliases": [],
+   "description": "A lowly scavenger akki who released a kami spirit from an ebon bottle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiery kami spirit",
+   "type": "creature",
+   "aliases": [
+    "the kami"
+   ],
+   "description": "Small kami shorn from the Patron, resembling a burning unborn akki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the great spirits war on the living.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the kami.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ik-Uk opens an ebon bottle and releases a small fiery kami that offers to serve him.",
+   "participants": [
+    "Ik-Uk",
+    "Fiery kami spirit"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he unknowingly released a small, fiery kami spirit"
+  },
+  {
+   "summary": "Ik-Uk commands the spirit to protect him, leading to the deaths of other akki who threaten him.",
+   "participants": [
+    "Ik-Uk",
+    "Fiery kami spirit"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "leading to the deaths of other akki who threatened him"
+  },
+  {
+   "summary": "Ik-Uk explains that the Patron has become a malevolent force.",
+   "participants": [
+    "Ik-Uk",
+    "Fiery kami spirit",
+    "Patron of the Akki"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "had become a malevolent force"
+  },
+  {
+   "summary": "Ik-Uk is captured by akki at an ancient mountain and devoured whole by the Patron.",
+   "participants": [
+    "Ik-Uk",
+    "Patron of the Akki",
+    "Akki"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The Patron, a terrifying and massive being, devoured Ik-Uk whole."
+  },
+  {
+   "summary": "Inside the Patron, the kami reveals it kept its promise by placing him in the safest place and that he will face a gruesome fate after a year and a day.",
+   "participants": [
+    "Ik-Uk",
+    "Fiery kami spirit",
+    "Patron of the Akki"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "after a year and a day, Ik-Uk would face a gruesome fate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Patron of the Akki",
+   "relation": "leader_of",
+   "target": "Akki",
+   "note": "patron kami",
+   "paragraph": 0,
+   "quote": "It is the great Patron Kami of the Akki."
+  },
+  {
+   "source": "Fiery kami spirit",
+   "relation": "other",
+   "target": "Patron of the Akki",
+   "note": "a shard shorn from the Patron",
+   "paragraph": 6,
+   "quote": "the same entity from which the kami was originally shorn"
+  },
+  {
+   "source": "Fiery kami spirit",
+   "relation": "serves",
+   "target": "Ik-Uk",
+   "note": "bound to serve him in exchange for freedom",
+   "paragraph": 4,
+   "quote": "offered to serve Ik-Uk in exchange for freeing it"
+  }
+ ],
+ "rejected": []
+}
