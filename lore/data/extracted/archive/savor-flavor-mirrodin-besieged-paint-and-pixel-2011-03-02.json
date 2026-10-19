@@ -1,0 +1,190 @@
+{
+ "page": "archive/savor-flavor-mirrodin-besieged-paint-and-pixel-2011-03-02",
+ "url": "https://web.archive.org/web/20210429201455/https://magic.wizards.com/en/articles/archive/savor-flavor/mirrodin-besieged-paint-and-pixel-2011-03-02",
+ "title": "Mirrodin Besieged in Paint and Pixel",
+ "story_date": "2011-03-02",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:18Z",
+ "storyline": "Mirrodin Besieged",
+ "entities": [
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [
+    "Mirrodin's home plane"
+   ],
+   "description": "The metal plane defended by the Mirrans against Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "the Phyrexians"
+   ],
+   "description": "The invading biomechanical force, now spreading beyond black-and-artifact into white.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrans",
+   "type": "faction",
+   "aliases": [
+    "the Mirran faction"
+   ],
+   "description": "The native peoples of Mirrodin resisting the Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Father of Machines"
+   ],
+   "description": "A captive of the Phyrexian praetors, lost in a reverie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vorinclex, Voice of Hunger",
+   "type": "character",
+   "aliases": [
+    "the green-aligned Praetor"
+   ],
+   "description": "The green-aligned Phyrexian Praetor seen at Karn's side.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [
+    "Glissa, the Traitor"
+   ],
+   "description": "A former hero of the story who has been Phyrexianized and turned traitor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mirrodin figure whose soul traps send people home in the Fifth Dawn novel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titan Forge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mystical seafloor assembly plant in the Quicksilver Sea that manufactures 9/9 Golems for the Mirrans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quicksilver Sea",
+   "type": "location",
+   "aliases": [
+    "the Sea"
+   ],
+   "description": "A metallic sea on Mirrodin where the Titan Forge lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oxidda Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where Vulshok and Sylvok humans gather for an attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tangle",
+   "type": "location",
+   "aliases": [
+    "Tangle trees"
+   ],
+   "description": "A region of Mirrodin with coppery trees.",
+   "presence": "appears"
+  },
+  {
+   "name": "leonin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mirrodin's leonin defend their home against Phyrexian invaders.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phyrexians mount a serious threat to Mirrodin; the Mirrans' Titan Forge manufactures colossal Golems as a secret weapon.",
+   "participants": [
+    "Phyrexia",
+    "Mirrans",
+    "Titan Forge"
+   ],
+   "location": "Quicksilver Sea",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "The Phyrexians have begun to mount a serious threat to the plane of Mirrodin"
+  },
+  {
+   "summary": "Glissa is Phyrexianized and turns traitor.",
+   "participants": [
+    "Glissa",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 19,
+   "quote": "Phyrexianize one of your story's former heroes"
+  },
+  {
+   "summary": "Karn is held captive by the Phyrexian praetors, with Vorinclex at his side.",
+   "participants": [
+    "Karn",
+    "Vorinclex, Voice of Hunger"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 21,
+   "quote": "the relationship between the captive Karn and the Phyrexian praetors"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phyrexia",
+   "relation": "enemy",
+   "target": "Mirrans",
+   "note": "Phyrexian invasion of Mirrodin",
+   "paragraph": 17,
+   "quote": "This is a perfect glimpse of the conflict between the Mirrans and Phyrexians"
+  },
+  {
+   "source": "Glissa",
+   "relation": "serves",
+   "target": "Phyrexia",
+   "note": "turned traitor after Phyrexianization",
+   "paragraph": 19,
+   "quote": "here Glissa looks disturbingly at home in her new traitorous skin."
+  },
+  {
+   "source": "Karn",
+   "relation": "other",
+   "target": "Vorinclex, Voice of Hunger",
+   "note": "captive of the Phyrexian praetors",
+   "paragraph": 21,
+   "quote": "the captive Karn and the Phyrexian praetors"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "quote not in page",
+   "summary": "Vulshok and Sylvok humans gather for an attack as Phyrexian forces silhouette on the horizon before armies clash.",
+   "participants": [
+    "Mirrans",
+    "Phyrexia"
+   ],
+   "location": "Oxidda Mountains",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "the fateful moment just before the clash of the two armies"
+  }
+ ]
+}
