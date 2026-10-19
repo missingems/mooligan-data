@@ -1,0 +1,159 @@
+{
+ "page": "wiki/greater-sea",
+ "url": "https://mtg.wiki/page/Greater_Sea",
+ "title": "Greater Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:33Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Greater Sea of Ulgrotha",
+   "type": "location",
+   "aliases": [
+    "Greater Sea"
+   ],
+   "description": "Ocean neighboring the Homelands that survived the Apocalypse Chime.",
+   "presence": "appears"
+  },
+  {
+   "name": "Homelands",
+   "type": "location",
+   "aliases": [],
+   "description": "Land neighboring the Greater Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Character who rang the Apocalypse Chime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact rung by Ravi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who made her home on an isle and infused it with mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who built the villa and the Wizards' School.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra's Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Small island in the Dead Zone made into a paradise.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feroz's Ban",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell that sealed Ulgrotha off from the other planes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Floating Isles",
+   "type": "location",
+   "aliases": [
+    "Floating Island"
+   ],
+   "description": "Location of the Wizards' School founded by Feroz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wizards' School",
+   "type": "location",
+   "aliases": [],
+   "description": "School built by Feroz on the Floating Island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea dwarves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Few in number, sailors of the sea who returned to find the school.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Serra and Feroz build a paradise on a small island in the Dead Zone.",
+   "participants": [
+    "Serra",
+    "Feroz",
+    "Serra's Isle"
+   ],
+   "location": "Serra's Isle",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The planeswalkers Serra and Feroz set up their home on a small island far into the Dead Zone"
+  },
+  {
+   "summary": "Serra and Feroz work nearly a year to create Feroz's Ban, sealing their world off from other planes.",
+   "participants": [
+    "Serra",
+    "Feroz",
+    "Feroz's Ban"
+   ],
+   "location": "Serra's Isle",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This resulted in Feroz's Ban , sealing their world off from the other planes."
+  },
+  {
+   "summary": "Feroz builds the Wizards' School on the Floating Island.",
+   "participants": [
+    "Feroz",
+    "Wizards' School",
+    "Sea dwarves"
+   ],
+   "location": "Floating Isles",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Feroz went to the Floating Island, and with the aid of his magics he built Wizards' School there"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Feroz",
+   "relation": "created",
+   "target": "Feroz's Ban",
+   "note": "Created it with Serra.",
+   "paragraph": 2,
+   "quote": "This resulted in Feroz's Ban , sealing their world off from the other planes."
+  },
+  {
+   "source": "Feroz",
+   "relation": "created",
+   "target": "Wizards' School",
+   "note": "Founded it.",
+   "paragraph": 3,
+   "quote": "The Floating Isles is the location of the Wizards' School founded by the planeswalker Feroz"
+  },
+  {
+   "source": "Serra",
+   "relation": "ally",
+   "target": "Feroz",
+   "note": "Partnered planeswalkers.",
+   "paragraph": 1,
+   "quote": "The planeswalkers Serra and Feroz set up their home"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,201 @@
+{
+ "page": "wiki/arguel",
+ "url": "https://mtg.wiki/page/Arguel",
+ "title": "Arguel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:55Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "High Marshal Arguel",
+   "type": "character",
+   "aliases": [
+    "Arguel"
+   ],
+   "description": "A vampire knight from Torrezon who discovered the Temple of Aclazotz and died of his blood fast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "Arguel's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the jungles and the temple.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temple of Aclazotz",
+   "type": "location",
+   "aliases": [],
+   "description": "A lost temple of the bat-god in Ixalan's jungles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "deity",
+   "aliases": [],
+   "description": "The bat-god of night, eternal enemy of the Threefold Sun, imprisoned in Ixalan's core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hierophant's Chalice",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact that could provide endless blood once a drop of blood is added.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "The vampire order whose golden armor Arguel wore.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mavren Fein",
+   "type": "character",
+   "aliases": [
+    "Mavren"
+   ],
+   "description": "The first to enter the temple after Arguel; enthralled by Zotz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zotz",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon-spawn of Aclazotz who laired in the temple.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alante",
+   "type": "character",
+   "aliases": [],
+   "description": "A cleric of the Order of the Five Sacraments who led the party that killed Zotz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Five Sacraments",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alante's order, which kept the Chalice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vona de Iedo",
+   "type": "character",
+   "aliases": [],
+   "description": "Alante's sworn enemy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vito Quijano de Pasamonte",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Church of Dusk who later frees Aclazotz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vito's church.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arguel's blood fast visions lead him into Ixalan's jungle to the lost Temple of Aclazotz.",
+   "participants": [
+    "High Marshal Arguel",
+    "Hierophant's Chalice"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Arguel walked through the blood and into the grand structure, but the bat god was not there."
+  },
+  {
+   "summary": "Arguel dies inside the temple, chalice in hand, his blood fast never ended.",
+   "participants": [
+    "High Marshal Arguel"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arguel died inside the temple"
+  },
+  {
+   "summary": "Mavren Fein enters the temple and falls under the enslavement of Zotz.",
+   "participants": [
+    "Mavren Fein",
+    "Zotz"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Mavren then fell under the enslavement of Zotz"
+  },
+  {
+   "summary": "Alante's party battles Mavren and Zotz; Zotz is killed, freeing Mavren from his hold.",
+   "participants": [
+    "Alante",
+    "Mavren Fein",
+    "Zotz"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "When Zotz was killed, its death finally broke its hold on Mavren"
+  },
+  {
+   "summary": "Alante finds Arguel's corpse and claims the Hierophant's Chalice for the Order of the Five Sacraments.",
+   "participants": [
+    "Alante",
+    "High Marshal Arguel",
+    "Hierophant's Chalice",
+    "Order of the Five Sacraments"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Alante claimed the Hierophant's Chalice from Arguel's corpse"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zotz",
+   "relation": "serves",
+   "target": "Aclazotz",
+   "note": "Demon-spawn of Aclazotz.",
+   "paragraph": 3,
+   "quote": "a demon-spawn of Aclazotz"
+  },
+  {
+   "source": "Alante",
+   "relation": "member_of",
+   "target": "Order of the Five Sacraments",
+   "note": "Cleric.",
+   "paragraph": 3,
+   "quote": "the Order of the Five Sacraments cleric Alante"
+  },
+  {
+   "source": "Alante",
+   "relation": "enemy",
+   "target": "Vona de Iedo",
+   "note": "Sworn enemy.",
+   "paragraph": 3,
+   "quote": "her sworn enemy, Vona de Iedo"
+  }
+ ],
+ "rejected": []
+}

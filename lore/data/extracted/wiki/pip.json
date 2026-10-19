@@ -1,0 +1,126 @@
+{
+ "page": "wiki/pip",
+ "url": "https://mtg.wiki/page/Pip",
+ "title": "Pip",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Pip",
+   "type": "creature",
+   "aliases": [],
+   "description": "The orange-furred house cat of the wizard Relno on Shandalar, enlarged to the size of a small whale to scare merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Relno",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard whose tower was raided by merfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zurbit",
+   "type": "character",
+   "aliases": [],
+   "description": "Relno's homunculus assistant who devised the plan to recover the stolen items.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Raiders who took Relno's valuables.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Pip lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Merfolk raid Relno's tower and take his valuable possessions.",
+   "participants": [
+    "Merfolk",
+    "Relno",
+    "Pip"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Pip was present when the wizard's valuable possessions were taken"
+  },
+  {
+   "summary": "Zurbit takes Pip and a vial of green liquid by rowboat to the reef.",
+   "participants": [
+    "Zurbit",
+    "Pip"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Zurbit and Pip ventured onto the water"
+  },
+  {
+   "summary": "Zurbit sends a demanding message in a flask; a merfolk scorns it.",
+   "participants": [
+    "Zurbit",
+    "Merfolk"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "A nearby merfolk surfaced, shot Zurbit a cold, contemptuous glare"
+  },
+  {
+   "summary": "Zurbit feeds Pip the green liquid and Pip grows to the size of a small whale, looming over the merfolk.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "eventually reaching that of a small whale"
+  },
+  {
+   "summary": "The stolen books and scrolls are recovered and Relno returns to find Pip grooming.",
+   "participants": [
+    "Relno",
+    "Pip"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "all the stolen books and scrolls had been recovered from the depths"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zurbit",
+   "relation": "serves",
+   "target": "Relno",
+   "note": "assistant homunculus",
+   "paragraph": 1,
+   "quote": "the homunculus named Zurbit"
+  },
+  {
+   "source": "Pip",
+   "relation": "serves",
+   "target": "Relno",
+   "note": "pet cat",
+   "paragraph": 0,
+   "quote": "the orange-furred house cat of the wizard Relno"
+  }
+ ],
+ "rejected": []
+}

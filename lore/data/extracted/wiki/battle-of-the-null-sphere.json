@@ -1,0 +1,169 @@
+{
+ "page": "wiki/battle-of-the-null-sphere",
+ "url": "https://mtg.wiki/page/Battle_of_the_Null_Sphere",
+ "title": "Battle of the Null Sphere",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:38Z",
+ "storyline": "Thran-Phyrexian War",
+ "entities": [
+  {
+   "name": "Battle of the Null Sphere",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle on Dominaria c. -5000 AR during the Thran-Phyrexian War in which Yawgmoth seized the Null Sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran-Phyrexian War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between the Thran Empire and Yawgmoth's Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Phyrexian army who sought the Null Sphere to defeat his attackers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Null Sphere",
+   "type": "artifact",
+   "aliases": [
+    "the Sphere"
+   ],
+   "description": "Huge hollow orb in a crater, a monitoring, broadcasting and control center for the Thran Empire's artifacts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian army"
+   ],
+   "description": "Yawgmoth's army, including spider-modified Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran Empire",
+   "type": "faction",
+   "aliases": [
+    "Thran"
+   ],
+   "description": "Empire that built and garrisoned the Null Sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyte guards",
+   "type": "faction",
+   "aliases": [],
+   "description": "Strike team led by Yawgmoth to take the Sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Megheddon Defile",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle decisively affected by the taking of the Null Sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the battle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yawgmoth realizes he needs the Null Sphere's power to defeat his attackers.",
+   "participants": [
+    "Yawgmoth",
+    "Null Sphere"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He would need the power of the Null Sphere"
+  },
+  {
+   "summary": "Yawgmoth approaches the Sphere on a flying caravel; the garrison's bombards cripple it and the Phyrexians abandon it as it crashes.",
+   "participants": [
+    "Yawgmoth",
+    "Phyrexians",
+    "Thran Empire"
+   ],
+   "location": "Null Sphere",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Yawgmoth and the Phyrexians were forced to abandon the vessel"
+  },
+  {
+   "summary": "The Phyrexians swarm the garrison and slaughter Thran and Phyrexians alike.",
+   "participants": [
+    "Phyrexians",
+    "Thran Empire"
+   ],
+   "location": "Null Sphere",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Yawgmoth sent his Phyrexians to swarm the garrison."
+  },
+  {
+   "summary": "Yawgmoth leads Halcyte guards to take the Sphere, mounting a powerstone equator and loosening it from the ground.",
+   "participants": [
+    "Yawgmoth",
+    "Halcyte guards",
+    "Null Sphere"
+   ],
+   "location": "Null Sphere",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Yawgmoth led a strike team of Halcyte guards to take the Sphere itself."
+  },
+  {
+   "summary": "The Null Sphere rises from its crater under Yawgmoth's command, with decisive effect on the Battle of Megheddon Defile.",
+   "participants": [
+    "Yawgmoth",
+    "Null Sphere",
+    "Battle of Megheddon Defile"
+   ],
+   "location": "Null Sphere",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "starting to float up from the ground into the air"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "leader_of",
+   "target": "Phyrexians",
+   "note": "commands the army",
+   "paragraph": 3,
+   "quote": "Yawgmoth sent his Phyrexians to swarm the garrison."
+  },
+  {
+   "source": "Phyrexians",
+   "relation": "enemy",
+   "target": "Thran Empire",
+   "note": "at war",
+   "paragraph": 3,
+   "quote": "neither Thran nor Phyrexian survived"
+  },
+  {
+   "source": "Null Sphere",
+   "relation": "serves",
+   "target": "Thran Empire",
+   "note": "control center for its artifacts",
+   "paragraph": 1,
+   "quote": "control center for the Thran Empire 's artifacts"
+  }
+ ],
+ "rejected": []
+}

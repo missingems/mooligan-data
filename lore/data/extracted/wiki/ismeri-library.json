@@ -1,0 +1,81 @@
+{
+ "page": "wiki/ismeri-library",
+ "url": "https://mtg.wiki/page/Ismeri_Library",
+ "title": "Ismeri Library",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ismeri Library",
+   "type": "location",
+   "aliases": [],
+   "description": "One of Ravnica's largest libraries in Precinct Five of Ravnica City, officially guildless but secretly run by House Dimir.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "Secretive guild that quietly operates the library as a hub for covert communication.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane where the library stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose students use the library.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Guild whose patrols research law at the library.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "Guild whose clerks verify old contracts at the library.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "House Dimir",
+   "relation": "other",
+   "target": "Ismeri Library",
+   "note": "secretly maintains and operates it",
+   "paragraph": 2,
+   "quote": "it is quietly maintained and operated by House Dimir"
+  },
+  {
+   "source": "Ismeri Library",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "in Precinct Five of Ravnica City",
+   "paragraph": 1,
+   "quote": "Located in Precinct Five of Ravnica City , the Ismeri Library is officially a guildless institution"
+  }
+ ],
+ "rejected": []
+}

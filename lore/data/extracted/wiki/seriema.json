@@ -1,0 +1,108 @@
+{
+ "page": "wiki/seriema",
+ "url": "https://mtg.wiki/page/Seriema",
+ "title": "Seriema",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:21Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Seriema",
+   "type": "artifact",
+   "aliases": [
+    "IPVN Seriema"
+   ],
+   "description": "A legendary, battered spacecraft in the Edge, crewed by Sami and Tannuk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sami",
+   "type": "character",
+   "aliases": [],
+   "description": "Human captain and engineer of the Seriema.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tannuk",
+   "type": "character",
+   "aliases": [],
+   "description": "Kav pilot and first mate of the Seriema.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunstar Free Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forces the Seriema evaded on Kavaron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kavaron",
+   "type": "plane",
+   "aliases": [],
+   "description": "Place where the Seriema evaded Sunstar forces.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mm'menon",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the Illvoi mechanics who repaired the Seriema's fusion drive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Illvoi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mechanics who repaired the Seriema's fusion drive.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "While evading Sunstar Free Company forces on Kavaron, the Seriema's radar is smashed and its main drive nozzle lasered off.",
+   "participants": [
+    "Seriema",
+    "Sunstar Free Company"
+   ],
+   "location": "Kavaron",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "her radar was smashed and the magnet nozzle for her main drive was lasered off"
+  },
+  {
+   "summary": "Illvoi mechanics under Mm'menon repair the Seriema's fusion drive.",
+   "participants": [
+    "Illvoi",
+    "Mm'menon",
+    "Seriema"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Her fusion drive was subsequently repaired by Illvoi mechanics under Mm'menon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sami",
+   "relation": "leader_of",
+   "target": "Seriema",
+   "note": "Captain and engineer.",
+   "paragraph": 6,
+   "quote": "Human captain and engineer."
+  },
+  {
+   "source": "Tannuk",
+   "relation": "serves",
+   "target": "Sami",
+   "note": "Pilot and first mate.",
+   "paragraph": 7,
+   "quote": "Kav pilot and first mate."
+  }
+ ],
+ "rejected": []
+}

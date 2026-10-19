@@ -1,0 +1,110 @@
+{
+ "page": "wiki/city-of-urborg",
+ "url": "https://mtg.wiki/page/City_of_Urborg",
+ "title": "City of Urborg",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:44Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "City of Urborg",
+   "type": "location",
+   "aliases": [
+    "Urborg"
+   ],
+   "description": "A gothic citadel on the island of Urborg, ruled by the lich Nevinyrral and obliterated by his disk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nevinyrral",
+   "type": "character",
+   "aliases": [
+    "Nevinyrral the lich",
+    "lich king Nevinyrral"
+   ],
+   "description": "Lich king and necromancer who ruled Urborg and destroyed it with his Disk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nevinyrral's Disk",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Disk-shaped phylactery into which Nevinyrral poured his essence to destroy Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bogardan",
+   "type": "location",
+   "aliases": [
+    "Bogardans"
+   ],
+   "description": "Volcanic realm ruled by godlike beings of flame; at war with Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dark Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era in which Nevinyrral ruled Urborg.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nevinyrral launches an unprovoked campaign against Bogardan.",
+   "participants": [
+    "Nevinyrral",
+    "Bogardan"
+   ],
+   "location": "Bogardan",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "launch an unprovoked campaign against Bogardan"
+  },
+  {
+   "summary": "Bogardan retaliates with hellkites and triggers a volcanic eruption beneath Urborg.",
+   "participants": [
+    "Bogardan",
+    "City of Urborg"
+   ],
+   "location": "City of Urborg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "sending flights of hellkites to darken the skies over Urborg"
+  },
+  {
+   "summary": "Nevinyrral pours his essence into Nevinyrral's Disk and detonates it, obliterating the city.",
+   "participants": [
+    "Nevinyrral",
+    "Nevinyrral's Disk",
+    "City of Urborg"
+   ],
+   "location": "City of Urborg",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "he poured his essence into a disk-shaped phylactery"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nevinyrral",
+   "relation": "leader_of",
+   "target": "City of Urborg",
+   "note": "ruled it as lich king",
+   "paragraph": 2,
+   "quote": "Urborg was ruled by the infamous lich king Nevinyrral"
+  },
+  {
+   "source": "City of Urborg",
+   "relation": "enemy",
+   "target": "Bogardan",
+   "note": "at war",
+   "paragraph": 0,
+   "quote": "It was at war with Bogardan"
+  }
+ ],
+ "rejected": []
+}

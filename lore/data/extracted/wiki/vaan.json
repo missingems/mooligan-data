@@ -1,0 +1,159 @@
+{
+ "page": "wiki/vaan",
+ "url": "https://mtg.wiki/page/Vaan",
+ "title": "Vaan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:23Z",
+ "storyline": "Mercadian Masques",
+ "entities": [
+  {
+   "name": "Vaan",
+   "type": "character",
+   "aliases": [],
+   "description": "A morose blue pixie enslaved by a merger-dragon who gathers warriors to kill it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zumaki",
+   "type": "creature",
+   "aliases": [
+    "Zumaki of the Bottomless Pool"
+   ],
+   "description": "A dragon who enslaved Vaan's people; killed fighting a Mak Fawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mak Fawa",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Phyrexian engine-dragon that fought Zumaki and merged with it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merger-dragon",
+   "type": "creature",
+   "aliases": [
+    "new dragon"
+   ],
+   "description": "A new dragon that rose with an engine body and twisted version of Zumaki's mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Donner Rus",
+   "type": "character",
+   "aliases": [],
+   "description": "Potion-master recruited by Vaan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tania Cayce",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Donner Rus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kula",
+   "type": "character",
+   "aliases": [],
+   "description": "An artifact-hating druid recruited by Vaan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Hask",
+   "type": "character",
+   "aliases": [
+    "Hask"
+   ],
+   "description": "Wielder of the Hand of Righteous Retribution, with his crew recruited by Vaan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hand of Righteous Retribution",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A magical sword Vaan thought necessary to kill the dragon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zumaki is attacked by a Mak Fawa and both dragons are killed; a new merged dragon rises.",
+   "participants": [
+    "Zumaki",
+    "Mak Fawa",
+    "Merger-dragon"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Zumaki was attacked by a Mak Fawa"
+  },
+  {
+   "summary": "The new dragon enslaves Vaan's people; only Vaan survives and he places glamours on the dragon.",
+   "participants": [
+    "Merger-dragon",
+    "Vaan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "only Vaan was left"
+  },
+  {
+   "summary": "Vaan, under a geas, gathers a group of warriors to kill his master.",
+   "participants": [
+    "Vaan",
+    "Donner Rus",
+    "Tania Cayce",
+    "Kula",
+    "Captain Hask"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he managed to gather together a group of warriors to kill his new master"
+  },
+  {
+   "summary": "The group suffers heavy losses and the dragon reconstructs itself and reanimates Vaan, making the mission a failure.",
+   "participants": [
+    "Merger-dragon",
+    "Vaan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the dragon reconstructed itself and reanimated Vaan"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zumaki",
+   "relation": "serves",
+   "target": "Vaan",
+   "note": "Zumaki enslaved Vaan.",
+   "paragraph": 2,
+   "quote": "had enslaved Vaan and his people"
+  },
+  {
+   "source": "Merger-dragon",
+   "relation": "enemy",
+   "target": "Vaan",
+   "note": "Vaan's master and target.",
+   "paragraph": 4,
+   "quote": "to kill his new master"
+  },
+  {
+   "source": "Donner Rus",
+   "relation": "mentor_of",
+   "target": "Tania Cayce",
+   "note": "Tania is his apprentice.",
+   "paragraph": 4,
+   "quote": "potion-master Donner Rus , his apprentice Tania Cayce"
+  }
+ ],
+ "rejected": []
+}

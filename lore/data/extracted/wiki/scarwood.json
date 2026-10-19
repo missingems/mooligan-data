@@ -1,0 +1,171 @@
+{
+ "page": "wiki/scarwood",
+ "url": "https://mtg.wiki/page/Scarwood",
+ "title": "Scarwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:56Z",
+ "storyline": "Legends Cycle",
+ "entities": [
+  {
+   "name": "Scarwood",
+   "type": "location",
+   "aliases": [
+    "Scarwood forest"
+   ],
+   "description": "A deep jungle forest on the continent of Jamuraa on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria containing the Scarwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Heart of the Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "A site hidden at the center of the Scarwood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terrent Amese",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the first cat warriors by fusing man and tiger; later disappeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tabernacle at Pendrell Vale",
+   "type": "location",
+   "aliases": [
+    "The Tabernacle at Pendrell Vale"
+   ],
+   "description": "A place of worship to Terrent Amese built by tiger warriors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scarwood elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who claimed the forest after the cat warriors left.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sulaki",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tiger warrior descendants who fought the elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hooraree",
+   "type": "faction",
+   "aliases": [],
+   "description": "Pilgrims descended from the tiger warrior tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "The first cat warrior to visit the Dark Heart since the exodus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ur-Drago",
+   "type": "creature",
+   "aliases": [],
+   "description": "Guardian of the Dark Heart, killed by Jedit.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Terrent Amese creates the first cat warriors to protect the Dark Heart, who build the Tabernacle at Pendrell Vale.",
+   "participants": [
+    "Terrent Amese",
+    "Tabernacle at Pendrell Vale"
+   ],
+   "location": "Scarwood",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Terrent Amese created the first cat warriors by fusing the essence of man and tiger"
+  },
+  {
+   "summary": "After the exodus of the cat warriors, the Scarwood elves claim the forest and fend off tiger-warrior descendants.",
+   "participants": [
+    "Scarwood elves",
+    "Sulaki",
+    "Hooraree"
+   ],
+   "location": "Scarwood",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Scarwood elves would claim the forest as their own"
+  },
+  {
+   "summary": "A tribe of sapient apes displaces the elves.",
+   "participants": [
+    "Scarwood elves"
+   ],
+   "location": "Scarwood",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the elves in turn were displaced by a tribe of sapient apes"
+  },
+  {
+   "summary": "Jedit Ojanen visits the Dark Heart in 3336 AR, defeats the apes, and kills its guardian Ur-Drago.",
+   "participants": [
+    "Jedit Ojanen",
+    "Ur-Drago"
+   ],
+   "location": "Dark Heart of the Wood",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "After killing its guardian, Ur-Drago"
+  },
+  {
+   "summary": "Jedit convinces the four cat warrior tribes that Terrent Amese was not a god and negotiates safe passage through the Scarwood.",
+   "participants": [
+    "Jedit Ojanen",
+    "Terrent Amese",
+    "Scarwood elves"
+   ],
+   "location": "Scarwood",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Jedit was able to negotiate safe passage through the Scarwood for any cat warrior"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Terrent Amese",
+   "relation": "created",
+   "target": "Tabernacle at Pendrell Vale",
+   "note": "He had the tiger warriors build it.",
+   "paragraph": 2,
+   "quote": "He then had the tiger warriors build the Tabernacle at Pendrell Vale"
+  },
+  {
+   "source": "Scarwood",
+   "relation": "located_in",
+   "target": "Jamuraa",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Scarwood is a forest on the continent of Jamuraa"
+  }
+ ],
+ "rejected": []
+}

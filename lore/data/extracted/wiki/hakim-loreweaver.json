@@ -1,0 +1,192 @@
+{
+ "page": "wiki/hakim-loreweaver",
+ "url": "https://mtg.wiki/page/Hakim_Loreweaver",
+ "title": "Hakim Loreweaver",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:29Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Hakim Loreweaver",
+   "type": "character",
+   "aliases": [
+    "Hakim",
+    "Loreweaver"
+   ],
+   "description": "Historian and wizard from Suq'Ata on Dominaria, a charming braggart called Loreweaver for his gift for telling stories.",
+   "presence": "appears"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "location",
+   "aliases": [],
+   "description": "Country on Dominaria that Hakim represented.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Hakim lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker, once Hakim's apprentice, who sent Hakim a dream.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mangara",
+   "type": "character",
+   "aliases": [],
+   "description": "Organizer of peace talks, held in an Amber Prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation party to the peace talks, now phased-in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Femeref",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation party to the peace talks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Asmira",
+   "type": "character",
+   "aliases": [
+    "Asmira the Prophet"
+   ],
+   "description": "Prophet who explained destiny drove them to rescue Mangara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rashida Scalebane",
+   "type": "character",
+   "aliases": [],
+   "description": "Formed an elite guard for the rescue mission.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sidar Jabari",
+   "type": "character",
+   "aliases": [
+    "Jabari"
+   ],
+   "description": "Created a distraction for the rescue mission with Hakim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ki'pamu",
+   "type": "location",
+   "aliases": [],
+   "description": "Zhalfirin capital near which they met.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amber Prison",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prison in which Mangara was held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mwonvuli Jungle",
+   "type": "location",
+   "aliases": [],
+   "description": "Jungle containing the palace where Mangara was held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord whose legions besieged Tefemburu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tefemburu",
+   "type": "location",
+   "aliases": [],
+   "description": "City besieged by Kaervek's legions.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hakim is entrusted to represent Suq'Ata in the peace talks Mangara organized.",
+   "participants": [
+    "Hakim Loreweaver",
+    "Mangara"
+   ],
+   "location": "Suq'Ata",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Hakim was entrusted by the rulers of Suq'Ata to represent his country"
+  },
+  {
+   "summary": "Hakim meets Asmira, Rashida and Jabari near Ki'pamu; Asmira explains they must rescue Mangara.",
+   "participants": [
+    "Hakim Loreweaver",
+    "Asmira",
+    "Rashida Scalebane",
+    "Sidar Jabari",
+    "Mangara"
+   ],
+   "location": "Ki'pamu",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "destiny was driving them to rescue Mangara"
+  },
+  {
+   "summary": "Hakim tells a tale rooted in a dream from Teferi that makes Kaervek's besieging armies vanish while the civilians escape Tefemburu.",
+   "participants": [
+    "Hakim Loreweaver",
+    "Teferi",
+    "Kaervek",
+    "Tefemburu"
+   ],
+   "location": "Tefemburu",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The tale wove a spell that caused the dark armies besieging the city to vanish completely at dusk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hakim Loreweaver",
+   "relation": "mentor_of",
+   "target": "Teferi",
+   "note": "Teferi was apprenticed to him.",
+   "paragraph": 3,
+   "quote": "Teferi was apprenticed to Hakim"
+  },
+  {
+   "source": "Hakim Loreweaver",
+   "relation": "ally",
+   "target": "Asmira",
+   "note": "Joined the rescue of Mangara.",
+   "paragraph": 5,
+   "quote": "Hakim met with Asmira the Prophet"
+  },
+  {
+   "source": "Kaervek",
+   "relation": "enemy",
+   "target": "Hakim Loreweaver",
+   "note": "His legions besieged Tefemburu.",
+   "paragraph": 5,
+   "quote": "When Kaervek 's legions besieged the city of Tefemburu"
+  }
+ ],
+ "rejected": []
+}

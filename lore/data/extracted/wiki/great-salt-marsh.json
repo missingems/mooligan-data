@@ -1,0 +1,169 @@
+{
+ "page": "wiki/great-salt-marsh",
+ "url": "https://mtg.wiki/page/Great_Salt_Marsh",
+ "title": "Great Salt Marsh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Great Salt Marsh",
+   "type": "location",
+   "aliases": [
+    "Great Salt Marshes"
+   ],
+   "description": "A vast wasteland in Golthonor in southeastern Corondor, with many conflicts in its history.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "A desolate province of Corondor containing the Great Salt Marsh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coldraith",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who blocked the Corthipan Inlet in 4196 AR and was later killed by Altair and Caliphear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sol'Kanar the Swamp King",
+   "type": "character",
+   "aliases": [
+    "Sol'Kanar",
+    "Swamp King"
+   ],
+   "description": "Ruler who demanded tribute from Khone and Shikar and destroyed Shikar in the Dragon War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Altair",
+   "type": "character",
+   "aliases": [
+    "Altair of Coloni"
+   ],
+   "description": "Met Caliphear at the Corthipan Inlet and helped kill Coldraith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caliphear",
+   "type": "character",
+   "aliases": [
+    "Caliphear the Nightmare"
+   ],
+   "description": "Met Altair at the Corthipan Inlet and helped kill Coldraith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khone",
+   "type": "location",
+   "aliases": [],
+   "description": "The northeastern swamp, ruled nominally by the Lord of House Khone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sulgh",
+   "type": "location",
+   "aliases": [],
+   "description": "The southwestern swamp at the mouth of the Golthonor Torrent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shikar",
+   "type": "location",
+   "aliases": [],
+   "description": "A city destroyed by Sol'Kanar in the Dragon War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corthipan Inlet",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Golthonor Torrent enters the marsh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golthonor Torrent",
+   "type": "location",
+   "aliases": [],
+   "description": "The waterfall that feeds the Great Salt Marsh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [],
+   "description": "Conquered southern Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grenfell Mor",
+   "type": "character",
+   "aliases": [],
+   "description": "The wizard seen as the visible symbol of oppression by the marsh's people.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sol'Kanar sides with treacherous Khone in the Dragon War and destroys the city of Shikar.",
+   "participants": [
+    "Sol'Kanar the Swamp King",
+    "Khone",
+    "Shikar"
+   ],
+   "location": "Great Salt Marsh",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sol'Kanar took the side of treacherous Khone, and destroyed the city of Shikar"
+  },
+  {
+   "summary": "In 4196 AR Coldraith blocks the Corthipan Inlet, draining the swamp and flooding the plains to the north.",
+   "participants": [
+    "Coldraith",
+    "Corthipan Inlet"
+   ],
+   "location": "Great Salt Marsh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the wizard Coldraith blocked off the Corthipan Inlet"
+  },
+  {
+   "summary": "Altair and Caliphear kill Coldraith and the water returns to the marshes.",
+   "participants": [
+    "Altair",
+    "Caliphear",
+    "Coldraith"
+   ],
+   "location": "Great Salt Marsh",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The water returned to the marshes after Coldraith was killed by Altair and Caliphear"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Altair",
+   "relation": "killed",
+   "target": "Coldraith",
+   "note": "Killed with Caliphear.",
+   "paragraph": 4,
+   "quote": "Coldraith was killed by Altair and Caliphear"
+  },
+  {
+   "source": "Great Salt Marsh",
+   "relation": "located_in",
+   "target": "Golthonor",
+   "note": "The marsh lies in Golthonor.",
+   "paragraph": 0,
+   "quote": "The Great Salt Marsh lies in Golthonor"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,130 @@
+{
+ "page": "wiki/higure",
+ "url": "https://mtg.wiki/page/Higure",
+ "title": "Higure",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:56Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Higure",
+   "type": "character",
+   "aliases": [
+    "the Still Wind"
+   ],
+   "description": "A human master ninja of Kamigawa during the Kami War, orphaned as a child and trained at the Temple of the Black Scroll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kagero",
+   "type": "character",
+   "aliases": [
+    "Master Kagero"
+   ],
+   "description": "Higure's master, who named him Higure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nitta",
+   "type": "character",
+   "aliases": [],
+   "description": "A samurai merchant living in seclusion, marked for assassination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kio",
+   "type": "character",
+   "aliases": [],
+   "description": "Nitta's daughter, whom Higure had loved from afar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temple of the Black Scroll",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Higure was trained as a ninja.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Higure lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which Higure was active.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Higure's village was attacked by malevolent kami, leaving him sole survivor of his family.",
+   "participants": [
+    "Higure"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "recalling the night when his village was attacked by malevolent kami, leaving him as the sole survivor of his family"
+  },
+  {
+   "summary": "Master Kagero named him Higure, 'twilight', and 'the Still Wind'.",
+   "participants": [
+    "Higure",
+    "Kagero"
+   ],
+   "location": "Temple of the Black Scroll",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was named Higure, meaning \"twilight,\" by his master, Kagero."
+  },
+  {
+   "summary": "Higure led his disciples to infiltrate Nitta's villa to assassinate the merchant, his guards and heir.",
+   "participants": [
+    "Higure",
+    "Nitta"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Higure led his disciples on a mission to infiltrate the villa of Nitta"
+  },
+  {
+   "summary": "Higure and his disciples eliminated a lone guard and Nitta's daughter Kio without alerting the household.",
+   "participants": [
+    "Higure",
+    "Kio"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Higure encountered a lone guard and Nitta's daughter Kio"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kagero",
+   "relation": "mentor_of",
+   "target": "Higure",
+   "note": "Trained and named him",
+   "paragraph": 4,
+   "quote": "his early training under Master Kagero"
+  },
+  {
+   "source": "Higure",
+   "relation": "enemy",
+   "target": "Nitta",
+   "note": "Marked Nitta for assassination",
+   "paragraph": 3,
+   "quote": "The target was the merchant, his guards, and his heir, who were marked for assassination."
+  }
+ ],
+ "rejected": []
+}

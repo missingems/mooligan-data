@@ -1,0 +1,127 @@
+{
+ "page": "wiki/jetmir",
+ "url": "https://mtg.wiki/page/Jetmir",
+ "title": "Jetmir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:27Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [
+    "Boss Jetmir",
+    "Grandfather Cabaretti"
+   ],
+   "description": "A cat demon, founder and crime-lord boss of the Cabaretti family in New Capenna and adoptive father of Jinnie Fay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [
+    "Cabaretti family"
+   ],
+   "description": "One of New Capenna's five crime families, founded and led by Jetmir.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The art-deco city plane where Jetmir rules the Cabaretti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jinnie Fay",
+   "type": "character",
+   "aliases": [],
+   "description": "Jetmir's adoptive daughter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halo",
+   "type": "concept",
+   "aliases": [],
+   "description": "The power source of New Capenna that Jetmir kept flowing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Adversary",
+   "type": "character",
+   "aliases": [
+    "Adversary"
+   ],
+   "description": "The foe whose agents gravely wounded Jetmir at the Crescendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "A celebration at which Jetmir was gravely wounded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which Jetmir complained about the use of his Halo reserves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the Crescendo celebration, Jetmir is gravely wounded by agents of the Adversary and tended to by his adopted daughter in an Obscura safehouse.",
+   "participants": [
+    "Jetmir",
+    "The Adversary",
+    "Jinnie Fay"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Jetmir was gravely wounded by agents of the Adversary"
+  },
+  {
+   "summary": "By the New Phyrexian Invasion, Jetmir has recovered and complains about use of his Halo reserves against the invaders.",
+   "participants": [
+    "Jetmir"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he seemed to have recovered, complaining about the use of his Halo reserves against the invaders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jetmir",
+   "relation": "leader_of",
+   "target": "Cabaretti",
+   "note": "Founder and boss.",
+   "paragraph": 3,
+   "quote": "Jetmir was the founder and boss of the Cabaretti"
+  },
+  {
+   "source": "Jetmir",
+   "relation": "family",
+   "target": "Jinnie Fay",
+   "note": "Adoptive father.",
+   "paragraph": 1,
+   "quote": "the adoptive father of Jinnie Fay"
+  },
+  {
+   "source": "The Adversary",
+   "relation": "enemy",
+   "target": "Jetmir",
+   "note": "Its agents gravely wounded him.",
+   "paragraph": 4,
+   "quote": "Jetmir was gravely wounded by agents of the Adversary"
+  }
+ ],
+ "rejected": []
+}

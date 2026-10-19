@@ -1,0 +1,138 @@
+{
+ "page": "wiki/mirrodin-s-core",
+ "url": "https://mtg.wiki/page/Mirrodin%27s_Core",
+ "title": "Mirrodin's Core",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:55Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Mirrodin's Core",
+   "type": "location",
+   "aliases": [
+    "Tav Rakshan",
+    "Hall of the Eternal Sun"
+   ],
+   "description": "A massive globular space within Mirrodin, used by Memnarch to control the outer world; later the Mycosynth Gardens of New Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The artificial plane whose core Memnarch used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Ascension Web who wanted to become a planeswalker like his creator, Karn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of Memnarch, who unintentionally brought glistening oil to Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mana Core",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A ball of pure mana at the center of Mirrodin's Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ascension Web",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device used to transfer a planeswalker's spark, powered by the destruction of souls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vanishing",
+   "type": "event",
+   "aliases": [],
+   "description": "Event caused when Memnarch triggered the Ascension Web and was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "What Mirrodin became under Phyrexian takeover; its core became the eighth sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mycosynth Gardens",
+   "type": "location",
+   "aliases": [],
+   "description": "The eighth sphere of New Phyrexia, formerly Mirrodin's Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "A Praetor who forbids visitors to the Mycosynth Gardens without invitation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who took over Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch triggers the Ascension Web using soul traps but is destroyed, causing the Vanishing.",
+   "participants": [
+    "Memnarch",
+    "Ascension Web",
+    "Vanishing"
+   ],
+   "location": "Mirrodin's Core",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He managed to trigger the Ascension Web using the soul traps , but was destroyed and instead caused the Vanishing to occur."
+  },
+  {
+   "summary": "During the Phyrexian takeover, the Phyrexians drill holes into the core, which becomes a sphere of New Phyrexia.",
+   "participants": [
+    "Phyrexians",
+    "Mirrodin's Core",
+    "New Phyrexia"
+   ],
+   "location": "Mirrodin's Core",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Phyrexians drilled holes into the core and it became one of the three spheres of New Phyrexia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Ascension Web",
+   "note": "",
+   "paragraph": 3,
+   "quote": "It was constructed by Memnarch"
+  },
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Memnarch",
+   "note": "Karn is Memnarch's creator.",
+   "paragraph": 3,
+   "quote": "like his creator, Karn"
+  }
+ ],
+ "rejected": []
+}

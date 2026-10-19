@@ -1,0 +1,175 @@
+{
+ "page": "wiki/razor-fields",
+ "url": "https://mtg.wiki/page/Razor_Fields",
+ "title": "Razor Fields",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:30Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Razor Fields",
+   "type": "location",
+   "aliases": [
+    "Razor Plains"
+   ],
+   "description": "Metallic plains on Mirrodin named for the razorgrass, home to the Auriok and the leonin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Razor Fields lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nomadic people who wandered the Razor Fields, trading with those they met.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leonin",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people who established dominance over the Razor Fields, with Taj-Nar as capital.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taj-Nar",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest leonin den, at the center of the Fields, chosen as leonin capital.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bladehold",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest Auriok settlement, built on a mesa above tall razorgrass.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ria Ivor",
+   "type": "character",
+   "aliases": [],
+   "description": "Rescued Bladehold during the Mirran-Phyrexian War before her compleation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lowlight",
+   "type": "location",
+   "aliases": [],
+   "description": "An encampment of surviving leonin abunas led by Kemba near the Cave of Light.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kemba",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the leonin abunas at Lowlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cave of Light",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the white Lacuna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ten Shields",
+   "type": "location",
+   "aliases": [],
+   "description": "A trade settlement used by both Auriok and leonin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders who conquered and compleated Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fair Basilica",
+   "type": "location",
+   "aliases": [],
+   "description": "The luminous white-aligned terrain that replaced the Mirrodin plains, the seventh layer of New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrex",
+   "type": "location",
+   "aliases": [],
+   "description": "The wasteland the former surface of Mirrodin became.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The leonin establish dominance over the Razor Fields and make Taj-Nar their capital.",
+   "participants": [
+    "Leonin",
+    "Taj-Nar"
+   ],
+   "location": "Razor Fields",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "it was chosen as the leonin capital"
+  },
+  {
+   "summary": "After the compleation of Mirrodin, its surface becomes the Mirrex wasteland and the Fair Basilica replaces the metallic plains.",
+   "participants": [
+    "Phyrexians",
+    "Mirrex",
+    "Fair Basilica"
+   ],
+   "location": "Razor Fields",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the former surface was rendered a wasteland known as the Mirrex"
+  },
+  {
+   "summary": "Ria Ivor rescues Bladehold during the Mirran-Phyrexian War.",
+   "participants": [
+    "Ria Ivor"
+   ],
+   "location": "Bladehold",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Rescued by Ria Ivor during the Mirran-Phyrexian War before her compleation"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kemba",
+   "relation": "leader_of",
+   "target": "Lowlight",
+   "note": "The encampment was formed by leonin abunas led by Kemba.",
+   "paragraph": 7,
+   "quote": "surviving leonin abunas led by Kemba"
+  },
+  {
+   "source": "Bladehold",
+   "relation": "located_in",
+   "target": "Razor Fields",
+   "note": "The largest Auriok settlement.",
+   "paragraph": 5,
+   "quote": "the largest Auriok settlement"
+  },
+  {
+   "source": "Taj-Nar",
+   "relation": "located_in",
+   "target": "Razor Fields",
+   "note": "At the Fields' center.",
+   "paragraph": 8,
+   "quote": "the largest leonin den located in the Fields' center"
+  }
+ ],
+ "rejected": []
+}

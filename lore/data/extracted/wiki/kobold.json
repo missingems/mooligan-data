@@ -1,0 +1,116 @@
+{
+ "page": "wiki/kobold",
+ "url": "https://mtg.wiki/page/Kobold",
+ "title": "Kobold",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kobolds",
+   "type": "creature",
+   "aliases": [
+    "Kobold"
+   ],
+   "description": "Little goblin-imp creatures, red or green skinned, living on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The only known plane inhabited by kobolds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kher Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Kobold fortress in the Kher Ridges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crookshank kobolds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kobolds of the Red Iron Mountains with a vast army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Compared kobolds to cockroaches.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [
+    "Yellow Lady"
+   ],
+   "description": "Summoned kobolds to tend fires over a Cosmic Horror.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prossh",
+   "type": "deity",
+   "aliases": [],
+   "description": "Dragon whom kobolds revere as a god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kobold Musketeers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organized kobold unit.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shauku summons kobolds to tend fires guarding the imprisoned Cosmic Horror.",
+   "participants": [
+    "Shauku",
+    "Kobolds"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Several kobolds were summoned by Shauku (whom they called the Yellow Lady)"
+  },
+  {
+   "summary": "The Kher Ridges kobolds come to revere Prossh as a god and offer themselves to him.",
+   "participants": [
+    "Kobolds",
+    "Prossh"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "came to revere the dragon Prossh as a god"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kobolds",
+   "relation": "serves",
+   "target": "Prossh",
+   "note": "Revere him as a god.",
+   "paragraph": 3,
+   "quote": "came to revere the dragon Prossh as a god"
+  },
+  {
+   "source": "Kobolds",
+   "relation": "serves",
+   "target": "Shauku",
+   "note": "Summoned by her.",
+   "paragraph": 2,
+   "quote": "Several kobolds were summoned by Shauku"
+  }
+ ],
+ "rejected": []
+}

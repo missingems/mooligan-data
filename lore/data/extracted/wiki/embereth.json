@@ -1,0 +1,111 @@
+{
+ "page": "wiki/embereth",
+ "url": "https://mtg.wiki/page/Embereth",
+ "title": "Embereth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:29Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Embereth",
+   "type": "faction",
+   "aliases": [
+    "The Burning Yard"
+   ],
+   "description": "The red-aligned knightly court of the Realm on Eldraine, centered on a free city and a tournament complex called the Burning Yard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Realm and its five knightly courts lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Irencrag",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A massive boulder glowing with volcanic heat beside the Burning Yard that tests aspiring knights of Embereth and can bestow legendary names on swords.",
+   "presence": "appears"
+  },
+  {
+   "name": "Embercleave",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A legendary magical sword given its name by the Irencrag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elven Lords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers who once enslaved mankind before being overthrown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The Phyrexian assault during which Embereth came under heavy attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian horde"
+   ],
+   "description": "The invading horde that attacked Embereth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mankind overthrows the Elven Lords who had enslaved them, and the five knightly courts are created, with Embereth established around the Irencrag.",
+   "participants": [
+    "Elven Lords",
+    "Embereth",
+    "Irencrag"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The court of Embereth was established around the Irencrag."
+  },
+  {
+   "summary": "During the New Phyrexian Invasion Embereth is heavily attacked; its knights fight the Phyrexian horde for three days and all but a few fall defending the court.",
+   "participants": [
+    "Embereth",
+    "Phyrexians",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Embereth",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The knights of the court fought valiantly for three days against the Phyrexian horde, with all but a few falling in the court's defense."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Embereth",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "Embereth's knights fought the Phyrexian horde.",
+   "paragraph": 7,
+   "quote": "The knights of the court fought valiantly for three days against the Phyrexian horde, with all but a few falling in the court's defense."
+  },
+  {
+   "source": "Embereth",
+   "relation": "located_in",
+   "target": "Eldraine",
+   "note": "Court of the Realm on Eldraine.",
+   "paragraph": 0,
+   "quote": "Embereth was the red -aligned court of the Realm on the plane of Eldraine ."
+  }
+ ],
+ "rejected": []
+}

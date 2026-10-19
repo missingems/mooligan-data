@@ -1,0 +1,120 @@
+{
+ "page": "wiki/khyyiani",
+ "url": "https://mtg.wiki/page/Khyyiani",
+ "title": "Khyyiani",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:40Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Khyyiani",
+   "type": "faction",
+   "aliases": [
+    "Khyyani"
+   ],
+   "description": "One of the four tribes of cheetah-like cat warriors in the Sukurvian Desert, with a fierce warrior culture.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sukurvian Desert",
+   "type": "location",
+   "aliases": [
+    "Sukurvia"
+   ],
+   "description": "Desert where the cat warrior tribes live in oases.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efravans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tiger-like cat people who consider the Khyyiani battle-mad and cruel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efrava",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of the Efravans, four days' walk southwest of the Khyyiani.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Windgrace",
+   "type": "deity",
+   "aliases": [],
+   "description": "Figure worshipped by the Khyyiani.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terrent Amese",
+   "type": "deity",
+   "aliases": [],
+   "description": "Said to have created the original tribe to guard the Dark Heart of the Wood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Heart of the Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Place guarded by the original tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to recruit the Khyyiani against Johan in 3336 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy with an incoming airship army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kyyrao Grrenmw",
+   "type": "character",
+   "aliases": [],
+   "description": "One of five Khyyiani who made it to northern Aerona.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jedit Ojanen visits the Khyyiani oasis to recruit them against Johan; they vehemently refuse.",
+   "participants": [
+    "Jedit Ojanen",
+    "Khyyiani",
+    "Johan"
+   ],
+   "location": "Sukurvian Desert",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "but they vehemently refused"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Terrent Amese",
+   "relation": "created",
+   "target": "Khyyiani",
+   "note": "created the original tribe from which they descend, per myth",
+   "paragraph": 4,
+   "quote": "which, according to myth, was created by Terrent Amese to guard the Dark Heart of the Wood"
+  },
+  {
+   "source": "Khyyiani",
+   "relation": "enemy",
+   "target": "Efravans",
+   "note": "Efravans call them cruel and battle-mad",
+   "paragraph": 2,
+   "quote": "being referred to as \"battle-mad\" by the Efravans"
+  }
+ ],
+ "rejected": []
+}

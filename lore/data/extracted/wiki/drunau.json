@@ -1,0 +1,117 @@
+{
+ "page": "wiki/drunau",
+ "url": "https://mtg.wiki/page/Drunau",
+ "title": "Drunau",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:32Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Drunau",
+   "type": "location",
+   "aliases": [],
+   "description": "A small but influential port town on the coast of Nephalia, under clandestine vampire influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Drunau lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Province of Innistrad containing Drunau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alrun River",
+   "type": "location",
+   "aliases": [],
+   "description": "River that begins where Kessig's Ulvenwald meets Gavony's Moorlands and reaches the sea at Drunau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Runo Stromkirk",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire lord of the Stromkirk bloodline whose ancestral manor lies near Drunau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elder Vetters",
+   "type": "character",
+   "aliases": [
+    "Vetters"
+   ],
+   "description": "Mayor of Drunau, a human servant of Runo Stromkirk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stromkirk",
+   "type": "faction",
+   "aliases": [
+    "Stromkirk bloodline"
+   ],
+   "description": "Vampire bloodline that roams Drunau and holds influence in Nephalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stromkirk Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortified stronghold on a cliff above Drunau, the Stromkirk military outpost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stromkirk Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancestral residence of Runo Stromkirk, deeper in the cliffs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Fauchard",
+   "type": "faction",
+   "aliases": [
+    "Fauchard"
+   ],
+   "description": "A secretive order of human vampire hunters who often operate out of Drunau.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Elder Vetters",
+   "relation": "serves",
+   "target": "Runo Stromkirk",
+   "note": "Human mayor who turns a blind eye for the promise of immortality.",
+   "paragraph": 2,
+   "quote": "Drunau's mayor, Elder Vetters , is a human servant of Runo Stromkirk"
+  },
+  {
+   "source": "The Fauchard",
+   "relation": "enemy",
+   "target": "Stromkirk",
+   "note": "Hunt vampires; any exposed Fauchard are hunted in return.",
+   "paragraph": 5,
+   "quote": "any Fauchard exposed by the Stromkirk are relentlessly hunted in return."
+  },
+  {
+   "source": "Drunau",
+   "relation": "located_in",
+   "target": "Nephalia",
+   "note": "Port town in the province.",
+   "paragraph": 1,
+   "quote": "Drunau is a port town in the province of Nephalia on Innistrad ."
+  }
+ ],
+ "rejected": []
+}

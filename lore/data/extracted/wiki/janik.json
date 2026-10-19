@@ -1,0 +1,182 @@
+{
+ "page": "wiki/janik",
+ "url": "https://mtg.wiki/page/Janik",
+ "title": "Janik",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:34Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Janik",
+   "type": "character",
+   "aliases": [],
+   "description": "A shaman of the Zhur-Taa clan of the Gruul on Ravnica and part of Nikya's war party.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nikya of the Old Ways",
+   "type": "character",
+   "aliases": [
+    "Nikya"
+   ],
+   "description": "A Gruul leader who declared war on the Rakdos over the perceived killing of the infant Zi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kal",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gruul shaman who tracked the war party and saved the day with a blast of fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zi",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gruul infant who survived the massacre and was in the care of his uncle Ruzi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ruzi",
+   "type": "character",
+   "aliases": [],
+   "description": "Zi's uncle, who cared for him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Massacre Girl",
+   "type": "character",
+   "aliases": [],
+   "description": "Led a Rakdos massacre of a Selesnyan vernadi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [
+    "Zhur-Taa clan"
+   ],
+   "description": "The Ravnican guild of which Janik's clan is part.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild that attacked Nikya's war party.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild whose vernadi was massacred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Gruul live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Massacre Girl leads a Rakdos massacre of a nearby Selesnyan vernadi.",
+   "participants": [
+    "Massacre Girl",
+    "Rakdos",
+    "Selesnya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Massacre Girl led a Rakdos massacre of a Selesnyan vernadi nearby"
+  },
+  {
+   "summary": "Nikya declares war on the Rakdos, swearing revenge over the perceived killing of the Gruul infant Zi.",
+   "participants": [
+    "Nikya of the Old Ways",
+    "Rakdos",
+    "Zi"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Nikya of the Old Ways declared war on the Rakdos"
+  },
+  {
+   "summary": "Janik nearly skewers Kal, who tracked the war party.",
+   "participants": [
+    "Janik",
+    "Kal"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Janik started as he had almost skewered his clanmate"
+  },
+  {
+   "summary": "The Rakdos attack, and Janik holds his own in the fight.",
+   "participants": [
+    "Janik",
+    "Rakdos",
+    "Gruul"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He held his own for a while"
+  },
+  {
+   "summary": "Kal incinerates the Rakdos attackers with a blast of fire and passes out, having saved the day.",
+   "participants": [
+    "Kal",
+    "Rakdos"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Bolts of flame reduced the rest of the Rakdos to bone and ash in a blinding flash."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Janik",
+   "relation": "member_of",
+   "target": "Gruul",
+   "note": "Shaman of the Zhur-Taa clan.",
+   "paragraph": 0,
+   "quote": "Janik is a shaman of the Zhur-Taa clan of the Gruul"
+  },
+  {
+   "source": "Janik",
+   "relation": "serves",
+   "target": "Nikya of the Old Ways",
+   "note": "Part of her war party.",
+   "paragraph": 2,
+   "quote": "Nikya bid Janik be part of her war party"
+  },
+  {
+   "source": "Gruul",
+   "relation": "enemy",
+   "target": "Rakdos",
+   "note": "At war after the massacre.",
+   "paragraph": 1,
+   "quote": "Nikya of the Old Ways declared war on the Rakdos"
+  },
+  {
+   "source": "Ruzi",
+   "relation": "family",
+   "target": "Zi",
+   "note": "Zi's uncle.",
+   "paragraph": 1,
+   "quote": "in the care of his uncle Ruzi"
+  }
+ ],
+ "rejected": []
+}
