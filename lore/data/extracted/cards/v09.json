@@ -1,0 +1,103 @@
+{
+ "page": "cards/v09",
+ "url": "https://scryfall.com/sets/v09",
+ "title": "From the Vault: Exiled: card flavor text",
+ "story_date": "2009-08-28",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:23:44Z",
+ "storyline": "From the Vault: Exiled",
+ "entities": [
+  {
+   "name": "Jula",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who grins and straps on his diplomacy helmet at the sight of enemy scouts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hanna",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman who muses about the greed a lovely petal inspires.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A brother whose war with Mishra made Dominaria a casualty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "A brother whose war with Urza made Dominaria a casualty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane that became a casualty of the war between Urza and Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [
+    "the war between Urza and Mishra"
+   ],
+   "description": "The war between Urza and Mishra that devastated Dominaria itself.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the first sign of enemy scouts, Jula grins and puts on his diplomacy helmet.",
+   "participants": [
+    "Jula"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "At the first sign of enemy scouts, Jula grinned and strapped on his diplomacy helmet."
+  },
+  {
+   "summary": "Hanna muses, stroking a lotus petal, about the greed such a flower inspires.",
+   "participants": [
+    "Hanna"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "such a lovely flower inspiring such greed."
+  },
+  {
+   "summary": "The war between Urza and Mishra makes Dominaria itself a casualty.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Dominaria",
+    "Brothers' War"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "the war between Urza and Mishra made Dominaria itself a casualty of war"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "They fought a war that ravaged Dominaria.",
+   "paragraph": 7,
+   "quote": "the war between Urza and Mishra made Dominaria itself a casualty of war"
+  }
+ ],
+ "rejected": []
+}
