@@ -1,0 +1,215 @@
+{
+ "page": "wiki/gorgon",
+ "url": "https://mtg.wiki/page/Gorgon",
+ "title": "Gorgon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:47Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gorgon",
+   "type": "creature",
+   "aliases": [
+    "Gorgons",
+    "medusae"
+   ],
+   "description": "Snake-skinned humanoid women with snakes or snakelike tendrils for hair who petrify those who look at their faces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose relationship with Vraska implies gorgons and humans are reproductively isolated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon planeswalker associated with the Golgari Swarm who took control of the guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Visara",
+   "type": "character",
+   "aliases": [],
+   "description": "A winged gorgon who was a pit fighter for the Cabal on Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization with pit fighters on Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisters of Stone Death",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gorgon guildmasters of the Golgari Swarm, reduced to one by Svogthir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ludmilla",
+   "type": "character",
+   "aliases": [],
+   "description": "The last surviving Sister of Stone Death, remaining in the Undercity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild whose gorgons were its most downtrodden race.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Golgari parun who fought the Sisters of Stone Death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home to dozens of gorgons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xathrid",
+   "type": "deity",
+   "aliases": [],
+   "description": "A demonic creature worshiped by cults of Shandalar, employing gorgons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pharika",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god of Theros who created gorgons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hythonia",
+   "type": "character",
+   "aliases": [
+    "Hythonia the Cruel"
+   ],
+   "description": "One of Theros's most powerful gorgons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dack Fayden",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who entered a gorgon's lair seeking an artifact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God using Pharika's Spawn to keep souls in the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pharika's Spawn",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dangerous early creations of Pharika banished to the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Damia",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon sage whose arcane knowledge rivals any archmage.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Svogthir and the Golgari reduce the Sisters of Stone Death to only Ludmilla.",
+   "participants": [
+    "Svogthir",
+    "Sisters of Stone Death",
+    "Ludmilla"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the Sisters of Stone Death were diminished to only one: Ludmilla"
+  },
+  {
+   "summary": "Vraska takes control of the Golgari and becomes a voice for gorgons.",
+   "participants": [
+    "Vraska",
+    "Golgari Swarm"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "When Vraska took control of the guild"
+  },
+  {
+   "summary": "Dack Fayden enters a gorgon's lair searching for an artifact.",
+   "participants": [
+    "Dack Fayden"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Another gorgon was encountered by Dack Fayden when he entered her lair searching for a magical artifact."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pharika",
+   "relation": "created",
+   "target": "Gorgon",
+   "note": "Gorgons of Theros were created by her.",
+   "paragraph": 9,
+   "quote": "Gorgons of Theros were created by the god Pharika"
+  },
+  {
+   "source": "Visara",
+   "relation": "serves",
+   "target": "Cabal",
+   "note": "Pit fighter.",
+   "paragraph": 5,
+   "quote": "served as one of the Cabal 's pit fighters on Otaria"
+  },
+  {
+   "source": "Vraska",
+   "relation": "leader_of",
+   "target": "Golgari Swarm",
+   "note": "Took control of the guild.",
+   "paragraph": 6,
+   "quote": "When Vraska took control of the guild"
+  },
+  {
+   "source": "Erebos",
+   "relation": "other",
+   "target": "Pharika's Spawn",
+   "note": "Uses them to keep souls in the Underworld.",
+   "paragraph": 11,
+   "quote": "are now used by Erebos to keep souls where they belong"
+  },
+  {
+   "source": "Xathrid",
+   "relation": "leader_of",
+   "target": "Gorgon",
+   "note": "Gorgons are in his employ.",
+   "paragraph": 8,
+   "quote": "Various gorgons are in the employ of Xathrid"
+  }
+ ],
+ "rejected": []
+}

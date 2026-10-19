@@ -1,0 +1,193 @@
+{
+ "page": "wiki/shapeshifter",
+ "url": "https://mtg.wiki/page/Shapeshifter",
+ "title": "Shapeshifter",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:21Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shapeshifters",
+   "type": "creature",
+   "aliases": [
+    "Shapeshifter"
+   ],
+   "description": "A loosely defined group of beings capable of assuming other shapes and forms, often imitating other beings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shrouds",
+   "type": "creature",
+   "aliases": [],
+   "description": "Membrane creatures of Nohrland's mountains in Cridhe, accidentally created by Malvos and Crephas, which disguise themselves as fabric and dissolve travelers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [],
+   "description": "Created the shrouds with Crephas while trying to make an invisible cloak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crephas",
+   "type": "character",
+   "aliases": [],
+   "description": "Created the shrouds with Malvos while trying to make an invisible cloak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Changelings",
+   "type": "creature",
+   "aliases": [],
+   "description": "Lorwyn's harmless, semi-intelligent shapeshifters who involuntarily take the shape of nearby creatures and plants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mimics",
+   "type": "creature",
+   "aliases": [],
+   "description": "Shadowmoor's aggressive changelings that attack in packs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pucas",
+   "type": "creature",
+   "aliases": [
+    "puca"
+   ],
+   "description": "Horse-headed shapeshifters active only in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Firdoch",
+   "type": "creature",
+   "aliases": [],
+   "description": "Animated standing stones serving Eirdu and Isilu, managing the boundaries between Lorwyn and Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lupuls",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ravnican shapeshifters that follow the vampire Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire commanding the lupuls until Jarad disrupted his control.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jarad",
+   "type": "character",
+   "aliases": [],
+   "description": "Devkarin hunter who communicated with and disrupted Szadek's control of the lupuls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gladewalkers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Green-aligned Kaldheim shapeshifters that prefer wild beast forms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Covewalkers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Blue-aligned Kaldheim shapeshifters fascinated with water.",
+   "presence": "appears"
+  },
+  {
+   "name": "Littjara",
+   "type": "location",
+   "aliases": [],
+   "description": "The Kaldheim realm where shapeshifters live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose experiments on Rath bore results that took after their master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Her downfall left changelings remaining in Lorwyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Velis Vel",
+   "type": "location",
+   "aliases": [],
+   "description": "A mysterious cavern where changelings convene each year and new changelings are created.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Malvos and Crephas, trying to make an invisible cloak, accidentally create the shrouds.",
+   "participants": [
+    "Malvos",
+    "Crephas",
+    "Shrouds"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Attempting to create an invisible cloak, Malvos and Crephas combined a patch of lint from a Haenish cloak"
+  },
+  {
+   "summary": "After Oona's downfall, changelings remain in Lorwyn unless driven into Shadowmoor.",
+   "participants": [
+    "Oona",
+    "Changelings",
+    "Mimics"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "Since Oona's downfall, changelings remain in Lorwyn unless they are driven into Shadowmoor unwillingly."
+  },
+  {
+   "summary": "The lupuls, thought defeated centuries earlier, resurface under Szadek until Jarad disrupts his control.",
+   "participants": [
+    "Lupuls",
+    "Szadek",
+    "Jarad"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "they resurfaced under Szadek 's command, until his control was disrupted by Jarad ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malvos",
+   "relation": "created",
+   "target": "Shrouds",
+   "note": "Created with Crephas by accident",
+   "paragraph": 5,
+   "quote": "The creatures they created instead are composed of a thin, transparent membrane"
+  },
+  {
+   "source": "Lupuls",
+   "relation": "serves",
+   "target": "Szadek",
+   "note": "Follow the vampire Szadek",
+   "paragraph": 24,
+   "quote": "Lupuls are shapeshifters that follow the vampire Szadek"
+  }
+ ],
+ "rejected": []
+}

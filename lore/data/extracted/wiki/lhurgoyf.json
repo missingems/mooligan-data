@@ -1,0 +1,130 @@
+{
+ "page": "wiki/lhurgoyf",
+ "url": "https://mtg.wiki/page/Lhurgoyf",
+ "title": "Lhurgoyf",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lhurgoyf",
+   "type": "creature",
+   "aliases": [
+    "lhurgoyfs",
+    "goyfs"
+   ],
+   "description": "Species of large reptilian scavenger creatures with elongated limbs and toothed mouths, found on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane across which lhurgoyfs spread during the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era in which lhurgoyfs adapted to dwindling food by developing a carrion-based diet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Northland",
+   "type": "location",
+   "aliases": [],
+   "description": "Arctic region of Dominaria where lhurgoyfs are now found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where at least one lhurgoyf lived by the time of the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which a lhurgoyf was found in Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarmogoyf",
+   "type": "creature",
+   "aliases": [
+    "tarmogoyfs"
+   ],
+   "description": "Omnivorous lhurgoyfs that metabolize a variety of creatures and magics.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cantivore",
+   "type": "creature",
+   "aliases": [
+    "cantivores"
+   ],
+   "description": "Lhurgoyf variety that derives power from magical energy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Magnivore",
+   "type": "creature",
+   "aliases": [
+    "magnivores"
+   ],
+   "description": "Lhurgoyf variety that derives power from emotions.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lhurgoyfs spread across Dominaria during the Ice Age, adapting to a carrion diet, and later migrate north to the Northland.",
+   "participants": [
+    "Lhurgoyf",
+    "Ice Age",
+    "Northland"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Lhurgoyfs spread across Dominaria during the Ice Age"
+  },
+  {
+   "summary": "At least one lhurgoyf is found in Urborg by the New Phyrexian Invasion.",
+   "participants": [
+    "Lhurgoyf",
+    "Urborg",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "at least one lhurgoyf was to be found in Urborg"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lhurgoyf",
+   "relation": "located_in",
+   "target": "Northland",
+   "note": "now found in the arctic Northland",
+   "paragraph": 10,
+   "quote": "they migrated north and are now found in the plane's arctic Northland"
+  },
+  {
+   "source": "Tarmogoyf",
+   "relation": "member_of",
+   "target": "Lhurgoyf",
+   "note": "a Dominarian lhurgoyf variety",
+   "paragraph": 13,
+   "quote": "Tarmogoyfs are omnivorous lhurgoyfs"
+  }
+ ],
+ "rejected": []
+}

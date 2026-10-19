@@ -1,0 +1,160 @@
+{
+ "page": "wiki/towashi",
+ "url": "https://mtg.wiki/page/Towashi",
+ "title": "Towashi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:00Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "Main city of modern day Kamigawa, seat of Imperial power, with skyscrapers and neon signs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Towashi lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [
+    "Jukai"
+   ],
+   "description": "Forest from which Towashi was cleared; home of kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [
+    "Boseiju District"
+   ],
+   "description": "Millennia-old tree that grew above the skyline, later corrupted by Tamiyo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Spirits of the forest who retaliated against deforestation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated planeswalker who led the Phyrexian assault at Towashi.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Phyrexian invasion of Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emperor",
+   "type": "character",
+   "aliases": [
+    "the emperor"
+   ],
+   "description": "Emperor who brokered an agreement between city and kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lantern Festival",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival Towashi is famous for.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Towashi's expansion into Jukai Forest angers the kami, who retaliate.",
+   "participants": [
+    "Towashi",
+    "Kami",
+    "Jukai Forest"
+   ],
+   "location": "Jukai Forest",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "rose from the forest depths to retaliate"
+  },
+  {
+   "summary": "The emperor brokers an agreement halting growth into the forest and forbidding cutting Boseiju.",
+   "participants": [
+    "Emperor",
+    "Kami",
+    "Towashi",
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He brokered an agreement that the city would halt further growth into the forest."
+  },
+  {
+   "summary": "Towashi grows upward and Boseiju is lost in the skyline.",
+   "participants": [
+    "Towashi",
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Towashi was forced to grow upwards instead"
+  },
+  {
+   "summary": "Boseiju grows again until it eclipses every structure.",
+   "participants": [
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "began to grow once again"
+  },
+  {
+   "summary": "Tamiyo leads the Phyrexian assault and corrupts and bursts Boseiju.",
+   "participants": [
+    "Tamiyo",
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The tree itself was corrupted by Tamiyo"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Towashi",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Towashi is the main city of modern day Kamigawa"
+  },
+  {
+   "source": "Tamiyo",
+   "relation": "enemy",
+   "target": "Boseiju",
+   "note": "corrupted it",
+   "paragraph": 7,
+   "quote": "who burst it apart"
+  }
+ ],
+ "rejected": []
+}

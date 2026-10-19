@@ -1,0 +1,247 @@
+{
+ "page": "wiki/rubblebelt",
+ "url": "https://mtg.wiki/page/Rubblebelt",
+ "title": "Rubblebelt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:22Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "Non-contiguous collection of ruined urban zones on Ravnica claimed by the Gruul Clans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "City plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "Primary occupants of the Rubblebelt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skarrg",
+   "type": "location",
+   "aliases": [],
+   "description": "Gutted palace; closest thing the Gruul have to a guild hall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nikya of the Old Ways",
+   "type": "character",
+   "aliases": [
+    "Nikya"
+   ],
+   "description": "Leader of the Zhur-Taa clan who declared a blood feud on the Rakdos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cecilee",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven Selesnya druid who set up a healing outpost and was killed by the Rakdos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zi",
+   "type": "character",
+   "aliases": [],
+   "description": "Abandoned Gruul infant adopted by Cecilee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruzi",
+   "type": "character",
+   "aliases": [],
+   "description": "Cecilee's brother who broke from the Conclave and turned to the Gruul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Massacre Girl",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the Cult of Rakdos attack on Cecilee's outpost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that destroyed Cecilee's outpost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Conclave"
+   ],
+   "description": "Guild Cecilee and Ruzi belonged to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Domri Rade",
+   "type": "character",
+   "aliases": [],
+   "description": "Gruul shaman whose planeswalker spark ignited during the Burying.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sabast",
+   "type": "character",
+   "aliases": [],
+   "description": "Tribe's shaman who declared Domri to have passed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Utvara",
+   "type": "location",
+   "aliases": [
+    "Utvara Valley"
+   ],
+   "description": "Valley abutting the Rubblebelt where the Burying is performed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Domri planeswalked to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that legally claims the Utvara Valley.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cecilee establishes a healing outpost in the Rubblebelt and adopts the abandoned Gruul infant Zi.",
+   "participants": [
+    "Cecilee",
+    "Zi",
+    "Nikya of the Old Ways"
+   ],
+   "location": "Rubblebelt",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "taking in an abandoned Gruul infant, naming him Zi"
+  },
+  {
+   "summary": "Cecilee refuses to return the child to Nikya's warriors, straining the alliance.",
+   "participants": [
+    "Cecilee",
+    "Nikya of the Old Ways",
+    "Zi"
+   ],
+   "location": "Rubblebelt",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Cecilee refused, straining the fragile alliance"
+  },
+  {
+   "summary": "The Cult of Rakdos led by Massacre Girl slaughters Cecilee's followers and kills Cecilee; Zi survives and is rescued by Ruzi.",
+   "participants": [
+    "Massacre Girl",
+    "Cult of Rakdos",
+    "Cecilee",
+    "Zi",
+    "Ruzi"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "Cecilee herself was killed, unaware that her adopted son Zi had survived"
+  },
+  {
+   "summary": "Ruzi breaks from the Conclave, turns to the Gruul, and Nikya declares a blood feud against the Rakdos.",
+   "participants": [
+    "Ruzi",
+    "Nikya of the Old Ways",
+    "Cult of Rakdos"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Ruzi officially broke from the Conclave and turned to the Gruul"
+  },
+  {
+   "summary": "During the Burying at Utvara, Domri's spark ignites and sends him to Alara; on return, Sabast declares he passed.",
+   "participants": [
+    "Domri Rade",
+    "Sabast"
+   ],
+   "location": "Utvara",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "The stress of the experience caused his planeswalker spark to ignite"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gruul Clans",
+   "relation": "enemy",
+   "target": "Cult of Rakdos",
+   "note": "Blood feud declared",
+   "paragraph": 13,
+   "quote": "declare a blood feud against the cult"
+  },
+  {
+   "source": "Cecilee",
+   "relation": "family",
+   "target": "Ruzi",
+   "note": "Her brother",
+   "paragraph": 12,
+   "quote": "rescued by her brother Ruzi"
+  },
+  {
+   "source": "Cecilee",
+   "relation": "family",
+   "target": "Zi",
+   "note": "Adoptive mother",
+   "paragraph": 12,
+   "quote": "her adopted son Zi"
+  },
+  {
+   "source": "Massacre Girl",
+   "relation": "killed",
+   "target": "Cecilee",
+   "note": "Her attack killed Cecilee",
+   "paragraph": 12,
+   "quote": "led by Massacre Girl , who slaughtered Cecilee’s followers"
+  },
+  {
+   "source": "Nikya of the Old Ways",
+   "relation": "leader_of",
+   "target": "Gruul Clans",
+   "note": "Leader of the Zhur-Taa clan",
+   "paragraph": 13,
+   "quote": "leader of the Zhur-Taa clan"
+  },
+  {
+   "source": "Skarrg",
+   "relation": "located_in",
+   "target": "Rubblebelt",
+   "note": "Located in the Rubblebelt",
+   "paragraph": 4,
+   "quote": "which is the location of Skarrg"
+  }
+ ],
+ "rejected": []
+}

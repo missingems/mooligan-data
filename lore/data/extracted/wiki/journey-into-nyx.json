@@ -1,0 +1,109 @@
+{
+ "page": "wiki/journey-into-nyx",
+ "url": "https://mtg.wiki/page/Journey_into_Nyx",
+ "title": "Journey into Nyx",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:20Z",
+ "storyline": "Theros block",
+ "entities": [
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane in chaos, where gods and mortals are pitted against each other and monsters stalk the land.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nyx",
+   "type": "location",
+   "aliases": [],
+   "description": "The night sky realm of Theros, to which Elspeth travels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker who travels to Nyx with Ajani's support, kills Xenagos, and is killed by Heliod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who supports Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xenagos",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed by Elspeth in Nyx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who, afraid of Elspeth's power, kills her.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Supported by Ajani, Elspeth travels to Nyx and kills Xenagos.",
+   "participants": [
+    "Elspeth Tirel",
+    "Ajani",
+    "Xenagos"
+   ],
+   "location": "Nyx",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Supported by Ajani , Elspeth travels to Nyx and kills Xenagos ."
+  },
+  {
+   "summary": "Afraid of her power, Heliod kills Elspeth.",
+   "participants": [
+    "Heliod",
+    "Elspeth Tirel"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Afraid of her power, Heliod kills Elspeth."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elspeth Tirel",
+   "relation": "killed",
+   "target": "Xenagos",
+   "note": "Killed him in Nyx",
+   "paragraph": 2,
+   "quote": "Elspeth travels to Nyx and kills Xenagos"
+  },
+  {
+   "source": "Heliod",
+   "relation": "killed",
+   "target": "Elspeth Tirel",
+   "note": "Afraid of her power",
+   "paragraph": 2,
+   "quote": "Afraid of her power, Heliod kills Elspeth."
+  },
+  {
+   "source": "Ajani",
+   "relation": "ally",
+   "target": "Elspeth Tirel",
+   "note": "Supported her",
+   "paragraph": 2,
+   "quote": "Supported by Ajani , Elspeth travels to Nyx"
+  }
+ ],
+ "rejected": []
+}

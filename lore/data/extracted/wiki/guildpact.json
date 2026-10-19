@@ -1,0 +1,101 @@
+{
+ "page": "wiki/guildpact",
+ "url": "https://mtg.wiki/page/Guildpact",
+ "title": "Guildpact",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:46Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The pact that kept Ravnica stable for thousands of years; also the second set of the Ravnica block.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane governed by ten guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "White/black guild led by Teysa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "Blue/red guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "Red/green guild that ravages the streets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Orzhov Syndicate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who does not care about the guild struggle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephilim",
+   "type": "creature",
+   "aliases": [],
+   "description": "The first creatures with exactly four colors.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Gruul ravage the streets while Teysa leads the Orzhov Syndicate to cleanse them.",
+   "participants": [
+    "Gruul Clans",
+    "Teysa",
+    "Orzhov Syndicate",
+    "Agrus Kos"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Teysa leads the Orzhov Syndicate to \"cleanse\" them."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teysa",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "Leads the guild.",
+   "paragraph": 3,
+   "quote": "Teysa leads the Orzhov Syndicate"
+  }
+ ],
+ "rejected": []
+}
