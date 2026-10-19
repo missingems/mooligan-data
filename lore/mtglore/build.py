@@ -112,7 +112,8 @@ def duplicate_pages(pages: Dict[str, dict]) -> Set[str]:
 
     Two stories are the same when their titles match and every paragraph after the first does (the first is
     where a copy differs, in a split drop cap), or when one is the other's slug plus "-0" under the same title.
-    The one kept is the first by slug, a "-0" copy sorting last.
+    The one kept is the first by slug, a "-0" copy sorting last. An old wizards.com column saved under several
+    dates is one page too.
     """
     by_title: Dict[tuple, List[str]] = defaultdict(list)
     for key, page in pages.items():
@@ -121,6 +122,16 @@ def duplicate_pages(pages: Dict[str, dict]) -> Set[str]:
     dropped: Set[str] = set()
     for keys in by_title.values():
         keys.sort(key=lambda k: (k.endswith("-0"), k))
+        dropped.update(keys[1:])
+    # The Internet Archive holds the same old column under several dates ("magic-art-tropes-2009-03-31" and
+    # "-2009-04-01"), each copy a little different; the earliest is kept.
+    columns: Dict[tuple, List[str]] = defaultdict(list)
+    for key, page in pages.items():
+        if page.get("kind") == "archive":
+            stem = re.sub(r"-\d{4}-\d{2}-\d{2}(-\d+)?$", "", key)
+            columns[(stem, page["title"].strip().lower())].append(key)
+    for keys in columns.values():
+        keys.sort(key=lambda k: (re.sub(r"^.*?(\d{4}-\d{2}-\d{2})?(-\d+)?$", r"\1", k) or "9999", k))
         dropped.update(keys[1:])
     # A "-0" copy with the same title as its original is a re-upload, even with a word changed.
     for key, page in pages.items():

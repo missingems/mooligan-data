@@ -1,6 +1,6 @@
 import json
 
-from mtglore.build import _shortening, build, text_fragment
+from mtglore.build import _shortening, build, duplicate_pages, text_fragment
 from mtglore.extract import check, locate, page_prompt, pending
 
 PAGE = {
@@ -122,3 +122,16 @@ def test_citations_name_the_work_and_who_published_it():
     c = citation(archived)
     assert c["series"] == "Savor the Flavor" and c["archived"].startswith("https://web.archive.org/")
     assert c["text"] == '"Ajani Faces". Savor the Flavor, Wizards of the Coast, 27 Oct 2008. Archived by the Internet Archive.'
+
+
+def test_an_old_column_saved_under_several_dates_is_one_page():
+    def column(title):
+        return {"kind": "archive", "title": title, "paragraphs": []}
+
+    pages = {
+        "savor-flavor-tropes-2009-04-01": column("Tropes"),
+        "savor-flavor-tropes-2009-03-31": column("Tropes"),
+        "savor-flavor-tropes-2009-03-31-0": column("Tropes"),
+        "savor-flavor-other-2010-01-01": column("Other"),
+    }
+    assert duplicate_pages(pages) == {"savor-flavor-tropes-2009-04-01", "savor-flavor-tropes-2009-03-31-0"}

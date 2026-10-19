@@ -1,0 +1,187 @@
+{
+ "page": "archive/uncharted-realms-paper-trail-2013-06-12",
+ "url": "https://web.archive.org/web/20190720030210/https://magic.wizards.com/en/articles/archive/uncharted-realms/paper-trail-2013-06-12",
+ "title": "Paper Trail",
+ "story_date": "2013-06-12",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:42:15Z",
+ "storyline": "Return to Ravnica",
+ "entities": [
+  {
+   "name": "Snapjaw",
+   "type": "creature",
+   "aliases": [
+    "the subject"
+   ],
+   "description": "A snapjaw modified by Golgari and Izzet, found injured and healed by the Simic, which begins developing humanoid features and sapience and longs to go home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kelen Jek",
+   "type": "character",
+   "aliases": [],
+   "description": "Mechanoaugmentation Specialist, Third Class, who submits Trial Proposal #1547.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stanisil",
+   "type": "character",
+   "aliases": [
+    "Biomancer, Hull Clade"
+   ],
+   "description": "Simic biomancer of Hull Clade who incubates and studies the snapjaw and asks it to record its thoughts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speaker Trifon",
+   "type": "character",
+   "aliases": [],
+   "description": "Simic speaker to whom Stanisil reports.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "The biomancer guild that cares for and studies the creature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "The guild whose rot farm and sewage reclamation the drudge-monitor oversees; its raising is suggested for the snapjaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The guild whose tinkering reinforced the snapjaw's skeleton and whose territory the drudge-monitor would herd it into.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hull Clade",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Simic clade of Stanisil.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A snapjaw enters the Golgari rot farm and fights and eats nonstop.",
+   "participants": [
+    "Snapjaw",
+    "Golgari Swarm"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "A snapjaw made its way into the rot farm today"
+  },
+  {
+   "summary": "The snapjaw eats two workers and a handler, so the drudge-monitor plans to herd it into Izzet territory.",
+   "participants": [
+    "Snapjaw",
+    "Golgari Swarm",
+    "Izzet League"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Then it ate the handler."
+  },
+  {
+   "summary": "Kelen Jek proposes a trial combining neuroamplification serum with a mechanical augmentation implant.",
+   "participants": [
+    "Kelen Jek"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Can a neuroamplification serum be applied to a subject in concert with an implanted mechanical augmentation"
+  },
+  {
+   "summary": "A badly injured creature is found on the Northern Interior coast and coaxed into incubation by Stanisil to be healed.",
+   "participants": [
+    "Stanisil",
+    "Snapjaw",
+    "Simic Combine"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "We coaxed it into incubation in order to heal it, and an unexpected set of reactions began."
+  },
+  {
+   "summary": "Stanisil removes most Izzet mechanisms from the snapjaw, which begins to develop humanoid features and near-sapience.",
+   "participants": [
+    "Stanisil",
+    "Snapjaw",
+    "Izzet League"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "I believe that it is on the verge of demonstrating sapience."
+  },
+  {
+   "summary": "The creature, now with hands, records its feelings, resents being studied and fears its freedom.",
+   "participants": [
+    "Snapjaw",
+    "Stanisil",
+    "Simic Combine"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "I am being studied, and I do not like it."
+  },
+  {
+   "summary": "The creature recalls a kind human boy and resolves to go home.",
+   "participants": [
+    "Snapjaw"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 20,
+   "quote": "I want to go home. And I think I remember the way."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Stanisil",
+   "relation": "serves",
+   "target": "Speaker Trifon",
+   "note": "Reports results to the speaker.",
+   "paragraph": 11,
+   "quote": "I am pleased to inform you of the results of a series of projects that have recently come to an end."
+  },
+  {
+   "source": "Stanisil",
+   "relation": "member_of",
+   "target": "Simic Combine",
+   "note": "Biomancer of Hull Clade.",
+   "paragraph": 15,
+   "quote": "Stanisil, Biomancer, Hull Clade"
+  },
+  {
+   "source": "Snapjaw",
+   "relation": "other",
+   "target": "Stanisil",
+   "note": "Cared for and studied by Stanisil.",
+   "paragraph": 16,
+   "quote": "Stanisil has asked me to record my thoughts and feelings as I, and they, develop."
+  }
+ ],
+ "rejected": []
+}
