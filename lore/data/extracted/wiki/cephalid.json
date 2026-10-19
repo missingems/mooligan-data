@@ -1,0 +1,153 @@
+{
+ "page": "wiki/cephalid",
+ "url": "https://mtg.wiki/page/Cephalid",
+ "title": "Cephalid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cephalid",
+   "type": "creature",
+   "aliases": [
+    "Cephalids"
+   ],
+   "description": "Anthropomorphic octopus-like creature type, now consolidated into Octopus; on Dominaria a cunning, power-hungry race ruled by an emperor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [],
+   "description": "New Capenna family with which Cephalids are primarily associated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Cephalids look more humanoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent whose surrounding oceans the Dominarian Cephalids inhabit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mer Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire in which Cephalids were originally a minor race below the merfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Plotted with Aboshan to give Cephalids access to more powerful magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aboshan",
+   "type": "character",
+   "aliases": [
+    "Emperor Aboshan"
+   ],
+   "description": "Cephalid emperor whose ploy with Laquatus empowered the Cephalids; his demise left Llawan empress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Llawan",
+   "type": "character",
+   "aliases": [
+    "Llawan, Cephalid Empress"
+   ],
+   "description": "Aboshan's estranged wife who became Cephalid empress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Race that ruled the Mer Empire; Cephalids overthrew their imperial family.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A ploy by Laquatus and Aboshan lets the Cephalids access more powerful magic.",
+   "participants": [
+    "Laquatus",
+    "Aboshan",
+    "Cephalid"
+   ],
+   "location": "Mer Empire",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "a ploy by Laquatus and Aboshan enabled them to access more powerful magic"
+  },
+  {
+   "summary": "After Aboshan's demise, his estranged wife Llawan becomes empress.",
+   "participants": [
+    "Aboshan",
+    "Llawan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "his estranged wife Llawan became the empress"
+  },
+  {
+   "summary": "The Cephalids overthrew the merfolk imperial family.",
+   "participants": [
+    "Cephalid",
+    "Merfolk"
+   ],
+   "location": "Mer Empire",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "having overthrown the merfolk imperial family in the past"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Llawan",
+   "relation": "family",
+   "target": "Aboshan",
+   "note": "Estranged wife",
+   "paragraph": 5,
+   "quote": "his estranged wife Llawan became the empress"
+  },
+  {
+   "source": "Llawan",
+   "relation": "leader_of",
+   "target": "Cephalid",
+   "note": "Empress after Aboshan",
+   "paragraph": 5,
+   "quote": "his estranged wife Llawan became the empress"
+  },
+  {
+   "source": "Cephalid",
+   "relation": "enemy",
+   "target": "Merfolk",
+   "note": "Overthrew their imperial family",
+   "paragraph": 6,
+   "quote": "having overthrown the merfolk imperial family in the past"
+  },
+  {
+   "source": "Cephalid",
+   "relation": "other",
+   "target": "Obscura",
+   "note": "Associated as information seekers and enforcers",
+   "paragraph": 3,
+   "quote": "They are primarily associated with the Obscura"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,129 @@
+{
+ "page": "wiki/riza",
+ "url": "https://mtg.wiki/page/Riza",
+ "title": "Riza",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:05Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Riza",
+   "type": "character",
+   "aliases": [],
+   "description": "An Abzan Captain in Tarkir's original timeline leading a Salt Road patrol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogan Shieldmender",
+   "type": "character",
+   "aliases": [],
+   "description": "Soldier Riza ordered to form a shield wall at the canyon mouth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan whose patrols guard the Salt Road.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mardu",
+   "type": "faction",
+   "aliases": [
+    "Mardu horde"
+   ],
+   "description": "Clan whose horde burned a shepherds' camp.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Canyon Falls",
+   "type": "location",
+   "aliases": [],
+   "description": "Oasis where Riza's patrol made its stand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Salt Road",
+   "type": "location",
+   "aliases": [],
+   "description": "Road patrolled by the Abzan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Riza's patrol found a shepherds' camp burned by the Mardu and followed the horde.",
+   "participants": [
+    "Riza",
+    "Abzan",
+    "Mardu"
+   ],
+   "location": "Salt Road",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "one of the shepherds' summer camps had been ravaged and burned to the ground by Mardu with not a single survivor"
+  },
+  {
+   "summary": "Riza decided to fall back to the oasis at Canyon Falls to await the larger patrol.",
+   "participants": [
+    "Riza"
+   ],
+   "location": "Canyon Falls",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Riza announced that they would fall back to the oasis at Canyon Falls"
+  },
+  {
+   "summary": "Riza set up a defense in the canyon, with Ogan Shieldmender forming a shield wall.",
+   "participants": [
+    "Riza",
+    "Ogan Shieldmender"
+   ],
+   "location": "Canyon Falls",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Riza bid Ogan Shieldmender array his men at the mouth of the canyon and form a shield wall."
+  },
+  {
+   "summary": "As the Mardu converged, an Abzan siege elephant of the larger patrol appeared.",
+   "participants": [
+    "Abzan",
+    "Mardu"
+   ],
+   "location": "Canyon Falls",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The larger patrol was coming."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Riza",
+   "relation": "member_of",
+   "target": "Abzan",
+   "note": "Captain",
+   "paragraph": 0,
+   "quote": "Riza was an Abzan Captain in Tarkir 's original timeline."
+  },
+  {
+   "source": "Abzan",
+   "relation": "enemy",
+   "target": "Mardu",
+   "note": "Hunt the horde",
+   "paragraph": 1,
+   "quote": "They followed the Mardu horde, who had twice their number."
+  }
+ ],
+ "rejected": []
+}

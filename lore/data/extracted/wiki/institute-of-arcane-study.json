@@ -1,0 +1,150 @@
+{
+ "page": "wiki/institute-of-arcane-study",
+ "url": "https://mtg.wiki/page/Institute_of_Arcane_Study",
+ "title": "Institute of Arcane Study",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Institute of Arcane Study",
+   "type": "faction",
+   "aliases": [],
+   "description": "A school of magic atop a basalt mountain in the Valley of Tamingazin, founded by refugees from the College of Lat-Nam.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valley of Tamingazin",
+   "type": "location",
+   "aliases": [],
+   "description": "Valley on the Otarian continent surrounded by the Magewall.",
+   "presence": "appears"
+  },
+  {
+   "name": "College of Lat-Nam",
+   "type": "faction",
+   "aliases": [],
+   "description": "Academy destroyed in the Brothers' War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magewall",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A barrier erected by the Institute preventing entry or exit from the valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aligarius Timni",
+   "type": "character",
+   "aliases": [],
+   "description": "A member who left to join Tagard Tarngold and was brainwashed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tagard Tarngold",
+   "type": "character",
+   "aliases": [],
+   "description": "A king assassinated with Aligarius's involvement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ursal Daleel",
+   "type": "character",
+   "aliases": [],
+   "description": "Suderbod ambassador who brainwashed Aligarius.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suderbod",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation whose Hemarch attacked the valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magewall Hub",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact stolen from the Institute.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Berimish",
+   "type": "location",
+   "aliases": [],
+   "description": "A city conquered by Tagard.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Refugees from the destroyed College of Lat-Nam found the Institute and later erect the Magewall.",
+   "participants": [
+    "Institute of Arcane Study",
+    "College of Lat-Nam",
+    "Magewall"
+   ],
+   "location": "Valley of Tamingazin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Institute was founded by refugees from the College of Lat-Nam"
+  },
+  {
+   "summary": "Aligarius Timni leaves the Institute to join Tagard Tarngold in conquering Berimish.",
+   "participants": [
+    "Aligarius Timni",
+    "Tagard Tarngold"
+   ],
+   "location": "Berimish",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Aligarius Timni left the Institute to join Tagard Tarngold in conquering the city of Berimish"
+  },
+  {
+   "summary": "Brainwashed by Ursal Daleel, Aligarius betrays Tagard and is involved in his assassination and the theft of artifacts including the Magewall Hub.",
+   "participants": [
+    "Aligarius Timni",
+    "Ursal Daleel",
+    "Tagard Tarngold"
+   ],
+   "location": "Berimish",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Aligarius betrayed Tagard , was directly involved in the king's assassination"
+  },
+  {
+   "summary": "Aligarius enables the Suderbod attack on the valley, then flees the mind-control and helps stop the army.",
+   "participants": [
+    "Aligarius Timni",
+    "Suderbod"
+   ],
+   "location": "Valley of Tamingazin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Aligarius then enabled the attack on the Valley of Tamingazin"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aligarius Timni",
+   "relation": "member_of",
+   "target": "Institute of Arcane Study",
+   "note": "",
+   "paragraph": 4,
+   "quote": "Aligarius Timni left the Institute"
+  },
+  {
+   "source": "Ursal Daleel",
+   "relation": "serves",
+   "target": "Suderbod",
+   "note": "Ambassador.",
+   "paragraph": 4,
+   "quote": "the Suderbod ambassador Ursal Daleel"
+  }
+ ],
+ "rejected": []
+}

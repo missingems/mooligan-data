@@ -1,0 +1,126 @@
+{
+ "page": "wiki/ulvenwald",
+ "url": "https://mtg.wiki/page/Ulvenwald",
+ "title": "Ulvenwald",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:56Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Ulvenwald",
+   "type": "location",
+   "aliases": [
+    "Misty Wood",
+    "Impossible Wood"
+   ],
+   "description": "Vast ancient forest covering much of Kessig on Innistrad, also called the Misty Wood or Impossible Wood, haunted by werewolves and spirits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Province of Innistrad isolated by the Ulvenwald.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Ulvenwald lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vildin Howlpack",
+   "type": "faction",
+   "aliases": [],
+   "description": "Werewolf pack known for stalking travelers deep in the Ulvenwald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bower Passage",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the three Breakneck Ride paths, a road from Gavony through the Ulvenwald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Province from which Bower Passage leads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Briarbridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Village by a stream at the forest edge, known for its two creaking waterwheels.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Celestus",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Large mechanical device hidden in the woods, once used during the Harvesttide festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harvesttide",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival during which the Celestus was used.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Werewolves of the Vildin Howlpack hunt travelers, chasing them in circles through the mist.",
+   "participants": [
+    "Vildin Howlpack"
+   ],
+   "location": "Ulvenwald",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They often hunt by toying with their prey"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ulvenwald",
+   "relation": "located_in",
+   "target": "Kessig",
+   "note": "Covers parts of the province",
+   "paragraph": 0,
+   "quote": "covers large parts of the province of Kessig"
+  },
+  {
+   "source": "Vildin Howlpack",
+   "relation": "other",
+   "target": "Ulvenwald",
+   "note": "Stalks travelers within the forest",
+   "paragraph": 3,
+   "quote": "known for stalking travelers deep within the Ulvenwald"
+  },
+  {
+   "source": "Bower Passage",
+   "relation": "located_in",
+   "target": "Ulvenwald",
+   "note": "Road through the forest",
+   "paragraph": 4,
+   "quote": "leading from Gavony straight through the heart"
+  },
+  {
+   "source": "Briarbridge",
+   "relation": "located_in",
+   "target": "Ulvenwald",
+   "note": "Village at the forest edge",
+   "paragraph": 5,
+   "quote": "A village set by a stream at the edge of the forest"
+  }
+ ],
+ "rejected": []
+}

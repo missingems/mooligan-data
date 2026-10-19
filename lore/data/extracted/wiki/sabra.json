@@ -1,0 +1,136 @@
+{
+ "page": "wiki/sabra",
+ "url": "https://mtg.wiki/page/Sabra",
+ "title": "Sabra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:12Z",
+ "storyline": "Worldwake",
+ "entities": [
+  {
+   "name": "Sabra",
+   "type": "character",
+   "aliases": [],
+   "description": "A new sell-sword and expedition mercenary from Zendikar who survived a throat-slitting by Anowon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who ambushed Sabra after she recovered the chest and slit her throat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Sabra comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa Expedition House",
+   "type": "faction",
+   "aliases": [],
+   "description": "The expedition house from which Sabra's first expedition set out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beyond Man",
+   "type": "character",
+   "aliases": [],
+   "description": "A mysterious figure who hired the expedition to find a chest with a draconic symbol.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Carnage Altar",
+   "type": "location",
+   "aliases": [],
+   "description": "A site with a tomb beneath it where the dragon relic chest was found.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon relic chest",
+   "type": "artifact",
+   "aliases": [
+    "relic chest"
+   ],
+   "description": "A chest bearing a draconic symbol that likely held information about the Eye of Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eye of Ugin",
+   "type": "location",
+   "aliases": [],
+   "description": "A mysterious cave believed to be hidden in the mountains of Akoum.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sabra joins her first expedition out of the Murasa Expedition House, hired by a Beyond Man to find a chest.",
+   "participants": [
+    "Sabra",
+    "Beyond Man",
+    "Murasa Expedition House"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Sabra was a new sell-sword and joined her first expedition out of the Murasa Expedition House"
+  },
+  {
+   "summary": "The party finds the dragon relic chest beneath Carnage Altar but a terrifying creature kills most of them; Sabra delivers the killing blow.",
+   "participants": [
+    "Sabra",
+    "Dragon relic chest"
+   ],
+   "location": "Carnage Altar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Sabra managed to deliver the killing blow to the monster"
+  },
+  {
+   "summary": "Anowon ambushes Sabra and slits her throat; she glimpses her attacker before losing consciousness.",
+   "participants": [
+    "Anowon",
+    "Sabra"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Sabra was ambushed by Anowon, who emerged from the shadows and slit her throat"
+  },
+  {
+   "summary": "Sabra survives and returns to tell her employer what happened.",
+   "participants": [
+    "Sabra"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Sabra survived the expedition and returned to tell her employer of what had happened"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anowon",
+   "relation": "enemy",
+   "target": "Sabra",
+   "note": "Attacked her and left her near-fatally wounded.",
+   "paragraph": 4,
+   "quote": "Sabra was ambushed by Anowon"
+  },
+  {
+   "source": "Sabra",
+   "relation": "serves",
+   "target": "Beyond Man",
+   "note": "Her party was hired by him.",
+   "paragraph": 2,
+   "quote": "The party was hired by a mysterious figure"
+  }
+ ],
+ "rejected": []
+}

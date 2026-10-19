@@ -1,0 +1,211 @@
+{
+ "page": "wiki/clan-capashen",
+ "url": "https://mtg.wiki/page/Clan_Capashen",
+ "title": "Clan Capashen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Clan Capashen",
+   "type": "faction",
+   "aliases": [
+    "House Capashen"
+   ],
+   "description": "One of the seven ruling clans of Benalia, descended from Sheoltun nobility and chosen for Urza's Bloodline Project.",
+   "presence": "appears"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian realm ruled by seven clans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who chose Clan Capashen for his Bloodline Project.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Danitha Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Current leader of the clan after her father's death; killed her compleated father.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aron Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan leader, father of Raff and Danitha; compleated by Ertai and killed by Danitha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated Aron Capashen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nathan Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan leader who agreed to the marriage of Jaffry Capashen and Myrr Ortovi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaffry Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Involved in Urza's bloodline project with Myrr Ortovi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Myrr Ortovi",
+   "type": "character",
+   "aliases": [],
+   "description": "Wife of Jaffry in Urza's bloodline project.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Hero of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raddeus Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan Chief at the start of the Phyrexian Invasion, killed by Tsabo Tavoc's minions and reanimated by Yawgmoth's Death Cloud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tsabo Tavoc",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose minions killed Raddeus and Leda.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rafwyn Capashen",
+   "type": "character",
+   "aliases": [
+    "Raff"
+   ],
+   "description": "Tolarian prodigy and former navigator of the Weatherlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ellyn Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Tax official who joined the army after saving Purceon Capashen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purceon Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan leader saved by Ellyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gavvan Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed by Phyrexians.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza chooses Clan Capashen for his Bloodline Project.",
+   "participants": [
+    "Urza",
+    "Clan Capashen"
+   ],
+   "location": "Benalia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "chose Clan Capashen to become part of his Bloodline Project"
+  },
+  {
+   "summary": "Ellyn saves Purceon from a Phyrexian attack and is appointed soldier.",
+   "participants": [
+    "Ellyn Capashen",
+    "Purceon Capashen"
+   ],
+   "location": "Benalia",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Appointed Ellyn Capashen as a soldier after she saved him from a Phyrexian attack"
+  },
+  {
+   "summary": "Raddeus and Leda are killed by Tsabo Tavoc's minions and reanimated as skeletons.",
+   "participants": [
+    "Raddeus Capashen",
+    "Tsabo Tavoc"
+   ],
+   "location": "Benalia",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "Killed by Tsabo Tavoc 's minions"
+  },
+  {
+   "summary": "Ertai compleats Aron Capashen and Danitha kills him.",
+   "participants": [
+    "Aron Capashen",
+    "Ertai",
+    "Danitha Capashen"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "Compleated by Ertai and killed by Danitha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Danitha Capashen",
+   "relation": "leader_of",
+   "target": "Clan Capashen",
+   "note": "Current leader",
+   "paragraph": 19,
+   "quote": "Current leader of the clan after her father's death"
+  },
+  {
+   "source": "Danitha Capashen",
+   "relation": "killed",
+   "target": "Aron Capashen",
+   "note": "Killed her compleated father",
+   "paragraph": 18,
+   "quote": "Compleated by Ertai and killed by Danitha"
+  },
+  {
+   "source": "Aron Capashen",
+   "relation": "family",
+   "target": "Danitha Capashen",
+   "note": "Father",
+   "paragraph": 18,
+   "quote": "Father of Raff and Danitha"
+  },
+  {
+   "source": "Nathan Capashen",
+   "relation": "leader_of",
+   "target": "Clan Capashen",
+   "note": "Leader",
+   "paragraph": 3,
+   "quote": "Leader of the clan"
+  }
+ ],
+ "rejected": []
+}
