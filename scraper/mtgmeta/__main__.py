@@ -26,6 +26,7 @@ from .published import fetch_published_decks
 from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
 from .store import SnapshotStore
+from .top import top_slugs, write_top
 
 
 def _list(name: str, default: str):
@@ -60,6 +61,20 @@ def publish_premier(directory: Path, report) -> list:
     path.write_text(json.dumps(schedule_page(events, stamp), ensure_ascii=False, separators=(",", ":")))
     logging.info("Premier schedule: %d upcoming events %s", len(events), by_type(events))
     return ["premier/schedule.json"]
+
+
+def publish_top(directory: Path, report, top: dict, catalog: Optional[dict] = None) -> list:
+    """EDHREC's ranked top commanders of the past week and month, as edh/top.json.
+
+    `top` is what `Edhrec.top_commanders` read before `store.finish`. A window it could not read is left out, and when it
+    read none the file stays published as it was.
+    """
+    try:
+        return write_top(directory, top, datetime.now(timezone.utc), catalog)
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.exception("EDHREC top commanders failed")
+        report.errors.append(f"edhrec top commanders: {error}")
+        return []
 
 
 def publish_locator(directory: Path, report) -> list:
@@ -266,16 +281,21 @@ def main() -> int:
         user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
         delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
     )
+    commander_limit = int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150"))
+    # Read first: the commanders it ranks go to the front of the commander refresh below.
+    top = edhrec.top_commanders() if commander_limit > 0 else {}
     written = store.finish(
         fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
         fetch_edh=edhrec.cards,
         edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
         catalog=catalog,
         fetch_commanders=edhrec.commanders,
-        commander_limit=int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150")),
+        commander_limit=commander_limit,
         deck_resolve_limit=int(os.environ.get("DECK_RESOLVE_PER_RUN", "300")),
+        priority_commanders=top_slugs(top),
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
+    written += publish_top(args.directory, report, top, catalog)
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)

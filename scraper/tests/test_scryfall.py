@@ -18,7 +18,9 @@ CARDS = [
     {"name": "Foil Only", "oracle_id": "foil-oracle", "layout": "normal", "cmc": 2.0, "prices": {"usd": None, "usd_foil": "3.25", "usd_etched": None}},
     {"name": "Unpriced Thing", "oracle_id": "unpriced-oracle", "layout": "normal", "cmc": 0.0, "prices": {"usd": None, "usd_foil": None, "usd_etched": None}},
     {"name": "Lightning Bolt Elemental", "oracle_id": "elemental-oracle", "layout": "normal", "type_line": "Creature — Elemental Landwalker"},
-    {"name": "Counterspell", "oracle_id": "counter-oracle", "layout": "normal", "mana_cost": "{U}{U}"},
+    {"name": "Counterspell", "oracle_id": "counter-oracle", "layout": "normal", "mana_cost": "{U}{U}", "color_identity": ["U"]},
+    {"name": "Kenrith, the Returned King", "oracle_id": "kenrith-oracle", "layout": "normal", "color_identity": ["B", "G", "R", "U", "W"]},
+    {"name": "Sol Ring", "oracle_id": "ring-oracle", "layout": "normal", "color_identity": []},
     {"name": "Fire // Ice", "oracle_id": "fire-oracle", "layout": "split", "mana_cost": "{1}{R} // {1}{U}", "type_line": "Instant // Instant",
      "card_faces": [{"mana_cost": "{1}{R}"}, {"mana_cost": "{1}{U}"}]},
     {"name": "Bonecrusher Giant // Stomp", "oracle_id": "giant-oracle", "layout": "adventure", "mana_cost": "{2}{R} // {1}{R}",
@@ -41,6 +43,10 @@ def test_the_catalog_keys_real_cards_by_slug(tmp_path: Path):
     # The printing the file picks is kept when it has an id.
     assert catalog["lightning-bolt"] == {"name": "Lightning Bolt", "oracle_id": "bolt-oracle", "scryfall_id": "bolt-printing", "type_line": "", "layout": "normal"}
     assert "scryfall_id" not in catalog["fable-of-the-mirror-breaker"]
+    # The colour identity is in WUBRG order, empty for a colourless card, and absent when the file has none.
+    assert catalog["kenrith-the-returned-king"]["color_identity"] == ["W", "U", "B", "R", "G"]
+    assert catalog["sol-ring"]["color_identity"] == [] and catalog["counterspell"]["color_identity"] == ["U"]
+    assert "color_identity" not in catalog["lightning-bolt"]
     # A double-faced card is keyed by its front face, as decklists write it.
     assert catalog["fable-of-the-mirror-breaker"]["oracle_id"] == "fable-oracle"
     # A reversible card keeps its oracle id on the face.

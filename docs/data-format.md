@@ -5,7 +5,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
-| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
+| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
@@ -21,6 +21,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
+| `edh/top.json` | EDHREC's ranked top 100 commanders of the past week and the past month, with each one's share of the window's top 100 decks | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
@@ -32,7 +33,7 @@ Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `pre
 ## Suggested app flow
 
 0. For a landing screen (an Explore tab), fetch `explore.json` alone: it has each main format's top archetypes and latest events in a few tens of KB, so nothing else has to download first.
-   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
+   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
@@ -84,7 +85,7 @@ A format is missing from `formats` until its first scrape completes.
 
 ## `explore-manifest.json`
 
-The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 21 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
+The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 22 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
 
 ```json
 {
@@ -100,7 +101,7 @@ The SHA-256 of each Explore file, so an app that keeps them can tell from one sm
 }
 ```
 
-- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
 - **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
 - **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings, and `rules/keywords.json` is written only on a run that finds new rules. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
 - **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
@@ -767,7 +768,43 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
 - **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
 - **`oracle_ids`** maps the commander's `name`, every card name in `sections` and every name in `average_deck` to its Scryfall oracle id. A name the catalog doesn't know is left out, so the object is `{}` on a page written by a run that couldn't load the catalog, and a page written before 11 October 2026 has none: decode it as optional and look a missing name up by name.
 - Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
-- Each run refreshes `EDHREC_COMMANDERS_PER_RUN` commanders (150 by default; the scheduled workflow sets 300, over about 4,200 commanders, so each comes round about every two weeks), longest unchecked first, so a commander may be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
+- Each run refreshes `EDHREC_COMMANDERS_PER_RUN` commanders (150 by default; the scheduled workflow sets 300, over about 4,200 commanders, so each comes round about every two weeks), longest unchecked first, but the commanders in [`edh/top.json`](#edhtopjson) go first, in their rank order, so each run refreshes them and a commander may otherwise be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
+
+## `edh/top.json`
+
+EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (`30d`), each with its share of the window. Each commander's `slug` is the one of its page, `edh/commanders/{slug}.json`; a run puts these commanders at the front of the commander refresh, so a commander listed here has a page.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-19T14:05:00Z",
+  "windows": {
+    "7d": {
+      "decks": 89845,
+      "commanders": [
+        {
+          "rank": 1,
+          "slug": "jace-multiverse-architect",
+          "name": "Jace, Multiverse Architect",
+          "decks": 4063,
+          "share": 4.5,
+          "color_identity": ["W", "U", "B", "R"],
+          "oracle_id": "3321c134-bf5b-4f63-8035-fca0bbdfa86b",
+          "scryfall_id": "55cd03d9-2535-4cf3-a8b2-1418e1190f4a",
+          "trend": 50.4
+        }
+      ]
+    },
+    "30d": { "decks": 291869, "commanders": [] }
+  }
+}
+```
+
+- **`decks`** of a window is the sum of its 100 commanders' `decks`, and a commander's **`share`** is its `decks` as a percent of that, to one decimal. It is a share of the window's top 100 decks, not of every Commander deck EDHREC has: the shares of a window add up to 100.
+- **`rank`** is EDHREC's, 1 the most played; the commanders are listed in rank order. **`trend`** is EDHREC's trend z-score, to one decimal (`null` when it has none).
+- **`color_identity`** (`W`, `U`, `B`, `R`, `G`, in that order; `[]` is colourless), **`oracle_id`** and **`scryfall_id`** are Scryfall's, looked up by name in the card catalog, and `null` for a name it does not know, or when the run could not load the catalog. A partner pair EDHREC lists as one commander ("Kraum, Ludevic's Opus // Tymna the Weaver") is no one card: its ids are `null` and its colour identity is both halves' together.
+- **A window that could not be read is left out of `windows`**; when neither could be, the file is not rewritten and the last one stays published. Decode `windows` keys as optional. A run with `EDHREC_COMMANDERS_PER_RUN=0` does not read EDHREC for it either.
+- It is listed in `explore-manifest.json`. **This is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page.**
 
 ## `locator/{place}.json`
 

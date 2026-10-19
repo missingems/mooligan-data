@@ -14,6 +14,7 @@ import urllib.request
 from typing import Dict, Iterator, Optional
 
 from .cards import slug
+from .colors import COLORS
 
 log = logging.getLogger(__name__)
 
@@ -33,7 +34,8 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
     """Maps a card's slug to its name and oracle id, streaming the file a line at a time.
 
     `"scryfall_id"` is the id of the printing the oracle-cards file picks for the card (the one `"price"` is
-    of), kept when the card has an `id`.
+    of), kept when the card has an `id`. `"color_identity"` is the card's, as WUBRG letters in WUBRG order
+    (`[]` for a colourless card), kept when the card has one.
 
     What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
     a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any), `"mana_value"`, and
@@ -54,6 +56,8 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
             entry = {"name": card["name"], "oracle_id": oracle_id, "type_line": front_type, "layout": card.get("layout") or ""}
             if card.get("id"):
                 entry["scryfall_id"] = card["id"]
+            if "color_identity" in card:
+                entry["color_identity"] = sorted(card["color_identity"], key=COLORS.index)
             # A double-faced spell with a land on the back ("Sorcery // Land") plays as a spell.
             if re.search(r"\bLand\b", front_type):
                 entry["land"] = True

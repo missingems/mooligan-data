@@ -1,6 +1,6 @@
 """explore-manifest.json: the SHA-256 of each Explore file, so an app can see in one request which ones changed.
 
-Lists explore.json, previews.json, today.json, rules/keywords.json, popular-cards/{format}.json and
+Lists explore.json, previews.json, today.json, edh/top.json, rules/keywords.json, popular-cards/{format}.json and
 breakouts/{format}.json, and nothing else (the app reads the movers through today.json). A run does not rewrite every
 one of them (the keyword rules change only when Wizards publishes new rules), and the files it leaves alone are not in
 the work directory, so the manifest of the run before is kept in `state/` and its entries carry over.
@@ -19,8 +19,8 @@ SCHEMA = 1
 PATH = "explore-manifest.json"
 STATE_PATH = "state/explore-manifest.json"
 
-# The Explore files: four single files, and the folders of one file per format.
-FILES = ("explore.json", "previews.json", "today.json", "rules/keywords.json")
+# The Explore files: five single files, and the folders of one file per format.
+FILES = ("explore.json", "previews.json", "today.json", "edh/top.json", "rules/keywords.json")
 FOLDERS = ("popular-cards", "breakouts")
 SHA256 = re.compile(r"[0-9a-f]{64}")
 
