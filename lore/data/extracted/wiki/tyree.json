@@ -1,0 +1,133 @@
+{
+ "page": "wiki/tyree",
+ "url": "https://mtg.wiki/page/Tyree",
+ "title": "Tyree",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tyree",
+   "type": "location",
+   "aliases": [],
+   "description": "An isolated island on Dominaria cursed by a witch's spell, its sea boiling blood-red.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Tyree lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quetzan",
+   "type": "character",
+   "aliases": [
+    "Witch of Tyree"
+   ],
+   "description": "A woman who mastered legendary powers and led the natives against pirates; killed by Samal and Marik.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samal the Razor",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous pirate captain who tricked his way to Tyree and killed Quetzan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marik",
+   "type": "character",
+   "aliases": [],
+   "description": "Samal's first mate.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Slavers abuse the peaceful Tyree natives, driving them into the interior.",
+   "participants": [
+    "Tyree"
+   ],
+   "location": "Tyree",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "This drove the natives deep into the interior"
+  },
+  {
+   "summary": "Led by Quetzan the natives rise up and drive out the pirates, forbidding the island to all other ships.",
+   "participants": [
+    "Quetzan",
+    "Tyree"
+   ],
+   "location": "Tyree",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Then, the natives exploded out of the interior, led by the Witch of Tyree."
+  },
+  {
+   "summary": "Samal and Marik use disguises to reach Tyree, trick the islanders and kill Quetzan.",
+   "participants": [
+    "Samal the Razor",
+    "Marik",
+    "Quetzan"
+   ],
+   "location": "Tyree",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "and then killed her, cutting her throat and dumping her corpse into the ocean outside the island"
+  },
+  {
+   "summary": "Quetzan's death triggers a blood curse trapping the pirates on the island.",
+   "participants": [
+    "Quetzan",
+    "Samal the Razor",
+    "Marik",
+    "Tyree"
+   ],
+   "location": "Tyree",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Quetzan's death triggered a blood curse upon the waters of the island"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samal the Razor",
+   "relation": "killed",
+   "target": "Quetzan",
+   "note": "He and Marik killed her.",
+   "paragraph": 5,
+   "quote": "tricked the islanders into bringing Quetzan to them and then killed her"
+  },
+  {
+   "source": "Marik",
+   "relation": "serves",
+   "target": "Samal the Razor",
+   "note": "First mate.",
+   "paragraph": 5,
+   "quote": "his first mate Marik"
+  },
+  {
+   "source": "Quetzan",
+   "relation": "leader_of",
+   "target": "Tyree",
+   "note": "Led the natives.",
+   "paragraph": 4,
+   "quote": "led by the Witch of Tyree"
+  },
+  {
+   "source": "Tyree",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "An island on Dominaria.",
+   "paragraph": 0,
+   "quote": "an infamous island on Dominaria"
+  }
+ ],
+ "rejected": []
+}

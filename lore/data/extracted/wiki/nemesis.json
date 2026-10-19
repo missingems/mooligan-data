@@ -1,0 +1,157 @@
+{
+ "page": "wiki/nemesis",
+ "url": "https://mtg.wiki/page/Nemesis",
+ "title": "Nemesis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:58Z",
+ "storyline": "Masques block",
+ "entities": [
+  {
+   "name": "Nemesis",
+   "type": "event",
+   "aliases": [],
+   "description": "The nineteenth Magic expansion, released February 2000 as the second set in the Masques block, set on Rath as the Phyrexians prepare to invade Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Nemesis story takes place, under Phyrexian tyranny.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane the Phyrexians prepare to invade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [
+    "Crovax the Cursed",
+    "Crovax, Ascendant Evincar"
+   ],
+   "description": "A bloodthirsty noble chosen by Phyrexia to replace Volrath, the main antagonist of the Rath story, who must still prove his worth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [
+    "Evincar Volrath"
+   ],
+   "description": "Rath's Evincar, who has abandoned his post.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker, the only one standing in the Dark Lord's way.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Dark Lord",
+   "type": "character",
+   "aliases": [],
+   "description": "The Phyrexian leader whose invasion plans are almost complete.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [
+    "Lord of Leaves"
+   ],
+   "description": "Leader in whose name Rath's rebels have united.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "the Phyrexians"
+   ],
+   "description": "The invading force that tyrannizes Rath and chose Crovax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath's rebels",
+   "type": "faction",
+   "aliases": [
+    "rebels"
+   ],
+   "description": "Rebels united under Eladamri to break free of Phyrexia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Volrath abandoned his post as Evincar, sparking a brutal contest among would-be successors.",
+   "participants": [
+    "Volrath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rath 's Evincar Volrath has abandoned his post, sparking a brutal contest among his would-be successors."
+  },
+  {
+   "summary": "Phyrexia chose Crovax to take Volrath's place and bestowed new powers on him.",
+   "participants": [
+    "Phyrexia",
+    "Crovax",
+    "Volrath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Phyrexia has chosen Crovax to take Volrath's place"
+  },
+  {
+   "summary": "Rath's rebels united in Eladamri's name to break free of Phyrexia's tyranny.",
+   "participants": [
+    "Rath's rebels",
+    "Eladamri",
+    "Phyrexia"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rath's rebels have united in the name of Eladamri , Lord of Leaves, to break free of Phyrexia's tyranny once and for all."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Crovax",
+   "relation": "serves",
+   "target": "Phyrexia",
+   "note": "Chosen by Phyrexia to replace Volrath.",
+   "paragraph": 3,
+   "quote": "Phyrexia has chosen Crovax to take Volrath's place"
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "The Dark Lord",
+   "note": "Only Urza stands in his way.",
+   "paragraph": 3,
+   "quote": "Only the Planeswalker Urza stands in his way."
+  },
+  {
+   "source": "Rath's rebels",
+   "relation": "serves",
+   "target": "Eladamri",
+   "note": "United in Eladamri's name.",
+   "paragraph": 3,
+   "quote": "Rath's rebels have united in the name of Eladamri"
+  }
+ ],
+ "rejected": []
+}

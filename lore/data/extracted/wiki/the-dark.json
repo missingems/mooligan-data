@@ -1,0 +1,111 @@
+{
+ "page": "wiki/the-dark",
+ "url": "https://mtg.wiki/page/The_Dark",
+ "title": "The Dark",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:41Z",
+ "storyline": "The Dark",
+ "entities": [
+  {
+   "name": "The Dark",
+   "type": "event",
+   "aliases": [],
+   "description": "The fourth Magic expansion, and also the darkness created when the Sylex Blast lofted debris that blotted out the sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "The climax of the Brothers' War, which lofted debris into the air and created the Dark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war whose climax was the Sylex Blast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "City of Shadows",
+   "type": "location",
+   "aliases": [],
+   "description": "A fabled city in the east where persecuted wizards hid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group in the west where persecuted wizards hid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anti-magic religion",
+   "type": "faction",
+   "aliases": [],
+   "description": "A religion that came to power blaming magic and its users for the Sylex Blast and its effects.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Sylex Blast, the climax of the Brothers' War, lofted debris that blotted out the sun and created the Dark.",
+   "participants": [
+    "Sylex Blast",
+    "Brothers' War",
+    "The Dark"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The climax of the Brothers' War was the Sylex Blast , which lofted debris into the air blotting out the sun and creating The Dark ."
+  },
+  {
+   "summary": "An anti-magic religion came to power, blaming magic and its users for the blast.",
+   "participants": [
+    "Anti-magic religion",
+    "Sylex Blast"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "an anti-magic religion comes to power, blaming the Sylex blast and its effects on all magic and its users"
+  },
+  {
+   "summary": "Persecution of wizards led to the creation of the City of Shadows and the Conclave of Mages, where they hid.",
+   "participants": [
+    "City of Shadows",
+    "Conclave of Mages",
+    "Anti-magic religion"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Persecution of these magic-using wizards led to the creation of the fabled City of Shadows in the east and the Conclave of Mages in the west"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anti-magic religion",
+   "relation": "enemy",
+   "target": "Conclave of Mages",
+   "note": "Persecuted wizards, who hid in the Conclave.",
+   "paragraph": 7,
+   "quote": "Persecution of these magic-using wizards led to the creation of the fabled City of Shadows in the east and the Conclave of Mages in the west"
+  },
+  {
+   "source": "Sylex Blast",
+   "relation": "other",
+   "target": "The Dark",
+   "note": "The blast created the Dark.",
+   "paragraph": 7,
+   "quote": "blotting out the sun and creating The Dark"
+  }
+ ],
+ "rejected": []
+}

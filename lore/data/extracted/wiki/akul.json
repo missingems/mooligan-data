@@ -1,0 +1,229 @@
+{
+ "page": "wiki/akul",
+ "url": "https://mtg.wiki/page/Akul",
+ "title": "Akul",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:06Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Akul",
+   "type": "character",
+   "aliases": [],
+   "description": "A scorpion dragon outlaw from Gastal, leader of the Hellspurs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Akul's outlaw gang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freestriders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang who robbed Akul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [
+    "Annie"
+   ],
+   "description": "Outlaw in Oko's gang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tommy",
+   "type": "character",
+   "aliases": [],
+   "description": "Annie Flash's nephew, poisoned by Akul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maag Taranau",
+   "type": "location",
+   "aliases": [
+    "the vault"
+   ],
+   "description": "Legendary treasure vault at the center of Thunder Junction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarnation",
+   "type": "location",
+   "aliases": [],
+   "description": "Town Akul built around the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Akul relocated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "Fae shapeshifter thief leading a gang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Thief who dueled Akul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Company whose mercenaries attacked Tarnation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archie Dixon",
+   "type": "character",
+   "aliases": [],
+   "description": "Courier killed by Akul's gang.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Akul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Planeswalker, Oko's disguised benefactor who took treasure from the vault.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Akul's gang kills courier Archie Dixon and two guards seeking the final key piece, which is not there.",
+   "participants": [
+    "Akul",
+    "Hellspurs",
+    "Archie Dixon",
+    "Sterling Company"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "killing a courier named Archie Dixon and two Sterling Company guards"
+  },
+  {
+   "summary": "Oko's gang is captured at Tarnation and Akul takes the final key piece, completing the key.",
+   "participants": [
+    "Akul",
+    "Oko",
+    "Annie Flash",
+    "Hellspurs"
+   ],
+   "location": "Tarnation",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "completing the true key to Maag Taranau"
+  },
+  {
+   "summary": "Kellan challenges Akul to a duel.",
+   "participants": [
+    "Kellan",
+    "Akul"
+   ],
+   "location": "Tarnation",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Akul was challenged to a duel by Kellan"
+  },
+  {
+   "summary": "Sterling mercenaries attack Tarnation and Oko steals the key.",
+   "participants": [
+    "Sterling Company",
+    "Oko",
+    "Akul",
+    "Hellspurs"
+   ],
+   "location": "Tarnation",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "it was stolen by Oko"
+  },
+  {
+   "summary": "Akul is defeated by Rakdos at the vault; Oko opens it for Jace, who takes treasure and planeswalks away.",
+   "participants": [
+    "Akul",
+    "Rakdos",
+    "Oko",
+    "Jace Beleren"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "with Akul being defeated by Rakdos"
+  },
+  {
+   "summary": "Kellan mind-controls Akul into the vault, which rockets into the sky with him inside.",
+   "participants": [
+    "Kellan",
+    "Akul",
+    "Annie Flash"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "ordering him to walk into the vault and never leave."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akul",
+   "relation": "leader_of",
+   "target": "Hellspurs",
+   "note": "gang leader",
+   "paragraph": 0,
+   "quote": "He was the leader of the Hellspurs ."
+  },
+  {
+   "source": "Akul",
+   "relation": "enemy",
+   "target": "Freestriders",
+   "note": "hunted them",
+   "paragraph": 2,
+   "quote": "the scorpion dragon spent weeks tracking them down"
+  },
+  {
+   "source": "Akul",
+   "relation": "created",
+   "target": "Tarnation",
+   "note": "built it",
+   "paragraph": 3,
+   "quote": "he built the town of Tarnation around the vault"
+  },
+  {
+   "source": "Kellan",
+   "relation": "enemy",
+   "target": "Akul",
+   "note": "dueled and mind-controlled him",
+   "paragraph": 7,
+   "quote": "Kellan fully awoke his fae magic and submitted Akul to mind control"
+  }
+ ],
+ "rejected": []
+}

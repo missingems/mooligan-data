@@ -1,0 +1,167 @@
+{
+ "page": "wiki/stonehaven",
+ "url": "https://mtg.wiki/page/Stonehaven",
+ "title": "Stonehaven",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Stonehaven",
+   "type": "location",
+   "aliases": [],
+   "description": "A large, historically significant region in the west of the Dominarian continent of Corondor, once ruled by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent containing Stonehaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who once ruled Stonehaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adam Carthalion",
+   "type": "character",
+   "aliases": [
+    "Lord Adam Carthalion"
+   ],
+   "description": "Lord of Ephren who died in the Battle of Aster Fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Born in Ephren; fought Ravidel and destroyed Castle Melmereth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yorgo",
+   "type": "character",
+   "aliases": [],
+   "description": "Infiltrated Melmereth with Jared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Melmereth",
+   "type": "location",
+   "aliases": [],
+   "description": "Seat of Adam Carthalion in Ephren, later Ravidel's residence, destroyed by Jared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ephren",
+   "type": "location",
+   "aliases": [
+    "Plains of Ephren"
+   ],
+   "description": "Central part of Stonehaven with enchanted plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Aster Fall",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Adam Carthalion died and his army was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that destroyed much of the region.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krysalthus",
+   "type": "location",
+   "aliases": [],
+   "description": "Enchanted forest controlled by House Verdenth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hamath",
+   "type": "location",
+   "aliases": [],
+   "description": "Prominent city on the Plains of Urlan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the delta of the Tenamis River.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tenamis River",
+   "type": "location",
+   "aliases": [],
+   "description": "Principal river of Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Corondor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Adam Carthalion's army is destroyed at the Battle of Aster Fall and Ravidel takes up residence in Castle Melmereth.",
+   "participants": [
+    "Adam Carthalion",
+    "Ravidel",
+    "Castle Melmereth"
+   ],
+   "location": "Ephren",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After Adam died in the Battle of Aster Fall , Ravidel took up residence in the castle."
+  },
+  {
+   "summary": "Jared Carthalion and Yorgo infiltrate Melmereth and Jared summons a Shivan Dragon, destroying it.",
+   "participants": [
+    "Jared Carthalion",
+    "Yorgo",
+    "Castle Melmereth"
+   ],
+   "location": "Castle Melmereth",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Jared summoned a Shivan Dragon , resulting in the fortress's destruction"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "leader_of",
+   "target": "Stonehaven",
+   "note": "Ruled it in earlier centuries.",
+   "paragraph": 0,
+   "quote": "it was under the rule of the planeswalker Ravidel"
+  },
+  {
+   "source": "Stonehaven",
+   "relation": "located_in",
+   "target": "Corondor",
+   "note": "",
+   "paragraph": 0,
+   "quote": "situated in the western part of the Dominarian continent of Corondor"
+  }
+ ],
+ "rejected": []
+}

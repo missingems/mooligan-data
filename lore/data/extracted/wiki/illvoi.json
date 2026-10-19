@@ -1,0 +1,116 @@
+{
+ "page": "wiki/illvoi",
+ "url": "https://mtg.wiki/page/Illvoi",
+ "title": "Illvoi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:31Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Illvoi",
+   "type": "faction",
+   "aliases": [
+    "Illvoi Bloom",
+    "jellies"
+   ],
+   "description": "A species of large gelatinous medusaform beings from a gas giant, living in the Edge and members of Pinnacle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edge",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where the Illvoi live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pinnacle",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization with vast libraries of pan-species knowledge that the Illvoi joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uthros Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Private research group headquartered on Uthros, with Administration, R&D and Security branches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Uthros",
+   "type": "location",
+   "aliases": [],
+   "description": "World with the Combine's secret installation deep in its core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Solidbodies Research",
+   "type": "faction",
+   "aliases": [],
+   "description": "Smaller research group that competes with the Combine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera system",
+   "type": "location",
+   "aliases": [
+    "Sothera"
+   ],
+   "description": "Star system where Illvoi are associated with the Uthros Combine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World-eater",
+   "type": "creature",
+   "aliases": [
+    "deity"
+   ],
+   "description": "A titanic entity with reality-bending and time-warping ability, the main subject of Uthros Combine research.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Illvoi build vessels and travel to the stars, where they meet Pinnacle and join it.",
+   "participants": [
+    "Illvoi",
+    "Pinnacle"
+   ],
+   "location": "Edge",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Illvoi joined Pinnacle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Illvoi",
+   "relation": "member_of",
+   "target": "Pinnacle",
+   "note": "A member of its scientific consensus arm.",
+   "paragraph": 2,
+   "quote": "a promising member among Pinnacle's scientific consensus arm"
+  },
+  {
+   "source": "Uthros Combine",
+   "relation": "enemy",
+   "target": "Solidbodies Research",
+   "note": "Its primary competitor.",
+   "paragraph": 5,
+   "quote": "It is the primary competitor of Solidbodies Research"
+  },
+  {
+   "source": "Uthros Combine",
+   "relation": "other",
+   "target": "World-eater",
+   "note": "Researches the entity.",
+   "paragraph": 9,
+   "quote": "The main subject of Uthros Combine research is a titanic entity"
+  }
+ ],
+ "rejected": []
+}

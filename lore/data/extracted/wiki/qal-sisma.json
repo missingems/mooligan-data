@@ -1,0 +1,179 @@
+{
+ "page": "wiki/qal-sisma",
+ "url": "https://mtg.wiki/page/Qal_Sisma",
+ "title": "Qal Sisma",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:07Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Qal Sisma",
+   "type": "location",
+   "aliases": [
+    "Qal Sisma Mountains"
+   ],
+   "description": "Snowy, craggy mountain range on Tarkir; territory of the Temur Frontier and formerly the Atarka brood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temur Frontier",
+   "type": "faction",
+   "aliases": [
+    "Temur"
+   ],
+   "description": "Semi-nomadic clan living in the Qal Sisma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atarka",
+   "type": "character",
+   "aliases": [
+    "Atarka brood"
+   ],
+   "description": "Dragon whose arrival and brood caused the Melting Wilds and who conquered Qadat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Qal Sisma lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "Spirit Dragon"
+   ],
+   "description": "Spirit Dragon who hibernated in a hedron crucible in the Valley of the Spirit Dragon for 1280 years.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan"
+   ],
+   "description": "Planeswalker sent back in time from the Valley of the Spirit Dragon in 4559 AR who saved Ugin by encasing him in hedrons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose Restoration awoke Ugin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley of the Spirit Dragon",
+   "type": "location",
+   "aliases": [
+    "Crucible of the Spirit Dragon",
+    "Tomb of the Spirit Dragon"
+   ],
+   "description": "Site where Ugin hibernated in a hedron crucible, which was broken in 4559.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qadat, the Fire Rim",
+   "type": "location",
+   "aliases": [
+    "Qadat"
+   ],
+   "description": "Volcanic region between Tiansun and Temur lands, once home of the Efreeti and Jeskai, conquered by Atarka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efreeti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Former inhabitants of Qadat before Atarka conquered it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melting Wilds",
+   "type": "event",
+   "aliases": [],
+   "description": "Widespread melting of the Qal Sisma's icy reaches that accompanied Atarka's arrival.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zenith Day",
+   "type": "event",
+   "aliases": [],
+   "description": "Annual observation at Summer Landing commemorating Temur survival and those lost to Atarka.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Atarka arrives with her brood's storms, causing the Melting Wilds, and conquers Qadat.",
+   "participants": [
+    "Atarka",
+    "Melting Wilds",
+    "Qadat, the Fire Rim",
+    "Efreeti"
+   ],
+   "location": "Qal Sisma",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "the arrival of Atarka and the storms that birthed her brood were accompanied by widespread melting of the icy reaches in the Qal Sisma Mountains"
+  },
+  {
+   "summary": "Sarkhan is sent back in time from the valley, and Sorin's Restoration awakens Ugin, breaking the crucible.",
+   "participants": [
+    "Sarkhan Vol",
+    "Sorin",
+    "Ugin",
+    "Valley of the Spirit Dragon"
+   ],
+   "location": "Valley of the Spirit Dragon",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Sarkhan Vol was sent back in time from this location"
+  },
+  {
+   "summary": "Sarkhan goes through the Nexus of Fate and saves Ugin by encasing him in hedrons; Sorin's Restoration later frees him in 4559.",
+   "participants": [
+    "Sarkhan Vol",
+    "Ugin",
+    "Sorin"
+   ],
+   "location": "Valley of the Spirit Dragon",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "In 4559 Sorin's Restoration broke the crucible and restored Ugin to life."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Temur Frontier",
+   "relation": "located_in",
+   "target": "Qal Sisma",
+   "note": "their territory",
+   "paragraph": 0,
+   "quote": "are the territory of the semi- nomadic Temur Frontier"
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Ugin",
+   "note": "saved his life",
+   "paragraph": 15,
+   "quote": "saved Ugin's life by encasing him in hedrons"
+  },
+  {
+   "source": "Atarka",
+   "relation": "enemy",
+   "target": "Efreeti",
+   "note": "conquered Qadat",
+   "paragraph": 14,
+   "quote": "home of the Efreeti , before it was conquered by Atarka"
+  }
+ ],
+ "rejected": []
+}

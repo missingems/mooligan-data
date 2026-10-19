@@ -1,0 +1,157 @@
+{
+ "page": "wiki/equilor",
+ "url": "https://mtg.wiki/page/Equilor",
+ "title": "Equilor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:06Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Equilor",
+   "type": "plane",
+   "aliases": [
+    "edge of time"
+   ],
+   "description": "One of the most ancient and distant planes, inhabited by long-lived humanlike beings; known mainly from Urza's visit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who visited Equilor seeking the origin of the Phyrexians and left to prepare Dominaria for invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's companion on the visit to Equilor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Equilorans",
+   "type": "faction",
+   "aliases": [
+    "Equilorians",
+    "the elders"
+   ],
+   "description": "Long-lived humanlike inhabitants of Equilor, who hold great knowledge; elders live in mountain caves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shard of Twelve Worlds",
+   "type": "artifact",
+   "aliases": [
+    "Shard"
+   ],
+   "description": "Barrier that prevented Phyrexians reaching Dominaria; destroyed while Urza was away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "Dark force Urza sought the origin of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Urza left unprotected and returned to prepare for invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodhill Bastion",
+   "type": "location",
+   "aliases": [],
+   "description": "City on a hill seemingly made of living tissue, guarded by sphinx-like creatures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eon Fog",
+   "type": "concept",
+   "aliases": [],
+   "description": "A never-lifting mist on Equilor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The elders tell Urza the Phyrexians could not reach Dominaria because of the Shard of the Twelve Worlds.",
+   "participants": [
+    "Equilorans",
+    "Urza",
+    "Shard of Twelve Worlds"
+   ],
+   "location": "Equilor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "told him that the Phyrexians couldn't reach Dominaria because of the Shard of the Twelve Worlds"
+  },
+  {
+   "summary": "Urza plans to turn Equilor into a mechanical paradise, which most elders reject.",
+   "participants": [
+    "Urza",
+    "Equilorans"
+   ],
+   "location": "Equilor",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "his intrusive plans weren't received well by the majority of the elders"
+  },
+  {
+   "summary": "Told the Shard was destroyed, Urza planeswalks away from Equilor, never to return, to prepare Dominaria for invasion.",
+   "participants": [
+    "Urza",
+    "Equilorans",
+    "Shard of Twelve Worlds",
+    "Dominaria"
+   ],
+   "location": "Equilor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Urza planeswalked away to prepare Dominaria for certain invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "ally",
+   "target": "Xantcha",
+   "note": "traveled together",
+   "paragraph": 4,
+   "quote": "Urza and Xantcha traveled there in hopes of discovering the origin of the Phyrexians"
+  },
+  {
+   "source": "Equilor",
+   "relation": "other",
+   "target": "Dominaria",
+   "note": "older than Dominaria, which has not always been the Nexus of the Multiverse",
+   "paragraph": 3,
+   "quote": "Dominaria has not always been the Nexus of the Multiverse"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "quote not in page",
+   "summary": "Urza and Xantcha travel to Equilor seeking the origin of the Phyrexians, taking over a thousand years to find it.",
+   "participants": [
+    "Urza",
+    "Xantcha",
+    "Equilor"
+   ],
+   "location": "Equilor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It took him far more than a thousand years to find the plane."
+  }
+ ]
+}
