@@ -1,0 +1,203 @@
+{
+ "page": "wiki/aether-hub",
+ "url": "https://mtg.wiki/page/Aether_Hub",
+ "title": "Aether Hub",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:54Z",
+ "storyline": "Aether Revolt",
+ "entities": [
+  {
+   "name": "Aether Hub",
+   "type": "location",
+   "aliases": [],
+   "description": "Major aether collection and distribution center in Weldfast, Ghirapur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Kaladesh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aetherflux Reservoir",
+   "type": "location",
+   "aliases": [],
+   "description": "Storage reservoir fed by the Hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "The Consulate's seat of power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ruling body controlling aether.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [
+    "renegade inventors"
+   ],
+   "description": "Inventors opposing the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Planeswalker who tailed a cloaked figure to the Hub and dueled Baral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker with a bad history with Tezzeret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Chandra's mother, captured near the Hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker working with the Consulate who sent Baral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [],
+   "description": "Consulate official suspicious of the renegades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dhiren Baral",
+   "type": "character",
+   "aliases": [
+    "Baral"
+   ],
+   "description": "Notorious agent sent by Tezzeret to reclaim the Hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Planeswalker group that helped the renegades capture the Hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inventors' Fair",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which the Hub became a flashpoint.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Revolt",
+   "type": "event",
+   "aliases": [],
+   "description": "The renegade uprising against the Consulate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandra and Liliana tailed a cloaked figure to the Hub, which ended in Pia's capture.",
+   "participants": [
+    "Chandra Nalaar",
+    "Liliana Vess",
+    "Pia Nalaar",
+    "Tezzeret"
+   ],
+   "location": "Aether Hub",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "ending with Pia's capture but leaving the Aether Hub intact and operational"
+  },
+  {
+   "summary": "The renegades captured the Hub with the Gatewatch's help and redirected its aether to their airship.",
+   "participants": [
+    "Renegades",
+    "Gatewatch",
+    "Aether Hub"
+   ],
+   "location": "Aether Hub",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "capturing it with help from the Gatewatch"
+  },
+  {
+   "summary": "Tezzeret sent Baral to reclaim the Hub; Baral dueled Chandra.",
+   "participants": [
+    "Tezzeret",
+    "Dhiren Baral",
+    "Chandra Nalaar"
+   ],
+   "location": "Aether Hub",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Baral engaged Chandra in a duel"
+  },
+  {
+   "summary": "The Consulate retook the Hub and the renegades fled aboard their airship.",
+   "participants": [
+    "Consulate",
+    "Renegades"
+   ],
+   "location": "Aether Hub",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the renegades fled aboard their newly completed airship"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dhiren Baral",
+   "relation": "serves",
+   "target": "Tezzeret",
+   "note": "dispatched by him",
+   "paragraph": 4,
+   "quote": "Tezzeret responded by dispatching the notorious Dhiren Baral"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "bad history",
+   "paragraph": 2,
+   "quote": "Tezzeret , whom she had a bad history with"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "mother",
+   "paragraph": 2,
+   "quote": "Chandra's mother, Pia Nalaar"
+  }
+ ],
+ "rejected": []
+}
