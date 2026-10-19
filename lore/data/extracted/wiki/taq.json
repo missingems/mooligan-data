@@ -1,0 +1,149 @@
+{
+ "page": "wiki/taq",
+ "url": "https://mtg.wiki/page/Taq",
+ "title": "Taq",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:27Z",
+ "storyline": "The Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Ojer Taq",
+   "type": "deity",
+   "aliases": [
+    "Taq"
+   ],
+   "description": "Chief deity of the Oltec and god of civilization, a triumvirate Deep God and child of Chimil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chimil",
+   "type": "deity",
+   "aliases": [],
+   "description": "Deity whose children include the Deep Gods of Ixalan's Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojer Axonil",
+   "type": "deity",
+   "aliases": [
+    "Axonil"
+   ],
+   "description": "Sibling of Taq who pulled Taq out of the veil and rescued them from Aclazotz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "deity",
+   "aliases": [
+    "the Betrayer"
+   ],
+   "description": "Betrayer who attempted to take Taq's life and was imprisoned by Axonil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oltec",
+   "type": "faction",
+   "aliases": [],
+   "description": "People whose chief deity is Ojer Taq.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Komon Winaq",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of whom Ojer Taq is patron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Deep Gods",
+   "type": "faction",
+   "aliases": [],
+   "description": "Shape-changing gods of Ixalan's Core, children of Chimil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whispering War",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict whose sounds drew Axonil into the Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Civilization",
+   "type": "location",
+   "aliases": [],
+   "description": "Largest temple in the Core, located in Oteclan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oteclan",
+   "type": "location",
+   "aliases": [],
+   "description": "City containing Ojer Taq's temple.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Axonil, drawn into the Core by the Whispering War, pulls his elder sibling Taq from the veil.",
+   "participants": [
+    "Ojer Axonil",
+    "Ojer Taq"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he reached into the veil and pulled his elder sibling to his side"
+  },
+  {
+   "summary": "Aclazotz attempts to take Taq's life; Axonil rescues them, takes the Betrayer's eye and imprisons him.",
+   "participants": [
+    "Aclazotz",
+    "Ojer Taq",
+    "Ojer Axonil"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Axonil rescued them, taking the Betrayer's eye and imprisoning him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ojer Taq",
+   "relation": "family",
+   "target": "Chimil",
+   "note": "One of her children.",
+   "paragraph": 0,
+   "quote": "they are considered one of her children"
+  },
+  {
+   "source": "Ojer Taq",
+   "relation": "family",
+   "target": "Ojer Axonil",
+   "note": "Siblings.",
+   "paragraph": 3,
+   "quote": "he reached into the veil and pulled his elder sibling to his side"
+  },
+  {
+   "source": "Aclazotz",
+   "relation": "enemy",
+   "target": "Ojer Taq",
+   "note": "Attempted to kill them.",
+   "paragraph": 3,
+   "quote": "When Aclazotz attempted to take Taq's life, Axonil rescued them"
+  },
+  {
+   "source": "Ojer Axonil",
+   "relation": "enemy",
+   "target": "Aclazotz",
+   "note": "Imprisoned him.",
+   "paragraph": 3,
+   "quote": "Axonil rescued them, taking the Betrayer's eye and imprisoning him."
+  }
+ ],
+ "rejected": []
+}

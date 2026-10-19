@@ -1,0 +1,183 @@
+{
+ "page": "wiki/anhelo",
+ "url": "https://mtg.wiki/page/Anhelo",
+ "title": "Anhelo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:40Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire, former boss of the Maestros family in New Capenna and its best assassin, compleated and killed by his daughter Errant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [
+    "Maestros family"
+   ],
+   "description": "Crime family of New Capenna that Anhelo led.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Anhelo lived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Errant",
+   "type": "character",
+   "aliases": [],
+   "description": "Anhelo's daughter, who killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serena",
+   "type": "character",
+   "aliases": [],
+   "description": "Anhelo's now-dead wife.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Xander",
+   "type": "character",
+   "aliases": [
+    "Xander"
+   ],
+   "description": "Anhelo's boss, who trained him for centuries and died in the Cabaretti Crescendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Evelyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Requester of the Nightmare assassination in which Anhelo was scarred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Severo Sr.",
+   "type": "character",
+   "aliases": [],
+   "description": "Man killed by Anhelo three years before Streets of New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Severo Jr.",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Severo Sr. who tried to take revenge on Anhelo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parnesse",
+   "type": "character",
+   "aliases": [],
+   "description": "Errant's bride at her wedding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "District Errant tried to blow up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which Xander died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Anhelo was compleated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Anhelo kills Severo Sr.; Severo Jr. lures him into a cab on Errant's wedding day and sets him up with stolen Halo.",
+   "participants": [
+    "Anhelo",
+    "Severo Sr.",
+    "Severo Jr.",
+    "Errant",
+    "Parnesse"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "he killed Severo Sr. ."
+  },
+  {
+   "summary": "After Xander's death in the Cabaretti Crescendo, Anhelo is promoted.",
+   "participants": [
+    "Anhelo",
+    "Lord Xander",
+    "Cabaretti Crescendo"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "he was promoted after his boss's death during the Cabaretti Crescendo ."
+  },
+  {
+   "summary": "Anhelo is compleated, faces Errant to stop her from blowing up Park Heights, fails and dies in the explosion.",
+   "participants": [
+    "Anhelo",
+    "Errant",
+    "Park Heights"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "He failed and died in the explosion."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Errant",
+   "relation": "killed",
+   "target": "Anhelo",
+   "note": "his own daughter",
+   "paragraph": 0,
+   "quote": "killed by his daughter, Errant ."
+  },
+  {
+   "source": "Anhelo",
+   "relation": "family",
+   "target": "Errant",
+   "note": "father",
+   "paragraph": 2,
+   "quote": "He had a daughter, Errant , with a now-dead wife named Serena ."
+  },
+  {
+   "source": "Anhelo",
+   "relation": "serves",
+   "target": "Lord Xander",
+   "note": "right-hand man",
+   "paragraph": 4,
+   "quote": "He was Lord Xander's right-hand man before the city was built"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "leader_of",
+   "target": "Maestros",
+   "note": "boss of the family",
+   "paragraph": 0,
+   "quote": "the former crime-lord and boss of the Maestros family in New Capenna"
+  }
+ ],
+ "rejected": []
+}

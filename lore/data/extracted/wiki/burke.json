@@ -1,0 +1,190 @@
+{
+ "page": "wiki/burke",
+ "url": "https://mtg.wiki/page/Burke",
+ "title": "Burke",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:30Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Burke",
+   "type": "character",
+   "aliases": [
+    "Laquatus's Champion"
+   ],
+   "description": "A shapeless, gel-bodied nightmare-horror created by Chainer with the Mirari to serve Laquatus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [
+    "Ambassador Laquatus"
+   ],
+   "description": "Merman ambassador whom Burke served as bodyguard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of Burke using the Mirari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Turg",
+   "type": "character",
+   "aliases": [],
+   "description": "Laquatus's earlier servant, whose death led to Burke's creation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Powerful artifact used to create Burke and sought by Laquatus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empress Llawan",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler Laquatus fought in a war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Veza",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped from Laquatus's vessel; Burke broke her ankle chasing her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balthor",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf who destroyed Burke with a suicide fire spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Fled with Balthor to Krosa, chased by Burke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "Turned Balthor into a zombie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle during which Burke was created.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria Trench",
+   "type": "location",
+   "aliases": [],
+   "description": "Sealed off, trapping Laquatus's army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Burke is created during the Battle for the Mirari and obeys Laquatus's every command.",
+   "participants": [
+    "Burke",
+    "Laquatus",
+    "Chainer"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Burke was created during the Battle for the Mirari and obeyed Laquatus's every command"
+  },
+  {
+   "summary": "Burke pursues the escaped Veza and breaks her ankle, but the Otaria Trench is sealed and he is trapped with Laquatus's army.",
+   "participants": [
+    "Burke",
+    "Veza",
+    "Laquatus"
+   ],
+   "location": "Otaria Trench",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Burke relentlessly pursued her, but only succeeded in breaking her ankle"
+  },
+  {
+   "summary": "Laquatus escapes his prison and Burke accompanies him to the surface and across Otaria in pursuit of the Mirari.",
+   "participants": [
+    "Burke",
+    "Laquatus"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He faithfully followed Laquatus across Otaria in pursuit of the Mirari"
+  },
+  {
+   "summary": "Balthor destroys Burke with a suicide fire spell as Laquatus tries to seize the Mirari.",
+   "participants": [
+    "Burke",
+    "Balthor",
+    "Laquatus"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he was destroyed by Balthor when Laquatus tried to seize the Mirari"
+  },
+  {
+   "summary": "A small part of Burke remaining in Balthor's throat lets Laquatus control Balthor after Braids turns him into a zombie.",
+   "participants": [
+    "Burke",
+    "Balthor",
+    "Braids",
+    "Laquatus"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "a small part of Burke remaining in his throat enabled Laquatus to take control of Balthor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chainer",
+   "relation": "created",
+   "target": "Burke",
+   "note": "Created him with the Mirari.",
+   "paragraph": 0,
+   "quote": "a nightmare - horror created by Chainer with the Mirari for Ambassador Laquatus"
+  },
+  {
+   "source": "Burke",
+   "relation": "serves",
+   "target": "Laquatus",
+   "note": "Servant and bodyguard.",
+   "paragraph": 3,
+   "quote": "Burke always served as the ambassador's bodyguard"
+  },
+  {
+   "source": "Balthor",
+   "relation": "killed",
+   "target": "Burke",
+   "note": "Destroyed him with a suicide fire spell.",
+   "paragraph": 4,
+   "quote": "he was destroyed by Balthor when Laquatus tried to seize the Mirari"
+  }
+ ],
+ "rejected": []
+}

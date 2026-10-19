@@ -1,0 +1,104 @@
+{
+ "page": "wiki/evendo",
+ "url": "https://mtg.wiki/page/Evendo",
+ "title": "Evendo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:16Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Evendo",
+   "type": "plane",
+   "aliases": [],
+   "description": "Icebound twin world of Kavaron near the supervoid Sothera, terraformed by Eumidians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron",
+   "type": "plane",
+   "aliases": [],
+   "description": "Twin of Evendo and Kav homeworld, whose deformation rained debris on Evendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "concept",
+   "aliases": [],
+   "description": "Supervoid that Evendo and Kavaron orbit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eumidians",
+   "type": "faction",
+   "aliases": [
+    "Eumidian"
+   ],
+   "description": "Terrasymbiotic beings who are terraforming Evendo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hearthhull",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Eumidian seedship that planted a brood on Evendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kavaronic Empire",
+   "type": "faction",
+   "aliases": [
+    "Kav"
+   ],
+   "description": "Empire planning to invade Evendo after the Eumidians finish terraforming.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hearthhull found the Sothera system and planted a brood on Evendo.",
+   "participants": [
+    "Hearthhull",
+    "Eumidians"
+   ],
+   "location": "Evendo",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hearthhull , a Eumidian seedship, found the Sothera system by chance and planted a brood on Evendo."
+  },
+  {
+   "summary": "Kavaron's deformation rained debris on Evendo, warming it and waking the Eumidians.",
+   "participants": [
+    "Eumidians"
+   ],
+   "location": "Evendo",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "This warming triggered the first wave of Eumidians to awaken from hibernation"
+  },
+  {
+   "summary": "The Kav declared peace with the Eumidians but by 4561 were preparing an invasion force.",
+   "participants": [
+    "Kavaronic Empire",
+    "Eumidians"
+   ],
+   "location": "Evendo",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "by 4561 they were preparing an invasion force in the planet's orbit"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kavaronic Empire",
+   "relation": "enemy",
+   "target": "Eumidians",
+   "note": "Planning invasion despite peace",
+   "paragraph": 6,
+   "quote": "who are designing invasion plans to take the world for their own once the Eumidians have finished remaking it"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,140 @@
+{
+ "page": "wiki/skellum",
+ "url": "https://mtg.wiki/page/Skellum",
+ "title": "Skellum",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Skellum",
+   "type": "character",
+   "aliases": [
+    "Cybariss"
+   ],
+   "description": "Old dementia master in the Cabal's employ, trainer of Chainer, known as Cybariss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization employing Skellum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azza",
+   "type": "creature",
+   "aliases": [],
+   "description": "Huge black dog beside Skellum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Last and most famous graduate of Skellum's academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [
+    "Patriarch"
+   ],
+   "description": "Leader who pushed Chainer faster and sent Skellum to die.",
+   "presence": "appears"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "Skellum's team-mate in the final match.",
+   "presence": "appears"
+  },
+  {
+   "name": "Major Teroh",
+   "type": "character",
+   "aliases": [
+    "Teroh"
+   ],
+   "description": "Order crusat squad leader who let mandrills kill Skellum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle during which Skellum was frustrated by the Patriarch.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Skellum trains Chainer to be a full dementist.",
+   "participants": [
+    "Skellum",
+    "Chainer"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The most famous (and last) graduate of the academy was Chainer"
+  },
+  {
+   "summary": "The Patriarch orders Skellum and Braids into a fixed pit fight against Teroh's squad.",
+   "participants": [
+    "Cabal Patriarch",
+    "Skellum",
+    "Braids",
+    "Major Teroh"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "commanded Skellum and his team-mate Braids to throw the match"
+  },
+  {
+   "summary": "Skellum channels his fight to Chainer, then is savaged to death by mandrills.",
+   "participants": [
+    "Skellum",
+    "Chainer",
+    "Major Teroh"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "allowing a troop of wolf-monkey mandrills controlled by the Order's druid ally to savage Skellum to death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skellum",
+   "relation": "mentor_of",
+   "target": "Chainer",
+   "note": "Trained him",
+   "paragraph": 3,
+   "quote": "whom Skellum trained"
+  },
+  {
+   "source": "Skellum",
+   "relation": "serves",
+   "target": "Cabal",
+   "note": "In its employ",
+   "paragraph": 0,
+   "quote": "in the employ of the Cabal"
+  },
+  {
+   "source": "Cabal Patriarch",
+   "relation": "enemy",
+   "target": "Skellum",
+   "note": "Sent him to die",
+   "paragraph": 4,
+   "quote": "the Patriarch believed the main restraint on Chainer's progress was Skellum"
+  }
+ ],
+ "rejected": []
+}

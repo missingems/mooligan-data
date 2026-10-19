@@ -1,0 +1,135 @@
+{
+ "page": "wiki/emeria",
+ "url": "https://mtg.wiki/page/Emeria",
+ "title": "Emeria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:42Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Emeria",
+   "type": "location",
+   "aliases": [
+    "Sky Ruin"
+   ],
+   "description": "A vast hedron field and ruined Skyclave floating above Tazeem on Zendikar, tied to Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazeem",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on Zendikar beneath Emeria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Emeria floats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emeria (goddess)",
+   "type": "deity",
+   "aliases": [
+    "Em",
+    "Kamsa",
+    "the goddess Emeria"
+   ],
+   "description": "A merfolk and kor sky goddess, now understood to reflect Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan to which the hedrons and the myth of Emeria are tied.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iona",
+   "type": "character",
+   "aliases": [
+    "Shield of Emeria"
+   ],
+   "description": "An angel who knew the goddess was a fiction yet kept explorers from climbing too high, and now fights the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose visions revealed Emeria's link to Emrakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose visions revealed Emeria's link to Emrakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who held Emeria sacred and brought offerings of hedron shards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Titans and brood on Zendikar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Iona keeps explorers from climbing too high, knowing Emeria the goddess was a fiction yet believing faith sustained her followers.",
+   "participants": [
+    "Iona",
+    "Emeria (goddess)"
+   ],
+   "location": "Emeria",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Iona knew the truth—that the goddess Emeria was a fiction—but believed that faith in Emeria sustained her followers through the perils of Zendikar."
+  },
+  {
+   "summary": "With the truth revealed, Iona joins the fight to defend Zendikar from the Eldrazi, including Emrakul.",
+   "participants": [
+    "Iona",
+    "Emrakul",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Iona has joined the fight to defend Zendikar from the Eldrazi, including Emrakul"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emeria",
+   "relation": "located_in",
+   "target": "Tazeem",
+   "note": "floating above the continent",
+   "paragraph": 0,
+   "quote": "floating above the continent of Tazeem on Zendikar"
+  },
+  {
+   "source": "Iona",
+   "relation": "serves",
+   "target": "Emeria (goddess)",
+   "note": "called the Shield of Emeria",
+   "paragraph": 4,
+   "quote": "the angel Iona , called the Shield of Emeria"
+  }
+ ],
+ "rejected": []
+}

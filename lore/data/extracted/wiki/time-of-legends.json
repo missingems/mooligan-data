@@ -1,0 +1,177 @@
+{
+ "page": "wiki/time-of-legends",
+ "url": "https://mtg.wiki/page/Time_of_Legends",
+ "title": "Time of Legends",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:38Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Time of Legends",
+   "type": "event",
+   "aliases": [],
+   "description": "An ancient era of Dominaria's mythohistory from the fall of the Thran Empire to the Start of Argivian Reckoning.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the era.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire whose fall began the era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "A small continent where most documented conflict occurred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sivitri's War",
+   "type": "event",
+   "aliases": [],
+   "description": "A continent-wide conflict on Corondor of power-hungry Planeswalkers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A famed sword forged in the era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade-Dihada War",
+   "type": "event",
+   "aliases": [],
+   "description": "A long, bitter war that marked Dakkon Blackblade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakkon Blackblade",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure of the Blackblade-Dihada War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder Dragon who first fell at the Battle at Mors Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder Dragon who first fell at the Battle at Mors Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation founded in the era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation founded in the era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire planeswalker who took part in the Imprisonment of the Eldrazi. Planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imprisonment of the Eldrazi",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which three Eldrazi Titans were bound on Zendikar for six millennia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Eldrazi were imprisoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Shilgengar's Ritual began the vampire bloodline.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shilgengar's Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual that initiated the vampire bloodline on Innistrad.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Battle at Mors Ridge sees the first downfalls of Vaevictis Asmadi and Palladia-Mors.",
+   "participants": [
+    "Vaevictis Asmadi",
+    "Palladia-Mors"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Battle at Mors Ridge on Aerona witnessed the first downfalls of two of the surviving Elder Dragons"
+  },
+  {
+   "summary": "Shilgengar's Ritual initiates the vampire bloodline on Innistrad.",
+   "participants": [
+    "Shilgengar's Ritual"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Shilgengar's Ritual initiated the bloodline of vampires that would shape that plane's dark future"
+  },
+  {
+   "summary": "Sorin Markov takes part in the Imprisonment of the Eldrazi, binding three Titans on Zendikar.",
+   "participants": [
+    "Sorin Markov",
+    "Imprisonment of the Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "three of the Eldrazi Titans were bound within the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sorin Markov",
+   "relation": "member_of",
+   "target": "Imprisonment of the Eldrazi",
+   "note": "Took part in it.",
+   "paragraph": 3,
+   "quote": "traveled to Zendikar and took part in the Imprisonment of the Eldrazi"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,210 @@
+{
+ "page": "wiki/nivix",
+ "url": "https://mtg.wiki/page/Nivix",
+ "title": "Nivix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:04Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Nivix",
+   "type": "location",
+   "aliases": [
+    "Nivix, Aerie of the Firemind"
+   ],
+   "description": "The Izzet guildhall on Ravnica and personal aerie of Niv-Mizzet, a tall spire of laboratories and workshops.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "the Firemind"
+   ],
+   "description": "Draconic genius and leader of the Izzet League.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "Guild of inventors, mages and alchemists housed in Nivix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Nivix stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet guildmage called to Nivix by Niv-Mizzet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Implicit Maze",
+   "type": "artifact",
+   "aliases": [
+    "the Maze"
+   ],
+   "description": "Maze created by Azor as a failsafe if the Guildpact was broken; it ends in the Forum of Azor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azor",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Implicit Maze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "Magical pact the Maze was a failsafe for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Forum of Azor",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Implicit Maze ends.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Millena",
+   "type": "character",
+   "aliases": [],
+   "description": "Dimir agent who infiltrated Nivix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Interplanar Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Idea planted in Niv-Mizzet's mind by Millena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy in the Battle for Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for Ravnica",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle against Tezzeret in which Nivix became a walking tower.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Niv-Mizzet tells Ral Zarek to stop working on the Implicit Maze and track down an intruder who read his mind.",
+   "participants": [
+    "Niv-Mizzet",
+    "Ral Zarek",
+    "Implicit Maze"
+   ],
+   "location": "Nivix",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Ral was stunned to hear Niv-Mizzet bidding him to stop working on that task"
+  },
+  {
+   "summary": "Ral runs the Maze, finds it ends in the Forum of Azor, and reports back to Nivix.",
+   "participants": [
+    "Ral Zarek",
+    "Niv-Mizzet",
+    "Implicit Maze"
+   ],
+   "location": "Forum of Azor",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "discovering it ended in the Forum of Azor"
+  },
+  {
+   "summary": "Niv-Mizzet tells Ral that Azor created the Maze as a failsafe in case the Guildpact was broken.",
+   "participants": [
+    "Niv-Mizzet",
+    "Ral Zarek",
+    "Azor"
+   ],
+   "location": "Nivix",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Maze was created by Azor himself as a failsafe"
+  },
+  {
+   "summary": "Dimir agent Millena infiltrates Nivix and plants the idea of the Interplanar Beacon in Niv-Mizzet's mind.",
+   "participants": [
+    "Millena",
+    "Niv-Mizzet",
+    "Interplanar Beacon"
+   ],
+   "location": "Nivix",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the Dimir agent Millena infiltrated Nivix"
+  },
+  {
+   "summary": "In the Battle for Ravnica, Ral unleashes lightning on Nivix, animating it as a walking tower piloted by the disembodied Niv-Mizzet.",
+   "participants": [
+    "Niv-Mizzet",
+    "Ral Zarek",
+    "Tezzeret",
+    "Nivix"
+   ],
+   "location": "Nivix",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Nivix became a walking tower piloted by the disembodied Niv-Mizzet"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Niv-Mizzet",
+   "relation": "leader_of",
+   "target": "Izzet League",
+   "note": "",
+   "paragraph": 3,
+   "quote": "the Firemind's closest assistants occupy the tower's upper levels"
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "guildmage",
+   "paragraph": 5,
+   "quote": "guildmage Ral Zarek was called up to Nivix"
+  },
+  {
+   "source": "Nivix",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "Izzet guildhall",
+   "paragraph": 0,
+   "quote": "Nivix is the Izzet guildhall on Ravnica"
+  },
+  {
+   "source": "Azor",
+   "relation": "created",
+   "target": "Implicit Maze",
+   "note": "as a failsafe",
+   "paragraph": 5,
+   "quote": "the Maze was created by Azor himself as a failsafe"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,173 @@
+{
+ "page": "wiki/battle-of-aster-fall",
+ "url": "https://mtg.wiki/page/Battle_of_Aster_Fall",
+ "title": "Battle of Aster Fall",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:27Z",
+ "storyline": "Aster Fall",
+ "entities": [
+  {
+   "name": "Battle of Aster Fall",
+   "type": "event",
+   "aliases": [
+    "Aster Fall"
+   ],
+   "description": "Final battle between Adam Carthalion and Ravidel around 4180 AR on the plains of Ephren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adam Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Dominarian leader who died in the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [
+    "Battlemage Ravidel"
+   ],
+   "description": "Planeswalker who manipulated Adam and conspired to take over Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwendolyn Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Adam's wife who died during the quest Ravidel tricked him into.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Adam's infant son marked with the sigil of the new moon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezer",
+   "type": "character",
+   "aliases": [],
+   "description": "Adam's loyal spellsquire who took charge of Jared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Plains of Ephren",
+   "type": "location",
+   "aliases": [
+    "Ephren"
+   ],
+   "description": "Site of the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose Festival of the Arena Adam traveled to attend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Barge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ravidel's barge damaged by Adam's Backdraft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Ravidel plotted to take over.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Adam travels west with his army while Ravidel invades the Plains of Ephren a second time.",
+   "participants": [
+    "Adam Carthalion",
+    "Ravidel"
+   ],
+   "location": "Plains of Ephren",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ravidel invaded the Plains of Ephren on his Planar Barge for the second time."
+  },
+  {
+   "summary": "Ravidel mortally wounds Adam with Syphon Soul; Adam entrusts his infant son to Ezer.",
+   "participants": [
+    "Ravidel",
+    "Adam Carthalion",
+    "Ezer",
+    "Jared Carthalion"
+   ],
+   "location": "Plains of Ephren",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he entrusted his infant son, Jared Carthalion , marked with the sigil of the new moon, to his loyal spellsquire, Ezer"
+  },
+  {
+   "summary": "Adam casts Backdraft, damaging Ravidel's barge and obliterating himself.",
+   "participants": [
+    "Adam Carthalion",
+    "Ravidel",
+    "Planar Barge"
+   ],
+   "location": "Plains of Ephren",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Adam’s final act of defiance was a powerful Backdraft spell"
+  },
+  {
+   "summary": "Syphon Soul alters Jared, leaving him hairless with a crescent moon mark; Ezer calls him a freak.",
+   "participants": [
+    "Jared Carthalion",
+    "Ezer"
+   ],
+   "location": "Plains of Ephren",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "a crescent moon mark appeared on his cheek"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Adam Carthalion",
+   "note": "Syphon Soul left him mortally wounded",
+   "paragraph": 2,
+   "quote": "Mortally wounded by a devastating Syphon Soul spell cast by Ravidel"
+  },
+  {
+   "source": "Adam Carthalion",
+   "relation": "family",
+   "target": "Jared Carthalion",
+   "note": "father and son",
+   "paragraph": 2,
+   "quote": "he entrusted his infant son, Jared Carthalion"
+  },
+  {
+   "source": "Ezer",
+   "relation": "serves",
+   "target": "Adam Carthalion",
+   "note": "spellsquire",
+   "paragraph": 2,
+   "quote": "to his loyal spellsquire, Ezer"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "enemy",
+   "target": "Adam Carthalion",
+   "note": "manipulated him",
+   "paragraph": 1,
+   "quote": "Ravidel had manipulated Adam"
+  }
+ ],
+ "rejected": []
+}

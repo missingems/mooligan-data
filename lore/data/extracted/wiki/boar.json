@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-19T22:59:44Z",
+ "extracted_at": "2026-10-19T23:01:09Z",
  "storyline": "",
  "entities": [
   {
@@ -105,6 +105,15 @@
    ],
    "description": "A notable boar on Zendikar who is also an Elemental.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Mardu Horde",
+   "type": "faction",
+   "aliases": [
+    "Mardu"
+   ],
+   "description": "A Tarkir clan whose virtues the Gore Swine exemplified in old Tarkir.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -147,18 +156,15 @@
    "note": "tamed boars as livestock",
    "paragraph": 9,
    "quote": "Other boars were tamed by the Vulshok as livestock."
-  }
- ],
- "rejected": [
+  },
   {
-   "kind": "relation",
-   "reason": "unlisted entity",
    "source": "Gore Swine",
    "relation": "other",
-   "target": "Mardu",
+   "target": "Mardu Horde",
    "note": "regarded as exemplars of Mardu virtues",
    "paragraph": 12,
    "quote": "the Gore Swine were regarded as exemplars of the virtues"
   }
- ]
+ ],
+ "rejected": []
 }
