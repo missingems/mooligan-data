@@ -1,0 +1,9 @@
+name = "mooligan-api"
+main = "src/index.ts"
+compatibility_date = "2025-10-01"
+routes = [{ pattern = "api.mooligan.com", custom_domain = true }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mooligan"
+database_id = "52e6697c-4bff-4763-872a-84ad990d3512"
