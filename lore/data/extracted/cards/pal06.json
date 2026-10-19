@@ -1,0 +1,95 @@
+{
+ "page": "cards/pal06",
+ "url": "https://scryfall.com/sets/pal06",
+ "title": "Arena League 2006: card flavor text",
+ "story_date": "2006-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:26:12Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Vuliev",
+   "type": "character",
+   "aliases": [
+    "Vuliev of the Ghost Council"
+   ],
+   "description": "A member of the Ghost Council who boasts of wielding Faith and Wealth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Juzba",
+   "type": "character",
+   "aliases": [],
+   "description": "An Izzet tinker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghost Council",
+   "type": "faction",
+   "aliases": [
+    "Ghost Council of Orzhova"
+   ],
+   "description": "Ruling body of the Orzhov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of tinkers and mages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild embodied by oracles of nature directed by thought and progress.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vuliev declares the Ghost Council needs no military might.",
+   "participants": [
+    "Vuliev",
+    "Ghost Council"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "We have no need for military might."
+  },
+  {
+   "summary": "Juzba explains the blazekite as vehicular dragscoop ionics.",
+   "participants": [
+    "Juzba",
+    "Izzet"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The blazekite is a simple concept, really"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vuliev",
+   "relation": "member_of",
+   "target": "Ghost Council",
+   "note": "of the Ghost Council",
+   "paragraph": 0,
+   "quote": "Vuliev of the Ghost Council"
+  },
+  {
+   "source": "Juzba",
+   "relation": "member_of",
+   "target": "Izzet",
+   "note": "Izzet tinker",
+   "paragraph": 1,
+   "quote": "Juzba, Izzet tinker"
+  }
+ ],
+ "rejected": []
+}
