@@ -1,0 +1,168 @@
+{
+ "page": "wiki/cho-arrim",
+ "url": "https://mtg.wiki/page/Cho-Arrim",
+ "title": "Cho-Arrim",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:27Z",
+ "storyline": "Mercadian Masques",
+ "entities": [
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [
+    "Cho-Arim"
+   ],
+   "description": "A people of human and ogre rebels in the Rushwood on Mercadia who worshipped Ramos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rushwood",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest where the Cho-Arrim live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Cho-Arrim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramos",
+   "type": "deity",
+   "aliases": [
+    "Ramos the dragon engine"
+   ],
+   "description": "A god of the Cho-Arrim origin myth, victor over Orhop; also a dragon engine they worshipped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orhop",
+   "type": "deity",
+   "aliases": [],
+   "description": "The evil god in the Peliam, vanquished by Ramos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hassno the Unrighteous",
+   "type": "character",
+   "aliases": [],
+   "description": "A demon who pretended to support Ramos and betrayed him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saprazzans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribes that fell into the Outer Sea in the myth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rishadans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribes that struck the coastal lands in the myth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orim",
+   "type": "character",
+   "aliases": [],
+   "description": "A healer who married into the Cho-Arrim through Cho-Manno.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Manno",
+   "type": "character",
+   "aliases": [],
+   "description": "Orim's husband.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oriss",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter of Orim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose denizens the Cho-Arrim blamed for a plague.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uniter",
+   "type": "concept",
+   "aliases": [],
+   "description": "A prophesied great metal serpent who would unite the children of Ramos.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A plague strikes the Cho-Arrim village; they blame Mercadia City, and war seems likely.",
+   "participants": [
+    "Cho-Arrim",
+    "Mercadia City"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The villagers blamed the denizens of Mercadia City for this"
+  },
+  {
+   "summary": "After the Phyrexian invasion, Orim joins the Cho-Arrim through her marriage with Cho-Manno.",
+   "participants": [
+    "Orim",
+    "Cho-Manno",
+    "Cho-Arrim"
+   ],
+   "location": "Rushwood",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were joined by the healer Orim through her marriage with Cho-Manno"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Orim",
+   "relation": "romantic",
+   "target": "Cho-Manno",
+   "note": "Married.",
+   "paragraph": 3,
+   "quote": "through her marriage with Cho-Manno"
+  },
+  {
+   "source": "Oriss",
+   "relation": "family",
+   "target": "Orim",
+   "note": "Daughter of Orim.",
+   "paragraph": 5,
+   "quote": "Oriss (Daughter of Orim)"
+  },
+  {
+   "source": "Ramos",
+   "relation": "enemy",
+   "target": "Orhop",
+   "note": "Vanquished him in the myth.",
+   "paragraph": 1,
+   "quote": "Ramos triumphed, and Orhop, the evil god, was vanquished."
+  },
+  {
+   "source": "Cho-Arrim",
+   "relation": "enemy",
+   "target": "Mercadia City",
+   "note": "Fought against oppression by the Mercadians.",
+   "paragraph": 3,
+   "quote": "fought against the oppression by the Mercadians"
+  }
+ ],
+ "rejected": []
+}

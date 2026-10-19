@@ -1,0 +1,185 @@
+{
+ "page": "cards/pmh2",
+ "url": "https://scryfall.com/sets/pmh2",
+ "title": "Modern Horizons 2 Promos: card flavor text",
+ "story_date": "2021-05-06",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:02Z",
+ "storyline": "Modern Horizons 2",
+ "entities": [
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "Theros god who turned against humanity in his hunger for power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [],
+   "description": "Man sought by Inquisitor Delmund to be made an example of for lurid practices.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inquisitor Delmund",
+   "type": "character",
+   "aliases": [
+    "Delmund"
+   ],
+   "description": "Inquisitor who demands Geralf be found and made an example of.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doros",
+   "type": "character",
+   "aliases": [],
+   "description": "Expedition guide.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karametra",
+   "type": "deity",
+   "aliases": [],
+   "description": "Goddess whose acolytes celebrate spring and whose love shows in verdant fields.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Setessan woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Woods where Karametra's acolytes sing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niko Aris",
+   "type": "character",
+   "aliases": [],
+   "description": "Speaker who says a mirror shapes reality.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who speaks of Yavimaya and Multani's heart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "Elemental whose heart is a seed from which Yavimaya grows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [
+    "Yavimaya, Cradle of Growth"
+   ],
+   "description": "Forest of Dominaria, with as much life as the rest of Dominaria together.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Yavimaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that always stands for justice and never alone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "General Ferrous Rokiric",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros general who speaks for the Legion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Academy with automated systems sorting acquisitions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quicksilver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea over which a thought monitor roams.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rishada",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where work is easy to find if you do not ask questions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mistmeadow",
+   "type": "location",
+   "aliases": [],
+   "description": "Doun where death matters less than duty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Afari",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of Tales.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Heliod turns against humanity in his hunger for power.",
+   "participants": [
+    "Heliod"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Though Heliod turned against humanity in his hunger for power"
+  },
+  {
+   "summary": "Inquisitor Delmund declares Geralf must be found and made an example of.",
+   "participants": [
+    "Inquisitor Delmund",
+    "Geralf"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "To halt these lurid practices, Geralf must be found and made an example of."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Inquisitor Delmund",
+   "relation": "enemy",
+   "target": "Geralf",
+   "note": "Delmund seeks Geralf to be made an example of.",
+   "paragraph": 2,
+   "quote": "To halt these lurid practices, Geralf must be found and made an example of."
+  },
+  {
+   "source": "Multani",
+   "relation": "other",
+   "target": "Yavimaya",
+   "note": "Multani's heart is a seed and all of Yavimaya its flower.",
+   "paragraph": 26,
+   "quote": "Multani's heart is a seed, and all of Yavimaya is its flower."
+  }
+ ],
+ "rejected": []
+}

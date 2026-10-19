@@ -1,0 +1,175 @@
+{
+ "page": "wiki/church-of-serra",
+ "url": "https://mtg.wiki/page/Church_of_Serra",
+ "title": "Church of Serra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Church of Serra",
+   "type": "faction",
+   "aliases": [
+    "Serranism"
+   ],
+   "description": "A religion on Dominaria dedicated to the goddess Serra, manifested through Serra Angels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Goddess worshipped by the Church, actually a planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra Angels",
+   "type": "creature",
+   "aliases": [],
+   "description": "Main manifestation of the Church of Serra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lyra Dawnbringer",
+   "type": "character",
+   "aliases": [],
+   "description": "Current leader of the Church of Serra and the Order of Dawn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brother Angus",
+   "type": "character",
+   "aliases": [
+    "Angus"
+   ],
+   "description": "Built the Cathedral of Serra around Serra's tomb.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cathedral of Serra",
+   "type": "location",
+   "aliases": [],
+   "description": "Cathedral on the Plains of Sursi around Serra's tomb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Angelfire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rival religion that opposed the Serrans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoltun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forerunner of Benalia, which lost control of eastern Terisiare after the Uprising in Epityr.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped the village of Devas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Dawn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order led by Lyra that protects Benalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation where Serranism was banned and later revived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Church.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Uprising in Epityr a priest of Serra calls forth Serra Angels to free the town, causing the Sheoltun Empire to lose eastern Terisiare.",
+   "participants": [
+    "Church of Serra",
+    "Serra Angels",
+    "Sheoltun Empire"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a priest of Serra called forth the Serra Angels to free the town"
+  },
+  {
+   "summary": "Serranism is banned in Benalia for centuries after its founding.",
+   "participants": [
+    "Church of Serra",
+    "Church of Angelfire"
+   ],
+   "location": "Benalia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Serranism was banned in that nation for centuries"
+  },
+  {
+   "summary": "Refugees from Serra's Realm revive the Church in Benalia.",
+   "participants": [
+    "Church of Serra",
+    "Urza"
+   ],
+   "location": "Benalia",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Church of Serra experienced a revival in Benalia"
+  },
+  {
+   "summary": "Brother Angus builds the Cathedral of Serra around Serra's tomb.",
+   "participants": [
+    "Brother Angus",
+    "Cathedral of Serra"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Brother Angus built the Cathedral of Serra around Serra's tomb on the Plains of Sursi"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lyra Dawnbringer",
+   "relation": "leader_of",
+   "target": "Church of Serra",
+   "note": "current leader",
+   "paragraph": 7,
+   "quote": "The Church of Serra is now led by Lyra Dawnbringer ."
+  },
+  {
+   "source": "Brother Angus",
+   "relation": "created",
+   "target": "Cathedral of Serra",
+   "note": "",
+   "paragraph": 4,
+   "quote": "Brother Angus built the Cathedral of Serra around Serra's tomb on the Plains of Sursi"
+  },
+  {
+   "source": "Church of Serra",
+   "relation": "enemy",
+   "target": "Church of Angelfire",
+   "note": "long opposed",
+   "paragraph": 6,
+   "quote": "the Church of Angelfire has long opposed the Serrans"
+  }
+ ],
+ "rejected": []
+}

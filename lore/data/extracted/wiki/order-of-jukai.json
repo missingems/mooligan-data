@@ -1,0 +1,121 @@
+{
+ "page": "wiki/order-of-jukai",
+ "url": "https://mtg.wiki/page/Order_of_Jukai",
+ "title": "Order of Jukai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:30Z",
+ "storyline": "Neon Dynasty",
+ "entities": [
+  {
+   "name": "Order of Jukai",
+   "type": "faction",
+   "aliases": [
+    "Order of Hanami",
+    "Hanami Order"
+   ],
+   "description": "A decentralized order founded on Kamigawa to preserve nature and reverence for the kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shigeki",
+   "type": "character",
+   "aliases": [],
+   "description": "The orochi who bonded with a nature kami, had a prophetic dream and founded the Order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saiba Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Developers of the technique to draw energy from the spirit realm; despised by the Order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperials",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers of Kamigawa under Kyodai who built merge gates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kyodai",
+   "type": "deity",
+   "aliases": [],
+   "description": "Under whose auspices the Imperials governed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War about 1,200 years before the Order was established.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest that expelled all mortals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzanshi",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of akki artisans who created enhancers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The orochi Shigeki bonds with a nature kami, has a prophetic dream of the spirit realm shattering, and founds the Order of Jukai.",
+   "participants": [
+    "Shigeki",
+    "Order of Jukai"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "When the orochi Shigeki bonded with a nature kami, he experienced a prophetic dream of the spirit realm shattering."
+  },
+  {
+   "summary": "The Order grows swiftly as others share the visions.",
+   "participants": [
+    "Order of Jukai"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Order grew swiftly as others had similar visions of the spirit realm's destruction."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shigeki",
+   "relation": "leader_of",
+   "target": "Order of Jukai",
+   "note": "Founder who named the Order.",
+   "paragraph": 2,
+   "quote": "named his new Order after the moment when the Jukai forest expelled all mortals"
+  },
+  {
+   "source": "Order of Jukai",
+   "relation": "enemy",
+   "target": "Saiba Futurists",
+   "note": "They actively despise them.",
+   "paragraph": 2,
+   "quote": "They actively despise the Saiba Futurists and desire to destroy their floating headquarters."
+  }
+ ],
+ "rejected": []
+}

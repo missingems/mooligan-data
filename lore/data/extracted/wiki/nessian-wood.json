@@ -1,0 +1,143 @@
+{
+ "page": "wiki/nessian-wood",
+ "url": "https://mtg.wiki/page/Nessian_Wood",
+ "title": "Nessian Wood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:18Z",
+ "storyline": "Theros Beyond Death",
+ "entities": [
+  {
+   "name": "Nessian Wood",
+   "type": "location",
+   "aliases": [
+    "the Nessian Wood"
+   ],
+   "description": "A vast wilderness in Theros, domain of Nylea, home to wild and magical creatures and the oldest trees in Theros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane in which the Nessian Wood lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "Deity whose domain is the Nessian Wood; she allows limited hunting and has killed poachers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Setessa",
+   "type": "location",
+   "aliases": [],
+   "description": "A sprawling polis whose inhabitants live in harmony with the wild and train with animals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bassara",
+   "type": "faction",
+   "aliases": [],
+   "description": "Patrols from Setessa that monitor the Cypress Gates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cypress Gates",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountain gap serving as an eastern entry to the Nessian Wood, with an ancient Setessan fortress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Enorasi",
+   "type": "location",
+   "aliases": [],
+   "description": "An enormous olive tree planted by Klothys, whose hollow trunk hides an entrance to the Underworld; lair of Arasta.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "Deity who planted the Enorasi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arasta",
+   "type": "character",
+   "aliases": [],
+   "description": "A cursed dryad trapped in the form of a spider, whose webs conceal the Underworld entrance in the Enorasi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hunter's Crossing",
+   "type": "location",
+   "aliases": [],
+   "description": "Abandoned tower ruins marking the farthest reach of ancient Setessan expansion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sperche River",
+   "type": "location",
+   "aliases": [],
+   "description": "The longest river on Theros, running through the Nessian Wood into the Siren Sea.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ancient Setessans carve a fortified stronghold into the mountains to guard the Cypress Gates.",
+   "participants": [
+    "Setessa",
+    "Cypress Gates"
+   ],
+   "location": "Cypress Gates",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Long ago, ancient Setessans carved a fortified stronghold into the mountains to guard the pass."
+  },
+  {
+   "summary": "Klothys plants the Enorasi in the Nessian Wood.",
+   "participants": [
+    "Klothys",
+    "Enorasi"
+   ],
+   "location": "Nessian Wood",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "an enormous olive tree which was planted in the Nessian Wood by"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nylea",
+   "relation": "leader_of",
+   "target": "Nessian Wood",
+   "note": "the wood is her domain",
+   "paragraph": 0,
+   "quote": "They are considered the domain of Nylea"
+  },
+  {
+   "source": "Klothys",
+   "relation": "created",
+   "target": "Enorasi",
+   "note": "planted it",
+   "paragraph": 3,
+   "quote": "an enormous olive tree which was planted in the Nessian Wood by"
+  },
+  {
+   "source": "Arasta",
+   "relation": "located_in",
+   "target": "Enorasi",
+   "note": "its lair",
+   "paragraph": 3,
+   "quote": "is now the lair of the cursed dryad"
+  }
+ ],
+ "rejected": []
+}
