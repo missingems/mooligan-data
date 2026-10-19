@@ -1,0 +1,184 @@
+{
+ "page": "wiki/nexus-of-fate",
+ "url": "https://mtg.wiki/page/Nexus_of_Fate",
+ "title": "Nexus of Fate",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:15Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Nexus of Fate",
+   "type": "event",
+   "aliases": [],
+   "description": "Climactic event on Tarkir in which Sarkhan Vol altered the plane's fate by going into the past to save Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan"
+   ],
+   "description": "Planeswalker who traveled into the past and encased Ugin in a hedron cocoon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Spirit dragon, twin brother of Bolas, mortally wounded and then preserved by Sarkhan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon who tracked and fought his twin brother Ugin on Tarkir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [],
+   "description": "Sarkhan's new-forged friend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zurgo",
+   "type": "character",
+   "aliases": [],
+   "description": "Sarkhan's old enemy who tracked him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who awakened Ugin seeking counsel against the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin's Nexus",
+   "type": "location",
+   "aliases": [],
+   "description": "Ugin's resting place, where the time rift was unlocked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the event takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khanfall",
+   "type": "event",
+   "aliases": [],
+   "description": "Overthrow of the khans by the risen dragons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragonlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers of Tarkir after the timeline changed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Threat Sorin sought Ugin's counsel against.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nicol Bolas tracks Ugin to Tarkir and they fight a battle that mortally wounds Ugin.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the two elder dragons fought a monumental battle that left Ugin mortally wounded"
+  },
+  {
+   "summary": "Sarkhan, drawn by Ugin's whispers, goes to Ugin's Nexus with Narset and Zurgo following.",
+   "participants": [
+    "Sarkhan Vol",
+    "Narset",
+    "Zurgo"
+   ],
+   "location": "Ugin's Nexus",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "found himself drawn to the spirit dragon's resting place"
+  },
+  {
+   "summary": "Sarkhan unlocks a time rift, travels 1,280 years into the past and encases Ugin in a hedron cocoon.",
+   "participants": [
+    "Sarkhan Vol",
+    "Ugin"
+   ],
+   "location": "Ugin's Nexus",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sarkhan intervened by encasing the wounded dragon in a hedron cocoon"
+  },
+  {
+   "summary": "Dragonstorms intensify, dragons multiply, the khans fall in the Khanfall and the dragonlords rise.",
+   "participants": [
+    "Dragonlords"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The dragonlords rose to rule the plane"
+  },
+  {
+   "summary": "Sorin Markov arrives and awakens Ugin from his cocoon, seeking counsel against the Eldrazi.",
+   "participants": [
+    "Sorin Markov",
+    "Ugin",
+    "Eldrazi"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Sorin Markov arrived and awoke still dormant Ugin from his cocoon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "family",
+   "target": "Ugin",
+   "note": "Twin brothers.",
+   "paragraph": 1,
+   "quote": "Nicol Bolas tracked his twin brother Ugin to Tarkir"
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Narset",
+   "note": "New-forged friend.",
+   "paragraph": 1,
+   "quote": "led by his new-forged friend Narset"
+  },
+  {
+   "source": "Zurgo",
+   "relation": "enemy",
+   "target": "Sarkhan Vol",
+   "note": "Old enemy.",
+   "paragraph": 1,
+   "quote": "tracked by his old enemy Zurgo"
+  }
+ ],
+ "rejected": []
+}

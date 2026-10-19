@@ -1,0 +1,138 @@
+{
+ "page": "wiki/necros",
+ "url": "https://mtg.wiki/page/Necros",
+ "title": "Necros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:27Z",
+ "storyline": "Doctor Who",
+ "entities": [
+  {
+   "name": "Necros",
+   "type": "plane",
+   "aliases": [],
+   "description": "A human-colonized planet, a non-canon plane subtype, and location of Tranquil Repose.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tranquil Repose",
+   "type": "location",
+   "aliases": [],
+   "description": "The finest funeral home in the galaxy, where the dead were held in suspended animation; later Davros's base and destroyed by a bomb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Resting Ones",
+   "type": "faction",
+   "aliases": [],
+   "description": "People placed into suspended animation at Tranquil Repose.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garden of Fond Memories",
+   "type": "location",
+   "aliases": [],
+   "description": "Garden outside Tranquil Repose with statues of the Resting Ones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Davros",
+   "type": "character",
+   "aliases": [
+    "the Great Healer"
+   ],
+   "description": "Creator of the Daleks who took over Tranquil Repose under an alias.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daleks",
+   "type": "faction",
+   "aliases": [
+    "Dalek race"
+   ],
+   "description": "A race Davros experimented on and bred a new generation of from the bodies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dalek Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Arrived to take Davros to Skaro for trial.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skaro",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Dalek Empire meant to try Davros.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Davros takes over Tranquil Repose as a base under the alias the Great Healer.",
+   "participants": [
+    "Davros",
+    "Tranquil Repose"
+   ],
+   "location": "Necros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tranquil Repose was eventually taken over and used as a base by Davros"
+  },
+  {
+   "summary": "Davros mutates bodies into new Daleks and turns the rest into protein sold to developing planets.",
+   "participants": [
+    "Davros",
+    "Daleks"
+   ],
+   "location": "Necros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The bodies of people of status and ambition were mutated and conditioned into his new generation of Daleks."
+  },
+  {
+   "summary": "The Dalek Empire arrives to take Davros to Skaro for trial.",
+   "participants": [
+    "Dalek Empire",
+    "Davros"
+   ],
+   "location": "Necros",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Dalek Empire arrived to take Davros to Skaro for trial."
+  },
+  {
+   "summary": "Tranquil Repose is destroyed by a bomb meant to kill Davros.",
+   "participants": [
+    "Tranquil Repose",
+    "Davros"
+   ],
+   "location": "Necros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tranquil Repose was eventually destroyed when a bomb was detonated in an attempt to kill Davros."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tranquil Repose",
+   "relation": "located_in",
+   "target": "Necros",
+   "note": "",
+   "paragraph": 1,
+   "quote": "the location of Tranquil Repose, the finest funeral home in the galaxy"
+  },
+  {
+   "source": "Dalek Empire",
+   "relation": "enemy",
+   "target": "Davros",
+   "note": "Came to take him to trial",
+   "paragraph": 2,
+   "quote": "The Dalek Empire arrived to take Davros to Skaro for trial."
+  }
+ ],
+ "rejected": []
+}

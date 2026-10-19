@@ -1,0 +1,224 @@
+{
+ "page": "wiki/beast-of-the-hours",
+ "url": "https://mtg.wiki/page/Beast_of_the_Hours",
+ "title": "Beast of the Hours",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:00Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "A giant cockatrice at Sarraza in Almaaz, summoned by Porros and later bound in an Armageddon clock.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [
+    "Mount Sarraza"
+   ],
+   "description": "Place in Almaaz where the Beast of the Hours was bound beneath the mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria containing Sarraza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Beast of the Hours dwelt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war between Mishra and Urza, during which the Beast was summoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [
+    "Dark Prince Porros"
+   ],
+   "description": "A traitor who summoned the Beast, and who was cursed by Samor into a taloned sand wraith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Urza whose armies the Beast decimated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Mishra's brother, whom Mishra wished to threaten.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [
+    "Samor"
+   ],
+   "description": "A songmage who helped bind the Beast and was killed by Porros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Circle of songmages",
+   "type": "faction",
+   "aliases": [],
+   "description": "Songmages called by Mishra to destroy the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "Place buried beneath the desert by Porros; its fall left nobody knowing how to release the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [
+    "Ogwater"
+   ],
+   "description": "A songmage who released the Beast during the Thaw and then banished it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Womba",
+   "type": "character",
+   "aliases": [],
+   "description": "An orc killed by the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chimes",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Chimes that were destroyed when they vibrated too intensely.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "The period (c. 3050 AR) in which the Beast was released.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Porros summons the giant cockatrice, which decimates Mishra's armies.",
+   "participants": [
+    "Porros",
+    "Beast of the Hours",
+    "Mishra"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Dark Prince Porros summoned the giant cockatrice called the Beast of the Hours"
+  },
+  {
+   "summary": "A discordant tone, sung by Porros, forces the songmages to bind the Beast instead; it is locked in an Armageddon clock beneath Mount Sarraza.",
+   "participants": [
+    "Samor the Collector",
+    "Circle of songmages",
+    "Beast of the Hours",
+    "Porros"
+   ],
+   "location": "Sarraza",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Beast of the Hours was locked into an Armageddon clock beneath Mount Sarraza ."
+  },
+  {
+   "summary": "Porros kills Samor in a fight while Samor curses him into a taloned sand wraith; Porros buries Sumifa beneath the desert.",
+   "participants": [
+    "Porros",
+    "Samor the Collector",
+    "Sumifa"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Porros cut Samor's throat, while Samor cursed Porros into becoming a taloned sand wraith"
+  },
+  {
+   "summary": "During the Thaw, Ogwater Rifkin releases the Beast with music and magical items, destroying the Chimes.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours",
+    "Chimes"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Beast of the Hours was released by the songmage Ogwater Rifkin"
+  },
+  {
+   "summary": "The Beast kills the orc Womba before Ogwater banishes it from existence.",
+   "participants": [
+    "Beast of the Hours",
+    "Womba",
+    "Ogwater Rifkin"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Beast of the Hours killed the orc Womba before Ogwater managed to use his renewed song magic to banish the creature from existence"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Porros",
+   "relation": "created",
+   "target": "Beast of the Hours",
+   "note": "Summoned it.",
+   "paragraph": 1,
+   "quote": "the Dark Prince Porros summoned the giant cockatrice"
+  },
+  {
+   "source": "Porros",
+   "relation": "killed",
+   "target": "Samor the Collector",
+   "note": "Cut his throat.",
+   "paragraph": 2,
+   "quote": "Porros cut Samor's throat"
+  },
+  {
+   "source": "Beast of the Hours",
+   "relation": "killed",
+   "target": "Womba",
+   "note": "Killed the orc during the Thaw.",
+   "paragraph": 3,
+   "quote": "The Beast of the Hours killed the orc Womba"
+  },
+  {
+   "source": "Porros",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "Viewed Mishra as a false king.",
+   "paragraph": 1,
+   "quote": "whom Porros viewed as a false king"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,77 @@
+{
+ "page": "wiki/brushwagg",
+ "url": "https://mtg.wiki/page/Brushwagg",
+ "title": "Brushwagg",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Brushwagg",
+   "type": "creature",
+   "aliases": [
+    "brushwaggs"
+   ],
+   "description": "A creature that looks like a heap of animated kindling, found on Dominaria, Ikoria and Thunder Junction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mtenda Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Plains in Jamuraa near which large brushwaggs live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Dominaria containing the Mtenda Plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fola",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of a message scrawled by a brushwagg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where small hedgehog-like brushwaggs are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where brushwaggs masquerade as tumbleweed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Brushwagg",
+   "relation": "located_in",
+   "target": "Mtenda Plains",
+   "note": "Large brushwaggs live near the plains.",
+   "paragraph": 5,
+   "quote": "The brushwaggs near the Mtenda Plains in Jamuraa are large animals"
+  },
+  {
+   "source": "Brushwagg",
+   "relation": "serves",
+   "target": "Fola",
+   "note": "A brushwagg sent a message to Fola; they are employed as messengers.",
+   "paragraph": 6,
+   "quote": "brushwaggs are happily employed by humans as messengers"
+  }
+ ],
+ "rejected": []
+}

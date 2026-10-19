@@ -1,0 +1,141 @@
+{
+ "page": "wiki/malynn",
+ "url": "https://mtg.wiki/page/Malynn",
+ "title": "Malynn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:18Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Malynn",
+   "type": "character",
+   "aliases": [],
+   "description": "An elderly, wise crone of Lambholt who teaches the village's children and believes Old Stickfingers is responsible for the killings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "A small village on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Lambholt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [],
+   "description": "A mythical boogeyman blamed for the Lambholt murders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "An archmage called to Lambholt to investigate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "The inquisitor who investigates with Vadrik.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ariosa",
+   "type": "character",
+   "aliases": [],
+   "description": "A village girl who properly finishes the summoning ritual.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Malynn, among the council of crones and mothers, calls Vadrik to Lambholt and asserts Old Stickfingers is responsible for the murders.",
+   "participants": [
+    "Malynn",
+    "Vadrik",
+    "Old Stickfingers",
+    "Lambholt"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She immediately asserted her belief that Old Stickfingers"
+  },
+  {
+   "summary": "Malynn gives Vadrik and Rem Karolus lore about Old Stickfingers.",
+   "participants": [
+    "Malynn",
+    "Vadrik",
+    "Rem Karolus",
+    "Old Stickfingers"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Malynn provided valuable insight and historical context about Old Stickfingers"
+  },
+  {
+   "summary": "Vadrik and the inquisitor confront Old Stickfingers in a grove; Vadrik destroys the twig mobile that summoned it.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus",
+    "Old Stickfingers"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Vadrik used his magical abilities to analyze and ultimately disrupt the summoning of Old Stickfingers"
+  },
+  {
+   "summary": "Ariosa finishes the summoning ritual properly, ending the threat to the village.",
+   "participants": [
+    "Ariosa",
+    "Old Stickfingers",
+    "Lambholt"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "effectively ending the threat against the village"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malynn",
+   "relation": "located_in",
+   "target": "Lambholt",
+   "note": "Crone of the village.",
+   "paragraph": 0,
+   "quote": "Malynn is a crone in the small village of Lambholt"
+  },
+  {
+   "source": "Malynn",
+   "relation": "ally",
+   "target": "Vadrik",
+   "note": "Her insight guided him.",
+   "paragraph": 3,
+   "quote": "guided Vadrik and the inquisitor, Rem Karolus"
+  },
+  {
+   "source": "Vadrik",
+   "relation": "ally",
+   "target": "Rem Karolus",
+   "note": "Investigated together.",
+   "paragraph": 4,
+   "quote": "the archmage and the inquisitor finally confronted Old Stickfingers in a grove"
+  }
+ ],
+ "rejected": []
+}

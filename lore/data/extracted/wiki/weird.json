@@ -1,0 +1,120 @@
+{
+ "page": "wiki/weird",
+ "url": "https://mtg.wiki/page/Weird",
+ "title": "Weird",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:51Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Weird",
+   "type": "creature",
+   "aliases": [
+    "Weirds"
+   ],
+   "description": "Creature type and subspecies of Elementals created by Niv-Mizzet, tied to the Izzet League, associated with red and blue mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "Ravnican guild whose chemisters create and use weirds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "Firemind",
+    "Izzet parun"
+   ],
+   "description": "Izzet parun and guildmaster who created the first weirds during the Katazar-Razblat Elemental Symposium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Katazar-Razblat Elemental Symposium",
+   "type": "event",
+   "aliases": [],
+   "description": "Gathering of quarrelling elementalists at which Niv-Mizzet made weirds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose lawmages would like to outlaw weird creation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melek",
+   "type": "character",
+   "aliases": [],
+   "description": "The only known sapient weird.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where weirds were created.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Niv-Mizzet combined opposing elements into the first weirds at the Katazar-Razblat Elemental Symposium.",
+   "participants": [
+    "Niv-Mizzet",
+    "Weird"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Niv-Mizzet took each opposing element and combined them into semi-sentient walking paradox"
+  },
+  {
+   "summary": "The Firemind ordered the weirds to burn, drown, smash and electrocute the squabbling mages.",
+   "participants": [
+    "Niv-Mizzet",
+    "Weird"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The Firemind subsequently ordered the weirds to burn, drown, smash, and electrocute all the squabbling mages."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Niv-Mizzet",
+   "relation": "created",
+   "target": "Weird",
+   "note": "Created weirds",
+   "paragraph": 4,
+   "quote": "Weirds were originally created by Niv-Mizzet"
+  },
+  {
+   "source": "Niv-Mizzet",
+   "relation": "leader_of",
+   "target": "Izzet League",
+   "note": "Parun and guildmaster",
+   "paragraph": 4,
+   "quote": "the Izzet League parun and guildmaster"
+  },
+  {
+   "source": "Melek",
+   "relation": "member_of",
+   "target": "Weird",
+   "note": "Only known sapient weird",
+   "paragraph": 7,
+   "quote": "Melek is the only known sapient weird."
+  }
+ ],
+ "rejected": []
+}

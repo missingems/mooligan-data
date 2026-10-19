@@ -1,0 +1,120 @@
+{
+ "page": "wiki/kishla-village",
+ "url": "https://mtg.wiki/page/Kishla_Village",
+ "title": "Kishla Village",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:21Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Kishla Village",
+   "type": "location",
+   "aliases": [],
+   "description": "Small fishing settlement on stilts in the Gudul delta swamps on Tarkir, a focal point of resistance to Silumgar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gudul delta",
+   "type": "location",
+   "aliases": [],
+   "description": "Swampy waterways where Kishla stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silumgar",
+   "type": "character",
+   "aliases": [],
+   "description": "Sultai ruler whose forces tried to seize Kishla's harvest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kotis",
+   "type": "character",
+   "aliases": [
+    "Fangkeeper"
+   ],
+   "description": "Farmer who led the Kishla rebellion, was killed, resurrected as a sibsig and became Fangkeeper of the reformed Sultai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sultai brood",
+   "type": "faction",
+   "aliases": [
+    "Sultai"
+   ],
+   "description": "Clan that oppressed Kishla under Silumgar and was later reformed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Kotis was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kotis rallies the villagers into rebellion when Silumgar's forces try to seize the harvest; the rebels briefly gain independence before being driven into the jungle.",
+   "participants": [
+    "Kotis",
+    "Silumgar",
+    "Kishla Village"
+   ],
+   "location": "Kishla Village",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the farmer Kotis , rallied the villagers into a rebellion"
+  },
+  {
+   "summary": "Kotis is killed in the New Phyrexian Invasion and resurrected by the rebels as a sibsig.",
+   "participants": [
+    "Kotis"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was resurrected by the rebels through necromantic rituals"
+  },
+  {
+   "summary": "Kotis rises to become Fangkeeper, leader of the reformed Sultai.",
+   "participants": [
+    "Kotis",
+    "Sultai brood"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rising to become the Fangkeeper"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kotis",
+   "relation": "leader_of",
+   "target": "Sultai brood",
+   "note": "Fangkeeper.",
+   "paragraph": 3,
+   "quote": "the new leader of the reformed Sultai"
+  },
+  {
+   "source": "Kotis",
+   "relation": "enemy",
+   "target": "Silumgar",
+   "note": "Rebelled against his rule.",
+   "paragraph": 2,
+   "quote": "became a focal point of resistance during Silumgar 's reign"
+  }
+ ],
+ "rejected": []
+}

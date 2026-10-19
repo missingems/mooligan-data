@@ -1,0 +1,118 @@
+{
+ "page": "wiki/morgan",
+ "url": "https://mtg.wiki/page/Morgan",
+ "title": "Morgan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:01Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "Morgan",
+   "type": "character",
+   "aliases": [],
+   "description": "High-ranking Thelonite druid in Havenwood who secretly hated Loren and tried to have him killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loren",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven Master Scout on the King's council, target of Morgan's hatred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thelonite order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Druid order in Havenwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Havenwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven realm on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thallids",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures evolved by the elves; Morgan used their blood to attack Loren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tev Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who freed Loren from the thallids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where the elves and thallids live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Morgan animates a tree with thallid blood to throw Loren to the thallids waiting below.",
+   "participants": [
+    "Morgan",
+    "Loren",
+    "Thallids"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Morgan used the blood of a thallid to animate a tree Loren stood perched in and ordered it to cast Loren to the ground."
+  },
+  {
+   "summary": "Tev Loneglade frees Loren and kills the thallids with a fireball.",
+   "participants": [
+    "Tev Loneglade",
+    "Loren",
+    "Thallids"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the planeswalker Tev Loneglade came across the trapped Elf and freed him"
+  },
+  {
+   "summary": "Morgan shoots Loren with a poisoned arrow and reveals his hatred and plan to rally the elves against the thallids.",
+   "participants": [
+    "Morgan",
+    "Loren"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Morgan shot Loren with a poisoned arrow, finally revealing himself to the weakened scout."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Morgan",
+   "relation": "enemy",
+   "target": "Loren",
+   "note": "Hated Loren and his family.",
+   "paragraph": 3,
+   "quote": "Having always hated Loren and his family"
+  },
+  {
+   "source": "Morgan",
+   "relation": "member_of",
+   "target": "Thelonite order",
+   "note": "High-ranking druid.",
+   "paragraph": 0,
+   "quote": "Morgan was a high-ranking druid of the Thelonite order in Havenwood"
+  }
+ ],
+ "rejected": []
+}

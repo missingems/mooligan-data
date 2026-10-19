@@ -1,0 +1,189 @@
+{
+ "page": "wiki/the-guardian",
+ "url": "https://mtg.wiki/page/The_Guardian",
+ "title": "The Guardian",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "The Guardian",
+   "type": "character",
+   "aliases": [
+    "Sahrmal's pupil"
+   ],
+   "description": "Apprentice of Kenan Sahrmal who became Protector of Shandalar and founded five guilds of magic; original name unknown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kenan Sahrmal",
+   "type": "character",
+   "aliases": [
+    "Sahrmal"
+   ],
+   "description": "Protector of Shandalar who trained the Guardian and Azar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane protected by Sahrmal and the Guardian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azar",
+   "type": "character",
+   "aliases": [],
+   "description": "Sahrmal's apprentice whose body was fought over by his soul and Lim-Dûl's.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer who besieged Ardestan and later returned; his soul was placed in the Chain Veil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ardestan",
+   "type": "location",
+   "aliases": [],
+   "description": "Besieged by Lim-Dûl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Lim-Dûl besieged Ardestan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizards' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Lim-Dûl was defeated by the Guardian's schools.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the Guardian was struck down.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the Guardian's five guilds of magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Malicious planeswalker who masqueraded as an advisor and persuaded the Guildlords to strike down the Guardian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item holding Lim-Dûl's soul to keep the Great Barrier intact.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Azar went against Sahrmal's counsel to fight Lim-Dûl alone; rescue failed and Sahrmal buried Azar's body.",
+   "participants": [
+    "Azar",
+    "Kenan Sahrmal",
+    "The Guardian",
+    "Lim-Dûl"
+   ],
+   "location": "Ardestan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a grieving Sahrmal buried the body in a secret location"
+  },
+  {
+   "summary": "Sahrmal invested his power in his remaining apprentice, who became the Guardian and Protector of Shandalar.",
+   "participants": [
+    "Kenan Sahrmal",
+    "The Guardian"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sahrmal invested the rest of his power into his remaining apprentice."
+  },
+  {
+   "summary": "The Guardian established five guilds of magic.",
+   "participants": [
+    "The Guardian",
+    "Guildlords"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Guardian established five guilds of magic"
+  },
+  {
+   "summary": "In the Wizards' War Lim-Dûl was defeated and his soul placed in the Chain Veil.",
+   "participants": [
+    "The Guardian",
+    "Lim-Dûl",
+    "Chain Veil"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Guardian then place Lim-Dûl's soul in the Chain Veil to keep the Great Barrier intact."
+  },
+  {
+   "summary": "Arzakon convinced the Guildlords to strike the Guardian down; his spirit lingered and warned the populace.",
+   "participants": [
+    "Arzakon",
+    "Guildlords",
+    "The Guardian"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "They did so, but the Guardian's spirit lingered"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kenan Sahrmal",
+   "relation": "mentor_of",
+   "target": "The Guardian",
+   "note": "trained him as apprentice",
+   "paragraph": 0,
+   "quote": "He was an apprentice to Kenan Sahrmal"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "enemy",
+   "target": "The Guardian",
+   "note": "manipulated Guildlords to strike him down",
+   "paragraph": 5,
+   "quote": "They did so, but the Guardian's spirit lingered"
+  },
+  {
+   "source": "The Guardian",
+   "relation": "enemy",
+   "target": "Lim-Dûl",
+   "note": "defeated him",
+   "paragraph": 4,
+   "quote": "Lim-Dûl was soundly defeated"
+  }
+ ],
+ "rejected": []
+}

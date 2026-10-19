@@ -1,0 +1,145 @@
+{
+ "page": "wiki/rica",
+ "url": "https://mtg.wiki/page/Rica",
+ "title": "Rica",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:14Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Rica",
+   "type": "character",
+   "aliases": [],
+   "description": "A composed, stoic human avenger pilot from Kroog who survived the Fall of Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Llora",
+   "type": "character",
+   "aliases": [],
+   "description": "Instructor of the cadet pilots, incinerated at the barricade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanwell",
+   "type": "character",
+   "aliases": [],
+   "description": "Fellow pilot who fled with Rica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carlo",
+   "type": "character",
+   "aliases": [],
+   "description": "Panicked fellow pilot killed by Fallaji soldiers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Fallaji army attacking Kroog.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Traxos",
+   "type": "creature",
+   "aliases": [],
+   "description": "The dragon engine whose arrival signaled the severity of the assault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "City invaded by Mishra's forces in 28 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [
+    "Fallaji army"
+   ],
+   "description": "Mishra's army that attacked Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Kroog",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion and destruction of Kroog.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As Mishra's forces invade, cadets including Rica are promoted to pilots of sword-pattern avengers.",
+   "participants": [
+    "Rica",
+    "Llora",
+    "Mishra"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The cadets, including Rica, were urgently promoted to full pilots"
+  },
+  {
+   "summary": "Traxos arrives; Llora orders the pilots to flank it, but defenses crumble and Llora and the barricade soldiers are incinerated.",
+   "participants": [
+    "Llora",
+    "Rica",
+    "Traxos",
+    "Mishra"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Llora and the soldiers at the barricade were incinerated"
+  },
+  {
+   "summary": "Carlo is killed by Fallaji soldiers; Sanwell and Rica flee the city.",
+   "participants": [
+    "Rica",
+    "Sanwell",
+    "Carlo",
+    "Fallaji"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Carlo was killed by Fallaji soldiers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Llora",
+   "relation": "mentor_of",
+   "target": "Rica",
+   "note": "instructor of the cadets",
+   "paragraph": 2,
+   "quote": "under the stern guidance of their instructor, Llora"
+  },
+  {
+   "source": "Rica",
+   "relation": "ally",
+   "target": "Sanwell",
+   "note": "fled together",
+   "paragraph": 4,
+   "quote": "even as he and Rica fled the city"
+  },
+  {
+   "source": "Fallaji",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "led by Mishra",
+   "paragraph": 3,
+   "quote": "The Fallaji army, led by Mishra"
+  }
+ ],
+ "rejected": []
+}

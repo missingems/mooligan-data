@@ -1,0 +1,191 @@
+{
+ "page": "wiki/dundoolin",
+ "url": "https://mtg.wiki/page/Dundoolin",
+ "title": "Dundoolin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dundoolin",
+   "type": "location",
+   "aliases": [],
+   "description": "The second largest kithkin clachan in Lorwyn, known for its sages and the Eightyfold Trail.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dundaeron",
+   "type": "location",
+   "aliases": [],
+   "description": "Dundoolin's Shadowmoor counterpart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kinsbaile",
+   "type": "location",
+   "aliases": [],
+   "description": "The only kithkin clachan larger than Dundoolin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Dundoolin stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eightyfold Trail",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An illustrated manuscript of Lorwyn's greater elementals kept by Dundoolin's sages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Library of Dundoolin",
+   "type": "location",
+   "aliases": [],
+   "description": "A collapsed fort at the center of Dundoolin holding buried document caches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ern Barhen",
+   "type": "character",
+   "aliases": [
+    "Chief Excavator Ern Barhen"
+   ],
+   "description": "Chief Excavator leading efforts to uncover the fort's chambers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daranna Gwal",
+   "type": "character",
+   "aliases": [
+    "Daranna"
+   ],
+   "description": "Honored cenn of Dundoolin when the Belltower crumbled; named Hyal her heir and died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hyal Lwellen",
+   "type": "character",
+   "aliases": [
+    "Hyal"
+   ],
+   "description": "Daranna's heir and Dundoolin's most famous cenn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belltower",
+   "type": "location",
+   "aliases": [],
+   "description": "Dundoolin's tower, destroyed by boggarts and later rebuilt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dundoolin Raiders",
+   "type": "faction",
+   "aliases": [],
+   "description": "A militia used to invade boggart warrens, disbanded by Hyal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paperfin merrows",
+   "type": "faction",
+   "aliases": [
+    "Paperfin"
+   ],
+   "description": "Merrows with whom Hyal set up trade holidays.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boggarts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creatures who collapsed Dundoolin's Belltower.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Book of Kith and Kin",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Record telling of Daranna and Hyal.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Injured Daranna is unable to stop delirious boggarts from destroying the Belltower, though she slays the warren's Auntie.",
+   "participants": [
+    "Daranna Gwal",
+    "Boggarts",
+    "Belltower"
+   ],
+   "location": "Dundoolin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Although she slew the warren's Auntie, she lost pride in her leadership"
+  },
+  {
+   "summary": "Daranna names Hyal Lwellen her heir, wills him her sword, and dies.",
+   "participants": [
+    "Daranna Gwal",
+    "Hyal Lwellen"
+   ],
+   "location": "Dundoolin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she named Hyal Lwellen her heir, willed him her precious sword, and died soon after"
+  },
+  {
+   "summary": "As cenn, Hyal rebuilds the Belltower, sets up trade holidays with the Paperfin merrows, founds the first elemental school and disbands the Dundoolin Raiders.",
+   "participants": [
+    "Hyal Lwellen",
+    "Paperfin merrows",
+    "Dundoolin Raiders"
+   ],
+   "location": "Dundoolin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Hyal's most famous act was to disband the Dundoolin Raiders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hyal Lwellen",
+   "relation": "leader_of",
+   "target": "Dundoolin",
+   "note": "cenn",
+   "paragraph": 4,
+   "quote": "accepting the role of cenn of Dundoolin"
+  },
+  {
+   "source": "Daranna Gwal",
+   "relation": "leader_of",
+   "target": "Dundoolin",
+   "note": "former cenn",
+   "paragraph": 3,
+   "quote": "Daranna Gwal was Dundoolin's cenn when the Belltower crumbled"
+  },
+  {
+   "source": "Daranna Gwal",
+   "relation": "mentor_of",
+   "target": "Hyal Lwellen",
+   "note": "named him heir",
+   "paragraph": 3,
+   "quote": "she named Hyal Lwellen her heir, willed him her precious sword, and died soon after"
+  },
+  {
+   "source": "Dundoolin",
+   "relation": "located_in",
+   "target": "Lorwyn",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Dundoolin is the second largest kithkin clachan in Lorwyn"
+  }
+ ],
+ "rejected": []
+}

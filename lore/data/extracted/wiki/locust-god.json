@@ -1,0 +1,164 @@
+{
+ "page": "wiki/locust-god",
+ "url": "https://mtg.wiki/page/Locust_God",
+ "title": "Locust God",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Locust God",
+   "type": "deity",
+   "aliases": [
+    "Chitin Court"
+   ],
+   "description": "One of three gods captured and distorted by Nicol Bolas; an insect god of Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh"
+   ],
+   "description": "Captured and distorted the gods to serve his interests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hekma",
+   "type": "concept",
+   "aliases": [],
+   "description": "Something the Locust God was meant to consume and destroy; rebuilt by Hazoret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who rebuilt the Hekma and ignited Phyrexian oil with her spear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scarab God",
+   "type": "deity",
+   "aliases": [],
+   "description": "Fellow insect god engaged with the Phyrexian invaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Amonkhet where the insect gods fought Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane invaded by Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders of Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "Led a crop of elite fighters to dismember the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ketramose",
+   "type": "deity",
+   "aliases": [],
+   "description": "Later god regarded by the insect gods as tainted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Phyrexian invasion targeting Amonkhet.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Locust God was confined outside Naktamun after Hazoret rebuilt the Hekma.",
+   "participants": [
+    "Locust God",
+    "Hazoret",
+    "Hekma"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Locust God was confined outside Naktamun"
+  },
+  {
+   "summary": "The survivors found the Scarab God and Locust God at Naktamun fighting the Phyrexians, and Hazoret ignited the Phyrexians' oil.",
+   "participants": [
+    "Locust God",
+    "Scarab God",
+    "Hazoret",
+    "Phyrexians"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hazoret used her flaming spear to ignite the glistening oil within the Phyrexians' veins"
+  },
+  {
+   "summary": "Djeru led elite fighters to dismember the Phyrexians; the insect gods then departed for the deep desert.",
+   "participants": [
+    "Djeru",
+    "Locust God",
+    "Scarab God"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the inscrutable insect gods departed for the deep desert without a word"
+  },
+  {
+   "summary": "After the God-Pharaoh's death the Scarab and Locust Gods showed agency, viewing themselves as true gods.",
+   "participants": [
+    "Locust God",
+    "Scarab God",
+    "Nicol Bolas"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "They saw themselves as the true gods of the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Locust God",
+   "note": "captured and distorted it",
+   "paragraph": 0,
+   "quote": "captured and distorted by Nicol Bolas to serve his interests"
+  },
+  {
+   "source": "Locust God",
+   "relation": "ally",
+   "target": "Scarab God",
+   "note": "form the Chitin Court",
+   "paragraph": 4,
+   "quote": "the Chitin Court , as they are termed"
+  }
+ ],
+ "rejected": []
+}

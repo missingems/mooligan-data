@@ -1,0 +1,146 @@
+{
+ "page": "wiki/brannon",
+ "url": "https://mtg.wiki/page/Brannon",
+ "title": "Brannon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Brannon",
+   "type": "character",
+   "aliases": [],
+   "description": "A young pyromancer acolyte in Keral Keep on Regatha who admires Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keral Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Keep on Regatha where Brannon lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Keral Keep stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra",
+   "type": "character",
+   "aliases": [
+    "Chandra Nalaar"
+   ],
+   "description": "Planeswalker pyromancer who stole the Dragon Scroll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Planeswalker mindmage sent to retrieve the Dragon Scroll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon Scroll",
+   "type": "artifact",
+   "aliases": [
+    "the scroll"
+   ],
+   "description": "Scroll Chandra took and Jace sought.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kephalai",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the prelate sent Jace.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jace, sent by the prelate to retrieve the Dragon Scroll, first encountered Brannon and read his mind, then followed him to Keral Keep.",
+   "participants": [
+    "Jace Beleren",
+    "Brannon"
+   ],
+   "location": "Regatha",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jace learned of Chandra by reading Brannon's mind"
+  },
+  {
+   "summary": "Brannon presented Chandra with a metal necklace he had made.",
+   "participants": [
+    "Brannon",
+    "Chandra"
+   ],
+   "location": "Keral Keep",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "presented her with a metal necklace, which he had made for her himself"
+  },
+  {
+   "summary": "Jace walked in and demanded the scroll, sparking a duel with Chandra.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra"
+   ],
+   "location": "Keral Keep",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This quickly escalated into a full-on duel between Jace and Chandra."
+  },
+  {
+   "summary": "Jace used an illusion of Brannon as a hostage, then posed as Brannon himself to grab the scroll and planeswalk away.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra",
+    "Brannon",
+    "Dragon Scroll"
+   ],
+   "location": "Regatha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jace used the opportunity to grab the scroll from Chandra, stunning her and then planeswalking away."
+  },
+  {
+   "summary": "Chandra admitted defeat but had secretly copied the scroll's symbols.",
+   "participants": [
+    "Chandra",
+    "Brannon"
+   ],
+   "location": "Regatha",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she had secretly copied the symbols of the scroll earlier"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brannon",
+   "relation": "ally",
+   "target": "Chandra",
+   "note": "admires her greatly",
+   "paragraph": 1,
+   "quote": "whom he admires greatly"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Chandra",
+   "note": "dueled her over the scroll",
+   "paragraph": 2,
+   "quote": "This quickly escalated into a full-on duel between Jace and Chandra."
+  }
+ ],
+ "rejected": []
+}

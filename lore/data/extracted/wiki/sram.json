@@ -1,0 +1,110 @@
+{
+ "page": "wiki/sram",
+ "url": "https://mtg.wiki/page/Sram",
+ "title": "Sram",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:11Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Sram",
+   "type": "character",
+   "aliases": [
+    "Sram, Senior Edificer"
+   ],
+   "description": "An eccentric dwarf, the highest-ranking edificer and chief architect of the Aether Hub in Ghirapur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Avishkar whose infrastructure Sram maintains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Kaladesh containing Ghirapur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Hub",
+   "type": "location",
+   "aliases": [],
+   "description": "Structure whose chief architect is Sram.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Renegades",
+   "type": "faction",
+   "aliases": [
+    "Renegades"
+   ],
+   "description": "A group whose destructive efforts Sram's team repaired.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Sram fought to defend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Sram fought in defense of Kaladesh.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sram and his team work tirelessly to repair Ghirapur after the Renegades' destruction.",
+   "participants": [
+    "Sram",
+    "The Renegades",
+    "Ghirapur"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Sram and his team worked tirelessly to repair the city."
+  },
+  {
+   "summary": "Sram fights in defense of Kaladesh during the New Phyrexian Invasion.",
+   "participants": [
+    "Sram",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Kaladesh",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Sram fought in defense of Kaladesh during the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sram",
+   "relation": "leader_of",
+   "target": "Aether Hub",
+   "note": "Its chief architect.",
+   "paragraph": 0,
+   "quote": "He is the Aether Hub 's chief architect"
+  },
+  {
+   "source": "Sram",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "Maintains the city.",
+   "paragraph": 0,
+   "quote": "Sram is a dwarf instrumental in the maintenance of Ghirapur on Avishkar for years."
+  }
+ ],
+ "rejected": []
+}
