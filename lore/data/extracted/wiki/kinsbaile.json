@@ -1,0 +1,183 @@
+{
+ "page": "wiki/kinsbaile",
+ "url": "https://mtg.wiki/page/Kinsbaile",
+ "title": "Kinsbaile",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:57Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Kinsbaile",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest kithkin clachan in Lorwyn, a trading hub of about 600 residents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kinsbaile lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaddock Teeg",
+   "type": "character",
+   "aliases": [],
+   "description": "Cenn who led Kinsbaile at the Great Aurora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brigid Baeli",
+   "type": "character",
+   "aliases": [],
+   "description": "Archer, Hero of Kinsbaile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [],
+   "description": "Treefolk sage, former teacher of Rhys.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Daen of Gilt-Leaf hunters hunted as a traitor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nath",
+   "type": "character",
+   "aliases": [],
+   "description": "Gilt-Leaf taercenn killed by Rhys.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gryffid",
+   "type": "character",
+   "aliases": [],
+   "description": "Gilt-Leaf daen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gilt-Leaf elves",
+   "type": "faction",
+   "aliases": [
+    "Gilt-Leaf"
+   ],
+   "description": "Elves who occupied Kinsbaile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "Flamekin whose rekindling caused Colfenor to burn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed the population of Kinsbaile's Shadowmoor counterpart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Claide Fiobhan",
+   "type": "character",
+   "aliases": [],
+   "description": "Guildmaster of the Curiosities Traders' Guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Curiosities Traders' Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kinsbaile's largest trade group.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Gilt-Leaf occupy Kinsbaile waiting for the traitor Rhys, planning to punish the kithkin.",
+   "participants": [
+    "Gilt-Leaf elves",
+    "Nath",
+    "Gryffid",
+    "Rhys",
+    "Kinsbaile"
+   ],
+   "location": "Kinsbaile",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "occupied Kinsbaile and waited for the traitor"
+  },
+  {
+   "summary": "Rhys kills Nath and the rest of the elves leave to pursue him, sparing Kinsbaile.",
+   "participants": [
+    "Rhys",
+    "Nath",
+    "Gilt-Leaf elves"
+   ],
+   "location": "Kinsbaile",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Kinsbaile was spared the elvish wrath when Nath was killed by Rhys"
+  },
+  {
+   "summary": "Ashling's rekindling causes Colfenor to burn, damaging buildings.",
+   "participants": [
+    "Ashling",
+    "Colfenor"
+   ],
+   "location": "Kinsbaile",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "the rekindling of the flamekin Ashling caused Colfenor to burn"
+  },
+  {
+   "summary": "Kinsbaile is repopulated after its Shadowmoor counterpart's population is killed by Oona.",
+   "participants": [
+    "Kinsbaile",
+    "Oona"
+   ],
+   "location": "Kinsbaile",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Kinsbaile was repopulated after the entire population of its Shadowmoor counterpart was killed by Oona"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rhys",
+   "relation": "killed",
+   "target": "Nath",
+   "note": "",
+   "paragraph": 5,
+   "quote": "Nath was killed by Rhys"
+  },
+  {
+   "source": "Gaddock Teeg",
+   "relation": "leader_of",
+   "target": "Kinsbaile",
+   "note": "cenn at the Great Aurora",
+   "paragraph": 4,
+   "quote": "the town was led by the cenn Gaddock Teeg"
+  },
+  {
+   "source": "Claide Fiobhan",
+   "relation": "leader_of",
+   "target": "Curiosities Traders' Guild",
+   "note": "guildmaster",
+   "paragraph": 2,
+   "quote": "Its guildmaster, Claide Fiobhan, runs"
+  }
+ ],
+ "rejected": []
+}

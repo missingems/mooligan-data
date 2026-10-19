@@ -1,0 +1,119 @@
+{
+ "page": "wiki/husk",
+ "url": "https://mtg.wiki/page/Husk",
+ "title": "Husk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "The Husk",
+   "type": "location",
+   "aliases": [
+    "Husk"
+   ],
+   "description": "Crumbling ring of ruins around the southern Utvara valley on Ravnica, home of the nephilim and claimed by the Gruul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Utvara",
+   "type": "location",
+   "aliases": [],
+   "description": "Valley region of Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "Clans that claim parts of the Husk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephilim",
+   "type": "creature",
+   "aliases": [],
+   "description": "Five ancient, monstrous god-like beings of pre-Guildpact origin dwelling in the Husk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose experimental detonations destabilized the region.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zomaj Hauc",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy in a battle after which the Husk was granted to the clans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cauldron",
+   "type": "location",
+   "aliases": [],
+   "description": "Destroyed in the battle with Zomaj Hauc.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Husk lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Husk becomes increasingly unstable after the kuga plague and Izzet experiments, and the nephilim appear or reawaken.",
+   "participants": [
+    "The Husk",
+    "Izzet League",
+    "Nephilim"
+   ],
+   "location": "The Husk",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "experimental detonations in the region"
+  },
+  {
+   "summary": "After the battle with Zomaj Hauc and the Cauldron's destruction, the Husk is granted to the Gruul clans as sovereign territory.",
+   "participants": [
+    "The Husk",
+    "Gruul Clans",
+    "Zomaj Hauc",
+    "Cauldron"
+   ],
+   "location": "The Husk",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Husk was granted to the clans as their sovereign territory"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nephilim",
+   "relation": "located_in",
+   "target": "The Husk",
+   "note": "dwell within the terrain",
+   "paragraph": 2,
+   "quote": "The Husk is also home to the nephilim"
+  },
+  {
+   "source": "Gruul Clans",
+   "relation": "other",
+   "target": "The Husk",
+   "note": "claim parts of it",
+   "paragraph": 2,
+   "quote": "Various branches of the Gruul Clans lay claim to parts of the Husk"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,188 @@
+{
+ "page": "wiki/latulla",
+ "url": "https://mtg.wiki/page/Latulla",
+ "title": "Latulla",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:55Z",
+ "storyline": "Prophecy",
+ "entities": [
+  {
+   "name": "Latulla",
+   "type": "character",
+   "aliases": [
+    "Doyenne Latulla"
+   ],
+   "description": "A Keldon warrior skilled in artifice, the Doyenne in charge of the Keldon invasion of Jamuraa; she died in battle at Barrin's hands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haddad",
+   "type": "character",
+   "aliases": [],
+   "description": "Kipamu officer captured and enslaved by Latulla.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gorsha",
+   "type": "character",
+   "aliases": [],
+   "description": "Servant of the Warlords' Council who defeated Latulla in ritual combat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Enraged by Rayne's death, he decapitated Latulla.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rayne",
+   "type": "character",
+   "aliases": [],
+   "description": "Person whose death enraged Barrin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [
+    "Keld"
+   ],
+   "description": "Warrior nation led by warlords whose women play a prominent role.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kipamu League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Force defending Jamuraa whose war machines Latulla captured.",
+   "presence": "appears"
+  },
+  {
+   "name": "Warlords' Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Keldon ruling council.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witch Kings",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings Latulla hoped to awaken for the Prophesied Keldon Twilight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Necropolis",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Latulla was refused entry.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on Dominaria invaded by Keldons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prophecy War",
+   "type": "event",
+   "aliases": [
+    "Keldon Invasion of Jamuraa"
+   ],
+   "description": "Keldon invasion of Jamuraa commanded by Latulla.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Latulla rises to prominence, expelling the master of her house and taking over his faction.",
+   "participants": [
+    "Latulla",
+    "Keldons"
+   ],
+   "location": "Keldons",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "reportedly expelling the master of her house and taking over his faction"
+  },
+  {
+   "summary": "Latulla is placed in command of the Prophecy War and takes the captive Kipamu officer Haddad as her slave.",
+   "participants": [
+    "Latulla",
+    "Haddad",
+    "Kipamu League"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she took the captive Kipamu officer Haddad as her slave"
+  },
+  {
+   "summary": "Latulla returns to Keld to push the warlords to awaken the Witch Kings, but is defeated in ritual combat by Gorsha at the Keldon Necropolis and exiled with her supporters.",
+   "participants": [
+    "Latulla",
+    "Gorsha",
+    "Warlords' Council",
+    "Witch Kings"
+   ],
+   "location": "Keldon Necropolis",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Latulla and her supporters were exiled from Keld to fight and die in foreign lands"
+  },
+  {
+   "summary": "Latulla's counterattack against the Kipamu League fails; pinned under a war barge, she is decapitated by Barrin, who she mistook for a slave.",
+   "participants": [
+    "Latulla",
+    "Barrin",
+    "Kipamu League"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Barrin, enraged by Rayne 's death, instead decapitated her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Barrin",
+   "relation": "killed",
+   "target": "Latulla",
+   "note": "decapitated her",
+   "paragraph": 4,
+   "quote": "Barrin, enraged by Rayne 's death, instead decapitated her"
+  },
+  {
+   "source": "Gorsha",
+   "relation": "serves",
+   "target": "Warlords' Council",
+   "note": "servant",
+   "paragraph": 3,
+   "quote": "Gorsha, a servant of the Warlords' Council"
+  },
+  {
+   "source": "Latulla",
+   "relation": "enemy",
+   "target": "Kipamu League",
+   "note": "fought and was defeated by it",
+   "paragraph": 4,
+   "quote": "was outmaneuvered by them and defeated"
+  },
+  {
+   "source": "Latulla",
+   "relation": "leader_of",
+   "target": "Keldons",
+   "note": "commanded the invasion",
+   "paragraph": 2,
+   "quote": "She was placed in command of the Prophecy War"
+  }
+ ],
+ "rejected": []
+}

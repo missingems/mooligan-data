@@ -1,0 +1,111 @@
+{
+ "page": "wiki/donner-rus",
+ "url": "https://mtg.wiki/page/Donner_Rus",
+ "title": "Donner Rus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Donner Rus",
+   "type": "character",
+   "aliases": [
+    "Rus"
+   ],
+   "description": "Potion-master and master poisoner from Dominaria, famed throughout the five kingdoms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tania Cayce",
+   "type": "character",
+   "aliases": [
+    "Tania"
+   ],
+   "description": "Donner Rus's apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaan",
+   "type": "character",
+   "aliases": [],
+   "description": "Man whose people were enslaved by a dragon; sought Rus's help to kill it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon engine",
+   "type": "creature",
+   "aliases": [
+    "the dragon"
+   ],
+   "description": "Dragon that enslaved Vaan's people, a dragon engine immune to Rus's spells and poisons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Rus lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vaan asks Rus to help kill the dragon that enslaved his people; Rus goes along pretending to accept.",
+   "participants": [
+    "Vaan",
+    "Donner Rus"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Rus was approached by Vaan , who wanted him to help kill the dragon that had enslaved Vaan and his people."
+  },
+  {
+   "summary": "Near the lair, Rus puts the group to sleep with herbs and sends Tania in to gather dragon parts.",
+   "participants": [
+    "Donner Rus",
+    "Tania Cayce",
+    "Vaan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He then sent Tania into the lair"
+  },
+  {
+   "summary": "The dragon proves awake and a dragon engine; Tania is saved by Vaan, and Rus is incinerated.",
+   "participants": [
+    "Donner Rus",
+    "Tania Cayce",
+    "Vaan",
+    "Dragon engine"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "but Rus himself was incinerated."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tania Cayce",
+   "relation": "serves",
+   "target": "Donner Rus",
+   "note": "apprentice",
+   "paragraph": 2,
+   "quote": "Tania Cayce , his apprentice, sometimes feared that he might slip her something"
+  },
+  {
+   "source": "Dragon engine",
+   "relation": "killed",
+   "target": "Donner Rus",
+   "note": "incinerated him",
+   "paragraph": 4,
+   "quote": "but Rus himself was incinerated."
+  }
+ ],
+ "rejected": []
+}

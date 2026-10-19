@@ -1,0 +1,191 @@
+{
+ "page": "wiki/baas",
+ "url": "https://mtg.wiki/page/Baas",
+ "title": "Baas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:52Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Baas",
+   "type": "character",
+   "aliases": [
+    "Baas Solvar Radley",
+    "Baas Solar",
+    "Baas Solvar"
+   ],
+   "description": "A one-armed ogre shaman and tattoo artist of the Ghor clan of the Gruul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghor clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "A clan of the Gruul to which Baas belongs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnica guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Baas wreaks havoc on infrastructure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arrus",
+   "type": "character",
+   "aliases": [],
+   "description": "A viashino who meets Baas in her clan's camp and travels with her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Govan Radley",
+   "type": "character",
+   "aliases": [],
+   "description": "Baas's relative, who caused the Tin Street Massacre.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daeska Solvar",
+   "type": "character",
+   "aliases": [],
+   "description": "Baas's cyclops husband, who was unfaithful to her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ossett Weslyn",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who arranged Baas's release to learn of a spy in the Boros Legion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild with a spy within it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tin Street Massacre",
+   "type": "event",
+   "aliases": [],
+   "description": "An infamous incident attributed to Govan Radley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya",
+   "type": "faction",
+   "aliases": [
+    "Selesnyan"
+   ],
+   "description": "A Ravnican guild with a secret project of accelerated growth magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Ravnica separated from Selesnyan territory by Selesnya's planned barrier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baas drops the Radley name after the Tin Street Massacre, takes her husband's name, then leaves him and becomes only Baas.",
+   "participants": [
+    "Baas",
+    "Daeska Solvar",
+    "Govan Radley"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she left him and dropped his name too, becoming only \"Baas\"."
+  },
+  {
+   "summary": "Ossett Weslyn arranges Baas's release to gain information about a spy within the Boros Legion.",
+   "participants": [
+    "Ossett Weslyn",
+    "Baas",
+    "Boros Legion"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Ossett arranged for Baas' release to gain crucial information about a spy within the Boros Legion."
+  },
+  {
+   "summary": "Arrus meets Baas in her clan's camp; a tense meeting leads to a scuffle over ink.",
+   "participants": [
+    "Arrus",
+    "Baas",
+    "Ghor clan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Their initial meeting was tense, leading to a scuffle over ink"
+  },
+  {
+   "summary": "Arrus and Baas journey into Selesnyan territory for ingredients for her healing ink.",
+   "participants": [
+    "Arrus",
+    "Baas",
+    "Selesnya"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "They ventured into Selesnyan territory in search of ingredients for Baas's special ink"
+  },
+  {
+   "summary": "Arrus discovers Selesnya's secret project to build a barrier between the Rubblebelt and Selesnyan territory, fueling his resolve to challenge his clan's leadership.",
+   "participants": [
+    "Arrus",
+    "Selesnya"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Arrus discovered Selesnya's secret project"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baas",
+   "relation": "member_of",
+   "target": "Ghor clan",
+   "note": "",
+   "paragraph": 0,
+   "quote": "part of the Ghor clan of Gruul"
+  },
+  {
+   "source": "Baas",
+   "relation": "romantic",
+   "target": "Daeska Solvar",
+   "note": "Former husband; she left him after learning of his infidelity.",
+   "paragraph": 3,
+   "quote": "using the name of her cyclops husband, Daeska Solvar"
+  },
+  {
+   "source": "Baas",
+   "relation": "family",
+   "target": "Govan Radley",
+   "note": "Relative.",
+   "paragraph": 2,
+   "quote": "done by her relative, Govan Radley"
+  }
+ ],
+ "rejected": []
+}

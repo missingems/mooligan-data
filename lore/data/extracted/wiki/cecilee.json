@@ -1,0 +1,166 @@
+{
+ "page": "wiki/cecilee",
+ "url": "https://mtg.wiki/page/Cecilee",
+ "title": "Cecilee",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cecilee",
+   "type": "character",
+   "aliases": [],
+   "description": "An elven druid who built a Selesnyan enclave in the Rubblebelt and was killed by Massacre Girl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Massacre Girl",
+   "type": "character",
+   "aliases": [],
+   "description": "Thrill-kill assassin-for-hire of the Rakdos who killed Cecilee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zi",
+   "type": "character",
+   "aliases": [],
+   "description": "Abandoned Gruul infant adopted by Cecilee and the sole survivor of the attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruzi",
+   "type": "character",
+   "aliases": [],
+   "description": "Cecilee's brother who rescued Zi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nikya",
+   "type": "character",
+   "aliases": [],
+   "description": "Gruul leader whose clan demanded the baby back.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Worldsoul",
+   "type": "concept",
+   "aliases": [],
+   "description": "Voice of Ravnica that Cecilee followed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose cultists attacked the vernadi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "Guild allied briefly with Cecilee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Conclave",
+    "Selesnya"
+   ],
+   "description": "Guild Cecilee came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "Devastated region of Ravnica where Cecilee built her vernadi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cecilee builds a vernadi in the Rubblebelt as a healing center and forms a bond with the Gruul.",
+   "participants": [
+    "Cecilee",
+    "Gruul Clans",
+    "Selesnya Conclave"
+   ],
+   "location": "Rubblebelt",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she built an outpost of the Conclave called a vernadi"
+  },
+  {
+   "summary": "Cecilee adopts an abandoned Gruul baby, names him Zi, and refuses to return him to Nikya's clan, ending the Gruul alliance.",
+   "participants": [
+    "Cecilee",
+    "Zi",
+    "Nikya",
+    "Gruul Clans"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Cecilee adopted the infant to raise as her own"
+  },
+  {
+   "summary": "The Rakdos attack the vernadi; Massacre Girl uprooting the guild tree and killing all followers.",
+   "participants": [
+    "Rakdos",
+    "Massacre Girl",
+    "Cecilee"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Rakdos killed all of Cecilee's followers, sparing her for last."
+  },
+  {
+   "summary": "Massacre Girl cuts Cecilee's throat; Zi survives hidden and is rescued by Ruzi.",
+   "participants": [
+    "Massacre Girl",
+    "Cecilee",
+    "Zi",
+    "Ruzi"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The infant was rescued by Cecilee's brother Ruzi later the same day."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Massacre Girl",
+   "relation": "killed",
+   "target": "Cecilee",
+   "note": "cut her throat",
+   "paragraph": 0,
+   "quote": "Cecilee was killed by Massacre Girl"
+  },
+  {
+   "source": "Cecilee",
+   "relation": "family",
+   "target": "Zi",
+   "note": "adoptive mother",
+   "paragraph": 2,
+   "quote": "Cecilee adopted the infant to raise as her own"
+  }
+ ],
+ "rejected": []
+}

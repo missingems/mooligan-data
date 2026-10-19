@@ -1,0 +1,147 @@
+{
+ "page": "wiki/torbran",
+ "url": "https://mtg.wiki/page/Torbran",
+ "title": "Torbran",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:49Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Torbran",
+   "type": "character",
+   "aliases": [
+    "Torbran, Thane of Red Fell"
+   ],
+   "description": "A red-bearded dwarf noble from Eldraine, Thane of the Red Fell clan, who wields a massive axe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Torbran lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Fell",
+   "type": "faction",
+   "aliases": [],
+   "description": "The dwarvish clan Torbran leads as Thane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Court of Embereth",
+   "type": "faction",
+   "aliases": [
+    "Embereth"
+   ],
+   "description": "Court whose camaraderie appeals to some dwarves, who compete at the Burning Yard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Irencrag",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A stone whose taunts insulted Torbran's weapon, which knights must strike to claim knighthood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rankle",
+   "type": "character",
+   "aliases": [],
+   "description": "A faerie in love with Ayara who stole Torbran's ring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayara",
+   "type": "character",
+   "aliases": [],
+   "description": "Now-compleat Phyrexianized figure loved by Rankle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Locthwain",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle Phyrexianized in the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Phyrexian force that invaded Eldraine.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Torbran travels to Embereth to compete for knighthood but refuses to strike the Irencrag and returns to the Wilds.",
+   "participants": [
+    "Torbran",
+    "Irencrag",
+    "Court of Embereth"
+   ],
+   "location": "Court of Embereth",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Torbran refused"
+  },
+  {
+   "summary": "New Phyrexia invades Eldraine; Torbran escapes compleation and plans to attack Castle Locthwain.",
+   "participants": [
+    "Torbran",
+    "New Phyrexia"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Torbran escaped compleation"
+  },
+  {
+   "summary": "Torbran rescues Rankle from a Phyrexian attack and takes him along.",
+   "participants": [
+    "Torbran",
+    "Rankle"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he rescued Rankle from a Phyrexian attack"
+  },
+  {
+   "summary": "Rankle steals Torbran's wishing ring and wastes two wishes; his third wish, a rain of love potion, defeats the Phyrexian force.",
+   "participants": [
+    "Rankle",
+    "Torbran",
+    "New Phyrexia"
+   ],
+   "location": "Castle Locthwain",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Rankle's third wish - a rain of love potion - ended up singlehandedly defeating the Phyrexian force"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Torbran",
+   "relation": "leader_of",
+   "target": "Red Fell",
+   "note": "Thane of the clan",
+   "paragraph": 3,
+   "quote": "the current Thane of the dwarvish clan of Red Fell"
+  },
+  {
+   "source": "Rankle",
+   "relation": "romantic",
+   "target": "Ayara",
+   "note": "Rankle is in love with Ayara",
+   "paragraph": 4,
+   "quote": "the faerie was in love with the now- compleat Ayara"
+  }
+ ],
+ "rejected": []
+}

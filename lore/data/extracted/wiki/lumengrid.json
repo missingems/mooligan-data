@@ -1,0 +1,137 @@
+{
+ "page": "wiki/lumengrid",
+ "url": "https://mtg.wiki/page/Lumengrid",
+ "title": "Lumengrid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lumengrid",
+   "type": "location",
+   "aliases": [
+    "Seat of the Synod"
+   ],
+   "description": "Massive city-stronghold on Mirrodin and capital of the Vedalken Empire, later capital of Jin-Gitaxias's Progress Engine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Lumengrid stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vedalken Empire",
+   "type": "faction",
+   "aliases": [
+    "vedalken"
+   ],
+   "description": "Empire ruled from Lumengrid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Synod",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gathering of vedalken rulers and officials housed at Lumengrid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Neurok",
+   "type": "faction",
+   "aliases": [],
+   "description": "People from the coast of the Quicksilver Sea, used as labor and slaves by the vedalken.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of the Synod",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which the Neurok disabled vedalken defenses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose Progress Engine made Lumengrid its capital.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pool of Knowledge",
+   "type": "location",
+   "aliases": [],
+   "description": "Site housed at Lumengrid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hoverguards",
+   "type": "creature",
+   "aliases": [
+    "Wanderguards"
+   ],
+   "description": "Guards of Lumengrid.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the Battle of the Synod the Neurok disable vedalken defenses, leaving hundreds dead including vedalken leadership.",
+   "participants": [
+    "Neurok",
+    "Vedalken Empire",
+    "Synod"
+   ],
+   "location": "Lumengrid",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Neurok were able to disable vedalken defenses at Lumengrid, leading to a massive battle"
+  },
+  {
+   "summary": "The two cultures enter an uneasy truce, vedalken in the upper city and Neurok in the lower.",
+   "participants": [
+    "Neurok",
+    "Vedalken Empire"
+   ],
+   "location": "Lumengrid",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the two cultures entered an uneasy truce, in which both inhabited Lumengrid."
+  },
+  {
+   "summary": "After the Phyrexianization of the plane, Lumengrid becomes capital of Jin-Gitaxias's Progress Engine.",
+   "participants": [
+    "Lumengrid",
+    "Jin-Gitaxias"
+   ],
+   "location": "Lumengrid",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Lumengrid became the capital of Jin-Gitaxias Progress Engine."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lumengrid",
+   "relation": "located_in",
+   "target": "Mirrodin",
+   "note": "capital of the Vedalken Empire",
+   "paragraph": 0,
+   "quote": "was a massive city-stronghold on Mirrodin , and the capital of the Vedalken Empire."
+  },
+  {
+   "source": "Neurok",
+   "relation": "serves",
+   "target": "Vedalken Empire",
+   "note": "brought as lab workers and slaves",
+   "paragraph": 2,
+   "quote": "or to work as slaves"
+  }
+ ],
+ "rejected": []
+}

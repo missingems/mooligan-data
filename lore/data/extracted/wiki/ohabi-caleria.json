@@ -1,0 +1,140 @@
+{
+ "page": "wiki/ohabi-caleria",
+ "url": "https://mtg.wiki/page/Ohabi_Caleria",
+ "title": "Ohabi Caleria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ohabi Caleria",
+   "type": "character",
+   "aliases": [
+    "Lady Ohabi Caleria",
+    "Lady Caleria"
+   ],
+   "description": "Elven archer who ruled the island Argenti and led the Edemi Islands in rebellion against Madara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Caleria",
+   "type": "deity",
+   "aliases": [
+    "Caleria"
+   ],
+   "description": "Goddess of the hunt venerated by Jamuraan archers around 3334 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marigold",
+   "type": "character",
+   "aliases": [],
+   "description": "Jamuraan archer who venerated Lady Caleria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wilemina",
+   "type": "character",
+   "aliases": [],
+   "description": "Jamuraan archer who venerated Lady Caleria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argenti",
+   "type": "location",
+   "aliases": [],
+   "description": "Island ruled by Ohabi Caleria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edemi Islands",
+   "type": "location",
+   "aliases": [],
+   "description": "Islands rallied into rebellion by Ohabi Caleria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empire of Madara",
+   "type": "faction",
+   "aliases": [
+    "Madara"
+   ],
+   "description": "Empire the Edemi Islands rebelled against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War begun by Ohabi Caleria's rebellion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Failed to invade the islands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jamuraan archers venerate a Lady Caleria as a goddess of the hunt around 3334 AR.",
+   "participants": [
+    "Lady Caleria",
+    "Marigold",
+    "Wilemina"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "venerated a Lady Caleria of unknown first name as a godess of the hunt."
+  },
+  {
+   "summary": "Ohabi Caleria rallies the Edemi Islands against the Empire of Madara, starting the Madara-Edemi War.",
+   "participants": [
+    "Ohabi Caleria",
+    "Edemi Islands",
+    "Empire of Madara"
+   ],
+   "location": "Edemi Islands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "rallied the Edemi Islands into a rebellion against the Empire of Madara"
+  },
+  {
+   "summary": "After the Kentsu's failed invasion, she leads the islands to Madara to demand reparations.",
+   "participants": [
+    "Ohabi Caleria",
+    "Kentsu",
+    "Empire of Madara"
+   ],
+   "location": "Empire of Madara",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she led the islands to Madara itself to demand reparations."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ohabi Caleria",
+   "relation": "leader_of",
+   "target": "Argenti",
+   "note": "ruled the island",
+   "paragraph": 3,
+   "quote": "the elven archer Ohabi Caleria ruled the island Argenti ."
+  },
+  {
+   "source": "Ohabi Caleria",
+   "relation": "enemy",
+   "target": "Empire of Madara",
+   "note": "led rebellion against it",
+   "paragraph": 3,
+   "quote": "rallied the Edemi Islands into a rebellion against the Empire of Madara"
+  }
+ ],
+ "rejected": []
+}

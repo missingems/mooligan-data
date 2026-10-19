@@ -1,0 +1,147 @@
+{
+ "page": "wiki/vhelnish",
+ "url": "https://mtg.wiki/page/Vhelnish",
+ "title": "Vhelnish",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:05Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Vhelnish",
+   "type": "location",
+   "aliases": [],
+   "description": "Underground kingdom of undead on the island of Urborg, once ruled by Lich Lord Dralnu, with inverted tower-stalactites over a glowing pit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian island above Vhelnish.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dralnu",
+   "type": "character",
+   "aliases": [
+    "Lich Lord Dralnu"
+   ],
+   "description": "Lich lord who ruled Vhelnish; slew the lich lady who reanimated him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lich lady",
+   "type": "character",
+   "aliases": [],
+   "description": "Lich who reanimated Dralnu and used the palace to display her collection of undead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marivel",
+   "type": "character",
+   "aliases": [],
+   "description": "Panther warrior who discovered Vhelnish and became a powerful necromancer and leader of Free Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Free Urborg",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance led by Marivel that used Vhelnish as a hideaway.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urguros",
+   "type": "character",
+   "aliases": [
+    "Cabal Specter Urguros"
+   ],
+   "description": "Cabal Specter haunting Vhelnish.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Free Urborg used Vhelnish.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dralnu slays the lich lady who reanimated him and transforms her palace into a city.",
+   "participants": [
+    "Dralnu",
+    "Lich lady",
+    "Vhelnish"
+   ],
+   "location": "Vhelnish",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After he had slain her, Dralnu transformed it into an actual city"
+  },
+  {
+   "summary": "Marivel discovers the lost city and learns from its ancient knowledge to become a powerful necromancer and leader of Free Urborg.",
+   "participants": [
+    "Marivel",
+    "Free Urborg",
+    "Vhelnish"
+   ],
+   "location": "Vhelnish",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she learned from its ancient knowledge to become one of Urborg's most powerful necromancers"
+  },
+  {
+   "summary": "Sixty years after the Mending, Free Urborg uses Vhelnish as a hideaway despite Urguros haunting it.",
+   "participants": [
+    "Free Urborg",
+    "Urguros",
+    "Vhelnish",
+    "The Mending"
+   ],
+   "location": "Vhelnish",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Free Urborg used Vhelnish as a hideaway"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dralnu",
+   "relation": "leader_of",
+   "target": "Vhelnish",
+   "note": "ruled it",
+   "paragraph": 0,
+   "quote": "once ruled by the Lich Lord Dralnu"
+  },
+  {
+   "source": "Dralnu",
+   "relation": "killed",
+   "target": "Lich lady",
+   "note": "slew the lich who reanimated him",
+   "paragraph": 2,
+   "quote": "After he had slain her"
+  },
+  {
+   "source": "Marivel",
+   "relation": "leader_of",
+   "target": "Free Urborg",
+   "note": "leader of the resistance",
+   "paragraph": 3,
+   "quote": "the leader of the Free Urborg resistance"
+  },
+  {
+   "source": "Vhelnish",
+   "relation": "located_in",
+   "target": "Urborg",
+   "note": "underground kingdom on the island",
+   "paragraph": 0,
+   "quote": "on the Dominarian island of Urborg"
+  }
+ ],
+ "rejected": []
+}
