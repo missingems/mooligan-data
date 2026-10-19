@@ -1,0 +1,115 @@
+{
+ "page": "wiki/torment",
+ "url": "https://mtg.wiki/page/Torment",
+ "title": "Torment",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:24:48Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cabal dementia summoner who discovers the Mirari and rises through the Cabal's ranks, rivaling the Patriarch, before his fall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Barbarian whose story continues on Otaria; befriends Chainer and trains as a pit fighter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Plots to gain control of the Mer Empire for himself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Black-aligned organization led by the Cabal Patriarch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [
+    "the Patriarch"
+   ],
+   "description": "Leader of the Cabal, rivaled by Chainer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Powerful orb discovered by Chainer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mer Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire Laquatus plots to control.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent on which Kamahl's story continues.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chainer discovers the Mirari and rises through the Cabal, rivaling the Patriarch before his fall; Kamahl befriends him and Laquatus plots to seize the Mer Empire.",
+   "participants": [
+    "Chainer",
+    "Kamahl",
+    "Laquatus",
+    "Cabal Patriarch",
+    "Mirari",
+    "Mer Empire"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Chainer's Torment presents the tale of Chainer , a Cabal dementia summoner, discovering the Mirari and rising through the ranks of the Cabal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kamahl",
+   "relation": "ally",
+   "target": "Chainer",
+   "note": "Befriends and fights beside him in the pits",
+   "paragraph": 6,
+   "quote": "Meanwhile Kamahl befriends Chainer"
+  },
+  {
+   "source": "Chainer",
+   "relation": "enemy",
+   "target": "Cabal Patriarch",
+   "note": "Rivals the Patriarch",
+   "paragraph": 6,
+   "quote": "rivaling the Cabal Patriarch himself"
+  },
+  {
+   "source": "Chainer",
+   "relation": "member_of",
+   "target": "Cabal",
+   "note": "A Cabal dementia summoner",
+   "paragraph": 6,
+   "quote": "Chainer , a Cabal dementia summoner"
+  }
+ ],
+ "rejected": []
+}

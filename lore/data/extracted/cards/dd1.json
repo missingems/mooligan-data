@@ -1,0 +1,194 @@
+{
+ "page": "cards/dd1",
+ "url": "https://scryfall.com/sets/dd1",
+ "title": "Duel Decks: Elves vs. Goblins: card flavor text",
+ "story_date": "2007-11-16",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:24:06Z",
+ "storyline": "Lorwyn / Onslaught",
+ "entities": [
+  {
+   "name": "Elves",
+   "type": "faction",
+   "aliases": [
+    "elvish",
+    "elf"
+   ],
+   "description": "Elves of Llanowar and Lys Alana; a culture of beauty with castes and long memories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperious Perfect",
+   "type": "character",
+   "aliases": [],
+   "description": "The most beautiful elf, worshipped as a god in a culture of beauty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Llanowar",
+   "type": "location",
+   "aliases": [
+    "Llanowar Elves"
+   ],
+   "description": "An elvish forest whose penalty for trespassing is a bone broken for every twig snapped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "An elvish region with Dawn's Light Palace and Wren's Run, where a huntmaster's horn sounds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawn's Light Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "A palace in Lys Alana with high tiers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wren's Run",
+   "type": "location",
+   "aliases": [],
+   "description": "A shaded part of Lys Alana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A power pulsing in the veins of the Stonewood Invoker, whose voice the elves hear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wirewood",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest from which an elf runs from laughing goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins",
+   "type": "faction",
+   "aliases": [
+    "goblin",
+    "Akki",
+    "Mogg",
+    "boggarts"
+   ],
+   "description": "Rock-loving creatures of Skirk Ridge, the Akki, mogg and boggart; capable of greater and worse things.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirk Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A ridge from which goblins pour like lava.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ib Halfheart",
+   "type": "character",
+   "aliases": [
+    "Ib Halfheart, Goblin Tactician"
+   ],
+   "description": "A goblin tactician.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "A dementia summoner who likes the sounds goblins make when they die.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auntie Grub",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin whose goat-and-tar mishap is a tale told of her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kumano",
+   "type": "character",
+   "aliases": [],
+   "description": "A teacher whose pupils each hold the strength of a landslide.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seton",
+   "type": "character",
+   "aliases": [],
+   "description": "A centaur druid who teaches that life's lessons come from breathing and noticing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Frogtosser Games",
+   "type": "event",
+   "aliases": [],
+   "description": "A goblin event ending in the lighting of the Flaming Boggart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flaming Boggart",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A figure lit at the Frogtosser Games.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Djinn",
+   "type": "creature",
+   "aliases": [],
+   "description": "A being who legend says gave the goblins a gift they could never master.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Goblins pour from Skirk Ridge like lava, burning and devouring everything in their path.",
+   "participants": [
+    "Goblins",
+    "Skirk Ridge"
+   ],
+   "location": "Skirk Ridge",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "They poured from the Skirk Ridge like lava, burning and devouring everything in their path."
+  },
+  {
+   "summary": "Goblins laugh as an elf runs away, until more elves return.",
+   "participants": [
+    "Goblins",
+    "Elves"
+   ],
+   "location": "Wirewood",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "The goblins laughed as the elf ran away, until more came back."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Imperious Perfect",
+   "relation": "other",
+   "target": "Elves",
+   "note": "worshipped as a god by the elves",
+   "paragraph": 3,
+   "quote": "the most beautiful are worshipped as gods"
+  },
+  {
+   "source": "Goblins",
+   "relation": "located_in",
+   "target": "Skirk Ridge",
+   "note": "",
+   "paragraph": 25,
+   "quote": "They poured from the Skirk Ridge like lava"
+  }
+ ],
+ "rejected": []
+}
