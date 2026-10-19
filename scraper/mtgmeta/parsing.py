@@ -223,7 +223,7 @@ def parse_tournament(html: str, event_id: str, format: str, summary: Optional[Ev
             )
         )
 
-    name = _event_name(soup) or (summary.event_name if summary else f"Tournament {event_id}")
+    name = _event_name(soup) or (summary.event_name if summary and summary.event_name else f"Tournament {event_id}")
     date = _labelled_date(soup) or (summary.date if summary else None) or parse_date(name)
     if date is None:
         raise ParseError(f"No date on tournament {event_id}")

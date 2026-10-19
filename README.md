@@ -67,7 +67,8 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | --- | --- | --- |
 | `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
 | `META_DAYS` | `30,14,7` in `ops/scrape.sh` | Metagame windows to publish |
-| `EVENTS_PER_FORMAT` | `10` | Events read from the tournaments list, which never shows more than 10 |
+| `EVENTS_PER_FORMAT` | `10` | Events taken from the tournaments list, which never shows more than 10 |
+| `RECHECK_DAYS` | `7` | Events dated within this many days of the run are read again every run, stored or not |
 | `MAX_NEW_EVENTS` | `150` | Events not yet stored read per format per run |
 | `MAX_SEARCH_PAGES` | `25` | Tournament-search pages read per format, 20 events each |
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |

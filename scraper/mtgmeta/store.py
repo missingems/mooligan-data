@@ -22,7 +22,7 @@ from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
 from .popular import build_popular_cards
-from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
+from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, EventSummary, Meta, to_document
 
 SCHEMA = 1
 
@@ -40,6 +40,7 @@ class Store(Protocol):
     def ignored_event_ids(self) -> Set[str]: ...
     def mark_empty_events(self, event_ids: Iterable[str]) -> None: ...
     def events_missing_source(self, format: str) -> List[str]: ...
+    def stored_events(self, format: str) -> List[EventSummary]: ...
     def missing_deck_ids(self) -> Set[str]: ...
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
 
@@ -164,6 +165,13 @@ class SnapshotStore:
         """Stored events read before the page's source was kept, newest first, so a run can fill it in."""
         events = self._snapshot(format)["events"].values()
         return [e["event_id"] for e in sorted(events, key=lambda e: e["date"], reverse=True) if not e.get("source")]
+
+    def stored_events(self, format: str) -> List[EventSummary]:
+        """Stored events as a listing shows them, with the number of results kept, so a run can compare."""
+        return [
+            EventSummary(e["event_id"], e["event_name"], _parse(e["date"]), len(e["results"]))
+            for e in self._snapshot(format)["events"].values()
+        ]
 
     def missing_deck_ids(self) -> Set[str]:
         """Decks MTGGoldfish no longer serves; asking again every run would be wasted."""
