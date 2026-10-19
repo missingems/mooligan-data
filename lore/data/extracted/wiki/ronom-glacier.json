@@ -1,0 +1,191 @@
+{
+ "page": "wiki/ronom-glacier",
+ "url": "https://mtg.wiki/page/Ronom_Glacier",
+ "title": "Ronom Glacier",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ronom Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "The coldest part of Terisiare during the Ice Age, the oldest and widest glacier on the continent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the glacier lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ronom Lake",
+   "type": "location",
+   "aliases": [
+    "Frost Marsh"
+   ],
+   "description": "Lake formed from the glacier's meltwater; became the Frost Marsh in the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Found a mysterious runed cane at the glacier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yumok",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who fished artifacts out of the meltwater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Foreboding artifact fished from the meltwater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coral Helm",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact fished from the meltwater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heidar",
+   "type": "character",
+   "aliases": [],
+   "description": "Mad wizard who awakened frozen Phyrexian war-beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose Thaw Heidar hoped to stop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcum Dagsson",
+   "type": "character",
+   "aliases": [],
+   "description": "Famed master machinist who trekked to destroy Heidar's constructs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marit Lage",
+   "type": "location",
+   "aliases": [],
+   "description": "A prison deep within the glacier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell whose casting began the Flooding of Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efuan Pincar",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation that later arose at the glacier's former site.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Feldon finds a runed cane buried in the glacier's ice.",
+   "participants": [
+    "Feldon",
+    "Ronom Glacier"
+   ],
+   "location": "Ronom Glacier",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Ronom Glacier was the site where Feldon found a mysterious runed cane"
+  },
+  {
+   "summary": "The Yumok fish up the Coral Helm and Golgothian Sylex from the meltwater.",
+   "participants": [
+    "Yumok",
+    "Coral Helm",
+    "Golgothian Sylex"
+   ],
+   "location": "Ronom Glacier",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "several other artifacts were fished up by the Yumok"
+  },
+  {
+   "summary": "In the Ice Age the glacier grows, drying its river and turning Ronom Lake into the Frost Marsh.",
+   "participants": [
+    "Ronom Glacier",
+    "Ronom Lake"
+   ],
+   "location": "Ronom Glacier",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Ronom Lake became the dreaded Frost Marsh"
+  },
+  {
+   "summary": "Heidar awakens frozen Phyrexian war-beasts to stop Freyalise's Thaw; Arcum Dagsson goes to destroy his army.",
+   "participants": [
+    "Heidar",
+    "Freyalise",
+    "Arcum Dagsson"
+   ],
+   "location": "Ronom Glacier",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "until the mad wizard Heidar awakened them in the hope he could stop Freyalise 's Thaw ."
+  },
+  {
+   "summary": "After the World Spell, the glacier melts over decades, creating the Sea of Laments and Sea of Almaaz.",
+   "participants": [
+    "Ronom Glacier",
+    "World Spell"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ronom Glacier proceeded to melt rapidly over several decades"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ronom Glacier",
+   "relation": "located_in",
+   "target": "Terisiare",
+   "note": "coldest part of the continent",
+   "paragraph": 0,
+   "quote": "The Ronom Glacier was the coldest part of Terisiare during the Ice Age of Dominaria ."
+  },
+  {
+   "source": "Arcum Dagsson",
+   "relation": "enemy",
+   "target": "Heidar",
+   "note": "opposed Heidar's army",
+   "paragraph": 2,
+   "quote": "He was opposed by the famed master machinist Arcum Dagsson"
+  }
+ ],
+ "rejected": []
+}

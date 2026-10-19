@@ -1,0 +1,175 @@
+{
+ "page": "wiki/tolarian-temporal-disaster",
+ "url": "https://mtg.wiki/page/Tolarian_Temporal_Disaster",
+ "title": "Tolarian Temporal Disaster",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tolarian Temporal Disaster",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in 3307 AR on Tolaria in which a time machine rupture destroyed the Tolarian Academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Academy on Tolaria invaded by Phyrexians and blasted apart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Island on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder who sent Karn back in time and teleported Barrin and others away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Silver golem who traveled back in time and survived the explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "Academy member who survived outside the time bubbles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Academy member teleported away by Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Academy member stuck in a slow-time bubble.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kerrick",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian sleeper agent who led the negators.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian negators"
+   ],
+   "description": "Invaders of the academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Time Rift",
+   "type": "concept",
+   "aliases": [],
+   "description": "Rift torn above Tolaria, unnoticed for centuries.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phyrexian negators led by sleeper agent Kerrick invade the academy and kill Jhoira, Barrin and Teferi.",
+   "participants": [
+    "Kerrick",
+    "Phyrexians",
+    "Jhoira",
+    "Barrin",
+    "Teferi",
+    "Karn"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Jhoira , Barrin and Teferi were all killed by Phyrexian negators led by the sleeper agent Kerrick"
+  },
+  {
+   "summary": "Urza sends Karn 24 hours back in time; Karn stops Kerrick by breaking his leg, un-killing the three.",
+   "participants": [
+    "Urza",
+    "Karn",
+    "Kerrick"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "by breaking Kerrick's leg and disabling him"
+  },
+  {
+   "summary": "The time machine implodes; Urza teleports Barrin and thirteen others away before the time stream ruptures.",
+   "participants": [
+    "Urza",
+    "Barrin"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Urza had just enough time to teleport Barrin and thirteen other students and teachers away from the island"
+  },
+  {
+   "summary": "Temporal light blasts the academy apart, killing hundreds, creating time bubbles and tearing a Time Rift.",
+   "participants": [
+    "Tolarian Academy",
+    "Phyrexians"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "killing hundreds of students and teachers"
+  },
+  {
+   "summary": "Karn, immune thanks to his silver frame, saves 33 survivors and sails away; Jhoira survives on the island.",
+   "participants": [
+    "Karn",
+    "Jhoira",
+    "Teferi",
+    "Kerrick"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He helped 33 students and teachers out of the academy's rubble and sailed them away from the island"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kerrick",
+   "relation": "serves",
+   "target": "Phyrexians",
+   "note": "sleeper agent",
+   "paragraph": 1,
+   "quote": "led by the sleeper agent Kerrick"
+  },
+  {
+   "source": "Karn",
+   "relation": "serves",
+   "target": "Urza",
+   "note": "obeyed his bidding",
+   "paragraph": 1,
+   "quote": "Urza bid Karn to travel 24 hours back in time"
+  }
+ ],
+ "rejected": []
+}

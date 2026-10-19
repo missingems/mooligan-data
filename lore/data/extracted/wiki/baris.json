@@ -1,0 +1,129 @@
+{
+ "page": "wiki/baris",
+ "url": "https://mtg.wiki/page/Baris",
+ "title": "Baris",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:57Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Baris",
+   "type": "character",
+   "aliases": [],
+   "description": "A Serra Inquisitor on Ulgrotha around the time of the Homelands, a devout shepherd and judge of the people of Aysen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Inquisitors",
+   "type": "faction",
+   "aliases": [
+    "Inquisitors"
+   ],
+   "description": "An institution of Aysen society tasked with protecting the populace from harm and vice, whose methods sometimes became zealous persecution.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "deity",
+   "aliases": [],
+   "description": "The divine figure whose tenets the Inquisitors uphold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "The land whose people Baris shepherded as an Inquisitor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Baris lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beast Walkers",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of dual human and beast nature, whose hearts Baris held to be aligned with Serra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ihsan",
+   "type": "character",
+   "aliases": [],
+   "description": "A fallen figure among the Serra Paladins, regarded by Baris with shame.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra Paladins",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order of Serra's followers, of which Ihsan was once a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Death Speakers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group targeted by the Inquisitors' witch-hunt for practicing forbidden knowledge.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baris serves as a Serra Inquisitor on Ulgrotha around the time of the Homelands.",
+   "participants": [
+    "Baris"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Baris was a Serra Inquisitor on Ulgrotha around the time of the Homelands"
+  },
+  {
+   "summary": "Baris and his fellow Inquisitors persecute those they believe practice forbidden knowledge, particularly the Death Speakers.",
+   "participants": [
+    "Baris",
+    "Serra Inquisitors",
+    "Death Speakers"
+   ],
+   "location": "Aysen",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "he and his fellow Inquisitors targeted those they believed practiced forbidden knowledge"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baris",
+   "relation": "member_of",
+   "target": "Serra Inquisitors",
+   "note": "He was an Inquisitor.",
+   "paragraph": 0,
+   "quote": "Baris was a Serra Inquisitor on Ulgrotha around the time of the Homelands"
+  },
+  {
+   "source": "Serra Inquisitors",
+   "relation": "enemy",
+   "target": "Death Speakers",
+   "note": "The Inquisitors persecuted the Death Speakers.",
+   "paragraph": 5,
+   "quote": "he and his fellow Inquisitors targeted those they believed practiced forbidden knowledge"
+  },
+  {
+   "source": "Baris",
+   "relation": "other",
+   "target": "Ihsan",
+   "note": "Baris regarded Ihsan's betrayal as shameful.",
+   "paragraph": 3,
+   "quote": "Baris regarded Ihsan's betrayal as a source of shame"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,134 @@
+{
+ "page": "wiki/ink-eyes",
+ "url": "https://mtg.wiki/page/Ink-Eyes",
+ "title": "Ink-Eyes",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:58Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Ink-Eyes",
+   "type": "character",
+   "aliases": [
+    "Sumime",
+    "Ink-Eyes, Servant of Oni"
+   ],
+   "description": "A legendary nezumi ninja, the most feared ninja on Kamigawa, who killed her ogre mentor and gained necromantic powers from the oni Kuro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muzan",
+   "type": "character",
+   "aliases": [],
+   "description": "An ogre hermit who took Ink-Eyes as his student and was later killed by her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuro",
+   "type": "character",
+   "aliases": [],
+   "description": "An oni overlord who gave Ink-Eyes necromantic powers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Okiba gang",
+   "type": "faction",
+   "aliases": [],
+   "description": "A nezumi gang that ostracized Ink-Eyes at a young age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takenuma swamp",
+   "type": "location",
+   "aliases": [
+    "Takenuma"
+   ],
+   "description": "A swamp on Kamigawa where Ink-Eyes was left to fend for herself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Ink-Eyes lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ostracized by the Okiba gang, Ink-Eyes is taken deep into the Takenuma swamp and left to fend for herself as punishment.",
+   "participants": [
+    "Ink-Eyes",
+    "Okiba gang"
+   ],
+   "location": "Takenuma swamp",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "As punishment, she was taken deep into the Takenuma swamp and left to fend for herself."
+  },
+  {
+   "summary": "Muzan catches Ink-Eyes stealing from him and takes her in as his student.",
+   "participants": [
+    "Ink-Eyes",
+    "Muzan"
+   ],
+   "location": "Takenuma swamp",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The ogre saw the ruthless nezumi girl's potential and decided to take her in as his student"
+  },
+  {
+   "summary": "Ink-Eyes kills Muzan in his sleep and offers his blood to the oni Kuro.",
+   "participants": [
+    "Ink-Eyes",
+    "Muzan",
+    "Kuro"
+   ],
+   "location": "Takenuma swamp",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "she killed her ogre mentor in his sleep and offered his blood to their oni overlord, Kuro"
+  },
+  {
+   "summary": "Pleased by her treachery, Kuro grants Ink-Eyes necromantic powers, and her eyes turn red.",
+   "participants": [
+    "Ink-Eyes",
+    "Kuro"
+   ],
+   "location": "Takenuma swamp",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The oni was pleased by her treachery and ambition"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muzan",
+   "relation": "mentor_of",
+   "target": "Ink-Eyes",
+   "note": "He took her as his student.",
+   "paragraph": 2,
+   "quote": "decided to take her in as his student"
+  },
+  {
+   "source": "Ink-Eyes",
+   "relation": "killed",
+   "target": "Muzan",
+   "note": "She killed him in his sleep.",
+   "paragraph": 5,
+   "quote": "she killed her ogre mentor in his sleep"
+  },
+  {
+   "source": "Ink-Eyes",
+   "relation": "serves",
+   "target": "Kuro",
+   "note": "She turns the dead into servants for her oni master.",
+   "paragraph": 6,
+   "quote": "turning them into servants for her oni master"
+  }
+ ],
+ "rejected": []
+}

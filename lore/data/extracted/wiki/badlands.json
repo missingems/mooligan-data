@@ -1,0 +1,85 @@
+{
+ "page": "wiki/badlands",
+ "url": "https://mtg.wiki/page/Badlands",
+ "title": "Badlands",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Badlands",
+   "type": "location",
+   "aliases": [],
+   "description": "Rugged region in North Aerona, part of the Domains of Dominaria, formerly Haakon's kingdom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [
+    "North Aerona"
+   ],
+   "description": "Land containing the Badlands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haakon",
+   "type": "character",
+   "aliases": [
+    "King of the Badlands"
+   ],
+   "description": "Wizard and self-proclaimed King of the Badlands, defeated by Gull and Greensleeves' army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped defeat Haakon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped defeat Haakon with her army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Haakon is defeated and his fortress destroyed by the army of Gull and Greensleeves.",
+   "participants": [
+    "Haakon",
+    "Gull",
+    "Greensleeves"
+   ],
+   "location": "Badlands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "until he was defeated and his fortress destroyed by Gull and Greensleeves ' army"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Haakon",
+   "relation": "leader_of",
+   "target": "Badlands",
+   "note": "Self-proclaimed king.",
+   "paragraph": 3,
+   "quote": "The Badlands were the kingdom of the wizard Haakon"
+  },
+  {
+   "source": "Badlands",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "Region of North Aerona.",
+   "paragraph": 0,
+   "quote": "are a region in North Aerona"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,128 @@
+{
+ "page": "wiki/skithiryx",
+ "url": "https://mtg.wiki/page/Skithiryx",
+ "title": "Skithiryx",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:07Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Skithiryx",
+   "type": "creature",
+   "aliases": [
+    "Skithiryx, the Blight Dragon"
+   ],
+   "description": "A compleated Furnace Dragon from Mirrodin, a skeletal undead Phyrexian abomination responsible for mass abductions in the Oxidda Chain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Novosh",
+   "type": "character",
+   "aliases": [],
+   "description": "A Mirran barbarian dispatched to kill a dragon who was killed by Skithiryx's oil tears and heard the whispers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian figure with whom Skithiryx seems to have a connection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oxidda Chain",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain region on Mirrodin where abductions occurred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Skithiryx and Novosh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Skithiryx fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rising faction whose dragon Skithiryx became.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Novosh climbs to where the dragon last struck, sent to kill it.",
+   "participants": [
+    "Novosh"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Novosh had been dispatched to kill a dragon."
+  },
+  {
+   "summary": "Skithiryx seizes Novosh in its claw and asks if he hears her whispering.",
+   "participants": [
+    "Skithiryx",
+    "Novosh"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Novosh felt panic as he was lifted into the air"
+  },
+  {
+   "summary": "Skithiryx's black oil tears are inhaled by Novosh, who then hears the whispers.",
+   "participants": [
+    "Skithiryx",
+    "Novosh"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "Then Novosh heard the whispers."
+  },
+  {
+   "summary": "Skithiryx fights in the New Phyrexian Invasion.",
+   "participants": [
+    "Skithiryx",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Skithiryx fought in the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skithiryx",
+   "relation": "other",
+   "target": "Sheoldred",
+   "note": "seems to have some connection",
+   "paragraph": 1,
+   "quote": "He seems to have some connection to Sheoldred ."
+  },
+  {
+   "source": "Skithiryx",
+   "relation": "enemy",
+   "target": "Novosh",
+   "note": "attacked and infected him",
+   "paragraph": 10,
+   "quote": "Novosh tried to fight"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,182 @@
+{
+ "page": "wiki/world-tree",
+ "url": "https://mtg.wiki/page/World_Tree",
+ "title": "World Tree",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [
+    "World Tree of Kaldheim"
+   ],
+   "description": "Binding element of the Ten Realms of Kaldheim and origin of all life there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Ten Realms bound by the World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ten Realms",
+   "type": "location",
+   "aliases": [],
+   "description": "Realms of Kaldheim that shift around the World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esika",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the World Tree who makes Cosmos Elixir from Tyrite.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tyrite",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical substance derived from the World Tree's sap.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skoti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Users of Tyrite whose aging is slowed by the Cosmos Elixir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "Took a sample of tyrite on Kaldheim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "Plans to link planes with the Realmbreaker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which the World Tree was burned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Contains a map of the Multiverse and every Omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who watched the World Tree birth new planes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "Collision of realms causing earthquakes and chaos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm whose light shines atop the highest branches.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kaldheim's inhabitants burn down the World Tree to keep it from Phyrexia.",
+   "participants": [
+    "World Tree",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the World Tree was burned down by Kaldheim's inhabitants to keep it out of Phyrexia's grasp"
+  },
+  {
+   "summary": "The World Tree regrows, reconnecting some realms.",
+   "participants": [
+    "World Tree",
+    "Ten Realms"
+   ],
+   "location": "Kaldheim",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "It is now regrowing, enough to reconnect some of Kaldheim's realms."
+  },
+  {
+   "summary": "After peering into Loot's mind, Jace watches the World Tree birth new planes.",
+   "participants": [
+    "Jace Beleren",
+    "Loot",
+    "World Tree"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Jace Beleren was able to watch the World Tree birth new planes"
+  },
+  {
+   "summary": "Vorinclex takes a sample of tyrite.",
+   "participants": [
+    "Vorinclex",
+    "Tyrite"
+   ],
+   "location": "Kaldheim",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Vorinclex took a sample of tyrite during his exploits on Kaldheim"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Esika",
+   "relation": "other",
+   "target": "World Tree",
+   "note": "god of the World Tree",
+   "paragraph": 0,
+   "quote": "Esika is the god of the World Tree."
+  },
+  {
+   "source": "Esika",
+   "relation": "created",
+   "target": "Tyrite",
+   "note": "makes Cosmos Elixir from it",
+   "paragraph": 3,
+   "quote": "Esika makes a \"Cosmos Elixir\" from Tyrite"
+  },
+  {
+   "source": "World Tree",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "",
+   "paragraph": 0,
+   "quote": "The World Tree of Kaldheim was the binding element of the Ten Realms"
+  }
+ ],
+ "rejected": []
+}

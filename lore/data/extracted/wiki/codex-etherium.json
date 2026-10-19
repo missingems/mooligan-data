@@ -1,0 +1,168 @@
+{
+ "page": "wiki/codex-etherium",
+ "url": "https://mtg.wiki/page/Codex_Etherium",
+ "title": "Codex Etherium",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:55Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Codex Etherium",
+   "type": "artifact",
+   "aliases": [
+    "the Codex"
+   ],
+   "description": "A supposedly ancient tome claimed by the Seekers of Carmot to hold the secrets of etherium, revealed to be blank.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [
+    "the Seekers"
+   ],
+   "description": "A group who pursue carmot based on the Codex, with an academy in Vectis City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etherium",
+   "type": "concept",
+   "aliases": [],
+   "description": "A substance whose supply the Seekers claim is running out on Esper.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Carmot",
+   "type": "concept",
+   "aliases": [],
+   "description": "A mythical red stone believed to be the key to replenishing etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A gifted artificer and Seeker who discovered the Codex was blank and became a planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crucius",
+   "type": "character",
+   "aliases": [],
+   "description": "A legendary sphinx said to have authored the Codex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sharuum the Hegemon",
+   "type": "character",
+   "aliases": [
+    "Sharuum"
+   ],
+   "description": "Crucius's consort, who confirmed the Codex was a fraud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who manipulated Tezzeret with false promises.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "The shard of Alara where the Seekers operate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vectis City",
+   "type": "location",
+   "aliases": [],
+   "description": "The city holding the Seekers' academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Esper.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tezzeret gained access to the Vault and found the Codex Etherium entirely blank.",
+   "participants": [
+    "Tezzeret",
+    "Codex Etherium",
+    "Seekers of Carmot"
+   ],
+   "location": "Vectis City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he discovered that the Codex Etherium was entirely blank"
+  },
+  {
+   "summary": "The Seekers attacked Tezzeret as he tried to flee; near death, his spark ignited and he escaped Esper.",
+   "participants": [
+    "Tezzeret",
+    "Seekers of Carmot"
+   ],
+   "location": "Vectis City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Tezzeret's planeswalker spark ignited, and he escaped Esper"
+  },
+  {
+   "summary": "Tezzeret confronted Sharuum, who confirmed the Codex was a fraud, and realized Nicol Bolas had manipulated him.",
+   "participants": [
+    "Tezzeret",
+    "Sharuum the Hegemon",
+    "Nicol Bolas"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "This revelation helped Tezzeret realize that Nicol Bolas had manipulated him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tezzeret",
+   "relation": "member_of",
+   "target": "Seekers of Carmot",
+   "note": "A gifted artificer and member.",
+   "paragraph": 3,
+   "quote": "a gifted artificer and member of the Seekers"
+  },
+  {
+   "source": "Sharuum the Hegemon",
+   "relation": "romantic",
+   "target": "Crucius",
+   "note": "Consort.",
+   "paragraph": 4,
+   "quote": "Tezzeret confronted Crucius"
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "Manipulated him with false promises.",
+   "paragraph": 4,
+   "quote": "Nicol Bolas had manipulated him by feeding him false promises about carmot and etherium"
+  },
+  {
+   "source": "Crucius",
+   "relation": "created",
+   "target": "Codex Etherium",
+   "note": "Allegedly authored it.",
+   "paragraph": 1,
+   "quote": "allegedly authored by the legendary sphinx Crucius"
+  }
+ ],
+ "rejected": []
+}

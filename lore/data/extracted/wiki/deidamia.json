@@ -1,0 +1,101 @@
+{
+ "page": "wiki/deidamia",
+ "url": "https://mtg.wiki/page/Deidamia",
+ "title": "Deidamia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:57Z",
+ "storyline": "Innistrad: Crimson Vow",
+ "entities": [
+  {
+   "name": "Deidamia",
+   "type": "character",
+   "aliases": [],
+   "description": "A non-binary witch from Innistrad known for pumpkin carving and nurturing hope.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Deidamia's home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Harvesttide Festival",
+   "type": "event",
+   "aliases": [],
+   "description": "A festival where people gathered under the ancient Celestus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arlinn Kord",
+   "type": "character",
+   "aliases": [],
+   "description": "A hero who arrived at the festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tovolar",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the werewolf pack that attacked the festival.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katilda",
+   "type": "character",
+   "aliases": [],
+   "description": "A witch killed in the massacre.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Heroes including Arlinn Kord arrived at the Harvesttide Festival.",
+   "participants": [
+    "Arlinn Kord",
+    "Deidamia"
+   ],
+   "location": "Harvesttide Festival",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "heroes, Arlinn Kord among them, arrived"
+  },
+  {
+   "summary": "Tovolar's werewolf pack attacked the festival in a massacre that killed many, including Katilda; Deidamia survived.",
+   "participants": [
+    "Tovolar",
+    "Katilda",
+    "Deidamia"
+   ],
+   "location": "Harvesttide Festival",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "an attack from Tovolar's werewolf pack, leading to a massacre that claimed many lives"
+  },
+  {
+   "summary": "Deidamia tended to the wounded and attended a meeting where heroes and witches strategized.",
+   "participants": [
+    "Deidamia"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Deidamia was seen among those who tended to the wounded and sick"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tovolar",
+   "relation": "enemy",
+   "target": "Deidamia",
+   "note": "His werewolf pack attacked the festival Deidamia attended.",
+   "paragraph": 2,
+   "quote": "an attack from Tovolar's werewolf pack"
+  }
+ ],
+ "rejected": []
+}
