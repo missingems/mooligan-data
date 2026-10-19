@@ -17,7 +17,7 @@ from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 from .cards import FormatDecks, build_card_pages, page_hash, slug
 from .clusters import apply as apply_merging, colors_by_deck, load_overrides, plan as plan_merging
 from .drilldown import archetype_hands, build_archetype_pages, build_event_pages, hand_key_cards
-from .edhrec import due_slugs, edhrec_slug, oracle_ids
+from .edhrec import due_commanders, due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
@@ -196,6 +196,7 @@ class SnapshotStore:
         fetch_commanders=None,
         commander_limit: int = 0,
         deck_resolve_limit: int = 300,
+        priority_commanders: Sequence[str] = (),
     ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
@@ -204,7 +205,9 @@ class SnapshotStore:
         `fetch_edh(slugs) -> {slug: entry}` reads Commander usage for at most
         `edh_limit` cards, the longest unchecked first. `catalog` is every card
         Magic has, keyed by slug, which gives pages their oracle id and widens
-        the Commander refresh past the cards tournaments play. Decklist entries
+        the Commander refresh past the cards tournaments play.
+        `fetch_commanders(slugs) -> {slug: entry}` reads at most `commander_limit`
+        commanders, `priority_commanders` first. Decklist entries
         the catalog could not name are looked up again for at most
         `deck_resolve_limit` decks.
         """
@@ -283,7 +286,7 @@ class SnapshotStore:
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
-        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog)
+        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
@@ -442,11 +445,11 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
-    def _write_commander_pages(self, fetch_commanders, limit: int, catalog: Dict[str, dict]) -> List[str]:
-        """Refreshes a slice of the commanders a card page names, and publishes their pages."""
+    def _write_commander_pages(self, fetch_commanders, limit: int, catalog: Dict[str, dict], priority: Sequence[str] = ()) -> List[str]:
+        """Refreshes a slice of the commanders a card page names, `priority` ones first, and publishes their pages."""
         wanted = {slug: name for slug, name in self._wanted_commanders.items()}
-        if fetch_commanders and limit > 0 and wanted:
-            due = due_slugs({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, limit)
+        if fetch_commanders and limit > 0 and (wanted or priority):
+            due = due_commanders({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, priority, limit)
             entries = fetch_commanders([slug for _, slug in due])
             for slug, entry in entries.items():
                 if not entry:

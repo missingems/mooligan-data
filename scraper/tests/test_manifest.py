@@ -50,11 +50,11 @@ def test_each_listed_hash_is_the_sha256_of_that_files_bytes(tmp_path):
 
 
 def test_the_explore_files_are_listed_and_nothing_else(tmp_path):
-    for path in ("explore.json", "today.json", "previews.json", "rules/keywords.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
+    for path in ("explore.json", "today.json", "previews.json", "edh/top.json", "rules/keywords.json", "popular-cards/modern.json", "popular-cards/legacy.json", "breakouts/modern.json", "breakouts/legacy.json"):
         put(tmp_path, path)
     for path in (
         "movers/all.json", "movers/modern.json", "snapshots/modern.json", "archetypes/modern-izzet-prowess.json", "events/66753.json",
-        "decks/7966104.json", "cards/lightning-bolt.json", "cards/index.json", "edh/commanders/atraxa.json", "index.json",
+        "decks/7966104.json", "cards/lightning-bolt.json", "cards/index.json", "edh/commanders/atraxa.json", "edh/commanders/index.json", "edh/top.json.bak", "index.json",
         "locator/singapore.json", "premier/schedule.json", "state/deck-ids.json", "state/deck-cards/modern.json",
         "popular-cards/readme.txt", "popular-cards/nested/modern.json", "explore.json.bak", "other/today.json", "breakouts.json",
         "rules/keywords.json.bak", "rules/other.json", "state/rules-keywords.json",
@@ -62,13 +62,13 @@ def test_the_explore_files_are_listed_and_nothing_else(tmp_path):
         put(tmp_path, path)
     write_manifest(tmp_path, NOW)
     assert list(listed(tmp_path)) == [
-        "breakouts/legacy.json", "breakouts/modern.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json",
+        "breakouts/legacy.json", "breakouts/modern.json", "edh/top.json", "explore.json", "popular-cards/legacy.json", "popular-cards/modern.json",
         "previews.json", "rules/keywords.json", "today.json",
     ]
 
 
 def test_is_explore_path_names_exactly_the_explore_files():
-    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "rules/keywords.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
+    assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "edh/top.json", "rules/keywords.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
     assert not any(
         is_explore_path(path)
         for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "rules/other.json", "rules/keywords.json.bak", "rules/", "")

@@ -193,6 +193,22 @@ def test_commander_pages_are_published_for_the_commanders_cards_name(tmp_path):
     assert index["commanders"]["vivi-ornitier"] == {"name": "Vivi Ornitier", "decks": 40779}
 
 
+def test_the_top_commanders_are_refreshed_first_and_within_the_limit(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    asked = []
+
+    def fetch_commanders(slugs):
+        asked.append(list(slugs))
+        return {slug: {"name": slug.title(), "slug": slug, "decks": 10, "salt": None, "url": "u", "sections": [], "average_deck": []} for slug in slugs}
+
+    store._wanted_commanders = {"older": "Older"}
+    store.finish(fetch_commanders=fetch_commanders, commander_limit=2, priority_commanders=["top-one", "top-two"])
+
+    assert asked == [["top-one", "top-two"]]
+    assert (tmp_path / "edh" / "commanders" / "top-one.json").exists()
+    assert not (tmp_path / "edh" / "commanders" / "older.json").exists()
+
+
 def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp_path):
     first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
     first.save_event(event("1", "2026-09-20"))
