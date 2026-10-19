@@ -1,0 +1,228 @@
+{
+ "page": "archive/uncharted-realms-guild-deals-2013-02-13",
+ "url": "https://web.archive.org/web/20211127121831/https://magic.wizards.com/en/articles/archive/uncharted-realms/guild-deals-2013-02-13",
+ "title": "The Guild of Deals",
+ "story_date": "2013-02-13",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:58Z",
+ "storyline": "Ravnica: City of Guilds",
+ "entities": [
+  {
+   "name": "Bosco",
+   "type": "character",
+   "aliases": [
+    "mopper"
+   ],
+   "description": "A young unguilded man who joins the Orzhov as a janitor, takes on five centuries of debt, and betrays his friend Drovo for the high prelate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drovo",
+   "type": "character",
+   "aliases": [],
+   "description": "Bosco's friend, lured into an Orzhov crypt and trapped with a crypt ghast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jozica",
+   "type": "character",
+   "aliases": [],
+   "description": "The Orzhov enforcer employed by the estate's owner, whom Bosco fears.",
+   "presence": "appears"
+  },
+  {
+   "name": "high prelate",
+   "type": "character",
+   "aliases": [
+    "the high prelate"
+   ],
+   "description": "An aged, sharp-minded Orzhov leader who contracts Bosco to deliver Drovo as a sacrifice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jozica's thrull",
+   "type": "creature",
+   "aliases": [
+    "the thrull"
+   ],
+   "description": "Jozica's personal thrull, which collects a mopper tax and whom Bosco hates.",
+   "presence": "appears"
+  },
+  {
+   "name": "crypt ghast",
+   "type": "creature",
+   "aliases": [
+    "the apparition"
+   ],
+   "description": "A masked, smoke-formed undead that emerges from a sarcophagus and attacks Drovo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov",
+   "type": "faction",
+   "aliases": [
+    "Orzhov guild"
+   ],
+   "description": "The Ravnican guild of debt, wealth and the dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gateless",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group Drovo thought Bosco might join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane the Orzhov claim to own.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sixth District",
+   "type": "location",
+   "aliases": [],
+   "description": "A district of Ravnica with dank bogs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov mansion",
+   "type": "location",
+   "aliases": [
+    "mansion grounds",
+    "mausoleum"
+   ],
+   "description": "The Orzhov estate where Bosco works, with a hidden mausoleum below.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bosco, an Orzhov mopper, endures the mopper tax from Jozica's thrull while planning to rise.",
+   "participants": [
+    "Bosco",
+    "Jozica's thrull"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "\"Three coins.\""
+  },
+  {
+   "summary": "Bosco tells Drovo he has taken on five centuries of debt to join the Orzhov.",
+   "participants": [
+    "Bosco",
+    "Drovo",
+    "Orzhov"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "\"That's how much debt I owe to the guild. Five centuries all told.\""
+  },
+  {
+   "summary": "Bosco meets Jozica and the high prelate and signs a magically binding contract to reduce his debt.",
+   "participants": [
+    "Bosco",
+    "Jozica",
+    "high prelate"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "major",
+   "paragraph": 26,
+   "quote": "Bosco hurriedly signed the contract"
+  },
+  {
+   "summary": "Bosco leads Drovo through a hidden passage to an Orzhov mausoleum.",
+   "participants": [
+    "Bosco",
+    "Drovo"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "Drovo pulled open the oaken panel to reveal a small, stone staircase"
+  },
+  {
+   "summary": "Bosco locks Drovo in the tomb, saying five centuries is too long.",
+   "participants": [
+    "Bosco",
+    "Drovo"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "\"Sorry Drovo. You were right, five centuries is too long.\""
+  },
+  {
+   "summary": "A crypt ghast forms from smoke and attacks the trapped Drovo.",
+   "participants": [
+    "crypt ghast",
+    "Drovo"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "major",
+   "paragraph": 50,
+   "quote": "The apparition gasped with palpable pleasure"
+  },
+  {
+   "summary": "The high prelate pays Bosco, promising more work, and Bosco no longer feels afraid.",
+   "participants": [
+    "Bosco",
+    "high prelate",
+    "Jozica"
+   ],
+   "location": "Orzhov mansion",
+   "importance": "major",
+   "paragraph": 53,
+   "quote": "\"You've proven yourself quite useful. There will be more work for you in the future.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bosco",
+   "relation": "member_of",
+   "target": "Orzhov",
+   "note": "joinant who owes five centuries of debt",
+   "paragraph": 11,
+   "quote": "I was new to the Orzhov—a joinant."
+  },
+  {
+   "source": "Bosco",
+   "relation": "serves",
+   "target": "high prelate",
+   "note": "signs contract for debt reduction",
+   "paragraph": 25,
+   "quote": "You sign this, carry out your task, and your debt will be substantially reduced"
+  },
+  {
+   "source": "Jozica",
+   "relation": "serves",
+   "target": "high prelate",
+   "note": "enforcer standing at his side",
+   "paragraph": 54,
+   "quote": "Jozica, who stood impassively at the high prelate's side"
+  },
+  {
+   "source": "Jozica's thrull",
+   "relation": "serves",
+   "target": "Jozica",
+   "note": "her personal thrull",
+   "paragraph": 3,
+   "quote": "It was Jozica's personal thrull"
+  },
+  {
+   "source": "Bosco",
+   "relation": "enemy",
+   "target": "Drovo",
+   "note": "Bosco betrays his friend",
+   "paragraph": 46,
+   "quote": "Sorry Drovo."
+  }
+ ],
+ "rejected": []
+}
