@@ -1,0 +1,198 @@
+{
+ "page": "wiki/mina-and-denn",
+ "url": "https://mtg.wiki/page/Mina_and_Denn",
+ "title": "Mina and Denn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:30Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Mina",
+   "type": "character",
+   "aliases": [
+    "Greenweaver Mina"
+   ],
+   "description": "A Mul Daya elf and Greenweaver, twin of Denn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Denn",
+   "type": "character",
+   "aliases": [],
+   "description": "A Mul Daya elf, twin of Mina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mul Daya",
+   "type": "faction",
+   "aliases": [
+    "Mul Daya tribe"
+   ],
+   "description": "The elf tribe of Zendikar that Mina and Denn came from.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the twins live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guum Wilds",
+   "type": "location",
+   "aliases": [
+    "Guum"
+   ],
+   "description": "The wilds on Bala Ged where the twins grew up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent the twins left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who destroyed the twins' tribe and home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "A far-off place where the Tajuru lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [],
+   "description": "The only remaining tribe of elves, which the twins joined.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenru",
+   "type": "character",
+   "aliases": [],
+   "description": "A Tajuru Warden who took the twins to the jaddi grove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nisede",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Tajuru.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi Titan whose brood the twins fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tazri",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander at Sea Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the final battle against the Titans took place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eldrazi destroy the twins' tribe and home.",
+   "participants": [
+    "Mina",
+    "Denn",
+    "Mul Daya",
+    "Eldrazi"
+   ],
+   "location": "Guum Wilds",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "With the coming of the Eldrazi , their tribe, their people, and their home were lost."
+  },
+  {
+   "summary": "The twins travel to Murasa to seek help from the Tajuru and meet Tenru.",
+   "participants": [
+    "Mina",
+    "Denn",
+    "Tajuru",
+    "Tenru"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they finally met a Warden of the Tajuru named Tenru"
+  },
+  {
+   "summary": "Mina taps the living ground beneath the Blight, weakening Kozilek's brood so Denn can finish them.",
+   "participants": [
+    "Mina",
+    "Denn",
+    "Kozilek"
+   ],
+   "location": "Murasa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "weakening the Eldrazi drones enough that Denn could finish them off"
+  },
+  {
+   "summary": "Nisede accepts the twins into the Tajuru and they head for Sea Gate to join Tazri.",
+   "participants": [
+    "Mina",
+    "Denn",
+    "Nisede",
+    "Tazri",
+    "Tajuru"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Nisede accepted"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mina",
+   "relation": "family",
+   "target": "Denn",
+   "note": "Twin siblings.",
+   "paragraph": 0,
+   "quote": "Mina and Denn are a pair of twin elves of the Mul Daya tribe of Zendikar ."
+  },
+  {
+   "source": "Mina",
+   "relation": "member_of",
+   "target": "Tajuru",
+   "note": "Asked to join and accepted.",
+   "paragraph": 4,
+   "quote": "Mina and Denn asked to join her tribe"
+  },
+  {
+   "source": "Nisede",
+   "relation": "leader_of",
+   "target": "Tajuru",
+   "note": "Tajuru leader.",
+   "paragraph": 4,
+   "quote": "Tenru brought the Tajuru leader, Nisede , to the twins"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,188 @@
+{
+ "page": "wiki/lord-of-tresserhorn",
+ "url": "https://mtg.wiki/page/Lord_of_Tresserhorn",
+ "title": "Lord of Tresserhorn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:29Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lord of Tresserhorn",
+   "type": "character",
+   "aliases": [],
+   "description": "An undead replacement for Lim-Dûl, built by Chaeska from the flesh and bone of a dozen Kjeldoran heroes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chaeska",
+   "type": "character",
+   "aliases": [
+    "the keeper"
+   ],
+   "description": "Keeper of Tresserhorn, a necromancer who created the Lord of Tresserhorn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [
+    "Lim-Dul"
+   ],
+   "description": "A necromancer taken to Shandalar by Leshrac at the end of his battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Took Lim-Dûl with him to Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who destroyed the Lord of Tresserhorn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who returned to Tresserhorn with Jodah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tresserhorn",
+   "type": "location",
+   "aliases": [
+    "keep of Tresserhorn"
+   ],
+   "description": "The keep that later fell beneath the Sea of Laments.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Leshrac took Lim-Dûl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea of Laments",
+   "type": "location",
+   "aliases": [],
+   "description": "The rising sea that swallowed Tresserhorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl's Battle",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of Lim-Dûl against the Kjeldorans and Balduvians.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Leshrac takes Lim-Dûl to Shandalar, leaving Chaeska masterless.",
+   "participants": [
+    "Leshrac",
+    "Lim-Dûl",
+    "Chaeska"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After Leshrac took Lim-Dûl with him to Shandalar"
+  },
+  {
+   "summary": "Chaeska creates a new Lord of Tresserhorn to keep Tresserhorn's undead from rebelling.",
+   "participants": [
+    "Chaeska",
+    "Lord of Tresserhorn"
+   ],
+   "location": "Tresserhorn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Lord of Tresserhorn was built from the flesh and bone of a dozen Kjeldoran heroes"
+  },
+  {
+   "summary": "The Lord of Tresserhorn attacks Jodah and Jaya upon their return.",
+   "participants": [
+    "Lord of Tresserhorn",
+    "Jodah",
+    "Jaya"
+   ],
+   "location": "Tresserhorn",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Lord of Tresserhorn attacked them"
+  },
+  {
+   "summary": "Jodah destroys the Lord of Tresserhorn.",
+   "participants": [
+    "Jodah",
+    "Lord of Tresserhorn"
+   ],
+   "location": "Tresserhorn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jodah then destroyed the Lord of Tresserhorn to avoid a large axe blow to the head"
+  },
+  {
+   "summary": "Chaeska swears to keep the armies at bay if allowed to rebuild the Lord; the mages agree.",
+   "participants": [
+    "Chaeska",
+    "Jodah",
+    "Jaya"
+   ],
+   "location": "Tresserhorn",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "and the two mages agreed"
+  },
+  {
+   "summary": "Tresserhorn falls beneath the rising Sea of Laments.",
+   "participants": [
+    "Tresserhorn",
+    "Sea of Laments",
+    "Chaeska"
+   ],
+   "location": "Tresserhorn",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the keep of Tresserhorn fell beneath the waves of the rising Sea of Laments"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chaeska",
+   "relation": "created",
+   "target": "Lord of Tresserhorn",
+   "note": "Through limited necromancy.",
+   "paragraph": 2,
+   "quote": "Created through Chaeska's limited necromancy"
+  },
+  {
+   "source": "Chaeska",
+   "relation": "serves",
+   "target": "Lim-Dûl",
+   "note": "Chaeska was Lim-Dûl's servant until left masterless.",
+   "paragraph": 2,
+   "quote": "Chaeska , now masterless"
+  },
+  {
+   "source": "Jodah",
+   "relation": "killed",
+   "target": "Lord of Tresserhorn",
+   "note": "Destroyed it.",
+   "paragraph": 3,
+   "quote": "Jodah then destroyed the Lord of Tresserhorn"
+  }
+ ],
+ "rejected": []
+}
