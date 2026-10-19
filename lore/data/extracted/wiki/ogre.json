@@ -1,0 +1,208 @@
+{
+ "page": "wiki/ogre",
+ "url": "https://mtg.wiki/page/Ogre",
+ "title": "Ogre",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:23:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ogre",
+   "type": "creature",
+   "aliases": [
+    "ogres"
+   ],
+   "description": "Massive, brutish humanoids of low intelligence and great bloodlust found on many planes, associated with red and black.",
+   "presence": "appears"
+  },
+  {
+   "name": "Incurables",
+   "type": "creature",
+   "aliases": [],
+   "description": "The cursed, mutated ogres of Grixis, monstrous and homicidally insane.",
+   "presence": "appears"
+  },
+  {
+   "name": "O-bakemono",
+   "type": "creature",
+   "aliases": [],
+   "description": "The ogres of Kamigawa, more intelligent than other ogres, who worshiped the oni.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "A dreaded ogre shaman who dwelt in the keep of Shinka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shinka",
+   "type": "location",
+   "aliases": [],
+   "description": "The blood-stained keep that was the stronghold of the demon-worshiping o-bakemono.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which the o-bakemono freed many oni masters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maraxus",
+   "type": "character",
+   "aliases": [],
+   "description": "A warlord who commanded the Sawtooth Ogres of Keld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karli",
+   "type": "character",
+   "aliases": [],
+   "description": "A desert wizard who summoned two Hasran ogresses to attack Gull's army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the army attacked by Karli's ogresses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hasran Ogres",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fierce ogres of Rabiah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghazbán Ogres",
+   "type": "creature",
+   "aliases": [],
+   "description": "Traitorous ogres of Rabiah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor served by phyrexianized Mirran ogres.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Onakke",
+   "type": "faction",
+   "aliases": [],
+   "description": "An ancient ogre civilization on Shandalar that created the Chain Veil and was obliterated by a spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact created by the Onakke, haunted by their spirits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the Chain Veil, haunted by the Onakke spirits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which dormant Onakke were reawakened.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mardu Horde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tarkir clan whose ogres are kept chained until sent at the enemy.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A shaman-queen's ritual to lift the Grixis curse instead mutates it, producing the Incurables.",
+   "participants": [
+    "Incurables"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "but instead her magic mutated the curse and strengthened its grasp on them all"
+  },
+  {
+   "summary": "With the Kami War the o-bakemono free many oni masters hoping to destroy Kamigawa.",
+   "participants": [
+    "O-bakemono",
+    "Kami War"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "the o-bakemono succeeded in freeing many of their oni masters from their spiritual prisons"
+  },
+  {
+   "summary": "Karli summons two Hasran ogresses in 4074 AR to attack Gull's army.",
+   "participants": [
+    "Karli",
+    "Hasran Ogres",
+    "Gull"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "The desert wizard Karli summoned two Hasran ogresses in 4074 AR to attack Gull 's army."
+  },
+  {
+   "summary": "Dormant Onakke are reawakened by the Chain Veil's magic seeping from Ravnica to Shandalar.",
+   "participants": [
+    "Onakke",
+    "Chain Veil",
+    "New Phyrexian Invasion"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "a group of dormant Onakke were reawakened by the Chain Veil's magic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Onakke",
+   "relation": "created",
+   "target": "Chain Veil",
+   "note": "Ogre civilization that made it.",
+   "paragraph": 18,
+   "quote": "were creators of the Chain Veil"
+  },
+  {
+   "source": "Maraxus",
+   "relation": "leader_of",
+   "target": "Ogre",
+   "note": "Rallied and commanded the Sawtooth Ogres of Keld.",
+   "paragraph": 6,
+   "quote": "have been rallied and commanded by leaders like the warlord Maraxus ."
+  },
+  {
+   "source": "Karli",
+   "relation": "enemy",
+   "target": "Gull",
+   "note": "Sent ogresses against his army.",
+   "paragraph": 16,
+   "quote": "The desert wizard Karli summoned two Hasran ogresses in 4074 AR to attack Gull 's army."
+  }
+ ],
+ "rejected": []
+}
