@@ -1,0 +1,111 @@
+{
+ "page": "wiki/tommy",
+ "url": "https://mtg.wiki/page/Tommy",
+ "title": "Tommy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:54Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Tommy",
+   "type": "character",
+   "aliases": [],
+   "description": "Human Atiin from an unknown plane, stung by Akul and left frail.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Tommy ended up.",
+   "presence": "appears"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [],
+   "description": "Tommy's aunt, leader of a gang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Scorpion dragon who stung Tommy after Annie's gang robbed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Akul's gang, robbed by Annie Flash's gang.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freestriders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang Akul hunted down.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Annie's gang robs Akul and the Hellspurs, and Akul hunts the Freestriders.",
+   "participants": [
+    "Annie Flash",
+    "Akul",
+    "Hellspurs",
+    "Freestriders"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "After her gang robbed Akul and the Hellspurs"
+  },
+  {
+   "summary": "Akul stings Tommy, causing him chronic pain.",
+   "participants": [
+    "Akul",
+    "Tommy"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "This led to Tommy being stung by the scorpion dragon Akul"
+  },
+  {
+   "summary": "Tommy leaves Thunder Junction for the Atiin home plane, parting from Annie with love.",
+   "participants": [
+    "Tommy",
+    "Annie Flash"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Eventually, he decided to leave Thunder Junction and return to the Atiin home plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tommy",
+   "relation": "family",
+   "target": "Annie Flash",
+   "note": "Nephew and aunt.",
+   "paragraph": 2,
+   "quote": "to live with his aunt, Annie Flash"
+  },
+  {
+   "source": "Akul",
+   "relation": "enemy",
+   "target": "Tommy",
+   "note": "Stung him.",
+   "paragraph": 3,
+   "quote": "Tommy being stung by the scorpion dragon Akul"
+  }
+ ],
+ "rejected": []
+}

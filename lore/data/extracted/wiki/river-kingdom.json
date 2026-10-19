@@ -1,0 +1,152 @@
+{
+ "page": "wiki/river-kingdom",
+ "url": "https://mtg.wiki/page/River_Kingdom",
+ "title": "River Kingdom",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "River Kingdom",
+   "type": "faction",
+   "aliases": [
+    "River Kingdom of Selkies"
+   ],
+   "description": "A small nation of selkies in the Borderlands, on an island southwest of Almaaz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Borderlands",
+   "type": "location",
+   "aliases": [],
+   "description": "Region cut off from Almaaz after the Flooding of Terisiare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Larger island near the Borderlands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarrazan River",
+   "type": "location",
+   "aliases": [],
+   "description": "River in whose valley the selkies thrive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Inland sea created when the sea levels sank.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drufalen",
+   "type": "character",
+   "aliases": [
+    "Drufalden"
+   ],
+   "description": "An ice sorceress who locked the Borderlands' water into an icy realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [
+    "Ogwater"
+   ],
+   "description": "Songmage who melted Drufalen's glacier and freed the Beast of the Hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [
+    "the Beast"
+   ],
+   "description": "Creature imprisoned until Ogwater freed it, then banished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that cut off the Borderlands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chimes",
+   "type": "location",
+   "aliases": [],
+   "description": "Valley of elves, destroyed by Ogwater.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Drufalen cast a spell to lock the Borderlands' water into an icy realm, shrinking the Sarrazan River.",
+   "participants": [
+    "Drufalen",
+    "River Kingdom"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "cast a spell that would lock the water of the Borderlands into an icy realm"
+  },
+  {
+   "summary": "In 3050 AR Ogwater Rifkin released the ice's hold through song magic, melting the glacier.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Drufalen"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "released the hold of the ice on her realm through song magic"
+  },
+  {
+   "summary": "Ogwater freed the Beast of the Hours, destroying the Chimes; the Beast was banished.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Beast was finally banished"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drufalen",
+   "relation": "enemy",
+   "target": "River Kingdom",
+   "note": "her cold kingdom forced the selkies to roam for fish",
+   "paragraph": 2,
+   "quote": "forcing the selkies to roam further and further to find fish to eat"
+  },
+  {
+   "source": "Ogwater Rifkin",
+   "relation": "enemy",
+   "target": "Drufalen",
+   "note": "melted her realm",
+   "paragraph": 3,
+   "quote": "released the hold of the ice on her realm through song magic"
+  }
+ ],
+ "rejected": []
+}
