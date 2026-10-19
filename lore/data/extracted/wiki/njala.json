@@ -1,0 +1,184 @@
+{
+ "page": "wiki/njala",
+ "url": "https://mtg.wiki/page/Njala",
+ "title": "Njala",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:35Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Njala",
+   "type": "character",
+   "aliases": [],
+   "description": "A valkyrie shepherd of Starnheim who observes battles to judge warriors' worthiness, paired with her reaper sister Alajn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alajn",
+   "type": "character",
+   "aliases": [],
+   "description": "Njala's paired sister, a reaper.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arni Brokenbrow",
+   "type": "character",
+   "aliases": [
+    "Goatleaper",
+    "Arni"
+   ],
+   "description": "The red-haired Tuskeri leader, formerly named Goatleaper, whose battles Njala watches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hormgart",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarf skald in Starnheim who tells Njala of Arni's past.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tover Giants-Blood",
+   "type": "character",
+   "aliases": [
+    "Giants-Blood"
+   ],
+   "description": "A massive duelist who fights Arni in an honor duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [
+    "the hall of heroes"
+   ],
+   "description": "The hall of heroes that worthy warriors enter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feltmark",
+   "type": "location",
+   "aliases": [],
+   "description": "Region above which a skirmish between Skelle and Tuskeri takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skelle",
+   "type": "faction",
+   "aliases": [
+    "Skelle raiders"
+   ],
+   "description": "Raiders who clash with the Tuskeri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuskeri",
+   "type": "faction",
+   "aliases": [
+    "Tuskeri warriors"
+   ],
+   "description": "Warriors led by Arni Brokenbrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tusk mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where Arni confronts a hellkite dragon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Njala and Alajn watch a skirmish where the outnumbered Tuskeri, led by Arni's bold charge, defeat the Skelle.",
+   "participants": [
+    "Njala",
+    "Alajn",
+    "Arni Brokenbrow",
+    "Skelle",
+    "Tuskeri"
+   ],
+   "location": "Feltmark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Despite the odds, Arni led a bold charge, surprising the Skelle and ensuring a Tuskeri victory."
+  },
+  {
+   "summary": "Njala feels a strange connection when Arni seems to grin at her.",
+   "participants": [
+    "Njala",
+    "Arni Brokenbrow"
+   ],
+   "location": "Feltmark",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Njala felt a strange connection when Arni appeared to grin at her"
+  },
+  {
+   "summary": "Njala seeks out Hormgart, who explains how Arni earned the name Brokenbrow headbutting a troll.",
+   "participants": [
+    "Njala",
+    "Hormgart",
+    "Arni Brokenbrow"
+   ],
+   "location": "Starnheim",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "She sought out Hormgart, a dwarf skald in Starnheim, to learn more about Arni."
+  },
+  {
+   "summary": "Arni lassos a hellkite dragon and drives his blade into its skull while Njala and Alajn watch.",
+   "participants": [
+    "Arni Brokenbrow",
+    "Njala",
+    "Alajn"
+   ],
+   "location": "Tusk mountains",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Arni's cunning prevailed as he lassoed the beast and drove his blade into its skull"
+  },
+  {
+   "summary": "Arni survives an honor duel with Tover Giants-Blood by headbutting him.",
+   "participants": [
+    "Arni Brokenbrow",
+    "Tover Giants-Blood",
+    "Njala"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Arni employed the same headbutt tactic that won him his name"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Njala",
+   "relation": "family",
+   "target": "Alajn",
+   "note": "Paired sisters; Alajn is a reaper.",
+   "paragraph": 1,
+   "quote": "She has a paired sister named Alajn , who serves as a reaper."
+  },
+  {
+   "source": "Arni Brokenbrow",
+   "relation": "leader_of",
+   "target": "Tuskeri",
+   "note": "",
+   "paragraph": 2,
+   "quote": "the Tuskeri leader known for his red hair and horn-like bone protrusion"
+  },
+  {
+   "source": "Arni Brokenbrow",
+   "relation": "enemy",
+   "target": "Tover Giants-Blood",
+   "note": "They fought an honor duel.",
+   "paragraph": 5,
+   "quote": "Arni in an honor duel with the massive Tover Giants-Blood"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,167 @@
+{
+ "page": "wiki/gitrog-monster",
+ "url": "https://mtg.wiki/page/Gitrog_monster",
+ "title": "Gitrog monster",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gitrog Monster",
+   "type": "creature",
+   "aliases": [
+    "Gitrog",
+    "the Gitrog monster"
+   ],
+   "description": "An enormous frog living in the depths of Lake Zhava on Innistrad, worshipped by a cult; it later carries Thalia against Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lake Zhava",
+   "type": "location",
+   "aliases": [],
+   "description": "Lake in the highlands of Nephalia on Innistrad where the Gitrog lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad containing Lake Zhava.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Gitrog lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad near the Gitrog's lake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [
+    "Eldrazi titan"
+   ],
+   "description": "Eldrazi titan whose influence severely mutated the Gitrog.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders whose strange machines came to the Gitrog's lake and who besieged Thalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Innistrad where the Gitrog finds Thalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [],
+   "description": "Last survivor of her Cathar squad, rescued by and riding the Gitrog Monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the Gitrog reached via an Omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Transplanar pathway through which the Gitrog reached Thunder Junction.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Villagers near the lake begin sacrificing sheep, and later humans, to the Gitrog as madness grows.",
+   "participants": [
+    "Gitrog Monster"
+   ],
+   "location": "Lake Zhava",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They began to sacrifice sheep to the Gitrog, and later humans"
+  },
+  {
+   "summary": "Strange machines come to the Gitrog's lake and try to hurt it, so it leaves the water.",
+   "participants": [
+    "Gitrog Monster",
+    "Phyrexians"
+   ],
+   "location": "Lake Zhava",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the Gitrog Monster heaved itself out of the waters and headed straight for Thraben"
+  },
+  {
+   "summary": "The Gitrog Monster rescues Thalia from Phyrexians at Thraben and lets her ride it.",
+   "participants": [
+    "Gitrog Monster",
+    "Thalia",
+    "Phyrexians"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Gitrog Monster bowled through her besiegers, saving her"
+  },
+  {
+   "summary": "The Gitrog arrives on Thunder Junction through an Omenpath.",
+   "participants": [
+    "Gitrog Monster"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The Gitrog found its way onto Thunder Junction through an Omenpath"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gitrog Monster",
+   "relation": "ally",
+   "target": "Thalia",
+   "note": "Saves her and carries her into battle.",
+   "paragraph": 4,
+   "quote": "Seeing the potential for a new human to bring it food, the Gitrog Monster bowled through her besiegers, saving her."
+  },
+  {
+   "source": "Emrakul",
+   "relation": "other",
+   "target": "Gitrog Monster",
+   "note": "Emrakul's influence severely mutated it.",
+   "paragraph": 0,
+   "quote": "the monster was severely mutated by the Eldrazi titan's influence"
+  },
+  {
+   "source": "Gitrog Monster",
+   "relation": "located_in",
+   "target": "Lake Zhava",
+   "note": "Lives in its depths.",
+   "paragraph": 0,
+   "quote": "The Gitrog monster is an enormous frog that lives in the depths of Lake Zhava"
+  }
+ ],
+ "rejected": []
+}

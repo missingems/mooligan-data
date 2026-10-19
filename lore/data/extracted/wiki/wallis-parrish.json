@@ -1,0 +1,168 @@
+{
+ "page": "wiki/wallis-parrish",
+ "url": "https://mtg.wiki/page/Wallis_Parrish",
+ "title": "Wallis Parrish",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:33Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Wallis Parrish",
+   "type": "character",
+   "aliases": [
+    "Captain Parrish",
+    "Captain Wallis Parrish"
+   ],
+   "description": "A pirate captain and mind-mage of the former Deadeye Fleet of the Brazen Coalition on Ixalan, who presumably later led the Bluecoats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Deadeye Fleet",
+   "type": "faction",
+   "aliases": [
+    "Deadeyes",
+    "Deadeye"
+   ],
+   "description": "A fleet of captains of the Brazen Coalition who once served in the naval forces of the Free Cities and preferred infiltration, assassination and thievery.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bluecoats",
+   "type": "faction",
+   "aliases": [],
+   "description": "The former Deadeyes, restored to the status of a national navy by Governor Brass, who enforce the Brazen Coalition's cosmium prospecting deeds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brazen Coalition",
+   "type": "faction",
+   "aliases": [
+    "the coalition"
+   ],
+   "description": "The pirate coalition of Ixalan that settled the coast after the invasion and is being legitimized as a state.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tide Turner",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The ship commanded by Captain Wallis Parrish.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dire Fleet",
+   "type": "faction",
+   "aliases": [],
+   "description": "A pirate fleet that, unlike the Deadeyes, sailed together as a formidable force.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brass",
+   "type": "character",
+   "aliases": [
+    "Governor Brass"
+   ],
+   "description": "The newly appointed governor of the Brazen Coalition, who seeks to legitimize it as a state.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion that upended the old order on Ixalan and devastated Atzocan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atzocan",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Ixalan devastated by the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Brazen Coalition and the Imperials contend.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Parrish commands the Tide Turner and secures the conditional loyalty of other Deadeye captains.",
+   "participants": [
+    "Wallis Parrish",
+    "Tide Turner",
+    "Deadeye Fleet"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Captain Wallis Parrish commanded the Tide Turner"
+  },
+  {
+   "summary": "Parrish keeps the captains loyal by controlling information and handing out tips, in exchange for a share of spoils.",
+   "participants": [
+    "Wallis Parrish",
+    "Deadeye Fleet"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Captain Parrish kept the other captains loyal to her by controlling the flow of information"
+  },
+  {
+   "summary": "The New Phyrexian Invasion devastates Atzocan and depopulates much of the coast.",
+   "participants": [
+    "New Phyrexian Invasion",
+    "Atzocan"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The New Phyrexian Invasion upended the old order, devastating Atzocan and depopulating much of the coast."
+  },
+  {
+   "summary": "Governor Brass returns the former Deadeyes to the status of a national navy, the Bluecoats.",
+   "participants": [
+    "Brass",
+    "Bluecoats",
+    "Deadeye Fleet"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the former Deadeyes returned to their old status as a national navy by Governor Brass"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wallis Parrish",
+   "relation": "leader_of",
+   "target": "Deadeye Fleet",
+   "note": "Her flag unites the Deadeye captains.",
+   "paragraph": 1,
+   "quote": "a handful of other captains who sail under Parrish's flag as part of a fleet called the Deadeyes"
+  },
+  {
+   "source": "Deadeye Fleet",
+   "relation": "member_of",
+   "target": "Brazen Coalition",
+   "note": "The Deadeye Fleet is part of the Brazen Coalition.",
+   "paragraph": 0,
+   "quote": "pirate commander of the former Deadeye Fleet of the Brazen Coalition on Ixalan"
+  },
+  {
+   "source": "Bluecoats",
+   "relation": "serves",
+   "target": "Brass",
+   "note": "Brass returned the former Deadeyes to national navy status as the Bluecoats.",
+   "paragraph": 2,
+   "quote": "the former Deadeyes returned to their old status as a national navy by Governor Brass"
+  }
+ ],
+ "rejected": []
+}

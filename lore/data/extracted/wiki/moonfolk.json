@@ -1,0 +1,151 @@
+{
+ "page": "wiki/moonfolk",
+ "url": "https://mtg.wiki/page/Moonfolk",
+ "title": "Moonfolk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:34Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Moonfolk",
+   "type": "faction",
+   "aliases": [
+    "Soratami",
+    "Skyfolk"
+   ],
+   "description": "Enigmatic flying humanoid race of Kamigawa dwelling in the clouds, claiming descent from a moon Myojin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane native to the moonfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otawara",
+   "type": "location",
+   "aliases": [],
+   "description": "Flying city of the moonfolk, later opened to other races and made the plane's center of learning and innovation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oboro",
+   "type": "location",
+   "aliases": [
+    "Oboro palace"
+   ],
+   "description": "Moonfolk palace not opened to outsiders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mochi",
+   "type": "character",
+   "aliases": [],
+   "description": "Worked secretly with the soratami during the Kami War era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Manipulated into inciting a war between mortals and kami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between mortals and kami on Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saiba Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of innovators established by the moonfolk, mostly soratami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kairi",
+   "type": "deity",
+   "aliases": [],
+   "description": "Dragon kami who refused the moonfolk's request to protect Otawara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Moonfolk planeswalker.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War era, Mochi and the soratami secretly plot to make the soratami dominant by manipulating Konda into inciting war between mortals and kami; the effort fails.",
+   "participants": [
+    "Mochi",
+    "Moonfolk",
+    "Konda"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "However, these efforts would ultimately fail."
+  },
+  {
+   "summary": "In Kamigawa's Modern Age the moonfolk open Otawara to outsiders and it becomes a center of innovation.",
+   "participants": [
+    "Moonfolk"
+   ],
+   "location": "Otawara",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "opening Otawara to outsiders (though still not Oboro palace itself), and allowing the city to become a center of innovation"
+  },
+  {
+   "summary": "The moonfolk establish the Saiba Futurists and ask the dragon kami Kairi to protect Otawara, but Kairi refuses.",
+   "participants": [
+    "Moonfolk",
+    "Saiba Futurists",
+    "Kairi"
+   ],
+   "location": "Otawara",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "the moonfolk asked the dragon kami Kairi to protect their city, only for the great kami to refuse"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mochi",
+   "relation": "ally",
+   "target": "Moonfolk",
+   "note": "worked secretly together in the Kami War era",
+   "paragraph": 6,
+   "quote": "Mochi and the soratami secretly worked together"
+  },
+  {
+   "source": "Moonfolk",
+   "relation": "other",
+   "target": "Saiba Futurists",
+   "note": "established them and make up the majority",
+   "paragraph": 8,
+   "quote": "The Soratami still make up a majority of the Saiba Futurists"
+  },
+  {
+   "source": "Moonfolk",
+   "relation": "located_in",
+   "target": "Otawara",
+   "note": "dwell in the flying city",
+   "paragraph": 5,
+   "quote": "particularly in the flying city of Otawara"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,159 @@
+{
+ "page": "wiki/gormank",
+ "url": "https://mtg.wiki/page/Gormank",
+ "title": "Gormank",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:46Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gormank",
+   "type": "character",
+   "aliases": [],
+   "description": "An ogre from northern Aerona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [
+    "North Aerona"
+   ],
+   "description": "Region of the Domains of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coraleon",
+   "type": "location",
+   "aliases": [],
+   "description": "City in North Aerona holding the Festival of Sorrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boxx",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who is a box or uses one as a stand-in body.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eorra",
+   "type": "character",
+   "aliases": [],
+   "description": "Elvish woman, the only person to beat Gormank in combat, resurrected by Boxx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dolores",
+   "type": "character",
+   "aliases": [
+    "Lady of Sorrow"
+   ],
+   "description": "Lady of Sorrow who forbade magic during the festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scavenging Ghoul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Boxx's ghoul who led Gormank to him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Benalish Hero",
+   "type": "character",
+   "aliases": [],
+   "description": "Companion who traveled with Gormank.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of Sorrow",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival in Coraleon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gormank travels to Coraleon to have Boxx resurrect Eorra, despite Dolores forbidding magic during the Festival of Sorrow.",
+   "participants": [
+    "Gormank",
+    "Boxx",
+    "Eorra",
+    "Dolores"
+   ],
+   "location": "Coraleon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Unfortunately, Coraleon's Festival of Sorrow was going on, and the Lady of Sorrow, Dolores forbade the use of magic"
+  },
+  {
+   "summary": "Gormank bribes Boxx with an amulet and they go to the cemetery to find Eorra's grave.",
+   "participants": [
+    "Gormank",
+    "Boxx",
+    "Scavenging Ghoul"
+   ],
+   "location": "Coraleon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Gormank bribed the wizard's box with a magical amulet"
+  },
+  {
+   "summary": "Boxx resurrects Eorra, who is severely weakened.",
+   "participants": [
+    "Boxx",
+    "Eorra"
+   ],
+   "location": "Coraleon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Boxx went ahead and resurrected Eorra, but she was severely weakened"
+  },
+  {
+   "summary": "Gormank realizes he can never restore his honor.",
+   "participants": [
+    "Gormank",
+    "Eorra"
+   ],
+   "location": "Coraleon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Gormank, who had boasted he never felt sorrow, realized he could never restore his honor."
+  },
+  {
+   "summary": "Dolores reveals she allowed the ritual because she knew the result would crush him; Gormank joins the Festival of Sorrow.",
+   "participants": [
+    "Dolores",
+    "Gormank"
+   ],
+   "location": "Coraleon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she had seen into Gormank's soul and knew that the result would crush him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eorra",
+   "relation": "enemy",
+   "target": "Gormank",
+   "note": "Only person to best him in combat.",
+   "paragraph": 1,
+   "quote": "Eorra was the only person to ever best Gormank in combat"
+  },
+  {
+   "source": "Gormank",
+   "relation": "ally",
+   "target": "Boxx",
+   "note": "Hired him to resurrect Eorra.",
+   "paragraph": 1,
+   "quote": "The ogre, the ghoul, and the box traveled to the cemetery"
+  }
+ ],
+ "rejected": []
+}

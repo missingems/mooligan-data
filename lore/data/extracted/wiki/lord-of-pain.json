@@ -1,0 +1,84 @@
+{
+ "page": "wiki/lord-of-pain",
+ "url": "https://mtg.wiki/page/Lord_of_Pain",
+ "title": "Lord of Pain",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:26Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Lord of Pain",
+   "type": "character",
+   "aliases": [],
+   "description": "A human assassin from Duskmourn, the first razorkin and de facto leader of the razorkin, existing only in the House's screens.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razorkin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Pain-seeking inhabitants of the House who loosely heed the Lord of Pain.",
+   "presence": "appears"
+  },
+  {
+   "name": "The House",
+   "type": "location",
+   "aliases": [
+    "Duskmourn"
+   ],
+   "description": "The sentient house of Duskmourn with screens throughout.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razor mazes",
+   "type": "location",
+   "aliases": [],
+   "description": "Mazes where hordes of razorkin lie in wait and the Lord of Pain's body is stashed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cellarspawn",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature whose essence the Lord of Pain injected into himself.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Lord of Pain injects a cellarspawn's essence seeking unparalleled agony; instead his mind is flung into the House's screens.",
+   "participants": [
+    "Lord of Pain",
+    "Cellarspawn"
+   ],
+   "location": "The House",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "it wrenched his mind from his body and flung it into the screens of the House"
+  },
+  {
+   "summary": "Watching a survivor's death through a screen, he abandons his mortal body to live in the screens.",
+   "participants": [
+    "Lord of Pain"
+   ],
+   "location": "The House",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he gleefully abandoned his mortal body to live exclusively within the House's screens"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord of Pain",
+   "relation": "leader_of",
+   "target": "Razorkin",
+   "note": "De facto leader",
+   "paragraph": 0,
+   "quote": "He is the de facto leader of the razorkin."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,205 @@
+{
+ "page": "wiki/krov",
+ "url": "https://mtg.wiki/page/Krov",
+ "title": "Krov",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:43Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Krov",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital city of the kingdom of Kjeldor on Terisiare in Dominaria, later ravaged by plague and washed out to sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom whose capital was Krov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria containing Kjeldor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Krov stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The era in which Krov stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Royal Academy of Magic",
+   "type": "location",
+   "aliases": [],
+   "description": "Academy in Krov with thin, ornate spires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcum's Weathervane",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact located in Krov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeld",
+   "type": "location",
+   "aliases": [],
+   "description": "Former capital of Kjeldor, where the royal family relocated during the plagues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell whose casting led to the Thaw and hard times for Krov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "A warming of the climate in which disease proliferated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garza Zol",
+   "type": "character",
+   "aliases": [
+    "Plague Queen"
+   ],
+   "description": "Powerful vampire known as the \"Plague Queen\" who emerged inside Krov and ordered Heidar's assassination.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Rimewind",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult that used Krov's libraries to locate Phyrexian war machines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heidar",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Cult of Rimewind who turned on Krov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krovikans",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Krov who kept enemies' eyes and ears as war trophies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shattered Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "The sea beneath which Krov's ruins now lie.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The royal throne and family move to expanding Krov, which becomes the largest city in Kjeldor.",
+   "participants": [
+    "Krov",
+    "Kjeldor"
+   ],
+   "location": "Krov",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the royal throne and family moved to the still-expanding Krov"
+  },
+  {
+   "summary": "After the World Spell, the Thaw brings plagues to Krov and vampires and zombies infest the city.",
+   "participants": [
+    "Krov",
+    "Garza Zol"
+   ],
+   "location": "Krov",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Krov was ravaged by a series of plagues that left its population suffering"
+  },
+  {
+   "summary": "The royal family relocates to Kjeld and plague victims are quarantined inside Krov.",
+   "participants": [
+    "Kjeld",
+    "Krov"
+   ],
+   "location": "Krov",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "quarantine the plague victims inside the walls of Krov"
+  },
+  {
+   "summary": "Garza Zol orders the assassination of Heidar after he turns on Krov.",
+   "participants": [
+    "Garza Zol",
+    "Heidar",
+    "Cult of Rimewind"
+   ],
+   "location": "Krov",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Garza Zol ordered his assassination"
+  },
+  {
+   "summary": "Plague-haunted Krov is washed out to the rising oceans.",
+   "participants": [
+    "Krov",
+    "Shattered Sea"
+   ],
+   "location": "Krov",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "plague-haunted Krov was washed out to the rising oceans"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Krov",
+   "relation": "located_in",
+   "target": "Kjeldor",
+   "note": "Capital city.",
+   "paragraph": 0,
+   "quote": "Krov was the capital city of the kingdom of Kjeldor"
+  },
+  {
+   "source": "Heidar",
+   "relation": "leader_of",
+   "target": "Cult of Rimewind",
+   "note": "Cult's leader.",
+   "paragraph": 4,
+   "quote": "the Rimewind cult's leader Heidar"
+  },
+  {
+   "source": "Garza Zol",
+   "relation": "enemy",
+   "target": "Heidar",
+   "note": "Ordered his assassination.",
+   "paragraph": 4,
+   "quote": "Garza Zol ordered his assassination"
+  }
+ ],
+ "rejected": []
+}
