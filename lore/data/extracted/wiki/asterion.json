@@ -1,0 +1,200 @@
+{
+ "page": "wiki/asterion",
+ "url": "https://mtg.wiki/page/Asterion",
+ "title": "Asterion",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:09Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Asterion",
+   "type": "character",
+   "aliases": [],
+   "description": "A statue spirit and mentor of Quintorius at Strixhaven, a whimsical figure who died in a fall centuries ago while seeking Zantafar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quintorius Kand",
+   "type": "character",
+   "aliases": [
+    "Quint",
+    "Quintorius"
+   ],
+   "description": "Lorehold student mentored by Asterion who discovers Zantafar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hofri Ghostforge",
+   "type": "character",
+   "aliases": [
+    "Professor Hofri Ghostforge"
+   ],
+   "description": "Professor at the dig site who almost caught Quint.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vis Svokunol",
+   "type": "character",
+   "aliases": [
+    "Vis"
+   ],
+   "description": "Loxodon friend of Asterion, unjustly executed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Magic university on Arcavios.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorehold",
+   "type": "faction",
+   "aliases": [],
+   "description": "Strixhaven college Quint belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Effigy Row",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where spirit statues must stay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pillardrop",
+   "type": "location",
+   "aliases": [],
+   "description": "Place with a cave and monument where Asterion was last seen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zantafar",
+   "type": "location",
+   "aliases": [],
+   "description": "Lost city Asterion sought, found beneath a cave in Pillardrop.",
+   "presence": "appears"
+  },
+  {
+   "name": "Canticle of Jed",
+   "type": "concept",
+   "aliases": [],
+   "description": "Part of the legend whose recitation opened the hidden passage.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Quint summons Asterion for a fourth session, and Asterion asks to leave Effigy Row.",
+   "participants": [
+    "Quintorius Kand",
+    "Asterion"
+   ],
+   "location": "Effigy Row",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Asterion, however, expressed a desire to leave Effigy Row and explore the campus"
+  },
+  {
+   "summary": "Asterion insists on visiting the cave at Pillardrop despite the rules.",
+   "participants": [
+    "Asterion",
+    "Quintorius Kand"
+   ],
+   "location": "Pillardrop",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Asterion insisted on visiting this cave"
+  },
+  {
+   "summary": "Quint sneaks Asterion past researchers, avoiding Professor Ghostforge.",
+   "participants": [
+    "Quintorius Kand",
+    "Asterion",
+    "Hofri Ghostforge"
+   ],
+   "location": "Pillardrop",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "They snuck past a group of researchers and professors at the dig site"
+  },
+  {
+   "summary": "Asterion reveals he sought Zantafar, and Quint follows him into the cave.",
+   "participants": [
+    "Asterion",
+    "Quintorius Kand",
+    "Zantafar"
+   ],
+   "location": "Pillardrop",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Asterion shared that he was searching for the lost city of Zantafar"
+  },
+  {
+   "summary": "In the cave Asterion tells of his friend Vis's unjust execution.",
+   "participants": [
+    "Asterion",
+    "Vis Svokunol",
+    "Quintorius Kand"
+   ],
+   "location": "Pillardrop",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "a loxodon unjustly executed"
+  },
+  {
+   "summary": "Quint recites the Canticle of Jed, opening a passage to Zantafar.",
+   "participants": [
+    "Quintorius Kand",
+    "Zantafar",
+    "Canticle of Jed"
+   ],
+   "location": "Pillardrop",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "This recitation triggered a hidden mechanism"
+  },
+  {
+   "summary": "They find Asterion's mummified body and stand before Zantafar.",
+   "participants": [
+    "Asterion",
+    "Quintorius Kand",
+    "Zantafar"
+   ],
+   "location": "Zantafar",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "they found Asterion’s own mummified body"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Asterion",
+   "relation": "mentor_of",
+   "target": "Quintorius Kand",
+   "note": "spirit mentor",
+   "paragraph": 5,
+   "quote": "Asterion was introduced as the spirit mentor of Quintorius"
+  },
+  {
+   "source": "Asterion",
+   "relation": "ally",
+   "target": "Vis Svokunol",
+   "note": "friend",
+   "paragraph": 10,
+   "quote": "his friend Vis Svokunol"
+  }
+ ],
+ "rejected": []
+}

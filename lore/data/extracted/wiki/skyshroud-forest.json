@@ -1,0 +1,201 @@
+{
+ "page": "wiki/skyshroud-forest",
+ "url": "https://mtg.wiki/page/Skyshroud_Forest",
+ "title": "Skyshroud Forest",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:07Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Skyshroud Forest",
+   "type": "location",
+   "aliases": [
+    "Skyshroud"
+   ],
+   "description": "A dense forest in Keld on Icehaven, transferred to Dominaria from Rath during the Rathi Overlay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria on the island of Icehaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Skyshroud ends up.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which the elves' floating construct was dragged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud elves",
+   "type": "faction",
+   "aliases": [
+    "Elves of Skyshroud"
+   ],
+   "description": "Once peaceable elves who built the Skyshroud forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk of Rootwater",
+   "type": "faction",
+   "aliases": [
+    "merfolk"
+   ],
+   "description": "Merfolk who shared a nation with the elves and later became savage carnivores.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rootwater",
+   "type": "location",
+   "aliases": [],
+   "description": "The waters beneath Skyshroud, home of the merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who saved the forest from freezing and later sacrificed herself to close the rift.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Being whose withdrawal of magic froze the forest and who was killed by the Mirari-sword.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that brought Skyshroud to Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time Spiral crisis",
+   "type": "event",
+   "aliases": [],
+   "description": "Crisis during which slivers overran the forest and a time-rift opened.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gathans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Time-displaced warriors from an alternate older Keld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [
+    "true Keldons"
+   ],
+   "description": "Neighbors of the Skyshroud elves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The elves build the new forest Skyshroud after their alliance with the merfolk ends in a bloody battle.",
+   "participants": [
+    "Skyshroud elves",
+    "Merfolk of Rootwater",
+    "Skyshroud Forest"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "their partnership ended abruptly in a bloody battle."
+  },
+  {
+   "summary": "Skyshroud arrives on the frozen wastes of Keld and Freyalise casts a spell to keep it warm.",
+   "participants": [
+    "Freyalise",
+    "Skyshroud Forest",
+    "Keld"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "it was saved by the planeswalker Freyalise , who cast a spell to keep the forest warm."
+  },
+  {
+   "summary": "Karona withdraws magic, freezing the forest for three months until Karona is killed by the Mirari-sword and it thaws.",
+   "participants": [
+    "Karona",
+    "Skyshroud Forest",
+    "Skyshroud elves"
+   ],
+   "location": "Skyshroud Forest",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The forest thawed, and warmth returned."
+  },
+  {
+   "summary": "The slivers overrun the forest and a time-rift links Keld to its alternate older version, and Gathan warriors attack.",
+   "participants": [
+    "Freyalise",
+    "Gathans",
+    "Keldons",
+    "Skyshroud Forest"
+   ],
+   "location": "Skyshroud Forest",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Soon, these time-displaced warriors attacked the true Keldons and Skyshroud's inhabitants."
+  },
+  {
+   "summary": "Freyalise sacrifices herself to close the rift and the inhabitants must leave the weakened forest.",
+   "participants": [
+    "Freyalise",
+    "Skyshroud elves"
+   ],
+   "location": "Skyshroud Forest",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "After Freyalise sacrificed herself to close the rift"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Freyalise",
+   "relation": "ally",
+   "target": "Skyshroud elves",
+   "note": "protects the forest",
+   "paragraph": 6,
+   "quote": "it was saved by the planeswalker Freyalise"
+  },
+  {
+   "source": "Skyshroud elves",
+   "relation": "enemy",
+   "target": "Merfolk of Rootwater",
+   "note": "alliance ended in battle",
+   "paragraph": 4,
+   "quote": "The merfolk cursed the elves and their new home, named Rootwater ."
+  },
+  {
+   "source": "Skyshroud Forest",
+   "relation": "located_in",
+   "target": "Keld",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Skyshroud Forest is a dense forest in Keld on the island of Icehaven"
+  }
+ ],
+ "rejected": []
+}

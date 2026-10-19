@@ -1,0 +1,79 @@
+{
+ "page": "cards/pdrc",
+ "url": "https://scryfall.com/sets/pdrc",
+ "title": "Dragon Con: card flavor text",
+ "story_date": "1994-07-15",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nalathni Dragon",
+   "type": "creature",
+   "aliases": [
+    "Nalathni Dragons"
+   ],
+   "description": "Small but intelligent Dragons that held back Pashalik Mons's Goblin hordes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olesian",
+   "type": "faction",
+   "aliases": [
+    "Olesian allies"
+   ],
+   "description": "Allies of the Nalathni Dragons against the Goblin Raiders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pashalik Mons",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of hordes of Goblin Raiders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin Raiders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hordes led by Pashalik Mons.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nalathni Dragons and their Olesian allies hold back the tide of Pashalik Mons's Goblin Raiders.",
+   "participants": [
+    "Nalathni Dragon",
+    "Olesian",
+    "Pashalik Mons",
+    "Goblin Raiders"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "These small but intelligent Dragons and their Olesian allies held back the tide of Pashalik Mons's hordes of Goblin Raiders."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nalathni Dragon",
+   "relation": "enemy",
+   "target": "Pashalik Mons",
+   "note": "They held back his hordes.",
+   "paragraph": 0,
+   "quote": "held back the tide of Pashalik Mons's hordes of Goblin Raiders"
+  },
+  {
+   "source": "Nalathni Dragon",
+   "relation": "ally",
+   "target": "Olesian",
+   "note": "",
+   "paragraph": 0,
+   "quote": "These small but intelligent Dragons and their Olesian allies"
+  }
+ ],
+ "rejected": []
+}

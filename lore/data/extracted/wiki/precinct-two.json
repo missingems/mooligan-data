@@ -1,0 +1,178 @@
+{
+ "page": "wiki/precinct-two",
+ "url": "https://mtg.wiki/page/Precinct_Two",
+ "title": "Precinct Two",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Precinct Two",
+   "type": "location",
+   "aliases": [],
+   "description": "A precinct of the Tenth District of Ravnica City, a district of modest homes and honest work with quiet tension between law officers and crime families.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "A district of Ravnica City that contains Precinct Two and its airship hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The guild of law and order, whose guildhall New Prahv stands in Precinct Two and employs many locals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild of soldiers; active soldiers and veterans settle in Precinct Two.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "The guild of finance and religion, which holds a discreet foothold in Precinct Two through business ties and protection rackets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "The main guildhall of the Azorius Senate and the district's tallest landmark, with three immense columns.",
+   "presence": "appears"
+  },
+  {
+   "name": "Griffin Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "A hilly southern neighborhood of Precinct Two known for two-story homes and underground dealings with the Orzhov.",
+   "presence": "appears"
+  },
+  {
+   "name": "Augustin Station",
+   "type": "location",
+   "aliases": [],
+   "description": "The main airship hub for the Tenth District, at the west end of Griffin Heights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Udzec, the Monolith",
+   "type": "location",
+   "aliases": [
+    "Udzec"
+   ],
+   "description": "A maximum security prison run by the Azorius.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who staged a riot at Sawtooth Prison and escaped while being transferred to Udzec.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who turned Isperia to stone at the Azorius Senate House.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius leader turned to stone by Vraska.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The war in which the Azorius Senate House hosted several transguilt meetings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "A famed Boros officer who upheld the Guildpact during the Decamillennial Celebration; a statue of him stands in Whitestone.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vraska turned Isperia to stone at the Azorius Senate House.",
+   "participants": [
+    "Vraska",
+    "Isperia"
+   ],
+   "location": "Precinct Two",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "This was where Vraska turned Isperia to stone."
+  },
+  {
+   "summary": "Krenko staged a riot at Sawtooth Prison, then staged an escape while being transferred to Udzec.",
+   "participants": [
+    "Krenko"
+   ],
+   "location": "Udzec, the Monolith",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "Krenko was being transferred here from Sawtooth Prison in Precinct Four after he staged a riot, but staged an escape during the transfer."
+  },
+  {
+   "summary": "The Azorius Senate House hosted several of the transguilt meetings during the War of the Spark.",
+   "participants": [
+    "Azorius Senate",
+    "War of the Spark"
+   ],
+   "location": "Precinct Two",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Hosted several of the transguilt meetings during the War of the Spark ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Precinct Two",
+   "relation": "located_in",
+   "target": "Tenth District",
+   "note": "Located in the southeastern part of the district.",
+   "paragraph": 1,
+   "quote": "Located in the southeastern part of the Tenth District"
+  },
+  {
+   "source": "Vraska",
+   "relation": "enemy",
+   "target": "Isperia",
+   "note": "Vraska turned Isperia to stone.",
+   "paragraph": 8,
+   "quote": "This was where Vraska turned Isperia to stone."
+  },
+  {
+   "source": "New Prahv",
+   "relation": "other",
+   "target": "Azorius Senate",
+   "note": "Main guildhall of the Azorius Senate.",
+   "paragraph": 3,
+   "quote": "the main guildhall of the Azorius Senate"
+  }
+ ],
+ "rejected": []
+}

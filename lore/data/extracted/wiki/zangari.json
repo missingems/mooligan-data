@@ -1,0 +1,181 @@
+{
+ "page": "wiki/zangari",
+ "url": "https://mtg.wiki/page/Zangari",
+ "title": "Zangari",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:21Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lord Zangari",
+   "type": "character",
+   "aliases": [
+    "Zangari"
+   ],
+   "description": "A human noble of Fiora whose schemes caused his downfall; he ordered a murderous music box for his wife and died from a trapped broach.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sydri",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer unaffiliated with the Black Rose who builds untraceable assassination devices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aribelle",
+   "type": "character",
+   "aliases": [
+    "Lady Aribell"
+   ],
+   "description": "Zangari's wife, the target of his plot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iolanni",
+   "type": "character",
+   "aliases": [],
+   "description": "Young widow and Zangari's mistress who tipped him off to Sydri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Tirelli",
+   "type": "character",
+   "aliases": [],
+   "description": "Noblewoman who told Zangari of his wife's gossip.",
+   "presence": "appears"
+  },
+  {
+   "name": "Earl Bartolotti",
+   "type": "character",
+   "aliases": [],
+   "description": "Host of the ball at his mansion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Rose",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Sydri is not affiliated with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Zangari came from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At a ball Lady Tirelli tells Zangari his wife is spreading word of his business misfortune; he leaves angry.",
+   "participants": [
+    "Lord Zangari",
+    "Lady Tirelli",
+    "Aribelle"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he left the party early, alone"
+  },
+  {
+   "summary": "Iolanni tips Zangari about the artificer Sydri.",
+   "participants": [
+    "Lord Zangari",
+    "Iolanni",
+    "Sydri"
+   ],
+   "location": "Fiora",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Iolanni tipped Zangari of the artificer Sydri"
+  },
+  {
+   "summary": "Zangari orders from Sydri a music box that would give his wife a heart attack.",
+   "participants": [
+    "Lord Zangari",
+    "Sydri"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "gave her the order to create a musical box that would give his wife a heart attack"
+  },
+  {
+   "summary": "Zangari returns with the items and admires a boar's head broach that Sydri says is not for sale.",
+   "participants": [
+    "Lord Zangari",
+    "Sydri"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the boar's head broach was a custom order for another client and was not for sale"
+  },
+  {
+   "summary": "Sydri explains how the music box will kill Aribelle on the third hearing.",
+   "participants": [
+    "Sydri",
+    "Lord Zangari",
+    "Aribelle"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "her heart would stop"
+  },
+  {
+   "summary": "Zangari threatens Sydri, and she gives him the music box and the broach as a gift.",
+   "participants": [
+    "Lord Zangari",
+    "Sydri"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Zangari greedily snatched both boxes and left."
+  },
+  {
+   "summary": "Zangari pins the broach on his cape, pricks his finger, laughs uncontrollably and dies feeling cold.",
+   "participants": [
+    "Lord Zangari"
+   ],
+   "location": "Fiora",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "There was a brief flash of pain as he had somehow managed to prick his finger on the broach."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Zangari",
+   "relation": "family",
+   "target": "Aribelle",
+   "note": "husband and wife",
+   "paragraph": 1,
+   "quote": "his wife Aribelle"
+  },
+  {
+   "source": "Lord Zangari",
+   "relation": "romantic",
+   "target": "Iolanni",
+   "note": "his mistress",
+   "paragraph": 1,
+   "quote": "He went straight to his mistress, the young widow Iolanni"
+  },
+  {
+   "source": "Sydri",
+   "relation": "killed",
+   "target": "Lord Zangari",
+   "note": "her broach trap killed him",
+   "paragraph": 7,
+   "quote": "he wondered to himself why he was feeling so cold on such a warm summer night"
+  }
+ ],
+ "rejected": []
+}

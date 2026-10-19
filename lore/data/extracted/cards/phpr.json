@@ -1,0 +1,90 @@
+{
+ "page": "cards/phpr",
+ "url": "https://scryfall.com/sets/phpr",
+ "title": "HarperPrism Book Promos: card flavor text",
+ "story_date": "1995-03-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Windseeker Centaur",
+   "type": "faction",
+   "aliases": [
+    "Windseeker tribe"
+   ],
+   "description": "A loyal and passionate Centaur tribe that roams the Green Lands near the Honeyed Sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Green Lands",
+   "type": "location",
+   "aliases": [],
+   "description": "Lands where the Windseeker tribe roams.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Honeyed Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "A sea near the Green Lands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who called a Giant Badger to her aid in battle with Karli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karli",
+   "type": "character",
+   "aliases": [],
+   "description": "A desert mage who fought Greensleeves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Giant Badger",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature called by Greensleeves to aid her.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The wizard Greensleeves calls a Giant Badger to her aid in a battle with the desert mage Karli.",
+   "participants": [
+    "Greensleeves",
+    "Giant Badger",
+    "Karli"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The wizard Greensleeves called a Giant Badger to her aid in an battle with the desert mage Karli."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Greensleeves",
+   "relation": "enemy",
+   "target": "Karli",
+   "note": "They battled.",
+   "paragraph": 1,
+   "quote": "an battle with the desert mage Karli"
+  },
+  {
+   "source": "Windseeker Centaur",
+   "relation": "located_in",
+   "target": "Green Lands",
+   "note": "",
+   "paragraph": 0,
+   "quote": "the Windseeker tribe roams the Green Lands near the Honeyed Sea"
+  }
+ ],
+ "rejected": []
+}

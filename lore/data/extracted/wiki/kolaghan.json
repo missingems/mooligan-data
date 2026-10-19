@@ -1,0 +1,200 @@
+{
+ "page": "wiki/kolaghan",
+ "url": "https://mtg.wiki/page/Kolaghan",
+ "title": "Kolaghan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:56Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Kolaghan",
+   "type": "creature",
+   "aliases": [
+    "dragonlord Kolaghan"
+   ],
+   "description": "One of the five elder dragons of Tarkir, a feral lightning-breathing dragonlord who leads clan Kolaghan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the dragons and clans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose dragon tempests produced the dragons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who saved Ugin in the current timeline.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mardu Horde",
+   "type": "faction",
+   "aliases": [
+    "Mardu"
+   ],
+   "description": "The clan that revered Kolaghan's brood; later renamed clan Kolaghan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Kolaghan",
+   "type": "faction",
+   "aliases": [
+    "Kolaghan clan"
+   ],
+   "description": "The reckless, honorless clan that grew from the Mardu under Kolaghan's rule.",
+   "presence": "appears"
+  },
+  {
+   "name": "Khanfall of Tarkir",
+   "type": "event",
+   "aliases": [],
+   "description": "The event in which the dragonlords banned khans and old clan names.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that caused heavy dragon casualties.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [],
+   "description": "A former planeswalker who found the Stormnexus Ritual.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormnexus Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "A ritual that summoned a dragonstorm and five spirit dragons, defeating the dragonlords.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spirit dragons",
+   "type": "creature",
+   "aliases": [
+    "five spirit dragons"
+   ],
+   "description": "Five dragons that emerged from the ritual and bound with the new clan leaders.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the original timeline Kolaghan's brood lost to the clans after Ugin's death; Kolaghan smashed into the cliff at Wingthrone and her skull became the Mardu khan's throne.",
+   "participants": [
+    "Kolaghan",
+    "Mardu Horde"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "her skull was used as the throne of the Mardu khan"
+  },
+  {
+   "summary": "In the current timeline Kolaghan joins the ban on the word khan and the old clan names.",
+   "participants": [
+    "Kolaghan"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kolaghan participated in the ban on the words \"khan\" and the names of the old clans"
+  },
+  {
+   "summary": "Under Kolaghan's reign the Mardu name is forgotten and the group becomes clan Kolaghan.",
+   "participants": [
+    "Kolaghan",
+    "Clan Kolaghan"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the group became known as clan Kolaghan"
+  },
+  {
+   "summary": "The New Phyrexian Invasion and reduced dragonstorms weaken the dragonlords, letting humanoid rebellions grow.",
+   "participants": [
+    "Kolaghan"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The humanoid rebellions were able to gain traction"
+  },
+  {
+   "summary": "Narset uncovers the Stormnexus Ritual and is convinced by the rebellion leaders to use it.",
+   "participants": [
+    "Narset",
+    "Stormnexus Ritual"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "she uncovered a spell scroll for the Stormnexus Ritual"
+  },
+  {
+   "summary": "The ritual summons five spirit dragons; the dragonlords fight them and are defeated, swallowed by the storm.",
+   "participants": [
+    "Kolaghan",
+    "Spirit dragons",
+    "Stormnexus Ritual"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "In the end, the dragonlords were defeated and seemingly swallowed up by the massive storm."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kolaghan",
+   "relation": "leader_of",
+   "target": "Clan Kolaghan",
+   "note": "Dragonlord leader of the clan.",
+   "paragraph": 4,
+   "quote": "The dragonlord became a fearsome leader"
+  },
+  {
+   "source": "Kolaghan",
+   "relation": "member_of",
+   "target": "Tarkir",
+   "note": "One of Tarkir's five elder dragons.",
+   "paragraph": 0,
+   "quote": "is one of the five elder dragons of Tarkir"
+  },
+  {
+   "source": "Narset",
+   "relation": "enemy",
+   "target": "Kolaghan",
+   "note": "Narset's ritual helped defeat the dragonlords.",
+   "paragraph": 8,
+   "quote": "the dragonlords were defeated"
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Ugin",
+   "note": "Saved Ugin in the current timeline.",
+   "paragraph": 3,
+   "quote": "After Ugin was saved by Sarkhan Vol"
+  }
+ ],
+ "rejected": []
+}

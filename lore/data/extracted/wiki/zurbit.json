@@ -1,0 +1,127 @@
+{
+ "page": "wiki/zurbit",
+ "url": "https://mtg.wiki/page/Zurbit",
+ "title": "Zurbit",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zurbit",
+   "type": "character",
+   "aliases": [],
+   "description": "Relno's faithful one-eyed homunculus attendant on Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Relno",
+   "type": "character",
+   "aliases": [
+    "the wizard"
+   ],
+   "description": "A wizard on Shandalar whose tower is robbed by merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pip",
+   "type": "creature",
+   "aliases": [],
+   "description": "Relno's beloved orange-striped cat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [
+    "the merfolk"
+   ],
+   "description": "A group of reef-dwelling merfolk who steal from land-dwellers along the Kapsho Sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kapsho Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "The sea along whose shores the merfolk steal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Relno and Zurbit live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zurbit discovers Relno's tower ransacked by merfolk.",
+   "participants": [
+    "Zurbit",
+    "Relno",
+    "Merfolk"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The bookshelves in Relno 's tower were bare, papers were everywhere, flasks and beakers lay broken"
+  },
+  {
+   "summary": "Zurbit rows Pip out to the merfolk reef and tosses a threatening message in a flask overboard.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "hastily scrawled a message, announcing that the merfolk should give back the stolen goods or they would be sorry"
+  },
+  {
+   "summary": "Zurbit feeds Pip a potion that makes the cat grow to the size of a small whale over the merfolk reef.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "while Pip slowly grew to the size of a small whale"
+  },
+  {
+   "summary": "Relno returns and Zurbit passes the damage off as letting in sea air.",
+   "participants": [
+    "Relno",
+    "Zurbit"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Zurbit just said that he was letting in a little sea air"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zurbit",
+   "relation": "serves",
+   "target": "Relno",
+   "note": "Faithful homunculus attendant.",
+   "paragraph": 0,
+   "quote": "Zurbit is Relno 's faithful homunculus attendant on Shandalar ."
+  },
+  {
+   "source": "Zurbit",
+   "relation": "enemy",
+   "target": "Merfolk",
+   "note": "Considers them robbers and cutthroats.",
+   "paragraph": 3,
+   "quote": "these finny folk were robbers and cutthroats"
+  }
+ ],
+ "rejected": []
+}

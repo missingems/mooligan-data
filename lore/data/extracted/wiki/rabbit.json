@@ -1,0 +1,115 @@
+{
+ "page": "wiki/rabbit",
+ "url": "https://mtg.wiki/page/Rabbit",
+ "title": "Rabbit",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:47Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Rabbitfolk",
+   "type": "faction",
+   "aliases": [
+    "Rabbits",
+    "Rabbit"
+   ],
+   "description": "A common type of animalfolk in the Valley of Bloomburrow, community-focused chefs and farmers who are conflict-averse but protect their homes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valley",
+   "type": "location",
+   "aliases": [
+    "the Valley"
+   ],
+   "description": "The region of Bloomburrow where the animalfolk live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pawpatch Party",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of powerful, trained rabbitfolk warriors who patrol the Valley to protect it from Calamity Beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dangerous beasts that threaten the Valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flower Garden",
+   "type": "location",
+   "aliases": [],
+   "description": "A sacred site to the rabbitfolk of Valley, its path curated for centuries so that no flower is trampled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Finneas",
+   "type": "character",
+   "aliases": [],
+   "description": "A rabbitfolk who assisted Mabel in her quest to stop the Calamity Beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "A character whose quest was to stop the Calamity Beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fluffles",
+   "type": "faction",
+   "aliases": [],
+   "description": "The large families around which rabbitfolk lives revolve.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Finneas, a rabbitfolk, assists Mabel in her quest to stop the Calamity Beasts.",
+   "participants": [
+    "Finneas",
+    "Mabel",
+    "Calamity Beasts"
+   ],
+   "location": "Valley",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "One of their kin, Finneas , assisted Mabel in her quest to stop the Calamity Beasts ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Finneas",
+   "relation": "ally",
+   "target": "Mabel",
+   "note": "Finneas assisted Mabel in her quest.",
+   "paragraph": 12,
+   "quote": "One of their kin, Finneas , assisted Mabel in her quest to stop the Calamity Beasts ."
+  },
+  {
+   "source": "Finneas",
+   "relation": "member_of",
+   "target": "Rabbitfolk",
+   "note": "Finneas is one of the rabbitfolk.",
+   "paragraph": 12,
+   "quote": "One of their kin, Finneas , assisted Mabel in her quest to stop the Calamity Beasts ."
+  },
+  {
+   "source": "Pawpatch Party",
+   "relation": "enemy",
+   "target": "Calamity Beasts",
+   "note": "The party patrols to protect the Valley from them.",
+   "paragraph": 9,
+   "quote": "a group of powerful and adeptly trained warriors who patrol Valley to protect from Calamity Beasts"
+  }
+ ],
+ "rejected": []
+}
