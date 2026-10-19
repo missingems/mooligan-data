@@ -1,0 +1,191 @@
+{
+ "page": "wiki/daghatar",
+ "url": "https://mtg.wiki/page/Daghatar",
+ "title": "Daghatar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:44Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Daghatar",
+   "type": "character",
+   "aliases": [
+    "Daghatar the Adamant"
+   ],
+   "description": "The khan of the Abzan tribe on Tarkir who submitted to the dragons and gave up the clan name, kin-trees and the title of Khan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [
+    "Abzan tribe"
+   ],
+   "description": "A tribe on Tarkir nearly exterminated by Dromoka's brood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the dragon storms and clans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan"
+   ],
+   "description": "A planeswalker who returned to the past to save Ugin from Nicol Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon planeswalker whose life Sarkhan saved and who was sent into deep slumber.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "The threat from whom Sarkhan saved Ugin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dromoka",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon who led genocide against the Abzan and forged a pact with Daghatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Remembrance",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Daghatar's amber-headed mace binding spirits of Abzan ancestors, the last remnant of the first kin-tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reyhan",
+   "type": "character",
+   "aliases": [],
+   "description": "The newly appointed khan of the \"true\" Abzan, killed at a meeting in Jeskai territory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon who attacked the khans' meeting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silumgar",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon who attacked the khans' meeting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khanfall",
+   "type": "event",
+   "aliases": [],
+   "description": "The event after which the plane's new order under the dragons began.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Sarkhan saves Ugin and Ugin sleeps, dragon storms intensify and Dromoka's brood carries out a systematic genocide of the Abzan.",
+   "participants": [
+    "Sarkhan Vol",
+    "Ugin",
+    "Dromoka",
+    "Abzan"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Dromoka and her brood thus laid a systematic genocide on the Abzan"
+  },
+  {
+   "summary": "Daghatar consults Remembrance and decides to parley with Dromoka, though the ancestral spirits plan to ambush her.",
+   "participants": [
+    "Daghatar",
+    "Remembrance",
+    "Dromoka"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "decided to hold an audience with Dromoka"
+  },
+  {
+   "summary": "Daghatar learns why the dragons massacred the Abzan, shatters Remembrance releasing the spirits, and ends kin-trees and ancestor practices to forge a pact with Dromoka.",
+   "participants": [
+    "Daghatar",
+    "Dromoka",
+    "Remembrance"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Daghatar ordered the end of all kin-trees and spirit ancestor practices"
+  },
+  {
+   "summary": "Dromoka forbids the words clan and khan, and Ojutai and Silumgar attack a meeting in Jeskai territory, killing Reyhan and the last chance of the true Abzan.",
+   "participants": [
+    "Dromoka",
+    "Reyhan",
+    "Ojutai",
+    "Silumgar",
+    "Daghatar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ojutai and Silumgar and their broods attacked the meeting, killing Reyhan"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Daghatar",
+   "relation": "leader_of",
+   "target": "Abzan",
+   "note": "khan of the tribe",
+   "paragraph": 0,
+   "quote": "Daghatar was the khan of the Abzan tribe on Tarkir"
+  },
+  {
+   "source": "Daghatar",
+   "relation": "serves",
+   "target": "Dromoka",
+   "note": "forged a pact and lived under her",
+   "paragraph": 3,
+   "quote": "thus forging a pact with the dragon"
+  },
+  {
+   "source": "Dromoka",
+   "relation": "enemy",
+   "target": "Abzan",
+   "note": "committed genocide against them",
+   "paragraph": 2,
+   "quote": "Dromoka and her brood thus laid a systematic genocide on the Abzan"
+  },
+  {
+   "source": "Reyhan",
+   "relation": "leader_of",
+   "target": "Abzan",
+   "note": "newly appointed khan of the true Abzan",
+   "paragraph": 4,
+   "quote": "under the newly appointed khan Reyhan"
+  }
+ ],
+ "rejected": []
+}

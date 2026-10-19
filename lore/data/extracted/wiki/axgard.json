@@ -1,0 +1,111 @@
+{
+ "page": "wiki/axgard",
+ "url": "https://mtg.wiki/page/Axgard",
+ "title": "Axgard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:33Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Axgard",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the ten realms of Kaldheim, three rugged mountain ranges hiding a dwarven city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the ten realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "City of Eight Doors",
+   "type": "location",
+   "aliases": [],
+   "description": "Fabled impregnable dwarven city reachable through eight golden doors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloodhammer Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "Largest auditorium of the city, named for founder Vilnus Bloodhammer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vilnus Bloodhammer",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of the City of Eight Doors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gunnar the Breathless",
+   "type": "character",
+   "aliases": [],
+   "description": "Famed skald who declaimed for three days and nights without pausing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goldmaw Chasm",
+   "type": "location",
+   "aliases": [],
+   "description": "Endless supply of liquid gold beneath the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goldeater",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cosmos Giant foretold to nearly destroy the City of Eight Doors.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gunnar the Breathless declaimed for three days and nights without taking a breath.",
+   "participants": [
+    "Gunnar the Breathless"
+   ],
+   "location": "Bloodhammer Hall",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The famed Gunnar the Breathless once declaimed for three days and three nights without pausing to take a breath"
+  },
+  {
+   "summary": "An unfinished saga foretells the Goldeater nearly destroying the city.",
+   "participants": [
+    "Goldeater",
+    "City of Eight Doors"
+   ],
+   "location": "Axgard",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "An unfinished saga foretells the near destruction of the City of Eight Doors by the Goldeater"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vilnus Bloodhammer",
+   "relation": "created",
+   "target": "City of Eight Doors",
+   "note": "founder",
+   "paragraph": 2,
+   "quote": "named in honor of the city's founder, Vilnus Bloodhammer"
+  },
+  {
+   "source": "Axgard",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "one of ten realms",
+   "paragraph": 0,
+   "quote": "Axgard is one of the ten realms of the plane of Kaldheim"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,231 @@
+{
+ "page": "wiki/borderlands",
+ "url": "https://mtg.wiki/page/Borderlands",
+ "title": "Borderlands",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:42Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Borderlands",
+   "type": "location",
+   "aliases": [
+    "the Borderlands"
+   ],
+   "description": "An island southwest of Almaaz in the Terisian Isles on Dominaria, formerly on the mainland Terisiare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "A larger island near the Borderlands, claimed by Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the Borderlands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Urza who laid claim to Almaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Mishra who sent an army to Almaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [],
+   "description": "The songmage prince of Almaaz who summoned the Beast of the Hours and murdered Samor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "A cockatrice summoned by Porros, bound beneath Mount Sarraza until freed and banished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [
+    "Samor"
+   ],
+   "description": "A magic user who bound the Beast beneath Mount Sarraza and was murdered by Porros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [
+    "Mount Sarraza"
+   ],
+   "description": "The mountain where the Beast of the Hours was bound.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chimes",
+   "type": "location",
+   "aliases": [
+    "The Chimes"
+   ],
+   "description": "A secret valley populated by elves, destroyed in 3050 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drufalden",
+   "type": "character",
+   "aliases": [
+    "queen Drufalden"
+   ],
+   "description": "A queen who created an ice kingdom in the Borderlands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [
+    "Ogwater"
+   ],
+   "description": "A songmage who melted the glacier and freed the Beast of the Hours in 3050 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "River Kingdom of Selkies",
+   "type": "faction",
+   "aliases": [
+    "Selkies"
+   ],
+   "description": "A kingdom of semi-aquatic shape-changing people on the Sarrazan River.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarrazan River",
+   "type": "location",
+   "aliases": [],
+   "description": "A river running along Sarraza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "An inland sea formed in the Thaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war between Urza and Mishra during which the Borderlands were on the mainland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The period in which the Great Glacier froze the Lat-Nam Straits and Halquina Mountains.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Mishra claims Almaaz, Urza sends an army; Prince Porros summons the Beast of the Hours to devastate both armies.",
+   "participants": [
+    "Mishra",
+    "Urza",
+    "Porros",
+    "Beast of the Hours"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The prince of Almaaz , a songmage named Porros , used the opportunity to sow chaos"
+  },
+  {
+   "summary": "Samor the Collector binds the Beast beneath Mount Sarraza, then is murdered by Porros before finishing a spell for Mishra to release it.",
+   "participants": [
+    "Samor the Collector",
+    "Beast of the Hours",
+    "Mishra",
+    "Porros"
+   ],
+   "location": "Sarraza",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Samor prepared a spell but was murdered by Porros before he could complete it."
+  },
+  {
+   "summary": "Queen Drufalden creates an ice kingdom in the Borderlands, locking water in a glacier and drying up the Sarrazan River.",
+   "participants": [
+    "Drufalden"
+   ],
+   "location": "Borderlands",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "queen Drufalden created an ice kingdom for herself in the Borderlands"
+  },
+  {
+   "summary": "In 3050 AR Ogwater Rifkin melts the glacier by song magic and frees and banishes the Beast of the Hours, destroying the Chimes.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours",
+    "Drufalden"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The Beast was finally banished, ending its threat over the Borderlands after more than 3000 years."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor the Collector",
+   "relation": "killed",
+   "target": "Beast of the Hours",
+   "note": "bound it beneath Mount Sarraza",
+   "paragraph": 3,
+   "quote": "Samor the Collector used his magic to bind the creature beneath Mount Sarraza"
+  },
+  {
+   "source": "Porros",
+   "relation": "killed",
+   "target": "Samor the Collector",
+   "note": "murdered him",
+   "paragraph": 3,
+   "quote": "Samor prepared a spell but was murdered by Porros before he could complete it."
+  },
+  {
+   "source": "Porros",
+   "relation": "created",
+   "target": "Beast of the Hours",
+   "note": "summoned it",
+   "paragraph": 3,
+   "quote": "summoning a cockatrice named the Beast of the Hours"
+  },
+  {
+   "source": "Mishra",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "brothers at war",
+   "paragraph": 3,
+   "quote": "to use it as a weapon against his brother"
+  }
+ ],
+ "rejected": []
+}

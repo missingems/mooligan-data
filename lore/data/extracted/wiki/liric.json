@@ -1,0 +1,186 @@
+{
+ "page": "wiki/liric",
+ "url": "https://mtg.wiki/page/Liric",
+ "title": "Liric",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:12Z",
+ "storyline": "Return to Ravnica",
+ "entities": [
+  {
+   "name": "Liric",
+   "type": "character",
+   "aliases": [],
+   "description": "Teacher at Hearth Fountain Academic and former Dimir agent who erases himself from Dimir memory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hearth Fountain Academic",
+   "type": "location",
+   "aliases": [],
+   "description": "Tuition-free school where Liric teaches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of secrets Liric leaves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skrygix",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin pupil who gave Liric a drawing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mareena",
+   "type": "character",
+   "aliases": [],
+   "description": "Liric's first kiss in Ismeri.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ismeri",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Liric grew up.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liric's father",
+   "type": "character",
+   "aliases": [
+    "Dimir interpreter"
+   ],
+   "description": "Dimir interpreter whose memories of Liric are erased.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "Dimir leader whose likeness is on the coin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon whose Implicit Maze foray appears in the sand wall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose maze foray appears in the sand wall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Implicit Maze",
+   "type": "event",
+   "aliases": [],
+   "description": "Maze whose runners the sand wall shows.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On the last day of semester Liric prepares to exit the Dimir and receives a drawing from his pupil Skrygix.",
+   "participants": [
+    "Liric",
+    "Skrygix"
+   ],
+   "location": "Hearth Fountain Academic",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "She gave Liric a cute drawing and wished him a good summer."
+  },
+  {
+   "summary": "Liric travels to Ismeri and enters a Dimir operations house in a guildcloak.",
+   "participants": [
+    "Liric",
+    "Dimir"
+   ],
+   "location": "Ismeri",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He walked into a Dimir operations house"
+  },
+  {
+   "summary": "Liric meets the Dimir interpreter, his father, who is studying a sand wall of stolen memories.",
+   "participants": [
+    "Liric",
+    "Liric's father"
+   ],
+   "location": "Ismeri",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The interpreter was Liric's father"
+  },
+  {
+   "summary": "Liric had tracked down and blanked the guildmage who promoted him seven days earlier.",
+   "participants": [
+    "Liric"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "blanked out his mind, erasing any memory of himself there"
+  },
+  {
+   "summary": "Liric erases his father's memories of him with his magic strand.",
+   "participants": [
+    "Liric",
+    "Liric's father"
+   ],
+   "location": "Ismeri",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "erasing his father's memories of him"
+  },
+  {
+   "summary": "Liric leaves, destroys his strand, and resolves to return to teach, a Dimir agent no more.",
+   "participants": [
+    "Liric",
+    "Dimir"
+   ],
+   "location": "Hearth Fountain Academic",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "a Dimir agent no more"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liric's father",
+   "relation": "family",
+   "target": "Liric",
+   "note": "father",
+   "paragraph": 3,
+   "quote": "The interpreter was Liric's father"
+  },
+  {
+   "source": "Liric",
+   "relation": "member_of",
+   "target": "Dimir",
+   "note": "former agent",
+   "paragraph": 0,
+   "quote": "He is also a former Dimir agent."
+  },
+  {
+   "source": "Liric",
+   "relation": "mentor_of",
+   "target": "Skrygix",
+   "note": "teacher and pupil",
+   "paragraph": 1,
+   "quote": "one of his pupils - the goblin Skrygix"
+  }
+ ],
+ "rejected": []
+}

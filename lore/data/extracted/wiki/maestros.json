@@ -1,0 +1,177 @@
+{
+ "page": "wiki/maestros",
+ "url": "https://mtg.wiki/page/Maestros",
+ "title": "Maestros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:06Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of five crime families of New Capenna, elite vampire assassins and art collectors, once the aristocracy of Old Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the crime families.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The earlier city whose culture the Maestros preserved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire boss of the Maestros, formerly Xander's Deacon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xander",
+   "type": "character",
+   "aliases": [
+    "Lord Xander"
+   ],
+   "description": "The family's former vampire boss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Evelyn",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire rogue of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiero Vespin",
+   "type": "character",
+   "aliases": [],
+   "description": "Art dealer of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Gloves",
+   "type": "character",
+   "aliases": [],
+   "description": "Enforcer of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Museum of Old Capenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Maestros headquarters in Park Heights, obliterated by Atraxa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "Borough where the Maestros are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mezzio",
+   "type": "location",
+   "aliases": [],
+   "description": "Borough where Maestros are thick.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian praetor who compleated most of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which the Maestros were compleated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During Old Capenna's fall, the Maestros safeguard its historical and cultural works.",
+   "participants": [
+    "Maestros",
+    "Old Capenna"
+   ],
+   "location": "Old Capenna",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "they safeguarded historical and cultural works"
+  },
+  {
+   "summary": "Atraxa compleats the vast majority of the Maestros during the New Phyrexian Invasion.",
+   "participants": [
+    "Atraxa",
+    "Maestros",
+    "New Phyrexian Invasion"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The vast majority of the Maestros were compleated by Atraxa"
+  },
+  {
+   "summary": "In her rage, Atraxa obliterates the Museum of Old Capenna.",
+   "participants": [
+    "Atraxa",
+    "Museum of Old Capenna"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Atraxa obliterated the Museum of Old Capenna"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anhelo",
+   "relation": "leader_of",
+   "target": "Maestros",
+   "note": "boss",
+   "paragraph": 3,
+   "quote": "Led by the vampire Anhelo"
+  },
+  {
+   "source": "Xander",
+   "relation": "leader_of",
+   "target": "Maestros",
+   "note": "former boss",
+   "paragraph": 10,
+   "quote": "the family's former Vampire boss"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "serves",
+   "target": "Xander",
+   "note": "formerly his Deacon",
+   "paragraph": 9,
+   "quote": "formerly Xander's Deacon"
+  },
+  {
+   "source": "Atraxa",
+   "relation": "enemy",
+   "target": "Maestros",
+   "note": "compleated them",
+   "paragraph": 6,
+   "quote": "The vast majority of the Maestros were compleated by Atraxa"
+  }
+ ],
+ "rejected": []
+}

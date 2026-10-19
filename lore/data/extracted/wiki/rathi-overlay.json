@@ -1,0 +1,180 @@
+{
+ "page": "wiki/rathi-overlay",
+ "url": "https://mtg.wiki/page/Rathi_Overlay",
+ "title": "Rathi Overlay",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:29Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Second stage of the first Phyrexian Invasion in which the plane of Rath was overlaid on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane engineered by Phyrexia as a staging ground; ceased to exist after the Overlay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane invaded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "Invaders led by Yawgmoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian leader whose strategy was to fuse worlds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "Evincar who killed Tsabo Tavoc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tsabo Tavoc",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian killed by Crovax.",
+   "presence": "appears"
+  },
+  {
+   "name": "Davvol",
+   "type": "character",
+   "aliases": [],
+   "description": "Evincar who shaped flowstone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Evincar who shaped flowstone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Heart of Rath that landed in Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp island where the Stronghold landed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "Fell after the Overlay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Defenders of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "flowstone",
+   "type": "concept",
+   "aliases": [],
+   "description": "Malleable substance used to expand Rath.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rath is overlaid on Dominaria, delivering Phyrexia's legions onto Dominarian soil and devastating regions.",
+   "participants": [
+    "Rathi Overlay",
+    "Phyrexia",
+    "Rath",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jagged spires of flowstone overwrote entire regions of Dominaria"
+  },
+  {
+   "summary": "Crovax kills Tsabo Tavoc in the Stronghold's throne room, solidifying his rule.",
+   "participants": [
+    "Crovax",
+    "Tsabo Tavoc"
+   ],
+   "location": "Stronghold",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Crovax emerged victorious, killing Tsabo"
+  },
+  {
+   "summary": "The Stronghold lands in Urborg, Koilos falls, and the Coalition fights the invaders.",
+   "participants": [
+    "Phyrexia",
+    "Coalition"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The immediate consequence was the fall of Koilos"
+  },
+  {
+   "summary": "Rath ceases to exist, its substance embedded in Dominaria.",
+   "participants": [
+    "Rath",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Rath, as a plane, ceased to exist after the Overlay."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Crovax",
+   "relation": "killed",
+   "target": "Tsabo Tavoc",
+   "note": "",
+   "paragraph": 4,
+   "quote": "Crovax emerged victorious, killing Tsabo"
+  },
+  {
+   "source": "Phyrexia",
+   "relation": "created",
+   "target": "Rath",
+   "note": "engineered as staging ground",
+   "paragraph": 1,
+   "quote": "The artificial plane of Rath, long engineered and cultivated by Phyrexia"
+  }
+ ],
+ "rejected": []
+}

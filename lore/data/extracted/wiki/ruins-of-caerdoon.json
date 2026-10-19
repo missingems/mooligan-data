@@ -1,0 +1,111 @@
+{
+ "page": "wiki/ruins-of-caerdoon",
+ "url": "https://mtg.wiki/page/Ruins_of_Caerdoon",
+ "title": "Ruins of Caerdoon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:41Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Ruins of Caerdoon",
+   "type": "location",
+   "aliases": [
+    "Caerdoon"
+   ],
+   "description": "The remains of an ancient fortress in Orrithia on Arcavios, steeped in necromantic energy from a long-forgotten battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the Ruins of Caerdoon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orrithia",
+   "type": "location",
+   "aliases": [],
+   "description": "The region of Arcavios where the ruins lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorehold College",
+   "type": "faction",
+   "aliases": [],
+   "description": "The college that conducts rare archaeological surveys of the ruins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murgaxor Grenshel",
+   "type": "character",
+   "aliases": [],
+   "description": "The figure tracked down and defeated in the fortress basement by fourth-year Strixhaven students.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven students",
+   "type": "faction",
+   "aliases": [
+    "party of fourth-year Strixhaven students"
+   ],
+   "description": "A party that defeated Murgaxor Grenshel.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A long-forgotten battle at Caerdoon kills hundreds and leaves the ground steeped in necromantic energy.",
+   "participants": [
+    "Ruins of Caerdoon"
+   ],
+   "location": "Ruins of Caerdoon",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "a long-forgotten battle in which hundreds perished"
+  },
+  {
+   "summary": "More recently a large-scale necromantic ritual at the fortress tried to achieve immortality.",
+   "participants": [
+    "Ruins of Caerdoon"
+   ],
+   "location": "Ruins of Caerdoon",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "a large-scale necromantic ritual that harnessed the death-saturated land in an attempt to achieve immortality"
+  },
+  {
+   "summary": "A party of fourth-year Strixhaven students tracks down and defeats Murgaxor Grenshel in the fortress basement.",
+   "participants": [
+    "Murgaxor Grenshel",
+    "Strixhaven students"
+   ],
+   "location": "Ruins of Caerdoon",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "This is where Murgaxor Grenshel was tracked down and defeated by a party of fourth-year Strixhaven students."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ruins of Caerdoon",
+   "relation": "located_in",
+   "target": "Orrithia",
+   "note": "fortress remains",
+   "paragraph": 0,
+   "quote": "The Ruins of Caerdoon are the remains of an ancient fortress in Orrithia"
+  },
+  {
+   "source": "Strixhaven students",
+   "relation": "enemy",
+   "target": "Murgaxor Grenshel",
+   "note": "tracked down and defeated him",
+   "paragraph": 8,
+   "quote": "This is where Murgaxor Grenshel was tracked down and defeated by a party of fourth-year Strixhaven students."
+  }
+ ],
+ "rejected": []
+}
