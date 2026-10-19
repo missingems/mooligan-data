@@ -1,0 +1,220 @@
+{
+ "page": "wiki/battle-of-white-ridge",
+ "url": "https://mtg.wiki/page/Battle_of_White_Ridge",
+ "title": "Battle of White Ridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Battle of White Ridge",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle between wizards in White Ridge in 4073 AR that destroyed the village.",
+   "presence": "appears"
+  },
+  {
+   "name": "White Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Village in the Whispering Woods destroyed in the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dacian",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who fought Towser for a fallen object.",
+   "presence": "appears"
+  },
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard rival of Dacian who later took Gull into his service.",
+   "presence": "appears"
+  },
+  {
+   "name": "Helki",
+   "type": "character",
+   "aliases": [],
+   "description": "Centaur summoned by Dacian and controlled by mind magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Holleb",
+   "type": "character",
+   "aliases": [],
+   "description": "Centaur summoned by Dacian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liko",
+   "type": "character",
+   "aliases": [],
+   "description": "Two-Headed Giant summoned by Dacian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Woodcutter orphaned by the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Gull's sister, who cannot speak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sparrow Hawk",
+   "type": "character",
+   "aliases": [],
+   "description": "Gull's younger brother, who vanished.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gorman",
+   "type": "character",
+   "aliases": [],
+   "description": "Towser's previous freight master who died in the battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Woods containing White Ridge.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An object falls in the Whispering Woods and Dacian and Towser meet to contend for it.",
+   "participants": [
+    "Dacian",
+    "Towser"
+   ],
+   "location": "White Ridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the wizards Dacian and Towser met outside White Ridge to contend for it"
+  },
+  {
+   "summary": "Each wizard summons armies and creatures to fight.",
+   "participants": [
+    "Dacian",
+    "Towser",
+    "Helki",
+    "Holleb",
+    "Liko"
+   ],
+   "location": "White Ridge",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Dacian summoned a phalanx of soldiers in silver-scaled armor."
+  },
+  {
+   "summary": "The forces clash in the village, killing combatants and civilians, and an earthquake destroys nearly every cottage.",
+   "participants": [
+    "Dacian",
+    "Towser"
+   ],
+   "location": "White Ridge",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Dacian summoned an earthquake that destroyed nearly every cottage in the village."
+  },
+  {
+   "summary": "Dacian drains survivors' life, Towser attacks with a stone rain, and survivors die of Black Plague.",
+   "participants": [
+    "Dacian",
+    "Towser"
+   ],
+   "location": "White Ridge",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Dacian, flying above the scene, drained the life from the survivors"
+  },
+  {
+   "summary": "Gull and Greensleeves refuse to leave; Sparrow Hawk has vanished.",
+   "participants": [
+    "Gull",
+    "Greensleeves",
+    "Sparrow Hawk"
+   ],
+   "location": "White Ridge",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Their younger brother, Sparrow Hawk , had vanished in the destruction"
+  },
+  {
+   "summary": "Gull finds Helki, Holleb and Liko, who reveal they were controlled by wizards.",
+   "participants": [
+    "Gull",
+    "Helki",
+    "Holleb",
+    "Liko"
+   ],
+   "location": "White Ridge",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "wizards controlled them with mind magic, forcing them into battle against their will"
+  },
+  {
+   "summary": "Towser arrives, offers Gull service, and releases the centaurs and Liko.",
+   "participants": [
+    "Towser",
+    "Gull",
+    "Helki",
+    "Holleb",
+    "Liko"
+   ],
+   "location": "White Ridge",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "offered Gull a place in his service"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dacian",
+   "relation": "enemy",
+   "target": "Towser",
+   "note": "dueled over an object",
+   "paragraph": 1,
+   "quote": "the wizards Dacian and Towser met outside White Ridge to contend for it"
+  },
+  {
+   "source": "Gull",
+   "relation": "family",
+   "target": "Greensleeves",
+   "note": "siblings",
+   "paragraph": 5,
+   "quote": "his sister Greensleeves"
+  },
+  {
+   "source": "Gull",
+   "relation": "serves",
+   "target": "Towser",
+   "note": "accepts the position",
+   "paragraph": 7,
+   "quote": "Gull accepted"
+  },
+  {
+   "source": "Helki",
+   "relation": "serves",
+   "target": "Dacian",
+   "note": "summoned and controlled",
+   "paragraph": 2,
+   "quote": "They were joined by the centaurs Helki and Holleb , and the giant Liko ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,166 @@
+{
+ "page": "wiki/bartek",
+ "url": "https://mtg.wiki/page/Bartek",
+ "title": "Bartek",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Bartek",
+   "type": "character",
+   "aliases": [],
+   "description": "Young crate loader on Ravnica who fell into a setup by the Bane Alley broker Andra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Andra",
+   "type": "character",
+   "aliases": [
+    "the Bane Alley broker"
+   ],
+   "description": "Bane Alley broker and Dimir agent who staged Bartek's mugging.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zifka",
+   "type": "character",
+   "aliases": [],
+   "description": "Bartek's boss.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imrich",
+   "type": "character",
+   "aliases": [],
+   "description": "Stall vendor at Tin Street Market who sold Bartek a necklace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nico",
+   "type": "character",
+   "aliases": [],
+   "description": "Thug who warned Bartek about the shop-girl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bane Alley",
+   "type": "location",
+   "aliases": [],
+   "description": "Seediest street in the area.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tin Street Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market Bartek crossed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Andra works for as an agent.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bartek buys a pewter necklace from Imrich.",
+   "participants": [
+    "Bartek",
+    "Imrich"
+   ],
+   "location": "Tin Street Market",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "encountered the stall vendor Imrich who offered him a pewter necklace"
+  },
+  {
+   "summary": "Nico warns Bartek that the shop-girl only wants his money; Bartek tells him off.",
+   "participants": [
+    "Nico",
+    "Bartek"
+   ],
+   "location": "Tin Street Market",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "warned him that the girl he was going to give it to was a shop-girl"
+  },
+  {
+   "summary": "Bartek gives Andra the necklace and she accepts.",
+   "participants": [
+    "Bartek",
+    "Andra"
+   ],
+   "location": "Bane Alley",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Bartek offered her the pewter necklace as a gift, and after some banter, she accepted it."
+  },
+  {
+   "summary": "Andra sells Bartek a dagger for five zinos.",
+   "participants": [
+    "Andra",
+    "Bartek"
+   ],
+   "location": "Bane Alley",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Andra then offered to sell Bartek a dagger for five zinos."
+  },
+  {
+   "summary": "Bartek is mugged and loses the dagger; Andra offers the money back but he refuses.",
+   "participants": [
+    "Bartek",
+    "Andra"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Two thugs grabbed him, knocked him over his head, and stole his dagger."
+  },
+  {
+   "summary": "Andra is revealed to have staged the mugging and to be a Dimir agent.",
+   "participants": [
+    "Andra",
+    "Bartek",
+    "Dimir"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Andra herself had staged the mugging, and that she was a Dimir agent"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Andra",
+   "relation": "member_of",
+   "target": "Dimir",
+   "note": "agent",
+   "paragraph": 4,
+   "quote": "Andra herself had staged the mugging, and that she was a Dimir agent"
+  },
+  {
+   "source": "Bartek",
+   "relation": "serves",
+   "target": "Zifka",
+   "note": "crate loader for his boss",
+   "paragraph": 1,
+   "quote": "loading crates onto a cart for his boss Zifka"
+  }
+ ],
+ "rejected": []
+}

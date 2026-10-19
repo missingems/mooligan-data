@@ -1,0 +1,137 @@
+{
+ "page": "wiki/ayara",
+ "url": "https://mtg.wiki/page/Ayara",
+ "title": "Ayara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:28Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Ayara",
+   "type": "character",
+   "aliases": [
+    "Queen Ayara",
+    "First of Locthwain",
+    "Widowed Queen"
+   ],
+   "description": "Ancient elf queen of the court of Locthwain on Eldraine, compleated and then slain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Ayara",
+   "type": "character",
+   "aliases": [
+    "compleated Ayara"
+   ],
+   "description": "Compleated version of Ayara with a black iron exoskeleton.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [
+    "the Realm"
+   ],
+   "description": "Plane Ayara ruled on.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Locthwain",
+   "type": "faction",
+   "aliases": [
+    "court of Locthwain"
+   ],
+   "description": "Court and realm ruled by Ayara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cauldron of Eternity",
+   "type": "artifact",
+   "aliases": [
+    "the Cauldron"
+   ],
+   "description": "Cauldron sought by Locthwain champions that kept Ayara youthful.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wild Hunt",
+   "type": "event",
+   "aliases": [],
+   "description": "Outlawed hunt in which Ayara secretly partook.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rankle",
+   "type": "character",
+   "aliases": [],
+   "description": "Fae who used a love potion to lure Ayara to her death.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Locthwain's court was compleated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ayara stays as ruler of Locthwain rather than withdrawing with her kin into the Wilds.",
+   "participants": [
+    "Ayara",
+    "Locthwain"
+   ],
+   "location": "Locthwain",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Ayara remained as the ruler of Locthwain rather than withdraw with her brethren into the Wilds"
+  },
+  {
+   "summary": "Ayara and the court of Locthwain are compleated in the New Phyrexian Invasion.",
+   "participants": [
+    "Ayara",
+    "Phyrexian Ayara",
+    "Locthwain",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Locthwain",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Ayara, along with the rest of the court of Locthwain, was compleated as part of the New Phyrexian Invasion ."
+  },
+  {
+   "summary": "Rankle uses a love potion to lure Ayara off a cliff to her death.",
+   "participants": [
+    "Rankle",
+    "Phyrexian Ayara"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Rankle used a love potion to lure her off a cliff and to her death."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rankle",
+   "relation": "killed",
+   "target": "Phyrexian Ayara",
+   "note": "lured her off a cliff",
+   "paragraph": 5,
+   "quote": "Rankle used a love potion to lure her off a cliff and to her death."
+  },
+  {
+   "source": "Ayara",
+   "relation": "leader_of",
+   "target": "Locthwain",
+   "note": "reigned over the court",
+   "paragraph": 0,
+   "quote": "who, until recently, reigned over the court of Locthwain"
+  }
+ ],
+ "rejected": []
+}

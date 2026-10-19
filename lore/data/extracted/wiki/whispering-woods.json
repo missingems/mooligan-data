@@ -1,0 +1,139 @@
+{
+ "page": "wiki/whispering-woods",
+ "url": "https://mtg.wiki/page/Whispering_Woods",
+ "title": "Whispering Woods",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Vast, mana-imbued forest in northern Aerona on Dominaria that seemed to whisper.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria containing the woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Strongly affected by the forest in her youth; became its new maro-sorcerer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Hometown companion of Greensleeves who moved the army into the woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "White Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Village at the forest border, hometown of Gull and Greensleeves, destroyed in 4073 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dacian",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who destroyed White Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who destroyed White Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves's Grove",
+   "type": "location",
+   "aliases": [],
+   "description": "Encampment of tree huts built in the woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chaney",
+   "type": "character",
+   "aliases": [],
+   "description": "Called the forest's maro-sorcerer Gaea's Liege.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion for which Dominaria prepared.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dacian and Towser destroy White Ridge in 4073 AR.",
+   "participants": [
+    "Dacian",
+    "Towser",
+    "White Ridge"
+   ],
+   "location": "White Ridge",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "until it was destroyed in 4073 AR by the wizards Dacian and Towser ."
+  },
+  {
+   "summary": "A year later Gull and Greensleeves move their army into the woods and build Greensleeves's Grove.",
+   "participants": [
+    "Gull",
+    "Greensleeves",
+    "Greensleeves's Grove"
+   ],
+   "location": "Whispering Woods",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Gull and Greensleeves moved their army into the woods."
+  },
+  {
+   "summary": "In preparation for the New Phyrexian invasion, the forest manifests a new maro-sorcerer, Greensleeves.",
+   "participants": [
+    "Greensleeves",
+    "Whispering Woods"
+   ],
+   "location": "Whispering Woods",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the forest manifested a new maro-sorcerer: Greensleeves."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Whispering Woods",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "north Aerona",
+   "paragraph": 0,
+   "quote": "Whispering Woods is a vast forest in North Aerona"
+  },
+  {
+   "source": "Gull",
+   "relation": "ally",
+   "target": "Greensleeves",
+   "note": "moved their army together",
+   "paragraph": 2,
+   "quote": "Gull and Greensleeves moved their army into the woods."
+  }
+ ],
+ "rejected": []
+}

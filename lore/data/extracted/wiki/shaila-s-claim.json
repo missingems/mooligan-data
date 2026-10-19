@@ -1,0 +1,148 @@
+{
+ "page": "wiki/shaila-s-claim",
+ "url": "https://mtg.wiki/page/Shaila%27s_Claim",
+ "title": "Shaila's Claim",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:23Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Shaila's Claim",
+   "type": "location",
+   "aliases": [],
+   "description": "A historic greenway on the edge of Ghirapur, preserved because a shepherd refused to leave her grazing land.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Kaladesh designed largely by elves according to the teachings of the Great Conduit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shaila",
+   "type": "character",
+   "aliases": [],
+   "description": "A human shepherd who refused to give up her grazing land to the Consulate and was granted the right to stay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [
+    "the Consulate"
+   ],
+   "description": "The governing authority of Kaladesh, led by the Enlightened Keepers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Enlightened Keepers",
+   "type": "faction",
+   "aliases": [],
+   "description": "The leaders of the Consulate, before whom Shaila demanded an audience.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Conduit",
+   "type": "concept",
+   "aliases": [],
+   "description": "The source of teachings by which Ghirapur's designers shaped the city's expansion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narnam House",
+   "type": "location",
+   "aliases": [],
+   "description": "A notorious underground greenhouse at the fringe of Shaila's Claim, centre of a hidden trade in poisons and murderous automatons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djarin",
+   "type": "character",
+   "aliases": [],
+   "description": "A human woman who owns Narnam House and raises her large family there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Ghirapur lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Kaladesh whose deadliest plants are grown at Narnam House.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Builders reached Shaila's hillock and wanted it for an advisor's mansion, but Shaila refused to yield.",
+   "participants": [
+    "Shaila",
+    "Consulate"
+   ],
+   "location": "Shaila's Claim",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "But Shaila refused to yield."
+  },
+  {
+   "summary": "Shaila demanded and won an audience with the Enlightened Keepers, who granted her the right to remain on the land in perpetuity.",
+   "participants": [
+    "Shaila",
+    "Enlightened Keepers",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She demanded an audience with the Enlightened Keepers themselves."
+  },
+  {
+   "summary": "Djarin runs Narnam House, selling poisons and murderous automatons to blindfolded clients.",
+   "participants": [
+    "Djarin",
+    "Narnam House"
+   ],
+   "location": "Narnam House",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Clients who wish to purchase her deadly wares are blindfolded and guided inside by her many children"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Djarin",
+   "relation": "other",
+   "target": "Narnam House",
+   "note": "owns it",
+   "paragraph": 6,
+   "quote": "Owned by a human woman named Djarin"
+  },
+  {
+   "source": "Narnam House",
+   "relation": "located_in",
+   "target": "Shaila's Claim",
+   "note": "hidden at its fringe",
+   "paragraph": 5,
+   "quote": "Hidden at the fringe of Shaila's Claim lies the notorious Narnam House ."
+  },
+  {
+   "source": "Shaila's Claim",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "on the edge of the city",
+   "paragraph": 0,
+   "quote": "Shaila's Claim is a historic greenway on the edge of Ghirapur"
+  }
+ ],
+ "rejected": []
+}

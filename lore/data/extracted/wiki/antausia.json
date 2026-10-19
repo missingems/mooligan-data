@@ -1,0 +1,162 @@
+{
+ "page": "wiki/antausia",
+ "url": "https://mtg.wiki/page/Antausia",
+ "title": "Antausia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Antausia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Sparsely inhabited plane rich in rumored-to-be cognizant magic, seldom visited by planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valdusian Tomer",
+   "type": "character",
+   "aliases": [],
+   "description": "Scholar who recorded Antausia's story and helped defeat Dinitra La Croix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Magus War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that raged nearly 600 years on Antausia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selena Mistencharmer",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the Celestial Prism; with Slides Stardust killed Mandrake Nightshade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slides Stardust",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped kill Mandrake Nightshade and curse the mountain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mandrake Nightshade",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed on Mandrake's Mountain's peak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dinitra La Croix",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Beldingard for 80 years until defeated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ignatius Firestorm",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Dinitra La Croix with Valdusian Tomer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Martuk",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage whose spirit permeates the Caverns of Martuk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bosconius",
+   "type": "location",
+   "aliases": [],
+   "description": "Largest city on Antausia, with a constant rainbow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mandrake's Mountain",
+   "type": "location",
+   "aliases": [
+    "Mount Margalus"
+   ],
+   "description": "Mountain cursed to imprison Mandrake's spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beldingard",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm with pools of pure magical energy.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Powerful wizards exploit Antausia's mana-rich land and the Great Magus War rages for nearly 600 years.",
+   "participants": [
+    "Great Magus War"
+   ],
+   "location": "Antausia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "For nearly 600 years, the Great Magus War raged on in the world."
+  },
+  {
+   "summary": "Selena Mistencharmer and Slides Stardust kill Mandrake Nightshade on the mountain's peak and later curse the mountain.",
+   "participants": [
+    "Selena Mistencharmer",
+    "Slides Stardust",
+    "Mandrake Nightshade"
+   ],
+   "location": "Mandrake's Mountain",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Mandrake Nightshade , who was killed on its peak by Selena Mistencharmer and Slides Stardust"
+  },
+  {
+   "summary": "Dinitra La Croix, ruler of Beldingard for 80 years, is defeated by Ignatius Firestorm and Valdusian Tomer.",
+   "participants": [
+    "Dinitra La Croix",
+    "Ignatius Firestorm",
+    "Valdusian Tomer"
+   ],
+   "location": "Beldingard",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Ruled by Dinitra La Croix for 80 years before she was defeated by Ignatius Firestorm and Valdusian Tomer ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Selena Mistencharmer",
+   "relation": "killed",
+   "target": "Mandrake Nightshade",
+   "note": "with Slides Stardust",
+   "paragraph": 8,
+   "quote": "Mandrake Nightshade , who was killed on its peak by Selena Mistencharmer and Slides Stardust"
+  },
+  {
+   "source": "Ignatius Firestorm",
+   "relation": "enemy",
+   "target": "Dinitra La Croix",
+   "note": "defeated her",
+   "paragraph": 10,
+   "quote": "she was defeated by Ignatius Firestorm and Valdusian Tomer"
+  },
+  {
+   "source": "Dinitra La Croix",
+   "relation": "leader_of",
+   "target": "Beldingard",
+   "note": "ruled 80 years",
+   "paragraph": 10,
+   "quote": "Ruled by Dinitra La Croix for 80 years"
+  }
+ ],
+ "rejected": []
+}

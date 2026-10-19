@@ -1,0 +1,143 @@
+{
+ "page": "wiki/eliza",
+ "url": "https://mtg.wiki/page/Eliza",
+ "title": "Eliza",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:14Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Eliza of the Keep",
+   "type": "character",
+   "aliases": [
+    "Eliza"
+   ],
+   "description": "Young human necromancer baron of Grixis who ruled the Keep at Ilsun Gate and later Unx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara where Eliza dwells.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Eliza's origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ilsun Gate",
+   "type": "location",
+   "aliases": [
+    "the Keep"
+   ],
+   "description": "Domain in the Dregscape ruled by Eliza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Unx",
+   "type": "location",
+   "aliases": [],
+   "description": "Necropolis Eliza claimed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malfegor",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon given the location of a hidden Hermitage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sedris",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord who was unwilling to confront Eliza's reanimated dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hermitages",
+   "type": "location",
+   "aliases": [],
+   "description": "Hidden human gatherings on Grixis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dregscape",
+   "type": "location",
+   "aliases": [],
+   "description": "Region in which her Keep lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Eliza carves out a small domain at Ilsun Gate and rules from her Keep.",
+   "participants": [
+    "Eliza of the Keep",
+    "Ilsun Gate"
+   ],
+   "location": "Ilsun Gate",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she managed to carve out a small domain at Ilsun Gate"
+  },
+  {
+   "summary": "Eliza lures Unx's demonic master out by betraying a hidden Hermitage, and takes the necropolis.",
+   "participants": [
+    "Eliza of the Keep",
+    "Unx",
+    "Malfegor"
+   ],
+   "location": "Unx",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She successfully launched an attack against the necropolis of Unx, claiming it for her own."
+  },
+  {
+   "summary": "Eliza stands down Sedris with a reanimated dragon.",
+   "participants": [
+    "Eliza of the Keep",
+    "Sedris"
+   ],
+   "location": "Unx",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Eliza successfully stood down Sedris"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eliza of the Keep",
+   "relation": "leader_of",
+   "target": "Ilsun Gate",
+   "note": "baron",
+   "paragraph": 0,
+   "quote": "She ruled as baron of the Keep at Ilsun Gate"
+  },
+  {
+   "source": "Eliza of the Keep",
+   "relation": "enemy",
+   "target": "Malfegor",
+   "note": "hoped to set the forces against each other",
+   "paragraph": 2,
+   "quote": "hoping that the two forces would batter themselves against each other"
+  },
+  {
+   "source": "Eliza of the Keep",
+   "relation": "enemy",
+   "target": "Sedris",
+   "note": "stood him down",
+   "paragraph": 2,
+   "quote": "Eliza successfully stood down Sedris"
+  }
+ ],
+ "rejected": []
+}

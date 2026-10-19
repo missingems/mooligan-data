@@ -1,0 +1,178 @@
+{
+ "page": "wiki/aleksandar",
+ "url": "https://mtg.wiki/page/Aleksandar",
+ "title": "Aleksandar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:16Z",
+ "storyline": "Innistrad Remastered",
+ "entities": [
+  {
+   "name": "Aleksandar",
+   "type": "character",
+   "aliases": [],
+   "description": "Young human blacksmith's son from Innistrad who became host to Umbris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [
+    "the nightmare"
+   ],
+   "description": "Nightmare horror that used the keep as a lair and possessed Aleksandar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torens",
+   "type": "character",
+   "aliases": [],
+   "description": "Outsider who advocated for Aleksandar and bargained with Umbris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boris",
+   "type": "character",
+   "aliases": [],
+   "description": "Cultist killed by villagers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vytas",
+   "type": "character",
+   "aliases": [],
+   "description": "Local aristocrat and cultist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eruth",
+   "type": "character",
+   "aliases": [],
+   "description": "Prisoner found in the keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Aleksandar's home.",
+   "presence": "appears"
+  },
+  {
+   "name": "The keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Keep used by Umbris as a lair.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Aleksandar pleads with Vytas for more time on rent; Torens advocates and Aleksandar is assigned to help investigate the keep.",
+   "participants": [
+    "Aleksandar",
+    "Vytas",
+    "Torens"
+   ],
+   "location": "The keep",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Torens's sympathy led to Aleksandar being assigned to help with the investigation"
+  },
+  {
+   "summary": "Aleksandar follows Torens and Boris into the keep against his father's wishes.",
+   "participants": [
+    "Aleksandar",
+    "Torens",
+    "Boris"
+   ],
+   "location": "The keep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Aleksandar, despite his father's insistence that he stay behind, chose to follow them."
+  },
+  {
+   "summary": "Torens and Aleksandar meet Eruth and learn Vytas and Boris are cultists serving Umbris.",
+   "participants": [
+    "Torens",
+    "Aleksandar",
+    "Eruth",
+    "Vytas",
+    "Boris",
+    "Umbris"
+   ],
+   "location": "The keep",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It was revealed that Vytas and Boris were cultists"
+  },
+  {
+   "summary": "Aleksandar is found bound in runes as a vessel for Umbris.",
+   "participants": [
+    "Aleksandar",
+    "Umbris",
+    "Torens",
+    "Eruth"
+   ],
+   "location": "The keep",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Aleksandar, now a vessel for Umbris, was bound in a circle of runes"
+  },
+  {
+   "summary": "Torens bargains with Umbris to free Aleksandar in exchange for its freedom; villagers stone Boris and Vytas.",
+   "participants": [
+    "Torens",
+    "Umbris",
+    "Aleksandar",
+    "Boris",
+    "Vytas"
+   ],
+   "location": "The keep",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Torens made a deal with Umbris to relinquish control of Aleksandar for its freedom."
+  },
+  {
+   "summary": "Torens swears to hunt the nightmare down.",
+   "participants": [
+    "Torens",
+    "Aleksandar",
+    "Umbris"
+   ],
+   "location": "The keep",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "swearing to hunt the nightmare down"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Boris",
+   "relation": "serves",
+   "target": "Umbris",
+   "note": "cultist",
+   "paragraph": 4,
+   "quote": "It was revealed that Vytas and Boris were cultists"
+  },
+  {
+   "source": "Torens",
+   "relation": "enemy",
+   "target": "Umbris",
+   "note": "swears to hunt it",
+   "paragraph": 7,
+   "quote": "swearing to hunt the nightmare down"
+  },
+  {
+   "source": "Torens",
+   "relation": "ally",
+   "target": "Aleksandar",
+   "note": "advocated for him",
+   "paragraph": 2,
+   "quote": "though Torens , an outsider, advocated for him"
+  }
+ ],
+ "rejected": []
+}

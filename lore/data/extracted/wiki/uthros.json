@@ -1,0 +1,115 @@
+{
+ "page": "wiki/uthros",
+ "url": "https://mtg.wiki/page/Uthros",
+ "title": "Uthros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:50Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Uthros",
+   "type": "location",
+   "aliases": [],
+   "description": "Farthest planet orbiting the supervoid Sothera in the Edge, a titanic gas giant ringed by dozens of moons, with a secret research installation at its core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [
+    "Sothera system"
+   ],
+   "description": "Supervoid in the Edge that Uthros orbits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Edge",
+   "type": "location",
+   "aliases": [],
+   "description": "Region containing the Sothera system.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uthros Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that built a research complex as cover for a secret installation at Uthros's core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Illvoi",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who call the corpse in the core a deity and a world-eater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titan corpse of Uthros",
+   "type": "creature",
+   "aliases": [
+    "world-eater"
+   ],
+   "description": "Corpse of a possibly eldrazi titan in the core, causing titanic elemental storms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memory Vessel",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient relic through which all Uthros networks are routed, converting data into thought.",
+   "presence": "appears"
+  },
+  {
+   "name": "VORSPIN",
+   "type": "faction",
+   "aliases": [
+    "liberatory VORSPIN"
+   ],
+   "description": "Uthros's repeater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "ILVTRAC",
+   "type": "faction",
+   "aliases": [],
+   "description": "Manages space travel on Uthros.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Uthros Combine builds a research complex as cover for a secret installation at the planet's core, where a possible eldrazi titan's corpse has been studied for about 92 years.",
+   "participants": [
+    "Uthros Combine",
+    "Titan corpse of Uthros",
+    "Illvoi"
+   ],
+   "location": "Uthros",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "It has been studied for at least 33,507 cycles"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Uthros",
+   "relation": "located_in",
+   "target": "Sothera",
+   "note": "farthest planet orbiting the supervoid",
+   "paragraph": 0,
+   "quote": "the farthest planet orbiting to the supervoid Sothera in the Edge"
+  },
+  {
+   "source": "Uthros Combine",
+   "relation": "other",
+   "target": "Titan corpse of Uthros",
+   "note": "studies it in a secret installation",
+   "paragraph": 3,
+   "quote": "a secret research installation at the planet's core"
+  }
+ ],
+ "rejected": []
+}

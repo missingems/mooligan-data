@@ -1,0 +1,160 @@
+{
+ "page": "wiki/seelenstone",
+ "url": "https://mtg.wiki/page/Seelenstone",
+ "title": "Seelenstone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:43Z",
+ "storyline": "Innistrad: Midnight Hunt",
+ "entities": [
+  {
+   "name": "Seelenstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Glowing white stone from Innistrad worshiped in the Priory of the Approaches of Kessig, which stills souls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Priory of the Approaches",
+   "type": "location",
+   "aliases": [],
+   "description": "Priory in Kessig built to house the Seelenstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Approachers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers granted the Seelenstone who resisted conversion to the Church of Avacyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nameless Angel",
+   "type": "deity",
+   "aliases": [
+    "the Angel"
+   ],
+   "description": "Granted the Seelenstone to the Approachers to fight the Bog's influence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bog Entity",
+   "type": "deity",
+   "aliases": [
+    "the Bog"
+   ],
+   "description": "Entity whose influence the stone fights and whom Willia ends up serving.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merlinde",
+   "type": "character",
+   "aliases": [],
+   "description": "Prioress who built a full priory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Willia Verlasen",
+   "type": "character",
+   "aliases": [
+    "Willia"
+   ],
+   "description": "Acolyte who guarded the Seelenstone, was corrupted by it and harvested souls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church most Approachers resisted joining.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whisperers",
+   "type": "creature",
+   "aliases": [],
+   "description": "What Willia's parents were turned into.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Nameless Angel grants the Seelenstone to the Approachers; a shrine, church, catacombs and priory are built for it.",
+   "participants": [
+    "Nameless Angel",
+    "Approachers",
+    "Merlinde",
+    "Seelenstone"
+   ],
+   "location": "Priory of the Approaches",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Seelenstone was granted to the Approachers by the Nameless Angel to fight the influence of the Bog ."
+  },
+  {
+   "summary": "The stone speaks to Willia, telling her to make it whole by finding other pieces among the people.",
+   "participants": [
+    "Seelenstone",
+    "Willia Verlasen"
+   ],
+   "location": "Priory of the Approaches",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It began to speak to Willia and told her of power and that she could use it to stop the darkness."
+  },
+  {
+   "summary": "Willia argues with her parents and, aided by the stone, kills them and turns them into Whisperers.",
+   "participants": [
+    "Willia Verlasen",
+    "Whisperers"
+   ],
+   "location": "Priory of the Approaches",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "She didn't mean to kill them."
+  },
+  {
+   "summary": "Willia begins harvesting souls, killing villagers and betraying the church's occupants.",
+   "participants": [
+    "Willia Verlasen"
+   ],
+   "location": "Priory of the Approaches",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she had begun harvesting souls, killing the villagers and betraying the occupants of the church."
+  },
+  {
+   "summary": "Willia breaks the Seelenstone to release its souls for the Bog Entity.",
+   "participants": [
+    "Willia Verlasen",
+    "Seelenstone",
+    "Bog Entity"
+   ],
+   "location": "Priory of the Approaches",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she broke it to release its souls for the benefit of the Bog Entity."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Willia Verlasen",
+   "relation": "serves",
+   "target": "Bog Entity",
+   "note": "released the stone's souls for it",
+   "paragraph": 4,
+   "quote": "she broke it to release its souls for the benefit of the Bog Entity."
+  },
+  {
+   "source": "Nameless Angel",
+   "relation": "created",
+   "target": "Seelenstone",
+   "note": "granted it to the Approachers",
+   "paragraph": 2,
+   "quote": "The Seelenstone was granted to the Approachers by the Nameless Angel"
+  }
+ ],
+ "rejected": []
+}

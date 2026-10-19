@@ -1,0 +1,160 @@
+{
+ "page": "wiki/ludevic",
+ "url": "https://mtg.wiki/page/Ludevic",
+ "title": "Ludevic",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:10Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Ludevic of Ulm",
+   "type": "character",
+   "aliases": [
+    "Dr. Ludevic",
+    "Ludevic"
+   ],
+   "description": "Wheezing, reclusive necro-alchemist of Havengul, and the most influential of Innistrad's merchants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Ludevic lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Havengul",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Ludevic lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf Cecani",
+   "type": "character",
+   "aliases": [
+    "Geralf"
+   ],
+   "description": "Young protege Ludevic trains in necro-alchemy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kraum",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hideous flying skaab created by Ludevic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selhoff",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Kraum haunts and where Ludevic has a former student.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olag",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ludevic's final creation, kind and innocent, locked beneath his laboratory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "Visited Ludevic to warn him of the invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion Sorin informed Ludevic about.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ludevic builds Olag as his final creation, but Olag is kind, so he locks them away.",
+   "participants": [
+    "Ludevic of Ulm",
+    "Olag"
+   ],
+   "location": "Havengul",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Olag remains locked away beneath the laboratory until Ludevic figures out how to fix them."
+  },
+  {
+   "summary": "Sorin Markov warns Ludevic of the Phyrexian invasion.",
+   "participants": [
+    "Sorin Markov",
+    "Ludevic of Ulm",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Havengul",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Sorin Markov visited Ludevic to inform him about the New Phyrexian Invasion"
+  },
+  {
+   "summary": "Ludevic entrusts Geralf with the defense of Havengul and visits a former student in Selhoff.",
+   "participants": [
+    "Ludevic of Ulm",
+    "Geralf Cecani",
+    "Havengul",
+    "Selhoff"
+   ],
+   "location": "Havengul",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "entrusted him with the defense of Havengul"
+  },
+  {
+   "summary": "Geralf goes through an Omenpath as an experiment; Ludevic sends Kraum to watch him.",
+   "participants": [
+    "Geralf Cecani",
+    "Ludevic of Ulm",
+    "Kraum"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Ludevic sent Kraum to keep an eye on him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ludevic of Ulm",
+   "relation": "mentor_of",
+   "target": "Geralf Cecani",
+   "note": "trains him in necro-alchemy",
+   "paragraph": 1,
+   "quote": "he has taken young Geralf Cecani under his wing and trains him in the arts of necro-alchemy"
+  },
+  {
+   "source": "Ludevic of Ulm",
+   "relation": "created",
+   "target": "Kraum",
+   "note": "flying skaab",
+   "paragraph": 2,
+   "quote": "Ludevic is the creator of the hideous flying skaab Kraum"
+  },
+  {
+   "source": "Ludevic of Ulm",
+   "relation": "created",
+   "target": "Olag",
+   "note": "final creation",
+   "paragraph": 3,
+   "quote": "Calling his creation \" Olag \", Ludevic activated his machines"
+  }
+ ],
+ "rejected": []
+}

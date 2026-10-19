@@ -1,0 +1,168 @@
+{
+ "page": "wiki/havengul",
+ "url": "https://mtg.wiki/page/Havengul",
+ "title": "Havengul",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Havengul",
+   "type": "location",
+   "aliases": [],
+   "description": "Major port city in Nephalia on Innistrad, known for trade, shipbuilding and a black market.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad province containing Havengul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Havengul lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elgaud Grounds",
+   "type": "location",
+   "aliases": [],
+   "description": "Small Avacynian church fort in Havengul, used as an execution site during the Lunarch Inquisition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacynian church",
+   "type": "faction",
+   "aliases": [
+    "Church of Avacyn"
+   ],
+   "description": "Church with a strong presence in Havengul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lunarch Inquisition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Inquisition that used the Elgaud Grounds for executions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose madness is mentioned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Herzag",
+   "type": "character",
+   "aliases": [],
+   "description": "Corrupt merchant and Lord Mayor of Havengul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeleva",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who preys on the city from her mansion nearby.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gisa Cecani",
+   "type": "character",
+   "aliases": [
+    "Gisa"
+   ],
+   "description": "Occupies the Engelturm and dislikes Havengul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geralf Cecani",
+   "type": "character",
+   "aliases": [
+    "Geralf"
+   ],
+   "description": "Runs Ludevic's laboratory in the city.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ludevic",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the laboratory, currently away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Engelturm",
+   "type": "location",
+   "aliases": [],
+   "description": "Tower once home to the Flight of Goldnight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which the Cecani siblings led the defense.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During Avacyn's madness the Lunarch Inquisition uses the Elgaud Grounds as an execution site.",
+   "participants": [
+    "Lunarch Inquisition",
+    "Avacyn"
+   ],
+   "location": "Elgaud Grounds",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Elgaud Grounds were used by the Lunarch Inquisition as an execution site."
+  },
+  {
+   "summary": "During the New Phyrexian Invasion the Cecani siblings lead the region's defense; many citizens are killed.",
+   "participants": [
+    "Gisa Cecani",
+    "Geralf Cecani"
+   ],
+   "location": "Havengul",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Cecani siblings led the defense of the region"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Herzag",
+   "relation": "leader_of",
+   "target": "Havengul",
+   "note": "Lord Mayor",
+   "paragraph": 3,
+   "quote": "The Lord Mayor of Havengul is Herzag"
+  },
+  {
+   "source": "Gisa Cecani",
+   "relation": "family",
+   "target": "Geralf Cecani",
+   "note": "siblings",
+   "paragraph": 5,
+   "quote": "the Cecani siblings led the defense of the region"
+  },
+  {
+   "source": "Havengul",
+   "relation": "located_in",
+   "target": "Nephalia",
+   "note": "largest of its three cities",
+   "paragraph": 1,
+   "quote": "Havengul is the largest of the three cities in the Innistrad province of Nephalia ."
+  }
+ ],
+ "rejected": []
+}

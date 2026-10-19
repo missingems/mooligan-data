@@ -1,0 +1,163 @@
+{
+ "page": "wiki/cauldron",
+ "url": "https://mtg.wiki/page/Cauldron",
+ "title": "Cauldron",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cauldron",
+   "type": "location",
+   "aliases": [
+    "The Cauldron"
+   ],
+   "description": "An Izzet League compound in Utvara that served as a massive geothermal power facility; destroyed in an explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Utvara",
+   "type": "location",
+   "aliases": [],
+   "description": "Township and region supported by the Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The guild that built and operated the Cauldron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "Izzet parun",
+    "Izzet guildleader"
+   ],
+   "description": "Dragon leader of the Izzet who sent Zomaj Hauc to hatch the eggs and later blasted the ruined compound.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zomaj Hauc",
+   "type": "character",
+   "aliases": [
+    "Magelord Zomaj Hauc"
+   ],
+   "description": "Izzet magelord who operated the Cauldron and secretly schemed to overthrow Niv-Mizzet with dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crix",
+   "type": "character",
+   "aliases": [
+    "Crixizix"
+   ],
+   "description": "A dragon (the third, white one) who with Teysa Karlov chased Hauc; later planned to rebuild the Cauldron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [],
+   "description": "Rider aboard the white dragon who gave chase to Hauc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Cauldron stood.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Niv-Mizzet learns of the ancient dragon eggs and sends Zomaj Hauc to establish an Izzet steamworks to incubate them.",
+   "participants": [
+    "Niv-Mizzet",
+    "Zomaj Hauc"
+   ],
+   "location": "Cauldron",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he sent Magelord Zomaj Hauc to the site to establish an Izzet steamworks there"
+  },
+  {
+   "summary": "Hauc covertly schemes to force the hatching dragons to submit to him and overthrow Niv-Mizzet.",
+   "participants": [
+    "Zomaj Hauc",
+    "Niv-Mizzet"
+   ],
+   "location": "Cauldron",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "covertly devising a scheme to force the three dragons to submit to his will upon hatching"
+  },
+  {
+   "summary": "The Cauldron is attacked from without and by rebellion within; the steamworks collapse and one egg is crushed.",
+   "participants": [
+    "Cauldron"
+   ],
+   "location": "Cauldron",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Cauldron facility was attacked both from without and from rebellion within simultaneously"
+  },
+  {
+   "summary": "Hauc spellbinds the blue dragon and flies off, pursued by Crix and Teysa Karlov on the white dragon; the Cauldron is destroyed in explosions.",
+   "participants": [
+    "Zomaj Hauc",
+    "Crix",
+    "Teysa Karlov"
+   ],
+   "location": "Cauldron",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Hauc managed to spellbind the second, blue, dragon and mount it"
+  },
+  {
+   "summary": "A month later Niv-Mizzet blasts the ruined compound with dragonfire, melting the scrap into a metal lid.",
+   "participants": [
+    "Niv-Mizzet"
+   ],
+   "location": "Cauldron",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Niv-Mizzet personally blasted the ruined compound with dragonfire"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cauldron",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "an Izzet League compound",
+   "paragraph": 0,
+   "quote": "The Cauldron was the site of an Izzet League compound in Utvara"
+  },
+  {
+   "source": "Zomaj Hauc",
+   "relation": "serves",
+   "target": "Niv-Mizzet",
+   "note": "ostensibly did the guildleader's bidding while plotting against him",
+   "paragraph": 5,
+   "quote": "ostensibly doing the bidding of the Izzet guildleader"
+  },
+  {
+   "source": "Zomaj Hauc",
+   "relation": "enemy",
+   "target": "Niv-Mizzet",
+   "note": "secretly plotted to overthrow him",
+   "paragraph": 5,
+   "quote": "giving him enough power to overthrow Niv-Mizzet"
+  }
+ ],
+ "rejected": []
+}

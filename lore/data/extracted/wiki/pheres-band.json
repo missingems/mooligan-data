@@ -1,0 +1,122 @@
+{
+ "page": "wiki/pheres-band",
+ "url": "https://mtg.wiki/page/Pheres_Band",
+ "title": "Pheres Band",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:29Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Pheres Band",
+   "type": "faction",
+   "aliases": [
+    "Pheres-band",
+    "Pheres"
+   ],
+   "description": "Violent nomadic centaur raiders of Theros, led by their strongest and most dominant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lagonna Band",
+   "type": "faction",
+   "aliases": [
+    "Lagonna"
+   ],
+   "description": "Centaur traders ruled by elders, less violent than the Pheres.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the centaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kithara",
+   "type": "location",
+   "aliases": [],
+   "description": "Known Pheres centaur village burned down by Akroan soldiers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akroan Soldiers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers of Akros who burned down Kithara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braulios",
+   "type": "character",
+   "aliases": [],
+   "description": "Pheres battlemaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great-Hoof",
+   "type": "character",
+   "aliases": [],
+   "description": "Charger of one of the largest Pheres raiding bands, a skilled tactician.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wide-Eyes",
+   "type": "character",
+   "aliases": [],
+   "description": "Young renowned Pheres caller with a squirrel companion named Glokhis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Smoke-Born",
+   "type": "character",
+   "aliases": [],
+   "description": "Middle-aged Pheres healer serving several raiding bands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Akroan soldiers burn down the Pheres centaur village Kithara.",
+   "participants": [
+    "Akroan Soldiers",
+    "Kithara",
+    "Pheres Band"
+   ],
+   "location": "Kithara",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "until it was burned down by Akroan Soldiers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pheres Band",
+   "relation": "enemy",
+   "target": "Lagonna Band",
+   "note": "plunder Lagonna centaurs who range too far north",
+   "paragraph": 1,
+   "quote": "Lagonna-band centaurs who range too far to the north"
+  },
+  {
+   "source": "Great-Hoof",
+   "relation": "leader_of",
+   "target": "Pheres Band",
+   "note": "charger of one of the largest raiding bands",
+   "paragraph": 9,
+   "quote": "the charger of one of the largest Pheres raiding bands"
+  },
+  {
+   "source": "Braulios",
+   "relation": "member_of",
+   "target": "Pheres Band",
+   "note": "battlemaster",
+   "paragraph": 8,
+   "quote": "Braulios , a battlemaster."
+  }
+ ],
+ "rejected": []
+}

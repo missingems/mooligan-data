@@ -1,0 +1,153 @@
+{
+ "page": "wiki/heart-of-shanodin",
+ "url": "https://mtg.wiki/page/Heart_of_Shanodin",
+ "title": "Heart of Shanodin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:22Z",
+ "storyline": "Arabian Nights",
+ "entities": [
+  {
+   "name": "Heart of Shanodin",
+   "type": "location",
+   "aliases": [],
+   "description": "Enchanted glade in the Shanodin forest on Oneah that reveals one's true self.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amjad",
+   "type": "character",
+   "aliases": [
+    "King Amjad"
+   ],
+   "description": "Tyrant who brings servants to the Heart to learn their nature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ittono Khairt ni Hata Kan",
+   "type": "character",
+   "aliases": [],
+   "description": "Amjad's Black Knight who reverts to a lover of music and falls for a dryad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daisilodavi",
+   "type": "character",
+   "aliases": [],
+   "description": "Amjad's Royal Assassin whose true self is an actor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Glinham",
+   "type": "character",
+   "aliases": [
+    "Glinham"
+   ],
+   "description": "Fat merchant pursued by Amjad who became a holy man.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shanodin dryads",
+   "type": "faction",
+   "aliases": [
+    "dryads"
+   ],
+   "description": "Dryads inhabiting the forest and glade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Odamulus",
+   "type": "character",
+   "aliases": [
+    "Seer Odamulus"
+   ],
+   "description": "Seer quoted on the Heart's power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oneah",
+   "type": "location",
+   "aliases": [],
+   "description": "Island where Shanodin lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Amjad sends Ittono and Daisilodavi to the Heart in pursuit of Lord Glinham.",
+   "participants": [
+    "Amjad",
+    "Ittono Khairt ni Hata Kan",
+    "Daisilodavi",
+    "Lord Glinham"
+   ],
+   "location": "Heart of Shanodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "King Amjad sent his Black Knight Ittono Khairt ni Hata Kan and his Royal Assassin Daisilodavi to the Heart of Shanodin"
+  },
+  {
+   "summary": "Ittono reverts to his old self and falls in love with a dryad.",
+   "participants": [
+    "Ittono Khairt ni Hata Kan",
+    "Shanodin dryads"
+   ],
+   "location": "Heart of Shanodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "fell in love with one of the glade's dryads"
+  },
+  {
+   "summary": "Daisilodavi, acting his role, assassinates Glinham.",
+   "participants": [
+    "Daisilodavi",
+    "Lord Glinham"
+   ],
+   "location": "Heart of Shanodin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "successfully assassinated Glinham"
+  },
+  {
+   "summary": "The assassin murders the dryad to reclaim Ittono for Amjad.",
+   "participants": [
+    "Daisilodavi",
+    "Ittono Khairt ni Hata Kan",
+    "Amjad"
+   ],
+   "location": "Heart of Shanodin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The assassin then murdered the dryad as well"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ittono Khairt ni Hata Kan",
+   "relation": "serves",
+   "target": "Amjad",
+   "note": "His Black Knight.",
+   "paragraph": 3,
+   "quote": "his Black Knight Ittono Khairt ni Hata Kan"
+  },
+  {
+   "source": "Daisilodavi",
+   "relation": "serves",
+   "target": "Amjad",
+   "note": "His Royal Assassin.",
+   "paragraph": 3,
+   "quote": "his Royal Assassin Daisilodavi"
+  },
+  {
+   "source": "Daisilodavi",
+   "relation": "killed",
+   "target": "Lord Glinham",
+   "note": "Assassinated him.",
+   "paragraph": 3,
+   "quote": "successfully assassinated Glinham"
+  }
+ ],
+ "rejected": []
+}

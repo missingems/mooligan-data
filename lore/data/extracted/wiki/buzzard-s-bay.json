@@ -1,0 +1,132 @@
+{
+ "page": "wiki/buzzard-s-bay",
+ "url": "https://mtg.wiki/page/Buzzard%27s_Bay",
+ "title": "Buzzard's Bay",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Buzzard's Bay",
+   "type": "location",
+   "aliases": [
+    "port of Buzzard's Bay"
+   ],
+   "description": "Huge bay on the Storm Coast of south-western Jamuraa, also a small port within it, riddled with deadly rocks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing the Storm Coast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witch's Weir",
+   "type": "location",
+   "aliases": [],
+   "description": "Safer southern branch of the bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emperor Johan of Tirras",
+   "type": "character",
+   "aliases": [
+    "Johan"
+   ],
+   "description": "Emperor who tortured and killed the bookseller Hebe seeking Shauku's library.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hebe",
+   "type": "character",
+   "aliases": [],
+   "description": "Bookseller tortured and killed by Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a famous library whose domain is in Arboria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Tracked Johan from Palmyra; Johan hired bandits to ambush her party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dandysprat",
+   "type": "location",
+   "aliases": [],
+   "description": "Tavern in the port.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Emperor Johan goes to the port seeking Shauku's library, tortures the bookseller Hebe for its location and kills her.",
+   "participants": [
+    "Emperor Johan of Tirras",
+    "Hebe",
+    "Shauku"
+   ],
+   "location": "Buzzard's Bay",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "tortured the location of Shauku's domain in Arboria from the bookseller Hebe before he killed her"
+  },
+  {
+   "summary": "Johan hires two local bandits to ambush Adira Strongheart's party.",
+   "participants": [
+    "Emperor Johan of Tirras",
+    "Adira Strongheart"
+   ],
+   "location": "Buzzard's Bay",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "He then hired two local bandits to ambush Adira Strongheart 's party"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emperor Johan of Tirras",
+   "relation": "killed",
+   "target": "Hebe",
+   "note": "after torturing her",
+   "paragraph": 4,
+   "quote": "tortured the location of Shauku's domain in Arboria from the bookseller Hebe before he killed her"
+  },
+  {
+   "source": "Emperor Johan of Tirras",
+   "relation": "enemy",
+   "target": "Adira Strongheart",
+   "note": "she had been tracking him",
+   "paragraph": 4,
+   "quote": "who had been tracking him from Palmyra"
+  },
+  {
+   "source": "Buzzard's Bay",
+   "relation": "located_in",
+   "target": "Jamuraa",
+   "note": "south-western Jamuraa",
+   "paragraph": 0,
+   "quote": "in south-western Jamuraa"
+  }
+ ],
+ "rejected": []
+}

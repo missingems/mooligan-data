@@ -1,0 +1,157 @@
+{
+ "page": "wiki/ondu",
+ "url": "https://mtg.wiki/page/Ondu",
+ "title": "Ondu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the seven continents of Zendikar, in the southwestern quadrant, with a rugged mainland and three major offshore islands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the continent of Ondu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agadeem",
+   "type": "location",
+   "aliases": [],
+   "description": "The large southern island of Ondu, renowned for its hedron-strewn fields and crypts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beyeen",
+   "type": "location",
+   "aliases": [],
+   "description": "A smaller island of Ondu marked by volcanic peaks and geothermal basins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jwar Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "A remote island of Ondu notorious for storms, onto which the Ondu Skyclave fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "An ancient Kor skyclave that fell onto Jwar Isle in a civil war with Makindi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Makindi",
+   "type": "location",
+   "aliases": [],
+   "description": "The capital of the ancient Kor empire, destroyed in a civil war with the Ondu Skyclave; also a region of Ondu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor empire",
+   "type": "faction",
+   "aliases": [
+    "Kor"
+   ],
+   "description": "An ancient empire whose heartland was Ondu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi titans",
+   "type": "creature",
+   "aliases": [
+    "Eldrazi"
+   ],
+   "description": "Titans whose release led to their broods teeming in Ondu's canyons and forests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silundi",
+   "type": "location",
+   "aliases": [
+    "Silundi Sea"
+   ],
+   "description": "A region of currents and reefs connecting Ondu's mainland with its islands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Turntimber",
+   "type": "location",
+   "aliases": [
+    "Turntimber, the Serpentine Wood"
+   ],
+   "description": "A vast spiral forest region of Ondu with roaming baloths, giant snakes and Tajuru elf villages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves living in secluded villages in Turntimber.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A civil war between Makindi and the Ondu Skyclave destroys Makindi and ruins the Skyclave, which falls onto Jwar Isle.",
+   "participants": [
+    "Makindi",
+    "Ondu Skyclave",
+    "Kor empire"
+   ],
+   "location": "Ondu",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a civil war between the city and the Ondu Skyclave caused Makindi’s destruction and the Skyclave’s ruin, which fell onto Jwar Isle"
+  },
+  {
+   "summary": "After the release of the Eldrazi titans, their broods fill Ondu, but the land itself resists them with crystalline shards, yawning canyons and mesas that grow limbs.",
+   "participants": [
+    "Eldrazi titans",
+    "Ondu"
+   ],
+   "location": "Ondu",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The defenders of Zendikar found an unpredictable but fierce ally in Ondu’s living terrain."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ondu",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "one of the seven continents",
+   "paragraph": 0,
+   "quote": "Ondu is one of the seven continents of Zendikar"
+  },
+  {
+   "source": "Ondu Skyclave",
+   "relation": "enemy",
+   "target": "Makindi",
+   "note": "civil war destroyed both",
+   "paragraph": 1,
+   "quote": "a civil war between the city and the Ondu Skyclave"
+  },
+  {
+   "source": "Makindi",
+   "relation": "member_of",
+   "target": "Kor empire",
+   "note": "capital of the Kor empire",
+   "paragraph": 1,
+   "quote": "whose capital, Makindi, flourished"
+  }
+ ],
+ "rejected": []
+}

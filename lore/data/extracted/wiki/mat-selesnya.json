@@ -1,0 +1,141 @@
+{
+ "page": "wiki/mat-selesnya",
+ "url": "https://mtg.wiki/page/Mat%27Selesnya",
+ "title": "Mat'Selesnya",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mat'Selesnya",
+   "type": "character",
+   "aliases": [],
+   "description": "Parun of the Selesnya Conclave and worldsoul of Ravnica, an elemental formed from a dozen merged dryads.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Conclave"
+   ],
+   "description": "Ravnican guild of unity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose life force Mat'Selesnya embodies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "Vast ancient tree at the heart of the Selesnya domain, within which Mat'Selesnya lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trostani",
+   "type": "character",
+   "aliases": [],
+   "description": "Chosen agent through whom Mat'Selesnya speaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Tried to destroy Mat'Selesnya during the Decamillennial.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "Laws binding the guilds of Ravnica; Mat'Selesnya is its heart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Signing of the Guildpact",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which Mat'Selesnya took part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Decamillennial",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Szadek tried to destroy Mat'Selesnya.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Twelve ancient dryads merge into Mat'Selesnya, sacrificing their identities for lasting peace.",
+   "participants": [
+    "Mat'Selesnya",
+    "Selesnya Conclave"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "who had sacrificed their identities and their freedom ten thousand years ago"
+  },
+  {
+   "summary": "Mat'Selesnya takes part in the Signing of the Guildpact.",
+   "participants": [
+    "Mat'Selesnya",
+    "Signing of the Guildpact"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Mat'Selesnya participated in the Signing of the Guildpact"
+  },
+  {
+   "summary": "Szadek tries to destroy Mat'Selesnya during the Decamillennial.",
+   "participants": [
+    "Szadek",
+    "Mat'Selesnya",
+    "Decamillennial"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "until Szadek tried to destroy her during the Decamillennial"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mat'Selesnya",
+   "relation": "leader_of",
+   "target": "Selesnya Conclave",
+   "note": "parun",
+   "paragraph": 0,
+   "quote": "Mat'Selesnya is the parun of the Selesnya Conclave"
+  },
+  {
+   "source": "Mat'Selesnya",
+   "relation": "located_in",
+   "target": "Vitu-Ghazi",
+   "note": "encased within the tree",
+   "paragraph": 2,
+   "quote": "She currently still lives deep inside Vitu-Ghazi and speaks through Trostani"
+  },
+  {
+   "source": "Szadek",
+   "relation": "enemy",
+   "target": "Mat'Selesnya",
+   "note": "tried to destroy her",
+   "paragraph": 2,
+   "quote": "until Szadek tried to destroy her during the Decamillennial"
+  }
+ ],
+ "rejected": []
+}

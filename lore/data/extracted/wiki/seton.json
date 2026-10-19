@@ -1,0 +1,202 @@
+{
+ "page": "wiki/seton",
+ "url": "https://mtg.wiki/page/Seton",
+ "title": "Seton",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:29Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Seton",
+   "type": "character",
+   "aliases": [],
+   "description": "A Centaur druid from the Krosan forest, emissary of the Krosan centaurs and pit fighter, murdered by the Cabal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krosan forest",
+   "type": "location",
+   "aliases": [
+    "Krosa"
+   ],
+   "description": "A forest on Dominaria, home of the Krosan centaurs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the Krosan forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "A barbarian warrior and pit fighter who became Seton's friend and pursued the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thriss",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent Seton to Cabal City to investigate the magical disturbances.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where magical disturbances were centered and Seton fought in the pits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The source of the magical disturbance and Kamahl's rage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kirtar",
+   "type": "character",
+   "aliases": [
+    "Lieutenant Kirtar"
+   ],
+   "description": "An aven commander who bore the Mirari and insanely attacked Krosa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [
+    "Ambassador Laquatus"
+   ],
+   "description": "An ambassador whose bodyguard was Turg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Turg",
+   "type": "character",
+   "aliases": [],
+   "description": "Ambassador Laquatus' anurid bodyguard who nearly blinded Seton with acidic bile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's sister, stabbed by him and left in Seton's care, then abducted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the Cabal forces who murdered Seton and abducted Jeska.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "The faction whose forces pursued Kamahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle over the Mirari in Krosa.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Seton meets Kamahl in a pit fight and they become friends after defeating a dementia creature.",
+   "participants": [
+    "Seton",
+    "Kamahl"
+   ],
+   "location": "Cabal City",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the two became good friends after they teamed up to defeat a powerful dementia creature, and Kamahl saved the centaur's life"
+  },
+  {
+   "summary": "Seton wrestles Turg but is nearly blinded by his bile and stays in Krosa to recover.",
+   "participants": [
+    "Seton",
+    "Turg",
+    "Kamahl"
+   ],
+   "location": "Krosan forest",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Turg intentionally vomited in Seton's face, nearly blinding the centaur with his acidic bile."
+  },
+  {
+   "summary": "Kamahl stabs his sister Jeska in Mirari-induced rage and leaves her in Seton's care.",
+   "participants": [
+    "Kamahl",
+    "Jeska",
+    "Seton"
+   ],
+   "location": "Krosan forest",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he left his sister in Seton's care"
+  },
+  {
+   "summary": "Cabal forces led by Braids murder Seton and abduct Jeska.",
+   "participants": [
+    "Braids",
+    "Seton",
+    "Jeska",
+    "Cabal"
+   ],
+   "location": "Krosan forest",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he found that Seton had been murdered and Jeska abducted by the Cabal forces that had pursued him, led by Braids ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Seton",
+   "relation": "ally",
+   "target": "Kamahl",
+   "note": "Became good friends.",
+   "paragraph": 3,
+   "quote": "the two became good friends"
+  },
+  {
+   "source": "Braids",
+   "relation": "killed",
+   "target": "Seton",
+   "note": "Cabal forces led by Braids murdered him.",
+   "paragraph": 4,
+   "quote": "Seton had been murdered and Jeska abducted by the Cabal forces that had pursued him, led by Braids ."
+  },
+  {
+   "source": "Kamahl",
+   "relation": "family",
+   "target": "Jeska",
+   "note": "Sister.",
+   "paragraph": 4,
+   "quote": "stabbed his sister Jeska"
+  },
+  {
+   "source": "Turg",
+   "relation": "serves",
+   "target": "Laquatus",
+   "note": "Bodyguard.",
+   "paragraph": 3,
+   "quote": "Ambassador Laquatus' bodyguard, Turg"
+  }
+ ],
+ "rejected": []
+}

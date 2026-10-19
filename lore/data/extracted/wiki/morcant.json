@@ -1,0 +1,199 @@
+{
+ "page": "wiki/morcant",
+ "url": "https://mtg.wiki/page/Morcant",
+ "title": "Morcant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:12Z",
+ "storyline": "Lorwyn Eclipsed",
+ "entities": [
+  {
+   "name": "Morcant",
+   "type": "character",
+   "aliases": [
+    "High Perfect Morcant"
+   ],
+   "description": "Perfect and tyrannical ruler of the Gilt-Leaf elves on Lorwyn-Shadowmoor who wants to restore the Gilt-Leaf Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gilt-Leaf elves",
+   "type": "faction",
+   "aliases": [
+    "Gilt-Leaf",
+    "Gilt-Leaf Empire"
+   ],
+   "description": "Elves ruled by Morcant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn-Shadowmoor",
+   "type": "plane",
+   "aliases": [
+    "Lorwyn",
+    "Shadowmoor"
+   ],
+   "description": "Dual-aspect plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Morcant is the de facto elf leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lluwen",
+   "type": "character",
+   "aliases": [],
+   "description": "Morcant's subordinate who captured Kirol and later helped them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kirol",
+   "type": "character",
+   "aliases": [],
+   "description": "Strixhaven student brought before Morcant and conscripted to pick dawnglove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isilu",
+   "type": "creature",
+   "aliases": [
+    "the beast of night"
+   ],
+   "description": "Beast that was awoken prematurely.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "Person the students sought for guidance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "Sent by Kirol's professor to retrieve them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanar",
+   "type": "character",
+   "aliases": [],
+   "description": "Kirol's classmate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rimekin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group who approached the grove of Dawnglade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawnglade",
+   "type": "location",
+   "aliases": [],
+   "description": "Grove where dawnglove grows.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lluwen captures Kirol and brings them before Morcant.",
+   "participants": [
+    "Lluwen",
+    "Kirol",
+    "Morcant"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Lluwen brought the student, Kirol , before Morcant."
+  },
+  {
+   "summary": "Morcant learns the students awoke Isilu by mistake and begins to plot.",
+   "participants": [
+    "Morcant",
+    "Kirol",
+    "Isilu"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she began to plot"
+  },
+  {
+   "summary": "Morcant plans to poison Isilu with dawnglove and conscripts Kirol to pick it.",
+   "participants": [
+    "Morcant",
+    "Kirol",
+    "Isilu"
+   ],
+   "location": "Dawnglade",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she conscripted Kirol to do it for her, since they had no dual nature"
+  },
+  {
+   "summary": "Ajani arrives to retrieve Kirol.",
+   "participants": [
+    "Ajani Goldmane",
+    "Kirol",
+    "Morcant"
+   ],
+   "location": "Dawnglade",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "they were interrupted by Ajani Goldmane"
+  },
+  {
+   "summary": "Kirol, Sanar and Lluwen steal the dawnglow from Morcant, transforming her into her Shadowmoor aspect.",
+   "participants": [
+    "Kirol",
+    "Sanar",
+    "Lluwen",
+    "Morcant"
+   ],
+   "location": "Lorwyn-Shadowmoor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "stole the dawnglow from her, transforming her into her Shadowmoor aspect in the process"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Morcant",
+   "relation": "leader_of",
+   "target": "Gilt-Leaf elves",
+   "note": "current ruler",
+   "paragraph": 0,
+   "quote": "the current ruler of the Gilt-Leaf elves"
+  },
+  {
+   "source": "Lluwen",
+   "relation": "serves",
+   "target": "Morcant",
+   "note": "subordinate",
+   "paragraph": 3,
+   "quote": "Morcant's subordinate Lluwen"
+  },
+  {
+   "source": "Morcant",
+   "relation": "enemy",
+   "target": "Kirol",
+   "note": "conscripted them and was thwarted",
+   "paragraph": 4,
+   "quote": "Morcant refused to let Kirol leave"
+  }
+ ],
+ "rejected": []
+}

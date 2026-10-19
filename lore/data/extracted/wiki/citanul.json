@@ -1,0 +1,155 @@
+{
+ "page": "wiki/citanul",
+ "url": "https://mtg.wiki/page/Citanul",
+ "title": "Citanul",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:32Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Citanul",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Argoth, a city built in harmony with nature and seat of the Court of Titania.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Island off Terisiare on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titania",
+   "type": "character",
+   "aliases": [
+    "queen of Citanul"
+   ],
+   "description": "Queen who resided in Citanul and refused Harbin's alliance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Citanul Druids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of druids descended from surviving Thran who disavowed technology.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harbin",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's envoy who crashed his thopter on Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwenna",
+   "type": "character",
+   "aliases": [],
+   "description": "Watched the intruder Harbin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother who activated the Golgothian Sylex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's brother and enemy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose activation caused the Sylex Blast.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Harbin crashes on Argoth; Gwenna sends word, but the Citanul Elder arrives too late and Harbin escapes.",
+   "participants": [
+    "Harbin",
+    "Gwenna",
+    "Citanul"
+   ],
+   "location": "Argoth",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the Citanul Elder did not reach the site of trespass in time before Harbin had escaped the island"
+  },
+  {
+   "summary": "Titania refuses Harbin's offered alliance against Mishra but lets him leave unharmed.",
+   "participants": [
+    "Titania",
+    "Harbin",
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Citanul",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Titania refused because Urza's armies despoiled the land equally as much as Mishra did"
+  },
+  {
+   "summary": "Citanul is obliterated with Argoth when Urza activates the Golgothian Sylex.",
+   "participants": [
+    "Urza",
+    "Citanul",
+    "Argoth",
+    "Golgothian Sylex"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Citanul was obliterated along with the rest of Argoth in the last battle of the Brothers' War"
+  },
+  {
+   "summary": "Surviving Citanul Druids are driven mad by Argoth's fall and grow violent.",
+   "participants": [
+    "Citanul Druids"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Driven mad by the fall of Argoth, the Citanul Druids grew violent"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Citanul",
+   "relation": "located_in",
+   "target": "Argoth",
+   "note": "capital",
+   "paragraph": 0,
+   "quote": "Citanul was the capital of Argoth"
+  },
+  {
+   "source": "Titania",
+   "relation": "leader_of",
+   "target": "Citanul",
+   "note": "queen",
+   "paragraph": 5,
+   "quote": "He spoke to the queen of Citanul"
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "Brothers' War",
+   "paragraph": 6,
+   "quote": "Urza activated the Golgothian Sylex"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,168 @@
+{
+ "page": "wiki/maia",
+ "url": "https://mtg.wiki/page/Maia",
+ "title": "Maia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:25Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Maia",
+   "type": "character",
+   "aliases": [],
+   "description": "A human on Theros, daughter of a smith who became a Returned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maia's father",
+   "type": "character",
+   "aliases": [
+    "her father"
+   ],
+   "description": "A smith who died and became a Returned, hammering aimlessly in his ruined smithy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Maia lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Theros near which Maia's family house stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kadmos",
+   "type": "character",
+   "aliases": [],
+   "description": "Maia's four-year-old brother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pylia",
+   "type": "character",
+   "aliases": [],
+   "description": "Maia's mentor, who explains the Returned to her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the forge, to whom prayer charms hung in the smithy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the dead, to whom Maia prays.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Returned",
+   "type": "concept",
+   "aliases": [
+    "the Returned"
+   ],
+   "description": "The dead who leave the Underworld, bodies holding only mechanical memories, with souls and loves left behind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Asphodel",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of the Returned, where Maia sends her father.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Odunos",
+   "type": "location",
+   "aliases": [],
+   "description": "A place where the Returned often gather.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Maia brings asters to her father's ruined smithy and prays to Erebos.",
+   "participants": [
+    "Maia",
+    "Erebos"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She said a quick prayer to Erebos , god of the dead, and hurried out of the forge."
+  },
+  {
+   "summary": "Maia returns and finds her father as a Returned hammering aimlessly; she puts asters on his anvil and flees in terror.",
+   "participants": [
+    "Maia",
+    "Maia's father"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She ran from the forge in terror, but he did not follow her."
+  },
+  {
+   "summary": "Maia talks with her mentor Pylia about the Returned.",
+   "participants": [
+    "Maia",
+    "Pylia"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Four days, later, Maia talked with her mentor Pylia about the Returned"
+  },
+  {
+   "summary": "Hoplites surround the forge to kill a Returned; Maia finds her father, who does not remember her, and sends him to Asphodel.",
+   "participants": [
+    "Maia",
+    "Maia's father",
+    "Asphodel"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "She bid him go to the place of the same name, the city of Asphodel, the city of the Returned"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Maia",
+   "relation": "family",
+   "target": "Maia's father",
+   "note": "daughter and father",
+   "paragraph": 0,
+   "quote": "She is the daughter of a smith who became a Returned ."
+  },
+  {
+   "source": "Pylia",
+   "relation": "mentor_of",
+   "target": "Maia",
+   "note": "",
+   "paragraph": 4,
+   "quote": "Maia talked with her mentor Pylia about the Returned"
+  },
+  {
+   "source": "Maia",
+   "relation": "family",
+   "target": "Kadmos",
+   "note": "brother",
+   "paragraph": 2,
+   "quote": "her mother and her four-year-old brother Kadmos waited for her"
+  }
+ ],
+ "rejected": []
+}

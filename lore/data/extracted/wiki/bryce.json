@@ -1,0 +1,159 @@
+{
+ "page": "wiki/bryce",
+ "url": "https://mtg.wiki/page/Bryce",
+ "title": "Bryce",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:10Z",
+ "storyline": "Johan's War",
+ "entities": [
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [
+    "City of Bridges",
+    "City of Canals"
+   ],
+   "description": "A city-state in Jamuraa on Dominaria near the mouth of the River Toloron and the Bay of Pearls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent on which Bryce lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Bryce was located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Governor of Bryce, with sand warriors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [
+    "Tirrans"
+   ],
+   "description": "A neighboring city that often attacked Bryce.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Bryce",
+   "type": "event",
+   "aliases": [],
+   "description": "The first battle in Johan's War, in which Tirrans swarmed Bryce.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war whose first battle was the Battle of Bryce.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xira Arien",
+   "type": "character",
+   "aliases": [],
+   "description": "A young wizard who defeated Hazezon Tamar's sand warriors using Stone-Throwing Devils.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaeger Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "A cat warrior befriended by Bryce who fought ferociously in its defense.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keepers of the Faith",
+   "type": "faction",
+   "aliases": [],
+   "description": "Those who tended the Temple of Anthius.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Battle of Bryce, the first battle of Johan's War, Tirrans swarm the streets of Bryce.",
+   "participants": [
+    "Tirras",
+    "Bryce"
+   ],
+   "location": "Bryce",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "the Battle of Bryce was the first battle in Johan's War"
+  },
+  {
+   "summary": "Xira Arien defeats Hazezon Tamar's sand warriors using Stone-Throwing Devils.",
+   "participants": [
+    "Xira Arien",
+    "Hazezon Tamar"
+   ],
+   "location": "Bryce",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "able to defeat Hazezon Tamar 's sand warriors through the use of Stone-Throwing Devils"
+  },
+  {
+   "summary": "Jaeger Ojanen fights ferociously, allowing Bryce's defenders to chase the Tirrans out.",
+   "participants": [
+    "Jaeger Ojanen",
+    "Tirras",
+    "Bryce"
+   ],
+   "location": "Bryce",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "allowing the city's defenders to chase the Tirrans out"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hazezon Tamar",
+   "relation": "leader_of",
+   "target": "Bryce",
+   "note": "governor",
+   "paragraph": 0,
+   "quote": "Its governor was Hazezon Tamar ."
+  },
+  {
+   "source": "Bryce",
+   "relation": "located_in",
+   "target": "Jamuraa",
+   "note": "city-state in Jamuraa",
+   "paragraph": 0,
+   "quote": "Bryce was a city-state in Jamuraa on the plane of Dominaria ."
+  },
+  {
+   "source": "Tirras",
+   "relation": "enemy",
+   "target": "Bryce",
+   "note": "often attacked it",
+   "paragraph": 12,
+   "quote": "Bryce was often attacked by neighboring Tirras"
+  },
+  {
+   "source": "Jaeger Ojanen",
+   "relation": "ally",
+   "target": "Bryce",
+   "note": "befriended the city and fought for it",
+   "paragraph": 12,
+   "quote": "Bryce had recently befriended the cat warrior Jaeger Ojanen"
+  }
+ ],
+ "rejected": []
+}
