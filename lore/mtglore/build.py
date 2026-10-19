@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 from .cite import citation, text_fragment
+from .eras import load as load_eras
 from .extract import fold, load_pages
 
 log = logging.getLogger(__name__)
@@ -211,6 +212,7 @@ def build(directory: Path) -> dict:
     events, relations, storylines = [], [], {}
     # Card flavor text is reprinted set after set; the same quote counts once, from its first printing.
     reprinted: Set[tuple] = set()
+    eras = load_eras(directory)
     said: Dict[str, List[dict]] = defaultdict(list)
     page_index = []
     for order, extraction in enumerate(extractions):
@@ -262,8 +264,12 @@ def build(directory: Path) -> dict:
                 if key in reprinted:
                     continue
                 reprinted.add(key)
+            section = page.get("paragraphs", [{}])[event["paragraph"]].get("section", "") if 0 <= event["paragraph"] < len(page.get("paragraphs", [])) else ""
+            era = eras.get(extraction["page"], {}).get(section) or eras.get(extraction["page"], {}).get("")
             events.append({
                 "id": f"{slug}-e{number}",
+                # An undated page's event takes the date of the set or year its section is tagged with (eras.py).
+                "era": era,
                 "summary": event["summary"],
                 "participants": list(dict.fromkeys(filter(None, (resolve(n) for n in event["participants"])))),
                 "location": resolve(event["location"]),
@@ -318,6 +324,8 @@ def build(directory: Path) -> dict:
         # Compact: the index is for programs, and every fact carries a full citation.
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n")
 
+    # Story order: the page's own date, else its section's era (eras.py); undated events last, in page order.
+    events = [e for _, e in sorted(enumerate(events), key=lambda ie: (ie[1]["story_date"] or (ie[1]["era"] or {}).get("date") or "9999", ie[0]))]
     by_entity: Dict[str, Dict[str, list]] = defaultdict(lambda: {"events": [], "relations": []})
     for event in events:
         # A place's timeline is what happens there, as a character's is what they take part in.

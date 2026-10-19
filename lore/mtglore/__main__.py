@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "build"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "era-ingest", "build"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -91,6 +91,13 @@ def main() -> int:
         checked = ingest(args.data, args.page, json.loads(args.raw.read_text()), args.model)
         print(json.dumps({"id": args.page, "bio": len(checked["bio"]), "summary": bool(checked["summary"]),
                           "status": bool(checked["status"]), "rejected": [(r["part"], r.get("text", "")[:60]) for r in checked["rejected"]]}))
+        return 0
+
+    if args.step == "era-ingest":
+        from .eras import ingest
+
+        report = ingest(args.data, json.loads(args.raw.read_text() if args.raw else Path(args.page).read_text()))
+        print(json.dumps({"saved": report["saved"], "bad": report["bad"][:20], "bad_count": len(report["bad"])}))
         return 0
 
     if args.step == "recheck":
