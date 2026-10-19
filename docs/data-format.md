@@ -16,7 +16,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
 | `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
-| `today.json` | One response for Explore's Today widgets: up to three breakout cards, the day's biggest mover and loser with their price history, the uprising EDH commander, and a preview | `max-age=300` |
+| `today.json` | One response for Explore's Today widgets: up to three breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
@@ -659,7 +659,7 @@ Each card is shown as its row in its busiest format: the format where it has the
 
 ### `movers`
 
-- **`mover`** is the first of `gainers` and **`loser`** the first of `losers` in the `1d` window of `movers/all.json`: the card that rose most and the card that fell most over the last day. They have the fields of a card there, copied as published and in that order: `name`, `slug`, `oracle_id`, `scryfall_id`, `set`, `price`, `previous`, `change`, `percent` and **`history`**, the card's price on each of the last 30 days up to `price_day`, oldest first, with `null` on a day it had none: draw it as a small static sparkline. The `7d` and `30d` windows are not used, and nothing is recomputed.
+- **`mover`** is the first of `gainers` and **`loser`** the first of `losers` in the `7d` window of `movers/all.json`: the card that rose most and the card that fell most over the last 7 days. They have the fields of a card there, copied as published and in that order: `name`, `slug`, `oracle_id`, `scryfall_id`, `set`, `price`, `previous`, `change`, `percent` and **`history`**, the card's price on each of the 8 days from `previous`'s to `price_day`, oldest first, with `null` on a day it had none: draw it as a small static sparkline. Its first point is `previous` and its last is `price`, so the line rises when `percent` does. Until 19 October 2026 these were the `1d` window's cards with 30 days of history, a month the percent did not cover. The `1d` and `30d` windows are not used, and nothing but the history's length is changed.
 - **`price_day`** is the movers file's. Either card is `null` when its list is empty, and all three are `null` when `movers/all.json` is missing.
 
 ### `commander`

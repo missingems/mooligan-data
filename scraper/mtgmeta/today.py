@@ -1,8 +1,8 @@
 """today.json: what matters today in one response, for Explore's Today widgets, published each run.
 
 Built from files already published: up to three breakout cards from `breakouts/{format}.json`, from three formats
-where three have one (the strongest first: most decks and top 8s over the formats), the day's biggest mover
-and loser from `movers/all.json` with their price history, the EDH commander whose deck count rose fastest since
+where three have one (the strongest first: most decks and top 8s over the formats), the week's biggest mover
+and loser from `movers/all.json` with their price over that week, the EDH commander whose deck count rose fastest since
 EDHREC was last asked about it (from the commander check times in `state/edhrec-commanders.json` and the snapshot
 this file keeps of them), and a preview, one of the printings Scryfall added since the last run, from a set not released yet (see previews.py).
 See docs/data-format.md.
@@ -32,6 +32,8 @@ CARD_FIELDS = ("name", "oracle_id", "scryfall_id", "type", "decks", "share", "pr
 MAX_ARCHETYPES = 3
 # The mover's fields, as movers/all.json publishes them, `history` included.
 MOVER_FIELDS = ("name", "slug", "oracle_id", "scryfall_id", "set", "price", "previous", "change", "percent", "history")
+# The movers window Today shows, and how many days back it compares.
+MOVER_WINDOW = ("7d", 7)
 # A format's place when a card's rows tie on decks: the published order, and formats not in it after, alphabetically.
 FORMAT_ORDER = {format: place for place, format in enumerate(FORMATS)}
 
@@ -202,17 +204,27 @@ def _wubrg(colors: Iterable[str]) -> List[str]:
 
 
 def _movers(movers_all: Optional[dict]) -> dict:
-    """The last day's biggest gainer and biggest loser of movers/all.json, as published; never the week or the month."""
-    day = ((movers_all or {}).get("windows") or {}).get("1d") or {}
+    """The last week's biggest gainer and biggest loser of movers/all.json, as published, never the day or the month.
+
+    Each one's history is cut to the window's days, so its first and last prices are the two its `percent` compares
+    and a sparkline of it rises when the card rose. The 30 days movers.py publishes span a month the pick knows nothing of.
+    """
+    name, days = MOVER_WINDOW
+    week = ((movers_all or {}).get("windows") or {}).get(name) or {}
     return {
         "price_day": (movers_all or {}).get("price_day"),
-        "mover": _first(day.get("gainers")),
-        "loser": _first(day.get("losers")),
+        "mover": _first(week.get("gainers"), days),
+        "loser": _first(week.get("losers"), days),
     }
 
 
-def _first(rows: Optional[list]) -> Optional[dict]:
-    return {field: rows[0][field] for field in MOVER_FIELDS if field in rows[0]} if rows else None
+def _first(rows: Optional[list], days: int) -> Optional[dict]:
+    if not rows:
+        return None
+    row = {field: rows[0][field] for field in MOVER_FIELDS if field in rows[0]}
+    if isinstance(row.get("history"), list):
+        row["history"] = row["history"][-(days + 1):]
+    return row
 
 
 # ---- The rising commander

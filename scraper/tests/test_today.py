@@ -34,9 +34,9 @@ def mover(name, price=10.0, previous=5.0, **extra):
     }
 
 
-def movers(gainers=(), losers=(), week=None):
-    windows = {"1d": {"gainers": list(gainers), "losers": list(losers)}, "7d": {"gainers": [], "losers": []}, "30d": {"gainers": [], "losers": []}}
-    windows.update(week or {})
+def movers(gainers=(), losers=(), others=None):
+    windows = {"1d": {"gainers": [], "losers": []}, "7d": {"gainers": list(gainers), "losers": list(losers)}, "30d": {"gainers": [], "losers": []}}
+    windows.update(others or {})
     return {"schema": 1, "format": "all", "generated_at": "2026-10-03T02:41:07Z", "price_day": "2026-10-02", "windows": windows}
 
 
@@ -394,7 +394,7 @@ def test_write_today_reads_the_archetype_pages_from_the_archetypes_folder(tmp_pa
 # ---- Movers
 
 
-def test_the_biggest_mover_and_loser_are_the_first_of_the_last_day_as_published():
+def test_the_biggest_mover_and_loser_are_the_first_of_the_last_week_as_published():
     file = movers(
         gainers=[mover("Rises Most", 20.0, 10.0), mover("Rises Less", 9.0, 8.0)],
         losers=[mover("Falls Most", 1.0, 5.0), mover("Falls Less", 4.0, 5.0)],
@@ -403,8 +403,8 @@ def test_the_biggest_mover_and_loser_are_the_first_of_the_last_day_as_published(
     today = build_today({}, file, NOW)
     assert today["movers"]["price_day"] == "2026-10-02"
     assert list(today["movers"]) == ["price_day", "mover", "loser"]
-    assert today["movers"]["mover"] == {key: snapshot["windows"]["1d"]["gainers"][0][key] for key in MOVER_FIELDS}
-    assert today["movers"]["loser"] == {key: snapshot["windows"]["1d"]["losers"][0][key] for key in MOVER_FIELDS}
+    assert today["movers"]["mover"] == {key: snapshot["windows"]["7d"]["gainers"][0][key] for key in MOVER_FIELDS}
+    assert today["movers"]["loser"] == {key: snapshot["windows"]["7d"]["losers"][0][key] for key in MOVER_FIELDS}
     assert list(today["movers"]["mover"]) == MOVER_FIELDS
     assert file == snapshot
 
@@ -419,31 +419,39 @@ def test_the_price_history_is_copied_with_the_mover():
     assert "history" not in build_today({}, movers(gainers=[bare]), NOW)["movers"]["mover"]
 
 
+def test_the_history_is_cut_to_the_week_so_it_ends_where_the_percent_does():
+    month = [4.84, 4.94, 4.94, 4.89, 4.42, 3.82, 3.24, 2.69, 1.32, 0.85, 0.58, 0.54, 0.76, 0.61, 0.59, 0.59, 0.59, 0.59, 0.62, 0.59, 0.59, 0.59, 0.59, 0.59, 0.62, 0.59, 0.59, 0.82, 1.05, 1.65]
+    today = build_today({}, movers(gainers=[mover("Mystic Gate", 1.65, 0.59, history=month)]), NOW)
+    week = today["movers"]["mover"]["history"]
+    assert week == month[-8:]
+    assert (week[0], week[-1]) == (today["movers"]["mover"]["previous"], today["movers"]["mover"]["price"])
+
+
 def test_values_are_copied_not_recomputed():
     odd = mover("Odd Math", 10.0, 5.0, change=99.0, percent=1.5)
     assert build_today({}, movers(gainers=[odd]), NOW)["movers"]["mover"]["change"] == 99.0
     assert build_today({}, movers(gainers=[odd]), NOW)["movers"]["mover"]["percent"] == 1.5
 
 
-def test_the_week_and_the_month_never_change_the_pair():
-    week = {
-        "7d": {"gainers": [mover("Week Gainer", 90.0, 10.0)], "losers": [mover("Week Loser", 1.0, 50.0)]},
+def test_the_day_and_the_month_never_change_the_pair():
+    others = {
+        "1d": {"gainers": [mover("Day Gainer", 90.0, 10.0)], "losers": [mover("Day Loser", 1.0, 50.0)]},
         "30d": {"gainers": [mover("Month Gainer", 90.0, 10.0)], "losers": [mover("Month Loser", 1.0, 50.0)]},
     }
-    plain = build_today({}, movers(gainers=[mover("Day Gainer")], losers=[mover("Day Loser", 1.0, 2.0)]), NOW)
-    with_longer = build_today({}, movers(gainers=[mover("Day Gainer")], losers=[mover("Day Loser", 1.0, 2.0)], week=week), NOW)
-    assert with_longer == plain
-    assert (plain["movers"]["mover"]["name"], plain["movers"]["loser"]["name"]) == ("Day Gainer", "Day Loser")
-    # A week with moves but a day with none is nulls, not the week's pair.
-    only_week = build_today({}, movers(week=week), NOW)
-    assert (only_week["movers"]["mover"], only_week["movers"]["loser"]) == (None, None)
+    plain = build_today({}, movers(gainers=[mover("Week Gainer")], losers=[mover("Week Loser", 1.0, 2.0)]), NOW)
+    with_others = build_today({}, movers(gainers=[mover("Week Gainer")], losers=[mover("Week Loser", 1.0, 2.0)], others=others), NOW)
+    assert with_others == plain
+    assert (plain["movers"]["mover"]["name"], plain["movers"]["loser"]["name"]) == ("Week Gainer", "Week Loser")
+    # A day with moves but a week with none is nulls, not the day's pair.
+    only_others = build_today({}, movers(others=others), NOW)
+    assert (only_others["movers"]["mover"], only_others["movers"]["loser"]) == (None, None)
 
 
 def test_a_missing_movers_file_is_a_movers_section_of_nulls():
     assert build_today({}, None, NOW)["movers"] == {"price_day": None, "mover": None, "loser": None}
 
 
-def test_empty_day_lists_are_nulls_and_one_side_can_be_empty():
+def test_empty_week_lists_are_nulls_and_one_side_can_be_empty():
     assert build_today({}, movers(), NOW)["movers"] == {"price_day": "2026-10-02", "mover": None, "loser": None}
     half = build_today({}, movers(gainers=[mover("Up")]), NOW)["movers"]
     assert half["mover"]["name"] == "Up" and half["loser"] is None
@@ -703,7 +711,7 @@ def test_read_published_reads_breakouts_and_movers_from_a_work_directory(tmp_pat
     found, all_movers = read_published(tmp_path)
     assert set(found) == {"modern", "legacy"} and all_movers is None
     (tmp_path / "movers" / "all.json").write_text(json.dumps(movers(gainers=[mover("Up")])))
-    assert read_published(tmp_path)[1]["windows"]["1d"]["gainers"][0]["name"] == "Up"
+    assert read_published(tmp_path)[1]["windows"]["7d"]["gainers"][0]["name"] == "Up"
 
 
 def test_write_today_writes_compact_json_and_names_the_file(tmp_path):
