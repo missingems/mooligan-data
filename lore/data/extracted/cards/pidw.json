@@ -1,0 +1,112 @@
+{
+ "page": "cards/pidw",
+ "url": "https://scryfall.com/sets/pidw",
+ "title": "IDW Comics Inserts: card flavor text",
+ "story_date": "2013-11-13",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:51:37Z",
+ "storyline": "IDW Comics Inserts",
+ "entities": [
+  {
+   "name": "Dack Fayden",
+   "type": "character",
+   "aliases": [
+    "Dack",
+    "Fayden"
+   ],
+   "description": "A thief and Planeswalker who is hunted across planes and seeks Sifa Grent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sifa Grent",
+   "type": "character",
+   "aliases": [
+    "Sifa"
+   ],
+   "description": "A character who takes youth from others and whom Dack Fayden seeks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maytov",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who warns Dack that all of Ravnica is looking for him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malfegor",
+   "type": "creature",
+   "aliases": [
+    "the draconic demon"
+   ],
+   "description": "A draconic demon that looms over Dack and has encountered other Planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ancient Fang",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact imbued with spells darker than any Dack Fayden would cast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose people are looking for Dack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wojek",
+   "type": "faction",
+   "aliases": [],
+   "description": "A force on Ravnica that is searching for Dack.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dack Fayden is confronted by the draconic demon Malfegor and senses it has met other Planeswalkers.",
+   "participants": [
+    "Dack Fayden",
+    "Malfegor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The draconic demon loomed over Dack"
+  },
+  {
+   "summary": "Dack Fayden tries to escape a giant's sphere of magic in order to find Sifa.",
+   "participants": [
+    "Dack Fayden",
+    "Sifa Grent"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "only that he had to escape it to find Sifa."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dack Fayden",
+   "relation": "enemy",
+   "target": "Wojek",
+   "note": "All of Ravnica, from the Wojek on down, is looking for Dack.",
+   "paragraph": 6,
+   "quote": "\"All of Ravnica's looking for you, Dack, from the Wojek on down.\""
+  },
+  {
+   "source": "Dack Fayden",
+   "relation": "other",
+   "target": "Sifa Grent",
+   "note": "Dack seeks Sifa.",
+   "paragraph": 2,
+   "quote": "only that he had to escape it to find Sifa."
+  }
+ ],
+ "rejected": []
+}
