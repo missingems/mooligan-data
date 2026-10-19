@@ -1,0 +1,78 @@
+{
+ "page": "wiki/construct",
+ "url": "https://mtg.wiki/page/Construct",
+ "title": "Construct",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Construct",
+   "type": "concept",
+   "aliases": [
+    "Constructs"
+   ],
+   "description": "A catch-all creature type for artificial life forms powered by mechanical means.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golems",
+   "type": "concept",
+   "aliases": [
+    "Golem"
+   ],
+   "description": "Artificial creatures created through magic, distinct from Constructs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esperite artificers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alaran artificers who build specialized constructs out of etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sundial",
+   "type": "creature",
+   "aliases": [],
+   "description": "A wandering construct on Muraganda that follows the dawn sun and is revered by the Dawnchaser Pilgrims.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawnchaser Pilgrims",
+   "type": "faction",
+   "aliases": [],
+   "description": "Pilgrims who revere the construct Sundial.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Reshaped Mirrodin, deliberately placing constructs there.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muzzio",
+   "type": "character",
+   "aliases": [],
+   "description": "Exiled from Palliano, slowing its clockwork output.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Sundial",
+   "relation": "other",
+   "target": "Dawnchaser Pilgrims",
+   "note": "Revered by them.",
+   "paragraph": 16,
+   "quote": "It is revered by the Dawnchaser Pilgrims ."
+  }
+ ],
+ "rejected": []
+}

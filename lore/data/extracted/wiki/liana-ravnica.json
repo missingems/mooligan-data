@@ -1,0 +1,178 @@
+{
+ "page": "wiki/liana-ravnica",
+ "url": "https://mtg.wiki/page/Liana_%28Ravnica%29",
+ "title": "Liana (Ravnica)",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:46Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Liana",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Simic researcher and apprentice to Florin Ozbolt who flees after he transforms himself into Experiment One.",
+   "presence": "appears"
+  },
+  {
+   "name": "Florin Ozbolt",
+   "type": "character",
+   "aliases": [
+    "Master Florin",
+    "Experiment One"
+   ],
+   "description": "Simic scientist who experimented on himself, becoming an ooze-like being called Experiment One.",
+   "presence": "appears"
+  },
+  {
+   "name": "Experiment One",
+   "type": "character",
+   "aliases": [],
+   "description": "The ooze-bodied form Florin Ozbolt takes after self-experimentation, who tells Liana to remake herself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "Ravnican guild that wields power over life; Liana and Florin's guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jovan",
+   "type": "character",
+   "aliases": [],
+   "description": "Liana's love interest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the story takes place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liana becomes Florin Ozbolt's apprentice after Florin seems to agree with her philosophy of using Simic power to improve lives.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Master Florin seemed to agree and thus accepted her as an apprentice."
+  },
+  {
+   "summary": "Liana and Florin test a limb-replacement therapy on rats with a mimetic ooze.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The pair spent their first time together working on an innovative limb-replacement therapy"
+  },
+  {
+   "summary": "They debate ethics of self-experimentation, and Liana reluctantly agrees to its nobility.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Florin asked Liana if she was ready for such a thing, and she reluctantly agreed."
+  },
+  {
+   "summary": "The rat's ooze-graft succeeds, and Florin prepares to proceed with Experiment One.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt",
+    "Experiment One"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The scientist was now ready to proceed with the cryptic test that he called Experiment One ."
+  },
+  {
+   "summary": "Liana returns to find the lab abandoned and the ooze in the tank moving; it leaps from the vat.",
+   "participants": [
+    "Liana"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Suddenly, the ooze launched itself out of the vat"
+  },
+  {
+   "summary": "Liana realizes the ooze has taken Florin's shape, and Florin speaks, saying he has bettered himself.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt",
+    "Experiment One"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "he told her he had bettered himself, just as they had spoken of in their debates"
+  },
+  {
+   "summary": "Florin urges Liana to enter the vat; she flees the lab.",
+   "participants": [
+    "Liana",
+    "Florin Ozbolt"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "She kept running, and she did not look back."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liana",
+   "relation": "serves",
+   "target": "Florin Ozbolt",
+   "note": "apprentice",
+   "paragraph": 0,
+   "quote": "Liana is a Simic researcher and former apprentice to Florin Ozbolt"
+  },
+  {
+   "source": "Florin Ozbolt",
+   "relation": "mentor_of",
+   "target": "Liana",
+   "note": "accepted her as apprentice",
+   "paragraph": 1,
+   "quote": "Master Florin seemed to agree and thus accepted her as an apprentice."
+  },
+  {
+   "source": "Liana",
+   "relation": "member_of",
+   "target": "Simic Combine",
+   "note": "Simic researcher",
+   "paragraph": 0,
+   "quote": "Liana is a Simic researcher"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "quote not in page",
+   "source": "Liana",
+   "relation": "romantic",
+   "target": "Jovan",
+   "note": "her love interest",
+   "paragraph": 3,
+   "quote": "Liana go see her love interest Jovan"
+  }
+ ]
+}

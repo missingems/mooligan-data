@@ -1,0 +1,223 @@
+{
+ "page": "wiki/forum-of-azor",
+ "url": "https://mtg.wiki/page/Forum_of_Azor",
+ "title": "Forum of Azor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:50Z",
+ "storyline": "Guilds of Ravnica",
+ "entities": [
+  {
+   "name": "Forum of Azor",
+   "type": "location",
+   "aliases": [
+    "Maze's End"
+   ],
+   "description": "Monumental public plaza in Ravnica's Tenth District, established by Azor I and endpoint of the Implicit Maze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the ten guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azor I",
+   "type": "character",
+   "aliases": [
+    "Azor"
+   ],
+   "description": "Parun of the Azorius Senate who established the Forum and the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "Guild that once strictly controlled the Forum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Bailiff",
+   "type": "concept",
+   "aliases": [],
+   "description": "Magically constructed intelligence left by Azor in the Forum's monolith, executor of the Implicit Maze's judgment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Implicit Maze",
+   "type": "concept",
+   "aliases": [
+    "the maze"
+   ],
+   "description": "Network of hidden mana paths linking the ten guildgates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Supreme Verdict",
+   "type": "concept",
+   "aliases": [],
+   "description": "Azor's judgment delivered when the maze was completed, dangerous to guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius guildmaster who lifted the Forum's magical controls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [
+    "Prime Speaker Zegana"
+   ],
+   "description": "Prime Speaker of the Simic Combine who delivered the Fathom Edict.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fathom Edict",
+   "type": "event",
+   "aliases": [],
+   "description": "Address announcing the rebirth of the Simic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "Guild reborn under new principles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Planeswalker who becomes the new Living Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet guildmaster who investigated the maze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who investigated the maze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "Manipulated the maze-runners into turning on one another.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [
+    "the original Guildpact"
+   ],
+   "description": "Magical accord binding Ravnica's guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Living Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "Title given to Jace by the Bailiff.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Isperia lifts the Forum's rigid magical controls, reviving it as an open civic space.",
+   "participants": [
+    "Isperia",
+    "Forum of Azor"
+   ],
+   "location": "Forum of Azor",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Isperia — then the Azorius guildmaster — lifted the rigid magical controls over the Forum."
+  },
+  {
+   "summary": "Zegana delivers the Fathom Edict announcing the rebirth of the Simic.",
+   "participants": [
+    "Zegana",
+    "Simic Combine"
+   ],
+   "location": "Forum of Azor",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Zegana announced the rebirth of the Simic under new philosophical principles"
+  },
+  {
+   "summary": "Jace discovers the Bailiff and learns of the Supreme Verdict; Lazav also speaks to the Bailiff.",
+   "participants": [
+    "Jace Beleren",
+    "The Bailiff",
+    "Lazav"
+   ],
+   "location": "Forum of Azor",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "As Jace left, Lazav also spoke to the bailiff to learn its secrets."
+  },
+  {
+   "summary": "The Bailiff pronounces the Supreme Verdict; Jace links the runners' minds to prevent catastrophe and is named the new Living Guildpact.",
+   "participants": [
+    "Jace Beleren",
+    "The Bailiff",
+    "Lazav"
+   ],
+   "location": "Forum of Azor",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "the bailiff named Jace the new Living Guildpact"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azor I",
+   "relation": "created",
+   "target": "Forum of Azor",
+   "note": "commissioned it",
+   "paragraph": 4,
+   "quote": "Commissioned by Azor I following the establishment of the Guildpact"
+  },
+  {
+   "source": "Azor I",
+   "relation": "created",
+   "target": "The Bailiff",
+   "note": "left it behind",
+   "paragraph": 2,
+   "quote": "a magically constructed intelligence left behind by Azor himself"
+  },
+  {
+   "source": "Lazav",
+   "relation": "enemy",
+   "target": "Jace Beleren",
+   "note": "manipulated the runners",
+   "paragraph": 8,
+   "quote": "manipulated by Lazav to betray the Maze’s true purpose"
+  }
+ ],
+ "rejected": []
+}

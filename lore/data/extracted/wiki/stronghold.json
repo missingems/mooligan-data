@@ -1,0 +1,84 @@
+{
+ "page": "wiki/stronghold",
+ "url": "https://mtg.wiki/page/Stronghold",
+ "title": "Stronghold",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:20Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Stronghold",
+   "type": "event",
+   "aliases": [],
+   "description": "The thirteenth Magic expansion, released March 1998 as the second set in the Tempest block.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath's Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "The fortress through which the Weatherlight crew battles, filled with Volrath's twisted creations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "The evil lord whose stronghold the Weatherlight crew enters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Weatherlight crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight crew",
+   "type": "faction",
+   "aliases": [
+    "the crew of the Weatherlight"
+   ],
+   "description": "The crew of the Weatherlight who journey through Volrath's Stronghold to rescue imprisoned comrades.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gerrard and the Weatherlight crew journey through Volrath's Stronghold, battling Volrath's creations to rescue imprisoned comrades.",
+   "participants": [
+    "Gerrard",
+    "Weatherlight crew",
+    "Volrath",
+    "Volrath's Stronghold"
+   ],
+   "location": "Volrath's Stronghold",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gerrard and the crew of the Weatherlight journey through the bowels of Volrath 's Stronghold"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gerrard",
+   "relation": "leader_of",
+   "target": "Weatherlight crew",
+   "note": "Journeys with his crew.",
+   "paragraph": 3,
+   "quote": "Gerrard and the crew of the Weatherlight journey through the bowels of Volrath 's Stronghold"
+  },
+  {
+   "source": "Weatherlight crew",
+   "relation": "enemy",
+   "target": "Volrath",
+   "note": "Battle his creations.",
+   "paragraph": 3,
+   "quote": "battling the twisted creations of Volrath's evil mind"
+  }
+ ],
+ "rejected": []
+}
