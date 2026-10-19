@@ -1,0 +1,91 @@
+{
+ "page": "wiki/mirrodin",
+ "url": "https://mtg.wiki/page/Mirrodin",
+ "title": "Mirrodin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:17:37Z",
+ "storyline": "Mirrodin block",
+ "entities": [
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "An artificial metallic plane created by the planeswalker Karn, named after the Mirari by Memnarch, orbited by four satellites.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who created the artificial world of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Character introduced by the set's storyline who named the plane after the Mirari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa Sunseeker",
+   "type": "character",
+   "aliases": [
+    "Glissa"
+   ],
+   "description": "The finest hunter and perhaps the most skilled warrior of the elves, who sets out to learn why the levelers seek to destroy her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Levelers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous creatures that seek to destroy Glissa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mirari",
+   "type": "artifact",
+   "aliases": [
+    "Mirari"
+   ],
+   "description": "The object after which Memnarch named the plane Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glissa begins her story, setting out to find out why the levelers seek to destroy her, which starts to uncover the mysteries of Mirrodin.",
+   "participants": [
+    "Glissa Sunseeker",
+    "Levelers"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "begins her story to find out why the monstrous \"levelers\" seek to destroy her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Mirrodin",
+   "note": "Karn created the artificial plane",
+   "paragraph": 3,
+   "quote": "an artificial world created by the planeswalker Karn"
+  },
+  {
+   "source": "Levelers",
+   "relation": "enemy",
+   "target": "Glissa Sunseeker",
+   "note": "The levelers seek to destroy her",
+   "paragraph": 3,
+   "quote": "the monstrous \"levelers\" seek to destroy her"
+  }
+ ],
+ "rejected": []
+}
