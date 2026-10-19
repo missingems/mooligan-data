@@ -1,0 +1,198 @@
+{
+ "page": "wiki/neurok",
+ "url": "https://mtg.wiki/page/Neurok",
+ "title": "Neurok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:23:00Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Neurok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Blue-aligned human ethnic group on the Quicksilver Sea of Mirrodin who prized knowledge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Metal plane where the Neurok lived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vedalken Empire",
+   "type": "faction",
+   "aliases": [
+    "Vedalken"
+   ],
+   "description": "Empire that held the Neurok in subservience.",
+   "presence": "appears"
+  },
+  {
+   "name": "Synod",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vedalken brain trust that claimed all the serum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Planar caretaker who destroyed the Neurok settlement of Medev.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Medev",
+   "type": "location",
+   "aliases": [],
+   "description": "Prominent Neurok settlement destroyed by Memnarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vy Covalt",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Covalt network.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kara Vrist",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Vrist network.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Networks",
+   "type": "faction",
+   "aliases": [
+    "Covalt network",
+    "Vrist network"
+   ],
+   "description": "Secret Neurok sects of assassins and thieves undermining the Vedalken.",
+   "presence": "appears"
+  },
+  {
+   "name": "Litera Phials",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Vials of quicksilver forming symbols and libraries of knowledge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of the Synod",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which the Neurok struck a blow against the Vedalken of Lumengrid.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian domination of Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch destroys the Neurok settlement of Medev.",
+   "participants": [
+    "Memnarch",
+    "Medev",
+    "Neurok"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Medev was a prominent Neurok settlement until its destruction by the planar caretaker Memnarch ."
+  },
+  {
+   "summary": "After the Vanishing, the Synod claims all serum and the Neurok form secret networks to undermine the Vedalken.",
+   "participants": [
+    "Synod",
+    "Neurok",
+    "Networks"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "They began to form secret sects to undermine the Vedalken."
+  },
+  {
+   "summary": "The Neurok use the Litera Phials to learn how to destroy vedalken drones.",
+   "participants": [
+    "Neurok",
+    "Litera Phials",
+    "Vedalken Empire"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "even learning the secret to destroy a key vedalken weapon"
+  },
+  {
+   "summary": "At the Battle of the Synod the Neurok power down the vedalken drones and defeat the Synod.",
+   "participants": [
+    "Neurok",
+    "Synod",
+    "Vedalken Empire"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The Synod was defeated, but hundreds died on both sides."
+  },
+  {
+   "summary": "Neurok and Vedalken leaders agree to an uneasy truce.",
+   "participants": [
+    "Neurok",
+    "Vedalken Empire"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Leaders between the Neurok and the Vedalken reached an uneasy truce."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Neurok",
+   "relation": "serves",
+   "target": "Vedalken Empire",
+   "note": "Lived in subservience before the networks.",
+   "paragraph": 3,
+   "quote": "Many Neuroks used to live in a state of subservience to the Vedalken Empire"
+  },
+  {
+   "source": "Vy Covalt",
+   "relation": "leader_of",
+   "target": "Networks",
+   "note": "Led the Covalt network.",
+   "paragraph": 5,
+   "quote": "the Covalt network (led by Vy Covalt )"
+  },
+  {
+   "source": "Kara Vrist",
+   "relation": "leader_of",
+   "target": "Networks",
+   "note": "Led the Vrist network.",
+   "paragraph": 5,
+   "quote": "the Vrist network (led by Kara Vrist )"
+  },
+  {
+   "source": "Memnarch",
+   "relation": "enemy",
+   "target": "Neurok",
+   "note": "Destroyed Medev.",
+   "paragraph": 4,
+   "quote": "until its destruction by the planar caretaker Memnarch"
+  }
+ ],
+ "rejected": []
+}

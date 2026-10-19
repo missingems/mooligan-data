@@ -1,0 +1,183 @@
+{
+ "page": "wiki/vulshok",
+ "url": "https://mtg.wiki/page/Vulshok",
+ "title": "Vulshok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:48Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Vulshok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Red-aligned human mountain barbarians and sorcerers of the Oxidda Chain on Mirrodin, preeminent blacksmiths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home plane of the Vulshok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oxidda Chain",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain range home of the Vulshok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koth",
+   "type": "character",
+   "aliases": [],
+   "description": "New Vulshok leader who restored their peace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman of the Hammer tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krark Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins with amiable relations with the Vulshok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human tribe with heated relations with the Vulshok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "New Phyrexia"
+   ],
+   "description": "Destroyers of Mirran culture.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spear",
+   "type": "faction",
+   "aliases": [],
+   "description": "Highland forge tribe of magic and piercing weapons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blade",
+   "type": "faction",
+   "aliases": [],
+   "description": "Highland forge tribe of edged weapons and fire magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hammer",
+   "type": "faction",
+   "aliases": [],
+   "description": "Lowland forge tribe of blunt arms and earth magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Lowland tribe producing armor and leaders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shield",
+   "type": "faction",
+   "aliases": [],
+   "description": "Semi-nomadic builder tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anvil",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribe of the deep valleys who refine metals.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phyrexian corruption upsets the balance of the six forge tribes, causing civil war.",
+   "participants": [
+    "Vulshok",
+    "Phyrexians"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Civil war broke up once more among the barbarians"
+  },
+  {
+   "summary": "Koth restores the Vulshok's fragile peace.",
+   "participants": [
+    "Koth",
+    "Vulshok"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "only the act of the new Vulshok leader, Koth could restore their fragile peace."
+  },
+  {
+   "summary": "The Phyrexian destruction of Mirran culture leaves the Vulshok functionally extinct.",
+   "participants": [
+    "Vulshok",
+    "Phyrexians"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "The Vulshok were rendered functionally extinct from the Phyrexian destruction of Mirran culture"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Koth",
+   "relation": "leader_of",
+   "target": "Vulshok",
+   "note": "new leader",
+   "paragraph": 4,
+   "quote": "the new Vulshok leader, Koth"
+  },
+  {
+   "source": "Vulshok",
+   "relation": "ally",
+   "target": "Krark Clan",
+   "note": "amiable relations",
+   "paragraph": 1,
+   "quote": "more or less amiable relations with the goblins of the Krark Clan"
+  },
+  {
+   "source": "Vulshok",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "destroyed by them",
+   "paragraph": 0,
+   "quote": "The Vulshok were rendered functionally extinct from the Phyrexian destruction of Mirran culture"
+  },
+  {
+   "source": "Tarrin",
+   "relation": "member_of",
+   "target": "Hammer",
+   "note": "shaman",
+   "paragraph": 11,
+   "quote": "Tarrin, shaman of the Hammer"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,88 @@
+{
+ "page": "cards/f07",
+ "url": "https://scryfall.com/sets/f07",
+ "title": "Friday Night Magic 2007: card flavor text",
+ "story_date": "2007-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:23:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "The Cabal",
+   "type": "faction",
+   "aliases": [
+    "Cabal"
+   ],
+   "description": "A group whose vault holds the Mirari, which radiates darkness across Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mirari",
+   "type": "artifact",
+   "aliases": [
+    "Mirari"
+   ],
+   "description": "A powerful object that pulsed like a dead sun in the Cabal's vault, spreading its darkness across Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A land across which the Mirari's darkness radiated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian"
+   ],
+   "description": "Authors of progress notes on a viral brew, the Engineered Plague.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scroll of Beginnings",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An in-world writing that tells of Wonder and the awestruck birds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard's"
+   ],
+   "description": "A figure whose verdict is the subject of a card; the flavor says a heart of light and a soul of darkness cannot coexist.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Mirari pulses in the Cabal's vault, its darkness radiating across Otaria.",
+   "participants": [
+    "The Cabal",
+    "The Mirari",
+    "Otaria"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Deep within the Cabal's vault, the Mirari pulsed like a dead sun-and its darkness radiated across Otaria."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Mirari",
+   "relation": "located_in",
+   "target": "The Cabal",
+   "note": "held in the Cabal's vault",
+   "paragraph": 5,
+   "quote": "Deep within the Cabal's vault, the Mirari pulsed like a dead sun-and its darkness radiated across Otaria."
+  }
+ ],
+ "rejected": []
+}
