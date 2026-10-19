@@ -1,0 +1,80 @@
+{
+ "page": "wiki/zof",
+ "url": "https://mtg.wiki/page/Zof",
+ "title": "Zof",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zof",
+   "type": "location",
+   "aliases": [
+    "Zof Marsh"
+   ],
+   "description": "A foreboding mangrove swamp on the northwest coast of Guul Draz on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guul Draz",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Zof.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [
+    "Tajuru elves",
+    "Tajuru nation"
+   ],
+   "description": "A small clan of Tajuru elves survives in the marsh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Voshk",
+   "type": "character",
+   "aliases": [],
+   "description": "An oblivion priest who draws nihilistic inspiration from Zof.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helix of Zof",
+   "type": "location",
+   "aliases": [],
+   "description": "An ancient spiral ruin deep in the swamp, a post-Eldrazi ruin of unknown origin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Zof",
+   "relation": "located_in",
+   "target": "Guul Draz",
+   "note": "Northwest coast of Guul Draz.",
+   "paragraph": 1,
+   "quote": "Zof stretches along the northwest coast of Guul Draz"
+  },
+  {
+   "source": "Helix of Zof",
+   "relation": "located_in",
+   "target": "Zof",
+   "note": "Deep within the swamp.",
+   "paragraph": 4,
+   "quote": "Deep within the swamp lies the ancient ruin known as the Helix of Zof"
+  }
+ ],
+ "rejected": []
+}

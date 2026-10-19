@@ -1,0 +1,139 @@
+{
+ "page": "wiki/jabras",
+ "url": "https://mtg.wiki/page/Jabras",
+ "title": "Jabras",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jabras",
+   "type": "character",
+   "aliases": [
+    "Councilor Jabras"
+   ],
+   "description": "A corpulent, smug councilor of Femeref who backed the Council's policy against aiding the Efravan caravan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niambi",
+   "type": "character",
+   "aliases": [],
+   "description": "Petitioner who asked the Council to lift the decree against aiding the Efravan caravan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gbega",
+   "type": "character",
+   "aliases": [
+    "Councilor Gbega"
+   ],
+   "description": "A councilor who supported Jabras's stance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Awateh",
+   "type": "character",
+   "aliases": [
+    "Councilor Awateh"
+   ],
+   "description": "A councilor who supported Jabras's stance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sidar Teshunda",
+   "type": "character",
+   "aliases": [
+    "Teshunda"
+   ],
+   "description": "Man who welcomed the Efravan to Femeref despite the councilors' protests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Voices",
+   "type": "faction",
+   "aliases": [
+    "the Council"
+   ],
+   "description": "The governing council of Femeref.",
+   "presence": "appears"
+  },
+  {
+   "name": "Efravan",
+   "type": "faction",
+   "aliases": [
+    "Efravan caravan"
+   ],
+   "description": "A caravan whose people needed aid and were suspected of Phyrexian influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Femeref",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Jamuraa, Dominaria, governed by the Council of Voices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure associated with the Efravan in the councilors' fears.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Great Chamber, Niambi petitions the Council to lift the decree against aiding the Efravan; Jabras and others refuse.",
+   "participants": [
+    "Jabras",
+    "Niambi",
+    "Gbega",
+    "Awateh",
+    "Council of Voices",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "maintained a firm stance against assisting"
+  },
+  {
+   "summary": "Jabras, Awateh and Gbega see Niambi take Teshunda to the Efravan mines, and follow too late; Teshunda welcomes the Efravan to Femeref.",
+   "participants": [
+    "Jabras",
+    "Awateh",
+    "Gbega",
+    "Niambi",
+    "Sidar Teshunda",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Teshunda had made up his mind and had welcomed the Efravan to Femeref"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jabras",
+   "relation": "member_of",
+   "target": "Council of Voices",
+   "note": "councilor",
+   "paragraph": 1,
+   "quote": "His presence in the Council of Voices is significant"
+  },
+  {
+   "source": "Jabras",
+   "relation": "enemy",
+   "target": "Niambi",
+   "note": "opposed her petition",
+   "paragraph": 2,
+   "quote": "When Niambi's fervent pleas failed to sway the Council, Jabras and others dismissed her"
+  }
+ ],
+ "rejected": []
+}

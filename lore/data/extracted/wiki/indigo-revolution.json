@@ -1,0 +1,189 @@
+{
+ "page": "wiki/indigo-revolution",
+ "url": "https://mtg.wiki/page/Indigo_Revolution",
+ "title": "Indigo Revolution",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Indigo Revolution",
+   "type": "event",
+   "aliases": [],
+   "description": "A mostly bloodless political upheaval on Avishkar in which the Consulate was overthrown and replaced by the Avishkar Assembly.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [
+    "Kaladesh"
+   ],
+   "description": "The plane formerly called Kaladesh, renamed by the Assembly.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The government of Kaladesh overthrown in the Indigo Revolution.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Culture Collective",
+   "type": "faction",
+   "aliases": [
+    "NCC"
+   ],
+   "description": "A political bloc of engineers, students, laborers and other radicals that led the protests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar Assembly",
+   "type": "faction",
+   "aliases": [
+    "People's Assembly"
+   ],
+   "description": "The democratically elected government that replaced the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [
+    "former Renegades"
+   ],
+   "description": "A group whose former members allied with the NCC.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Pia"
+   ],
+   "description": "A reform-minded figure who organized and led the Indigo Revolution.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "A crisis whose handling spurred discontent with the Consulate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Revolt",
+   "type": "event",
+   "aliases": [],
+   "description": "An earlier upheaval after which the Consulate's functionaries survived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Avishkar connected to other planes by stable Omenpaths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Identified by Avishkar as its chief rival in culture and commerce.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "An annual spectacle showcasing Avishkar's culture.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the New Phyrexian Invasion, discontent with the Consulate and aether inequity spurred calls for change, with the NCC leading protests.",
+   "participants": [
+    "New Culture Collective",
+    "Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "discontent with the Consulate’s handling of the crisis and the inequitable distribution of aether spurred widespread calls for change"
+  },
+  {
+   "summary": "The NCC with former Renegades and allies coordinated a nearly bloodless coup that removed the Consulate, organized and led by Pia Nalaar.",
+   "participants": [
+    "New Culture Collective",
+    "Renegades",
+    "Pia Nalaar",
+    "Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "coordinated a nearly bloodless coup that removed the Consulate from power"
+  },
+  {
+   "summary": "The Avishkar Assembly took power and its first act was to rename the plane from Kaladesh to Avishkar.",
+   "participants": [
+    "Avishkar Assembly"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Assembly’s first act was to rename the plane from Kaladesh to Avishkar"
+  },
+  {
+   "summary": "The new government reformed the class system and positioned Avishkar as a hub of multiversal trade and diplomacy.",
+   "participants": [
+    "Avishkar Assembly",
+    "Ravnica"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "reforms to the class system were implemented, including instituting fair pay for the servants of the wealthy"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "leader_of",
+   "target": "Indigo Revolution",
+   "note": "She organized and led it.",
+   "paragraph": 2,
+   "quote": "Pia was instrumental in organizing and leading the Indigo Revolution."
+  },
+  {
+   "source": "New Culture Collective",
+   "relation": "enemy",
+   "target": "Consulate",
+   "note": "The NCC overthrew the Consulate.",
+   "paragraph": 0,
+   "quote": "the Consulate was overthrown by the New Culture Collective and allied factions"
+  },
+  {
+   "source": "Avishkar Assembly",
+   "relation": "other",
+   "target": "Consulate",
+   "note": "The Assembly replaced the Consulate.",
+   "paragraph": 0,
+   "quote": "replaced by the Avishkar Assembly"
+  },
+  {
+   "source": "Avishkar",
+   "relation": "enemy",
+   "target": "Ravnica",
+   "note": "Identified as chief rival in culture and commerce.",
+   "paragraph": 4,
+   "quote": "identified Ravnica as its chief rival in culture and commerce"
+  }
+ ],
+ "rejected": []
+}

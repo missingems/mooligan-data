@@ -1,0 +1,173 @@
+{
+ "page": "wiki/umbris",
+ "url": "https://mtg.wiki/page/Umbris",
+ "title": "Umbris",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:52:49Z",
+ "storyline": "Innistrad: Crimson Vow",
+ "entities": [
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [
+    "Umbris, Fear Manifest"
+   ],
+   "description": "An ancient nightmare horror of shadows from Ulvenwald, Innistrad, that feeds on memories of sorrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulvenwald",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad from which Umbris comes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Umbris lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taivas",
+   "type": "character",
+   "aliases": [],
+   "description": "A man who a hundred years ago imprisoned Umbris in a magic circle and made a pact with it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Traublassen",
+   "type": "location",
+   "aliases": [],
+   "description": "A village whose people had their sorrowful memories stolen by Umbris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vytas",
+   "type": "character",
+   "aliases": [],
+   "description": "Taivas' great-grandson, who hired Torens to investigate strange sounds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torens",
+   "type": "character",
+   "aliases": [],
+   "description": "An investigator carrying a sacred mace who was sent to Umbris as a sacrifice and instead freed it on new terms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aleksandar",
+   "type": "character",
+   "aliases": [],
+   "description": "A young boy who helped Torens and was possessed by Umbris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Devils",
+   "type": "faction",
+   "aliases": [],
+   "description": "Devils who served Umbris as their master and helped store stolen memories in jars.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A hundred years earlier, Taivas imprisons Umbris in a magic circle and makes a pact: Umbris steals the villagers' sorrowful memories in exchange for human sacrifices.",
+   "participants": [
+    "Taivas",
+    "Umbris",
+    "Traublassen"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "One hundred years ago Taivas imprisoned Umbris in a magic circle and made a pact with the entity."
+  },
+  {
+   "summary": "Vytas hires Torens to investigate strange sounds in an old building near Traublassen, unknowingly sending him to Umbris as a sacrifice.",
+   "participants": [
+    "Vytas",
+    "Torens",
+    "Umbris"
+   ],
+   "location": "Traublassen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Unknowingly, Torens was sent to Umbris as a sacrifice."
+  },
+  {
+   "summary": "Umbris possesses Aleksandar's body.",
+   "participants": [
+    "Umbris",
+    "Aleksandar"
+   ],
+   "location": "Traublassen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The entity possessed the body of Aleksandar"
+  },
+  {
+   "summary": "Umbris offers to remove Torens' painful memories; Torens refuses and destroys the circle with his sacred mace.",
+   "participants": [
+    "Torens",
+    "Umbris"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Torens refused and destroyed the circle that held Umbris using his sacred mace."
+  },
+  {
+   "summary": "Torens strikes a new deal: Umbris must return the stolen memories and abandon Aleksandar, and Torens warns he will destroy it next time.",
+   "participants": [
+    "Torens",
+    "Umbris",
+    "Aleksandar"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the entity must return the stolen memories to the villagers and abandon Aleksandar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Devils",
+   "relation": "serves",
+   "target": "Umbris",
+   "note": "Devils served Umbris as their master.",
+   "paragraph": 2,
+   "quote": "devils who served him as their master"
+  },
+  {
+   "source": "Vytas",
+   "relation": "family",
+   "target": "Taivas",
+   "note": "Great-grandson of Taivas.",
+   "paragraph": 3,
+   "quote": "Taivas' great-grandson Vytas"
+  },
+  {
+   "source": "Taivas",
+   "relation": "enemy",
+   "target": "Umbris",
+   "note": "Imprisoned it, then made a pact with it.",
+   "paragraph": 2,
+   "quote": "One hundred years ago Taivas imprisoned Umbris in a magic circle"
+  },
+  {
+   "source": "Torens",
+   "relation": "enemy",
+   "target": "Umbris",
+   "note": "Freed it but vowed to destroy it next time.",
+   "paragraph": 3,
+   "quote": "the next time they would meet Torens would destroy him"
+  }
+ ],
+ "rejected": []
+}

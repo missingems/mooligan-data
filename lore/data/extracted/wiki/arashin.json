@@ -1,0 +1,164 @@
+{
+ "page": "wiki/arashin",
+ "url": "https://mtg.wiki/page/Arashin",
+ "title": "Arashin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:52:50Z",
+ "storyline": "Tarkir",
+ "entities": [
+  {
+   "name": "Arashin",
+   "type": "location",
+   "aliases": [
+    "Great Arashin City"
+   ],
+   "description": "The largest and oldest fortress city of the Abzan clan on Tarkir, built on an oasis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [
+    "Abzan clan"
+   ],
+   "description": "A clan of Tarkir whose society centers on family, fortification and ancestral tradition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Arashin stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shifting Wastes",
+   "type": "location",
+   "aliases": [],
+   "description": "A dry and ever-changing region of steppes and deserts containing Arashin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aerie",
+   "type": "location",
+   "aliases": [],
+   "description": "A giant fortress structure at the core of Arashin that once served as Dromoka's seat of power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dromoka",
+   "type": "character",
+   "aliases": [
+    "Draglonlord Dromoka"
+   ],
+   "description": "A dragonlord who ruled the Abzan, outlawing necromancy and destroying Kin-Trees, and who was defeated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kin-Trees",
+   "type": "concept",
+   "aliases": [
+    "Kin-Tree"
+   ],
+   "description": "Trees bonded to Abzan kin-houses that tie the people to their ancestors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Abzan rebellion",
+   "type": "event",
+   "aliases": [],
+   "description": "A rebellion against Dromoka's rule during the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which the Abzan rebellion arose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Council of Houses",
+   "type": "faction",
+   "aliases": [],
+   "description": "The governing body of Arashin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Felothar Zanhar",
+   "type": "character",
+   "aliases": [
+    "Khan Felothar Zanhar"
+   ],
+   "description": "Khan of the Abzan who leads the Council of Houses.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dromoka rules over the Abzan from the Great Aerie, outlawing necromancy and destroying Kin-Trees to sever ties to ancestors.",
+   "participants": [
+    "Dromoka",
+    "Abzan",
+    "Great Aerie"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "outlawing necromancy and destroying Kin-Trees to sever the people’s ties to their ancestors"
+  },
+  {
+   "summary": "The Abzan rebellion rises during the New Phyrexian Invasion and Dromoka is defeated.",
+   "participants": [
+    "Abzan rebellion",
+    "New Phyrexian Invasion",
+    "Dromoka"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After Dromoka’s defeat, the fortress city was reclaimed"
+  },
+  {
+   "summary": "Arashin is transformed into the spiritual and political center of the revived Abzan clan.",
+   "participants": [
+    "Arashin",
+    "Abzan"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "transformed into the spiritual and political center of the revived Abzan clan"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arashin",
+   "relation": "located_in",
+   "target": "Shifting Wastes",
+   "note": "Arashin stands within the Shifting Wastes.",
+   "paragraph": 1,
+   "quote": "within the Shifting Wastes"
+  },
+  {
+   "source": "Felothar Zanhar",
+   "relation": "leader_of",
+   "target": "Council of Houses",
+   "note": "The Council of Houses is led by Khan Felothar Zanhar.",
+   "paragraph": 4,
+   "quote": "led by Khan Felothar Zanhar"
+  },
+  {
+   "source": "Dromoka",
+   "relation": "leader_of",
+   "target": "Abzan",
+   "note": "Dromoka ruled over the Abzan.",
+   "paragraph": 3,
+   "quote": "the era when Dromoka ruled over the Abzan"
+  }
+ ],
+ "rejected": []
+}

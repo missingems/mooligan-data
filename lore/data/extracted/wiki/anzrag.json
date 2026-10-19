@@ -1,0 +1,187 @@
+{
+ "page": "wiki/anzrag",
+ "url": "https://mtg.wiki/page/Anzrag",
+ "title": "Anzrag",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:00Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Anzrag",
+   "type": "deity",
+   "aliases": [
+    "the Rampage Mole"
+   ],
+   "description": "A Gruul Mole God of Ravnica, a primal harvest god of planting and growth, one of the Utmungr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Anzrag is worshipped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [
+    "Gruul Clans"
+   ],
+   "description": "The Ravnican guild that reveres Anzrag as a Mole God.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Utmungr",
+   "type": "faction",
+   "aliases": [
+    "gods of the deep earth"
+   ],
+   "description": "The gods of the deep earth, of whom Anzrag is one.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yarus",
+   "type": "character",
+   "aliases": [],
+   "description": "A Zhur-Taa druid who summoned Anzrag after months of attempts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhur-Taa",
+   "type": "faction",
+   "aliases": [],
+   "description": "The druid group Yarus belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "An investigative agency whose investigators contained Anzrag.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "An investigator with the Agency who helped stop Anzrag.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya Cassir",
+   "type": "character",
+   "aliases": [
+    "Kaya"
+   ],
+   "description": "The one who recaptured Anzrag after it rampaged in the Agency headquarters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure targeted in an attempted assassination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild to which the Agency had to prove Anzrag would not rampage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ninth District",
+   "type": "location",
+   "aliases": [],
+   "description": "A Ravnican district Anzrag devastated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murders at Karlov Manor",
+   "type": "event",
+   "aliases": [],
+   "description": "The story events used as a time reference for Anzrag's rampage.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After months of attempts, the Zhur-Taa druid Yarus summoned Anzrag, and giant mole tunnels were afterward found beneath the undercity.",
+   "participants": [
+    "Yarus",
+    "Anzrag"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Zhur-Taa druid Yarus was able to summon Anzrag"
+  },
+  {
+   "summary": "A month before Murders at Karlov Manor, Anzrag broke loose of guild control and ravaged the Ninth District until investigators including Kellan contained him in an evidence capsule at Agency headquarters.",
+   "participants": [
+    "Anzrag",
+    "Kellan",
+    "Ravnican Agency of Magicological Investigations"
+   ],
+   "location": "Ninth District",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Anzrag broke loose of guild control and wreaked havoc across the Ninth District"
+  },
+  {
+   "summary": "Anzrag was released the day after the attempted assassination of Aurelia, rampaged through the Agency headquarters killing at least four agents, and was recaptured by Kaya Cassir.",
+   "participants": [
+    "Anzrag",
+    "Kaya Cassir",
+    "Aurelia",
+    "Ravnican Agency of Magicological Investigations"
+   ],
+   "location": "Ravnican Agency of Magicological Investigations",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "He killed at least four agents and injured more before he could be recaptured by Kaya Cassir ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anzrag",
+   "relation": "member_of",
+   "target": "Utmungr",
+   "note": "He is one of the gods of the deep earth.",
+   "paragraph": 2,
+   "quote": "He is one of the Utmungr , the gods of the deep earth."
+  },
+  {
+   "source": "Yarus",
+   "relation": "created",
+   "target": "Anzrag",
+   "note": "Yarus summoned Anzrag.",
+   "paragraph": 3,
+   "quote": "the Zhur-Taa druid Yarus was able to summon Anzrag"
+  },
+  {
+   "source": "Anzrag",
+   "relation": "enemy",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "He killed agents of the Agency.",
+   "paragraph": 5,
+   "quote": "He killed at least four agents and injured more"
+  },
+  {
+   "source": "Kaya Cassir",
+   "relation": "enemy",
+   "target": "Anzrag",
+   "note": "She recaptured him.",
+   "paragraph": 5,
+   "quote": "before he could be recaptured by Kaya Cassir ."
+  }
+ ],
+ "rejected": []
+}

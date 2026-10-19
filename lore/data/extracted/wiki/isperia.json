@@ -1,0 +1,181 @@
+{
+ "page": "wiki/isperia",
+ "url": "https://mtg.wiki/page/Isperia",
+ "title": "Isperia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:52:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [
+    "Isperia the Inscrutable"
+   ],
+   "description": "The sphinx guildmaster of the Azorius Senate on Ravnica, petrified by Vraska.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild devoted to law, led by Isperia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Isperia led the Azorius.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild whose members Isperia ordered arrested.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker arrested under Isperia's writ and later Bolas' minion who petrified Isperia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskend Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "A prison riot in an Azorius detention compound in which nearly one hundred were killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Augustin IV",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius guildmaster whom Isperia replaced.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Elder dragon planeswalker whose manipulations victimized Isperia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [],
+   "description": "Replaced Isperia as Azorius leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Ravnica's undercity, where Isperia's petrified form sank.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As a judge, Isperia issued a writ of mass arrest of Golgari members, and Vraska was apprehended.",
+   "participants": [
+    "Isperia",
+    "Vraska",
+    "Golgari Swarm"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Vraska was amongst those apprehended"
+  },
+  {
+   "summary": "The overcrowded Azorius detention compound fell to a prison riot, the Duskend Troubles.",
+   "participants": [
+    "Azorius Senate",
+    "Duskend Troubles"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "These events became known as the Duskend Troubles"
+  },
+  {
+   "summary": "Isperia replaced Augustin IV as guildmaster after years of convincing.",
+   "participants": [
+    "Isperia",
+    "Augustin IV"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Isperia was the guild champion before she replaced Augustin IV"
+  },
+  {
+   "summary": "Vraska petrified Isperia after the first day of the guild summit; Dovin Baan replaced her.",
+   "participants": [
+    "Vraska",
+    "Isperia",
+    "Nicol Bolas",
+    "Dovin Baan"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "She was petrified by Bolas' minion Vraska after the first day of the guild summit"
+  },
+  {
+   "summary": "Isperia's petrified form sank into the Undercity and began to be reclaimed.",
+   "participants": [
+    "Isperia"
+   ],
+   "location": "Undercity",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Isperia's petrified form sank into the Undercity"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Isperia",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "guildmaster",
+   "paragraph": 0,
+   "quote": "Isperia was the sphinx guildmaster to the Azorius Senate on Ravnica"
+  },
+  {
+   "source": "Vraska",
+   "relation": "enemy",
+   "target": "Isperia",
+   "note": "petrified her",
+   "paragraph": 5,
+   "quote": "She was petrified by Bolas' minion Vraska after the first day of the guild summit"
+  },
+  {
+   "source": "Vraska",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "his minion",
+   "paragraph": 5,
+   "quote": "She was petrified by Bolas' minion Vraska after the first day of the guild summit"
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "other",
+   "target": "Isperia",
+   "note": "replaced her",
+   "paragraph": 5,
+   "quote": "Isperia was replaced by Dovin Baan"
+  }
+ ],
+ "rejected": []
+}
