@@ -1,0 +1,205 @@
+{
+ "page": "wiki/walker-of-night",
+ "url": "https://mtg.wiki/page/Walker_of_Night",
+ "title": "Walker of Night",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who escaped Shandalar, was imprisoned in an oubliette in Estark, and is now an incorporeal shade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arlen",
+   "type": "character",
+   "aliases": [
+    "Prodigal Sorcerer"
+   ],
+   "description": "A Prodigal Sorcerer from the Institute of Arcane Study investigating why Estark natives are gifted in magic; killed by Leshrac's hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Institute of Arcane Study",
+   "type": "faction",
+   "aliases": [],
+   "description": "The institute on Dominaria that Arlen left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "A city whose natives are gifted in magic thanks to Leshrac's excess energy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Leshrac escaped from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who forced Leshrac to spend all his mana in a duel and plans the Mox Beacon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taysir",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who put Leshrac in an oubliette to use his life energy to re-enter Rabiah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oubliette",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The prison in which Leshrac is trapped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rabiah",
+   "type": "location",
+   "aliases": [],
+   "description": "A place Taysir sought to re-enter with Leshrac's life energy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [
+    "Kristina"
+   ],
+   "description": "A woman who refused Taysir's request to give her energy and be his mortal wife on Rabiah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon Leshrac used to enter Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The place where Taysir spent centuries with the Anaba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anaba",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people with whom Taysir spent centuries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mox Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ravidel's planned device that Leshrac hopes to use to escape.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In a duel in Estark, Ravidel forces Leshrac to spend all his mana on counterspells, and Taysir puts him into an Oubliette.",
+   "participants": [
+    "Leshrac",
+    "Ravidel",
+    "Taysir",
+    "Oubliette"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Taysir put him into an Oubliette"
+  },
+  {
+   "summary": "Taysir tells Leshrac he will use his life energy to re-enter Rabiah, having been refused by Kristina of the Woods.",
+   "participants": [
+    "Taysir",
+    "Leshrac",
+    "Kristina of the Woods"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Taysir tells Leshrac of his plan to use his life energy to re-enter Rabiah"
+  },
+  {
+   "summary": "As Ravidel and Taysir drain him, Leshrac casts a spell that saves his life; the portal fails and he remains trapped as an incorporeal shade, his excess energy flowing into the people of Estark.",
+   "participants": [
+    "Leshrac",
+    "Ravidel",
+    "Taysir"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "His excess energy then flows into the people of Estark"
+  },
+  {
+   "summary": "Taysir visits Leshrac after his time on Ulgrotha, finds him full of hate, and leaves him imprisoned.",
+   "participants": [
+    "Taysir",
+    "Leshrac"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Taysir feels justified in keeping him locked up and leaves him to his misery."
+  },
+  {
+   "summary": "Leshrac manifests his hand and cuts Arlen's throat, confident he will soon escape using Ravidel's Mox Beacon.",
+   "participants": [
+    "Leshrac",
+    "Arlen",
+    "Mox Beacon",
+    "Ravidel"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "cuts the poor wizard's throat, just because he can"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Leshrac",
+   "relation": "killed",
+   "target": "Arlen",
+   "note": "cut his throat with a manifested hand",
+   "paragraph": 5,
+   "quote": "cuts the poor wizard's throat, just because he can"
+  },
+  {
+   "source": "Taysir",
+   "relation": "enemy",
+   "target": "Leshrac",
+   "note": "imprisoned him for his ritual",
+   "paragraph": 4,
+   "quote": "had no right to use him for his ritual"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "ally",
+   "target": "Taysir",
+   "note": "together drained Leshrac's power",
+   "paragraph": 3,
+   "quote": "As Ravidel and Taysir start draining Leshrac's power"
+  }
+ ],
+ "rejected": []
+}

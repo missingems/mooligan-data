@@ -1,0 +1,147 @@
+{
+ "page": "wiki/horobi",
+ "url": "https://mtg.wiki/page/Horobi",
+ "title": "Horobi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:59Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Horobi",
+   "type": "creature",
+   "aliases": [
+    "Death's Wail"
+   ],
+   "description": "A terrifying kami of death from Kamigawa with a horned skull face, drawn to pain and suffering.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Horobi comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reito Massacre",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Horobi came into being.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Kitanosu heard the wailing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kitanosu",
+   "type": "location",
+   "aliases": [],
+   "description": "Nezumi village that heard Horobi's wailing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Forked-Tongue",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman who identified Horobi and advised sacrificing a life, then hid in her treasury.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sonokura",
+   "type": "character",
+   "aliases": [],
+   "description": "Human mercenary, fallen into disrepair, sacrificed to Horobi.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Horobi fought both sides.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kitanosu hears unsettling wailing; shaman Forked-Tongue identifies Horobi and advises sacrificing a life every third night it appeared.",
+   "participants": [
+    "Forked-Tongue",
+    "Horobi",
+    "Kitanosu"
+   ],
+   "location": "Kitanosu",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "advised that the village must sacrifice a life to appease the spirit every third night it appeared"
+  },
+  {
+   "summary": "The village leaders decide to sacrifice the mercenary Sonokura, luring him to the outskirts, binding him and cutting his leg tendons.",
+   "participants": [
+    "Sonokura",
+    "Kitanosu"
+   ],
+   "location": "Kitanosu",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "his leg tendons cut to ensure he couldn't escape"
+  },
+  {
+   "summary": "Horobi appears, drawn to Sonokura's suffering, and devours him, leaving bones and worms, absorbing his voice into its chorus.",
+   "participants": [
+    "Horobi",
+    "Sonokura"
+   ],
+   "location": "Kitanosu",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Sonokura's voice was absorbed into the kami's chorus of wails"
+  },
+  {
+   "summary": "Forked-Tongue sits in her treasury, knowing the sacrifices keep Horobi away from her belongings.",
+   "participants": [
+    "Forked-Tongue",
+    "Horobi"
+   ],
+   "location": "Kitanosu",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "She reveled in her cunning"
+  },
+  {
+   "summary": "Horobi fights both sides in the New Phyrexian Invasion, killing Phyrexians and Kamigawans.",
+   "participants": [
+    "Horobi"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Horobi fought against both sides during the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Horobi",
+   "relation": "killed",
+   "target": "Sonokura",
+   "note": "devoured him",
+   "paragraph": 4,
+   "quote": "the kami slowly devoured him"
+  },
+  {
+   "source": "Forked-Tongue",
+   "relation": "enemy",
+   "target": "Sonokura",
+   "note": "advised the sacrifice to protect her treasures",
+   "paragraph": 4,
+   "quote": "the shaman who had guided the villagers to make the sacrifice"
+  }
+ ],
+ "rejected": []
+}

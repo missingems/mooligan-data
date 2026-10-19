@@ -1,0 +1,130 @@
+{
+ "page": "wiki/lavabrink",
+ "url": "https://mtg.wiki/page/Lavabrink",
+ "title": "Lavabrink",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:33Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Lavabrink",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the few permanent human settlements in Raugrin on Ikoria, built beneath a volcanic shelf in the Ongra Range and defended by lava.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Raugrin and Lavabrink.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raugrin",
+   "type": "location",
+   "aliases": [],
+   "description": "Volcanic triome of Ikoria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ongra Range",
+   "type": "location",
+   "aliases": [
+    "Ongra Mountains"
+   ],
+   "description": "Mountains of frequent eruptions where Lavabrink lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kauld",
+   "type": "location",
+   "aliases": [],
+   "description": "Lava lake in the Ongra Mountains into which Lavabrink's lava flows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jar Korcha",
+   "type": "location",
+   "aliases": [
+    "terror road"
+   ],
+   "description": "Central road linking Lavabrink to distant parts of Ikoria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stonesingers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mages of Lavabrink who manipulate lava flow with geomantic magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Lavabrink became a haven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City attacked and overwhelmed by Lukka and Phyrexian forces.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "Led forces that attacked Drannith alongside the Phyrexians.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Drannith is attacked and overwhelmed by Lukka and Phyrexian forces; survivors flee west.",
+   "participants": [
+    "Lukka",
+    "Drannith"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "many survivors fled westward"
+  },
+  {
+   "summary": "Lavabrink becomes a haven and focal point of resistance against the invaders.",
+   "participants": [
+    "Lavabrink",
+    "Stonesingers"
+   ],
+   "location": "Lavabrink",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "it became a focal point for resistance against the invaders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lavabrink",
+   "relation": "located_in",
+   "target": "Ongra Range",
+   "note": "within Raugrin",
+   "paragraph": 0,
+   "quote": "It is situated beneath an enormous volcanic shelf in the"
+  },
+  {
+   "source": "Stonesingers",
+   "relation": "serves",
+   "target": "Lavabrink",
+   "note": "defend it with lava",
+   "paragraph": 3,
+   "quote": "a group of specialized mages who live and work in Lavabrink"
+  }
+ ],
+ "rejected": []
+}

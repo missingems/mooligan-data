@@ -1,0 +1,141 @@
+{
+ "page": "wiki/places-of-unknown-origin",
+ "url": "https://mtg.wiki/page/Places_of_unknown_origin",
+ "title": "Places of unknown origin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Everlorne",
+   "type": "location",
+   "aliases": [],
+   "description": "A land ruled by the wizard Noranda-Zang, with juniper and holly forests, yellow-green plains and a stone fortress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Noranda-Zang",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who ruled Everlorne.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kartya",
+   "type": "location",
+   "aliases": [],
+   "description": "An island on an unknown plane, home of the planeswalker Rafthrasa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rafthrasa",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who wanted to live on Kartya as a mortal farmer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kell Phir",
+   "type": "location",
+   "aliases": [],
+   "description": "A place with poppy dens that Elspeth has been to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who has been to Kell Phir and Zarnic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley of Echoes",
+   "type": "location",
+   "aliases": [],
+   "description": "A place Karn and Venser explored together.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Found a scroll in the Valley of Echoes that he could read.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "Could not read the scroll Karn found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vex",
+   "type": "location",
+   "aliases": [],
+   "description": "A place of demons where Davriel Cane spent some time and obtained a shadow charm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Davriel Cane",
+   "type": "character",
+   "aliases": [],
+   "description": "Spent time in Vex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zarnic",
+   "type": "location",
+   "aliases": [],
+   "description": "A place known to Elspeth that features devils.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn and Venser explore the Valley of Echoes, where Karn finds a scroll he can read and Venser cannot.",
+   "participants": [
+    "Karn",
+    "Venser",
+    "Valley of Echoes"
+   ],
+   "location": "Valley of Echoes",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "a place Karn and Venser explored together, where Karn found a scroll that he was surprised to be able to read, while Venser could not."
+  },
+  {
+   "summary": "Davriel Cane spends time in Vex and obtains a shadow charm.",
+   "participants": [
+    "Davriel Cane",
+    "Vex"
+   ],
+   "location": "Vex",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "a place of demons where Davriel Cane spent some time, and from where he obtained a shadow charm."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Noranda-Zang",
+   "relation": "leader_of",
+   "target": "Everlorne",
+   "note": "wizard ruler",
+   "paragraph": 8,
+   "quote": "Everlorne - a land ruled by the wizard Noranda-Zang ."
+  },
+  {
+   "source": "Rafthrasa",
+   "relation": "located_in",
+   "target": "Kartya",
+   "note": "home of the planeswalker",
+   "paragraph": 20,
+   "quote": "the home of the Planeswalker Rafthrasa"
+  }
+ ],
+ "rejected": []
+}

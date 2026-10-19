@@ -1,0 +1,163 @@
+{
+ "page": "wiki/park-heights",
+ "url": "https://mtg.wiki/page/Park_Heights",
+ "title": "Park Heights",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:08Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "Top tier of New Capenna above the Mezzio, home of the Brokers and the city's bosses and titans of industry.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Metropolis containing Park Heights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mezzio",
+   "type": "location",
+   "aliases": [],
+   "description": "Borough below Park Heights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brokers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Family whose primary home was Park Heights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [],
+   "description": "Family with a stronghold in the Cloud Spire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raffine",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Obscura.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "Family headquartered at the Museum of Old Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Maestros and chief curator of the Museum of Old Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cloud Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "Skyscraper that served as Obscura stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Museum of Old Capenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Maestros headquarters, obliterated by Atraxa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian praetor killed when Park Heights collapsed on her.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Park Heights was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xander",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of Xander's Lounge and Vault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Henzie Torre",
+   "type": "character",
+   "aliases": [],
+   "description": "Devil who owned the Herculaneum Candy Shop.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the New Phyrexian Invasion, the Capennan resistance collapses Park Heights on Atraxa, killing her but destroying the borough.",
+   "participants": [
+    "Atraxa",
+    "Park Heights",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Capennan resistance collapsed Park Heights on Atraxa"
+  },
+  {
+   "summary": "Atraxa obliterates the Museum of Old Capenna.",
+   "participants": [
+    "Atraxa",
+    "Museum of Old Capenna"
+   ],
+   "location": "Museum of Old Capenna",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "It was obliterated by Atraxa during the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raffine",
+   "relation": "leader_of",
+   "target": "Obscura",
+   "note": "family boss",
+   "paragraph": 4,
+   "quote": "sanctum of the family's boss, Raffine"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "leader_of",
+   "target": "Maestros",
+   "note": "family boss",
+   "paragraph": 9,
+   "quote": "Headquarters of the Maestros and the family's boss"
+  },
+  {
+   "source": "Park Heights",
+   "relation": "located_in",
+   "target": "New Capenna",
+   "note": "",
+   "paragraph": 0,
+   "quote": "the top tier of the metropolis of"
+  }
+ ],
+ "rejected": []
+}

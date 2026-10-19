@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-19T23:02:27Z",
+ "extracted_at": "2026-10-19T23:03:04Z",
  "storyline": "Streets of New Capenna",
  "entities": [
   {
@@ -436,6 +436,22 @@
    ],
    "description": "Origin of the Phyrexian war.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya",
+   "type": "faction",
+   "aliases": [
+    "Mat'Selesnya"
+   ],
+   "description": "A guild of unity and nature.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria West",
+   "type": "location",
+   "aliases": [],
+   "description": "A place where temporal manipulation was banned.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -493,6 +509,16 @@
    "importance": "minor",
    "paragraph": 57,
    "quote": "As the Eldrazi spread, no secret that could give Zendikar's defenders an advantage was considered too dangerous to seek."
+  },
+  {
+   "summary": "The banning of temporal manipulation at Tolaria West teaches students the value of time.",
+   "participants": [
+    "Tolaria West"
+   ],
+   "location": "Tolaria West",
+   "importance": "minor",
+   "paragraph": 38,
+   "quote": "It took the banning of temporal manipulation at Tolaria West to teach its students the value of time."
   }
  ],
  "relations": [
@@ -545,6 +571,14 @@
    "quote": "\"I came seeking a challenge. All I found was you.\" —Zurgo, khan of the Mardu"
   },
   {
+   "source": "Heruj",
+   "relation": "other",
+   "target": "Selesnya",
+   "note": "Selesnya hierophant",
+   "paragraph": 109,
+   "quote": "\"Within the song of Mat'Selesnya, one becomes all.\" —Heruj, Selesnya hierophant"
+  },
+  {
    "source": "Siara",
    "relation": "serves",
    "target": "Silumgar",
@@ -553,26 +587,5 @@
    "quote": "\"Silumgar's mind is a dark labyrinth, full of grim secrets and subtle traps.\" —Siara, the Dragon's Mouth"
   }
  ],
- "rejected": [
-  {
-   "kind": "event",
-   "reason": "unlisted participant",
-   "summary": "The banning of temporal manipulation at Tolaria West teaches students the value of time.",
-   "participants": [],
-   "location": "Tolaria West",
-   "importance": "minor",
-   "paragraph": 38,
-   "quote": "It took the banning of temporal manipulation at Tolaria West to teach its students the value of time."
-  },
-  {
-   "kind": "relation",
-   "reason": "unlisted entity",
-   "source": "Heruj",
-   "relation": "other",
-   "target": "Selesnya",
-   "note": "Selesnya hierophant",
-   "paragraph": 109,
-   "quote": "\"Within the song of Mat'Selesnya, one becomes all.\" —Heruj, Selesnya hierophant"
-  }
- ]
+ "rejected": []
 }

@@ -1,0 +1,186 @@
+{
+ "page": "wiki/towser",
+ "url": "https://mtg.wiki/page/Towser",
+ "title": "Towser",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:14Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "An egotistical wizard interested in astronomy and astrology living in Aerona on Dominaria, primary foe of Greensleeves and Gull.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where Towser lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "A foe of Towser who defeated him and took away his magic with the Stone Brain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "A foe of Towser who was hired into his traveling crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haley",
+   "type": "character",
+   "aliases": [],
+   "description": "Towser's nurse who administers six potions a day.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kakulina",
+   "type": "character",
+   "aliases": [],
+   "description": "Towser's astrologer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dacian",
+   "type": "character",
+   "aliases": [],
+   "description": "A rival wizard Towser battled outside White Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "White Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A village destroyed in the battle between Towser and Dacian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Woods where Towser met Dacian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nova Pentacle",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Greensleeves' device for summoning bound spellcasters, which Towser planned to steal and copy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Lat-Nam",
+   "type": "event",
+   "aliases": [],
+   "description": "A battle in which Greensleeves defeated Towser.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The device Greensleeves used to take away Towser's gift of magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Towser lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4073 AR Towser follows a falling object to the Whispering Woods, meets Dacian outside White Ridge, and their battle destroys the village.",
+   "participants": [
+    "Towser",
+    "Dacian",
+    "White Ridge"
+   ],
+   "location": "Whispering Woods",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "engaged in a battle that resulted in the village's destruction"
+  },
+  {
+   "summary": "Towser hires Gull to tend his livestock and wagons.",
+   "participants": [
+    "Towser",
+    "Gull"
+   ],
+   "location": "Aerona",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "he hired Gull as a member of his traveling crew"
+  },
+  {
+   "summary": "Towser plans to kill Greensleeves by stealing and copying her Nova Pentacle.",
+   "participants": [
+    "Towser",
+    "Greensleeves"
+   ],
+   "location": "Aerona",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "he planned to kill her by stealing and copying her Nova Pentacle"
+  },
+  {
+   "summary": "After Greensleeves defeats him at the Battle of Lat-Nam, she uses the Stone Brain to take away his ability to do magic.",
+   "participants": [
+    "Greensleeves",
+    "Towser"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "she took away his gift of doing magic, rendering him a mere common man"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Towser",
+   "relation": "enemy",
+   "target": "Greensleeves",
+   "note": "primary foe",
+   "paragraph": 0,
+   "quote": "He was the primary foe of Greensleeves and Gull ."
+  },
+  {
+   "source": "Towser",
+   "relation": "enemy",
+   "target": "Dacian",
+   "note": "rival wizard he battled",
+   "paragraph": 5,
+   "quote": "he met the rival wizard Dacian"
+  },
+  {
+   "source": "Haley",
+   "relation": "serves",
+   "target": "Towser",
+   "note": "his nurse",
+   "paragraph": 2,
+   "quote": "His nurse, Haley, administered six potions a day"
+  },
+  {
+   "source": "Kakulina",
+   "relation": "serves",
+   "target": "Towser",
+   "note": "his astrologer",
+   "paragraph": 2,
+   "quote": "Kakulina, his astrologer, shared his readings"
+  }
+ ],
+ "rejected": []
+}
