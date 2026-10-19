@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import logging
 import random
+import re
 from dataclasses import dataclass, field
 from urllib.parse import urlencode
 from datetime import datetime, timedelta, timezone
@@ -21,6 +22,7 @@ from .models import (
 from .browser import Fetched
 from .pacing import DeckPacing, Pacer, Visit, build_plan, deck_path, run_downloads
 from .parsing import (
+    event_kind,
     ParseError,
     parse_archetype,
     parse_archetype_decks,
@@ -33,6 +35,8 @@ from .parsing import (
 from .store import Store
 
 log = logging.getLogger(__name__)
+
+_FALLBACK_NAME = re.compile(r"^Tournament \d+$")
 
 
 class Browser(Protocol):
@@ -48,13 +52,18 @@ class ScrapeConfig:
         "modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander",
     )
     meta_days: Sequence[str] = ("30",)
-    # The tournaments list only ever shows the latest 10.
+    # The tournaments list only ever shows the latest 10; they are listings like the search's.
     events_per_format: int = 10
     # Pages of the tournament search read per format, 20 events each, newest
     # first, until the window is covered. Modern's 30 days is about 7 pages.
     max_search_pages: int = 25
     # Events not yet stored (from the search or archetype lists) read per format per run.
     max_new_events: int = 150
+    # Events dated within this many days of the run are read again every run, stored or not.
+    recheck_days: int = 7
+    # Per format per run, for older events. Stored events whose name is the "Tournament <id>" fallback, or that a listing now
+    # names differently or shows with more results, are read again.
+    max_reread_events: int = 20
     # Per format. Decks never change once published, so each run only downloads
     # new ones; the cap keeps one format's backlog from starving the others.
     max_new_decks: int = 400
@@ -248,33 +257,48 @@ def _read_events(
     now: Optional[datetime] = None,
 ) -> List[Event]:
     try:
-        recent = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
+        latest = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
     except Exception as error:  # noqa: BLE001
         _fail(report, f"tournaments {format}", error)
-        recent = []
+        latest = []
 
     ignored = store.ignored_event_ids()
-    recent = [summary for summary in recent if summary.event_id not in ignored]
-    seen = {summary.event_id for summary in recent} | ignored
-
+    stored_events = {summary.event_id: summary for summary in store.stored_events(format)}
     # Every event of the format in the window, from the tournament search: the
     # only listing that goes past the latest ten, and the one that has the Pro
     # Tours, Regional Championships and RCQs.
-    candidates: Dict[str, EventSummary] = {}
-    if cutoff and now:
-        for summary in _search_events(browser, format, cutoff, now, config.max_search_pages, report):
-            if summary.decklists == 0:
-                continue  # listed, but nothing to read
-            if summary.event_id not in seen:
-                candidates.setdefault(summary.event_id, summary)
+    searched = _search_events(browser, format, cutoff, now, config.max_search_pages, report) if cutoff and now else []
+    # The search comes first for the decklist count it gives.
+    listed: Dict[str, EventSummary] = {}
+    for summary in searched + latest:
+        listed.setdefault(summary.event_id, summary)
     # Plus the events the archetype lists mention, which cover multi-format events.
     for history in histories:
         for result in history.results:
-            if result.event_id and result.event_id not in seen:
-                candidates.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
-    stored = store.existing_event_ids(candidates) if candidates else set()
+            if result.event_id:
+                listed.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
+    # Listed, but nothing to read.
+    listed = {
+        event_id: summary
+        for event_id, summary in listed.items()
+        if event_id not in ignored and (summary.decklists != 0 or event_id in stored_events)
+    }
+    anywhere = store.existing_event_ids(listed)
+
+    # Everything dated within the last few days is read again, stored or not, since results keep arriving.
+    horizon = (now or datetime.now(timezone.utc)) - timedelta(days=config.recheck_days)
+    recheck: Dict[str, EventSummary] = {
+        event_id: summary
+        for event_id, summary in listed.items()
+        if (event_id in stored_events or event_id not in anywhere) and (summary.date is None or summary.date >= horizon)
+    }
+    for event_id, kept in stored_events.items():
+        if event_id not in ignored and event_id not in recheck and kept.date >= horizon:
+            recheck[event_id] = EventSummary(event_id, "", kept.date)
+    recent = sorted(recheck.values(), key=lambda s: s.date or datetime.max.replace(tzinfo=timezone.utc), reverse=True)
+
     older = sorted(
-        (s for s in candidates.values() if s.event_id not in stored),
+        (s for event_id, s in listed.items() if event_id not in recheck and event_id not in anywhere),
         key=lambda s: s.date or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True,
     )
@@ -282,16 +306,23 @@ def _read_events(
         log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
     # Stored events read before their source was kept are re-read with whatever room is left.
     room = max(config.max_new_events - len(older), 0)
-    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in seen][:room]
+    seen = set(recheck) | ignored
+    reread = _events_to_reread(stored_events, listed, seen, cutoff)[: config.max_reread_events]
+    taken = seen | {summary.event_id for summary in reread}
+    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in taken][:room]
 
-    summaries = recent + older[: config.max_new_events] + refresh
+    summaries = recent + older[: config.max_new_events] + reread + refresh
     pages = browser.fetch_pages([f"/tournament/{summary.event_id}" for summary in summaries])
     events = []
     empty = []
     for summary in summaries:
         try:
             html = _body(pages[f"/tournament/{summary.event_id}"])
-            event = parse_tournament(html, summary.event_id, format, summary if summary.event_name else None)
+            event = parse_tournament(html, summary.event_id, format, summary)
+            kept = stored_events.get(summary.event_id)
+            if _FALLBACK_NAME.match(event.event_name) and kept and not _FALLBACK_NAME.match(kept.event_name):
+                event.event_name = kept.event_name
+                event.kind = event_kind(kept.event_name, event.source)
             log.info("Read event %s %s (%d results)", event.event_id, event.event_name, len(event.results))
             events.append(event)
         except ParseError as error:
@@ -303,6 +334,26 @@ def _read_events(
     if empty:
         store.mark_empty_events(empty)
     return events
+
+
+def _events_to_reread(
+    stored: Dict[str, EventSummary], listed: Dict[str, EventSummary], skip: Set[str], cutoff: Optional[datetime]
+) -> List[EventSummary]:
+    """Stored events in the window that were read badly or have changed, newest first.
+
+    Each comes with its listing's summary when there is one, so its name can come from there.
+    """
+    found = []
+    for event_id, kept in stored.items():
+        if event_id in skip or (cutoff and kept.date < cutoff):
+            continue
+        listing = listed.get(event_id)
+        named = listing is not None and bool(listing.event_name) and not _FALLBACK_NAME.match(listing.event_name)
+        renamed = named and listing.event_name != kept.event_name
+        grown = listing is not None and (listing.decklists or 0) > (kept.decklists or 0)
+        if _FALLBACK_NAME.match(kept.event_name) or renamed or grown:
+            found.append(listing if named else EventSummary(event_id, "", kept.date))
+    return sorted(found, key=lambda summary: summary.date or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
 
 
 def _search_events(

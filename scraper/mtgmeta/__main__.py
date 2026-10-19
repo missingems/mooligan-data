@@ -235,6 +235,7 @@ def main() -> int:
         max_new_decks=int(os.environ.get("MAX_NEW_DECKS", "400")),
         archetype_decks=int(os.environ.get("ARCHETYPE_DECKS", "100")),
         max_new_events=int(os.environ.get("MAX_NEW_EVENTS", "150")),
+        recheck_days=int(os.environ.get("RECHECK_DAYS", "7")),
         max_search_pages=int(os.environ.get("MAX_SEARCH_PAGES", "25")),
         history_days=int(os.environ.get("HISTORY_DAYS", "30")),
         max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
