@@ -1,0 +1,127 @@
+{
+ "page": "wiki/sigma",
+ "url": "https://mtg.wiki/page/Sigma",
+ "title": "Sigma",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sigma",
+   "type": "location",
+   "aliases": [],
+   "description": "A dwarf planet orbiting the Sothera supervoid in the Edge, with arid orange clay surface.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sigma's Reach",
+   "type": "location",
+   "aliases": [],
+   "description": "Abandoned mining colony built to mine moxite.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [
+    "Sothera supervoid"
+   ],
+   "description": "Supervoid system around which Sigma orbits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Edge",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Sothera system lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact discovered by miners that changed history.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunstar Free Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group whose palestar sent warmakers to eradicate the colony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hopelight warmakers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Four warmakers dispatched to eradicate the inhabitants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tethys",
+   "type": "location",
+   "aliases": [],
+   "description": "Long-dry seabed with moxite clay.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sigma's Reach is built and colonized between about 4554 and 4561 AR.",
+   "participants": [
+    "Sigma's Reach"
+   ],
+   "location": "Sigma",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Sigma's Reach was built between about 4554 and 4561 AR and colonized by workers."
+  },
+  {
+   "summary": "By 4564 the miners discover the Endstone and place it in quality assurance.",
+   "participants": [
+    "Endstone",
+    "Sigma's Reach"
+   ],
+   "location": "Sigma's Reach",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "By 4564, the miners discovered the Endstone"
+  },
+  {
+   "summary": "A Sunstar Free Company palestar sends four Hopelight warmakers to eradicate the inhabitants.",
+   "participants": [
+    "Sunstar Free Company",
+    "Hopelight warmakers"
+   ],
+   "location": "Sigma",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "dispatched four Hopelight warmakers to eradicate the inhabitants"
+  },
+  {
+   "summary": "The Endstone changes history so no one ever arrived to work, and the palestar passes by unharmed.",
+   "participants": [
+    "Endstone",
+    "Sunstar Free Company"
+   ],
+   "location": "Sigma",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Endstone changed history so that no one ever arrived to start work"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sigma's Reach",
+   "relation": "located_in",
+   "target": "Sigma",
+   "note": "Its only settlement.",
+   "paragraph": 0,
+   "quote": "Its only settlement is the abandoned mining colony Sigma's Reach ."
+  }
+ ],
+ "rejected": []
+}

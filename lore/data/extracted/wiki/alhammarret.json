@@ -1,0 +1,128 @@
+{
+ "page": "wiki/alhammarret",
+ "url": "https://mtg.wiki/page/Alhammarret",
+ "title": "Alhammarret",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:09Z",
+ "storyline": "Origin of Jace",
+ "entities": [
+  {
+   "name": "Alhammarret",
+   "type": "character",
+   "aliases": [],
+   "description": "A sphinx mind mage from Vryn who tutored Jace Beleren and was later killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vryn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane with two warring factions arbitrated by Alhammarret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Planeswalker, Alhammarret's apprentice whose spark ignited when he entered his master's mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ampryn",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of Vryn's warring factions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trovians",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of Vryn's warring factions.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alhammarret trains Jace and sends him to gather information from the opposing camps.",
+   "participants": [
+    "Alhammarret",
+    "Jace Beleren",
+    "Ampryn",
+    "Trovians"
+   ],
+   "location": "Vryn",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Alhammarret started sending Jace out to gather information"
+  },
+  {
+   "summary": "Jace enters his master's mind, triggering his spark; Alhammarret pulls him back and wipes the memory.",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The shock of success and the power of Alhammarret's mind triggered his spark"
+  },
+  {
+   "summary": "Jace discovers Alhammarret was playing both factions against each other and keeping the war going.",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Alhammarret was playing both warring factions against each other"
+  },
+  {
+   "summary": "In a final confrontation Jace damages Alhammarret's mind, making him forget how to breathe, at the cost of his own memories of home, then planeswalks away.",
+   "participants": [
+    "Jace Beleren",
+    "Alhammarret"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Jace damaged the sphinx's mind, removing his knowledge of how to breathe"
+  },
+  {
+   "summary": "Authorities find Alhammarret dead from lack of oxygen and Jace missing, assumed dead.",
+   "participants": [
+    "Alhammarret",
+    "Jace Beleren"
+   ],
+   "location": "Vryn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The authorities found Alhammarret dead from lack of oxygen and Jace missing."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Alhammarret",
+   "relation": "mentor_of",
+   "target": "Jace Beleren",
+   "note": "tutored him",
+   "paragraph": 0,
+   "quote": "who tutored and was later killed by Jace Beleren"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "killed",
+   "target": "Alhammarret",
+   "note": "removed his knowledge of how to breathe",
+   "paragraph": 0,
+   "quote": "who tutored and was later killed by Jace Beleren"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,93 @@
+{
+ "page": "wiki/kitt-kanto",
+ "url": "https://mtg.wiki/page/Kitt_Kanto",
+ "title": "Kitt Kanto",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:45Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Kitt Kanto",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin Cabaretti crooner and best singer in New Capenna, once a subway busker in the Caldaia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabaretti leader who noticed Kitt and offered her a job.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [
+    "Cabaretti family"
+   ],
+   "description": "Family for which Kitt performs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caldaia",
+   "type": "location",
+   "aliases": [],
+   "description": "District where Kitt busked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Kitt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jetmir notices Kitt busking in the Caldaia and offers her a job.",
+   "participants": [
+    "Jetmir",
+    "Kitt Kanto"
+   ],
+   "location": "Caldaia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "until she was noticed by Jetmir and offered a job"
+  },
+  {
+   "summary": "Kitt becomes the family's premier act and headlines the Cabaretti's main club.",
+   "participants": [
+    "Kitt Kanto",
+    "Cabaretti"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she became the family's premier act"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kitt Kanto",
+   "relation": "member_of",
+   "target": "Cabaretti",
+   "note": "She is a Cabaretti crooner.",
+   "paragraph": 0,
+   "quote": "Kitt Kanto is a leonin woman and Cabaretti crooner in New Capenna ."
+  },
+  {
+   "source": "Jetmir",
+   "relation": "other",
+   "target": "Kitt Kanto",
+   "note": "Jetmir discovered Kitt and hired her.",
+   "paragraph": 1,
+   "quote": "until she was noticed by Jetmir and offered a job"
+  }
+ ],
+ "rejected": []
+}

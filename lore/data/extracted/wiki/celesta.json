@@ -1,0 +1,255 @@
+{
+ "page": "wiki/celesta",
+ "url": "https://mtg.wiki/page/Celesta",
+ "title": "Celesta",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Celesta",
+   "type": "plane",
+   "aliases": [],
+   "description": "A frontier plane isolated from the Multiverse, ruled by a Supreme Council and setting of the Dreamcast game.",
+   "presence": "appears"
+  },
+  {
+   "name": "Supreme Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council that kept the balance between Celesta's five regions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Yagoche",
+   "type": "character",
+   "aliases": [
+    "Yagoche"
+   ],
+   "description": "Head of the Supreme Council who protected Magic Heart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ā",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who took over Celesta and was overthrown by Tyler.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tyler",
+   "type": "character",
+   "aliases": [],
+   "description": "Hero who defeated the five regional leaders and overthrew Ā.",
+   "presence": "appears"
+  },
+  {
+   "name": "Magic Heart",
+   "type": "location",
+   "aliases": [],
+   "description": "Village protected from Ā by Elder Yagoche.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balance Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Ā's headquarters, destroyed after his defeat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Camat Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Blue-aligned region led by Wanalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the angels, destroyed by Ā.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lydar Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Green-aligned region led by Tantanik.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murg",
+   "type": "location",
+   "aliases": [],
+   "description": "Black-aligned region led by Hepatu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tornell",
+   "type": "location",
+   "aliases": [],
+   "description": "White-aligned region led by Valeria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Veluk",
+   "type": "location",
+   "aliases": [],
+   "description": "Red-aligned volcanic region led by Ashuza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wanalan",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Camat Island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tantanik",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Lydar Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hepatu",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Murg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valeria",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Tornell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashuza",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Veluk.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ā planeswalks to Celesta and quickly takes over, installing an apprentice over each of the five regions.",
+   "participants": [
+    "Ā",
+    "Supreme Council"
+   ],
+   "location": "Celesta",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ā planeswalked to Celesta and quickly took over the world, installing an apprentice to lead each of the five regions."
+  },
+  {
+   "summary": "Elder Yagoche casts a protective spell on Magic Heart.",
+   "participants": [
+    "Elder Yagoche",
+    "Magic Heart"
+   ],
+   "location": "Magic Heart",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "cast a protective spell on the village of Magic Heart, keeping it from the planeswalker"
+  },
+  {
+   "summary": "Multiple heroes rise against Ā but are defeated by his apprentices.",
+   "participants": [
+    "Ā"
+   ],
+   "location": "Celesta",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Multiple heroes attempted to rise against Ā, but were each defeated by his apprentices."
+  },
+  {
+   "summary": "Tyler defeats the five regional leaders and their apprentices and overthrows Ā.",
+   "participants": [
+    "Tyler",
+    "Ā"
+   ],
+   "location": "Celesta",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tyler defeated each of the five regional leaders and their apprentices and overthrew Ā."
+  },
+  {
+   "summary": "Ā destroys Heaven; Balance Tower is destroyed after his defeat.",
+   "participants": [
+    "Ā"
+   ],
+   "location": "Heaven",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Destroyed by Ā."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elder Yagoche",
+   "relation": "leader_of",
+   "target": "Supreme Council",
+   "note": "Head of the council.",
+   "paragraph": 2,
+   "quote": "Elder Yagoche , head of the Supreme Council"
+  },
+  {
+   "source": "Tyler",
+   "relation": "enemy",
+   "target": "Ā",
+   "note": "Overthrew him.",
+   "paragraph": 2,
+   "quote": "Tyler defeated each of the five regional leaders and their apprentices and overthrew Ā."
+  },
+  {
+   "source": "Wanalan",
+   "relation": "leader_of",
+   "target": "Camat Island",
+   "note": "Region leader.",
+   "paragraph": 4,
+   "quote": "a blue-aligned region led by Wanalan"
+  },
+  {
+   "source": "Tantanik",
+   "relation": "leader_of",
+   "target": "Lydar Forest",
+   "note": "Region leader.",
+   "paragraph": 6,
+   "quote": "a green-aligned region led by Tantanik"
+  },
+  {
+   "source": "Hepatu",
+   "relation": "leader_of",
+   "target": "Murg",
+   "note": "Region leader.",
+   "paragraph": 8,
+   "quote": "a black-aligned region led by Hepatu"
+  },
+  {
+   "source": "Valeria",
+   "relation": "leader_of",
+   "target": "Tornell",
+   "note": "Region leader.",
+   "paragraph": 9,
+   "quote": "a white-aligned region led by Valeria"
+  },
+  {
+   "source": "Ashuza",
+   "relation": "leader_of",
+   "target": "Veluk",
+   "note": "Region leader.",
+   "paragraph": 10,
+   "quote": "a red-aligned, volcanic region led by Ashuza"
+  }
+ ],
+ "rejected": []
+}

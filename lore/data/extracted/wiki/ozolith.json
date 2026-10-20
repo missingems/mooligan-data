@@ -1,0 +1,132 @@
+{
+ "page": "wiki/ozolith",
+ "url": "https://mtg.wiki/page/Ozolith",
+ "title": "Ozolith",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:07Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Ozolith",
+   "type": "location",
+   "aliases": [
+    "The Ozolith"
+   ],
+   "description": "A field of crystal formations on Ikoria, far north of Drannith, manipulated to influence the plane's monsters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Ozolith lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City attacked by Lukka's monsters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argalith",
+   "type": "location",
+   "aliases": [],
+   "description": "Crystal at the center of Drannith's defenses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "Planeswalker who noticed the mutations among Ikoria's fauna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "Monster bonder who learned to control mutated monsters through the Ozolith.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vivien notices mutations and new bonds between men and monsters and fears an unnamed planeswalker's doing.",
+   "participants": [
+    "Vivien Reid"
+   ],
+   "location": "Ikoria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Vivien feared that this was all an unnamed planeswalker's doing."
+  },
+  {
+   "summary": "Vivien and Lukka trace the changes to the Ozolith, where Lukka learns he can control the mutated monsters.",
+   "participants": [
+    "Vivien Reid",
+    "Lukka",
+    "Ozolith"
+   ],
+   "location": "Ozolith",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Lukka realized he was able to control the mutated monsters"
+  },
+  {
+   "summary": "When Drannith refuses his help, Lukka attacks the city with his monsters.",
+   "participants": [
+    "Lukka",
+    "Drannith"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Lukka attacked the city with his monsters himself"
+  },
+  {
+   "summary": "Lukka uses too much power, overloading and shattering the Ozolith.",
+   "participants": [
+    "Lukka",
+    "Ozolith"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Ozolith was overloaded and shattered."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vivien Reid",
+   "relation": "ally",
+   "target": "Lukka",
+   "note": "tracked the changes together",
+   "paragraph": 3,
+   "quote": "Vivien and Lukka tracked the source of these changes to the Ozolith"
+  },
+  {
+   "source": "Lukka",
+   "relation": "enemy",
+   "target": "Drannith",
+   "note": "attacked it",
+   "paragraph": 4,
+   "quote": "Lukka attacked the city with his monsters himself"
+  },
+  {
+   "source": "Ozolith",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "north of Drannith",
+   "paragraph": 0,
+   "quote": "a peculiar crystal formation on the plane of Ikoria"
+  }
+ ],
+ "rejected": []
+}

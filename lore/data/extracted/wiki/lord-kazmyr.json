@@ -1,0 +1,116 @@
+{
+ "page": "wiki/lord-kazmyr",
+ "url": "https://mtg.wiki/page/Lord_Kazmyr",
+ "title": "Lord Kazmyr",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:40Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Lord Kazmyr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Winged thrull, pet of kingpin Ilona, who repeatedly warns Symond that Bilagru will come.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ilona",
+   "type": "character",
+   "aliases": [],
+   "description": "Kingpin whose thrull bears a noble name for her amusement.",
+   "presence": "appears"
+  },
+  {
+   "name": "Symond Halm",
+   "type": "character",
+   "aliases": [],
+   "description": "Playwright who signed a contract on his life and killed a vedalken to hide in an Azorius prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bilagru",
+   "type": "creature",
+   "aliases": [],
+   "description": "Entity said to come for Symond.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose prison held Symond.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Symond Halm signs a contract with Ilona that puts his life on the line if his play fails; Lord Kazmyr warns him Bilagru will come.",
+   "participants": [
+    "Symond Halm",
+    "Ilona",
+    "Lord Kazmyr",
+    "Bilagru"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Bilagru will come for you."
+  },
+  {
+   "summary": "Symond's play launches with only a quarter of seats filled, and he bolts.",
+   "participants": [
+    "Symond Halm",
+    "Ilona",
+    "Lord Kazmyr"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "only a quarter of the seats were filled"
+  },
+  {
+   "summary": "Symond kills a vedalken man to be put into an Azorius prison.",
+   "participants": [
+    "Symond Halm"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Symond killed a vedalken man to be put into an Azorius prison"
+  },
+  {
+   "summary": "Bilagru goes to work in the prison as Lord Kazmyr keeps repeating his warning.",
+   "participants": [
+    "Bilagru",
+    "Lord Kazmyr",
+    "Symond Halm"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Then Bilagru went to work."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Kazmyr",
+   "relation": "serves",
+   "target": "Ilona",
+   "note": "He is her pet thrull.",
+   "paragraph": 0,
+   "quote": "the pet of kingpin Ilona"
+  },
+  {
+   "source": "Symond Halm",
+   "relation": "other",
+   "target": "Ilona",
+   "note": "He owes her a debt from her funding of his play.",
+   "paragraph": 1,
+   "quote": "he had to sign a contract that put his life on the line should he fail"
+  }
+ ],
+ "rejected": []
+}

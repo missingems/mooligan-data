@@ -1,0 +1,220 @@
+{
+ "page": "wiki/discovery-of-koilos",
+ "url": "https://mtg.wiki/page/Discovery_of_Koilos",
+ "title": "Discovery of Koilos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:10Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Discovery of Koilos",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in the later Time of Legends when Urza, Tocasia and Mishra found the Thran ruins of Koilos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "A few crumbling buildings and caves holding the last Thran technology, remnant of Halcyon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyon",
+   "type": "location",
+   "aliases": [],
+   "description": "Mythical beautiful capital of the Thran Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran Empire",
+   "type": "faction",
+   "aliases": [
+    "Thran"
+   ],
+   "description": "Ancient civilization whose technology remained at Koilos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist who claimed the Mightstone and killed the roc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist who claimed the Weakstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist leading the expedition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Roc",
+   "type": "creature",
+   "aliases": [],
+   "description": "Bird that attacked the ornithopter and waited outside the cave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hall of Tagsin",
+   "type": "location",
+   "aliases": [],
+   "description": "Hall holding the large powerstone and a closed portal to Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Powerstone",
+   "type": "artifact",
+   "aliases": [
+    "Mightstone",
+    "Weakstone"
+   ],
+   "description": "Large powerstone split between Urza (Mightstone) and Mishra (Weakstone).",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane reached by the portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Su-chi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Constructs guarding the caves that attacked the explorers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran Spider",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Spidery construct Urza charged and used against the roc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ornithopter",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Craft used in the expedition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia's Digsite",
+   "type": "location",
+   "aliases": [],
+   "description": "Site to which the archaeologists returned.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza, Tocasia and Mishra find the Koilos caves; a roc attacks, forcing them to land and flee inside.",
+   "participants": [
+    "Urza",
+    "Tocasia",
+    "Mishra",
+    "Roc",
+    "Koilos"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Underway, they were attacked by a roc , forcing them to land their craft in front of the cave opening and rush inside."
+  },
+  {
+   "summary": "They discover a large powerstone in the Hall of Tagsin; Urza and Mishra each claim half, the Mightstone and Weakstone.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Powerstone",
+    "Hall of Tagsin"
+   ],
+   "location": "Hall of Tagsin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Urza and Mishra each claimed one half as theirs."
+  },
+  {
+   "summary": "They unwittingly open the portal between Dominaria and Phyrexia and are attacked by su-chi, forcing them to flee; the portal closes on its own.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Su-chi",
+    "Phyrexia"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they unwittingly opened the portal between Dominaria and Phyrexia"
+  },
+  {
+   "summary": "Urza mans the Thran Spider and sets the roc afire; it crashes onto the su-chi, smashing them.",
+   "participants": [
+    "Urza",
+    "Roc",
+    "Su-chi",
+    "Thran Spider",
+    "Tocasia",
+    "Mishra"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The burning bird crashed onto the scrambling su-chi, smashing them all to pieces."
+  },
+  {
+   "summary": "The archaeologists return to Tocasia's Digsite, Urza and Mishra arguing over who should own both pieces of the powerstone.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Tocasia",
+    "Powerstone"
+   ],
+   "location": "Tocasia's Digsite",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Urza and Mishra arguing over who should own both pieces of the powerstone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "argue over who owns both pieces of the powerstone",
+   "paragraph": 3,
+   "quote": "Urza and Mishra arguing over who should own both pieces of the powerstone"
+  },
+  {
+   "source": "Urza",
+   "relation": "killed",
+   "target": "Roc",
+   "note": "set it afire with immolation charges",
+   "paragraph": 3,
+   "quote": "setting it afire"
+  },
+  {
+   "source": "Koilos",
+   "relation": "other",
+   "target": "Halcyon",
+   "note": "remnant of the Thran capital",
+   "paragraph": 1,
+   "quote": "This was all that remained of mythical Halcyon"
+  }
+ ],
+ "rejected": []
+}

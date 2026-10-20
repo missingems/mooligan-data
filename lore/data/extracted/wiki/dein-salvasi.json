@@ -1,0 +1,167 @@
+{
+ "page": "wiki/dein-salvasi",
+ "url": "https://mtg.wiki/page/Dein_Salvasi",
+ "title": "Dein Salvasi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:46Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Dein Salvasi",
+   "type": "character",
+   "aliases": [],
+   "description": "A wealthy, pious man of Lambholt on Innistrad at the center of mysterious deaths linked to Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arinos",
+   "type": "character",
+   "aliases": [],
+   "description": "Farmer who disappeared; he summoned Stickfingers to save his farm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lakil",
+   "type": "character",
+   "aliases": [],
+   "description": "Shepherdess found dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "Inquisitor and monster slayer called by Salvasi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Archmage from Nephalia who investigated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fearsome guardian spirit summoned by Arinos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ariosa",
+   "type": "character",
+   "aliases": [],
+   "description": "Arinos's daughter who finished the ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "Small village where events occurred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Lambholt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arinos disappears after arguing with Salvasi and travelers and locals including Lakil are found dead.",
+   "participants": [
+    "Arinos",
+    "Dein Salvasi",
+    "Lakil"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the mysterious disappearance of a farmer named Arinos"
+  },
+  {
+   "summary": "Salvasi calls for Rem Karolus and the council calls for Vadrik.",
+   "participants": [
+    "Dein Salvasi",
+    "Rem Karolus",
+    "Vadrik"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "called for the help of Rem Karolus"
+  },
+  {
+   "summary": "Vadrik and Rem learn that Old Stickfingers was summoned by Arinos to save his farm from Salvasi.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus",
+    "Old Stickfingers",
+    "Arinos",
+    "Dein Salvasi"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arinos had summoned Stickfingers to save his farm from Salvasi"
+  },
+  {
+   "summary": "Old Stickfingers attacks Vadrik and Rem and is driven off.",
+   "participants": [
+    "Old Stickfingers",
+    "Vadrik",
+    "Rem Karolus"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the pair temporarily drove it away"
+  },
+  {
+   "summary": "Vadrik destroys the twig mobile and lets Ariosa finish the ritual, dispelling Stickfingers.",
+   "participants": [
+    "Vadrik",
+    "Ariosa",
+    "Old Stickfingers"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Vadrik destroyed the mobile and let Arinos's daughter Ariosa finish the ritual"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arinos",
+   "relation": "other",
+   "target": "Old Stickfingers",
+   "note": "Summoned it; the ritual went awry.",
+   "paragraph": 3,
+   "quote": "Arinos had summoned Stickfingers to save his farm from Salvasi"
+  },
+  {
+   "source": "Arinos",
+   "relation": "family",
+   "target": "Ariosa",
+   "note": "Father and daughter.",
+   "paragraph": 4,
+   "quote": "Arinos's daughter Ariosa"
+  },
+  {
+   "source": "Dein Salvasi",
+   "relation": "enemy",
+   "target": "Arinos",
+   "note": "Argued and threatened to take his farm over debt.",
+   "paragraph": 3,
+   "quote": "Salvasi, who had been threatening to take it due to debt"
+  }
+ ],
+ "rejected": []
+}

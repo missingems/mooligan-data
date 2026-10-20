@@ -1,0 +1,145 @@
+{
+ "page": "wiki/fyndhorn",
+ "url": "https://mtg.wiki/page/Fyndhorn",
+ "title": "Fyndhorn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:44Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Fyndhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Densely forested area in southeast Terisiare during the Ice Age, home to elves and druids who worshiped Freyalise.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "deity",
+   "aliases": [],
+   "description": "Goddess of nature worshiped by Fyndhorn elves; cast the World Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kelsinko",
+   "type": "location",
+   "aliases": [],
+   "description": "Main city of Fyndhorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Neighboring nation with which Fyndhorn elves traded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell cast by Freyalise that brought the Thaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "Thaw of Terisiare after the World Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that swallowed most of Fyndhorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korlis",
+   "type": "location",
+   "aliases": [],
+   "description": "Island remaining clear of the waves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Where many former inhabitants migrated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Island remains in whose shadow Fyndhorn grew.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fyndhorn emerges from the sea floor as glaciers lower sea levels at the start of the Ice Age.",
+   "participants": [
+    "Fyndhorn"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the sea levels sank, revealing Fyndhorn from the ocean floor"
+  },
+  {
+   "summary": "The elves of Fyndhorn establish trading ties with Kjeldor.",
+   "participants": [
+    "Fyndhorn",
+    "Kjeldor"
+   ],
+   "location": "Fyndhorn",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "established trading ties with the neighboring nation of Kjeldor"
+  },
+  {
+   "summary": "After Freyalise's World Spell the Thaw and Flooding swallow most of Fyndhorn, and survivors migrate to Yavimaya.",
+   "participants": [
+    "Freyalise",
+    "Fyndhorn",
+    "Kelsinko",
+    "Yavimaya"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Many of the forest's former inhabitants migrated to Yavimaya to establish a new home there."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kelsinko",
+   "relation": "located_in",
+   "target": "Fyndhorn",
+   "note": "Main city in the forest.",
+   "paragraph": 2,
+   "quote": "Kelsinko was the main city in the forest."
+  },
+  {
+   "source": "Fyndhorn",
+   "relation": "other",
+   "target": "Freyalise",
+   "note": "Its elves and druids worshiped her as goddess of nature.",
+   "paragraph": 1,
+   "quote": "who worshiped Freyalise as a goddess of nature"
+  }
+ ],
+ "rejected": []
+}
