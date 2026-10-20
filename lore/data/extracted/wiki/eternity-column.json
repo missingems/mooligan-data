@@ -1,0 +1,86 @@
+{
+ "page": "wiki/eternity-column",
+ "url": "https://mtg.wiki/page/Eternity_column",
+ "title": "Eternity column",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:24Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Eternity column",
+   "type": "artifact",
+   "aliases": [
+    "Eternity columns"
+   ],
+   "description": "Pinnacle-constructed, free-floating, kilometers-long installations in the Edge that sling eternity ships between columns at faster-than-light speeds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pinnacle",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization that builds and manages the eternity columns and holds ultimate authority over them.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Edge",
+   "type": "location",
+   "aliases": [
+    "Edge"
+   ],
+   "description": "The region where eternity columns stand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Source for the count of eternity columns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Infinite Guideline Station",
+   "type": "location",
+   "aliases": [],
+   "description": "The only known eternity column station in the Sothera system, a critical hub for starfarers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sothera system",
+   "type": "location",
+   "aliases": [],
+   "description": "Star system with one known column.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eulalia system",
+   "type": "location",
+   "aliases": [],
+   "description": "Star system with multiple columns.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Pinnacle",
+   "relation": "created",
+   "target": "Eternity column",
+   "note": "Builds and manages them",
+   "paragraph": 1,
+   "quote": "These anchored columns are all built and managed by Pinnacle"
+  },
+  {
+   "source": "Infinite Guideline Station",
+   "relation": "located_in",
+   "target": "Sothera system",
+   "note": "The only known column there",
+   "paragraph": 3,
+   "quote": "the only one known within the Sothera system is Infinite Guideline Station"
+  }
+ ],
+ "rejected": []
+}

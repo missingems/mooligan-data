@@ -1,0 +1,159 @@
+{
+ "page": "wiki/sedris",
+ "url": "https://mtg.wiki/page/Sedris",
+ "title": "Sedris",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:26Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Sedris",
+   "type": "character",
+   "aliases": [
+    "The Traitor King"
+   ],
+   "description": "The most powerful lich on Grixis, once the righteous king of Vithia who fell to demons and became a lich warlord ruling Sedraxis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Former Shard of Alara cut off from white and green mana; also the Vithian word for traitor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane sundered into the Shards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vithia",
+   "type": "location",
+   "aliases": [],
+   "description": "A kingdom with a caste system and focus on knighthood and chivalry, ruled by Sedris, overrun by demons and undead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [
+    "Shard of Bant"
+   ],
+   "description": "Shard whose kingdoms resemble Vithia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Demons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tempted Sedris with dreams of power; gained power on Grixis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vithia's paladins",
+   "type": "faction",
+   "aliases": [
+    "paladins"
+   ],
+   "description": "Knights who fled the kingdom shouting \"Grixis\".",
+   "presence": "appears"
+  },
+  {
+   "name": "Sedraxis",
+   "type": "location",
+   "aliases": [],
+   "description": "Former Vithian capital turned the greatest necropolis on the plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sundering of Alara",
+   "type": "event",
+   "aliases": [
+    "the sundering"
+   ],
+   "description": "Event separating Alara into Shards.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Grixis is separated from the rest of Alara and cut off from white and green mana; demons and necromancers gain power.",
+   "participants": [
+    "Grixis",
+    "Demons"
+   ],
+   "location": "Grixis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the demons and necromancers gained power in the ensuing chaos"
+  },
+  {
+   "summary": "Tempted by demons with dreams of power, Sedris submits, hands thousands of innocents to them, kills his family and advisors and performs a ritual to become a lich.",
+   "participants": [
+    "Sedris",
+    "Demons"
+   ],
+   "location": "Vithia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Sedris handed thousands of innocents over to the demons, killed his own family and advisors"
+  },
+  {
+   "summary": "Vithia's paladins, unable to stop him, flee the kingdom with \"Grixis\" on their lips.",
+   "participants": [
+    "Vithia's paladins",
+    "Sedris"
+   ],
+   "location": "Vithia",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Vithia's paladins , unable to stop the fallen monarch, fled the kingdom"
+  },
+  {
+   "summary": "Vithia is overrun by demons and undead and its capital becomes the necropolis Sedraxis, ruled by Sedris.",
+   "participants": [
+    "Sedris",
+    "Demons",
+    "Vithia",
+    "Sedraxis"
+   ],
+   "location": "Sedraxis",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the capital was transformed into Sedraxis , the now greatest necropolis on the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sedris",
+   "relation": "leader_of",
+   "target": "Vithia",
+   "note": "Once the good king",
+   "paragraph": 3,
+   "quote": "Sedris was once the good and righteous king of Vithia"
+  },
+  {
+   "source": "Sedris",
+   "relation": "leader_of",
+   "target": "Sedraxis",
+   "note": "Rules it as lich warlord",
+   "paragraph": 5,
+   "quote": "Sedris still rules this dark city of the dead"
+  },
+  {
+   "source": "Sedris",
+   "relation": "serves",
+   "target": "Demons",
+   "note": "Submitted to their temptation",
+   "paragraph": 3,
+   "quote": "when demons tempted him with dreams of power, he submitted"
+  }
+ ],
+ "rejected": []
+}

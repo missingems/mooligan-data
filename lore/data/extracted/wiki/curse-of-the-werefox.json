@@ -1,0 +1,172 @@
+{
+ "page": "wiki/curse-of-the-werefox",
+ "url": "https://mtg.wiki/page/Curse_of_the_Werefox",
+ "title": "Curse of the Werefox",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:24Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Curse of the Werefox",
+   "type": "event",
+   "aliases": [],
+   "description": "A folktale from Eldraine about the elves of Redtooth Keep, based on Beauty and the Beast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Redtooth Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "An elven citadel in Eldraine whose garrison was cursed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the folktale.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elves of Redtooth Keep",
+   "type": "faction",
+   "aliases": [
+    "werefoxes"
+   ],
+   "description": "Garrison elves who are rangers by day and feral werefoxes by night.",
+   "presence": "appears"
+  },
+  {
+   "name": "Witch",
+   "type": "character",
+   "aliases": [
+    "powerful witch"
+   ],
+   "description": "A traveler turned away who cursed the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Armont",
+   "type": "character",
+   "aliases": [
+    "Armont"
+   ],
+   "description": "A knight who stumbled upon Redtooth Keep and broke the curse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yenna",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the werefoxes who told Armont of the enchanted rose.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wild Rose",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mystical rose that blooms in moonlight, guarded by an archon, able to break the curse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Guardian of the Wild Rose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that happened long after the folktale's events.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ardenvale knight",
+   "type": "character",
+   "aliases": [],
+   "description": "A knight who fell in love with and betrothed a werefox.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Redtooth Keep garrison turns away travelers; one is revealed as a witch and curses the elves to transform to match their selfish, bestial hearts.",
+   "participants": [
+    "Elves of Redtooth Keep",
+    "Witch",
+    "Redtooth Keep"
+   ],
+   "location": "Redtooth Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "cursed the elves, declaring that their bodies would forever transform to match their hearts' selfish and bestial natures"
+  },
+  {
+   "summary": "Syr Armont stumbles upon Redtooth Keep and commits herself to breaking the curse.",
+   "participants": [
+    "Syr Armont",
+    "Redtooth Keep"
+   ],
+   "location": "Redtooth Keep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "After Syr Armont stumbled upon Redtooth Keep, she committed herself to solving this mystery and breaking the curse."
+  },
+  {
+   "summary": "Yenna warms to Armont and tells her of the enchanted rose.",
+   "participants": [
+    "Yenna",
+    "Syr Armont",
+    "Wild Rose"
+   ],
+   "location": "Redtooth Keep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Yenna , leader of the werefoxes, warmed up to Armont's kindness and told her of the enchanted rose."
+  },
+  {
+   "summary": "Armont and Yenna venture to the glade and Armont breaks the curse; it is implied the two fell in love.",
+   "participants": [
+    "Syr Armont",
+    "Yenna",
+    "Wild Rose"
+   ],
+   "location": "Redtooth Keep",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the knight was able to break the curse"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yenna",
+   "relation": "leader_of",
+   "target": "Elves of Redtooth Keep",
+   "note": "Leader of the werefoxes",
+   "paragraph": 3,
+   "quote": "Yenna , leader of the werefoxes"
+  },
+  {
+   "source": "Syr Armont",
+   "relation": "romantic",
+   "target": "Yenna",
+   "note": "Implied",
+   "paragraph": 3,
+   "quote": "It is implied the two fell in love."
+  },
+  {
+   "source": "Witch",
+   "relation": "enemy",
+   "target": "Elves of Redtooth Keep",
+   "note": "Cursed them",
+   "paragraph": 1,
+   "quote": "was revealed to be a powerful witch and cursed the elves"
+  }
+ ],
+ "rejected": []
+}

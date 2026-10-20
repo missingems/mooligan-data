@@ -1,0 +1,210 @@
+{
+ "page": "wiki/magfire",
+ "url": "https://mtg.wiki/page/Magfire",
+ "title": "Magfire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Magfire",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Folk of the Pines in Arboria on Jamuraa around 3334 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Folk of the Pines",
+   "type": "faction",
+   "aliases": [],
+   "description": "Magfire's people in Arboria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arboria",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Folk of the Pines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Circle of Seven, wrecked in Buzzard's Bay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Circle of Seven",
+   "type": "faction",
+   "aliases": [],
+   "description": "Adira Strongheart's party.",
+   "presence": "appears"
+  },
+  {
+   "name": "Buzzard's Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Adira's party was wrecked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [],
+   "description": "Ancient vampire who trapped Johan in an Amber Prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Trapped in an Amber Prison, later released; killed Taurion at Palmyra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taurion",
+   "type": "character",
+   "aliases": [],
+   "description": "Magfire's brother who joined Adira's Circle of Seven and was killed by Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caverns of Despair",
+   "type": "location",
+   "aliases": [],
+   "description": "Caverns containing Ghosts of the Damned and Crimson Kobolds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cosmic Horror",
+   "type": "creature",
+   "aliases": [
+    "the horror"
+   ],
+   "description": "Horror trapped in the tunnels, released to defeat Shauku; it summoned a Falling Star.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Palmyra",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Taurion was killed by Johan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Magfire and her people meet Adira and her Circle of Seven after their wreck in Buzzard's Bay and warn them of Shauku and the trapped horror.",
+   "participants": [
+    "Magfire",
+    "Adira Strongheart",
+    "Circle of Seven",
+    "Shauku"
+   ],
+   "location": "Arboria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Magfire warned the pirates of Shauku and the trapped Cosmic Horror in the tunnels below"
+  },
+  {
+   "summary": "They enter the Caverns of Despair and learn the ancient vampire trapped Johan in an Amber Prison.",
+   "participants": [
+    "Magfire",
+    "Adira Strongheart",
+    "Shauku",
+    "Johan"
+   ],
+   "location": "Caverns of Despair",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the ancient vampire had trapped Johan in an Amber Prison"
+  },
+  {
+   "summary": "To defeat Shauku they release the horror, which summons a Falling Star; Johan is freed and runs away.",
+   "participants": [
+    "Adira Strongheart",
+    "Cosmic Horror",
+    "Johan",
+    "Shauku"
+   ],
+   "location": "Caverns of Despair",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "To defeat Shauku, they released the horror from its prison, and it summoned a Falling Star"
+  },
+  {
+   "summary": "After they flee into Arboria, the meteorite obliterates the ruined castle.",
+   "participants": [
+    "Adira Strongheart",
+    "Magfire"
+   ],
+   "location": "Arboria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the meteorite struck the ruined castle, obliterating it"
+  },
+  {
+   "summary": "Taurion volunteers to join Adira's Circle of Seven while Magfire stays behind.",
+   "participants": [
+    "Taurion",
+    "Adira Strongheart",
+    "Magfire"
+   ],
+   "location": "Arboria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Magfire's brother Taurion volunteered to become part of Adira's Circle of Seven, while Magfire stayed behind"
+  },
+  {
+   "summary": "Magfire assists at the Battle of Palmyra, where Johan kills Taurion.",
+   "participants": [
+    "Magfire",
+    "Taurion",
+    "Johan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "where her brother Taurion was killed by Johan"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Magfire",
+   "relation": "leader_of",
+   "target": "Folk of the Pines",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Magfire was the leader of the Folk of the Pines"
+  },
+  {
+   "source": "Magfire",
+   "relation": "family",
+   "target": "Taurion",
+   "note": "Brother",
+   "paragraph": 2,
+   "quote": "Magfire's brother Taurion"
+  },
+  {
+   "source": "Johan",
+   "relation": "killed",
+   "target": "Taurion",
+   "note": "At the Battle of Palmyra",
+   "paragraph": 2,
+   "quote": "where her brother Taurion was killed by Johan"
+  },
+  {
+   "source": "Magfire",
+   "relation": "ally",
+   "target": "Adira Strongheart",
+   "note": "Helped her party",
+   "paragraph": 2,
+   "quote": "Magfire and her people met Adira Strongheart and her Circle of Seven"
+  }
+ ],
+ "rejected": []
+}

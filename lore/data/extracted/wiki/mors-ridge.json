@@ -1,0 +1,165 @@
+{
+ "page": "wiki/mors-ridge",
+ "url": "https://mtg.wiki/page/Mors_Ridge",
+ "title": "Mors Ridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:11Z",
+ "storyline": "Elder Dragons",
+ "entities": [
+  {
+   "name": "Mors Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A town in the Eastern Domains before the Brothers' War, ruled by the High Council, built atop the buried Elder Dragon Palladia-Mors and destroyed when she awoke.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Council of Mors Ridge",
+   "type": "faction",
+   "aliases": [],
+   "description": "Five-member ruling council; all but Arcus and Ham were killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcus",
+   "type": "character",
+   "aliases": [],
+   "description": "Council member who told the Legend of Mors Ridge yearly.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ham",
+   "type": "character",
+   "aliases": [],
+   "description": "Council member who survived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "creature",
+   "aliases": [
+    "Mors"
+   ],
+   "description": "Elder Dragon buried beneath Mors Ridge, kept asleep by a Tickery spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "Dug above the sleeping Elder, breaking the spell; his army merged with the remaining troops.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Army of the Valley",
+   "type": "faction",
+   "aliases": [],
+   "description": "Formed from remaining troops and Red Donald's army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gwilliam",
+   "type": "character",
+   "aliases": [],
+   "description": "Came from Mors Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jacob",
+   "type": "character",
+   "aliases": [],
+   "description": "Came from Mors Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chromium",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder Dragon who listened to the enchanted child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tickery Man",
+   "type": "character",
+   "aliases": [],
+   "description": "Title taken by the stranger who felled Palladia-Mors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War following these events.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Red Donald digs above the sleeping Elder, breaking the Tickery spell and destroying the town.",
+   "participants": [
+    "Red Donald",
+    "Palladia-Mors",
+    "Mors Ridge"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The spell was broken when Red Donald began to dig above the sleeping Elder, and the town was destroyed."
+  },
+  {
+   "summary": "The remaining troops join Red Donald's army to form the Army of the Valley.",
+   "participants": [
+    "Red Donald",
+    "Army of the Valley"
+   ],
+   "location": "Mors Ridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The remaining troops joined with Red Donald's army to form the Army of the Valley"
+  },
+  {
+   "summary": "In the legend, an enchanted child finds Chromium and Palladia-Mors in a cave, and the town wizard pronounces the dragons evil.",
+   "participants": [
+    "Chromium",
+    "Palladia-Mors"
+   ],
+   "location": "Mors Ridge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The ignorant town wizard pronounced the dragons evil and rallied the townsfolk."
+  },
+  {
+   "summary": "In the legend, Palladia-Mors attacks the town; a stranger casts a spell that makes her fall and becomes the first Tickery Man.",
+   "participants": [
+    "Palladia-Mors",
+    "Tickery Man"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a stranger appeared and cast a spell that caused Palladia-Mors to fall to the earth"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mors Ridge",
+   "relation": "located_in",
+   "target": "Palladia-Mors",
+   "note": "town built atop her buried body",
+   "paragraph": 1,
+   "quote": "the town was built atop the buried body of the Elder Dragon Palladia-Mors"
+  },
+  {
+   "source": "Arcus",
+   "relation": "member_of",
+   "target": "High Council of Mors Ridge",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Arcus , a member of the High Council of Mors Ridge"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,127 @@
+{
+ "page": "wiki/diantha",
+ "url": "https://mtg.wiki/page/Diantha",
+ "title": "Diantha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:13Z",
+ "storyline": "Theros Beyond Death",
+ "entities": [
+  {
+   "name": "Diantha",
+   "type": "character",
+   "aliases": [],
+   "description": "A human acolyte from Theros in the service of the Oracle of Kruphix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kydele",
+   "type": "character",
+   "aliases": [
+    "Oracle of Kruphix",
+    "lady Kydele"
+   ],
+   "description": "Six-armed Oracle of Kruphix, once rescued by her god from Xenagos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kruphix",
+   "type": "deity",
+   "aliases": [
+    "Kurphix"
+   ],
+   "description": "God of horizons whose small temple in Meletis Diantha serves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "City with a small temple of Kruphix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xenagos",
+   "type": "character",
+   "aliases": [],
+   "description": "Held Kydele in his grip before Kruphix rescued her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Kruphix at the edge of the world",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple where Kydele spent time after being rescued.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Diantha brings the oracle Kydele her meal.",
+   "participants": [
+    "Diantha",
+    "Kydele"
+   ],
+   "location": "Meletis",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Diantha set down the tray of mutton and grilled vegetables, fresh olives, and cheese."
+  },
+  {
+   "summary": "Kydele mentions her time at the temple of Kruphix at the edge of the world after her god rescued her from Xenagos.",
+   "participants": [
+    "Kydele",
+    "Kruphix",
+    "Xenagos"
+   ],
+   "location": "Meletis",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "after her god rescued her from the grip of Xenagos"
+  },
+  {
+   "summary": "Diantha confesses she envies Kydele and cannot hear Kruphix's voice, and asks for any insight.",
+   "participants": [
+    "Diantha",
+    "Kydele",
+    "Kruphix"
+   ],
+   "location": "Meletis",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she told Kydele she envied her"
+  },
+  {
+   "summary": "After a long silence Kydele says there is nothing she can share, and Diantha leaves.",
+   "participants": [
+    "Kydele",
+    "Diantha"
+   ],
+   "location": "Meletis",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "there was nothing at all she could share"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Diantha",
+   "relation": "serves",
+   "target": "Kydele",
+   "note": "acolyte in the Oracle of Kruphix's service",
+   "paragraph": 1,
+   "quote": "Diantha was in the Oracle of Kruphix 's service"
+  },
+  {
+   "source": "Kruphix",
+   "relation": "ally",
+   "target": "Kydele",
+   "note": "rescued her from Xenagos",
+   "paragraph": 2,
+   "quote": "after her god rescued her from the grip of Xenagos"
+  }
+ ],
+ "rejected": []
+}
