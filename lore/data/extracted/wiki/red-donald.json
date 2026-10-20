@@ -1,0 +1,133 @@
+{
+ "page": "wiki/red-donald",
+ "url": "https://mtg.wiki/page/Red_Donald",
+ "title": "Red Donald",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord who fought across the Domains of Dominaria and died at Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ad'Amra",
+   "type": "character",
+   "aliases": [],
+   "description": "Red Donald's daughter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mors Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Ham kept Palladia-Mors at bay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ham",
+   "type": "character",
+   "aliases": [],
+   "description": "Boy who performed \"Tickery\" magic to keep Palladia-Mors at bay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder Dragon awakened by canal digging at Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [
+    "Dragon Whelp"
+   ],
+   "description": "Elder Dragon who posed as Red Donald's Dragon Whelp familiar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balgot",
+   "type": "character",
+   "aliases": [],
+   "description": "Orc general who killed Red Donald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle at Mors Ridge",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle started when Palladia-Mors was awakened.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Domains.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Red Donald, urged by his Dragon Whelp familiar, dug canals in the ridge, awakening Palladia-Mors and starting the Battle at Mors Ridge.",
+   "participants": [
+    "Red Donald",
+    "Vaevictis Asmadi",
+    "Palladia-Mors"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This awoke Palladia-Mors, starting the Battle at Mors Ridge ."
+  },
+  {
+   "summary": "The Dragon Whelp was revealed as Vaevictis Asmadi, who needed Palladia to lift the curse that turned him into a whelp.",
+   "participants": [
+    "Vaevictis Asmadi",
+    "Palladia-Mors"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Dragon Whelp was revealed to be Vaevictis Asmadi ."
+  },
+  {
+   "summary": "The orc general Balgot killed Red Donald with a poisoned blade.",
+   "participants": [
+    "Balgot",
+    "Red Donald"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The orc general Balgot killed Red Donald with a poisoned blade."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Balgot",
+   "relation": "killed",
+   "target": "Red Donald",
+   "note": "Used a poisoned blade.",
+   "paragraph": 1,
+   "quote": "The orc general Balgot killed Red Donald with a poisoned blade."
+  },
+  {
+   "source": "Red Donald",
+   "relation": "family",
+   "target": "Ad'Amra",
+   "note": "Father and daughter.",
+   "paragraph": 1,
+   "quote": "he arrived with his daughter Ad'Amra"
+  }
+ ],
+ "rejected": []
+}

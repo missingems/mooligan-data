@@ -1,0 +1,64 @@
+{
+ "page": "wiki/toby",
+ "url": "https://mtg.wiki/page/Toby",
+ "title": "Toby",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:03Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Toby",
+   "type": "character",
+   "aliases": [],
+   "description": "Young survivor on Duskmourn who lives among beasties and has a bond with Gribble.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gribble",
+   "type": "creature",
+   "aliases": [],
+   "description": "One of Toby's loyal beasties.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Toby is a survivor, threatened by Valgavoth's spawn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Entity whose spawn threaten the survivors of Duskmourn.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Toby slips out of the survivors' camp, follows a call to a beastie and finds belonging among beasties.",
+   "participants": [
+    "Toby"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He never returned to his original survivor group."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Toby",
+   "relation": "ally",
+   "target": "Gribble",
+   "note": "Bond with one of his loyal beasties",
+   "paragraph": 1,
+   "quote": "Toby's strength lies in his bond with Gribble"
+  }
+ ],
+ "rejected": []
+}

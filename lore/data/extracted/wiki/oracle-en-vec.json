@@ -1,0 +1,183 @@
+{
+ "page": "wiki/oracle-en-vec",
+ "url": "https://mtg.wiki/page/Oracle_en-Vec",
+ "title": "Oracle en-Vec",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Oracle en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "A prophet on Rath and spiritual leader of the Vec tribe who believed Gerrard and later Eladamri to be the Korvecdal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf leader declared the real Korvecdal who became a leader in the Coalition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Believed by the Oracle to be the prophesied Korvecdal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Korvecdal",
+   "type": "concept",
+   "aliases": [],
+   "description": "The prophesied figure of the Vec tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Rath that the Rathi Tribes tried to overthrow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Airship whose crew infiltrated the Stronghold and fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Volrath's seat infiltrated by Gerrard and the Weatherlight crew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vec tribe",
+   "type": "faction",
+   "aliases": [
+    "Vec"
+   ],
+   "description": "The tribe on Rath led spiritually by the Oracle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Tribes",
+   "type": "faction",
+   "aliases": [],
+   "description": "The tribes rallied against Volrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alliance on Dominaria that Eladamri became a leader in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Oracle lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which Eladamri was transported.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Eladamri rejoined his people.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Traveling to meet Eladamri, the Oracle meets Gerrard Capashen and believes him the Korvecdal.",
+   "participants": [
+    "Oracle en-Vec",
+    "Gerrard Capashen",
+    "Eladamri"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "she encountered Gerrard Capashen"
+  },
+  {
+   "summary": "The Oracle and Eladamri rally the Rathi Tribes to overthrow Volrath, but the uprising fails when Weatherlight flees.",
+   "participants": [
+    "Oracle en-Vec",
+    "Eladamri",
+    "Rathi Tribes",
+    "Volrath",
+    "Weatherlight"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "the uprising was unsuccessful and was called off when"
+  },
+  {
+   "summary": "The Oracle declares Eladamri the real Korvecdal and predicts he must leave for another world first.",
+   "participants": [
+    "Oracle en-Vec",
+    "Eladamri"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "declaring that he was the real Korvecdal"
+  },
+  {
+   "summary": "Eladamri is transported to Dominaria and becomes a Coalition leader.",
+   "participants": [
+    "Eladamri",
+    "Coalition"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This prophecy came true as Eladamri was transported to Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oracle en-Vec",
+   "relation": "leader_of",
+   "target": "Vec tribe",
+   "note": "Spiritual leader.",
+   "paragraph": 0,
+   "quote": "the spiritual leader of the Vec tribe"
+  },
+  {
+   "source": "Oracle en-Vec",
+   "relation": "ally",
+   "target": "Eladamri",
+   "note": "Rallied the tribes with him.",
+   "paragraph": 0,
+   "quote": "Along with Eladamri and his elves"
+  },
+  {
+   "source": "Eladamri",
+   "relation": "enemy",
+   "target": "Volrath",
+   "note": "They sought to overthrow him.",
+   "paragraph": 0,
+   "quote": "in an attempt to overthrow Volrath"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,110 @@
+{
+ "page": "wiki/kzzy-n",
+ "url": "https://mtg.wiki/page/Kzzy%27n",
+ "title": "Kzzy'n",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kzzy'n",
+   "type": "character",
+   "aliases": [
+    "Kzzy'n, the Dragon Lord"
+   ],
+   "description": "Dragon Lord, a warrior of Shandalar who took command of the Red Guild until its downfall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of Shandalar commanded by Kzzy'n, with sorcerers, troll shamans, goblin lords and dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kzzy'n was a guildlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil planeswalker who corrupted the guildlords posing as a benevolent advisor and was banned from Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian of Shandalar",
+   "type": "character",
+   "aliases": [],
+   "description": "Protector of Shandalar betrayed by the guildlords during Arzakon's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the guildlords betrayed the Guardian of Shandalar to open the path for Arzakon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the guilds of Shandalar, including Kzzy'n, corrupted by Arzakon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The guildlords, corrupted by Arzakon, betrayed the Guardian of Shandalar during Arzakon's War.",
+   "participants": [
+    "Guildlords",
+    "Kzzy'n",
+    "Arzakon",
+    "Guardian of Shandalar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Together, they betrayed the Guardian of Shandalar during Arzakon's War"
+  },
+  {
+   "summary": "The Guildlords including Kzzy'n were defeated and Arzakon was banned from the plane.",
+   "participants": [
+    "Guildlords",
+    "Kzzy'n",
+    "Arzakon"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arzakon was banned from entering the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kzzy'n",
+   "relation": "leader_of",
+   "target": "Red Guild",
+   "note": "He took command of the Red Guild.",
+   "paragraph": 0,
+   "quote": "who took command of the Red Guild until its downfall"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "enemy",
+   "target": "Guildlords",
+   "note": "Arzakon corrupted them.",
+   "paragraph": 2,
+   "quote": "were corrupted by the evil Planeswalker Arzakon 's influence"
+  }
+ ],
+ "rejected": []
+}

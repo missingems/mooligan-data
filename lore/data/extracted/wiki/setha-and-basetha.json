@@ -1,0 +1,182 @@
+{
+ "page": "wiki/setha-and-basetha",
+ "url": "https://mtg.wiki/page/Setha_and_Basetha",
+ "title": "Setha and Basetha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:00Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Setha",
+   "type": "character",
+   "aliases": [],
+   "description": "Khenra initiate of Tah crop from Naktamun, brother of Basetha; killed in the Trial of Ambition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Basetha",
+   "type": "character",
+   "aliases": [],
+   "description": "Khenra initiate of Tah crop, sister of Setha, who survived the Trial of Ambition, was killed in the Trial of Zeal and re-killed by Samut as part of the Dreadhorde.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "The last survivor of Tah crop.",
+   "presence": "appears"
+  },
+  {
+   "name": "Neit",
+   "type": "character",
+   "aliases": [],
+   "description": "A Tah crop initiate who cut out another initiate's heart and was later killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nassor",
+   "type": "character",
+   "aliases": [],
+   "description": "A Tah crop initiate who survived the Trial of Ambition and was later killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "The one who re-killed Basetha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tah crop",
+   "type": "faction",
+   "aliases": [],
+   "description": "The crop of initiates to which Setha and Basetha belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trial of Ambition",
+   "type": "event",
+   "aliases": [],
+   "description": "A trial in which Setha was killed by swirling blades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trial of Zeal",
+   "type": "event",
+   "aliases": [],
+   "description": "A trial in which Basetha, Neit and Nassor died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "The horde on Ravnica Basetha later joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "The city the twins came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the twins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Basetha was re-killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Setha is killed by swirling blades in the Trial of Ambition.",
+   "participants": [
+    "Setha",
+    "Trial of Ambition"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Setha was killed by swirling blades in the Trial"
+  },
+  {
+   "summary": "Basetha survives the Trial of Ambition by stealing the heart Neit had cut out of another initiate.",
+   "participants": [
+    "Basetha",
+    "Neit",
+    "Trial of Ambition"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "She completed the trial by stealing the heart"
+  },
+  {
+   "summary": "Basetha, Neit and Nassor die in the Trial of Zeal, leaving Djeru the last survivor of Tah crop.",
+   "participants": [
+    "Basetha",
+    "Neit",
+    "Nassor",
+    "Djeru",
+    "Trial of Zeal"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "leaving Djeru as the last survivor of Tah crop"
+  },
+  {
+   "summary": "Basetha joins the Dreadhorde on Ravnica and is re-killed by Samut.",
+   "participants": [
+    "Basetha",
+    "Dreadhorde",
+    "Samut"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "was re-killed by Samut"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Setha",
+   "relation": "family",
+   "target": "Basetha",
+   "note": "Setha was the brother and Basetha the sister.",
+   "paragraph": 0,
+   "quote": "Setha was the brother, and Basetha was the sister"
+  },
+  {
+   "source": "Samut",
+   "relation": "killed",
+   "target": "Basetha",
+   "note": "Samut re-killed Basetha.",
+   "paragraph": 3,
+   "quote": "was re-killed by Samut"
+  },
+  {
+   "source": "Basetha",
+   "relation": "member_of",
+   "target": "Dreadhorde",
+   "note": "Basetha became part of the Dreadhorde.",
+   "paragraph": 3,
+   "quote": "Basetha later became part of the Dreadhorde on Ravnica"
+  }
+ ],
+ "rejected": []
+}

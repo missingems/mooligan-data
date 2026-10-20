@@ -1,0 +1,103 @@
+{
+ "page": "wiki/kush",
+ "url": "https://mtg.wiki/page/Kush",
+ "title": "Kush",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [
+    "Western Lands",
+    "Western Realms"
+   ],
+   "description": "Nation of southwestern Aerona on Dominaria, once a city known for the Festival of the Arena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "Festival city and high barony; the rebuilt city of Kush.",
+   "presence": "appears"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "Period when the city of Kush was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac Nightwalker",
+   "type": "character",
+   "aliases": [
+    "Leshrac"
+   ],
+   "description": "Dominated part of Kush before being imprisoned in Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Leshrac was imprisoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of the Arena",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival Kush city was known for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hammen",
+   "type": "character",
+   "aliases": [],
+   "description": "Came from Jor in Kush.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The city of Kush is destroyed in the Time of Troubles; Kush becomes the name of the region and the rebuilt city is named Estark.",
+   "participants": [
+    "Kush",
+    "Estark"
+   ],
+   "location": "Kush",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "while the rebuilt city itself received the name Estark"
+  },
+  {
+   "summary": "Leshrac Nightwalker dominates part of Kush before being imprisoned in Phyrexia.",
+   "participants": [
+    "Leshrac Nightwalker",
+    "Kush",
+    "Phyrexia"
+   ],
+   "location": "Kush",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Leshrac Nightwalker dominated part of it before being imprisoned in Phyrexia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Estark",
+   "relation": "located_in",
+   "target": "Kush",
+   "note": "festival city and high barony",
+   "paragraph": 5,
+   "quote": "Estark , the festival city and high barony"
+  }
+ ],
+ "rejected": []
+}

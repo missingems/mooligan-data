@@ -1,0 +1,102 @@
+{
+ "page": "wiki/ergamon",
+ "url": "https://mtg.wiki/page/Ergamon",
+ "title": "Ergamon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ergamon",
+   "type": "plane",
+   "aliases": [],
+   "description": "A small, hidden plane with colossal peaks and exotic fauna, invaded by Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Worzel",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who dueled Thomil on Ergamon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thomil",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure dueled by the planeswalker Worzel on Ergamon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Truga Jungle",
+   "type": "location",
+   "aliases": [],
+   "description": "The only known location on Ergamon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which Phyrexians attacked Ergamon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhinos of Ergamon",
+   "type": "faction",
+   "aliases": [
+    "Rhinos"
+   ],
+   "description": "A race of Rhinos that defended their world.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Worzel duels Thomil on Ergamon.",
+   "participants": [
+    "Worzel",
+    "Thomil"
+   ],
+   "location": "Ergamon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The planeswalker Worzel dueled Thomil at least once on this plane."
+  },
+  {
+   "summary": "Phyrexians invade Ergamon during the New Phyrexian Invasion.",
+   "participants": [
+    "Ergamon",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Ergamon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was also invaded by Phyrexians during the"
+  },
+  {
+   "summary": "The Rhinos and the whole ecosystem work together to repel the invaders.",
+   "participants": [
+    "Rhinos of Ergamon"
+   ],
+   "location": "Ergamon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the ecosystem, predator and prey alike, worked in tandem to repel the invaders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Truga Jungle",
+   "relation": "located_in",
+   "target": "Ergamon",
+   "note": "Its only known location.",
+   "paragraph": 1,
+   "quote": "The only known location on Ergamon is the Truga Jungle"
+  }
+ ],
+ "rejected": []
+}

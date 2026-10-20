@@ -1,0 +1,76 @@
+{
+ "page": "wiki/chaos-orb",
+ "url": "https://mtg.wiki/page/Chaos_Orb",
+ "title": "Chaos Orb",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Chaos Orb",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A powerful artifact used by Ravidel that blasted all the ports of Arathoxia, killing Marshal Bikov.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who used the Chaos Orb during his invasion of Arathoxia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "A city invaded by Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marshal Bikov",
+   "type": "character",
+   "aliases": [
+    "Marshall Bikov"
+   ],
+   "description": "A leader of Arathoxia killed by the Chaos Orb.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravidel used the Chaos Orb to blast all the ports of Arathoxia during his invasion, killing Marshal Bikov.",
+   "participants": [
+    "Ravidel",
+    "Chaos Orb",
+    "Marshal Bikov"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "blasted all of the ports in Arathoxia during his invasion of the city, killing Marshal Bikov"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Marshal Bikov",
+   "note": "Through the Chaos Orb.",
+   "paragraph": 0,
+   "quote": "killing Marshal Bikov"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "other",
+   "target": "Chaos Orb",
+   "note": "Ravidel used the artifact.",
+   "paragraph": 0,
+   "quote": "used by the planeswalker Ravidel"
+  }
+ ],
+ "rejected": []
+}

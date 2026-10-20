@@ -1,0 +1,104 @@
+{
+ "page": "wiki/olag",
+ "url": "https://mtg.wiki/page/Olag",
+ "title": "Olag",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Olag",
+   "type": "creature",
+   "aliases": [
+    "Ludevic's Hubris"
+   ],
+   "description": "A zombie from Innistrad created by Ludevic from flesh, metal and four brains; innocent and kind, locked beneath the laboratory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ludevic",
+   "type": "character",
+   "aliases": [],
+   "description": "A necro-alchemist who created Olag as his final creation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Miau",
+   "type": "creature",
+   "aliases": [],
+   "description": "A male tabby cat who befriended Olag.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Olag was created.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creatures that had recently been on Innistrad.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ludevic builds and animates Olag from flesh, metal and pieces of four brains.",
+   "participants": [
+    "Ludevic",
+    "Olag"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Calling his creation \"Olag,\" Ludevic activated his machines"
+  },
+  {
+   "summary": "Ludevic orders Olag to maim, kill and destroy; Olag asks why and Ludevic is disgusted.",
+   "participants": [
+    "Ludevic",
+    "Olag"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "\"But why?\" asked Olag"
+  },
+  {
+   "summary": "Olag is locked away beneath the laboratory and befriends the cat Miau.",
+   "participants": [
+    "Olag",
+    "Miau"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They befriended a male tabby cat named"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ludevic",
+   "relation": "created",
+   "target": "Olag",
+   "note": "He built Olag as his final creation.",
+   "paragraph": 1,
+   "quote": "Calling his creation \"Olag,\" Ludevic activated his machines"
+  },
+  {
+   "source": "Olag",
+   "relation": "ally",
+   "target": "Miau",
+   "note": "They are friends.",
+   "paragraph": 2,
+   "quote": "They befriended a male tabby cat named"
+  }
+ ],
+ "rejected": []
+}

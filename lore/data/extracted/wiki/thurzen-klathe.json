@@ -1,0 +1,102 @@
+{
+ "page": "wiki/thurzen-klathe",
+ "url": "https://mtg.wiki/page/Thurzen_Klathe",
+ "title": "Thurzen Klathe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:53Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Thurzen Klathe",
+   "type": "character",
+   "aliases": [
+    "His Excellency"
+   ],
+   "description": "Lord High Priest of the Order of the Ebon Hand on Sarpadia, residing in Achtep Keep; addressed as His Excellency.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [
+    "Ebon Hand"
+   ],
+   "description": "A cruel Sarpadian order practicing horrific sacrifices.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Achtep Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Klathe's residence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarya Haasendel",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the dwarves who received aid from Klathe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivra Jursdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "A mercenary Klathe sent to the dwarves, who joined the orcs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent where the Ebon Hand holds power.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When the dwarves are attacked by orcs and goblins, Klathe alone among Sarpadian leaders sends aid to Sarya Haasendel, seeing a chance for conversion.",
+   "participants": [
+    "Thurzen Klathe",
+    "Sarya Haasendel"
+   ],
+   "location": "Sarpadia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Klathe was the only leader of the other four Sarpadian nations to send aid"
+  },
+  {
+   "summary": "Klathe sends the mercenary Ivra Jursdotter, who joins the orcs, sealing the dwarves' fate.",
+   "participants": [
+    "Thurzen Klathe",
+    "Ivra Jursdotter"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he sent the mercenary Ivra Jursdotter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thurzen Klathe",
+   "relation": "leader_of",
+   "target": "Order of the Ebon Hand",
+   "note": "Lord High Priest of the Order.",
+   "paragraph": 0,
+   "quote": "Lord High Priest of the Order of the Ebon Hand"
+  },
+  {
+   "source": "Ivra Jursdotter",
+   "relation": "serves",
+   "target": "Thurzen Klathe",
+   "note": "Sent by Klathe as a mercenary.",
+   "paragraph": 1,
+   "quote": "he sent the mercenary Ivra Jursdotter"
+  }
+ ],
+ "rejected": []
+}

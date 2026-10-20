@@ -1,0 +1,119 @@
+{
+ "page": "wiki/malpiri",
+ "url": "https://mtg.wiki/page/Malpiri",
+ "title": "Malpiri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:07Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Malpiri",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation of Terisiare during the Brothers' War and Dark Age, later supplanted by Balduvia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malpiri Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Heartlands of Malpiri northeast of the Monastery of Gix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monastery of Gix",
+   "type": "location",
+   "aliases": [],
+   "description": "Located southwest of the Malpiri heartlands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kathwar",
+   "type": "character",
+   "aliases": [],
+   "description": "Chief of the Malpiri clan, representing the Sardians and Malpiri on the Council of Mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council Kathwar was invited to join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivory Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Seat of the Archmandrite.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flarg",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains in the northern Malpiri plains, home to an aggressive goblin tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that devastated most nations of Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation that supplanted Malpiri during the Ice Age.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Archmandrite invites Kathwar to join the Council of Mages.",
+   "participants": [
+    "Kathwar",
+    "Council of Mages"
+   ],
+   "location": "Ivory Tower",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Archmandrite of the Ivory Tower invited Kathwar , chief of the Malpiri clan, representing the Sardian people as well as the Malpiri, to join the Council of Mages ."
+  },
+  {
+   "summary": "Malpiri is devastated during the Brothers' War.",
+   "participants": [
+    "Malpiri",
+    "Brothers' War"
+   ],
+   "location": "Malpiri Plains",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Like most nations of Terisiare , Malpiri was devastated during the Brothers' War ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kathwar",
+   "relation": "leader_of",
+   "target": "Malpiri",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Kathwar , chief of the Malpiri clan"
+  },
+  {
+   "source": "Kathwar",
+   "relation": "member_of",
+   "target": "Council of Mages",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Kathwar was the representative of shamanic mountain magic on the Council."
+  }
+ ],
+ "rejected": []
+}

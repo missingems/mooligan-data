@@ -1,0 +1,74 @@
+{
+ "page": "wiki/arabella",
+ "url": "https://mtg.wiki/page/Arabella",
+ "title": "Arabella",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:40Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Arabella",
+   "type": "character",
+   "aliases": [],
+   "description": "A quickened porcelain toy from Duskmourn who hates survivors and commands packs of damaged toys.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boilerbilges",
+   "type": "location",
+   "aliases": [],
+   "description": "Part of the House where damaged toys and dolls gather; contains a furnace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Arabella lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The House",
+   "type": "location",
+   "aliases": [],
+   "description": "The house of Duskmourn whose hallways Arabella's packs roam.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arabella quickens with affection for her owner, but the owner tries to destroy her by shattering her and dropping her into a Boilerbilges furnace.",
+   "participants": [
+    "Arabella"
+   ],
+   "location": "Boilerbilges",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Her owner, however, reacted out of fear and tried to destroy her by shattering her body and dropping her into a Boilerbilges furnace."
+  },
+  {
+   "summary": "Arabella finds the Boilerbilges teeming with other damaged toys and takes command of them.",
+   "participants": [
+    "Arabella"
+   ],
+   "location": "Boilerbilges",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Under Arabella's command, they now roam the House's hallways in hunting packs"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arabella",
+   "relation": "leader_of",
+   "target": "Boilerbilges",
+   "note": "Commands the damaged toys of the Boilerbilges (target is the place)",
+   "paragraph": 2,
+   "quote": "Under Arabella's command"
+  }
+ ],
+ "rejected": []
+}

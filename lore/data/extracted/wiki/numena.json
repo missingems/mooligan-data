@@ -1,0 +1,111 @@
+{
+ "page": "wiki/numena",
+ "url": "https://mtg.wiki/page/Numena",
+ "title": "Numena",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Numena",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of avatar wizards, one per color, who nearly single-handedly overthrew the Primevals of Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Primevals",
+   "type": "faction",
+   "aliases": [],
+   "description": "The rulers of Dominaria overthrown by the Numena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lowallyn",
+   "type": "character",
+   "aliases": [],
+   "description": "The numen of blue, later reincarnated as Ixidor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "An illusionist who was Lowallyn reincarnated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "The numen of black, worshiped as a god of commerce among the Cabal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Averru",
+   "type": "character",
+   "aliases": [],
+   "description": "The numen of red, later reincarnated as an ancient city bearing his name.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyer of the reincarnated numena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that worshiped Kuberr.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The numena of white and green were slain by the other three wizards, who refused to share their powers in a five-way split.",
+   "participants": [
+    "Numena"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the numena for the colors white and green were slain by the other three wizards"
+  },
+  {
+   "summary": "After the numena's reincarnations, they were swiftly destroyed by Karona.",
+   "participants": [
+    "Karona",
+    "Numena"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they were swiftly destroyed by Karona"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lowallyn",
+   "relation": "other",
+   "target": "Ixidor",
+   "note": "Lowallyn was reincarnated as Ixidor.",
+   "paragraph": 1,
+   "quote": "who was later reincarnated as the illusionist Ixidor"
+  },
+  {
+   "source": "Karona",
+   "relation": "killed",
+   "target": "Numena",
+   "note": "Destroyed the reincarnated numena.",
+   "paragraph": 2,
+   "quote": "they were swiftly destroyed by Karona"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,89 @@
+{
+ "page": "wiki/gaslight-swamp",
+ "url": "https://mtg.wiki/page/Gaslight_Swamp",
+ "title": "Gaslight Swamp",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gaslight Swamp",
+   "type": "location",
+   "aliases": [],
+   "description": "A swamp in Dominaria, south of King's Head, site of a bloody battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaxle Brey",
+   "type": "character",
+   "aliases": [
+    "Warmaster Jaxle Brey",
+    "Brey"
+   ],
+   "description": "Warmaster leading a King's Head battalion, wiped out and captured by goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wolsey",
+   "type": "character",
+   "aliases": [],
+   "description": "Scribe who defected to the goblins, took their throne, and captured Brey.",
+   "presence": "appears"
+  },
+  {
+   "name": "King's Head",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose battalion marched south.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins of Gaslight Swamp",
+   "type": "faction",
+   "aliases": [
+    "goblins"
+   ],
+   "description": "Goblins with rocksleds, kites and sappers, whose king was outwitted by Wolsey.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Brey's battalion from King's Head meets goblins with inventions in Gaslight Swamp.",
+   "participants": [
+    "Jaxle Brey",
+    "Goblins of Gaslight Swamp"
+   ],
+   "location": "Gaslight Swamp",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The army led by Warmaster Jaxle Brey encountered goblins armed with various inventions"
+  },
+  {
+   "summary": "Wolsey defects to the goblins, takes their throne, has Brey's force wiped out and captures Brey.",
+   "participants": [
+    "Wolsey",
+    "Jaxle Brey",
+    "Goblins of Gaslight Swamp"
+   ],
+   "location": "Gaslight Swamp",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "cleverly outwitting their king and taking the throne for himself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wolsey",
+   "relation": "enemy",
+   "target": "Jaxle Brey",
+   "note": "Wolsey hated Brey and captured him to kill him.",
+   "paragraph": 1,
+   "quote": "In hatred of Brey, the scribe Wolsey defected to the side of the goblins"
+  }
+ ],
+ "rejected": []
+}

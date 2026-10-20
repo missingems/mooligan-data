@@ -1,0 +1,90 @@
+{
+ "page": "wiki/tigaden",
+ "url": "https://mtg.wiki/page/Tigaden",
+ "title": "Tigaden",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Tigaden",
+   "type": "location",
+   "aliases": [],
+   "description": "Dwarf village in the Crimson Peaks of Sarpadia on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crimson Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains in Sarpadia where dragon eggs hatch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria containing the Crimson Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melelki",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf woman and poor embroiderer who sold dragon eggs to Reod Dai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reod Dai",
+   "type": "character",
+   "aliases": [],
+   "description": "Man who offered to buy dragon eggs from Melelki at 2 gold apiece.",
+   "presence": "appears"
+  },
+  {
+   "name": "Squat Duck",
+   "type": "location",
+   "aliases": [],
+   "description": "Local inn in Tigaden.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A dragon whelp wanders into Tigaden looking for food and is killed after bloodying five dwarves.",
+   "participants": [
+    "Tigaden"
+   ],
+   "location": "Tigaden",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "a dragon whelp wander into the village, looking for food"
+  },
+  {
+   "summary": "Melelki meets Reod Dai at the Squat Duck, who offers 2 gold apiece for dragon eggs; they trade yearly for 3 years.",
+   "participants": [
+    "Melelki",
+    "Reod Dai",
+    "Squat Duck"
+   ],
+   "location": "Squat Duck",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He offered to buy dragon eggs from her for 2 gold apiece"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Melelki",
+   "relation": "other",
+   "target": "Reod Dai",
+   "note": "Sold him dragon eggs.",
+   "paragraph": 1,
+   "quote": "Each year for a total of 3 years they repeated the trade"
+  }
+ ],
+ "rejected": []
+}

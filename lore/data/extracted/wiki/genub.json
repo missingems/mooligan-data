@@ -1,0 +1,98 @@
+{
+ "page": "wiki/genub",
+ "url": "https://mtg.wiki/page/Genub",
+ "title": "Genub",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:57Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Genub",
+   "type": "character",
+   "aliases": [],
+   "description": "An Amonkheti human who fell during the Final Hours while searching for his lover Makare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makare",
+   "type": "character",
+   "aliases": [],
+   "description": "Genub's lover, transformed into a controlled Eternal who killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Final Hours",
+   "type": "event",
+   "aliases": [],
+   "description": "The final stage of Amonkhet in which Genub died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hour of Eternity",
+   "type": "event",
+   "aliases": [],
+   "description": "The hour during which Eternals attacked and Genub searched for Makare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "Blue-armored undead warriors who attacked during the Hour of Eternity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "God-Pharaoh",
+   "type": "character",
+   "aliases": [],
+   "description": "The ruler whom Genub and Makare defied by their forbidden love.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Hour of Eternity, Genub searched frantically for Makare and they were separated.",
+   "participants": [
+    "Genub",
+    "Makare"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Genub frantically searched for his lover, Makare"
+  },
+  {
+   "summary": "Genub found Makare changed and controlled by a naga wizard; she struck him down with an axe, ending his life.",
+   "participants": [
+    "Genub",
+    "Makare"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she swung the axe, striking him down"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Genub",
+   "relation": "romantic",
+   "target": "Makare",
+   "note": "Forbidden lovers who defied the God-Pharaoh.",
+   "paragraph": 1,
+   "quote": "They had pledged their forbidden love to each other months earlier"
+  },
+  {
+   "source": "Makare",
+   "relation": "killed",
+   "target": "Genub",
+   "note": "While controlled by a naga wizard.",
+   "paragraph": 2,
+   "quote": "Her blow, followed by others, ended his life"
+  }
+ ],
+ "rejected": []
+}

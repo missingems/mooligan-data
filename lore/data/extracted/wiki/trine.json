@@ -1,0 +1,128 @@
+{
+ "page": "wiki/trine",
+ "url": "https://mtg.wiki/page/Trine",
+ "title": "Trine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:21Z",
+ "storyline": "Legends",
+ "entities": [
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Serra Angel summoned by Xarl and bound as a fallen angel for 326 years; forgiven by Rahel and carried to Serra in death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl Angel-Keeper",
+   "type": "character",
+   "aliases": [
+    "Archmage Xarl Angel-Keeper",
+    "Xarl"
+   ],
+   "description": "Archmage who summoned Trine and bound her with a Horned Halo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Horned Halo",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item placed on Trine's head that bound her to Xarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Xarl's great-great-grandson, who summoned Rahel to fight Trine; blinded and bleached white, he ascended.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rahel",
+   "type": "character",
+   "aliases": [],
+   "description": "Serran Angel summoned by Eskil to fight Trine; forgave Trine's crimes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm freed in the north by Eskil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "plane",
+   "aliases": [],
+   "description": "Realm to which Trine was carried.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Absolution of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Rahel's forgiveness of Trine for her crimes.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xarl places a Horned Halo on Trine's head, binding her and making her a fallen angel.",
+   "participants": [
+    "Xarl Angel-Keeper",
+    "Trine",
+    "Horned Halo"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Xarl placed a Horned Halo on Trine's head, binding her to him and making her a fallen angel"
+  },
+  {
+   "summary": "Eskil summons the Serran Angel Rahel to fight Trine and free northern Corondor.",
+   "participants": [
+    "Eskil",
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eskil , Xarl's great-great-grandson summoned the Serran Angel Rahel to fight Trine and free northern Corondor"
+  },
+  {
+   "summary": "Rahel forgives Trine; in death Trine reverts to a Serra Angel and is carried off to Serra.",
+   "participants": [
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Serra",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rahel forgave Trine for her crimes"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trine",
+   "relation": "serves",
+   "target": "Xarl Angel-Keeper",
+   "note": "Enslaved to him by the Horned Halo.",
+   "paragraph": 1,
+   "quote": "Enslaved for 326 years"
+  },
+  {
+   "source": "Eskil",
+   "relation": "family",
+   "target": "Xarl Angel-Keeper",
+   "note": "Great-great-grandson.",
+   "paragraph": 2,
+   "quote": "Eskil , Xarl's great-great-grandson"
+  }
+ ],
+ "rejected": []
+}

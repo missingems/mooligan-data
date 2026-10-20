@@ -1,0 +1,144 @@
+{
+ "page": "wiki/balesh-pass",
+ "url": "https://mtg.wiki/page/Balesh_Pass",
+ "title": "Balesh Pass",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:36Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Balesh Pass",
+   "type": "location",
+   "aliases": [],
+   "description": "Snow-covered pass high in the Karplusan Mountains on Terisiare, site of battles between Kjeldor knights and Balduvian orcs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karplusan Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains in which Balesh Pass lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Kireshal",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain above Balesh Pass.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Delapre",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain along whose edge the pass runs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "faction",
+   "aliases": [
+    "knights of Kjeldor"
+   ],
+   "description": "Realm whose knights fought the Balduvian orcs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balduvian orcs",
+   "type": "faction",
+   "aliases": [
+    "Balduvians"
+   ],
+   "description": "Orcs who fought the knights of Kjeldor at Balesh Pass.",
+   "presence": "appears"
+  },
+  {
+   "name": "Flarg goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins of the Flarg used as a distraction by the Balduvians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Groth Jonar",
+   "type": "character",
+   "aliases": [],
+   "description": "Orcish general who accepted a parley and let surviving Kjeldor knights retreat, claiming their battle standard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [
+    "Dominarian Ice Age"
+   ],
+   "description": "Dominarian Ice Age during which the pass was fought over.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the first battle, Balduvian orcs are routed by a wall of pikemen and charging knights of Kjeldor.",
+   "participants": [
+    "Kjeldor",
+    "Balduvian orcs"
+   ],
+   "location": "Balesh Pass",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The first was a loss for the orcs"
+  },
+  {
+   "summary": "In the second battle, goblins of the Flarg distract the knights so the orcs can flank and kill many of them.",
+   "participants": [
+    "Balduvian orcs",
+    "Flarg goblins",
+    "Kjeldor"
+   ],
+   "location": "Balesh Pass",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "bolstered by goblins of the Flarg"
+  },
+  {
+   "summary": "Groth Jonar accepts the parley and lets surviving Kjeldor knights retreat, taking only their battle standard.",
+   "participants": [
+    "Groth Jonar",
+    "Kjeldor"
+   ],
+   "location": "Balesh Pass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "accepted the parley and allowed the surviving knights of Kjeldor to retreat without further harm"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kjeldor",
+   "relation": "enemy",
+   "target": "Balduvian orcs",
+   "note": "Their knights fought at Balesh Pass.",
+   "paragraph": 2,
+   "quote": "battles between knights of Kjeldor and Balduvian orcs were fought"
+  },
+  {
+   "source": "Balesh Pass",
+   "relation": "located_in",
+   "target": "Karplusan Mountains",
+   "note": "The pass is high in the mountains.",
+   "paragraph": 0,
+   "quote": "a pass high in the Karplusan Mountains"
+  }
+ ],
+ "rejected": []
+}

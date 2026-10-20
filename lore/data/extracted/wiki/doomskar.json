@@ -1,0 +1,81 @@
+{
+ "page": "wiki/doomskar",
+ "url": "https://mtg.wiki/page/Doomskar",
+ "title": "Doomskar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:55Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [
+    "doomskars"
+   ],
+   "description": "A collision of Kaldheim's realms causing earthquakes, destabilization and war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of ten realms in constant motion around the World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "Tree around which the realms of Kaldheim move.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A sapling from the world tree that can create doomskars across the multiverse for New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Uses Realmbreaker to invade other worlds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "During it all ten realms collided, connecting Kaldheim as one plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Invasion all ten realms collide, connecting Kaldheim as one plane.",
+   "participants": [
+    "Realmbreaker",
+    "Kaldheim"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "During the Invasion, all ten realms collided with each other, connecting Kaldheim as one plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Realmbreaker",
+   "relation": "serves",
+   "target": "New Phyrexia",
+   "note": "Lets New Phyrexia invade other worlds with doomskars.",
+   "paragraph": 2,
+   "quote": "allowing New Phyrexia to invade other worlds"
+  }
+ ],
+ "rejected": []
+}

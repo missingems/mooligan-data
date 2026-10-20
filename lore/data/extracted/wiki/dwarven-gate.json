@@ -1,0 +1,113 @@
+{
+ "page": "wiki/dwarven-gate",
+ "url": "https://mtg.wiki/page/Dwarven_Gate",
+ "title": "Dwarven Gate",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dwarven Gate",
+   "type": "location",
+   "aliases": [
+    "Dwarven Gate of New Freedom"
+   ],
+   "description": "Planar portal beneath Castle Sengir leading from Ulgrotha to an unknown plane; no longer functions since the Mending.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [
+    "the Baron",
+    "Sengir"
+   ],
+   "description": "Vampire baron who wished to conquer Ulgrotha and march troops through the portal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Sengir",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle on Ulgrotha above the Dwarven Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the Dwarven Gate leads from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who saw the vampire army marching.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ihsan's Shade",
+   "type": "character",
+   "aliases": [
+    "Ihsan"
+   ],
+   "description": "Ordered the great army of vampires to march.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Confronted Sengir on the far side of the Gate in the BOOM! Comics version.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [
+    "the Mending"
+   ],
+   "description": "Event on whose eve the army marched; since then the portal is dead.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baron Sengir plans to conquer Ulgrotha and march troops through the portal.",
+   "participants": [
+    "Baron Sengir"
+   ],
+   "location": "Dwarven Gate",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Baron Sengir wished to conquer Ulgrotha"
+  },
+  {
+   "summary": "On the eve of the Great Mending, Leshrac sees a vast vampire army march at Ihsan's Shade's order, the Baron at its head walking through the portal.",
+   "participants": [
+    "Leshrac",
+    "Ihsan's Shade",
+    "Baron Sengir"
+   ],
+   "location": "Dwarven Gate",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Baron was last seen at the head of this army, walking through the portal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dwarven Gate",
+   "relation": "located_in",
+   "target": "Castle Sengir",
+   "note": "Portal lies beneath the castle.",
+   "paragraph": 0,
+   "quote": "The Dwarven Gate was a planar portal beneath Castle Sengir"
+  }
+ ],
+ "rejected": []
+}

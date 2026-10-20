@@ -1,0 +1,82 @@
+{
+ "page": "wiki/cormela",
+ "url": "https://mtg.wiki/page/Cormela",
+ "title": "Cormela",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:41Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Cormela, Glamour Thief",
+   "type": "character",
+   "aliases": [
+    "Cormela"
+   ],
+   "description": "A vampire rogue of the Maestros family in New Capenna, gallery owner and acquisition agent for Lord Xander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Xander",
+   "type": "character",
+   "aliases": [],
+   "description": "Maestros leader who personally mentored Cormela.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna crime family of vampires.",
+   "presence": "appears"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "District of New Capenna where Cormela has her gallery.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Cormela lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cormela recovers work from guarded private collections for Lord Xander, targeting those who try to weasel out of his deals.",
+   "participants": [
+    "Cormela, Glamour Thief",
+    "Lord Xander"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Cormela is one of Lord Xander's favorite acquisition agents"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cormela, Glamour Thief",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "Vampire rogue of the family",
+   "paragraph": 0,
+   "quote": "Cormela , Glamour Thief is a vampire rogue of the Maestros family in New Capenna"
+  },
+  {
+   "source": "Lord Xander",
+   "relation": "mentor_of",
+   "target": "Cormela, Glamour Thief",
+   "note": "Mentored under his personal instruction",
+   "paragraph": 1,
+   "quote": "curator mentored under Lord Xander 's own personal instruction"
+  }
+ ],
+ "rejected": []
+}

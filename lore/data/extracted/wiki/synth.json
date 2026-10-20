@@ -1,0 +1,111 @@
+{
+ "page": "wiki/synth",
+ "url": "https://mtg.wiki/page/Synth",
+ "title": "Synth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:38Z",
+ "storyline": "Fallout",
+ "entities": [
+  {
+   "name": "Synth",
+   "type": "concept",
+   "aliases": [
+    "synthetic humanoid"
+   ],
+   "description": "Humanoid robots or artificial humans manufactured in the Institute's laboratories.",
+   "presence": "appears"
+  },
+  {
+   "name": "Institute",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creators of synths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brotherhood of Steel",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction viewing synths as an existential threat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Railroad",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction sympathetic to synths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paladin Danse",
+   "type": "character",
+   "aliases": [
+    "Danse"
+   ],
+   "description": "A notable synth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nick Valentine",
+   "type": "character",
+   "aliases": [],
+   "description": "A notable synth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Generation 3 synths from the late 2220s were biological constructs nearly indistinguishable from humans.",
+   "participants": [
+    "Synth",
+    "Institute"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Generation 3 synths produced from the late 2220s onward were biological constructs near-indistinguishable from humans"
+  },
+  {
+   "summary": "The Brotherhood regards synths as a threat while the Railroad sympathizes.",
+   "participants": [
+    "Brotherhood of Steel",
+    "Railroad",
+    "Synth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "some view them with sympathy, such as the Railroad"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Institute",
+   "relation": "created",
+   "target": "Synth",
+   "note": "Manufactures them",
+   "paragraph": 2,
+   "quote": "manufactured within the Institute's laboratories"
+  },
+  {
+   "source": "Brotherhood of Steel",
+   "relation": "enemy",
+   "target": "Synth",
+   "note": "Considers them a threat",
+   "paragraph": 3,
+   "quote": "who consider them an existential threat to humanity"
+  },
+  {
+   "source": "Railroad",
+   "relation": "ally",
+   "target": "Synth",
+   "note": "Sympathetic",
+   "paragraph": 3,
+   "quote": "such as the Railroad"
+  }
+ ],
+ "rejected": []
+}

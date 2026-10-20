@@ -1,0 +1,123 @@
+{
+ "page": "wiki/muldrotha",
+ "url": "https://mtg.wiki/page/Muldrotha",
+ "title": "Muldrotha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Muldrotha",
+   "type": "character",
+   "aliases": [
+    "Muldrotha, the Gravetide"
+   ],
+   "description": "A Dominarian elemental avatar, spawn of Multani and Maro-Sorcerer of Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "Muldrotha's father, the Maro-Sorcerer of Yavimaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "The land of Multani, whose offshoot is on Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "The land that gave Muldrotha life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slimefoot",
+   "type": "character",
+   "aliases": [],
+   "description": "A being who requested Muldrotha's help against Yargle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The ship whose crew Muldrotha helped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yargle",
+   "type": "character",
+   "aliases": [],
+   "description": "A being Muldrotha helped defeat, later fighting Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which Multani bound himself to Yargle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders Yargle fought and ate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At Slimefoot's and Urborg's spirits' request, Muldrotha helped the Weatherlight crew defeat Yargle.",
+   "participants": [
+    "Muldrotha",
+    "Slimefoot",
+    "Yargle"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she helped the Weatherlight crew to defeat Yargle"
+  },
+  {
+   "summary": "Muldrotha persuaded Multani to help Yargle, and Multani bound himself to Yargle.",
+   "participants": [
+    "Muldrotha",
+    "Multani",
+    "Yargle"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Multani bound himself to Yargle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muldrotha",
+   "relation": "family",
+   "target": "Multani",
+   "note": "Spawn of Multani; he is her father",
+   "paragraph": 1,
+   "quote": "She is the spawn of Multani"
+  },
+  {
+   "source": "Multani",
+   "relation": "ally",
+   "target": "Yargle",
+   "note": "Bound himself to Yargle",
+   "paragraph": 2,
+   "quote": "Multani bound himself to Yargle"
+  }
+ ],
+ "rejected": []
+}

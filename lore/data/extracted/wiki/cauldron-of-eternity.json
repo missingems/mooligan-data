@@ -1,0 +1,123 @@
+{
+ "page": "wiki/cauldron-of-eternity",
+ "url": "https://mtg.wiki/page/Cauldron_of_Eternity",
+ "title": "Cauldron of Eternity",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:46Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cauldron of Eternity",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical stone bowl on Eldraine that grants eternal youth and can revive those it deems worthy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Cauldron is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Locthwain",
+   "type": "location",
+   "aliases": [],
+   "description": "Court of Eldraine that once housed the Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wilds",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Eldraine where Locthwain knights quested for the Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Will Kenrith",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose persistence summoned the Cauldron back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker cursed by the Chain Veil, freed and revived by the Cauldron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose curse afflicted Garruk Wildspeaker.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Cauldron vanished from Locthwain, and knights of that court quested in the Wilds to find it.",
+   "participants": [
+    "Locthwain"
+   ],
+   "location": "The Wilds",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "many knights of that court have quested in the Wilds"
+  },
+  {
+   "summary": "Will Kenrith's persistence summoned the Cauldron back, and it freed Garruk of the Chain Veil's curse and returned him to life.",
+   "participants": [
+    "Will Kenrith",
+    "Garruk Wildspeaker",
+    "Cauldron of Eternity"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Cauldron was used to free Garruk Wildspeaker of the Chain Veil 's curse and to return him to life"
+  },
+  {
+   "summary": "A voice called Garruk worthy.",
+   "participants": [
+    "Garruk Wildspeaker"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "A voice that squeezed the heart called Garruk worthy"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cauldron of Eternity",
+   "relation": "located_in",
+   "target": "Locthwain",
+   "note": "It used to be housed at Locthwain.",
+   "paragraph": 1,
+   "quote": "It used to be housed at Locthwain before it vanished"
+  },
+  {
+   "source": "Cauldron of Eternity",
+   "relation": "located_in",
+   "target": "Eldraine",
+   "note": "A magical artifact found on Eldraine.",
+   "paragraph": 0,
+   "quote": "a magical artifact found on the plane of Eldraine"
+  },
+  {
+   "source": "Garruk Wildspeaker",
+   "relation": "other",
+   "target": "Chain Veil",
+   "note": "Garruk was cursed by the Chain Veil.",
+   "paragraph": 2,
+   "quote": "free Garruk Wildspeaker of the Chain Veil 's curse"
+  }
+ ],
+ "rejected": []
+}

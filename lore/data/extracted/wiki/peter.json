@@ -1,0 +1,135 @@
+{
+ "page": "wiki/peter",
+ "url": "https://mtg.wiki/page/Peter",
+ "title": "Peter",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:08Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Peter",
+   "type": "character",
+   "aliases": [
+    "the Wolf Knight"
+   ],
+   "description": "Human woodsman of Eldraine, Ruby's brother, enchanted by Agatha into the Wolf Knight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruby",
+   "type": "character",
+   "aliases": [],
+   "description": "Peter's younger sister, raised by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agatha",
+   "type": "character",
+   "aliases": [],
+   "description": "Witch who enchanted Peter; killed by Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imodane",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured by Peter and Agatha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Agatha, breaking the enchantment on Peter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edgewall",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Peter lived and was considered best hunter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witchstalkers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Pack of creatures Peter fought off.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Peter lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "While hunting, Peter is enchanted by Agatha and becomes a fearsome wolf knight.",
+   "participants": [
+    "Peter",
+    "Agatha"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "While out hunting, he was enchanted by Agatha"
+  },
+  {
+   "summary": "Peter and Agatha capture Imodane.",
+   "participants": [
+    "Peter",
+    "Agatha",
+    "Imodane"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He and Agatha captured Imodane before he ran into Kellan and Ruby."
+  },
+  {
+   "summary": "Kellan kills Agatha, breaking the enchantment on Peter.",
+   "participants": [
+    "Kellan",
+    "Agatha",
+    "Peter"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the enchantment was broken when Kellan killed Agatha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Peter",
+   "relation": "family",
+   "target": "Ruby",
+   "note": "Brother",
+   "paragraph": 0,
+   "quote": "Ruby 's brother"
+  },
+  {
+   "source": "Agatha",
+   "relation": "other",
+   "target": "Peter",
+   "note": "Enchanted him",
+   "paragraph": 3,
+   "quote": "he was enchanted by Agatha"
+  },
+  {
+   "source": "Kellan",
+   "relation": "killed",
+   "target": "Agatha",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Kellan killed Agatha"
+  }
+ ],
+ "rejected": []
+}

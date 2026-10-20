@@ -1,0 +1,99 @@
+{
+ "page": "wiki/staff-of-zegon",
+ "url": "https://mtg.wiki/page/Staff_of_Zegon",
+ "title": "Staff of Zegon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Staff of Zegon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A dark wooden staff topped with a dolphin's skull, built by Ashnod to weaken targets by affecting nerves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Builder of the Staff of Zegon, later Mishra's apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose maq fawa was kept from Zegon; took Ashnod as apprentice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zegon",
+   "type": "location",
+   "aliases": [],
+   "description": "City protected by the staff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hajar",
+   "type": "character",
+   "aliases": [],
+   "description": "Target weakened by the staff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maq fawa",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mishra's force kept from approaching Zegon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashnod snuck into Mishra's camp and used the staff on Hajar.",
+   "participants": [
+    "Ashnod",
+    "Hajar",
+    "Mishra"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ashnod snuck into Mishra's camp with the staff and used it on Hajar"
+  },
+  {
+   "summary": "Impressed, Mishra took Ashnod on as his apprentice.",
+   "participants": [
+    "Mishra",
+    "Ashnod"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mishra was so impressed with Ashnod's design of the staff that he took her on as his apprentice"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "created",
+   "target": "Staff of Zegon",
+   "note": "Built it",
+   "paragraph": 0,
+   "quote": "an artifact built by Ashnod"
+  },
+  {
+   "source": "Mishra",
+   "relation": "mentor_of",
+   "target": "Ashnod",
+   "note": "Took her as apprentice",
+   "paragraph": 1,
+   "quote": "he took her on as his apprentice"
+  }
+ ],
+ "rejected": []
+}

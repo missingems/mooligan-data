@@ -1,0 +1,110 @@
+{
+ "page": "wiki/qala",
+ "url": "https://mtg.wiki/page/Qala",
+ "title": "Qala",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Qala",
+   "type": "character",
+   "aliases": [],
+   "description": "Nacatl leonin of Alara and former tribemate of Ajani and Jazal Goldmane, who abandoned Ajani to human hunters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenoch",
+   "type": "character",
+   "aliases": [],
+   "description": "Nacatl leonin who patrolled with Qala and Ajani and abandoned Ajani with Qala.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "Planeswalker, white-furred leonin whom Qala and Tenoch called jinxed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jazal Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "Ajani's brother and kha of the Nacatl tribe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nacatl",
+   "type": "faction",
+   "aliases": [],
+   "description": "The leonin tribe of Qala, Tenoch, Ajani and Jazal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Qala lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara where leonin and humans are usually not hostile.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Qala and Tenoch are assigned to patrol with Ajani, and protest that he is jinxed; Jazal's word as kha is final.",
+   "participants": [
+    "Qala",
+    "Tenoch",
+    "Ajani Goldmane",
+    "Jazal Goldmane"
+   ],
+   "location": "Naya",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "But Ajani's brother Jazal Goldmane was the kha of their tribe, and his word was final."
+  },
+  {
+   "summary": "Human hunters attack the patrol to claim Ajani's white hide, and Qala and Tenoch stay behind, abandoning Ajani to his fate.",
+   "participants": [
+    "Qala",
+    "Tenoch",
+    "Ajani Goldmane"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Tenoch and Qala stayed behind, abandoning Ajani to his fate."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jazal Goldmane",
+   "relation": "leader_of",
+   "target": "Nacatl",
+   "note": "Jazal is the kha of the tribe.",
+   "paragraph": 1,
+   "quote": "Jazal Goldmane was the kha of their tribe"
+  },
+  {
+   "source": "Jazal Goldmane",
+   "relation": "family",
+   "target": "Ajani Goldmane",
+   "note": "Brothers.",
+   "paragraph": 1,
+   "quote": "Ajani's brother Jazal Goldmane"
+  }
+ ],
+ "rejected": []
+}

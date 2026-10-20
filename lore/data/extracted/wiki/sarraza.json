@@ -1,0 +1,130 @@
+{
+ "page": "wiki/sarraza",
+ "url": "https://mtg.wiki/page/Sarraza",
+ "title": "Sarraza",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [
+    "Sarazzan Mount"
+   ],
+   "description": "Mountain in the Borderlands of the Terisian Isles on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor",
+   "type": "character",
+   "aliases": [],
+   "description": "Songmage who bound the Beast of the Hours beneath Sarraza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cockatrice bound beneath the mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valley of the Chimes",
+   "type": "location",
+   "aliases": [
+    "hidden valley of the Chimes"
+   ],
+   "description": "Hidden valley behind the mountain whose chimes power a banishing spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarrazan River",
+   "type": "location",
+   "aliases": [],
+   "description": "River flowing through the land.",
+   "presence": "appears"
+  },
+  {
+   "name": "Borderlands",
+   "type": "location",
+   "aliases": [],
+   "description": "Smaller island southwest of Almaaz including Sarraza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "Flooding that cut Sarraza off from Almaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Island Sarraza was cut off from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samor binds the Beast of the Hours beneath Sarraza.",
+   "participants": [
+    "Samor",
+    "Beast of the Hours",
+    "Sarraza"
+   ],
+   "location": "Sarraza",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the songmage Samor bound the cockatrice called the Beast of the Hours beneath the mountain"
+  },
+  {
+   "summary": "Samor discovers the hidden valley of the Chimes and uses its magic to create a spell to banish the beast.",
+   "participants": [
+    "Samor",
+    "Valley of the Chimes",
+    "Beast of the Hours"
+   ],
+   "location": "Sarraza",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "used the magic of its great chimes to create a spell that would banish the beast"
+  },
+  {
+   "summary": "The flooding of the Thaw cuts Sarraza off from the rest of Almaaz.",
+   "participants": [
+    "Sarraza",
+    "Thaw",
+    "Almaaz"
+   ],
+   "location": "Almaaz",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "it became cut off from the rest of Almaaz by the flooding of the Thaw"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor",
+   "relation": "enemy",
+   "target": "Beast of the Hours",
+   "note": "bound it",
+   "paragraph": 1,
+   "quote": "the songmage Samor bound the cockatrice"
+  },
+  {
+   "source": "Sarraza",
+   "relation": "located_in",
+   "target": "Borderlands",
+   "note": "mountain in the Borderlands",
+   "paragraph": 0,
+   "quote": "is a mountain in the Borderlands"
+  }
+ ],
+ "rejected": []
+}

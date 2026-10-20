@@ -1,0 +1,110 @@
+{
+ "page": "wiki/murmuring-bosk-weeping-bosk",
+ "url": "https://mtg.wiki/page/Murmuring_Bosk/Weeping_Bosk",
+ "title": "Murmuring Bosk/Weeping Bosk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:08Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Weeping Bosk",
+   "type": "location",
+   "aliases": [
+    "Murmuring Bosk"
+   ],
+   "description": "Secluded grove by the Wanderbrine River, home of Colfenor, where Rhys trained in yew magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Young elf who trained in yew magic under Colfenor and joined the Wilt-Leaf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [
+    "Colfenor the Red Yew"
+   ],
+   "description": "Treefolk, Colfenor the Red Yew, home of the Weeping Bosk for hundreds of years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wilt-Leaf",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elf faction Rhys served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kinscaer",
+   "type": "location",
+   "aliases": [],
+   "description": "Kithkin doun where Colfenor died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Faerie queen whose birth was the last such spectacle at Glen Elendra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of Oona's birth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rhys trains in yew magic with Colfenor, who is disappointed when Rhys chooses to serve the Wilt-Leaf.",
+   "participants": [
+    "Rhys",
+    "Colfenor",
+    "Wilt-Leaf"
+   ],
+   "location": "Weeping Bosk",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Colfenor at first delighted in his abilities, but then became disappointed when Rhys decided to use his magic skills in service of the Wilt-Leaf instead of fostering the treefolk seedlings."
+  },
+  {
+   "summary": "Colfenor dies in Kinscaer and the bosk begins growing buds that burst open with faeries.",
+   "participants": [
+    "Colfenor",
+    "Weeping Bosk"
+   ],
+   "location": "Kinscaer",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the bosk started growing rows of green vine stalks carrying growing buds."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Colfenor",
+   "relation": "mentor_of",
+   "target": "Rhys",
+   "note": "",
+   "paragraph": 0,
+   "quote": "where Rhys received his yew magic training from Colfenor"
+  },
+  {
+   "source": "Rhys",
+   "relation": "serves",
+   "target": "Wilt-Leaf",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Rhys decided to use his magic skills in service of the Wilt-Leaf"
+  }
+ ],
+ "rejected": []
+}

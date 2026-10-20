@@ -1,0 +1,161 @@
+{
+ "page": "wiki/cho-manno",
+ "url": "https://mtg.wiki/page/Cho-Manno",
+ "title": "Cho-Manno",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:05Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cho-Manno",
+   "type": "character",
+   "aliases": [],
+   "description": "Spiritual and political leader of the Cho-Arrim on Mercadia and follower of the Ramos mythology.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Mercadia led by Cho-Manno, pushed out of their ancestral lands by the Kyren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [
+    "Mercadians"
+   ],
+   "description": "Plane where the Cho-Arrim rebelled against the Kyren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kyren",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ruling masters of Mercadia who oppressed the Cho-Arrim and were overthrown and exiled.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Weatherlight crew"
+   ],
+   "description": "Ship whose crew helped Cho-Manno free his people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orim",
+   "type": "character",
+   "aliases": [],
+   "description": "Healer who fell in love with Cho-Manno, cured the Phyrexian plague and later married him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Took Orim to Mercadia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oriss",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter of Cho-Manno and Orim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Revolution on Mercadia",
+   "type": "event",
+   "aliases": [],
+   "description": "Uprising that overthrew and exiled the ruling Kyren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion of Dominaria in which Orim cured the Phyrexian plague.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cho-Manno guides the Cho-Arrim in rebellion against the Mercadians and Kyren masters.",
+   "participants": [
+    "Cho-Manno",
+    "Cho-Arrim",
+    "Kyren"
+   ],
+   "location": "Mercadia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Cho-Manno guided his people in their rebellion against the oppression of the Mercadians"
+  },
+  {
+   "summary": "The Weatherlight crew helps free the Cho-Arrim and Cho-Manno falls in love with Orim.",
+   "participants": [
+    "Weatherlight",
+    "Cho-Manno",
+    "Orim"
+   ],
+   "location": "Mercadia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he fell in love with Orim while they did"
+  },
+  {
+   "summary": "Orim is taken by Karn to Mercadia and marries Cho-Manno; they have a daughter, Oriss.",
+   "participants": [
+    "Karn",
+    "Orim",
+    "Cho-Manno",
+    "Oriss"
+   ],
+   "location": "Mercadia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Orim was taken by Karn to Mercadia, where she married Cho-Manno"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cho-Manno",
+   "relation": "leader_of",
+   "target": "Cho-Arrim",
+   "note": "spiritual and political leader",
+   "paragraph": 0,
+   "quote": "Cho-Manno was the spiritual and political leader of the Cho-Arrim on Mercadia"
+  },
+  {
+   "source": "Cho-Manno",
+   "relation": "romantic",
+   "target": "Orim",
+   "note": "married",
+   "paragraph": 3,
+   "quote": "where she married Cho-Manno"
+  },
+  {
+   "source": "Cho-Manno",
+   "relation": "family",
+   "target": "Oriss",
+   "note": "father; they had a daughter",
+   "paragraph": 3,
+   "quote": "They had a daughter named Oriss"
+  },
+  {
+   "source": "Cho-Arrim",
+   "relation": "enemy",
+   "target": "Kyren",
+   "note": "oppressed and rebelled against",
+   "paragraph": 1,
+   "quote": "their Kyren masters, who were pushing the Cho-Arrim out of their ancestral lands"
+  }
+ ],
+ "rejected": []
+}

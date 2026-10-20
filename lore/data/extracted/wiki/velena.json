@@ -1,0 +1,111 @@
+{
+ "page": "wiki/velena",
+ "url": "https://mtg.wiki/page/Velena",
+ "title": "Velena",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:40Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Velena",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Shanna's crew on the Weatherlight, assigned to the weapons podium, killed by Phyrexian powerbolts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Airship whose crew included Velena; it was compleated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shanna",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose crew Velena belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arvad",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member who searched for Shanna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elmegraun",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member killed with Velena by powerbolts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bone dragon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon the Weatherlight crew battled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Velena identifies the bone dragon and urges the crew to act.",
+   "participants": [
+    "Velena",
+    "Bone dragon"
+   ],
+   "location": "Weatherlight",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she quickly identified the dragon and urged the crew to take action"
+  },
+  {
+   "summary": "Velena, Arvad and Elmegraun go to find Shanna and warn her group of the danger to the Weatherlight.",
+   "participants": [
+    "Velena",
+    "Arvad",
+    "Elmegraun",
+    "Shanna"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They found Shanna's group along the trail"
+  },
+  {
+   "summary": "Sickly green powerbolts hit Velena and Elmegraun, melting them into puddles and killing them instantly.",
+   "participants": [
+    "Velena",
+    "Elmegraun"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Velena and Elmegraun were directly hit by the powerbolts, which melted them into puddles, killing them instantly."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Velena",
+   "relation": "member_of",
+   "target": "Weatherlight",
+   "note": "She was crew on the ship.",
+   "paragraph": 1,
+   "quote": "Velena was a member of the Weatherlight 's crew"
+  },
+  {
+   "source": "Velena",
+   "relation": "serves",
+   "target": "Shanna",
+   "note": "One of Shanna's crew.",
+   "paragraph": 0,
+   "quote": "Velena was one of Shanna 's crew on the Weatherlight"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,92 @@
+{
+ "page": "wiki/serenok",
+ "url": "https://mtg.wiki/page/Serenok",
+ "title": "Serenok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:42Z",
+ "storyline": "Regatha",
+ "entities": [
+  {
+   "name": "Serenok",
+   "type": "character",
+   "aliases": [],
+   "description": "The abbot of Keral Keep on Regatha who mentored Chandra Nalaar and died in his sleep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keral Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Monastery on Regatha led by an abbot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mother Luti",
+   "type": "character",
+   "aliases": [],
+   "description": "Mentor who with Serenok trained Chandra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A pyromancer mentored as potential heir.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Serenok and Mother Luti mentored Chandra Nalaar to secure an heir.",
+   "participants": [
+    "Serenok",
+    "Mother Luti",
+    "Chandra Nalaar"
+   ],
+   "location": "Keral Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Serenok and Mother Luti took it upon themselves to personally mentor Chandra Nalaar"
+  },
+  {
+   "summary": "Serenok died in his sleep.",
+   "participants": [
+    "Serenok",
+    "Chandra Nalaar"
+   ],
+   "location": "Keral Keep",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Serenok passed away in his sleep"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Serenok",
+   "relation": "mentor_of",
+   "target": "Chandra Nalaar",
+   "note": "Mentored her as heir",
+   "paragraph": 1,
+   "quote": "personally mentor Chandra Nalaar"
+  },
+  {
+   "source": "Serenok",
+   "relation": "leader_of",
+   "target": "Keral Keep",
+   "note": "Abbot",
+   "paragraph": 0,
+   "quote": "Serenok was the abbot of Keral Keep"
+  }
+ ],
+ "rejected": []
+}

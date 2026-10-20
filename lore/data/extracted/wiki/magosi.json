@@ -1,0 +1,81 @@
+{
+ "page": "wiki/magosi",
+ "url": "https://mtg.wiki/page/Magosi",
+ "title": "Magosi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Magosi",
+   "type": "location",
+   "aliases": [
+    "Waterveil"
+   ],
+   "description": "Towering waterfall on the continent of Tazeem on Zendikar, the largest along the Umara River, with a busy portage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazeem",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar where Magosi lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Magosi lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Umara River",
+   "type": "location",
+   "aliases": [],
+   "description": "River along which Magosi is the largest waterfall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Verazol",
+   "type": "creature",
+   "aliases": [],
+   "description": "Massive serpent that dwells in the dark waters behind Magosi and likely takes travelers who camp overnight.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "People mysteriously vanish at night at the Magosi portage, likely taken by Verazol.",
+   "participants": [
+    "Verazol"
+   ],
+   "location": "Magosi",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Numerous people have mysteriously vanished during the night"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Magosi",
+   "relation": "located_in",
+   "target": "Tazeem",
+   "note": "Magosi is on the continent of Tazeem.",
+   "paragraph": 0,
+   "quote": "located on the continent of Tazeem within the plane of Zendikar"
+  },
+  {
+   "source": "Verazol",
+   "relation": "located_in",
+   "target": "Magosi",
+   "note": "Verazol dwells in the waters behind the waterfall.",
+   "paragraph": 2,
+   "quote": "the massive serpent that dwells in the dark waters concealed behind the waterfall"
+  }
+ ],
+ "rejected": []
+}

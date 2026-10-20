@@ -1,0 +1,100 @@
+{
+ "page": "wiki/obeka",
+ "url": "https://mtg.wiki/page/Obeka",
+ "title": "Obeka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Obeka",
+   "type": "character",
+   "aliases": [
+    "Selwan, Timesmasher"
+   ],
+   "description": "An ogre mage chronologist who breaks the flow of time by brute force; a mercenary for the Slickshot Gang on Thunder Junction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Obeka traveled to via Omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Passage Obeka used to reach Thunder Junction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slickshot Gang",
+   "type": "faction",
+   "aliases": [],
+   "description": "A criminal gang that Obeka worked for as mercenary.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nashi",
+   "type": "character",
+   "aliases": [],
+   "description": "Thief who stole the gang's magic-amplifying elixir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magic-amplifying elixir",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Elixir possessed by the gang's leader that made the gang big players in the underworld.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Obeka travels to Thunder Junction via Omenpath and becomes a mercenary for the Slickshot Gang.",
+   "participants": [
+    "Obeka",
+    "Slickshot Gang"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "found work as a hired mercenary for the Slickshot Gang"
+  },
+  {
+   "summary": "Nashi steals the elixir, which Obeka failed to prevent.",
+   "participants": [
+    "Nashi",
+    "Obeka"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Obeka was unable to prevent the elixir's theft by"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Obeka",
+   "relation": "serves",
+   "target": "Slickshot Gang",
+   "note": "Hired mercenary.",
+   "paragraph": 3,
+   "quote": "found work as a hired mercenary for the Slickshot Gang"
+  },
+  {
+   "source": "Nashi",
+   "relation": "enemy",
+   "target": "Slickshot Gang",
+   "note": "Nashi stole their elixir.",
+   "paragraph": 3,
+   "quote": "the elixir's theft by"
+  }
+ ],
+ "rejected": []
+}

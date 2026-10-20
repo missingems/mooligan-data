@@ -1,0 +1,115 @@
+{
+ "page": "wiki/house-bikov",
+ "url": "https://mtg.wiki/page/House_Bikov",
+ "title": "House Bikov",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "House Bikov",
+   "type": "faction",
+   "aliases": [
+    "House Sapphire"
+   ],
+   "description": "One of the five powerful houses of Arathoxia, also called House Sapphire, ruled by Marshall Bikov.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marshall Bikov",
+   "type": "character",
+   "aliases": [
+    "Marshal Bikov"
+   ],
+   "description": "Merfolk lord of House Bikov, ally of Lady Verdenth, killed by the Chaos Orb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Corondor with five powerful houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "A battlemage who invaded Arathoxia and later held the blue Mox.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chaos Orb",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ravidel's weapon that obliterated House Bikov and its leader.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [],
+   "description": "Once possessed the blue Mox.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Verdenth",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally of Marshall Bikov during the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Arathoxia lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "House Bikov was destroyed in Ravidel's invasion of Arathoxia, obliterated with its leader by the Chaos Orb.",
+   "participants": [
+    "Ravidel",
+    "House Bikov",
+    "Marshall Bikov",
+    "Chaos Orb"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "House Bikov was destroyed in Ravidel’s invasion of Arathoxia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marshall Bikov",
+   "relation": "leader_of",
+   "target": "House Bikov",
+   "note": "He ruled the house.",
+   "paragraph": 0,
+   "quote": "ruled by Marshall Bikov"
+  },
+  {
+   "source": "Chaos Orb",
+   "relation": "killed",
+   "target": "Marshall Bikov",
+   "note": "He was killed by the Chaos Orb.",
+   "paragraph": 2,
+   "quote": "was killed by the Chaos Orb"
+  },
+  {
+   "source": "Marshall Bikov",
+   "relation": "ally",
+   "target": "Lady Verdenth",
+   "note": "Allied during Ravidel's invasion.",
+   "paragraph": 2,
+   "quote": "He was allied with Lady Verdenth during Ravidel ’s invasion of Arathoxia"
+  }
+ ],
+ "rejected": []
+}

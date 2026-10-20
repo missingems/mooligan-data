@@ -1,0 +1,98 @@
+{
+ "page": "wiki/anton",
+ "url": "https://mtg.wiki/page/Anton",
+ "title": "Anton",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Anton",
+   "type": "character",
+   "aliases": [],
+   "description": "A green and white planeswalker who dueled Karshan on at least three occasions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karshan",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who battled Anton for dominion over the Multiverse and defeated him with a goblin raiding band and juggernaut.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scryb sprites",
+   "type": "faction",
+   "aliases": [
+    "Scryb"
+   ],
+   "description": "Forest sprites summoned by Anton in his final duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Anton's cottage, destroyed by stone rain.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Anton and Karshan fight three duels for dominion over the Multiverse.",
+   "participants": [
+    "Anton",
+    "Karshan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Anton battled Karshan for dominion over the Multiverse"
+  },
+  {
+   "summary": "In the final duel Anton's cottage is destroyed by stone rain; he summons a colossal spider and the Scryb sprites but falls to Karshan's goblin raiders and juggernaut.",
+   "participants": [
+    "Anton",
+    "Karshan",
+    "Scryb sprites"
+   ],
+   "location": "Great Plains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he fell to Karshan's goblin raiding band and juggernaut"
+  },
+  {
+   "summary": "Anton prefers dying to watching Karshan rule and swears his spirit will reclaim what was his.",
+   "participants": [
+    "Anton",
+    "Karshan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Anton preferred dying over watching Karshan rule over the Multiverse."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anton",
+   "relation": "enemy",
+   "target": "Karshan",
+   "note": "Rivals in three duels for dominion of the Multiverse.",
+   "paragraph": 1,
+   "quote": "Anton battled Karshan for dominion over the Multiverse"
+  },
+  {
+   "source": "Karshan",
+   "relation": "killed",
+   "target": "Anton",
+   "note": "Anton fell to Karshan's forces.",
+   "paragraph": 1,
+   "quote": "he fell to Karshan's goblin raiding band and juggernaut"
+  }
+ ],
+ "rejected": []
+}

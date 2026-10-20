@@ -1,0 +1,129 @@
+{
+ "page": "wiki/iron-kingdom",
+ "url": "https://mtg.wiki/page/Iron_Kingdom",
+ "title": "Iron Kingdom",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Iron Kingdom",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient war-empire on Corondor founded by Mandek Ironfist, with Ironhold as its capital.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruthless warlord who founded the Iron Kingdom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "A fallen angel ordered by Mandek to annihilate Gan; absolved and ended by her sister Rahel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rahel",
+   "type": "character",
+   "aliases": [],
+   "description": "Serra Angel and sister of Trine who ended Trine's existence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gan",
+   "type": "location",
+   "aliases": [
+    "Ironhold"
+   ],
+   "description": "Abandoned city on Corondor whose over 100,000 Ganarians were annihilated; renamed Ironhold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Corondor where Mandek established his domain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Iron Kingdom lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Absolution of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which Rahel ended Trine's tormented existence at Ironhold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wolf's Hackle",
+   "type": "location",
+   "aliases": [],
+   "description": "Landmark north of the thought location of the Iron Kingdom.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mandek orders Trine to annihilate Gan's population and makes it his capital, Ironhold.",
+   "participants": [
+    "Mandek Ironfist",
+    "Trine"
+   ],
+   "location": "Gan",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "choosing the abandoned city of Gan as his capital after ordering the fallen angel Trine to annihilate its entire population of over 100,000 Ganarians"
+  },
+  {
+   "summary": "Rahel ends Trine's tormented existence at Ironhold in the Absolution of Trine.",
+   "participants": [
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Gan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Serra Angel Rahel , ended Trine's tormented existence, absolving her of her ancient crimes"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mandek Ironfist",
+   "relation": "created",
+   "target": "Iron Kingdom",
+   "note": "Founder",
+   "paragraph": 0,
+   "quote": "founded by the ruthless warlord Mandek Ironfist"
+  },
+  {
+   "source": "Rahel",
+   "relation": "family",
+   "target": "Trine",
+   "note": "Sisters",
+   "paragraph": 1,
+   "quote": "Trine's sister, the Serra Angel Rahel"
+  },
+  {
+   "source": "Mandek Ironfist",
+   "relation": "other",
+   "target": "Trine",
+   "note": "Ordered her to destroy Gan",
+   "paragraph": 0,
+   "quote": "after ordering the fallen angel Trine to annihilate its entire population"
+  }
+ ],
+ "rejected": []
+}

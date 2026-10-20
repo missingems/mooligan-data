@@ -1,0 +1,102 @@
+{
+ "page": "wiki/askaranton",
+ "url": "https://mtg.wiki/page/Askaranton",
+ "title": "Askaranton",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Askaranton",
+   "type": "location",
+   "aliases": [
+    "Askantaron"
+   ],
+   "description": "A former kingdom in the Domains of Dominaria, raided by Keld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keldon warriors",
+   "type": "faction",
+   "aliases": [
+    "Keld"
+   ],
+   "description": "Warriors of Keld, some with Phyrexian genes from the Bloodline project, who skirmished in Askaranton.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexia"
+   ],
+   "description": "Had sleeper agents in Askantaron reporting on the skirmish.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Croag",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian put on the trail of Gatha's meddling in Keld's bloodlines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatha",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose meddling in Keld's bloodlines drew Phyrexian ire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Icehaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of the Keldon army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodline project",
+   "type": "concept",
+   "aliases": [],
+   "description": "Project giving some Keldon warriors Phyrexian components in their genes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phyrexian sleeper agents report a skirmish between locals and Keldon warriors, some with Phyrexian affinities.",
+   "participants": [
+    "Keldon warriors",
+    "Phyrexians"
+   ],
+   "location": "Askaranton",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Phyrexian sleeper agents in Askantaron reported a skirmish between the locals and a large number of Keldon warriors"
+  },
+  {
+   "summary": "After Keld's visit Askantaron is no longer a kingdom, and the Keldon army ships plunder back to Icehaven.",
+   "participants": [
+    "Keldon warriors"
+   ],
+   "location": "Askaranton",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After Keld's visit, Askantaron was no longer a kingdom"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Keldon warriors",
+   "relation": "enemy",
+   "target": "Askaranton",
+   "note": "Keld raided and ended the kingdom.",
+   "paragraph": 1,
+   "quote": "After Keld's visit, Askantaron was no longer a kingdom"
+  }
+ ],
+ "rejected": []
+}

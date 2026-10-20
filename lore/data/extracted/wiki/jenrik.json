@@ -1,0 +1,157 @@
+{
+ "page": "wiki/jenrik",
+ "url": "https://mtg.wiki/page/Jenrik",
+ "title": "Jenrik",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jenrik",
+   "type": "character",
+   "aliases": [],
+   "description": "A mysterious astronomancer who lived in a tall tower on Innistrad and studied the stars; he died trapped in the walls of Markov Manor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Jenrik lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "A province of Innistrad containing the Silver Beach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silver Beach",
+   "type": "location",
+   "aliases": [],
+   "description": "A beach in Nephalia where Jenrik's tower stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jenrik's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "A tall tower on the Silver Beach whose mortar was mixed with glittering sand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A moonfolk planeswalker, the only person welcomed by Jenrik.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire of Markov Manor whom Jenrik went to question.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Markov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "The castle where Jenrik was trapped in the walls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who later found Tamiyo's journal in Jenrik's petrified hands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Jenrik's old friend and colleague who took up his work.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tamiyo spent months studying Jenrik's charts and adding her observations.",
+   "participants": [
+    "Tamiyo",
+    "Jenrik"
+   ],
+   "location": "Jenrik's Tower",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She spent months poring over his countless charts and adding her observations."
+  },
+  {
+   "summary": "At Tamiyo's urging, Jenrik went to Markov Manor to question Sorin Markov; he and the vampires were trapped in the walls.",
+   "participants": [
+    "Jenrik",
+    "Sorin Markov"
+   ],
+   "location": "Markov Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "someone ripped the castle apart and trapped the vampires and Jenrik in the walls"
+  },
+  {
+   "summary": "Jace Beleren pried Tamiyo's journal from Jenrik's petrified hands.",
+   "participants": [
+    "Jace Beleren",
+    "Jenrik",
+    "Tamiyo"
+   ],
+   "location": "Markov Manor",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jace Beleren later found Tamiyo's journal, and pried it from Jenrik's petrified hands."
+  },
+  {
+   "summary": "Vadrik took up Jenrik's work after his death.",
+   "participants": [
+    "Vadrik",
+    "Jenrik"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "his old friend and colleague Vadrik took up the burden of his work"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jenrik",
+   "relation": "located_in",
+   "target": "Silver Beach",
+   "note": "Lived in a tower there",
+   "paragraph": 0,
+   "quote": "living in a tall tower on the Silver Beach of Innistrad's province of Nephalia"
+  },
+  {
+   "source": "Tamiyo",
+   "relation": "ally",
+   "target": "Jenrik",
+   "note": "Only person welcomed by him",
+   "paragraph": 2,
+   "quote": "The only person welcomed by Jenrik was the moonfolk planeswalker Tamiyo"
+  },
+  {
+   "source": "Vadrik",
+   "relation": "ally",
+   "target": "Jenrik",
+   "note": "Old friend and colleague",
+   "paragraph": 3,
+   "quote": "his old friend and colleague Vadrik"
+  }
+ ],
+ "rejected": []
+}

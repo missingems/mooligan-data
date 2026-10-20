@@ -1,0 +1,107 @@
+{
+ "page": "wiki/plains-of-oneah",
+ "url": "https://mtg.wiki/page/Plains_of_Oneah",
+ "title": "Plains of Oneah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Plains of Oneah",
+   "type": "location",
+   "aliases": [
+    "Plain of Suns"
+   ],
+   "description": "Plains in the center of the island of Oneah in the Domains, also called the Plain of Suns, once home to the Seven Cities of the Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oneah",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the Domains and nation whose heartland was the Plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seven Cities of the Sun",
+   "type": "location",
+   "aliases": [],
+   "description": "The heartland cities of the nation of Oneah, which fell to the goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hordes from the Red Mountains who destroyed the Cities of the Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goblin War",
+   "type": "event",
+   "aliases": [],
+   "description": "A lengthy war preceding the goblin swarming in 4165.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains ringing the plains, where goblin warrens lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Domains",
+   "type": "plane",
+   "aliases": [],
+   "description": "Region containing the island of Oneah.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4165, after the Goblin War, goblins swarm from the Red Mountains and fill the plains with bloodshed.",
+   "participants": [
+    "Goblins",
+    "Plains of Oneah"
+   ],
+   "location": "Plains of Oneah",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "goblins swarmed from their warrens in the Red Mountains"
+  },
+  {
+   "summary": "The Cities of the Sun fall one by one and survivors flee, never to return.",
+   "participants": [
+    "Goblins",
+    "Seven Cities of the Sun"
+   ],
+   "location": "Plains of Oneah",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "One by one, the Cities of the Sun fell to the rampaging hordes."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Plains of Oneah",
+   "relation": "located_in",
+   "target": "Oneah",
+   "note": "In the central part of the island.",
+   "paragraph": 0,
+   "quote": "in the central part of the island of Oneah"
+  },
+  {
+   "source": "Goblins",
+   "relation": "enemy",
+   "target": "Seven Cities of the Sun",
+   "note": "They razed the cities.",
+   "paragraph": 1,
+   "quote": "the Cities of the Sun fell to the rampaging hordes"
+  }
+ ],
+ "rejected": []
+}

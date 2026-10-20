@@ -1,0 +1,94 @@
+{
+ "page": "wiki/aretopolis",
+ "url": "https://mtg.wiki/page/Aretopolis",
+ "title": "Aretopolis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aretopolis",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital city of Kephalai, famed for the Sanctum of Stars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kephalai",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose capital is Aretopolis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanctum of Stars",
+   "type": "location",
+   "aliases": [],
+   "description": "Famed museum in Aretopolis that stored the Dragon Scroll; collapsed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon Scroll",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact stored in the Sanctum of Stars and stolen by Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Planeswalker who stole the Dragon Scroll twice and collapsed the building.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who retrieved the Dragon Scroll.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandra Nalaar steals the Dragon Scroll from the Sanctum of Stars.",
+   "participants": [
+    "Chandra Nalaar",
+    "Dragon Scroll",
+    "Sanctum of Stars"
+   ],
+   "location": "Aretopolis",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Chandra Nalaar stole the Dragon Scroll from the Sanctum of Stars"
+  },
+  {
+   "summary": "Jace retrieves the scroll; Chandra returns and steals it again, accidentally collapsing the building with her explosive magic.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Sanctum of Stars"
+   ],
+   "location": "Aretopolis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "accidentally causing the entire building to collapse after she used her explosive magic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aretopolis",
+   "relation": "located_in",
+   "target": "Kephalai",
+   "note": "Capital city of the plane.",
+   "paragraph": 0,
+   "quote": "Aretopolis is the capital city on the plane of Kephalai"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,142 @@
+{
+ "page": "wiki/zagorka",
+ "url": "https://mtg.wiki/page/Zagorka",
+ "title": "Zagorka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:05Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Zagorka",
+   "type": "character",
+   "aliases": [
+    "She Disputes"
+   ],
+   "description": "Elderly human woman of Otaria who became leader of the refugees in Sanctum and was accidentally killed by Kamahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chester",
+   "type": "creature",
+   "aliases": [
+    "Stonebrow"
+   ],
+   "description": "Zagorka's mule.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard of Aphetto against whom the Nightmare War was fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter who killed Akroma, Phage and accidentally Zagorka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akroma",
+   "type": "character",
+   "aliases": [],
+   "description": "Combatant in the final battle with Phage, killed by Kamahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [],
+   "description": "Combatant in the final battle with Akroma, killed by Kamahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanctum",
+   "type": "location",
+   "aliases": [],
+   "description": "Abandoned city on the Corian Escarpment where refugees found asylum; it was the Numena Averru.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Averru",
+   "type": "character",
+   "aliases": [
+    "Numena Averru"
+   ],
+   "description": "Numena who was the city of Sanctum and regarded Zagorka as his mother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nightmare War",
+   "type": "event",
+   "aliases": [],
+   "description": "War against the wizard Ixidor in Aphetto.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Dominaria where Zagorka lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Zagorka sought employment.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zagorka flees the overwhelming Nightmare War and finds refuge in the abandoned city of Sanctum.",
+   "participants": [
+    "Zagorka",
+    "Chester",
+    "Sanctum"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she fled when the battle became overwhelming"
+  },
+  {
+   "summary": "Kamahl kills Akroma and Phage and accidentally Zagorka.",
+   "participants": [
+    "Kamahl",
+    "Akroma",
+    "Phage",
+    "Zagorka"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kamahl killed them both and (accidentally) Zagorka as well"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zagorka",
+   "relation": "other",
+   "target": "Chester",
+   "note": "Long-time companion and mule",
+   "paragraph": 1,
+   "quote": "They seemed long-time companions"
+  },
+  {
+   "source": "Kamahl",
+   "relation": "killed",
+   "target": "Zagorka",
+   "note": "Accidentally",
+   "paragraph": 2,
+   "quote": "Kamahl killed them both and (accidentally) Zagorka as well"
+  }
+ ],
+ "rejected": []
+}

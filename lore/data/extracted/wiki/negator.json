@@ -1,0 +1,83 @@
+{
+ "page": "wiki/negator",
+ "url": "https://mtg.wiki/page/Negator",
+ "title": "Negator",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Phyrexian Negator",
+   "type": "creature",
+   "aliases": [
+    "Negator",
+    "Negators"
+   ],
+   "description": "One of Phyrexia's most notorious creations, made to track and destroy planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane that creates negators.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whom Phyrexia tried to destroy using negators before the Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of a Phyrexian attack in which negators were the chief operatives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which negators were used very scarcely.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Negators were the chief operatives during the Phyrexian attack on the original Tolarian Academy.",
+   "participants": [
+    "Phyrexian Negator",
+    "Tolarian Academy"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Negators were the chief operatives during the Phyrexian attack on the original Tolarian Academy"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phyrexia",
+   "relation": "created",
+   "target": "Phyrexian Negator",
+   "note": "Created for tracking and destroying planeswalkers.",
+   "paragraph": 1,
+   "quote": "Negators were created for the sole purpose of tracking and destroying planeswalkers"
+  },
+  {
+   "source": "Phyrexian Negator",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "Used in attempts to destroy Urza.",
+   "paragraph": 1,
+   "quote": "later chiefly used in Phyrexia's attempts to destroy Urza"
+  }
+ ],
+ "rejected": []
+}

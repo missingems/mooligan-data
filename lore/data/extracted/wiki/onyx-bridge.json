@@ -1,0 +1,120 @@
+{
+ "page": "wiki/onyx-bridge",
+ "url": "https://mtg.wiki/page/Onyx_Bridge",
+ "title": "Onyx Bridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Onyx Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Narrow isthmus of Jamuraa separating western and southeastern Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Supercontinent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gallidi",
+   "type": "location",
+   "aliases": [],
+   "description": "City on the Jamuraan Sea side of the Onyx Bridge, a trade hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Robaran Mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenary company led by Adira Strongheart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the Robaran Mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the Robaran Mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [],
+   "description": "Place the mercenaries returned to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 3335 AR Adira Strongheart and the Robaran Mercenaries landed at Gallidi and crossed the Onyx Bridge to the Sea of Serenity coast, returning to Bryce.",
+   "participants": [
+    "Adira Strongheart",
+    "Robaran Mercenaries",
+    "Jedit Ojanen",
+    "Hazezon Tamar",
+    "Gallidi",
+    "Onyx Bridge"
+   ],
+   "location": "Onyx Bridge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They disembarked in Gallidi , and from there crossed the Onyx Bridge to the Sea of Serenity 's coast, returning to Bryce through that route."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jedit Ojanen",
+   "relation": "member_of",
+   "target": "Robaran Mercenaries",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Adira Strongheart and her Robaran Mercenaries , including Jedit Ojanen and Hazezon Tamar"
+  },
+  {
+   "source": "Adira Strongheart",
+   "relation": "leader_of",
+   "target": "Robaran Mercenaries",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Adira Strongheart and her Robaran Mercenaries"
+  },
+  {
+   "source": "Gallidi",
+   "relation": "located_in",
+   "target": "Onyx Bridge",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The Onyx Bridge features the city of Gallidi"
+  }
+ ],
+ "rejected": []
+}

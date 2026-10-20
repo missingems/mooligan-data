@@ -1,0 +1,105 @@
+{
+ "page": "wiki/kethek",
+ "url": "https://mtg.wiki/page/Kethek",
+ "title": "Kethek",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kethek",
+   "type": "creature",
+   "aliases": [],
+   "description": "A merciless Phyrexian goliath general on New Phyrexia, created by Urabrask and Sheoldred, who melts enemies with flamethrowers and reforges them as cannon fodder.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kethek lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian who rebelled against Elesh Norn and made allies with Sheoldred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "A ruthless Phyrexian, ally of Urabrask in his rebellion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian ruler against whom Urabrask rebelled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urabrask and Sheoldred, as a gesture of goodwill, work together to create Kethek as a general to lead their united front.",
+   "participants": [
+    "Urabrask",
+    "Sheoldred",
+    "Kethek"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "these allies worked together to create a new Phyrexian general to lead their united front"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urabrask",
+   "relation": "enemy",
+   "target": "Elesh Norn",
+   "note": "Urabrask rebels against her.",
+   "paragraph": 1,
+   "quote": "his rebellion against Elesh Norn"
+  },
+  {
+   "source": "Urabrask",
+   "relation": "ally",
+   "target": "Sheoldred",
+   "note": "They are allies in the rebellion.",
+   "paragraph": 1,
+   "quote": "these allies worked together"
+  },
+  {
+   "source": "Urabrask",
+   "relation": "created",
+   "target": "Kethek",
+   "note": "Urabrask and Sheoldred created Kethek.",
+   "paragraph": 1,
+   "quote": "worked together to create a new Phyrexian general"
+  },
+  {
+   "source": "Sheoldred",
+   "relation": "created",
+   "target": "Kethek",
+   "note": "Urabrask and Sheoldred created Kethek.",
+   "paragraph": 1,
+   "quote": "worked together to create a new Phyrexian general"
+  },
+  {
+   "source": "Kethek",
+   "relation": "serves",
+   "target": "Urabrask",
+   "note": "Her victims become cannon fodder for Urabrask and Sheoldred.",
+   "paragraph": 1,
+   "quote": "cannon fodder for Urabrask and Sheoldred"
+  }
+ ],
+ "rejected": []
+}

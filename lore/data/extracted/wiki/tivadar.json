@@ -1,0 +1,124 @@
+{
+ "page": "wiki/tivadar",
+ "url": "https://mtg.wiki/page/Tivadar",
+ "title": "Tivadar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:01Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Tivadar",
+   "type": "character",
+   "aliases": [
+    "Tivadar of Thorn"
+   ],
+   "description": "Tivadar of Thorn, leader of the Knights of Thorn who led a crusade against the goblins and orcs of Terisiare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Knights of Thorn",
+   "type": "faction",
+   "aliases": [],
+   "description": "The order led by Tivadar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rasputin Dreamweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "Fellow leader of the Goblin Wars crusade alongside Tivadar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "A crusade against the goblins and orcs of Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "An apprentice wizard who served briefly with Tivadar and deserted at the Battle of Pitdown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghed",
+   "type": "location",
+   "aliases": [],
+   "description": "The city-state whose army Tivadar joined as a boy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Tivadar's home town in northeastern Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Pitdown",
+   "type": "event",
+   "aliases": [],
+   "description": "A battle at which Jodah deserted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent where the Goblin Wars took place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tivadar, born in Thorn, joins the army of Ghed at thirteen and briefly serves with Jodah, who deserts at the Battle of Pitdown.",
+   "participants": [
+    "Tivadar",
+    "Ghed",
+    "Jodah",
+    "Battle of Pitdown"
+   ],
+   "location": "Ghed",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he joined the army of the city-state of Ghed"
+  },
+  {
+   "summary": "Tivadar leads the Goblin Wars crusade alongside Rasputin Dreamweaver.",
+   "participants": [
+    "Tivadar",
+    "Rasputin Dreamweaver",
+    "Goblin Wars"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "He led a crusade against the goblins and orcs of Terisiare"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tivadar",
+   "relation": "leader_of",
+   "target": "Knights of Thorn",
+   "note": "He led the Knights of Thorn.",
+   "paragraph": 0,
+   "quote": "the leader of the Knights of Thorn"
+  },
+  {
+   "source": "Tivadar",
+   "relation": "ally",
+   "target": "Rasputin Dreamweaver",
+   "note": "Led the crusade together.",
+   "paragraph": 0,
+   "quote": "alongside Rasputin Dreamweaver"
+  }
+ ],
+ "rejected": []
+}

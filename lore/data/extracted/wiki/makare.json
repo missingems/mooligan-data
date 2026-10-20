@@ -1,0 +1,167 @@
+{
+ "page": "wiki/makare",
+ "url": "https://mtg.wiki/page/Makare",
+ "title": "Makare",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:50Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Makare",
+   "type": "character",
+   "aliases": [],
+   "description": "An Amonkheti human who fell during the Final Hours and became an Eternal; she killed her love Genub, later joined the Dreadhorde and was re-killed by Vitu-Ghazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Genub",
+   "type": "character",
+   "aliases": [],
+   "description": "Makare's forbidden love, struck down by her after she became an Eternal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spellweaver Eternal",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eternal whose spells felled Makare and raised her as an Eternal.",
+   "presence": "appears"
+  },
+  {
+   "name": "God-Pharaoh",
+   "type": "deity",
+   "aliases": [],
+   "description": "The ruler of Amonkhet whom Makare and Genub defied.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Final Hours",
+   "type": "event",
+   "aliases": [],
+   "description": "The final period on Amonkhet during which Makare fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hour of Eternity",
+   "type": "event",
+   "aliases": [],
+   "description": "The hour during which Makare and Genub stuck together.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Phyrexian-style horde on Ravnica that Makare became part of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "The Selesnya world-tree city that re-killed Makare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Makare lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Makare was re-killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Makare and Genub, who pledged forbidden love defying the God-Pharaoh, are separated in an attack by a Spellweaver Eternal.",
+   "participants": [
+    "Makare",
+    "Genub",
+    "Spellweaver Eternal",
+    "God-Pharaoh"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They stuck together during the Hour of Eternity"
+  },
+  {
+   "summary": "Makare falls to the Spellweaver Eternal's spells and is raised as an Eternal.",
+   "participants": [
+    "Makare",
+    "Spellweaver Eternal"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She fell to its spells and was risen as an Eternal"
+  },
+  {
+   "summary": "When Genub reaches her, Makare strikes him down.",
+   "participants": [
+    "Makare",
+    "Genub"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "As Genub reached her, she struck him down"
+  },
+  {
+   "summary": "Makare becomes part of the Dreadhorde on Ravnica and is re-killed by Vitu-Ghazi.",
+   "participants": [
+    "Makare",
+    "Dreadhorde",
+    "Vitu-Ghazi"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She became part of the Dreadhorde on Ravnica"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Makare",
+   "relation": "romantic",
+   "target": "Genub",
+   "note": "They pledged forbidden love.",
+   "paragraph": 2,
+   "quote": "Makare had pledged her forbidden love to Genub"
+  },
+  {
+   "source": "Makare",
+   "relation": "killed",
+   "target": "Genub",
+   "note": "She struck him down after becoming an Eternal.",
+   "paragraph": 2,
+   "quote": "As Genub reached her, she struck him down"
+  },
+  {
+   "source": "Vitu-Ghazi",
+   "relation": "killed",
+   "target": "Makare",
+   "note": "Vitu-Ghazi re-killed her.",
+   "paragraph": 3,
+   "quote": "was re-killed by Vitu-Ghazi"
+  },
+  {
+   "source": "Makare",
+   "relation": "member_of",
+   "target": "Dreadhorde",
+   "note": "She became part of the Dreadhorde.",
+   "paragraph": 3,
+   "quote": "She became part of the Dreadhorde on Ravnica"
+  }
+ ],
+ "rejected": []
+}

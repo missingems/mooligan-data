@@ -1,0 +1,111 @@
+{
+ "page": "wiki/junji",
+ "url": "https://mtg.wiki/page/Junji",
+ "title": "Junji",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:49Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Junji",
+   "type": "creature",
+   "aliases": [
+    "Kokusho"
+   ],
+   "description": "A dragon spirit from Kamigawa, the reincarnated form of the ancient dragon Kokusho, who dwells in the canals beneath Towashi's Undercity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kokusho",
+   "type": "creature",
+   "aliases": [],
+   "description": "An ancient divine dragon who survived the Kami War and died defending Takenuma from an oni assault; reborn as Junji.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Junji originates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "The catastrophic war in which many divine dragon spirits perished.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "A swampy region whose people Kokusho defended and Junji abandoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "A city whose Undercity canals are Junji's domain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reckoner",
+   "type": "faction",
+   "aliases": [
+    "Reckoner gangs"
+   ],
+   "description": "Gangs whose turf battles Junji's presence keeps from escalating.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kokusho survives the Kami War but dies decades later defending Takenuma from a brutal oni assault, and is reborn as Junji.",
+   "participants": [
+    "Kokusho",
+    "Junji",
+    "Takenuma"
+   ],
+   "location": "Takenuma",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "met his end several decades later while defending the inhabitants of Takenuma"
+  },
+  {
+   "summary": "Junji severs ties with Takenuma and establishes his domain in the canals beneath Towashi's Undercity.",
+   "participants": [
+    "Junji",
+    "Takenuma",
+    "Towashi"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Junji chose to sever ties with the swampy region of Takenuma"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Junji",
+   "relation": "other",
+   "target": "Kokusho",
+   "note": "Junji is Kokusho's reincarnation.",
+   "paragraph": 0,
+   "quote": "He is the reincarnated form of the ancient dragon Kokusho"
+  },
+  {
+   "source": "Junji",
+   "relation": "enemy",
+   "target": "Reckoner",
+   "note": "He deters Reckoner gangs from escalating their turf battles.",
+   "paragraph": 1,
+   "quote": "preventing Reckoner gangs from escalating their violent turf battles"
+  }
+ ],
+ "rejected": []
+}

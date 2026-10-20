@@ -1,0 +1,142 @@
+{
+ "page": "wiki/thriss",
+ "url": "https://mtg.wiki/page/Thriss",
+ "title": "Thriss",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:36Z",
+ "storyline": "Mirari Saga",
+ "entities": [
+  {
+   "name": "Thriss",
+   "type": "character",
+   "aliases": [
+    "Primus Thriss"
+   ],
+   "description": "Primus Thriss, powerful giant mantis-like Nantuko druid and guardian of the Krosan Forest who trained Kamahl as a druid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Barbarian whom Thriss convinced to abandon his barbarous ways and trained as a druid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krosan Forest",
+   "type": "location",
+   "aliases": [
+    "Krosa"
+   ],
+   "description": "Forest on Dominaria guarded by Thriss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Krosan Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nantuko",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mantis-like druid people; Thriss was the oldest and wisest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [
+    "Phyrexian Invasion of Dominaria"
+   ],
+   "description": "Invasion of Dominaria during which Thriss kept the forest safe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari Saga",
+   "type": "event",
+   "aliases": [],
+   "description": "Story period during which Thriss was the oldest and wisest Nantuko.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose transformative powers Kamahl speculated mutated Krosa and Thriss.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thriss plants the seeds that become the Krosan forest after the Ice Age recedes.",
+   "participants": [
+    "Thriss",
+    "Krosan Forest"
+   ],
+   "location": "Krosan Forest",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Thriss planted the seeds that became the Krosan forest after the Ice Age receded"
+  },
+  {
+   "summary": "Thriss guards the forest and keeps it safe during the Phyrexian Invasion.",
+   "participants": [
+    "Thriss",
+    "Krosan Forest",
+    "Phyrexian Invasion"
+   ],
+   "location": "Krosan Forest",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He guarded the forest and kept it safe during the Phyrexian Invasion of Dominaria"
+  },
+  {
+   "summary": "Thriss convinces Kamahl to abandon his barbarous ways and trains him as a druid.",
+   "participants": [
+    "Thriss",
+    "Kamahl"
+   ],
+   "location": "Krosan Forest",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "He convinced Kamahl to abandon his barbarous ways and trained him as a druid."
+  },
+  {
+   "summary": "Thriss's fate is unknown; Kamahl speculates he mutated with Krosa due to the Mirari.",
+   "participants": [
+    "Thriss",
+    "Kamahl",
+    "Mirari"
+   ],
+   "location": "Krosan Forest",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Thriss's fate is unknown"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thriss",
+   "relation": "mentor_of",
+   "target": "Kamahl",
+   "note": "Thriss trained Kamahl as a druid.",
+   "paragraph": 0,
+   "quote": "He convinced Kamahl to abandon his barbarous ways and trained him as a druid."
+  },
+  {
+   "source": "Thriss",
+   "relation": "leader_of",
+   "target": "Krosan Forest",
+   "note": "He is guardian of the forest.",
+   "paragraph": 0,
+   "quote": "became guardian of the Krosan Forest on Dominaria"
+  }
+ ],
+ "rejected": []
+}

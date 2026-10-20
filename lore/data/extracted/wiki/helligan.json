@@ -1,0 +1,131 @@
+{
+ "page": "wiki/helligan",
+ "url": "https://mtg.wiki/page/Helligan",
+ "title": "Helligan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:28Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Helligan",
+   "type": "character",
+   "aliases": [],
+   "description": "A labmage of the Wojek League and chief of the Tenth Leaguehall mortuary on Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wojek League",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican league Helligan belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tenth Leaguehall",
+   "type": "location",
+   "aliases": [],
+   "description": "The Wojek leaguehall whose mortuary Helligan chiefed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saint Bayul",
+   "type": "character",
+   "aliases": [],
+   "description": "Hibernating body brought to the mortuary; told Helligan to bring Fonn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fonn",
+   "type": "character",
+   "aliases": [],
+   "description": "Person Bayul asked Helligan to bring, to be found with Agrus Kos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Company in which Fonn is to be found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Luda",
+   "type": "character",
+   "aliases": [],
+   "description": "A girl, the first crime's victim, actually a lupul in disguise who consumed Helligan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Helligan lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Decamillennial",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the first crime occurred.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Helligan breaks scalpels trying to perform a necroscopy on Saint Bayul's body.",
+   "participants": [
+    "Helligan",
+    "Saint Bayul"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He broke several scalpels when trying to perform a necroscopy."
+  },
+  {
+   "summary": "Bayul tells Helligan to bring Fonn.",
+   "participants": [
+    "Saint Bayul",
+    "Helligan",
+    "Fonn"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Bayul told him to bring Fonn"
+  },
+  {
+   "summary": "Helligan is consumed by a lupul disguised as the girl Luda, which takes his form.",
+   "participants": [
+    "Helligan",
+    "Luda"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The lupul consumed Helligan and took his form."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Helligan",
+   "relation": "member_of",
+   "target": "Wojek League",
+   "note": "He was a labmage in it.",
+   "paragraph": 0,
+   "quote": "Helligan was a member of the Wojek League on Ravnica ."
+  },
+  {
+   "source": "Luda",
+   "relation": "killed",
+   "target": "Helligan",
+   "note": "The lupul consumed him.",
+   "paragraph": 3,
+   "quote": "The lupul consumed Helligan and took his form."
+  }
+ ],
+ "rejected": []
+}

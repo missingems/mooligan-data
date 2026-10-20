@@ -1,0 +1,101 @@
+{
+ "page": "wiki/albrecht",
+ "url": "https://mtg.wiki/page/Albrecht",
+ "title": "Albrecht",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Albrecht",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire and friend of Thatu Reiniger, killed by the Bloodletter on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thatu Reiniger",
+   "type": "character",
+   "aliases": [],
+   "description": "Friend of Albrecht who later falls to Raben Amsel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloodletter",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mysterious sword whose wounds cause eternal bleeding in the living and are fatal to the undead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raben Amsel",
+   "type": "character",
+   "aliases": [],
+   "description": "Kills Thatu Reiniger.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad where Albrecht met Thatu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Albrecht lived and died.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Albrecht meets Thatu Reiniger in Stensia.",
+   "participants": [
+    "Albrecht",
+    "Thatu Reiniger"
+   ],
+   "location": "Stensia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he was present in Stensia where he encountered Thatu Reiniger"
+  },
+  {
+   "summary": "Albrecht dies after trying to wield the Bloodletter.",
+   "participants": [
+    "Albrecht",
+    "Bloodletter"
+   ],
+   "location": "Stensia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Albrecht met his demise while handling a mysterious sword named the Bloodletter"
+  },
+  {
+   "summary": "Thatu Reiniger later dies at the hands of Raben Amsel.",
+   "participants": [
+    "Thatu Reiniger",
+    "Raben Amsel"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "which in turn would lead to Thatu's demise at the hands of Raben Amsel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Albrecht",
+   "relation": "ally",
+   "target": "Thatu Reiniger",
+   "note": "Friend",
+   "paragraph": 0,
+   "quote": "Albrecht was a vampire and friend of Thatu Reiniger"
+  }
+ ],
+ "rejected": []
+}

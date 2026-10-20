@@ -1,0 +1,130 @@
+{
+ "page": "wiki/lady-s-path",
+ "url": "https://mtg.wiki/page/Lady%27s_Path",
+ "title": "Lady's Path",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:55Z",
+ "storyline": "Ulgrotha",
+ "entities": [
+  {
+   "name": "Lady's Path",
+   "type": "location",
+   "aliases": [],
+   "description": "Road through the Great Wood on Ulgrotha connecting the Koskun Mountains and An-Havva.",
+   "presence": "appears"
+  },
+  {
+   "name": "Autumn Willow",
+   "type": "character",
+   "aliases": [],
+   "description": "Created the Lady's Path and had Faeries build the River Bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest on Ulgrotha with a huge river.",
+   "presence": "appears"
+  },
+  {
+   "name": "River Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Bridge built by Faeries where the path crosses the river.",
+   "presence": "appears"
+  },
+  {
+   "name": "Faeries",
+   "type": "faction",
+   "aliases": [
+    "Faerie Nobles"
+   ],
+   "description": "Built the River Bridge and guard it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spectral Bears",
+   "type": "creature",
+   "aliases": [],
+   "description": "Believed personal guardians of Autumn Willow.",
+   "presence": "appears"
+  },
+  {
+   "name": "An-Havva",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination of caravans on the path.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains connected by the path.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "World of the Great Wood.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Autumn Willow creates the Lady's Path through the Great Wood.",
+   "participants": [
+    "Autumn Willow",
+    "Lady's Path"
+   ],
+   "location": "Great Wood",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "a road created by Autumn Willow through the Great Wood"
+  },
+  {
+   "summary": "Autumn Willow has the Faeries build the River Bridge and set them to keep interlopers from crossing.",
+   "participants": [
+    "Autumn Willow",
+    "Faeries",
+    "River Bridge"
+   ],
+   "location": "Great Wood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the Autumn Willow had the Faeries construct the River Bridge"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Autumn Willow",
+   "relation": "created",
+   "target": "Lady's Path",
+   "note": "created the road",
+   "paragraph": 0,
+   "quote": "a road created by Autumn Willow"
+  },
+  {
+   "source": "Faeries",
+   "relation": "serves",
+   "target": "Autumn Willow",
+   "note": "guard the bridge at her command",
+   "paragraph": 1,
+   "quote": "she then set them to keep any interlopers from crossing it"
+  },
+  {
+   "source": "Spectral Bears",
+   "relation": "serves",
+   "target": "Autumn Willow",
+   "note": "believed guardians",
+   "paragraph": 2,
+   "quote": "are believed to be the personal guardians of Autumn Willow"
+  }
+ ],
+ "rejected": []
+}

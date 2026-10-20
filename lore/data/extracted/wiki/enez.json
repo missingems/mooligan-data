@@ -1,0 +1,144 @@
+{
+ "page": "wiki/enez",
+ "url": "https://mtg.wiki/page/Enez",
+ "title": "Enez",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Enez",
+   "type": "location",
+   "aliases": [],
+   "description": "City on the Craggy Coast of southern Jamuraa on Dominaria, at the southern end of the Great Wall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Craggy Coast",
+   "type": "location",
+   "aliases": [],
+   "description": "Rugged stretch of coastline in southern Jamuraa marked by cliffs and fortified settlements.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Enez lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Wall",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient wall that protects the Craggy Coast region from inland threats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [],
+   "description": "City friendly with Enez; site of the Battle of Bryce.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader who sent requests for aid to the coastal cities during Johan's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [
+    "Emperor Johan"
+   ],
+   "description": "Emperor whose rise threatened the coastal cities; his empire crumbled after his death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Johan sought to subjugate Jamuraa's coastal cities.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Bryce",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle during Johan's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Palmyra",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle to which Enez sent many warriors.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Battle of Bryce, Hazezon Tamar asks the coastal cities for aid, warning of subjugation by Emperor Johan.",
+   "participants": [
+    "Hazezon Tamar",
+    "Johan",
+    "Bryce"
+   ],
+   "location": "Craggy Coast",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Hazezon Tamar sent out requests for aid from the other coastal cities"
+  },
+  {
+   "summary": "Enez answers the call and sends many warriors to fight at the Battle of Palmyra.",
+   "participants": [
+    "Enez",
+    "Battle of Palmyra"
+   ],
+   "location": "Enez",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Enez responded to Hazezon's call to arms, sending many warriors to fight in the Battle of Palmyra"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Enez",
+   "relation": "located_in",
+   "target": "Craggy Coast",
+   "note": "Enez is a city on the Craggy Coast.",
+   "paragraph": 0,
+   "quote": "Enez is a city on the Craggy Coast of southern Jamuraa"
+  },
+  {
+   "source": "Enez",
+   "relation": "ally",
+   "target": "Bryce",
+   "note": "Enez has friendly relations with Bryce.",
+   "paragraph": 0,
+   "quote": "has friendly relations with nearby Bryce"
+  },
+  {
+   "source": "Enez",
+   "relation": "ally",
+   "target": "Hazezon Tamar",
+   "note": "Enez answered his call to arms.",
+   "paragraph": 1,
+   "quote": "Enez responded to Hazezon's call to arms"
+  }
+ ],
+ "rejected": []
+}

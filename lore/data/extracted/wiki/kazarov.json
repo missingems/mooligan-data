@@ -1,0 +1,75 @@
+{
+ "page": "wiki/kazarov",
+ "url": "https://mtg.wiki/page/Kazarov",
+ "title": "Kazarov",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kazarov",
+   "type": "character",
+   "aliases": [],
+   "description": "A Sengir vampire and aristocrat of the Sengir bloodline who keeps up an illusion of civility; he transformed Arvad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Progenitor of the Sengir vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arvad",
+   "type": "character",
+   "aliases": [
+    "Arvad the Cursed"
+   ],
+   "description": "Benalish knight transformed into a vampire by Kazarov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sengir vampires",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire line stemming from Baron Sengir's undead curse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kazarov transformed the Benalish knight Arvad into a vampire.",
+   "participants": [
+    "Kazarov",
+    "Arvad"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He is the vampire responsible for transforming the Benalish knight Arvad"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kazarov",
+   "relation": "member_of",
+   "target": "Sengir vampires",
+   "note": "An aristocrat of the Sengir bloodline.",
+   "paragraph": 1,
+   "quote": "Kazarov, though, is an aristocrat of the Sengir bloodline"
+  },
+  {
+   "source": "Kazarov",
+   "relation": "created",
+   "target": "Arvad",
+   "note": "Transformed him into a vampire.",
+   "paragraph": 1,
+   "quote": "He is the vampire responsible for transforming the Benalish knight Arvad"
+  }
+ ],
+ "rejected": []
+}

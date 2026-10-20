@@ -1,0 +1,97 @@
+{
+ "page": "wiki/krieghelm",
+ "url": "https://mtg.wiki/page/Krieghelm",
+ "title": "Krieghelm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:11Z",
+ "storyline": "Johan's War",
+ "entities": [
+  {
+   "name": "Krieghelm",
+   "type": "location",
+   "aliases": [],
+   "description": "A fortress carved into a granite mountain in the Tirran Mountains of southwestern Jamuraa on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [
+    "Emperor-Tyrant Johan"
+   ],
+   "description": "Emperor-Tyrant whose keep was Krieghelm during Johan's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War driven from Krieghelm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Imprisoned in Krieghelm and escaped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Imprisoned in Krieghelm and escaped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the rescue party.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "City in the foothills below Krieghelm.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hazezon Tamar and Adira Strongheart, imprisoned in Krieghelm, escaped through Hazezon's magic and a rescue party led by Jedit Ojanen.",
+   "participants": [
+    "Hazezon Tamar",
+    "Adira Strongheart",
+    "Jedit Ojanen"
+   ],
+   "location": "Krieghelm",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they managed to escape through a combination of Hazezon's magic and a rescue party led by Jedit Ojanen"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Johan",
+   "relation": "other",
+   "target": "Krieghelm",
+   "note": "Krieghelm was his keep and base of operations.",
+   "paragraph": 2,
+   "quote": "Krieghelm was the keep of Emperor-Tyrant Johan"
+  },
+  {
+   "source": "Jedit Ojanen",
+   "relation": "ally",
+   "target": "Hazezon Tamar",
+   "note": "Led the rescue party.",
+   "paragraph": 2,
+   "quote": "a rescue party led by Jedit Ojanen"
+  }
+ ],
+ "rejected": []
+}

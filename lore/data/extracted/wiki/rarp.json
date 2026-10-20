@@ -1,0 +1,87 @@
+{
+ "page": "wiki/rarp",
+ "url": "https://mtg.wiki/page/Rarp",
+ "title": "Rarp",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rarp",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin stone jockey of Squee's clan, revealed to be a Phyrexianized sleeper agent and burned to death by Squee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Squee",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin whose kingdom or clan Rarp belonged to; he burned Rarp to death after identifying him with a mana torch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Source of the technology that corrupted Rarp.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A rope snaps and Rarp is crushed under a falling boulder but survives.",
+   "participants": [
+    "Rarp"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "an accident caused a rope to snap, and Rarp was crushed under a falling boulder"
+  },
+  {
+   "summary": "Black oil leaking from Rarp's eyes and a black metal cable under his skin reveal him as a Phyrexian sleeper agent.",
+   "participants": [
+    "Rarp",
+    "Phyrexians"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "black oil leaking from his eyes and a glistening black metal cable under his skin exposed him as a sleeper agent corrupted by Phyrexian technology"
+  },
+  {
+   "summary": "Squee uses a mana torch to identify a golden sheen in Rarp's eyes and burns Rarp to death.",
+   "participants": [
+    "Squee",
+    "Rarp"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Squee used a mana torch to identify a golden sheen in Rarp's eyes before he burned Rarp to death."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Squee",
+   "relation": "killed",
+   "target": "Rarp",
+   "note": "Squee burned Rarp to death.",
+   "paragraph": 1,
+   "quote": "before he burned Rarp to death"
+  },
+  {
+   "source": "Rarp",
+   "relation": "member_of",
+   "target": "Squee",
+   "note": "Rarp was a goblin of Squee's clan.",
+   "paragraph": 1,
+   "quote": "Rarp was a goblin stone jockey from Squee 's clan"
+  }
+ ],
+ "rejected": []
+}

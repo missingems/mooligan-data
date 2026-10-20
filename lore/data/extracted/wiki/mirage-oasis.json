@@ -1,0 +1,65 @@
+{
+ "page": "wiki/mirage-oasis",
+ "url": "https://mtg.wiki/page/Mirage/Oasis",
+ "title": "Mirage/Oasis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:18Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Oasis",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Web-published braided novel created by Wizards of the Coast in 1996, based on the Mirage expansion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hakim Loreweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "Storyteller whose stories are woven together in Oasis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bwire",
+   "type": "character",
+   "aliases": [],
+   "description": "Character whose misdeeds in Kenlo are the story's subject.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kenlo",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Bwire committed misdeeds.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bwire commits misdeeds in Kenlo, motivated by an amber prison swallowed by a goat.",
+   "participants": [
+    "Bwire",
+    "Kenlo"
+   ],
+   "location": "Kenlo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The story is of the misdeeds of Bwire in Kenlo , motivated by an amber prison swallowed by a goat."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hakim Loreweaver",
+   "relation": "other",
+   "target": "Oasis",
+   "note": "Narrates the stories woven into the braided novel.",
+   "paragraph": 1,
+   "quote": "Stories told by Hakim Loreweaver are woven together"
+  }
+ ],
+ "rejected": []
+}

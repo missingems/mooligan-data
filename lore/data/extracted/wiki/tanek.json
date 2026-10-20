@@ -1,0 +1,132 @@
+{
+ "page": "wiki/tanek",
+ "url": "https://mtg.wiki/page/Tanek",
+ "title": "Tanek",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:11Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Tanek",
+   "type": "character",
+   "aliases": [],
+   "description": "Rogue and petty thief of Ravnica who became a Boros informer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erika",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Tanek's band of rogues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Migen",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Tanek's band of rogues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivo",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Tanek's band of rogues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ambroz Benakov",
+   "type": "character",
+   "aliases": [],
+   "description": "Corrupt Orzhov official who extorted others with thugs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Busa",
+   "type": "character",
+   "aliases": [],
+   "description": "Chicken vendor harassed by Benakov's men.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Radomir",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros legionnaire who caught Tanek and recruited him as a future spy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Ravnican guild Radomir belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "Guild Benakov belongs to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tanek steals Benakov's bag of gold, but Radomir catches him and makes him return it.",
+   "participants": [
+    "Tanek",
+    "Ambroz Benakov",
+    "Radomir"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tanek had to give back the bag of gold"
+  },
+  {
+   "summary": "Radomir gives Tanek two gold and offers him spy work; Tanek leaves the thieves' circle to become a Boros informer.",
+   "participants": [
+    "Tanek",
+    "Radomir"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After that day, Tanek withdrew from his thieves' circle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tanek",
+   "relation": "ally",
+   "target": "Erika",
+   "note": "Fellow rogue in a small band",
+   "paragraph": 1,
+   "quote": "Tanek was part of a small band of rogues, including Erika , Migen , and Ivo ."
+  },
+  {
+   "source": "Ambroz Benakov",
+   "relation": "member_of",
+   "target": "Orzhov Syndicate",
+   "note": "Corrupt official",
+   "paragraph": 2,
+   "quote": "Benakov was a corrupt Orzhov official"
+  },
+  {
+   "source": "Radomir",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "Legionnaire",
+   "paragraph": 2,
+   "quote": "a Boros legionnaire named Radomir"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,115 @@
+{
+ "page": "wiki/skavius-slan",
+ "url": "https://mtg.wiki/page/Skavius_Slan",
+ "title": "Skavius Slan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:11Z",
+ "storyline": "Shandalar",
+ "entities": [
+  {
+   "name": "Skavius Slan",
+   "type": "character",
+   "aliases": [
+    "Skavius Slan the lichlord"
+   ],
+   "description": "Lich of Shandalar who took Azar's body and commanded the Black Guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azar",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard whose empty body Skavius Slan used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild commanded by Skavius Slan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the guilds arose.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil planeswalker who corrupted the guildlords as a benevolent advisor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian of Shandalar",
+   "type": "character",
+   "aliases": [],
+   "description": "Betrayed by the guildlords during Arzakon's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the guildlords betrayed the Guardian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizard's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War after which Skavius used Azar's body.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The guildlords, corrupted by Arzakon, betray the Guardian of Shandalar during Arzakon's War.",
+   "participants": [
+    "Arzakon",
+    "Skavius Slan",
+    "Guardian of Shandalar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Together, they betrayed the Guardian of Shandalar during Arzakon's War , to open the path for Arzakon."
+  },
+  {
+   "summary": "The Guildlords are defeated and Arzakon is banned from the plane.",
+   "participants": [
+    "Skavius Slan",
+    "Arzakon"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Guildlords, including Skavius Slan, were in turn defeated, and Arzakon was banned from entering the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skavius Slan",
+   "relation": "leader_of",
+   "target": "Black Guild",
+   "note": "",
+   "paragraph": 0,
+   "quote": "The lichlord took command of the Black Guild and ruled for ages"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "other",
+   "target": "Skavius Slan",
+   "note": "corrupted the guildlords",
+   "paragraph": 2,
+   "quote": "were corrupted by the evil Planeswalker Arzakon 's influence in the guise of a benevolent advisor."
+  }
+ ],
+ "rejected": []
+}

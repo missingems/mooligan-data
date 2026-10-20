@@ -1,0 +1,89 @@
+{
+ "page": "wiki/uktabi-jungle",
+ "url": "https://mtg.wiki/page/Uktabi_Jungle",
+ "title": "Uktabi Jungle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Uktabi Jungle",
+   "type": "location",
+   "aliases": [
+    "Uktabi"
+   ],
+   "description": "A small jungle on Zhalfir, once part of Jamuraa, domain of the Quirion elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane the Uktabi now belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mangara",
+   "type": "character",
+   "aliases": [],
+   "description": "Set up diplomatic relations with the nations of Jamuraa; allied to the Quirion elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quirion elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Allies of Mangara who colonized much of the Uktabi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Salamzuri",
+   "type": "location",
+   "aliases": [],
+   "description": "The Quirion elves' city, capital of the Uktabi and sanctuary for refugees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war during which the jungle had a Maro-Sorcerer.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Uktabi was phased out with the rest of Zhalfir and now exists as part of that separate plane.",
+   "participants": [
+    "Uktabi Jungle",
+    "Zhalfir"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Uktabi was phased out with the rest of Zhalfir"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Quirion elves",
+   "relation": "ally",
+   "target": "Mangara",
+   "note": "The Uktabi was the domain of his allies, the Quirion elves.",
+   "paragraph": 1,
+   "quote": "the Uktabi had been the domain of his allies, the Quirion elves"
+  },
+  {
+   "source": "Uktabi Jungle",
+   "relation": "located_in",
+   "target": "Zhalfir",
+   "note": "It now exists as part of Zhalfir.",
+   "paragraph": 3,
+   "quote": "now exists as part of that separate plane"
+  }
+ ],
+ "rejected": []
+}
