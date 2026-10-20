@@ -193,6 +193,22 @@ def test_commander_pages_are_published_for_the_commanders_cards_name(tmp_path):
     assert index["commanders"]["vivi-ornitier"] == {"name": "Vivi Ornitier", "decks": 40779}
 
 
+def test_the_top_commanders_are_refreshed_first_and_within_the_limit(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    asked = []
+
+    def fetch_commanders(slugs):
+        asked.append(list(slugs))
+        return {slug: {"name": slug.title(), "slug": slug, "decks": 10, "salt": None, "url": "u", "sections": [], "average_deck": []} for slug in slugs}
+
+    store._wanted_commanders = {"older": "Older"}
+    store.finish(fetch_commanders=fetch_commanders, commander_limit=2, priority_commanders=["top-one", "top-two"])
+
+    assert asked == [["top-one", "top-two"]]
+    assert (tmp_path / "edh" / "commanders" / "top-one.json").exists()
+    assert not (tmp_path / "edh" / "commanders" / "older.json").exists()
+
+
 def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp_path):
     first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
     first.save_event(event("1", "2026-09-20"))
@@ -504,3 +520,47 @@ def test_without_a_catalog_the_published_popular_cards_are_left_alone(tmp_path):
     fresh = tmp_path / "other"
     SnapshotStore(fresh, ["modern"], history_days=30, now=NOW).finish()
     assert not (fresh / "popular-cards").exists()
+
+
+def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scraped(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    catalog = {
+        "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "oracle-bolt", "type_line": "Instant", "layout": "normal", "mana_cost": "{R}"},
+        "lava-spike": {"name": "Lava Spike", "oracle_id": "oracle-spike", "type_line": "Sorcery", "layout": "normal", "mana_cost": "{R}"},
+        "mountain": {"name": "Mountain", "oracle_id": "oracle-mountain", "type_line": "Basic Land — Mountain", "layout": "normal", "land": True},
+    }
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
+    store.save_meta(Meta("modern", "7d", [Archetype("Burn", 6.0, "burn", 60, colors=["R"]), Archetype("Rakdos Burn", 1.5, "rakdos-burn", 15, colors=["B", "R"])]))
+    store.save_event(Event("7", "Modern League 2026-09-21", "modern", day("2026-09-21"), [
+        EventResult("p1", "Burn", "5-0", "1", "burn"),
+        EventResult("p2", "Burn", "5-0", "2", "burn"),
+        EventResult("p3", "Rakdos Burn", "5-0", "3", "rakdos-burn"),
+        EventResult("p4", "RB", "5-0", "4"),
+    ], "https://www.mtggoldfish.com/tournament/7"))
+    for deck_id in ("1", "2", "3", "4"):
+        store.save_decks([Deck(deck_id, "p", "Burn", [DeckCard(4, "Lightning Bolt"), DeckCard(4, "Lava Spike"), DeckCard(20, "Mountain")], [], "modern", "7")])
+    store.finish()
+
+    published = json.loads((tmp_path / "snapshots" / "modern.json").read_text())
+    assert [(t["id"], t["percentage"], t["deck_count"], t["colors"]) for t in published["meta"]["7d"]["archetypes"]] == [("burn", 7.5, 75, ["R"])]
+    assert published["merges"] == {"rakdos-burn": "burn"}
+    assert [(r["archetype_id"], r["archetype"]) for r in published["events"][0]["results"]] == [("burn", "Burn")] * 4
+    page = json.loads((tmp_path / "archetypes" / "burn.json").read_text())
+    assert (page["cards"]["deck_count"], page["cards"]["list_count"]) == (4, 4)
+    assert [(c["name"], c["share"], c["copies"]) for c in page["cards"]["main"]] == [("Mountain", 100.0, 20.0), ("Lava Spike", 100.0, 4.0), ("Lightning Bolt", 100.0, 4.0)]
+    assert [c["name"] for c in page["hand"]] == ["Lava Spike", "Lightning Bolt"]
+    assert json.loads((tmp_path / "archetypes" / "rakdos-burn.json").read_text())["merged_into"] == "burn"
+    assert json.loads((tmp_path / "state" / "archetype-groups" / "modern.json").read_text()) == {"rakdos-burn": "burn"}
+    explore = json.loads((tmp_path / "explore.json").read_text())
+    assert [row["id"] for row in explore["formats"][0]["standings_by_window"]["7d"]] == ["burn"]
+    assert published["meta"]["7d"]["archetypes"][0]["key_cards"] == page["key_cards"] == page["hand"]  # its two non-lands
+    assert explore["formats"][0]["standings_by_window"]["7d"][0]["key_cards"] == page["hand"][:2]
+    assert explore["formats"][0]["recent_events"][0]["lead"]["key_cards"] == page["hand"][:2]
+
+    scraped = json.loads((tmp_path / "state" / "snapshots" / "modern.json").read_text())
+    assert "merges" not in scraped and [t["id"] for t in scraped["meta"]["7d"]["archetypes"]] == ["burn", "rakdos-burn"]
+    again = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
+    again.finish()
+    assert json.loads((tmp_path / "snapshots" / "modern.json").read_text())["meta"] == published["meta"]
+    assert [r["archetype_id"] for r in json.loads((tmp_path / "state" / "snapshots" / "modern.json").read_text())["events"][0]["results"]] == ["burn", "burn", "rakdos-burn", None]

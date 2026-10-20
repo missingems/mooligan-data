@@ -2,10 +2,12 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+import random
+import re
+from dataclasses import dataclass, field
 from urllib.parse import urlencode
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Protocol, Sequence, Tuple, Union
+from typing import Dict, List, Optional, Protocol, Sequence, Set, Tuple, Union
 
 from .models import (
     Archetype,
@@ -17,7 +19,10 @@ from .models import (
     Meta,
     RunReport,
 )
+from .browser import Fetched
+from .pacing import DeckPacing, Pacer, Visit, build_plan, deck_path, run_downloads
 from .parsing import (
+    event_kind,
     ParseError,
     parse_archetype,
     parse_archetype_decks,
@@ -31,11 +36,14 @@ from .store import Store
 
 log = logging.getLogger(__name__)
 
+_FALLBACK_NAME = re.compile(r"^Tournament \d+$")
+
 
 class Browser(Protocol):
     def page(self, path: str) -> str: ...
     def metagame(self, format: str, days: str) -> Tuple[str, bool]: ...
     def fetch_pages(self, paths: Sequence[str]) -> Dict[str, Union[str, Exception]]: ...
+    def fetch_batch(self, paths: Sequence[str]) -> List[Fetched]: ...
 
 
 @dataclass
@@ -44,16 +52,23 @@ class ScrapeConfig:
         "modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander",
     )
     meta_days: Sequence[str] = ("30",)
-    # The tournaments list only ever shows the latest 10.
+    # The tournaments list only ever shows the latest 10; they are listings like the search's.
     events_per_format: int = 10
     # Pages of the tournament search read per format, 20 events each, newest
     # first, until the window is covered. Modern's 30 days is about 7 pages.
     max_search_pages: int = 25
     # Events not yet stored (from the search or archetype lists) read per format per run.
     max_new_events: int = 150
+    # Events dated within this many days of the run are read again every run, stored or not.
+    recheck_days: int = 7
+    # Per format per run, for older events. Stored events whose name is the "Tournament <id>" fallback, or that a listing now
+    # names differently or shows with more results, are read again.
+    max_reread_events: int = 20
     # Per format. Decks never change once published, so each run only downloads
-    # new ones; the cap keeps a first run (or a backlog) from hammering the site.
+    # new ones; the cap keeps one format's backlog from starving the others.
     max_new_decks: int = 400
+    # How the downloads move, and how many a run may take in all formats together.
+    deck_pacing: DeckPacing = field(default_factory=DeckPacing)
     # Archetypes per format, most played first, whose results and featured deck are kept.
     archetype_decks: int = 100
     # How far back each archetype's results go.
@@ -74,9 +89,18 @@ class _WantedDeck:
     archetype_id: Optional[str] = None
 
 
-def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[datetime] = None) -> RunReport:
-    report = RunReport()
+def scrape(
+    browser: Browser,
+    store: Store,
+    config: ScrapeConfig,
+    now: Optional[datetime] = None,
+    pacer: Optional[Pacer] = None,
+    report: Optional[RunReport] = None,
+) -> RunReport:
+    """Reads every format, then downloads the new decks. Adds to `report` when the caller already has one."""
+    report = report or RunReport()
     cutoff = (now or datetime.now(timezone.utc)) - timedelta(days=config.history_days)
+    wanted: Dict[str, List[_WantedDeck]] = {}
     for format in config.formats:
         metas = _read_metas(browser, format, config.meta_days, report)
         histories = _read_archetypes(browser, store, format, _ranked_archetypes(metas)[: config.archetype_decks], config, cutoff, report)
@@ -98,11 +122,10 @@ def scrape(browser: Browser, store: Store, config: ScrapeConfig, now: Optional[d
                     result.archetype, result.archetype_id = canonical[result.deck_id]
             if _save(report, f"event {event.event_id}", lambda: store.save_event(event)):
                 report.events.append(event.event_id)
+        wanted[format] = _wanted_decks(format, histories, events)
 
-        # Each format has its own allowance, so one big backlog can't starve the others.
-        left = _download_decks(browser, store, _wanted_decks(format, histories, events), config.max_new_decks, report)
-        if left <= 0:
-            log.warning("Stopped %s at the limit of %d new decks; the rest come next run", format, config.max_new_decks)
+    # The decks come last, once every format's pages are read, so the pace is set by the deck phase alone.
+    _download_decks(browser, store, wanted, config, report, pacer)
     return report
 
 
@@ -234,33 +257,48 @@ def _read_events(
     now: Optional[datetime] = None,
 ) -> List[Event]:
     try:
-        recent = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
+        latest = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
     except Exception as error:  # noqa: BLE001
         _fail(report, f"tournaments {format}", error)
-        recent = []
+        latest = []
 
     ignored = store.ignored_event_ids()
-    recent = [summary for summary in recent if summary.event_id not in ignored]
-    seen = {summary.event_id for summary in recent} | ignored
-
+    stored_events = {summary.event_id: summary for summary in store.stored_events(format)}
     # Every event of the format in the window, from the tournament search: the
     # only listing that goes past the latest ten, and the one that has the Pro
     # Tours, Regional Championships and RCQs.
-    candidates: Dict[str, EventSummary] = {}
-    if cutoff and now:
-        for summary in _search_events(browser, format, cutoff, now, config.max_search_pages, report):
-            if summary.decklists == 0:
-                continue  # listed, but nothing to read
-            if summary.event_id not in seen:
-                candidates.setdefault(summary.event_id, summary)
+    searched = _search_events(browser, format, cutoff, now, config.max_search_pages, report) if cutoff and now else []
+    # The search comes first for the decklist count it gives.
+    listed: Dict[str, EventSummary] = {}
+    for summary in searched + latest:
+        listed.setdefault(summary.event_id, summary)
     # Plus the events the archetype lists mention, which cover multi-format events.
     for history in histories:
         for result in history.results:
-            if result.event_id and result.event_id not in seen:
-                candidates.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
-    stored = store.existing_event_ids(candidates) if candidates else set()
+            if result.event_id:
+                listed.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
+    # Listed, but nothing to read.
+    listed = {
+        event_id: summary
+        for event_id, summary in listed.items()
+        if event_id not in ignored and (summary.decklists != 0 or event_id in stored_events)
+    }
+    anywhere = store.existing_event_ids(listed)
+
+    # Everything dated within the last few days is read again, stored or not, since results keep arriving.
+    horizon = (now or datetime.now(timezone.utc)) - timedelta(days=config.recheck_days)
+    recheck: Dict[str, EventSummary] = {
+        event_id: summary
+        for event_id, summary in listed.items()
+        if (event_id in stored_events or event_id not in anywhere) and (summary.date is None or summary.date >= horizon)
+    }
+    for event_id, kept in stored_events.items():
+        if event_id not in ignored and event_id not in recheck and kept.date >= horizon:
+            recheck[event_id] = EventSummary(event_id, "", kept.date)
+    recent = sorted(recheck.values(), key=lambda s: s.date or datetime.max.replace(tzinfo=timezone.utc), reverse=True)
+
     older = sorted(
-        (s for s in candidates.values() if s.event_id not in stored),
+        (s for event_id, s in listed.items() if event_id not in recheck and event_id not in anywhere),
         key=lambda s: s.date or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True,
     )
@@ -268,16 +306,23 @@ def _read_events(
         log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
     # Stored events read before their source was kept are re-read with whatever room is left.
     room = max(config.max_new_events - len(older), 0)
-    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in seen][:room]
+    seen = set(recheck) | ignored
+    reread = _events_to_reread(stored_events, listed, seen, cutoff)[: config.max_reread_events]
+    taken = seen | {summary.event_id for summary in reread}
+    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in taken][:room]
 
-    summaries = recent + older[: config.max_new_events] + refresh
+    summaries = recent + older[: config.max_new_events] + reread + refresh
     pages = browser.fetch_pages([f"/tournament/{summary.event_id}" for summary in summaries])
     events = []
     empty = []
     for summary in summaries:
         try:
             html = _body(pages[f"/tournament/{summary.event_id}"])
-            event = parse_tournament(html, summary.event_id, format, summary if summary.event_name else None)
+            event = parse_tournament(html, summary.event_id, format, summary)
+            kept = stored_events.get(summary.event_id)
+            if _FALLBACK_NAME.match(event.event_name) and kept and not _FALLBACK_NAME.match(kept.event_name):
+                event.event_name = kept.event_name
+                event.kind = event_kind(kept.event_name, event.source)
             log.info("Read event %s %s (%d results)", event.event_id, event.event_name, len(event.results))
             events.append(event)
         except ParseError as error:
@@ -289,6 +334,26 @@ def _read_events(
     if empty:
         store.mark_empty_events(empty)
     return events
+
+
+def _events_to_reread(
+    stored: Dict[str, EventSummary], listed: Dict[str, EventSummary], skip: Set[str], cutoff: Optional[datetime]
+) -> List[EventSummary]:
+    """Stored events in the window that were read badly or have changed, newest first.
+
+    Each comes with its listing's summary when there is one, so its name can come from there.
+    """
+    found = []
+    for event_id, kept in stored.items():
+        if event_id in skip or (cutoff and kept.date < cutoff):
+            continue
+        listing = listed.get(event_id)
+        named = listing is not None and bool(listing.event_name) and not _FALLBACK_NAME.match(listing.event_name)
+        renamed = named and listing.event_name != kept.event_name
+        grown = listing is not None and (listing.decklists or 0) > (kept.decklists or 0)
+        if _FALLBACK_NAME.match(kept.event_name) or renamed or grown:
+            found.append(listing if named else EventSummary(event_id, "", kept.date))
+    return sorted(found, key=lambda summary: summary.date or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
 
 
 def _search_events(
@@ -346,39 +411,85 @@ def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[E
     return sorted(wanted.values(), key=lambda deck: deck.date, reverse=True)
 
 
-def _download_decks(browser: Browser, store: Store, wanted: List[_WantedDeck], budget: int, report: RunReport) -> int:
-    existing = store.existing_deck_ids(deck.deck_id for deck in wanted)
+def _download_decks(
+    browser: Browser,
+    store: Store,
+    wanted: Dict[str, List[_WantedDeck]],
+    config: ScrapeConfig,
+    report: RunReport,
+    pacer: Optional[Pacer] = None,
+) -> None:
+    """Downloads the new decks of every format the way a reader would, saving each batch as it comes."""
+    everything = [want for decks in wanted.values() for want in decks]
+    existing = store.existing_deck_ids(want.deck_id for want in everything)
     report.decks_skipped += len(existing)
     gone = store.missing_deck_ids()
-    todo = [want for want in wanted if want.deck_id not in existing and want.deck_id not in gone][: max(budget, 0)]
+    allowance = max(config.max_new_decks, 0)
+    # Each format has its own allowance, so one big backlog can't starve the others.
+    todo: Dict[str, List[_WantedDeck]] = {}
+    chosen: Set[str] = set()
+    over_allowance = 0
+    for format, decks in wanted.items():
+        fresh = [want for want in decks if want.deck_id not in existing and want.deck_id not in gone and want.deck_id not in chosen]
+        todo[format] = fresh[:allowance]
+        chosen.update(want.deck_id for want in todo[format])
+        if len(fresh) > allowance:
+            over_allowance += len(fresh) - allowance
+            log.info("%d %s decks wait past the limit of %d new decks a format; they come next run", len(fresh) - allowance, format, allowance)
+    if not chosen:
+        return
+
+    pacer = pacer or Pacer(config.deck_pacing, random.Random())
+    plan = build_plan(todo, pacer.pacing, pacer.rng)
+    planned = sum(len(visit.decks) for visit in plan)
+    over_run = len(chosen) - planned
+    if over_run:
+        log.info("%d decks wait past the limit of %d new decks a run; they come next run", over_run, pacer.pacing.per_run)
+    by_path = {deck_path(want.deck_id): want for decks in todo.values() for want in decks}
     missing: List[str] = []
-    # Downloaded in chunks and saved after each, so a crash or timeout keeps what was fetched.
-    for start in range(0, len(todo), 50):
-        chunk = todo[start : start + 50]
-        texts = browser.fetch_pages([f"/deck/download/{want.deck_id}" for want in chunk])
+
+    def handle(visit: Visit, fetched: List[Fetched]) -> None:
         pending: List[Deck] = []
-        for want in chunk:
+        for answer in fetched:
+            want = by_path[answer.path]
+            if answer.status != 200:
+                # Not inside an except, so logged without a traceback.
+                log.error("Failed on deck %s: HTTP %d", want.deck_id, answer.status)
+                report.errors.append(f"deck {want.deck_id}: HTTP {answer.status} on {answer.path}")
+                continue
             try:
-                mainboard, sideboard = parse_decklist(_body(texts[f"/deck/download/{want.deck_id}"]))
+                mainboard, sideboard = parse_decklist(answer.body)
             except ParseError:
                 # MTGGoldfish redirects a deleted deck to its metagame page.
                 log.info("Deck %s is no longer on MTGGoldfish", want.deck_id)
                 missing.append(want.deck_id)
                 continue
-            except Exception as error:  # noqa: BLE001
-                _fail(report, f"deck {want.deck_id}", error)
-                continue
-            budget -= 1
             pending.append(
-                Deck(
-                    want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id
-                )
+                Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id)
             )
         _flush_decks(store, pending, report)
+
+    outcome = run_downloads(browser, plan, pacer, handle)
     if missing:
         store.mark_missing_decks(missing)
         log.info("%d decks are no longer on MTGGoldfish; later runs skip them", len(missing))
-    return budget
+
+    report.decks_deferred = over_allowance + over_run + outcome.left
+    minutes = pacer.elapsed() / 60
+    if outcome.reason == "blocked":
+        report.deck_block = outcome.refusal
+        warning = (
+            f"Deck downloads blocked after {outcome.downloaded_attempted} ({outcome.refusal}); "
+            f"{report.decks_deferred} left for the next run"
+        )
+        report.warnings.append(warning)
+    elif outcome.reason == "time":
+        log.info(
+            "Deck downloads stopped at the %.0f-minute budget after %d; %d left for the next run",
+            pacer.pacing.minutes, outcome.downloaded_attempted, report.decks_deferred,
+        )
+    else:
+        log.info("Downloaded %d new decks in %.0f min; %d wait for the next run", report.decks_written, minutes, report.decks_deferred)
 
 
 def _body(result: Union[str, Exception]) -> str:

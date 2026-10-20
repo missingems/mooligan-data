@@ -14,7 +14,7 @@ CATALOG = {
     slug(entry["name"]): entry
     for entry in [
         card("Lightning Bolt", "Instant", price=1.5),
-        card("Psychic Frog", "Creature — Frog", price=18.0),
+        card("Psychic Frog", "Creature — Frog", price=18.0, scryfall_id="s-psychic-frog"),
         card("Consign to Memory", "Instant"),
         card("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", "Enchantment — Saga", layout="transform"),
         card("Mountain", "Basic Land — Mountain"),
@@ -59,6 +59,7 @@ def test_a_card_the_last_week_plays_and_the_weeks_before_did_not_breaks_out():
     assert row == {
         "name": "Psychic Frog",
         "oracle_id": "o-psychic-frog",
+        "scryfall_id": "s-psychic-frog",
         "type": "creature",
         "decks": 4,
         "share": 80.0,
@@ -69,9 +70,18 @@ def test_a_card_the_last_week_plays_and_the_weeks_before_did_not_breaks_out():
         "top8": 3,
         "wins": 1,
         "best_prestige": 2,
-        "archetypes": [{"id": "dimir", "name": "Dimir", "decks": 3}, {"id": "dimir-control", "name": "Dimir-Control", "decks": 1}],
         "price": 18.0,
+        "results": row["results"],
     }
+    assert "archetypes" not in row
+    # The printing the price is of sits right after the oracle id.
+    assert list(row)[:3] == ["name", "oracle_id", "scryfall_id"]
+    assert [(r["deck_id"], r["finish"], r["top8"], r["archetype_id"], r["archetype"], r["copies"], r["mainboard"]) for r in row["results"]] == [
+        ("r0", "1st Place", True, "dimir", "Dimir", 4, True),
+        ("r1", "2nd Place", True, "dimir", "Dimir", 4, True),
+        ("r3", "5th Place", True, "dimir-control", "Dimir-Control", 2, False),
+        ("r2", "9th Place", False, "dimir", "Dimir", 4, True),
+    ]
 
 
 def test_too_few_decks_or_too_little_growth_is_no_breakout():
@@ -97,3 +107,58 @@ def test_breakouts_rank_by_decks_hold_at_most_the_limit_and_name_a_double_faced_
     recent = [(fable + [(1, "Consign to Memory")], [], "1st Place", "a")] * 6 + [(fable, [], "1st Place", "a")]
     file = breakouts(recent, kind="regional_championship", name="Regional Championship")
     assert [(row["name"], row["decks"], row["best_prestige"]) for row in file["cards"]] == [("Fable of the Mirror-Breaker", 7, 4), ("Consign to Memory", 6, 4)]
+
+
+def test_results_list_every_recent_deck_in_order_with_what_each_played():
+    frog = [(4, "Psychic Frog")]
+    recent = [
+        (frog, [], "9th Place", "dimir"),
+        (frog, [], "5-0", "dimir"),
+        ([], [(1, "Psychic Frog")], "2nd Place", "dimir"),
+        (frog + [(1, "Consign to Memory")], [(1, "Psychic Frog")], "1st Place", None),
+        (frog, [], "1st Place", "dimir"),
+    ]
+    document, deck_cards = world(recent)
+    document["events"][1]["event_name"] = "Modern Challenge 32 2026-09-28"
+    # r4 was in a Regional Championship the day before; r0..r3 are from the challenge two days ago.
+    other = {"event_id": "3", "event_name": "Regional Championship", "kind": "regional_championship", "date": "2026-09-29T00:00:00Z", "results": [document["events"][1]["results"].pop(4)]}
+    document["events"].append(other)
+    for r in document["events"][1]["results"] + other["results"]:
+        r["player"] = "P" + r["deck_id"]
+    document["events"][1]["results"][1]["colors"] = ["U", "B"]
+    document["events"][1]["results"][4 - 1]["colors"] = ["R"]
+    [row] = build_breakouts(document, deck_cards, CATALOG, NOW)["cards"]
+    assert "archetypes" not in row
+    assert row["decks"] == len(row["results"]) == 5
+    assert [r["deck_id"] for r in row["results"]] == ["r4", "r3", "r2", "r0", "r1"]
+    first, second, third, fourth, last = row["results"]
+    assert first == {
+        "deck_id": "r4", "date": "2026-09-29", "event_id": "3", "event_name": "Regional Championship", "prestige": 4,
+        "finish": "1st Place", "top8": True, "player": "Pr4", "archetype": "Dimir", "archetype_id": "dimir",
+        "colors": [], "copies": 4, "mainboard": True,
+    }
+    assert (third["finish"], third["copies"], third["mainboard"], third["prestige"]) == ("2nd Place", 1, False, 2)
+    # Untracked: no archetype id, the pilot's own deck title, and the colours scraped from the event page.
+    assert (second["archetype_id"], second["archetype"], second["colors"], second["copies"], second["event_name"]) == (None, "Brew", ["R"], 5, "Modern Challenge 32")
+    assert (fourth["finish"], fourth["top8"]) == ("9th Place", False)
+    # A League-style record is no placing, so it is not a top 8, and it follows the placings.
+    assert (last["finish"], last["top8"], last["colors"]) == ("5-0", False, ["U", "B"])
+    assert [r["date"] for r in row["results"]] == ["2026-09-29", "2026-09-28", "2026-09-28", "2026-09-28", "2026-09-28"]
+
+
+def test_a_deck_only_an_archetype_lists_has_no_event_and_the_lowest_prestige():
+    document, deck_cards = world([([(4, "Psychic Frog")], [], "1st Place", "a")] * 4)
+    document["events"][1]["results"].pop()
+    document["archetypes"]["a"]["results"] = [{"deck_id": "r3", "date": "2026-09-27T00:00:00Z", "event_id": "99", "event_name": "Gone 2026-09-27", "finish": "3rd Place", "player": None}]
+    [row] = build_breakouts(document, deck_cards, CATALOG, NOW)["cards"]
+    last = row["results"][-1]
+    assert (last["deck_id"], last["date"], last["event_id"], last["event_name"], last["prestige"], last["player"], last["top8"]) == ("r3", "2026-09-27", None, None, 1, None, True)
+    assert last["archetype_id"] == "a"
+
+
+def test_a_result_without_scraped_colours_has_those_of_its_deck():
+    recent = [([(4, "Psychic Frog")], [], "1st Place", "dimir")] * 4
+    document, deck_cards = world(recent)
+    catalog = {**CATALOG, slug("Psychic Frog"): card("Psychic Frog", "Creature — Frog", mana_cost="{1}{U}{B}")}
+    [row] = build_breakouts(document, deck_cards, catalog, NOW)["cards"]
+    assert {tuple(r["colors"]) for r in row["results"]} == {("U", "B")}

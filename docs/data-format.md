@@ -1,10 +1,11 @@
 # Published data format
 
-Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper once a day at 14:00 UTC. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
+Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the scraper once a day. The run is scheduled for 14:00 UTC, but GitHub's scheduler has been starting it hours late (the scheduled runs of 30 September and 1, 2 and 3 October 2026 started at 19:01, 19:24, 19:08 and 17:52 UTC and finished at 19:35, 20:11, 19:55 and 18:46), and the files land about an hour after it starts. The `generated_at` of `explore.json`, `popular-cards/…` and `breakouts/…` is when the run started building them, and `today.json`'s is when it was built. Dates are UTC, in the form `2026-09-21T00:00:00Z`. The files are served compressed when the client accepts gzip or Brotli, which `URLSession` and browsers do by default.
 
 | Path | Holds | Cache-Control |
 | --- | --- | --- |
 | `index.json` | What each format's snapshot is, with its hash | `max-age=60` |
+| `explore-manifest.json` | The SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/…`, `breakouts/…`), to see in one request which of them changed | `max-age=60` |
 | `explore.json` | A small summary of the six main formats, for a landing screen: top archetypes and the latest events | `max-age=300` |
 | `snapshots/{format}.json` | Meta, events and archetype results for one format | `max-age=300` |
 | `archetypes/{archetype_id}.json` | One archetype in a format's current metagame: its shares and its recent decks | `max-age=300` |
@@ -15,8 +16,13 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
 | `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
+| `today.json` | One response for Explore's Today widgets: up to three breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
+| `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
+| `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
+| `edh/commanders/{slug}/guide.json` | One commander's play styles and its five power brackets, each with its cards, judged by Claude | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
+| `edh/top.json` | EDHREC's ranked top 100 commanders of the past week and the past month, with each one's share of the window's top 100 decks | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
@@ -25,13 +31,14 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
-Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1`, and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
+Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
 ## Suggested app flow
 
 0. For a landing screen (an Explore tab), fetch `explore.json` alone: it has each main format's top archetypes and latest events in a few tens of KB, so nothing else has to download first.
+   To keep the Explore files (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, and the `popular-cards/` and `breakouts/` files) up to date, fetch `explore-manifest.json` first and download only the files whose `sha256` differs from the copy you hold, in place of asking for each file. See [`explore-manifest.json`](#explore-manifestjson).
 1. Fetch `index.json`, which is a few hundred bytes.
 2. For each format the app shows, compare `formats[format].sha256` with the hash of the snapshot you have cached. Download `snapshots/{format}.json` only when the hash differs.
 3. Fetch `decks/{deck_id}.json` when the user opens a deck, and cache it for good.
@@ -44,6 +51,21 @@ Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `pre
 5. Look up cards on Scryfall by `card_name` (`https://api.scryfall.com/cards/named?exact=…`), keeping to Scryfall's guidelines: a User-Agent header, at most about 10 requests a second, and caching.
 
 A deck or event a snapshot mentions may not be published yet. The scraper downloads up to 1,500 new decklists per format a run, newest first, so the app should handle a 404 from `decks/…` as "not available yet". The archetype and event files say which decks to expect: each row's `published` is false for a deck whose file doesn't exist yet, so the app can grey the row out instead of asking. An `event_id` in an archetype's deck list can point at an event with no file (an event outside the last 30 days, or one dated ahead), which is a 404 as well.
+
+## Merged archetypes
+
+MTGGoldfish names some archetypes apart that play one deck (Modern's "Eldrazi Ramp", "Eldrazi" and "Mono-Green Basking Broodscale Combo"; "Izzet Prowess" and "Temur Prowess"). Every published file shows such archetypes as one, under the id and name of its **leader**, and every result of them under the leader. Added on 17 October 2026: before it each MTGGoldfish archetype stood alone, so decode `merges` and `merged_into` as optional. The scraper keeps them apart in `state/snapshots/{format}.json`, so the groups are worked out afresh each run and an archetype that drifts away is published on its own again.
+
+- **Lists compared.** An archetype's average list over a window is its mainboard's non-lands from the stored decklists of its decks in that window, each card at its share of the decks times its average copies (copies capped at 4). Two lists score their weighted cosine, 0 to 1.
+- **Groups.** The archetypes with stored lists are taken biggest first: most decks in the last 30 days, then 14, then 7. Each joins the leader it scores highest against, at **0.8** or more, in any of the 7, 14 and 30 day windows where both have lists, and otherwise leads its own group. A member is so always close to its leader's own list, not only to another member, and no chain of look-alikes forms. One set of groups holds in every window, so an id means the same thing on the 7, 14 and 30 day lists, and `share_7d` and `trend` compare like with like. An archetype with no stored list in the last 30 days is never merged.
+- **Groups hold from run to run.** Each run starts from the last run's groups (`state/archetype-groups/{format}.json`). A group keeps its leader, and so its id and name, unless one of its members now has more than 1.2 times the leader's decks of the last 30 days, which then leads it; so two close archetypes (Eldrazi Tron and Tron) don't swap the id every other day. A member stays in its group while it scores at least **0.75** against the leader, below the 0.8 a new member needs, so one scoring about 0.8 doesn't come and go. A group whose leader has no stored list left breaks up, and its archetypes are grouped afresh.
+- **Overrides.** `scraper/mtgmeta/archetype_overrides.json` is kept by hand and wins over every score: `disabled` lists the formats published unmerged (Duel Commander, whose decks share most of their 99 across different commanders); `keep_apart` (per format, sets of archetype ids) never puts two ids of a set in one group, whether one would join the other or both one leader (Modern's 4c Energy and Azorius Control); `always_merge` (per format, sets of ids) joins every archetype of a set to the group of the biggest of them, whatever it scores.
+- **Results with no archetype** (`archetype_id` null, the pilot's own deck title) join the leader whose own 30-day list theirs scores highest against, at 0.8 or more, and take its `archetype_id` and name.
+- **Where it shows.** In `snapshots/{format}.json`: each window's `meta` lists a group once, under the leader, with the members' `percentage` and `deck_count` added up (`deck_count` null when a member's is) the leader's `key_cards` and featured `deck_id` (from its tile in that window, else its tile in the longest window that has one, else the biggest member's), and the group's colours, in order of share; `archetypes` has the leader only, its `results` every member's and the results that joined it, newest first; every event result of a member, or that joined, has the leader's `archetype_id` and name as `archetype`. `explore.json`, `archetypes/{id}.json`, `events/{id}.json`, `cards/{slug}.json`, `popular-cards/`, `breakouts/` and `today.json` are built from that snapshot, so they show the groups too. A result that joined a group adds to its results, top 8s and wins, but not to its `percentage` or `deck_count`, which are MTGGoldfish's.
+- **A group's `colors`** are the colours at least half of its decks play, among its decks whose colours are known: every result of every member and every result that joined, each deck's colours being the pips MTGGoldfish showed on its event page, else those of its stored decklist (see *Colours of a result* in `explore.json`). Neither the leader's tile alone (Eldrazi Ramp's `["G"]` would hide a red half of the group) nor the union (one Gruul deck would make the group red). A group none of whose decks' colours is known keeps the leader's tile colours. An archetype that merged nothing keeps its tile's colours.
+- **`merges`**, at the top of `snapshots/{format}.json`, maps every archetype id merged away to its leader's id (`{}` when none is). Decode it as optional.
+- **An old id still opens.** `archetypes/{id}.json` for an id merged away is still written: it is the leader's file (with the leader's `id`), plus `"merged_into"` naming the leader. Decklists keep MTGGoldfish's own `archetype_id` (see `decks/{deck_id}.json`); `merges` maps it.
+- A run that could not read Scryfall's card catalog (which tells the lands apart) publishes the snapshots unmerged.
 
 ## `index.json`
 
@@ -65,6 +87,30 @@ A deck or event a snapshot mentions may not be published yet. The scraper downlo
 ```
 
 A format is missing from `formats` until its first scrape completes.
+
+## `explore-manifest.json`
+
+The SHA-256 of each Explore file, so an app that keeps them can tell from one small response (about 2 KB for all 22 files) which ones changed, in place of asking for each of them. It is published as compact JSON, sorted by path. `index.json` is as it was: it still lists only the snapshots, so nothing that reads it changes.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-04T19:52:10Z",
+  "files": {
+    "breakouts/legacy.json": { "sha256": "1b6e…" },
+    "explore.json": { "sha256": "9d40…" },
+    "popular-cards/modern.json": { "sha256": "e7a2…" },
+    "previews.json": { "sha256": "52b9…" },
+    "today.json": { "sha256": "04cf…" }
+  }
+}
+```
+
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
+- **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings, and `rules/keywords.json` is written only on a run that finds new rules. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
+- **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
+- **Using it.** Fetch `explore-manifest.json`, compare each `files[path].sha256` with the hash of the copy you hold, and download only the files that differ. For a path the manifest does not list, or when the manifest is a 404, ask for the file itself, for example with `If-None-Match`. A cache can hand out the previous copy of a file for up to its `max-age`, so if a download still differs from the manifest, keep it and check again at the next manifest.
 
 ## `snapshots/{format}.json`
 
@@ -119,9 +165,10 @@ A format is missing from `formats` until its first scrape completes.
 }
 ```
 
-- **`meta`** is keyed by window: `30d`, `14d` and `7d`. A format whose page has no window selector (Duel Commander) publishes `30d` only. Archetypes are in MTGGoldfish's order, most played first. `deck_count` can be null, and `deck_id` (the archetype's featured list) is null when it couldn't be read. Each archetype also has **`colors`**, the colours MTGGoldfish shows on its tile as letters (`W`, `U`, `B`, `R`, `G`) in that fixed order, `[]` for a colourless deck, and **`key_cards`**, the three cards its tile names, most representative first. A key card is `{ "name", "oracle_id" }`, with Scryfall's oracle id matched from the name, or null when the catalog doesn't know it (join on `oracle_id`, not the name). Both are `[]` when MTGGoldfish's tile doesn't show them, and are missing from snapshots published before 30 September 2026, so decode them as optional.
+- **`meta`** is keyed by window: `30d`, `14d` and `7d`. A format whose page has no window selector (Duel Commander) publishes `30d` only. Archetypes are in MTGGoldfish's order, most played first. `deck_count` can be null, and `deck_id` (the archetype's featured list) is null when it couldn't be read. Each archetype also has **`colors`**, the colours MTGGoldfish shows on its tile as letters (`W`, `U`, `B`, `R`, `G`) in that fixed order, `[]` for a colourless deck, and **`key_cards`**, up to three cards that stand for it, most representative first. They are the first three of the archetype's `hand` in `archetypes/{id}.json` (its most played mainboard non-lands of the last 7 days, from our stored decklists), and, for an archetype with no hand (no stored list in those days), the three cards MTGGoldfish's tile names. A key card is `{ "name", "oracle_id" }`, with Scryfall's oracle id matched from the name, or null when the catalog doesn't know it (join on `oracle_id`, not the name). Both are `[]` when the archetype has no hand and MTGGoldfish's tile doesn't show them, and are missing from snapshots published before 30 September 2026, so decode them as optional. Key cards come from the hand since 18 October 2026; before, they were always the tile's.
 - **`events`** is newest first and covers every event MTGGoldfish lists for the format in the last 30 days: it is read from their tournament search, not just the "latest 10". Each has a **`kind`**, worked out from its name: `pro_tour` (also Worlds), `regional_championship`, `rcq` (RCQs and any other qualifier), `store_championship`, `mtgo_challenge` (Challenges, Showcases, prelims), `mtgo_league` (Magic Online Leagues: a league counts only when its `source` is `mtgo.com`, so a paper league imported from melee.gg is `other`), or `other` for local and unnamed events. Letters from another alphabet that look like a Latin one (a Cyrillic С in "Store Сhampionship") are read as the Latin letter. The `kind` is worked out again from the name and source on every run, so a fix to the rules corrects the events already stored (the `kind` of a League from melee.gg was `mtgo_league` until 1 October 2026). **`source`** is the site the results came from, usually `mtgo.com` or `melee.gg`, or null. MTGGoldfish sometimes imports a Challenge twice, and names the copy "… (1)". A copy with the same standings as another event is left out, here and in `archetypes`. A result's `finish` is a placing such as `"1st Place"` for Challenges, or a record such as `"5-0"` for Leagues. `archetype_id` is null when the deck isn't in a tracked archetype's list; `archetype` is then the pilot's own deck title. A result's **`colors`** are the pips MTGGoldfish shows beside the deck on the event's page, as `W`, `U`, `B`, `R`, `G` in that order. The key is there only for an event read since 1 October 2026 whose page showed some, and is absent otherwise (a colourless deck shows none, and an older event was not read for them), so decode it as optional: absent means unknown here, and `explore.json` and `events/{id}.json` fill it in (see below).
 - **`archetypes`** is keyed by archetype id. `results` holds every deck of that archetype in the last 30 days, newest first. To group by event, group on `event_id`, which is null for the rare result without one; `event_name` is always set.
+- Archetypes that play one deck are merged under their leader in `meta`, `events` and `archetypes`, and **`merges`** maps each id merged away to its leader: see [Merged archetypes](#merged-archetypes).
 
 ## `explore.json`
 
@@ -191,7 +238,7 @@ A summary of the six main formats for a landing screen, written with the snapsho
   - **`lead`** is the result an event row can show without opening the event: the 1st place result, or, for an event with no 1st place (a League), the first result listed. It is `{ "finish", "archetype", "archetype_id", "player", "deck_id", "colors", "key_cards" }`: `finish` is a placing such as `"1st Place"` or a record such as `"5-0"`; `archetype_id` is null when the deck isn't in a tracked archetype, and `archetype` is then the pilot's own deck title; `deck_id` is `decks/{deck_id}.json`. `colors` are the colours of the deck and `key_cards` its two preview cards (see below). `lead` is null only when the event has no results. Added on 30 September 2026, so decode `id`, `result_count` and `lead` as optional.
   - **`top`** is the event's first three results in finish order (1st, 2nd, 3rd place; a League's are its first three listed), each shaped like `lead`: `{ "finish", "player", "archetype", "archetype_id", "deck_id", "colors", "key_cards" }`. `top[0]` is `lead`. It has fewer than three when the event has fewer results, and is `[]` when it has none. Added on 30 September 2026, so decode it as optional.
   - **Key cards of a result** (in `lead`, `top` and `events/{id}.json`) are always the two cards to draw for it, so a row never lacks a preview. They are, in order of preference:
-    1. The first two of the archetype's tile in the format's metagame (from the longest window that shows it), as in `standings`, when `archetype_id` is set and the archetype has a tile.
+    1. The first two of the archetype's key cards in the format's metagame (from the longest window that shows it; the first two of its `hand`, else its tile's), as in `standings`, when `archetype_id` is set and the archetype has a tile.
     2. Otherwise (`archetype_id` is null because the deck isn't in a tracked archetype, or the archetype has left the metagame or shows no key cards) two cards of the deck's own mainboard, never a land: first a card whose name shares a word of four letters or more with the result's `archetype` (a "Beanstalk Control" deck picks a card with "Beanstalk" in its name; the best ranked such card), then the most played cards, the four-ofs first. Cards played in equal numbers go to the one with the higher price (Scryfall's USD price for the card, and a card with no price ranks below any priced one), then to the higher mana value, then to the decklist's order. Each is `{ "name", "oracle_id" }`, the name as the decklist writes it and Scryfall's oracle id, both from the stored decklist and Scryfall's catalog: a card the catalog doesn't know is skipped.
     3. `[]` only when the deck's list isn't stored yet (its `published` in `events/{id}.json` is false; the scraper downloads a capped number of decklists a run) or has no non-land card that Scryfall knows, such as a list of basic lands.
     Before 30 September 2026 only the first applied, so a result outside a tracked archetype had `[]`.
@@ -203,11 +250,41 @@ A summary of the six main formats for a landing screen, written with the snapsho
 
     Added on 1 October 2026 (before it a result had no `colors`), so decode it as optional.
 - **`latest_event`** is the first of `recent_events` that has a winner, or the first if none has, or null when there are no events. It has the fields of a recent event except `winner_player` (so it has `top` too).
+- **`localized`** is the printed name and picture of every card in the file, in Japanese, French, Italian, Spanish and German, so the app can show Explore in the card language without asking Scryfall. See *`localized`* below. Added on 11 October 2026, so decode it as optional.
 - An `explore.json` run for some formats only keeps the rest from the snapshots already published, and it isn't written at all when there is nothing to summarise.
+
+### `localized`
+
+`today.json` and `explore.json` have a top-level **`localized`**, keyed by the `oracle_id` of every card in the file (wherever an `oracle_id` appears in it), then by language code (`ja`, `fr`, `it`, `es`, `de`), then the card as printed in that language:
+
+```json
+"localized": {
+  "33e3793c-098f-4897-88f3-9f9ce9081e0f": {
+    "ja": { "name": "驕慢な戦闘魔道士", "image": "https://cards.scryfall.io/normal/front/1/7/174c608e-9086-4de8-ae28-51f537884b07.jpg?1790683523" },
+    "fr": { "name": "Mage de bataille pompeux", "image": "https://cards.scryfall.io/normal/front/0/d/0d05d177-8b79-4717-9f16-ff3230101c4d.jpg?1790683507" }
+  },
+  "<double-faced oracle id>": {
+    "ja": {
+      "name": "秘密を掘り下げる者 // 昆虫の逸脱者",
+      "image": "https://cards.scryfall.io/normal/front/…jpg?…", "back_image": "https://cards.scryfall.io/normal/back/…jpg?…",
+      "faces": [{ "name": "秘密を掘り下げる者" }, { "name": "昆虫の逸脱者" }]
+    }
+  }
+}
+```
+
+- **A key is left out when there is no value.** A card with no printing in a language has no entry for it (and one with none in any language has no entry at all), so an app shows the English card for what is missing. Every key of an entry is optional.
+- **`name`** is the printed name: the card's `printed_name`; for a card with faces and none of its own, the faces' printed names joined with `" // "`, when every face has one; else the front face's.
+- **`image`** is the `normal`-size picture (`https://cards.scryfall.io/normal/…`) of the printing. The path never changes for a printing; the `?` timestamp changes when Scryfall replaces the scan. **`back_image`** is the back face's picture, present only for a double-faced card whose two faces both have one; a double-faced card with only one of them has neither `image` nor `back_image`. A scan Scryfall marks `missing` or `placeholder` is never published.
+- **`faces`** is there for a card with more than one face, one object per face in order, with the face's `name` (and, in `today.json`, its text); a face with nothing to say is `{}`.
+- **The printing** is normally the same for every language of a card, and is chosen so the picture matches the card the app shows. The English printing is the newest paper printing (by `released_at`), then the lowest collector number (compared as a number where it has digits), then the set code. For each language the entry comes from that language's printing of the **same set and collector number** when it has one with a usable picture; otherwise (so that language does not share the printing) from that language's own newest paper printing with a usable picture. Tokens, art series cards, emblems, vanguard, scheme and planar cards, and printings not available in paper are never chosen.
+- **Text, `today.json` only.** There the entry also has **`type_line`**, **`text`** and **`flavor_text`** (the printed type line, rules text and flavour text; each left out when the printing has none), and each of `faces` has the same three, so a card opened from Today reads in full offline. `explore.json` has the name and pictures only, as it holds many more cards.
+- **Size.** About 55 KB gzipped in `explore.json` (175 KB raw, over about 1,200 entries) and 10 KB gzipped in `today.json` (33 KB raw) added to the figures above. They change with the file, which is about daily.
+- **Missing.** A run with `LOCALIZE=0`, or one that could not read Scryfall's file and has no saved cards, publishes the file without `localized`. A run that could not read it but has the last good run's cards (`state/localized.json.gz`) publishes those instead, so a card new that day may be missing from it. Decode a missing `localized` as empty, and skip an entry that cannot be read rather than failing the file.
 
 ## `archetypes/{archetype_id}.json`
 
-One file per archetype in each format's current metagame (any of the `7d`, `14d` and `30d` windows), written with the snapshots. The `archetype_id` is a standings row's `id`, and ids are unique across formats. Every format's archetypes are written, including the three formats `explore.json` leaves out. Everything in it can be worked out from the snapshot; it is that archetype's slice, so a screen doesn't download the whole format.
+One file per archetype in each format's current metagame (any of the `7d`, `14d` and `30d` windows), written with the snapshots. The `archetype_id` is a standings row's `id`, and ids are unique across formats. Every format's archetypes are written, including the three formats `explore.json` leaves out. Everything in it can be worked out from the snapshot and the stored decklists; it is that archetype's slice, so a screen doesn't download the whole format. An archetype is a group of merged archetypes under its leader (see [Merged archetypes](#merged-archetypes)), and an id merged away has a file too: its leader's, with `merged_into`.
 
 ```json
 {
@@ -222,16 +299,54 @@ One file per archetype in each format's current metagame (any of the `7d`, `14d`
   ],
   "shares": { "7d": 14.6, "14d": 14.4, "30d": 10.3 },
   "decks": [
-    { "deck_id": "7977623", "date": "2026-09-29", "event_id": "66952", "event_name": "Modern Challenge 64", "finish": "15th Place", "player": "Uagli1", "published": true }
-  ]
+    {
+      "deck_id": "7977623", "date": "2026-09-29", "event_id": "66952", "event_name": "Modern Challenge 64", "finish": "15th Place", "player": "Uagli1", "published": true,
+      "event": { "id": "66952", "name": "Modern Challenge 64", "kind": "mtgo_challenge", "prestige": 3, "source": "mtgo.com", "deck_count": 64 },
+      "changes": {
+        "added": [{ "name": "Forest", "oracle_id": "…", "quantity": 2, "board": "main" }],
+        "removed": [
+          { "name": "Devourer of Destiny", "oracle_id": "…", "quantity": 1, "board": "main" },
+          { "name": "Trinisphere", "oracle_id": "…", "quantity": 1, "board": "side" }
+        ],
+        "added_count": 2, "removed_count": 2
+      }
+    }
+  ],
+  "cards": {
+    "window": "7d", "deck_count": 357, "list_count": 217,
+    "main": [
+      { "name": "Kozilek's Command", "oracle_id": "2f2c549d-…", "type": "instant", "decks": 217, "share": 100.0, "copies": 4.0 },
+      { "name": "Forest", "oracle_id": "…", "type": "land", "decks": 214, "share": 98.6, "copies": 5.5 }
+    ],
+    "side": [
+      { "name": "Trinisphere", "oracle_id": "…", "type": "artifact", "decks": 207, "share": 95.4, "copies": 2.5 }
+    ]
+  },
+  "hand": [
+    { "name": "Kozilek's Command", "oracle_id": "2f2c549d-…" },
+    { "name": "Sowing Mycospawn", "oracle_id": "…" }
+  ],
+  "consensus": {
+    "main": [
+      { "name": "Forest", "oracle_id": "…", "quantity": 6 },
+      { "name": "Kozilek's Command", "oracle_id": "2f2c549d-…", "quantity": 4 }
+    ],
+    "side": [{ "name": "Trinisphere", "oracle_id": "…", "quantity": 3 }]
+  }
 }
 ```
 
-- **`colors`** and **`key_cards`** are as in the snapshot's meta, with up to three key cards (the tile's own three). A tile that shows no colours takes the colours of the archetype's featured deck (as in `explore.json`'s `standings`; `[]` when it is colourless or its list isn't stored), as one that shows no key cards takes three cards of the archetype's featured deck instead, picked as for a result's key cards (the namesake of the archetype's `name` first), and `[]` only when the featured deck's list isn't stored.
+- **`colors`** and **`key_cards`** are as in the snapshot's meta, with up to three key cards: the first three of `hand`, in its order, so they are the first cards of the hand's fan; with no hand, the tile's own three. A tile that shows no colours takes the colours of the archetype's featured deck (as in `explore.json`'s `standings`; `[]` when it is colourless or its list isn't stored), as one that shows no key cards takes three cards of the archetype's featured deck instead, picked as for a result's key cards (the namesake of the archetype's `name` first), and `[]` only when the featured deck's list isn't stored.
 - **`shares`** is the archetype's percent of the format's decks in each window, to one decimal, null for a window that doesn't list it (or a format with no such window; Duel Commander has `30d` only).
 - **`decks`** are the archetype's results in the snapshot, newest first, at most 60, dated today or earlier. Results of one day are in the snapshot's order, which is not by finish. `date` is `yyyy-MM-dd` (UTC) and `event_name` has the event's own date taken out, as in `explore.json`. `event_id` is null for a result without an event, and otherwise names `events/{event_id}.json`, when that event is in the last 30 days. `finish` is a placing or a League record.
 - **`published`** is whether `decks/{deck_id}.json` exists. The scraper caps how many decklists it downloads each run (see above), so a new result can wait a run or two; it is false until then.
+- **`event`** is the deck's event as an event row of `explore.json`'s `recent_events` shows it, for a header: `{ "id", "name", "kind", "prestige", "source", "deck_count" }`, each as there (`name` without its date, `deck_count` the results published for the event). It is null for a result whose event isn't in the snapshot (no `event_id`, or an event outside the last 30 days). Added on 17 October 2026, so decode it as optional.
 - An archetype with no results yet has `decks: []`.
+- **`cards`** is the archetype's card tally from our stored decklists of its decks of the last 7 days (`window` is `"7d"`), counted back from the run as `explore.json`'s top 8s are. An archetype with no stored list in those days is counted over its decks of the last 30 days instead, when any of them has one (`window` is then `"30d"`), and its `hand`, `consensus` and decks' `changes` follow. `deck_count` is its decks in those days and `list_count` how many of them have a stored list, which is what the tally counts. `main` and `side` are the mainboard's and sideboard's cards, each `{ "name", "oracle_id", "type", "decks", "share", "copies" }` as in `popular-cards/{format}.json`: `type` is the kind of card from the front face's type line (`creature`, `planeswalker`, `battle`, `land`, `instant`, `sorcery`, `artifact`, `enchantment`, in that order of precedence, or `other`), `decks` the lists that play it, **`share`** their percent of `list_count` to one decimal (0 to 100, as every share in these files), and **`copies`** the average copies in the lists that play it, to one decimal. Lands and basics are in; a card Scryfall's catalog doesn't know is left out. Sorted by `decks` (so by share), then `copies`, then name. With no stored list, both are `[]`. Added on 17 October 2026, so decode it as optional.
+- **`hand`** is the five mainboard non-lands that most stand for the archetype, by share times average copies (the card's copies over all the lists, divided by `list_count`), a tie going to the name: each `{ "name", "oracle_id" }`. Fewer when the lists have fewer, `[]` with none. Every key card list of the archetype (`key_cards` here and in the snapshot's meta, `explore.json`'s standings, and the key cards of its results) is the first cards of this hand, in its order, when it has any. Added on 17 October 2026, so decode it as optional.
+- **`consensus`** is the archetype's common list, from the same lists as `cards` (its stored decklists of the last 7 days, or 30 as in `cards`): every card that at least half of `list_count` play on that board, at its average copies in the lists that play it (`copies` in `cards`), rounded half up (2.5 is 3) and at least 1. `main` and `side` are each `[{ "name", "oracle_id", "quantity" }]`, most copies first, then name. Lands and basics count like any card. A card Scryfall's catalog doesn't know is in too, named as the first list writes it, with a null `oracle_id`. With no stored list in those days, both are `[]`. The quantities need not add up to 60 and 15. Added on 18 October 2026, so decode it as optional.
+- **`changes`** on a deck is how its list differs from `consensus`, card by card on each board: where it plays more copies than the consensus the difference is in `added`, where it plays fewer (or none) the difference is in `removed`, so a deck with two more Forests has `{ "name": "Forest", "quantity": 2, "board": "main" }` in `added`. Each is `{ "name", "oracle_id", "quantity", "board" }`, `board` being `"main"` or `"side"`, mainboard first, then most copies, then name; names are as in `consensus`. **`added_count`** and **`removed_count`** add up their `quantity`s. A deck as played as the consensus has both lists `[]` and both counts 0. Any deck of `decks` with a stored list has it, older decks too (compared with this week's consensus); it is null for a deck whose list isn't stored, and for every deck when the archetype has no stored list in the week (so `consensus` is empty). Added on 18 October 2026, so decode it as optional.
+- **`merged_into`** is there only in the file of an id merged into another: the leader's id, which is also the file's `id`. The rest of the file is the leader's.
 
 ## `events/{event_id}.json`
 
@@ -258,7 +373,7 @@ One file per event of the last 30 days, in every format, written with the snapsh
 ```
 
 - `name`, `date` (`yyyy-MM-dd`, UTC), `kind`, `prestige`, `source` and `url` are as in a recent event in `explore.json`. `prestige` was added on 1 October 2026, so decode it as optional.
-- **`results`** are in finish order, as the snapshot publishes them (as MTGGoldfish lists them; a League's are all `"5-0"`, in no particular order). Each carries what a snapshot event's result does (`finish`, `player`, `archetype`, `archetype_id`, `deck_id`), plus **`published`** (whether `decks/{deck_id}.json` exists), **`colors`** (the deck's colours, `[]` for colourless and `null` for unknown, from the event page, else the deck, else its archetype: see *Colours of a result* in `explore.json`; added on 1 October 2026) and **`key_cards`**, the result's two preview cards, chosen as for `lead` in `explore.json`: the archetype's tile when it has one, otherwise the deck's own namesake and most played cards. It is `[]` only for a result whose deck isn't stored yet (`published` false) or has no non-land card. A result with an `archetype_id` links to `archetypes/{archetype_id}.json` when that archetype is in the current metagame (it may 404 otherwise).
+- **`results`** are in finish order, as the snapshot publishes them (as MTGGoldfish lists them; a League's are all `"5-0"`, in no particular order). Each carries what a snapshot event's result does (`finish`, `player`, `archetype`, `archetype_id`, `deck_id`), plus **`published`** (whether `decks/{deck_id}.json` exists), **`colors`** (the deck's colours, `[]` for colourless and `null` for unknown, from the event page, else the deck, else its archetype: see *Colours of a result* in `explore.json`; added on 1 October 2026) and **`key_cards`**, the result's two preview cards, chosen as for `lead` in `explore.json`: the archetype's tile when it has one, otherwise the deck's own namesake and most played cards. It is `[]` only for a result whose deck isn't stored yet (`published` false) or has no non-land card. A result with an `archetype_id` links to `archetypes/{archetype_id}.json` when that archetype is in the current metagame (it may 404 otherwise). A result of an archetype merged into another, or with no archetype of its own that joined one, has the leader's `archetype_id` and name (see [Merged archetypes](#merged-archetypes)).
 - These files are only rewritten, never deleted: when an event or archetype ages out it stops being linked from `explore.json` and the snapshots but its file stays where it was.
 
 ## `decks/{deck_id}.json`
@@ -277,7 +392,7 @@ One file per event of the last 30 days, in every format, written with the snapsh
 }
 ```
 
-Each entry's `oracle_id` is Scryfall's, matched from the name; it is null on decks published before 2026-09-23 and for names the catalog doesn't know, and `cards/index.json` (which carries `oracle_id` per card) resolves those by slug. `event_id` is null for an archetype's featured list. `archetype_id` points at the entry in the snapshot's `archetypes`, so a deck screen can link to everything else that archetype did. It is null for decks stored before 23 September 2026, and for decks outside a tracked archetype; those can still be found by searching the snapshot's `archetypes` for the `deck_id`. `card_name` is exactly as MTGGoldfish writes it. For a double-faced card that's the front face ("Fable of the Mirror-Breaker"), which Scryfall's `exact` lookup accepts.
+Each entry's `oracle_id` is Scryfall's, matched from the name; it is null on decks published before 2026-09-23 and for names the catalog doesn't know, and `cards/index.json` (which carries `oracle_id` per card) resolves those by slug. `event_id` is null for an archetype's featured list. `archetype_id` points at the entry in the snapshot's `archetypes`, so a deck screen can link to everything else that archetype did. It is MTGGoldfish's id, written once with the deck: when that archetype is merged into another, the snapshot's `merges` gives the leader's id (its `archetypes/{id}.json` still opens, see [Merged archetypes](#merged-archetypes)). It is null for decks stored before 23 September 2026, and for decks outside a tracked archetype; those can still be found by searching the snapshot's `archetypes` for the `deck_id`. `card_name` is exactly as MTGGoldfish writes it. For a double-faced card that's the front face ("Fable of the Mirror-Breaker"), which Scryfall's `exact` lookup accepts.
 
 ## `cards/{slug}.json`
 
@@ -389,10 +504,14 @@ One file per format a run built, written with `popular-cards/{format}.json` from
   "baseline_deck_count": 2410,
   "cards": [
     {
-      "name": "Psychic Frog", "oracle_id": "0f1d…", "type": "creature",
+      "name": "Psychic Frog", "oracle_id": "0f1d…", "scryfall_id": "3c9a…", "type": "creature",
       "decks": 61, "share": 8.2, "previous_share": 0.4, "new": false, "first_seen": "2026-09-12", "mainboard": 58,
       "top8": 19, "wins": 3, "best_prestige": 3,
-      "archetypes": [ { "id": "modern-dimir-frog", "name": "Dimir Frog", "decks": 40 } ],
+      "results": [
+        { "deck_id": "7977623", "date": "2026-09-29", "event_id": "66952", "event_name": "Modern Challenge 64", "prestige": 3,
+          "finish": "2nd Place", "top8": true, "player": "Uagli1", "archetype": "Dimir Frog", "archetype_id": "modern-dimir-frog",
+          "colors": ["U", "B"], "copies": 4, "mainboard": true }
+      ],
       "price": 18.5
     }
   ]
@@ -403,9 +522,9 @@ One file per format a run built, written with `popular-cards/{format}.json` from
 - **What breaks out.** At least 4 recent decks and 1% of them play the card, and its **`share`** of the recent decks (a percent, to one decimal) is at least three times its **`previous_share`** of the earlier ones. **`new`** is true when no earlier deck played it. With fewer than 20 earlier decks every card would look new, so `cards` is `[]`. Basics are left out.
 - **Order.** Most `decks` first, then most `top8`, then `name`; at most 25 cards.
 - **How the decks did.** **`top8`** and **`wins`** count the card's recent decks that placed 8th or better, or 1st (a League record such as `5-0` is no placing). **`best_prestige`** is the highest `prestige` (1 to 4, as in `explore.json`) of the events those decks were played in, so a card a Regional Championship deck played shows 4. A deck only an archetype's results list, from an event not stored, counts as 1.
-- **`archetypes`** are the three archetypes with the most of the card's recent decks, most first, with `id` linking to `archetypes/{id}.json`. A deck outside a tracked archetype isn't counted here.
+- **`results`** lists every deck of the last 7 days that plays the card (so it has `decks` entries, with no cap), for showing which decks justify the call and which made top 8. Each has **`deck_id`** (which names `decks/{deck_id}.json` when that deck is published), **`date`** (`yyyy-MM-dd`), **`event_id`** and **`event_name`** (the name without its date, as in `events/{id}.json`; both null when the deck's event isn't stored), **`prestige`** (as in `explore.json`; 1 when the event isn't stored), **`finish`** (as the event lists it, such as `"2nd Place"` or a League's `"5-0"`; null if unknown), **`top8`** (true when the finish is a placing from 1st to 8th, so a League record is false), **`player`** (null if unknown), **`archetype`**, **`archetype_id`** and **`colors`**, **`copies`** (the card's copies in the deck, mainboard and sideboard together) and **`mainboard`** (whether it is played main). A deck outside the tracked archetypes is listed too, with a null `archetype_id` and the pilot's own deck title as its `archetype`. `colors` are those of a result in `events/{id}.json`: `[]` is colourless and `null` unknown (see *Colours of a result* above). The list is in order: top 8 decks first, then the rest; within each group higher `prestige` first, then better placing (placings before League records and unknown finishes), then newer `date`, then `deck_id`. This replaces the card's `archetypes`, which was removed on 2 October 2026; app decoders should treat it as gone.
 - **`first_seen`** is the date of the earliest deck of the last 30 days that plays the card.
-- **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
+- **`name`**, **`oracle_id`** and **`type`** are as in `popular-cards`. **`scryfall_id`** is the printing Scryfall's oracle-cards file picks for the card, the one `price` is of; it is missing when the catalog has none, and present from 5 October 2026. **`price`** is Scryfall's current US dollar price of the printing its oracle-cards file picks for the card (regular, else foil, else etched), missing when it has none; for price moves see `movers/{format}.json`.
 - A run for some formats only keeps the other formats' files as they were published, and a run that could not read Scryfall's catalog leaves all of them as they were.
 
 ## `movers/{format}.json`
@@ -436,13 +555,191 @@ One file per published format plus `all.json`, written every run: the cards whos
 ```
 
 - **Prices.** TCGplayer's retail price in US dollars, from MTGJSON, as published in `catalog/prices/history.bin.gz` (the catalog workflow builds it at 10:17 UTC; this file is rebuilt from it by the scrape at 14:00). **`price_day`** is the last day MTGJSON has a price for, and every window ends on it, so `1d` sets `price_day` against the day before it.
-- **A card's price** is the cheapest of its paper printings in the regular (non-foil) finish that day: what it costs to play it. A new, cheaper reprint lowers it from the day it is priced, so a reprint shows as a loss. Printings that are not the card to play with are left out: oversized cards, gold-bordered and other memorabilia, tokens, minigames, and the Un-sets and playtest cards. A printing's price holds over up to 3 days MTGJSON skipped, and after that the printing has no price. **`scryfall_id`** and **`set`** are the printing that is cheapest on `price_day`.
+- **A card's price** is the cheapest of its paper printings that come in the regular (non-foil) finish: what it costs to play it. A printing Scryfall lists as foil-only is left out, as its regular-finish price is not one anyone can pay (The List's foil-only Fatespinner, newly priced at 95 cents, once made the card look like it fell from $10.45). Printings that are not the card to play with are left out too: oversized cards, gold-bordered and other memorabilia, tokens, minigames, and the Un-sets and playtest cards. A printing's price holds over up to 3 days MTGJSON skipped, and after that the printing has no price.
+- **Like for like.** A window compares the printings that have a price at both of its ends: the card costs the cheapest of them on `price_day` and the cheapest of them at the start of the window. A printing priced for the first time in the window (a reprint just listed) is left out of that window, so it cannot make the card look cheaper or dearer than it was; it counts again once it has been priced at both ends of a window. **`scryfall_id`** and **`set`** are the cheapest of those printings on `price_day`.
 - **What moves.** A card is listed when it has a price on `price_day` and at the start of the window, cost at least $0.50 at both ends and at least $1 at one of them, and moved by at least $0.25, so bulk commons moving a few cents don't fill the lists. **`price`** is its price on `price_day`, **`previous`** at the start of the window, **`change`** the difference in dollars and **`percent`** that as a percent of `previous`, to one decimal.
 - **Order.** `gainers` are the largest `percent` first, `losers` the most negative first, ties by `change`; each has at most 30 cards.
 - **Formats.** A format's file lists only cards legal (or restricted) there, by Scryfall's legalities: `penny_dreadful` is Scryfall's `penny` and `duel_commander` its `duel`. It says nothing about whether the card is played; for that, see `popular-cards/{format}.json`. `all.json` lists every card, legal anywhere or not.
-- **`history`** is the card's price on each of the last 30 days up to `price_day`, oldest first, for a sparkline, with `null` on a day it had none. It is the same in every window.
+- **`history`** is the price of those same printings on each of the last 30 days up to `price_day`, oldest first, for a sparkline, with `null` on a day none had one. It ends on `price`, and differs between windows only when a printing was priced for the first time in one of them.
 - **`name`** is Scryfall's, both faces of a double-faced card ("Fable of the Mirror-Breaker // Reflection of Kiki-Jiki"); `slug` is the card's `cards/{slug}.json`, which is a 404 for a card no tournament deck plays.
 - A run that could not read the price history or Scryfall's printings leaves the files as they were, and is marked failed.
+
+## `today.json`
+
+One response for Explore's Today widgets, so the app doesn't open a separate large file for each card. Built by `scraper/mtgmeta/today.py` at the end of each run from the `breakouts/` and `movers/all.json` just written, the EDHREC commander counts the run refreshed, and the printings Scryfall added since the last run, and uploaded with them (`max-age=300`). Published since 4 October 2026; **`schema` is `2`** since 5 October 2026 (see *Schema 1* below).
+
+This example is the generator's real output for the files of the 4 October run, with the commander counts EDHREC gave on 5 October for 100 of the commanders checked on 30 September:
+
+```json
+{
+  "schema": 2,
+  "generated_at": "2026-10-05T19:31:04Z",
+  "breakouts": [
+    {
+      "format": "modern", "formats": ["modern", "standard", "pioneer"],
+      "name": "Pompous Battlemage", "oracle_id": "33e3793c-098f-4897-88f3-9f9ce9081e0f", "type": "creature",
+      "decks": 41, "share": 3.3, "previous_share": 0.0, "new": true, "first_seen": "2026-09-30", "top8": 5, "wins": 0, "price": 2.3,
+      "archetypes": [
+        {"name": "Izzet Prowess", "id": "modern-izzet-prowess", "decks": 18, "colors": ["U", "R"]},
+        {"name": "Grixis Prowess", "id": "modern-grixis-prowess", "decks": 1, "colors": ["U", "B", "R"]},
+        {"name": "Jeskai Prowess", "id": "modern-jeskai-prowess", "decks": 1, "colors": ["W", "U", "R"]}
+      ]
+    },
+    {
+      "format": "standard", "formats": ["standard"],
+      "name": "Liliana the Faultless", "oracle_id": "22c2e66d-a2a1-46db-a70a-dff5ad5d6c14", "type": "creature",
+      "decks": 17, "share": 8.5, "previous_share": 0.0, "new": true, "first_seen": "2026-09-29", "top8": 4, "wins": 0, "price": 4.13,
+      "archetypes": [
+        {"name": "Lifegain", "id": "standard-lifegain-woe", "decks": 16, "colors": ["W", "B"]}
+      ]
+    },
+    {
+      "format": "vintage", "formats": ["vintage"],
+      "name": "Avatar of Burgeoning Echoes", "oracle_id": "08e8a63c-9fcc-48cf-a9af-15cbaeec943f", "type": "creature",
+      "decks": 9, "share": 6.9, "previous_share": 0.0, "new": true, "first_seen": "2026-10-02", "top8": 1, "wins": 0, "price": 3.31,
+      "archetypes": [
+        {"name": "Lurrus DRS", "id": "vintage-lurrus-drs", "decks": 3, "colors": ["U", "B", "G"]}
+      ]
+    }
+  ],
+  "movers": {
+    "price_day": "2026-10-04",
+    "mover": {
+      "name": "Roxanne, Starfall Savant", "slug": "roxanne-starfall-savant", "oracle_id": "11765eaf-87a1-48bd-90c1-7a5f21be5918", "scryfall_id": "11fbe52f-febd-49fc-8391-28d3efe9c3eb", "set": "otj",
+      "price": 1.22, "previous": 0.78, "change": 0.44, "percent": 56.4,
+      "history": [0.47, 0.45, 0.45, 0.46, 0.49, 0.49, 0.49, 0.5, 0.5, 0.5, 0.51, 0.58, 0.6, 0.64, 0.69, 0.73, 0.73, 0.75, 0.77, 0.76, 0.78, 0.75, 0.74, 0.73, 0.72, 0.75, 0.8, 0.83, 0.78, 1.22]
+    },
+    "loser": {
+      "name": "Bast, Panther Goddess", "slug": "bast-panther-goddess", "oracle_id": "e3233686-7703-460c-80ee-8cd37b3014ff", "scryfall_id": "c53a05f1-8e95-4a39-b2a3-a21d3d19b5b3", "set": "msc",
+      "price": 0.82, "previous": 1.53, "change": -0.71, "percent": -46.4,
+      "history": [1.2, 1.19, 1.16, 1.16, 1.17, 1.17, 1.17, 1.2, 1.19, 1.14, 1.14, 1.15, 1.06, 0.96, 0.96, 0.97, 1.0, 1.0, 1.02, 0.91, 0.91, 0.87, 0.86, 0.81, 0.81, 0.78, 0.76, 1.52, 1.53, 0.82]
+    }
+  },
+  "commander": {
+    "slug": "avacyn-angel-of-horror", "name": "Avacyn, Angel of Horror", "oracle_id": "…", "scryfall_id": "ff65f46b-0f82-49b8-93b9-7ac0243ce941", "color_identity": ["B"],
+    "decks": 1722, "previous_decks": 1147, "rise": 575, "rise_percent": 50.1, "since": "2026-09-30",
+    "days": 5, "rise_per_day": 115.0, "rise_percent_per_day": 10.03,
+    "url": "https://edhrec.com/commanders/avacyn-angel-of-horror",
+    "top_cards": [
+      {"name": "Dark Ritual", "oracle_id": "…", "decks": 1459, "share": 84.7, "synergy": 0.17},
+      {"name": "Gray Merchant of Asphodel", "oracle_id": "…", "decks": 1445, "share": 83.9, "synergy": 0.34},
+      {"name": "Jet Medallion", "oracle_id": "…", "decks": 1315, "share": 76.4, "synergy": 0.14}
+    ],
+    "synergy_cards": [
+      {"name": "The Sibsig Ceremony", "oracle_id": "…", "decks": 1118, "share": 64.9, "synergy": 0.63},
+      {"name": "Blood Vassal", "oracle_id": "…", "decks": 223, "share": 13.0, "synergy": 0.13},
+      {"name": "H.E.R.B.I.E. Scout Unit", "oracle_id": "…", "decks": 117, "share": 6.8, "synergy": 0.06}
+    ],
+    "attribution": {"name": "EDHREC", "url": "https://edhrec.com"}
+  },
+  "preview": { "card": null },
+  "localized": {
+    "33e3793c-098f-4897-88f3-9f9ce9081e0f": {
+      "ja": { "name": "驕慢な戦闘魔道士", "image": "https://cards.scryfall.io/normal/front/1/7/174c608e-9086-4de8-ae28-51f537884b07.jpg?1790683523", "type_line": "…", "text": "…" },
+      "fr": { "name": "Mage de bataille pompeux", "image": "https://cards.scryfall.io/normal/front/0/d/0d05d177-8b79-4717-9f16-ff3230101c4d.jpg?1790683507", "type_line": "…", "text": "…" }
+    }
+  }
+}
+```
+
+Today is a row of widgets of four kinds: up to three breakout cards, the movers, the rising commander and the preview. The breakouts and the movers are built from files already published, so they add no data of their own; the commander comes from the EDHREC pages the run refreshed, and the preview from Scryfall's default-cards bulk file, which the movers read anyway. Every section is always present; one with nothing to show is `[]` (`breakouts`) or `null` (`commander`, `mover`, `loser`, `preview.card`).
+
+### `breakouts`
+
+A list of **1 to 3 cards**, fewer when fewer exist and `[]` when no format has a breakout. They are taken from one ranking, strongest first. Cards are ranked as cards, not as rows: a real release finds a home in several formats at once, while a card that four decks of one small format play may just be a tech. Cards are told apart by `oracle_id` (`name` when a row has none), and a card is listed once. The ranking, in this order:
+
+1. The most **`decks` plus `top8`** added up over every format whose `breakouts/{format}.json` lists the card (a top 8 deck counts twice).
+2. The largest gain in share (`share` minus `previous_share`) in any one format.
+3. A card that is `new` (no deck of the 23 earlier days played it) in its busiest format (below) before one that is not: `new` only breaks a tie, since a new card needs only 4 decks and 1% of a format's decks.
+4. `name`.
+
+So a card seeing play in three formats (26 Standard decks, 13 in Pioneer, 6 in Modern) comes before a card 4 decks of Pauper play, new or not.
+
+**Three formats where it can.** The three cards come from three different formats when three formats have a breakout: going down the ranking, a card is taken when no card taken so far has its busiest format (below), until there are three. Only when fewer than three formats have one is the list filled up with the next best cards whatever their format. The cards are listed in their ranked order. So the best card of a third format comes before a second card of a format already listed.
+
+Each card is shown as its row in its busiest format: the format where it has the most `decks`, ties going to the format's place in the order of the formats above (`modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander`; a format not in it comes after, alphabetically). It has:
+
+- **`format`**: that busiest format, the one whose numbers the card shows. **`formats`**: every format whose `breakouts/` file lists the card, new or not, `format` first and the rest in the order above.
+- From that format's breakout row, as in `breakouts/{format}.json`: **`name`**, **`oracle_id`**, **`scryfall_id`** (the printing Scryfall's oracle-cards file picks for the card, whose price `price` is; present from the first run after 5 October 2026, so the example has none, and missing for a card it has no printing for), **`type`**, **`decks`**, **`share`**, **`previous_share`**, **`new`**, **`first_seen`**, **`top8`** and **`wins`**, and **`price`** when the row has one. `results`, `mainboard` and `best_prestige` are left out.
+- **`archetypes`**: which decks play it, for "played in Izzet Prowess": the tracked archetypes of the row's `results` (the decks of the last 7 days that play it), counted by deck, most `decks` first, then `name`; at most 3. **`id`** is the archetype's `archetypes/{id}.json`, never null. A deck outside the tracked archetypes (a null `archetype_id` in `results`, named by its pilot) is left out, so `decks` can add up to less than the card's, and `archetypes` is `[]` when no deck playing it is in a tracked archetype. Each archetype's **`colors`** are its colour identity as letters (`W`, `U`, `B`, `R`, `G`) in that fixed order, `[]` for a colourless deck: the archetype's own, as its `archetypes/{id}.json` and `explore.json`'s standings show them (its tile's, else its featured deck's), else the colours most of the card's decks of that archetype have (the first listed in `results` on a tie). `colors` is left out when neither is known. Added on 5 October 2026, so decode it as optional.
+
+### `movers`
+
+- **`mover`** is the first of `gainers` and **`loser`** the first of `losers` in the `7d` window of `movers/all.json`: the card that rose most and the card that fell most over the last 7 days. They have the fields of a card there, copied as published and in that order: `name`, `slug`, `oracle_id`, `scryfall_id`, `set`, `price`, `previous`, `change`, `percent` and **`history`**, the card's price on each of the 8 days from `previous`'s to `price_day`, oldest first, with `null` on a day it had none: draw it as a small static sparkline. Its first point is `previous` and its last is `price`, so the line rises when `percent` does. Until 19 October 2026 these were the `1d` window's cards with 30 days of history, a month the percent did not cover. The `1d` and `30d` windows are not used, and nothing but the history's length is changed.
+- **`price_day`** is the movers file's. Either card is `null` when its list is empty, and all three are `null` when `movers/all.json` is missing.
+
+### `commander`
+
+The uprising EDH commander: the commander whose deck count on EDHREC rose fastest, as a percent a day, since EDHREC was last asked about it. **This is EDHREC's data, used with their permission: an app showing it must credit EDHREC (`attribution`) and link to the commander's page (`url`).**
+
+- **How a rise is seen.** Each run refreshes a slice of the commanders, longest unchecked first (`edh/commanders/{slug}.json`; 300 a run over about 4,200 commanders, so each comes round about every two weeks), and `edh/commanders/index.json` has only each one's latest count. So the run that builds `today.json` keeps, in `state/today-commanders.json`, every commander's count and when EDHREC gave it, and the next run compares: a commander EDHREC was asked about again since then can have risen, from **`previous_decks`** (its count then) to **`decks`** (its count now). Commanders not refreshed this run, and commanders refreshed for the first time, have no rise.
+- **The floor.** A rise counts only with at least **50 `decks`** now, a **`rise`** of at least **10 decks** and a **`rise_percent`** of at least **10**. Most commanders barely move between two checks: of 100 commanders checked on 30 September and again on 5 October, half had the same count and the median change was 0%; a small commander swings by several percent on a deck or two (20 to 22 decks is +10%), which the deck floors keep out; and the three that cleared the floor rose 25% to 50% (Avacyn, Angel of Horror 1,147 → 1,722; Aerid Konstrari 2,184 → 2,893; Ghalta, the Immovable 330 → 414).
+- **The ranking.** The checks of two commanders can be days or weeks apart (each run refreshes the longest unchecked, and a run can refresh more or fewer), so the commanders that clear the floor are ranked by their rise a day: **`rise_percent_per_day`**, the percent rise over the **`days`** between the dates of the two checks (at least 1). Ties go to the larger `rise_per_day`, then the larger `rise`, then the slug. The floor is on the whole rise, not the rise a day.
+- **`null`** when no commander clears the floor, on the first run (there is no snapshot to compare with yet), and on a run that refreshed no commanders (`EDHREC_COMMANDERS_PER_RUN=0` or EDHREC unreachable).
+- **The fields.** **`slug`** (its `edh/commanders/{slug}.json`), **`name`**; **`scryfall_id`** (the printing EDHREC shows) and **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) as EDHREC has them, `null` when the run has no page for it; **`decks`**, **`previous_decks`**, **`rise`** (`decks` less `previous_decks`) and **`rise_percent`** (to one decimal); **`since`**, the day (`yyyy-MM-dd`) EDHREC gave `previous_decks`, so the rise is "since 30 September"; **`days`**, the days from `since` to this run's check (at least 1); **`rise_per_day`** (`rise` over `days`, to one decimal) and **`rise_percent_per_day`** (`rise_percent` over `days`, unrounded first, to two decimals), added on 5 October 2026, so decode them as optional; **`url`**, its page on EDHREC; **`attribution`**, `{"name": "EDHREC", "url": "https://edhrec.com"}`.
+- **`oracle_id`** is on the commander and on each of its `top_cards` and `synergy_cards`, matched from the name against Scryfall's oracle cards, so `localized` and Scryfall can be joined on it. It is `null` when Scryfall's catalog has no card of that name, or when the run could not load the catalog. Added on 11 October 2026, so decode it as optional.
+- **The decks' breakdown**, from the commander's `edh/commanders/{slug}.json`: **`top_cards`**, the first three cards of its Top Cards (the cards most of its decks play), and **`synergy_cards`**, the first three of its High Synergy Cards (the cards its decks play far more than other decks of its colours; EDHREC now calls the section High Lift Cards, and either is used). Each has **`name`**, **`decks`** (how many of the commander's decks play it), **`share`** (that as a percent of the commander's decks, to one decimal) and **`synergy`** (EDHREC's score, as in `edh/commanders/{slug}.json`; `null` when it has none). Either list is `[]` when the page has no such section.
+
+### `preview`
+
+Unchanged from schema 1. **`preview`** holds exactly one card, never a list: a printing Scryfall added since the last run, from a set not released yet. (The whole list of what was added in the last 7 days is [`previews.json`](#previewsjson).) Each run saves the id of every printing in Scryfall's default-cards bulk file (`state/printing-ids.json.gz`), and a printing whose id the last run did not have is new. Tokens, art series cards, emblems and other memorabilia, minigame inserts, oversized cards and digital-only printings are never the preview. Of the rest, only a new printing whose `released_at` is after the day of `generated_at` (in UTC) can be it; a printing released that day or earlier, or with no `released_at` or one that is not a date, cannot. Among those, the order is: a card's first printing before a reprint (Scryfall's `reprint`), so a new card wins over a new printing of an old card, as most of what Scryfall lists ahead of a release is reprints and promos; then the most recently previewed first (`previewed_at`), with one Scryfall has no preview date for after those it has, since it was added since the last run all the same; and ties go to the set code, then the collector number. The release date only decides who is eligible, never the order: a card previewed today beats one previewed earlier, however much later it is released.
+
+**`card`** is `null` when there is none (as in the example): on a day Scryfall added no printing from a set not released yet, on the first run (it only saves the ids to compare with), and on a run that could not read Scryfall's file to its end or skipped the movers (`MOVERS=0`). Those last two leave the saved ids as they were, so the next run still finds the printings they missed. A printing that was new on a day with no card is not offered again, since the next run saves its id; so `card` is often `null`, and an app should show nothing for it rather than an older preview.
+
+A preview card looks like this:
+
+```json
+"preview": {
+  "card": {
+    "name": "Overwrite the Multiverse", "oracle_id": "d037…", "scryfall_id": "c455…",
+    "set": "fra", "set_name": "Reality Fracture", "released_at": "2026-10-23",
+    "previewed_at": "2026-09-09", "source": "Wizards of the Coast", "source_uri": "https://magic.wizards.com/en/news/…"
+  }
+}
+```
+
+It has Scryfall's **`name`** (both faces of a double-faced card, as in `movers/`), **`oracle_id`**, **`scryfall_id`** (the printing, which Scryfall's API and images are keyed on), **`set`**, **`set_name`** and **`released_at`** (`yyyy-MM-dd`), and, when Scryfall has them, **`previewed_at`**, **`source`** and **`source_uri`**: when the card was previewed, by whom and where. Show `source` and link to `source_uri` wherever the card is shown with them. Decode every field but `name` as optional.
+
+### Decoding
+
+**`generated_at`** is when the file was built. A decoder should treat every section and every field but a card's `name` as optional, read `breakouts` as `[]` when it is missing, skip one entry it cannot read rather than fail the file, and ignore keys it doesn't know.
+
+### Schema 1
+
+The files of 4 and 5 October 2026 before the change are `"schema": 1`. They have no `breakouts`, `commander` or movers' `history`, and have instead an **`interesting_card`** object holding one `card` (or `null`): the first card of the ranking then (new cards first), with **`kind`** `"new_card"` (step 1) or `"released_card"` (step 2), `format`, and the row's `name`, `oracle_id`, `type`, `decks`, `share`, `previous_share`, `first_seen`, `top8`, `wins` and `price`. Schema 2 drops `interesting_card`. An app holding a stored schema-1 copy can read its card as a one-card `breakouts` (`new` is `kind == "new_card"`, no `archetypes`) until the next download replaces it.
+
+## `previews.json`
+
+The cards being previewed: every printing Scryfall added to its default-cards bulk file in the last 7 days that is from a set not released yet. It is the list behind a "View N more" link, in place of every unreleased card on Scryfall (about 800 printings, most of them listed months before their release). It is built from the same read of Scryfall's file as `today.json`'s [`preview`](#preview), whose one card is always one of these (when it is picked at all), and uploaded next to it with the same `max-age`. It is published as compact JSON.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-14T06:12:40Z",
+  "window_days": 7,
+  "count": 2,
+  "cards": [
+    {
+      "name": "Overwrite the Multiverse", "oracle_id": "d037…", "scryfall_id": "c455…",
+      "set": "fra", "set_name": "Reality Fracture", "collector_number": "88", "released_at": "2026-10-23",
+      "first_seen": "2026-10-14", "previewed_at": "2026-10-13"
+    },
+    {
+      "name": "Marsh Flats", "oracle_id": "9a1c…", "scryfall_id": "01b7…",
+      "set": "fra", "set_name": "Reality Fracture", "collector_number": "311", "released_at": "2026-10-23",
+      "first_seen": "2026-10-11", "previewed_at": null
+    }
+  ]
+}
+```
+
+- **`cards`** holds a card for each printing (`scryfall_id`) that is eligible, was first seen within the last **`window_days`** (7) days and is not released yet. Eligible is as for `preview`: a paper card, not a token, art series card, emblem, other memorabilia, minigame insert, oversized card or digital-only printing. Not released yet means `released_at` is after the day of `generated_at` in UTC. A printing with no `released_at` or one that is not a date is not listed. A card leaves the list on the day it is released and 8 days after it was first seen: a printing first seen on 7 October is still listed on 14 October (`first_seen` is not more than 7 days before the day of `generated_at`) and gone on 15 October. **`count`** is `cards.length`. An empty list is a valid file: `{"cards": [], "count": 0}`.
+- **Order** is fixed, so the same data gives the same bytes: the newest **`first_seen`** first, then the most recent **`previewed_at`** (a card with none after those with one), then `set` and `collector_number` (natural order: 9 before 10 before 10a), then `scryfall_id`. The release date is never used to order the cards; it only decides who is listed.
+- **`first_seen`** (`yyyy-MM-dd`, UTC) is the day a run first saw the printing's id in Scryfall's file. It is the day the printing was added to Scryfall, to the day, as the scraper runs once a day. **`previewed_at`** is Scryfall's own preview date (`preview.previewed_at`), or `null`; it can be earlier than `first_seen`, as Scryfall adds some cards after a reveal. **`name`**, **`oracle_id`**, **`scryfall_id`**, **`set`**, **`set_name`**, **`collector_number`** and **`released_at`** are Scryfall's, as in `preview.card`. Decode every field but `name` and `scryfall_id` as optional.
+- **How it is kept.** Each run saves the id of every printing in the file (`state/printing-ids.json.gz`), and an eligible printing whose id the last run did not have gets today's date as its first-seen date, in `state/printing-first-seen.json.gz` (a gzipped JSON object of id to `yyyy-MM-dd`). Old dates are kept. An entry is dropped once its date is more than 30 days old or its printing was released more than 30 days ago, or the printing is no longer in Scryfall's file. Dropping an entry never makes a printing new again, since new means "not in `state/printing-ids.json.gz`", which is never pruned.
+- **Bootstrap.** The first run with no `state/printing-first-seen.json.gz` (the deploy of this file, or a lost state) cannot tell old printings from new ones, so every printing in the file counts as old, with no first-seen date, but for two kinds. An eligible printing whose id the previous run did not have is new, and gets today's date. An eligible, unreleased printing that has a Scryfall `preview.previewed_at` in the last 7 days (and not in the future) takes that date as its `first_seen`. So the list holds the cards revealed in the last week at once, rather than being empty for a week. After that run, nothing uses `previewed_at` to date a printing again. The first-ever run, with no ids saved either, bootstraps the same way. A run with a corrupt first-seen file bootstraps again.
+- **When it is not written.** On a run that skips the movers (`MOVERS=0`) or could not read Scryfall's file to its end, `previews.json` is not rewritten and the state is not moved on, so the file stays as published by the last run that read the file; check its `generated_at`. The next complete run finds the printings the failed run missed.
+- **App.** Fetch `previews.json` separately from `today.json` (it is listed in `explore-manifest.json`, so the manifest says when it changed) and show `count` and the cards. It is `max-age=300`, so a CDN or `URLSession` cache can serve an older copy for up to 5 minutes. A card's image and details are Scryfall's, keyed on `scryfall_id`.
 
 ## `edh/commanders/{slug}.json`
 
@@ -456,6 +753,8 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
   "decks": 40779,
   "salt": 2.81,
   "url": "https://edhrec.com/commanders/vivi-ornitier",
+  "color_identity": ["U", "R"],
+  "scryfall_id": "ecc1027a-8c07-44a0-bdde-fa2844cff694",
   "generated_at": "2026-09-23T02:00:11Z",
   "sections": [
     {
@@ -464,14 +763,92 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
       "cards": [{ "name": "Brainstorm", "decks": 28385, "of_decks": 40779, "synergy": 0.28 }]
     }
   ],
-  "average_deck": [{ "header": "Lands", "cards": ["Island"] }]
+  "average_deck": [{ "header": "Lands", "cards": ["Island"] }],
+  "oracle_ids": { "Vivi Ornitier": "…", "Brainstorm": "…", "Island": "…" }
 }
 ```
 
-- **`sections`** are EDHREC's own groupings: `topcards`, `highsynergycards`, `gamechangers`, then by card type. A card's `decks` of `of_decks` is how many of this commander's decks play it, and `synergy` is EDHREC's synergy score (0.28 means 28 percentage points more than other decks of the same colours would play it).
+- **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) and **`scryfall_id`** (the printing EDHREC shows for the commander) are EDHREC's, on a page written from 5 October 2026; an older page has neither, and either is `null` when EDHREC has none.
+- **`sections`** are EDHREC's own groupings: `newcards`, `highsynergycards` (which EDHREC renamed `highliftcards`, High Lift Cards, in October 2026), `topcards`, `gamechangers`, then by card type. A card's `decks` of `of_decks` is how many of this commander's decks play it, and `synergy` is EDHREC's synergy score (0.28 means 28 percentage points more than other decks of the same colours would play it).
 - **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
+- **`oracle_ids`** maps the commander's `name`, every card name in `sections` and every name in `average_deck` to its Scryfall oracle id. A name the catalog doesn't know is left out, so the object is `{}` on a page written by a run that couldn't load the catalog, and a page written before 11 October 2026 has none: decode it as optional and look a missing name up by name.
 - Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
-- Each run refreshes 150 commanders, longest unchecked first, so a commander may be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
+- Each run refreshes `EDHREC_COMMANDERS_PER_RUN` commanders (150 by default; the scheduled workflow sets 300, over about 4,200 commanders, so each comes round about every two weeks), longest unchecked first, but the commanders in [`edh/top.json`](#edhtopjson) go first, in their rank order, so each run refreshes them and a commander may otherwise be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
+
+## `edh/commanders/{slug}/guide.json`
+
+A commander's play styles and what each of Wizards' five Commander Brackets looks like for it. Claude (`claude-sonnet-5-5`) writes it from the commander's oracle text and the card pool of its [`edh/commanders/{slug}.json`](#edhcommandersslugjson), judging the styles and brackets itself: EDHREC's theme and bracket pages are not read. Not every commander has one; a missing file is a 404.
+
+```json
+{
+  "schema": 1,
+  "slug": "atraxa-praetors-voice",
+  "name": "Atraxa, Praetors' Voice",
+  "generated_at": "2026-10-20T09:00:00Z",
+  "model": "claude-sonnet-5-5",
+  "styles": [
+    {
+      "id": "infect",
+      "name": "Infect",
+      "summary": "Two or three sentences on the plan and how it wins.",
+      "brackets": [2, 3, 4],
+      "cards": [{ "name": "Blighted Agent", "oracle_id": "…", "role": "payoff" }]
+    }
+  ],
+  "brackets": [
+    {
+      "level": 3,
+      "name": "Upgraded",
+      "summary": "Two or three sentences on the deck at this bracket.",
+      "cards": [{ "name": "Smothering Tithe", "oracle_id": "…", "role": "ramp" }]
+    }
+  ]
+}
+```
+
+- **`styles`**: 3 to 6 different ways to build the deck, most played first. **`id`** is the slug of **`name`** (the `cards/{slug}.json` rule), unique within the file. **`brackets`** lists every bracket level the style plays well at, ascending, each once (not a range: `[2, 4]` means 2 and 4). **`cards`** are the cards that make the style, the most important first: Claude is asked for 40 to 60 and the file keeps at most 60; after the checks below a style can have fewer than 30, which the run logs.
+- **`brackets`**: always five, levels **1** to **5** in order, with Wizards' names: 1 `Exhibition`, 2 `Core`, 3 `Upgraded`, 4 `Optimized`, 5 `cEDH`. **`cards`** (at most 30) are what set that bracket apart for this commander: the on-theme core at 1 and 2, the upgrades at 3, the high-power additions at 4 and 5. They keep the bracket's Game Changer limit: none at 1 and 2, at most three at 3. The other rules (mass land denial, extra turns, two-card combos, tutors) are in Claude's instructions but not checked card by card.
+- **A card** has **`name`** and **`oracle_id`** as Scryfall's catalog has them (a double-faced card is named with both faces, `"A // B"`), and **`role`**, one of `land`, `ramp`, `draw`, `removal`, `counter`, `wipe`, `protection`, `tutor`, `payoff`, `engine`, `combo`, `utility`. Cards come from the commander's pool or are well-known staples. Every name Claude gives is looked up in the catalog by slug, and dropped when the catalog does not know it, when it is outside the commander's colour identity, when it is banned in Commander (Scryfall's `banned:commander`), when it is the commander itself, or when it repeats a card of the same list.
+- **`model`** is the model that wrote it; a refusal can be rerouted to another model by the API, which is then named here. **`generated_at`** is when it was written. `name` is EDHREC's, as on the commander's page.
+- **The Game Changers** are kept in `scraper/mtgmeta/game_changers.json` (53 cards on 20 October 2026, read from Scryfall's `is:gamechanger`, which follows Wizards' list). Update it when Wizards changes the list; a change rewrites every guide on its next run.
+- **When it is written.** `python -m mtgmeta guides DIR --top N` (see the module's docstring; it needs `ANTHROPIC_API_KEY`) writes the guides of the first `N` commanders of [`edh/top.json`](#edhtopjson), the week's first. A commander's guide is asked for again only when what Claude would be sent changes: its oracle text, the names in its pool, a card's share of its decks crossing a tenth (it is sent rounded to the nearest 10%), the instructions, the Game Changers or the model. `state/guides.json` keeps, per slug, a hash of that input with the `generated_at` and `model` of the guide written from it. A guide that fails its checks (fewer than 3 styles, a bracket missing, a refusal, an answer cut off) is not written, and the published one stays.
+- The card pool it is built from is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page.
+
+## `edh/top.json`
+
+EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (`30d`), each with its share of the window. Each commander's `slug` is the one of its page, `edh/commanders/{slug}.json`; a run puts these commanders at the front of the commander refresh, so a commander listed here has a page.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-19T14:05:00Z",
+  "windows": {
+    "7d": {
+      "decks": 89845,
+      "commanders": [
+        {
+          "rank": 1,
+          "slug": "jace-multiverse-architect",
+          "name": "Jace, Multiverse Architect",
+          "decks": 4063,
+          "share": 4.5,
+          "color_identity": ["W", "U", "B", "R"],
+          "oracle_id": "3321c134-bf5b-4f63-8035-fca0bbdfa86b",
+          "scryfall_id": "55cd03d9-2535-4cf3-a8b2-1418e1190f4a",
+          "trend": 50.4
+        }
+      ]
+    },
+    "30d": { "decks": 291869, "commanders": [] }
+  }
+}
+```
+
+- **`decks`** of a window is the sum of its 100 commanders' `decks`, and a commander's **`share`** is its `decks` as a percent of that, to one decimal. It is a share of the window's top 100 decks, not of every Commander deck EDHREC has: the shares of a window add up to 100.
+- **`rank`** is EDHREC's, 1 the most played; the commanders are listed in rank order. **`trend`** is EDHREC's trend z-score, to one decimal (`null` when it has none).
+- **`color_identity`** (`W`, `U`, `B`, `R`, `G`, in that order; `[]` is colourless), **`oracle_id`** and **`scryfall_id`** are Scryfall's, looked up by name in the card catalog, and `null` for a name it does not know, or when the run could not load the catalog. A partner pair EDHREC lists as one commander ("Kraum, Ludevic's Opus // Tymna the Weaver") is no one card: its ids are `null` and its colour identity is both halves' together.
+- **A window that could not be read is left out of `windows`**; when neither could be, the file is not rewritten and the last one stays published. Decode `windows` keys as optional. A run with `EDHREC_COMMANDERS_PER_RUN=0` does not read EDHREC for it either.
+- It is listed in `explore-manifest.json`. **This is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page.**
 
 ## `locator/{place}.json`
 
@@ -544,6 +921,43 @@ Wizards' premier play calendar, read from magic.gg's schedule page each run: eve
 - **`url`** is where magic.gg sends readers, usually an announcement article or the organiser's site.
 
 Regional Championship Qualifiers (RCQs) are store events and are not in this calendar: they appear in `locator/{place}.json` with `rules_level` of `COMPETITIVE`, and in the tournament feed's `events` with `kind` of `rcq` once results are posted.
+
+
+## `rules/keywords.json`
+
+What the Comprehensive Rules say about each keyword, so an app can show the rule behind a word on a card. Wizards publishes the rules as a text file a few times a year (on <https://magic.wizards.com/en/rules>); each run finds the link on that page, reads the file and keeps the keyword actions (rule 701), the keyword abilities (rule 702) and the ability words (rule 207.2c), and nothing else. The file is built on every daily scrape but **changes only when Wizards publishes new rules**: a run that finds the same rules writes nothing, so the file keeps its `generated_at`, its bytes, its hash in `explore-manifest.json` and its ETag, and `generated_at` is when the rules last changed here. It is compact JSON, about 200 KB (45 KB gzipped).
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-12T14:00:07Z",
+  "effective_date": "2026-09-25",
+  "source_url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020260925.txt",
+  "keywords": {
+    "flying": {
+      "name": "Flying",
+      "number": "702.9",
+      "rules": [
+        "Flying is an evasion ability.",
+        "A creature with flying can’t be blocked except by creatures with flying and/or reach. A creature with flying can block a creature with or without flying.",
+        "Multiple instances of flying on the same creature are redundant."
+      ]
+    }
+  },
+  "ability_words": {
+    "number": "207.2c",
+    "text": "An ability word appears in italics at the beginning of some abilities. Ability words are similar to keywords in that they tie together cards that have similar functionality, but they have no special rules meaning and no individual entries in the Comprehensive Rules.",
+    "words": ["adamant", "addendum", "alliance", "…", "will of the council"]
+  }
+}
+```
+
+- **`effective_date`** is the date from "These rules are effective as of …", as `YYYY-MM-DD`: show it as the version of the rules.
+- **`source_url`** is the text file the rules were read from, the link found on Wizards' rules page (the file name carries its date, so it changes with every edition).
+- **`keywords`** holds every named entry of rule 701 (keyword actions) and rule 702 (keyword abilities), about 260, keyed by the **lower-cased name** and in the order of the rules. The introductions of the two sections (701.1, 702.1) are not entries. **`name`** is the name as the rules write it, **`number`** is the rule's number (`702.9`), and **`rules`** are its subrules (`702.9a`, `702.9b`, …) in order, without their letters. Cross references in parentheses are removed ("(See rule 509, “Declare Blockers Step,” and rule 702.17, “Reach.”)"), and so are the examples. A cross reference written as a sentence stays ("See rule 701.28, “Convert.”"), and so does reminder text. Text uses the rules' curly quotes and apostrophes.
+- **`ability_words`** is rule 207.2c: **`text`** is its sentences before the list (what an ability word is), and **`words`** are the listed ability words, lower-cased as the rules write them and in their order (about 60; "descend 4" and "descend 8" are two words). An ability word has no entry of its own in the rules, so an app that shows 207.2c for it names the word itself.
+- **Looking a word up.** Keys are lower-cased and spelled as the rules spell them, curly apostrophes included (`council’s dilemma`), so lower-case a card's keyword and compare apostrophes the same way. The rules describe a family of keywords in one entry: every “[type]walk” (islandwalk, snow swampwalk) is under `landwalk`, and the typecycling variants (plainscycling, swampcycling) are under `cycling`. An ability word has no entry of its own: `ability_words` is all the rules say about it.
+- **When it is missing.** A run that cannot read Wizards' page or file (the site is down, the link or the text changed shape) logs a warning and does not fail; the file stays as last published, and the next run tries again. Until the first successful run the file is a 404.
 
 ## Lore: `lore/app/…`
 

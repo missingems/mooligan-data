@@ -110,7 +110,7 @@ def _standings(snapshot: dict, now: datetime, previews: "Previews") -> List[dict
                 "top8_30d": sum(1 for place in places if place <= 8),
                 "wins_30d": sum(1 for place in places if place == 1),
                 "colors": previews.tile_colors(archetype),
-                "key_cards": key_cards(archetype),
+                "key_cards": key_cards(archetype, catalog=previews.catalog),
             }
         )
     return standings
@@ -144,7 +144,7 @@ def _standings_by_window(snapshot: dict, now: datetime, previews: "Previews") ->
                     "wins": sum(1 for place in places if place == 1),
                     "trend": _trend(shares[recent].get(archetype["id"]), shares[baseline].get(archetype["id"])),
                     "colors": previews.tile_colors(archetype),
-                    "key_cards": key_cards(archetype),
+                    "key_cards": key_cards(archetype, catalog=previews.catalog),
                 }
             )
         by_window[window] = entries
@@ -182,9 +182,9 @@ def archetype_tiles(meta: dict) -> Dict[str, dict]:
     return tiles
 
 
-def key_cards(archetype: dict, limit: int = KEY_CARDS) -> List[dict]:
+def key_cards(archetype: dict, limit: int = KEY_CARDS, catalog: Optional[Dict[str, dict]] = None) -> List[dict]:
     return [
-        {"name": card["name"], "oracle_id": card.get("oracle_id")}
+        {"name": card["name"], "oracle_id": card.get("oracle_id") or (catalog or {}).get(slug(card["name"]), {}).get("oracle_id")}
         for card in archetype.get("key_cards", [])[:limit]
     ]
 
@@ -210,18 +210,18 @@ class Previews:
     ) -> None:
         self._tiles = archetype_tiles(meta)
         self._decks = decks or {}
-        self._catalog = catalog or {}
+        self.catalog = catalog or {}
         # The snapshot's archetypes by id, for each one's featured deck.
         self._archetypes = archetypes or {}
 
     def key_cards(self, result: dict) -> List[dict]:
         archetype_id = result.get("archetype_id")
         tile = self._tiles.get(archetype_id) if archetype_id else None
-        cards = key_cards(tile) if tile else []
+        cards = key_cards(tile, catalog=self.catalog) if tile else []
         if cards:
             return cards
         deck = self._decks.get(result["deck_id"])
-        return deck_key_cards(deck.get("m", []), self._catalog, result.get("archetype") or "") if deck else []
+        return deck_key_cards(deck.get("m", []), self.catalog, result.get("archetype") or "") if deck else []
 
     def colors(self, result: dict) -> Optional[List[str]]:
         """The colours of a result's deck as WUBRG letters in that order; `[]` for a colourless deck, None when unknown.
@@ -237,7 +237,13 @@ class Previews:
         derived = self._deck_colors(result["deck_id"])
         if derived is not None:
             return derived
-        archetype_id = result.get("archetype_id")
+        return self.archetype_colors(result.get("archetype_id"))
+
+    def archetype_colors(self, archetype_id: Optional[str]) -> Optional[List[str]]:
+        """The colours of an archetype as its standings row shows them: its tile's, else its featured deck's; None when unknown.
+
+        An archetype with no tile is unknown (a tile with a `colors` list but no pips and no featured deck to ask is `[]`).
+        """
         tile = self._tiles.get(archetype_id) if archetype_id else None
         if tile is None:
             return None
@@ -263,7 +269,7 @@ class Previews:
 
     def _deck_colors(self, deck_id: str) -> Optional[List[str]]:
         deck = self._decks.get(deck_id)
-        return deck_colors(deck.get("m", []) + deck.get("s", []), self._catalog) if deck else None
+        return deck_colors(deck.get("m", []) + deck.get("s", []), self.catalog) if deck else None
 
 
 def deck_key_cards(mainboard: Sequence[Sequence], catalog: Dict[str, dict], archetype: str = "", limit: int = KEY_CARDS) -> List[dict]:

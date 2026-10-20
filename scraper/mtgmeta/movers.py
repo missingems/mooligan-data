@@ -3,8 +3,9 @@
 Prices come from the price catalog the card catalog workflow publishes (`catalog/prices/history.bin.gz`,
 MTGJSON's TCGplayer retail price of every printing, day by day; its layout is at the top of
 generators/Sources/Prices/main.swift). Play data is a card, not a printing, so a card's price is the cheapest
-of its paper printings in the regular finish on each day: what it costs to play it. Scryfall's default-cards bulk
-file says which printings are one card, and where the card is legal. See docs/data-format.md.
+of its paper printings that come in the regular finish: what it costs to play it. A move compares only the
+printings priced at both ends of its window, so a printing priced for the first time is no move. Scryfall's
+default-cards bulk file says which printings are one card, and where the card is legal. See docs/data-format.md.
 """
 from __future__ import annotations
 
@@ -19,7 +20,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 from itertools import accumulate
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Callable, Dict, Iterable, List, Optional, Tuple
 
 from .cards import slug
 from .scryfall import DEFAULT_CARDS_URL, HEADERS, SKIPPED_LAYOUTS, _bulk_download_uri, bulk_cards
@@ -163,7 +164,8 @@ def _hold(series: array, start: int, day: int, cents: int, until: int) -> None:
 def printings(cards: Iterable[dict]) -> Dict[str, dict]:
     """The cards of Scryfall's default-cards file, each with the paper printings that are the card itself.
 
-    oracle id -> `{"name", "slug", "legal": {format, ...}, "printings": {scryfall id: set code}}`.
+    oracle id -> `{"name", "slug", "legal": {format, ...}, "printings": {scryfall id: set code}}`. A foil-only
+    printing is left out: the price history's regular finish is not a price of it that anyone can pay.
     """
     by_card: Dict[str, dict] = {}
     for card in cards:
@@ -172,6 +174,7 @@ def printings(cards: Iterable[dict]) -> Dict[str, dict]:
             or card.get("oversized")
             or card.get("layout") in SKIPPED_LAYOUTS
             or card.get("set_type") in SKIPPED_SET_TYPES
+            or "nonfoil" not in (card.get("finishes") or [])
             or not card.get("name")
         ):
             continue
@@ -191,41 +194,17 @@ def printings(cards: Iterable[dict]) -> Dict[str, dict]:
     return by_card
 
 
-def card_prices(history: PriceHistory, cards: Dict[str, dict]) -> Dict[str, Tuple[array, str]]:
-    """Each card's price on each kept day, the cheapest of its printings that had one, and the printing cheapest on the last day."""
-    result: Dict[str, Tuple[array, str]] = {}
-    for oracle_id, card in cards.items():
-        series: Optional[array] = None
-        cheapest, cheapest_cents = "", None
-        for printing in card["printings"]:
-            prices = history.prices.get(printing)
-            if prices is None:
-                continue
-            if series is None:
-                series = array("i", prices)
-            else:
-                for day, cents in enumerate(prices):
-                    if cents != NO_PRICE and (series[day] == NO_PRICE or cents < series[day]):
-                        series[day] = cents
-            if prices[-1] != NO_PRICE and (cheapest_cents is None or prices[-1] < cheapest_cents):
-                cheapest, cheapest_cents = printing, prices[-1]
-        if series is not None:
-            result[oracle_id] = (series, cheapest)
-    return result
-
-
 def build_movers(history: PriceHistory, cards: Dict[str, dict], now: datetime) -> Dict[str, dict]:
     """The files to publish: format (and "all") -> its document."""
-    priced = card_prices(history, cards)
-    moves = {name: _moves(priced, days) for name, days in WINDOWS}
+    moves = {name: _moves(history, cards, days) for name, days in WINDOWS}
     files = {}
     for format in ("all", *FORMATS):
         windows = {}
         for name, _ in WINDOWS:
             legal = [move for move in moves[name] if format == "all" or format in cards[move[2]]["legal"]]
             windows[name] = {
-                "gainers": [_row(move, priced, cards) for move in heapq.nlargest(LIMIT, (move for move in legal if move[1] > 0))],
-                "losers": [_row(move, priced, cards) for move in heapq.nsmallest(LIMIT, (move for move in legal if move[1] < 0))],
+                "gainers": [_row(move, history, cards) for move in heapq.nlargest(LIMIT, (move for move in legal if move[1] > 0))],
+                "losers": [_row(move, history, cards) for move in heapq.nsmallest(LIMIT, (move for move in legal if move[1] < 0))],
             }
         files[format] = {
             "schema": SCHEMA,
@@ -237,36 +216,48 @@ def build_movers(history: PriceHistory, cards: Dict[str, dict], now: datetime) -
     return files
 
 
-def _moves(priced: Dict[str, Tuple[array, str]], days: int) -> List[Tuple[float, int, str, int]]:
-    """Every card that moved enough over the last `days` days, as (percent, change in cents, oracle id, cents before)."""
+def _moves(history: PriceHistory, cards: Dict[str, dict], days: int) -> List[Tuple[float, int, str, int, int, List[str]]]:
+    """Every card that moved enough over the last `days` days.
+
+    As (percent, change in cents, oracle id, cents before, cents now, the printings compared). Only the printings
+    priced at both ends are compared, the card costing the cheapest of them at each end, so a printing priced for
+    the first time in the window can't make the card look cheaper (or dearer) than it was.
+    """
     moves = []
-    for oracle_id, (series, _) in priced.items():
-        now, before = series[-1], series[-1 - days]
-        if now == NO_PRICE or before == NO_PRICE:
+    for oracle_id, card in cards.items():
+        matched = [
+            printing
+            for printing in card["printings"]
+            if printing in history.prices and history.prices[printing][-1] != NO_PRICE and history.prices[printing][-1 - days] != NO_PRICE
+        ]
+        if not matched:
             continue
+        now = min(history.prices[printing][-1] for printing in matched)
+        before = min(history.prices[printing][-1 - days] for printing in matched)
         change = now - before
         if min(now, before) < MIN_CENTS or max(now, before) < NOTABLE_CENTS or abs(change) < MIN_CHANGE_CENTS:
             continue
-        moves.append((round(change * 100 / before, 1), change, oracle_id, before))
+        moves.append((round(change * 100 / before, 1), change, oracle_id, before, now, matched))
     return moves
 
 
-def _row(move: Tuple[float, int, str, int], priced: Dict[str, Tuple[array, str]], cards: Dict[str, dict]) -> dict:
-    percent, change, oracle_id, before = move
-    series, cheapest = priced[oracle_id]
+def _row(move: Tuple[float, int, str, int, int, List[str]], history: PriceHistory, cards: Dict[str, dict]) -> dict:
+    percent, change, oracle_id, before, now, matched = move
+    cheapest = min(matched, key=lambda printing: history.prices[printing][-1])
     card = cards[oracle_id]
+    series = [min((history.prices[printing][day] for printing in matched if history.prices[printing][day] != NO_PRICE), default=NO_PRICE) for day in range(1, KEPT_DAYS)]
     return {
         "name": card["name"],
         "slug": card["slug"],
         "oracle_id": oracle_id,
         "scryfall_id": cheapest,
         "set": card["printings"][cheapest],
-        "price": series[-1] / 100,
+        "price": now / 100,
         "previous": before / 100,
         "change": change / 100,
         "percent": percent,
-        # The last 30 days, oldest first, for a sparkline; null on a day with no price.
-        "history": [None if cents == NO_PRICE else cents / 100 for cents in series[1:]],
+        # The last 30 days of the printings compared, oldest first, for a sparkline; null on a day with no price.
+        "history": [None if cents == NO_PRICE else cents / 100 for cents in series],
     }
 
 
@@ -277,9 +268,13 @@ def fetch_history(url: str) -> bytes:
         return gzip.decompress(response.read())
 
 
-def movers(history_url: str, now: datetime) -> Dict[str, dict]:
-    """Downloads the price history and Scryfall's printings, and builds every format's file."""
-    cards = printings(bulk_cards(_bulk_download_uri(DEFAULT_CARDS_URL)))
+def movers(history_url: str, now: datetime, watch: Optional[Callable[[Iterable[dict]], Iterable[dict]]] = None) -> Dict[str, dict]:
+    """Downloads the price history and Scryfall's printings, and builds every format's file.
+
+    `watch` sees Scryfall's printings on their way through, so the preview in today.json reads the same download.
+    """
+    stream = bulk_cards(_bulk_download_uri(DEFAULT_CARDS_URL))
+    cards = printings(watch(stream) if watch else stream)
     wanted = {printing for card in cards.values() for printing in card["printings"]}
     history = read_history(fetch_history(history_url), wanted)
     log.info("Movers: %d cards, %d printings priced up to %s", len(cards), len(history.prices), history.last_day)

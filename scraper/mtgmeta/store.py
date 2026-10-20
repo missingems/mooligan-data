@@ -15,13 +15,14 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Set
 
 from .cards import FormatDecks, build_card_pages, page_hash, slug
-from .drilldown import build_archetype_pages, build_event_pages
-from .edhrec import due_slugs, edhrec_slug
+from .clusters import apply as apply_merging, colors_by_deck, load_overrides, plan as plan_merging
+from .drilldown import archetype_hands, build_archetype_pages, build_event_pages, hand_key_cards
+from .edhrec import due_commanders, due_slugs, edhrec_slug, oracle_ids
 from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
 from .popular import build_popular_cards
-from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, Meta, to_document
+from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, EventSummary, Meta, to_document
 
 SCHEMA = 1
 
@@ -39,6 +40,7 @@ class Store(Protocol):
     def ignored_event_ids(self) -> Set[str]: ...
     def mark_empty_events(self, event_ids: Iterable[str]) -> None: ...
     def events_missing_source(self, format: str) -> List[str]: ...
+    def stored_events(self, format: str) -> List[EventSummary]: ...
     def missing_deck_ids(self) -> Set[str]: ...
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
 
@@ -59,7 +61,10 @@ class SnapshotStore:
         self._cutoff = self._now - timedelta(days=history_days)
         self._snapshots: Dict[str, Dict[str, Any]] = {}
         for format in formats:
-            path = root / "snapshots" / f"{format}.json"
+            # The published snapshot has its archetypes merged (see clusters.py); the store keeps them as scraped.
+            path = root / "state" / "snapshots" / f"{format}.json"
+            if not path.exists():
+                path = root / "snapshots" / f"{format}.json"
             previous = json.loads(path.read_text()) if path.exists() else {}
             self._snapshots[format] = {
                 "meta": previous.get("meta", {}),
@@ -74,9 +79,14 @@ class SnapshotStore:
         self._empty_events: Set[str] = set(json.loads(empty_path.read_text())) if empty_path.exists() else set()
         missing_path = root / "state" / "missing-deck-ids.json"
         self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
+        unresolved_path = root / "state" / "unresolved-deck-ids.json"
+        self._unresolved: Dict[str, dict] = json.loads(unresolved_path.read_text()) if unresolved_path.exists() else {}
+        self._saved: Set[str] = set()
         # What each stored deck plays, so card pages can be built without downloading every deck again.
         self._wanted_commanders: Dict[str, str] = {}
         self._deck_cards: Dict[str, Dict[str, dict]] = {}
+        # Each archetype's hand by format, worked out once a run for its key cards and its page.
+        self._hands: Dict[str, Dict[str, List[dict]]] = {}
         for format in formats:
             cards_path = root / "state" / "deck-cards" / f"{format}.json"
             self._deck_cards[format] = json.loads(cards_path.read_text()) if cards_path.exists() else {}
@@ -120,6 +130,12 @@ class SnapshotStore:
                     card["oracle_id"] = self._catalog.get(slug(card["card_name"]), {}).get("oracle_id")
             path.write_text(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
             self._deck_ids.add(deck.deck_id)
+            self._saved.add(deck.deck_id)
+            names = _unresolved_names(document)
+            if names:
+                self._unresolved[deck.deck_id] = {"attempts": 0, "names": names}
+            else:
+                self._unresolved.pop(deck.deck_id, None)
             self._deck_cards.setdefault(deck.format, {})[deck.deck_id] = {
                 "m": [[card.quantity, card.card_name] for card in deck.mainboard],
                 "s": [[card.quantity, card.card_name] for card in deck.sideboard],
@@ -150,6 +166,13 @@ class SnapshotStore:
         events = self._snapshot(format)["events"].values()
         return [e["event_id"] for e in sorted(events, key=lambda e: e["date"], reverse=True) if not e.get("source")]
 
+    def stored_events(self, format: str) -> List[EventSummary]:
+        """Stored events as a listing shows them, with the number of results kept, so a run can compare."""
+        return [
+            EventSummary(e["event_id"], e["event_name"], _parse(e["date"]), len(e["results"]))
+            for e in self._snapshot(format)["events"].values()
+        ]
+
     def missing_deck_ids(self) -> Set[str]:
         """Decks MTGGoldfish no longer serves; asking again every run would be wasted."""
         return set(self._missing)
@@ -172,6 +195,8 @@ class SnapshotStore:
         catalog: Optional[Dict[str, dict]] = None,
         fetch_commanders=None,
         commander_limit: int = 0,
+        deck_resolve_limit: int = 300,
+        priority_commanders: Sequence[str] = (),
     ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
@@ -181,12 +206,18 @@ class SnapshotStore:
         `edh_limit` cards, the longest unchecked first. `catalog` is every card
         Magic has, keyed by slug, which gives pages their oracle id and widens
         the Commander refresh past the cards tournaments play.
+        `fetch_commanders(slugs) -> {slug: entry}` reads at most `commander_limit`
+        commanders, `priority_commanders` first. Decklist entries
+        the catalog could not name are looked up again for at most
+        `deck_resolve_limit` decks.
         """
         written = []
         formats = {}
         documents: Dict[str, dict] = {}
         card_decks: Dict[str, FormatDecks] = {}
         catalog = catalog or self._catalog
+        if catalog and fetch_decks:
+            self._resolve_decks_again(fetch_decks, catalog, deck_resolve_limit)
         for format, snapshot in self._snapshots.items():
             self._duplicates |= _duplicate_event_ids(snapshot["events"].values())
             duplicates = self._duplicates
@@ -220,17 +251,7 @@ class SnapshotStore:
                 "events": events,
                 "archetypes": archetypes,
             }
-            # Decks of this format still in the window, newest first, with their archetype.
-            membership: Dict[str, tuple] = {}
-            for archetype in archetypes.values():
-                if archetype["deck_id"]:
-                    membership.setdefault(archetype["deck_id"], (archetype["archetype_id"], archetype["name"]))
-                for result in archetype["results"]:
-                    membership.setdefault(result["deck_id"], (archetype["archetype_id"], archetype["name"]))
-            # Decks seen only in an event still count, under the name that event gave them.
-            for event in events:
-                for result in event["results"]:
-                    membership.setdefault(result["deck_id"], (result.get("archetype_id") or "", result.get("archetype") or "Other"))
+            membership = _membership(document)
             stored = self._deck_cards.get(format, {})
             if fetch_decks:
                 missing = [deck_id for deck_id in membership if deck_id not in stored and deck_id in self._deck_ids]
@@ -240,20 +261,24 @@ class SnapshotStore:
                         "s": [[card["quantity"], card["card_name"]] for card in deck.get("sideboard", [])],
                     }
             self._deck_cards[format] = {deck_id: stored[deck_id] for deck_id in membership if deck_id in stored}
-            card_decks[format] = FormatDecks(self._deck_cards[format], membership)
+            self._write(f"state/snapshots/{format}.json", _json_bytes(document))
+            published = self._merged(format, document, catalog)
+            self._hands[format] = archetype_hands(published, self._now, self._deck_cards[format], catalog)
+            published = hand_key_cards(published, self._hands[format])
+            card_decks[format] = FormatDecks(self._deck_cards[format], _membership(published))
 
-            body = json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
+            body = _json_bytes(published)
             relative = f"snapshots/{format}.json"
             self._write(relative, body)
             written.append(relative)
-            documents[format] = document
+            documents[format] = published
             formats[format] = {
                 "path": relative,
                 "sha256": hashlib.sha256(body).hexdigest(),
                 "bytes": len(body),
-                "generated_at": document["generated_at"],
+                "generated_at": published["generated_at"],
                 "events": len(events),
-                "archetypes": len(archetypes),
+                "archetypes": len(published["archetypes"]),
             }
         written += self._write_explore(documents, catalog)
         self._write_popular_cards(documents, catalog)
@@ -261,15 +286,73 @@ class SnapshotStore:
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
-        written += self._write_commander_pages(fetch_commanders, commander_limit)
+        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
+        self._write("state/unresolved-deck-ids.json", json.dumps(self._unresolved, sort_keys=True).encode())
         self._write("state/empty-event-ids.json", json.dumps(sorted(self._empty_events)).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
+
+    def _merged(self, format: str, document: dict, catalog: Dict[str, dict]) -> dict:
+        """The snapshot to publish: its archetypes that play one deck merged (see clusters.py).
+
+        Without a catalog no card can be told from a land, which the lists are compared without, so the
+        snapshot is published as scraped.
+        """
+        if not catalog:
+            log.warning("No card catalog: the archetypes of %s were not merged", format)
+            return document
+        lands = {key for key, card in catalog.items() if card.get("land")}
+        decks = self._deck_cards.get(format, {})
+        groups_path = self._root / "state" / "archetype-groups" / f"{format}.json"
+        previous = json.loads(groups_path.read_text()) if groups_path.exists() else {}
+        merging = plan_merging(document, decks, lands, overrides=load_overrides(format), previous=previous)
+        log.info("Archetypes of %s: %d merged into others, %d results joined one", format, len(merging.leaders), len(merging.assigned))
+        groups = {member: leader for member, (leader, _, _) in sorted(merging.leaders.items())}
+        self._write(f"state/archetype-groups/{format}.json", json.dumps(groups, sort_keys=True).encode())
+        return apply_merging(document, merging, colors_by_deck(document, decks, catalog))
+
+    def _resolve_decks_again(self, fetch_decks, catalog: Dict[str, dict], limit: int = 300) -> None:
+        """Gives oracle ids to decklist entries the catalog could not name when their deck was saved.
+
+        Reads at most `limit` of the decks in `state/unresolved-deck-ids.json` that
+        have been tried fewer than 3 times, fewest tries first, and not the ones saved
+        this run. A deck that is fully named leaves the list; the others, and those
+        that could not be fetched, count a try.
+        Their files are rewritten for the workflow to upload, not listed as written.
+        """
+        due = sorted(
+            (deck_id for deck_id, state in self._unresolved.items() if state["attempts"] < 3 and deck_id not in self._saved),
+            key=lambda deck_id: (self._unresolved[deck_id]["attempts"], deck_id),
+        )[:limit]
+        fetched = fetch_decks(due) if due else {}
+        for deck_id in due:
+            if deck_id not in fetched:
+                self._unresolved[deck_id] = {**self._unresolved[deck_id], "attempts": self._unresolved[deck_id]["attempts"] + 1}
+        for deck_id, deck in fetched.items():
+            if deck_id not in self._unresolved:
+                continue
+            changed = False
+            for board in ("mainboard", "sideboard"):
+                for card in deck.get(board, []):
+                    if card.get("oracle_id") is None:
+                        oracle_id = catalog.get(slug(card["card_name"]), {}).get("oracle_id")
+                        if oracle_id is not None:
+                            card["oracle_id"] = oracle_id
+                            changed = True
+            if changed:
+                path = self._root / "decks" / f"{deck_id}.json"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(deck, ensure_ascii=False, separators=(",", ":")))
+            names = _unresolved_names(deck)
+            if names:
+                self._unresolved[deck_id] = {"attempts": self._unresolved[deck_id]["attempts"] + 1, "names": names}
+            else:
+                del self._unresolved[deck_id]
 
     def _write_explore(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> List[str]:
         """Writes explore.json from the snapshots just built, and from the published ones for formats this run skipped.
@@ -324,7 +407,7 @@ class SnapshotStore:
         counts = {"archetypes": 0, "events": 0}
         for format, document in documents.items():
             for kind, pages in (
-                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
+                ("archetypes", build_archetype_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog, self._hands.get(format))),
                 ("events", build_event_pages(document, self._now, self._deck_ids, self._deck_cards.get(format), catalog)),
             ):
                 for page_id, page in pages.items():
@@ -362,16 +445,16 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
-    def _write_commander_pages(self, fetch_commanders, limit: int) -> List[str]:
-        """Refreshes a slice of the commanders a card page names, and publishes their pages."""
+    def _write_commander_pages(self, fetch_commanders, limit: int, catalog: Dict[str, dict], priority: Sequence[str] = ()) -> List[str]:
+        """Refreshes a slice of the commanders a card page names, `priority` ones first, and publishes their pages."""
         wanted = {slug: name for slug, name in self._wanted_commanders.items()}
-        if fetch_commanders and limit > 0 and wanted:
-            due = due_slugs({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, limit)
+        if fetch_commanders and limit > 0 and (wanted or priority):
+            due = due_commanders({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, priority, limit)
             entries = fetch_commanders([slug for _, slug in due])
             for slug, entry in entries.items():
                 if not entry:
                     continue
-                self._write(f"edh/commanders/{slug}.json", _json_bytes({**entry, "schema": SCHEMA, "generated_at": self._stamp()}))
+                self._write(f"edh/commanders/{slug}.json", _json_bytes({**entry, "oracle_ids": oracle_ids(entry, catalog), "schema": SCHEMA, "generated_at": self._stamp()}))
                 self._commanders[slug] = {"checked_at": self._stamp(), "name": entry["name"], "decks": entry["decks"]}
         self._write("state/edhrec-commanders.json", json.dumps(self._commanders, sort_keys=True, separators=(",", ":")).encode())
         if not self._commanders:
@@ -428,6 +511,32 @@ class SnapshotStore:
 
 def _json_bytes(document: dict) -> bytes:
     return json.dumps(document, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+def _membership(document: dict) -> Dict[str, tuple]:
+    """Each deck of the snapshot (its archetypes' featured decks and results, then its events'), with its archetype's id and name.
+
+    A deck seen only in an event counts under the name that event gave it, with an id of "" for no archetype.
+    """
+    membership: Dict[str, tuple] = {}
+    for archetype in document["archetypes"].values():
+        if archetype.get("deck_id"):
+            membership.setdefault(archetype["deck_id"], (archetype["archetype_id"], archetype["name"]))
+        for result in archetype["results"]:
+            membership.setdefault(result["deck_id"], (archetype["archetype_id"], archetype["name"]))
+    for event in document["events"]:
+        for result in event["results"]:
+            membership.setdefault(result["deck_id"], (result.get("archetype_id") or "", result.get("archetype") or "Other"))
+    return membership
+
+
+def _unresolved_names(deck: dict) -> List[str]:
+    names: List[str] = []
+    for board in ("mainboard", "sideboard"):
+        for card in deck.get(board, []):
+            if card.get("oracle_id") is None and card["card_name"] not in names:
+                names.append(card["card_name"])
+    return names
 
 
 def _duplicate_event_ids(events: Iterable[Dict[str, Any]]) -> Set[str]:

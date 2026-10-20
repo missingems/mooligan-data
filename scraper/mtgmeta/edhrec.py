@@ -15,6 +15,8 @@ import urllib.error
 import urllib.request
 from typing import Dict, List, Optional, Sequence, Tuple
 
+from .cards import slug as card_slug
+
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://json.edhrec.com/pages/cards"
@@ -24,6 +26,8 @@ CARD_URL = "https://edhrec.com/cards"
 SITE_COMMANDER_URL = "https://edhrec.com/commanders"
 # Commanders kept per card, most decks first.
 MAX_COMMANDERS = 12
+# The windows of EDHREC's ranked commanders: ours, and the page each is read from.
+TOP_WINDOWS = {"7d": "week", "30d": "month"}
 
 # EDHREC drops apostrophes and commas rather than replacing them:
 # "Y'shtola, Night's Blessed" becomes "yshtola-nights-blessed".
@@ -61,6 +65,19 @@ class Edhrec:
             entries[slug] = self.commander(slug)
         log.info("EDHREC: read %d commanders, %d with data", len(entries), sum(1 for e in entries.values() if e))
         return entries
+
+    def top_commanders(self) -> Dict[str, List[dict]]:
+        """EDHREC's ranked top commanders per window (see `TOP_WINDOWS`); a window it cannot be read for is left out."""
+        windows: Dict[str, List[dict]] = {}
+        for index, (window, page) in enumerate(TOP_WINDOWS.items()):
+            if index:
+                time.sleep(self._delay)
+            rows = _top_rows(self._json(f"{COMMANDER_URL}/{page}.json"))
+            if rows:
+                windows[window] = rows
+            else:
+                log.warning("EDHREC: no top commanders for the %s window", window)
+        return windows
 
     def _json(self, url: str) -> Optional[dict]:
         request = urllib.request.Request(url, headers={"User-Agent": self._user_agent})
@@ -118,6 +135,26 @@ def _entry(body: dict, slug: str) -> Optional[dict]:
     }
 
 
+def _top_rows(body: Optional[dict]) -> List[dict]:
+    """The ranked commanders of a top page, in rank order; a row with no deck count or slug is skipped."""
+    cardlists = ((body or {}).get("container", {}).get("json_dict", {}).get("cardlists")) or [{}]
+    rows: List[dict] = []
+    for view in cardlists[0].get("cardviews", []):
+        if not isinstance(view.get("num_decks"), int) or not view.get("sanitized") or not view.get("name"):
+            continue
+        trend = view.get("trend_zscore")
+        rows.append(
+            {
+                "rank": view["rank"] if isinstance(view.get("rank"), int) else len(rows) + 1,
+                "slug": view["sanitized"],
+                "name": view["name"],
+                "decks": view["num_decks"],
+                "trend": round(trend, 1) if isinstance(trend, (int, float)) else None,
+            }
+        )
+    return rows
+
+
 def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional[dict]:
     container = body.get("container", {}).get("json_dict", {})
     card = container.get("card") or {}
@@ -144,9 +181,26 @@ def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional
         "decks": decks,
         "salt": round(card["salt"], 2) if isinstance(card.get("salt"), (int, float)) else None,
         "url": f"{SITE_COMMANDER_URL}/{slug}",
+        "color_identity": card.get("color_identity"),
+        "scryfall_id": card.get("id"),
         "sections": sections,
         "average_deck": _average_deck(average),
     }
+
+
+def oracle_ids(entry: dict, catalog: Optional[Dict[str, dict]]) -> Dict[str, str]:
+    """The oracle id of the commander and of every card its page names, by name; names the catalog lacks are left out."""
+    if not catalog:
+        return {}
+    names = [entry.get("name", "")]
+    names += [card.get("name", "") for section in entry.get("sections", []) for card in section.get("cards", [])]
+    names += [name for section in entry.get("average_deck", []) for name in section.get("cards", [])]
+    ids: Dict[str, str] = {}
+    for name in names:
+        oracle_id = catalog.get(card_slug(name), {}).get("oracle_id") if name else None
+        if oracle_id:
+            ids[name] = oracle_id
+    return ids
 
 
 def _average_deck(average: Optional[dict]) -> List[dict]:
@@ -168,3 +222,15 @@ def due_slugs(known: Dict[str, dict], wanted: Dict[str, str], limit: int) -> Lis
         return []
     ordered = sorted(wanted.items(), key=lambda item: known.get(item[1], {}).get("checked_at", ""))
     return ordered[:limit]
+
+
+def due_commanders(known: Dict[str, dict], wanted: Dict[str, str], priority: Sequence[str], limit: int) -> List[Tuple[str, str]]:
+    """The commanders to refresh this run: the `priority` ones first, in the order given, then as `due_slugs` has it.
+
+    A priority commander is read whether or not a card page names it, and the limit holds for both together.
+    """
+    if limit <= 0:
+        return []
+    first = list(dict.fromkeys(priority))[:limit]
+    rest = {key: slug for key, slug in wanted.items() if slug not in first}
+    return [(slug, slug) for slug in first] + due_slugs(known, rest, limit - len(first))

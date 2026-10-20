@@ -3,11 +3,14 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import random
+import re
 import sys
 import time
 from contextlib import contextmanager
-from typing import Dict, Iterator, List, Sequence, Tuple, Union
+from dataclasses import dataclass
+from typing import Dict, Iterator, List, Optional, Sequence, Tuple, Union
 
 from seleniumbase import SB
 
@@ -23,8 +26,51 @@ def _is_challenge(body: str) -> bool:
     return "<title>just a moment" in head or "challenges.cloudflare.com" in head or "cf-chl" in head
 
 
+# Statuses that mean "not now" rather than "not there": 0 is a request that never got an answer.
+_REFUSED_STATUSES = (0, 403, 429, 503)
+
+
+def _retry_after(value: object) -> Optional[float]:
+    """A Retry-After header as seconds. An HTTP-date or anything else that is not a number gives None."""
+    try:
+        seconds = float(str(value).strip())
+    except ValueError:
+        return None
+    return seconds if math.isfinite(seconds) and seconds >= 0 else None
+
+
 class BlockedError(RuntimeError):
     """Cloudflare kept serving its challenge instead of the page."""
+
+
+@dataclass
+class Fetched:
+    """One answer to a fetch() made from inside the open page."""
+
+    path: str
+    status: int
+    body: str
+    retry_after: Optional[float] = None
+    # The cf-mitigated header ("challenge" when Cloudflare answered with its check), if any.
+    mitigated: str = ""
+    # The URL the answer came from, which differs from the request after a redirect.
+    final_url: str = ""
+
+    @property
+    def refused(self) -> bool:
+        """Whether the site said "not now": a refusing status or a challenge page, whatever the status."""
+        return self.status in _REFUSED_STATUSES or _is_challenge(self.body)
+
+    def describe(self) -> str:
+        """A one-line diagnostic of the answer, for the log."""
+        match = re.search(r"<title[^>]*>(.*?)</title>", self.body[:3000], re.I | re.S)
+        title = match.group(1).strip() if match else self.body[:80].strip()
+        retry = "none" if self.retry_after is None else f"{self.retry_after:g}s"
+        parts = [f"HTTP {self.status}", f"cf-mitigated={self.mitigated or 'none'}", f"retry-after={retry}", f"title {title!r}"]
+        final = self.final_url[len(BASE_URL) :] if self.final_url.startswith(BASE_URL) else self.final_url
+        if final and final != self.path:
+            parts.append(f"redirected to {final}")
+        return ", ".join(parts)
 
 
 class GoldfishBrowser:
@@ -57,7 +103,7 @@ class GoldfishBrowser:
 
         A format without one (Duel Commander) has a single, unwindowed page.
         """
-        html = self.page(f"/metagame/{format}/full")
+        html = self._loaded_metagame(format)
         window = selected_period(html)
         if window is None:
             log.info("The %s metagame has no window selector; taking the page as it comes", format)
@@ -96,14 +142,13 @@ class GoldfishBrowser:
             for start in range(0, len(pending), self._concurrency):
                 batch = pending[start : start + self._concurrency]
                 self._pause()
-                for path, response in zip(batch, self._fetch_batch(batch)):
-                    status, body = response["status"], response["body"]
-                    if status == 200 and not _is_challenge(body):
-                        results[path] = body
-                    elif status in (0, 403, 429, 503) or _is_challenge(body):
-                        blocked.append(path)
+                for fetched in self.fetch_batch(batch):
+                    if fetched.status == 200 and not fetched.refused:
+                        results[fetched.path] = fetched.body
+                    elif fetched.refused:
+                        blocked.append(fetched.path)
                     else:
-                        results[path] = RuntimeError(f"HTTP {status} on {path}")
+                        results[fetched.path] = RuntimeError(f"HTTP {fetched.status} on {fetched.path}")
                 if blocked and len(blocked) == len(batch):
                     # The whole batch was refused: stop spending requests and renew first.
                     blocked.extend(pending[start + self._concurrency :])
@@ -119,12 +164,36 @@ class GoldfishBrowser:
                 results[path] = BlockedError(f"Blocked on {path}")
         return results
 
+    def fetch_batch(self, paths: Sequence[str]) -> List[Fetched]:
+        """Fetches `paths` together with fetch() inside the open page: one attempt, no pause, no retry.
+
+        A refusal is reported in the answer, not handled here, so the caller decides how long to wait.
+        """
+        paths = list(paths)
+        return [
+            Fetched(
+                path,
+                status=int(response.get("status", 0)),
+                body=str(response.get("body", "")),
+                retry_after=_retry_after(response.get("retryAfter")),
+                mitigated=response.get("mitigated") or "",
+                final_url=response.get("url") or "",
+            )
+            for path, response in zip(paths, self._fetch_batch(paths))
+        ]
+
     def _fetch_batch(self, paths: List[str]) -> List[dict]:
         # BaseCase.execute_async_script takes no script arguments, so embed the paths.
         script = """
             const done = arguments[arguments.length - 1];
             Promise.all(%s.map(path => fetch(path, {credentials: 'include'})
-              .then(r => r.text().then(body => ({status: r.status, body})))
+              .then(r => r.text().then(body => ({
+                status: r.status,
+                body,
+                retryAfter: r.headers.get('retry-after'),
+                mitigated: r.headers.get('cf-mitigated'),
+                url: r.url,
+              })))
               .catch(error => ({status: 0, body: String(error)}))))
               .then(responses => done(JSON.stringify(responses)));
         """ % json.dumps(paths)
@@ -132,6 +201,28 @@ class GoldfishBrowser:
             return json.loads(self._sb.execute_async_script(script, timeout=90))
         except Exception as error:  # noqa: BLE001 - a hung request times out the whole script
             return [{"status": 0, "body": str(error)} for _ in paths]
+
+    def _loaded_metagame(self, format: str, attempts: int = 2) -> str:
+        """The metagame page once its archetype tiles are in, loaded again if they never come.
+
+        The tiles can land after the page has cleared the challenge, and a page read before them parses
+        as having none. Still without tiles after every attempt, the page is returned as it is.
+        """
+        path = f"/metagame/{format}/full"
+        for attempt in range(1, attempts + 1):
+            self.page(path)
+            if self._tiles_landed(wait=15):
+                return self._sb.get_page_source()
+            log.warning("No archetype tiles on the %s metagame page yet (attempt %d/%d)", format, attempt, attempts)
+        return self._sb.get_page_source()
+
+    def _tiles_landed(self, wait: float) -> bool:
+        """Whether the metagame page shows its archetype tiles, giving them `wait` seconds to arrive."""
+        for _ in range(int(wait / 0.5) + 1):
+            if self._tile_statistics():
+                return True
+            time.sleep(0.5)
+        return False
 
     def _cleared(self, wait: float) -> bool:
         """Whether the real page is showing, giving an automatic challenge `wait` seconds to pass."""
