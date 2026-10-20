@@ -1,8 +1,8 @@
 name: Lore
 
 # Scrapes the Magic Story archive, has Claude extract who and what is in each page, and builds the index,
-# committing each stage's files under lore/data. Every stage only does what is new, so a run that stops
-# part way loses nothing. See lore/README.md.
+# committing each stage's files under lore/data, then publishes the site and the app's feed (lore-site.yml).
+# Every stage only does what is new, so a run that stops part way loses nothing. See lore/README.md.
 on:
   workflow_dispatch:
     inputs:
@@ -71,6 +71,14 @@ jobs:
       - if: always()
         run: bash commit.sh 'Lore - extract with Claude'
 
+      # The index isn't committed; this checks the build works, and lore-site.yml builds it again to publish.
       - name: Build the index
         run: python -m mtglore build
-      - run: bash commit.sh 'Lore - build the index'
+
+  # Publish what this run added: the site and the app's feed (lore/app/ on data.mooligan.com).
+  site:
+    needs: lore
+    uses: ./.github/workflows/lore-site.yml
+    with:
+      publish: true
+    secrets: inherit

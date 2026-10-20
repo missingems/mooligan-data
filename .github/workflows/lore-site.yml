@@ -11,6 +11,12 @@ on:
         description: Upload to R2 under lore/
         type: boolean
         default: false
+  # The weekly Lore run calls this after it has extracted the new chapters, so they reach the site and the app.
+  workflow_call:
+    inputs:
+      publish:
+        type: boolean
+        default: true
   push:
     branches: [claude/lucid-allen-jjvx9l]
     # Editing lore/site/publish.json builds and publishes from the branch (a manual run needs the workflow on main).
@@ -29,6 +35,9 @@ jobs:
         working-directory: lore
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The branch as it is now: when called from the Lore run, that includes what the run just committed.
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
