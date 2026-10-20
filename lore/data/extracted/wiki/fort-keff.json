@@ -1,0 +1,172 @@
+{
+ "page": "wiki/fort-keff",
+ "url": "https://mtg.wiki/page/Fort_Keff",
+ "title": "Fort Keff",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:33Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Fort Keff",
+   "type": "location",
+   "aliases": [],
+   "description": "A settlement near the Eye of Ugin on Akoum, Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eye of Ugin",
+   "type": "location",
+   "aliases": [],
+   "description": "Location near Fort Keff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Fort Keff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker who fought at Fort Keff and left to seek help on Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker Gideon had unsuccessfully searched for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Surrakar",
+   "type": "creature",
+   "aliases": [],
+   "description": "A beast that warned of gods from beyond the world and later led the fort's inhabitants to underground rivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi brood",
+   "type": "creature",
+   "aliases": [
+    "brood",
+    "demon-insects"
+   ],
+   "description": "Swarming creatures that attacked the fort.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi titan who darkened the skies over the fort.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Gideon set out for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Infinite Consortium",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of planeswalkers Gideon presumably sought out.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A primal scream from a surrakar wakes the fort's inhabitants, including Gideon, who had come seeking rest after searching for Chandra.",
+   "participants": [
+    "Gideon Jura",
+    "Surrakar"
+   ],
+   "location": "Fort Keff",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "A primal scream tore the sleep from the inhabitants of the fort, including planeswalker Gideon Jura ."
+  },
+  {
+   "summary": "The surrakar warns of gods from the void with no color who would devour all life.",
+   "participants": [
+    "Surrakar",
+    "Gideon Jura"
+   ],
+   "location": "Fort Keff",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The beast warned Gideon and the assembled soldiers of its gods who came from beyond the world"
+  },
+  {
+   "summary": "The brood swarms the fort; Gideon fights bravely and alone turns the tide.",
+   "participants": [
+    "Gideon Jura",
+    "Eldrazi brood"
+   ],
+   "location": "Fort Keff",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he alone turned the tide against the brood"
+  },
+  {
+   "summary": "Emrakul darkens the skies and Gideon tells everyone to follow the surrakar to the underground rivers and flee.",
+   "participants": [
+    "Emrakul",
+    "Gideon Jura",
+    "Surrakar"
+   ],
+   "location": "Fort Keff",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Gideon told all the inhabitants of the fort to follow the surrakar to the underground rivers and flee."
+  },
+  {
+   "summary": "Gideon sets out for Ravnica to petition a group of planeswalkers for help.",
+   "participants": [
+    "Gideon Jura",
+    "Infinite Consortium"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gideon set out for Ravnica to petition the help of a group of planeswalkers he had heard rumors about"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fort Keff",
+   "relation": "located_in",
+   "target": "Akoum",
+   "note": "Near the Eye of Ugin",
+   "paragraph": 0,
+   "quote": "Fort Keff is a settlement near the Eye of Ugin on the continent of Akoum on Zendikar ."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "enemy",
+   "target": "Eldrazi brood",
+   "note": "Fought them at the fort",
+   "paragraph": 2,
+   "quote": "Gideon fought bravely amongst the soldiers of Fort Keff"
+  }
+ ],
+ "rejected": []
+}

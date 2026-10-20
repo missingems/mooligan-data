@@ -1,0 +1,190 @@
+{
+ "page": "wiki/icehaven",
+ "url": "https://mtg.wiki/page/Icehaven",
+ "title": "Icehaven",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:34Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Icehaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The northernmost island of the Domains, largest after Aerona, notorious for its cold climate and home to small states and stone giant tribes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Domains",
+   "type": "location",
+   "aliases": [],
+   "description": "The island group Icehaven belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent separated from Icehaven by the Rip.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Rip",
+   "type": "location",
+   "aliases": [
+    "Rip"
+   ],
+   "description": "Strait separating Icehaven from Aerona.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keld",
+   "type": "faction",
+   "aliases": [],
+   "description": "A nation of large, gray-skinned warriors taking up most of Icehaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parma",
+   "type": "faction",
+   "aliases": [],
+   "description": "Theocratic kingdom of the Northern Paladins on the east tip of Icehaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stone giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Indigenous tribes separating Icehaven's small states.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agderisk",
+   "type": "location",
+   "aliases": [],
+   "description": "A port city on the southern coast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Necropolis",
+   "type": "location",
+   "aliases": [
+    "The Keldon Necropolis"
+   ],
+   "description": "Destroyed during the Keldon Twilight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Twilight",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which the Keldon Necropolis was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Letha",
+   "type": "location",
+   "aliases": [],
+   "description": "An outcast village destroyed by the dragon Skouras.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skouras",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon that destroyed Letha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mountain",
+   "type": "location",
+   "aliases": [],
+   "description": "A lone volcano and sacred peak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gurdurngs",
+   "type": "location",
+   "aliases": [
+    "The Gurdurngs"
+   ],
+   "description": "Mountainous region in southern Icehaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kvardalen",
+   "type": "location",
+   "aliases": [],
+   "description": "A centaur village in the Gurdurngs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Rootwater and the Skyshroud Forest were placed on Icehaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Keldon Necropolis is destroyed during the Keldon Twilight.",
+   "participants": [
+    "Keldon Necropolis",
+    "Keldon Twilight"
+   ],
+   "location": "Icehaven",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Keldon Necropolis - destroyed during the Keldon Twilight ."
+  },
+  {
+   "summary": "The dragon Skouras destroys the outcast village of Letha.",
+   "participants": [
+    "Skouras",
+    "Letha"
+   ],
+   "location": "Icehaven",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Letha - an outcast village, destroyed by the dragon Skouras ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Icehaven",
+   "relation": "located_in",
+   "target": "Domains",
+   "note": "Northernmost island",
+   "paragraph": 0,
+   "quote": "Icehaven is the northernmost island of the Domains"
+  },
+  {
+   "source": "Keld",
+   "relation": "located_in",
+   "target": "Icehaven",
+   "note": "Takes up most of the island",
+   "paragraph": 1,
+   "quote": "Keld - a nation of large, gray-skinned warriors taking up most of Icehaven"
+  },
+  {
+   "source": "Parma",
+   "relation": "located_in",
+   "target": "Icehaven",
+   "note": "East tip",
+   "paragraph": 3,
+   "quote": "Parma - theocratic kingdom of the Northern Paladins on the east tip of Icehaven"
+  },
+  {
+   "source": "Skouras",
+   "relation": "killed",
+   "target": "Letha",
+   "note": "Destroyed the village",
+   "paragraph": 1,
+   "quote": "Letha - an outcast village, destroyed by the dragon Skouras ."
+  }
+ ],
+ "rejected": []
+}

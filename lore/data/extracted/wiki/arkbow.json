@@ -1,0 +1,106 @@
+{
+ "page": "wiki/arkbow",
+ "url": "https://mtg.wiki/page/Arkbow",
+ "title": "Arkbow",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Arkbow",
+   "type": "artifact",
+   "aliases": [
+    "The Arkbow"
+   ],
+   "description": "Magical artifact attuned to Vivien Reid, holding an invocation of every creature that ever lived on Skalla and more.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "Planeswalker who possesses the Arkbow and summons spirit creatures by firing arrows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skalla",
+   "type": "plane",
+   "aliases": [],
+   "description": "World whose creatures the Arkbow contains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nura and Smaragdi",
+   "type": "faction",
+   "aliases": [
+    "Nura",
+    "Smaragdi"
+   ],
+   "description": "Peoples who created the Arkbow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Draconic planeswalker who threatened their world.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Nura and Smaragdi created the Arkbow after their world came under threat from Nicol Bolas.",
+   "participants": [
+    "Nura and Smaragdi",
+    "Nicol Bolas"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Arkbow was created by the Nura and Smaragdi after their world came under threat from Nicol Bolas"
+  },
+  {
+   "summary": "The battle was lost and Vivien instinctively planeswalked to safety with the Arkbow.",
+   "participants": [
+    "Vivien Reid",
+    "Nicol Bolas"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "as the battle was lost, Vivien instinctively planeswalked to safety with the Arkbow"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nura and Smaragdi",
+   "relation": "created",
+   "target": "Arkbow",
+   "note": "Created it against Bolas.",
+   "paragraph": 1,
+   "quote": "The Arkbow was created by the Nura and Smaragdi"
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "other",
+   "target": "Arkbow",
+   "note": "Possesses and is attuned to it.",
+   "paragraph": 0,
+   "quote": "in possession of, and attuned to, the planeswalker Vivien Reid"
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "Fled his attack.",
+   "paragraph": 1,
+   "quote": "as the battle was lost"
+  }
+ ],
+ "rejected": []
+}
