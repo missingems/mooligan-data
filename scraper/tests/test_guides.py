@@ -364,3 +364,14 @@ def test_a_dry_run_asks_nothing(tmp_path, capsys):
 def test_the_client_reads_the_key_from_the_environment(monkeypatch):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     assert guides._client() is None
+
+
+def test_a_budget_stops_asking_before_it_would_be_passed(tmp_path):
+    slugs = ["atraxa-praetors-voice", "atraxa-two", "atraxa-three"]
+    src, _ = source(tmp_path, {f"edh/commanders/{slug}.json": {**PAGE, "slug": slug} for slug in slugs[1:]})
+    client = fake()
+    result = guides.run(
+        tmp_path, slugs, src, client=client, catalog=CATALOG, banned=set(), fetch_oracle=lambda page: "Proliferate.", now=lambda: NOW, budget=0.2
+    )
+    assert len(client.calls) == 2 and result.over_budget == ["atraxa-three"]
+    assert result.usage.dollars() <= 0.2

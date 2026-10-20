@@ -53,6 +53,8 @@ BRACKET_3_GAME_CHANGERS = 3
 
 # Sonnet 5.5, per million tokens; a 5-minute cache write is 1.25 times input.
 PRICE_INPUT, PRICE_OUTPUT, PRICE_CACHE_WRITE, PRICE_CACHE_READ = 2.00, 10.00, 2.50, 0.20
+# What one guide is assumed to cost under --budget until a guide has been asked for; the first five came to $0.09 each.
+GUIDE_COST_GUESS = 0.15
 
 _CARD = {
     "type": "object",
@@ -434,6 +436,7 @@ class Result:
     unchanged: List[str] = field(default_factory=list)
     failed: List[str] = field(default_factory=list)
     planned: List[Tuple[str, int]] = field(default_factory=list)
+    over_budget: List[str] = field(default_factory=list)
     usage: Usage = field(default_factory=Usage)
 
 
@@ -455,6 +458,7 @@ def run(
     dry_run: bool = False,
     now: Optional[Callable[[], datetime]] = None,
     find_combos: Optional[Callable[[dict], List[dict]]] = None,
+    budget: Optional[float] = None,
 ) -> Result:
     """Asks for the guide of each commander whose input changed, writing each one and the state as it goes."""
     clock = now or (lambda: datetime.now(timezone.utc))
@@ -482,6 +486,10 @@ def run(
             continue
         if dry_run:
             result.planned.append((slug, estimate_tokens(system + json.dumps(TOOL) + message)))
+            continue
+        asked = len(result.written) + len(result.failed)
+        if budget is not None and result.usage.dollars() + (result.usage.dollars() / asked if asked else GUIDE_COST_GUESS) > budget:
+            result.over_budget.append(slug)
             continue
         checker = Checker(catalog or {}, commander_identity(page, catalog or {}), commander_ids(page, catalog or {}), banned or set(), changer_ids)
         try:
@@ -541,6 +549,7 @@ def main(
     parser.add_argument("--slug", action="append", default=[], help="a commander's slug, in place of --top; repeatable")
     parser.add_argument("--force", action="store_true", help="ask again even when the input has not changed")
     parser.add_argument("--dry-run", action="store_true", help="list what would be asked and its estimated cost; calls nothing")
+    parser.add_argument("--budget", type=float, help="stop asking before the run's cost, in dollars, would pass this")
     args = parser.parse_args(list(argv))
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     for name in ("anthropic", "httpx", "httpx2", "httpcore"):
@@ -574,6 +583,7 @@ def main(
         force=args.force,
         dry_run=args.dry_run,
         find_combos=find_combos,
+        budget=args.budget,
     )
 
     if args.dry_run:
@@ -587,6 +597,8 @@ def main(
             f"tokens: {usage.input} input, {usage.cache_write} cache write, {usage.cache_read} cache read, {usage.output} output; "
             f"about ${usage.dollars():.2f}"
         )
+        if result.over_budget:
+            print(f"{len(result.over_budget)} not asked, over the ${args.budget:.2f} budget: {' '.join(result.over_budget)}")
     return 1 if result.failed else 0
 
 
