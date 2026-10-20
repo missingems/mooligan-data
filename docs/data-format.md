@@ -19,6 +19,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `today.json` | One response for Explore's Today widgets: up to three breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
+| `sets/art.json` | Wizards' official art for each set, by Scryfall set code, for a set page's hero banner. Sets without art are left out | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/{slug}/guide.json` | One commander's play styles and its five power brackets, each with its cards, judged by Claude | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
@@ -31,7 +32,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -958,6 +959,33 @@ What the Comprehensive Rules say about each keyword, so an app can show the rule
 - **`ability_words`** is rule 207.2c: **`text`** is its sentences before the list (what an ability word is), and **`words`** are the listed ability words, lower-cased as the rules write them and in their order (about 60; "descend 4" and "descend 8" are two words). An ability word has no entry of its own in the rules, so an app that shows 207.2c for it names the word itself.
 - **Looking a word up.** Keys are lower-cased and spelled as the rules spell them, curly apostrophes included (`council’s dilemma`), so lower-case a card's keyword and compare apostrophes the same way. The rules describe a family of keywords in one entry: every “[type]walk” (islandwalk, snow swampwalk) is under `landwalk`, and the typecycling variants (plainscycling, swampcycling) are under `cycling`. An ability word has no entry of its own: `ability_words` is all the rules say about it.
 - **When it is missing.** A run that cannot read Wizards' page or file (the site is down, the link or the text changed shape) logs a warning and does not fail; the file stays as last published, and the next run tries again. Until the first successful run the file is a 404.
+
+## `sets/art.json`
+
+Wizards' own art for each set, so a set page can open with a hero banner. Wizards has no list of it, so each run reads their sitemap (<https://magic.wizards.com/en/sitemap.xml>) for the product page of each set (`/en/products/{set}`), its card image gallery (`/en/products/{set}/card-image-gallery`) and, for older sets, the gallery article (`/en/news/card-image-gallery/{set}`), matches each page to a Scryfall set by its name, and takes the `og:image` Wizards sets on the page. On a product page that is the set's promo card, usually with its logo on it; on a gallery it is the set's key art or a piece of its art, without one.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-20T09:30:00Z",
+  "sets": {
+    "dsk": {
+      "url": "https://images.ctfassets.net/s5n2t79q9icq/…/dsk_meta.jpg",
+      "width": 1200,
+      "height": 630,
+      "title": "Duskmourn: House of Horror",
+      "source": "wizards",
+      "page": "https://magic.wizards.com/en/products/duskmourn-house-of-horror"
+    }
+  }
+}
+```
+
+- **`sets`** is keyed by the **lower-case Scryfall set code**. It holds the paper expansions, core sets, Masters sets, Commander decks, Un-sets and draft innovation sets released since 1 January 2015, and the upcoming ones Scryfall lists, as soon as Wizards' page for one carries an image. A set with no page, or no usable image, is **not in the file**: fall back to a crop of one of its cards. Do not expect every set to be there (promo and event sets never are, and most Commander decks are not).
+- **`url`** is the image itself, on Wizards' CDN (JPEG or PNG), with **`width`** and **`height`** in pixels, read from the file. It is always landscape (at least 1.2 times as wide as tall). Between a set's pages the widest image wins, and a product page wins a tie, so a recent set often gets its 1920 by 1080 key art from its gallery's header, else its product page's 1200 by 630 promo card, and an older set the 768 by 432 art of its gallery article. Scale it to fill the banner; do not rely on it being 16:9.
+- **`title`** is the set's name, from Scryfall. **`source`** is always `"wizards"`. **`page`** is the Wizards page the image was read from, to link to or credit.
+- **Updates.** A page is read again only when the sitemap says it changed, so an image changes when Wizards changes the page: an upcoming set's first image can be a placeholder until its art is ready. The file is rebuilt from the pages read so far on every run, so `generated_at` is the run's and says nothing about the art. A run that cannot read the sitemap or Scryfall's sets logs a warning and does not fail; the file stays as last published. Until the first successful run it is a 404.
+- **Images are not ours.** They are Wizards' marketing art, served from their CDN; show them as the set's banner and link to `page` where you credit them.
 
 ## Lore: `lore/app/…`
 
