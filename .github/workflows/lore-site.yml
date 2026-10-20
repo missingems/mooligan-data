@@ -1,7 +1,7 @@
 name: Lore site
 
 # Builds the lore site (lore/site) from the committed index: `mtglore publish` writes the data, esbuild the page.
-# With "publish" ticked it uploads the result to the R2 bucket under lore/, where it is served at
+# With "publish" ticked, or on a push that edits lore/site/publish.json, it uploads the result to the R2 bucket under lore/, where it is served at
 # https://data.mooligan.com/lore/index.html. Nothing outside lore/ in the bucket is touched.
 on:
   workflow_dispatch:
@@ -10,6 +10,10 @@ on:
         description: Upload to R2 under lore/
         type: boolean
         default: false
+  push:
+    branches: [claude/lucid-allen-jjvx9l]
+    # Editing lore/site/publish.json builds and publishes from the branch (a manual run needs the workflow on main).
+    paths: [lore/site/publish.json]
 
 concurrency:
   group: lore-site
@@ -39,7 +43,7 @@ jobs:
       - working-directory: lore/site
         run: npm ci && npm test && npm run build
       - name: Upload to R2
-        if: inputs.publish
+        if: inputs.publish || github.event_name == 'push'
         working-directory: lore/site
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
