@@ -37,6 +37,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `today.json` is one response for Explore's Today widgets: up to three breakouts (the strongest by decks and top 8s over the formats, `new` only breaking a tie) with the decks that play them, the day's biggest price mover and loser from `movers/all.json` with their price history, the uprising EDH commander (the one whose deck count on EDHREC rose most since EDHREC was last asked; EDHREC's data, used with their permission, so an app must credit them), and one preview: a printing Scryfall added since the last run from a set not released yet, or none on a day it added no such printing.
 - `previews.json` lists the printings Scryfall added in the last 7 days from sets not released yet (`window_days`, `count`, `cards`), ordered by the day each was first seen; it is the list behind Explore's "View N more", and its format is in `docs/data-format.md`.
 - `rules/keywords.json` holds what Magic's Comprehensive Rules say about each keyword action and keyword ability, and the ability words, read from the text file Wizards links on magic.wizards.com/en/rules. Every run reads it, but the file changes only when Wizards publishes new rules.
+- `sets/art.json` holds Wizards' official art for each set, keyed by Scryfall set code, for a set page's hero banner. A set Wizards has no art for is left out.
 - `explore-manifest.json` lists the SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`), so the app fetches it first and downloads only the files whose hash differs. A file a run does not rewrite keeps its entry from the last manifest, which is kept in `state/explore-manifest.json`.
 
 Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk file is read once a run for card names and oracle ids, and for whether a card is a land, its price and its mana value, which pick the preview cards of results outside a tracked archetype.
@@ -85,6 +86,8 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `LOCALIZE` | `1`, `0` with `QUICK=1` | Add the `localized` map (printed names and pictures in ja, fr, it, es and de) to `today.json` and `explore.json`. It streams Scryfall's every-printing file, about 400 MB gzipped, so it adds a minute or two to a run; `0` skips it |
 | `LOCALIZE_ALL_CARDS_URL` | Scryfall's `all_cards` bulk file | Read another file instead; a `file://` URL works |
 | `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json`, which reads the Comprehensive Rules from Wizards' site |
+| `SET_ART` | `1` | `0` skips `sets/art.json`, which reads each set's art from Wizards' site |
+| `SET_ART_DELAY` | `0.5` | Seconds between requests to Wizards' site for `sets/art.json` |
 
 ## Setup
 
@@ -175,6 +178,10 @@ The same read of the default-cards file finds the preview in `today.json`. Each 
 ## Keyword rules
 
 Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds the link to the text file on <https://magic.wizards.com/en/rules> (the file name carries its date, so the link is never hard-coded), downloads it, and keeps rule 701 (keyword actions), rule 702 (keyword abilities) and the ability words of rule 207.2c. The state keeps a fingerprint of what was published (`state/rules-keywords.json`), and a run that finds the same rules writes nothing, so the file, its hash in the manifest and its ETag stay as they were until Wizards publishes new rules. When Wizards' site cannot be read, or its page or text has changed shape, the run logs a warning and carries on, and the published file stays as it was. See `scraper/mtgmeta/rules.py` and `docs/data-format.md`.
+
+## Set art
+
+`sets/art.json` is read from Wizards' sitemap: each set's product page and card image gallery are matched to a Scryfall set by name, and their `og:image` is kept with its measured size (see `scraper/mtgmeta/setart.py`). Requests are 0.5 seconds apart with a descriptive User-Agent. The pages read are cached in `state/set-art.json` by URL and the sitemap's `lastmod`, so after the first run (about 300 requests) a run reads only the pages that changed. It can be run alone with `python -m mtgmeta set-art DIR`. When Wizards' site cannot be read the run logs a warning and carries on, and the published file stays as it was. See `docs/data-format.md`.
 
 ## Premier play calendar
 

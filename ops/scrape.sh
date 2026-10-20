@@ -108,6 +108,10 @@ step_upload() (
     if [ -f work/rules/keywords.json ]; then
       cp work/rules/keywords.json "$R2/rules/keywords.json" --cache-control "public, max-age=300"
     fi
+    # Wizards' art for each set, read from their sitemap and pages, with nothing pointing at it.
+    if [ -f work/sets/art.json ]; then
+      cp work/sets/art.json "$R2/sets/art.json" --cache-control "public, max-age=300"
+    fi
     cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
     # Built from the snapshots above, so it goes up after them.
     if [ -f work/explore.json ]; then
@@ -207,7 +211,7 @@ elif [ "$PUBLISH" != 1 ]; then
   for dir in decks cards edh locator premier archetypes events popular-cards breakouts movers snapshots state; do
     if [ -d "work/$dir" ]; then echo "  $dir/: $(find "work/$dir" -type f | wc -l | tr -d ' ') files"; fi
   done
-  for file in index.json explore.json today.json previews.json rules/keywords.json explore-manifest.json; do
+  for file in index.json explore.json today.json previews.json rules/keywords.json sets/art.json explore-manifest.json; do
     if [ -f "work/$file" ]; then echo "  $file"; fi
   done
   if [ ! -f work/index.json ]; then echo "  (no index.json: the run did not finish)"; fi

@@ -5,6 +5,7 @@ to publish on the way out.
 
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
 `python -m mtgmeta guides DIR --top 5` asks Claude for the top commanders' guides (see guides.py).
+`python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
 """
 from __future__ import annotations
 
@@ -136,6 +137,26 @@ def publish_rules(directory: Path, report) -> list:
         return []
 
 
+def publish_set_art(directory: Path, report) -> list:
+    """Wizards' art for each set, by Scryfall set code, as sets/art.json.
+
+    Nothing is written when Wizards' sitemap or Scryfall's sets cannot be read: the file stays published as it was.
+    That is a warning, not an error, so the run passes.
+    """
+    if os.environ.get("SET_ART", "1") != "1":
+        return []
+    from .setart import DELAY, USER_AGENT, Paced, fetch, scryfall_fetch, write_set_art
+
+    agent = os.environ.get("SET_ART_USER_AGENT", USER_AGENT)
+    get = Paced(lambda url, last_byte=None: fetch(url, last_byte, agent), float(os.environ.get("SET_ART_DELAY", str(DELAY))))
+    try:
+        return write_set_art(directory, datetime.now(timezone.utc), get, lambda url: scryfall_fetch(url, agent))
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Set art failed", exc_info=True)
+        report.warnings.append(f"set art: {error}")
+        return []
+
+
 def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
     """The cards whose price moved most, from the published price catalog, as movers/{format}.json.
 
@@ -243,6 +264,10 @@ def main() -> int:
         from .guides import main as guides
 
         return guides(sys.argv[2:])
+    if sys.argv[1:2] == ["set-art"]:
+        from .setart import main as set_art
+
+        return set_art(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
     args = parser.parse_args()
@@ -304,6 +329,7 @@ def main() -> int:
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)
+    written += publish_set_art(args.directory, report)
     # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
     new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
