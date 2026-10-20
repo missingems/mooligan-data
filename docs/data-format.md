@@ -805,6 +805,16 @@ A commander's play styles and what each of Wizards' five Commander Brackets look
       "summary": "Two or three sentences on the deck at this bracket.",
       "cards": [{ "name": "Smothering Tithe", "oracle_id": "…", "role": "ramp" }]
     }
+  ],
+  "combos": [
+    {
+      "id": "1529-4256",
+      "cards": [{ "name": "Kinnan, Bonder Prodigy", "oracle_id": "…" }, { "name": "Basalt Monolith", "oracle_id": "…" }],
+      "requires": ["A mana sink"],
+      "results": ["Infinite colorless mana"],
+      "bracket": 4,
+      "bracket_tag": "R"
+    }
   ]
 }
 ```
@@ -812,6 +822,7 @@ A commander's play styles and what each of Wizards' five Commander Brackets look
 - **`styles`**: 3 to 6 different ways to build the deck, most played first. **`id`** is the slug of **`name`** (the `cards/{slug}.json` rule), unique within the file. **`brackets`** lists every bracket level the style plays well at, ascending, each once (not a range: `[2, 4]` means 2 and 4). **`cards`** are the cards that make the style, the most important first: Claude is asked for 40 to 60 and the file keeps at most 60; after the checks below a style can have fewer than 30, which the run logs.
 - **`brackets`**: always five, levels **1** to **5** in order, with Wizards' names: 1 `Exhibition`, 2 `Core`, 3 `Upgraded`, 4 `Optimized`, 5 `cEDH`. **`cards`** (at most 30) are what set that bracket apart for this commander: the on-theme core at 1 and 2, the upgrades at 3, the high-power additions at 4 and 5. They keep the bracket's Game Changer limit: none at 1 and 2, at most three at 3. The other rules (mass land denial, extra turns, two-card combos, tutors) are in Claude's instructions but not checked card by card.
 - **A card** has **`name`** and **`oracle_id`** as Scryfall's catalog has them (a double-faced card is named with both faces, `"A // B"`), and **`role`**, one of `land`, `ramp`, `draw`, `removal`, `counter`, `wipe`, `protection`, `tutor`, `payoff`, `engine`, `combo`, `utility`. Cards come from the commander's pool or are well-known staples. Every name Claude gives is looked up in the catalog by slug, and dropped when the catalog does not know it, when it is outside the commander's colour identity, when it is banned in Commander (Scryfall's `banned:commander`), when it is the commander itself, or when it repeats a card of the same list.
+- **`combos`**: the combos the guide's cards can assemble, from [Commander Spellbook](https://commanderspellbook.com): every variant its find-my-combos finds whole in a deck of the commander (both halves of a pair) and every card of the guide's styles and brackets, at most 30, the most played first, one per set of cards. A variant is kept when Spellbook marks it OK, not a spoiler, legal in Commander and not banned. **`id`** is Spellbook's variant id (`https://commanderspellbook.com/combo/{id}`). **`cards`** are its pieces, the commander among them when it is one, named and identified as Spellbook has them. **`requires`** names the other pieces it needs, as Spellbook's templates (`"Permanent Castable for {C}"`). **`results`** is what it makes, Spellbook's standalone and contextual features only. **`bracket`** is the lowest Commander Bracket it fits, from Spellbook's **`bracket_tag`** as Spellbook reads its own tags: `E` (Exhibition) 1, `C` (Core) and `O` (Oddball) 2, `P` (Powerful) and `S` (Spicy) 3, `R` (Ruthless) 4. The combos of one style are those whose `cards` are all among the style's cards and the commander. The field is missing when Spellbook could not be read, and empty when it found none. `python -m mtgmeta guide-combos DIR --top N` adds it to the published guides without asking Claude again; `guides` adds it to every guide it writes.
 - **`model`** is the model that wrote it; a refusal can be rerouted to another model by the API, which is then named here. **`generated_at`** is when it was written. `name` is EDHREC's, as on the commander's page.
 - **The Game Changers** are kept in `scraper/mtgmeta/game_changers.json` (53 cards on 20 October 2026, read from Scryfall's `is:gamechanger`, which follows Wizards' list). Update it when Wizards changes the list; a change rewrites every guide on its next run.
 - **When it is written.** `python -m mtgmeta guides DIR --top N` (see the module's docstring; it needs `ANTHROPIC_API_KEY`) writes the guides of the first `N` commanders of [`edh/top.json`](#edhtopjson), the week's first. A commander's guide is asked for again only when what Claude would be sent changes: its oracle text, the names in its pool, a card's share of its decks crossing a tenth (it is sent rounded to the nearest 10%), the instructions, the Game Changers or the model. `state/guides.json` keeps, per slug, a hash of that input with the `generated_at` and `model` of the guide written from it. A guide that fails its checks (fewer than 3 styles, a bracket missing, a refusal, an answer cut off) is not written, and the published one stays.

@@ -329,6 +329,7 @@ def cli(tmp_path, *args, make_client=None):
     return guides.main(
         [str(tmp_path), "--top", "1", *args],
         make_client=make_client, load_catalog=lambda: CATALOG, fetch_banned=lambda: set(), fetch_oracle=lambda page: "Proliferate.",
+        find_combos=lambda guide: [{"id": "1-2", "cards": [], "requires": [], "results": ["Infinite mana"], "bracket": 4, "bracket_tag": "R"}],
     )
 
 
@@ -340,6 +341,8 @@ def test_the_command_never_shows_the_key(tmp_path, monkeypatch, capsys, caplog):
 
     out = capsys.readouterr()
     assert "1 written, 0 unchanged, 0 failed" in out.out and "about $0.08" in out.out
+    written = json.loads((tmp_path / "edh" / "commanders" / "atraxa-praetors-voice" / "guide.json").read_text())
+    assert written["combos"][0]["results"] == ["Infinite mana"]
     assert KEY not in out.out + out.err + caplog.text + json.dumps(client.calls)
 
 

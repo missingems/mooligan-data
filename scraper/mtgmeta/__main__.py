@@ -5,6 +5,7 @@ to publish on the way out.
 
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
 `python -m mtgmeta guides DIR --top 5` asks Claude for the top commanders' guides (see guides.py).
+`python -m mtgmeta guide-combos DIR --top 5` adds Commander Spellbook's combos to the top commanders' guides (see guide_combos.py).
 `python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
 `python -m mtgmeta set-products DIR` writes sets/products/{code}.json, each recent set's sealed products (see setproducts.py).
 `python -m mtgmeta set-mechanics DIR` writes sets/mechanics.json, the mechanics each set introduced (see setmechanics.py).
@@ -314,6 +315,10 @@ def main() -> int:
         from .guides import main as guides
 
         return guides(sys.argv[2:])
+    if sys.argv[1:2] == ["guide-combos"]:
+        from .guide_combos import main as guide_combos
+
+        return guide_combos(sys.argv[2:])
     if sys.argv[1:2] == ["set-art"]:
         from .setart import main as set_art
 
