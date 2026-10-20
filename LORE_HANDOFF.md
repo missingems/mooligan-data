@@ -25,7 +25,7 @@ The suggested flow:
 
 ### The `.md` files
 
-They are playgraph primer markdown (`missingems/playgraph`, branch `feat/primers-api`), written to be read rather than scanned: prose paragraphs, no citation links and no sources list.
+They are playgraph primer markdown (`missingems/playgraph`, branch `feat/primers-api`; all 1,903 entity files and 1,662 set files parse without diagnostics), written to be read rather than scanned: prose paragraphs, no citation links and no sources list.
 
 ```
 ---
@@ -45,37 +45,37 @@ id / name / type / title / planes / updated / credit
 
 ## Coverage (this build)
 
-**Entities with a page:** 1,799 (612 with a written, cited bio), counted in `entities.json` and the `.md` files.
+**Entities with a page:** 1,903 (610 with a written bio; the 821 key to a set have story prose for those sets), counted in `entities.json` and the `.md` files.
 
 | Type | Entities |
 | --- | --- |
-| Characters | 1,152 |
-| Planeswalkers | 98 |
-| Locations | 321 |
-| Factions | 106 |
-| Planes | 74 |
-| Artifacts | 48 |
+| Characters | 1,228 |
+| Planeswalkers | 102 |
+| Locations | 331 |
+| Factions | 107 |
+| Planes | 76 |
+| Artifacts | 59 |
 
-**Cards mapped to an entity:** 1,926, out of Scryfall's 4,637 planeswalkers, legendary creatures, plane cards and legendary lands.
+**Cards mapped to an entity:** 2,018, out of Scryfall's 4,637 planeswalkers, legendary creatures, plane cards and legendary lands.
 
 | Card kind | Mapped |
 | --- | --- |
-| Planeswalkers | 313 of 348 |
-| Legendary creatures | 1,372 of 4,014; most of the rest are minor or Universes Beyond legends the story doesn't cover |
+| Planeswalkers | 317 of 348 |
+| Legendary creatures | 1,440 of 4,014; most of the rest are minor or Universes Beyond legends the story doesn't cover |
 | Plane cards | 112 of 184 |
-| Legendary lands | 17 of 91 |
+| Legendary lands | 24 of 91 |
 
-**Portraits:** 1,285 entities have a `portrait_oracle_id`.
+**Portraits:** 1,376 entities have a `portrait_oracle_id`.
 
-**Sets with key characters:** 134, covering every expansion, core and draft-innovation set except:
+**Sets with key characters:** 141 (1,662 set pages; 140 with a story summary), covering every expansion, core and draft-innovation set except:
 - Unlimited through Tenth Edition, which only reprint.
 - Jumpstart, crossover sets (Lord of the Rings, Final Fantasy, Marvel, TMNT, Assassin's Creed, D&D…), and a few products without a story.
 
-**Behind it:** the index the feed is cut from has 14,191 entities, 30,994 events and 17,542 relations from 6,293 pages. The sources are:
+**Behind it:** the index the feed is cut from has 16,172 entities, 31,674 events and 18,813 relations from 6,682 pages. The sources are:
 - 480 Magic Story articles and 79 story profiles from magic.wizards.com;
 - 229 old wizards.com story columns from the Internet Archive;
-- card flavor text, one page per set (320 sets);
-- 5,185 MTG Wiki articles, including the short stub articles.
+- card flavor text, one page per set (581 sets);
+- 5,313 MTG Wiki articles, including the short stub articles.
 
 ## Where it comes from
 
@@ -99,6 +99,6 @@ Everything is in `lore/` (see [`lore/README.md`](lore/README.md)):
 - **Wizards' text:** pages carry summaries written from the sources, with at most a short quote inline, not the stories themselves. Keep it that way.
 - **Order and eras:** story order is the order the story was published in, not in-world time. Wiki events are dated by the set or year that told them (`eras.json`), and a few dozen of those era tags are best guesses.
 - **Card matching** is name-based and deliberately strict. Card names that differ from the character's own name (nicknames, titles, flavor names) stay unmatched rather than guessed. The card matcher also ignores aliases that don't agree with the entity's own name.
-- **Names:** `lore/data/merges.json` fixes known mix-ups: wrong aliases (`drop_aliases`), phrases that aren't names (`not_names`), and one name used by two characters (`split`; the two Finneases are now separate). 725 aliases are still claimed by more than one entity (`review.json` in the built index); most are shared titles or family names. Mirri is still one entity covering both the Weatherlight's cat warrior and Sami's cat from Edge of Eternities; her bio says so.
+- **Names:** `lore/data/merges.json` fixes known mix-ups: wrong aliases (`drop_aliases`), phrases that aren't names (`not_names`), and one name used by two characters (`split`; the two Finneases are now separate). 807 aliases are still claimed by more than one entity (`review.json` in the built index); most are shared titles or family names. Mirri is still one entity covering both the Weatherlight's cat warrior and Sami's cat from Edge of Eternities; her bio says so.
 - **Thin pages:** many minor entities have a description and a few events but no written bio.
 - **Not in the feed:** question answering. The web preview asks Claude with the visitor's own key; an app would need an on-device model or a small server.
