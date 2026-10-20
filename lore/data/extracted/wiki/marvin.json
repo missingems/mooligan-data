@@ -1,0 +1,91 @@
+{
+ "page": "wiki/marvin",
+ "url": "https://mtg.wiki/page/Marvin",
+ "title": "Marvin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:08Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Marvin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Quickened ventriloquist's puppet toy from Duskmourn wielding a serrated saber, absorbing traits of beings by taking their body parts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razorkin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Razorkin who picked up the puppet and unwittingly helped quicken it, then was hacked to pieces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Entity of the House whom Marvin aims to taste.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The House",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of all the entities Marvin wants to taste.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Marvin lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A razorkin uses a puppet to terrorize a survivor, and the puppet quickens.",
+   "participants": [
+    "Razorkin",
+    "Marvin"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the puppet quickened, its dormant seed of life nudged awake with the razorkin's unwitting aid"
+  },
+  {
+   "summary": "Marvin's first act is to grab the razorkin's machete and hack the razorkin into pieces.",
+   "participants": [
+    "Marvin",
+    "Razorkin"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "grab the razorkin's machete, and hack the razorkin into pieces"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marvin",
+   "relation": "killed",
+   "target": "Razorkin",
+   "note": "Marvin hacked the razorkin to pieces.",
+   "paragraph": 2,
+   "quote": "hack the razorkin into pieces"
+  },
+  {
+   "source": "Marvin",
+   "relation": "enemy",
+   "target": "Valgavoth",
+   "note": "Marvin's goal is to taste every entity in the House, Valgavoth included.",
+   "paragraph": 2,
+   "quote": "including Valgavoth himself"
+  }
+ ],
+ "rejected": []
+}

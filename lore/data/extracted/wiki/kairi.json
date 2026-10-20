@@ -1,0 +1,118 @@
+{
+ "page": "wiki/kairi",
+ "url": "https://mtg.wiki/page/Kairi",
+ "title": "Kairi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:08Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kairi",
+   "type": "creature",
+   "aliases": [],
+   "description": "A cool-headed spirit dragon of Kamigawa, reincarnation of Keiga, who frees Hidetsugu to fight the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keiga",
+   "type": "creature",
+   "aliases": [
+    "divine dragon of islands"
+   ],
+   "description": "Divine dragon of islands slain by Hidetsugu; Kairi is his reincarnation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Kairi protects.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minamo",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Kairi protected until its decline late in the Shattered States Era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otawara",
+   "type": "location",
+   "aliases": [],
+   "description": "Rising center of learning and innovation that sought Kairi's protection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moonfolk",
+   "type": "faction",
+   "aliases": [
+    "moonfolks"
+   ],
+   "description": "People Kairi suspected of ulterior intentions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon locked in the spirit realm who slew Keiga and agrees to fight beside Kairi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Otawara seeks Kairi's protection but he suspects the moonfolk's intentions and refuses.",
+   "participants": [
+    "Kairi",
+    "Moonfolk",
+    "Otawara"
+   ],
+   "location": "Otawara",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kairi was suspicious of the moonfolks ' intentions and refused"
+  },
+  {
+   "summary": "Kairi frees Hidetsugu from the spirit realm and asks for help against the Phyrexians; Hidetsugu agrees.",
+   "participants": [
+    "Kairi",
+    "Hidetsugu"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Hidetsugu agreed to fight alongside the dragon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kairi",
+   "relation": "other",
+   "target": "Keiga",
+   "note": "reincarnation of",
+   "paragraph": 0,
+   "quote": "He is the reincarnation of Keiga ."
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "killed",
+   "target": "Keiga",
+   "note": "slew the previous incarnation",
+   "paragraph": 2,
+   "quote": "the reincarnation of the dragon he had slain"
+  },
+  {
+   "source": "Kairi",
+   "relation": "ally",
+   "target": "Hidetsugu",
+   "note": "temporary allies, Kairi plans to lock him up again",
+   "paragraph": 2,
+   "quote": "they're on the same side for the time being"
+  }
+ ],
+ "rejected": []
+}

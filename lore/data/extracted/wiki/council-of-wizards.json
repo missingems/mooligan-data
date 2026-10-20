@@ -1,0 +1,114 @@
+{
+ "page": "wiki/council-of-wizards",
+ "url": "https://mtg.wiki/page/Council_of_Wizards",
+ "title": "Council of Wizards",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Council of Wizards",
+   "type": "faction",
+   "aliases": [
+    "Wizard's Council"
+   ],
+   "description": "Ruling body of the Wizards' School on the Floating Isle on Ulgrotha, made of the eight most powerful mages plus the Wizard Savant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wizards' School",
+   "type": "location",
+   "aliases": [],
+   "description": "School on the Floating Isle ruled by the Council.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Floating Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Island of the Wizards' School on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Council.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "First master, who disappeared in disguise.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wall of Kelp",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Creation of the Council able to block any port on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizard Savant",
+   "type": "character",
+   "aliases": [],
+   "description": "Ninth member of the Council with the final say.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Council is created after the disappearance of the first master, Feroz in disguise.",
+   "participants": [
+    "Council of Wizards",
+    "Feroz"
+   ],
+   "location": "Floating Isle",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Council was created after the disappearance of the first master"
+  },
+  {
+   "summary": "The Council grows more prone to controlling the plane, becoming masters of manipulation and deception.",
+   "participants": [
+    "Council of Wizards"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "became masters of manipulation and deception"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Council of Wizards",
+   "relation": "leader_of",
+   "target": "Wizards' School",
+   "note": "It is the ruling body of the school.",
+   "paragraph": 0,
+   "quote": "The Council of Wizards is the ruling body of the Wizards' School"
+  },
+  {
+   "source": "Wizard Savant",
+   "relation": "member_of",
+   "target": "Council of Wizards",
+   "note": "Ninth member with the final say.",
+   "paragraph": 2,
+   "quote": "Its' ninth member is the Wizard Savant"
+  },
+  {
+   "source": "Council of Wizards",
+   "relation": "created",
+   "target": "Wall of Kelp",
+   "note": "One of their most known creations.",
+   "paragraph": 1,
+   "quote": "One of their most known creations is the Wall of Kelp"
+  }
+ ],
+ "rejected": []
+}

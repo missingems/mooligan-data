@@ -1,0 +1,84 @@
+{
+ "page": "wiki/pikepierce",
+ "url": "https://mtg.wiki/page/Pikepierce",
+ "title": "Pikepierce",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Pikepierce",
+   "type": "character",
+   "aliases": [],
+   "description": "Renegade goblin of Ulgrotha, agile spear fighter whose arrogance led to his death at Jekelth's hands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jekelth",
+   "type": "character",
+   "aliases": [],
+   "description": "Minotaur warrior who feigned resignation and killed Pikepierce.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anaba",
+   "type": "faction",
+   "aliases": [],
+   "description": "Minotaurs among whom Pikepierce's death became legend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Pikepierce is from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pikepierce brings the minotaur Jekelth to his knees with quick movements and aggressive tactics.",
+   "participants": [
+    "Pikepierce",
+    "Jekelth"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "brought the mighty minotaur warrior to his knees"
+  },
+  {
+   "summary": "Pikepierce taunts Jekelth, who feigns acceptance of death and then regains the upper hand and kills Pikepierce.",
+   "participants": [
+    "Pikepierce",
+    "Jekelth"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "ultimately kill him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jekelth",
+   "relation": "killed",
+   "target": "Pikepierce",
+   "note": "Jekelth tricked and killed him.",
+   "paragraph": 3,
+   "quote": "regain the upper hand and ultimately kill him"
+  },
+  {
+   "source": "Pikepierce",
+   "relation": "enemy",
+   "target": "Jekelth",
+   "note": "They fought.",
+   "paragraph": 2,
+   "quote": "his encounter with the minotaur Jekelth"
+  }
+ ],
+ "rejected": []
+}

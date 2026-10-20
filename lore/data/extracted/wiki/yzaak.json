@@ -1,0 +1,140 @@
+{
+ "page": "wiki/yzaak",
+ "url": "https://mtg.wiki/page/Yzaak",
+ "title": "Yzaak",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Yzaak",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet cyclops attendant to the guildmage Madarrak on Ravnica, killed by Abrupt Decay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madarrak",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet scientist and guildmage who followed a homing beacon into the Undercity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet guildmaster who bid Madarrak seek the beacon's maker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erno Zslod",
+   "type": "character",
+   "aliases": [],
+   "description": "Lost chemister who made the homing beacon and vanished over thirty years earlier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castan",
+   "type": "character",
+   "aliases": [],
+   "description": "Madarrak's apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari sentries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sentries following Madarrak's party in hiding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kraul",
+   "type": "faction",
+   "aliases": [],
+   "description": "Horde that chased Madarrak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruins beneath Ravnica where the beacon led.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where events occur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Abrupt Decay",
+   "type": "concept",
+   "aliases": [],
+   "description": "Spell that left Yzaak putrefied.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Madarrak is bid by Niv-Mizzet to find the beacon's maker, Erno Zslod.",
+   "participants": [
+    "Madarrak",
+    "Niv-Mizzet",
+    "Erno Zslod"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Madarrak was bid by Niv-Mizzet to seek out the beacon's maker"
+  },
+  {
+   "summary": "Madarrak, Castan and Yzaak follow the beacon into the Undercity; Madarrak has Yzaak stand guard.",
+   "participants": [
+    "Madarrak",
+    "Castan",
+    "Yzaak"
+   ],
+   "location": "Undercity",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Madarrak bid the large and powerful Yzaak to stand guard through the way they had come"
+  },
+  {
+   "summary": "Madarrak, chased by kraul, returns to find Yzaak killed by Abrupt Decay and teleports away, leaving the corpse.",
+   "participants": [
+    "Madarrak",
+    "Yzaak",
+    "Kraul"
+   ],
+   "location": "Undercity",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "leaving Yzaak's corpse to molder"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yzaak",
+   "relation": "serves",
+   "target": "Madarrak",
+   "note": "He was Madarrak's attendant.",
+   "paragraph": 0,
+   "quote": "attendant to the scientist and guildmage Madarrak"
+  },
+  {
+   "source": "Castan",
+   "relation": "other",
+   "target": "Madarrak",
+   "note": "Castan is Madarrak's apprentice.",
+   "paragraph": 2,
+   "quote": "Madarrak brought his apprentice Castan"
+  }
+ ],
+ "rejected": []
+}

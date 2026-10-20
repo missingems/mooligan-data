@@ -1,0 +1,132 @@
+{
+ "page": "wiki/radiant",
+ "url": "https://mtg.wiki/page/Radiant",
+ "title": "Radiant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:13Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Radiant",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel in charge of Serra's armies who took command of Serra's Realm under Phyrexia's influence and died fighting Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who created and then left Serra's Realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra's Realm",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Radiant ruled until its collapse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Influence that corrupted Radiant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra's Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The palace Radiant occupied.",
+   "presence": "appears"
+  },
+  {
+   "name": "Collapse of Serra's Realm",
+   "type": "event",
+   "aliases": [],
+   "description": "Collapse caused by Radiant's holy war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to save the realm and staged an exodus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mightstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stone torn from Urza's skull.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weakstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stone torn from Urza's skull.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Radiant occupied Serra's Palace after Serra left, tainted by a Phyrexian agent into waging holy war on Serrans.",
+   "participants": [
+    "Radiant",
+    "Serra"
+   ],
+   "location": "Serra's Realm",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she was convinced Serrans were becoming Phyrexians and waged a holy war against the plane's terrified inhabitants"
+  },
+  {
+   "summary": "Urza came to save the realm and had to stage an exodus; Radiant tried to prevent it and nearly killed him by tearing out the Mightstone and Weakstone.",
+   "participants": [
+    "Urza",
+    "Radiant",
+    "Mightstone",
+    "Weakstone"
+   ],
+   "location": "Serra's Realm",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "nearly managed to kill him by tearing out the Mightstone and Weakstone from his skull"
+  },
+  {
+   "summary": "Radiant died trying to reunite the two stones, destroying the palace, saying 'I am the mad one!'",
+   "participants": [
+    "Radiant",
+    "Serra's Palace"
+   ],
+   "location": "Serra's Palace",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "I am the mad one!"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Radiant",
+   "relation": "serves",
+   "target": "Serra",
+   "note": "Archangel in charge of her armies.",
+   "paragraph": 0,
+   "quote": "Radiant was the archangel in charge of the planeswalker Serra 's armies on Serra's Realm ."
+  },
+  {
+   "source": "Radiant",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "Fought him.",
+   "paragraph": 2,
+   "quote": "Radiant attempted to prevent this, and in a battle"
+  }
+ ],
+ "rejected": []
+}

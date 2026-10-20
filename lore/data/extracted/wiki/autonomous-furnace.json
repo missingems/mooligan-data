@@ -1,0 +1,115 @@
+{
+ "page": "wiki/autonomous-furnace",
+ "url": "https://mtg.wiki/page/Autonomous_Furnace",
+ "title": "Autonomous Furnace",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:10Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Autonomous Furnace",
+   "type": "location",
+   "aliases": [
+    "Furnace Layer",
+    "the Furnace"
+   ],
+   "description": "The third, red-aligned sphere of New Phyrexia, a molten crucible that served as the Phyrexians' first stronghold on Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Phyrexianized Mirrodin of which the Furnace is a sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane the Phyrexians invaded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [
+    "rebel praetor Urabrask"
+   ],
+   "description": "A rebel praetor who leads the Quiet Furnace in resistance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quiet Furnace",
+   "type": "faction",
+   "aliases": [],
+   "description": "Urabrask's faction of Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirran Resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Remnants of whom resist alongside Urabrask.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian ruler whom Urabrask silently opposed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask's Forge",
+   "type": "location",
+   "aliases": [],
+   "description": "Rebel stronghold of Urabrask.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Salvage Complex",
+   "type": "location",
+   "aliases": [],
+   "description": "A repurposed Phyrexian prison overseen by Slobad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [],
+   "description": "Oversees the Salvage Complex and reclaims obsolete constructs against Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Furnace bosses",
+   "type": "faction",
+   "aliases": [],
+   "description": "Controllers of the Furnace's many regions.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Urabrask",
+   "relation": "enemy",
+   "target": "Elesh Norn",
+   "note": "Waged silent opposition.",
+   "paragraph": 4,
+   "quote": "the rebellious stronghold from which Urabrask waged his silent opposition to Elesh Norn"
+  },
+  {
+   "source": "Slobad",
+   "relation": "located_in",
+   "target": "Salvage Complex",
+   "note": "Oversees it.",
+   "paragraph": 4,
+   "quote": "a repurposed Phyrexian prison overseen by Slobad"
+  }
+ ],
+ "rejected": []
+}
