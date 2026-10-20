@@ -1,0 +1,151 @@
+{
+ "page": "wiki/munda",
+ "url": "https://mtg.wiki/page/Munda",
+ "title": "Munda",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:59Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Munda",
+   "type": "character",
+   "aliases": [
+    "The Spider"
+   ],
+   "description": "Kor known as The Spider for his skill with ropes; squad leader of the Zendikari allied forces appointed by Gideon Jura.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who appointed Munda squad leader.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pili",
+   "type": "character",
+   "aliases": [],
+   "description": "Runaway goblin Munda chased.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker Munda met and helped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazri",
+   "type": "character",
+   "aliases": [],
+   "description": "General Munda rallied to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "Released Ulamog and woke Kozilek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan trapped and later released.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan woken by Ob Nixilis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sky Rock",
+   "type": "location",
+   "aliases": [],
+   "description": "Camp of the allied forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "City being liberated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aligned Hedron Network",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Hedrons the Kor arranged with ropes to trap Ulamog.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Munda chases the runaway goblin Pili, meets Nissa Revane and helps her defeat Eldrazi, and persuades the goblins to join the allied forces.",
+   "participants": [
+    "Munda",
+    "Pili",
+    "Nissa Revane"
+   ],
+   "location": "Sky Rock",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He found Pili and an army of other goblins, which he persuaded to join the allied forces at Sky Rock ."
+  },
+  {
+   "summary": "After high losses at Sea Gate, Munda convinces Gideon to retreat.",
+   "participants": [
+    "Munda",
+    "Gideon Jura"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he convinced Gideon to retreat"
+  },
+  {
+   "summary": "Munda coordinates the Kor to arrange the Aligned Hedron Network to trap Ulamog.",
+   "participants": [
+    "Munda",
+    "Ulamog"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Munda coordinated the Kor, which salvaged and arranged the Aligned Hedron Network with ropes in order to trap Ulamog ."
+  },
+  {
+   "summary": "Ob Nixilis releases Ulamog and wakes Kozilek; Munda rallies to General Tazri.",
+   "participants": [
+    "Ob Nixilis",
+    "Munda",
+    "Tazri"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Munda rallied to general Tazri"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "leader_of",
+   "target": "Munda",
+   "note": "Appointed him squad leader",
+   "paragraph": 0,
+   "quote": "Munda was appointed by Gideon Jura as a squad leader of the Zendikari allied forces"
+  }
+ ],
+ "rejected": []
+}

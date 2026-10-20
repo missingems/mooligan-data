@@ -1,0 +1,114 @@
+{
+ "page": "wiki/eliterate-colony",
+ "url": "https://mtg.wiki/page/Eliterate_Colony",
+ "title": "Eliterate Colony",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:12Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Eliterate Colony",
+   "type": "location",
+   "aliases": [],
+   "description": "Vodalian merfolk enclave in a deep trench founded by outcast artists escaping Empress Galina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Empress Galina",
+   "type": "character",
+   "aliases": [
+    "Galina"
+   ],
+   "description": "Tyrannical Vodalian empress who died in Yawgmoth's deathcloud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Took the form of a deathcloud that killed most of Vodalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bo Levar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who sacrificed his life to stop the cloud reaching the commune.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor Omen",
+   "type": "character",
+   "aliases": [
+    "Omen",
+    "Destry"
+   ],
+   "description": "Moderate captain who ruled New Vodalia; in reality the Eliterate actor Destry.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vodalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Vodalian realm devastated by the deathcloud.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion near whose end Yawgmoth became a deathcloud.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yawgmoth becomes a deathcloud that kills most of Vodalia, including Galina.",
+   "participants": [
+    "Yawgmoth",
+    "Empress Galina"
+   ],
+   "location": "Vodalia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Galina was one of the many casualties, ending her thousand-year reign"
+  },
+  {
+   "summary": "Bo Levar sacrifices his life to stop the cloud reaching the Eliterate commune.",
+   "participants": [
+    "Bo Levar",
+    "Yawgmoth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "sacrificed his life to prevent the cloud from reaching the Eliterate commune"
+  },
+  {
+   "summary": "Destry as Emperor Omen rebuilds New Vodalia and stages his death with illusion magic.",
+   "participants": [
+    "Emperor Omen"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "this was a staged death using illusory magic"
+  }
+ ],
+ "relations": [],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "quote not in page",
+   "source": "Destry",
+   "relation": "other",
+   "target": "Emperor Omen",
+   "note": "Played the emperor in reality",
+   "paragraph": 1,
+   "quote": "in reality the Eliterate actor Destry"
+  }
+ ]
+}

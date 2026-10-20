@@ -1,0 +1,104 @@
+{
+ "page": "wiki/wildsear",
+ "url": "https://mtg.wiki/page/Wildsear",
+ "title": "Wildsear",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:00Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Wildsear",
+   "type": "creature",
+   "aliases": [
+    "Wildfire Wolf",
+    "Season of Flames",
+    "Primordial Fire",
+    "Scouring Maw"
+   ],
+   "description": "Wildfire Wolf, the Season of Flames, one of the Calamity Beasts of Bloomburrow, a giant elemental wolf manifesting wildfire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of giant elemental beasts of Bloomburrow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Wildsear ravages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of Cinders",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Wildsear turned the tide.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lily of Valley",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Wildsear, fashioned Cragflame from its tooth and sent it beyond the Brambles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cragflame",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item fashioned by Lily from Wildsear's tooth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wildsear turns the tide in the War of Cinders.",
+   "participants": [
+    "Wildsear",
+    "War of Cinders"
+   ],
+   "location": "Bloomburrow",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Wildsear turned the tide in the War of Cinders"
+  },
+  {
+   "summary": "Lily of Valley defeats Wildsear, fashions Cragflame from its tooth and sends it beyond the Brambles, ending the war.",
+   "participants": [
+    "Lily of Valley",
+    "Wildsear",
+    "Cragflame"
+   ],
+   "location": "Bloomburrow",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "until it was defeated by Lily of Valley"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lily of Valley",
+   "relation": "enemy",
+   "target": "Wildsear",
+   "note": "She defeated it.",
+   "paragraph": 2,
+   "quote": "it was defeated by Lily of Valley"
+  },
+  {
+   "source": "Wildsear",
+   "relation": "member_of",
+   "target": "Calamity Beasts",
+   "note": "It is one of them.",
+   "paragraph": 0,
+   "quote": "is one of the Calamity Beasts of Bloomburrow"
+  }
+ ],
+ "rejected": []
+}

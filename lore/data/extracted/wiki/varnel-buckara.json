@@ -1,0 +1,120 @@
+{
+ "page": "wiki/varnel-buckara",
+ "url": "https://mtg.wiki/page/Varnel_Buckara",
+ "title": "Varnel Buckara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Varnel Buckara",
+   "type": "character",
+   "aliases": [],
+   "description": "Lascivious Master of the Orange House of Fentesk in Estark; took a bribe from Zarel and was aged to bones by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orange House of Fentesk",
+   "type": "faction",
+   "aliases": [
+    "Fentesk"
+   ],
+   "description": "House of Estark led by Varnel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel",
+   "type": "character",
+   "aliases": [
+    "Grand Master Zarel"
+   ],
+   "description": "Grand Master of Arena who bribed Varnel and later destroyed the four Houses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garth",
+   "type": "character",
+   "aliases": [],
+   "description": "Joined Varnel's house.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Oor-tael",
+   "type": "faction",
+   "aliases": [],
+   "description": "House destroyed in the Night of Fire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "Destruction of the House of Oor-tael in which Varnel participated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Varnel slits the throat of his first consort in 4067 AR.",
+   "participants": [
+    "Varnel Buckara"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He slit the throat of his first consort in 4067 AR ."
+  },
+  {
+   "summary": "After Garth joins his house, Varnel takes a 3000 gold bribe from Zarel to bar Fentesk's door so the Grand Master can capture Garth.",
+   "participants": [
+    "Varnel Buckara",
+    "Zarel",
+    "Garth"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Varnel took a 3000 gold bribe from Zarel"
+  },
+  {
+   "summary": "Zarel destroys the four Houses and casts a spell that ages Varnel until only skeletal remains are left.",
+   "participants": [
+    "Zarel",
+    "Varnel Buckara"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "all that was left of him were his skeletal remains"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zarel",
+   "relation": "killed",
+   "target": "Varnel Buckara",
+   "note": "Aged him to skeletal remains.",
+   "paragraph": 3,
+   "quote": "He was killed by the Grand Master of Arena Zarel"
+  },
+  {
+   "source": "Varnel Buckara",
+   "relation": "leader_of",
+   "target": "Orange House of Fentesk",
+   "note": "Its Master.",
+   "paragraph": 0,
+   "quote": "Varnel Buckara was the Master of the Orange House of Fentesk"
+  }
+ ],
+ "rejected": []
+}

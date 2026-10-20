@@ -1,0 +1,138 @@
+{
+ "page": "wiki/chondeah",
+ "url": "https://mtg.wiki/page/Chondeah",
+ "title": "Chondeah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Chondeah",
+   "type": "character",
+   "aliases": [
+    "Chondaeh",
+    "Condeah"
+   ],
+   "description": "Young wizard of the Kingdom of Shikar who helped summon a Scarzam Dragon and was hailed a hero.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shikar",
+   "type": "location",
+   "aliases": [
+    "Kingdom of Shikar"
+   ],
+   "description": "Kingdom of Chondeah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [
+    "the Swamp King"
+   ],
+   "description": "Swamp King for whom the dragon was to be summoned; destroyed the Kingdom of Khone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jinno Terimund",
+   "type": "character",
+   "aliases": [],
+   "description": "Chondeah's love, killed by Khonian arrows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gydolien Mor",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorceress of Khone who allied with Chondeah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sivitri Scarzam",
+   "type": "character",
+   "aliases": [],
+   "description": "Rider of the summoned dragon who attacked Sol'Kanar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kingdom of Khone",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom destroyed by Sol'Kanar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarzam Dragon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon summoned for Sol'Kanar, ridden by Sivitri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict in which the dragon was summoned.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jinno Terimund is killed by Khonian arrows after discovering their treacherous plan.",
+   "participants": [
+    "Jinno Terimund"
+   ],
+   "location": "Shikar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "who was killed by Khonian arrows"
+  },
+  {
+   "summary": "Chondeah allies with Gydolien Mor and the dragon is summoned, ridden by Sivitri Scarzam, who attacks Sol'Kanar.",
+   "participants": [
+    "Chondeah",
+    "Gydolien Mor",
+    "Sivitri Scarzam",
+    "Sol'Kanar"
+   ],
+   "location": "Shikar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the dragon was ridden by none other than Sivitri Scarzam herself"
+  },
+  {
+   "summary": "Sol'Kanar destroys the Kingdom of Khone, and Chondeah is received as a hero.",
+   "participants": [
+    "Sol'Kanar",
+    "Chondeah"
+   ],
+   "location": "Kingdom of Khone",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Sol’Kanar destroyed the Kingdom of Khone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chondeah",
+   "relation": "ally",
+   "target": "Gydolien Mor",
+   "note": "Allied fifteen years later",
+   "paragraph": 1,
+   "quote": "she allied with Gydolien Mor"
+  },
+  {
+   "source": "Chondeah",
+   "relation": "romantic",
+   "target": "Jinno Terimund",
+   "note": "Fell in love with him",
+   "paragraph": 1,
+   "quote": "She fell in love with Jinno Terimund"
+  }
+ ],
+ "rejected": []
+}

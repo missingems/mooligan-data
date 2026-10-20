@@ -1,0 +1,108 @@
+{
+ "page": "wiki/cryptolith",
+ "url": "https://mtg.wiki/page/Cryptolith",
+ "title": "Cryptolith",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:02Z",
+ "storyline": "Eldritch Moon",
+ "entities": [
+  {
+   "name": "Cryptoliths",
+   "type": "artifact",
+   "aliases": [
+    "Cluestones"
+   ],
+   "description": "Stone artifacts created by Nahiri on Innistrad, actually leystones shaped to bend leylines and summon Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who created the cryptoliths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the cryptoliths are scattered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Analyzed the cryptolith formations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region off whose shore Innistrad's pole migrated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drownyard",
+   "type": "location",
+   "aliases": [],
+   "description": "Location to which Innistrad's pole migrated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi summoned by the cryptoliths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "City hit by the redirected leylines.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tamiyo's analysis finds the cryptoliths migrated Innistrad's pole to the Drownyard and warp mana flow.",
+   "participants": [
+    "Tamiyo",
+    "Cryptoliths",
+    "Drownyard"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The scattered formation caused a net migration of Innistrad's pole"
+  },
+  {
+   "summary": "After Emrakul is summoned, the cryptoliths direct the leylines at Thraben.",
+   "participants": [
+    "Cryptoliths",
+    "Emrakul",
+    "Thraben"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After Emrakul had been summoned, the cryptoliths directed the Ley Lines at the strongest concentration of life on Innistrad"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nahiri",
+   "relation": "created",
+   "target": "Cryptoliths",
+   "note": "She created them.",
+   "paragraph": 0,
+   "quote": "stone artifacts created by the planeswalker Nahiri"
+  }
+ ],
+ "rejected": []
+}

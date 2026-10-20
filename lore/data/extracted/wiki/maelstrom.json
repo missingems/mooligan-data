@@ -1,0 +1,132 @@
+{
+ "page": "wiki/maelstrom",
+ "url": "https://mtg.wiki/page/Maelstrom",
+ "title": "Maelstrom",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:42Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "The Maelstrom",
+   "type": "location",
+   "aliases": [
+    "Maelstrom"
+   ],
+   "description": "Chaotic storm of mana created in the Conflux where the five Shards of Alara met.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that merged Alara's shards and created the Maelstrom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose five shards met at the Maelstrom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Elder dragon planeswalker who orchestrated the war and stepped into the storm to regain his powers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Child of Alara",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous entity that sprang from the Maelstrom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maelstrom Wanderer",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous entity that sprang from the Maelstrom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who stopped Bolas from destroying all of Alara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sundering",
+   "type": "event",
+   "aliases": [],
+   "description": "Event predating many of the obelisks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders the Maelstrom rose against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which the Maelstrom rose in defense of the plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bolas orchestrates the war between the five worlds and channels mana through obelisks into the Maelstrom.",
+   "participants": [
+    "Nicol Bolas"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a war that the elder dragon Nicol Bolas orchestrated"
+  },
+  {
+   "summary": "Bolas steps into the storm and regains his godlike powers but is stopped by Ajani Goldmane from destroying Alara.",
+   "participants": [
+    "Nicol Bolas",
+    "Ajani Goldmane"
+   ],
+   "location": "The Maelstrom",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was ultimately stopped from destroying all of Alara by Ajani Goldmane"
+  },
+  {
+   "summary": "The Maelstrom rises against the Phyrexians in defense of the plane.",
+   "participants": [
+    "The Maelstrom",
+    "Phyrexians"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Maelstrom itself rose against the Phyrexians in defense of the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ajani Goldmane",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "Stopped him from destroying Alara.",
+   "paragraph": 2,
+   "quote": "was ultimately stopped from destroying all of Alara by Ajani Goldmane"
+  }
+ ],
+ "rejected": []
+}

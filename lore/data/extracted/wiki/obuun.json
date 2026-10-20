@@ -1,0 +1,99 @@
+{
+ "page": "wiki/obuun",
+ "url": "https://mtg.wiki/page/Obuun",
+ "title": "Obuun",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:02Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Obuun",
+   "type": "character",
+   "aliases": [
+    "The Everliving One"
+   ],
+   "description": "Elf who led the Mul Daya rebellion against the Bala Ged Skyclave, now a spirit and advisor to Speaker Hazzan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mul Daya",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elven nation Obuun led in rebellion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bala Ged Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "Skyclave against which Obuun's rebellion was fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Speaker Hazzan",
+   "type": "character",
+   "aliases": [],
+   "description": "Current Mul Daya leader advised by Obuun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riverroot Village",
+   "type": "location",
+   "aliases": [],
+   "description": "Village where Obuun reconnected with ancestor spirits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Obuun.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Obuun leads the Mul Daya rebellion against the Bala Ged Skyclave.",
+   "participants": [
+    "Obuun",
+    "Mul Daya"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "the elf Obuun was the leader of the Mul Daya rebellion against the Bala Ged Skyclave on Zendikar"
+  },
+  {
+   "summary": "Obuun returns to Riverroot Village to reconnect with ancestors' spirits.",
+   "participants": [
+    "Obuun"
+   ],
+   "location": "Riverroot Village",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He returned to Riverroot Village to reconnect with the spirits of his ancestors"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Obuun",
+   "relation": "other",
+   "target": "Speaker Hazzan",
+   "note": "Key advisor in death",
+   "paragraph": 2,
+   "quote": "In death, Obuun is the key advisor to Speaker Hazzan"
+  },
+  {
+   "source": "Speaker Hazzan",
+   "relation": "leader_of",
+   "target": "Mul Daya",
+   "note": "Current leader",
+   "paragraph": 2,
+   "quote": "the current leader of the Mul Daya nation"
+  }
+ ],
+ "rejected": []
+}

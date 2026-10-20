@@ -1,0 +1,143 @@
+{
+ "page": "wiki/abuelo",
+ "url": "https://mtg.wiki/page/Abuelo",
+ "title": "Abuelo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:41Z",
+ "storyline": "The Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Abuelo",
+   "type": "character",
+   "aliases": [
+    "Abuelo (grandfather)"
+   ],
+   "description": "Komon Winaq human warrior from Ixalan who died in Topizielo and was summoned as an Echo by Quintorius Kand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quintorius Kand",
+   "type": "character",
+   "aliases": [],
+   "description": "Cast The Rousing to return Abuelo as an Echo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Matzalantli",
+   "type": "location",
+   "aliases": [],
+   "description": "Sealed door protecting the Core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Topizielo",
+   "type": "location",
+   "aliases": [],
+   "description": "Komon city where Abuelo died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mycoids",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fungal creatures spreading toward the Core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mycotyrant",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant fungus that invaded the Core.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed the giant fungus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thousand Moons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers guarding the door.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperial soldiers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers Abuelo guided through Matzalantli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Abuelo.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Abuelo is granted the key to the seal at Matzalantli to protect the Core from the mycoids.",
+   "participants": [
+    "Abuelo",
+    "Matzalantli"
+   ],
+   "location": "Matzalantli",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Abuelo was granted the key to open the seal at Matzalantli"
+  },
+  {
+   "summary": "Abuelo dies fighting the mycoids in Topizielo.",
+   "participants": [
+    "Abuelo",
+    "Mycoids"
+   ],
+   "location": "Topizielo",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He later died fighting the mycoids in the Komon city of Topizielo."
+  },
+  {
+   "summary": "Quintorius Kand casts The Rousing, returning Abuelo as an Echo.",
+   "participants": [
+    "Quintorius Kand",
+    "Abuelo"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he cast \"The Rousing,\" returning Abuelo as an Echo"
+  },
+  {
+   "summary": "Abuelo and his wife, also an Echo, help fend off the Mycotyrant until Breeches destroys it.",
+   "participants": [
+    "Abuelo",
+    "Mycotyrant",
+    "Breeches"
+   ],
+   "location": "Matzalantli",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Abuelo and his wife, who was also an Echo, helped fend the mycoids off until Breeches destroyed the giant fungus"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Quintorius Kand",
+   "relation": "other",
+   "target": "Abuelo",
+   "note": "Summoned his Echo",
+   "paragraph": 2,
+   "quote": "returning Abuelo as an Echo"
+  }
+ ],
+ "rejected": []
+}

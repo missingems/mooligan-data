@@ -1,0 +1,105 @@
+{
+ "page": "wiki/talon-gates",
+ "url": "https://mtg.wiki/page/Talon_Gates",
+ "title": "Talon Gates",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Talon Gates",
+   "type": "location",
+   "aliases": [],
+   "description": "Remains of the Demonic Leviathan fought by Nicol Bolas, thought to be two rocks near the Madaran Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who fought the Demonic Leviathan and later recreated the gates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Demonic Leviathan",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature Bolas fought in the first planeswalker duel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [
+    "Nightwalker"
+   ],
+   "description": "The Nightwalker who destroyed the gates in a fight with Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Rang the Apocalypse Chime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Weakened the boundaries between Dominaria and Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the gates were the main route.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madaran Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire near the gates.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravi rings the Apocalypse Chime, weakening the boundaries between Dominaria and Kamigawa.",
+   "participants": [
+    "Ravi"
+   ],
+   "location": "Talon Gates",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Due to Ravi ringing her Apocalypse Chime"
+  },
+  {
+   "summary": "In a fight with Bolas, Leshrac destroys the Talon Gates; Bolas recreates them after his defeat.",
+   "participants": [
+    "Nicol Bolas",
+    "Leshrac"
+   ],
+   "location": "Talon Gates",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Talon Gates were destroyed by the Nightwalker, but shortly after his defeat, they were recreated by Bolas"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Leshrac",
+   "note": "Fought each other",
+   "paragraph": 2,
+   "quote": "During a fight between Nicol Bolas and Leshrac"
+  }
+ ],
+ "rejected": []
+}

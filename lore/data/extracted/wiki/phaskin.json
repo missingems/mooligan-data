@@ -1,0 +1,145 @@
+{
+ "page": "wiki/phaskin",
+ "url": "https://mtg.wiki/page/Phaskin",
+ "title": "Phaskin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:18Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Phaskin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Shift Commander of the Tenth Section in 9999 Z.C., superior to Agrus Kos, killed and replaced by a lupul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Lieutenant under Phaskin, wounded in the assassination attempt on Saint Bayul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sulli Valenco",
+   "type": "character",
+   "aliases": [],
+   "description": "Ninth Section Commander Phaskin was to replace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saint Bayul",
+   "type": "character",
+   "aliases": [],
+   "description": "Target of an assassination attempt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stanslov",
+   "type": "character",
+   "aliases": [],
+   "description": "Lieutenant given Kos's case, later consumed by the false Phaskin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feather",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Kos escape and destroyed the false Phaskin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fonn",
+   "type": "character",
+   "aliases": [],
+   "description": "Led back to the mortuary by Kos, took Bayul's green gem.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lupul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Shapeshifting creature that killed and replaced the real Phaskin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth Leaguehall",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the mortuary.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Kos is wounded, Phaskin orders him to hand his case to Stanslov and relieves him of duty when he objects.",
+   "participants": [
+    "Phaskin",
+    "Agrus Kos",
+    "Stanslov"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Phaskin relieved him of duty"
+  },
+  {
+   "summary": "With Feather's help Kos escapes the infirmary and leads Fonn to the Tenth Leaguehall mortuary.",
+   "participants": [
+    "Agrus Kos",
+    "Feather",
+    "Fonn"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "With the help of Feather"
+  },
+  {
+   "summary": "When Fonn takes Bayul's green gem, the false Phaskin reveals himself and consumes Stanslov.",
+   "participants": [
+    "Phaskin",
+    "Lupul",
+    "Stanslov",
+    "Fonn"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He revealed himself and consumed Lieutenant"
+  },
+  {
+   "summary": "Feather destroys the false Phaskin.",
+   "participants": [
+    "Feather",
+    "Phaskin"
+   ],
+   "location": "Tenth Leaguehall",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The false Phaskin was destroyed by Feather almost immediately after."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phaskin",
+   "relation": "leader_of",
+   "target": "Agrus Kos",
+   "note": "Direct superior.",
+   "paragraph": 0,
+   "quote": "a direct superior to"
+  },
+  {
+   "source": "Feather",
+   "relation": "killed",
+   "target": "Phaskin",
+   "note": "Destroyed the lupul impersonator.",
+   "paragraph": 2,
+   "quote": "The false Phaskin was destroyed by Feather almost immediately after."
+  }
+ ],
+ "rejected": []
+}

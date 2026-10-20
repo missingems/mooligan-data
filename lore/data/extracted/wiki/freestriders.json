@@ -1,0 +1,119 @@
+{
+ "page": "wiki/freestriders",
+ "url": "https://mtg.wiki/page/Freestriders",
+ "title": "Freestriders",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:04Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Freestriders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang of nomadic outlaw vigilantes on Thunder Junction who help the disenfranchised and patrol near the Omenpaths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Freestriders live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Scorpion dragon of the Hellspurs who hunted down the Freestriders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang robbed by the Freestriders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [],
+   "description": "Freestrider who took her nephew Tommy into her care and quit the gang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tommy",
+   "type": "character",
+   "aliases": [],
+   "description": "Annie Flash's nephew, nearly killed by Akul's venom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Passages the Freestriders patrol to protect new arrivals.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Freestriders rob Akul and the Hellspurs.",
+   "participants": [
+    "Freestriders",
+    "Akul",
+    "Hellspurs"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "After the Freestriders robbed Akul and the Hellspurs"
+  },
+  {
+   "summary": "Akul attacks the Freestriders despite their returning what they stole, nearly killing Tommy with venom.",
+   "participants": [
+    "Akul",
+    "Freestriders",
+    "Tommy"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Akul attacked them regardless, almost killing Annie Flash 's nephew Tommy with his venom"
+  },
+  {
+   "summary": "Annie Flash takes Tommy into her care and quits the gang.",
+   "participants": [
+    "Annie Flash",
+    "Tommy",
+    "Freestriders"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she took Tommy into her care and quit the gang"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Freestriders",
+   "relation": "enemy",
+   "target": "Akul",
+   "note": "Akul hunted them after the robbery.",
+   "paragraph": 3,
+   "quote": "the scorpion dragon spent weeks tracking them down and killing those that got in his way"
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "family",
+   "target": "Tommy",
+   "note": "Her nephew.",
+   "paragraph": 3,
+   "quote": "Annie Flash 's nephew Tommy"
+  }
+ ],
+ "rejected": []
+}

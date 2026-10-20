@@ -1,0 +1,92 @@
+{
+ "page": "wiki/jadar",
+ "url": "https://mtg.wiki/page/Jadar",
+ "title": "Jadar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:06Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Jadar",
+   "type": "character",
+   "aliases": [
+    "Jadar, Ghoulcaller of Nephalia"
+   ],
+   "description": "Foremost ghoulcaller of Nephalia, a former surgeon turned necromancer driven mad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Nephalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Morkrut",
+   "type": "location",
+   "aliases": [],
+   "description": "Marsh from which Jadar fishes bodies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gorex",
+   "type": "creature",
+   "aliases": [],
+   "description": "Reanimated giant turtle that serves as Jadar's cart and horse.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jadar turns to necromancy to treat an unfamiliar plague; when the last villager falls he goes mad and raises the entire town.",
+   "participants": [
+    "Jadar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Jadar succumbed to necromancy-fueled madness"
+  },
+  {
+   "summary": "Jadar reanimates a giant turtle as Gorex, his primary means of transport.",
+   "participants": [
+    "Jadar",
+    "Gorex"
+   ],
+   "location": "Morkrut",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Calling the creature Gorex"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jadar",
+   "relation": "created",
+   "target": "Gorex",
+   "note": "Reanimated it.",
+   "paragraph": 2,
+   "quote": "reanimated it as the perfect beast of burden"
+  },
+  {
+   "source": "Gorex",
+   "relation": "serves",
+   "target": "Jadar",
+   "note": "His primary means of transport.",
+   "paragraph": 2,
+   "quote": "it now serves as Jadar's primary means of transport"
+  }
+ ],
+ "rejected": []
+}

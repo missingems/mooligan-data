@@ -1,0 +1,164 @@
+{
+ "page": "wiki/house-of-bolk",
+ "url": "https://mtg.wiki/page/House_of_Bolk",
+ "title": "House of Bolk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:42Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "House of Bolk",
+   "type": "faction",
+   "aliases": [
+    "Bolk"
+   ],
+   "description": "One of the five Houses in Estark, in Kush on Dominaria, brown-colored, with fighters tied to black and green mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "Place with five Houses of fighters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirlen",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of House Bolk before the Night of Fire until the Time of Troubles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naru",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of House Bolk after the Time of Troubles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erwina",
+   "type": "character",
+   "aliases": [],
+   "description": "A House Bolk fighter paired against Haglin of Fentesk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haglin",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter of Fentesk paired against Erwina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Farnin",
+   "type": "character",
+   "aliases": [],
+   "description": "A House Bolk fighter killed by Petrakov of Fentesk while avenging his lover.",
+   "presence": "appears"
+  },
+  {
+   "name": "Petrakov",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter of Fentesk who killed Farnin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilrash",
+   "type": "character",
+   "aliases": [],
+   "description": "A House Bolk fighter beaten by Norreen at oquorak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Norreen",
+   "type": "character",
+   "aliases": [],
+   "description": "Beat Gilrash in a match of oquorak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ogla",
+   "type": "character",
+   "aliases": [],
+   "description": "A House Bolk fighter paired against Alinar of Fentesk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alinar",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter of Fentesk paired against Ogla.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Naru became master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "Event before which Kirlen led the House.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Farnin fights Petrakov of Fentesk to avenge his lover's death but is killed by Petrakov.",
+   "participants": [
+    "Farnin",
+    "Petrakov"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "he too was killed by Petrakov"
+  },
+  {
+   "summary": "Norreen beats Gilrash at oquorak despite his rule-breaking.",
+   "participants": [
+    "Norreen",
+    "Gilrash"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "he was beaten by Norreen in a match of oquorak"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kirlen",
+   "relation": "leader_of",
+   "target": "House of Bolk",
+   "note": "Master before the Time of Troubles.",
+   "paragraph": 2,
+   "quote": "Kirlen (from before the Night of Fire until the Time of Troubles"
+  },
+  {
+   "source": "Naru",
+   "relation": "leader_of",
+   "target": "House of Bolk",
+   "note": "Master after the Time of Troubles.",
+   "paragraph": 3,
+   "quote": "Naru (after the Time of Troubles)"
+  },
+  {
+   "source": "Petrakov",
+   "relation": "killed",
+   "target": "Farnin",
+   "note": "Killed him in a duel.",
+   "paragraph": 5,
+   "quote": "he too was killed by Petrakov"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,104 @@
+{
+ "page": "wiki/sruta",
+ "url": "https://mtg.wiki/page/Sruta",
+ "title": "Sruta",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sruta",
+   "type": "character",
+   "aliases": [],
+   "description": "Quiet, skilled craftsperson of Innistrad who joined the ritual to summon the Buried Lord and was killed and consumed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olutio",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the small group that tried to summon the Buried Lord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Algli",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the group who later found Sruta with Liesa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liesa",
+   "type": "character",
+   "aliases": [
+    "Liesa, Shepherd of the Lost"
+   ],
+   "description": "Arch angel whose return Sruta was partially responsible for.",
+   "presence": "appears"
+  },
+  {
+   "name": "Buried Lord",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon the group tried to summon; killed and consumed Sruta.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sruta takes part in the final ritual to summon the Buried Lord; when it seems to fail she calls Olutio and Algli fools and leaves.",
+   "participants": [
+    "Sruta",
+    "Olutio",
+    "Algli",
+    "Buried Lord"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she expressed her frustration and disillusionment by calling Olutio and Algli fools"
+  },
+  {
+   "summary": "The Buried Lord kills and consumes Sruta as Algli and Liesa find her.",
+   "participants": [
+    "Buried Lord",
+    "Sruta",
+    "Algli",
+    "Liesa"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Buried Lord killed and consumed Sruta"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Buried Lord",
+   "relation": "killed",
+   "target": "Sruta",
+   "note": "Killed and consumed her",
+   "paragraph": 3,
+   "quote": "The Buried Lord killed and consumed Sruta"
+  },
+  {
+   "source": "Olutio",
+   "relation": "leader_of",
+   "target": "Sruta",
+   "note": "Led the small group of ritualists",
+   "paragraph": 1,
+   "quote": "led by Olutio and including Algli"
+  }
+ ],
+ "rejected": []
+}

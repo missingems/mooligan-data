@@ -1,0 +1,115 @@
+{
+ "page": "wiki/jhess",
+ "url": "https://mtg.wiki/page/Jhess",
+ "title": "Jhess",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:04Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Jhess",
+   "type": "location",
+   "aliases": [],
+   "description": "An island nation on the eastern coast of Alaran Bant, famed for navigators and its navy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valeron",
+   "type": "location",
+   "aliases": [],
+   "description": "Mainland nation in constant siege against Jhess.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [
+    "Alaran Bant"
+   ],
+   "description": "Shard of Alara containing Jhess.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Unbeholden",
+   "type": "faction",
+   "aliases": [],
+   "description": "Lowest-ranking caste of thieves and rogues, largest in Jhess.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Harborgate",
+   "type": "location",
+   "aliases": [],
+   "description": "An Esper spire pushed into Bant during the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which incursion zones pushed Harborgate into Bant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard from which Harborgate came.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inner Three",
+   "type": "location",
+   "aliases": [],
+   "description": "More traditional nations of Bant.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jhessian marines and ships dominate the sea while Valeron's cavalry rules inland; each raids the other.",
+   "participants": [
+    "Jhess",
+    "Valeron"
+   ],
+   "location": "Bant",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jhess is under constant siege from Valeron on the mainland."
+  },
+  {
+   "summary": "During the Conflux an Esper spire named Harborgate is pushed into Bant.",
+   "participants": [
+    "Harborgate",
+    "Bant",
+    "Conflux"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "an Esper spire named Harborgate was pushed into Bant by the incursion zones"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jhess",
+   "relation": "enemy",
+   "target": "Valeron",
+   "note": "Under constant siege from it.",
+   "paragraph": 1,
+   "quote": "Jhess is under constant siege from Valeron on the mainland."
+  },
+  {
+   "source": "Jhess",
+   "relation": "located_in",
+   "target": "Bant",
+   "note": "On the eastern coast.",
+   "paragraph": 0,
+   "quote": "runs the eastern coast of Alaran Bant"
+  }
+ ],
+ "rejected": []
+}

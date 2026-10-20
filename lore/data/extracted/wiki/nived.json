@@ -1,0 +1,118 @@
+{
+ "page": "wiki/nived",
+ "url": "https://mtg.wiki/page/Nived",
+ "title": "Nived",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:45Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Nived",
+   "type": "character",
+   "aliases": [],
+   "description": "A caterer and member of the Renegades on Avishkar who was putting up a leaking-spire art piece.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yahenni",
+   "type": "character",
+   "aliases": [],
+   "description": "Nived's dying friend, who drained an enforcer's life to extend their own.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group symbolized by the leaking spire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Authority whose enforcer attacked Nived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pacification Array",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device used to shock Nived unconscious.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Yahenni found Nived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Ghirapur.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dying Yahenni finds Nived putting up a leaking spire art piece and apologizes for canceling their Penultimate Party.",
+   "participants": [
+    "Yahenni",
+    "Nived"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "A dying Yahenni discovered Nived"
+  },
+  {
+   "summary": "A Consulate enforcer shocks Nived unconscious with a Pacification Array.",
+   "participants": [
+    "Nived",
+    "Pacification Array",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "shocking Nived into unconsciousness"
+  },
+  {
+   "summary": "Yahenni drains the enforcer's life, extending their life span by twelve days, then hides Nived behind a market stall.",
+   "participants": [
+    "Yahenni",
+    "Nived",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "sapping his life force and extending their life span by twelve days"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nived",
+   "relation": "member_of",
+   "target": "Renegades",
+   "note": "He is a renegade.",
+   "paragraph": 0,
+   "quote": "a member of the Renegades on"
+  },
+  {
+   "source": "Yahenni",
+   "relation": "ally",
+   "target": "Nived",
+   "note": "Friends.",
+   "paragraph": 1,
+   "quote": "their friend and caterer"
+  }
+ ],
+ "rejected": []
+}

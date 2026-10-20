@@ -1,0 +1,133 @@
+{
+ "page": "wiki/melisk",
+ "url": "https://mtg.wiki/page/Melisk",
+ "title": "Melisk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:44Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Melisk",
+   "type": "character",
+   "aliases": [],
+   "description": "Orzhov attendant to Teysa Karlov who secretly served the Obzedat and manipulated Teysa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "Guild Melisk belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa"
+   ],
+   "description": "Orzhov baroness whom Melisk served and manipulated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obzedat",
+   "type": "faction",
+   "aliases": [],
+   "description": "Orzhov ghost council Melisk secretly served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taj",
+   "type": "creature",
+   "aliases": [
+    "taj killers"
+   ],
+   "description": "Killers who possessed dead Gruul bodies and obeyed Melisk until Teysa took control.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose dead bodies were possessed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Schism",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Melisk's spirit fell into.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Melisk uses narcolepsy spells to make Teysa a puppet in service of the Obzedat.",
+   "participants": [
+    "Melisk",
+    "Teysa Karlov",
+    "Obzedat"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Teysa became a puppet in his hands"
+  },
+  {
+   "summary": "Melisk arranges the attack at the Karlov lokopede, in which his taj make Teysa kill her uncle.",
+   "participants": [
+    "Melisk",
+    "Taj",
+    "Teysa Karlov"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "made Teysa kill her uncle"
+  },
+  {
+   "summary": "Teysa learns of his treachery; Melisk brings his taj to kill her, but she takes control of them and he is dismembered and killed.",
+   "participants": [
+    "Teysa Karlov",
+    "Melisk",
+    "Taj"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Melisk was dismembered and killed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Melisk",
+   "relation": "serves",
+   "target": "Obzedat",
+   "note": "Secret agent of the Obzedat.",
+   "paragraph": 2,
+   "quote": "Melisk was an agent of the Obzedat"
+  },
+  {
+   "source": "Melisk",
+   "relation": "member_of",
+   "target": "Orzhov Syndicate",
+   "note": "Member of the guild.",
+   "paragraph": 0,
+   "quote": "Melisk was a member of the Orzhov guild"
+  },
+  {
+   "source": "Teysa Karlov",
+   "relation": "killed",
+   "target": "Melisk",
+   "note": "She decided to kill him.",
+   "paragraph": 2,
+   "quote": "decided to kill him"
+  }
+ ],
+ "rejected": []
+}

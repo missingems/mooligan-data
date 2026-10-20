@@ -1,0 +1,86 @@
+{
+ "page": "wiki/nadier",
+ "url": "https://mtg.wiki/page/Nadier",
+ "title": "Nadier",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nadier",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf warrior sent by the Duskenel as a supposed diplomat but actually their foremost killer, tasked to train wood elves to drive off humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskenel",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elven nation that sent Nadier under a treaty.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wood elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Neighboring elves hosting Nadier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Humans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Settlers pressing into the woods.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Duskenel and wood elves sign a treaty and Nadier arrives as an apparent diplomat.",
+   "participants": [
+    "Nadier",
+    "Duskenel",
+    "Wood elves"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Nadier appears to be a diplomat sent by the Duskenel"
+  },
+  {
+   "summary": "Secretly, Nadier is tasked to train a battalion of wood elves to drive humans from the forest.",
+   "participants": [
+    "Nadier",
+    "Wood elves",
+    "Humans"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Secretly, Nadier has been tasked to train a battalion of wood elves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nadier",
+   "relation": "serves",
+   "target": "Duskenel",
+   "note": "Offered as their foremost killer.",
+   "paragraph": 2,
+   "quote": "the Duskenel offered Nadier's services"
+  },
+  {
+   "source": "Duskenel",
+   "relation": "ally",
+   "target": "Wood elves",
+   "note": "Treaty ended tribal disagreements.",
+   "paragraph": 1,
+   "quote": "elven solidarity far outweighs petty tribal disagreements"
+  }
+ ],
+ "rejected": []
+}

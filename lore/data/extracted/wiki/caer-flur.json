@@ -1,0 +1,87 @@
+{
+ "page": "wiki/caer-flur",
+ "url": "https://mtg.wiki/page/Caer_Flur",
+ "title": "Caer Flur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:11Z",
+ "storyline": "Shadowmoor",
+ "entities": [
+  {
+   "name": "Caer Flur",
+   "type": "location",
+   "aliases": [],
+   "description": "Elf safehold and largest settlement in Shadowmoor, home to 500, mostly elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lys Gaerlinon",
+   "type": "location",
+   "aliases": [],
+   "description": "Lorwyn counterpart of Caer Flur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Caer Flur lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taylin",
+   "type": "character",
+   "aliases": [],
+   "description": "Lead Farmer who leads the safehold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eluvian",
+   "type": "location",
+   "aliases": [],
+   "description": "Enormous tree deep within Caer Flur used as a gathering place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose fall preceded Caer Flur's founding in 4562.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elves of every clan help build Caer Flur after the fall of Oona.",
+   "participants": [
+    "Caer Flur",
+    "Oona"
+   ],
+   "location": "Shadowmoor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Caer Flur was founded after the fall of Oona in 4562."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Taylin",
+   "relation": "leader_of",
+   "target": "Caer Flur",
+   "note": "Lead Farmer",
+   "paragraph": 1,
+   "quote": "The safehold is led by Lead Farmer Taylin"
+  },
+  {
+   "source": "Eluvian",
+   "relation": "located_in",
+   "target": "Caer Flur",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Deep within Caer Flur is the Eluvian"
+  }
+ ],
+ "rejected": []
+}
