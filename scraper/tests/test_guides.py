@@ -1,366 +1,366 @@
 import json
-from datetime import datetime, timezone
-from pathlib import Path
-from types import SimpleNamespace
-
-import pytest
+from datetime import datetime, timedelta, timezone
 
 from mtgmeta import guides
 
-NOW = datetime(2026, 10, 20, 9, 0, tzinfo=timezone.utc)
-KEY = "sk-ant-test-sentinel-0123456789"
-
-CATALOG = {
-    "atraxa-praetors-voice": {"name": "Atraxa, Praetors' Voice", "oracle_id": "atraxa-oracle", "color_identity": ["W", "U", "B", "G"]},
-    "sol-ring": {"name": "Sol Ring", "oracle_id": "ring-oracle", "color_identity": []},
-    "counterspell": {"name": "Counterspell", "oracle_id": "counter-oracle", "color_identity": ["U"]},
-    "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "bolt-oracle", "color_identity": ["R"]},
-    "mana-crypt": {"name": "Mana Crypt", "oracle_id": "crypt-oracle", "color_identity": []},
-    "delay": {"name": "Delay", "oracle_id": "delay-oracle", "color_identity": ["U"]},
-    "fable-of-the-mirror-breaker": {"name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki", "oracle_id": "fable-oracle", "color_identity": ["R"]},
-}
-# A run of plain cards, so a style can reach its 30.
-for number in range(40):
-    CATALOG[f"filler-{number}"] = {"name": f"Filler {number}", "oracle_id": f"filler-{number}-oracle", "color_identity": ["G"]}
-# Five Game Changers from the repo's list, by their real oracle ids.
+NOW = datetime(2026, 10, 21, 14, 0, tzinfo=timezone.utc)
+SLUG = "atraxa-praetors-voice"
+EDHREC = "https://json.edhrec.com/pages/commanders"
+SPELLBOOK = "https://backend.commanderspellbook.com/estimate-bracket"
 CHANGERS = {card["name"]: card["oracle_id"] for card in guides.load_game_changers()}
-for name in ("Demonic Tutor", "Vampiric Tutor", "Rhystic Study", "Cyclonic Rift", "Smothering Tithe"):
-    CATALOG[guides.card_slug(name)] = {"name": name, "oracle_id": CHANGERS[name], "color_identity": []}
 
-PAGE = {
-    "schema": 1,
-    "slug": "atraxa-praetors-voice",
-    "name": "Atraxa, Praetors' Voice",
-    "decks": 1000,
-    "color_identity": ["W", "U", "B", "G"],
-    "scryfall_id": "atraxa-printing",
-    "generated_at": "2026-10-19T14:00:00Z",
-    "sections": [
-        {"tag": "topcards", "header": "Top Cards", "cards": [{"name": "Sol Ring", "decks": 912, "of_decks": 1000, "synergy": 0.0}]},
-        {"tag": "instants", "header": "Instants", "cards": [
-            {"name": "Counterspell", "decks": 400, "of_decks": 1000, "synergy": 0.1},
-            {"name": "Sol Ring", "decks": 912, "of_decks": 1000, "synergy": 0.0},
-        ]},
-    ],
-    "average_deck": [{"header": "Artifacts", "cards": ["Sol Ring", "Arcane Signet"]}],
-}
-TOP = {"schema": 1, "windows": {
-    "7d": {"decks": 10, "commanders": [{"rank": 1, "slug": "atraxa-praetors-voice", "name": "Atraxa, Praetors' Voice"}]},
-    "30d": {"decks": 10, "commanders": [{"rank": 1, "slug": "other-commander", "name": "Other"}]},
-}}
+CATALOG = {}
 
 
-def card(name, role="utility"):
-    return {"name": name, "role": role}
-
-
-def answer(styles=None, brackets=None):
-    fillers = [card(f"Filler {number}", "engine") for number in range(40)]
-    return {
-        "styles": styles if styles is not None else [
-            {"name": "Superfriends", "summary": "Planeswalkers.", "brackets": [3, 2, 2, 9], "cards": [card("Sol Ring", "ramp"), *fillers]},
-            {"name": "Infect", "summary": "Poison.", "brackets": [4], "cards": fillers},
-            {"name": "Proliferate Counters", "summary": "Counters.", "brackets": [2, 3], "cards": fillers},
-        ],
-        "brackets": brackets if brackets is not None else [
-            {"level": level, "summary": f"Bracket {level}.", "cards": [card("Sol Ring", "ramp")]} for level in (5, 4, 3, 2, 1)
-        ],
+def add(name, type_line, text="", colours=(), mana_value=2.0, cost="{2}", price=1.0, oracle_id=None):
+    CATALOG[guides.card_slug(name)] = {
+        "name": name, "oracle_id": oracle_id or f"{guides.card_slug(name)}-oracle", "type_line": type_line, "oracle_text": text,
+        "color_identity": list(colours), "mana_value": mana_value, "mana_cost": cost, "price": price,
     }
 
 
-class Stream:
-    def __init__(self, message):
-        self._message = message
+add("Atraxa, Praetors' Voice", "Legendary Creature — Phyrexian Angel Horror", "Flying, vigilance, deathtouch, lifelink", "WUBG", 4.0, "{G}{W}{U}{B}")
+for basic in ("Plains", "Island", "Swamp", "Forest"):
+    add(basic, f"Basic Land — {basic}", mana_value=0.0, cost="", price=0.25)
+JOBS = {
+    "ramp": ("Artifact", "{T}: Add {G}.", "{1}{G}"),
+    "draw": ("Sorcery", "Draw two cards.", "{1}{U}"),
+    "removal": ("Instant", "Destroy target creature.", "{1}{B}"),
+    "counter": ("Instant", "Counter target spell.", "{U}{U}"),
+    "wipe": ("Sorcery", "Destroy all creatures.", "{2}{W}{W}"),
+    "protection": ("Instant", "Creatures you control gain hexproof until end of turn.", "{G}"),
+    "payoff": ("Creature — Phyrexian", "Infect", "{2}{G}"),
+    "land": ("Land", "{T}: Add {W} or {U}.", ""),
+}
+for job, (type_line, text, cost) in JOBS.items():
+    for number in range(30 if job == "payoff" else 14):
+        add(f"{job.title()} {number}", type_line, text, "G" if job in ("ramp", "payoff", "protection") else "", 0.0 if job == "land" else 2.0, cost)
+for name in ("Demonic Tutor", "Vampiric Tutor", "Rhystic Study", "Smothering Tithe", "Cyclonic Rift"):
+    add(name, "Sorcery", "Search your library for a card.", "B", 2.0, "{1}{B}", 30.0, CHANGERS[name])
+add("Armageddon", "Sorcery", "Destroy all lands.", "W", 4.0, "{3}{W}")
+add("Time Warp", "Sorcery", "Take an extra turn after this one.", "U", 5.0, "{3}{U}{U}")
+add("Thassa's Oracle", "Creature — Merfolk Wizard", "When this enters, look at the top X cards.", "U", 2.0, "{U}{U}", 20.0, CHANGERS["Thassa's Oracle"])
+add("Demonic Consultation", "Instant", "Exile cards from the top of your library.", "B", 1.0, "{B}")
+add("Lightning Bolt", "Instant", "Lightning Bolt deals 3 damage to any target.", "R", 1.0, "{R}")
+add("Mana Crypt", "Artifact", "{T}: Add {C}{C}.", "", 0.0, "{0}")
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *exc):
-        return False
-
-    def get_final_message(self):
-        return self._message
-
-
-class FakeClient:
-    """Stands in for anthropic.Anthropic: records each call and answers with a write_guide tool call."""
-
-    def __init__(self, *answers, stop_reason="tool_use"):
-        self.calls = []
-        self._answers = list(answers)
-        self._stop_reason = stop_reason
-        self.beta = SimpleNamespace(messages=SimpleNamespace(stream=self._stream))
-
-    def _stream(self, **call):
-        self.calls.append(call)
-        tool_input = self._answers.pop(0) if self._answers else answer()
-        return Stream(SimpleNamespace(
-            content=[SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="tool_use", name="write_guide", input=tool_input)],
-            stop_reason=self._stop_reason,
-            model="claude-sonnet-5-5",
-            usage=SimpleNamespace(input_tokens=2000, output_tokens=8000, cache_creation_input_tokens=0, cache_read_input_tokens=2100),
-        ))
+FILLERS = [entry["name"] for entry in CATALOG.values() if entry["name"].split()[0] in {job.title() for job in JOBS}]
+POWER = ["Demonic Tutor", "Vampiric Tutor", "Rhystic Study", "Smothering Tithe", "Cyclonic Rift", "Armageddon", "Time Warp",
+         "Thassa's Oracle", "Demonic Consultation", "Lightning Bolt"]
 
 
-fake = FakeClient
+def rates(names, base=0.5):
+    return {name: max(0.05, base - index * 0.004) for index, name in enumerate(names)}
 
 
-def source(tmp_path: Path, pages=None):
-    pages = {"edh/top.json": TOP, "edh/commanders/atraxa-praetors-voice.json": PAGE, **(pages or {})}
-    requested = []
+def published(**changes):
+    cards = [{"name": name, "decks": int(rate * 1000), "of_decks": 1000, "synergy": 0.1} for name, rate in rates(FILLERS + POWER).items()]
+    page = {
+        "schema": 1, "slug": SLUG, "name": "Atraxa, Praetors' Voice", "decks": 1000, "url": f"https://edhrec.com/commanders/{SLUG}",
+        "color_identity": ["W", "U", "B", "G"], "scryfall_id": "atraxa-printing",
+        "sections": [{"tag": "newcards", "header": "New Cards", "cards": [{"name": "Mana Crypt", "decks": 900, "of_decks": 1000}]},
+                     {"tag": "creatures", "header": "Creatures", "cards": cards}],
+        "average_deck": [],
+        "themes": [{"slug": "infect", "name": "Infect", "decks": 400}, {"slug": "superfriends", "name": "Superfriends", "decks": 200},
+                   {"slug": "tiny", "name": "Tiny", "decks": 12}],
+        "bracket_decks": {"1": 5, "2": 300, "3": 400, "4": 250, "5": 45},
+        "lands": 36, "basics": 26,
+    }
+    return {**page, **changes}
 
-    def fetch(url):
-        requested.append(url)
-        return pages.get(url.split("https://data.example/", 1)[1])
 
-    return guides.Source(tmp_path, "https://data.example", fetch), requested
+def edhrec_page(decks, inclusion, brackets=None, lands=36, basics=26):
+    views = [{"name": name, "num_decks": int(rate * decks), "potential_decks": decks, "synergy": 0.2} for name, rate in inclusion.items()]
+    return {
+        "container": {"json_dict": {"card": {"num_decks": decks}, "cardlists": [{"tag": "creatures", "cardviews": views}]}},
+        "bracket_counts": brackets or {}, "land": lands, "basic": basics,
+    }
 
 
-def run(tmp_path, client, **options):
-    src, _ = source(tmp_path)
+INFECT = {**rates(FILLERS, 0.6), "Payoff 29": 0.95, "Payoff 28": 0.9}
+PAGES = {
+    f"{EDHREC}/{SLUG}/infect.json": edhrec_page(400, INFECT, {"2": 150, "3": 200, "4": 50}),
+    f"{EDHREC}/{SLUG}/superfriends.json": edhrec_page(200, rates(FILLERS, 0.5), {"3": 5}),
+    f"{EDHREC}/{SLUG}/core.json": edhrec_page(300, rates(FILLERS, 0.5)),
+    f"{EDHREC}/{SLUG}/upgraded.json": edhrec_page(400, {**rates(FILLERS, 0.5), "Rhystic Study": 0.9, "Smothering Tithe": 0.9, "Demonic Tutor": 0.9, "Vampiric Tutor": 0.9}),
+    f"{EDHREC}/{SLUG}/optimized.json": edhrec_page(250, {**rates(FILLERS, 0.5), **{name: 0.99 for name in POWER}}),
+    f"{EDHREC}/{SLUG}/cedh.json": edhrec_page(45, {**rates(FILLERS, 0.4), **{name: 0.99 for name in POWER}}),
+    f"{EDHREC}/{SLUG}/exhibition.json": edhrec_page(5, {"Payoff 0": 1.0}),
+}
+
+
+def combo(id, names, tag, two_card=False, popularity=100):
+    return {
+        "combo": {
+            "id": id, "status": "OK", "spoiler": False, "legalities": {"commander": True}, "bracketTag": tag, "popularity": popularity,
+            "uses": [{"card": {"name": name, "oracleId": CATALOG[guides.card_slug(name)]["oracle_id"]}} for name in names],
+            "requires": [], "produces": [{"feature": {"name": "Win the game", "status": "S"}}],
+        },
+        "definitelyTwoCard": two_card, "arguablyTwoCard": two_card, "relevant": True,
+    }
+
+
+class Spellbook:
+    def __init__(self, fail=False):
+        self.decks = []
+        self.fail = fail
+
+    def __call__(self, url, deck):
+        assert url == SPELLBOOK
+        if self.fail:
+            raise OSError("Spellbook is down")
+        self.decks.append(deck)
+        names = {each["card"] for each in deck["main"]}
+        flags = {"Armageddon": "massLandDenial", "Time Warp": "extraTurn", "Lightning Bolt": "banned"}
+        return {
+            "bracketTag": "R",
+            "cards": [{"card": {"name": name}, "gameChanger": name in CHANGERS, **({flags[name]: True} if name in flags else {})} for name in names],
+            "combos": [
+                combo("oracle-consult", ["Thassa's Oracle", "Demonic Consultation"], "R", two_card=True, popularity=900),
+                combo("casual-three", ["Payoff 0", "Payoff 1", "Payoff 2"], "E", popularity=50),
+            ],
+        }
+
+
+class Fetch:
+    def __init__(self, pages=None):
+        self.urls = []
+        self.pages = PAGES if pages is None else pages
+
+    def __call__(self, url):
+        self.urls.append(url)
+        return self.pages.get(url)
+
+
+def source(tmp_path):
+    return guides.Source(tmp_path, "https://data.example", lambda url: None)
+
+
+def setup(tmp_path, page=None):
+    path = tmp_path / "edh" / "commanders" / f"{SLUG}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(page or published()))
+
+
+def build(tmp_path, fetch=None, spellbook=None, now=NOW, **options):
+    if not (tmp_path / "edh" / "commanders" / f"{SLUG}.json").exists():
+        setup(tmp_path)
     return guides.run(
-        tmp_path, ["atraxa-praetors-voice"], src, client=client, catalog=CATALOG, banned={"crypt-oracle"},
-        fetch_oracle=lambda page: "Flying, vigilance, deathtouch, lifelink\nAt the beginning of your end step, proliferate.",
-        now=lambda: NOW, **options,
+        tmp_path, [SLUG], source(tmp_path), CATALOG, fetch_edhrec=fetch or Fetch(), post_spellbook=spellbook or Spellbook(),
+        delay=0, now=lambda: now, **options,
     )
 
 
-def written(tmp_path):
-    return json.loads((tmp_path / "edh" / "commanders" / "atraxa-praetors-voice" / "guide.json").read_text())
+def guide(tmp_path):
+    return json.loads((tmp_path / "edh" / "commanders" / SLUG / "guide.json").read_text())
 
 
-def test_a_guide_is_written_to_the_contract(tmp_path):
-    result = run(tmp_path, fake())
+def test_each_theme_with_enough_decks_is_a_play_style(tmp_path):
+    result = build(tmp_path)
 
-    guide = written(tmp_path)
-    assert result.written == ["edh/commanders/atraxa-praetors-voice/guide.json"]
-    assert list(guide) == ["schema", "slug", "name", "generated_at", "model", "styles", "brackets"]
-    assert guide["schema"] == 1 and guide["slug"] == "atraxa-praetors-voice" and guide["name"] == "Atraxa, Praetors' Voice"
-    assert guide["generated_at"] == "2026-10-20T09:00:00Z" and guide["model"] == "claude-sonnet-5-5"
-    style = guide["styles"][0]
-    assert list(style) == ["id", "name", "summary", "brackets", "cards"]
-    # The id is the name's slug; the brackets are sorted, each once, with anything but 1 to 5 left out.
-    assert style["id"] == "superfriends" and style["brackets"] == [2, 3]
-    assert style["cards"][0] == {"name": "Sol Ring", "oracle_id": "ring-oracle", "role": "ramp"}
-    assert [style["id"] for style in guide["styles"]] == ["superfriends", "infect", "proliferate-counters"]
-    # All five brackets, in order, named by Wizards, whatever order Claude gave them in.
-    assert [(b["level"], b["name"]) for b in guide["brackets"]] == [(1, "Exhibition"), (2, "Core"), (3, "Upgraded"), (4, "Optimized"), (5, "cEDH")]
-    assert list(guide["brackets"][0]) == ["level", "name", "summary", "cards"]
-    assert guide["brackets"][0]["cards"] == [{"name": "Sol Ring", "oracle_id": "ring-oracle", "role": "ramp"}]
+    assert result.written == [f"edh/commanders/{SLUG}/guide.json"] and not result.failed
+    written = guide(tmp_path)
+    assert (written["schema"], written["slug"], written["name"], written["generator"], written["model"]) == (1, SLUG, "Atraxa, Praetors' Voice", "data-1", None)
+    # Tiny has 12 decks, under the 30 a theme needs.
+    assert [(style["id"], style["name"], style["decks"]) for style in written["styles"]] == [("infect", "Infect", 400), ("superfriends", "Superfriends", 200)]
+    infect = written["styles"][0]
+    assert infect["url"] == f"https://edhrec.com/commanders/{SLUG}/infect"
+    assert infect["summary"].startswith("Infect is how 400 of Atraxa's 1,000 decks on EDHREC are built (40%). It leans on Payoff 29, Payoff 28")
+    # Its brackets come from its own decks: a tenth or more at 2, 3 and 4.
+    assert infect["brackets"] == [2, 3, 4]
+    # Too few of Superfriends' decks say a bracket, so the commander's split stands in.
+    assert written["styles"][1]["brackets"] == [2, 3, 4]
 
 
-def test_cards_are_checked_against_the_catalog(tmp_path):
-    styles = answer()["styles"]
-    styles[0]["cards"] = [
-        card("Sol Ring", "ramp"),
-        card("Not A Real Card", "payoff"),
-        card("Lightning Bolt", "removal"),  # red, and Atraxa has no red
-        card("Mana Crypt", "ramp"),  # banned in Commander
-        card("Atraxa, Praetors' Voice", "payoff"),  # the commander itself
-        card("sol ring", "ramp"),  # the same card again
-        card("Counterspell", "teleport"),  # a role not on the list
-        card("Fable of the Mirror-Breaker", "engine"),
-        *styles[0]["cards"][1:],
-    ]
-    run(tmp_path, fake(answer(styles=styles)))
+def test_every_style_has_a_whole_deck_for_each_of_its_brackets(tmp_path):
+    build(tmp_path)
 
-    cards = written(tmp_path)["styles"][0]["cards"]
-    assert cards[:2] == [
-        {"name": "Sol Ring", "oracle_id": "ring-oracle", "role": "ramp"},
-        {"name": "Counterspell", "oracle_id": "counter-oracle", "role": "utility"},
-    ]
-    names = {card["name"] for card in cards}
-    assert not names & {"Not A Real Card", "Lightning Bolt", "Mana Crypt", "Atraxa, Praetors' Voice"}
-    assert "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki" not in names
+    for style in guide(tmp_path)["styles"]:
+        assert [deck["level"] for deck in style["lists"]] == style["brackets"]
+        for deck in style["lists"]:
+            names = [card["name"] for card in deck["cards"]]
+            basics = sum(basic["count"] for basic in deck["basics"])
+            assert len(names) + basics == 99 and len(set(names)) == len(names)
+            assert not {"Atraxa, Praetors' Voice", "Lightning Bolt", "Mana Crypt"} & set(names)
+            assert deck["lands"] == 36 and {basic["name"] for basic in deck["basics"]} <= {"Plains", "Island", "Swamp", "Forest"}
+            assert deck["price"] > 0
+        lowest = {card["name"] for card in style["lists"][0]["cards"]}
+        assert all(card["name"] in lowest and card["role"] != "land" for card in style["cards"]) and len(style["cards"]) <= 60
+    # The style's cards are its theme's most played first.
+    assert [card["name"] for card in guide(tmp_path)["styles"][0]["cards"][:2]] == ["Payoff 29", "Payoff 28"]
 
 
-def test_game_changers_keep_to_each_brackets_limit(tmp_path):
-    changers = [card(name, "tutor") for name in ("Demonic Tutor", "Vampiric Tutor", "Rhystic Study", "Cyclonic Rift", "Smothering Tithe")]
-    brackets = [{"level": level, "summary": "", "cards": [*changers, card("Sol Ring", "ramp")]} for level in range(1, 6)]
-    run(tmp_path, fake(answer(brackets=brackets)))
+def test_the_decks_fill_the_app_builders_role_aims(tmp_path):
+    build(tmp_path)
 
-    counts = [len(bracket["cards"]) - 1 for bracket in written(tmp_path)["brackets"]]
-    # None at brackets 1 and 2, three at 3, any number at 4 and 5.
-    assert counts == [0, 0, 3, 5, 5]
+    roles = {}
+    for card in guide(tmp_path)["styles"][0]["lists"][0]["cards"]:
+        roles[card["role"]] = roles.get(card["role"], 0) + 1
+    assert roles["ramp"] == 10 and roles["draw"] == 10 and roles.get("removal", 0) + roles.get("counter", 0) == 10
+    assert roles["wipe"] == 3 and roles["protection"] == 3
+    # EDHREC's decks play 10 nonbasic lands of their 36.
+    assert roles["land"] == 10
 
 
-def test_a_guide_missing_a_bracket_or_short_of_styles_is_not_written(tmp_path):
-    short = answer(brackets=[{"level": level, "summary": "", "cards": []} for level in (1, 2, 3, 4)])
-    few = answer(styles=answer()["styles"][:2])
-    for broken in (short, few):
-        result = run(tmp_path, fake(broken))
-        assert result.failed == ["atraxa-praetors-voice"] and result.written == []
-    assert not (tmp_path / "edh" / "commanders" / "atraxa-praetors-voice").exists()
-    # Nothing is remembered, so the next run asks again.
+def test_each_deck_keeps_its_brackets_rules(tmp_path):
+    build(tmp_path)
+
+    decks = {deck["level"]: deck for deck in guide(tmp_path)["styles"][0]["lists"]}
+    two, three, four = ({card["name"] for card in decks[level]["cards"]} for level in (2, 3, 4))
+    assert not two & set(CHANGERS) and decks[2]["game_changers"] == 0 and decks[2]["bracket"] <= 2
+    assert len(three & set(CHANGERS)) == 3 and decks[3]["game_changers"] == 3 and decks[3]["bracket"] == 3
+    assert "Armageddon" not in two | three and "Time Warp" not in two
+    assert not {"Thassa's Oracle", "Demonic Consultation"} <= three
+    # Bracket 4 holds anything legal, and its deck plays the two-card combo, whose pieces have the combo role.
+    assert "Armageddon" in four and decks[4]["mass_land_denial"] == 1 and decks[4]["bracket"] == 4
+    assert "oracle-consult" in decks[4]["combos"] and "oracle-consult" not in decks[3]["combos"]
+    assert {card["role"] for card in decks[4]["cards"] if card["name"] in ("Thassa's Oracle", "Demonic Consultation")} == {"combo"}
+
+
+def test_combos_are_spellbooks_with_two_card_ones_kept_from_bracket_three(tmp_path):
+    spellbook = Spellbook()
+    build(tmp_path, spellbook=spellbook)
+
+    combos = {each["id"]: each for each in guide(tmp_path)["combos"]}
+    assert combos["oracle-consult"]["bracket"] == 4 and combos["oracle-consult"]["two_card"] is True
+    assert combos["casual-three"]["bracket"] == 1 and combos["casual-three"]["two_card"] is False
+    assert [card["name"] for card in combos["oracle-consult"]["cards"]] == ["Thassa's Oracle", "Demonic Consultation"]
+    # One estimate for the whole pool: the commander, and every card it may play from all its pages.
+    assert len(spellbook.decks) == 1
+    deck = spellbook.decks[0]
+    assert deck["commanders"] == [{"card": "Atraxa, Praetors' Voice"}]
+    main = {each["card"] for each in deck["main"]}
+    assert {"Payoff 29", "Thassa's Oracle"} <= main and "Mana Crypt" not in main
+
+
+def test_a_card_spellbook_calls_banned_is_left_out(tmp_path):
+    build(tmp_path)
+
+    names = {card["name"] for style in guide(tmp_path)["styles"] for deck in style["lists"] for card in deck["cards"]}
+    names |= {card["name"] for bracket in guide(tmp_path)["brackets"] for card in bracket["cards"]}
+    assert "Lightning Bolt" not in names
+
+
+def test_the_five_brackets_name_what_sets_each_apart(tmp_path):
+    build(tmp_path)
+
+    brackets = guide(tmp_path)["brackets"]
+    assert [(bracket["level"], bracket["name"]) for bracket in brackets] == [(1, "Exhibition"), (2, "Core"), (3, "Upgraded"), (4, "Optimized"), (5, "cEDH")]
+    upgraded = brackets[2]
+    assert upgraded["decks"] == 400
+    assert len({card["name"] for card in upgraded["cards"]} & set(CHANGERS)) == 3
+    assert upgraded["summary"].startswith("400 of Atraxa's decks on EDHREC are built for Bracket 3, Upgraded. Up to three Game Changers")
+    # Bracket 1 has 5 decks, too few, so the nearest bracket with enough stands in, within bracket 1's rules.
+    assert not {card["name"] for card in brackets[0]["cards"]} & set(CHANGERS)
+    assert all(len(bracket["cards"]) <= 30 for bracket in brackets)
+
+
+def test_a_guide_is_built_again_only_when_due(tmp_path):
+    build(tmp_path)
+    state = json.loads((tmp_path / "state" / "guides.json").read_text())
+    assert state[SLUG]["generator"] == "data-1" and state[SLUG]["built_at"] == "2026-10-21T14:00:00Z" and state[SLUG]["decks"] == 1000
+
+    fetch = Fetch()
+    assert build(tmp_path, fetch=fetch, now=NOW + timedelta(days=6)).unchanged == [SLUG] and fetch.urls == []
+    assert build(tmp_path, now=NOW + timedelta(days=7)).written
+
+    later = NOW + timedelta(days=8)
+    setup(tmp_path, published(decks=1200))
+    assert build(tmp_path, now=later).written
+    setup(tmp_path, published(decks=1250, themes=[{"slug": "infect", "name": "Infect", "decks": 400}]))
+    assert build(tmp_path, now=later).written
+    assert build(tmp_path, now=later).unchanged == [SLUG]
+    assert build(tmp_path, now=later, force=True).written
+
+
+def test_a_run_builds_the_never_built_first_and_leaves_the_rest_for_later(tmp_path):
+    state = {SLUG: {"generator": "data-1", "fingerprint": "old", "built_at": "2026-10-01T00:00:00Z", "decks": 1000}}
+    (tmp_path / "state").mkdir()
+    (tmp_path / "state" / "guides.json").write_text(json.dumps(state))
+    setup(tmp_path)
+    (tmp_path / "edh" / "commanders" / "atraxa-grand-unifier.json").write_text(json.dumps(published(name="Atraxa, Grand Unifier")))
+
+    result = guides.run(
+        tmp_path, [SLUG, "atraxa-grand-unifier"], source(tmp_path), CATALOG,
+        fetch_edhrec=Fetch({}), post_spellbook=Spellbook(), delay=0, now=lambda: NOW, limit=1,
+    )
+
+    assert result.written == ["edh/commanders/atraxa-grand-unifier/guide.json"] and result.deferred == [SLUG]
+
+
+def test_a_commander_spellbook_cannot_read_is_not_written(tmp_path):
+    result = build(tmp_path, spellbook=Spellbook(fail=True))
+
+    assert result.failed == [SLUG] and not (tmp_path / "edh" / "commanders" / SLUG).exists()
     assert not (tmp_path / "state" / "guides.json").exists()
 
 
-def test_a_refusal_or_a_cut_off_answer_fails_that_commander(tmp_path):
-    for stop in ("refusal", "max_tokens"):
-        result = run(tmp_path, fake(stop_reason=stop))
-        assert result.failed == ["atraxa-praetors-voice"]
-        assert result.usage.output == 8000
-    assert not (tmp_path / "edh" / "commanders" / "atraxa-praetors-voice").exists()
+def test_a_commander_with_no_theme_pages_gets_the_average_deck(tmp_path):
+    build(tmp_path, fetch=Fetch({}))
+
+    styles = guide(tmp_path)["styles"]
+    assert [(style["id"], style["name"], style["decks"]) for style in styles] == [("average-deck", "Average Deck", 1000)]
+    assert styles[0]["summary"].startswith("The cards most of Atraxa's 1,000 decks on EDHREC play.")
+    assert styles[0]["url"] == f"https://edhrec.com/commanders/{SLUG}"
 
 
-def test_a_guide_is_asked_for_again_only_when_its_input_changed(tmp_path):
-    client = fake()
-    run(tmp_path, client)
-    state = json.loads((tmp_path / "state" / "guides.json").read_text())
-    assert set(state["atraxa-praetors-voice"]) == {"hash", "generated_at", "model"}
+def test_a_page_published_before_it_had_themes_is_read_again_from_edhrec(tmp_path):
+    old = published()
+    for key in ("themes", "bracket_decks", "lands", "basics"):
+        old.pop(key)
+    setup(tmp_path, old)
+    body = edhrec_page(1000, rates(FILLERS, 0.5), {"3": 900})
+    body["container"]["json_dict"]["card"].update({"name": "Atraxa, Praetors' Voice", "color_identity": ["W", "U", "B", "G"]})
+    body["tag_counts"] = [{"slug": "infect", "value": "Infect", "count": 400}]
+    fetch = Fetch({**PAGES, f"{EDHREC}/{SLUG}.json": body})
 
-    assert run(tmp_path, client).unchanged == ["atraxa-praetors-voice"]
-    assert len(client.calls) == 1
-    # The same pool with new deck counts inside the same tenth is the same input.
-    PAGE["sections"][0]["cards"][0]["decks"] = 905
-    assert run(tmp_path, client).unchanged == ["atraxa-praetors-voice"]
-    assert run(tmp_path, client, force=True).written
-    assert len(client.calls) == 2
-    # A new card in the pool asks again.
-    PAGE["sections"][1]["cards"].append({"name": "Delay", "decks": 100, "of_decks": 1000, "synergy": 0.2})
-    try:
-        assert run(tmp_path, client).written
-        assert len(client.calls) == 3
-    finally:
-        PAGE["sections"][1]["cards"].pop()
-        PAGE["sections"][0]["cards"][0]["decks"] = 912
+    build(tmp_path, fetch=fetch)
+
+    assert fetch.urls[0] == f"{EDHREC}/{SLUG}.json"
+    assert [style["id"] for style in guide(tmp_path)["styles"]] == ["infect"]
 
 
-def test_a_change_to_the_rules_asks_for_every_guide_again(tmp_path, monkeypatch):
-    client = fake()
-    run(tmp_path, client)
-    monkeypatch.setattr(guides, "_RULES", guides._RULES + "\nOne more rule.")
-    assert run(tmp_path, client).written
-    assert len(client.calls) == 2
+def test_polish_replaces_only_what_it_returns(tmp_path):
+    def polish(written):
+        return {**written, "model": "claude-test", "styles": [{**style, "summary": "Prose."} for style in written["styles"]]}
+
+    build(tmp_path, polish=polish)
+
+    written = guide(tmp_path)
+    assert written["model"] == "claude-test" and {style["summary"] for style in written["styles"]} == {"Prose."}
+    assert json.loads((tmp_path / "state" / "guides.json").read_text())[SLUG]["model"] == "claude-test"
 
 
-def test_the_request_caches_the_rules_and_not_the_commander(tmp_path):
-    client = fake()
-    run(tmp_path, client)
+def test_the_command_builds_the_top_commanders(tmp_path, capsys):
+    setup(tmp_path)
+    top = {"schema": 1, "windows": {"7d": {"commanders": [{"rank": 1, "slug": SLUG}]}, "30d": {"commanders": [{"rank": 1, "slug": "other"}]}}}
+    (tmp_path / "edh" / "top.json").write_text(json.dumps(top))
 
-    call = client.calls[0]
-    assert call["model"] == "claude-sonnet-5-5" and call["output_config"] == {"effort": "medium"}
-    # Sonnet 5.5 refuses a forced tool call, so the tool is strict and the prompt asks for it.
-    assert call["tool_choice"] == {"type": "auto"} and call["tools"][0]["strict"] is True
-    assert call["fallbacks"] == "default" and call["betas"] == ["server-side-fallback-2026-07-01"]
-    assert "temperature" not in call
-    system = call["system"]
-    assert len(system) == 1 and system[0]["cache_control"] == {"type": "ephemeral"}
-    assert "Demonic Tutor" in system[0]["text"] and "Atraxa" not in system[0]["text"]
-    message = call["messages"][0]
-    assert message["role"] == "user" and isinstance(message["content"], str)
-    assert "Atraxa, Praetors' Voice" in message["content"] and "proliferate" in message["content"]
+    code = guides.main([str(tmp_path), "--top", "1", "--delay", "0"], load_catalog=lambda: CATALOG, fetch_edhrec=Fetch(), post_spellbook=Spellbook())
+
+    assert code == 0 and "1 written, 0 unchanged, 0 failed" in capsys.readouterr().out
 
 
-def test_the_commander_message_lists_each_card_once():
-    text = guides.commander_message(PAGE, "Flying")
-
-    assert "Colour identity: W U B G" in text
-    assert text.count("Sol Ring") == 1
-    assert "Sol Ring (~90%) *" in text and "Counterspell (~40%)" in text
-    # A card in the average deck the sections never name is listed after them.
-    assert text.rstrip().endswith("## Also in the average deck\nArcane Signet")
+def test_polish_without_a_key_stops_the_command(tmp_path, caplog):
+    setup(tmp_path)
+    assert guides.main([str(tmp_path), "--slug", SLUG, "--polish"], load_catalog=lambda: CATALOG, make_polisher=lambda: None) == 2
+    assert "--polish needs ANTHROPIC_API_KEY" in caplog.text
 
 
-def test_the_strict_tool_schema_closes_every_object():
-    def objects(schema):
-        if isinstance(schema, dict):
-            if schema.get("type") == "object":
-                yield schema
-            for value in schema.values():
-                yield from objects(value)
-        elif isinstance(schema, list):
-            for value in schema:
-                yield from objects(value)
-
-    found = list(objects(guides.TOOL["input_schema"]))
-    assert len(found) == 5
-    assert all(o["additionalProperties"] is False and set(o["required"]) == set(o["properties"]) for o in found)
+def test_top_takes_the_weeks_commanders_first():
+    top = {"windows": {"7d": {"commanders": [{"slug": "a"}, {"slug": "b"}]}, "30d": {"commanders": [{"slug": "c"}, {"slug": "a"}]}}}
+    assert guides.commander_slugs(top, 3) == ["a", "b", "c"]
+    assert guides.commander_slugs(None, 5) == []
 
 
 def test_the_game_changers_file_names_each_card_with_its_oracle_id():
     cards = guides.load_game_changers()
     assert len(cards) == 53
     assert all(card["name"] and len(card["oracle_id"]) == 36 for card in cards)
-    assert len({card["oracle_id"] for card in cards}) == 53
-
-
-def test_top_takes_the_weeks_commanders_first():
-    assert guides.commander_slugs(TOP, 2) == ["atraxa-praetors-voice", "other-commander"]
-    assert guides.commander_slugs(TOP, 1) == ["atraxa-praetors-voice"]
-    assert guides.commander_slugs(None, 5) == []
 
 
 def test_pages_missing_locally_come_from_the_live_site(tmp_path):
-    src, requested = source(tmp_path)
-    (tmp_path / "edh").mkdir()
-    (tmp_path / "edh" / "top.json").write_text(json.dumps(TOP))
-
-    assert src.read("edh/top.json") == TOP
-    assert src.read("edh/commanders/atraxa-praetors-voice.json") == PAGE
-    assert requested == ["https://data.example/edh/commanders/atraxa-praetors-voice.json"]
-
-
-def test_oracle_text_reads_both_faces_and_both_partners():
-    cards = {
-        "https://api.scryfall.com/cards/atraxa-printing": {"name": "Atraxa", "mana_cost": "{G}{W}{U}{B}", "type_line": "Legendary Creature", "oracle_text": "Proliferate."},
-        "https://api.scryfall.com/cards/named?exact=Kraum%2C%20Ludevic%27s%20Opus": {"card_faces": [{"name": "Kraum", "oracle_text": "Flying, haste"}]},
-        "https://api.scryfall.com/cards/named?exact=Tymna%20the%20Weaver": {"name": "Tymna", "oracle_text": "Lifelink"},
-    }
-    assert guides.oracle_text(PAGE, cards.get) == "Atraxa - {G}{W}{U}{B} - Legendary Creature\nProliferate."
-    pair = {"name": "Kraum, Ludevic's Opus // Tymna the Weaver", "scryfall_id": None}
-    assert guides.oracle_text(pair, cards.get) == "Kraum\nFlying, haste\n\nTymna\nLifelink"
-
-
-def test_the_banned_list_follows_scryfalls_pages():
-    pages = {
-        "https://api.scryfall.com/cards/search?q=banned%3Acommander&unique=cards": {"has_more": True, "next_page": "page-2", "data": [{"oracle_id": "a"}]},
-        "page-2": {"has_more": False, "data": [{"oracle_id": "b"}]},
-    }
-    assert guides.banned_oracle_ids(pages.get) == {"a", "b"}
-    with pytest.raises(guides.GuideError):
-        guides.banned_oracle_ids(lambda url: None)
-
-
-def cli(tmp_path, *args, make_client=None):
-    for path, body in {"edh/top.json": TOP, "edh/commanders/atraxa-praetors-voice.json": PAGE}.items():
-        (tmp_path / path).parent.mkdir(parents=True, exist_ok=True)
-        (tmp_path / path).write_text(json.dumps(body))
-    return guides.main(
-        [str(tmp_path), "--top", "1", *args],
-        make_client=make_client, load_catalog=lambda: CATALOG, fetch_banned=lambda: set(), fetch_oracle=lambda page: "Proliferate.",
-        find_combos=lambda guide: [{"id": "1-2", "cards": [], "requires": [], "results": ["Infinite mana"], "bracket": 4, "bracket_tag": "R"}],
-    )
-
-
-def test_the_command_never_shows_the_key(tmp_path, monkeypatch, capsys, caplog):
-    monkeypatch.setenv("ANTHROPIC_API_KEY", KEY)
-    caplog.set_level("DEBUG")
-    client = fake()
-    assert cli(tmp_path, make_client=lambda: client) == 0
-
-    out = capsys.readouterr()
-    assert "1 written, 0 unchanged, 0 failed" in out.out and "about $0.08" in out.out
-    written = json.loads((tmp_path / "edh" / "commanders" / "atraxa-praetors-voice" / "guide.json").read_text())
-    assert written["combos"][0]["results"] == ["Infinite mana"]
-    assert KEY not in out.out + out.err + caplog.text + json.dumps(client.calls)
-
-
-def test_the_command_stops_without_a_key(tmp_path, monkeypatch, caplog):
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    assert cli(tmp_path, make_client=guides._client) == 2
-    assert "ANTHROPIC_API_KEY is not set" in caplog.text
-
-
-def test_a_dry_run_asks_nothing(tmp_path, capsys):
-    def no_client():
-        raise AssertionError("a dry run built a client")
-
-    assert cli(tmp_path, "--dry-run", make_client=no_client) == 0
-    assert "would ask: atraxa-praetors-voice" in capsys.readouterr().out
-    assert not (tmp_path / "edh" / "commanders" / "atraxa-praetors-voice").exists()
-
-
-def test_the_client_reads_the_key_from_the_environment(monkeypatch):
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    assert guides._client() is None
+    requested = []
+    live = guides.Source(tmp_path, "https://data.example/", lambda url: requested.append(url) or {"name": "live"})
+    assert live.read(f"edh/commanders/{SLUG}.json") == {"name": "live"}
+    assert requested == [f"https://data.example/edh/commanders/{SLUG}.json"]

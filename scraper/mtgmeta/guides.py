@@ -1,12 +1,14 @@
-"""edh/commanders/{slug}/guide.json: Claude's own read of a commander's play styles and power brackets.
+"""edh/commanders/{slug}/guide.json: a commander's play styles and power brackets, built from data with no model.
 
-`python -m mtgmeta guides DIR --top 5` takes the first commanders of `edh/top.json`, gives Claude each one's oracle
-text and the card pool of its `edh/commanders/{slug}.json`, and writes what it returns, with every card checked
-against Scryfall's catalog. A guide is asked for again only when what Claude would be sent changes (the pool, the
-oracle text, the rules or the model), which `state/guides.json` remembers. See docs/data-format.md.
+Each play style is one of EDHREC's themes for the commander, with its own cards and deck counts. Each style gets a
+whole deck for every bracket it is played at, filled by the Mooligan app's builder rules (guide_builder.py) from
+EDHREC's inclusion rates under that bracket's rules (guide_brackets.py), and the Commander Spellbook combos that deck
+holds. Prices are Scryfall's, from the card catalog. The summaries are templates over those numbers (guide_text.py);
+`--polish` has Claude rewrite them as prose (guide_polish.py), and is the only part that needs ANTHROPIC_API_KEY.
 
-It reads ANTHROPIC_API_KEY from the environment, and `--dry-run` shows what would be asked, and its estimated
-cost, without one.
+The daily scrape runs it for the commanders of `edh/top.json`, a few a run. `state/guides.json` remembers what each
+guide was built from, so a commander is read again only when its themes change, its decks move by a tenth, or its
+guide is a week old. `python -m mtgmeta guides DIR --top 5` runs it by hand. See docs/data-format.md.
 """
 from __future__ import annotations
 
@@ -16,338 +18,48 @@ import json
 import logging
 import os
 import sys
-import time
 import urllib.error
-import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
+from typing import Callable, Dict, List, Optional, Sequence, Set, Tuple
 
+from . import guide_text
 from .cards import slug as card_slug
-from .guide_combos import find, with_combos
+from .edhrec import COMMANDER_URL, _commander_entry as commander_entry
+from .guide_brackets import NAMES, Pool, Rules, counts, deck_bracket, find_pool, post_json
+from .guide_builder import BASICS, Candidate, Deck, fill, role
+from .guide_edhrec import Page, SubPages, published_page, read_sub_pages
 from .scryfall import HEADERS as SCRYFALL_HEADERS
 from .top import top_slugs
 
 log = logging.getLogger(__name__)
 
 SCHEMA = 1
-MODEL = "claude-sonnet-5-5"
-EFFORT = "medium"
-MAX_TOKENS = 32000
-# Refusals go to the model the API picks for their category, inside the same call.
-BETAS = ["server-side-fallback-2026-07-01"]
-TOOL_NAME = "write_guide"
+# Bumped whenever a change to the build would change a guide, so every guide is built again.
+GENERATOR = "data-1"
 STATE_PATH = "state/guides.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
-SCRYFALL_API = "https://api.scryfall.com"
-SCRYFALL_DELAY = 0.1
+EDHREC_USER_AGENT = "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"
 
-ROLES = ("land", "ramp", "draw", "removal", "counter", "wipe", "protection", "tutor", "payoff", "engine", "combo", "utility")
-BRACKETS = {1: "Exhibition", 2: "Core", 3: "Upgraded", 4: "Optimized", 5: "cEDH"}
-MIN_STYLES, MAX_STYLES = 3, 6
-MIN_STYLE_CARDS, MAX_STYLE_CARDS = 30, 60
+MAX_STYLES = 5
+# A theme or bracket page needs this many decks before its inclusion rates are used.
+MIN_SAMPLE = 30
+# A style is played at a bracket when this share of its decks are built for it.
+MIN_BRACKET_SHARE = 0.10
+MAX_STYLE_CARDS = 60
 MAX_BRACKET_CARDS = 30
-BRACKET_3_GAME_CHANGERS = 3
-
-# Sonnet 5.5, per million tokens; a 5-minute cache write is 1.25 times input.
-PRICE_INPUT, PRICE_OUTPUT, PRICE_CACHE_WRITE, PRICE_CACHE_READ = 2.00, 10.00, 2.50, 0.20
-
-_CARD = {
-    "type": "object",
-    "additionalProperties": False,
-    "required": ["name", "role"],
-    "properties": {
-        "name": {"type": "string", "description": "The card's exact English name, as Scryfall prints it."},
-        "role": {"type": "string", "enum": list(ROLES)},
-    },
-}
-_LEVEL = {"type": "integer", "enum": list(BRACKETS)}
-
-TOOL = {
-    "name": TOOL_NAME,
-    "description": "Records the commander's guide: its play styles and what each of the five power brackets looks like for it.",
-    "strict": True,
-    "input_schema": {
-        "type": "object",
-        "additionalProperties": False,
-        "required": ["styles", "brackets"],
-        "properties": {
-            "styles": {
-                "type": "array",
-                "description": "3 to 6 distinct ways to build the deck, most played first.",
-                "items": {
-                    "type": "object",
-                    "additionalProperties": False,
-                    "required": ["name", "summary", "brackets", "cards"],
-                    "properties": {
-                        "name": {"type": "string", "description": "A short name, such as Infect or Spellslinger."},
-                        "summary": {"type": "string", "description": "Two or three sentences: the plan and how it wins."},
-                        "brackets": {"type": "array", "description": "Every bracket this style plays well at.", "items": _LEVEL},
-                        "cards": {"type": "array", "description": "40 to 60 cards that make the style.", "items": _CARD},
-                    },
-                },
-            },
-            "brackets": {
-                "type": "array",
-                "description": "All five brackets, 1 to 5, once each.",
-                "items": {
-                    "type": "object",
-                    "additionalProperties": False,
-                    "required": ["level", "summary", "cards"],
-                    "properties": {
-                        "level": _LEVEL,
-                        "summary": {"type": "string", "description": "Two or three sentences: what the deck looks like at this bracket."},
-                        "cards": {"type": "array", "description": "12 to 25 cards that set this bracket apart.", "items": _CARD},
-                    },
-                },
-            },
-        },
-    },
-}
-
-_RULES = """You are an expert Magic: The Gathering Commander deck builder. You judge play styles and power brackets yourself, from the commander's oracle text and the card pool its players use; EDHREC's own theme and bracket pages are not your source.
-
-You are given one commander: its oracle text and colour identity, then the cards EDHREC's decks for it play, by section, each with the share of the commander's decks that play it ("~60%"). A "*" marks a card in EDHREC's average deck for it.
-
-Call the write_guide tool once with the whole guide, and write nothing else.
-
-## Play styles
-
-Give 3 to 6 genuinely different ways to build around this commander, most played first: different win conditions or engines, not the same deck at another budget. For each:
-- name: short, such as "Infect", "Spellslinger", "Aristocrats".
-- summary: two or three sentences on the plan and how it wins.
-- brackets: every bracket the style plays well at, such as [2, 3, 4].
-- cards: 40 to 60 cards that make the style, the most important first. Draw them from the pool, or from well-known staples legal in Commander and in the commander's colour identity. Never list the commander itself, cards outside its colour identity, or cards banned in Commander.
-
-## Power brackets
-
-Describe all five brackets for this commander, once each, levels 1 to 5. For each, a summary of two or three sentences on what the deck looks like at that bracket, and 12 to 25 cards that set the bracket apart for this commander: at 1 and 2 the on-theme core that keeps it casual, at 3 the upgrades (with at most three Game Changers), at 4 and 5 the high-power additions. The cards of a bracket must keep its rules.
-
-Wizards of the Coast's Commander Brackets:
-1. Exhibition. Theme and flavour first, power well below a preconstructed deck; expect games of nine turns or more. No Game Changers. No mass land denial. No extra-turn cards. No two-card combos that win the game or make an infinite loop.
-2. Core. About the power of a current preconstructed deck; expect games of eight turns or more. No Game Changers. No mass land denial. Extra turns only a few, never chained or looped. No two-card combos.
-3. Upgraded. Stronger than a precon, with tuned synergy and better interaction; expect games of six turns or more. Up to three Game Changers. No mass land denial. Extra turns only a few, never chained or looped. No two-card combos that can win early in the game; late-game combos are fine.
-4. Optimized. High power, with nothing restricted but the banned list: any number of Game Changers, fast mana, mass land denial, chained extra turns and compact combos; games can end from turn four.
-5. cEDH. Built to win as fast and as reliably as possible for the competitive metagame, with the same card rules as bracket 4.
-
-Tutors: since October 2025 the brackets set no separate limit on tutors. The most efficient ones are Game Changers and count as such; at brackets 1 and 2 keep tutors few, fetching theme pieces rather than combo pieces.
-
-Mass land denial means cards that destroy, exile or bounce several lands, or stop lands untapping, such as Armageddon, Ruination, Winter Orb or Blood Moon. Extra-turn cards are cards such as Time Warp or Nexus of Fate.
-
-Game Changers (each counts against bracket 3's three, and none is allowed at brackets 1 or 2):
-{game_changers}
-
-## Roles
-
-Give every card one role, the job it does in this deck:
-- land: a land.
-- ramp: makes or fixes mana beyond the land drop.
-- draw: draws cards or gives card advantage.
-- removal: removes a single permanent or creature.
-- counter: counters spells.
-- wipe: removes many permanents at once.
-- protection: protects the commander or the board.
-- tutor: searches the library for a card.
-- payoff: what the deck wins with or builds towards.
-- engine: repeats value with the commander's plan.
-- combo: a piece of a combo that wins the game.
-- utility: anything else.
-"""
+MAX_COMBOS = 30
+SIGNATURE_CARDS = 3
+REFRESH_DAYS = 7
+# Spellbook reads at most 600 cards besides the commanders.
+MAX_POOL = 600
+DECKS_MOVED = 0.10
 
 
 def load_game_changers(path: Path = GAME_CHANGERS) -> List[dict]:
     return json.loads(path.read_text())["cards"]
-
-
-def system_prompt(game_changers: Sequence[dict]) -> str:
-    return _RULES.replace("{game_changers}", "\n".join(f"- {card['name']}" for card in game_changers))
-
-
-def fingerprint(system: str) -> str:
-    """What every guide was asked with: the model, its effort, the rules and the tool. A change asks for every guide again."""
-    body = json.dumps({"model": MODEL, "effort": EFFORT, "system": system, "tool": TOOL}, sort_keys=True)
-    return hashlib.sha256(body.encode()).hexdigest()[:16]
-
-
-def commander_message(page: dict, oracle_text: str) -> str:
-    """The user turn for one commander: its oracle text, then its card pool, each card once, in its first section."""
-    identity = page.get("color_identity")
-    lines = [
-        f"Commander: {page['name']}",
-        f"Colour identity: {' '.join(identity) if identity else 'colourless'}" if identity is not None else "Colour identity: unknown",
-        "",
-        "Oracle text:",
-        oracle_text.strip() or "(not available)",
-        "",
-        f"Card pool from {page.get('decks', 0)} EDHREC decks:",
-    ]
-    average = {name for section in page.get("average_deck", []) for name in section.get("cards", [])}
-    seen = {page["name"]}
-    for section in page.get("sections", []):
-        rows = []
-        for card in section.get("cards", []):
-            if card["name"] in seen:
-                continue
-            seen.add(card["name"])
-            share = round(card["decks"] * 10 / card["of_decks"]) * 10 if card.get("of_decks") else 0
-            rows.append(f"{card['name']} (~{share}%){' *' if card['name'] in average else ''}")
-        if rows:
-            lines += ["", f"## {section.get('header') or section.get('tag')}", *rows]
-    rest = sorted(average - seen)
-    if rest:
-        lines += ["", "## Also in the average deck", ", ".join(rest)]
-    return "\n".join(lines) + "\n"
-
-
-def request(system: str, message: str) -> dict:
-    """The Messages API call: the tool and rules form the cached prefix, the commander is the turn after it."""
-    return {
-        "model": MODEL,
-        "max_tokens": MAX_TOKENS,
-        "betas": BETAS,
-        "fallbacks": "default",
-        "output_config": {"effort": EFFORT},
-        "tools": [TOOL],
-        "tool_choice": {"type": "auto"},
-        "system": [{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
-        "messages": [{"role": "user", "content": message}],
-    }
-
-
-def input_hash(fingerprint_: str, message: str) -> str:
-    return hashlib.sha256(f"{fingerprint_}\n{message}".encode()).hexdigest()[:16]
-
-
-@dataclass
-class Usage:
-    input: int = 0
-    output: int = 0
-    cache_write: int = 0
-    cache_read: int = 0
-
-    def add(self, usage) -> None:
-        self.input += getattr(usage, "input_tokens", 0) or 0
-        self.output += getattr(usage, "output_tokens", 0) or 0
-        self.cache_write += getattr(usage, "cache_creation_input_tokens", 0) or 0
-        self.cache_read += getattr(usage, "cache_read_input_tokens", 0) or 0
-
-    def dollars(self) -> float:
-        return (
-            self.input * PRICE_INPUT + self.output * PRICE_OUTPUT + self.cache_write * PRICE_CACHE_WRITE + self.cache_read * PRICE_CACHE_READ
-        ) / 1_000_000
-
-
-class GuideError(Exception):
-    def __init__(self, message: str, usage=None) -> None:
-        super().__init__(message)
-        self.usage = usage
-
-
-def ask(client, call: dict):
-    """Claude's guide for one call, as the tool's input, and the message it came in."""
-    with client.beta.messages.stream(**call) as stream:
-        message = stream.get_final_message()
-    if message.stop_reason in ("refusal", "max_tokens"):
-        raise GuideError(f"stopped: {message.stop_reason}", message.usage)
-    for block in message.content:
-        if getattr(block, "type", None) == "tool_use" and block.name == TOOL_NAME:
-            return block.input, message
-    raise GuideError(f"no {TOOL_NAME} call (stop reason {message.stop_reason})", message.usage)
-
-
-@dataclass
-class Checker:
-    """Resolves Claude's card names against the catalog and keeps what the commander may play."""
-
-    catalog: Dict[str, dict]
-    identity: Optional[Set[str]]
-    commander: Set[str]
-    banned: Set[str]
-    game_changers: Set[str]
-    dropped: List[str] = field(default_factory=list)
-
-    def cards(self, cards: Iterable[dict], limit: int, game_changers: Optional[int] = None) -> List[dict]:
-        kept, ids, changers = [], set(), 0
-        for card in cards:
-            name = str(card.get("name", "")).strip()
-            entry = self.catalog.get(card_slug(name)) if name else None
-            if not entry or not entry.get("oracle_id"):
-                self.dropped.append(f"{name}: not in the catalog")
-                continue
-            oracle_id = entry["oracle_id"]
-            if oracle_id in ids or oracle_id in self.commander:
-                continue
-            if oracle_id in self.banned:
-                self.dropped.append(f"{name}: banned in Commander")
-                continue
-            colours = entry.get("color_identity")
-            if self.identity is not None and colours is not None and not set(colours) <= self.identity:
-                self.dropped.append(f"{name}: outside the colour identity")
-                continue
-            if oracle_id in self.game_changers and game_changers is not None:
-                if changers >= game_changers:
-                    self.dropped.append(f"{name}: a Game Changer over the bracket's limit")
-                    continue
-                changers += 1
-            role = card.get("role") if card.get("role") in ROLES else "utility"
-            ids.add(oracle_id)
-            kept.append({"name": entry["name"], "oracle_id": oracle_id, "role": role})
-            if len(kept) == limit:
-                break
-        return kept
-
-
-def build_guide(slug: str, name: str, answer: dict, checker: Checker, model: str, now: datetime) -> Tuple[dict, List[str]]:
-    """The guide.json document from Claude's answer, and the warnings it raised; GuideError when it breaks the contract."""
-    warnings: List[str] = []
-    styles, ids = [], set()
-    for style in answer.get("styles") or []:
-        style_name = str(style.get("name", "")).strip()
-        style_id = card_slug(style_name)
-        levels = sorted({level for level in style.get("brackets") or [] if level in BRACKETS})
-        if not style_id or style_id in ids or not levels:
-            warnings.append(f"style {style_name!r} dropped: no name, a repeated name or no bracket")
-            continue
-        cards = checker.cards(style.get("cards") or [], MAX_STYLE_CARDS)
-        if len(cards) < MIN_STYLE_CARDS:
-            warnings.append(f"style {style_id}: {len(cards)} cards after checking, under {MIN_STYLE_CARDS}")
-        ids.add(style_id)
-        styles.append({"id": style_id, "name": style_name, "summary": str(style.get("summary", "")).strip(), "brackets": levels, "cards": cards})
-    if len(styles) < MIN_STYLES:
-        raise GuideError(f"{len(styles)} play styles, under {MIN_STYLES}")
-    if len(styles) > MAX_STYLES:
-        warnings.append(f"{len(styles)} play styles, the first {MAX_STYLES} kept")
-        styles = styles[:MAX_STYLES]
-
-    by_level: Dict[int, dict] = {}
-    for bracket in answer.get("brackets") or []:
-        if bracket.get("level") in BRACKETS:
-            by_level.setdefault(bracket["level"], bracket)
-    missing = [level for level in BRACKETS if level not in by_level]
-    if missing:
-        raise GuideError(f"brackets {missing} missing")
-    limits = {1: 0, 2: 0, 3: BRACKET_3_GAME_CHANGERS}
-    brackets = [
-        {
-            "level": level,
-            "name": BRACKETS[level],
-            "summary": str(by_level[level].get("summary", "")).strip(),
-            "cards": checker.cards(by_level[level].get("cards") or [], MAX_BRACKET_CARDS, limits.get(level)),
-        }
-        for level in BRACKETS
-    ]
-    guide = {
-        "schema": SCHEMA,
-        "slug": slug,
-        "name": name,
-        "generated_at": now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "model": model,
-        "styles": styles,
-        "brackets": brackets,
-    }
-    return guide, warnings
 
 
 def http_json(url: str, headers: Optional[dict] = None) -> Optional[dict]:
@@ -362,55 +74,13 @@ def http_json(url: str, headers: Optional[dict] = None) -> Optional[dict]:
         raise
 
 
-def scryfall_json(url: str) -> Optional[dict]:
-    time.sleep(SCRYFALL_DELAY)
-    return http_json(url, SCRYFALL_HEADERS)
-
-
-def _card_text(card: dict) -> str:
-    faces = card.get("card_faces") or [card]
-    parts = []
-    for face in faces:
-        head = " - ".join(part for part in (face.get("name"), face.get("mana_cost"), face.get("type_line")) if part)
-        parts.append(f"{head}\n{face.get('oracle_text', '')}".strip())
-    return "\n\n".join(parts)
-
-
-def oracle_text(page: dict, fetch: Callable[[str], Optional[dict]] = scryfall_json) -> str:
-    """The commander's oracle text from Scryfall, by EDHREC's printing id, else by name; both halves of a partner pair."""
-    if page.get("scryfall_id"):
-        cards = [fetch(f"{SCRYFALL_API}/cards/{page['scryfall_id']}")]
-    else:
-        names = [half.strip() for half in page["name"].split("//")] if "//" in page["name"] else [page["name"]]
-        cards = [fetch(f"{SCRYFALL_API}/cards/named?exact={urllib.parse.quote(name)}") for name in names]
-    return "\n\n".join(_card_text(card) for card in cards if card)
-
-
-def banned_oracle_ids(fetch: Callable[[str], Optional[dict]] = scryfall_json) -> Set[str]:
-    """The oracle ids of every card banned in Commander, from Scryfall's search."""
-    url: Optional[str] = f"{SCRYFALL_API}/cards/search?q={urllib.parse.quote('banned:commander')}&unique=cards"
-    ids: Set[str] = set()
-    while url:
-        body = fetch(url)
-        if not body:
-            raise GuideError("Scryfall's banned list could not be read")
-        ids.update(card["oracle_id"] for card in body.get("data", []) if card.get("oracle_id"))
-        url = body.get("next_page") if body.get("has_more") else None
-    return ids
-
-
-def commander_identity(page: dict, catalog: Dict[str, dict]) -> Optional[Set[str]]:
-    if page.get("color_identity") is not None:
-        return set(page["color_identity"])
-    halves = [catalog.get(card_slug(half)) for half in page["name"].split("//")]
-    if all(half and "color_identity" in half for half in halves):
-        return {letter for half in halves for letter in half["color_identity"]}
-    return None
-
-
-def commander_ids(page: dict, catalog: Dict[str, dict]) -> Set[str]:
-    names = [page["name"], *page["name"].split("//")]
-    return {entry["oracle_id"] for entry in (catalog.get(card_slug(name)) for name in names) if entry and entry.get("oracle_id")}
+def edhrec_json(url: str) -> Optional[dict]:
+    """An EDHREC page, None when it has none or cannot be read now."""
+    try:
+        return http_json(url, {"User-Agent": EDHREC_USER_AGENT})
+    except (urllib.error.URLError, OSError, ValueError) as error:
+        log.warning("EDHREC %s: %s", url, error)
+        return None
 
 
 class Source:
@@ -428,122 +98,411 @@ class Source:
         return self._fetch(f"{self._data_url}/{path}")
 
 
+def commander_slugs(top: Optional[dict], count: int) -> List[str]:
+    windows = {window: body.get("commanders", []) for window, body in ((top or {}).get("windows") or {}).items()}
+    return top_slugs(windows)[:count]
+
+
+def commander_names(name: str) -> List[str]:
+    return [half.strip() for half in name.split("//")] if "//" in name else [name]
+
+
+def commander_identity(page: dict, catalog: Dict[str, dict]) -> Optional[Set[str]]:
+    if page.get("color_identity") is not None:
+        return set(page["color_identity"])
+    halves = [catalog.get(card_slug(half)) for half in page["name"].split("//")]
+    if all(half and "color_identity" in half for half in halves):
+        return {letter for half in halves for letter in half["color_identity"]}
+    return None
+
+
+def themes(page: dict) -> List[dict]:
+    """The themes that become play styles: EDHREC's with enough decks, most decks first."""
+    return [theme for theme in page.get("themes") or [] if theme.get("decks", 0) >= MIN_SAMPLE][:MAX_STYLES]
+
+
+def fingerprint(page: dict, game_changers: Sequence[dict]) -> str:
+    """What makes a guide due before its week is out: the generator, the commander's themes and the Game Changers."""
+    body = json.dumps({
+        "generator": GENERATOR,
+        "themes": [theme["slug"] for theme in themes(page)],
+        "game_changers": sorted(card["oracle_id"] for card in game_changers),
+    }, sort_keys=True)
+    return hashlib.sha256(body.encode()).hexdigest()[:16]
+
+
+def is_due(entry: Optional[dict], page: dict, digest: str, now: datetime) -> bool:
+    if not entry or entry.get("generator") != GENERATOR or entry.get("fingerprint") != digest:
+        return True
+    try:
+        built = datetime.strptime(entry["built_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except (KeyError, ValueError):
+        return True
+    if now - built >= timedelta(days=REFRESH_DAYS):
+        return True
+    before, decks = entry.get("decks") or 0, page.get("decks") or 0
+    return not before or abs(decks - before) / before >= DECKS_MOVED
+
+
+@dataclass
+class Resolver:
+    """Turns EDHREC's names into the catalog's cards the commander may play, each with its role."""
+
+    catalog: Dict[str, dict]
+    identity: Optional[Set[str]]
+    commanders: Set[str]
+    banned: Set[str] = field(default_factory=set)
+    _cache: Dict[str, Optional[dict]] = field(default_factory=dict)
+
+    def ban(self, names: Set[str]) -> None:
+        self.banned = set(names)
+        self._cache.clear()
+
+    def card(self, name: str) -> Optional[dict]:
+        if name not in self._cache:
+            self._cache[name] = self._resolve(name)
+        return self._cache[name]
+
+    def _resolve(self, name: str) -> Optional[dict]:
+        entry = self.catalog.get(card_slug(name))
+        if not entry or not entry.get("oracle_id") or entry["name"] in self.commanders or name in self.commanders:
+            return None
+        if entry["name"] in self.banned or name in self.banned:
+            return None
+        if (entry.get("type_line") or "").startswith("Basic"):
+            return None
+        colours = entry.get("color_identity")
+        if self.identity is not None and colours is not None and not set(colours) <= self.identity:
+            return None
+        return {**entry, "role": role(entry)}
+
+
+def candidates(scores: Dict[str, Tuple[float, float]], resolver: Resolver) -> List[Candidate]:
+    kept: Dict[str, Candidate] = {}
+    for name, (score, synergy) in scores.items():
+        entry = resolver.card(name)
+        if entry is None or entry["name"] in kept:
+            continue
+        kept[entry["name"]] = Candidate(
+            name=entry["name"],
+            oracle_id=entry["oracle_id"],
+            role=entry["role"],
+            score=score,
+            synergy=synergy,
+            mana_value=entry.get("mana_value") or 0.0,
+            mana_cost=entry.get("mana_cost") or "",
+            price=entry.get("price"),
+        )
+    return list(kept.values())
+
+
+def usable(page: Optional[Page]) -> Optional[Page]:
+    return page if page is not None and page.decks >= MIN_SAMPLE else None
+
+
+def nearest_bracket(sub: SubPages, level: int) -> Optional[Page]:
+    """The bracket's own page when it has enough decks, else the nearest level's that has, the higher on a tie."""
+    for other in sorted(sub.brackets, key=lambda each: (abs(each - level), -each)):
+        page = usable(sub.brackets.get(other))
+        if page is not None:
+            return page
+    return None
+
+
+def scores(base: Page, theme: Page, bracket: Optional[Page]) -> Dict[str, Tuple[float, float]]:
+    """Each card's inclusion in the theme's decks, moved by how much more or less the bracket's decks play it."""
+    names = list(dict.fromkeys([*theme.cards, *(bracket.cards if bracket else {})]))
+    result: Dict[str, Tuple[float, float]] = {}
+    for name in names:
+        overall = base.cards[name].inclusion if name in base.cards else 0.0
+        themed = theme.cards[name].inclusion if name in theme.cards else overall
+        lift = (bracket.cards[name].inclusion - overall) if bracket and name in bracket.cards else 0.0
+        synergy = theme.cards[name].synergy if name in theme.cards else bracket.cards[name].synergy
+        result[name] = (max(0.0, themed + lift), synergy)
+    return result
+
+
+def bracket_split(theme: Page, base: Page) -> Dict[int, int]:
+    """How the theme's decks split by bracket, or the commander's when too few of the theme's say."""
+    return theme.bracket_decks if sum(theme.bracket_decks.values()) >= MIN_SAMPLE else base.bracket_decks
+
+
+def style_levels(split: Dict[int, int]) -> List[int]:
+    """The brackets a style is played at: from the lowest to the highest that holds a tenth of its decks."""
+    total = sum(split.values())
+    levels = [level for level in NAMES if total and split.get(level, 0) / total >= MIN_BRACKET_SHARE]
+    return list(range(min(levels), max(levels) + 1)) if levels else [2, 3]
+
+
+def most_played(split: Dict[int, int], levels: Sequence[int]) -> Optional[int]:
+    played = [level for level in levels if split.get(level)]
+    return max(played, key=lambda level: (split[level], -level)) if played else None
+
+
+def card_json(card: Candidate, role_: Optional[str] = None) -> dict:
+    return {"name": card.name, "oracle_id": card.oracle_id, "role": role_ or card.role}
+
+
+def deck_combos(names: Set[str], pool: Pool, commanders: Set[str]) -> List[dict]:
+    have = names | commanders
+    return [combo for combo in pool.combos if {card["name"] for card in combo["cards"]} <= have]
+
+
+def deck_json(level: int, deck: Deck, pool: Pool, commanders: Set[str], basic_prices: Dict[str, float]) -> dict:
+    """One style's whole deck at one bracket; a spell that is a piece of one of its combos has the `combo` role."""
+    names = {card.name for card in deck.cards}
+    combos = deck_combos(names, pool, commanders)
+    pieces = {card["name"] for combo in combos for card in combo["cards"]}
+    price = sum(card.price or 0.0 for card in deck.cards) + sum(basic_prices.get(color, 0.0) * count for color, count in deck.basics.items())
+    return {
+        "level": level,
+        "name": NAMES[level],
+        "cards": [card_json(card, "combo" if card.name in pieces and not card.is_land else None) for card in deck.cards],
+        "basics": [{"name": BASICS[color], "count": count} for color, count in deck.basics.items()],
+        "lands": sum(1 for card in deck.cards if card.is_land) + sum(deck.basics.values()),
+        "price": round(price, 2),
+        "bracket": deck_bracket(names, pool, commanders),
+        **counts(names, pool),
+        "combos": [combo["id"] for combo in combos],
+    }
+
+
+def build_deck(level: int, base: Page, theme: Page, sub: SubPages, resolver: Resolver, pool: Pool, commanders: Set[str], identity: Sequence[str]) -> Deck:
+    rules = Rules(level, pool, commanders)
+    return fill(
+        candidates(scores(base, theme, nearest_bracket(sub, level)), resolver),
+        slots=100 - len(commanders),
+        identity=identity,
+        nonbasic_lands=(theme.lands - theme.basics) if theme.lands is not None and theme.basics is not None else None,
+        allows=rules.allows,
+        on_add=rules.add,
+    )
+
+
+def lifted(base: Page, page: Page, resolver: Resolver) -> List[Candidate]:
+    """The cards `page`'s decks play more than the commander's decks overall, most lifted first."""
+    lifts = {}
+    for name, card in page.cards.items():
+        overall = base.cards[name].inclusion if name in base.cards else 0.0
+        if card.inclusion - overall > 0:
+            lifts[name] = (card.inclusion - overall, card.synergy)
+    return sorted(candidates(lifts, resolver), key=lambda card: (-card.score, card.name))
+
+
+def signature(base: Page, theme: Page, resolver: Resolver, count: int = SIGNATURE_CARDS) -> List[str]:
+    """The spells the theme's decks play most above the commander's other decks: in a fifth of them, 5 points up."""
+    return [
+        card.name for card in lifted(base, theme, resolver)
+        if card.role != "land" and card.score >= 0.05 and theme.cards.get(card.name) and theme.cards[card.name].inclusion >= 0.2
+    ][:count] if theme is not base else []
+
+
+def bracket_cards(level: int, base: Page, sub: SubPages, resolver: Resolver, pool: Pool, commanders: Set[str]) -> List[Candidate]:
+    """What sets the bracket apart: the cards its decks play more than the commander's decks overall, within its rules."""
+    page = nearest_bracket(sub, level)
+    if page is None:
+        return []
+    rules = Rules(level, pool, commanders)
+    kept: List[Candidate] = []
+    names: Set[str] = set()
+    for card in lifted(base, page, resolver):
+        if not rules.allows(card.name, names):
+            continue
+        rules.add(card.name)
+        names.add(card.name)
+        kept.append(card)
+        if len(kept) == MAX_BRACKET_CARDS:
+            break
+    return kept
+
+
+def pool_names(base: Page, sub: SubPages, resolver: Resolver, limit: int = MAX_POOL) -> List[str]:
+    """Every card the commander's pages name that it may play, the `limit` with the best inclusion on any page."""
+    pages = [base, *(page for page in sub.themes.values() if page), *(page for page in sub.brackets.values() if page)]
+    best: Dict[str, float] = {}
+    for page in pages:
+        for name, card in page.cards.items():
+            entry = resolver.card(name)
+            if entry:
+                best[entry["name"]] = max(best.get(entry["name"], 0.0), card.inclusion)
+    return sorted(sorted(best, key=lambda name: (-best[name], name))[:limit])
+
+
+def basic_prices(catalog: Dict[str, dict]) -> Dict[str, float]:
+    return {color: (catalog.get(card_slug(name)) or {}).get("price") or 0.0 for color, name in BASICS.items()}
+
+
+def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool, resolver: Resolver, now: datetime) -> dict:
+    """The guide.json document for one commander, from its published page, its sub-pages and Spellbook's reading."""
+    base = published_page(page)
+    commanders = set(commander_names(page["name"]))
+    identity = sorted(resolver.identity or set())
+    prices = basic_prices(catalog)
+    chosen = [(theme, themed) for theme in themes(page) if (themed := usable(sub.themes.get(theme["slug"]))) is not None]
+    if not chosen:
+        chosen = [({"slug": "", "name": "Average Deck", "decks": base.decks}, base)]
+    styles, used = [], set()
+    for theme, themed in chosen:
+        split = bracket_split(themed, base)
+        levels = style_levels(split)
+        decks = [deck_json(level, build_deck(level, base, themed, sub, resolver, pool, commanders, identity), pool, commanders, prices) for level in levels]
+        order = {card.name: index for index, card in enumerate(sorted(candidates(scores(base, themed, None), resolver), key=lambda card: (-card.score, -card.synergy, card.name)))}
+        style_cards = sorted((card for card in decks[0]["cards"] if card["role"] != "land"), key=lambda card: order.get(card["name"], len(order)))
+        combo_ids = {each for deck in decks for each in deck["combos"]}
+        combos = [combo for combo in pool.combos if combo["id"] in combo_ids]
+        used |= combo_ids
+        styles.append({
+            "id": card_slug(theme["name"]),
+            "name": theme["name"],
+            "summary": guide_text.style_summary(
+                page["name"], theme["name"], theme["decks"], base.decks, levels, most_played(split, levels),
+                signature(base, themed, resolver), combos[0] if combos else None,
+            ),
+            "brackets": levels,
+            "decks": theme["decks"],
+            "url": f"https://edhrec.com/commanders/{page['slug']}/{theme['slug']}" if theme["slug"] else page.get("url"),
+            "cards": style_cards[:MAX_STYLE_CARDS],
+            "lists": decks,
+        })
+    brackets = []
+    for level, name in NAMES.items():
+        cards = bracket_cards(level, base, sub, resolver, pool, commanders)
+        own = sub.brackets.get(level)
+        decks = base.bracket_decks.get(level) or (own.decks if own else 0)
+        brackets.append({
+            "level": level,
+            "name": name,
+            "summary": guide_text.bracket_summary(page["name"], level, decks, [card.name for card in cards[:3]]),
+            "decks": decks,
+            "cards": [card_json(card) for card in cards],
+        })
+    return {
+        "schema": SCHEMA,
+        "slug": page["slug"],
+        "name": page["name"],
+        "generated_at": now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generator": GENERATOR,
+        "model": None,
+        "decks": base.decks,
+        "url": page.get("url"),
+        "styles": styles,
+        "brackets": brackets,
+        "combos": [combo for combo in pool.combos if combo["id"] in used][:MAX_COMBOS],
+    }
+
+
+def build_one(page: dict, catalog: Dict[str, dict], changer_ids: Set[str], fetch_edhrec, post_spellbook, delay: float, now: datetime) -> Optional[dict]:
+    """One commander's guide; None when Spellbook cannot be read, as its brackets would be guesses."""
+    commanders = commander_names(page["name"])
+    resolver = Resolver(catalog, commander_identity(page, catalog), set(commanders))
+    sub = read_sub_pages(page["slug"], [theme["slug"] for theme in themes(page)], fetch_edhrec, delay)
+    names = pool_names(published_page(page), sub, resolver)
+    pool = find_pool(commanders, names, post_spellbook)
+    if pool is None:
+        return None
+    ours = {name for name in names if resolver.card(name)["oracle_id"] in changer_ids}
+    theirs = pool.game_changers & set(names)
+    if ours != theirs:
+        log.info("Guide %s: Game Changers differ from Spellbook's: only ours %s, only Spellbook's %s", page["slug"], sorted(ours - theirs), sorted(theirs - ours))
+    pool.game_changers = ours
+    resolver.ban(pool.banned)
+    return build_guide(page, sub, catalog, pool, resolver, now)
+
+
+def fresh_page(slug: str, page: dict, fetch_edhrec: Callable[[str], Optional[dict]]) -> dict:
+    """A page published before it carried EDHREC's themes, read again from EDHREC; as it was when EDHREC has none."""
+    body = fetch_edhrec(f"{COMMANDER_URL}/{slug}.json")
+    entry = commander_entry(body, None, slug) if body else None
+    return {**page, **entry, "oracle_ids": page.get("oracle_ids", {})} if entry else page
+
+
 @dataclass
 class Result:
     written: List[str] = field(default_factory=list)
     unchanged: List[str] = field(default_factory=list)
     failed: List[str] = field(default_factory=list)
-    planned: List[Tuple[str, int]] = field(default_factory=list)
-    usage: Usage = field(default_factory=Usage)
-
-
-def commander_slugs(top: Optional[dict], count: int) -> List[str]:
-    windows = {window: body.get("commanders", []) for window, body in ((top or {}).get("windows") or {}).items()}
-    return top_slugs(windows)[:count]
+    deferred: List[str] = field(default_factory=list)
 
 
 def run(
     directory: Path,
     slugs: Sequence[str],
     source: Source,
+    catalog: Dict[str, dict],
     *,
-    client=None,
-    catalog: Optional[Dict[str, dict]] = None,
-    banned: Optional[Set[str]] = None,
-    fetch_oracle: Callable[[dict], str] = oracle_text,
+    fetch_edhrec: Callable[[str], Optional[dict]] = edhrec_json,
+    post_spellbook: Callable[[str, dict], dict] = post_json,
+    limit: Optional[int] = None,
+    delay: float = 1.0,
     force: bool = False,
-    dry_run: bool = False,
+    polish: Optional[Callable[[dict], dict]] = None,
     now: Optional[Callable[[], datetime]] = None,
-    find_combos: Optional[Callable[[dict], List[dict]]] = None,
 ) -> Result:
-    """Asks for the guide of each commander whose input changed, writing each one and the state as it goes."""
+    """Builds the guide of each commander that is due, up to `limit` of them, writing each one and the state as it goes."""
     clock = now or (lambda: datetime.now(timezone.utc))
     game_changers = load_game_changers()
-    system = system_prompt(game_changers)
-    prefix = fingerprint(system)
+    changer_ids = {card["oracle_id"] for card in game_changers}
     state_path = directory / STATE_PATH
     state: Dict[str, dict] = json.loads(state_path.read_text()) if state_path.exists() else {}
-    changer_ids = {card["oracle_id"] for card in game_changers}
     result = Result()
+    due: List[Tuple[str, dict, str]] = []
     for slug in slugs:
         try:
             page = source.read(f"edh/commanders/{slug}.json")
-            if not page or not page.get("name"):
-                raise GuideError("no commander page")
-            message = commander_message(page, fetch_oracle(page))
         except Exception as error:  # noqa: BLE001 - one commander must not stop the others
-            log.error("Guide %s failed: %s", slug, error)
+            log.error("Guide %s: its page could not be read: %s", slug, error)
+            page = None
+        if page and "themes" not in page:
+            page = fresh_page(slug, page, fetch_edhrec)
+        if not page or not page.get("name"):
             result.failed.append(slug)
             continue
-        digest = input_hash(prefix, message)
-        target = directory / "edh" / "commanders" / slug / "guide.json"
-        if not force and state.get(slug, {}).get("hash") == digest:
+        page = {**page, "slug": slug}
+        digest = fingerprint(page, game_changers)
+        if not force and not is_due(state.get(slug), page, digest, clock()):
             result.unchanged.append(slug)
             continue
-        if dry_run:
-            result.planned.append((slug, estimate_tokens(system + json.dumps(TOOL) + message)))
-            continue
-        checker = Checker(catalog or {}, commander_identity(page, catalog or {}), commander_ids(page, catalog or {}), banned or set(), changer_ids)
+        due.append((slug, page, digest))
+    # Never built by this generator first, then the oldest, so a short run still brings every commander round.
+    due.sort(key=lambda item: (state.get(item[0], {}).get("generator") == GENERATOR, state.get(item[0], {}).get("built_at", "")))
+    if limit is not None:
+        result.deferred = [slug for slug, _, _ in due[limit:]]
+        due = due[:limit]
+    for slug, page, digest in due:
         try:
-            answer, response = ask(client, request(system, message))
-            result.usage.add(response.usage)
-            guide, warnings = build_guide(slug, page["name"], answer, checker, response.model, clock())
-        except Exception as error:  # noqa: BLE001 - an API error or a broken answer fails this commander only
-            result.usage.add(getattr(error, "usage", None))
-            log.error("Guide %s failed: %s: %s", slug, type(error).__name__, error)
+            guide = build_one(page, catalog, changer_ids, fetch_edhrec, post_spellbook, delay, clock())
+            if guide is not None and polish is not None:
+                guide = polish(guide)
+        except Exception as error:  # noqa: BLE001 - one commander must not stop the others
+            log.exception("Guide %s failed: %s", slug, error)
+            guide = None
+        if guide is None:
             result.failed.append(slug)
             continue
-        if find_combos is not None:
-            guide = with_combos(guide, find_combos)
-        for warning in warnings:
-            log.warning("Guide %s: %s", slug, warning)
-        if checker.dropped:
-            log.info("Guide %s: dropped %d cards: %s", slug, len(checker.dropped), "; ".join(checker.dropped))
+        target = directory / "edh" / "commanders" / slug / "guide.json"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(guide, ensure_ascii=False, separators=(",", ":")))
-        state[slug] = {"hash": digest, "generated_at": guide["generated_at"], "model": guide["model"]}
+        state[slug] = {"generator": GENERATOR, "fingerprint": digest, "built_at": guide["generated_at"], "decks": page.get("decks") or 0}
+        if guide.get("model"):
+            state[slug]["model"] = guide["model"]
         state_path.parent.mkdir(parents=True, exist_ok=True)
         state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
         result.written.append(f"edh/commanders/{slug}/guide.json")
-        log.info("Guide %s: %d styles", slug, len(guide["styles"]))
+        log.info("Guide %s: %d styles, %d combos", slug, len(guide["styles"]), len(guide["combos"]))
     return result
 
 
-def estimate_tokens(text: str) -> int:
-    """A rough count, about four characters a token, for the dry run; the API's count_tokens is exact but is a call."""
-    return len(text) // 4
-
-
-def _client():
-    """The Anthropic client, with the key from ANTHROPIC_API_KEY and, for a key not scoped to one, the workspace from
-    ANTHROPIC_WORKSPACE_ID; None when the key is not set."""
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        return None
-    import anthropic
-
-    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
-    headers = {"anthropic-workspace-id": workspace} if workspace else None
-    return anthropic.Anthropic(api_key=key, default_headers=headers)
-
-
-def main(
-    argv: Sequence[str],
-    make_client: Callable[[], object] = _client,
-    load_catalog=None,
-    fetch_banned=banned_oracle_ids,
-    fetch_oracle=oracle_text,
-    find_combos: Callable[[dict], List[dict]] = find,
-) -> int:
+def main(argv: Sequence[str], load_catalog=None, fetch_edhrec=edhrec_json, post_spellbook=post_json, make_polisher=None) -> int:
     parser = argparse.ArgumentParser(prog="python -m mtgmeta guides", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket; missing pages are read from DATA_URL")
     parser.add_argument("--top", type=int, default=5, help="the first N commanders of edh/top.json, the week's first (default 5)")
     parser.add_argument("--slug", action="append", default=[], help="a commander's slug, in place of --top; repeatable")
-    parser.add_argument("--force", action="store_true", help="ask again even when the input has not changed")
-    parser.add_argument("--dry-run", action="store_true", help="list what would be asked and its estimated cost; calls nothing")
+    parser.add_argument("--force", action="store_true", help="build again even when the guide is not due")
+    parser.add_argument("--polish", action="store_true", help="have Claude rewrite the summaries as prose (needs ANTHROPIC_API_KEY)")
+    parser.add_argument("--delay", type=float, default=1.0, help="seconds between EDHREC pages (default 1)")
     args = parser.parse_args(list(argv))
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-    for name in ("anthropic", "httpx", "httpx2", "httpcore"):
+    for name in ("anthropic", "httpx", "httpcore"):
         logging.getLogger(name).setLevel(logging.WARNING)
 
     source = Source(args.directory, os.environ.get("DATA_URL", "https://data.mooligan.com"))
@@ -551,42 +510,21 @@ def main(
     if not slugs:
         log.error("No commanders: edh/top.json could not be read")
         return 1
-    client = None
-    if not args.dry_run:
-        client = make_client()
-        if client is None:
-            log.error("ANTHROPIC_API_KEY is not set")
+    polish = None
+    if args.polish:
+        if make_polisher is None:
+            from .guide_polish import make_polisher
+        polish = make_polisher()
+        if polish is None:
+            log.error("--polish needs ANTHROPIC_API_KEY")
             return 2
-    if args.dry_run:
-        catalog, banned = {}, set()
-    else:
-        if load_catalog is None:
-            from .scryfall import card_catalog as load_catalog
-        catalog, banned = load_catalog(), fetch_banned()
+    if load_catalog is None:
+        from .scryfall import card_catalog as load_catalog
     result = run(
-        args.directory,
-        slugs,
-        source,
-        client=client,
-        catalog=catalog,
-        banned=banned,
-        fetch_oracle=fetch_oracle,
-        force=args.force,
-        dry_run=args.dry_run,
-        find_combos=find_combos,
+        args.directory, slugs, source, load_catalog(),
+        fetch_edhrec=fetch_edhrec, post_spellbook=post_spellbook, delay=args.delay, force=args.force, polish=polish,
     )
-
-    if args.dry_run:
-        for slug, tokens in result.planned:
-            print(f"would ask: {slug} (~{tokens} input tokens)")
-        print(f"{len(result.planned)} to ask, {len(result.unchanged)} unchanged")
-    else:
-        usage = result.usage
-        print(
-            f"{len(result.written)} written, {len(result.unchanged)} unchanged, {len(result.failed)} failed; "
-            f"tokens: {usage.input} input, {usage.cache_write} cache write, {usage.cache_read} cache read, {usage.output} output; "
-            f"about ${usage.dollars():.2f}"
-        )
+    print(f"{len(result.written)} written, {len(result.unchanged)} unchanged, {len(result.failed)} failed")
     return 1 if result.failed else 0
 
 

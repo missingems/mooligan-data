@@ -23,7 +23,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `sets/products/{code}.json` | One recent set's sealed products (boxes, boosters, bundles, decks) with TCGplayer's picture, link and price. Sets with no sealed products have no file | `max-age=300` |
 | `sets/mechanics.json` | The keyword abilities, keyword actions and ability words each set introduced, by Scryfall set code, with rules, reminder text and example cards | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
-| `edh/commanders/{slug}/guide.json` | One commander's play styles and its five power brackets, each with its cards, judged by Claude | `max-age=300` |
+| `edh/commanders/{slug}/guide.json` | One commander's play styles (EDHREC's themes), each with a whole deck per bracket it is played at, its five power brackets and its combos, built from EDHREC, Commander Spellbook and Scryfall | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
 | `edh/top.json` | EDHREC's ranked top 100 commanders of the past week and the past month, with each one's share of the window's top 100 decks | `max-age=300` |
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
@@ -34,7 +34,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the sealed products already read for each set (`state/set-products.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the sealed products already read for each set (`state/set-products.json`), what each commander guide was built from and when (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -774,59 +774,88 @@ The `slug` is the one on each card page's `edh.commanders[].slug`, so a card lea
 - **`color_identity`** (`W`, `U`, `B`, `R`, `G`; `[]` is colourless) and **`scryfall_id`** (the printing EDHREC shows for the commander) are EDHREC's, on a page written from 5 October 2026; an older page has neither, and either is `null` when EDHREC has none.
 - **`sections`** are EDHREC's own groupings: `newcards`, `highsynergycards` (which EDHREC renamed `highliftcards`, High Lift Cards, in October 2026), `topcards`, `gamechangers`, then by card type. A card's `decks` of `of_decks` is how many of this commander's decks play it, and `synergy` is EDHREC's synergy score (0.28 means 28 percentage points more than other decks of the same colours would play it).
 - **`average_deck`** is the typical list EDHREC builds for the commander, by card type. Names only, since it is one copy of each apart from basics.
+- **`themes`** are EDHREC's themes (tags) for the commander, most decks first, each `{"slug", "name", "decks"}`: `slug` is the theme's EDHREC page, `https://edhrec.com/commanders/{slug}/{theme slug}`. **`bracket_decks`** counts the commander's decks by the Commander Bracket their builders gave them (`{"1": 154, "2": 3202, …}`; most decks give none). **`lands`** and **`basics`** are the land and basic land counts of EDHREC's average deck. All four are on pages written from 21 October 2026: decode them as optional.
 - **`oracle_ids`** maps the commander's `name`, every card name in `sections` and every name in `average_deck` to its Scryfall oracle id. A name the catalog doesn't know is left out, so the object is `{}` on a page written by a run that couldn't load the catalog, and a page written before 11 October 2026 has none: decode it as optional and look a missing name up by name.
 - Card names here match the `cards/{slug}.json` slug rule, so an app can link straight from a commander's list to a card page.
 - Each run refreshes `EDHREC_COMMANDERS_PER_RUN` commanders (150 by default; the scheduled workflow sets 300, over about 4,200 commanders, so each comes round about every two weeks), longest unchecked first, but the commanders in [`edh/top.json`](#edhtopjson) go first, in their rank order, so each run refreshes them and a commander may otherwise be missing until its first turn. **This is EDHREC's data, used with their permission: credit them and link back to `url`.**
 
 ## `edh/commanders/{slug}/guide.json`
 
-A commander's play styles and what each of Wizards' five Commander Brackets looks like for it. Claude (`claude-sonnet-5-5`) writes it from the commander's oracle text and the card pool of its [`edh/commanders/{slug}.json`](#edhcommandersslugjson), judging the styles and brackets itself: EDHREC's theme and bracket pages are not read. Not every commander has one; a missing file is a 404.
+A commander's play styles and what each of Wizards' five Commander Brackets looks like for it, built from data with no model: EDHREC's theme and bracket pages for the commander, [Commander Spellbook](https://commanderspellbook.com)'s reading of its cards, and Scryfall's catalog. Each style has a whole deck for every bracket it is played at, filled the way the Mooligan app's Commander builder fills one. Not every commander has one; a missing file is a 404.
 
 ```json
 {
   "schema": 1,
   "slug": "atraxa-praetors-voice",
   "name": "Atraxa, Praetors' Voice",
-  "generated_at": "2026-10-20T09:00:00Z",
-  "model": "claude-sonnet-5-5",
+  "generated_at": "2026-10-21T14:40:00Z",
+  "generator": "data-1",
+  "model": null,
+  "decks": 45745,
+  "url": "https://edhrec.com/commanders/atraxa-praetors-voice",
   "styles": [
     {
       "id": "infect",
       "name": "Infect",
-      "summary": "Two or three sentences on the plan and how it wins.",
+      "summary": "Infect is how 3,740 of Atraxa's 45,745 decks on EDHREC are built (8%). It leans on …",
       "brackets": [2, 3, 4],
-      "cards": [{ "name": "Blighted Agent", "oracle_id": "…", "role": "payoff" }]
+      "decks": 3740,
+      "url": "https://edhrec.com/commanders/atraxa-praetors-voice/infect",
+      "cards": [{ "name": "Blighted Agent", "oracle_id": "…", "role": "payoff" }],
+      "lists": [
+        {
+          "level": 3,
+          "name": "Upgraded",
+          "cards": [{ "name": "Smothering Tithe", "oracle_id": "…", "role": "ramp" }],
+          "basics": [{ "name": "Forest", "count": 4 }],
+          "lands": 36,
+          "price": 812.4,
+          "bracket": 3,
+          "game_changers": 3,
+          "mass_land_denial": 0,
+          "extra_turns": 0,
+          "combos": ["1529-5902"]
+        }
+      ]
     }
   ],
   "brackets": [
     {
       "level": 3,
       "name": "Upgraded",
-      "summary": "Two or three sentences on the deck at this bracket.",
+      "summary": "4,033 of Atraxa's decks on EDHREC are built for Bracket 3, Upgraded. Up to three Game Changers, …",
+      "decks": 4033,
       "cards": [{ "name": "Smothering Tithe", "oracle_id": "…", "role": "ramp" }]
     }
   ],
   "combos": [
     {
-      "id": "1529-4256",
-      "cards": [{ "name": "Kinnan, Bonder Prodigy", "oracle_id": "…" }, { "name": "Basalt Monolith", "oracle_id": "…" }],
-      "requires": ["A mana sink"],
-      "results": ["Infinite colorless mana"],
-      "bracket": 4,
-      "bracket_tag": "R"
+      "id": "1529-5902",
+      "cards": [{ "name": "Vraska, Betrayal's Sting", "oracle_id": "…" }, { "name": "Innkeeper's Talent", "oracle_id": "…" }],
+      "requires": [],
+      "results": ["Target opponent loses the game"],
+      "bracket": 3,
+      "bracket_tag": "S",
+      "two_card": true
     }
   ]
 }
 ```
 
-- **`styles`**: 3 to 6 different ways to build the deck, most played first. **`id`** is the slug of **`name`** (the `cards/{slug}.json` rule), unique within the file. **`brackets`** lists every bracket level the style plays well at, ascending, each once (not a range: `[2, 4]` means 2 and 4). **`cards`** are the cards that make the style, the most important first: Claude is asked for 40 to 60 and the file keeps at most 60; after the checks below a style can have fewer than 30, which the run logs.
-- **`brackets`**: always five, levels **1** to **5** in order, with Wizards' names: 1 `Exhibition`, 2 `Core`, 3 `Upgraded`, 4 `Optimized`, 5 `cEDH`. **`cards`** (at most 30) are what set that bracket apart for this commander: the on-theme core at 1 and 2, the upgrades at 3, the high-power additions at 4 and 5. They keep the bracket's Game Changer limit: none at 1 and 2, at most three at 3. The other rules (mass land denial, extra turns, two-card combos, tutors) are in Claude's instructions but not checked card by card.
-- **A card** has **`name`** and **`oracle_id`** as Scryfall's catalog has them (a double-faced card is named with both faces, `"A // B"`), and **`role`**, one of `land`, `ramp`, `draw`, `removal`, `counter`, `wipe`, `protection`, `tutor`, `payoff`, `engine`, `combo`, `utility`. Cards come from the commander's pool or are well-known staples. Every name Claude gives is looked up in the catalog by slug, and dropped when the catalog does not know it, when it is outside the commander's colour identity, when it is banned in Commander (Scryfall's `banned:commander`), when it is the commander itself, or when it repeats a card of the same list.
-- **`combos`**: the combos the guide's cards can assemble, from [Commander Spellbook](https://commanderspellbook.com): every variant its find-my-combos finds whole in a deck of the commander (both halves of a pair) and every card of the guide's styles and brackets, at most 30, the most played first, one per set of cards. A variant is kept when Spellbook marks it OK, not a spoiler, legal in Commander and not banned. **`id`** is Spellbook's variant id (`https://commanderspellbook.com/combo/{id}`). **`cards`** are its pieces, the commander among them when it is one, named and identified as Spellbook has them. **`requires`** names the other pieces it needs, as Spellbook's templates (`"Permanent Castable for {C}"`). **`results`** is what it makes, Spellbook's standalone and contextual features only. **`bracket`** is the lowest Commander Bracket it fits, from Spellbook's **`bracket_tag`** as Spellbook reads its own tags: `E` (Exhibition) 1, `C` (Core) and `O` (Oddball) 2, `P` (Powerful) and `S` (Spicy) 3, `R` (Ruthless) 4. The combos of one style are those whose `cards` are all among the style's cards and the commander. The field is missing when Spellbook could not be read, and empty when it found none. `python -m mtgmeta guide-combos DIR --top N` adds it to the published guides without asking Claude again; `guides` adds it to every guide it writes.
-- **`model`** is the model that wrote it; a refusal can be rerouted to another model by the API, which is then named here. **`generated_at`** is when it was written. `name` is EDHREC's, as on the commander's page.
-- **The Game Changers** are kept in `scraper/mtgmeta/game_changers.json` (53 cards on 20 October 2026, read from Scryfall's `is:gamechanger`, which follows Wizards' list). Update it when Wizards changes the list; a change rewrites every guide on its next run.
-- **When it is written.** `python -m mtgmeta guides DIR --top N` (see the module's docstring; it needs `ANTHROPIC_API_KEY`) writes the guides of the first `N` commanders of [`edh/top.json`](#edhtopjson), the week's first. A commander's guide is asked for again only when what Claude would be sent changes: its oracle text, the names in its pool, a card's share of its decks crossing a tenth (it is sent rounded to the nearest 10%), the instructions, the Game Changers or the model. `state/guides.json` keeps, per slug, a hash of that input with the `generated_at` and `model` of the guide written from it. A guide that fails its checks (fewer than 3 styles, a bracket missing, a refusal, an answer cut off) is not written, and the published one stays.
-- The card pool it is built from is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page.
+- **`styles`**: EDHREC's themes for the commander (its tags) with at least 30 decks, most decks first, at most 5. A commander with none gets one style, `Average Deck` (`id` `average-deck`), built from its own page. **`id`** is the slug of **`name`** (the `cards/{slug}.json` rule). **`decks`** is how many of the commander's decks EDHREC tags with the theme, and **`url`** its EDHREC page (credit them and link to it).
+  - **`brackets`**: the levels from the lowest to the highest that holds a tenth or more of the theme's decks (by the bracket their builders gave them), ascending and with no gaps; the commander's own split stands in when fewer than 30 of the theme's decks give one, and `[2, 3]` when neither does.
+  - **`lists`**: one deck per level of `brackets`, in the same order. **`cards`** are its 99 (98 with a partner pair) less the basics, which **`basics`** counts; a card is listed once. **`lands`** is its land count, basics included. **`price`** is in US dollars, Scryfall's price for each card (its regular printing, else foil, else etched) and the basics, with a card Scryfall has no price for counted as nothing. **`bracket`** is the lowest bracket whose rules the deck keeps, checked as below (a deck built for 5 reads 4: the rules do not tell the two apart). **`game_changers`**, **`mass_land_denial`** and **`extra_turns`** count its cards of each kind. **`combos`** are the ids of the guide's `combos` whose pieces are all in the deck or the commander.
+  - **`cards`**: the spells of the style's lowest deck (no lands), the ones the theme's decks play most first, at most 60. With `brackets` and the guide's bracket `cards`, this is what the app has shown since the AI-written guides; `lists` is the whole deck.
+- **How a deck is filled.** Every card on the theme's EDHREC page and the bracket's is scored by its share of the theme's decks, moved by how much more or less the bracket's decks play it than the commander's decks overall. A bracket page with fewer than 30 decks gives way to the nearest level's that has more (the higher one on a tie). Cards are dropped when Scryfall's catalog does not know them, when they are outside the colour identity, basic lands, the commander itself, or banned in Commander (Spellbook's reading). Then, as the app's builder does (`Core/Networking/Sources/Collection/Builder`): the best 10 ramp, 10 draw, 10 removal or counterspells, 3 board wipes and 3 protection; a land target of 36, one fewer with 12 or more ramp, one more when the spells' average mana value is over 3.5; payoffs, engines, tutors and the rest in the slots left; then the best nonbasic lands, as many as the theme's decks play on average; and basics for the rest, split by the colour pips of the spells' mana costs. A card the bracket's rules refuse is skipped. A colourless commander gets no basics, only more lands and spells.
+- **A card** has **`name`** and **`oracle_id`** as Scryfall's catalog has them (a double-faced card is named with both faces), and **`role`**, one of `land`, `ramp`, `draw`, `removal`, `counter`, `wipe`, `protection`, `tutor`, `payoff`, `engine`, `combo`, `utility`. The role is the app builder's reading of the card's rules text: the first of land, wipe, counter, removal, ramp, tutor, draw, protection, engine (a permanent with "whenever" or "at the beginning of"), payoff (a creature or planeswalker), else utility. In a deck of `lists`, a spell that is a piece of one of the deck's combos is `combo`.
+- **The bracket rules** (Wizards', October 2025), checked card by card as a deck is filled: no Game Changers at 1 and 2, at most three at 3; no mass land denial below 4; no extra turns at 1 and at most two at 2 and 3; and no card that completes a combo whose `bracket` is above the deck's. The Game Changers are `scraper/mtgmeta/game_changers.json`, by oracle id; which cards are mass land denial or extra turns, and which are banned, is Spellbook's estimate-bracket reading of the commander's whole card pool (at most 600 cards, the best by inclusion on any of its pages).
+- **`brackets`**: always five, levels **1** to **5** in order, with Wizards' names: 1 `Exhibition`, 2 `Core`, 3 `Upgraded`, 4 `Optimized`, 5 `cEDH`. **`decks`** is how many of the commander's decks are built for it. **`cards`** (at most 30) set it apart: the cards its decks play more than the commander's decks overall, most lifted first, within the bracket's rules (the nearest bracket page with 30 decks stands in for a smaller one). The app shows a style's deck at a level as the style's `cards` and these.
+- **`combos`**: the combos the guide's decks hold, from Spellbook's estimate-bracket on the commander's card pool, at most 30, the most played first, one per set of cards. A combo is kept when Spellbook marks it OK, not a spoiler, legal in Commander and not banned. **`id`** is Spellbook's variant id (`https://commanderspellbook.com/combo/{id}`). **`cards`** are its pieces, the commander among them when it is one, named and identified as Spellbook has them. **`requires`** names the other pieces it needs, as Spellbook's templates (`"Permanent Castable for {C}"`). **`results`** is what it makes, Spellbook's standalone and contextual features only. **`bracket_tag`** is Spellbook's own tag: `E` (Exhibition), `C` (Core), `O` (Oddball), `P` (Powerful), `S` (Spicy), `R` (Ruthless). **`bracket`** is the lowest bracket it is allowed at: from the tag, `E` 1, `C` and `O` 2, `P` and `S` 3, `R` 4, and at least 3 for a **`two_card`** combo (one Spellbook calls two-card, definitely or arguably), as the brackets allow none below 3. A style's combos are those its `lists` name. A guide written by `guide-combos` (below) has no `two_card`, and its `bracket` is the tag's alone.
+- **`summary`** of a style and of a bracket is written from these numbers by template. `python -m mtgmeta guides … --polish` has Claude (`claude-sonnet-5-5`) rewrite them as prose from the guide's own facts, and changes nothing else; **`model`** is then the model that wrote them, and `null` otherwise. **`generator`** names the build (`data-1`); a change to it rebuilds every guide. **`generated_at`** is when it was built. `name` and `decks` are EDHREC's, as on the commander's page.
+- **The Game Changers** are kept in `scraper/mtgmeta/game_changers.json` (53 cards on 20 October 2026, read from Scryfall's `is:gamechanger`, which follows Wizards' list). Update it when Wizards changes the list; a change rebuilds every guide on its next run.
+- **When it is written.** Each daily run builds the guides of the first 100 commanders of [`edh/top.json`](#edhtopjson) (`GUIDES_TOP`) that are due, at most `GUIDES_PER_RUN` (25) a run, never built first and then the oldest: at most 10 EDHREC pages (up to 5 theme pages and the five bracket pages; the commander's own page is the one the run just wrote), `GUIDE_DELAY` (1) seconds apart, and one Spellbook call each. A guide is due when it was never built by this generator, a week after it was built, when the commander's themes or the Game Changers change, or when its decks have moved by a tenth. `state/guides.json` keeps, per slug, the `generator`, a `fingerprint` of the themes and Game Changers, `built_at`, the `decks` it was built from, and the `model` that polished it. A commander Spellbook cannot be read for this run is not built, and its published guide stays. `python -m mtgmeta guides DIR --top N` (or `--slug`) builds them by hand; `--force` builds them whether due or not. Guides of commanders that leave the top 100 are not removed.
+- `python -m mtgmeta guide-combos DIR --top N` still adds find-my-combos combos to published guides, as it did for the AI-written ones.
+- The card pool it is built from is EDHREC's data, used with their permission: credit them and link to the `url` of the guide and of each style.
 
 ## `edh/top.json`
 

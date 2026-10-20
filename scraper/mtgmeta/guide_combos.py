@@ -30,6 +30,8 @@ MAX_COMBOS = 30
 BRACKETS = {"E": 1, "C": 2, "O": 2, "P": 3, "S": 3, "R": 4}
 # Standalone and contextual results; helper and utility features are steps, not what the combo makes.
 RESULT_STATUSES = {"S", "C"}
+# The brackets allow no two-card combo below 3.
+TWO_CARD_COMBOS_FROM = 3
 
 
 def post_json(url: str, body: dict) -> dict:
@@ -66,10 +68,16 @@ def included(deck: dict, post: Callable[[str, dict], dict] = post_json) -> List[
     return variants
 
 
-def combos(variants: Iterable[dict], limit: int = MAX_COMBOS) -> List[dict]:
-    """The guide's combos from Spellbook's variants: the most played first, one per set of cards."""
+def combos(variants: Iterable[dict], limit: Optional[int] = MAX_COMBOS) -> List[dict]:
+    """The guide's combos from Spellbook's variants: the most played first, one per set of cards.
+
+    A variant can come wrapped as estimate-bracket returns it, `{"combo": variant, "definitelyTwoCard": …}`; a two-card
+    combo that wins or loops is then kept at bracket 3 or above, which the brackets' rules ask.
+    """
     kept, seen = [], set()
-    for variant in sorted(variants, key=lambda each: -(each.get("popularity") or 0)):
+    entries = [each if "combo" in each else {"combo": each} for each in variants]
+    for entry in sorted(entries, key=lambda each: -(each["combo"].get("popularity") or 0)):
+        variant = entry["combo"]
         if variant.get("status") != "OK" or variant.get("spoiler") or not (variant.get("legalities") or {}).get("commander"):
             continue
         tag = variant.get("bracketTag")
@@ -83,14 +91,19 @@ def combos(variants: Iterable[dict], limit: int = MAX_COMBOS) -> List[dict]:
         if not results or key in seen:
             continue
         seen.add(key)
-        kept.append({
+        combo = {
             "id": variant["id"],
             "cards": cards,
             "requires": [each["template"]["name"] for each in variant.get("requires") or []],
             "results": results,
             "bracket": BRACKETS[tag],
             "bracket_tag": tag,
-        })
+        }
+        if "definitelyTwoCard" in entry or "arguablyTwoCard" in entry:
+            combo["two_card"] = bool(entry.get("definitelyTwoCard") or entry.get("arguablyTwoCard"))
+            if combo["two_card"] and entry.get("relevant", True):
+                combo["bracket"] = max(combo["bracket"], TWO_CARD_COMBOS_FROM)
+        kept.append(combo)
         if len(kept) == limit:
             break
     return kept
