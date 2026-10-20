@@ -1,0 +1,113 @@
+{
+ "page": "cards/sir",
+ "url": "https://scryfall.com/sets/sir",
+ "title": "Shadows over Innistrad Remastered: card flavor text",
+ "story_date": "2023-03-21",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Shadows over Innistrad Remastered",
+ "entities": [
+  {
+   "name": "Ashmouth",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Innistrad where hunters go on expeditions and devils make mischief.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Devilthorn Lodge",
+   "type": "faction",
+   "aliases": [],
+   "description": "A lodge of hunters who rely on the cleverness of foxes to counteract devils on expeditions through Ashmouth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Saint Traft",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order that found new strength with Sigarda's support.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose support gave the Order of Saint Traft new strength.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halana",
+   "type": "character",
+   "aliases": [],
+   "description": "A companion of Alena who grew brambles to make a barricade around their camp.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "A trapper of Kessig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Innistrad, home of the trapper Alena.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Order of Saint Traft found new strength through Sigarda's support.",
+   "participants": [
+    "Order of Saint Traft",
+    "Sigarda"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Order of Saint Traft found new strength with Sigarda's support."
+  },
+  {
+   "summary": "Alena recalls that Halana grew a bramble barricade around their camp to keep wolves out, a mistake that nearly cost them dearly.",
+   "participants": [
+    "Alena",
+    "Halana"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Halana grew brambles to create a barricade around our camp, hoping that it would keep the wolves out."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sigarda",
+   "relation": "ally",
+   "target": "Order of Saint Traft",
+   "note": "Sigarda supports the order.",
+   "paragraph": 1,
+   "quote": "The Order of Saint Traft found new strength with Sigarda's support."
+  },
+  {
+   "source": "Alena",
+   "relation": "ally",
+   "target": "Halana",
+   "note": "They shared a camp.",
+   "paragraph": 2,
+   "quote": "Halana grew brambles to create a barricade around our camp"
+  },
+  {
+   "source": "Alena",
+   "relation": "located_in",
+   "target": "Kessig",
+   "note": "Alena is a trapper of Kessig.",
+   "paragraph": 2,
+   "quote": "—Alena, trapper of Kessig"
+  }
+ ],
+ "rejected": []
+}

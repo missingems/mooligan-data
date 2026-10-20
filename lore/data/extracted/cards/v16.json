@@ -1,0 +1,116 @@
+{
+ "page": "cards/v16",
+ "url": "https://scryfall.com/sets/v16",
+ "title": "From the Vault: Lore: card flavor text",
+ "story_date": "2016-08-19",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Speaker who enjoys watching his own 'symphony' play itself out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [
+    "Glissa, the Traitor"
+   ],
+   "description": "Once Mirrodin's brightest hope, now Phyrexia's cruel champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The world that once looked to Glissa as its brightest hope.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "The power whose cruel champion Glissa has become.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "A long-dead figure whose name is still spoken by cultists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who made a funeral pyre of Tolaria for his family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "A place Barrin destroyed as a funeral pyre for his family.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glissa turns from Mirrodin's brightest hope into Phyrexia's cruel champion.",
+   "participants": [
+    "Glissa",
+    "Mirrodin",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Once Mirrodin's brightest hope. Now Phyrexia's cruel champion."
+  },
+  {
+   "summary": "Barrin makes a funeral pyre of Tolaria for his family.",
+   "participants": [
+    "Barrin",
+    "Tolaria"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "For his family, Barrin made a funeral pyre of Tolaria."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Glissa",
+   "relation": "serves",
+   "target": "Phyrexia",
+   "note": "Phyrexia's champion",
+   "paragraph": 3,
+   "quote": "Now Phyrexia's cruel champion."
+  },
+  {
+   "source": "Glissa",
+   "relation": "other",
+   "target": "Mirrodin",
+   "note": "formerly Mirrodin's brightest hope",
+   "paragraph": 3,
+   "quote": "Once Mirrodin's brightest hope."
+  },
+  {
+   "source": "Barrin",
+   "relation": "other",
+   "target": "Tolaria",
+   "note": "destroyed it as a funeral pyre",
+   "paragraph": 6,
+   "quote": "For his family, Barrin made a funeral pyre of Tolaria."
+  }
+ ],
+ "rejected": []
+}

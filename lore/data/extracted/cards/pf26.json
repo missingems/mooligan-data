@@ -1,0 +1,48 @@
+{
+ "page": "cards/pf26",
+ "url": "https://scryfall.com/sets/pf26",
+ "title": "MagicFest 2026: card flavor text",
+ "story_date": "2026-04-13",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard adept quoted dismissing a countered spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jonathan Archer",
+   "type": "character",
+   "aliases": [
+    "Captain Jonathan Archer"
+   ],
+   "description": "A captain who says Starfleet sent his crew, rather than a probe, to explore with their own senses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starfleet",
+   "type": "faction",
+   "aliases": [],
+   "description": "The organization that sent Captain Jonathan Archer and his crew out to explore.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Jonathan Archer",
+   "relation": "member_of",
+   "target": "Starfleet",
+   "note": "Archer says Starfleet sent him and his crew to explore.",
+   "paragraph": 5,
+   "quote": "They sent us, so that we could explore with our own senses."
+  }
+ ],
+ "rejected": []
+}

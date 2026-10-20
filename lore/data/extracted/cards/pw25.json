@@ -1,0 +1,66 @@
+{
+ "page": "cards/pw25",
+ "url": "https://scryfall.com/sets/pw25",
+ "title": "Wizards Play Network 2025: card flavor text",
+ "story_date": "2025-07-25",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Great Conduit",
+   "type": "concept",
+   "aliases": [],
+   "description": "A great flow of power that someone warns cannot be controlled, likened to a river.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glimmervoid",
+   "type": "location",
+   "aliases": [],
+   "description": "A place described as a blank canvas on which to build grand creations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Constructs compared to the Glimmervoid as blank canvases on which to build grand creations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thomas the woodsman",
+   "type": "character",
+   "aliases": [
+    "Thomas"
+   ],
+   "description": "A woodsman whose last words were cut short as he remarked on a creature's big paws.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thomas the woodsman speaks his last words, cut off mid-sentence while remarking on a creature's big paws.",
+   "participants": [
+    "Thomas the woodsman"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "\"My, what big paws y—\" —Thomas the woodsman, last words"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Myr",
+   "relation": "other",
+   "target": "Glimmervoid",
+   "note": "The myr are likened to the Glimmervoid as blank canvases.",
+   "paragraph": 3,
+   "quote": "The myr are like the Glimmervoid: blank canvases on which to build grand creations."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,73 @@
+{
+ "page": "cards/ss2",
+ "url": "https://scryfall.com/sets/ss2",
+ "title": "Signature Spellbook: Gideon: card flavor text",
+ "story_date": "2019-06-28",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Signature Spellbook: Gideon",
+ "entities": [
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A planeswalker hero who trusted Oketra and wields the redeemed Blackblade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oketra",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Amonkhet in whom Gideon placed his trust.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane upon which much befell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [
+    "Blackblade Reforged"
+   ],
+   "description": "A weapon of evil, redeemed in Gideon's hand.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "other",
+   "target": "Oketra",
+   "note": "trusts the god",
+   "paragraph": 3,
+   "quote": "Gideon never believed that his trust in Oketra was misplaced."
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "other",
+   "target": "Blackblade",
+   "note": "wields the weapon",
+   "paragraph": 4,
+   "quote": "A weapon of evil, redeemed in Gideon's hand."
+  },
+  {
+   "source": "Oketra",
+   "relation": "located_in",
+   "target": "Amonkhet",
+   "note": "god of Amonkhet",
+   "paragraph": 3,
+   "quote": "Even after all that befell Amonkhet, Gideon never believed that his trust in Oketra was misplaced."
+  }
+ ],
+ "rejected": []
+}

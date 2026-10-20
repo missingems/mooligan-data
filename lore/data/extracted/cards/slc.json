@@ -1,0 +1,238 @@
+{
+ "page": "cards/slc",
+ "url": "https://scryfall.com/sets/slc",
+ "title": "Secret Lair Countdown: card flavor text",
+ "story_date": "2025-11-03",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gray Merchant of Asphodel",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who seeks to prove that you can take it with you.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [
+    "Ob Nixilis, the Fallen"
+   ],
+   "description": "A figure whose life of desperation is described as quite loud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yarok, the Desecrated",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature whose exploits stalking jungles and quags are recorded by Bala Ged scribes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "A region whose scribes record Yarok's exploits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zo-Zu the Punisher",
+   "type": "character",
+   "aliases": [
+    "Zo-Zu"
+   ],
+   "description": "An akki regarded for his cleverness who makes puns and shoots fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akki",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people among whom Zo-Zu's cleverness is well regarded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shivan Dragon",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon that takes particular glee in tormenting its victims.",
+   "presence": "appears"
+  },
+  {
+   "name": "Squee",
+   "type": "character",
+   "aliases": [
+    "Squee, Goblin Nabob"
+   ],
+   "description": "A goblin mockingly called a general.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tahngarth",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who scoffs at Squee being called general.",
+   "presence": "appears"
+  },
+  {
+   "name": "Genesis",
+   "type": "creature",
+   "aliases": [],
+   "description": "The first being through the Riftstone, who ended the world's lifelessness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riftstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A stone through which Genesis first came.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scroll of Beginnings",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An in-world writing recounting Genesis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dosan",
+   "type": "character",
+   "aliases": [],
+   "description": "A man to whom nature revealed itself as he sat in repose.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction with an army of soldiers and respected mage-priests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Twila",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gilt-Leaf archdruid who urges study of great spirits and lineage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gilt-Leaf",
+   "type": "faction",
+   "aliases": [],
+   "description": "The group of which Twila is archdruid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group whose war beasts send enemies fleeing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [
+    "Thalia, Heretic Cathar"
+   ],
+   "description": "A heretic cathar who says salvation must be earned, not granted by the Lunarch Council.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lunarch Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "A council Thalia says will not grant salvation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Turnipsons",
+   "type": "faction",
+   "aliases": [],
+   "description": "A family whose turn it is in the good soil this week.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dosan sits in repose for hours and nature reveals itself to him.",
+   "participants": [
+    "Dosan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "And as he sat, nature revealed itself to him."
+  },
+  {
+   "summary": "Genesis is the first through the Riftstone, bringing life to the world.",
+   "participants": [
+    "Genesis",
+    "Riftstone"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "\"First through the Riftstone was Genesis—and the world was lifeless no more.\""
+  },
+  {
+   "summary": "Tahngarth mocks the notion of Squee as a general.",
+   "participants": [
+    "Tahngarth",
+    "Squee"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "\"General?!\" Tahngarth roared. \"General *nuisance*, maybe.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zo-Zu the Punisher",
+   "relation": "member_of",
+   "target": "Akki",
+   "note": "",
+   "paragraph": 7,
+   "quote": "His cleverness is well regarded among the akki"
+  },
+  {
+   "source": "Twila",
+   "relation": "leader_of",
+   "target": "Gilt-Leaf",
+   "note": "archdruid",
+   "paragraph": 16,
+   "quote": "—Twila, Gilt-Leaf archdruid"
+  },
+  {
+   "source": "Thalia",
+   "relation": "other",
+   "target": "Lunarch Council",
+   "note": "rejects its authority over salvation",
+   "paragraph": 19,
+   "quote": "\"Salvation will not be granted by the Lunarch Council."
+  },
+  {
+   "source": "Tahngarth",
+   "relation": "other",
+   "target": "Squee",
+   "note": "disdains him",
+   "paragraph": 10,
+   "quote": "\"General *nuisance*, maybe.\""
+  },
+  {
+   "source": "Yarok, the Desecrated",
+   "relation": "located_in",
+   "target": "Bala Ged",
+   "note": "stalks its jungles",
+   "paragraph": 6,
+   "quote": "Bala Ged scribes have stanza upon stanza of its exploits stalking jungles and the mirey quags within."
+  }
+ ],
+ "rejected": []
+}

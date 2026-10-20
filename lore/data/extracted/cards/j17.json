@@ -1,0 +1,141 @@
+{
+ "page": "cards/j17",
+ "url": "https://scryfall.com/sets/j17",
+ "title": "Judge Gift Cards 2017: card flavor text",
+ "story_date": "2017-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who emerged from the Helvault, freed from her prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A silver monolith that imprisoned Avacyn, shattered by an explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jingzhou",
+   "type": "location",
+   "aliases": [],
+   "description": "A province that was the fulcrum of the three kingdoms, coveted and controlled at times by the Wu, the Shu, and the Wei.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wu",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the three kingdoms that coveted and controlled Jingzhou.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shu",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the three kingdoms that coveted and controlled Jingzhou.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wei",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the three kingdoms that coveted and controlled Jingzhou.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaddock Teeg",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure of such great wisdom and spirit that those who meet him describe him as a giant of a man.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Malcator wishes to show that progress doesn't always need teeth or claws.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malcator, Executor of Synthesis",
+   "type": "character",
+   "aliases": [
+    "Malcator"
+   ],
+   "description": "The Executor of Synthesis, who speaks of showing Vorinclex a different kind of progress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pendelhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "A place whose limbs extend as far as the meek roam and reach as high as they strive.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An explosion shatters the Helvault and Avacyn emerges, freed from her prison.",
+   "participants": [
+    "Avacyn",
+    "Helvault"
+   ],
+   "location": "Helvault",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "A thunderous explosion shattered the silver monolith and Avacyn emerged, free from her prison at last."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Avacyn",
+   "relation": "other",
+   "target": "Helvault",
+   "note": "imprisoned in, then freed",
+   "paragraph": 0,
+   "quote": "Avacyn emerged, free from her prison at last."
+  },
+  {
+   "source": "Wu",
+   "relation": "other",
+   "target": "Jingzhou",
+   "note": "coveted and controlled the province at times",
+   "paragraph": 1,
+   "quote": "At separate times it was coveted and controlled by the Wu, the Shu, and the Wei."
+  },
+  {
+   "source": "Shu",
+   "relation": "other",
+   "target": "Jingzhou",
+   "note": "coveted and controlled the province at times",
+   "paragraph": 1,
+   "quote": "At separate times it was coveted and controlled by the Wu, the Shu, and the Wei."
+  },
+  {
+   "source": "Wei",
+   "relation": "other",
+   "target": "Jingzhou",
+   "note": "coveted and controlled the province at times",
+   "paragraph": 1,
+   "quote": "At separate times it was coveted and controlled by the Wu, the Shu, and the Wei."
+  },
+  {
+   "source": "Malcator, Executor of Synthesis",
+   "relation": "other",
+   "target": "Vorinclex",
+   "note": "seeks to prove a different view of progress to him",
+   "paragraph": 5,
+   "quote": "\"Let's show Vorinclex that progress doesn't always need teeth or claws.\""
+  }
+ ],
+ "rejected": []
+}

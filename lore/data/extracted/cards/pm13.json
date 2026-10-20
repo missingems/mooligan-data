@@ -1,0 +1,55 @@
+{
+ "page": "cards/pm13",
+ "url": "https://scryfall.com/sets/pm13",
+ "title": "Magic 2013 Promos: card flavor text",
+ "story_date": "2013-08-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Magic 2013",
+ "entities": [
+  {
+   "name": "Staff of Nin",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A staff attuned to the screams of others so that only its wielder may benefit from their pain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volux",
+   "type": "character",
+   "aliases": [
+    "disciple of Nin"
+   ],
+   "description": "A disciple of Nin who attuned the staff to his victims' screams.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nin",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose disciple is Volux and whose name the Staff of Nin bears.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaddock Teeg",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker who remarks on the dangers of living on a giant's back.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Volux",
+   "relation": "serves",
+   "target": "Nin",
+   "note": "Volux is a disciple of Nin.",
+   "paragraph": 0,
+   "quote": "—Volux, disciple of Nin"
+  }
+ ],
+ "rejected": []
+}

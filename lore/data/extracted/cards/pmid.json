@@ -1,0 +1,201 @@
+{
+ "page": "cards/pmid",
+ "url": "https://scryfall.com/sets/pmid",
+ "title": "Innistrad: Midnight Hunt Promos: card flavor text",
+ "story_date": "2021-09-24",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Innistrad: Midnight Hunt",
+ "entities": [
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "A vampire planeswalker who sensed a plot and raced to his grandfather's resting-crypt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior who takes no joy in violence but cares only for the lives he saves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lier, Disciple of the Drowned",
+   "type": "character",
+   "aliases": [],
+   "description": "A disciple of the Drowned, connected to lost gods stirring beneath the waves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jadar, Ghoulcaller of Nephalia",
+   "type": "character",
+   "aliases": [],
+   "description": "A ghoulcaller who raises the drowned dead from the river to serve him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ormendahl, the Corrupter",
+   "type": "creature",
+   "aliases": [
+    "Ormendahl"
+   ],
+   "description": "A demon who addresses Jerren as a faithful, useful insect.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jerren",
+   "type": "character",
+   "aliases": [],
+   "description": "A faithful servant of Ormendahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "creature",
+   "aliases": [],
+   "description": "An evil being whose legacy lives on through a mask.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mask of Griselbrand",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mask carrying the legacy of Griselbrand's evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tovolar",
+   "type": "character",
+   "aliases": [],
+   "description": "A werewolf whose huntmaster leads a pack that smells fear and despair.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katilda, Dawnhart Prime",
+   "type": "character",
+   "aliases": [
+    "Katilda"
+   ],
+   "description": "A leader of the Dawnhart witches who trusts in Ghrin-Danu after the angels' abandonment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghrin-Danu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A power Katilda says has not abandoned the people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawnhart",
+   "type": "faction",
+   "aliases": [],
+   "description": "A coven of witches who call on nature.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "A province of narrow ravines where howlpacks herd their prey.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "A province associated with rivers and the drowned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falkenrath",
+   "type": "faction",
+   "aliases": [],
+   "description": "A vampire bloodline whose members fight in the arena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel whose name is borne by the Sigardian Savior.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A gothic horror plane where day and night cycles have become unspooled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sorin raced to his grandfather's resting-crypt sensing a plot, but someone else had gotten there first.",
+   "participants": [
+    "Sorin Markov"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Sensing a plot, Sorin raced to his grandfather's resting-crypt. But someone else had gotten there first."
+  },
+  {
+   "summary": "Jadar raises a drowned corpse from the river to serve him.",
+   "participants": [
+    "Jadar, Ghoulcaller of Nephalia"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "\"Rise, my pretty thing. Why rot in the river when you can serve at my bidding?\""
+  },
+  {
+   "summary": "Ormendahl addresses his faithful servant Jerren.",
+   "participants": [
+    "Ormendahl, the Corrupter",
+    "Jerren"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "\"Ah. Jerren. You've been such a faithful, useful insect.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jerren",
+   "relation": "serves",
+   "target": "Ormendahl, the Corrupter",
+   "note": "Ormendahl calls him faithful and useful.",
+   "paragraph": 15,
+   "quote": "\"Ah. Jerren. You've been such a faithful, useful insect.\""
+  },
+  {
+   "source": "Katilda, Dawnhart Prime",
+   "relation": "other",
+   "target": "Ghrin-Danu",
+   "note": "Katilda places her faith in Ghrin-Danu.",
+   "paragraph": 28,
+   "quote": "\"The angels may have abandoned us, but Ghrin-Danu has not.\""
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "Howlpacks herd their prey through Kessig's ravines.",
+   "participants": [],
+   "location": "Kessig",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "Cries of panic echo along Kessig's narrow ravines as howlpacks herd their prey."
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "page": "cards/cm1",
+ "url": "https://scryfall.com/sets/cm1",
+ "title": "Commander's Arsenal: card flavor text",
+ "story_date": "2012-11-02",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Edric, Spymaster of Trest",
+   "type": "character",
+   "aliases": [],
+   "description": "A spymaster who keeps his sources secret and knows the bounties placed on others' heads.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaalia of the Vast",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure sworn to revenge, willing to call on every force from above and below.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [
+    "Mirari sword"
+   ],
+   "description": "A sword that slew a false god on Dominaria and still radiated power afterward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane from which a false god tore the magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vela the Night-Clad",
+   "type": "character",
+   "aliases": [
+    "Vela"
+   ],
+   "description": "A figure who wipes out every trace of Krond's reign, leaving nightfall behind her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krond",
+   "type": "character",
+   "aliases": [],
+   "description": "A ruler whose reign Vela erases.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the past, a false god tore the magic from Dominaria and was slain by the Mirari sword, which still radiates power.",
+   "participants": [
+    "Mirari",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Even after a false god tore the magic from Dominaria, power still radiated from the Mirari sword that slew her."
+  },
+  {
+   "summary": "Vela snuffs out every trace of Krond's reign.",
+   "participants": [
+    "Vela the Night-Clad",
+    "Krond"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Vela snuffs out every trace of Krond's reign, leaving pure nightfall in her wake."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vela the Night-Clad",
+   "relation": "enemy",
+   "target": "Krond",
+   "note": "Vela erases all traces of Krond's reign.",
+   "paragraph": 8,
+   "quote": "Vela snuffs out every trace of Krond's reign"
+  },
+  {
+   "source": "Mirari",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "The Mirari sword radiates power on Dominaria after slaying the false god.",
+   "paragraph": 6,
+   "quote": "Even after a false god tore the magic from Dominaria, power still radiated from the Mirari sword that slew her."
+  }
+ ],
+ "rejected": []
+}

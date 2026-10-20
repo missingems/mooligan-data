@@ -1,0 +1,120 @@
+{
+ "page": "cards/oc13",
+ "url": "https://scryfall.com/sets/oc13",
+ "title": "Commander 2013 Oversized: card flavor text",
+ "story_date": "2013-11-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Commander 2013",
+ "entities": [
+  {
+   "name": "Gahiji, Honored One",
+   "type": "character",
+   "aliases": [
+    "Gahiji"
+   ],
+   "description": "A figure who can stir the gentlest spirit to wild ferocity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mayael the Anima",
+   "type": "character",
+   "aliases": [
+    "Anima"
+   ],
+   "description": "The sacred Anima, whose eyes are blind to all but the grandest truths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nekusar, the Mindrazer",
+   "type": "character",
+   "aliases": [
+    "lich king"
+   ],
+   "description": "A lich king who suffered a brutal death and unnatural rebirth, possibly by his own plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Roon of the Hidden Realm",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who regards time and space as battlefields to be mastered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rubinia Soulsinger",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who speaks of taking up the quill and feeling the future flow into runes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sek'Kuar, Deathkeeper",
+   "type": "character",
+   "aliases": [
+    "Sek'Kuar"
+   ],
+   "description": "A figure the orcs believe still lives in the Karplusan Mountains gathering a dead army for revenge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karplusan Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where the orcs believe Sek'Kuar still lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sharuum the Hegemon",
+   "type": "character",
+   "aliases": [
+    "the hegemon"
+   ],
+   "description": "A hegemon whose audience requires bringing a riddle she has not heard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraximundar",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose name means \"he who paints the earth red.\"",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nekusar, the lich king, died brutally and was unnaturally reborn, leaving his enemies to wonder if it was his plan.",
+   "participants": [
+    "Nekusar, the Mindrazer"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "His enemies wondered if the lich king's brutal death and unnatural rebirth had been his plan all along."
+  },
+  {
+   "summary": "Sek'Kuar is believed by the orcs to be gathering his dead army in the Karplusan Mountains, intent on revenge.",
+   "participants": [
+    "Sek'Kuar, Deathkeeper",
+    "Karplusan Mountains"
+   ],
+   "location": "Karplusan Mountains",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The orcs believe Sek'Kuar still lives in the Karplusan Mountains, gathering his dead army, intent on revenge."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sek'Kuar, Deathkeeper",
+   "relation": "located_in",
+   "target": "Karplusan Mountains",
+   "note": "Believed by the orcs to still live there.",
+   "paragraph": 5,
+   "quote": "The orcs believe Sek'Kuar still lives in the Karplusan Mountains"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,187 @@
+{
+ "page": "cards/pfrf",
+ "url": "https://scryfall.com/sets/pfrf",
+ "title": "Fate Reforged Promos: card flavor text",
+ "story_date": "2015-01-23",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Fate Reforged",
+ "entities": [
+  {
+   "name": "Daghatar the Adamant",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior who speaks of victories protecting generations and of family as a weapon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mytha",
+   "type": "character",
+   "aliases": [],
+   "description": "A Temur shaman who speaks of shaping ice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temur",
+   "type": "faction",
+   "aliases": [],
+   "description": "A clan of Tarkir to which the shaman Mytha belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A being whose whispered summons led Sarkhan Vol to his primal battle with Nicol Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Led by Ugin's whispered summons to witness the battle between Ugin and Nicol Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "A being who fought Ugin in a primal battle that sealed Tarkir's fate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The world whose fate was sealed by the battle between Ugin and Nicol Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alesha, Who Smiles at Death",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior who urges greeting death with sword in hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka",
+   "type": "creature",
+   "aliases": [
+    "Atarka, World Render"
+   ],
+   "description": "A dragon whose limitless hunger could consume all of Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yasova Dragonclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker who warns of Atarka's hunger.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dromoka",
+   "type": "creature",
+   "aliases": [
+    "Dromoka, the Eternal"
+   ],
+   "description": "A dragon that has shattered countless weapons meant to slay her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojutai",
+   "type": "creature",
+   "aliases": [
+    "Ojutai, Soul of Winter"
+   ],
+   "description": "A dragon whom Shu Yun battled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shu Yun, the Silent Tempest",
+   "type": "character",
+   "aliases": [],
+   "description": "A fighter who battled Ojutai and realized his learning had only begun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silumgar",
+   "type": "creature",
+   "aliases": [
+    "Silumgar, the Drifting Death"
+   ],
+   "description": "A dragon described as pure, sweeping death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tasigur, the Golden Fang",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker who describes Silumgar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ugin's summons lead Sarkhan Vol to witness the primal battle between Ugin and Nicol Bolas, which seals Tarkir's fate.",
+   "participants": [
+    "Ugin",
+    "Sarkhan Vol",
+    "Nicol Bolas",
+    "Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Ugin's whispered summons led Sarkhan Vol to the moment that would echo down the centuries and seal Tarkir's fate: the primal battle between Ugin and Nicol Bolas."
+  },
+  {
+   "summary": "Shu Yun recalls battling Ojutai.",
+   "participants": [
+    "Shu Yun, the Silent Tempest",
+    "Ojutai"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "When I battled Ojutai, I realized my learning had only begun."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mytha",
+   "relation": "member_of",
+   "target": "Temur",
+   "note": "",
+   "paragraph": 3,
+   "quote": "—Mytha, Temur shaman"
+  },
+  {
+   "source": "Ugin",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "They fought a primal battle.",
+   "paragraph": 5,
+   "quote": "the primal battle between Ugin and Nicol Bolas."
+  },
+  {
+   "source": "Shu Yun, the Silent Tempest",
+   "relation": "enemy",
+   "target": "Ojutai",
+   "note": "Battled Ojutai.",
+   "paragraph": 13,
+   "quote": "When I battled Ojutai, I realized my learning had only begun."
+  },
+  {
+   "source": "Atarka",
+   "relation": "located_in",
+   "target": "Tarkir",
+   "note": "",
+   "paragraph": 11,
+   "quote": "Left unchecked, she would feast on all of Tarkir."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,546 @@
+{
+ "page": "cards/pltr",
+ "url": "https://scryfall.com/sets/pltr",
+ "title": "Tales of Middle-earth Promos: card flavor text",
+ "story_date": "2023-06-23",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Tales of Middle-earth",
+ "entities": [
+  {
+   "name": "Peregrin Took",
+   "type": "character",
+   "aliases": [
+    "Pippin"
+   ],
+   "description": "A Hobbit of the Shire who leads the Tooks at the Battle of Bywater and swears fealty to Gondor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meriadoc Brandybuck",
+   "type": "character",
+   "aliases": [
+    "Merry"
+   ],
+   "description": "A Hobbit of the Shire who fights the ruffians at Bywater.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Tooks",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Hobbit family who march into the Battle of Bywater.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Bywater",
+   "type": "event",
+   "aliases": [],
+   "description": "A battle in which Hobbits fight ruffians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aragorn",
+   "type": "character",
+   "aliases": [],
+   "description": "A great lord, bearer of the reforged blade, who plants the new White Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boromir",
+   "type": "character",
+   "aliases": [],
+   "description": "A man of Minas Tirith who bids Aragorn save his people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minas Tirith",
+   "type": "location",
+   "aliases": [
+    "the City"
+   ],
+   "description": "The city of Boromir's people, with the White Tree in its courts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "White Tree",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The tree of the courts of the kings, newly planted by Aragorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The One Ring",
+   "type": "artifact",
+   "aliases": [
+    "the Ring"
+   ],
+   "description": "Sauron's Ring, cut from his hand by Isildur and later worn by Frodo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mordor",
+   "type": "location",
+   "aliases": [],
+   "description": "The land that fears Aragorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Legolas",
+   "type": "character",
+   "aliases": [],
+   "description": "An Elf who speaks of Aragorn's greatness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goldberry",
+   "type": "character",
+   "aliases": [],
+   "description": "The River-Daughter who welcomes guests under Tom Bombadil's roof.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tom Bombadil",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of the house where Goldberry welcomes guests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rangers of Ithilien",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rangers who set out to ambush the Men of Harad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Men of Harad",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemies ambushed by the Rangers of Ithilien.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isengard",
+   "type": "location",
+   "aliases": [],
+   "description": "Once full of trees, barren in Saruman's latter days.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saruman",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard whose rule left Isengard barren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isildur",
+   "type": "character",
+   "aliases": [],
+   "description": "The man who cut the Ring from Sauron's hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sauron",
+   "type": "character",
+   "aliases": [],
+   "description": "The Dark Lord, maker of the Ring, overthrown by Isildur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Frodo Baggins",
+   "type": "character",
+   "aliases": [
+    "Frodo"
+   ],
+   "description": "A Hobbit who puts on the Ring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nazgûl",
+   "type": "faction",
+   "aliases": [],
+   "description": "Servants of Sauron who besieged Gandalf on Weathertop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weathertop",
+   "type": "location",
+   "aliases": [],
+   "description": "A hill where Gandalf was besieged by the Nazgûl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gandalf",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who fought the Nazgûl at Weathertop and the Balrog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Éomer",
+   "type": "character",
+   "aliases": [],
+   "description": "Marshal of Rohan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rohan",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom of the House of Eorl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fangorn",
+   "type": "character",
+   "aliases": [
+    "Treebeard"
+   ],
+   "description": "An Ent, shepherd of trees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ents",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tree-shepherds who march on Isengard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doors of Durin",
+   "type": "location",
+   "aliases": [],
+   "description": "The gates of Moria opened by the password 'friend'.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Éowyn",
+   "type": "character",
+   "aliases": [],
+   "description": "A fearless knight of the House of Eorl.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Eorl",
+   "type": "faction",
+   "aliases": [],
+   "description": "The royal house of Rohan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Faramir",
+   "type": "character",
+   "aliases": [],
+   "description": "Prince of Ithilien who wishes to see Minas Tirith in peace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balrog",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature driven back by white fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Galadriel",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven lady of Lothlórien who passes the test and will go into the West.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lothlórien",
+   "type": "location",
+   "aliases": [],
+   "description": "Galadriel's realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lotho",
+   "type": "character",
+   "aliases": [],
+   "description": "A corrupt Shirriff blamed by Pippin for the Shire's wrongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Shire",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of the Hobbits, with deep soil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gondor",
+   "type": "location",
+   "aliases": [],
+   "description": "The realm to which Pippin swears fealty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Horn of the Mark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A horn that sets fear in enemies and joy in friends.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phial of Galadriel",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A gift meant to be a light in dark places.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barad-dûr",
+   "type": "location",
+   "aliases": [],
+   "description": "A fortress from whose gates none return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mines of Moria",
+   "type": "location",
+   "aliases": [
+    "Moria"
+   ],
+   "description": "The wonder of the Northern world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glóin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dwarf who praises Moria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rivendell",
+   "type": "location",
+   "aliases": [],
+   "description": "A fair valley where Aragorn's heart dwells.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elbereth Gilthoniel",
+   "type": "deity",
+   "aliases": [],
+   "description": "The figure invoked in an Elven chorus.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pippin leads the Tooks into the Battle of Bywater, giving Merry enough Hobbits to deal with the ruffians.",
+   "participants": [
+    "Peregrin Took",
+    "The Tooks",
+    "Meriadoc Brandybuck"
+   ],
+   "location": "The Shire",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "The Tooks marched in with Pippin at their head."
+  },
+  {
+   "summary": "Boromir bids Aragorn farewell and asks him to save his people at Minas Tirith.",
+   "participants": [
+    "Boromir",
+    "Aragorn"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "\"Farewell, Aragorn! Go to Minas Tirith and save my people!\""
+  },
+  {
+   "summary": "Isildur cuts the Ring from Sauron's hand, and Sauron is overthrown.",
+   "participants": [
+    "Isildur",
+    "Sauron",
+    "The One Ring"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Isildur cut the Ring from Sauron's hand with the hilt-shard of his father's sword, and Sauron himself was overthrown."
+  },
+  {
+   "summary": "Gandalf is besieged by the Nazgûl on Weathertop.",
+   "participants": [
+    "Gandalf",
+    "Nazgûl"
+   ],
+   "location": "Weathertop",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "\"The Nazgûl closed round at night, and I was besieged."
+  },
+  {
+   "summary": "The Balrog is driven back by white fire.",
+   "participants": [
+    "Balrog"
+   ],
+   "location": "Mines of Moria",
+   "importance": "minor",
+   "paragraph": 23,
+   "quote": "There was a ringing clash and a stab of white fire, and the Balrog fell back."
+  },
+  {
+   "summary": "Frodo puts on the Ring and Sauron becomes aware of his folly.",
+   "participants": [
+    "Frodo Baggins",
+    "Sauron",
+    "The One Ring"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "As Frodo put on the Ring, Sauron was suddenly aware of the magnitude of his own folly."
+  },
+  {
+   "summary": "The Ents march on Isengard.",
+   "participants": [
+    "Ents"
+   ],
+   "location": "Isengard",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "\"To Isengard with doom we come! With doom we come, with doom we come!\""
+  },
+  {
+   "summary": "Galadriel passes the test and resolves to go into the West.",
+   "participants": [
+    "Galadriel"
+   ],
+   "location": "Lothlórien",
+   "importance": "major",
+   "paragraph": 24,
+   "quote": "\"I pass the test. I will diminish, and go into the West, and remain Galadriel.\""
+  },
+  {
+   "summary": "Pippin swears fealty to Gondor.",
+   "participants": [
+    "Peregrin Took",
+    "Gondor"
+   ],
+   "location": "Minas Tirith",
+   "importance": "major",
+   "paragraph": 27,
+   "quote": "\"Here do I swear fealty to Gondor, until my lord release me, or death take me.\""
+  },
+  {
+   "summary": "Aragorn plants the new White Tree in the court by the fountain.",
+   "participants": [
+    "Aragorn",
+    "White Tree"
+   ],
+   "location": "Minas Tirith",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Aragorn planted the new tree in the court by the fountain, and swiftly and gladly it began to grow."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Peregrin Took",
+   "relation": "leader_of",
+   "target": "The Tooks",
+   "note": "Led them at Bywater",
+   "paragraph": 0,
+   "quote": "The Tooks marched in with Pippin at their head."
+  },
+  {
+   "source": "Boromir",
+   "relation": "ally",
+   "target": "Aragorn",
+   "note": "",
+   "paragraph": 1,
+   "quote": "\"Farewell, Aragorn! Go to Minas Tirith and save my people!\""
+  },
+  {
+   "source": "Mordor",
+   "relation": "enemy",
+   "target": "Aragorn",
+   "note": "Mordor fears him",
+   "paragraph": 3,
+   "quote": "Not for naught does Mordor fear him."
+  },
+  {
+   "source": "Goldberry",
+   "relation": "other",
+   "target": "Tom Bombadil",
+   "note": "Lives under his roof",
+   "paragraph": 4,
+   "quote": "For tonight you are under the roof of Tom Bombadil."
+  },
+  {
+   "source": "Rangers of Ithilien",
+   "relation": "enemy",
+   "target": "Men of Harad",
+   "note": "",
+   "paragraph": 7,
+   "quote": "to ambush the Men of Harad."
+  },
+  {
+   "source": "Saruman",
+   "relation": "located_in",
+   "target": "Isengard",
+   "note": "",
+   "paragraph": 8,
+   "quote": "no green thing grew there in the latter days of Saruman."
+  },
+  {
+   "source": "Isildur",
+   "relation": "enemy",
+   "target": "Sauron",
+   "note": "Overthrew him",
+   "paragraph": 10,
+   "quote": "Isildur cut the Ring from Sauron's hand"
+  },
+  {
+   "source": "Gandalf",
+   "relation": "enemy",
+   "target": "Nazgûl",
+   "note": "",
+   "paragraph": 12,
+   "quote": "\"The Nazgûl closed round at night, and I was besieged."
+  },
+  {
+   "source": "Fangorn",
+   "relation": "member_of",
+   "target": "Ents",
+   "note": "",
+   "paragraph": 18,
+   "quote": "\"I am an Ent."
+  },
+  {
+   "source": "Éowyn",
+   "relation": "member_of",
+   "target": "House of Eorl",
+   "note": "",
+   "paragraph": 21,
+   "quote": "\"Am I not of the House of Eorl?"
+  },
+  {
+   "source": "Peregrin Took",
+   "relation": "serves",
+   "target": "Gondor",
+   "note": "Sworn fealty",
+   "paragraph": 27,
+   "quote": "\"Here do I swear fealty to Gondor"
+  },
+  {
+   "source": "Galadriel",
+   "relation": "located_in",
+   "target": "Lothlórien",
+   "note": "",
+   "paragraph": 24,
+   "quote": "I will diminish, and go into the West, and remain Galadriel."
+  }
+ ],
+ "rejected": []
+}

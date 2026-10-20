@@ -1,0 +1,207 @@
+{
+ "page": "wiki/varena",
+ "url": "https://mtg.wiki/page/Varena",
+ "title": "Varena",
+ "story_date": "",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Varena",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the best fighters in the House of Fentesk in Kush on Dominaria, a ninth-rank fighter who later became the Grand Master of the Arena.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Fentesk",
+   "type": "faction",
+   "aliases": [],
+   "description": "A fighting house in Kush on Dominaria to which Varena belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Dominaria where the House of Fentesk is based.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kush is located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "A period after which Varena became Grand Master of the Arena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arena",
+   "type": "location",
+   "aliases": [],
+   "description": "The fighting arena of which Varena became Grand Master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garth",
+   "type": "character",
+   "aliases": [],
+   "description": "A fighter whose power Varena was tasked to test; he became her lover and friend and was forced to kill her in the festival's last match.",
+   "presence": "appears"
+  },
+  {
+   "name": "Norreen",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman with whom Varena had a strange friendship and rivalry.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who held Garth in his prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hammen",
+   "type": "character",
+   "aliases": [],
+   "description": "The one who revived Varena after her death.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Varena is tasked by her House Master to test Garth's power and becomes his lover and friend.",
+   "participants": [
+    "Varena",
+    "Garth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Varena was tasked by her House Master to test Garth 's power, then quickly became his lover and friend"
+  },
+  {
+   "summary": "Varena helps rescue Garth from Zarel's prison.",
+   "participants": [
+    "Varena",
+    "Garth",
+    "Zarel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She helped rescue Garth from Zarel 's prison."
+  },
+  {
+   "summary": "In the last match of the festival, Garth is forced to kill Varena.",
+   "participants": [
+    "Garth",
+    "Varena"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "In the last match of the festival, she was paired against Garth, who was forced to kill her."
+  },
+  {
+   "summary": "Hammen revives Varena.",
+   "participants": [
+    "Hammen",
+    "Varena"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Luckily, she was revived by Hammen ."
+  },
+  {
+   "summary": "Varena becomes the new Grand Master of the Arena.",
+   "participants": [
+    "Varena"
+   ],
+   "location": "Arena",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She later became the new Grand Master of the Arena ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Varena",
+   "relation": "member_of",
+   "target": "House of Fentesk",
+   "note": "One of its best fighters",
+   "paragraph": 0,
+   "quote": "Varena was one of the best fighters in the House of Fentesk in Kush on Dominaria ."
+  },
+  {
+   "source": "Varena",
+   "relation": "romantic",
+   "target": "Garth",
+   "note": "Lover and friend",
+   "paragraph": 2,
+   "quote": "then quickly became his lover and friend"
+  },
+  {
+   "source": "Varena",
+   "relation": "other",
+   "target": "Norreen",
+   "note": "Strange friendship and rivalry",
+   "paragraph": 2,
+   "quote": "this created a strange friendship and rivalry with Norreen ."
+  },
+  {
+   "source": "Garth",
+   "relation": "killed",
+   "target": "Varena",
+   "note": "Forced to kill her in the festival's last match; she was later revived",
+   "paragraph": 2,
+   "quote": "In the last match of the festival, she was paired against Garth, who was forced to kill her."
+  },
+  {
+   "source": "Varena",
+   "relation": "leader_of",
+   "target": "Arena",
+   "note": "Grand Master of the Arena",
+   "paragraph": 0,
+   "quote": "After the Time of Troubles , she became the Grand Master of the Arena."
+  },
+  {
+   "source": "House of Fentesk",
+   "relation": "located_in",
+   "target": "Kush",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Varena was one of the best fighters in the House of Fentesk in Kush on Dominaria ."
+  },
+  {
+   "source": "Kush",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Varena was one of the best fighters in the House of Fentesk in Kush on Dominaria ."
+  },
+  {
+   "source": "Zarel",
+   "relation": "enemy",
+   "target": "Garth",
+   "note": "Held Garth in his prison",
+   "paragraph": 2,
+   "quote": "She helped rescue Garth from Zarel 's prison."
+  }
+ ],
+ "rejected": []
+}

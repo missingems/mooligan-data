@@ -1,0 +1,197 @@
+{
+ "page": "cards/peld",
+ "url": "https://scryfall.com/sets/peld",
+ "title": "Throne of Eldraine Promos: card flavor text",
+ "story_date": "2019-10-04",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Throne of Eldraine",
+ "entities": [
+  {
+   "name": "Linden, the Steadfast Queen",
+   "type": "character",
+   "aliases": [],
+   "description": "A queen who vows to defend the realm until her last breath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gadwick, the Wizened",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose name is spoken only in whispers, yet who hears it just the same.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayara, First of Locthwain",
+   "type": "character",
+   "aliases": [],
+   "description": "A noblewoman of Locthwain whose mourning shifts seamlessly to celebration as she chooses her next suitor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torbran, Thane of Red Fell",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarf thane. His flavor text says a dwarf's grudge runs deeper than the mountains' roots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ceri",
+   "type": "character",
+   "aliases": [
+    "royal mirrorkeeper"
+   ],
+   "description": "The royal mirrorkeeper, who says the Mirror reveals a person's soul's essence.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mirror",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mirror that reveals a person's soul's essence once they share their darkest secret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ardenvale",
+   "type": "location",
+   "aliases": [
+    "Castle Ardenvale"
+   ],
+   "description": "A court of the realm whose aspirants must step through the flame. Its loyalty keeps the realm from devouring itself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Embereth",
+   "type": "location",
+   "aliases": [
+    "Castle Embereth"
+   ],
+   "description": "A court of the realm whose courage keeps the realm from faltering.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garenbrig",
+   "type": "location",
+   "aliases": [
+    "Castle Garenbrig"
+   ],
+   "description": "A court of the realm whose strength keeps the wilds at bay. Ennor was cast out of it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Locthwain",
+   "type": "location",
+   "aliases": [
+    "Castle Locthwain"
+   ],
+   "description": "A court of the realm whose persistence keeps the realm from stagnating.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vantress",
+   "type": "location",
+   "aliases": [
+    "Castle Vantress"
+   ],
+   "description": "A court of the realm whose knowledge keeps the realm out of darkness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blacklances",
+   "type": "faction",
+   "aliases": [],
+   "description": "Knights who travel deep into the wilds, sometimes for years, searching for the lost Cauldron of Eternity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cauldron of Eternity",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A lost cauldron that the Blacklances seek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ellwen",
+   "type": "character",
+   "aliases": [],
+   "description": "A person kept in a guarded chamber who vanished overnight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ennor",
+   "type": "character",
+   "aliases": [],
+   "description": "A man cast out of Garenbrig for his crimes who used fae magic to make a weapon for his revenge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Legend of the Gilded Knights",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An in-world written tale about the Gilded Knights.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ellwen, locked in her chamber by the guards, vanishes overnight.",
+   "participants": [
+    "Ellwen"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "By morning, the fire was out and Ellwen was gone."
+  },
+  {
+   "summary": "Ennor is cast out of Garenbrig for his crimes and turns to fae magic to fashion a weapon for his revenge.",
+   "participants": [
+    "Ennor"
+   ],
+   "location": "Garenbrig",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "Cast out of Garenbrig for his crimes, Ennor turned to fae magic to fashion the perfect weapon for his revenge."
+  },
+  {
+   "summary": "The Blacklances travel into the wilds for years in search of the lost Cauldron of Eternity.",
+   "participants": [
+    "Blacklances",
+    "Cauldron of Eternity"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "The Blacklances travel deep into the wilds, sometimes for years at a time, in search of the lost Cauldron of Eternity."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ceri",
+   "relation": "other",
+   "target": "The Mirror",
+   "note": "keeper of the Mirror",
+   "paragraph": 6,
+   "quote": "—Ceri, royal mirrorkeeper"
+  },
+  {
+   "source": "Ennor",
+   "relation": "enemy",
+   "target": "Garenbrig",
+   "note": "cast out and seeking revenge",
+   "paragraph": 23,
+   "quote": "Cast out of Garenbrig for his crimes, Ennor turned to fae magic to fashion the perfect weapon for his revenge."
+  },
+  {
+   "source": "Blacklances",
+   "relation": "other",
+   "target": "Cauldron of Eternity",
+   "note": "searching for it",
+   "paragraph": 9,
+   "quote": "in search of the lost Cauldron of Eternity."
+  }
+ ],
+ "rejected": []
+}

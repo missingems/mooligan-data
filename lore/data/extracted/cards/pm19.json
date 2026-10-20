@@ -1,0 +1,225 @@
+{
+ "page": "cards/pm19",
+ "url": "https://scryfall.com/sets/pm19",
+ "title": "Core Set 2019 Promos: card flavor text",
+ "story_date": "2018-07-13",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Core Set 2019",
+ "entities": [
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who reflects on his past ambitions as only first steps toward a greater future.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who grafted the Planar Bridge into himself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Bridge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device Tezzeret grafted into his body, causing his spark to flare across the Multiverse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multiverse",
+   "type": "concept",
+   "aliases": [],
+   "description": "The totality of planes, which the Great Mending healed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "An elder dragon whose power was unraveled by the Great Mending and who sought to be restored to his former glory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "The event that healed the Multiverse and unraveled Nicol Bolas's power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isareth the Awakener",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer who raises the dead to work.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane a speaker intends to claim as a throne once intruders are gone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A scholar who calls the alpine moon a rare and fascinating phenomenon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "One who sees the dragon as the purest expression of life's savage splendor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [],
+   "description": "An enthusiastic observer of great beasts such as the Gigantosaurus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "An empire whose most sacred sites are guarded by more than prayers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malcolm",
+   "type": "character",
+   "aliases": [],
+   "description": "Navigator of the Belligerent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belligerent",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A ship on which Malcolm serves as navigator.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [
+    "Palladia-Mors, the Ruiner"
+   ],
+   "description": "An elder dragon, sister of Nicol Bolas and survivor of the Elder Dragon War, the most vicious of her kin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elder Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war that Palladia-Mors survived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goreclaw",
+   "type": "creature",
+   "aliases": [
+    "Goreclaw, Terror of Qal Sisma"
+   ],
+   "description": "A fearsome beast called the Terror of Qal Sisma, whose name has an untold origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qal Sisma",
+   "type": "location",
+   "aliases": [],
+   "description": "A region terrorized by Goreclaw.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tezzeret recalls grafting the Planar Bridge into himself, feeling his spark flare beyond his body.",
+   "participants": [
+    "Tezzeret",
+    "Planar Bridge",
+    "Multiverse"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "When I grafted the Planar Bridge into myself, I felt my Planeswalker spark flare beyond my body."
+  },
+  {
+   "summary": "The Great Mending healed the Multiverse but unraveled Nicol Bolas's power.",
+   "participants": [
+    "Great Mending",
+    "Nicol Bolas",
+    "Multiverse"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "The Great Mending that healed the Multiverse also unraveled the threads of Nicol Bolas's power."
+  },
+  {
+   "summary": "Nicol Bolas works tirelessly to restore himself to his former glory.",
+   "participants": [
+    "Nicol Bolas"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "Nicol Bolas would not rest until he was restored to his former glory."
+  },
+  {
+   "summary": "Palladia-Mors survived the Elder Dragon War.",
+   "participants": [
+    "Palladia-Mors",
+    "Elder Dragon War"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 38,
+   "quote": "Survivor of the Elder Dragon War."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Palladia-Mors",
+   "relation": "family",
+   "target": "Nicol Bolas",
+   "note": "Sister",
+   "paragraph": 38,
+   "quote": "Sister of Nicol Bolas."
+  },
+  {
+   "source": "Malcolm",
+   "relation": "member_of",
+   "target": "Belligerent",
+   "note": "Navigator of the ship",
+   "paragraph": 37,
+   "quote": "—Malcolm, navigator of the *Belligerent*"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "other",
+   "target": "Planar Bridge",
+   "note": "Grafted it into his body",
+   "paragraph": 10,
+   "quote": "When I grafted the Planar Bridge into myself"
+  },
+  {
+   "source": "Goreclaw",
+   "relation": "other",
+   "target": "Qal Sisma",
+   "note": "Known as its terror",
+   "paragraph": 33,
+   "quote": "You don't want to know how she got that name."
+  }
+ ],
+ "rejected": []
+}

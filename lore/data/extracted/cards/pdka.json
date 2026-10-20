@@ -1,0 +1,99 @@
+{
+ "page": "cards/pdka",
+ "url": "https://scryfall.com/sets/pdka",
+ "title": "Dark Ascension Promos: card flavor text",
+ "story_date": "2012-01-28",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Dark Ascension",
+ "entities": [
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and necromancer who claims more power than Innistrad's ghoulcallers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose ghoulcallers create undead creations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tovolar",
+   "type": "character",
+   "aliases": [],
+   "description": "A werewolf master addressed by a Mondronen shaman, asked to gather the howlpack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hunter's Moon",
+   "type": "event",
+   "aliases": [],
+   "description": "A lunar event said to be nigh, when the howlpack should gather.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "A city whose walls are said to grow weak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "ghoulcallers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Innistrad's necromancers who create ghouls.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liliana Vess boasts that she can create something more powerful than Innistrad's ghoulcallers.",
+   "participants": [
+    "Liliana Vess",
+    "ghoulcallers"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "let me show you what someone with real power can create."
+  },
+  {
+   "summary": "A Mondronen shaman urges Tovolar to gather the howlpack as the Hunter's Moon approaches and Thraben's walls weaken.",
+   "participants": [
+    "Tovolar",
+    "Hunter's Moon",
+    "Thraben"
+   ],
+   "location": "Thraben",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Gather the howlpack, for the Hunter's Moon is nigh and Thraben's walls grow weak."
+  }
+ ],
+ "relations": [
+  {
+   "source": "ghoulcallers",
+   "relation": "located_in",
+   "target": "Innistrad",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Innistrad's ghoulcallers are talented enough"
+  },
+  {
+   "source": "Thraben",
+   "relation": "enemy",
+   "target": "Tovolar",
+   "note": "Tovolar's howlpack threatens Thraben's weakening walls.",
+   "paragraph": 3,
+   "quote": "Gather the howlpack, for the Hunter's Moon is nigh and Thraben's walls grow weak."
+  }
+ ],
+ "rejected": []
+}

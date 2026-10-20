@@ -1,0 +1,41 @@
+{
+ "page": "cards/pm11",
+ "url": "https://scryfall.com/sets/pm11",
+ "title": "Magic 2011 Promos: card flavor text",
+ "story_date": "2010-07-15",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Magic 2011",
+ "entities": [
+  {
+   "name": "Yare-Tiva",
+   "type": "character",
+   "aliases": [
+    "warden of Gramur forest"
+   ],
+   "description": "Warden of Gramur forest, quoted on the origin of the world's colors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gramur forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest whose warden is Yare-Tiva.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Yare-Tiva",
+   "relation": "other",
+   "target": "Gramur forest",
+   "note": "warden of the forest",
+   "paragraph": 2,
+   "quote": "—Yare-Tiva, warden of Gramur forest"
+  }
+ ],
+ "rejected": []
+}

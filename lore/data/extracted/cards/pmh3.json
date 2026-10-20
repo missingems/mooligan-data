@@ -1,0 +1,214 @@
+{
+ "page": "cards/pmh3",
+ "url": "https://scryfall.com/sets/pmh3",
+ "title": "Modern Horizons 3 Promos: card flavor text",
+ "story_date": "2024-06-14",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Modern Horizons 3",
+ "entities": [
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose weather shifts to assail would-be invaders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaea",
+   "type": "deity",
+   "aliases": [],
+   "description": "A nature deity; when she speaks, all of nature falls silent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "A being who experiences reality on his own terms, revered by the Eternal Pilgrims.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ayli",
+   "type": "character",
+   "aliases": [],
+   "description": "High priest of the Eternal Pilgrims.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eternal Pilgrims",
+   "type": "faction",
+   "aliases": [],
+   "description": "A religious order led by high priest Ayli.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who works alongside Skreeg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skreeg",
+   "type": "character",
+   "aliases": [],
+   "description": "An associate of Ral Zarek who meddles with things, sometimes successfully.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kudo, King Among Bears",
+   "type": "creature",
+   "aliases": [],
+   "description": "A bear king born from the greatest granite boulder and crowned amid a raging blizzard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "A land whose landscape a wight knew well, prized by her demonic overlords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naromin",
+   "type": "character",
+   "aliases": [],
+   "description": "A veteran explorer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vantress",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm with a once-prosperous town now reclaimed by the waters of the wilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "A place whose surrounding waters are polluted by a warped gateway.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with an underground paradise beneath its surface.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane that is home to fearsome trolls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani, Nacatl Pariah",
+   "type": "character",
+   "aliases": [],
+   "description": "Ajani as a nacatl pariah, denied by his pride but not by his brother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader concerned about dwindling troop recruitment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's associate, whom he addresses about recruitment.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ral Zarek scolds Skreeg for meddling, then realizes Skreeg's tinkering worked.",
+   "participants": [
+    "Ral Zarek",
+    "Skreeg"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "\"Skreeg! I thought I told you to stop messing with... Oh, that worked. Good job, Skreeg.\""
+  },
+  {
+   "summary": "Kudo is born from a granite boulder and crowned king amid a blizzard.",
+   "participants": [
+    "Kudo, King Among Bears"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "Born from the greatest granite boulder, nursed on the sweetest honey, crowned amid a raging blizzard."
+  },
+  {
+   "summary": "Urza tells Tawnos that recruitment is failing and a new strategy is needed.",
+   "participants": [
+    "Urza",
+    "Tawnos"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "\"Our recruitment drives are bringing in fewer fresh troops every day. We need a new strategy.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ayli",
+   "relation": "leader_of",
+   "target": "Eternal Pilgrims",
+   "note": "high priest",
+   "paragraph": 15,
+   "quote": "—Ayli, high priest of the Eternal Pilgrims"
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "ally",
+   "target": "Skreeg",
+   "note": "",
+   "paragraph": 16,
+   "quote": "Good job, Skreeg."
+  },
+  {
+   "source": "Urza",
+   "relation": "ally",
+   "target": "Tawnos",
+   "note": "Urza confides strategy to Tawnos",
+   "paragraph": 27,
+   "quote": "—Urza, to Tawnos"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "A town in Vantress is swept clean and reclaimed by the waters of the wilds.",
+   "participants": [],
+   "location": "Vantress",
+   "importance": "minor",
+   "paragraph": 22,
+   "quote": "Once a prosperous Vantress town, now swept clean and reclaimed by the waters of the wilds."
+  },
+  {
+   "kind": "relation",
+   "reason": "unlisted entity",
+   "source": "Towashi",
+   "relation": "other",
+   "target": "Towashi",
+   "note": "polluted by a warped gateway",
+   "paragraph": 23,
+   "quote": "A warped gateway that seeps toxins and malevolence into the waters around Towashi."
+  }
+ ]
+}

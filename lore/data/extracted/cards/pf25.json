@@ -1,0 +1,70 @@
+{
+ "page": "cards/pf25",
+ "url": "https://scryfall.com/sets/pf25",
+ "title": "MagicFest 2025: card flavor text",
+ "story_date": "2025-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tifa Lockhart",
+   "type": "character",
+   "aliases": [],
+   "description": "A character whose card's flavor text has her urging others not to keep Cloud waiting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cloud Strife",
+   "type": "character",
+   "aliases": [
+    "Cloud"
+   ],
+   "description": "Someone Tifa Lockhart does not want to keep waiting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "J. Jonah Jameson",
+   "type": "character",
+   "aliases": [],
+   "description": "A character whose card's flavor text has him shouting at a \"menace\" not to come back.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tifa Lockhart sizes up four opponents and decides to press on so as not to keep Cloud waiting.",
+   "participants": [
+    "Tifa Lockhart",
+    "Cloud Strife"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Okay. Let's not keep Cloud waiting."
+  },
+  {
+   "summary": "J. Jonah Jameson drives off someone he calls a menace.",
+   "participants": [
+    "J. Jonah Jameson"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "\"And don't come back, you menace!\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tifa Lockhart",
+   "relation": "ally",
+   "target": "Cloud Strife",
+   "note": "Tifa is heading to meet Cloud and does not want to keep him waiting.",
+   "paragraph": 0,
+   "quote": "Okay. Let's not keep Cloud waiting."
+  }
+ ],
+ "rejected": []
+}

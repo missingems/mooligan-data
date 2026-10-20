@@ -1,0 +1,41 @@
+{
+ "page": "cards/plg20",
+ "url": "https://scryfall.com/sets/plg20",
+ "title": "Love Your LGS 2020: card flavor text",
+ "story_date": "2020-05-18",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Love Your LGS 2020",
+ "entities": [
+  {
+   "name": "Reliquary Tower",
+   "type": "location",
+   "aliases": [
+    "The tower"
+   ],
+   "description": "A tower that, according to Archmage Vintra, is not merely a structure but the community and shared wisdom of its inhabitants, growing upward with a stone for every new arrival.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Archmage Vintra",
+   "type": "character",
+   "aliases": [],
+   "description": "An archmage who speaks of the Reliquary Tower as embodying its members and their shared wisdom.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Archmage Vintra",
+   "relation": "member_of",
+   "target": "Reliquary Tower",
+   "note": "Vintra counts herself among those who make up the tower.",
+   "paragraph": 0,
+   "quote": "It is all of us, and the wisdom we share."
+  }
+ ],
+ "rejected": []
+}

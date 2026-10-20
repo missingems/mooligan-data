@@ -1,0 +1,81 @@
+{
+ "page": "cards/pltc",
+ "url": "https://scryfall.com/sets/pltc",
+ "title": "Tales of Middle-earth Deluxe Commander Kit: card flavor text",
+ "story_date": "2024-10-16",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Tales of Middle-earth",
+ "entities": [
+  {
+   "name": "Frodo Baggins",
+   "type": "character",
+   "aliases": [
+    "Frodo",
+    "Frodo, Determined Hero"
+   ],
+   "description": "A hero whose heart flames within him as he draws his sword and advances.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gandalf",
+   "type": "character",
+   "aliases": [
+    "Gandalf, White Rider"
+   ],
+   "description": "The White Rider, who has passed through the fire and the abyss and whom the enemy shall fear.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Balrog",
+   "type": "creature",
+   "aliases": [
+    "Flame of Udûn"
+   ],
+   "description": "An evil of the Ancient World, both a shadow and a flame.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ancient World",
+   "type": "concept",
+   "aliases": [],
+   "description": "The ancient age from which the Balrog's evil comes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Frodo, his heart aflame, draws his sword and advances.",
+   "participants": [
+    "Frodo Baggins"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "He drew his sword and advanced."
+  },
+  {
+   "summary": "Gandalf has passed through the fire and the abyss, and returns as the White Rider.",
+   "participants": [
+    "Gandalf"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He has passed through the fire and the abyss, and the enemy shall fear him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Balrog",
+   "relation": "other",
+   "target": "Ancient World",
+   "note": "originates from",
+   "paragraph": 2,
+   "quote": "An evil of the Ancient World, both a shadow and a flame."
+  }
+ ],
+ "rejected": []
+}

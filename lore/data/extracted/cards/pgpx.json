@@ -1,0 +1,133 @@
+{
+ "page": "cards/pgpx",
+ "url": "https://scryfall.com/sets/pgpx",
+ "title": "Grand Prix Promos: card flavor text",
+ "story_date": "2015-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beings whose emergence is discussed by an Ondu relic hunter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Javad Nasrin",
+   "type": "character",
+   "aliases": [],
+   "description": "An Ondu relic hunter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "The region Javad Nasrin hunts relics in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "One who emerged from the broken Helvault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A vault that was broken, from which Avacyn emerged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "character",
+   "aliases": [],
+   "description": "The being whose release was the price of Avacyn's freedom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [
+    "Knight-Cathar"
+   ],
+   "description": "A Knight-Cathar who speaks of Avacyn's emergence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Progenitus",
+   "type": "creature",
+   "aliases": [
+    "The Soul of the World"
+   ],
+   "description": "The Soul of the World, which has returned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "collision of the shards",
+   "type": "event",
+   "aliases": [],
+   "description": "A collision during which entire ways of life disappeared.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the collision of the shards, entire ways of life disappeared without a trace.",
+   "participants": [
+    "collision of the shards"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "During the collision of the shards, entire ways of life disappeared without a trace."
+  },
+  {
+   "summary": "Avacyn emerged from the broken Helvault, and Griselbrand was freed with her.",
+   "participants": [
+    "Avacyn",
+    "Griselbrand",
+    "Helvault"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Avacyn emerged from the broken Helvault, but her freedom came at a price—him."
+  },
+  {
+   "summary": "The Soul of the World returns.",
+   "participants": [
+    "Progenitus"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The Soul of the World has returned."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Javad Nasrin",
+   "relation": "other",
+   "target": "Ondu",
+   "note": "relic hunter of Ondu",
+   "paragraph": 4,
+   "quote": "—Javad Nasrin, Ondu relic hunter"
+  },
+  {
+   "source": "Avacyn",
+   "relation": "other",
+   "target": "Helvault",
+   "note": "emerged from the broken Helvault",
+   "paragraph": 5,
+   "quote": "Avacyn emerged from the broken Helvault"
+  }
+ ],
+ "rejected": []
+}

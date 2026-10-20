@@ -1,0 +1,131 @@
+{
+ "page": "cards/v13",
+ "url": "https://scryfall.com/sets/v13",
+ "title": "From the Vault: Twenty: card flavor text",
+ "story_date": "2013-08-23",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [
+    "Lim-Dûl, the Necromancer"
+   ],
+   "description": "A necromancer who addresses Leshrac as his liege and asks for power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Lim-Dûl's liege, whom he petitions for power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the metathran, whose children were made by an integrated system of machines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Metathran",
+   "type": "creature",
+   "aliases": [],
+   "description": "Urza's children, conceived, birthed and nurtured by machines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of mages who often acquire magic reagents from dubious sources, making their spells unpredictable.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [
+    "Venser, Shaper Savant"
+   ],
+   "description": "An artificer whose mind is said to surpass his marvels of artifice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tree of Tales",
+   "type": "location",
+   "aliases": [],
+   "description": "A tree on which Phyrexian prophecies glowed as the green sun crowned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian prophecies",
+   "type": "concept",
+   "aliases": [],
+   "description": "Prophecies that glowed on the Tree of Tales.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Wilds where a werewolf's first howl is said to echo till moonset.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lim-Dûl the Necromancer petitions his liege Leshrac for power.",
+   "participants": [
+    "Lim-Dûl",
+    "Leshrac"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "\"Leshrac, my liege, grant me the power I am due.\""
+  },
+  {
+   "summary": "Phyrexian prophecies glow on the Tree of Tales as the green sun crowns.",
+   "participants": [
+    "Tree of Tales",
+    "Phyrexian prophecies"
+   ],
+   "location": "Tree of Tales",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "As the green sun crowned, Phyrexian prophecies glowed on the Tree of Tales."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lim-Dûl",
+   "relation": "serves",
+   "target": "Leshrac",
+   "note": "Lim-Dûl calls Leshrac his liege.",
+   "paragraph": 0,
+   "quote": "\"Leshrac, my liege, grant me the power I am due.\""
+  },
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Metathran",
+   "note": "The metathran are Urza's children, made by machines.",
+   "paragraph": 6,
+   "quote": "Urza's metathran children were conceived, birthed, and nurtured by an integrated system of machines."
+  },
+  {
+   "source": "Phyrexian prophecies",
+   "relation": "located_in",
+   "target": "Tree of Tales",
+   "note": "The prophecies glowed on the tree.",
+   "paragraph": 12,
+   "quote": "Phyrexian prophecies glowed on the Tree of Tales."
+  }
+ ],
+ "rejected": []
+}
