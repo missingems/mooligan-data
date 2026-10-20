@@ -1,0 +1,97 @@
+{
+ "page": "wiki/chorus-of-the-conclave",
+ "url": "https://mtg.wiki/page/Chorus_of_the_Conclave",
+ "title": "Chorus of the Conclave",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:52Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Chorus of the Conclave",
+   "type": "character",
+   "aliases": [
+    "Chorus"
+   ],
+   "description": "Collective mind of dryads that led the Selesnya Conclave before the Decamillennial.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild led by the Chorus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire whose murder of Savra vod Savo killed the Chorus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Savra vod Savo",
+   "type": "character",
+   "aliases": [],
+   "description": "Murdered by Szadek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Decamillennial",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the Chorus was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Selesnya Conclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Tree",
+   "type": "concept",
+   "aliases": [],
+   "description": "Source of connection the Selesnya lost.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Decamillennial the Chorus was killed by Szadek's murder of Savra vod Savo, and Selesnya lost its connection to the World Tree.",
+   "participants": [
+    "Szadek",
+    "Savra vod Savo",
+    "Chorus of the Conclave"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Chorus was killed by Szadek 's murder of Savra vod Savo"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chorus of the Conclave",
+   "relation": "leader_of",
+   "target": "Selesnya Conclave",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The guild leader of Selesnya before the Decamillennial was at one point the collective mind of Dryads known as the Chorus of the Conclave"
+  },
+  {
+   "source": "Szadek",
+   "relation": "killed",
+   "target": "Savra vod Savo",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Szadek 's murder of Savra vod Savo"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,129 @@
+{
+ "page": "wiki/skule",
+ "url": "https://mtg.wiki/page/Skule",
+ "title": "Skule",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:22Z",
+ "storyline": "Time of Legends",
+ "entities": [
+  {
+   "name": "Skule",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard from Golthonor on Corondor during the Time of Legends, a mage from Balthesa murdered by his spellsquire Xarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [],
+   "description": "Skule's spellsquire who betrayed him to Mandek Ironfist and murdered him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord to whom Xarl betrayed Skule.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Angel Trine",
+   "type": "character",
+   "aliases": [
+    "Trine"
+   ],
+   "description": "Angel summoned and bound by Skule under duress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Enslavement of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "A 326-year period of terror on Corondor in which thousands, if not millions, were slain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balthesa",
+   "type": "location",
+   "aliases": [
+    "City-State of Balthesa"
+   ],
+   "description": "City-state Skule came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent containing Golthonor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Corondor Skule came from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Skule meets young Xarl and takes him on as a spellsquire.",
+   "participants": [
+    "Skule",
+    "Xarl"
+   ],
+   "location": "Balthesa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "who met Xarl as a young boy, and took him on as a spellsquire."
+  },
+  {
+   "summary": "Xarl betrays Skule to the warlord Mandek Ironfist.",
+   "participants": [
+    "Xarl",
+    "Skule",
+    "Mandek Ironfist"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "years later, Xarl betrayed Skule to the warlord Mandek Ironfist ."
+  },
+  {
+   "summary": "Xarl forces Skule to summon the Serra Angel Trine, then murders him right after the binding.",
+   "participants": [
+    "Xarl",
+    "Skule",
+    "Serra Angel Trine"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Skule was murdered by Xarl immediately after binding the angel."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Xarl",
+   "relation": "killed",
+   "target": "Skule",
+   "note": "Murdered him after the binding.",
+   "paragraph": 1,
+   "quote": "Skule was murdered by Xarl immediately after binding the angel."
+  },
+  {
+   "source": "Skule",
+   "relation": "mentor_of",
+   "target": "Xarl",
+   "note": "Took him as a spellsquire.",
+   "paragraph": 1,
+   "quote": "who met Xarl as a young boy, and took him on as a spellsquire."
+  }
+ ],
+ "rejected": []
+}

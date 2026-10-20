@@ -1,0 +1,93 @@
+{
+ "page": "wiki/trynn",
+ "url": "https://mtg.wiki/page/Trynn",
+ "title": "Trynn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Trynn",
+   "type": "character",
+   "aliases": [],
+   "description": "Human Soldier and former Coppercoat of Ikoria, secret bonder of the Cat Nightmare Silvar who feeds corrupt officials to him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silvar",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant Cat Nightmare bonded with Trynn, living in the Savai triome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Trynn stayed after her eludha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coppercoats",
+   "type": "faction",
+   "aliases": [
+    "Coppercoat"
+   ],
+   "description": "Drannith's city guard, of which Trynn was a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Savai",
+   "type": "location",
+   "aliases": [],
+   "description": "Triome where Silvar resides.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trynn remained in Drannith after her eludha, keeping her bonder identity secret.",
+   "participants": [
+    "Trynn",
+    "Drannith"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Trynn remained in Drannith after her eludha"
+  },
+  {
+   "summary": "Trynn lures corrupt officials outside the city and feeds them to Silvar.",
+   "participants": [
+    "Trynn",
+    "Silvar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she lures them outside the city and feeds them to her partner"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trynn",
+   "relation": "ally",
+   "target": "Silvar",
+   "note": "Bonded partners",
+   "paragraph": 0,
+   "quote": "She is bonded with the giant Cat Nightmare"
+  },
+  {
+   "source": "Trynn",
+   "relation": "member_of",
+   "target": "Coppercoats",
+   "note": "Former Coppercoat",
+   "paragraph": 1,
+   "quote": "As a former"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,63 @@
+{
+ "page": "wiki/atogatog",
+ "url": "https://mtg.wiki/page/Atogatog",
+ "title": "Atogatog",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Atogatog",
+   "type": "creature",
+   "aliases": [
+    "The Atogatog"
+   ],
+   "description": "A legendary Atog on Otaria who rules over and consumes other Atogs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the Atogatog resides.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Atogatog.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atogs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Small creatures ruled and consumed by the Atogatog.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Atogatog",
+   "relation": "leader_of",
+   "target": "Atogs",
+   "note": "It rules over and consumes other Atogs.",
+   "paragraph": 1,
+   "quote": "it rules over and consumes other Atogs for strength"
+  },
+  {
+   "source": "Atogatog",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "It resides on Otaria.",
+   "paragraph": 1,
+   "quote": "resides on the continent of Otaria on Dominaria"
+  }
+ ],
+ "rejected": []
+}

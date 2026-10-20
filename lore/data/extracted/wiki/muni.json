@@ -1,0 +1,108 @@
+{
+ "page": "wiki/muni",
+ "url": "https://mtg.wiki/page/Muni",
+ "title": "Muni",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Muni",
+   "type": "character",
+   "aliases": [],
+   "description": "Digsite foreman at the old Sumifa excavation who spoke every modern language in Almaaz and always told the truth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Muni worked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [
+    "old Sumifa"
+   ],
+   "description": "Old city whose ruins were excavated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Javin",
+   "type": "character",
+   "aliases": [],
+   "description": "Colleague of Muni who left for Sarraza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cheyne",
+   "type": "character",
+   "aliases": [],
+   "description": "Colleague of Muni who left for Sarraza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [],
+   "description": "Person whose skeleton was located at the Sumifa ruins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maceo",
+   "type": "character",
+   "aliases": [],
+   "description": "New king of Sumifa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Javin and Cheyne left for.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Muni is present when the ruins of old Sumifa and the skeleton of Samor the Collector are located.",
+   "participants": [
+    "Muni",
+    "Samor the Collector"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Muni was present when the ruins of old Sumifa and the skeleton of Samor the Collector were located"
+  },
+  {
+   "summary": "After Maceo becomes king and Javin and Cheyne leave, Muni oversees finishing the unearthing of the ruins.",
+   "participants": [
+    "Muni",
+    "Maceo",
+    "Javin",
+    "Cheyne"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "it became Muni's job to oversee finishing unearthing the ruins of the city"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muni",
+   "relation": "ally",
+   "target": "Javin",
+   "note": "Colleagues at the excavation.",
+   "paragraph": 1,
+   "quote": "a colleague of Javin and Cheyne"
+  }
+ ],
+ "rejected": []
+}

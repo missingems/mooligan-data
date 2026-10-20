@@ -1,0 +1,118 @@
+{
+ "page": "wiki/tajuru",
+ "url": "https://mtg.wiki/page/Tajuru",
+ "title": "Tajuru",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tajuru Nation",
+   "type": "faction",
+   "aliases": [
+    "Tajurua Nation",
+    "Tajuru"
+   ],
+   "description": "Elven nation of Murasa on Zendikar, the largest and most prominent elf faction, open to other races and skilled innovators.",
+   "presence": "appears"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar whose massive jaddi treetops housed the Tajuru.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Murasa and the Tajuru are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sutina",
+   "type": "character",
+   "aliases": [
+    "Speaker Sutina"
+   ],
+   "description": "Speaker of the Tajuru nation who led it to prominence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tumbled Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Tajuru, on the cliffs of Sunder Bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi in whose tentacles Sutina died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nisede",
+   "type": "character",
+   "aliases": [],
+   "description": "A later leader of the Tajuru.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Under Speaker Sutina the Tajuru became the largest and most prominent elf faction on Zendikar.",
+   "participants": [
+    "Tajuru Nation",
+    "Sutina"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the Tajuru nation became the largest and most prominent elf faction on Zendikar"
+  },
+  {
+   "summary": "Sutina died in the tentacles of Kozilek.",
+   "participants": [
+    "Sutina",
+    "Kozilek"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Before the creature died in the tentacles of"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sutina",
+   "relation": "leader_of",
+   "target": "Tajuru Nation",
+   "note": "Speaker of the nation",
+   "paragraph": 1,
+   "quote": "Through the leadership of Speaker"
+  },
+  {
+   "source": "Nisede",
+   "relation": "leader_of",
+   "target": "Tajuru Nation",
+   "note": "A later leader",
+   "paragraph": 1,
+   "quote": "A later leader of the Tajuru was Nisede."
+  },
+  {
+   "source": "Tumbled Palace",
+   "relation": "other",
+   "target": "Tajuru Nation",
+   "note": "Capital of the Tajuru",
+   "paragraph": 1,
+   "quote": "Their capital was the Tumbled Palace"
+  }
+ ],
+ "rejected": []
+}

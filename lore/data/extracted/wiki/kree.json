@@ -1,0 +1,63 @@
+{
+ "page": "wiki/kree",
+ "url": "https://mtg.wiki/page/Kree",
+ "title": "Kree",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kree",
+   "type": "faction",
+   "aliases": [
+    "Kree Empire"
+   ],
+   "description": "Blue-skinned humanoid alien species from Hala holding a large empire, at war with the Skrull Empire; they created the Inhumans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hala",
+   "type": "plane",
+   "aliases": [],
+   "description": "Planet of origin of the Kree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skrull Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire the Kree have often warred with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inhumans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings created by the Kree from genetic experiments on humans.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Kree",
+   "relation": "enemy",
+   "target": "Skrull Empire",
+   "note": "They have often warred.",
+   "paragraph": 1,
+   "quote": "They have often warred with the Skrull Empire"
+  },
+  {
+   "source": "Kree",
+   "relation": "created",
+   "target": "Inhumans",
+   "note": "From genetic experiments on humans.",
+   "paragraph": 1,
+   "quote": "They created the Inhumans from genetic experiments on humans"
+  }
+ ],
+ "rejected": []
+}

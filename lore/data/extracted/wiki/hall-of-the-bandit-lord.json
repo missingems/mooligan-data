@@ -1,0 +1,68 @@
+{
+ "page": "wiki/hall-of-the-bandit-lord",
+ "url": "https://mtg.wiki/page/Hall_of_the_Bandit_Lord",
+ "title": "Hall of the Bandit Lord",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hall of the Bandit Lord",
+   "type": "location",
+   "aliases": [],
+   "description": "A large rough stone building in the Sokenzan mountains used by Godo and his sanzoku bandits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Godo",
+   "type": "character",
+   "aliases": [],
+   "description": "Bandit lord who controlled the mountains' southern territory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanzoku",
+   "type": "faction",
+   "aliases": [],
+   "description": "Godo's bandits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain range holding the hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the hall was in use.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Hall of the Bandit Lord",
+   "relation": "located_in",
+   "target": "Sokenzan",
+   "note": "It is in the Sokenzan mountain range.",
+   "paragraph": 1,
+   "quote": "in Sokenzan mountain range"
+  },
+  {
+   "source": "Godo",
+   "relation": "leader_of",
+   "target": "Sanzoku",
+   "note": "Godo and his sanzoku bandits used the hall.",
+   "paragraph": 1,
+   "quote": "used by Godo and his sanzoku bandits"
+  }
+ ],
+ "rejected": []
+}

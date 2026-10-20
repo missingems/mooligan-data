@@ -1,0 +1,81 @@
+{
+ "page": "wiki/lier",
+ "url": "https://mtg.wiki/page/Lier",
+ "title": "Lier",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:28Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Lier",
+   "type": "character",
+   "aliases": [],
+   "description": "Human wizard, sinister high priest of a cult of an ancient god of sea and storms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Runo Stromkirk",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who covertly founded the cult.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katilda",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought alongside Lier in defense of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Lier and Katilda defended Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Lier is from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lier fights alongside Katilda in defense of Innistrad during the New Phyrexian Invasion.",
+   "participants": [
+    "Lier",
+    "Katilda",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lier fought alongside Katilda in defense of Innistrad"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lier",
+   "relation": "ally",
+   "target": "Katilda",
+   "note": "fought together",
+   "paragraph": 2,
+   "quote": "Lier fought alongside Katilda in defense of Innistrad"
+  },
+  {
+   "source": "Runo Stromkirk",
+   "relation": "created",
+   "target": "Lier",
+   "note": "founded the cult Lier leads (the cult, not Lier)",
+   "paragraph": 1,
+   "quote": "covertly founded by the vampire Runo Stromkirk"
+  }
+ ],
+ "rejected": []
+}

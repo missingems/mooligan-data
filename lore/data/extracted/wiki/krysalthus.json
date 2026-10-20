@@ -1,0 +1,73 @@
+{
+ "page": "wiki/krysalthus",
+ "url": "https://mtg.wiki/page/Krysalthus",
+ "title": "Krysalthus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Krysalthus",
+   "type": "location",
+   "aliases": [],
+   "description": "Enchanted forest in Stonehaven, western Corondor on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Verdenth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Seat of Emerald Magic that controlled Krysalthus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Verdenth",
+   "type": "character",
+   "aliases": [],
+   "description": "Led House Verdenth until her death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ironroot Treefolk",
+   "type": "creature",
+   "aliases": [],
+   "description": "Treefolk who live in Krysalthus.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lady Verdenth leads House Verdenth, which controls Krysalthus, until her death.",
+   "participants": [
+    "Lady Verdenth",
+    "House Verdenth"
+   ],
+   "location": "Krysalthus",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "led by Lady Verdenth until her death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lady Verdenth",
+   "relation": "leader_of",
+   "target": "House Verdenth",
+   "note": "Led it until her death",
+   "paragraph": 1,
+   "quote": "led by Lady Verdenth until her death"
+  },
+  {
+   "source": "House Verdenth",
+   "relation": "other",
+   "target": "Krysalthus",
+   "note": "Controlled the forest",
+   "paragraph": 1,
+   "quote": "It was controlled by House Verdenth"
+  }
+ ],
+ "rejected": []
+}

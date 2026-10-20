@@ -1,0 +1,76 @@
+{
+ "page": "wiki/keral-keep",
+ "url": "https://mtg.wiki/page/Keral_Keep",
+ "title": "Keral Keep",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Keral Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Monastery on Regatha founded around Jaya Ballard's teachings of pyromancy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited Regatha; the Keep was built around her teachings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Studied at the Keep and became its abbot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Keral Keep.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Locals build a shrine to Jaya Ballard, founding the monastery.",
+   "participants": [
+    "Jaya Ballard",
+    "Keral Keep"
+   ],
+   "location": "Regatha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The monastery was founded around Jaya Ballard"
+  },
+  {
+   "summary": "Chandra Nalaar studies at the Keep and becomes its new abbot.",
+   "participants": [
+    "Chandra Nalaar",
+    "Keral Keep"
+   ],
+   "location": "Keral Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "eventually became the new abbot"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandra Nalaar",
+   "relation": "leader_of",
+   "target": "Keral Keep",
+   "note": "Became abbot",
+   "paragraph": 1,
+   "quote": "eventually became the new abbot"
+  }
+ ],
+ "rejected": []
+}

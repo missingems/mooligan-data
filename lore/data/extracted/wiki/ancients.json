@@ -1,0 +1,116 @@
+{
+ "page": "wiki/ancients",
+ "url": "https://mtg.wiki/page/Ancients",
+ "title": "Ancients",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ancients",
+   "type": "faction",
+   "aliases": [
+    "the Ancients"
+   ],
+   "description": "Powerful and jealous wizards and planeswalkers who fought the Tolgath in the Great War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolgath",
+   "type": "faction",
+   "aliases": [],
+   "description": "A younger group of wizards who battled the Ancients.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great War",
+   "type": "event",
+   "aliases": [],
+   "description": "Interplanar war between the Ancients and the Tolgath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Destruction",
+   "type": "event",
+   "aliases": [],
+   "description": "The end of the war on Ulgrotha when the battle was joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Great Destruction occurred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rift",
+   "type": "location",
+   "aliases": [],
+   "description": "Created on Ulgrotha by one of the Ancients.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Rang the Apocalypse Chime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact rung by Ravi, which destroyed many of the Ancients.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Great War ended in the Great Destruction on Ulgrotha.",
+   "participants": [
+    "Ancients",
+    "Tolgath"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The war ended in the Great Destruction on the plane of Ulgrotha when their battle was joined."
+  },
+  {
+   "summary": "One of the Ancients created the Rift on Ulgrotha.",
+   "participants": [
+    "Ancients"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "One of the Ancients created the Rift on Ulgrotha."
+  },
+  {
+   "summary": "Ravi rang the Apocalypse Chime, probably destroying many of the Ancients.",
+   "participants": [
+    "Ravi",
+    "Ancients"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "many, if not all, were destroyed when Ravi rang the Apocalypse Chime"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ancients",
+   "relation": "enemy",
+   "target": "Tolgath",
+   "note": "They fought in the Great War.",
+   "paragraph": 0,
+   "quote": "battled the younger group of wizards, the Tolgath , in the interplanar Great War"
+  }
+ ],
+ "rejected": []
+}

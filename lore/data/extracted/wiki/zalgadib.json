@@ -1,0 +1,99 @@
+{
+ "page": "wiki/zalgadib",
+ "url": "https://mtg.wiki/page/Zalgadib",
+ "title": "Zalgadib",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zalgadib",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Tempest Efreet from Suq'Ata who defended Ramses Overdark's keep and was killed by Kolo Meha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramses Overdark",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the keep Zalgadib defended; died before the contract ended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kolo Meha",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Zalgadib on Tetsuo Umezawa's orders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent Kolo Meha to destroy Overdark's keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "location",
+   "aliases": [],
+   "description": "Zalgadib's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Suq'Ata.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ramses Overdark dies 256 years before the end of Zalgadib's contract.",
+   "participants": [
+    "Ramses Overdark",
+    "Zalgadib"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ramses died 256 years before Zalgadib's contract to service to the keep ended"
+  },
+  {
+   "summary": "Kolo Meha kills Zalgadib.",
+   "participants": [
+    "Kolo Meha",
+    "Zalgadib",
+    "Tetsuo Umezawa"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Zalgadib himself was killed by Kolo Meha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kolo Meha",
+   "relation": "killed",
+   "target": "Zalgadib",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Zalgadib himself was killed by Kolo Meha"
+  },
+  {
+   "source": "Zalgadib",
+   "relation": "serves",
+   "target": "Ramses Overdark",
+   "note": "Defended his keep.",
+   "paragraph": 1,
+   "quote": "The efreet defended Ramses Overdark 's keep"
+  }
+ ],
+ "rejected": []
+}

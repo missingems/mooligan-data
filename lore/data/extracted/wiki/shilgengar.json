@@ -1,0 +1,116 @@
+{
+ "page": "wiki/shilgengar",
+ "url": "https://mtg.wiki/page/Shilgengar",
+ "title": "Shilgengar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:34Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Shilgengar",
+   "type": "character",
+   "aliases": [],
+   "description": "An extremely powerful demon lord who indirectly created the vampires of Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edgar Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "An aging human alchemist manipulated into turning to blood magic; creator of the vampire bloodlines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marycz",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel strung up and exsanguinated by Edgar Markov in Shilgengar's Ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and vampire of Innistrad indirectly created by Shilgengar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Land that suffered a great famine caused by Shilgengar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose vampires Shilgengar indirectly created.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shilgengar's Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual in which Edgar Markov exsanguinated the angel Marycz.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shilgengar caused a great famine in the lands that would become Stensia.",
+   "participants": [
+    "Shilgengar",
+    "Stensia"
+   ],
+   "location": "Stensia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Shilgengar caused a great famine in the lands of what would become Stensia"
+  },
+  {
+   "summary": "Shilgengar manipulated Edgar Markov into turning to blood magic to find food for his kin.",
+   "participants": [
+    "Shilgengar",
+    "Edgar Markov"
+   ],
+   "location": "Stensia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "manipulated the aging human alchemist Edgar Markov into turning to blood magic"
+  },
+  {
+   "summary": "Edgar exsanguinated the angel Marycz and shared her blood with the nobility, creating the vampire bloodlines.",
+   "participants": [
+    "Edgar Markov",
+    "Marycz"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Edgar strung the angel Marycz up in his laboratory and exsanguinated her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shilgengar",
+   "relation": "created",
+   "target": "Sorin Markov",
+   "note": "Indirectly created the vampires including Sorin",
+   "paragraph": 0,
+   "quote": "who indirectly created the vampires of Innistrad"
+  },
+  {
+   "source": "Edgar Markov",
+   "relation": "killed",
+   "target": "Marycz",
+   "note": "Exsanguinated her",
+   "paragraph": 1,
+   "quote": "Edgar strung the angel Marycz up in his laboratory and exsanguinated her"
+  }
+ ],
+ "rejected": []
+}

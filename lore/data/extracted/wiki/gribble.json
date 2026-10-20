@@ -1,0 +1,63 @@
+{
+ "page": "wiki/gribble",
+ "url": "https://mtg.wiki/page/Gribble",
+ "title": "Gribble",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gribble",
+   "type": "creature",
+   "aliases": [
+    "beastie"
+   ],
+   "description": "A large purple-furred beastie on Duskmourn, loyal protector and friend of Toby.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toby",
+   "type": "character",
+   "aliases": [],
+   "description": "Gribble's companion who lives in a tower of stacked buildings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Gribble and Toby.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Source of the spawn Gribble and Toby are safe from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Gribble",
+   "relation": "ally",
+   "target": "Toby",
+   "note": "Loyal and protective companion.",
+   "paragraph": 1,
+   "quote": "Gribble is deeply affectionate and fiercely protective of Toby."
+  },
+  {
+   "source": "Valgavoth",
+   "relation": "other",
+   "target": "Gribble",
+   "note": "Gribble and Toby are safe from his spawn.",
+   "paragraph": 1,
+   "quote": "safe from Valgavoth 's spawn"
+  }
+ ],
+ "rejected": []
+}

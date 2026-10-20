@@ -1,0 +1,74 @@
+{
+ "page": "wiki/vega",
+ "url": "https://mtg.wiki/page/Vega",
+ "title": "Vega",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vega",
+   "type": "creature",
+   "aliases": [
+    "Vega the Watcher"
+   ],
+   "description": "A three-eyed spirit owl of Kaldheim and spy for the gods who watches from the roots of the World Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kolvori",
+   "type": "character",
+   "aliases": [],
+   "description": "The one Vega would report to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gods' Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "The hall near which Vega lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valki",
+   "type": "character",
+   "aliases": [],
+   "description": "Valki tricked Toralf into dragging the Hall across the realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toralf",
+   "type": "character",
+   "aliases": [],
+   "description": "Tricked by Valki into dragging the Hall across the realms.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Valki tricks Toralf into dragging the Gods' Hall across the realms.",
+   "participants": [
+    "Valki",
+    "Toralf"
+   ],
+   "location": "Gods' Hall",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Valki tricked Toralf into dragging the Hall across the realms"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vega",
+   "relation": "serves",
+   "target": "Kolvori",
+   "note": "Vega would report anything abnormal to Kolvori.",
+   "paragraph": 1,
+   "quote": "Vega would immediately report to Kolvori"
+  }
+ ],
+ "rejected": []
+}

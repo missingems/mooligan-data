@@ -1,0 +1,147 @@
+{
+ "page": "wiki/kodaira",
+ "url": "https://mtg.wiki/page/Kodaira",
+ "title": "Kodaira",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:23Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kodaira",
+   "type": "location",
+   "aliases": [],
+   "description": "Village on the Towabara Plains of Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Kodaira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which nezumi attacked Kodaira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nezumi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Raiders who attacked Kodaira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Matsuda",
+   "type": "character",
+   "aliases": [
+    "Matsuda"
+   ],
+   "description": "Guard outpost captain who sheltered villagers and was arrested for it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shiro",
+   "type": "character",
+   "aliases": [],
+   "description": "Messenger who brought word to General Takeno.",
+   "presence": "appears"
+  },
+  {
+   "name": "Munetsugu Takeno",
+   "type": "character",
+   "aliases": [
+    "General Takeno",
+    "Takeno"
+   ],
+   "description": "General who rode to Kodaira and killed the nezumi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Place to which dispatches were sent for help.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War, nezumi attacked Kodaira and Captain Matsuda let the villagers into the garrison to protect them.",
+   "participants": [
+    "Nezumi",
+    "Captain Matsuda"
+   ],
+   "location": "Kodaira",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Captain Matsuda of the guard outpost let the villagers inside the garrison to prevent them from being killed by the raiders"
+  },
+  {
+   "summary": "Shiro, the messenger, arrived to bring word to General Munetsugu Takeno.",
+   "participants": [
+    "Shiro",
+    "Munetsugu Takeno"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the messenger Shiro arrived to bring word to General Munetsugu Takeno"
+  },
+  {
+   "summary": "Takeno rode to Kodaira with a contingent and killed the offending nezumi.",
+   "participants": [
+    "Munetsugu Takeno",
+    "Nezumi"
+   ],
+   "location": "Kodaira",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Takeno rode to Kodaira with a contingent and killed the offending nezumi"
+  },
+  {
+   "summary": "Takeno arrested Captain Matsuda for breaking the law by allowing villagers onto military grounds.",
+   "participants": [
+    "Munetsugu Takeno",
+    "Captain Matsuda"
+   ],
+   "location": "Kodaira",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "then arrested Captain Matsuda for breaking the law"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nezumi",
+   "relation": "enemy",
+   "target": "Kodaira",
+   "note": "Attacked the village",
+   "paragraph": 1,
+   "quote": "Kodaira was attacked by nezumi"
+  },
+  {
+   "source": "Munetsugu Takeno",
+   "relation": "killed",
+   "target": "Nezumi",
+   "note": "Killed the offending nezumi",
+   "paragraph": 1,
+   "quote": "killed the offending nezumi"
+  },
+  {
+   "source": "Kodaira",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "",
+   "paragraph": 0,
+   "quote": "a village on the Towabara Plains of Kamigawa"
+  }
+ ],
+ "rejected": []
+}

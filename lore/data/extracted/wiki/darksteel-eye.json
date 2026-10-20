@@ -1,0 +1,106 @@
+{
+ "page": "wiki/darksteel-eye",
+ "url": "https://mtg.wiki/page/Darksteel_Eye",
+ "title": "Darksteel Eye",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:28Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Darksteel Eye",
+   "type": "artifact",
+   "aliases": [
+    "The Darksteel Eye"
+   ],
+   "description": "Artifact Memnarch used to monitor events across Mirrodin, housed in the Panopticon and later restored by Elesh Norn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Used the Darksteel Eye to monitor Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane monitored by the Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Panopticon",
+   "type": "location",
+   "aliases": [],
+   "description": "Place housing the Darksteel Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Green Sun",
+   "type": "event",
+   "aliases": [],
+   "description": "Release that damaged the Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "Fully restored the Darksteel Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urabrask",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of a domain the Eye cannot view.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Darksteel Eye is damaged during the release of the Green Sun.",
+   "participants": [
+    "Darksteel Eye"
+   ],
+   "location": "Panopticon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "It was damaged during the release of the Green Sun"
+  },
+  {
+   "summary": "Elesh Norn fully restores the Darksteel Eye.",
+   "participants": [
+    "Elesh Norn",
+    "Darksteel Eye"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "later fully restored by Elesh Norn"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "other",
+   "target": "Darksteel Eye",
+   "note": "Used it to monitor Mirrodin.",
+   "paragraph": 0,
+   "quote": "used by Memnarch to monitor the entirety of events"
+  },
+  {
+   "source": "Darksteel Eye",
+   "relation": "located_in",
+   "target": "Panopticon",
+   "note": "Housed there.",
+   "paragraph": 1,
+   "quote": "was housed in the Panopticon"
+  }
+ ],
+ "rejected": []
+}

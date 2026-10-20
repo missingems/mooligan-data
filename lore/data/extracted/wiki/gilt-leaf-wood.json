@@ -1,0 +1,79 @@
+{
+ "page": "wiki/gilt-leaf-wood",
+ "url": "https://mtg.wiki/page/Gilt-Leaf_Wood",
+ "title": "Gilt-Leaf Wood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:29Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Gilt-Leaf Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest at the heart of the Gilt-Leaf elves' realm in Lorwyn, considered by elves the most beautiful.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gilt-Leaf tribe",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elven tribe whose realm contains the wood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Gilt-Leaf realm, within the wood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eidren",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman of the Perfect caste said to have created the wood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Gilt-Leaf realm.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "By legend, Eidren orders hundreds of trees uprooted and rearranged, creating the Gilt-Leaf Wood.",
+   "participants": [
+    "Eidren"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Eidren ordered hundreds of trees uprooted and rearranged into a pattern he deemed beautiful."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eidren",
+   "relation": "created",
+   "target": "Gilt-Leaf Wood",
+   "note": "According to legend.",
+   "paragraph": 1,
+   "quote": "Legend says that the Gilt-Leaf Wood was created by Eidren"
+  },
+  {
+   "source": "Lys Alana",
+   "relation": "located_in",
+   "target": "Gilt-Leaf Wood",
+   "note": "The capital lay within.",
+   "paragraph": 1,
+   "quote": "The capital of the Gilt-Leaf realm, Lys Alana , lay within."
+  }
+ ],
+ "rejected": []
+}

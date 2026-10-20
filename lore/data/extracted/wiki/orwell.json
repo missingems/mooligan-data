@@ -1,0 +1,106 @@
+{
+ "page": "wiki/orwell",
+ "url": "https://mtg.wiki/page/Orwell",
+ "title": "Orwell",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:37Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Orwell",
+   "type": "character",
+   "aliases": [],
+   "description": "Village bell-ringer from Gatstaf in Kessig, ritualistically murdered by Bes Palter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bes Palter",
+   "type": "character",
+   "aliases": [],
+   "description": "Murderer who arranged Orwell's body parts to help summon Ormendahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon Bes Palter sought to summon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halana",
+   "type": "character",
+   "aliases": [],
+   "description": "Discovered Orwell's corpse with Alena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "Discovered Orwell's corpse with Halana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatstaf",
+   "type": "location",
+   "aliases": [],
+   "description": "Village in Kessig where Orwell lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad containing Gatstaf.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Orwell lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bes Palter ritualistically murdered Orwell and arranged his body parts to help summon the demon Ormendahl.",
+   "participants": [
+    "Bes Palter",
+    "Orwell",
+    "Ormendahl"
+   ],
+   "location": "Gatstaf",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "ritualistically murdered by Bes Palter"
+  },
+  {
+   "summary": "Halana and Alena discovered Orwell's corpse and realized a different kind of murderer was loose, as he had not been eaten.",
+   "participants": [
+    "Halana",
+    "Alena",
+    "Orwell"
+   ],
+   "location": "Gatstaf",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "But as Orwell had not been eaten, they realized a different type of murderer was loose in the village as well."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bes Palter",
+   "relation": "killed",
+   "target": "Orwell",
+   "note": "Ritual murder",
+   "paragraph": 0,
+   "quote": "ritualistically murdered by Bes Palter"
+  }
+ ],
+ "rejected": []
+}

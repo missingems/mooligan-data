@@ -1,0 +1,83 @@
+{
+ "page": "wiki/tuvasa",
+ "url": "https://mtg.wiki/page/Tuvasa",
+ "title": "Tuvasa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shaper Tuvasa",
+   "type": "character",
+   "aliases": [
+    "Tuvasa",
+    "the Sunlit"
+   ],
+   "description": "Great Shaper of the River Heralds on Ixalan, called the Sunlit; she felt a strong affinity for Ixalan's sun and died in the New Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group on Ixalan led by Great Shapers, of which Tuvasa was one.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the River Heralds live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Tuvasa lost her life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tuvasa's apprentice",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Tuvasa who inherited her name and position.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tuvasa dies during the New Phyrexian Invasion and her apprentice inherits her name and position.",
+   "participants": [
+    "Shaper Tuvasa",
+    "Tuvasa's apprentice"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She lost her life during the New Phyrexian Invasion and her name and position were inherited by her apprentice."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shaper Tuvasa",
+   "relation": "member_of",
+   "target": "River Heralds",
+   "note": "Great Shaper of the River Heralds.",
+   "paragraph": 0,
+   "quote": "was a Great Shaper of the River Heralds on Ixalan"
+  },
+  {
+   "source": "Tuvasa's apprentice",
+   "relation": "serves",
+   "target": "Shaper Tuvasa",
+   "note": "Apprentice who inherited her name and position.",
+   "paragraph": 1,
+   "quote": "her name and position were inherited by her apprentice"
+  }
+ ],
+ "rejected": []
+}

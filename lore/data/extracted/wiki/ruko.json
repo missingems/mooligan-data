@@ -1,0 +1,77 @@
+{
+ "page": "wiki/ruko",
+ "url": "https://mtg.wiki/page/Ruko",
+ "title": "Ruko",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ruko",
+   "type": "character",
+   "aliases": [],
+   "description": "Tiger warrior and chief of scouts from Efrava on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrested by Ruko for bringing a human into Efrava.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Human who disliked Ruko and set him on fire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efrava",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of the tigermen on Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ruko arrests Jedit Ojanen for bringing a human into Efrava.",
+   "participants": [
+    "Ruko",
+    "Jedit Ojanen",
+    "Johan"
+   ],
+   "location": "Efrava",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "going as far as arresting Jedit Ojanen for bringing a human into their homeland"
+  },
+  {
+   "summary": "Johan escapes and casts Immolation on Ruko's spear, burning him to death.",
+   "participants": [
+    "Johan",
+    "Ruko"
+   ],
+   "location": "Efrava",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "which caused the whole tigerman to catch fire and burn to death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Johan",
+   "relation": "killed",
+   "target": "Ruko",
+   "note": "Set him ablaze with Immolation",
+   "paragraph": 1,
+   "quote": "Johan made certain to cast Immolation on Ruko's spear"
+  }
+ ],
+ "rejected": []
+}

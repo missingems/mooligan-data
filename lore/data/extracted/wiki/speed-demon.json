@@ -1,0 +1,86 @@
+{
+ "page": "wiki/speed-demon",
+ "url": "https://mtg.wiki/page/Speed_Demon",
+ "title": "Speed Demon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Speed Demon",
+   "type": "creature",
+   "aliases": [
+    "The Speed Demon"
+   ],
+   "description": "Lesser demon of Duskmourn released by Valgavoth to chaperone Winter, cursed and bound to him as warden.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Speed Demon lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon who released the Speed Demon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Winter",
+   "type": "character",
+   "aliases": [],
+   "description": "Team captain of the Speed Demons, tormented by the demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speed Demons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Team co-led by the demon and captained by Winter.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Valgavoth releases the Speed Demon to chaperone Winter.",
+   "participants": [
+    "Valgavoth",
+    "Speed Demon",
+    "Winter"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "released by Valgavoth to chaperone Winter"
+  },
+  {
+   "summary": "The Speed Demon is cursed and bound to Winter to forever act as his warden.",
+   "participants": [
+    "Speed Demon",
+    "Winter"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was cursed and bound to Winter to forever act as his warden"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Speed Demon",
+   "relation": "enemy",
+   "target": "Winter",
+   "note": "Demonic minder and tormentor of the team captain.",
+   "paragraph": 0,
+   "quote": "the tormentor of the Speed Demons team captain"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,130 @@
+{
+ "page": "wiki/gan",
+ "url": "https://mtg.wiki/page/Gan",
+ "title": "Gan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gan",
+   "type": "location",
+   "aliases": [
+    "Ironhold"
+   ],
+   "description": "Once the largest city of Golthonor in ancient Corondor; its inhabitants were destroyed and it was renamed Ironhold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on the continent of Corondor containing Gan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on which Gan lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Fallen angel who destroyed all the living Ganarians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord who ordered Gan's destruction, took over the city and founded the Iron Kingdom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iron Kingdom",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kingdom founded by Mandek centered on Gan, renamed Ironhold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wolf's Hackle",
+   "type": "location",
+   "aliases": [],
+   "description": "Place north of Gan's location.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Legends",
+   "type": "concept",
+   "aliases": [],
+   "description": "Ancient era in which Gan was destroyed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The fallen angel Trine destroys all living Ganarians as ordered by Mandek Ironfist.",
+   "participants": [
+    "Trine",
+    "Mandek Ironfist"
+   ],
+   "location": "Gan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "all living 100,457 Ganarians were destroyed by the fallen angel Trine as ordered by warlord Mandek Ironfist"
+  },
+  {
+   "summary": "Mandek takes over Gan, founds the Iron Kingdom and renames the city Ironhold.",
+   "participants": [
+    "Mandek Ironfist",
+    "Iron Kingdom"
+   ],
+   "location": "Gan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mandek took over the city and founded the Iron Kingdom centered there, renaming the city itself Ironhold"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trine",
+   "relation": "killed",
+   "target": "Gan",
+   "note": "Trine destroyed all living Ganarians at Mandek's order.",
+   "paragraph": 1,
+   "quote": "all living 100,457 Ganarians were destroyed by the fallen angel Trine"
+  },
+  {
+   "source": "Trine",
+   "relation": "serves",
+   "target": "Mandek Ironfist",
+   "note": "Acted as ordered by the warlord.",
+   "paragraph": 1,
+   "quote": "as ordered by warlord Mandek Ironfist"
+  },
+  {
+   "source": "Mandek Ironfist",
+   "relation": "leader_of",
+   "target": "Iron Kingdom",
+   "note": "Mandek founded the Iron Kingdom.",
+   "paragraph": 1,
+   "quote": "Mandek took over the city and founded the Iron Kingdom centered there"
+  },
+  {
+   "source": "Gan",
+   "relation": "located_in",
+   "target": "Golthonor",
+   "note": "Gan lay within Golthonor on Corondor.",
+   "paragraph": 1,
+   "quote": "it lay south of Wolf's Hackle , within the land of Golthonor on the continent of Corondor"
+  }
+ ],
+ "rejected": []
+}

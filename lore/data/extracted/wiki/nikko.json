@@ -1,0 +1,100 @@
+{
+ "page": "wiki/nikko",
+ "url": "https://mtg.wiki/page/Nikko",
+ "title": "Nikko",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nikko",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Yorgo's ruffians in Arathoxia on Dominaria, later killed by Narok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yorgo",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the ruffians including Nikko.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who summoned a goblin and healed Nikko, and later attacked Castle Melmereth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narok",
+   "type": "character",
+   "aliases": [],
+   "description": "The one who killed Nikko at Castle Melmereth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Melmereth",
+   "type": "location",
+   "aliases": [],
+   "description": "The castle attacked by Arathoxian refugees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which Nikko's spirit could be encountered.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nikko has his throat torn out by a goblin summoned by Jared Carthalion, but is healed when Jared gives him an alabaster potion.",
+   "participants": [
+    "Nikko",
+    "Jared Carthalion"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Nikko had his throat torn out by a goblin summoned by Jared Carthalion"
+  },
+  {
+   "summary": "Nikko is killed by Narok when Jared, Yorgo and other refugees attack Castle Melmereth.",
+   "participants": [
+    "Nikko",
+    "Narok",
+    "Jared Carthalion",
+    "Yorgo"
+   ],
+   "location": "Castle Melmereth",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He was later killed by Narok"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Narok",
+   "relation": "killed",
+   "target": "Nikko",
+   "note": "Narok killed Nikko at Castle Melmereth.",
+   "paragraph": 1,
+   "quote": "He was later killed by Narok"
+  },
+  {
+   "source": "Nikko",
+   "relation": "serves",
+   "target": "Yorgo",
+   "note": "Nikko was one of Yorgo's ruffians.",
+   "paragraph": 0,
+   "quote": "was one of Yorgo 's ruffians in Arathoxia"
+  }
+ ],
+ "rejected": []
+}

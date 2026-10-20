@@ -1,0 +1,126 @@
+{
+ "page": "wiki/marked-ones",
+ "url": "https://mtg.wiki/page/Marked_Ones",
+ "title": "Marked Ones",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:05Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Marked Ones",
+   "type": "faction",
+   "aliases": [
+    "Marked One"
+   ],
+   "description": "Shamanistic barbarian tribe of the Balduvian Steppes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer who poisoned the Marked Ones' water to use their dead in his army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samiks",
+   "type": "character",
+   "aliases": [],
+   "description": "Dying Marked One who told the Kjeldorans what had happened.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldorans",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Kjeldor who aided the Marked Ones.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bolar",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer who administered a Healing Salve to the Marked Ones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balduvians",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of the Balduvian Steppes who later allied with Kjeldor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvian Steppes",
+   "type": "location",
+   "aliases": [],
+   "description": "Steppes of Dominaria inhabited by the Marked Ones.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Ice Age.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lim-Dûl poisons the Marked Ones' water to use their dead bodies in his army and steal their artifacts.",
+   "participants": [
+    "Lim-Dûl",
+    "Marked Ones"
+   ],
+   "location": "Balduvian Steppes",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Their water was poisoned by Lim-Dûl"
+  },
+  {
+   "summary": "Kjeldorans find the dying Marked One Samiks, who tells them what happened.",
+   "participants": [
+    "Kjeldorans",
+    "Samiks"
+   ],
+   "location": "Balduvian Steppes",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kjeldorans later happened upon a dying Marked One named Samiks"
+  },
+  {
+   "summary": "Bolar cures the Marked Ones of the poison with a Healing Salve, an early step toward a Kjeldoran-Balduvian alliance.",
+   "participants": [
+    "Bolar",
+    "Marked Ones",
+    "Kjeldorans"
+   ],
+   "location": "Balduvian Steppes",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the sorcerer Bolar administered a Healing Salve to cure them of Lim-Dûl's poison"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lim-Dûl",
+   "relation": "enemy",
+   "target": "Marked Ones",
+   "note": "poisoned their water",
+   "paragraph": 1,
+   "quote": "Their water was poisoned by Lim-Dûl"
+  },
+  {
+   "source": "Kjeldorans",
+   "relation": "ally",
+   "target": "Balduvians",
+   "note": "bonds that would later bloom into a full alliance",
+   "paragraph": 1,
+   "quote": "which would later bloom into a full alliance"
+  }
+ ],
+ "rejected": []
+}

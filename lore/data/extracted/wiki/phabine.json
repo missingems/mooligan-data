@@ -1,0 +1,55 @@
+{
+ "page": "wiki/phabine",
+ "url": "https://mtg.wiki/page/Phabine",
+ "title": "Phabine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Phabine",
+   "type": "character",
+   "aliases": [
+    "Phabine, Boss's Confidant"
+   ],
+   "description": "A Leonin advisor in New Capenna who takes notes on clients' stories and reports to Jetmir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Crime boss of the Cabaretti to whom Phabine reports.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "The crime family led by Jetmir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Phabine's plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Phabine",
+   "relation": "serves",
+   "target": "Jetmir",
+   "note": "She reports to him.",
+   "paragraph": 1,
+   "quote": "She reports to the crime boss Jetmir of the Cabaretti"
+  }
+ ],
+ "rejected": []
+}

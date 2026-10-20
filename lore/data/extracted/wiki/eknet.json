@@ -1,0 +1,132 @@
+{
+ "page": "wiki/eknet",
+ "url": "https://mtg.wiki/page/Eknet",
+ "title": "Eknet",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Eknet",
+   "type": "character",
+   "aliases": [],
+   "description": "An aven warrior and vizier of the Hekma guard on Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Eknet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hekma",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guard of which Eknet was vizier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Planeswalker group first spoken to by Eknet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who read Eknet's mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temmet",
+   "type": "character",
+   "aliases": [],
+   "description": "Person Eknet was convinced to bring to meet the Gatewatch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army on Ravnica of which Eknet was later part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Eknet was re-killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Eknet again on Ravnica.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Eknet became the first being to speak to the Gatewatch on Amonkhet.",
+   "participants": [
+    "Eknet",
+    "Gatewatch"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "who was the first being to speak to the Gatewatch after they planeswalked to Amonkhet"
+  },
+  {
+   "summary": "Jace Beleren read Eknet's mind and convinced him to get Temmet to meet them.",
+   "participants": [
+    "Jace Beleren",
+    "Eknet",
+    "Temmet"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jace Beleren read his mind and convinced him to get Temmet to meet with them"
+  },
+  {
+   "summary": "Eknet, part of the Dreadhorde, was re-killed by Samut.",
+   "participants": [
+    "Eknet",
+    "Samut",
+    "Dreadhorde"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eknet was part of the Dreadhorde on Ravnica , and was re-killed by Samut ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samut",
+   "relation": "killed",
+   "target": "Eknet",
+   "note": "She re-killed him on Ravnica.",
+   "paragraph": 2,
+   "quote": "was re-killed by Samut"
+  },
+  {
+   "source": "Eknet",
+   "relation": "member_of",
+   "target": "Dreadhorde",
+   "note": "He was part of the Dreadhorde.",
+   "paragraph": 2,
+   "quote": "Eknet was part of the Dreadhorde on Ravnica"
+  }
+ ],
+ "rejected": []
+}

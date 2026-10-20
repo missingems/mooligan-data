@@ -1,0 +1,145 @@
+{
+ "page": "wiki/janus",
+ "url": "https://mtg.wiki/page/Janus",
+ "title": "Janus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Janus",
+   "type": "character",
+   "aliases": [
+    "Janus of the Synod"
+   ],
+   "description": "Janus of the Synod, chief vedalken member of the Synod of Lumengrid and representative to Memnarch; killed by Glissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of the vedalken Synod.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf who fought and killed Janus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kane",
+   "type": "character",
+   "aliases": [],
+   "description": "Viridian elf killed by Janus with a Disarm spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Synod of Lumengrid",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vedalken Synod on Mirrodin of which Janus was a chief member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pool of Knowledge",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Glissa entered using Janus's fingers and where she killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Tangle",
+   "type": "location",
+   "aliases": [
+    "Tangle"
+   ],
+   "description": "Place where Janus visited Glissa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Synod.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Janus visited Glissa in the Tangle and was initially defeated by her; he killed Kane with a Disarm spell.",
+   "participants": [
+    "Janus",
+    "Glissa",
+    "Kane"
+   ],
+   "location": "The Tangle",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was initially defeated by Glissa as he visited her in the Tangle"
+  },
+  {
+   "summary": "Glissa cut off two of Janus's fingers and later used them to gain access to the Pool of Knowledge.",
+   "participants": [
+    "Glissa",
+    "Janus",
+    "Pool of Knowledge"
+   ],
+   "location": "Pool of Knowledge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Glissa then cut off two of Janus's fingers."
+  },
+  {
+   "summary": "Glissa and Janus battled again at the Pool of Knowledge and Glissa killed Janus.",
+   "participants": [
+    "Glissa",
+    "Janus"
+   ],
+   "location": "Pool of Knowledge",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Glissa killed Janus."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Janus",
+   "relation": "serves",
+   "target": "Memnarch",
+   "note": "Chief representative to their master",
+   "paragraph": 1,
+   "quote": "Janus was the vedalken's chief representative to their master"
+  },
+  {
+   "source": "Glissa",
+   "relation": "killed",
+   "target": "Janus",
+   "note": "Killed at the Pool of Knowledge",
+   "paragraph": 2,
+   "quote": "Glissa killed Janus."
+  },
+  {
+   "source": "Janus",
+   "relation": "killed",
+   "target": "Kane",
+   "note": "Via a Disarm spell",
+   "paragraph": 1,
+   "quote": "Janus killed Kane via a Disarm spell"
+  },
+  {
+   "source": "Janus",
+   "relation": "member_of",
+   "target": "Synod of Lumengrid",
+   "note": "Chief member",
+   "paragraph": 0,
+   "quote": "Janus of the Synod was one of the chief members of the vedalken Synod of Lumengrid"
+  }
+ ],
+ "rejected": []
+}

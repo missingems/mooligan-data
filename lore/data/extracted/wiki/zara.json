@@ -1,0 +1,79 @@
+{
+ "page": "wiki/zara",
+ "url": "https://mtg.wiki/page/Zara",
+ "title": "Zara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zara, Renegade Recruiter",
+   "type": "character",
+   "aliases": [
+    "Zara"
+   ],
+   "description": "A pirate from Avishkar and captain of her own airship who recruited for the Renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rebels against the Consulate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Authority the Renegades rebelled against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Renegades.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zara recruited Consulate members to the Renegades with her rhetoric.",
+   "participants": [
+    "Zara, Renegade Recruiter",
+    "Renegades",
+    "Consulate"
+   ],
+   "location": "Kaladesh",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "convincing even entrenched Consulate members to join her side"
+  },
+  {
+   "summary": "Zara led raids key to the Renegades' victory.",
+   "participants": [
+    "Zara, Renegade Recruiter",
+    "Renegades"
+   ],
+   "location": "Kaladesh",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a series of successful raids that were key to delivering the Renegades's victory"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zara, Renegade Recruiter",
+   "relation": "member_of",
+   "target": "Renegades",
+   "note": "She was among their recruiters.",
+   "paragraph": 1,
+   "quote": "Among their various recruiters, none were as effective as Zara."
+  }
+ ],
+ "rejected": []
+}

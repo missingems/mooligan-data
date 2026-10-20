@@ -1,0 +1,104 @@
+{
+ "page": "wiki/babolax",
+ "url": "https://mtg.wiki/page/Babolax",
+ "title": "Babolax",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Babolax",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin foreman on the Cauldron project for the Izzet, killed by Teysa Karlov.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [],
+   "description": "Orzhov leader who interrogated and killed Babolax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zomaj Hauc",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet magelord Babolax was sent in place of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Babolax served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cauldron",
+   "type": "location",
+   "aliases": [],
+   "description": "Izzet project Babolax worked on.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Babolax is sent to an audience with Teysa Karlov instead of Zomaj Hauc, bringing a bam-stick as a gift.",
+   "participants": [
+    "Babolax",
+    "Teysa Karlov",
+    "Zomaj Hauc"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He brought a gift to Teysa: a fully loaded bam-stick"
+  },
+  {
+   "summary": "Teysa questions Babolax in her verity circle.",
+   "participants": [
+    "Teysa Karlov",
+    "Babolax"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Teysa put him into her verity circle and asked questions about the Cauldron"
+  },
+  {
+   "summary": "Teysa kills Babolax with the bam-stick as a warning to Hauc.",
+   "participants": [
+    "Teysa Karlov",
+    "Babolax",
+    "Zomaj Hauc"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she killed Babolax by burning his head off with the bam-stick as a warning for Hauc"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teysa Karlov",
+   "relation": "killed",
+   "target": "Babolax",
+   "note": "Burned his head off with a bam-stick",
+   "paragraph": 1,
+   "quote": "she killed Babolax by burning his head off with the bam-stick as a warning for Hauc"
+  },
+  {
+   "source": "Babolax",
+   "relation": "serves",
+   "target": "Izzet",
+   "note": "Goblin foreman for the Izzet",
+   "paragraph": 0,
+   "quote": "in the service of the Izzet guild on Ravnica"
+  }
+ ],
+ "rejected": []
+}

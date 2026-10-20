@@ -1,0 +1,98 @@
+{
+ "page": "wiki/marivel",
+ "url": "https://mtg.wiki/page/Marivel",
+ "title": "Marivel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Marivel",
+   "type": "character",
+   "aliases": [],
+   "description": "Panther warrior and necromancer from Urborg, leader of Free Urborg and ruler of Vhelnish.",
+   "presence": "appears"
+  },
+  {
+   "name": "Free Urborg",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance led by Marivel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group whose brutality cost Marivel her parents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vhelnish",
+   "type": "location",
+   "aliases": [],
+   "description": "Lost city Marivel discovered and now rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon whose death preceded unknown events for Marivel.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marivel lost her parents to the brutality of the Cabal.",
+   "participants": [
+    "Marivel",
+    "Cabal"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Marivel lost her parents to the brutality of the Cabal"
+  },
+  {
+   "summary": "Marivel discovered the lost city of Vhelnish and learned its ancient knowledge.",
+   "participants": [
+    "Marivel",
+    "Vhelnish"
+   ],
+   "location": "Vhelnish",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When she discovered the lost city of Vhelnish"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marivel",
+   "relation": "leader_of",
+   "target": "Free Urborg",
+   "note": "Leader of the resistance.",
+   "paragraph": 0,
+   "quote": "the leader of Free Urborg"
+  },
+  {
+   "source": "Marivel",
+   "relation": "enemy",
+   "target": "Cabal",
+   "note": "Led resistance after the Cabal killed her parents.",
+   "paragraph": 1,
+   "quote": "Marivel lost her parents to the brutality of the Cabal"
+  }
+ ],
+ "rejected": []
+}

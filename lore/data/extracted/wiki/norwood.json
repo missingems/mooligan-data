@@ -1,0 +1,83 @@
+{
+ "page": "wiki/norwood",
+ "url": "https://mtg.wiki/page/Norwood",
+ "title": "Norwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Norwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven forest covering much of northern Caliman on Dominaria, famed for featherwood trees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talas",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who harvested Norwood's featherwood to build ships, conflicting with the elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Norwood elves",
+   "type": "faction",
+   "aliases": [
+    "the elves"
+   ],
+   "description": "Highly militarized elves of Norwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arathel",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven queen of Norwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caliman",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian region containing Norwood.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mass logging of featherwood by the Talas leads to conflicts between the Talas and the elves.",
+   "participants": [
+    "Talas",
+    "Norwood elves",
+    "Norwood"
+   ],
+   "location": "Norwood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "This mass logging led to conflicts between the Talas and the elves."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arathel",
+   "relation": "leader_of",
+   "target": "Norwood elves",
+   "note": "She is the elven queen of Norwood.",
+   "paragraph": 2,
+   "quote": "The elven queen of Norwood is Arathel ."
+  },
+  {
+   "source": "Talas",
+   "relation": "enemy",
+   "target": "Norwood elves",
+   "note": "Logging led to conflicts.",
+   "paragraph": 1,
+   "quote": "This mass logging led to conflicts between the Talas and the elves."
+  }
+ ],
+ "rejected": []
+}

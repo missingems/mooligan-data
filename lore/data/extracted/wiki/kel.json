@@ -1,0 +1,75 @@
+{
+ "page": "wiki/kel",
+ "url": "https://mtg.wiki/page/Kel",
+ "title": "Kel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Saint Kel",
+   "type": "character",
+   "aliases": [
+    "Kel"
+   ],
+   "description": "Loxodon member of the Selesnya Conclave's inner circle who ordered the quietmen out after his mind collapsed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Kel represented.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Kel was present.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feather",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose testimony Kel attended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parhelion",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Crashed, causing atrocities in Prahv.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the crash of Parhelion Kel's mind collapsed and he ordered the forbidden quietmen sent out.",
+   "participants": [
+    "Saint Kel",
+    "Parhelion",
+    "Prahv"
+   ],
+   "location": "Prahv",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "his mind collapsed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Saint Kel",
+   "relation": "member_of",
+   "target": "Selesnya Conclave",
+   "note": "Member of the inner circle.",
+   "paragraph": 0,
+   "quote": "a loxodon member of the inner circle of the Selesnya Conclave"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,69 @@
+{
+ "page": "wiki/brand",
+ "url": "https://mtg.wiki/page/Brand",
+ "title": "Brand",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Brand",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who used dark magic that destroyed himself and his plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mindrel",
+   "type": "character",
+   "aliases": [],
+   "description": "Brand's friend who warned him against dark magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Outer Ring",
+   "type": "plane",
+   "aliases": [],
+   "description": "Brand's threatened plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Brand told Mindrel he planned to learn dark magic; she warned him but he did not listen.",
+   "participants": [
+    "Brand",
+    "Mindrel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Mindrel tried to talk him out of it by explaining the dangers."
+  },
+  {
+   "summary": "Brand met his challenger at home and used dark magic that destroyed both himself and his plane.",
+   "participants": [
+    "Brand",
+    "Outer Ring"
+   ],
+   "location": "Outer Ring",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He used dark magic that destroyed both him and his plane, and his familiar died curled up by the fireplace."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brand",
+   "relation": "ally",
+   "target": "Mindrel",
+   "note": "Friend whom he sought support from.",
+   "paragraph": 1,
+   "quote": "He sought support from his friend Mindrel"
+  }
+ ],
+ "rejected": []
+}

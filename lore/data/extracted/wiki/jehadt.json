@@ -1,0 +1,86 @@
+{
+ "page": "wiki/jehadt",
+ "url": "https://mtg.wiki/page/Jehadt",
+ "title": "Jehadt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jehadt",
+   "type": "character",
+   "aliases": [],
+   "description": "A proud wizard and warder of Gordahn who vowed revenge after Mezlok defeated him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mezlok",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker named champion of Gordahn who defeated Jehadt easily.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gordahn",
+   "type": "location",
+   "aliases": [],
+   "description": "Village Jehadt was warder of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrankkar",
+   "type": "event",
+   "aliases": [],
+   "description": "The wizards' duel Jehadt trained for.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mezlok walks into Gordahn and the village leader announces he will be champion.",
+   "participants": [
+    "Mezlok",
+    "Gordahn"
+   ],
+   "location": "Gordahn",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "the planeswalker Mezlok walked into the village, and the village's leader announced that Mezlok would be the village's champion"
+  },
+  {
+   "summary": "Jehadt challenges Mezlok and is defeated easily.",
+   "participants": [
+    "Jehadt",
+    "Mezlok"
+   ],
+   "location": "Gordahn",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Jehadt challenged Mezlok for the right to represent the village, but Mezlok defeated him easily"
+  },
+  {
+   "summary": "Jehadt vows revenge and vanishes.",
+   "participants": [
+    "Jehadt"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Jehadt vowed revenge and vanished"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jehadt",
+   "relation": "enemy",
+   "target": "Mezlok",
+   "note": "Vowed revenge.",
+   "paragraph": 0,
+   "quote": "Jehadt vowed revenge and vanished"
+  }
+ ],
+ "rejected": []
+}

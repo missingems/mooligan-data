@@ -1,0 +1,76 @@
+{
+ "page": "wiki/muraytt-mountains",
+ "url": "https://mtg.wiki/page/Muraytt_Mountains",
+ "title": "Muraytt Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Muraytt Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Range of peaks in Dominaria with the abandoned city of Binyen and a Shivan Dragon's cave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Muraytt Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Binyen",
+   "type": "location",
+   "aliases": [
+    "Binyat"
+   ],
+   "description": "Abandoned city in the Muraytt Mountains, once guarded by a Granite Gargoyle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Granite Gargoyle",
+   "type": "creature",
+   "aliases": [],
+   "description": "Gargoyle guardian of Binyen that remembers ornithopters from the Brothers' War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shivan Dragon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon whose cave lies in the Muraytt Mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent near which the Muraytts must lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War whose ornithopters the gargoyle remembers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Binyen",
+   "relation": "located_in",
+   "target": "Muraytt Mountains",
+   "note": "Abandoned city in the range.",
+   "paragraph": 1,
+   "quote": "The mountains feature the abandoned city of Binyen"
+  }
+ ],
+ "rejected": []
+}

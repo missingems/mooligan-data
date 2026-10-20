@@ -1,0 +1,108 @@
+{
+ "page": "wiki/balgot",
+ "url": "https://mtg.wiki/page/Balgot",
+ "title": "Balgot",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:49Z",
+ "storyline": "Elder Dragons",
+ "entities": [
+  {
+   "name": "Balgot",
+   "type": "character",
+   "aliases": [],
+   "description": "Orcish general in the Eastern Domains of Dominaria during the Time of Legends who killed Red Donald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder Dragon who brought Balgot to Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Army of the Valley, killed by Balgot with a poisoned blade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Army of the Valley",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army that fought at the Battle at Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle at Mors Ridge",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Balgot killed Red Donald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mors Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the battle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Palladia-Mors brings Balgot to Mors Ridge to fight Red Donald and the Army of the Valley.",
+   "participants": [
+    "Palladia-Mors",
+    "Balgot",
+    "Red Donald",
+    "Army of the Valley"
+   ],
+   "location": "Mors Ridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Balgot was brought to Mors Ridge by the Elder Dragon Palladia-Mors"
+  },
+  {
+   "summary": "Balgot kills Red Donald with a poisoned blade and is later presumed killed.",
+   "participants": [
+    "Balgot",
+    "Red Donald"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He killed Red Donald with a poisoned blade"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Balgot",
+   "relation": "killed",
+   "target": "Red Donald",
+   "note": "With a poisoned blade at Mors Ridge.",
+   "paragraph": 1,
+   "quote": "He killed Red Donald with a poisoned blade"
+  },
+  {
+   "source": "Balgot",
+   "relation": "serves",
+   "target": "Palladia-Mors",
+   "note": "Brought to battle by the Elder Dragon.",
+   "paragraph": 1,
+   "quote": "brought to Mors Ridge by the Elder Dragon Palladia-Mors"
+  },
+  {
+   "source": "Balgot",
+   "relation": "enemy",
+   "target": "Army of the Valley",
+   "note": "Fought against it.",
+   "paragraph": 1,
+   "quote": "to fight against Red Donald and the Army of the Valley"
+  }
+ ],
+ "rejected": []
+}

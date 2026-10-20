@@ -1,0 +1,106 @@
+{
+ "page": "wiki/windgrace-acolytes",
+ "url": "https://mtg.wiki/page/Windgrace_Acolytes",
+ "title": "Windgrace Acolytes",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Windgrace Acolytes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of cat warriors on Urborg following Lord Windgrace's anti-artifact principles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Windgrace",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose principles the order follows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer the Acolytes tried to discourage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed the Heroes' Memorial.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction whose coming brought the Memorial's destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heroes' Memorial",
+   "type": "location",
+   "aliases": [],
+   "description": "Memorial the Acolytes tended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the order.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Phyrexian Invasion the Acolytes tend the Heroes' Memorial and discourage Venser from working on his ambulators.",
+   "participants": [
+    "Windgrace Acolytes",
+    "Venser"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They tried to discourage Venser from working on his ambulators"
+  },
+  {
+   "summary": "After the Cabal comes and Belzenlok destroys the Memorial, the Acolytes fight to keep Urborg relics from the Cabal.",
+   "participants": [
+    "Windgrace Acolytes",
+    "Belzenlok",
+    "Cabal"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Acolytes fought to keep Urborg relics out of Cabal hands"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Windgrace Acolytes",
+   "relation": "enemy",
+   "target": "Cabal",
+   "note": "keep relics from them",
+   "paragraph": 2,
+   "quote": "the Acolytes fought to keep Urborg relics out of Cabal hands"
+  },
+  {
+   "source": "Windgrace Acolytes",
+   "relation": "serves",
+   "target": "Lord Windgrace",
+   "note": "follow his principles",
+   "paragraph": 0,
+   "quote": "follow the anti-artifact principles of Lord Windgrace"
+  }
+ ],
+ "rejected": []
+}

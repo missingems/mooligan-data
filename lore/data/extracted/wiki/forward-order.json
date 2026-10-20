@@ -1,0 +1,97 @@
+{
+ "page": "wiki/forward-order",
+ "url": "https://mtg.wiki/page/Forward_Order",
+ "title": "Forward Order",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Forward Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "A holy order of clerics devoted to the healing arts, based in the Caligo Forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caligo Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A bleak backwater on Benalia where the order was based.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Ana",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of the Forward Order and Liliana's mentor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker and apprentice of Lady Ana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Vess",
+   "type": "faction",
+   "aliases": [],
+   "description": "The house whose fall wiped out the order's branch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Location of the Caligo Forest.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The branch of the order with Lady Ana and Liliana Vess is wiped out in the fall of House Vess.",
+   "participants": [
+    "Forward Order",
+    "Lady Ana",
+    "Liliana Vess",
+    "House Vess"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "their branch of the order was wiped out in the fall of House Vess"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lady Ana",
+   "relation": "member_of",
+   "target": "Forward Order",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Members of the order included Lady Ana and her apprentice Liliana Vess"
+  },
+  {
+   "source": "Lady Ana",
+   "relation": "mentor_of",
+   "target": "Liliana Vess",
+   "note": "Her apprentice.",
+   "paragraph": 1,
+   "quote": "Lady Ana and her apprentice Liliana Vess"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "member_of",
+   "target": "Forward Order",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Members of the order included Lady Ana and her apprentice Liliana Vess"
+  }
+ ],
+ "rejected": []
+}
