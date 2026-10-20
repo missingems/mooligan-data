@@ -6,8 +6,10 @@ older sets' galleries (`/en/news/card-image-gallery/{set}`). A page is matched t
 short alias) against the page's last path segment, and only matching pages are fetched, one `og:image` each: the social
 image Wizards sets for the page, which is the set's promo art on a product page and a piece of the set's art on a gallery.
 
-For a set, the widest landscape image of its pages wins; a product page beats a gallery on a tie. A set with no page, or
-none with a usable image, is left out, and the app falls back to a card art crop.
+For a set, a gallery's image beats a product page's, because a product page's is a marketing poster with the set's logo and
+text on it and a gallery's is clean key art. Among galleries the larger image (by pixels) wins, a product's gallery on a tie
+before an older gallery. A product page's image is the fallback for a set with no gallery image. A set with no page, or none
+with a usable image, is left out, and the app falls back to a card art crop.
 
 Pages are cached in `state/set-art.json` by URL with the sitemap's `lastmod`, so a page is fetched again only when the
 sitemap says it changed, and the file is rebuilt from the cache on every run. See docs/data-format.md.
@@ -289,12 +291,16 @@ def read_page(page: Page, cached: Optional[dict], get: Fetch) -> dict:
 
 
 def pick(candidates: List[Tuple[Page, dict]]) -> Optional[Tuple[Page, dict]]:
-    """The widest landscape image; a product page, then a product's gallery, then an older gallery on a tie."""
+    """The largest landscape gallery image, a product's gallery before an older gallery on a tie; a product page's image only when there is no gallery's."""
     landscape = [
         (page, entry) for page, entry in candidates
         if entry.get("image") and entry.get("width") and entry.get("height") and entry["width"] >= MIN_ASPECT * entry["height"]
     ]
-    return min(landscape, key=lambda found: (-found[1]["width"], found[0].kind, found[0].url), default=None)
+    return min(
+        landscape,
+        key=lambda found: (found[0].kind == PRODUCT, -found[1]["width"] * found[1]["height"], found[0].kind, found[0].url),
+        default=None,
+    )
 
 
 def build(sets: List[SetInfo], matches: Dict[str, List[Page]], cache: Dict[str, dict], now: datetime) -> dict:
