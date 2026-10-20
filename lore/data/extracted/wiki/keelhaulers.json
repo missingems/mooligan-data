@@ -1,0 +1,115 @@
+{
+ "page": "wiki/keelhaulers",
+ "url": "https://mtg.wiki/page/Keelhaulers",
+ "title": "Keelhaulers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:09Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Keelhaulers",
+   "type": "faction",
+   "aliases": [
+    "The Keelhaulers"
+   ],
+   "description": "A rowdy racing team of chordatan corsairs, fishfolk and humans from an oceanic plane that competed in the Ghirapur Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Race on Avishkar in which the Keelhaulers competed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent hosting the Grand Prix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Howler",
+   "type": "character",
+   "aliases": [],
+   "description": "Daring, brash captain leading the Keelhaulers' premier team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kari Zev",
+   "type": "character",
+   "aliases": [],
+   "description": "Infamous Avishkari pirate who sponsored the Keelhaulers and works as a mercenary guide.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ragavan",
+   "type": "character",
+   "aliases": [],
+   "description": "Kari Zev's companion, employed as guide and envoy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chordatans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Coastal Avishkar people with a strong affinity for aether who arrived by an instanced Omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City to which Kari Zev and Ragavan act as envoys.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Keelhaulers field multiple crews in the second Ghirapur Grand Prix, with Howler leading their premier team.",
+   "participants": [
+    "Keelhaulers",
+    "Howler",
+    "Ghirapur Grand Prix"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "with their most daring and brash captain, Howler , leading their premier team"
+  },
+  {
+   "summary": "Kari Zev sponsors the Keelhaulers' entry into the Grand Prix for unknown reasons.",
+   "participants": [
+    "Kari Zev",
+    "Keelhaulers"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Their entry into the Grand Prix was sponsored by the infamous Avishkari pirate Kari Zev for unknown reasons."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Howler",
+   "relation": "leader_of",
+   "target": "Keelhaulers",
+   "note": "captain of their premier team",
+   "paragraph": 2,
+   "quote": "Howler , leading their premier team"
+  },
+  {
+   "source": "Kari Zev",
+   "relation": "ally",
+   "target": "Keelhaulers",
+   "note": "sponsor and mercenary guide",
+   "paragraph": 4,
+   "quote": "Kari Zev and her companion Ragavan , are employed by the Keelhaulers as mercenary guides"
+  }
+ ],
+ "rejected": []
+}

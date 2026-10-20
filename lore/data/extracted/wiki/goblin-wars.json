@@ -1,0 +1,157 @@
+{
+ "page": "wiki/goblin-wars",
+ "url": "https://mtg.wiki/page/Goblin_Wars",
+ "title": "Goblin Wars",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Goblin Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "Military campaigns in the final decades of the Dark Age on Terisiare targeting goblin and orc forces that threatened human settlements.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the wars took place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Goblin Wars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tivadar of Thorn",
+   "type": "character",
+   "aliases": [
+    "Tivadar"
+   ],
+   "description": "Young warrior who led the Knights of Thorn and the campaigns against goblins and orcs; later wrote a history of the wars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rasputin Dreamweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer who supported Tivadar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church whose witch hunts Tivadar grew up amid; its mission shifted toward external defense.",
+   "presence": "appears"
+  },
+  {
+   "name": "Knights of Thorn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order led by Tivadar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Pitdown",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in 430 AR just before which Tivadar was recruited as a prison guard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins",
+   "type": "faction",
+   "aliases": [
+    "goblin and orc forces"
+   ],
+   "description": "Massing forces Tivadar saw as the real danger.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tivadar, at thirteen, is recruited as a prison guard just before the Battle of Pitdown in 430 AR.",
+   "participants": [
+    "Tivadar of Thorn",
+    "Battle of Pitdown"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Just thirteen years old when he was recruited as a prison guard just before the Battle of Pitdown in 430 AR"
+  },
+  {
+   "summary": "Tivadar becomes leader of the Knights of Thorn, believing goblins, not magic, are the real danger.",
+   "participants": [
+    "Tivadar of Thorn",
+    "Knights of Thorn",
+    "Goblins"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Tivadar of Thorn became the leader of the Knights of Thorn"
+  },
+  {
+   "summary": "Tivadar is joined by Rasputin Dreamweaver, and they form a unit of warriors that takes the fight to the goblins, shifting the Church of Tal's mission.",
+   "participants": [
+    "Tivadar of Thorn",
+    "Rasputin Dreamweaver",
+    "Goblins",
+    "Church of Tal"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "together they established a unit of strong warriors that took the fight to the goblins"
+  },
+  {
+   "summary": "Tivadar leads a major campaign against the goblins and orcs of Terisiare alongside Rasputin; he survives and later writes a history of the wars.",
+   "participants": [
+    "Tivadar of Thorn",
+    "Rasputin Dreamweaver",
+    "Goblins"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Tivadar survived, and later wrote a history of the wars"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tivadar of Thorn",
+   "relation": "leader_of",
+   "target": "Knights of Thorn",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Tivadar of Thorn became the leader of the Knights of Thorn"
+  },
+  {
+   "source": "Rasputin Dreamweaver",
+   "relation": "ally",
+   "target": "Tivadar of Thorn",
+   "note": "joined him against the goblins",
+   "paragraph": 2,
+   "quote": "Tivadar was joined by the sorcerer Rasputin Dreamweaver"
+  },
+  {
+   "source": "Tivadar of Thorn",
+   "relation": "enemy",
+   "target": "Goblins",
+   "note": "led campaigns against them",
+   "paragraph": 2,
+   "quote": "He led a major campaign against the goblins and orcs of Terisiare"
+  }
+ ],
+ "rejected": []
+}
