@@ -1,0 +1,169 @@
+{
+ "page": "wiki/polukranos",
+ "url": "https://mtg.wiki/page/Polukranos",
+ "title": "Polukranos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:38Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Polukranos",
+   "type": "creature",
+   "aliases": [
+    "World Eater"
+   ],
+   "description": "Gigantic legendary Hydra of Theros, also called World Eater, a herald of terrible times.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose battle with Heliod dislodged Polukranos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who sealed Polukranos and made Elspeth his champion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "Goddess who helped seal Polukranos under the Nessian Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker, champion of Heliod, who defeated the hydra with Godsend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daxos",
+   "type": "character",
+   "aliases": [],
+   "description": "Faced the hydra alongside Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Godsend",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Swordspear crafted by Heliod used to defeat Polukranos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nessian Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest beneath which Polukranos was sealed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Polukranos was locked after death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alabaster Host",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian group that compleated Polukranos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Polukranos lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Polukranos falls to Theros because of the battle between Purphoros and Heliod, and is sealed under the Nessian Forest by Heliod and Nylea.",
+   "participants": [
+    "Polukranos",
+    "Purphoros",
+    "Heliod",
+    "Nylea"
+   ],
+   "location": "Nessian Forest",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was sealed under the Nessian Forest by Heliod and Nylea"
+  },
+  {
+   "summary": "Heliod makes Elspeth Tirel his champion; she and Daxos face the awakened hydra and Elspeth defeats it with Godsend.",
+   "participants": [
+    "Elspeth Tirel",
+    "Daxos",
+    "Heliod",
+    "Polukranos",
+    "Godsend"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Elspeth defeated it using Godsend"
+  },
+  {
+   "summary": "After death Polukranos is locked in the Underworld but breaks free during the war of the gods.",
+   "participants": [
+    "Polukranos"
+   ],
+   "location": "The Underworld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the undead monster managed to break free"
+  },
+  {
+   "summary": "During the New Phyrexian Invasion Polukranos escapes the Underworld a third time and is ultimately compleated by the Alabaster Host.",
+   "participants": [
+    "Polukranos",
+    "Alabaster Host"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He would ultimately be compleated by the Alabaster Host"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elspeth Tirel",
+   "relation": "killed",
+   "target": "Polukranos",
+   "note": "Defeated it with Godsend.",
+   "paragraph": 1,
+   "quote": "Elspeth defeated it using Godsend"
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "serves",
+   "target": "Heliod",
+   "note": "Heliod's champion.",
+   "paragraph": 1,
+   "quote": "Heliod made her his champion"
+  },
+  {
+   "source": "Heliod",
+   "relation": "created",
+   "target": "Godsend",
+   "note": "Crafted the swordspear.",
+   "paragraph": 1,
+   "quote": "a swordspear crafted by Heliod"
+  }
+ ],
+ "rejected": []
+}

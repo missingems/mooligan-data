@@ -1,0 +1,90 @@
+{
+ "page": "wiki/ravnica-cycle",
+ "url": "https://mtg.wiki/page/Ravnica_Cycle",
+ "title": "Ravnica Cycle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:37Z",
+ "storyline": "Ravnica Cycle",
+ "entities": [
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [
+    "City of Guilds"
+   ],
+   "description": "Plane and city run by ancient guilds for ten millennia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Age-old document and spell maintaining Ravnica's stability, now strained.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azor I",
+   "type": "character",
+   "aliases": [],
+   "description": "Parun of the Azorius Senate who mostly drew up the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild led by Azor I.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Signing of the Guildpact",
+   "type": "event",
+   "aliases": [],
+   "description": "Event when the Guildpact was co-signed by the guild paruns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Creation of the Schism",
+   "type": "event",
+   "aliases": [],
+   "description": "Featured event of the cycle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Guildpact is drawn up by Azor I and co-signed by the other guilds' paruns to keep Ravnica stable.",
+   "participants": [
+    "Azor I",
+    "Guildpact",
+    "Azorius Senate"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Guildpact, an age-old and potent document and spell, was drawn up, mostly by the parun of the Azorius Senate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azor I",
+   "relation": "created",
+   "target": "Guildpact",
+   "note": "mostly drew it up",
+   "paragraph": 1,
+   "quote": "was drawn up, mostly by the parun of the Azorius Senate"
+  },
+  {
+   "source": "Azor I",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "parun",
+   "paragraph": 1,
+   "quote": "the parun of the Azorius Senate"
+  }
+ ],
+ "rejected": []
+}

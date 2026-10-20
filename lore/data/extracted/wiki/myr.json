@@ -1,0 +1,98 @@
+{
+ "page": "wiki/myr",
+ "url": "https://mtg.wiki/page/Myr",
+ "title": "Myr",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:39Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Myr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Metal automatons created by Memnarch found all over Mirrodin as mindless servitors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the myr who can see through their eyes using the Darksteel Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darksteel Eye",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device letting Memnarch see through myr eyes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where myr are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who used the myr creation myth to cure Jace of madness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker cured of madness by Tamiyo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which many myr were adapted to the Phyrexian side.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tamiyo uses the myr creation myth to cure Jace Beleren of his madness.",
+   "participants": [
+    "Tamiyo",
+    "Jace Beleren",
+    "Myr"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The planeswalker Tamiyo once used the creation myth of the myr to magically cure Jace Beleren of his madness."
+  },
+  {
+   "summary": "At the start of the Phyrexian invasion, many myr are adapted to the Phyrexian side.",
+   "participants": [
+    "Myr",
+    "Phyrexian invasion"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "At the start of the Phyrexian invasion, many were adapted to the Phyrexian side"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Myr",
+   "note": "He created the myr.",
+   "paragraph": 0,
+   "quote": "the metal automatons created by Memnarch"
+  }
+ ],
+ "rejected": []
+}

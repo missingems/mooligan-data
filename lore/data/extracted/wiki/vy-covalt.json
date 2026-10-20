@@ -1,0 +1,121 @@
+{
+ "page": "wiki/vy-covalt",
+ "url": "https://mtg.wiki/page/Vy_Covalt",
+ "title": "Vy Covalt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:32Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Vy Covalt",
+   "type": "character",
+   "aliases": [
+    "Covalt"
+   ],
+   "description": "Neurok leader of the Covalt network who joined the Mirran Resistance and was dissected by Threx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Covalt network",
+   "type": "faction",
+   "aliases": [],
+   "description": "Powerful neurok network.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kara Vrist",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Vrist network.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vrist network",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rival powerful neurok network.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Synod",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vedalken brain trust that claimed all serum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirran Resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance Covalt joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Threx",
+   "type": "character",
+   "aliases": [],
+   "description": "Butcher who dissected Covalt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Synod claims all serum and neurok form networks, led by Covalt and Vrist.",
+   "participants": [
+    "Synod",
+    "Covalt network",
+    "Vrist network",
+    "Vy Covalt",
+    "Kara Vrist"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The most powerful of the networks were the Covalt network"
+  },
+  {
+   "summary": "Covalt joins the Mirran Resistance and shepherds survivors to the Furnace Layer.",
+   "participants": [
+    "Vy Covalt",
+    "Mirran Resistance"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Covalt became a member of the Mirran Resistance"
+  },
+  {
+   "summary": "Covalt is caught and dissected by the butcher Threx.",
+   "participants": [
+    "Vy Covalt",
+    "Threx"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He was caught and dissected by the butcher Threx"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vy Covalt",
+   "relation": "leader_of",
+   "target": "Covalt network",
+   "note": "Led it.",
+   "paragraph": 1,
+   "quote": "the Covalt network (led by Vy Covalt)"
+  },
+  {
+   "source": "Threx",
+   "relation": "killed",
+   "target": "Vy Covalt",
+   "note": "Dissected him.",
+   "paragraph": 2,
+   "quote": "He was caught and dissected by the butcher Threx"
+  }
+ ],
+ "rejected": []
+}

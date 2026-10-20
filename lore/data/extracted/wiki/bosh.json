@@ -1,0 +1,185 @@
+{
+ "page": "wiki/bosh",
+ "url": "https://mtg.wiki/page/Bosh",
+ "title": "Bosh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:12Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Bosh",
+   "type": "character",
+   "aliases": [],
+   "description": "A golem of Mirrodin, companion of Glissa, who sought his lost memory and whose body slowly turned to flesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Bosh lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Bosh's companion who summoned the Kaldra avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of Bosh who later took control of the Kaldra avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [
+    "Compleated Slobad"
+   ],
+   "description": "Goblin tinkerer who found Bosh and travelled with him; parts of Bosh were later used in his compleated form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mycosynth",
+   "type": "concept",
+   "aliases": [],
+   "description": "Substance Bosh was tasked with clearing from Mirrodin's Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin's Core",
+   "type": "location",
+   "aliases": [
+    "Core"
+   ],
+   "description": "Heart of Mirrodin where Bosh's flesh transformation accelerated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [],
+   "description": "Toxic region where Bosh was abandoned and found by Slobad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pool of Knowledge",
+   "type": "location",
+   "aliases": [],
+   "description": "Pool that restored Bosh's memories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldra avatar",
+   "type": "creature",
+   "aliases": [
+    "Kaldra"
+   ],
+   "description": "Avatar summoned by Glissa that Memnarch controlled; it crushed Bosh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Praetors of New Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "praetors"
+   ],
+   "description": "Rulers who incorporated parts of Bosh in Slobad's compleated form.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch creates Bosh and tasks him with clearing mycosynth from the Core, which he fails.",
+   "participants": [
+    "Memnarch",
+    "Bosh"
+   ],
+   "location": "Mirrodin's Core",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Bosh was created by Memnarch to help him with his duties and quests."
+  },
+  {
+   "summary": "Bosh is deactivated and abandoned in the Mephidross, where Slobad finds him.",
+   "participants": [
+    "Bosh",
+    "Slobad"
+   ],
+   "location": "Mephidross",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he was deactivated and abandoned in the Mephidross"
+  },
+  {
+   "summary": "Bosh's memories are fully restored in the Pool of Knowledge.",
+   "participants": [
+    "Bosh"
+   ],
+   "location": "Pool of Knowledge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "until his memories were fully restored by entering the Pool of Knowledge"
+  },
+  {
+   "summary": "Glissa summons the Kaldra avatar, which Memnarch commandeers to capture her; Bosh takes her place and is crushed in Kaldra's grip.",
+   "participants": [
+    "Bosh",
+    "Glissa",
+    "Memnarch",
+    "Kaldra avatar",
+    "Slobad"
+   ],
+   "location": "Mirrodin's Core",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Bosh's fleshy body was crushed in Kaldra's giant grip."
+  },
+  {
+   "summary": "The praetors of New Phyrexia incorporate parts of Bosh into the compleated Slobad.",
+   "participants": [
+    "Praetors of New Phyrexia",
+    "Slobad",
+    "Bosh"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The praetors of New Phyrexia incorporated parts of Bosh in the compleated form of Slobad ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Bosh",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Bosh was created by Memnarch to help him with his duties and quests."
+  },
+  {
+   "source": "Bosh",
+   "relation": "ally",
+   "target": "Glissa",
+   "note": "companion who sacrificed himself for her",
+   "paragraph": 2,
+   "quote": "Bosh saved his friend one last time"
+  },
+  {
+   "source": "Kaldra avatar",
+   "relation": "killed",
+   "target": "Bosh",
+   "note": "crushed him in its grip under Memnarch's control",
+   "paragraph": 2,
+   "quote": "Bosh's fleshy body was crushed in Kaldra's giant grip."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,133 @@
+{
+ "page": "wiki/house-of-ingkara",
+ "url": "https://mtg.wiki/page/House_of_Ingkara",
+ "title": "House of Ingkara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:21Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "House of Ingkara",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of five fighter Houses in Estark, Kush.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jimak Ravelth",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of House Ingkara before the Time of Troubles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garth",
+   "type": "character",
+   "aliases": [],
+   "description": "Arena fighter who defeated Naru and fought Ingkara fighters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balzark",
+   "type": "character",
+   "aliases": [],
+   "description": "Reported Garth's victory over Naru to Jimak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilganorin",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter who battled Garth, killed by Kuthuman after surrender.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuthuman",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Gilganorin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Igun",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Garth, eaten by a Craw Wurm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silmar",
+   "type": "character",
+   "aliases": [],
+   "description": "Tantium captain planted in the House by Zarel Ewine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zarel Ewine",
+   "type": "character",
+   "aliases": [],
+   "description": "Planted Silmar hoping to kill Garth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulin",
+   "type": "character",
+   "aliases": [],
+   "description": "Fast mana gatherer killed by Garth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "Place with five Houses.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gilganorin was killed by Kuthuman after his surrender.",
+   "participants": [
+    "Gilganorin",
+    "Kuthuman"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "He was killed by Kuthuman after his surrender."
+  },
+  {
+   "summary": "Garth killed Ulin in a death match.",
+   "participants": [
+    "Garth",
+    "Ulin"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "He was killed by Garth in a death match."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jimak Ravelth",
+   "relation": "leader_of",
+   "target": "House of Ingkara",
+   "note": "Master of the House",
+   "paragraph": 2,
+   "quote": "Jimak Ravelth (from before the Night of Fire until the Time of Troubles )"
+  },
+  {
+   "source": "Garth",
+   "relation": "killed",
+   "target": "Ulin",
+   "note": "Killed in a death match",
+   "paragraph": 9,
+   "quote": "He was killed by Garth in a death match."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,108 @@
+{
+ "page": "wiki/rograkh",
+ "url": "https://mtg.wiki/page/Rograkh",
+ "title": "Rograkh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rograkh",
+   "type": "character",
+   "aliases": [
+    "Rograkh, Son of Rohgahh"
+   ],
+   "description": "A left-handed Kobold of Dominaria who led a resistance against his father.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rohgahh",
+   "type": "character",
+   "aliases": [],
+   "description": "Kobold leader of Kher Keep who made himself a tyrant, imitating his god.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rosnakht",
+   "type": "character",
+   "aliases": [],
+   "description": "Current ruler of Kher Keep, a possible descendant of Rograkh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prossh",
+   "type": "deity",
+   "aliases": [],
+   "description": "Great dragon worshipped by the kobolds of Kher Keep as a god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kher Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Kobold stronghold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kobolds of Kher Keep",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kobolds who worship Prossh.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rohgahh decides to become a god himself, becoming a tyrant who demands tribute and sacrifice.",
+   "participants": [
+    "Rohgahh",
+    "Prossh"
+   ],
+   "location": "Kher Keep",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he assumed the role of tyrant, demanding tribute, and sacrifice equal to what was offered to Prossh."
+  },
+  {
+   "summary": "Rograkh leads a resistance against his father to return the kobolds to the path of righteousness.",
+   "participants": [
+    "Rograkh",
+    "Rohgahh"
+   ],
+   "location": "Kher Keep",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He led a resistance against his father in an attempt to return the kobolds of Kher Keep to the path of \"righteousness.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rograkh",
+   "relation": "family",
+   "target": "Rohgahh",
+   "note": "son",
+   "paragraph": 3,
+   "quote": "Rograkh, Rohgahh's son, could not bear to watch his father pillage his own people."
+  },
+  {
+   "source": "Rograkh",
+   "relation": "enemy",
+   "target": "Rohgahh",
+   "note": "led resistance against his father",
+   "paragraph": 3,
+   "quote": "He led a resistance against his father"
+  },
+  {
+   "source": "Rohgahh",
+   "relation": "leader_of",
+   "target": "Kobolds of Kher Keep",
+   "note": "",
+   "paragraph": 3,
+   "quote": "their leader Rohgahh had a new idea"
+  }
+ ],
+ "rejected": []
+}

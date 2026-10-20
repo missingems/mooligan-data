@@ -1,0 +1,109 @@
+{
+ "page": "wiki/fire-eye",
+ "url": "https://mtg.wiki/page/Fire_Eye",
+ "title": "Fire Eye",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fire Eye",
+   "type": "character",
+   "aliases": [
+    "Bey Fire Eye"
+   ],
+   "description": "Elder Viashino Bey of Shiv in 3346 AR, who made a deal with Urza over the Mana Rig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to Shiv to take control of the Mana Rig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mana Rig",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient machinery of Shiv producing Thran-metal viashino.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shiv",
+   "type": "location",
+   "aliases": [],
+   "description": "Island ruled by the Viashino Bey.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhammidarigaaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon champion of the viashino.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gherridarigaaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "Mother of the champion Rhammidarigaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact creature whom Fire Eye wanted to possess.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza travels to Shiv and is led to Fire Eye after resistance from Rhammidarigaaz.",
+   "participants": [
+    "Urza",
+    "Rhammidarigaaz",
+    "Fire Eye"
+   ],
+   "location": "Shiv",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he was led to Fire Eye after some resistance from the viashino 's champion dragon"
+  },
+  {
+   "summary": "Fire Eye agrees to Urza's proposal on condition Gherridarigaaz leave Shiv and he possess Karn; Urza agrees.",
+   "participants": [
+    "Fire Eye",
+    "Urza",
+    "Gherridarigaaz"
+   ],
+   "location": "Shiv",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Urza agreed to the deal on both counts."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fire Eye",
+   "relation": "leader_of",
+   "target": "Shiv",
+   "note": "Viashino Bey",
+   "paragraph": 0,
+   "quote": "Fire Eye was the Viashino Bey of Shiv in 3346 AR"
+  },
+  {
+   "source": "Rhammidarigaaz",
+   "relation": "serves",
+   "target": "Fire Eye",
+   "note": "Champion dragon of the viashino",
+   "paragraph": 2,
+   "quote": "the viashino 's champion dragon, Rhammidarigaaz"
+  }
+ ],
+ "rejected": []
+}

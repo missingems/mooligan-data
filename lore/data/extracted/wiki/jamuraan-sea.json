@@ -1,0 +1,115 @@
+{
+ "page": "wiki/jamuraan-sea",
+ "url": "https://mtg.wiki/page/Jamuraan_Sea",
+ "title": "Jamuraan Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:18Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Jamuraan Sea",
+   "type": "location",
+   "aliases": [
+    "Midmercian Sea"
+   ],
+   "description": "Mediterranean sea surrounded by Jamuraa, hard to navigate because of reefs and shoals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Robaran Mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenaries including Jedit Ojanen and Hazezon Tamar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Robaran mercenary.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Robaran mercenary.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose vessels sail the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gallidi",
+   "type": "location",
+   "aliases": [],
+   "description": "Port city on the Onyx Bridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pendrell Vale",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the Tabernacle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Robarans hailed a Corondorian vessel and arranged to meet it again nine weeks later.",
+   "participants": [
+    "Adira Strongheart",
+    "Robaran Mercenaries",
+    "Jedit Ojanen",
+    "Hazezon Tamar"
+   ],
+   "location": "Jamuraan Sea",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "hailed a Corondorian sailing vessel from the shore of the Jamuraan sea"
+  },
+  {
+   "summary": "The ship picked up the mercenaries and sailed them to Gallidi to cross the Onyx Bridge.",
+   "participants": [
+    "Robaran Mercenaries"
+   ],
+   "location": "Gallidi",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the ship picked the mercenaries up and sailed them to Gallidi"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jedit Ojanen",
+   "relation": "member_of",
+   "target": "Robaran Mercenaries",
+   "note": "member",
+   "paragraph": 2,
+   "quote": "Adira Strongheart and her Robaran Mercenaries , including Jedit Ojanen and Hazezon Tamar"
+  },
+  {
+   "source": "Adira Strongheart",
+   "relation": "leader_of",
+   "target": "Robaran Mercenaries",
+   "note": "leader",
+   "paragraph": 2,
+   "quote": "Adira Strongheart and her Robaran Mercenaries"
+  }
+ ],
+ "rejected": []
+}

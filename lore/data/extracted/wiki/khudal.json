@@ -1,0 +1,112 @@
+{
+ "page": "wiki/khudal",
+ "url": "https://mtg.wiki/page/Khudal",
+ "title": "Khudal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:29Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Khudal",
+   "type": "character",
+   "aliases": [],
+   "description": "Rakshasa vizier of the Sultai who framed Yala for his own poisoning attempt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tasigur",
+   "type": "character",
+   "aliases": [],
+   "description": "Sultai khan targeted by an attempt on his life.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikra Shidiqi",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought Tasigur to Khudal's chamber.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yala",
+   "type": "character",
+   "aliases": [],
+   "description": "Honorable warrior falsely accused and killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sultai",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan served by Khudal.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After an attempt on Tasigur's life Ikra Shidiqi brings him to Khudal, who names the warrior Yala.",
+   "participants": [
+    "Ikra Shidiqi",
+    "Tasigur",
+    "Khudal",
+    "Yala"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Khudal told him it was the honorable warrior Yala"
+  },
+  {
+   "summary": "Tasigur breaks his promise and kills the innocent Yala.",
+   "participants": [
+    "Tasigur",
+    "Yala"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tasigur did not keep his promise, and killed Yala"
+  },
+  {
+   "summary": "Khudal admits the poison was his own, having wanted Yala's soul, and fades away.",
+   "participants": [
+    "Khudal",
+    "Tasigur"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Khudal admitted the poison had been his own"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Khudal",
+   "relation": "serves",
+   "target": "Sultai",
+   "note": "Vizier of the clan.",
+   "paragraph": 0,
+   "quote": "Khudal was a rakshasa vizier of the Sultai"
+  },
+  {
+   "source": "Tasigur",
+   "relation": "killed",
+   "target": "Yala",
+   "note": "Killed her in frustration.",
+   "paragraph": 2,
+   "quote": "Tasigur did not keep his promise, and killed Yala"
+  },
+  {
+   "source": "Ikra Shidiqi",
+   "relation": "serves",
+   "target": "Tasigur",
+   "note": "Brought him to Khudal.",
+   "paragraph": 1,
+   "quote": "Ikra Shidiqi brought him to Khudal's chamber"
+  }
+ ],
+ "rejected": []
+}

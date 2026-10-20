@@ -1,0 +1,103 @@
+{
+ "page": "wiki/grandfather-karlov",
+ "url": "https://mtg.wiki/page/Grandfather_Karlov",
+ "title": "Grandfather Karlov",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:28Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Grandfather Karlov",
+   "type": "character",
+   "aliases": [],
+   "description": "Greediest Orzhov Oligarch, ghostly head of the Obzedat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obzedat",
+   "type": "faction",
+   "aliases": [],
+   "description": "Oligarchy of ghosts ruling the Orzhov Syndicate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild ruled by the Obzedat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa"
+   ],
+   "description": "Karlov's descendant and Grand Envoy, imprisoned by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who assassinated the Obzedat.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teysa's attempt to seize power fails and Karlov orders her imprisoned.",
+   "participants": [
+    "Grandfather Karlov",
+    "Teysa Karlov",
+    "Obzedat"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Karlov gave the order to imprison Teysa"
+  },
+  {
+   "summary": "Kaya plunges her knife into Karlov's heart as she assassinates the Obzedat.",
+   "participants": [
+    "Kaya",
+    "Grandfather Karlov",
+    "Obzedat"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kaya plunged her knife into Karlov's heart."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kaya",
+   "relation": "killed",
+   "target": "Grandfather Karlov",
+   "note": "Assassinated him.",
+   "paragraph": 3,
+   "quote": "Kaya plunged her knife into Karlov's heart."
+  },
+  {
+   "source": "Grandfather Karlov",
+   "relation": "member_of",
+   "target": "Obzedat",
+   "note": "Head of the council.",
+   "paragraph": 1,
+   "quote": "As the head of the council"
+  },
+  {
+   "source": "Grandfather Karlov",
+   "relation": "family",
+   "target": "Teysa Karlov",
+   "note": "Her ancestor.",
+   "paragraph": 1,
+   "quote": "his descendant, Teysa"
+  }
+ ],
+ "rejected": []
+}

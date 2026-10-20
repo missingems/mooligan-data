@@ -1,0 +1,86 @@
+{
+ "page": "wiki/wallader",
+ "url": "https://mtg.wiki/page/Wallader",
+ "title": "Wallader",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:33Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Wallader",
+   "type": "character",
+   "aliases": [
+    "Wallader the Eventual"
+   ],
+   "description": "Diminutive turtlefolk mailman on the Strixhaven campus who prefers traditional delivery.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zimone Wola",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of an unmarked package.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nimiroti Wola",
+   "type": "character",
+   "aliases": [],
+   "description": "Zimone's grandmother who sent the package.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Firejolt Café",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the package was delivered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Campus where Wallader works.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wallader delivers a sender-less package to Zimone Wola at the Firejolt Café, apologizing for the delay.",
+   "participants": [
+    "Wallader",
+    "Zimone Wola",
+    "Firejolt Café"
+   ],
+   "location": "Firejolt Café",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Wallader delivered a package to Zimone Wola at the Firejolt Café."
+  },
+  {
+   "summary": "Zimone recognizes the package as from her grandmother Nimiroti Wola.",
+   "participants": [
+    "Zimone Wola",
+    "Nimiroti Wola"
+   ],
+   "location": "Firejolt Café",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Zimone knew it was from her grandmother Nimiroti Wola just from its looks."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zimone Wola",
+   "relation": "family",
+   "target": "Nimiroti Wola",
+   "note": "Granddaughter and grandmother.",
+   "paragraph": 2,
+   "quote": "her grandmother Nimiroti Wola"
+  }
+ ],
+ "rejected": []
+}

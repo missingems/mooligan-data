@@ -1,0 +1,154 @@
+{
+ "page": "wiki/adanto",
+ "url": "https://mtg.wiki/page/Adanto",
+ "title": "Adanto",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:42Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Adanto",
+   "type": "location",
+   "aliases": [],
+   "description": "Legion of Dusk's first and oldest fort in Queen's Bay, on a small island off the mainland coast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire faction that built Adanto and landed on Ixalan in Year 0 of the Dawn Era.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen's Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Adanto stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Natives who controlled the territory before the Legion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Continent where the vampires first landed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adrian Adanto",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander who first claimed the lands for his queen; fort's namesake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Relo of Garra",
+   "type": "character",
+   "aliases": [],
+   "description": "Representative of Queen Miralda governing Adanto.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen Miralda",
+   "type": "character",
+   "aliases": [],
+   "description": "Queen the Legion serves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elia Sotonores",
+   "type": "character",
+   "aliases": [
+    "Viceroy Elia"
+   ],
+   "description": "Adanto's loyal viceroy and second-in-command.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lucaz Sotonores",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Viceroy Elia, killed in pirate raids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brazen Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Pirates who repeatedly raid Adanto.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The vampires of the Legion first set foot on Ixalan, beginning their expansion in Year 0 of the Dawn Era.",
+   "participants": [
+    "Legion of Dusk",
+    "Adrian Adanto"
+   ],
+   "location": "Adanto",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was on these shores that the vampires first set foot on the continent of Ixalan"
+  },
+  {
+   "summary": "Adrian Adanto claimed the lands in his queen's name.",
+   "participants": [
+    "Adrian Adanto"
+   ],
+   "location": "Adanto",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the commander who first claimed these lands in the name of his queen"
+  },
+  {
+   "summary": "Brazen Coalition raids killed Viceroy Elia's brother Lucaz Sotonores.",
+   "participants": [
+    "Brazen Coalition",
+    "Lucaz Sotonores",
+    "Elia Sotonores"
+   ],
+   "location": "Adanto",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the pirates’ raids have even led to the death of Viceroy Elia’s brother, Lucaz Sotonores"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Relo of Garra",
+   "relation": "serves",
+   "target": "Queen Miralda",
+   "note": "Representative governing the fort.",
+   "paragraph": 1,
+   "quote": "Relo of Garra acts as the representative of Queen Miralda"
+  },
+  {
+   "source": "Brazen Coalition",
+   "relation": "enemy",
+   "target": "Legion of Dusk",
+   "note": "Deepening enmity.",
+   "paragraph": 2,
+   "quote": "deepening the enmity between the Legion and the Brazen Coalition"
+  },
+  {
+   "source": "Elia Sotonores",
+   "relation": "family",
+   "target": "Lucaz Sotonores",
+   "note": "Brothers.",
+   "paragraph": 2,
+   "quote": "Viceroy Elia’s brother, Lucaz Sotonores"
+  }
+ ],
+ "rejected": []
+}

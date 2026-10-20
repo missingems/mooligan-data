@@ -1,0 +1,94 @@
+{
+ "page": "wiki/hub",
+ "url": "https://mtg.wiki/page/Hub",
+ "title": "Hub",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:33Z",
+ "storyline": "Rath",
+ "entities": [
+  {
+   "name": "The Hub",
+   "type": "artifact",
+   "aliases": [
+    "Hub"
+   ],
+   "description": "Giant cylindrical machine on Rath resembling a volcano that generated flowstone and housed the Stronghold of the Evincar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane where the Hub stood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stronghold of the Evincar",
+   "type": "location",
+   "aliases": [
+    "Stronghold"
+   ],
+   "description": "Fortress housed under the Hub's mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "City of Traitors",
+   "type": "location",
+   "aliases": [],
+   "description": "City inside the hollow mountain of the Hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "plane",
+   "aliases": [],
+   "description": "Place to which the Stronghold was shifted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Planeshift that moved the Stronghold to Urborg.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Rathi Overlay the Stronghold was shifted to Urborg.",
+   "participants": [
+    "Stronghold of the Evincar",
+    "Rathi Overlay"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "During the Rathi Overlay , the Stronghold was shifted to Urborg ."
+  },
+  {
+   "summary": "The Hub broke apart, exposing the damaged Stronghold to the open air.",
+   "participants": [
+    "The Hub",
+    "Stronghold of the Evincar"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The forces of the planeshift caused the Hub to break apart"
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Hub",
+   "relation": "located_in",
+   "target": "Rath",
+   "note": "Landmark of Rath.",
+   "paragraph": 0,
+   "quote": "a giant cylindrical object resembling a volcano on Rath"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,125 @@
+{
+ "page": "wiki/westvale-abbey",
+ "url": "https://mtg.wiki/page/Westvale_Abbey",
+ "title": "Westvale Abbey",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:18Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Westvale Abbey",
+   "type": "location",
+   "aliases": [],
+   "description": "A cathedral in the village of Westvale in Gavony, once a sanctuary and now a corrupted stronghold of Ormendahl and site of Skirsdag worship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Westvale",
+   "type": "location",
+   "aliases": [],
+   "description": "Village in the Moorland parish of Gavony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Parish of Innistrad containing Westvale.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the abbey.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "character",
+   "aliases": [
+    "Profane Prince"
+   ],
+   "description": "Demon released from the shattered Helvault who made the abbey his lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skirsdag cult",
+   "type": "faction",
+   "aliases": [
+    "Skirsdag"
+   ],
+   "description": "Cult that repurposed the abbey for demonic rites and worships Ormendahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church whose oversight the abbey's remoteness avoided.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Saint Traft",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order whose oversight the abbey's remoteness avoided.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prison from which Ormendahl was released when it shattered.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Ormendahl's release from the shattered Helvault, the Skirsdag cult repurposes the abbey for demonic rites.",
+   "participants": [
+    "Skirsdag cult",
+    "Ormendahl",
+    "Westvale Abbey"
+   ],
+   "location": "Westvale Abbey",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Skirsdag cult repurposed the abbey as a site for demonic rites"
+  },
+  {
+   "summary": "With Ormendahl's emergence the abbey is violently transformed into a profane monument and the demon's lair.",
+   "participants": [
+    "Ormendahl",
+    "Skirsdag cult",
+    "Westvale Abbey"
+   ],
+   "location": "Westvale Abbey",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The sacred structure was twisted into a profane monument"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skirsdag cult",
+   "relation": "serves",
+   "target": "Ormendahl",
+   "note": "fully dedicated the abbey to his worship",
+   "paragraph": 3,
+   "quote": "the cult fully dedicated the site to his worship"
+  },
+  {
+   "source": "Westvale Abbey",
+   "relation": "located_in",
+   "target": "Gavony",
+   "note": "village of Westvale, Moorland parish",
+   "paragraph": 0,
+   "quote": "within the Moorland parish of Gavony on the plane of Innistrad"
+  }
+ ],
+ "rejected": []
+}

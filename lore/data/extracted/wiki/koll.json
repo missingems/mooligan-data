@@ -1,0 +1,138 @@
+{
+ "page": "wiki/koll",
+ "url": "https://mtg.wiki/page/Koll",
+ "title": "Koll",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:35Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Koll",
+   "type": "character",
+   "aliases": [],
+   "description": "A talented dwarf smith from Kaldheim who forged the Sword of the Realms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sword of the Realms",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Blade of Tyrite sharp enough to cut a path between realms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarulf",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster that attacked Koll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halvar",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who defeated Sarulf and saved Koll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tyrite",
+   "type": "concept",
+   "aliases": [],
+   "description": "Godly material that transformed Koll's hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tibalt",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who disguised himself as Valki and killed Koll for the Sword.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valki",
+   "type": "character",
+   "aliases": [],
+   "description": "Identity Tibalt disguised himself as.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sarulf attacks Koll, but Halvar defeats the monster.",
+   "participants": [
+    "Sarulf",
+    "Koll",
+    "Halvar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the god Halvar intervened and defeated the monster"
+  },
+  {
+   "summary": "Koll touches a chunk of Tyrite, turning his hand to Tyrite, and swears to forge a blade for Halvar.",
+   "participants": [
+    "Koll",
+    "Tyrite",
+    "Halvar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "transforming his hand into Tyrite itself"
+  },
+  {
+   "summary": "Koll forges the Sword of the Realms.",
+   "participants": [
+    "Koll",
+    "Sword of the Realms"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a blade he called the Sword of the Realms"
+  },
+  {
+   "summary": "Tibalt, disguised as Valki, tries to get the Sword; Koll refuses and Tibalt kills him and takes it.",
+   "participants": [
+    "Tibalt",
+    "Koll",
+    "Sword of the Realms"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tibalt killed the dwarf and took the Sword for himself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Koll",
+   "relation": "created",
+   "target": "Sword of the Realms",
+   "note": "Forged it.",
+   "paragraph": 0,
+   "quote": "the forger of the Sword of the Realms"
+  },
+  {
+   "source": "Tibalt",
+   "relation": "killed",
+   "target": "Koll",
+   "note": "Killed him to take the Sword.",
+   "paragraph": 2,
+   "quote": "Tibalt killed the dwarf and took the Sword for himself"
+  },
+  {
+   "source": "Halvar",
+   "relation": "ally",
+   "target": "Koll",
+   "note": "Saved him from Sarulf.",
+   "paragraph": 1,
+   "quote": "the god Halvar intervened and defeated the monster"
+  }
+ ],
+ "rejected": []
+}

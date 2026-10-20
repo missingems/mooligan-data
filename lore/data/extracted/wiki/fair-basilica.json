@@ -1,0 +1,121 @@
+{
+ "page": "wiki/fair-basilica",
+ "url": "https://mtg.wiki/page/Fair_Basilica",
+ "title": "Fair Basilica",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:41Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Fair Basilica",
+   "type": "location",
+   "aliases": [],
+   "description": "The white-aligned seventh sphere of New Phyrexia built by Elesh Norn.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Fair Basilica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "Dominant praetor of New Phyrexia who built the Fair Basilica in her image.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alabaster Host",
+   "type": "faction",
+   "aliases": [],
+   "description": "Armored legions guarding the cathedral avenues.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Designated by Norn to oversee the unification of the plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mycosynth Gardens",
+   "type": "location",
+   "aliases": [],
+   "description": "Second layer where Norn now resides.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Cleaved Sheoldred's Coliseum from the Dross Pits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred's Coliseum",
+   "type": "location",
+   "aliases": [],
+   "description": "Now rests in the Fair Basilica.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elesh Norn declares herself dominant praetor and builds the Fair Basilica in her image.",
+   "participants": [
+    "Elesh Norn"
+   ],
+   "location": "Fair Basilica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After declaring herself the dominant praetor of all of New Phyrexia"
+  },
+  {
+   "summary": "Norn moves to the Mycosynth Gardens and designates Atraxa to oversee unification.",
+   "participants": [
+    "Elesh Norn",
+    "Atraxa"
+   ],
+   "location": "Mycosynth Gardens",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "designates the unification of the plane to Atraxa in her stead"
+  },
+  {
+   "summary": "Nahiri cleaves Sheoldred's Coliseum from the Dross Pits; it now rests in the Fair Basilica.",
+   "participants": [
+    "Nahiri"
+   ],
+   "location": "Fair Basilica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Since Nahiri cleaved it from the Dross Pits"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elesh Norn",
+   "relation": "created",
+   "target": "Fair Basilica",
+   "note": "Built in her image.",
+   "paragraph": 1,
+   "quote": "Elesh Norn built the Fair Basilica in her image"
+  },
+  {
+   "source": "Atraxa",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Stands in for her.",
+   "paragraph": 3,
+   "quote": "designates the unification of the plane to Atraxa in her stead"
+  }
+ ],
+ "rejected": []
+}

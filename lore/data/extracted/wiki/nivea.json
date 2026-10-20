@@ -1,0 +1,146 @@
+{
+ "page": "wiki/nivea",
+ "url": "https://mtg.wiki/page/Nivea",
+ "title": "Nivea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:24Z",
+ "storyline": "Onslaught",
+ "entities": [
+  {
+   "name": "Nivea",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage of Otaria who summoned white creatures and died at Phage's hands in a Cabal pit fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "Illusionist and fortune teller, Nivea's love, who created Akroma in her image.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akroma",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel Ixidor created in Nivea's image.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Nivea in a Cabal pit fight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization running pit fights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the northern plains",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mage order Nivea belonged to until its decimation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Nivea met Ixidor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Nivea's homeland.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nivea abandoned the remnants of her order, traveled to Aphetto and met Ixidor.",
+   "participants": [
+    "Nivea",
+    "Ixidor",
+    "Aphetto"
+   ],
+   "location": "Aphetto",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she met Ixidor , an illusionist who worked as a street fortune teller"
+  },
+  {
+   "summary": "Nivea and Ixidor bet on themselves in Cabal pit fights.",
+   "participants": [
+    "Nivea",
+    "Ixidor",
+    "Cabal"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Nivea partnered with her love to make their living betting on themselves"
+  },
+  {
+   "summary": "Nivea died at the hands of Phage in a Cabal pit fight.",
+   "participants": [
+    "Nivea",
+    "Phage",
+    "Cabal"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She died at the hands of Phage in a Cabal pit fight."
+  },
+  {
+   "summary": "In his grief Ixidor created the angel Akroma in her image.",
+   "participants": [
+    "Ixidor",
+    "Akroma",
+    "Nivea"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "In his grief, Ixidor created the angel Akroma in her image."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nivea",
+   "relation": "romantic",
+   "target": "Ixidor",
+   "note": "Fell in love",
+   "paragraph": 2,
+   "quote": "they quickly fell in love"
+  },
+  {
+   "source": "Phage",
+   "relation": "killed",
+   "target": "Nivea",
+   "note": "Killed her in a pit fight",
+   "paragraph": 3,
+   "quote": "She died at the hands of Phage in a Cabal pit fight."
+  },
+  {
+   "source": "Ixidor",
+   "relation": "created",
+   "target": "Akroma",
+   "note": "Created her in Nivea's image",
+   "paragraph": 4,
+   "quote": "In his grief, Ixidor created the angel Akroma in her image."
+  }
+ ],
+ "rejected": []
+}

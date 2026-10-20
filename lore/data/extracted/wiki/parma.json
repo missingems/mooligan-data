@@ -1,0 +1,130 @@
+{
+ "page": "wiki/parma",
+ "url": "https://mtg.wiki/page/Parma",
+ "title": "Parma",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Parma",
+   "type": "location",
+   "aliases": [],
+   "description": "A cold theocratic kingdom among the northern Domains of Dominaria, neighbouring Keld on Icehaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Land founded by Keldons driven from Parma by the cold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Icehaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on which Parma and Keld lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Northern Paladins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Paladins of Parma who spread its central teaching through the Domains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Frost Giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Inhabitants of the cold land of Parma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [],
+   "description": "People driven from Parma at the time of the Brothers' War who founded Keld and learned fire magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Book of Tal",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Text mentioning Parma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Radha",
+   "type": "character",
+   "aliases": [],
+   "description": "Keldon warlord who led a host to Parma to kill ice creatures and lessen Keld's frost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Keldons fled Parma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [
+    "first Phyrexian Invasion of Dominaria"
+   ],
+   "description": "Invasion that Parma's culture survived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the time of the Brothers' War, Keldons are driven from Parma by the cold and found Keld.",
+   "participants": [
+    "Keldons",
+    "Parma",
+    "Keld"
+   ],
+   "location": "Parma",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "At the time of the Brothers' War , Keldons were driven from Parma by the cold."
+  },
+  {
+   "summary": "Parma conflicts with Radha, who leads Gathans and Keldon survivors there to kill ice creatures, then returns to Keld.",
+   "participants": [
+    "Radha",
+    "Parma",
+    "Keld"
+   ],
+   "location": "Parma",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After her campaign, she returned to Keld."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Parma",
+   "relation": "other",
+   "target": "Northern Paladins",
+   "note": "home of the paladins",
+   "paragraph": 0,
+   "quote": "The cold land is home to the Northern Paladins and Frost Giants ."
+  },
+  {
+   "source": "Radha",
+   "relation": "enemy",
+   "target": "Parma",
+   "note": "came into conflict with it",
+   "paragraph": 3,
+   "quote": "eventually came into conflict with Radha and the folk of Keld and Skyshroud"
+  }
+ ],
+ "rejected": []
+}

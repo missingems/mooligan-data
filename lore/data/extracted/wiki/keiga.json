@@ -1,0 +1,169 @@
+{
+ "page": "wiki/keiga",
+ "url": "https://mtg.wiki/page/Keiga",
+ "title": "Keiga",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:34Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Keiga",
+   "type": "creature",
+   "aliases": [
+    "Keiga, the Tide Star"
+   ],
+   "description": "The Tide Star, great ryuu (divine dragon) of Kamigawa's islands who guarded Minamo and the Kamitaki Falls; later reincarnated as Kairi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kairi",
+   "type": "creature",
+   "aliases": [
+    "Kairi, the Swirling Sky"
+   ],
+   "description": "The Swirling Sky, Keiga's reborn form, jailer of Hidetsugu in the spirit realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiki-Jiki",
+   "type": "character",
+   "aliases": [],
+   "description": "Akki entrusted by Keiga with recovering a stolen egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meloku",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature who stole an egg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "O-bakemono who killed Keiga and was later jailed by Kairi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo School",
+   "type": "location",
+   "aliases": [],
+   "description": "School Keiga was defending when killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [],
+   "description": "Place beneath which Keiga slept in an egg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Keiga was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Kairi briefly freed Hidetsugu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yosei",
+   "type": "creature",
+   "aliases": [],
+   "description": "Said in one source to be Keiga's brother.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Before the Kami War Keiga meets Kiki-Jiki, entrusts him with recovering an egg stolen by Meloku, and helps him unlock his magic.",
+   "participants": [
+    "Keiga",
+    "Kiki-Jiki",
+    "Meloku"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "entrusted him with the mission of recovering an egg that was stolen by Meloku"
+  },
+  {
+   "summary": "During the Kami War Hidetsugu kills Keiga while he defends the Minamo School.",
+   "participants": [
+    "Hidetsugu",
+    "Keiga"
+   ],
+   "location": "Minamo School",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Keiga was killed by the o-bakemono Hidetsugu"
+  },
+  {
+   "summary": "After a fifty-year slumber in an egg beneath Boseiju, Keiga is reborn as Kairi.",
+   "participants": [
+    "Keiga",
+    "Kairi"
+   ],
+   "location": "Boseiju",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Keiga was reborn as Kairi"
+  },
+  {
+   "summary": "Kairi, jailer of Hidetsugu, briefly frees the oni to help defend Kamigawa from the New Phyrexian Invasion.",
+   "participants": [
+    "Kairi",
+    "Hidetsugu"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The spirit dragon briefly freed the oni to participate in the defense of Kamigawa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hidetsugu",
+   "relation": "killed",
+   "target": "Keiga",
+   "note": "Killed him in the Kami War.",
+   "paragraph": 2,
+   "quote": "Keiga was killed by the o-bakemono Hidetsugu"
+  },
+  {
+   "source": "Kairi",
+   "relation": "other",
+   "target": "Keiga",
+   "note": "Kairi is Keiga's reincarnation.",
+   "paragraph": 0,
+   "quote": "has since reincarnated as Kairi"
+  },
+  {
+   "source": "Kairi",
+   "relation": "other",
+   "target": "Hidetsugu",
+   "note": "Serves as his jailer in the spirit realm.",
+   "paragraph": 4,
+   "quote": "Kairi serves as Hidetsugu's jailer in the spirit realm"
+  },
+  {
+   "source": "Keiga",
+   "relation": "ally",
+   "target": "Kiki-Jiki",
+   "note": "Entrusted him with a mission and helped him.",
+   "paragraph": 1,
+   "quote": "the dragon helped the akki to unlock his inner magic talents"
+  }
+ ],
+ "rejected": []
+}
