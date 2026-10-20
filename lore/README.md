@@ -26,6 +26,8 @@ Each step only does what is new: scrape skips pages already saved, extract skips
 | `profiles/<slug>.json` | A planeswalker's or plane's bio page under /en/story |
 | `archive/<slug>.json`, `cards/<set>.json`, `wiki/<slug>.json` | The older sources, in the same shape (see `mtglore/sources.py`): wizards.com's old columns, each set's flavor text, MTG Wiki articles |
 | `bios/<id>.json` | A short bio of one of the most-mentioned entities, every sentence citing what it rests on (see `mtglore/bios.py`) |
+| `narratives/<id>.json` | For the app: a short story paragraph per set the entity is key to, `{"sets": {code: [{text, cites}]}}`, each sentence citing that set's events (see `mtglore/narratives.py`: `narrative-prep DIR` writes the inputs, `narrative-ingest <id> raw.json` checks and saves one) |
+| `set_summaries/<code>.json` | For the app: two or three sentences of a set's story, citing its events (`set-summary-ingest <code> raw.json`) |
 | `extracted/{stories,profiles}/<slug>.json` | What Claude found on that page: entities, events and relations. Every event and relation carries a verbatim quote and its paragraph; ones whose quote is not in the page, or that name someone not listed, are under `rejected` |
 | `state/batch.json` | The batch in flight, while there is one, so the next run collects it rather than paying twice |
 | `eras.json` | When each MTG Wiki section's story is set, so the wiki's undated events can be put in order: `{page: {section: {era, label, date}}}`, where `era` is the set code of the set that told it (or a year), and `date` that set's release date (see `mtglore/eras.py`, `python -m mtglore era-ingest <file>`) |

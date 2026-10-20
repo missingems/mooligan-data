@@ -1096,10 +1096,13 @@ Two entities sharing a name about equally, or a card printed only in Universes B
 
 ```json
 {"schema": 1, "generated_at": "…",
- "sets": {"dom": [{"id": "liliana-vess", "name": "Liliana Vess", "type": "planeswalker", "role": "main", "mentions": 122}, …]}}
+ "sets": {"dom": [{"id": "liliana-vess", "name": "Liliana Vess", "type": "planeswalker", "role": "main", "mentions": 122}, …]},
+ "summaries": {"dom": "Dominaria's story follows the Weatherlight's new crew as …"}}
 ```
 
-Each story set (expansions, core sets, draft innovation; not reprint editions or crossovers), by Scryfall set code, to at most 12 entities, most important first. `type` is `character`, `planeswalker`, `plane`, `location`, `faction` or `artifact`. `role` is `main` for the four characters the set is most about and its leading place, else `supporting`. `mentions` counts the facts linking the entity to the set. A fact belongs to a set when it comes from the set's flavor text, from a wiki section tagged with the set, from a story whose storyline is named for the set, or else from a story published within about six weeks before to four months after the set's release.
+`sets` maps each story set (expansions, core sets, draft innovation; not reprint editions or crossovers), by Scryfall set code, to at most 12 entities, most important first. Each set's value stays an array, so readers of the first shape keep working. `type` is `character`, `planeswalker`, `plane`, `location`, `faction` or `artifact`. `role` is `main` for the four characters the set is most about and its leading place, else `supporting`. `mentions` counts the facts linking the entity to the set. A fact belongs to a set when it comes from the set's flavor text, from a wiki section tagged with the set, from a story whose storyline is named for the set, or else from a story published within about six weeks before to four months after the set's release.
+
+`summaries` maps a set code to two or three sentences of that set's story, for the set's About tab. A set without a written summary is missing from the map; show nothing then.
 
 ### `lore/app/entities.json`
 
@@ -1115,7 +1118,7 @@ Every entity with a page: those with a written bio, those a card depicts, and th
 
 ### `lore/app/entities/{id}.md`
 
-One entity's page in [playgraph](https://github.com/missingems/playgraph) primer markdown (`feat/primers-api`): front matter, `##` sections, `[[Card Name]]` links and a `:::cards` block. Every file parses with playgraph's `exportPrimer` without diagnostics.
+One entity's page in [playgraph](https://github.com/missingems/playgraph) primer markdown (`feat/primers-api`): front matter, `##` sections, `[[Card Name]]` links and a `:::cards` block. It is prose to read, not a list of facts: who they are, then their story set by set. Every file parses with playgraph's `exportPrimer` without diagnostics.
 
 ```markdown
 ---
@@ -1123,9 +1126,65 @@ id: teferi
 name: Teferi
 type: planeswalker
 title: Teferi
-planes: [Dominaria, Zhalfir]
+planes: [Zhalfir, Dominaria]
 updated: 2026-10-20
+credit: "Parts adapted from MTG Wiki (https://mtg.wiki) by MTG Wiki contributors, CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)."
 ---
+
+## Who they are
+
+Teferi is a time-manipulating mage and planeswalker from Zhalfir, … He married Subira and they had a daughter, Niambi; …
+
+As of the latest material he is alive in Zhalfir, …
+
+## Story
+
+### Mirage
+
+Teferi unified Zhalfir's houses into guilds, but Kaervek's war reached his isle. …
+
+### Dominaria
+
+Teferi, now mortal, is living with his family when Jhoira asks him to join the Weatherlight. …
+
+## Cards
+
+:::cards
+[[Teferi, Hero of Dominaria]] Dominaria, 2018
+:::
+```
+
+- `credit` (front matter): present when any of the page's text comes from MTG Wiki, which is CC BY-NC-SA 4.0. Show it, for example as a small footnote, whenever the page is shown. A page told only from official sources has no `credit`.
+- `## Who they are` (`## What it is` for places, factions and artifacts): the written bio, then a paragraph on where things stand; or the index's description.
+- `## Story`: one `###` per set (else storyline, era or year) in story order, each with one short paragraph. For the sets the entity is key to, the paragraph is written as a story (`lore/data/narratives`); for the others, it tells up to four of its events from that set.
+- `## Cards`: the cards that depict the entity, oldest first. `[[Card Name]]` also appears in the prose where it reads naturally, only for the entity's own cards.
+- The page carries no links or source list. Which line each sentence rests on stays in the lore index (`lore/data/narratives`, `lore/data/bios` and the index's citations), and the web preview shows it.
+
+### `lore/app/sets/{code}/{id}.md`
+
+What happened to one key entity in one set: open it first when someone taps an entity on a set page, then show the entity's full page below it. There is one for every entity listed under the set in `sets.json`.
+
+```markdown
+---
+id: teferi
+set: dom
+name: Teferi
+title: Teferi in Dominaria
+---
+
+## In Dominaria
+
+Teferi, now mortal, is living with his family when Jhoira asks him to join the Weatherlight. …
+
+## Timeline
+
+- Teferi explains he created a time rift to phase Zhalfir out of Dominaria to protect it from the Phyrexians.
+- Joining Jhoira, Teferi agrees to save the world again.
+```
+
+- `## In {Set Name}`: the same paragraph as the set's section in the entity's page. Where the set has none of the entity's events and the entity is only on its cards, it is what the cards show of them.
+- `## Timeline`: at most 10 of the entity's events in that set, one short line each, in story order; the major ones are kept first when there are more. It is left out when there are none.
+- `credit`: as for the entity pages.
 
 ## Who they are
 
