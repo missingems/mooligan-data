@@ -1,0 +1,98 @@
+{
+ "page": "wiki/sinnia",
+ "url": "https://mtg.wiki/page/Sinnia",
+ "title": "Sinnia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:47Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sinnia",
+   "type": "character",
+   "aliases": [],
+   "description": "A human from Innistrad who took part in Harvesttide and fell foul of the witch Saryth when she wore a mysterious mask.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leinore",
+   "type": "character",
+   "aliases": [],
+   "description": "Sinnia's sister, who destroyed the mask.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saryth",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil witch tied to the mask.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coiled One",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant serpent tied to the mask that held Sinnia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Sinnia lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Harvesttide",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival Sinnia participated in.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sinnia finds a mysterious mask and wears it despite warnings, becoming charismatic and influential.",
+   "participants": [
+    "Sinnia"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Sinnia discovered a mysterious mask and decided to wear it despite warnings."
+  },
+  {
+   "summary": "Leinore destroys the mask; the serpent releases Sinnia and returns underground.",
+   "participants": [
+    "Leinore",
+    "Sinnia",
+    "Coiled One"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Leinore managed to destroy the mask, which made the serpent release its hold on Sinnia and send it back below ground."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sinnia",
+   "relation": "family",
+   "target": "Leinore",
+   "note": "sisters",
+   "paragraph": 2,
+   "quote": "often teasing her sister Leinore with kindness"
+  },
+  {
+   "source": "Saryth",
+   "relation": "other",
+   "target": "Coiled One",
+   "note": "the mask was tied to both",
+   "paragraph": 3,
+   "quote": "the mask proved to be tied to the evil witch Saryth and the giant serpent known as the Coiled One"
+  }
+ ],
+ "rejected": []
+}

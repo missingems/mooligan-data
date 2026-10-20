@@ -1,0 +1,116 @@
+{
+ "page": "wiki/imbraham",
+ "url": "https://mtg.wiki/page/Imbraham",
+ "title": "Imbraham",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:16Z",
+ "storyline": "March of the Machine Aftermath",
+ "entities": [
+  {
+   "name": "Imbraham",
+   "type": "character",
+   "aliases": [
+    "Dean Imbraham"
+   ],
+   "description": "A stern owlin bird wizard, instructor and Dean of Theory at Quandrix College, killed in the New Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quandrix College",
+   "type": "faction",
+   "aliases": [],
+   "description": "College within Strixhaven University.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zimone Wola",
+   "type": "character",
+   "aliases": [],
+   "description": "Student who finally claimed Imbraham's bounties.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adrix",
+   "type": "character",
+   "aliases": [],
+   "description": "Took over Imbraham's role as Dean of Theory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Imbraham died.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zimone Wola's arrival in his classes brings the first claim on Imbraham's bounties.",
+   "participants": [
+    "Imbraham",
+    "Zimone Wola"
+   ],
+   "location": "Quandrix College",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "bounties which remained untouched until the arrival of Zimone Wola in his classes"
+  },
+  {
+   "summary": "Imbraham is killed during the New Phyrexian Invasion.",
+   "participants": [
+    "Imbraham"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "During the New Phyrexian Invasion , Imbraham, like many other Strixhaven teachers, was killed."
+  },
+  {
+   "summary": "Adrix takes over as Dean of Theory of Quandrix.",
+   "participants": [
+    "Adrix"
+   ],
+   "location": "Quandrix College",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "His role as Dean of Theory of the Quandrix College was later taken over by Adrix ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Imbraham",
+   "relation": "member_of",
+   "target": "Quandrix College",
+   "note": "instructor and Dean of Theory",
+   "paragraph": 0,
+   "quote": "Dean Imbraham was a bird wizard and esteemed instructor at the Quandrix College"
+  },
+  {
+   "source": "Adrix",
+   "relation": "other",
+   "target": "Imbraham",
+   "note": "successor as Dean of Theory",
+   "paragraph": 3,
+   "quote": "His role as Dean of Theory of the Quandrix College was later taken over by Adrix ."
+  }
+ ],
+ "rejected": []
+}

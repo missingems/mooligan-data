@@ -1,0 +1,158 @@
+{
+ "page": "wiki/montford",
+ "url": "https://mtg.wiki/page/Montford",
+ "title": "Montford",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:55Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Montford",
+   "type": "location",
+   "aliases": [],
+   "description": "An outpost town of Icatia in Sarpadia that fell to the orc-goblin army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Icatia",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Sarpadia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oliver Farrel",
+   "type": "character",
+   "aliases": [
+    "Farrel"
+   ],
+   "description": "Leader of the Farrelites, active in Montford, who slew Tymolin Loneglade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sianna",
+   "type": "character",
+   "aliases": [],
+   "description": "Oliver Farrel's champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ailis Connaut",
+   "type": "character",
+   "aliases": [],
+   "description": "Scout who revealed the army's position and was knighted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymolin Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "Farrel's ex-lover, slain by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker brother of Tymolin who opened a Planar Gate over Montford; a planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Farrelites",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers of Oliver Farrel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orc-goblin army",
+   "type": "faction",
+   "aliases": [
+    "orcs and goblins"
+   ],
+   "description": "Horde that attacked Montford.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent of Montford.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Sarpadia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The horde encroached on Montford but Icatia's scouts, including Ailis Connaut, enabled the infantry to repel it.",
+   "participants": [
+    "Orc-goblin army",
+    "Ailis Connaut",
+    "Montford"
+   ],
+   "location": "Montford",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Icatia's scouts observed the enemy's position"
+  },
+  {
+   "summary": "Farrel slew his ex-lover Tymolin Loneglade.",
+   "participants": [
+    "Oliver Farrel",
+    "Tymolin Loneglade"
+   ],
+   "location": "Montford",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After Farrel slew his ex-lover"
+  },
+  {
+   "summary": "Tevesh Szat opened a Planar Gate over Montford in revenge; the orc-goblin army poured through and the town fell.",
+   "participants": [
+    "Tevesh Szat",
+    "Orc-goblin army",
+    "Montford"
+   ],
+   "location": "Montford",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The town ultimately fell"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oliver Farrel",
+   "relation": "killed",
+   "target": "Tymolin Loneglade",
+   "note": "He slew his ex-lover.",
+   "paragraph": 3,
+   "quote": "After Farrel slew his ex-lover"
+  },
+  {
+   "source": "Tevesh Szat",
+   "relation": "family",
+   "target": "Tymolin Loneglade",
+   "note": "Tymolin's brother.",
+   "paragraph": 3,
+   "quote": "Tymolin's brother"
+  },
+  {
+   "source": "Sianna",
+   "relation": "serves",
+   "target": "Oliver Farrel",
+   "note": "She is his champion.",
+   "paragraph": 1,
+   "quote": "as was his champion"
+  }
+ ],
+ "rejected": []
+}

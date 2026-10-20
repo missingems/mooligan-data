@@ -1,0 +1,107 @@
+{
+ "page": "wiki/etali",
+ "url": "https://mtg.wiki/page/Etali",
+ "title": "Etali",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:34Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Etali",
+   "type": "creature",
+   "aliases": [
+    "the hurricane"
+   ],
+   "description": "An elder dinosaur of Ixalan called \"the hurricane\", a manifestation of red mana; compleated by the Copper Host and killed by Zacama.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zetalpa",
+   "type": "creature",
+   "aliases": [],
+   "description": "An elder dinosaur whose talons tore Etali's dorsal sail in a fight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zacama",
+   "type": "creature",
+   "aliases": [],
+   "description": "An elder dinosaur who bit off Etali's arm and head.",
+   "presence": "appears"
+  },
+  {
+   "name": "Copper Host",
+   "type": "faction",
+   "aliases": [],
+   "description": "Green-aligned Phyrexian group that compleated Etali.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "The golden city whose opening revealed the elder dinosaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Etali was compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Etali's home plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Etali is compleated by the Copper Host during the New Phyrexian Invasion.",
+   "participants": [
+    "Etali",
+    "Copper Host"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Etali was compleated by the green-aligned Copper Host during the New Phyrexian Invasion"
+  },
+  {
+   "summary": "Zacama kills Etali during the defense of Orazca.",
+   "participants": [
+    "Zacama",
+    "Etali"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "subsequently killed by Zacama during the defense of Orazca"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zacama",
+   "relation": "killed",
+   "target": "Etali",
+   "note": "Bit off his arm and head",
+   "paragraph": 1,
+   "quote": "Zacama subsequently bit off his arm and head."
+  },
+  {
+   "source": "Copper Host",
+   "relation": "created",
+   "target": "Etali",
+   "note": "Compleated him",
+   "paragraph": 3,
+   "quote": "Etali was compleated by the green-aligned Copper Host"
+  }
+ ],
+ "rejected": []
+}

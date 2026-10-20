@@ -1,0 +1,200 @@
+{
+ "page": "wiki/tolsimir-wolfblood",
+ "url": "https://mtg.wiki/page/Tolsimir_Wolfblood",
+ "title": "Tolsimir Wolfblood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:30Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Tolsimir Wolfblood",
+   "type": "character",
+   "aliases": [
+    "Tolsimir"
+   ],
+   "description": "Long-lived elven evangelist of the Selesnya Conclave and leader of the Ledev Guardians, killed by Yarus while defending Trostani.",
+   "presence": "appears"
+  },
+  {
+   "name": "Voja Fenstalker",
+   "type": "creature",
+   "aliases": [
+    "Voja"
+   ],
+   "description": "Tolsimir's massive white wolf mount, father of Biracazir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Biracazir",
+   "type": "creature",
+   "aliases": [],
+   "description": "Son of Voja Fenstalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild Tolsimir served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ledev Guardians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group led by Tolsimir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yarus",
+   "type": "character",
+   "aliases": [],
+   "description": "Impaled Tolsimir with a broken rafter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trostani",
+   "type": "character",
+   "aliases": [],
+   "description": "Selesnya guildmaster Tolsimir defended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oba",
+   "type": "character",
+   "aliases": [],
+   "description": "Dryad revealed as the mastermind of the murders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [],
+   "description": "Detective who investigated the murders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of the gathering where the murders were solved.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karlov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the Orzhov celebrations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict where the Ledev Guardians opposed the Dreadhorde.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forces opposed in the War of the Spark.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tolsimir becomes a person of interest after murders at Karlov Manor.",
+   "participants": [
+    "Tolsimir Wolfblood",
+    "Alquist Proft"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Here he became a person of interest after a string of murders."
+  },
+  {
+   "summary": "Tolsimir tries to admit guilt but Proft says he is covering for Trostani.",
+   "participants": [
+    "Tolsimir Wolfblood",
+    "Alquist Proft",
+    "Trostani"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Tolsimir stepped forward and tried to admit guilt"
+  },
+  {
+   "summary": "Oba reveals herself as mastermind and attacks the guild; Tolsimir defends Trostani and is fatally impaled by Yarus.",
+   "participants": [
+    "Tolsimir Wolfblood",
+    "Oba",
+    "Yarus",
+    "Trostani"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "allowing himself to be fatally impaled with a broken rafter by Yarus"
+  },
+  {
+   "summary": "The Ledev Guardians fight the Dreadhorde in the War of the Spark.",
+   "participants": [
+    "Tolsimir Wolfblood",
+    "Ledev Guardians"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "where they fought to oppose the forces of the Dreadhorde"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tolsimir Wolfblood",
+   "relation": "leader_of",
+   "target": "Ledev Guardians",
+   "note": "Leader.",
+   "paragraph": 0,
+   "quote": "the leader of the Ledev Guardians"
+  },
+  {
+   "source": "Tolsimir Wolfblood",
+   "relation": "member_of",
+   "target": "Selesnya Conclave",
+   "note": "Evangelist.",
+   "paragraph": 0,
+   "quote": "elven evangelist of the Selesnya Conclave"
+  },
+  {
+   "source": "Yarus",
+   "relation": "killed",
+   "target": "Tolsimir Wolfblood",
+   "note": "Impaled him.",
+   "paragraph": 0,
+   "quote": "He was killed by Yarus while defending Trostani"
+  },
+  {
+   "source": "Tolsimir Wolfblood",
+   "relation": "serves",
+   "target": "Trostani",
+   "note": "Defended her.",
+   "paragraph": 0,
+   "quote": "while defending Trostani"
+  },
+  {
+   "source": "Voja Fenstalker",
+   "relation": "family",
+   "target": "Biracazir",
+   "note": "Father.",
+   "paragraph": 1,
+   "quote": "the father of Biracazir"
+  }
+ ],
+ "rejected": []
+}

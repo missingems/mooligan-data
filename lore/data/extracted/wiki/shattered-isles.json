@@ -1,0 +1,119 @@
+{
+ "page": "wiki/shattered-isles",
+ "url": "https://mtg.wiki/page/Shattered_Isles",
+ "title": "Shattered Isles",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:44Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Shattered Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "An archipelago of broken basalt spires that are remnants of Argoth, part of the Terisian Isles of Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Land destroyed when Urza activated the Golgothian Sylex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Activated the Golgothian Sylex at the end of the Brothers' War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose explosion broke the land beneath Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War ending with the activation of the Sylex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which the Shattered Sea formed as Fyndhorn and Kelsinko sank.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Formed a team of mages that failed to hold back the waters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fyndhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest the elves migrated to, later sunk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kelsinko",
+   "type": "location",
+   "aliases": [],
+   "description": "Land that sank during the Flooding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shattered Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea that formed around the islands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza activates the Golgothian Sylex, destroying Argoth.",
+   "participants": [
+    "Urza",
+    "Golgothian Sylex",
+    "Argoth"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Urza activated the Golgothian Sylex , causing a massive explosion that broke the land beneath it."
+  },
+  {
+   "summary": "Jaya Ballard's team of mages fails to keep the waters at bay in the Flooding of Terisiare.",
+   "participants": [
+    "Jaya Ballard",
+    "Flooding of Terisiare"
+   ],
+   "location": "Shattered Isles",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Jaya Ballard formed a team of mages to attempt to keep the waters at bay, but failed."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "other",
+   "target": "Argoth",
+   "note": "Destroyed it with the Golgothian Sylex",
+   "paragraph": 2,
+   "quote": "Argoth was utterly destroyed, and most life near it perished."
+  }
+ ],
+ "rejected": []
+}

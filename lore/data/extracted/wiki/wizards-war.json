@@ -1,0 +1,155 @@
+{
+ "page": "wiki/wizards-war",
+ "url": "https://mtg.wiki/page/Wizards%27_War",
+ "title": "Wizards' War",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:11Z",
+ "storyline": "Shandalar",
+ "entities": [
+  {
+   "name": "Wizards' War",
+   "type": "event",
+   "aliases": [],
+   "description": "Lim-Dul's second campaign to dominate Shandalar, fought against the five wizard schools founded by the Guardian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dul",
+   "type": "character",
+   "aliases": [
+    "Lim-Dûl"
+   ],
+   "description": "A necromancer who twice campaigned to dominate Shandalar and was defeated, his soul imprisoned in the Chain Veil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian",
+   "type": "character",
+   "aliases": [
+    "The Guardian"
+   ],
+   "description": "Founder of the five wizard schools of Shandalar who defeated Lim-Dul and imprisoned his soul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Lim-Dul tried to dominate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Guildlord",
+   "type": "character",
+   "aliases": [],
+   "description": "Guildlord of the black school, killed during the war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azar",
+   "type": "character",
+   "aliases": [],
+   "description": "The body from which Lim-Dul's soul was removed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical artifact that imprisoned Lim-Dul's soul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Barrier",
+   "type": "concept",
+   "aliases": [],
+   "description": "Barrier powered by Lim-Dul's soul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Necromancer lured by Lim-Dul's whispers who claimed the Chain Veil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skavius Slan",
+   "type": "character",
+   "aliases": [],
+   "description": "Lichlord reanimated from Azar's corpse who became black guildlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dul's War",
+   "type": "event",
+   "aliases": [],
+   "description": "Earlier campaign in which Lim-Dul almost conquered all of Shandalar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Black Guildlord was killed during the war while the other guildlords and the Guardian survived.",
+   "participants": [
+    "Black Guildlord",
+    "Guardian"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Black Guildlord was killed during this war"
+  },
+  {
+   "summary": "Lim-Dul was defeated; the Guardian removed his soul from Azar's body and imprisoned it in the Chain Veil to power the Great Barrier.",
+   "participants": [
+    "Guardian",
+    "Lim-Dul",
+    "Azar",
+    "Chain Veil",
+    "Great Barrier"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Guardian removed the necromancer's soul from Azar ’s body"
+  },
+  {
+   "summary": "Azar's soulless corpse was reanimated as the lichlord Skavius Slan, who became guildlord of the black guild.",
+   "participants": [
+    "Skavius Slan",
+    "Azar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Azar's soulless corpse was reanimated as the lichlord Skavius Slan"
+  },
+  {
+   "summary": "Almost a thousand years later Liliana Vess, lured by Lim-Dul's whispers, claimed the Chain Veil.",
+   "participants": [
+    "Liliana Vess",
+    "Chain Veil",
+    "Lim-Dul"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "claimed the relic in her quest for power"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Guardian",
+   "relation": "enemy",
+   "target": "Lim-Dul",
+   "note": "The Guardian defeated him and imprisoned his soul.",
+   "paragraph": 2,
+   "quote": "imprisoned it within a magical artifact called the Chain Veil"
+  }
+ ],
+ "rejected": []
+}

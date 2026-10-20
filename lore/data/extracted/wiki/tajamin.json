@@ -1,0 +1,160 @@
+{
+ "page": "wiki/tajamin",
+ "url": "https://mtg.wiki/page/Tajamin",
+ "title": "Tajamin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tajamin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Keldon doyenne, Keeper of the Book of Keld, who taught Astor the history and philosophy of Keld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Astor",
+   "type": "character",
+   "aliases": [],
+   "description": "A former camp runner who became one of the most famous and powerful warlords of Keld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Commander Treulk",
+   "type": "character",
+   "aliases": [
+    "Treulk"
+   ],
+   "description": "Commander under whom Astor served as camp runner.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olvresk",
+   "type": "character",
+   "aliases": [
+    "Doyen Olvresk",
+    "Bastard of Bogardan"
+   ],
+   "description": "A doyen who took Astor from Treulk and sent him to train under Tajamin, then stormed her compound.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Olvresk's elite soldiers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Land of the Keldons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Book of Keld",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The book Tajamin keeps.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kradak",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of the Tinder Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jezal's Covenant",
+   "type": "concept",
+   "aliases": [],
+   "description": "A teaching Tajamin gave Astor after he learned the spell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Olvresk took Astor from Treulk and sent him to train under Tajamin.",
+   "participants": [
+    "Olvresk",
+    "Astor",
+    "Tajamin"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Olvresk took him from Treulk and sent Astor to train under Doyenne Tajamin"
+  },
+  {
+   "summary": "Olvresk stormed Tajamin's compound with his Fists and slaughtered many of her people.",
+   "participants": [
+    "Olvresk",
+    "Fists",
+    "Tajamin"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He stormed Tajamin's compound and used his Fists, his elite soldiers, to slaughter many of Tajamin's people."
+  },
+  {
+   "summary": "Tajamin saved herself and Astor by telling Olvresk to teach Astor the Tinder Spell himself.",
+   "participants": [
+    "Tajamin",
+    "Olvresk",
+    "Astor"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Tajamin saved her own life, as well as that of Astor"
+  },
+  {
+   "summary": "Astor learned the spell in two days without food, and Tajamin told him of Jezal's Covenant.",
+   "participants": [
+    "Astor",
+    "Tajamin",
+    "Olvresk"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Two days later, Astor knew the spell"
+  },
+  {
+   "summary": "Astor rose to become one of the most famous and powerful warlords of Keld.",
+   "participants": [
+    "Astor"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Astor rose to become one of the most famous and powerful warlords of Keld in modern times."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tajamin",
+   "relation": "mentor_of",
+   "target": "Astor",
+   "note": "Taught him Keld's history and philosophy.",
+   "paragraph": 0,
+   "quote": "She was responsible for teaching Astor the history and philosophy of Keld."
+  },
+  {
+   "source": "Olvresk",
+   "relation": "enemy",
+   "target": "Tajamin",
+   "note": "Disagreed with her methods and attacked her compound.",
+   "paragraph": 1,
+   "quote": "Olvresk disagreed strongly with these methods."
+  }
+ ],
+ "rejected": []
+}

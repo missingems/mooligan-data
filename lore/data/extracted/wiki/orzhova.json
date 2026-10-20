@@ -1,0 +1,154 @@
+{
+ "page": "wiki/orzhova",
+ "url": "https://mtg.wiki/page/Orzhova",
+ "title": "Orzhova",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:42Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Orzhova",
+   "type": "location",
+   "aliases": [
+    "Cathedral Opulent",
+    "Church of Deals"
+   ],
+   "description": "The lavish cathedral guildhall of the Orzhov Syndicate on Ravnica, former seat of the Obzedat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild whose guildhall is Orzhova.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obzedat",
+   "type": "faction",
+   "aliases": [
+    "Ghost Council"
+   ],
+   "description": "The council of ghosts of the Orzhov, also called the Ghost Council.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Orzhova stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin who with Lazav stole something from the quarters of the Obzedat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [
+    "Taz"
+   ],
+   "description": "Known then as Taz; stole something from the Obzedat with Krenko.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who fought toward Orzhova during the War of the Spark and later rested in her chambers there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought toward Orzhova during the War of the Spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Araithia Shokta",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought toward Orzhova during the War of the Spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose officers investigated the theft.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle for Ravnica against Nicol Bolas.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 10,075 ZC Krenko and Lazav steal something from the quarters of the Obzedat and escape.",
+   "participants": [
+    "Krenko",
+    "Lazav",
+    "Obzedat"
+   ],
+   "location": "Orzhova",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "stole something from the quarters of the Obzedat"
+  },
+  {
+   "summary": "During the War of the Spark, Kaya, Teyo and Araithia Shokta fight toward Orzhova to gain the Orzhov guild's help.",
+   "participants": [
+    "Kaya",
+    "Teyo",
+    "Araithia Shokta"
+   ],
+   "location": "Orzhova",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Orzhova became a goal for Kaya"
+  },
+  {
+   "summary": "After the war the three return to Orzhova and rest in Kaya's chambers.",
+   "participants": [
+    "Kaya",
+    "Teyo",
+    "Araithia Shokta"
+   ],
+   "location": "Orzhova",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "going to Kaya's chambers to rest and recuperate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Orzhova",
+   "relation": "other",
+   "target": "Orzhov Syndicate",
+   "note": "Guildhall of the Syndicate.",
+   "paragraph": 0,
+   "quote": "the guildhall of the Orzhov Syndicate on Ravnica"
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Teyo",
+   "note": "They fought toward Orzhova together.",
+   "paragraph": 4,
+   "quote": "the three of them returned to Orzhova"
+  }
+ ],
+ "rejected": []
+}

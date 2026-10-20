@@ -1,0 +1,115 @@
+{
+ "page": "wiki/unawanna",
+ "url": "https://mtg.wiki/page/Unawanna",
+ "title": "Unawanna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Unawanna",
+   "type": "location",
+   "aliases": [],
+   "description": "Tropical volcanic island in the Sea of Serenity, south of Jamuraa on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Unawanna lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mummuir",
+   "type": "creature",
+   "aliases": [
+    "Monarch of All Trees"
+   ],
+   "description": "Banyan on the volcano's rim, the Monarch of All Trees, whose vapor induces fatal drowsiness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Unawanna people",
+   "type": "faction",
+   "aliases": [],
+   "description": "Native people of the island, enslaved by Lucrezians then liberated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lucrezians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who used the island as a staging ground in their war against Fysmatan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Robaran Mercenaries who liberated the Unawanna people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenary company led by Adira Strongheart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fysmatan",
+   "type": "location",
+   "aliases": [],
+   "description": "Enemy of the Lucrezians in their war.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lucrezians enslave the Unawanna people and force them to build ships.",
+   "participants": [
+    "Lucrezians",
+    "Unawanna people"
+   ],
+   "location": "Unawanna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the native Unawanna people were enslaved by Lucrezians"
+  },
+  {
+   "summary": "Adira Strongheart and her Robaran Mercenaries arrive and liberate the Unawanna people.",
+   "participants": [
+    "Adira Strongheart",
+    "Robaran Mercenaries",
+    "Unawanna people"
+   ],
+   "location": "Unawanna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "until Adira Strongheart and her Robaran Mercenaries arrived and liberated the Unawanna people"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lucrezians",
+   "relation": "enemy",
+   "target": "Unawanna people",
+   "note": "Enslaved them",
+   "paragraph": 2,
+   "quote": "the native Unawanna people were enslaved by Lucrezians"
+  },
+  {
+   "source": "Adira Strongheart",
+   "relation": "leader_of",
+   "target": "Robaran Mercenaries",
+   "note": "Her mercenaries",
+   "paragraph": 2,
+   "quote": "Adira Strongheart and her Robaran Mercenaries"
+  }
+ ],
+ "rejected": []
+}

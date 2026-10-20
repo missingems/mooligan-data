@@ -1,0 +1,134 @@
+{
+ "page": "wiki/otaria-chasm",
+ "url": "https://mtg.wiki/page/Otaria_Chasm",
+ "title": "Otaria Chasm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:10Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Otaria Chasm",
+   "type": "location",
+   "aliases": [
+    "Loqar's Folly"
+   ],
+   "description": "A cleft in northern Otaria beneath the Cliffs of Onara, formed as part of the Aboshan Trench.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rillu Veza",
+   "type": "character",
+   "aliases": [],
+   "description": "Mapped the chasm and named it Loqar's Folly.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empress Llawan",
+   "type": "character",
+   "aliases": [
+    "Llawan"
+   ],
+   "description": "Leader who trapped Laquatus's army in the chasm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Mer leader lured into the chasm and later killed by Kamahl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Laquatus in Krosa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "A battle in which Llawan used the chasm to strategic advantage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aboshan Trench",
+   "type": "location",
+   "aliases": [],
+   "description": "A stretch of land that Llawan laid claim to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mer civil war",
+   "type": "event",
+   "aliases": [],
+   "description": "A conflict effectively ended by the use of the Otaria Chasm.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Empress Llawan lured Laquatus and his army into the chasm under false pretenses and sealed them in with portals at each end.",
+   "participants": [
+    "Empress Llawan",
+    "Laquatus",
+    "Otaria Chasm",
+    "Battle for the Mirari"
+   ],
+   "location": "Otaria Chasm",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she lured Laquatus and his army into the ravine under false pretenses"
+  },
+  {
+   "summary": "Llawan's forces hunted down and killed Laquatus's army, and Kamahl killed Laquatus in Krosa, ending the Mer civil war.",
+   "participants": [
+    "Empress Llawan",
+    "Laquatus",
+    "Kamahl",
+    "Mer civil war"
+   ],
+   "location": "Otaria Chasm",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Since Laquatus himself was killed in Krosa by Kamahl"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kamahl",
+   "relation": "killed",
+   "target": "Laquatus",
+   "note": "Killed in Krosa.",
+   "paragraph": 3,
+   "quote": "Laquatus himself was killed in Krosa by Kamahl"
+  },
+  {
+   "source": "Empress Llawan",
+   "relation": "enemy",
+   "target": "Laquatus",
+   "note": "She trapped his army in the chasm.",
+   "paragraph": 3,
+   "quote": "his army was hunted down and killed by Llawan's forces"
+  }
+ ],
+ "rejected": []
+}

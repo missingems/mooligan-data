@@ -1,0 +1,111 @@
+{
+ "page": "wiki/erg-desert",
+ "url": "https://mtg.wiki/page/Erg_Desert",
+ "title": "Erg Desert",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Erg Desert",
+   "type": "location",
+   "aliases": [],
+   "description": "A hostile desert covering western Almaaz in the Terisian Isles on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the Terisian Isles where the Erg Desert lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Terisian Isles lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the Sea of Almaaz formed and the Erg Desert spread.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wyrvil",
+   "type": "faction",
+   "aliases": [],
+   "description": "Fractious orc kingdom occupying the western half of the erg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City sheltering in a river valley near the coast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallajia",
+   "type": "location",
+   "aliases": [
+    "Fallaji"
+   ],
+   "description": "Land east of the erg with a gentler climate; its Fallaji ride kavu into the desert.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Neffia",
+   "type": "location",
+   "aliases": [],
+   "description": "Cave system with a life-saving oasis that sheltered the Neffian people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borderlands",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on a smaller island southwest across a Lat-Nam Strait.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Flooding of Terisiare and the creation of the Sea of Almaaz, the Erg Desert comes to cover western Almaaz.",
+   "participants": [
+    "Erg Desert",
+    "Almaaz",
+    "Flooding of Terisiare"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Erg Desert came to cover almost the entire western half of the island of Almaaz"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Erg Desert",
+   "relation": "located_in",
+   "target": "Almaaz",
+   "note": "western half",
+   "paragraph": 0,
+   "quote": "The Erg Desert covers western Almaaz"
+  },
+  {
+   "source": "Wyrvil",
+   "relation": "other",
+   "target": "Erg Desert",
+   "note": "orc kingdom occupying its western half",
+   "paragraph": 3,
+   "quote": "The fractious orc kingdom of Wyrvil occupies the western half of the erg"
+  }
+ ],
+ "rejected": []
+}

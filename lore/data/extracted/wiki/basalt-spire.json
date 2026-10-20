@@ -1,0 +1,102 @@
+{
+ "page": "wiki/basalt-spire",
+ "url": "https://mtg.wiki/page/Basalt_Spire",
+ "title": "Basalt Spire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Basalt Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient tower in the Dead Zone of Ulgrotha that held the planeswalker Ravi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker trapped in the Basalt Spire after unleashing the Apocalypse Chime.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose activation caused devastation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Discovered and freed Ravi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolgath",
+   "type": "event",
+   "aliases": [],
+   "description": "Catastrophic era of Ravi's refuge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Dead Zone.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravi takes refuge in the spire from the devastation of the Apocalypse Chime.",
+   "participants": [
+    "Ravi",
+    "Basalt Spire",
+    "Apocalypse Chime"
+   ],
+   "location": "Basalt Spire",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the planeswalker Ravi sought refuge within this dark and lonely spire"
+  },
+  {
+   "summary": "Baron Sengir discovers and frees Ravi after countless generations.",
+   "participants": [
+    "Baron Sengir",
+    "Ravi"
+   ],
+   "location": "Basalt Spire",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "until she was eventually discovered and freed by Baron Sengir"
+  },
+  {
+   "summary": "Time reduces the Spire to rubble, burying Ravi.",
+   "participants": [
+    "Basalt Spire",
+    "Ravi"
+   ],
+   "location": "Basalt Spire",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "reduced the Spire to rubble, burying Ravi beneath the remains"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baron Sengir",
+   "relation": "other",
+   "target": "Ravi",
+   "note": "He freed her from the tower.",
+   "paragraph": 1,
+   "quote": "until she was eventually discovered and freed by Baron Sengir"
+  }
+ ],
+ "rejected": []
+}

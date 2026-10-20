@@ -1,0 +1,155 @@
+{
+ "page": "wiki/coliseum-island",
+ "url": "https://mtg.wiki/page/Coliseum_Island",
+ "title": "Coliseum Island",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:13Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Coliseum Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the swamps outside Aphetto, once the site of the Grand Coliseum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grand Coliseum",
+   "type": "location",
+   "aliases": [],
+   "description": "Giant arena built by the Cabal on Coliseum Island and destroyed by Karona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "Place near the swamps.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Annihilated the Grand Coliseum in a rage and left Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "City destroyed during the Battle for the Mirari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Cabal City was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Ordered construction of the Grand Coliseum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [],
+   "description": "Overseer of the coliseum's construction who wiped out the island's villagers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "Sought by Karona; escaped through a portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped through a portal to Aphetto.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lowallyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Escaped through a portal to Aphetto.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phage offers the villagers on Coliseum Island an ultimatum, then wipes them out and levels the village.",
+   "participants": [
+    "Phage"
+   ],
+   "location": "Coliseum Island",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she promptly wiped them all out and leveled their village utterly"
+  },
+  {
+   "summary": "Karona drains the area of mana looking for Kuberr.",
+   "participants": [
+    "Karona",
+    "Kuberr"
+   ],
+   "location": "Grand Coliseum",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she drained the area of mana"
+  },
+  {
+   "summary": "Kuberr, Kamahl and Lowallyn escape through a portal and Karona annihilates the coliseum in a rage.",
+   "participants": [
+    "Kuberr",
+    "Kamahl",
+    "Lowallyn",
+    "Karona"
+   ],
+   "location": "Grand Coliseum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Karona proceeded to annihilate the rest of the coliseum in a rage"
+  },
+  {
+   "summary": "When Karona leaves Dominaria, the island sinks back into the swamp.",
+   "participants": [
+    "Karona"
+   ],
+   "location": "Coliseum Island",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the island sank back into the muck to be reclaimed fully by the swamp"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phage",
+   "relation": "serves",
+   "target": "Cabal Patriarch",
+   "note": "Oversaw the construction of his arena.",
+   "paragraph": 1,
+   "quote": "The building efforts were overseen by Phage"
+  },
+  {
+   "source": "Karona",
+   "relation": "other",
+   "target": "Grand Coliseum",
+   "note": "Destroyed it.",
+   "paragraph": 2,
+   "quote": "Karona proceeded to annihilate the rest of the coliseum in a rage"
+  }
+ ],
+ "rejected": []
+}

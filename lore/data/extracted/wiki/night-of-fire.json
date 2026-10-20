@@ -1,0 +1,176 @@
+{
+ "page": "wiki/night-of-fire",
+ "url": "https://mtg.wiki/page/Night_of_Fire",
+ "title": "Night of Fire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "A massacre in the city of Estark in which the House of Oor-tael was burned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "The city on Dominaria where the Night of Fire occurred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Estark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuthuman",
+   "type": "character",
+   "aliases": [
+    "Grand Master Kuthuman"
+   ],
+   "description": "Grand Master who ordered a tribute of mana from every house for his ascension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House of Oor-tael",
+   "type": "faction",
+   "aliases": [
+    "Oor-tael"
+   ],
+   "description": "A house that refused to give its blue and green mana and was destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel Ewine",
+   "type": "character",
+   "aliases": [],
+   "description": "A conspirator who destroyed Oor-tael to become Grand Master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Uriah Aswark",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarf who betrayed House Oor-tael and became Zarel's second.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cullinarn",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of House Oor-tael who burned alive after teleporting his wife and child away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Galin",
+   "type": "character",
+   "aliases": [],
+   "description": "Cullinarn's child, teleported far away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of the Arena",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival at whose 978th final evening the massacre occurred.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kuthuman ordered a great tribute of mana from every house; Oor-tael refused its blue and green mana, and Zarel conspired with four houses to destroy them.",
+   "participants": [
+    "Kuthuman",
+    "House of Oor-tael",
+    "Zarel Ewine"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Zarel Ewine conspired with the other four houses to destroy them so he could become the Grand Master."
+  },
+  {
+   "summary": "Uriah Aswark betrayed his house, giving away its secrets and unbarring its gates.",
+   "participants": [
+    "Uriah Aswark",
+    "House of Oor-tael"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The dwarf Uriah Aswark betrayed his house, giving away its secrets and unbarring the house's gates."
+  },
+  {
+   "summary": "Zarel and the four houses stormed the grounds and set fire to all buildings; Cullinarn and countless others burned alive.",
+   "participants": [
+    "Zarel Ewine",
+    "House of Oor-tael",
+    "Cullinarn"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Zarel Ewine and the four conspiring houses stormed the grounds and set fire to all its buildings."
+  },
+  {
+   "summary": "Cullinarn teleported his wife and child Galin far away.",
+   "participants": [
+    "Cullinarn",
+    "Galin"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He teleported his wife and child, Galin , far away."
+  },
+  {
+   "summary": "Kuthuman completed his ascension, leaving Zarel the Grand Master with Uriah as his second.",
+   "participants": [
+    "Kuthuman",
+    "Zarel Ewine",
+    "Uriah Aswark"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "leaving Zarel the Grand Master, with Uriah as his second"
+  },
+  {
+   "summary": "Zarel had former members and anyone associated with them arrested and executed; thousands died.",
+   "participants": [
+    "Zarel Ewine"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "After the massacre, Zarel had any former member, suspected former member, or person who conversed with or harbored such a person arrested."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Uriah Aswark",
+   "relation": "other",
+   "target": "Zarel Ewine",
+   "note": "Became his second as Grand Master.",
+   "paragraph": 2,
+   "quote": "leaving Zarel the Grand Master, with Uriah as his second"
+  },
+  {
+   "source": "Zarel Ewine",
+   "relation": "enemy",
+   "target": "House of Oor-tael",
+   "note": "Conspired to destroy them.",
+   "paragraph": 1,
+   "quote": "Zarel Ewine conspired with the other four houses to destroy them so he could become the Grand Master."
+  }
+ ],
+ "rejected": []
+}

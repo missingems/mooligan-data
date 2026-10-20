@@ -1,0 +1,177 @@
+{
+ "page": "wiki/infinite-consortium",
+ "url": "https://mtg.wiki/page/Infinite_Consortium",
+ "title": "Infinite Consortium",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Infinite Consortium",
+   "type": "faction",
+   "aliases": [
+    "the Consortium"
+   ],
+   "description": "Mercantile organization spanning several planes, procuring any items clients wanted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who founded the Consortium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who usurped the Consortium in a bloody coup and led it from the Iron Tower.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "Planeswalker who worked for the Consortium and later crushed Tezzeret's mind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baltrice",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker working for the Consortium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker occasionally hired by the Consortium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iron Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Consortium headquarters in a desert region of an unknown plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Tezzeret's involvement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home of one of the Consortium's most important cells.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home of a young cell opposed by the nezumi-bito.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event several years after Tezzeret's coup.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tezzeret usurps the Consortium from Nicol Bolas in a bloody coup d'etat.",
+   "participants": [
+    "Tezzeret",
+    "Nicol Bolas",
+    "Infinite Consortium"
+   ],
+   "location": "Iron Tower",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "was usurped by Tezzeret in a bloody coup d'état"
+  },
+  {
+   "summary": "Jace Beleren crushes Tezzeret's mind and destroys the information needed to run the Consortium, dissolving it.",
+   "participants": [
+    "Jace Beleren",
+    "Tezzeret",
+    "Infinite Consortium"
+   ],
+   "location": "Iron Tower",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jace Beleren crushed Tezzeret's mind"
+  },
+  {
+   "summary": "Jace returns to the remnants of the Ravnican cell and assumes leadership.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jace could return to the remnants of the Ravnican cell and assume leadership of it"
+  },
+  {
+   "summary": "Tezzeret's darksteel renews his memories, and he settles on the plane of his old headquarters.",
+   "participants": [
+    "Tezzeret"
+   ],
+   "location": "Iron Tower",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "settled there to plot his next moves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "created",
+   "target": "Infinite Consortium",
+   "note": "He founded it.",
+   "paragraph": 1,
+   "quote": "The Consortium was founded by Nicol Bolas"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "leader_of",
+   "target": "Infinite Consortium",
+   "note": "He led it after the coup.",
+   "paragraph": 1,
+   "quote": "The headquarters, under Tezzeret's leadership"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "Jace crushed his mind.",
+   "paragraph": 2,
+   "quote": "Jace Beleren crushed Tezzeret's mind"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "serves",
+   "target": "Infinite Consortium",
+   "note": "Jace worked for the Consortium as one of its planeswalkers.",
+   "paragraph": 1,
+   "quote": "There were five planeswalkers working for the Consortium"
+  }
+ ],
+ "rejected": []
+}

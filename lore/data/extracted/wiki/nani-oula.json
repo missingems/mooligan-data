@@ -1,0 +1,190 @@
+{
+ "page": "wiki/nani-oula",
+ "url": "https://mtg.wiki/page/Nani_Oula",
+ "title": "Nani Oula",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:38Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Nani Oula",
+   "type": "character",
+   "aliases": [
+    "Witch of the Moorlands"
+   ],
+   "description": "A witch of the Moorlands near Hexenrast in Gavony who mentored apprentices; her soul was trapped in an amulet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volomir",
+   "type": "character",
+   "aliases": [],
+   "description": "Human apprentice told to slay his family, then fed to werewolves and became a wraith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa Cecani",
+   "type": "character",
+   "aliases": [],
+   "description": "Friend of Volomir and apprentice who received a task.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulav",
+   "type": "character",
+   "aliases": [],
+   "description": "Madman of Hexenrast and later apprentice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Havish",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder rescued from wolves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kurjak",
+   "type": "character",
+   "aliases": [],
+   "description": "Werewolf high shaman killed in Crussebourg, whose soul the Butcher later freed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaash Vroga",
+   "type": "character",
+   "aliases": [],
+   "description": "Third apprentice who stole Geralf's masterpiece.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf Cecani",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the masterpiece.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Butcher of Crussebourg",
+   "type": "character",
+   "aliases": [
+    "the traveler",
+    "the Butcher"
+   ],
+   "description": "The Legends planeswalker who served as Nani's apprentice and later confronted her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hexenrast",
+   "type": "location",
+   "aliases": [],
+   "description": "Town near where Nani lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crussebourg",
+   "type": "location",
+   "aliases": [],
+   "description": "Town cleansed of lycanthropy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Nani lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nani has Volomir slay his family; when he questions her she feeds him to werewolves.",
+   "participants": [
+    "Nani Oula",
+    "Volomir"
+   ],
+   "location": "Gavony",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she fed him to werewolves and he became a wraith"
+  },
+  {
+   "summary": "Ulav presents the traveler to Nani for an apprenticeship.",
+   "participants": [
+    "Ulav",
+    "Butcher of Crussebourg",
+    "Nani Oula"
+   ],
+   "location": "Hexenrast",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he presented the traveler to Nani for an apprenticeship"
+  },
+  {
+   "summary": "The traveler massacres werewolves in Crussebourg, including Kurjak.",
+   "participants": [
+    "Butcher of Crussebourg",
+    "Kurjak",
+    "Nani Oula"
+   ],
+   "location": "Crussebourg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She had the traveler massacre many werewolves in the town, including the high shaman Kurjak."
+  },
+  {
+   "summary": "Nani tasks Vaash with stealing Geralf's masterpiece.",
+   "participants": [
+    "Nani Oula",
+    "Vaash Vroga",
+    "Geralf Cecani"
+   ],
+   "location": "Gavony",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Nani tasked Vaash with the theft of Geralf's masterpiece"
+  },
+  {
+   "summary": "The Butcher frees Kurjak's soul and together they trap Nani's soul in the amulet.",
+   "participants": [
+    "Butcher of Crussebourg",
+    "Kurjak",
+    "Nani Oula"
+   ],
+   "location": "Gavony",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The Butcher and Kurjak then trapped Nani's soul within the very amulet she had given the Butcher."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nani Oula",
+   "relation": "mentor_of",
+   "target": "Volomir",
+   "note": "Apprentice.",
+   "paragraph": 1,
+   "quote": "Volomir, a friend of Gisa Cecani , was a human apprentice to Nani Oula."
+  },
+  {
+   "source": "Nani Oula",
+   "relation": "mentor_of",
+   "target": "Vaash Vroga",
+   "note": "Third apprentice.",
+   "paragraph": 4,
+   "quote": "Nani took on Vaash Vroga as a third simultaneous apprentice"
+  },
+  {
+   "source": "Butcher of Crussebourg",
+   "relation": "enemy",
+   "target": "Nani Oula",
+   "note": "Trapped her soul.",
+   "paragraph": 5,
+   "quote": "The Butcher and Kurjak then trapped Nani's soul"
+  }
+ ],
+ "rejected": []
+}

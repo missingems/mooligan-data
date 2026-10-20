@@ -1,0 +1,120 @@
+{
+ "page": "wiki/khalni-heart",
+ "url": "https://mtg.wiki/page/Khalni_Heart",
+ "title": "Khalni Heart",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Khalni Heart",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical flower that is an outgrowth of the soul of Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Zendikari planeswalker who found the Khalni Heart in Bala Ged and rekindled her connection to the plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon and former planeswalker who sought to use the Khalni Heart to reignite his spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose soul the Khalni Heart grows from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "Devastated continent where the Khalni Heart had a new bud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders whose onslaught devastated Bala Ged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khalni Stone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient mana refractor at the heart of Ora Ondor feeding the Impossible Garden.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ora Ondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Place in Akoum at the heart of which lies the Khalni Stone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Impossible Garden",
+   "type": "location",
+   "aliases": [],
+   "description": "Garden fed by the Khalni Stone whose plants mutate elves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Led by visions, Nissa travels into Bala Ged to find the Khalni Heart and rekindles her connection to the plane.",
+   "participants": [
+    "Nissa Revane",
+    "Khalni Heart"
+   ],
+   "location": "Bala Ged",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Through it, Nissa rekindled her connection to the plane"
+  },
+  {
+   "summary": "Nissa runs afoul of Ob Nixilis, bests him, removes the Khalni Heart to safety and escapes.",
+   "participants": [
+    "Nissa Revane",
+    "Ob Nixilis",
+    "Khalni Heart"
+   ],
+   "location": "Bala Ged",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Nissa bested Ob Nixilis, removed the Khalni Heart to safety, and escaped."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nissa Revane",
+   "relation": "enemy",
+   "target": "Ob Nixilis",
+   "note": "She bested him over the Khalni Heart.",
+   "paragraph": 1,
+   "quote": "Nissa bested Ob Nixilis"
+  },
+  {
+   "source": "Khalni Stone",
+   "relation": "other",
+   "target": "Khalni Heart",
+   "note": "The Stone's mana truly comes from a Khalni Heart.",
+   "paragraph": 2,
+   "quote": "The true source of the refracting Khalni Stone's mana is in fact a Khalni Heart"
+  }
+ ],
+ "rejected": []
+}

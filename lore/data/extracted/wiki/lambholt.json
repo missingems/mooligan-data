@@ -1,0 +1,122 @@
+{
+ "page": "wiki/lambholt",
+ "url": "https://mtg.wiki/page/Lambholt",
+ "title": "Lambholt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [
+    "The Threatened Pasture"
+   ],
+   "description": "Farming village in Kessig on Innistrad, known for livestock and its struggle against werewolf attacks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Province of Innistrad containing Lambholt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Lambholt lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulvenwald",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest at the edge of which Lambholt's pasture was carved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose disappearance weakened protective wards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Horror that terrorized Lambholt until driven off.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Astronomer mage who helped drive off Old Stickfingers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "Inquisitor who helped drive off Old Stickfingers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Werewolves",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures that frequently attack the village's livestock and people.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Avacyn's disappearance the harvest festival evolves into a hunters' contest in the Ulvenwald.",
+   "participants": [
+    "Lambholt",
+    "Avacyn"
+   ],
+   "location": "Ulvenwald",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the festival evolved into a hunters' contest"
+  },
+  {
+   "summary": "Old Stickfingers is driven off with the help of Vadrik and Rem Karolus.",
+   "participants": [
+    "Old Stickfingers",
+    "Vadrik",
+    "Rem Karolus"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "until it was driven off with the help of the astronomer mage Vadrik and inquisitor Rem Karolus"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lambholt",
+   "relation": "located_in",
+   "target": "Kessig",
+   "note": "Farming village in the province.",
+   "paragraph": 0,
+   "quote": "is a farming village in the province of Kessig on Innistrad"
+  },
+  {
+   "source": "Werewolves",
+   "relation": "enemy",
+   "target": "Lambholt",
+   "note": "Werewolves frequently attack it.",
+   "paragraph": 1,
+   "quote": "werewolves frequently attack the village's livestock and people"
+  }
+ ],
+ "rejected": []
+}

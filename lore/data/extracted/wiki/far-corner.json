@@ -1,0 +1,124 @@
+{
+ "page": "wiki/far-corner",
+ "url": "https://mtg.wiki/page/Far_Corner",
+ "title": "Far Corner",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:29Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Far Corner",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighborhood of Towashi that juts furthest into the Jukai, once a Jukai village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "City that the Far Corner belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest surrounding the Far Corner on two sides.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Go-Shintai of Boundless Vigor",
+   "type": "location",
+   "aliases": [],
+   "description": "Shrine at the end of Far Corner whose kami whispers dreams to followers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chishiro",
+   "type": "character",
+   "aliases": [],
+   "description": "Protector hired to defend the village from the Mukotai Reckoners.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group threatening the village.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tatsunari",
+   "type": "character",
+   "aliases": [],
+   "description": "Reckoner who attacked the shrine and awakened the wrathful kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaima",
+   "type": "character",
+   "aliases": [],
+   "description": "Chishiro's former kami who reappeared.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Reckoner Tatsunari attacked the shrine, awakening the wrathful kami and unleashing chaos on Far Corner.",
+   "participants": [
+    "Tatsunari",
+    "Go-Shintai of Boundless Vigor"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Reckoner Tatsunari attacked the shrine, awakening the wrathful kami"
+  },
+  {
+   "summary": "Chishiro confronted Tatsunari and faced the reappearance of Kaima.",
+   "participants": [
+    "Chishiro",
+    "Tatsunari",
+    "Kaima"
+   ],
+   "location": "Far Corner",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Chishiro confronted Tatsunari while also facing the haunting reappearance of his former kami, Kaima"
+  },
+  {
+   "summary": "Chishiro offered Kaima his blade in surrender and hope; Kaima chose renewal, and they left the ruins together.",
+   "participants": [
+    "Chishiro",
+    "Kaima"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Chishiro offered Kaima his blade as an act of surrender and hope"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Far Corner",
+   "relation": "located_in",
+   "target": "Towashi",
+   "note": "neighborhood of Towashi",
+   "paragraph": 0,
+   "quote": "The Far Corner is the part of Towashi that juts the furthest out into the Jukai"
+  },
+  {
+   "source": "Chishiro",
+   "relation": "other",
+   "target": "Kaima",
+   "note": "former kami and bound partner",
+   "paragraph": 3,
+   "quote": "his former kami, Kaima"
+  }
+ ],
+ "rejected": []
+}

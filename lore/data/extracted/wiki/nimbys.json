@@ -1,0 +1,155 @@
+{
+ "page": "wiki/nimbys",
+ "url": "https://mtg.wiki/page/Nimbys",
+ "title": "Nimbys",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nimbys of Tharkair",
+   "type": "character",
+   "aliases": [
+    "Nimbys"
+   ],
+   "description": "Planeswalker who fought for 'the Cause', summoning Isle of Indigo villagers to battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruannon",
+   "type": "character",
+   "aliases": [],
+   "description": "Villager of the Isle of Indigo summoned by Nimbys and killed in battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alandrah",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruannon's wife, summoned by Nimbys and killed as an archer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Peter Langwynd",
+   "type": "character",
+   "aliases": [
+    "Peter"
+   ],
+   "description": "Son of Ruannon and Alandrah who stabbed Nimbys and refused his offer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isle of Indigo",
+   "type": "location",
+   "aliases": [],
+   "description": "Island home of Ruannon, Alandrah and Peter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Indigents",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of the Isle of Indigo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Foulmere",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Peter was summoned and lived afterward.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Cause",
+   "type": "concept",
+   "aliases": [],
+   "description": "What Nimbys fights for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enchanted dagger",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Dagger Nimbys sent Ruannon back with as weregild, later used by Peter.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nimbys helps the village then leaves, after which people vanish; he summons Ruannon to a distant battlefield where he is killed.",
+   "participants": [
+    "Nimbys of Tharkair",
+    "Ruannon"
+   ],
+   "location": "Isle of Indigo",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Ruannon was one of the first, summoned to a distant battlefield by Nimbys, where he was killed."
+  },
+  {
+   "summary": "Nimbys summons Alandrah with Peter clinging to her; she is turned into an archer and killed in battle.",
+   "participants": [
+    "Nimbys of Tharkair",
+    "Alandrah",
+    "Peter Langwynd"
+   ],
+   "location": "Foulmere",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She was turned into an archer and killed in the battle fighting on behalf of Nimbys"
+  },
+  {
+   "summary": "Peter stabs Nimbys in the heart with the enchanted dagger, but it does not wound him.",
+   "participants": [
+    "Peter Langwynd",
+    "Nimbys of Tharkair",
+    "Enchanted dagger"
+   ],
+   "location": "Foulmere",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "stabbed him in the heart with the enchanted dagger, but it did not kill Nimbys"
+  },
+  {
+   "summary": "Peter refuses Nimbys's recruitment and offer of return home, and lives in Foulmere.",
+   "participants": [
+    "Peter Langwynd",
+    "Nimbys of Tharkair"
+   ],
+   "location": "Foulmere",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Nimbys let Peter go to live in Foulmere where he had been summoned."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ruannon",
+   "relation": "family",
+   "target": "Peter Langwynd",
+   "note": "Peter is the son of Ruannon and Alandrah.",
+   "paragraph": 0,
+   "quote": "Ruannon and Alandrah and their son Peter Langwynd"
+  },
+  {
+   "source": "Ruannon",
+   "relation": "family",
+   "target": "Alandrah",
+   "note": "Husband and wife, parents of Peter.",
+   "paragraph": 0,
+   "quote": "Ruannon and Alandrah and their son Peter Langwynd"
+  },
+  {
+   "source": "Nimbys of Tharkair",
+   "relation": "enemy",
+   "target": "Peter Langwynd",
+   "note": "Peter stabbed Nimbys after his parents died fighting for him.",
+   "paragraph": 1,
+   "quote": "Enraged, Peter found Nimbys on the battlefield"
+  }
+ ],
+ "rejected": []
+}

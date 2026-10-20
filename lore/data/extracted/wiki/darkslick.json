@@ -1,0 +1,130 @@
+{
+ "page": "wiki/darkslick",
+ "url": "https://mtg.wiki/page/Darkslick",
+ "title": "Darkslick",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Darkslick",
+   "type": "location",
+   "aliases": [
+    "The Darkslick"
+   ],
+   "description": "A boundary region on New Phyrexia where the Surgical Bay's quicksilver seeps into the Dross Pits; home to laboratories and breeding vats.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Mirrodin became after its complete transformation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Surgical Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Fifth sphere region of New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dross Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "Sixth sphere region of New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [],
+   "description": "Source of black necrogenous sludge that mingled with the Quicksilver Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quicksilver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sentient sea with chrome-forged islands, mingling with the Mephidross at the Darkslick.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mistvault Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Bridge that spanned the Darkslick.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event preceding the completion of Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Progress Engine",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Machine served by the Darkslick's laboratories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane that was completely transformed into New Phyrexia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Early Phyrexian agents, especially nim and vedalken, use the Darkslick for experiments unbound by ethical limits.",
+   "participants": [
+    "Darkslick"
+   ],
+   "location": "Darkslick",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Early Phyrexian agents, especially nim and vedalken, found the Darkslick ideal for experiments unbound by ethical limits."
+  },
+  {
+   "summary": "After Mirrodin's complete transformation into New Phyrexia, the Darkslick is absorbed into the plane's inner structure as a transition between the Surgical Bay and the Dross Pits.",
+   "participants": [
+    "Darkslick",
+    "New Phyrexia",
+    "Surgical Bay",
+    "Dross Pits",
+    "Mirrodin"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the region was absorbed into the inner structure of the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Darkslick",
+   "relation": "located_in",
+   "target": "New Phyrexia",
+   "note": "boundary region",
+   "paragraph": 0,
+   "quote": "The Darkslick is a boundary region on the plane of New Phyrexia"
+  },
+  {
+   "source": "Darkslick",
+   "relation": "serves",
+   "target": "Progress Engine",
+   "note": "its laboratories serve the engine",
+   "paragraph": 4,
+   "quote": "Its laboratories now serve the Progress Engine"
+  }
+ ],
+ "rejected": []
+}

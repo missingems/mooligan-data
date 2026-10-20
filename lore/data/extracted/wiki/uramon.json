@@ -1,0 +1,189 @@
+{
+ "page": "wiki/uramon",
+ "url": "https://mtg.wiki/page/Uramon",
+ "title": "Uramon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:48Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Uramon",
+   "type": "character",
+   "aliases": [
+    "Boss Uramon"
+   ],
+   "description": "A criminal overlord in the Takenuma swamp on Kamigawa, killed by Kiku's camellia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp on Kamigawa where Uramon ruled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Uramon lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Numai",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Uramon built her manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myojin of Night's Reach",
+   "type": "deity",
+   "aliases": [],
+   "description": "Spirit Uramon worshipped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadow Gate",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact that let Uramon travel via shadows; stolen by Toshiro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [
+    "Toshi"
+   ],
+   "description": "Man Uramon questioned; escaped and stole the Shadow Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiku",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent after Toshi, turned on Uramon and killed her with her camellia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marrow-Gnawer",
+   "type": "character",
+   "aliases": [],
+   "description": "Nezumi sent with Kiku after Toshi who turned against Uramon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heart of Frost",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Toshi forced Kiku and Marrow-Gnawer to join the Hyozan Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang Kiku and Marrow-Gnawer joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soratami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Moon spirits who began infiltrating the swamp.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When the soratami infiltrate the swamp, Uramon sends for Toshiro Umezawa to question him.",
+   "participants": [
+    "Uramon",
+    "Toshiro Umezawa",
+    "Soratami"
+   ],
+   "location": "Numai",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she sent for Toshiro Umezawa to question him"
+  },
+  {
+   "summary": "Toshi escapes and Uramon sends Kiku and Marrow-Gnawer after him to the Heart of Frost.",
+   "participants": [
+    "Uramon",
+    "Toshiro Umezawa",
+    "Kiku",
+    "Marrow-Gnawer"
+   ],
+   "location": "Heart of Frost",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Uramon sent Kiku and Marrow-Gnawer after him to the Heart of Frost"
+  },
+  {
+   "summary": "Toshi forces the pair into joining the Hyozan Reckoners, and they turn against Uramon.",
+   "participants": [
+    "Toshiro Umezawa",
+    "Kiku",
+    "Marrow-Gnawer",
+    "Hyozan Reckoners"
+   ],
+   "location": "Heart of Frost",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they turned against their former master"
+  },
+  {
+   "summary": "Ordered to execute Toshi, they release him and attack; Toshi steals the Shadow Gate and Kiku's camellia kills Uramon.",
+   "participants": [
+    "Uramon",
+    "Toshiro Umezawa",
+    "Kiku",
+    "Marrow-Gnawer"
+   ],
+   "location": "Numai",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the overlord herself was killed by Kiku 's camellia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kiku",
+   "relation": "killed",
+   "target": "Uramon",
+   "note": "with her camellia",
+   "paragraph": 3,
+   "quote": "the overlord herself was killed by Kiku 's camellia"
+  },
+  {
+   "source": "Uramon",
+   "relation": "other",
+   "target": "Myojin of Night's Reach",
+   "note": "worshipper",
+   "paragraph": 2,
+   "quote": "Uramon was a worshipper of the Myojin of Night's Reach"
+  },
+  {
+   "source": "Uramon",
+   "relation": "other",
+   "target": "Shadow Gate",
+   "note": "owned it until Toshi stole it",
+   "paragraph": 2,
+   "quote": "she possessed an artifact that allowed her to travel via shadows, the Shadow Gate"
+  },
+  {
+   "source": "Uramon",
+   "relation": "located_in",
+   "target": "Takenuma",
+   "note": "criminal overlord of the swamp",
+   "paragraph": 0,
+   "quote": "Boss Uramon was a criminal overlord in the Takenuma swamp on Kamigawa ."
+  }
+ ],
+ "rejected": []
+}

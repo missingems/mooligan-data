@@ -1,0 +1,134 @@
+{
+ "page": "wiki/kiki-jiki",
+ "url": "https://mtg.wiki/page/Kiki-Jiki",
+ "title": "Kiki-Jiki",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:37Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kiki-Jiki",
+   "type": "character",
+   "aliases": [],
+   "description": "An akki of Sokenzan on Kamigawa who could duplicate creatures with illusionism.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paku-Paku",
+   "type": "character",
+   "aliases": [],
+   "description": "The akki tribe elder who drove Kiki-Jiki out.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keiga",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon who took a liking to Kiki-Jiki, tasked him with stealing her pearl and trained him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meloku",
+   "type": "character",
+   "aliases": [],
+   "description": "Soratami ambassador whom Kiki-Jiki was sent to rob of Keiga's pearl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiki-Jiki's Reflection",
+   "type": "character",
+   "aliases": [],
+   "description": "The reflection that escaped from a shattered soratami mirror and split from Kiki-Jiki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Kiki-Jiki's akki tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oboro",
+   "type": "location",
+   "aliases": [],
+   "description": "Soratami realm Keiga flew Kiki-Jiki to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Kiki-Jiki.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Paku-Paku drives Kiki-Jiki from the tribe.",
+   "participants": [
+    "Paku-Paku",
+    "Kiki-Jiki"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Paku-Paku drove Kiki-Jiki from the tribe."
+  },
+  {
+   "summary": "Kiki-Jiki falls into Keiga's lair; the dragon recognizes his magical potential.",
+   "participants": [
+    "Kiki-Jiki",
+    "Keiga"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The dragon took a liking to Kiki-Jiki and recognized his magical potential."
+  },
+  {
+   "summary": "Kiki-Jiki shatters an enchanted mirror and his reflection escapes; the two split up.",
+   "participants": [
+    "Kiki-Jiki",
+    "Kiki-Jiki's Reflection"
+   ],
+   "location": "Oboro",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kiki-Jiki shattered the mirror, and his reflection escaped."
+  },
+  {
+   "summary": "Kiki-Jiki escapes and trains with Keiga, becoming a great duplication sorcerer.",
+   "participants": [
+    "Kiki-Jiki",
+    "Keiga"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "after training with Keiga he began to hone his magical talent"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Keiga",
+   "relation": "mentor_of",
+   "target": "Kiki-Jiki",
+   "note": "He trained with Keiga.",
+   "paragraph": 2,
+   "quote": "after training with Keiga he began to hone his magical talent"
+  },
+  {
+   "source": "Kiki-Jiki",
+   "relation": "enemy",
+   "target": "Paku-Paku",
+   "note": "Paku-Paku grew fed up and banished him.",
+   "paragraph": 1,
+   "quote": "Paku-Paku drove Kiki-Jiki from the tribe."
+  }
+ ],
+ "rejected": []
+}

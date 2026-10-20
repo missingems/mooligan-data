@@ -1,0 +1,189 @@
+{
+ "page": "wiki/etlan-shiis",
+ "url": "https://mtg.wiki/page/Etlan_Shiis",
+ "title": "Etlan Shiis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Etlan Shiis",
+   "type": "location",
+   "aliases": [
+    "Atlantis",
+    "New Vodalia",
+    "Freedom's Warmth"
+   ],
+   "description": "A Vodalian merfolk colony in the Voda Sea east of Aerona, later called New Vodalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vodalia",
+   "type": "faction",
+   "aliases": [
+    "Vodalian Empire"
+   ],
+   "description": "Merfolk society whose artisan caste founded the colony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Voda Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea in which Etlan Shiis lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Land west of Etlan Shiis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orvadian merchants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sea-faring traders who corrupted the colony's name to Atlantis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Galina III",
+   "type": "character",
+   "aliases": [
+    "Empress Galina III"
+   ],
+   "description": "Empress of the Sarpadian Empire who fled to Etlan Shiis and took over power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadian Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire that crumbled in 170 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Homarids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemy the colony was likely to have escaped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Founding of New Vodalia",
+   "type": "event",
+   "aliases": [],
+   "description": "Galina III's takeover of power at Etlan Shiis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited on Lat-Nam in 4077 AR by a Lord of Atlantis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord of Atlantis",
+   "type": "character",
+   "aliases": [],
+   "description": "Over 4000 years old; remembered the Sages of the College of Lat-Nam.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lat-Nam",
+   "type": "location",
+   "aliases": [],
+   "description": "Island where Greensleeves stayed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "College of Lat-Nam",
+   "type": "faction",
+   "aliases": [
+    "Sages of the College of Lat-Nam"
+   ],
+   "description": "Former college partly drowned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose origins Greensleeves learned about.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The oppressed artisan class of Vodalia is granted the right to found a colony far from the Imperial government.",
+   "participants": [
+    "Vodalia",
+    "Etlan Shiis"
+   ],
+   "location": "Voda Sea",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the artisan class sought and was granted the right to start a new colony"
+  },
+  {
+   "summary": "Empress Galina III flees her crumbling empire through a portal to Etlan Shiis, arriving by accident in 3307 AR.",
+   "participants": [
+    "Galina III",
+    "Sarpadian Empire",
+    "Etlan Shiis"
+   ],
+   "location": "Etlan Shiis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "By accident, she arrived there in 3307 AR , more than 3000 years in the future."
+  },
+  {
+   "summary": "Galina III quickly takes over power, founding New Vodalia.",
+   "participants": [
+    "Galina III",
+    "Founding of New Vodalia"
+   ],
+   "location": "Etlan Shiis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She quickly took over power in the Founding of New Vodalia ."
+  },
+  {
+   "summary": "A Lord of Atlantis brings Greensleeves to a drowned piece of the former college, where she learns of the Stone Brain's origins.",
+   "participants": [
+    "Lord of Atlantis",
+    "Greensleeves",
+    "Stone Brain",
+    "College of Lat-Nam"
+   ],
+   "location": "Lat-Nam",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "where she learned of the Stone Brain 's origins"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Galina III",
+   "relation": "leader_of",
+   "target": "Etlan Shiis",
+   "note": "conquered it; it became New Vodalia",
+   "paragraph": 0,
+   "quote": "After the conquest by Empress Galina III"
+  },
+  {
+   "source": "Etlan Shiis",
+   "relation": "located_in",
+   "target": "Voda Sea",
+   "note": "colony east of Aerona",
+   "paragraph": 0,
+   "quote": "a Vodalian merfolk colony in the Voda Sea east of Aerona"
+  }
+ ],
+ "rejected": []
+}

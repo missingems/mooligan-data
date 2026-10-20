@@ -1,0 +1,118 @@
+{
+ "page": "wiki/nameless-angel",
+ "url": "https://mtg.wiki/page/Nameless_Angel",
+ "title": "Nameless Angel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:45Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Nameless Angel",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel worshiped in the Approaches of Kessig who blessed them with the Seelenstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seelenstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Relic of the priory that stilled souls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church the Nameless Angel represented.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi Titan whose madness struck the angel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rom",
+   "type": "character",
+   "aliases": [],
+   "description": "Old hunter who killed the angel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tacenda Verlasen",
+   "type": "character",
+   "aliases": [],
+   "description": "Whom the angel's soul helped defeat her sister.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Willia",
+   "type": "character",
+   "aliases": [],
+   "description": "Sister of Tacenda, defeated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Nameless Angel grants the Approaches the Seelenstone.",
+   "participants": [
+    "Nameless Angel",
+    "Seelenstone"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Nameless Angel had granted the Approaches the boon of the Seelenstone"
+  },
+  {
+   "summary": "Struck by Emrakul's madness, the Angel is locked away, then killed by Rom and nailed to a catacomb wall.",
+   "participants": [
+    "Nameless Angel",
+    "Emrakul",
+    "Rom"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She was killed by the old hunter Rom and nailed to a wall in the catacombs."
+  },
+  {
+   "summary": "The angel's soul speaks to Tacenda Verlasen and helps her defeat Willia.",
+   "participants": [
+    "Nameless Angel",
+    "Tacenda Verlasen",
+    "Willia"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Her soul spoke to Tacenda Verlasen"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rom",
+   "relation": "killed",
+   "target": "Nameless Angel",
+   "note": "Killed her.",
+   "paragraph": 3,
+   "quote": "She was killed by the old hunter Rom"
+  },
+  {
+   "source": "Nameless Angel",
+   "relation": "member_of",
+   "target": "Church of Avacyn",
+   "note": "She represented it.",
+   "paragraph": 1,
+   "quote": "Although she represented the Church of Avacyn"
+  }
+ ],
+ "rejected": []
+}

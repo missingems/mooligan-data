@@ -1,0 +1,136 @@
+{
+ "page": "wiki/betor",
+ "url": "https://mtg.wiki/page/Betor",
+ "title": "Betor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:57Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Betor",
+   "type": "creature",
+   "aliases": [
+    "Mythic Spirit Dragon of the Abzan Houses"
+   ],
+   "description": "The Mythic Spirit Dragon of the Abzan Houses on Tarkir, a collective of lost Abzan spirits who speaks as \"we\".",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan Houses",
+   "type": "faction",
+   "aliases": [
+    "Abzan"
+   ],
+   "description": "Tarkir clan whose lost spirits formed Betor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Betor dwells.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [],
+   "description": "Performed the Stormnexus Ritual.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormnexus Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual performed by Narset that led to Betor's summoning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Felothar",
+   "type": "character",
+   "aliases": [],
+   "description": "Called Betor forth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dromoka",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon who demanded the Abzan repudiate their honored dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kin-Tree wardens",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Betor oversees.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Narset performs the Stormnexus Ritual and Felothar calls Betor forth.",
+   "participants": [
+    "Narset",
+    "Felothar",
+    "Betor"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "They came into being after Narset performed the Stormnexus Ritual and Felothar called them forth."
+  },
+  {
+   "summary": "The lost and drifting Abzan spirits coalesce into Betor.",
+   "participants": [
+    "Betor",
+    "Abzan Houses"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "the lost and drifting spirits of the Abzan coalesced into their being"
+  },
+  {
+   "summary": "Dromoka demanded the Abzan repudiate their honored dead and branded ancestral worship unnatural.",
+   "participants": [
+    "Dromoka",
+    "Abzan Houses"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Dromoka had demanded the Abzan repudiate their honored dead"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Narset",
+   "relation": "created",
+   "target": "Betor",
+   "note": "performed the ritual that brought them into being",
+   "paragraph": 0,
+   "quote": "They came into being after Narset performed the Stormnexus Ritual"
+  },
+  {
+   "source": "Betor",
+   "relation": "enemy",
+   "target": "Dromoka",
+   "note": "exists in defiance of her edicts",
+   "paragraph": 1,
+   "quote": "Betor, on the other hand, exists in defiance of those edicts"
+  },
+  {
+   "source": "Betor",
+   "relation": "leader_of",
+   "target": "Kin-Tree wardens",
+   "note": "oversees them",
+   "paragraph": 2,
+   "quote": "Betor also oversees the Kin-Tree wardens and ancestral summoners."
+  }
+ ],
+ "rejected": []
+}

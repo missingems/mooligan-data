@@ -1,0 +1,109 @@
+{
+ "page": "wiki/squelch",
+ "url": "https://mtg.wiki/page/Squelch",
+ "title": "Squelch",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:24Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Squelch",
+   "type": "character",
+   "aliases": [],
+   "description": "Inventive Izzet goblin wizard on Ravnica who teamed up with Ruric Thar in the Implicit Maze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruric Thar",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre in the Implicit Maze who agreed to pay Squelch in chickens.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Squelch belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Implicit Maze",
+   "type": "event",
+   "aliases": [],
+   "description": "Contest in which Squelch and Ruric Thar teamed up.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers who faced Squelch and Ruric Thar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A disheveled goblin, Squelch, approached Ruric Thar to team up, in exchange for chickens.",
+   "participants": [
+    "Squelch",
+    "Ruric Thar"
+   ],
+   "location": "Implicit Maze",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The deal was, the goblin would help the ogre out, and the ogre would pay him in chickens."
+  },
+  {
+   "summary": "Squelch jammed a metal spike into a war beast's head, causing the Boros war engine to explode.",
+   "participants": [
+    "Squelch",
+    "Boros"
+   ],
+   "location": "Implicit Maze",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "pulled a metal spike from an unseen pocket and jammed it into the top of the creature's head"
+  },
+  {
+   "summary": "The path clear, Ruric Thar advanced with Squelch riding in a basket on their back.",
+   "participants": [
+    "Ruric Thar",
+    "Squelch"
+   ],
+   "location": "Implicit Maze",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Now clear to proceed, Ruric Thar lumbered forward, and Squelch climbed onto their back."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Squelch",
+   "relation": "ally",
+   "target": "Ruric Thar",
+   "note": "Teamed up in the maze.",
+   "paragraph": 0,
+   "quote": "he teamed up with Ruric Thar during the running of the Implicit Maze"
+  },
+  {
+   "source": "Squelch",
+   "relation": "member_of",
+   "target": "Izzet",
+   "note": "An Izzet goblin wizard.",
+   "paragraph": 0,
+   "quote": "Squelch is an Izzet goblin wizard on the plane of Ravnica"
+  }
+ ],
+ "rejected": []
+}

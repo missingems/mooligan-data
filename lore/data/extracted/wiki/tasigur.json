@@ -1,0 +1,120 @@
+{
+ "page": "wiki/tasigur",
+ "url": "https://mtg.wiki/page/Tasigur",
+ "title": "Tasigur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:29Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Tasigur",
+   "type": "character",
+   "aliases": [],
+   "description": "Young, cruel human khan of the Sultai Brood in Tarkir's past, who became Silumgar's slave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sultai Brood",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan ruled by humans then, led by Tasigur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Khudal",
+   "type": "creature",
+   "aliases": [],
+   "description": "Rakshasa Tasigur disrespected.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silumgar",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon progenitor to whom Tasigur gifted his jade throne and who enslaved him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragonlord whose dragons won over the khans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khanfall of Tarkir",
+   "type": "event",
+   "aliases": [
+    "Khanfall"
+   ],
+   "description": "Event in which dragons won over the khans and clans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Tasigur.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tasigur disrespects the rakshasa Khudal; the Sultai lose control of their undead and are abandoned by the naga.",
+   "participants": [
+    "Tasigur",
+    "Khudal",
+    "Sultai Brood"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Due to his disrespect of a Rakshasa named Khudal"
+  },
+  {
+   "summary": "Tasigur attempts to gift Silumgar his jade throne.",
+   "participants": [
+    "Tasigur",
+    "Silumgar"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tasigur attempted to gift the dragon progenitor Silumgar with his jade throne"
+  },
+  {
+   "summary": "Tasigur leads the dragon's brood into the khans' meeting, causing the Khanfall; he becomes Silumgar's slave.",
+   "participants": [
+    "Tasigur",
+    "Silumgar",
+    "Ojutai"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Tasigur was rewarded for this by becoming Silumgar's slave"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tasigur",
+   "relation": "leader_of",
+   "target": "Sultai Brood",
+   "note": "Khan",
+   "paragraph": 0,
+   "quote": "During his time, humans still ruled the Sultai Brood ."
+  },
+  {
+   "source": "Tasigur",
+   "relation": "serves",
+   "target": "Silumgar",
+   "note": "Became his slave",
+   "paragraph": 3,
+   "quote": "Tasigur was rewarded for this by becoming Silumgar's slave"
+  }
+ ],
+ "rejected": []
+}

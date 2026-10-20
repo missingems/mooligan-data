@@ -1,0 +1,113 @@
+{
+ "page": "wiki/arima",
+ "url": "https://mtg.wiki/page/Arima",
+ "title": "Arima",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:27Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Arima",
+   "type": "character",
+   "aliases": [],
+   "description": "A non-binary human scientist from Kamigawa, lead inventor of the Saiba Futurists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otawara",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Arima works as a scientist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Jukai",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order Arima belonged to before becoming lead inventor of the Saiba Futurists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saiba Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of which Arima became lead inventor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kotori",
+   "type": "character",
+   "aliases": [],
+   "description": "Person for whose safety Arima is concerned; under Shorikai's control she committed a violent act.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shorikai",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mech that controlled Kotori.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katsumasa",
+   "type": "character",
+   "aliases": [],
+   "description": "Researcher whose secretive research and ethics Arima distrusts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of the conference Arima left Otawara to attend.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arima, promoted at 23, is resented by other Futurists as an outsider who rose too quickly.",
+   "participants": [
+    "Arima",
+    "Saiba Futurists"
+   ],
+   "location": "Otawara",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "other Futurists resented them as an outsider who rose too quickly through their ranks"
+  },
+  {
+   "summary": "Arima leaves Otawara for a conference in Eiganjo and so misses the incident in which Kotori, under Shorikai's control, kills several people.",
+   "participants": [
+    "Arima",
+    "Kotori",
+    "Shorikai"
+   ],
+   "location": "Eiganjo",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Arima's absence from this particular incident meant they missed the chaos that ensued"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arima",
+   "relation": "member_of",
+   "target": "Saiba Futurists",
+   "note": "Lead inventor.",
+   "paragraph": 2,
+   "quote": "the lead inventor of the Saiba Futurists"
+  },
+  {
+   "source": "Shorikai",
+   "relation": "other",
+   "target": "Kotori",
+   "note": "Kotori committed a violent act under Shorikai's control.",
+   "paragraph": 2,
+   "quote": "Kotori, under Shorikai’s control, committed a violent act"
+  }
+ ],
+ "rejected": []
+}

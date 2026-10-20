@@ -1,0 +1,122 @@
+{
+ "page": "wiki/spurna",
+ "url": "https://mtg.wiki/page/Spurna",
+ "title": "Spurna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Spurna",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin embermage, head of the embermages of Squee's kingdom, secretly compleated by Phyrexia; died in the explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Squee",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin king whose kingdom Spurna served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "Agent of Phyrexia who compromised Spurna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invading power whose sleeper agents infiltrated the goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin mountain",
+   "type": "location",
+   "aliases": [
+    "the mountain"
+   ],
+   "description": "The goblins' mountain home, lit by mana lamps and destroyed by explosions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mana lamps",
+   "type": "artifact",
+   "aliases": [
+    "mana torches"
+   ],
+   "description": "Lamps illuminating the goblins' mountain, tended by Spurna.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Squee orders the mana lamps extinguished for a celebration; Spurna warns him of the danger but follows the order.",
+   "participants": [
+    "Spurna",
+    "Squee"
+   ],
+   "location": "Goblin mountain",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "he ordered the extinguishing of the mana lamps for a celebration"
+  },
+  {
+   "summary": "Spurna is revealed as a traitor compromised by Ertai and attacks Squee.",
+   "participants": [
+    "Spurna",
+    "Squee",
+    "Ertai"
+   ],
+   "location": "Goblin mountain",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "In a shocking betrayal, she attacked Squee"
+  },
+  {
+   "summary": "A partially compleated Squee accidentally sets off the mana torches; explosions destroy the mountain, killing all the goblins inside including Spurna.",
+   "participants": [
+    "Squee",
+    "Spurna"
+   ],
+   "location": "Goblin mountain",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "a chain of explosions annihilated the mountain the goblins lived in, killing all the goblins inside, Spurna included"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Spurna",
+   "relation": "serves",
+   "target": "Ertai",
+   "note": "compromised by him and allied to his cause",
+   "paragraph": 3,
+   "quote": "having been compromised by Ertai , an agent of Phyrexia"
+  },
+  {
+   "source": "Ertai",
+   "relation": "serves",
+   "target": "Phyrexia",
+   "note": "agent",
+   "paragraph": 3,
+   "quote": "an agent of Phyrexia"
+  },
+  {
+   "source": "Spurna",
+   "relation": "enemy",
+   "target": "Squee",
+   "note": "betrayed and attacked him",
+   "paragraph": 3,
+   "quote": "In a shocking betrayal, she attacked Squee"
+  }
+ ],
+ "rejected": []
+}

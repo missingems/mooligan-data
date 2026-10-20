@@ -1,0 +1,121 @@
+{
+ "page": "wiki/nakht",
+ "url": "https://mtg.wiki/page/Nakht",
+ "title": "Nakht",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nakht",
+   "type": "character",
+   "aliases": [],
+   "description": "Young aven wizard of Naktamun and Tah crop initiate with an affinity for water; drained by a Grim Strider.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "Nakht's childhood friend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "Nakht's childhood friend who found a hole in the Hekma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grim Strider",
+   "type": "creature",
+   "aliases": [],
+   "description": "Incredibly tall horror that drained Nakht of life.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City of Amonkhet where the friends grew up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Named as trespasser in ancient ruins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tah crop",
+   "type": "faction",
+   "aliases": [],
+   "description": "Initiate crop the three were fated to join.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At twelve Nakht reveals he is a wizard with an affinity for water.",
+   "participants": [
+    "Nakht",
+    "Samut",
+    "Djeru"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Nakht revealed that he was a wizard and had an affinity for manipulating water."
+  },
+  {
+   "summary": "The friends slip through a hole in the Hekma, see a Grim Strider and are attacked by zombies in ancient ruins.",
+   "participants": [
+    "Nakht",
+    "Samut",
+    "Djeru",
+    "Grim Strider"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "were attacked by a swarm of zombies"
+  },
+  {
+   "summary": "Nakht lures the undead away so Djeru and Samut can escape; the Grim Strider drains him into a soulless husk.",
+   "participants": [
+    "Nakht",
+    "Grim Strider",
+    "Samut",
+    "Djeru"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "draining him of life and leaving him a soulless husk to join the zombie horde"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nakht",
+   "relation": "ally",
+   "target": "Samut",
+   "note": "Childhood friends.",
+   "paragraph": 1,
+   "quote": "Nakht, Samut and Djeru grew up together"
+  },
+  {
+   "source": "Grim Strider",
+   "relation": "killed",
+   "target": "Nakht",
+   "note": "Drained him of life.",
+   "paragraph": 2,
+   "quote": "draining him of life and leaving him a soulless husk to join the zombie horde"
+  }
+ ],
+ "rejected": []
+}

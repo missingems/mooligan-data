@@ -1,0 +1,112 @@
+{
+ "page": "wiki/fatima",
+ "url": "https://mtg.wiki/page/Fatima",
+ "title": "Fatima",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fatima",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker princess of Rabiah who created the City of Brass and the first Brass Man.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rabiah",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Fatima was born.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "al-Abin",
+   "type": "character",
+   "aliases": [],
+   "description": "Fatima's lover who asked her hand after agreeing never to marry her.",
+   "presence": "appears"
+  },
+  {
+   "name": "City of Brass",
+   "type": "location",
+   "aliases": [],
+   "description": "City Fatima created, blazing with the heat of her fury.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brass Men",
+   "type": "creature",
+   "aliases": [
+    "Brass Man"
+   ],
+   "description": "Creatures Fatima created in her city.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Al-Abin changes his mind and asks Fatima's hand; furious, she rages for days.",
+   "participants": [
+    "Fatima",
+    "al-Abin"
+   ],
+   "location": "Rabiah",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Furious at al-Abin and his land, Fatima went into a rage that lasted several days."
+  },
+  {
+   "summary": "Fatima creates the City of Brass.",
+   "participants": [
+    "Fatima",
+    "City of Brass"
+   ],
+   "location": "Rabiah",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Fatima created the City of Brass"
+  },
+  {
+   "summary": "Fatima's power grows until she can planeswalk; she moves the city to the edge of Rabiah and creates the first Brass Man.",
+   "participants": [
+    "Fatima",
+    "Brass Men"
+   ],
+   "location": "Rabiah",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "created the first Brass Man"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fatima",
+   "relation": "created",
+   "target": "City of Brass",
+   "note": "Built it with her magic",
+   "paragraph": 2,
+   "quote": "Fatima created the City of Brass"
+  },
+  {
+   "source": "Fatima",
+   "relation": "created",
+   "target": "Brass Men",
+   "note": "First Brass Man out of loneliness",
+   "paragraph": 3,
+   "quote": "created the first Brass Man"
+  },
+  {
+   "source": "Fatima",
+   "relation": "romantic",
+   "target": "al-Abin",
+   "note": "Her former lover",
+   "paragraph": 1,
+   "quote": "her lover, al-Abin"
+  }
+ ],
+ "rejected": []
+}

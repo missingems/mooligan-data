@@ -1,0 +1,100 @@
+{
+ "page": "wiki/aatchik",
+ "url": "https://mtg.wiki/page/Aatchik",
+ "title": "Aatchik",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:25Z",
+ "storyline": "Ghirapur Grand Prix",
+ "entities": [
+  {
+   "name": "Radian Aatchik",
+   "type": "character",
+   "aliases": [
+    "Aatchik"
+   ],
+   "description": "Wizened insectoid captain of the Speedbrood team in the Ghirapur Grand Prix, a druid of velocity and precision.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speedbrood",
+   "type": "faction",
+   "aliases": [],
+   "description": "Insectoid brood whose cohort Aatchik led in the race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "The race on Avishkar; Aatchik competed in the second annual one.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Grand Prix was held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who mind-controlled Aatchik while trying to recover his adopted child Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Jace Beleren's adopted child.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Aatchik enters her last race as a highmind, hoping to prove herself ready for metamorphosis into a Speedbrood vehicle.",
+   "participants": [
+    "Radian Aatchik",
+    "Speedbrood"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This was Aatchik's last race as a highmind"
+  },
+  {
+   "summary": "In the final stage Aatchik's vehicle is wrecked and she is mind-controlled by Jace Beleren.",
+   "participants": [
+    "Radian Aatchik",
+    "Jace Beleren"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Aatchik's vehicle was wrecked, and she was mind-controlled by Jace Beleren"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Radian Aatchik",
+   "relation": "leader_of",
+   "target": "Speedbrood",
+   "note": "Captain of the Speedbrood team.",
+   "paragraph": 0,
+   "quote": "captain of the Speedbrood team"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Radian Aatchik",
+   "note": "Jace mind-controlled her.",
+   "paragraph": 3,
+   "quote": "she was mind-controlled by Jace Beleren"
+  }
+ ],
+ "rejected": []
+}

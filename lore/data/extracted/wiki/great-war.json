@@ -1,0 +1,137 @@
+{
+ "page": "wiki/great-war",
+ "url": "https://mtg.wiki/page/Great_War",
+ "title": "Great War",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:32Z",
+ "storyline": "Ulgrotha",
+ "entities": [
+  {
+   "name": "Great War",
+   "type": "event",
+   "aliases": [
+    "Wizards' Wars"
+   ],
+   "description": "The conflict between the Ancients and the Tolgath, also known as the Wizards' Wars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ancients",
+   "type": "faction",
+   "aliases": [],
+   "description": "One side of the Great War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolgath",
+   "type": "faction",
+   "aliases": [],
+   "description": "The other side of the Great War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Destruction",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle on Ulgrotha in which the Great War culminated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Young Tolgath who rang the Apocalypse Chime and created the Dead Zone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Chime whose ringing created the Dead Zone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dead Zone",
+   "type": "concept",
+   "aliases": [],
+   "description": "Zone created by the chime that killed nearly every creature and destroyed the world's mana lines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the war culminated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose spiritual and physical realms were destabilized by the war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Kamigawa indirectly caused by the Great War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose Talon Gates were connected to other worlds.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Great War ends when Ravi rings the Apocalypse Chime without knowing its effects, creating the Dead Zone.",
+   "participants": [
+    "Ravi",
+    "Apocalypse Chime",
+    "Dead Zone"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The war ended when the young Tolgath Ravi rang the Apocalypse Chime"
+  },
+  {
+   "summary": "The rifts of the war disturb the stability between Kamigawa's spiritual and physical realms, leading indirectly to the Kami War.",
+   "participants": [
+    "Great War",
+    "Kamigawa",
+    "Kami War"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "leading indirectly to the Kami War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ancients",
+   "relation": "enemy",
+   "target": "Tolgath",
+   "note": "Opposed sides in the Great War.",
+   "paragraph": 0,
+   "quote": "the conflict between the Ancients and the Tolgath"
+  },
+  {
+   "source": "Ravi",
+   "relation": "created",
+   "target": "Dead Zone",
+   "note": "Created it by ringing the chime.",
+   "paragraph": 1,
+   "quote": "created the Dead Zone"
+  }
+ ],
+ "rejected": []
+}

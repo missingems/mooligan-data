@@ -1,0 +1,89 @@
+{
+ "page": "wiki/alacrian-quickbeasts",
+ "url": "https://mtg.wiki/page/Alacrian_Quickbeasts",
+ "title": "Alacrian Quickbeasts",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:25Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Alacrian Quickbeasts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racing team from Alacria competing in the Ghirapur Grand Prix, made of riders and Quickbeast partners.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alacria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane connected to Avishkar by an Omenpath; home of Quickbeasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [
+    "GGP"
+   ],
+   "description": "Race on Avishkar in which the Quickbeasts compete.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caradora",
+   "type": "character",
+   "aliases": [],
+   "description": "Rider who leads the Alacrian Quickbeasts with Lagorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lagorin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Quickbeast who leads the team with Caradora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where the Grand Prix is held.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Caradora and Lagorin were forced into a racing pair by tragic circumstances back home.",
+   "participants": [
+    "Caradora",
+    "Lagorin"
+   ],
+   "location": "Alacria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "a rider and Quickbeast who were not originally bound together but have been forced into a racing pair by tragic circumstances back home"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Caradora",
+   "relation": "leader_of",
+   "target": "Alacrian Quickbeasts",
+   "note": "co-leader",
+   "paragraph": 3,
+   "quote": "They are led by Caradora and Lagorin"
+  },
+  {
+   "source": "Lagorin",
+   "relation": "leader_of",
+   "target": "Alacrian Quickbeasts",
+   "note": "co-leader",
+   "paragraph": 3,
+   "quote": "They are led by Caradora and Lagorin"
+  }
+ ],
+ "rejected": []
+}

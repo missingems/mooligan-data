@@ -1,0 +1,156 @@
+{
+ "page": "wiki/hand-of-justice",
+ "url": "https://mtg.wiki/page/Hand_of_Justice",
+ "title": "Hand of Justice",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hand of Justice",
+   "type": "creature",
+   "aliases": [
+    "Sarpadian Hand",
+    "Jamuraan Hand"
+   ],
+   "description": "An avatar of law on Dominaria, an embodiment of the ideal of justice that is content with only meting out justice; avatars were summoned in Sarpadia and in Ki'pamu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Hand of Justice is an avatar of law.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Dominaria where a Hand of Justice was summoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Icatia",
+   "type": "location",
+   "aliases": [],
+   "description": "A nation on the continent of Sarpadia where a Hand of Justice was present just before the Fall of the Sarpadian Empires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Sarpadian Empires",
+   "type": "event",
+   "aliases": [],
+   "description": "The collapse of the empires of Sarpadia, shortly after which a Hand of Justice was present in Icatia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oliver Farrel",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who may have summoned the Sarpadian Hand of Justice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ki'pamu",
+   "type": "location",
+   "aliases": [],
+   "description": "A city where the Civic guild summoned a Hand of Justice and where another was later summoned to stop crime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Civic guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "A guild in Ki'pamu that summoned a Hand of Justice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tartesk Hajeen",
+   "type": "character",
+   "aliases": [],
+   "description": "Man who summoned a Hand of Justice to stop crime in Ki'pamu; uncle of Sabul Hajeen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sabul Hajeen",
+   "type": "character",
+   "aliases": [],
+   "description": "Tartesk's nephew, who allied with his family's arch-enemy Jhossendea Ilmiera to banish the Hand of Justice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhossendea Ilmiera",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer and arch-enemy of the Hajeen family who helped Sabul Hajeen banish the Hand of Justice.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Hand of Justice is present in Icatia just before the Fall of the Sarpadian Empires, possibly summoned by Oliver Farrel; its actions are unknown.",
+   "participants": [
+    "Hand of Justice",
+    "Oliver Farrel"
+   ],
+   "location": "Icatia",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "This avatar's actions are unknown."
+  },
+  {
+   "summary": "Millennia later Tartesk Hajeen summons a Hand of Justice to stop crime in Ki'pamu.",
+   "participants": [
+    "Tartesk Hajeen",
+    "Hand of Justice"
+   ],
+   "location": "Ki'pamu",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Millennia later, another Hand of Justice was summoned by Tartesk Hajeen to stop crime in the city of Ki'pamu"
+  },
+  {
+   "summary": "The avatar starts indiscriminately targeting the city's poor; Sabul Hajeen allies with Jhossendea Ilmiera and together they banish it, beginning to mend the enmity between their families.",
+   "participants": [
+    "Hand of Justice",
+    "Sabul Hajeen",
+    "Jhossendea Ilmiera"
+   ],
+   "location": "Ki'pamu",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Together, the two of them managed to banish the Hand of Justice"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tartesk Hajeen",
+   "relation": "created",
+   "target": "Hand of Justice",
+   "note": "summoned the Jamuraan Hand",
+   "paragraph": 5,
+   "quote": "another Hand of Justice was summoned by Tartesk Hajeen"
+  },
+  {
+   "source": "Sabul Hajeen",
+   "relation": "family",
+   "target": "Tartesk Hajeen",
+   "note": "nephew",
+   "paragraph": 5,
+   "quote": "Tartesk's nephew Sabul Hajeen"
+  },
+  {
+   "source": "Sabul Hajeen",
+   "relation": "ally",
+   "target": "Jhossendea Ilmiera",
+   "note": "allied despite their families' enmity",
+   "paragraph": 5,
+   "quote": "saw no other option but to ally himself with his family's arch-enemy"
+  }
+ ],
+ "rejected": []
+}

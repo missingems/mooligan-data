@@ -1,0 +1,126 @@
+{
+ "page": "wiki/rag-man",
+ "url": "https://mtg.wiki/page/Rag_Man",
+ "title": "Rag Man",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rag Man",
+   "type": "creature",
+   "aliases": [
+    "Ragman"
+   ],
+   "description": "Minion created by Lord Ith during the Dark Age, with a soul-taking touch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Ith",
+   "type": "character",
+   "aliases": [
+    "Ith"
+   ],
+   "description": "Mage imprisoned by Mairsil, who summoned a Rag Man.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mairsil",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice who imprisoned Ith and died in his rampage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Freed Ith and brought him to his senses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barl",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer who devised Ith's cage and became his new Rag Man.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that fell during Ith's rampage.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Imprisoned by Mairsil, Ith summons a Rag Man who leads Jodah to the Conclave.",
+   "participants": [
+    "Lord Ith",
+    "Mairsil",
+    "Rag Man",
+    "Jodah"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Lord Ith, imprisoned by his apprentice Mairsil , summoned a Rag Man"
+  },
+  {
+   "summary": "Jodah frees Ith, who rampages, killing Mairsil and the Rag Man; the Conclave falls.",
+   "participants": [
+    "Jodah",
+    "Lord Ith",
+    "Mairsil",
+    "Rag Man"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "go into a murderous rampage that resulted in the death of Mairsil and the Rag Man"
+  },
+  {
+   "summary": "Jodah brings Ith to his senses; Barl becomes Ith's new Rag Man.",
+   "participants": [
+    "Jodah",
+    "Lord Ith",
+    "Barl"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "was turned into Ith's new Rag Man"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Ith",
+   "relation": "created",
+   "target": "Rag Man",
+   "note": "Minion",
+   "paragraph": 0,
+   "quote": "The Rag Man or Ragman was a minion created by Lord Ith"
+  },
+  {
+   "source": "Mairsil",
+   "relation": "enemy",
+   "target": "Lord Ith",
+   "note": "Imprisoned his master",
+   "paragraph": 3,
+   "quote": "imprisoned by his apprentice Mairsil"
+  },
+  {
+   "source": "Mairsil",
+   "relation": "serves",
+   "target": "Lord Ith",
+   "note": "Apprentice",
+   "paragraph": 3,
+   "quote": "his apprentice Mairsil"
+  }
+ ],
+ "rejected": []
+}

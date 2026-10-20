@@ -1,0 +1,99 @@
+{
+ "page": "wiki/keimi",
+ "url": "https://mtg.wiki/page/Keimi",
+ "title": "Keimi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:18Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Keimi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant toad mount of Tatsunari killed in Far Corner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tatsunari",
+   "type": "character",
+   "aliases": [],
+   "description": "Mukotai Reckoner who rode Keimi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chishiro",
+   "type": "character",
+   "aliases": [],
+   "description": "Man who killed Keimi seeking vengeance on Tatsunari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Go-Shintai of Boundless Vigor",
+   "type": "character",
+   "aliases": [],
+   "description": "Kami of Far Corner that consumed Keimi's remains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Far Corner",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where the confrontation took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang Tatsunari belongs to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chishiro struck down Keimi with his silver blade during the confrontation in Far Corner.",
+   "participants": [
+    "Chishiro",
+    "Keimi",
+    "Tatsunari"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Chishiro managed to strike down the toad with his silver blade."
+  },
+  {
+   "summary": "Roots of Go-Shintai of Boundless Vigor consumed Keimi's remains.",
+   "participants": [
+    "Go-Shintai of Boundless Vigor",
+    "Keimi"
+   ],
+   "location": "Far Corner",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "its remains were swiftly consumed by the roots"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chishiro",
+   "relation": "killed",
+   "target": "Keimi",
+   "note": "Struck down the toad",
+   "paragraph": 2,
+   "quote": "Chishiro managed to strike down the toad with his silver blade."
+  },
+  {
+   "source": "Keimi",
+   "relation": "serves",
+   "target": "Tatsunari",
+   "note": "Mount of Tatsunari",
+   "paragraph": 0,
+   "quote": "Keimi was the Mukotai Reckoner Tatsunari 's giant toad"
+  }
+ ],
+ "rejected": []
+}

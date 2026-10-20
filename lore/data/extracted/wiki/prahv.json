@@ -1,0 +1,141 @@
+{
+ "page": "wiki/prahv",
+ "url": "https://mtg.wiki/page/Prahv",
+ "title": "Prahv",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:33Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Prahv",
+   "type": "location",
+   "aliases": [
+    "Old Prahv"
+   ],
+   "description": "Former guildhall of the Azorius Senate on Ravnica, destroyed by the Parhelion and now the nature preserve Old Prahv.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "The rebuilt Azorius guildhall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild whose hall was Prahv.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feather",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who revealed the Ghost Quarter of Agyrem and warned about Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parhelion",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Airborne angel-fortress that crashed into Prahv.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Dimir vampire lord Feather warned about.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghost Quarter of Agyrem",
+   "type": "location",
+   "aliases": [],
+   "description": "District Feather revealed to the guild leaders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius leader under whom New Prahv's reconstruction began.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Prahv stood.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the halls of Prahv, Feather reveals the Ghost Quarter of Agyrem and the fate of the Parhelion, and warns of the Dimir vampire lord Szadek.",
+   "participants": [
+    "Feather",
+    "Szadek",
+    "Parhelion"
+   ],
+   "location": "Prahv",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the angel Feather revealed to the guild leaders the existence of the Ghost Quarter of Agyrem"
+  },
+  {
+   "summary": "The Parhelion strikes Prahv, collapsing three towers and shattering the blue dome.",
+   "participants": [
+    "Parhelion",
+    "Prahv"
+   ],
+   "location": "Prahv",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Prahv was struck by none other than the Parhelion itself"
+  },
+  {
+   "summary": "Reconstruction of New Prahv finally begins after Isperia assumes leadership of the guild.",
+   "participants": [
+    "Isperia",
+    "Azorius Senate"
+   ],
+   "location": "New Prahv",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "It was only after Isperia assumed leadership of the guild that reconstruction efforts of New Prahv finally began."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Prahv",
+   "relation": "other",
+   "target": "Azorius Senate",
+   "note": "Its former guildhall.",
+   "paragraph": 0,
+   "quote": "the former guild hall for the Azorius Senate on Ravnica"
+  },
+  {
+   "source": "Feather",
+   "relation": "enemy",
+   "target": "Szadek",
+   "note": "She warned of his threat.",
+   "paragraph": 2,
+   "quote": "the ongoing threat posed by the Dimir vampire lord"
+  },
+  {
+   "source": "Isperia",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "Assumed leadership of the guild.",
+   "paragraph": 3,
+   "quote": "after Isperia assumed leadership of the guild"
+  }
+ ],
+ "rejected": []
+}

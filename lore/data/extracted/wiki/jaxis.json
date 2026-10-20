@@ -1,0 +1,75 @@
+{
+ "page": "wiki/jaxis",
+ "url": "https://mtg.wiki/page/Jaxis",
+ "title": "Jaxis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:36Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Jaxis",
+   "type": "character",
+   "aliases": [
+    "the Troublemaker"
+   ],
+   "description": "A human boxer of the Riveteers in New Capenna known as the Troublemaker, undefeated and seen as blessed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna family with which Jaxis is affiliated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna family that sent assassins against Jaxis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Jaxis fights.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Assassins sent by the Maestros attack Jaxis; burning shadows of past champions appear and drive them off.",
+   "participants": [
+    "Jaxis",
+    "Maestros"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Called forth by some unknown power, these champions fought alongside her, driving off the assassins"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jaxis",
+   "relation": "member_of",
+   "target": "Riveteers",
+   "note": "She is affiliated with the Riveteers.",
+   "paragraph": 0,
+   "quote": "a human warrior affiliated with the Riveteers family in New Capenna"
+  },
+  {
+   "source": "Maestros",
+   "relation": "enemy",
+   "target": "Jaxis",
+   "note": "Maestros assassins tried to eliminate her.",
+   "paragraph": 2,
+   "quote": "a group of assassins sent by the Maestros attempted to eliminate her"
+  }
+ ],
+ "rejected": []
+}

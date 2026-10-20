@@ -1,0 +1,151 @@
+{
+ "page": "wiki/frost-marsh",
+ "url": "https://mtg.wiki/page/Frost_Marsh",
+ "title": "Frost Marsh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:58Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Frost Marsh",
+   "type": "location",
+   "aliases": [
+    "Lake of the Dead"
+   ],
+   "description": "A blackened swamp in northern Terisiare near Tresserhorn, a graveyard used by Lim-Dûl to incubate undead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ronom Lake",
+   "type": "location",
+   "aliases": [],
+   "description": "Lake that dried up as the glacier grew, becoming the marsh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ronom Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "Growing glacier whose meltwater no longer fed Ronom Lake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tresserhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Dark keep of Lim-Dûl near which the marsh formed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Necromancer who incubated undead in the marsh and sent them against Kjeldor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Realm attacked by Lim-Dûl's undead battalion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "End of the Ice Age after which the land flooded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that covered the marsh with seawater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea of Laments",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea that eventually completely submerged the marsh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The era in which the marsh existed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ronom Lake dries up, turning the surrounding land into a swamp.",
+   "participants": [
+    "Ronom Lake",
+    "Ronom Glacier"
+   ],
+   "location": "Frost Marsh",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the land around it turned into a swamp"
+  },
+  {
+   "summary": "Lim-Dûl uses the marsh to incubate undead followers.",
+   "participants": [
+    "Lim-Dûl",
+    "Frost Marsh"
+   ],
+   "location": "Frost Marsh",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "used by Lim-Dûl to incubate his undead followers"
+  },
+  {
+   "summary": "Near the end of the Ice Age Lim-Dûl calls a battalion of undead from the lake to attack Kjeldor.",
+   "participants": [
+    "Lim-Dûl",
+    "Kjeldor"
+   ],
+   "location": "Frost Marsh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Lim-Dûl called a battalion of undead from the lake, sending it to attack Kjeldor ."
+  },
+  {
+   "summary": "After the Thaw, the Flooding of Terisiare submerges the marsh under the Sea of Laments.",
+   "participants": [
+    "Frost Marsh",
+    "Flooding of Terisiare",
+    "Sea of Laments"
+   ],
+   "location": "Frost Marsh",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "it was eventually completely submerged by the newly formed Sea of Laments"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lim-Dûl",
+   "relation": "enemy",
+   "target": "Kjeldor",
+   "note": "sent undead to attack it",
+   "paragraph": 3,
+   "quote": "sending it to attack Kjeldor ."
+  },
+  {
+   "source": "Frost Marsh",
+   "relation": "located_in",
+   "target": "Tresserhorn",
+   "note": "formed near the base of the keep",
+   "paragraph": 2,
+   "quote": "The Frost Marsh formed near the base of the dark keep of Tresserhorn"
+  }
+ ],
+ "rejected": []
+}

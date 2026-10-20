@@ -1,0 +1,108 @@
+{
+ "page": "wiki/salt-flats",
+ "url": "https://mtg.wiki/page/Salt_flats",
+ "title": "Salt flats",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:21Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Salt flats",
+   "type": "location",
+   "aliases": [],
+   "description": "Salt-crusted flatlands in northern Otaria, formerly the Cabal Holdings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Youth trained in dementia casting on the flats, who found the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minat",
+   "type": "character",
+   "aliases": [],
+   "description": "Trained Chainer in dementia casting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Chainer found in a ruined house.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "City destroyed in the Battle for the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Cabal City was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing the flats.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chainer met Minat, who trained him in dementia casting.",
+   "participants": [
+    "Chainer",
+    "Minat"
+   ],
+   "location": "Salt flats",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "It was in the salt flats that Chainer met Minat"
+  },
+  {
+   "summary": "Chainer found the Mirari hovering inside a ruined house.",
+   "participants": [
+    "Chainer",
+    "Mirari"
+   ],
+   "location": "Salt flats",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "found the Mirari hovering a foot above the ground inside a ruined house"
+  },
+  {
+   "summary": "Cabal City was destroyed and abandoned during the Battle for the Mirari.",
+   "participants": [
+    "Cabal City",
+    "Battle for the Mirari"
+   ],
+   "location": "Salt flats",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Cabal City was destroyed and abandoned"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Minat",
+   "relation": "mentor_of",
+   "target": "Chainer",
+   "note": "Trained him in dementia casting",
+   "paragraph": 2,
+   "quote": "Minat , who first trained the youth in dementia casting"
+  }
+ ],
+ "rejected": []
+}

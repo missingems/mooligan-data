@@ -1,0 +1,148 @@
+{
+ "page": "wiki/telim-tor",
+ "url": "https://mtg.wiki/page/Telim%27Tor",
+ "title": "Telim'Tor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:34Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Telim'Tor",
+   "type": "character",
+   "aliases": [
+    "Telim"
+   ],
+   "description": "Brutal military leader of Suq'Ata on Dominaria, fond of small artifacts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Husam'Tor",
+   "type": "character",
+   "aliases": [
+    "Husam"
+   ],
+   "description": "Telim'Tor's brother, a man of strategy and cunning, killed in battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tor",
+   "type": "faction",
+   "aliases": [
+    "the Tor"
+   ],
+   "description": "A wealthy and large clan to which Telim'Tor's family belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation on Dominaria led militarily by Telim'Tor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amiqat",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Suq'Ata.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ekundu Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where Husam'Tor was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Attackers of a royal caravan who looted priceless maps.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Suq'Ata.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Telim'Tor and his brothers join the Suq'Ata military; only Telim'Tor and Husam'Tor survive the second year.",
+   "participants": [
+    "Telim'Tor",
+    "Husam'Tor",
+    "Suq'Ata"
+   ],
+   "location": "Suq'Ata",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Only Telim'Tor and Husam'Tor survived the second year in the army."
+  },
+  {
+   "summary": "Goblins attack a royal caravan and loot priceless maps; Husam'Tor leads a strike force into the Ekundu Mountains and is killed.",
+   "participants": [
+    "Husam'Tor",
+    "Goblins"
+   ],
+   "location": "Ekundu Mountains",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Husam'Tor led a strike force into the Ekundu Mountains to recover the maps but was killed in battle."
+  },
+  {
+   "summary": "Telim'Tor seizes control, recovers the maps but decimates the troops to one-tenth their number.",
+   "participants": [
+    "Telim'Tor"
+   ],
+   "location": "Ekundu Mountains",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Telim'Tor seized control, recovering the maps but decimating the troops to one-tenth their original number."
+  },
+  {
+   "summary": "In Amiqat Telim'Tor falsely blames Husam for the near disaster; the survivors are executed the next day and Telim'Tor becomes leader of the imperial army.",
+   "participants": [
+    "Telim'Tor",
+    "Husam'Tor"
+   ],
+   "location": "Amiqat",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he deceived the government by telling them that Husam had led them all to near disaster"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Telim'Tor",
+   "relation": "family",
+   "target": "Husam'Tor",
+   "note": "Brothers; Telim resented Husam's shadow",
+   "paragraph": 1,
+   "quote": "Telim was angered by the fact that he always stood in Husam's shadow."
+  },
+  {
+   "source": "Telim'Tor",
+   "relation": "leader_of",
+   "target": "Suq'Ata",
+   "note": "Military leader",
+   "paragraph": 0,
+   "quote": "Telim'Tor (tel-lim-tor ) was the military leader of Suq'Ata on Dominaria ."
+  },
+  {
+   "source": "Telim'Tor",
+   "relation": "member_of",
+   "target": "Tor",
+   "note": "Youngest of four sons",
+   "paragraph": 1,
+   "quote": "Youngest of four sons born to the Tor, a wealthy and large clan"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,146 @@
+{
+ "page": "wiki/sigrid",
+ "url": "https://mtg.wiki/page/Sigrid",
+ "title": "Sigrid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sigrid, God-Favored",
+   "type": "character",
+   "aliases": [
+    "Sigrid"
+   ],
+   "description": "Human warrior of Kaldheim and spiritual leader of the Beskir blessed by Alrund.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beskir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan led spiritually by Sigrid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Sigrid's ancestor who saved Alrund's life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alrund",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who gifted Feltmark to Hurrik's descendants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feltmark",
+   "type": "location",
+   "aliases": [],
+   "description": "Land gifted by Alrund to Hurrik and his descendants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cosmos Bear",
+   "type": "creature",
+   "aliases": [],
+   "description": "Bear that approached young Sigrid and pressed its snout against her forehead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bretagard",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm whose armies were led by the human clan leaders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tibalt's Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that swept open Omenpaths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Harald",
+   "type": "character",
+   "aliases": [],
+   "description": "King with whom the clan leaders agreed elves and humans must live in peace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skemfar",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven realm to which elves would return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Sigrid lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Cosmos Bear approaches the young Sigrid without attacking, seen as a renewal of Alrund's pledge.",
+   "participants": [
+    "Sigrid, God-Favored",
+    "Cosmos Bear"
+   ],
+   "location": "Feltmark",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It instead pressed its snout against her forehead, then returned to the forest from which it came."
+  },
+  {
+   "summary": "Sigrid and the other clan leaders lead the Bretagard armies against the invading army during Tibalt's Doomskar.",
+   "participants": [
+    "Sigrid, God-Favored",
+    "Tibalt's Doomskar"
+   ],
+   "location": "Bretagard",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "lead the Bretagard armies against the invading army that swept open Omenpaths"
+  },
+  {
+   "summary": "Sigrid and the clan leaders agree with King Harald that elves and humans must live in peace.",
+   "participants": [
+    "Sigrid, God-Favored",
+    "King Harald"
+   ],
+   "location": "Bretagard",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "elves and humans must live in peace until the elves would manage to return to Skemfar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sigrid, God-Favored",
+   "relation": "leader_of",
+   "target": "Beskir",
+   "note": "She is the spiritual leader of the Beskir.",
+   "paragraph": 1,
+   "quote": "Sigrid is the spiritual leader of the Beskir."
+  },
+  {
+   "source": "Sigrid, God-Favored",
+   "relation": "family",
+   "target": "Hurrik",
+   "note": "Hurrik is her ancestor.",
+   "paragraph": 1,
+   "quote": "Sigrid's ancestor Hurrik saved the god Alrund 's life"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,132 @@
+{
+ "page": "wiki/kara-vrist",
+ "url": "https://mtg.wiki/page/Kara_Vrist",
+ "title": "Kara Vrist",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:42Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Kara Vrist",
+   "type": "character",
+   "aliases": [],
+   "description": "Neurok spy and leader of the Vrist network on Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vrist network",
+   "type": "faction",
+   "aliases": [],
+   "description": "Powerful neurok network led by Kara Vrist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Covalt network",
+   "type": "faction",
+   "aliases": [],
+   "description": "Neurok network led by Vy Covalt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vy Covalt",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Covalt network.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Synod",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vedalken brain trust that claimed all serum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melira",
+   "type": "character",
+   "aliases": [],
+   "description": "Healer who led a Mirran Resistance faction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirran Resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance against Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Fallen ruler of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lumengrid",
+   "type": "location",
+   "aliases": [],
+   "description": "Phyrexianized place Kara entered and survived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Synod claims all serum, leaving the neurok as second-class citizens, and secret networks form.",
+   "participants": [
+    "Synod",
+    "Vrist network",
+    "Covalt network"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Synod laid claim to all the serum on the plane"
+  },
+  {
+   "summary": "After New Phyrexia's creation Kara becomes a spy for Melira's faction of the Mirran Resistance.",
+   "participants": [
+    "Kara Vrist",
+    "Melira",
+    "Mirran Resistance"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kara became a spy for the faction of the Mirran Resistance"
+  },
+  {
+   "summary": "Kara enters the Phyrexianized Lumengrid and survives without compleation.",
+   "participants": [
+    "Kara Vrist",
+    "Lumengrid"
+   ],
+   "location": "Lumengrid",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kara was the only person to ever enter the Phyrexianized Lumengrid"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kara Vrist",
+   "relation": "leader_of",
+   "target": "Vrist network",
+   "note": "Led the network.",
+   "paragraph": 1,
+   "quote": "the Vrist network (led by Kara Vrist)"
+  },
+  {
+   "source": "Kara Vrist",
+   "relation": "serves",
+   "target": "Melira",
+   "note": "Spied for her faction.",
+   "paragraph": 2,
+   "quote": "led by the healer Melira"
+  }
+ ],
+ "rejected": []
+}

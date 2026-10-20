@@ -1,0 +1,70 @@
+{
+ "page": "wiki/lynde",
+ "url": "https://mtg.wiki/page/Lynde",
+ "title": "Lynde",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:34Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Lynde",
+   "type": "character",
+   "aliases": [],
+   "description": "A human warlock and witch from Innistrad, cursed by a planeswalker so that she no longer ages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Lynde lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Traveling mage",
+   "type": "character",
+   "aliases": [
+    "planeswalker"
+   ],
+   "description": "A powerful planeswalker passing through town who deflected Lynde's curse and returned a curse of their own.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lynde tried to curse a mage who bumped into her; the mage, a planeswalker, deflected it and cursed her back.",
+   "participants": [
+    "Lynde",
+    "Traveling mage"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she attempted to curse a traveling mage"
+  },
+  {
+   "summary": "Lynde discovered she no longer aged and learned to pass her ailments onto others.",
+   "participants": [
+    "Lynde"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lynde discovered that she no longer aged."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Traveling mage",
+   "relation": "enemy",
+   "target": "Lynde",
+   "note": "The mage cursed her in return after she attempted to curse them.",
+   "paragraph": 1,
+   "quote": "deflected the curse and sent over a curse of their own"
+  }
+ ],
+ "rejected": []
+}

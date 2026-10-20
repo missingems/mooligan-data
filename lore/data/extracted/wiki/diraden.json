@@ -1,0 +1,186 @@
+{
+ "page": "wiki/diraden",
+ "url": "https://mtg.wiki/page/Diraden",
+ "title": "Diraden",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Diraden",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane once covered in a shroud of perpetual darkness, cursed by Prince Velrav.",
+   "presence": "appears"
+  },
+  {
+   "name": "Velrav",
+   "type": "character",
+   "aliases": [
+    "Prince Velrav"
+   ],
+   "description": "Youngest of King Gelidor's three sons; exiled, learned black magic, massacred his family and cursed Diraden with Eternal Night; beheaded by Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Gelidor",
+   "type": "character",
+   "aliases": [
+    "Gelidor"
+   ],
+   "description": "King of Diraden who exiled Velrav; impaled himself on the sword that killed his son, ending the curse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Planeswalker who killed Velrav on Diraden.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker whose spark Velrav tried to absorb.",
+   "presence": "appears"
+  },
+  {
+   "name": "Velrav Castle",
+   "type": "location",
+   "aliases": [
+    "Prince's palace"
+   ],
+   "description": "Where Prince Velrav resided and brought captured residents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eternal Night",
+   "type": "concept",
+   "aliases": [
+    "shroud of Eternal Night"
+   ],
+   "description": "Curse cast by Velrav cloaking Diraden in darkness and cutting it off from non-black mana.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "King Gelidor exiles his youngest son Velrav, who learns black magic from the most powerful demon and takes revenge.",
+   "participants": [
+    "King Gelidor",
+    "Velrav"
+   ],
+   "location": "Diraden",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After King Gelidor exiled the Prince Velrav , the youngest of his three sons"
+  },
+  {
+   "summary": "Velrav massacres his family, feeds on the king and erects a curtain of darkness over the world.",
+   "participants": [
+    "Velrav",
+    "King Gelidor"
+   ],
+   "location": "Diraden",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He massacred the entire family and fed on the king"
+  },
+  {
+   "summary": "Velrav casts a curse on Diraden, cloaking it in Eternal Night and cutting it off from non-black mana.",
+   "participants": [
+    "Velrav"
+   ],
+   "location": "Diraden",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "cutting the plane off from non- black mana"
+  },
+  {
+   "summary": "Chandra and Gideon are taken to the Prince's palace, where Velrav tries to absorb Gideon's spark.",
+   "participants": [
+    "Chandra Nalaar",
+    "Gideon Jura",
+    "Velrav"
+   ],
+   "location": "Velrav Castle",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "During a ritual where Velrav attempted to absorb Gideon's planeswalker spark"
+  },
+  {
+   "summary": "Chandra regains her red mana and beheads Velrav with a flaming sword.",
+   "participants": [
+    "Chandra Nalaar",
+    "Velrav"
+   ],
+   "location": "Velrav Castle",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she beheaded the prince with a flaming sword"
+  },
+  {
+   "summary": "King Gelidor impales himself on the same sword, ending the curse; Chandra and Gideon leave.",
+   "participants": [
+    "King Gelidor",
+    "Chandra Nalaar",
+    "Gideon Jura"
+   ],
+   "location": "Velrav Castle",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "King Gelidor then impaled himself on the same sword, ending the plane's curse."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandra Nalaar",
+   "relation": "killed",
+   "target": "Velrav",
+   "note": "beheaded him",
+   "paragraph": 3,
+   "quote": "she beheaded the prince with a flaming sword"
+  },
+  {
+   "source": "Velrav",
+   "relation": "family",
+   "target": "King Gelidor",
+   "note": "son",
+   "paragraph": 1,
+   "quote": "the youngest of his three sons"
+  },
+  {
+   "source": "Velrav",
+   "relation": "enemy",
+   "target": "King Gelidor",
+   "note": "exiled by him, took revenge",
+   "paragraph": 1,
+   "quote": "the boy learned the vilest of black magic from the most powerful demon on the plane and took his revenge"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "ally",
+   "target": "Gideon Jura",
+   "note": "taken to the palace together",
+   "paragraph": 3,
+   "quote": "Chandra Nalaar and Gideon Jura were taken to the Prince's palace"
+  },
+  {
+   "source": "Velrav",
+   "relation": "located_in",
+   "target": "Velrav Castle",
+   "note": "resided there",
+   "paragraph": 4,
+   "quote": "where Prince Velrav resided"
+  }
+ ],
+ "rejected": []
+}

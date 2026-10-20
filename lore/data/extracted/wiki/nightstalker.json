@@ -1,0 +1,149 @@
+{
+ "page": "wiki/nightstalker",
+ "url": "https://mtg.wiki/page/Nightstalker",
+ "title": "Nightstalker",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:42Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Nightstalkers",
+   "type": "creature",
+   "aliases": [
+    "Night Stalker"
+   ],
+   "description": "A species of malevolent black-mana humanoids with elongated limbs, spiked hair and sharp teeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tojira",
+   "type": "character",
+   "aliases": [],
+   "description": "Swamp queen of Dakmor who magically created nightstalker servants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose nightstalker minions served as assassins in his attempt to conquer Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breathstealers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Most feared Urborg nightstalkers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qhattib of Amiqat",
+   "type": "character",
+   "aliases": [
+    "Qhattib"
+   ],
+   "description": "Suq'Atan vizier killed by Breathstealers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spirit of the Night",
+   "type": "deity",
+   "aliases": [],
+   "description": "Mysterious entity the Urborg nightstalkers worshipped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned a Shimian Night Stalker using a Black Mana Battery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alaborn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Attacked by nightstalkers of Dakmor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakmor",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where nightstalkers were most prolific.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shimia",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where nightstalkers are common.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tojira magically creates nightstalker servants in Dakmor and arms them.",
+   "participants": [
+    "Tojira",
+    "Nightstalkers"
+   ],
+   "location": "Dakmor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were magically created servants of the swamp queen Tojira"
+  },
+  {
+   "summary": "Kaervek's nightstalker assassins serve in his bid to conquer Jamuraa; the Breathstealers kill Qhattib.",
+   "participants": [
+    "Kaervek",
+    "Breathstealers",
+    "Qhattib of Amiqat"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "infamously killing the Suq'Atan vizier Qhattib of Amiqat"
+  },
+  {
+   "summary": "Palladia-Mors summons a Shimian Night Stalker with a Black Mana Battery.",
+   "participants": [
+    "Palladia-Mors"
+   ],
+   "location": "Shimia",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "A Shimian Night Stalker was once summoned by Palladia-Mors using a Black Mana Battery ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tojira",
+   "relation": "created",
+   "target": "Nightstalkers",
+   "note": "Magically created them in Dakmor.",
+   "paragraph": 3,
+   "quote": "they were magically created servants of the swamp queen Tojira"
+  },
+  {
+   "source": "Nightstalkers",
+   "relation": "serves",
+   "target": "Kaervek",
+   "note": "Minions and assassins.",
+   "paragraph": 4,
+   "quote": "They were the minions of Kaervek"
+  },
+  {
+   "source": "Breathstealers",
+   "relation": "killed",
+   "target": "Qhattib of Amiqat",
+   "note": "Infamously killed him.",
+   "paragraph": 4,
+   "quote": "infamously killing the Suq'Atan vizier Qhattib of Amiqat"
+  }
+ ],
+ "rejected": []
+}

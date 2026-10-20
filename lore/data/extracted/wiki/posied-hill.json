@@ -1,0 +1,113 @@
+{
+ "page": "wiki/posied-hill",
+ "url": "https://mtg.wiki/page/Posied_Hill",
+ "title": "Posied Hill",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Posied Hill",
+   "type": "location",
+   "aliases": [],
+   "description": "Wooded hill of posies in Dominaria where a clan of dwarves live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karin Amberly",
+   "type": "character",
+   "aliases": [
+    "Lady Karin Amberly"
+   ],
+   "description": "Lady who ordered Grinstable to claim the castle of Lord Dane Isely.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grinstable",
+   "type": "character",
+   "aliases": [
+    "Captain Grinstable"
+   ],
+   "description": "Captain leading the siege.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dane Isely",
+   "type": "character",
+   "aliases": [
+    "Lord Dane Isely"
+   ],
+   "description": "Evil lord whose castle was besieged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glemp",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf who parleyed with Grinstable.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eod",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Dwarven Demolition Team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dwarven Demolition Team",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dwarf squad that rigged explosives.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glemp parleys with Grinstable, offering the Demolition Team's services in return for leaving Posied Hill alone.",
+   "participants": [
+    "Glemp",
+    "Grinstable",
+    "Eod"
+   ],
+   "location": "Posied Hill",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "offered their services in return for Grinstable leaving Posied Hill alone"
+  },
+  {
+   "summary": "The explosives reduce the castle to a crater that fills and becomes a lake.",
+   "participants": [
+    "Eod",
+    "Dwarven Demolition Team",
+    "Grinstable"
+   ],
+   "location": "Posied Hill",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the explosives reduced the entire castle into a giant crater"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Grinstable",
+   "relation": "serves",
+   "target": "Karin Amberly",
+   "note": "Ordered to claim the castle",
+   "paragraph": 1,
+   "quote": "Lady Karin Amberly bid Captain Grinstable lay claim to the castle"
+  },
+  {
+   "source": "Eod",
+   "relation": "leader_of",
+   "target": "Dwarven Demolition Team",
+   "note": "Led the team",
+   "paragraph": 1,
+   "quote": "Dwarven Demolition Team led by Eod"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,90 @@
+{
+ "page": "wiki/the-mountain",
+ "url": "https://mtg.wiki/page/The_Mountain",
+ "title": "The Mountain",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:34Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "The Mountain",
+   "type": "location",
+   "aliases": [],
+   "description": "Volcano and holy site in Keld housing the secret of fire magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Keldon homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kradak",
+   "type": "character",
+   "aliases": [],
+   "description": "First doyen who learned fire magic on the Mountain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jezal",
+   "type": "character",
+   "aliases": [],
+   "description": "First doyenne who formed a pact with Kradak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Astor",
+   "type": "character",
+   "aliases": [],
+   "description": "Runner who climbed the Mountain to become a warlord.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parma",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Kradak fled for its deadly cold.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kradak ascended the Mountain and learned the secret of fire magic.",
+   "participants": [
+    "Kradak",
+    "The Mountain"
+   ],
+   "location": "The Mountain",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Here he learned the secret of fire magic, which would sustain his people"
+  },
+  {
+   "summary": "Astor climbed the Mountain and became a warlord of Keld.",
+   "participants": [
+    "Astor",
+    "The Mountain"
+   ],
+   "location": "The Mountain",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the runner Astor successfully climbed the Mountain"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kradak",
+   "relation": "ally",
+   "target": "Jezal",
+   "note": "Formed a pact to establish Keldon society",
+   "paragraph": 1,
+   "quote": "formed a pact with the first doyenne, Jezal"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,109 @@
+{
+ "page": "wiki/chimes",
+ "url": "https://mtg.wiki/page/Chimes",
+ "title": "Chimes",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:17Z",
+ "storyline": "Song of Time",
+ "entities": [
+  {
+   "name": "The Chimes",
+   "type": "location",
+   "aliases": [
+    "Chimes"
+   ],
+   "description": "Magical valley behind mount Sarraza in the Borderlands, home of elves and giant standing chimes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mount Sarraza",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain beneath which the Beast of the Hours was bound.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [
+    "great cockatrice"
+   ],
+   "description": "Great cockatrice bound beneath mount Sarraza and later banished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [],
+   "description": "Songmage who discovered the chimes' use in song-magic and made a banishing song spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "Songmage who used the spell to banish the Beast of the Hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group containing Almaaz and the Chimes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Chimes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 35 AR, after binding the Beast of the Hours, Samor discovers the Chimes and creates a banishing song spell at the cost of the chimes' integrity.",
+   "participants": [
+    "Samor the Collector",
+    "Beast of the Hours"
+   ],
+   "location": "The Chimes",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He created a song spell that would banish the bound beast should it ever be released"
+  },
+  {
+   "summary": "Over 3000 years later Ogwater Rifkin uses the spell to release and banish the Beast; the chimes break.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours"
+   ],
+   "location": "The Chimes",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ogwater succeeded in his attempt, and the Beast of the Hours was no more."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor the Collector",
+   "relation": "enemy",
+   "target": "Beast of the Hours",
+   "note": "Bound it beneath mount Sarraza",
+   "paragraph": 2,
+   "quote": "after binding the Beast of the Hours beneath mount Sarraza"
+  },
+  {
+   "source": "Ogwater Rifkin",
+   "relation": "killed",
+   "target": "Beast of the Hours",
+   "note": "Banished it",
+   "paragraph": 3,
+   "quote": "Ogwater succeeded in his attempt, and the Beast of the Hours was no more."
+  }
+ ],
+ "rejected": []
+}

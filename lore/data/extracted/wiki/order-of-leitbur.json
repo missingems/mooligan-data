@@ -1,0 +1,171 @@
+{
+ "page": "wiki/order-of-leitbur",
+ "url": "https://mtg.wiki/page/Order_of_Leitbur",
+ "title": "Order of Leitbur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Order of Leitbur",
+   "type": "faction",
+   "aliases": [
+    "Leitburites"
+   ],
+   "description": "A religious sect of Cleric Knights in Sarpadia on Dominaria, founded by Bethan Leitbur, dedicated to Icatia's defense.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bethan Leitbur",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of the Order, worshipped by its members; recorded his teachings in The Way.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hand of Justice",
+   "type": "deity",
+   "aliases": [],
+   "description": "Avatar of justice worshipped by the Order's members.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Way",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Bethan's recorded teachings, used as a codex by the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order fundamentally opposed to the Order of Leitbur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tourach",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose influence the Order guards its transcripts against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Icatia",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation in Sarpadia the Order helped defend; it fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Farrelite Cult",
+   "type": "faction",
+   "aliases": [
+    "Farrelites"
+   ],
+   "description": "Cult with beliefs similar to Leitbur's but fanatical, which swayed many members of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Incited the Orc-Goblin army into attacking Montford.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orc-Goblin army",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army whose suicidal, lightning-fast attacks brought down Icatia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Montford",
+   "type": "location",
+   "aliases": [],
+   "description": "Place attacked by the Orc-Goblin army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the Order existed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Internal strife weakens the Order as many members are swayed into the Farrelite Cult.",
+   "participants": [
+    "Order of Leitbur",
+    "Farrelite Cult"
+   ],
+   "location": "Icatia",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Internal strife in Icatia weakened the Order as many members were swayed into the Farrelite Cult"
+  },
+  {
+   "summary": "Tevesh Szat incites the Orc-Goblin army to attack Montford, causing the fall of Icatia.",
+   "participants": [
+    "Tevesh Szat",
+    "Orc-Goblin army"
+   ],
+   "location": "Montford",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the fall of a splintered Icatia is caused by Tevesh Szat inciting the Orc - Goblin army into attacking Montford"
+  },
+  {
+   "summary": "The Order, trained against Ebon Hand tactics, is unprepared for the Goblins; the Icatian army and Order defend strongly but Icatia falls.",
+   "participants": [
+    "Order of Leitbur",
+    "Orc-Goblin army"
+   ],
+   "location": "Icatia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Icatian army and the Order would put up a strong defense, but all of Icatia would fall."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bethan Leitbur",
+   "relation": "created",
+   "target": "Order of Leitbur",
+   "note": "founder",
+   "paragraph": 0,
+   "quote": "It was founded by Bethan Leitbur ."
+  },
+  {
+   "source": "Order of Leitbur",
+   "relation": "enemy",
+   "target": "Order of the Ebon Hand",
+   "note": "fundamentally opposed and often clashed",
+   "paragraph": 1,
+   "quote": "The Order of Leitbur fundamentally opposed the Order of the Ebon Hand"
+  },
+  {
+   "source": "Order of Leitbur",
+   "relation": "other",
+   "target": "Hand of Justice",
+   "note": "members worship it",
+   "paragraph": 1,
+   "quote": "Cleric Knights who worship the Hand of Justice and Bethan Leitbur himself"
+  },
+  {
+   "source": "Tevesh Szat",
+   "relation": "leader_of",
+   "target": "Orc-Goblin army",
+   "note": "incited it into attacking",
+   "paragraph": 3,
+   "quote": "Tevesh Szat inciting the Orc - Goblin army into attacking Montford"
+  }
+ ],
+ "rejected": []
+}

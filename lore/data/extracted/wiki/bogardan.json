@@ -1,0 +1,110 @@
+{
+ "page": "wiki/bogardan",
+ "url": "https://mtg.wiki/page/Bogardan",
+ "title": "Bogardan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Bogardan",
+   "type": "location",
+   "aliases": [],
+   "description": "A volcanic mountain island, one of the three main islands of the Burning Isles on Dominaria, home to embermages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Burning Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group including Bogardan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Bogardan lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Land of hellish demons controlled by the lich Nevinyrral, at war with Bogardan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nevinyrral",
+   "type": "character",
+   "aliases": [],
+   "description": "Lich who controlled the demons of Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shiv",
+   "type": "location",
+   "aliases": [],
+   "description": "The most powerful site of red mana on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emberwilde Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order that has not moved into Bogardan for fear of insulting the entities in its depths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wildfire",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane reached by portals on Bogardan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bogardan was at war with the demons of Urborg, controlled by Nevinyrral.",
+   "participants": [
+    "Bogardan",
+    "Urborg",
+    "Nevinyrral"
+   ],
+   "location": "Bogardan",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Bogardan once was at war with the hellish demons of Urborg"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bogardan",
+   "relation": "located_in",
+   "target": "Burning Isles",
+   "note": "one of three main islands",
+   "paragraph": 0,
+   "quote": "one of the three main islands that make up the Burning Isles"
+  },
+  {
+   "source": "Bogardan",
+   "relation": "enemy",
+   "target": "Urborg",
+   "note": "once at war",
+   "paragraph": 3,
+   "quote": "Bogardan once was at war with the hellish demons of Urborg"
+  },
+  {
+   "source": "Nevinyrral",
+   "relation": "leader_of",
+   "target": "Urborg",
+   "note": "lich controlling its demons",
+   "paragraph": 3,
+   "quote": "controlled by the lich Nevinyrral"
+  }
+ ],
+ "rejected": []
+}

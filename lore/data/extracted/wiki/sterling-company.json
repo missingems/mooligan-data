@@ -1,0 +1,95 @@
+{
+ "page": "wiki/sterling-company",
+ "url": "https://mtg.wiki/page/Sterling_Company",
+ "title": "Sterling Company",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:33Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "A private peacekeeping force founded by Bertram Graywater on Thunder Junction that sells guards for profit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bertram Graywater",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder and leader of the Sterling Company.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Sterling Company operates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "Hired the Sterling Company to protect his communication lines across the Omenpaths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prosperity",
+   "type": "location",
+   "aliases": [],
+   "description": "City on whose edge the Sterling Company headquarters stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Pathways between planes across which Ral builds communication lines.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ral Zarek hires the Sterling Company to protect his efforts to create communication lines across the Omenpaths.",
+   "participants": [
+    "Ral Zarek",
+    "Sterling Company"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ral Zarek hired the company to protect his efforts to create communication lines across the Omenpaths ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bertram Graywater",
+   "relation": "created",
+   "target": "Sterling Company",
+   "note": "He founded it.",
+   "paragraph": 0,
+   "quote": "founded by Bertram Graywater on Thunder Junction"
+  },
+  {
+   "source": "Bertram Graywater",
+   "relation": "leader_of",
+   "target": "Sterling Company",
+   "note": "Listed as its leader.",
+   "paragraph": 4,
+   "quote": "Bertram Graywater (leader)"
+  },
+  {
+   "source": "Sterling Company",
+   "relation": "located_in",
+   "target": "Prosperity",
+   "note": "Its headquarters is on the edge of Prosperity.",
+   "paragraph": 2,
+   "quote": "The headquarters of the Sterling Company is located on the edge of the city of Prosperity ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,144 @@
+{
+ "page": "wiki/ivory-tower",
+ "url": "https://mtg.wiki/page/Ivory_Tower",
+ "title": "Ivory Tower",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:17Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Ivory Tower",
+   "type": "faction",
+   "aliases": [
+    "Order of the Ivory Towers"
+   ],
+   "description": "Order of bookkeepers in Terisia City that joined the Third Path.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archimandrite",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman who presided over Terisia City from the tallest Ivory Tower.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurkyl",
+   "type": "character",
+   "aliases": [],
+   "description": "College of Lat-Nam member.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drafna",
+   "type": "character",
+   "aliases": [],
+   "description": "College of Lat-Nam member.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feldon",
+   "type": "character",
+   "aliases": [],
+   "description": "College of Lat-Nam member.",
+   "presence": "appears"
+  },
+  {
+   "name": "Third Path",
+   "type": "faction",
+   "aliases": [
+    "Union of the Third Path"
+   ],
+   "description": "Alliance of magic users, historians, intellectuals and artificers seeking neutrality.",
+   "presence": "appears"
+  },
+  {
+   "name": "College of Lat-Nam",
+   "type": "faction",
+   "aliases": [],
+   "description": "Scholarly college.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group with secret other loyalties that joined the Union.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City of the Ivory Towers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the warring brothers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the warring brothers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hurkyl, Drafna and Feldon met the Archimandrite to establish the Union of the Third Path.",
+   "participants": [
+    "Hurkyl",
+    "Drafna",
+    "Feldon",
+    "Archimandrite",
+    "Third Path"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "to establish the Union of the Third Path"
+  },
+  {
+   "summary": "The Union elected neutrality in the war between Urza and Mishra and named itself the Third Path.",
+   "participants": [
+    "Third Path",
+    "Ivory Tower",
+    "College of Lat-Nam",
+    "Brotherhood of Gix",
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "officially elected to seek neutrality in the war between Urza and Mishra"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Archimandrite",
+   "relation": "leader_of",
+   "target": "Ivory Tower",
+   "note": "Leader of the bookkeepers",
+   "paragraph": 1,
+   "quote": "As the leader of the bookkeepers of the legendary Ivory Tower, the Archimandrite"
+  },
+  {
+   "source": "Ivory Tower",
+   "relation": "member_of",
+   "target": "Third Path",
+   "note": "Became part of it",
+   "paragraph": 0,
+   "quote": "They became part of the Third Path during the war."
+  }
+ ],
+ "rejected": []
+}

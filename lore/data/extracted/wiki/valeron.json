@@ -1,0 +1,82 @@
+{
+ "page": "wiki/valeron",
+ "url": "https://mtg.wiki/page/Valeron",
+ "title": "Valeron",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:38Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Valeron",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on the southern coast of Alaran Bant famed for its cavalry, home to the Sun-Dappled Court.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [
+    "Alaran Bant"
+   ],
+   "description": "Shard of Alara where Valeron lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhess",
+   "type": "location",
+   "aliases": [],
+   "description": "Island nation that constantly battles Valeron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sun-Dappled Court",
+   "type": "faction",
+   "aliases": [],
+   "description": "Court based in Valeron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serul Cove",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal city of Valeron.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Valeron constantly battles Jhess, whose navy dominates the sea while Valeron's cavalry rules the land.",
+   "participants": [
+    "Valeron",
+    "Jhess"
+   ],
+   "location": "Valeron",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Valeron constantly battles with the island nation of Jhess"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Valeron",
+   "relation": "enemy",
+   "target": "Jhess",
+   "note": "Constant warfare.",
+   "paragraph": 2,
+   "quote": "Valeron constantly battles with the island nation of Jhess"
+  },
+  {
+   "source": "Sun-Dappled Court",
+   "relation": "located_in",
+   "target": "Valeron",
+   "note": "Home to the court.",
+   "paragraph": 1,
+   "quote": "is home to the Sun-Dappled Court"
+  }
+ ],
+ "rejected": []
+}
