@@ -112,6 +112,14 @@ step_upload() (
     if [ -f work/sets/art.json ]; then
       cp work/sets/art.json "$R2/sets/art.json" --cache-control "public, max-age=300"
     fi
+    # Each recent set's sealed products, from TCGCSV's mirror of TCGplayer, with nothing pointing at them.
+    if [ -d work/sets/products ]; then
+      cp work/sets/products "$R2/sets/products" --recursive --cache-control "public, max-age=300"
+    fi
+    # The mechanics each set introduced, from Scryfall's printings, its keyword catalogs and the keyword rules above.
+    if [ -f work/sets/mechanics.json ]; then
+      cp work/sets/mechanics.json "$R2/sets/mechanics.json" --cache-control "public, max-age=300"
+    fi
     cp work/snapshots "$R2/snapshots" --recursive --cache-control "public, max-age=300"
     # Built from the snapshots above, so it goes up after them.
     if [ -f work/explore.json ]; then
@@ -208,10 +216,10 @@ if [ "$PUBLISH" = 1 ] && [ -f work/index.json ]; then
 elif [ "$PUBLISH" != 1 ]; then
   echo
   echo "PUBLISH=0: nothing was uploaded. The output is in $REPO/scraper/work:"
-  for dir in decks cards edh locator premier archetypes events popular-cards breakouts movers snapshots state; do
+  for dir in decks cards edh locator premier archetypes events popular-cards breakouts movers sets/products snapshots state; do
     if [ -d "work/$dir" ]; then echo "  $dir/: $(find "work/$dir" -type f | wc -l | tr -d ' ') files"; fi
   done
-  for file in index.json explore.json today.json previews.json rules/keywords.json sets/art.json explore-manifest.json; do
+  for file in index.json explore.json today.json previews.json rules/keywords.json sets/art.json sets/mechanics.json explore-manifest.json; do
     if [ -f "work/$file" ]; then echo "  $file"; fi
   done
   if [ ! -f work/index.json ]; then echo "  (no index.json: the run did not finish)"; fi

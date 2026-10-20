@@ -20,6 +20,8 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `sets/art.json` | Wizards' official art for each set, by Scryfall set code, for a set page's hero banner. Sets without art are left out | `max-age=300` |
+| `sets/products/{code}.json` | One recent set's sealed products (boxes, boosters, bundles, decks) with TCGplayer's picture, link and price. Sets with no sealed products have no file | `max-age=300` |
+| `sets/mechanics.json` | The keyword abilities, keyword actions and ability words each set introduced, by Scryfall set code, with rules, reminder text and example cards | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
 | `edh/commanders/{slug}/guide.json` | One commander's play styles and its five power brackets, each with its cards, judged by Claude | `max-age=300` |
 | `edh/commanders/index.json` | Every commander published, with its deck count | `max-age=300` |
@@ -32,7 +34,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the sealed products already read for each set (`state/set-products.json`), the input each commander guide was written from (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -986,6 +988,89 @@ Wizards' own art for each set, so a set page can open with a hero banner. Wizard
 - **`title`** is the set's name, from Scryfall. **`source`** is always `"wizards"`. **`page`** is the Wizards page the image was read from, to link to or credit.
 - **Updates.** A page is read again only when the sitemap says it changed, so an image changes when Wizards changes the page: an upcoming set's first image can be a placeholder until its art is ready. The file is rebuilt from the pages read so far on every run, so `generated_at` is the run's and says nothing about the art. A run that cannot read the sitemap or Scryfall's sets logs a warning and does not fail; the file stays as last published. Until the first successful run it is a 404.
 - **Images are not ours.** They are Wizards' marketing art, served from their CDN; show them as the set's banner and link to `page` where you credit them.
+
+## `sets/products/{code}.json`
+
+The sealed products of one set (boosters, boxes, bundles, Commander decks), so a set page can show what to buy. TCGplayer lists them; TCGCSV (<https://tcgcsv.com>) mirrors its Magic catalog daily as JSON, and each run reads the products and prices of the group matching each Scryfall set. There is one file per set, keyed by the **lower-case Scryfall set code**: `sets/products/fra.json`. About 60 sets have one.
+
+```json
+{
+  "schema": 1,
+  "set": "fra",
+  "generated_at": "2026-10-20T09:30:00Z",
+  "products": [
+    {
+      "name": "Reality Fracture - Play Booster Display",
+      "kind": "booster-box",
+      "image": "https://tcgplayer-cdn.tcgplayer.com/product/692980_400w.jpg",
+      "url": "https://www.tcgplayer.com/product/692980/magic-reality-fracture-reality-fracture-play-booster-display",
+      "price": 130.94
+    }
+  ]
+}
+```
+
+- **Which sets.** Every paper set Scryfall lists as released since 1 January 2023, plus the ones not out yet, that has at least one sealed product with a picture. A set with none has **no file** (the request is a 404): do not expect a file for every set. Promo, token and memorabilia sets are not looked up. A Scryfall set is matched to TCGplayer's group by abbreviation (it is the set's code for most sets) when the two names also read alike, else by name alone, so a few sets do not match (promo packs, Secret Lair); the matching is by `scraper/mtgmeta/setproducts.py`.
+- **`name`** is TCGplayer's product name, as written ("Reality Fracture - Play Booster Display"; TCGplayer calls a booster box a display). **`url`** is the product's TCGplayer page.
+- **`image`** is the product's picture on TCGplayer's CDN, the 400 pixel wide version (`…_400w.jpg`). A product whose picture the CDN does not serve (some products not out yet) is left out until it does. They are TCGplayer's images; show them for identification and link to `url`.
+- **`price`** is TCGplayer's market price in USD, else its mid price, as of TCGCSV's last daily build (about 20:00 UTC), rounded to cents. It is **`null`** when TCGplayer has no price yet, usually for a product not out yet. Do not show it as $0.
+- **`kind`** is read from the name by simple patterns, one of:
+  - `booster-box`: a box or display of play, draft, set, Jumpstart or plain boosters ("Play Booster Display", "Draft Booster Box")
+  - `collector-booster-box`: a Collector Booster box or display
+  - `play-booster`: one Play Booster, or a set's plain "Booster Pack"
+  - `collector-booster`: one Collector Booster
+  - `bundle`: a Bundle, Gift Bundle or any named bundle (the "Secret Lair Bundle" too)
+  - `prerelease`: a Prerelease Pack
+  - `commander-deck`: a Commander Deck, or a set of them
+  - `starter-kit`: a Starter Kit
+  - `other`: anything else: **cases** ("Play Booster Display Case"), Scene Boxes, Draft Night, Draft, Set and Jumpstart packs, sample and Omega packs. Filter by `kind` to show the ones you want.
+- **Order** is by `kind` in the order above, then by TCGplayer's product id, which is roughly the order TCGplayer added them.
+- Cards (products with a number and a rarity), products TCGplayer sells in another language ("(Japanese)") and products with no picture are not in the file.
+- **Updates.** The file is rewritten on every run, so `generated_at` is the run's and not the prices'. A set released in the last 120 days or not yet out is read from TCGCSV after each of its builds, an older one only when TCGCSV says its group changed or every 14 days (`state/set-products.json`). A run that cannot read TCGCSV logs a warning and does not fail; the files stay as last published. Until the first successful run they are a 404.
+
+## `sets/mechanics.json`
+
+The mechanics each set introduced, for "New in this set" on a set page. Built from Scryfall: a keyword is new to the set that holds its **earliest paper printing** (by release date) of any card with that keyword in Scryfall's `keywords` array.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-20T09:30:00Z",
+  "sets": {
+    "sos": [
+      {
+        "keyword": "Prepared",
+        "kind": "keyword action",
+        "reminder": "While it's prepared, you may cast a copy of its spell. Doing so unprepares it.",
+        "rules": "",
+        "example_oracle_ids": ["6cb8b8c4-0674-4f14-9d89-010969fbb80e", "58b0c737-0a84-4f9a-b3b7-300c5de43874", "93056597-b964-421f-be2f-e92abef1c2a4"],
+        "first_set": "sos"
+      }
+    ],
+    "tdm": [
+      {
+        "keyword": "Mobilize",
+        "kind": "keyword ability",
+        "reminder": "Whenever this creature attacks, create two tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.",
+        "rules": "Mobilize is a triggered ability. “Mobilize N” means “Whenever this creature attacks, create N 1/1 red Warrior creature tokens. Those tokens enter tapped and attacking. Sacrifice them at the beginning of the next end step.”",
+        "example_oracle_ids": ["b12cbda1-ac09-49eb-96b3-a4df27bc37ea", "158d0272-a850-4399-8afa-d0caa143c3cb", "449db6bf-d766-4d09-a7bd-9c45b3d4c4c3"],
+        "first_set": "tdm"
+      }
+    ],
+    "m10": []
+  }
+}
+```
+
+- **`sets`** is keyed by the **lower-case Scryfall set code** and holds an entry (an empty array when the set introduced nothing) for every set that can introduce a mechanic: paper expansions, core sets, Masters, Commander decks, draft innovation, Un-sets and the like, about 310. Promo, token, memorabilia, Secret Lair and digital-only sets are not in it, and their printings do not count (a prerelease promo is out a week before its set).
+- **A tie.** A set and its Commander decks come out on one day. The mechanic goes to the set, and the Commander deck only when it is the only one with it (then the set with more cards with it, then the code). Each mechanic is in exactly one set, and **`first_set`** repeats that set's code.
+- **What is left out.** The evergreen keywords (flying, trample, flash, ward, … and the evergreen actions such as scry and fight), a keyword first printed before 1 January 1999, and variants of one mechanic, which count as it: every `…cycling` is cycling, every landwalk is landwalk, multikicker is kicker, megamorph is morph, nightbound is daybound. Names Scryfall puts in `keywords` that are not keywords (a card's own named abilities) are not in it: a word counts only if the Comprehensive Rules or one of Scryfall's keyword ability, keyword action or ability word catalogs lists it. Scryfall's data decides both the name and the date, so Secrets of Strixhaven's mechanic is **`Prepared`** here, and a keyword Scryfall tags only on a later card (or on a token) is dated by that card.
+- **`keyword`** is the name as Scryfall's catalog (else the rules) writes it. **`kind`** is `keyword ability` (rule 702), `keyword action` (rule 701) or `ability word` (rule 207.2c) from `rules/keywords.json`; for a word the rules do not list yet (the Comprehensive Rules are published a few times a year, a new set's mechanics are in Scryfall first), it is the Scryfall catalog it is in.
+- **`rules`** is the keyword's rules from `rules/keywords.json` (its subrules joined by a newline); for an ability word it is rule 207.2c's general text, as an ability word has no rules of its own. It is **`""`** for a mechanic the Comprehensive Rules do not list yet.
+- **`reminder`** is the reminder text in parentheses from one of the examples' oracle text (without the parentheses), as printed on that card, so it can name that card's number ("Mobilize 2 … create two"). It is **`""`** when no example has one, always for an ability word.
+- **`example_oracle_ids`** are up to three cards of the set with the keyword, the most played first: lowest EDHREC rank, then the rarest, then by name. They are the `oracle_id` of `cards/{slug}.json`.
+- **Order** in a set is the mechanics with the most cards in the set first, then by name.
+- **Updates.** The file is rewritten on every run from Scryfall's every-printing file (the movers' download, read a second time), its catalogs, and `rules/keywords.json`: this run's copy when the rules changed, else the published one. A run that cannot read them logs a warning and does not fail; the file stays as last published. Until the first successful run it is a 404.
 
 ## Lore: `lore/app/…`
 

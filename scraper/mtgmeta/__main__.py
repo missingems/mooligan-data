@@ -6,6 +6,8 @@ to publish on the way out.
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
 `python -m mtgmeta guides DIR --top 5` asks Claude for the top commanders' guides (see guides.py).
 `python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
+`python -m mtgmeta set-products DIR` writes sets/products/{code}.json, each recent set's sealed products (see setproducts.py).
+`python -m mtgmeta set-mechanics DIR` writes sets/mechanics.json, the mechanics each set introduced (see setmechanics.py).
 """
 from __future__ import annotations
 
@@ -157,6 +159,54 @@ def publish_set_art(directory: Path, report) -> list:
         return []
 
 
+def publish_set_products(directory: Path, report) -> list:
+    """The sealed products of each recent set, by Scryfall set code, as sets/products/{code}.json.
+
+    Nothing is written when TCGCSV or Scryfall's sets cannot be read: the files stay published as they were.
+    That is a warning, not an error, so the run passes.
+    """
+    if os.environ.get("SET_PRODUCTS", "1") != "1":
+        return []
+    from .setart import Paced, Response, scryfall_fetch
+    from .setproducts import DELAY, USER_AGENT, fetch, image_loads, write_set_products
+
+    agent = os.environ.get("SET_PRODUCTS_USER_AGENT", USER_AGENT)
+    paced = Paced(lambda url, last_byte=None: Response("", fetch(url, agent)), float(os.environ.get("SET_PRODUCTS_DELAY", str(DELAY))))
+    try:
+        return write_set_products(
+            directory, datetime.now(timezone.utc), lambda url: paced(url).body, lambda url: scryfall_fetch(url, agent),
+            lambda url: image_loads(url, agent),
+        )
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Set products failed", exc_info=True)
+        report.warnings.append(f"set products: {error}")
+        return []
+
+
+def publish_set_mechanics(directory: Path, report, data_url: str) -> list:
+    """The mechanics each set introduced, by Scryfall set code, as sets/mechanics.json.
+
+    It reads rules/keywords.json from `directory` when `publish_rules` wrote it this run, else the published file at `data_url`,
+    so it runs after `publish_rules`. Nothing is written when Scryfall's cards, its catalogs or the rules cannot be read: the file
+    stays published as it was. That is a warning, not an error, so the run passes.
+    """
+    if os.environ.get("SET_MECHANICS", "1") != "1":
+        return []
+    from .scryfall import DEFAULT_CARDS_URL, _bulk_download_uri, bulk_cards
+    from .setmechanics import RULES_PATH, USER_AGENT, fetch, load_rules, write_set_mechanics
+
+    agent = os.environ.get("SET_MECHANICS_USER_AGENT", USER_AGENT)
+    try:
+        return write_set_mechanics(
+            directory, datetime.now(timezone.utc), bulk_cards(_bulk_download_uri(DEFAULT_CARDS_URL)), lambda url: fetch(url, agent),
+            lambda: load_rules(directory, lambda url: fetch(url, agent), f"{data_url}/{RULES_PATH}"),
+        )
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Set mechanics failed", exc_info=True)
+        report.warnings.append(f"set mechanics: {error}")
+        return []
+
+
 def publish_movers(directory: Path, report, data_url: str, watch=None) -> list:
     """The cards whose price moved most, from the published price catalog, as movers/{format}.json.
 
@@ -268,6 +318,14 @@ def main() -> int:
         from .setart import main as set_art
 
         return set_art(sys.argv[2:])
+    if sys.argv[1:2] == ["set-products"]:
+        from .setproducts import main as set_products
+
+        return set_products(sys.argv[2:])
+    if sys.argv[1:2] == ["set-mechanics"]:
+        from .setmechanics import main as set_mechanics
+
+        return set_mechanics(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
     args = parser.parse_args()
@@ -330,6 +388,8 @@ def main() -> int:
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)
     written += publish_set_art(args.directory, report)
+    written += publish_set_products(args.directory, report)
+    written += publish_set_mechanics(args.directory, report, data_url)
     # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
     new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
     written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
