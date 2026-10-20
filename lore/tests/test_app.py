@@ -122,3 +122,13 @@ def test_narratives_keep_only_sentences_their_set_events_support():
     rejected = []
     check_sentences([{"text": "One.", "cites": ["e1"]}] * 6, known, set(), "dom", rejected)
     assert [r["reason"] for r in rejected] == ["too long"]
+
+
+def test_a_long_timeline_keeps_its_ending_and_prefers_the_story_to_the_wiki():
+    from mtglore.app import _pick
+    story = [{"id": f"s{i}", "page": "stories/x", "importance": "major" if i % 2 else "minor", "summary": f"s{i}"} for i in range(30)]
+    wiki = [{"id": f"w{i}", "page": "wiki/x", "importance": "major", "summary": f"w{i}"} for i in range(5)]
+    picked = [e["id"] for e in _pick(story + wiki, 10)]
+    assert len(picked) == 10 and not any(p.startswith("w") for p in picked)
+    assert picked[0] == "s1" and picked[-1] == "s29"  # the first and last major story events: start and climax
+    assert picked == sorted(picked, key=lambda p: int(p[1:]))  # in story order
