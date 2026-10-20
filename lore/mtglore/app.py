@@ -6,10 +6,12 @@
   legendary creatures and planeswalkers by their name, the part before the comma or the planeswalker type; lands and
   planes by the place they're named for; legendary artifacts by name.
 - `sets.json`: each set's key characters and places, most important first, from the stories, wiki sections and
-  flavor text that set told.
+  flavor text that set told; and `summaries`, a few sentences of each set's story (data/set_summaries).
 - `entities.json`: a summary of every entity that has a page, with the card whose art shows it best and its sets.
-- `entities/<id>.md`: the entity's page in playgraph primer markdown: front matter, `##` sections, `[[Card]]` links
-  and a `:::cards` block, with each fact linking to its source.
+- `entities/<id>.md`: the entity's page in playgraph primer markdown, as prose: who they are, then a paragraph per
+  set (data/narratives where written, else its events), a `:::cards` block, and the MTG Wiki credit in the front
+  matter when the page uses the wiki. The citations stay in the index.
+- `sets/<code>/<id>.md`: what happened to one of a set's key entities in that set, and a short timeline.
 
 Needs the index (`build`) and Scryfall's catalog (`scrape-scryfall`, data/scryfall).
 """
