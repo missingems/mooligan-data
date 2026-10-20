@@ -1,0 +1,161 @@
+{
+ "page": "wiki/tomakul-campaign",
+ "url": "https://mtg.wiki/page/Tomakul_Campaign",
+ "title": "Tomakul Campaign",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:28Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tomakul Campaign",
+   "type": "event",
+   "aliases": [],
+   "description": "Trench warfare in the cold desert outside Tomakul in which the Argivians were pushed back by the Fallaji.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomakul",
+   "type": "location",
+   "aliases": [],
+   "description": "De facto capital of the Fallaji Empire and seat of the Qadir, Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji Empire",
+   "type": "faction",
+   "aliases": [
+    "Fallaji"
+   ],
+   "description": "Empire led by Mishra whose capital was Tomakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [
+    "Qadir"
+   ],
+   "description": "Qadir of the Fallaji who lashed together dragon engines against the Argivians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Argivian leader whose line faltered and fell back across the desert.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer whose transmogrant pulled clay from Tawnos's statues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's artificer whose clay statues were used in the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argivian army",
+   "type": "faction",
+   "aliases": [
+    "Argivians"
+   ],
+   "description": "Army of Urza and the Combined Kingdoms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarinth",
+   "type": "location",
+   "aliases": [],
+   "description": "City that fell after years of siege.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korlis",
+   "type": "location",
+   "aliases": [],
+   "description": "Source of reinforcements that never arrived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of Kroog",
+   "type": "event",
+   "aliases": [],
+   "description": "Event caused by two real dragon engines.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashnod's transmogrants and Tawnos's clay statues are used in battle, with the transmogrants pulling clay from the statues.",
+   "participants": [
+    "Ashnod",
+    "Tawnos"
+   ],
+   "location": "Tomakul",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Having faced the clay statues before, Ashnod knew of their power"
+  },
+  {
+   "summary": "Sarinth falls and Fallaji troops flood south against the Argivian columns.",
+   "participants": [
+    "Fallaji Empire",
+    "Argivian army"
+   ],
+   "location": "Tomakul",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sarinth had fallen after years of siege as the Combined Kingdoms pressed west"
+  },
+  {
+   "summary": "Mishra lashes together dragon engines, including two real ones and a flying type.",
+   "participants": [
+    "Mishra"
+   ],
+   "location": "Tomakul",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mishra lashed together at least a dozen dragon engines"
+  },
+  {
+   "summary": "The Argivians come within a mile of the city but are pushed back; Urza's line falls back across the desert.",
+   "participants": [
+    "Urza",
+    "Argivian army",
+    "Fallaji Empire"
+   ],
+   "location": "Tomakul",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Urza's line faltered, and fell back across the desert, from trench to trench."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mishra",
+   "relation": "leader_of",
+   "target": "Fallaji Empire",
+   "note": "He is Qadir and seat of power at Tomakul.",
+   "paragraph": 0,
+   "quote": "the de facto capital of the Fallaji Empire and seat of the Qadir, Mishra"
+  },
+  {
+   "source": "Ashnod",
+   "relation": "enemy",
+   "target": "Tawnos",
+   "note": "Ashnod programmed transmogrants against Tawnos's clay statues.",
+   "paragraph": 0,
+   "quote": "she had programmed the transmogrants to pull the primal clay from the statues' forms"
+  }
+ ],
+ "rejected": []
+}

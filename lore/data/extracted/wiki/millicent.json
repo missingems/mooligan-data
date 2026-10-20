@@ -1,0 +1,119 @@
+{
+ "page": "wiki/millicent",
+ "url": "https://mtg.wiki/page/Millicent",
+ "title": "Millicent",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:11Z",
+ "storyline": "Crimson Vow",
+ "entities": [
+  {
+   "name": "Millicent",
+   "type": "character",
+   "aliases": [],
+   "description": "Geist soldier from Innistrad; in life mayor and captain of the guard of a small township in Stensia, now leading spirits seeking vengeance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Millicent lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Millicent's township stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cyril Rav",
+   "type": "character",
+   "aliases": [],
+   "description": "Necro-alchemist who created the geistbomb and experimented on geists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jacob Hauken",
+   "type": "character",
+   "aliases": [],
+   "description": "Accomplice of Cyril Rav.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eloise Wicker",
+   "type": "character",
+   "aliases": [],
+   "description": "Employed by Millicent to find Rav and Hauken.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Travails",
+   "type": "event",
+   "aliases": [
+    "Travails"
+   ],
+   "description": "Events that left many vengeful spirits on Innistrad.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Millicent's town is wiped off the map by a geistbomb created by Cyril Rav.",
+   "participants": [
+    "Cyril Rav",
+    "Millicent"
+   ],
+   "location": "Stensia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The town was wiped off the map by a geistbomb created by the necro-alchemist Cyril Rav."
+  },
+  {
+   "summary": "Millicent and her citizens rise again as spirits, traveling the plane seeking vengeance.",
+   "participants": [
+    "Millicent"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Millicent and her citizens rose again as spirits"
+  },
+  {
+   "summary": "Misused in Rav's experiments, Millicent employs Eloise Wicker to find Rav and Jacob Hauken.",
+   "participants": [
+    "Millicent",
+    "Eloise Wicker",
+    "Cyril Rav",
+    "Jacob Hauken"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "She employed Eloise Wicker to find Rav and his accomplice Jacob Hauken ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cyril Rav",
+   "relation": "killed",
+   "target": "Millicent",
+   "note": "Geistbomb destroyed her town",
+   "paragraph": 2,
+   "quote": "The town was wiped off the map by a geistbomb created by the necro-alchemist Cyril Rav."
+  },
+  {
+   "source": "Millicent",
+   "relation": "enemy",
+   "target": "Cyril Rav",
+   "note": "Bent on revenge",
+   "paragraph": 4,
+   "quote": "she became bent on revenge"
+  }
+ ],
+ "rejected": []
+}

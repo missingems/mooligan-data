@@ -1,0 +1,120 @@
+{
+ "page": "wiki/havenwood",
+ "url": "https://mtg.wiki/page/Havenwood",
+ "title": "Havenwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Havenwood",
+   "type": "location",
+   "aliases": [],
+   "description": "A tremendous forest south of the Sarpadian Mountains on Sarpadia, home of the Elven Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria whose northern coast Havenwood reached.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Havenwood lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elven Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The vast empire of the elves of Havenwood, crushed by the thallids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tev Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who made his abode in Havenwood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thelon",
+   "type": "character",
+   "aliases": [],
+   "description": "A powerful elven druid who created the thallids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thallids",
+   "type": "creature",
+   "aliases": [],
+   "description": "Sentient fungus creatures created by Thelon that produced saprolings and destroyed the Elven Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eub Hlut",
+   "type": "faction",
+   "aliases": [],
+   "description": "A tiny people who long after the fall of Sarpadia inhabited the Foulmere.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thelon learns to create thallid creatures out of fungus, which produce saprolings used as food when crops wither.",
+   "participants": [
+    "Thelon",
+    "Thallids"
+   ],
+   "location": "Havenwood",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "learned to create creatures out of fungus called thallids which produced saprolings"
+  },
+  {
+   "summary": "The thallids grow sentient and, vastly outnumbering the elves, crush the Elven Empire in a single day.",
+   "participants": [
+    "Thallids",
+    "Elven Empire"
+   ],
+   "location": "Havenwood",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "crushed the Elven Empire in a single day"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thelon",
+   "relation": "created",
+   "target": "Thallids",
+   "note": "Thelon learned to make thallids from fungus.",
+   "paragraph": 2,
+   "quote": "learned to create creatures out of fungus called thallids which produced saprolings"
+  },
+  {
+   "source": "Thallids",
+   "relation": "enemy",
+   "target": "Elven Empire",
+   "note": "The thallids destroyed the Elven Empire.",
+   "paragraph": 2,
+   "quote": "crushed the Elven Empire in a single day"
+  },
+  {
+   "source": "Havenwood",
+   "relation": "located_in",
+   "target": "Sarpadia",
+   "note": "Havenwood reached the northern coast of Sarpadia.",
+   "paragraph": 0,
+   "quote": "reaching the northern coast of Sarpadia"
+  }
+ ],
+ "rejected": []
+}

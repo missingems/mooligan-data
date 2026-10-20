@@ -1,0 +1,97 @@
+{
+ "page": "wiki/prossh",
+ "url": "https://mtg.wiki/page/Prossh",
+ "title": "Prossh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Prossh",
+   "type": "creature",
+   "aliases": [
+    "His Mighty Overlordship"
+   ],
+   "description": "A legendary dragon who dominates the Kher region of Dominaria, worshipped as a god by the kobolds of Kher Keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kher",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria dominated by Prossh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kher Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the kobolds who worship Prossh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kobolds of Kher Keep",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kobolds who worship Prossh as a god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rosnakht",
+   "type": "character",
+   "aliases": [],
+   "description": "Current kobold ruler of Kher Keep who seeks to kill Prossh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kher lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rosnakht seeks to kill Prossh and free her people.",
+   "participants": [
+    "Rosnakht",
+    "Prossh"
+   ],
+   "location": "Kher Keep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Rosnakht seeks to kill Prossh, and free her people from his rule."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kobolds of Kher Keep",
+   "relation": "other",
+   "target": "Prossh",
+   "note": "Worship him as a God",
+   "paragraph": 2,
+   "quote": "Prossh is worshipped as a God by the kobolds of Kher Keep"
+  },
+  {
+   "source": "Rosnakht",
+   "relation": "enemy",
+   "target": "Prossh",
+   "note": "Seeks to kill him",
+   "paragraph": 3,
+   "quote": "Rosnakht seeks to kill Prossh, and free her people from his rule."
+  },
+  {
+   "source": "Rosnakht",
+   "relation": "leader_of",
+   "target": "Kobolds of Kher Keep",
+   "note": "Current kobold ruler of Kher Keep",
+   "paragraph": 3,
+   "quote": "The current kobold ruler of Kher Keep"
+  }
+ ],
+ "rejected": []
+}

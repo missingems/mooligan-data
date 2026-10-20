@@ -1,0 +1,127 @@
+{
+ "page": "wiki/cordelia",
+ "url": "https://mtg.wiki/page/Cordelia",
+ "title": "Cordelia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:14Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Cordelia",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire of the Stromkirk lineage of Nephalia on Innistrad, a few hundred years old.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stromkirk",
+   "type": "faction",
+   "aliases": [
+    "Stromkirk bloodline"
+   ],
+   "description": "Vampire bloodline of Nephalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Cordelia lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Voldaren Estate",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of Olivia Voldaren's grand wedding.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olivia Voldaren",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who hosted her own grand wedding at the Voldaren Estate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Relio Voldaren",
+   "type": "character",
+   "aliases": [],
+   "description": "Cordelia's annoying companion, killed by Henrika Domnathi for his insolence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Henrika Domnathi",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who killed Relio Voldaren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "His arrival signaled deeper political machinations.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Henrika Domnathi killed Relio Voldaren for flouting vampire etiquette.",
+   "participants": [
+    "Henrika Domnathi",
+    "Relio Voldaren",
+    "Cordelia"
+   ],
+   "location": "Voldaren Estate",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Relio Voldaren , who consistently flouted vampire etiquette and paid the ultimate price when Henrika Domnathi killed him for his insolence"
+  },
+  {
+   "summary": "Olivia Voldaren's dramatic entrance with her groom saved Cordelia from Henrika's attention.",
+   "participants": [
+    "Olivia Voldaren",
+    "Cordelia",
+    "Henrika Domnathi"
+   ],
+   "location": "Voldaren Estate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Olivia Voldaren's dramatic entrance with her groom saved her"
+  },
+  {
+   "summary": "Sorin Markov arrived, signaling deeper political machinations.",
+   "participants": [
+    "Sorin Markov",
+    "Cordelia"
+   ],
+   "location": "Voldaren Estate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the arrival of Sorin Markov signaled deeper political machinations"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Henrika Domnathi",
+   "relation": "killed",
+   "target": "Relio Voldaren",
+   "note": "For his insolence.",
+   "paragraph": 2,
+   "quote": "Henrika Domnathi killed him for his insolence"
+  },
+  {
+   "source": "Cordelia",
+   "relation": "member_of",
+   "target": "Stromkirk",
+   "note": "Of the Stromkirk bloodline.",
+   "paragraph": 1,
+   "quote": "Cordelia is a few hundred years old discerning vampire of the Stromkirk bloodline"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,186 @@
+{
+ "page": "wiki/blood-avatar",
+ "url": "https://mtg.wiki/page/Blood_Avatar",
+ "title": "Blood Avatar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:24Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Blood Avatar",
+   "type": "creature",
+   "aliases": [
+    "The Blood Avatar"
+   ],
+   "description": "Huge evil being on Arcavios, temporarily summoned by Extus Narr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Extus Narr",
+   "type": "character",
+   "aliases": [
+    "Extus"
+   ],
+   "description": "Oriq who summoned the Blood Avatar to destroy Strixhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction to which Extus Narr belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Blood Avatar was summoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [
+    "Strixhaven University"
+   ],
+   "description": "Place Extus meant to destroy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Will Kenrith",
+   "type": "character",
+   "aliases": [
+    "Will"
+   ],
+   "description": "Planeswalker twin who fought the Blood Avatar and lost his right leg at the knee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rowan Kenrith",
+   "type": "character",
+   "aliases": [
+    "Rowan"
+   ],
+   "description": "Planeswalker twin who tapped the Snarl's energy against the Blood Avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Snarl",
+   "type": "concept",
+   "aliases": [
+    "Snarl"
+   ],
+   "description": "Source of energy Rowan tapped and into which the Blood Avatar was pulled back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hall of Oracles",
+   "type": "location",
+   "aliases": [],
+   "description": "Place that collapsed during the fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dean Nassari",
+   "type": "character",
+   "aliases": [
+    "Nassari"
+   ],
+   "description": "Dean who saved the twins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dean Lisette",
+   "type": "character",
+   "aliases": [
+    "Lisette"
+   ],
+   "description": "Dean who saved the twins.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Extus Narr summons the Blood Avatar to unleash destruction upon Strixhaven.",
+   "participants": [
+    "Extus Narr",
+    "Blood Avatar"
+   ],
+   "location": "Strixhaven",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Extus Narr summoned the Blood Avatar to unleash destruction upon Strixhaven"
+  },
+  {
+   "summary": "The Blood Avatar crushes Extus, then cuts off Will's right leg at the knee as it is pulled into the Snarl.",
+   "participants": [
+    "Blood Avatar",
+    "Extus Narr",
+    "Will Kenrith"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "grievously injuring Will by cutting his right leg off at the knee"
+  },
+  {
+   "summary": "Deans Nassari and Lisette save the twins from the collapsing Hall of Oracles.",
+   "participants": [
+    "Dean Nassari",
+    "Dean Lisette",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Hall of Oracles collapsed, but the twins were saved by Deans Nassari and Lisette ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Extus Narr",
+   "relation": "created",
+   "target": "Blood Avatar",
+   "note": "He summoned it.",
+   "paragraph": 0,
+   "quote": "temporarily summoned by the Oriq Extus Narr"
+  },
+  {
+   "source": "Extus Narr",
+   "relation": "member_of",
+   "target": "Oriq",
+   "note": "",
+   "paragraph": 0,
+   "quote": "temporarily summoned by the Oriq Extus Narr"
+  },
+  {
+   "source": "Will Kenrith",
+   "relation": "family",
+   "target": "Rowan Kenrith",
+   "note": "Twins.",
+   "paragraph": 2,
+   "quote": "the twins survived"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "quote not in page",
+   "summary": "Rowan taps the Snarl's energy at great personal cost and temporarily disrupts the Blood Avatar; Extus mocks her.",
+   "participants": [
+    "Rowan Kenrith",
+    "Extus Narr",
+    "Blood Avatar"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Rowan tapped the Snarl 's energy, gaining immense power but at great personal cost."
+  }
+ ]
+}

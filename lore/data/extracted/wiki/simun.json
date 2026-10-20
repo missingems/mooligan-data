@@ -1,0 +1,90 @@
+{
+ "page": "wiki/simun",
+ "url": "https://mtg.wiki/page/Simun",
+ "title": "Simun",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Simun the Quiet",
+   "type": "character",
+   "aliases": [
+    "Simun"
+   ],
+   "description": "Gifted but troubled wizard from an unknown plane, cast out from the Order of the Elements, who created the Strongbox.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Elements",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order that cast Simun out for his unnatural ideas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strongbox",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Orb-shaped secure vessel Simun built, with a key, to safeguard his secrets.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cast out from the Order of the Elements, Simun retreats to a hidden laboratory in an ancient fortress for over fifty years.",
+   "participants": [
+    "Simun the Quiet",
+    "Order of the Elements"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After being cast out from the Order of the Elements due to his so-called \"unnatural ideas,\""
+  },
+  {
+   "summary": "Fearing his former comrades, Simun crafts the Strongbox and a key, hiding the key beyond discovery.",
+   "participants": [
+    "Simun the Quiet",
+    "Strongbox"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This artifact, which he named the Strongbox"
+  },
+  {
+   "summary": "Hearing tapping at his wall, Simun transfers all his secrets and memories into the Strongbox and locks it, then forgets what it is.",
+   "participants": [
+    "Simun the Quiet",
+    "Strongbox"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Simun hastily transferred all of his accumulated secrets and memories into the Strongbox"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Simun the Quiet",
+   "relation": "created",
+   "target": "Strongbox",
+   "note": "Crafted it",
+   "paragraph": 2,
+   "quote": "Simun crafted a secure vessel to safeguard his secrets."
+  },
+  {
+   "source": "Simun the Quiet",
+   "relation": "member_of",
+   "target": "Order of the Elements",
+   "note": "Formerly, cast out",
+   "paragraph": 1,
+   "quote": "After being cast out from the Order of the Elements"
+  }
+ ],
+ "rejected": []
+}

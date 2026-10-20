@@ -1,0 +1,164 @@
+{
+ "page": "wiki/belaxis",
+ "url": "https://mtg.wiki/page/Belaxis",
+ "title": "Belaxis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Belaxis",
+   "type": "character",
+   "aliases": [],
+   "description": "A half-compleated Phyrexian from the Hunter Maze of New Phyrexia, talkative and clever, used by Ixhel to form Vishgraz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vishgraz",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature Ixhel formed from pieces of Belaxis, Geth and herself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixhel",
+   "type": "character",
+   "aliases": [],
+   "description": "A fully compleated Phyrexian warrior tasked by Atraxa with eliminating Geth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geth",
+   "type": "character",
+   "aliases": [],
+   "description": "A traitorous lich and one of the seven Steel Thanes of the Dross Pits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [
+    "the Grand Unifier"
+   ],
+   "description": "The Grand Unifier of the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drivnod",
+   "type": "character",
+   "aliases": [
+    "the Dominus of Pain"
+   ],
+   "description": "Dominus of Pain whose spines Belaxis was impaled on.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hunter Maze",
+   "type": "location",
+   "aliases": [],
+   "description": "A perilous sphere of New Phyrexia with harsh conditions and deadly inhabitants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dross Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "Part of New Phyrexia where Geth rules as a Steel Thane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Phyrexian-ruled plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Belaxis escapes the Hunter Maze and reaches the Dross Pits, making a deal with Geth for protection.",
+   "participants": [
+    "Belaxis",
+    "Geth"
+   ],
+   "location": "Dross Pits",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He escaped the Maze and made his way to the Dross Pits"
+  },
+  {
+   "summary": "Belaxis, gatekeeper of Geth's fortress, offers to help Ixhel solve the gate puzzle to survive.",
+   "participants": [
+    "Belaxis",
+    "Ixhel"
+   ],
+   "location": "Dross Pits",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Belaxis offered to help Ixhel solve the gate puzzle"
+  },
+  {
+   "summary": "Ixhel finds and slays Geth.",
+   "participants": [
+    "Ixhel",
+    "Geth"
+   ],
+   "location": "Dross Pits",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After finding and slaying Geth"
+  },
+  {
+   "summary": "Ixhel impales Belaxis on Drivnod's spines and combines him with Geth and herself to create Vishgraz.",
+   "participants": [
+    "Ixhel",
+    "Belaxis",
+    "Drivnod",
+    "Geth",
+    "Vishgraz"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she impaled Belaxis on the spines of Drivnod"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Atraxa",
+   "relation": "other",
+   "target": "Ixhel",
+   "note": "Atraxa tasked Ixhel to eliminate Geth.",
+   "paragraph": 2,
+   "quote": "tasked by Atraxa , the Grand Unifier, to eliminate Geth"
+  },
+  {
+   "source": "Ixhel",
+   "relation": "killed",
+   "target": "Geth",
+   "note": "Ixhel slew Geth.",
+   "paragraph": 3,
+   "quote": "After finding and slaying Geth"
+  },
+  {
+   "source": "Ixhel",
+   "relation": "created",
+   "target": "Vishgraz",
+   "note": "Formed from pieces of Belaxis, Geth and herself.",
+   "paragraph": 3,
+   "quote": "to create a creature she called Vishgraz"
+  },
+  {
+   "source": "Belaxis",
+   "relation": "serves",
+   "target": "Geth",
+   "note": "Belaxis was gatekeeper of Geth's fortress under a protection deal.",
+   "paragraph": 2,
+   "quote": "Belaxis' role as a gatekeeper for Geth's fortress"
+  }
+ ],
+ "rejected": []
+}

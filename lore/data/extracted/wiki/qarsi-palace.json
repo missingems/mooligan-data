@@ -1,0 +1,158 @@
+{
+ "page": "wiki/qarsi-palace",
+ "url": "https://mtg.wiki/page/Qarsi_Palace",
+ "title": "Qarsi Palace",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Qarsi Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "A sprawling, opulent complex among the waterways of the Gudul delta on Tarkir, once a temple compound and the heart of the Sultai government.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Qarsi Palace stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gudul delta",
+   "type": "location",
+   "aliases": [],
+   "description": "The delta of Tarkir where Qarsi Palace lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kheru City",
+   "type": "location",
+   "aliases": [],
+   "description": "Primary urban hub of the Sultai within the delta, with Qarsi Palace at its center.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kheru temple complex",
+   "type": "location",
+   "aliases": [],
+   "description": "The temple complex absorbed into the palace's architecture.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sultai brood",
+   "type": "faction",
+   "aliases": [
+    "Sultai"
+   ],
+   "description": "The brood ruled from Qarsi Palace under Silumgar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silumgar",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of the Sultai brood under whom the palace became the seat of power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sidisi",
+   "type": "character",
+   "aliases": [],
+   "description": "A cunning naga vizier who ruled much of the day-to-day from the palace; later escapes into exile.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that reached Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gurmag",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamps where Sidisi plots in exile.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakshasa",
+   "type": "faction",
+   "aliases": [
+    "rakshasa allies"
+   ],
+   "description": "Powerful allies of Sidisi in exile; agents gather in Kheru City.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Under Silumgar, Qarsi Palace becomes the seat of power for the whole Sultai brood, with Sidisi running much of its daily rule.",
+   "participants": [
+    "Silumgar",
+    "Sidisi",
+    "Sultai brood",
+    "Qarsi Palace"
+   ],
+   "location": "Qarsi Palace",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Under Silumgar, Qarsi Palace became the seat of power for the entire Sultai brood."
+  },
+  {
+   "summary": "As the New Phyrexian Invasion reaches Tarkir, rebellions in the brood culminate in a raid on Qarsi Palace.",
+   "participants": [
+    "Sultai brood",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Qarsi Palace",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "rising rebellions within the brood culminated in a daring raid on Qarsi Palace itself"
+  },
+  {
+   "summary": "Gravely injured in the raid, Sidisi escapes into the swamps of Gurmag and plots with rakshasa allies to reclaim her throne.",
+   "participants": [
+    "Sidisi",
+    "Rakshasa"
+   ],
+   "location": "Gurmag",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gravely injured in the attack, Sidisi escaped into the swamps of Gurmag"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Qarsi Palace",
+   "relation": "located_in",
+   "target": "Kheru City",
+   "note": "At its center",
+   "paragraph": 1,
+   "quote": "Qarsi Palace is located at the center of Kheru City"
+  },
+  {
+   "source": "Sidisi",
+   "relation": "serves",
+   "target": "Silumgar",
+   "note": "Vizier ruling day-to-day under his rule",
+   "paragraph": 3,
+   "quote": "The cunning naga vizier Sidisi ruled much of the day-to-day from within its halls"
+  },
+  {
+   "source": "Sidisi",
+   "relation": "ally",
+   "target": "Rakshasa",
+   "note": "Plots in exile with rakshasa allies",
+   "paragraph": 3,
+   "quote": "she now plots in exile with powerful rakshasa allies"
+  }
+ ],
+ "rejected": []
+}

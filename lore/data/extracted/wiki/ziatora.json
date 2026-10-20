@@ -1,0 +1,119 @@
+{
+ "page": "wiki/ziatora",
+ "url": "https://mtg.wiki/page/Ziatora",
+ "title": "Ziatora",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:29Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Ziatora",
+   "type": "character",
+   "aliases": [
+    "the Incinerator"
+   ],
+   "description": "Demonic dragon, crime-lord and boss of the Riveteers family in New Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [
+    "Riveteers family"
+   ],
+   "description": "One of New Capenna's five families, led by Ziatora and controlling its largest Halo store.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Ziatora rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caldaia",
+   "type": "location",
+   "aliases": [],
+   "description": "Utilitarian district that is Ziatora's headquarters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Museum of Old Capenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Museum displaying skulls and teeth of the great dragons of Old Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halo",
+   "type": "concept",
+   "aliases": [],
+   "description": "Precious dwindling resource whose flow dictates the city's fate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Archdemons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Archdemons who offered Ziatora a contract and founded New Capenna.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ziatora discovers she enjoys fighting knights during the Kingdom Era.",
+   "participants": [
+    "Ziatora"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Ziatora discovered from a young age that she enjoyed the rush of fighting knights"
+  },
+  {
+   "summary": "Ziatora agrees to the archdemon's contract despite scorn from other dragons.",
+   "participants": [
+    "Ziatora",
+    "Archdemons"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "when she first agreed to the archdemon's contract"
+  },
+  {
+   "summary": "Ziatora rules the Caldaia and controls New Capenna's largest store of Halo.",
+   "participants": [
+    "Ziatora",
+    "Riveteers"
+   ],
+   "location": "Caldaia",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "New Capenna's single largest store of Halo is under the Riveteers' control"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ziatora",
+   "relation": "leader_of",
+   "target": "Riveteers",
+   "note": "She is crime-lord and boss.",
+   "paragraph": 0,
+   "quote": "Ziatora is the demonic dragon that serves as the crime-lord and boss of the Riveteers family in New Capenna ."
+  },
+  {
+   "source": "Riveteers",
+   "relation": "located_in",
+   "target": "Caldaia",
+   "note": "Headquartered in Caldaia.",
+   "paragraph": 1,
+   "quote": "Ziatora has her headquarters in utilitarian Caldaia"
+  }
+ ],
+ "rejected": []
+}

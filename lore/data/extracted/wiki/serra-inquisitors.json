@@ -1,0 +1,115 @@
+{
+ "page": "wiki/serra-inquisitors",
+ "url": "https://mtg.wiki/page/Serra_inquisitors",
+ "title": "Serra inquisitors",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Serra inquisitors",
+   "type": "faction",
+   "aliases": [
+    "Inquisitors"
+   ],
+   "description": "Priests and judges of the people of Aysen on Ulgrotha, devoted to Serra, who have started a witch-hunt against the Death speakers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Ulgrotha whose people the inquisitors shepherd.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Aysen lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "deity",
+   "aliases": [],
+   "description": "Figure in whose name the inquisitors act.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra Paladin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order with more common-folk ideas than the inquisitors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Death speakers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A small faction practicing divination and spirit magic, persecuted by the inquisitors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Equipped the Death Speakers with spell books hoping the schism would grow.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The inquisitors start a witch-hunt against the Death speakers, raiding homes and convicting them of corruption.",
+   "participants": [
+    "Serra inquisitors",
+    "Death speakers"
+   ],
+   "location": "Aysen",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Inquisitors have started a witch-hunt"
+  },
+  {
+   "summary": "Baron Sengir equips the Death Speakers with books of spells and dark knowledge to grow the schism.",
+   "participants": [
+    "Baron Sengir",
+    "Death speakers"
+   ],
+   "location": "Aysen",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Baron Sengir took notice of this and started to equip the Death Speakers with actual books of spells and dark knowledge"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Serra inquisitors",
+   "relation": "enemy",
+   "target": "Death speakers",
+   "note": "persecute them",
+   "paragraph": 2,
+   "quote": "have been conducting armed raids on their homes"
+  },
+  {
+   "source": "Serra inquisitors",
+   "relation": "serves",
+   "target": "Serra",
+   "note": "act in her name",
+   "paragraph": 1,
+   "quote": "their devotion to a cause greater than themselves"
+  },
+  {
+   "source": "Baron Sengir",
+   "relation": "ally",
+   "target": "Death speakers",
+   "note": "arms them hoping to exploit the schism",
+   "paragraph": 2,
+   "quote": "in hopes that the schism would continue to grow into something he could use"
+  }
+ ],
+ "rejected": []
+}

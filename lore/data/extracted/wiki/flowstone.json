@@ -1,0 +1,88 @@
+{
+ "page": "wiki/flowstone",
+ "url": "https://mtg.wiki/page/Flowstone",
+ "title": "Flowstone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Flowstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Silvery substance made in the Stronghold's reactor core, used by the Phyrexians to increase Rath's mass and overlay it onto Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane protected by flowstone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Rath overlaid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Users of flowstone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Evincars",
+   "type": "faction",
+   "aliases": [
+    "evincar of Rath"
+   ],
+   "description": "Rulers skilled at controlling flowstone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Death Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "Where impurities from making flowstone were ejected.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Overlay of Rath onto Dominaria, leaving flowstone deposits.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Rathi overlay large deposits of flowstone remain on Dominaria and spellcasters appear who control it.",
+   "participants": [
+    "Flowstone",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "a new kind of spellcaster appeared, specialized in controlling flowstone and drawing power from it"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phyrexians",
+   "relation": "created",
+   "target": "Flowstone",
+   "note": "used to increase Rath's mass",
+   "paragraph": 0,
+   "quote": "used by the Phyrexians to increase the mass of Rath"
+  }
+ ],
+ "rejected": []
+}

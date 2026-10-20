@@ -1,0 +1,151 @@
+{
+ "page": "wiki/order-of-heliud",
+ "url": "https://mtg.wiki/page/Order_of_Heliud",
+ "title": "Order of Heliud",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:02Z",
+ "storyline": "Magic Origins",
+ "entities": [
+  {
+   "name": "Order of Heliud",
+   "type": "faction",
+   "aliases": [],
+   "description": "A religious organization spread across many planes that strives to bring harmony, protection and law to the Multiverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where a sect of the Order sought to bring law through hieromancy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purifying Fire",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Flame that probed souls for sin and could destroy a mortal or drain a planeswalker of all power, including planeswalking.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hieromancy",
+   "type": "concept",
+   "aliases": [],
+   "description": "The magic of holy justice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker who served the Order as an agent to study the purifying fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Planeswalker pyromancer the Order sought to apprehend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Walbert III",
+   "type": "character",
+   "aliases": [
+    "Walbert"
+   ],
+   "description": "Leader of the Order's sect on Regatha, with ulterior motives against Chandra.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Order's Regatha sect sends those deemed criminals into the Purifying Fire.",
+   "participants": [
+    "Order of Heliud",
+    "Purifying Fire"
+   ],
+   "location": "Regatha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They sent people they deemed criminal into the Purifying Fire"
+  },
+  {
+   "summary": "Gideon agrees to serve as an agent of the Order for a chance to study the flame.",
+   "participants": [
+    "Gideon Jura",
+    "Order of Heliud",
+    "Purifying Fire"
+   ],
+   "location": "Regatha",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Gideon Jura , who agreed to serve as an agent of the Order for a chance to study the flame"
+  },
+  {
+   "summary": "Gideon is sent to apprehend Chandra Nalaar.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "Regatha",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He was sent to apprehend the pyromancer Chandra Nalaar for the threat she posed to the Order's goals."
+  },
+  {
+   "summary": "Gideon returns with Chandra; with his help she survives Walbert's persecution and he comes to question the Order's motives.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar",
+    "Walbert III"
+   ],
+   "location": "Regatha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "With Gideon's help, however, Chandra survived Walbert's persecution and gave Gideon reason to question the Order's true motives."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "serves",
+   "target": "Order of Heliud",
+   "note": "agent, never fully committed",
+   "paragraph": 2,
+   "quote": "but he never committed himself to them fully"
+  },
+  {
+   "source": "Walbert III",
+   "relation": "leader_of",
+   "target": "Order of Heliud",
+   "note": "led the sect on Regatha",
+   "paragraph": 3,
+   "quote": "The sect of the Order on Regatha was led by Walbert III"
+  },
+  {
+   "source": "Walbert III",
+   "relation": "enemy",
+   "target": "Chandra Nalaar",
+   "note": "persecuted her",
+   "paragraph": 3,
+   "quote": "who had ulterior motives for wanting Chandra out of the way"
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "helped her survive",
+   "paragraph": 3,
+   "quote": "With Gideon's help, however, Chandra survived Walbert's persecution"
+  }
+ ],
+ "rejected": []
+}

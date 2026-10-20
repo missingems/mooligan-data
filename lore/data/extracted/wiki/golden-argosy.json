@@ -1,0 +1,110 @@
+{
+ "page": "wiki/golden-argosy",
+ "url": "https://mtg.wiki/page/Golden_Argosy",
+ "title": "Golden Argosy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:52Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Golden Argosy",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary Keldon longship atop the Keldon Necropolis that ferries warriors to crucial battles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kradak",
+   "type": "character",
+   "aliases": [],
+   "description": "First Keldon Doyen who stole the ship from Parma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Necropolis",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Golden Argosy was perched.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Twilight",
+   "type": "event",
+   "aliases": [],
+   "description": "Prophesied event when the ship would carry risen champions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of the crucial battle of the Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Astor",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary warrior who rode the Argosy in the second invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of the Mana Rig",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle the Argosy took part in.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kradak steals the Golden Argosy from Parma and brings it to the Keldon Necropolis.",
+   "participants": [
+    "Kradak",
+    "Golden Argosy",
+    "Keldon Necropolis"
+   ],
+   "location": "Keldon Necropolis",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "was stolen by the first Keldon Doyen, Kradak"
+  },
+  {
+   "summary": "At the Keldon Twilight the Argosy rescues living Keldon warriors and Skyshroud elves and carries them to Urborg.",
+   "participants": [
+    "Golden Argosy",
+    "Urborg"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Golden Argosy instead rescued the living Keldon warriors from the freezing waters"
+  },
+  {
+   "summary": "The Argosy reappears for a second twilight and joins the Battle of the Mana Rig.",
+   "participants": [
+    "Golden Argosy",
+    "Astor",
+    "Battle of the Mana Rig"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Golden Argosy reappeared with warriors"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kradak",
+   "relation": "other",
+   "target": "Golden Argosy",
+   "note": "He stole it and sailed the world on it.",
+   "paragraph": 1,
+   "quote": "According to legend, Kradak sailed around the world on the ship"
+  }
+ ],
+ "rejected": []
+}

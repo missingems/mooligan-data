@@ -1,0 +1,170 @@
+{
+ "page": "wiki/zivan",
+ "url": "https://mtg.wiki/page/Zivan",
+ "title": "Zivan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:12Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Zivan",
+   "type": "character",
+   "aliases": [],
+   "description": "Renowned Azorius Arbiter and legislator who fell from grace and was murdered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius guild"
+   ],
+   "description": "Governing body of the Azorius guild, which Zivan served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose pleasure houses led to Zivan's fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild subjected to a mass arrest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "High-ranking judge who ordered the mass arrest of Golgari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Relov",
+   "type": "character",
+   "aliases": [],
+   "description": "Arbiter who signed the mass arrest order and became the next murder target.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Javy",
+   "type": "character",
+   "aliases": [],
+   "description": "Old friend of Relov, allied with Vraska, who sought a reckoning; likely killed Zivan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Gorgon allied with Javy; planeswalker whose orders likely led to Zivan's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mass arrest of Golgari",
+   "type": "event",
+   "aliases": [],
+   "description": "Arrest signed by Zivan that caused many deaths and set off retribution.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zivan spoke for sixteen hours straight to filibuster a request for refugee assistance.",
+   "participants": [
+    "Zivan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Zivan once spoke for sixteen hours straight to filibuster a request for refugee assistance"
+  },
+  {
+   "summary": "Zivan fell from grace indulging in the pleasure houses of the Cult of Rakdos.",
+   "participants": [
+    "Zivan",
+    "Cult of Rakdos"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he fell from grace, indulging in the pleasure houses offered by the Cult of Rakdos"
+  },
+  {
+   "summary": "Zivan signed the mass arrest of Golgari ordered by Isperia, leading to many deaths.",
+   "participants": [
+    "Zivan",
+    "Isperia",
+    "Golgari"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He signed the mass arrest of Golgari ordered by Isperia"
+  },
+  {
+   "summary": "Years later Zivan was found dead, bled out from words carved by magic on his body.",
+   "participants": [
+    "Zivan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he was found dead, bled out from the words of Azorius statues magically carved all over his body"
+  },
+  {
+   "summary": "Relov, who had signed the arrest order, became the next target.",
+   "participants": [
+    "Relov",
+    "Javy",
+    "Vraska"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Arbiter Relov , who had signed the mass arrest order without understanding its full implications, became the next target"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zivan",
+   "relation": "member_of",
+   "target": "Azorius Senate",
+   "note": "He was an Arbiter and legislator there.",
+   "paragraph": 0,
+   "quote": "Zivan was once a renowned Arbiter and legislator within the Azorius Senate"
+  },
+  {
+   "source": "Javy",
+   "relation": "killed",
+   "target": "Zivan",
+   "note": "Likely Javy on Vraska's orders.",
+   "paragraph": 3,
+   "quote": "It was likely Javy on the orders of Vraska who was responsible for Zivan's death."
+  },
+  {
+   "source": "Javy",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Javy is allied with Vraska.",
+   "paragraph": 3,
+   "quote": "His old friend Javy , now allied with a gorgon named Vraska"
+  },
+  {
+   "source": "Javy",
+   "relation": "ally",
+   "target": "Relov",
+   "note": "Old friends.",
+   "paragraph": 3,
+   "quote": "His old friend Javy"
+  }
+ ],
+ "rejected": []
+}

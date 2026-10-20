@@ -1,0 +1,199 @@
+{
+ "page": "wiki/koskun",
+ "url": "https://mtg.wiki/page/Koskun",
+ "title": "Koskun",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:26Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Koskun",
+   "type": "location",
+   "aliases": [
+    "Koskun Mountains"
+   ],
+   "description": "Mountainous region in Ulgrotha with a keep, a river and waterfalls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Koskun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "An-Zerrin",
+   "type": "location",
+   "aliases": [],
+   "description": "Small ruined castle in the Koskun Mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler whose servants killed An-Zerrin's occupants and raised them in death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kher Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Anaba Minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anaba Minotaurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Minotaurs living on Kher Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taysir of Rabiah",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Sandruu on Kher Ridge and was killed by Feroz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sandruu",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated by Taysir of Rabiah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Taysir on Kher Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Created the Monument to Feroz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Monument to Feroz",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Monument created on Kher Ridge by Serra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Keep",
+   "type": "location",
+   "aliases": [
+    "the Keep"
+   ],
+   "description": "Stronghold of goblins and thieves ruled by Eron the Relentless.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [
+    "Eron"
+   ],
+   "description": "Ruler of Koskun Keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighbor that buys protection from Eron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strongrock",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress at the base of Koskun Keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Falls",
+   "type": "location",
+   "aliases": [
+    "Koskun River"
+   ],
+   "description": "Waterfalls marking the border between Koskun Keep and the Dark Barony.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dark Barony",
+   "type": "location",
+   "aliases": [],
+   "description": "Sengirian lands beyond Koskun Falls.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baron Sengir kills An-Zerrin's occupants and they serve him in death.",
+   "participants": [
+    "Baron Sengir"
+   ],
+   "location": "An-Zerrin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Its occupants were killed by Baron Sengir and served him in death."
+  },
+  {
+   "summary": "Taysir of Rabiah defeats Sandruu on Kher Ridge, and Feroz later kills Taysir.",
+   "participants": [
+    "Taysir of Rabiah",
+    "Sandruu",
+    "Feroz"
+   ],
+   "location": "Kher Ridge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This was where Taysir of Rabiah defeated Sandruu , and where Feroz killed Taysir."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eron the Relentless",
+   "relation": "leader_of",
+   "target": "Koskun Keep",
+   "note": "",
+   "paragraph": 3,
+   "quote": "It is ruled by Eron the Relentless"
+  },
+  {
+   "source": "Feroz",
+   "relation": "killed",
+   "target": "Taysir of Rabiah",
+   "note": "On Kher Ridge.",
+   "paragraph": 2,
+   "quote": "where Feroz killed Taysir"
+  },
+  {
+   "source": "Taysir of Rabiah",
+   "relation": "enemy",
+   "target": "Sandruu",
+   "note": "Taysir defeated Sandruu.",
+   "paragraph": 2,
+   "quote": "Taysir of Rabiah defeated Sandruu"
+  },
+  {
+   "source": "Serra",
+   "relation": "created",
+   "target": "Monument to Feroz",
+   "note": "",
+   "paragraph": 2,
+   "quote": "The Monument to Feroz was created here by Serra ."
+  }
+ ],
+ "rejected": []
+}

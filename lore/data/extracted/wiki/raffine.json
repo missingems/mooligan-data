@@ -1,0 +1,101 @@
+{
+ "page": "wiki/raffine",
+ "url": "https://mtg.wiki/page/Raffine",
+ "title": "Raffine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Raffine",
+   "type": "character",
+   "aliases": [],
+   "description": "Sphinx Demon, crime-lord and boss of the Obscura family in New Capenna; a prophet who joined the arch demons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [
+    "Obscura family"
+   ],
+   "description": "Crime family of New Capenna led by Raffine.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "City-plane where Raffine rules the Obscura family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cloud Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "Place from which Raffine operated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Capenna",
+   "type": "location",
+   "aliases": [],
+   "description": "The city before its founding as New Capenna, home of few sphinxes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arch demons",
+   "type": "faction",
+   "aliases": [
+    "archdemon"
+   ],
+   "description": "Demonic powers Raffine joined as the angels fell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the city's founding Raffine joined the arch demons as the angels fell and received infernal visions.",
+   "participants": [
+    "Raffine",
+    "Arch demons"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Raffine joined with the arch demons as the angels fell"
+  },
+  {
+   "summary": "Raffine's dark prophecies of a shining metal end proved correct; she alone was raised and granted demonic investiture by an archdemon.",
+   "participants": [
+    "Raffine"
+   ],
+   "location": "Old Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "She alone was raised, granted demonic investiture by an archdemon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raffine",
+   "relation": "leader_of",
+   "target": "Obscura",
+   "note": "She is the boss of the Obscura family.",
+   "paragraph": 0,
+   "quote": "Raffine is the crime-lord and boss of the Obscura family in New Capenna"
+  },
+  {
+   "source": "Raffine",
+   "relation": "ally",
+   "target": "Arch demons",
+   "note": "She joined with the arch demons.",
+   "paragraph": 2,
+   "quote": "Raffine joined with the arch demons as the angels fell"
+  }
+ ],
+ "rejected": []
+}

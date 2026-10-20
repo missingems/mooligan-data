@@ -1,0 +1,84 @@
+{
+ "page": "wiki/arthur",
+ "url": "https://mtg.wiki/page/Arthur",
+ "title": "Arthur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:50Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Arthur",
+   "type": "character",
+   "aliases": [
+    "Marigold Knight"
+   ],
+   "description": "Legendary mousefolk Marigold Knight of Bloomburrow who rides a wicker steed and wields a lance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zinnia",
+   "type": "character",
+   "aliases": [],
+   "description": "Singer of songs of Arthur's deeds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Savior of Valley, said to have been given a sword lesson by Arthur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley",
+   "type": "location",
+   "aliases": [],
+   "description": "Mousefolk home whose people believe in Arthur's heroic acts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calamity Graveyard",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Arthur is said to have crossed with a Sunspine Lynx at his tail.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arthur is said to have crossed the Calamity Graveyard with a Sunspine Lynx at his tail and escaped.",
+   "participants": [
+    "Arthur"
+   ],
+   "location": "Calamity Graveyard",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Who could forget the crossing of the Calamity Graveyard with a Sunspine Lynx at his tail and how he escaped with nary a singed whisker?"
+  },
+  {
+   "summary": "Arthur is said to have given Mabel a sword lesson.",
+   "participants": [
+    "Arthur",
+    "Mabel"
+   ],
+   "location": "Valley",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Or when he gave Mabel herself, the savior of Valley , a sword lesson?"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zinnia",
+   "relation": "other",
+   "target": "Arthur",
+   "note": "Sings songs of his deeds",
+   "paragraph": 3,
+   "quote": "Many songs have been written of Arthur's deeds, some sung by Zinnia themself."
+  }
+ ],
+ "rejected": []
+}

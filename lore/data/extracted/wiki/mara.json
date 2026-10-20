@@ -1,0 +1,98 @@
+{
+ "page": "wiki/mara",
+ "url": "https://mtg.wiki/page/Mara",
+ "title": "Mara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mara",
+   "type": "character",
+   "aliases": [],
+   "description": "A scarred and proud veteran of the war against the Eldrazi who defended Sea Gate on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Zendikar that Mara helped defend against the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Mara fought the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Titanic invaders of Zendikar who corrupted Mara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who met Mara at Sea Gate while looking for Nahiri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker Jace Beleren was looking for at Sea Gate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mara holds back a swarm of broodlings so a dozen people can escape, but is overrun and corrupted by the Eldrazi.",
+   "participants": [
+    "Mara",
+    "Eldrazi"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she held back a swarm of broodlings and helped a dozen people escape the chaos"
+  },
+  {
+   "summary": "Mara meets Jace Beleren at Sea Gate and shares her story with him.",
+   "participants": [
+    "Mara",
+    "Jace Beleren"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She met Jace Beleren at Sea Gate when he returned there looking for Nahiri"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mara",
+   "relation": "enemy",
+   "target": "Eldrazi",
+   "note": "She fought them at Sea Gate and was corrupted by them.",
+   "paragraph": 2,
+   "quote": "she was ultimately overrun and corrupted by the Eldrazi"
+  },
+  {
+   "source": "Mara",
+   "relation": "ally",
+   "target": "Jace Beleren",
+   "note": "She shared her story with him.",
+   "paragraph": 2,
+   "quote": "she shared her story with him"
+  }
+ ],
+ "rejected": []
+}

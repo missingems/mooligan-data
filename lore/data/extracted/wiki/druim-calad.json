@@ -1,0 +1,82 @@
+{
+ "page": "wiki/druim-calad",
+ "url": "https://mtg.wiki/page/Druim_Calad",
+ "title": "Druim Calad",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:31Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Druim Calad",
+   "type": "location",
+   "aliases": [],
+   "description": "The only major aboveground port in Shadowmoor, built on a collapsed city's remains near a sinkhole; home to about 300 residents, mostly merrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crannog Ansicr",
+   "type": "location",
+   "aliases": [],
+   "description": "Druim Calad's Lorwyn counterpart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane (realm) containing Druim Calad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Merrow leader of the Finblade network of cutthroats who claims to rule Druim Calad and owns the Red Shallows tavern.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Finblade",
+   "type": "faction",
+   "aliases": [],
+   "description": "A network of cutthroats led by Myyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Red Shallows",
+   "type": "location",
+   "aliases": [],
+   "description": "Myyn's tavern, just above the water in Druim Calad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merrow",
+   "type": "faction",
+   "aliases": [],
+   "description": "The majority species in Druim Calad, who do most of their trading there.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Myyn",
+   "relation": "leader_of",
+   "target": "Finblade",
+   "note": "Leader of the network of cutthroats",
+   "paragraph": 2,
+   "quote": "Myyn, the leader of the Finblade network of cutthroats"
+  },
+  {
+   "source": "Druim Calad",
+   "relation": "located_in",
+   "target": "Shadowmoor",
+   "note": "Only major aboveground port in Shadowmoor",
+   "paragraph": 0,
+   "quote": "Druim Calad is the only major aboveground port in Shadowmoor ."
+  }
+ ],
+ "rejected": []
+}

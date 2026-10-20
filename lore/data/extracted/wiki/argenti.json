@@ -1,0 +1,120 @@
+{
+ "page": "wiki/argenti",
+ "url": "https://mtg.wiki/page/Argenti",
+ "title": "Argenti",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:25Z",
+ "storyline": "Madara",
+ "entities": [
+  {
+   "name": "Argenti",
+   "type": "location",
+   "aliases": [],
+   "description": "Island of the Edemi Islands off the coast of Madara, with a northern plain and southern forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edemi Islands",
+   "type": "location",
+   "aliases": [],
+   "description": "Island chain off the coast of Madara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose coast the Edemi Islands lie off.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lisu",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of northern Argenti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvan Library",
+   "type": "location",
+   "aliases": [],
+   "description": "Seat from which the southern forest is ruled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ohabi Caleria",
+   "type": "character",
+   "aliases": [
+    "Lady Caleria"
+   ],
+   "description": "Ruler of northern Argenti who rallied the Edemis against the empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magnus",
+   "type": "character",
+   "aliases": [
+    "Lord Magnus"
+   ],
+   "description": "Ruler of the southern forest who could animate vegetation and command wildlife.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Argenti was attacked by the kentsu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who attacked Argenti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ayesha Tanaka",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Magnus defeat the invaders.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Argenti was attacked by the kentsu; Magnus with Ayesha Tanaka animated their leather clothing and armor to defeat them.",
+   "participants": [
+    "Magnus",
+    "Ayesha Tanaka",
+    "Kentsu"
+   ],
+   "location": "Argenti",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Lord Magnus managed to defeat the invaders by animating the leather in their clothing and killing them with their armor."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ohabi Caleria",
+   "relation": "leader_of",
+   "target": "Argenti",
+   "note": "Ruled the northern part",
+   "paragraph": 3,
+   "quote": "the northern part of Argenti was ruled by Ohabi Caleria"
+  },
+  {
+   "source": "Magnus",
+   "relation": "leader_of",
+   "target": "Argenti",
+   "note": "Ruled the southern forest",
+   "paragraph": 3,
+   "quote": "while the southern forest was ruled by Magnus ."
+  }
+ ],
+ "rejected": []
+}

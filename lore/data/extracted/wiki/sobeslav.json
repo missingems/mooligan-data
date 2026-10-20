@@ -1,0 +1,155 @@
+{
+ "page": "wiki/sobeslav",
+ "url": "https://mtg.wiki/page/Sobeslav",
+ "title": "Sobeslav",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sobeslav",
+   "type": "character",
+   "aliases": [],
+   "description": "Assistant to Golgari Guildmaster Jarad vod Savo who was killed by Mazirek in the Undercity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jarad vod Savo",
+   "type": "character",
+   "aliases": [
+    "Guildmaster Jarad"
+   ],
+   "description": "Guildmaster of the Golgari Swarm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild allied with the kraul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mazirek",
+   "type": "character",
+   "aliases": [],
+   "description": "Death priest and leader of the kraul who poisoned Sobeslav and drained his life force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kraul",
+   "type": "faction",
+   "aliases": [],
+   "description": "Insectoid race recently allied with the Golgari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Ravnica's underground, through which Sobeslav journeyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umerilek, the Mausoleum of the Erstwhile",
+   "type": "location",
+   "aliases": [
+    "Umerilek"
+   ],
+   "description": "Mausoleum filled with ancient undead nobles, opened by Mazirek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the events occur.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sobeslav leads guards deep into the Undercity to answer Mazirek's invitation.",
+   "participants": [
+    "Sobeslav",
+    "Mazirek"
+   ],
+   "location": "Undercity",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sobeslav led a contingent of guards on a perilous journey deep into the Undercity"
+  },
+  {
+   "summary": "In a vast cavern full of kraul, Mazirek reveals he has been poisoning Sobeslav and his guards.",
+   "participants": [
+    "Sobeslav",
+    "Mazirek",
+    "Kraul"
+   ],
+   "location": "Undercity",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Mazirek confronted Sobeslav, who quickly realized the death priest had been poisoning him and his guards"
+  },
+  {
+   "summary": "The guards collapse and Sobeslav dies in agony as Mazirek drains his life force for a necromantic spell.",
+   "participants": [
+    "Sobeslav",
+    "Mazirek"
+   ],
+   "location": "Undercity",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sobeslav succumbed last, dying in agony as Mazirek drained his life force to empower his necromantic spell."
+  },
+  {
+   "summary": "Mazirek opens a stone slab revealing Umerilek filled with ancient undead nobles who begin to rise.",
+   "participants": [
+    "Mazirek",
+    "Umerilek, the Mausoleum of the Erstwhile"
+   ],
+   "location": "Umerilek, the Mausoleum of the Erstwhile",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "As the mausoleum's inhabitants began to rise, Mazirek stood triumphant"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sobeslav",
+   "relation": "serves",
+   "target": "Jarad vod Savo",
+   "note": "He was Jarad's assistant.",
+   "paragraph": 0,
+   "quote": "Sobeslav was the assistant to Guildmaster Jarad vod Savo of the Golgari Swarm"
+  },
+  {
+   "source": "Mazirek",
+   "relation": "killed",
+   "target": "Sobeslav",
+   "note": "Mazirek poisoned and drained Sobeslav.",
+   "paragraph": 2,
+   "quote": "dying in agony as Mazirek drained his life force"
+  },
+  {
+   "source": "Mazirek",
+   "relation": "leader_of",
+   "target": "Kraul",
+   "note": "He is the death priest and leader of the kraul.",
+   "paragraph": 1,
+   "quote": "Mazirek , the death priest and leader of the kraul"
+  },
+  {
+   "source": "Kraul",
+   "relation": "ally",
+   "target": "Golgari Swarm",
+   "note": "The kraul were recently allied with the Golgari.",
+   "paragraph": 1,
+   "quote": "an insectoid race recently allied with the Golgari"
+  }
+ ],
+ "rejected": []
+}

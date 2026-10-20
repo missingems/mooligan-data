@@ -1,0 +1,119 @@
+{
+ "page": "wiki/ohran-ridge",
+ "url": "https://mtg.wiki/page/Ohran_Ridge",
+ "title": "Ohran Ridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:10Z",
+ "storyline": "Ice Age Saga",
+ "entities": [
+  {
+   "name": "Ohran Ridge",
+   "type": "location",
+   "aliases": [
+    "Ohran Mountains"
+   ],
+   "description": "A line of mountains on Gulmany in the Terisian Isles of Dominaria; the only part of the Colekgan Mountains clear of glaciers in the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gulmany",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the Terisian Isles of Dominaria where the Ohran Mountains lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Ohran Ridge lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived in a cottage on Ohran Ridge with Urza for a period after the Thaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived at the Ohran Ridge cottage, and returned to it 300 years later while working on the Bloodline project; attacked there by Phyrexian negators.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloodline project",
+   "type": "event",
+   "aliases": [],
+   "description": "Urza's genetics project in which he hoped to replenish a Femeref genetic line.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian negators",
+   "type": "creature",
+   "aliases": [
+    "negators"
+   ],
+   "description": "Phyrexian creatures that attacked Urza at the cabin and burned it down.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Thaw, Xantcha and Urza lived in a cottage on Ohran Ridge.",
+   "participants": [
+    "Xantcha",
+    "Urza"
+   ],
+   "location": "Ohran Ridge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Ohran Ridge housed the cottage of Xantcha and Urza for a period"
+  },
+  {
+   "summary": "Some 300 years later Urza returned to the cabin while working on the Bloodline project.",
+   "participants": [
+    "Urza"
+   ],
+   "location": "Ohran Ridge",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Urza returned to the cabin in Ohran Ridge some 300 years later while working on the Bloodline project"
+  },
+  {
+   "summary": "Phyrexian negators attacked Urza at the cabin, and the cabin burned down in the struggle.",
+   "participants": [
+    "Urza",
+    "Phyrexian negators"
+   ],
+   "location": "Ohran Ridge",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Urza was attacked by Phyrexian negators , and the cabin was burned down in the struggle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ohran Ridge",
+   "relation": "located_in",
+   "target": "Gulmany",
+   "note": "The ridge stretches from the Ohran Mountains on Gulmany.",
+   "paragraph": 0,
+   "quote": "Ohran Ridge is a line of mountains that stretches from the larger Ohran Mountains on Gulmany"
+  },
+  {
+   "source": "Phyrexian negators",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "Negators attacked Urza at the cabin.",
+   "paragraph": 3,
+   "quote": "Urza was attacked by Phyrexian negators"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,147 @@
+{
+ "page": "wiki/cruelclaw",
+ "url": "https://mtg.wiki/page/Cruelclaw",
+ "title": "Cruelclaw",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:05Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Cruelclaw",
+   "type": "character",
+   "aliases": [
+    "The Infamous Cruelclaw"
+   ],
+   "description": "A weaselfolk mercenary from Bloomburrow and leader of the Direshade Company.",
+   "presence": "appears"
+  },
+  {
+   "name": "Direshade Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "A mercenary company led by Cruelclaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Cruelclaw comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Glarb",
+   "type": "character",
+   "aliases": [
+    "Glarb"
+   ],
+   "description": "A king who hired Cruelclaw to steal Maha's egg and was defeated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maha",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of an egg that Cruelclaw was hired to steal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fountainport",
+   "type": "location",
+   "aliases": [],
+   "description": "City where the egg was taken and Glarb and Cruelclaw were confronted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of a party that came to investigate the Calamity Beasts' rampage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beasts whose rampage Mabel's party came to investigate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Early in his career Cruelclaw filches raccoonfolk heirlooms, then moves on to bigger jobs for nastier clients.",
+   "participants": [
+    "Cruelclaw"
+   ],
+   "location": "Bloomburrow",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Cruelclaw moved on to bigger jobs for more nasty clients."
+  },
+  {
+   "summary": "King Glarb hires Cruelclaw to steal Maha's egg.",
+   "participants": [
+    "Cruelclaw",
+    "King Glarb",
+    "Maha"
+   ],
+   "location": "Bloomburrow",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Cruelclaw was hired by King Glarb to steal Maha 's egg"
+  },
+  {
+   "summary": "Mabel's party confronts Glarb and Cruelclaw in Fountainport; the egg is returned and both are defeated.",
+   "participants": [
+    "Cruelclaw",
+    "King Glarb",
+    "Mabel",
+    "Maha"
+   ],
+   "location": "Fountainport",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The egg was returned to Maha and the king and Cruelclaw were defeated."
+  },
+  {
+   "summary": "Cruelclaw flees the city.",
+   "participants": [
+    "Cruelclaw"
+   ],
+   "location": "Fountainport",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The weasel subsequently fled the city."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cruelclaw",
+   "relation": "leader_of",
+   "target": "Direshade Company",
+   "note": "",
+   "paragraph": 0,
+   "quote": "He is the leader of the Direshade Company."
+  },
+  {
+   "source": "Cruelclaw",
+   "relation": "serves",
+   "target": "King Glarb",
+   "note": "hired to steal the egg",
+   "paragraph": 4,
+   "quote": "Cruelclaw was hired by King Glarb to steal Maha 's egg"
+  },
+  {
+   "source": "Cruelclaw",
+   "relation": "enemy",
+   "target": "Mabel",
+   "note": "confronted and defeated by her party",
+   "paragraph": 4,
+   "quote": "Glarb and Cruelclaw were confronted by Mabel's party"
+  }
+ ],
+ "rejected": []
+}

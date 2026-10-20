@@ -1,0 +1,168 @@
+{
+ "page": "wiki/trenz",
+ "url": "https://mtg.wiki/page/Trenz",
+ "title": "Trenz",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Trenz",
+   "type": "character",
+   "aliases": [
+    "Trenz the chemister"
+   ],
+   "description": "A white-haired Izzet chemister from Ravnica who performed an epic experiment for Niv-Mizzet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon leader of the Izzet League, for whom Trenz performed his experiment.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The Ravnican guild of chemisters to which Trenz belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mr. Taz",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Trenz teleported next to in the Undercity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Trenz teleported next to in the Undercity, together with Mr. Taz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican cult whose Bloodwitches took notice of the destruction and created a new feast day.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Trenz lives and works.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "The bowels of Ravnica where Trenz was teleported.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empty Cup Row",
+   "type": "location",
+   "aliases": [],
+   "description": "An abandoned block cleared of rubble by Trenz's first test.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rix Maadi",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the Rakdos pleasure clubs where Bloodwitches nested.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Experiment Day",
+   "type": "event",
+   "aliases": [],
+   "description": "The day on which Trenz ran four tests involving magic, science and luck.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trenz sets up his equipment on Experiment Day for four tests.",
+   "participants": [
+    "Trenz"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "On Experiment Day, Trenz set up his equipment to run a series of tests involving magic, science, and sheer luck."
+  },
+  {
+   "summary": "The first test tears a Cyclonic Rift through the Empty Cup Row, clearing rubble.",
+   "participants": [
+    "Trenz"
+   ],
+   "location": "Empty Cup Row",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This created a Cyclonic Rift that tore through the abandoned block called the Empty Cup Row"
+  },
+  {
+   "summary": "The second test accidentally teleports Trenz next to Mr. Taz and Krenko in the Undercity, giving them access to the Orzhov inner sanctum.",
+   "participants": [
+    "Trenz",
+    "Mr. Taz",
+    "Krenko"
+   ],
+   "location": "Undercity",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Trenz inhaled too much dust and accidentally received a teleportal to the bowels of the Undercity just next to Mr. Taz and Krenko"
+  },
+  {
+   "summary": "The third test triggers Mizzium Mortars; the destruction draws the Rakdos Bloodwitches, who create a new feast day.",
+   "participants": [
+    "Trenz",
+    "Cult of Rakdos"
+   ],
+   "location": "Rix Maadi",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "In the aftermath, the Cult created a new feast day"
+  },
+  {
+   "summary": "Trenz tests the Neural Schisatrode and the room erupts in lightning.",
+   "participants": [
+    "Trenz"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Lastly, Trenz tested the Neural Schisatrode."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trenz",
+   "relation": "serves",
+   "target": "Niv-Mizzet",
+   "note": "Performed an epic experiment for him.",
+   "paragraph": 0,
+   "quote": "who performed an epic experiment for Niv-Mizzet"
+  },
+  {
+   "source": "Trenz",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "He is an Izzet chemister.",
+   "paragraph": 0,
+   "quote": "Trenz is a white-haired Izzet chemister"
+  }
+ ],
+ "rejected": []
+}

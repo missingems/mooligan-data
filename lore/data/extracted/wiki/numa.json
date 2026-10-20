@@ -1,0 +1,142 @@
+{
+ "page": "wiki/numa",
+ "url": "https://mtg.wiki/page/Numa",
+ "title": "Numa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Numa",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf of Zendikar and clan chief of the Joraga Nation who exiled the young Nissa Revane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Joraga Nation",
+   "type": "faction",
+   "aliases": [
+    "Joraga"
+   ],
+   "description": "Elven nation of Zendikar led by Numa's clan, destroyed by the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Harsh, dangerous plane where Numa lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker, as a youth an animist plagued by dreams, exiled by Numa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meroe",
+   "type": "character",
+   "aliases": [],
+   "description": "Nissa's mother, one of the last animists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Animists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group who Numa said angered Zendikar and paid the price.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Roil",
+   "type": "concept",
+   "aliases": [],
+   "description": "Zendikar's upheaval, implied to have killed the animists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "Region destroyed by the Eldrazi along with the Joraga Nation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings that destroyed Bala Ged and the Joraga Nation.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Numa decides to exile the young Nissa Revane to protect the clan.",
+   "participants": [
+    "Numa",
+    "Nissa Revane",
+    "Meroe"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Numa made the hard decision to exile a young Nissa Revane"
+  },
+  {
+   "summary": "Nissa, believing Numa right, slips out of her home with her staff-sword and bow before her mother notices.",
+   "participants": [
+    "Nissa Revane",
+    "Meroe"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nissa packed her staff-sword and bow and slipped out of the house before her mother could notice."
+  },
+  {
+   "summary": "The Eldrazi destroy Bala Ged and the Joraga Nation, making Numa's survival unlikely.",
+   "participants": [
+    "Eldrazi",
+    "Joraga Nation",
+    "Numa"
+   ],
+   "location": "Bala Ged",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Bala Ged and the Joraga Nation were destroyed by the Eldrazi"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Numa",
+   "relation": "leader_of",
+   "target": "Joraga Nation",
+   "note": "clan chief",
+   "paragraph": 0,
+   "quote": "Numa was an Elf from Zendikar , and a clan chief of the Joraga Nation ."
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "family",
+   "target": "Meroe",
+   "note": "mother and daughter",
+   "paragraph": 2,
+   "quote": "She and her mother Meroe were the last animists"
+  },
+  {
+   "source": "Numa",
+   "relation": "enemy",
+   "target": "Nissa Revane",
+   "note": "exiled her",
+   "paragraph": 1,
+   "quote": "Numa made the hard decision to exile a young Nissa Revane"
+  }
+ ],
+ "rejected": []
+}

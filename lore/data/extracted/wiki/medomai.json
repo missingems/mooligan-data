@@ -1,0 +1,103 @@
+{
+ "page": "wiki/medomai",
+ "url": "https://mtg.wiki/page/Medomai",
+ "title": "Medomai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Medomai",
+   "type": "character",
+   "aliases": [
+    "Medomai the Wandering Oracle"
+   ],
+   "description": "Ancient male sphinx and seer, the Wandering Oracle, who appears in Meletis at moments of historical import.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "Theran city where Medomai is usually seen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daxos",
+   "type": "character",
+   "aliases": [],
+   "description": "Sought Medomai's help with Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who sought Medomai's help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anthousa",
+   "type": "character",
+   "aliases": [],
+   "description": "Informed Daxos that Nyxborn creatures were attacking humanity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "City shown to Daxos and Elspeth in a vision under siege.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Medomai dwells.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Anthousa tells Daxos Nyxborn creatures are attacking humanity; Daxos and Elspeth decide to seek Medomai.",
+   "participants": [
+    "Anthousa",
+    "Daxos",
+    "Elspeth Tirel",
+    "Medomai"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Nyxborn creatures were attacking humanity"
+  },
+  {
+   "summary": "Medomai explains the origins of the gods and shows Daxos and Elspeth disastrous predictions and a vision of Akros under siege.",
+   "participants": [
+    "Medomai",
+    "Daxos",
+    "Elspeth Tirel",
+    "Akros"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Medomai explained the origins of the gods of Theros"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Medomai",
+   "relation": "located_in",
+   "target": "Meletis",
+   "note": "He is usually seen there.",
+   "paragraph": 1,
+   "quote": "The wise and ancient sphinx Medomai is usually seen in Meletis"
+  }
+ ],
+ "rejected": []
+}

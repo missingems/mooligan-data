@@ -1,0 +1,143 @@
+{
+ "page": "wiki/branko",
+ "url": "https://mtg.wiki/page/Branko",
+ "title": "Branko",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:31Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Branko",
+   "type": "character",
+   "aliases": [
+    "Branko One-Ear"
+   ],
+   "description": "A seven-foot guard at the Azorius Detention Compound on Ravnica who lost an ear to Vraska and was later killed by her cultists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A prisoner who escaped the Azorius Detention Compound as her planeswalker spark ignited, later served by cultists; she is a planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Detention Compound",
+   "type": "location",
+   "aliases": [],
+   "description": "A prison on Ravnica where Branko worked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild that Branko served as a guard before leaving.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild whose members rioted in the compound basement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild whose territory briefly included Branko's tenement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Branko lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keyhole Downs",
+   "type": "location",
+   "aliases": [],
+   "description": "A Ravnican district where Branko bought a tenement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mass Arrest",
+   "type": "event",
+   "aliases": [],
+   "description": "An event in which Branko participated, for which Vraska's cultists later killed him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska's cultists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers of Vraska who killed Branko.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During a Golgari prison riot, Vraska tore off Branko's ear as he tried to subdue her; she escaped and her spark ignited.",
+   "participants": [
+    "Branko",
+    "Vraska",
+    "Golgari",
+    "Azorius Detention Compound"
+   ],
+   "location": "Azorius Detention Compound",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she tore his ear off"
+  },
+  {
+   "summary": "Branko left the Azorius and bought a tenement near Keyhole Downs with his father's help.",
+   "participants": [
+    "Branko",
+    "Azorius",
+    "Keyhole Downs"
+   ],
+   "location": "Keyhole Downs",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Following the raid, Branko left the Azorius"
+  },
+  {
+   "summary": "Vraska's cultists killed Branko for his part in the Mass Arrest, leaving him dead in the alley behind his tenement.",
+   "participants": [
+    "Branko",
+    "Vraska's cultists",
+    "Mass Arrest"
+   ],
+   "location": "Keyhole Downs",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Branko was eventually killed by"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vraska's cultists",
+   "relation": "killed",
+   "target": "Branko",
+   "note": "Killed for his participation in the Mass Arrest.",
+   "paragraph": 3,
+   "quote": "for his participation in the Mass Arrest"
+  },
+  {
+   "source": "Branko",
+   "relation": "enemy",
+   "target": "Vraska",
+   "note": "He tried to subdue her during the riot.",
+   "paragraph": 1,
+   "quote": "While Branko was attempting to subdue Vraska"
+  }
+ ],
+ "rejected": []
+}

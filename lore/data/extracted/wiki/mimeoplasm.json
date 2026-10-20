@@ -1,0 +1,92 @@
+{
+ "page": "wiki/mimeoplasm",
+ "url": "https://mtg.wiki/page/Mimeoplasm",
+ "title": "Mimeoplasm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:47Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Mimeoplasm",
+   "type": "creature",
+   "aliases": [
+    "The Mimeoplasm"
+   ],
+   "description": "Legendary ooze of Muraganda that absorbs the power and traits of the dead and carries the ancestral memory of Saurid leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muraganda",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Mimeoplasm roams.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fang Druids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group who named the Mimeoplasm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saurids",
+   "type": "faction",
+   "aliases": [
+    "Saurid Autocracy"
+   ],
+   "description": "Saurid warriors of the south who follow and worship the Mimeoplasm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scar witches",
+   "type": "faction",
+   "aliases": [],
+   "description": "Witches who see the Mimeoplasm as the ultimate enemy of the world.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Saurids feed their great leaders to the Mimeoplasm upon death and build temples across its path.",
+   "participants": [
+    "Saurids",
+    "Mimeoplasm"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The saurids revere it, feeding it their great leaders upon their deaths"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Saurids",
+   "relation": "other",
+   "target": "Mimeoplasm",
+   "note": "worship and follow it",
+   "paragraph": 1,
+   "quote": "The Mimeoplasm is always followed in its roaming by the Saurid warriors of the south"
+  },
+  {
+   "source": "Scar witches",
+   "relation": "enemy",
+   "target": "Mimeoplasm",
+   "note": "see it as the ultimate enemy",
+   "paragraph": 1,
+   "quote": "seeing it as the ultimate enemy of the world"
+  },
+  {
+   "source": "Mimeoplasm",
+   "relation": "located_in",
+   "target": "Muraganda",
+   "note": "legendary ooze from Muraganda",
+   "paragraph": 0,
+   "quote": "The Mimeoplasm is a legendary ooze from Muraganda ."
+  }
+ ],
+ "rejected": []
+}

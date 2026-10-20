@@ -1,0 +1,155 @@
+{
+ "page": "wiki/inti",
+ "url": "https://mtg.wiki/page/Inti",
+ "title": "Inti",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:23Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Inti",
+   "type": "character",
+   "aliases": [
+    "seneschal of the sun"
+   ],
+   "description": "Human dinosaur knight and seneschal of the sun in the Sun Empire, cousin of Huatli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [],
+   "description": "Inti's cousin who led an expedition into the Core of Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Imperial realm on Ixalan that Inti served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "City defended during the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Phyrexian invasion in which Orazca was defended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Core of Ixalan",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Huatli's expedition entered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen's Bay Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Soldiers who freed Aclazotz and were transformed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "deity",
+   "aliases": [],
+   "description": "Bat god freed by the Queen's Bay Company.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clavileño",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire demon who killed Inti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wayta",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of Inti's sword with his Echo crystal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Sun Empire.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Inti took part in the defense of Orazca, suffering a head wound but surviving.",
+   "participants": [
+    "Inti"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Inti participated in the defense of Orazca during the New Phyrexian Invasion"
+  },
+  {
+   "summary": "Inti accompanied Huatli's expedition into the Core of Ixalan.",
+   "participants": [
+    "Inti",
+    "Huatli"
+   ],
+   "location": "Core of Ixalan",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Inti was one of the warriors who accompanied her."
+  },
+  {
+   "summary": "Inti wounded Clavileño but was killed when the vampire snapped his neck; his spirit became an Echo in the crystal on his sword, given to Wayta.",
+   "participants": [
+    "Inti",
+    "Clavileño",
+    "Wayta",
+    "Huatli"
+   ],
+   "location": "Core of Ixalan",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the vampire snapped his neck, killing him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Inti",
+   "relation": "family",
+   "target": "Huatli",
+   "note": "cousins",
+   "paragraph": 0,
+   "quote": "He was the cousin of Huatli"
+  },
+  {
+   "source": "Inti",
+   "relation": "member_of",
+   "target": "Sun Empire",
+   "note": "imperial officer",
+   "paragraph": 0,
+   "quote": "an imperial officer of the Sun Empire on Ixalan"
+  },
+  {
+   "source": "Clavileño",
+   "relation": "killed",
+   "target": "Inti",
+   "note": "snapped his neck",
+   "paragraph": 3,
+   "quote": "the vampire snapped his neck, killing him"
+  }
+ ],
+ "rejected": []
+}

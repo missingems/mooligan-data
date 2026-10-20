@@ -1,0 +1,129 @@
+{
+ "page": "wiki/aether-collection-towers",
+ "url": "https://mtg.wiki/page/Aether_Collection_Towers",
+ "title": "Aether Collection Towers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:10Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Aether Collection Towers",
+   "type": "location",
+   "aliases": [],
+   "description": "Huge spires on Avishkar that funnel aether from the sky into cables running to the Aether Spire in Ghirapur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where the aether-gathering machinery is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "Prominent Consulate headquarters in Ghirapur and former site of Tezzeret's secret laboratory; both a collection tower and a distribution hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City where the Aether Spire stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose secret laboratory was once in the Aether Spire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Hub",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest aether distribution center on Avishkar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aetherflux Reservoir",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Giant storage unit for aether collected from the towers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [
+    "Kaladesh Consulate"
+   ],
+   "description": "The governing body that uses the towers to make aether accessible; its symbol was inspired by the towers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rebels who claim the Consulate's aether infrastructure is a stranglehold; they use the Leaking Spire symbol.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avaati Vya",
+   "type": "character",
+   "aliases": [],
+   "description": "Discoverer of aether refining processes sixty years earlier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rebellious forces claim the Consulate's aether infrastructure is a stranglehold on a freely available resource, and try to undo its work.",
+   "participants": [
+    "Renegades",
+    "Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "some rebellious forces claimed that the infrastructure and regulations amounted to a stranglehold on what should be a freely available resource"
+  },
+  {
+   "summary": "The towers become a symbol of the Consulate's tyranny and inspire the Consulate's symbol and the Renegades' Leaking Spire symbol.",
+   "participants": [
+    "Aether Collection Towers",
+    "Consulate",
+    "Renegades"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The Aether Collection Towers became seen as a symbol of the consulate's tyranny"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Renegades",
+   "relation": "enemy",
+   "target": "Consulate",
+   "note": "oppose its control of aether",
+   "paragraph": 5,
+   "quote": "some rebellious forces claimed that the infrastructure and regulations amounted to a stranglehold"
+  },
+  {
+   "source": "Aether Spire",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "",
+   "paragraph": 0,
+   "quote": "absorbed into cables running to the Aether Spire in Ghirapur"
+  }
+ ],
+ "rejected": []
+}

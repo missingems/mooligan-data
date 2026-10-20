@@ -1,0 +1,215 @@
+{
+ "page": "wiki/kambal",
+ "url": "https://mtg.wiki/page/Kambal",
+ "title": "Kambal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:05Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kambal",
+   "type": "character",
+   "aliases": [
+    "Consul of Allocation",
+    "Consul Kambal"
+   ],
+   "description": "A corrupt human who oversaw the distribution of aether on Avishkar and later became mayor of Prosperity on Thunder Junction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kambal oversaw aether distribution.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kambal became mayor of Prosperity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prosperity",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Thunder Junction of which Kambal is the corrupt mayor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bomat",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Avishkar that Kambal oversaw from his estate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gonti's Night Market",
+   "type": "location",
+   "aliases": [],
+   "description": "A market surrounded by docks, warehouses and abandoned buildings below Kambal's estate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gonti",
+   "type": "character",
+   "aliases": [],
+   "description": "An aetherborn crime lord entertained at Kambal's estate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enlightened Keepers",
+   "type": "faction",
+   "aliases": [],
+   "description": "The consuls of whom Kambal was one.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rebels whose revolt led to Kambal's replacement.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Replaced Kambal after the revolt of the Renegades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally of Kambal in kidnapping inventors from the Inventors' Fair.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally of Kambal in kidnapping inventors from the Inventors' Fair.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Kambal joined on Thunder Junction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "A passage between planes through which Kambal reached Thunder Junction.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kambal oversees Bomat from his estate and supervises aether distribution as Consul of Allocation, while keeping black market ties.",
+   "participants": [
+    "Kambal",
+    "Gonti",
+    "Enlightened Keepers"
+   ],
+   "location": "Bomat",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "As the Consul of Allocation , he supervised the distribution of aether throughout the city."
+  },
+  {
+   "summary": "Kambal allies with Baral and Tezzeret and kidnaps the best inventors from the Inventors' Fair.",
+   "participants": [
+    "Kambal",
+    "Baral",
+    "Tezzeret"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "He was allied with Baral and Tezzeret when he kidnapped the best inventors from the Inventors' Fair ."
+  },
+  {
+   "summary": "After the revolt of the Renegades, Kambal is replaced by Pia Nalaar.",
+   "participants": [
+    "Kambal",
+    "Renegades",
+    "Pia Nalaar"
+   ],
+   "location": "Bomat",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After the revolt of the Renegades , Kambal was replaced by Pia Nalaar ."
+  },
+  {
+   "summary": "Kambal reaches Thunder Junction through an Omenpath, joins the Sterling Company and becomes corrupt mayor of Prosperity.",
+   "participants": [
+    "Kambal",
+    "Sterling Company",
+    "Prosperity"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kambal found his way onto Thunder Junction through an Omenpath , joining the Sterling Company and becoming the corrupt mayor of Prosperity ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kambal",
+   "relation": "ally",
+   "target": "Baral",
+   "note": "Allied when kidnapping inventors",
+   "paragraph": 0,
+   "quote": "He was allied with Baral and Tezzeret"
+  },
+  {
+   "source": "Kambal",
+   "relation": "ally",
+   "target": "Tezzeret",
+   "note": "Allied when kidnapping inventors",
+   "paragraph": 0,
+   "quote": "He was allied with Baral and Tezzeret"
+  },
+  {
+   "source": "Kambal",
+   "relation": "member_of",
+   "target": "Enlightened Keepers",
+   "note": "One of its consuls",
+   "paragraph": 1,
+   "quote": "his fellow consuls of the Enlightened Keepers"
+  },
+  {
+   "source": "Kambal",
+   "relation": "member_of",
+   "target": "Sterling Company",
+   "note": "Joined on Thunder Junction",
+   "paragraph": 3,
+   "quote": "joining the Sterling Company"
+  },
+  {
+   "source": "Kambal",
+   "relation": "leader_of",
+   "target": "Prosperity",
+   "note": "Mayor of the city",
+   "paragraph": 0,
+   "quote": "He serves as the mayor of the city of Prosperity on Thunder Junction ."
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "other",
+   "target": "Kambal",
+   "note": "Replaced him as consul after the Renegades' revolt",
+   "paragraph": 2,
+   "quote": "Kambal was replaced by Pia Nalaar ."
+  }
+ ],
+ "rejected": []
+}

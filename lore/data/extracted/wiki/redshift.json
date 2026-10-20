@@ -1,0 +1,126 @@
+{
+ "page": "wiki/redshift",
+ "url": "https://mtg.wiki/page/Redshift",
+ "title": "Redshift",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:52Z",
+ "storyline": "Ghirapur Grand Prix",
+ "entities": [
+  {
+   "name": "Redshift",
+   "type": "character",
+   "aliases": [],
+   "description": "A brash goblin test pilot and co-captain of the Goblin Rocketeers in the 2nd Ghirapur Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goblin Rocketeers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin racing team co-captained by Redshift and Daretti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-captain of the Goblin Rocketeers whom Redshift abandoned during the race.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who mind controlled Redshift while trying to recover his adopted child Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Jace Beleren's adopted child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muraganda",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the third leg of the Grand Prix where saurid raiders laid a trap.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [
+    "2nd Ghirapur Grand Prix"
+   ],
+   "description": "The race in which the Goblin Rocketeers competed.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Rocketeers lead for three legs, but in the third leg through Muraganda they are the first to cross a trap laid by saurid raiders.",
+   "participants": [
+    "Redshift",
+    "Goblin Rocketeers"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were the first to cross a trap laid on the course by saurid raiders"
+  },
+  {
+   "summary": "Redshift abandons his co-captain Daretti, putting victory over all other interests.",
+   "participants": [
+    "Redshift",
+    "Daretti"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "he abandoned his co-captain Daretti"
+  },
+  {
+   "summary": "In the final stage Redshift's vehicle is wrecked and Jace Beleren mind controls him.",
+   "participants": [
+    "Redshift",
+    "Jace Beleren"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "his vehicle was wrecked, and he was mind controlled by Jace Beleren"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Redshift",
+   "relation": "leader_of",
+   "target": "Goblin Rocketeers",
+   "note": "He co-captains the team.",
+   "paragraph": 0,
+   "quote": "co-captain of the Goblin Rocketeers"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Redshift",
+   "note": "Jace mind controlled him while seeking Loot.",
+   "paragraph": 4,
+   "quote": "he was mind controlled by Jace Beleren"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "family",
+   "target": "Loot",
+   "note": "Loot is his adopted child.",
+   "paragraph": 4,
+   "quote": "his adopted child Loot"
+  }
+ ],
+ "rejected": []
+}

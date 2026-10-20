@@ -1,0 +1,122 @@
+{
+ "page": "wiki/steel-island",
+ "url": "https://mtg.wiki/page/Steel_Island",
+ "title": "Steel Island",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:28Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Steel Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Third island of the Burning Isles, inhabited by mechanical gnomes and dominated by a gigantic castle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Burning Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Archipelago of three islands inhabited by mechanical gnomes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Zhalfirin sailors found the chest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfirin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation whose sailors found the journal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wavecrester",
+   "type": "artifact",
+   "aliases": [
+    "the Wavecrester"
+   ],
+   "description": "Zhalfirin ship that visited Steel Island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clockwork Gnomes",
+   "type": "faction",
+   "aliases": [
+    "mechanical gnomes",
+    "Gnomes"
+   ],
+   "description": "Emotionless mechanical gnomes building flying servants and a Dreadnought.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreadnought",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Massive destructive artifact of metal and sorcery built on Steel Island.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zhalfirin sailors find a chest holding a journal about the Wavecrester and Steel Island.",
+   "participants": [
+    "Zhalfirin"
+   ],
+   "location": "Zhalfirin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Zhalfirin sailors discovered, on the north-western coast of their country, a barnacle-encrusted chest"
+  },
+  {
+   "summary": "The Wavecrester clears pirates from the Burning Isles and reaches Steel Island, finding gnomes building a Dreadnought.",
+   "participants": [
+    "Wavecrester",
+    "Clockwork Gnomes",
+    "Dreadnought"
+   ],
+   "location": "Steel Island",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "After successfully scouring the seas for pirates, the ship reached a mysterious island."
+  },
+  {
+   "summary": "A confrontation ends with the reported destruction of the Wavecrester and the gnomes flying off on their dreadnought.",
+   "participants": [
+    "Wavecrester",
+    "Clockwork Gnomes",
+    "Dreadnought"
+   ],
+   "location": "Steel Island",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "ended with the reported demise of the former and the flight on their dreadnought of the latter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Clockwork Gnomes",
+   "relation": "created",
+   "target": "Dreadnought",
+   "note": "They built it.",
+   "paragraph": 2,
+   "quote": "were constructing a massive Dreadnought of metal and sorcery"
+  },
+  {
+   "source": "Steel Island",
+   "relation": "located_in",
+   "target": "Burning Isles",
+   "note": "",
+   "paragraph": 0,
+   "quote": "the archipelago of the Burning Isles"
+  }
+ ],
+ "rejected": []
+}

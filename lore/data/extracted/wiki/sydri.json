@@ -1,0 +1,89 @@
+{
+ "page": "wiki/sydri",
+ "url": "https://mtg.wiki/page/Sydri",
+ "title": "Sydri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sydri",
+   "type": "character",
+   "aliases": [],
+   "description": "A young, brilliant human artificer of the High City of Paliano on Fiora, who animates objects and sells devices to anyone who pays.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High City of Paliano"
+   ],
+   "description": "The High City on Fiora where Sydri works.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Paliano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [],
+   "description": "A dangerous circle of elite priests who will do anything to gain the upper hand politically; Sydri has fallen in with them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Zangari",
+   "type": "character",
+   "aliases": [],
+   "description": "A client of Sydri whose death she may have inadvertently caused.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Brago",
+   "type": "character",
+   "aliases": [],
+   "description": "A king whose treatment Sydri was possibly involved in.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sydri may have inadvertently caused the death of her client Lord Zangari.",
+   "participants": [
+    "Sydri",
+    "Lord Zangari"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "One of her clients was Lord Zangari"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sydri",
+   "relation": "other",
+   "target": "Custodi",
+   "note": "She fell into their circle.",
+   "paragraph": 1,
+   "quote": "she's fallen into a dangerous circle of elite priests"
+  },
+  {
+   "source": "Sydri",
+   "relation": "located_in",
+   "target": "Paliano",
+   "note": "Artificer at the High City.",
+   "paragraph": 0,
+   "quote": "Sydri is a skilled human artificer at the High City of Paliano on the plane of Fiora ."
+  }
+ ],
+ "rejected": []
+}

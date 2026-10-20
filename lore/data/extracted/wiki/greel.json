@@ -1,0 +1,162 @@
+{
+ "page": "wiki/greel",
+ "url": "https://mtg.wiki/page/Greel",
+ "title": "Greel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:32Z",
+ "storyline": "Keldon Invasion",
+ "entities": [
+  {
+   "name": "Greel",
+   "type": "creature",
+   "aliases": [],
+   "description": "A humanoid horror in league with the Keldons and Phyrexians who masqueraded as a Keldon and fed on life force; killed by Barrin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Warriors of Jamuraa whom Greel masqueraded as and was in league with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erissa",
+   "type": "character",
+   "aliases": [
+    "bog witch Erissa"
+   ],
+   "description": "A bog witch for whom Greel served as familiar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doyenne Latulla",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer for whom Greel served as familiar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rayne",
+   "type": "character",
+   "aliases": [],
+   "description": "Barrin's wife, who traced the Phyrexian plague to Greel and was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Husband of Rayne, who killed Greel with magical sparks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian plague",
+   "type": "event",
+   "aliases": [],
+   "description": "A plague spreading on Jamuraa, originating with Greel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings Greel was in league with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion of Jamuraa during which Greel was active.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on Dominaria where the events occurred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Greel lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rayne identifies Greel as the plague's origin and tries to kill him, but he is unfazed.",
+   "participants": [
+    "Rayne",
+    "Greel"
+   ],
+   "location": "Jamuraa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Rayne pinpointed the origin of the plague to Greel."
+  },
+  {
+   "summary": "Greel kills Rayne after she is knocked off her artifact steed.",
+   "participants": [
+    "Greel",
+    "Rayne"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When Rayne was knocked off her artifact steed, Greel killed her."
+  },
+  {
+   "summary": "Barrin kills Greel with magical sparks.",
+   "participants": [
+    "Barrin",
+    "Greel"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "killing the horror by dissolving him rapidly from within"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Greel",
+   "relation": "killed",
+   "target": "Rayne",
+   "note": "Killed her after she was knocked off her steed",
+   "paragraph": 1,
+   "quote": "When Rayne was knocked off her artifact steed, Greel killed her."
+  },
+  {
+   "source": "Barrin",
+   "relation": "killed",
+   "target": "Greel",
+   "note": "Dissolved him with magical sparks",
+   "paragraph": 1,
+   "quote": "Barrin cast a cascade of magical sparks onto Greel"
+  },
+  {
+   "source": "Barrin",
+   "relation": "family",
+   "target": "Rayne",
+   "note": "Husband of Rayne",
+   "paragraph": 1,
+   "quote": "Barrin, husband of Rayne"
+  },
+  {
+   "source": "Greel",
+   "relation": "serves",
+   "target": "Erissa",
+   "note": "Served as her familiar",
+   "paragraph": 1,
+   "quote": "He served as a familiar for the bog witch Erissa and the artificer Doyenne Latulla"
+  }
+ ],
+ "rejected": []
+}

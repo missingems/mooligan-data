@@ -1,0 +1,163 @@
+{
+ "page": "wiki/neyali",
+ "url": "https://mtg.wiki/page/Neyali",
+ "title": "Neyali",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Neyali",
+   "type": "character",
+   "aliases": [],
+   "description": "Vulshok rebel from the Oxidda Chain on New Phyrexia who leads a resistance cell with phoenixes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tribe of the Helm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vulshok tribe Neyali belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oxidda Chain",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain range that was Neyali's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otharri",
+   "type": "creature",
+   "aliases": [],
+   "description": "Blazing phoenix that hatched from the egg Neyali found.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slagmaw",
+   "type": "location",
+   "aliases": [],
+   "description": "Hidden Mirran rebel camp.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elham",
+   "type": "character",
+   "aliases": [],
+   "description": "Previous leader of the resistance cell at Slagmaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reyana",
+   "type": "character",
+   "aliases": [],
+   "description": "Neyali's childhood friend, compleated by Slobad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated Reyana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who destroyed Neyali's village.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Neyali finds a faintly glowing egg and takes it in; soon after the Phyrexians destroy her village, leaving only her and the egg.",
+   "participants": [
+    "Neyali",
+    "Phyrexians"
+   ],
+   "location": "Oxidda Chain",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "leaving Neyali and her egg as the only ones left alive"
+  },
+  {
+   "summary": "Cornered by Phyrexian centurions, Neyali sees the egg hatch into the phoenix Otharri, which incinerates her attackers.",
+   "participants": [
+    "Neyali",
+    "Otharri",
+    "Phyrexians"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the egg broke open"
+  },
+  {
+   "summary": "Guided by Otharri, Neyali reaches the rebel camp Slagmaw.",
+   "participants": [
+    "Neyali",
+    "Otharri"
+   ],
+   "location": "Slagmaw",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Neyali reached Slagmaw, a hidden Mirran rebel camp"
+  },
+  {
+   "summary": "Neyali takes leadership of the resistance cell from Elham.",
+   "participants": [
+    "Neyali",
+    "Elham"
+   ],
+   "location": "Slagmaw",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Neyali took up leadership of the resistance cell from Elham"
+  },
+  {
+   "summary": "Neyali is captured while trying to save Reyana from compleation, but escapes with Otharri's help.",
+   "participants": [
+    "Neyali",
+    "Reyana",
+    "Slobad",
+    "Otharri"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Though Neyali was captured, she escaped with Otharri's help"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Neyali",
+   "relation": "leader_of",
+   "target": "Slagmaw",
+   "note": "Leads the resistance cell.",
+   "paragraph": 4,
+   "quote": "Neyali took up leadership of the resistance cell from Elham"
+  },
+  {
+   "source": "Neyali",
+   "relation": "ally",
+   "target": "Otharri",
+   "note": "Phoenix companion.",
+   "paragraph": 3,
+   "quote": "Guided by Otharri"
+  },
+  {
+   "source": "Slobad",
+   "relation": "other",
+   "target": "Reyana",
+   "note": "Slobad compleated Reyana.",
+   "paragraph": 4,
+   "quote": "chose to be compleated by Slobad"
+  }
+ ],
+ "rejected": []
+}

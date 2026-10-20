@@ -1,0 +1,161 @@
+{
+ "page": "wiki/absolution-of-trine",
+ "url": "https://mtg.wiki/page/Absolution_of_Trine",
+ "title": "Absolution of Trine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "A fallen angel enslaved by Xarl, killed and absolved by Rahel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rahel",
+   "type": "character",
+   "aliases": [],
+   "description": "A Serra Angel summoned by Eskil who killed and absolved Trine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "A pure-hearted young spellsquire whose Planeswalker spark ignited; later guardian of the White Woods and mentor of Mangara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [],
+   "description": "An archmage, Angel-Keeper of Trine, responsible for the Enslavement of Trine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mangara",
+   "type": "character",
+   "aliases": [],
+   "description": "Student of Eskil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "White Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Place guarded by Eskil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enslavement of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Xarl's binding of the fallen angel Trine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade-Dihada War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Eskil saved the children of Corondor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xarl dies of old age and leaves the House of Xarl to his spellsquire Eskil.",
+   "participants": [
+    "Xarl",
+    "Eskil"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "When Xarl finally died of old age, the House of Xarl was left to Eskil."
+  },
+  {
+   "summary": "Without a purpose, Trine escapes her imprisonment.",
+   "participants": [
+    "Trine"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Trine escaped her imprisonment"
+  },
+  {
+   "summary": "Eskil summons the Serra Angel Rahel to undo the evil done by Xarl and Trine.",
+   "participants": [
+    "Eskil",
+    "Rahel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Eskil, pure of heart, summoned another Serra Angel named Rahel"
+  },
+  {
+   "summary": "Rahel kills Trine and absolves her, returning her to purity; Eskil becomes an immortal planeswalker.",
+   "participants": [
+    "Rahel",
+    "Trine",
+    "Eskil"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Rahel killed Trine in a flash that blinded Eskil"
+  },
+  {
+   "summary": "Eskil saves the children of Corondor during the Blackblade-Dihada War and becomes Mangara's mentor.",
+   "participants": [
+    "Eskil",
+    "Mangara"
+   ],
+   "location": "White Woods",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Eskil saved the children of Corondor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rahel",
+   "relation": "killed",
+   "target": "Trine",
+   "note": "Rahel killed and absolved her.",
+   "paragraph": 1,
+   "quote": "Rahel killed Trine in a flash that blinded Eskil"
+  },
+  {
+   "source": "Xarl",
+   "relation": "other",
+   "target": "Trine",
+   "note": "Xarl was her Angel-Keeper and enslaved her.",
+   "paragraph": 1,
+   "quote": "Angel-Keeper of the fallen angel Trine"
+  },
+  {
+   "source": "Eskil",
+   "relation": "mentor_of",
+   "target": "Mangara",
+   "note": "Eskil became Mangara's mentor.",
+   "paragraph": 2,
+   "quote": "he eventually became Mangara 's mentor"
+  },
+  {
+   "source": "Eskil",
+   "relation": "serves",
+   "target": "Xarl",
+   "note": "Eskil was Xarl's spellsquire.",
+   "paragraph": 1,
+   "quote": "as a spellsquire"
+  }
+ ],
+ "rejected": []
+}

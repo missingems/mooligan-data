@@ -1,0 +1,108 @@
+{
+ "page": "wiki/veldrane",
+ "url": "https://mtg.wiki/page/Veldrane",
+ "title": "Veldrane",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Veldrane",
+   "type": "character",
+   "aliases": [
+    "Veldrane of Sengir"
+   ],
+   "description": "Veldrane of Sengir, the Baron Sengir's most loyal minion on Ulgrotha: a poacher, scout and messenger.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of Veldrane who rules the Dark Barony from Castle Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Veldrane served the Baron Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Sengir",
+   "type": "location",
+   "aliases": [],
+   "description": "The Baron's castle on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Autumn Willow",
+   "type": "character",
+   "aliases": [],
+   "description": "Secret power of the Great Wood, who created Devin as a joke against Veldrane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Devin",
+   "type": "character",
+   "aliases": [],
+   "description": "Faerie Noble created by Autumn Willow as a miniature replica of Veldrane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest into which Veldrane led hunting missions.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Veldrane, the Baron's best hunter, leads successful missions into the Great Wood but fails to discover the Autumn Willow.",
+   "participants": [
+    "Veldrane",
+    "Autumn Willow"
+   ],
+   "location": "Great Wood",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "neither Veldrane nor any other hunters were able to discover the Autumn Willow"
+  },
+  {
+   "summary": "Autumn Willow creates Devin as a miniature replica of Veldrane, as a joke.",
+   "participants": [
+    "Autumn Willow",
+    "Devin",
+    "Veldrane"
+   ],
+   "location": "Great Wood",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Autumn Willow thus created Devin"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Veldrane",
+   "relation": "serves",
+   "target": "Baron Sengir",
+   "note": "Most loyal servant",
+   "paragraph": 0,
+   "quote": "Veldrane of Sengir was one of the Baron Sengir 's minions on Ulgrotha and his most loyal servant."
+  },
+  {
+   "source": "Autumn Willow",
+   "relation": "created",
+   "target": "Devin",
+   "note": "Created as a joke against Veldrane",
+   "paragraph": 2,
+   "quote": "Autumn Willow thus created Devin"
+  }
+ ],
+ "rejected": []
+}

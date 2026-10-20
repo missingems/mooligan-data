@@ -1,0 +1,161 @@
+{
+ "page": "wiki/kreig",
+ "url": "https://mtg.wiki/page/Kreig",
+ "title": "Kreig",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kreig",
+   "type": "character",
+   "aliases": [
+    "Witch-king of Keld"
+   ],
+   "description": "The most powerful Keldon of all time, product of Gatha's Bloodline Project with Keldon and Phyrexian stock.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatha",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Bloodline Project and slow-time water who spliced Keldon and Phyrexian stock.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloodline Project",
+   "type": "concept",
+   "aliases": [],
+   "description": "Gatha's genetic splicing program that produced Kreig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Croag",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian Inner Circle member who fought Kreig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Davvol",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian who with Croag attacked Keld's troops.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keld",
+   "type": "faction",
+   "aliases": [
+    "Keldons"
+   ],
+   "description": "Nation led by Kreig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Askaranton",
+   "type": "location",
+   "aliases": [],
+   "description": "Target of a Keldon raid led by Kreig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Necropolis",
+   "type": "location",
+   "aliases": [],
+   "description": "Site whose cliffside Kreig and Gatha leapt from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemies whose agents noticed Kreig's Phyrexian genetics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kreig lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kreig is born as part of Gatha's Bloodline Project.",
+   "participants": [
+    "Kreig",
+    "Gatha"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kreig was born as part of Gatha 's own Bloodline Project"
+  },
+  {
+   "summary": "On a raid on Askaranton, Phyrexian sleeper agents notice Kreig's Phyrexian genetics and Croag and Davvol begin attacking Keld's troops.",
+   "participants": [
+    "Kreig",
+    "Croag",
+    "Davvol"
+   ],
+   "location": "Askaranton",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Croag and Davvol began staging attacks on Keld's troops"
+  },
+  {
+   "summary": "In his final battle Kreig wounds Croag but cannot defeat him.",
+   "participants": [
+    "Kreig",
+    "Croag"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kreig did manage to wound Croag, but could not defeat him."
+  },
+  {
+   "summary": "Kreig and Gatha jump from the Keldon Necropolis cliffside, killing themselves to avoid capture by the Phyrexians.",
+   "participants": [
+    "Kreig",
+    "Gatha"
+   ],
+   "location": "Keldon Necropolis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kreig and Gatha jumped off the Keldon Necropolis 's cliffside"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gatha",
+   "relation": "created",
+   "target": "Kreig",
+   "note": "through the Bloodline Project",
+   "paragraph": 2,
+   "quote": "Kreig was born as part of Gatha 's own Bloodline Project"
+  },
+  {
+   "source": "Kreig",
+   "relation": "leader_of",
+   "target": "Keld",
+   "note": "Witch-king",
+   "paragraph": 2,
+   "quote": "Kreig led his nation in numerous battles"
+  },
+  {
+   "source": "Kreig",
+   "relation": "enemy",
+   "target": "Croag",
+   "note": "fought in his final battle",
+   "paragraph": 2,
+   "quote": "Kreig encountered the Phyrexian Inner Circle member Croag"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,173 @@
+{
+ "page": "wiki/lily-emberseed",
+ "url": "https://mtg.wiki/page/Lily_Emberseed",
+ "title": "Lily Emberseed",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lily Emberseed",
+   "type": "character",
+   "aliases": [
+    "Lily of Valley"
+   ],
+   "description": "Legendary mousefolk of Bloomburrow, champion of the Order of the Holly Leaf, who gained the Seed Flame and fought Wildsear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Holly Leaf",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of which Lily was a mousefolk champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley",
+   "type": "location",
+   "aliases": [],
+   "description": "Mousefolk settlement of Bloomburrow where Lily was born in the tunnels beneath.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of Cinders",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Lily was born.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wildsear",
+   "type": "creature",
+   "aliases": [
+    "Wildfire Wolf"
+   ],
+   "description": "Calamity Beast, also called the Wildfire Wolf, fought by Lily.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seed Flame",
+   "type": "concept",
+   "aliases": [
+    "Ember Seed"
+   ],
+   "description": "Power, also called the Ember Seed, that ignited in Lily's soul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cragflame",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical sword Lily fashioned from Wildsear's tooth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Lily's descendant who later wielded Cragflame to protect Valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Lily is from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brambles",
+   "type": "location",
+   "aliases": [],
+   "description": "Region outside Valley where Wildsear was sent and Lily later travelled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lily faces the Calamity Beast Wildsear and the Seed Flame ignites in her soul, turning her into a radiant sun.",
+   "participants": [
+    "Lily Emberseed",
+    "Wildsear",
+    "Seed Flame"
+   ],
+   "location": "Valley",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Seed Flame, also called the Ember Seed, ignited in her soul"
+  },
+  {
+   "summary": "In the war's final battle Lily fights Wildsear, chipping its tooth and sending it beyond the Brambles.",
+   "participants": [
+    "Lily Emberseed",
+    "Wildsear"
+   ],
+   "location": "Valley",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she fought Wildsear, chipping its tooth and sending the beast beyond the Brambles"
+  },
+  {
+   "summary": "Lily fashions the tooth into the sword Cragflame.",
+   "participants": [
+    "Lily Emberseed",
+    "Cragflame"
+   ],
+   "location": "Valley",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Lily fashioned the Wildfire Wolf's tooth into the magical sword Cragflame ."
+  },
+  {
+   "summary": "After the war Lily leaves Valley to travel the Brambles, leaving her armor and sword to her descendants.",
+   "participants": [
+    "Lily Emberseed"
+   ],
+   "location": "Brambles",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Lily left Valley to travel the Brambles, leaving her armor and sword to her descendants."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lily Emberseed",
+   "relation": "enemy",
+   "target": "Wildsear",
+   "note": "She fought and drove back the Calamity Beast.",
+   "paragraph": 1,
+   "quote": "she fought Wildsear, chipping its tooth"
+  },
+  {
+   "source": "Lily Emberseed",
+   "relation": "created",
+   "target": "Cragflame",
+   "note": "She fashioned it from Wildsear's tooth.",
+   "paragraph": 1,
+   "quote": "Lily fashioned the Wildfire Wolf's tooth into the magical sword Cragflame ."
+  },
+  {
+   "source": "Lily Emberseed",
+   "relation": "family",
+   "target": "Mabel",
+   "note": "Mabel is her descendant.",
+   "paragraph": 1,
+   "quote": "Her descendant Mabel later wielded the blade to protect Valley from the Calamity Beasts."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "quote not in page",
+   "source": "Lily Emberseed",
+   "relation": "member_of",
+   "target": "Order of the Holly Leaf",
+   "note": "She was a champion of the order.",
+   "paragraph": 1,
+   "quote": "Lily was a mousefolk champion of the Order of the Holly Leaf ."
+  }
+ ]
+}

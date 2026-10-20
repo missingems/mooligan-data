@@ -1,0 +1,107 @@
+{
+ "page": "wiki/vadax-gor",
+ "url": "https://mtg.wiki/page/Vadax_Gor",
+ "title": "Vadax Gor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:13Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Vadax Gor",
+   "type": "character",
+   "aliases": [],
+   "description": "A scarred Rakdos criminal arrested by the Azorius for kidnapping.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parisha",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius arrester who trailed and caught Vadax Gor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fblthp",
+   "type": "character",
+   "aliases": [],
+   "description": "A homunculus used as bait and snatched by Vadax Gor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [
+    "Azorius Senate"
+   ],
+   "description": "Ravnican guild whose arresters and agents caught Vadax Gor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [
+    "Cult of Rakdos"
+   ],
+   "description": "Guild of which Vadax Gor was a part.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vadax Gor causes the disappearance of two citizens, putting Parisha on his trail.",
+   "participants": [
+    "Vadax Gor",
+    "Parisha"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he caused the disappearance of two citizens"
+  },
+  {
+   "summary": "Fblthp visits the leatherworker's shop as a ploy by Parisha; the leatherworker sends thugs to look for trouble.",
+   "participants": [
+    "Fblthp",
+    "Parisha"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "One day, a homunculus named Fblthp showed up at the shop"
+  },
+  {
+   "summary": "Vadax Gor snatches Fblthp in the alley but is caught by Parisha, who locks him with an arrester's ring.",
+   "participants": [
+    "Vadax Gor",
+    "Parisha",
+    "Fblthp"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was caught up by Parisha, who threw an arrester's ring on him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Parisha",
+   "relation": "enemy",
+   "target": "Vadax Gor",
+   "note": "Arrested him.",
+   "paragraph": 3,
+   "quote": "Vadax Gor was trapped, and Parisha claimed Fblthp from his arms and locked the criminal up."
+  },
+  {
+   "source": "Vadax Gor",
+   "relation": "member_of",
+   "target": "Rakdos",
+   "note": "A Rakdos criminal.",
+   "paragraph": 0,
+   "quote": "Vadax Gor is a Rakdos criminal"
+  }
+ ],
+ "rejected": []
+}
