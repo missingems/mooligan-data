@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,era-ingest,build,publish,app} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,narrative-prep,narrative-ingest,set-summary-ingest,era-ingest,build,publish,app} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall", "era-ingest", "build", "publish", "app"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "narrative-prep", "narrative-ingest", "set-summary-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall", "era-ingest", "build", "publish", "app"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -107,6 +107,21 @@ def main() -> int:
         checked = ingest(args.data, args.page, json.loads(args.raw.read_text()), args.model)
         print(json.dumps({"id": args.page, "bio": len(checked["bio"]), "summary": bool(checked["summary"]),
                           "status": bool(checked["status"]), "rejected": [(r["part"], r.get("text", "")[:60]) for r in checked["rejected"]]}))
+        return 0
+
+    if args.step == "narrative-prep":
+        from .narratives import prep
+
+        print(json.dumps(prep(args.data, Path(args.page))))
+        return 0
+
+    if args.step in ("narrative-ingest", "set-summary-ingest"):
+        from .narratives import ingest_entity, ingest_set
+
+        ingest = ingest_entity if args.step == "narrative-ingest" else ingest_set
+        checked = ingest(args.data, args.page, json.loads(args.raw.read_text()), args.model)
+        kept = {code: len(items) for code, items in checked["sets"].items()} if "sets" in checked else len(checked["summary"])
+        print(json.dumps({"id": args.page, "kept": kept, "rejected": [(r["part"], r["reason"], r.get("text", "")[:60]) for r in checked["rejected"]]}))
         return 0
 
     if args.step == "era-ingest":

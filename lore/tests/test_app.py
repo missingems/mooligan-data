@@ -1,4 +1,4 @@
-from mtglore.app import Matcher, SetLinker, entity_markdown, key_entities
+from mtglore.app import Matcher, SetLinker, entity_markdown, key_entities, set_entity_markdown
 
 ENTITIES = [
     {"id": "jace-beleren", "name": "Jace Beleren", "type": "character", "pages": 400, "description": "A planeswalker."},
@@ -63,28 +63,59 @@ def test_a_sets_key_entities_put_its_characters_first():
     assert [(e["id"], e["role"]) for e in keyed["dom"]] == [("dominaria", "main"), ("teferi", "main"), ("jace-beleren", "supporting")]
 
 
-def test_an_entity_page_is_primer_markdown_with_cited_lines():
+def _teferi():
     official = {"official": True, "source": "wizards", "url": "https://example.com/a", "text": "\"A\". Magic Story."}
     wiki = {"official": False, "source": "mtg-wiki", "url": "https://mtg.wiki/page/Teferi", "text": "\"Teferi\". MTG Wiki contributors, CC BY-NC-SA 4.0."}
-    entity = {
-        "id": "teferi", "name": "Teferi", "description": "A time mage.",
+    return {
+        "id": "teferi", "name": "Teferi", "type": "character", "description": "A time mage.",
         "bio": {"summary": {"text": "Teferi is a time mage.", "cites": ["teferi-e0"]}, "bio": [], "status": None},
         "timeline": [
-            {"id": "teferi-e0", "summary": "Teferi phases out Zhalfir [[sic]].", "storyline": "Mirage", "story_date": "", "era": None,
+            {"id": "teferi-e0", "summary": "Teferi phases out Zhalfir [[sic]]", "storyline": "Mirage", "story_date": "", "era": None,
              "page": "wiki/teferi", "importance": "major", "participants": ["teferi"], "location": "", "citation": wiki, "link": "https://mtg.wiki/page/Teferi#x"},
             {"id": "teferi-e1", "summary": "Teferi returns.", "storyline": "Dominaria", "story_date": "2018-04-10", "era": None,
              "page": "stories/a", "importance": "major", "participants": ["teferi"], "location": "", "citation": official, "link": "https://example.com/a#y"},
+            {"id": "teferi-e2", "summary": "Teferi takes back his spark.", "storyline": "Dominaria", "story_date": "2018-04-17", "era": None,
+             "page": "stories/b", "importance": "minor", "participants": ["teferi"], "location": "", "citation": official, "link": "https://example.com/b#z"},
         ],
-        "relations": [{"id": "r0", "source": "teferi", "relation": "mentor_of", "target": "jhoira", "note": "", "citation": official, "link": "https://example.com/a#z"}],
+        "relations": [],
         "pages_say": [],
     }
+
+
+def test_an_entity_page_tells_its_story_set_by_set_as_prose():
     cards = [card("Teferi, Hero of Dominaria", "Legendary Planeswalker — Teferi")]
-    md = entity_markdown(entity, "planeswalker", {"teferi": "Teferi", "jhoira": "Jhoira"}, ["Dominaria"], cards, {"dom": "Dominaria"}, SetLinker(SETS))
+    narrative = {"sets": {"dom": [{"text": "Teferi comes home to Dominaria as [[Teferi, Hero of Dominaria]] and [[Not His Card]].", "cites": ["teferi-e1"]}]}}
+    md = entity_markdown(_teferi(), "planeswalker", ["Dominaria"], cards, {"dom": "Dominaria"}, SetLinker(SETS), narrative)
     assert md.startswith("---\nid: teferi\nname: Teferi\ntype: planeswalker\ntitle: Teferi\nplanes: [Dominaria]\n")
-    assert "## Who they are\n\nTeferi is a time mage. ([MTG Wiki](https://mtg.wiki/page/Teferi#x))" in md
-    assert "### Dominaria\n\n- Teferi returns. ([story](https://example.com/a#y))" in md
-    assert "[[sic]]" not in md  # brackets in story text never read as card links
-    assert "- Teferi mentor of Jhoira" in md
+    assert "## Who they are\n\nTeferi is a time mage.\n" in md
+    # A set with a written narrative uses it; card links stay only for the entity's own cards.
+    assert "### Dominaria\n\nTeferi comes home to Dominaria as [[Teferi, Hero of Dominaria]] and [Not His Card].\n" in md
+    # Without one, its events are told as a paragraph.
+    assert "### Mirage\n\nTeferi phases out Zhalfir [sic].\n" in md
+    assert "(story)" not in md and "## Sources" not in md and "- " not in md.split(":::cards")[0]
     assert ":::cards\n[[Teferi, Hero of Dominaria]] Dominaria, 2018\n:::" in md
-    sources = md.split("## Sources")[1]
-    assert sources.index("Magic Story") < sources.index("CC BY-NC-SA 4.0 (https://creativecommons.org")
+    # The wiki-sourced lines need the CC BY-NC-SA credit, once, in the front matter.
+    assert md.count("CC BY-NC-SA 4.0") == 1 and "\ncredit: " in md.split("\n---\n")[0]
+
+
+def test_a_set_page_has_the_entitys_paragraph_and_timeline_for_that_set():
+    md = set_entity_markdown(_teferi(), "dom", "Dominaria", [], {"dom": "Dominaria"}, SetLinker(SETS))
+    assert md.startswith("---\nid: teferi\nset: dom\nname: Teferi\ntitle: Teferi in Dominaria\n---\n")
+    assert "## In Dominaria\n\nTeferi returns. Teferi takes back his spark.\n" in md
+    assert "## Timeline\n\n- Teferi returns.\n- Teferi takes back his spark.\n" in md
+    assert "credit:" not in md  # only official sources here
+
+
+def test_narratives_keep_only_sentences_their_set_events_support():
+    from mtglore.narratives import check_sentences
+    known = {"e1": {"quote": "the stars fell like rain"}}
+    rejected = []
+    kept = check_sentences([
+        {"text": "The sky broke.", "cites": ["e1"]},
+        {"text": "It came from elsewhere.", "cites": ["e9"]},
+        {"text": 'They said "the stars fell like rain".', "cites": ["e1"]},
+        {"text": 'They said "the moon fell".', "cites": ["e1"]},
+        {"text": "See [[Some Card]].", "cites": ["e1"]},
+    ], known, set(), "dom", rejected)
+    assert [k["text"] for k in kept] == ["The sky broke.", 'They said "the stars fell like rain".']
+    assert [r["reason"] for r in rejected] == ["cites", "quote"]
