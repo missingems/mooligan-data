@@ -39,7 +39,8 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
 
     What a deck's preview needs to pick its cards is kept too: `"land": true` for a card whose front face is
     a land, `"price"` (Scryfall's USD, else its foil or etched price, when it has any), `"mana_value"`, and
-    `"mana_cost"` (see `_mana_cost`) when the card has one. What the popular cards lists group by is always
+    `"mana_cost"` (see `_mana_cost`) when the card has one. `"oracle_text"`, every face's rules text, is kept for the
+    commander guides' card roles when the card has any. What the popular cards lists group by is always
     there: `"type_line"` of the front face, which is what a decklist plays ("" for a card with none), and the
     `"layout"`, which says whether "Fire // Ice" is a split card (both halves are its name) or a double-faced one.
     """
@@ -69,6 +70,9 @@ def card_catalog(url: Optional[str] = None) -> Dict[str, dict]:
             cost = _mana_cost(card)
             if cost:
                 entry["mana_cost"] = cost
+            text = _oracle_text(card)
+            if text:
+                entry["oracle_text"] = text
             catalog[key] = entry
     log.info("Scryfall: %d cards in the catalog", len(catalog))
     return catalog
@@ -102,6 +106,12 @@ def _mana_cost(card: dict) -> str:
     if not cost:
         cost = (card.get("card_faces") or [{}])[0].get("mana_cost") or ""
     return cost
+
+
+def _oracle_text(card: dict) -> str:
+    """The rules text of the card and of each of its faces, one after another, with curly apostrophes made straight."""
+    parts = [card.get("oracle_text") or ""] + [face.get("oracle_text") or "" for face in card.get("card_faces") or []]
+    return "\n".join(part for part in parts if part).replace("\u2019", "'")
 
 
 def _price(prices: dict) -> Optional[float]:
