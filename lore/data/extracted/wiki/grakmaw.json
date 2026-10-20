@@ -1,0 +1,96 @@
+{
+ "page": "wiki/grakmaw",
+ "url": "https://mtg.wiki/page/Grakmaw",
+ "title": "Grakmaw",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:12Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Grakmaw",
+   "type": "creature",
+   "aliases": [],
+   "description": "A massive blind hydra horror that lurked for centuries in a fallen Skyclave on Jwar Isle; turned to stone by Anowon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Grakmaw with a Kor potion that turned it to stone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jwar Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in Ondu where Grakmaw lurked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Zendikar containing Jwar Isle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Grakmaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skyclaves",
+   "type": "location",
+   "aliases": [],
+   "description": "Floating structures; one fell and sheltered Grakmaw, and they rose again.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient people who made the stoning potion.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When the Skyclaves rise again, Grakmaw begins feeding on adventuring parties.",
+   "participants": [
+    "Grakmaw"
+   ],
+   "location": "Jwar Isle",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "When the Skyclaves rose once again, Grakmaw discovered a new source of food"
+  },
+  {
+   "summary": "Anowon kills Grakmaw with an ancient Kor potion that turns it to stone.",
+   "participants": [
+    "Anowon",
+    "Grakmaw"
+   ],
+   "location": "Jwar Isle",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Grakmaw was killed by Anowon who used a potion made by the ancient Kor which turned the hydra into stone."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anowon",
+   "relation": "killed",
+   "target": "Grakmaw",
+   "note": "With a Kor potion.",
+   "paragraph": 3,
+   "quote": "Grakmaw was killed by Anowon who used a potion made by the ancient Kor which turned the hydra into stone."
+  }
+ ],
+ "rejected": []
+}

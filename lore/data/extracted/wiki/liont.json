@@ -1,0 +1,93 @@
+{
+ "page": "wiki/liont",
+ "url": "https://mtg.wiki/page/Liont",
+ "title": "Liont",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Liont",
+   "type": "character",
+   "aliases": [],
+   "description": "Human smith and former werewolf of Kessig on Innistrad, who killed his family and was killed by Avacyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who answered Liont's call and killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cursemute",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Liont's werewolf nature was cured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose presence corrupted Avacyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad province where Liont lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Cursemute Liont was cured of his werewolf nature.",
+   "participants": [
+    "Liont",
+    "Cursemute"
+   ],
+   "location": "Kessig",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Liont’s werewolf nature was completely cured"
+  },
+  {
+   "summary": "When the Cursemute ended he turned into a werewolf and killed his whole family.",
+   "participants": [
+    "Liont"
+   ],
+   "location": "Kessig",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he uncontrollably turned into a werewolf and killed his whole family"
+  },
+  {
+   "summary": "Liont called for Avacyn in despair, and she killed him with a blast from her spear.",
+   "participants": [
+    "Liont",
+    "Avacyn"
+   ],
+   "location": "Kessig",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "In answer to his prayer, she shot a blast of white light from her spear, killing him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Avacyn",
+   "relation": "killed",
+   "target": "Liont",
+   "note": "Killed him at his prayer",
+   "paragraph": 1,
+   "quote": "she shot a blast of white light from her spear, killing him"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,81 @@
+{
+ "page": "wiki/kuro",
+ "url": "https://mtg.wiki/page/Kuro",
+ "title": "Kuro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:01Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kuro",
+   "type": "character",
+   "aliases": [],
+   "description": "Oni pitlord of Kamigawa active during the Kami War, who bargains eternal life for eternal service.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ink-Eyes",
+   "type": "character",
+   "aliases": [],
+   "description": "Nezumi taken by Kuro as a minion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muzan",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre taken by Kuro as a minion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Kuro was active.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kuro lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kuro offers bargains of eternal life for eternal service and takes many as minions, including Ink-Eyes and Muzan.",
+   "participants": [
+    "Kuro",
+    "Ink-Eyes",
+    "Muzan"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "In this manner, Kuro took many as his minions, including the nezumi Ink-Eyes and the ogre Muzan ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ink-Eyes",
+   "relation": "serves",
+   "target": "Kuro",
+   "note": "Taken as a minion.",
+   "paragraph": 2,
+   "quote": "Kuro took many as his minions, including the nezumi Ink-Eyes"
+  },
+  {
+   "source": "Muzan",
+   "relation": "serves",
+   "target": "Kuro",
+   "note": "Taken as a minion.",
+   "paragraph": 2,
+   "quote": "including the nezumi Ink-Eyes and the ogre Muzan ."
+  }
+ ],
+ "rejected": []
+}

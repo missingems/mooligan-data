@@ -1,0 +1,133 @@
+{
+ "page": "wiki/iwset",
+ "url": "https://mtg.wiki/page/Iwset",
+ "title": "Iwset",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Iwset",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state of the Dark Age on the western coast of Terisiare near the Lat-Nam Straits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where Iwset lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era during which Iwset was a city-state.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Peemel",
+   "type": "character",
+   "aliases": [
+    "Peemel"
+   ],
+   "description": "Ruler of Iwset at a certain point in the Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Digody",
+   "type": "character",
+   "aliases": [],
+   "description": "Advisor to Lord Peemel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apepei",
+   "type": "character",
+   "aliases": [],
+   "description": "Advisor to Peemel and later co-ruler of Iwset with Edara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edara",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruled Iwset with Apepei after the Iwset-Jehesic War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jehesic",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighbor city across the Lat-Nam Straits, rival of Iwset.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iwset-Jehesic War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Iwset and Jehesic.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Iwset was ruled by Lord Peemel, advised by Digody and Apepei.",
+   "participants": [
+    "Iwset",
+    "Lord Peemel",
+    "Digody",
+    "Apepei"
+   ],
+   "location": "Iwset",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Iwset was ruled by Lord Peemel , with the advisors Digody and Apepei counseling him"
+  },
+  {
+   "summary": "After the Iwset-Jehesic War, Iwset was ruled by Edara and Apepei without the city's sigil or true heir.",
+   "participants": [
+    "Iwset",
+    "Edara",
+    "Apepei",
+    "Iwset-Jehesic War"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After the Iwset-Jehesic War , Iwset was ruled by Edara and Apepei, although with neither the sigil of the city nor the true heir at their disposal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Peemel",
+   "relation": "leader_of",
+   "target": "Iwset",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Iwset was ruled by Lord Peemel"
+  },
+  {
+   "source": "Digody",
+   "relation": "serves",
+   "target": "Lord Peemel",
+   "note": "Advisor.",
+   "paragraph": 1,
+   "quote": "with the advisors Digody and Apepei counseling him"
+  },
+  {
+   "source": "Iwset",
+   "relation": "enemy",
+   "target": "Jehesic",
+   "note": "Long tense rivalry.",
+   "paragraph": 1,
+   "quote": "the Iwsetians had long been in a tense rivalry with their neighbor"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,117 @@
+{
+ "page": "wiki/vhati-il-dal",
+ "url": "https://mtg.wiki/page/Vhati_il-Dal",
+ "title": "Vhati il-Dal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vhati il-Dal",
+   "type": "character",
+   "aliases": [],
+   "description": "Ambitious second-in-command to Greven il-Vec on Rath, killed when Greven threw him overboard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [
+    "Greven"
+   ],
+   "description": "Brutal commander on Rath who boarded the Weatherlight and fought Gerrard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [
+    "Gerrard"
+   ],
+   "description": "Fought Greven and was thrown overboard from the Weatherlight but survived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Greven and Vhati served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Predator",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ship that Vhati was put in charge of.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Skyship that planeshifted to Rath and was boarded by Greven.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vhati was put in charge of Predator while Greven oversaw the boarding of the Weatherlight.",
+   "participants": [
+    "Vhati il-Dal",
+    "Greven il-Vec",
+    "Predator",
+    "Weatherlight"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was placed in charge of Predator while Greven personally oversaw the boarding of Weatherlight"
+  },
+  {
+   "summary": "Vhati fired a cannon at Greven, missed, and struck the Weatherlight's deck, throwing Gerrard overboard.",
+   "participants": [
+    "Vhati il-Dal",
+    "Greven il-Vec",
+    "Gerrard Capashen",
+    "Weatherlight"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "decided to fire one of Predator ’s cannons at his commander"
+  },
+  {
+   "summary": "Greven threw Vhati overboard in retaliation and Vhati did not survive the fall.",
+   "participants": [
+    "Greven il-Vec",
+    "Vhati il-Dal"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Greven immediately stalked back to Predator and retaliated by throwing the grovelling Vhati overboard as well."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vhati il-Dal",
+   "relation": "serves",
+   "target": "Greven il-Vec",
+   "note": "His ambitious second-in-command.",
+   "paragraph": 0,
+   "quote": "Vhati il-Dal was Greven il -Vec 's ambitious second-in-command on Rath"
+  },
+  {
+   "source": "Greven il-Vec",
+   "relation": "killed",
+   "target": "Vhati il-Dal",
+   "note": "Threw him overboard.",
+   "paragraph": 1,
+   "quote": "Unlike Gerrard, Vhati did not survive the fall."
+  }
+ ],
+ "rejected": []
+}

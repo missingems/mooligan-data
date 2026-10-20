@@ -1,0 +1,116 @@
+{
+ "page": "wiki/desert-nomads",
+ "url": "https://mtg.wiki/page/Desert_Nomads",
+ "title": "Desert Nomads",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Desert Nomads of Rabiah",
+   "type": "faction",
+   "aliases": [
+    "Desert Nomads"
+   ],
+   "description": "Wanderers of the dunes of Rabiah, experts at surviving the deadly desert climate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rabiah",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the desert nomads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Taysir",
+   "type": "character",
+   "aliases": [
+    "Nomad Taysir",
+    "Taysir"
+   ],
+   "description": "Most famous of the nomads and a future planeswalker who lived in the Karun Desert and left his version of Rabiah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apprentice Taysir",
+   "type": "character",
+   "aliases": [
+    "Black-Green Apprentice Taysir"
+   ],
+   "description": "The Black-Green Apprentice, soul brother of Red Taysir, who gave him the Ring of Maruf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nailah",
+   "type": "character",
+   "aliases": [
+    "Sorceress Queen Nailah"
+   ],
+   "description": "Sorceress Queen encountered by Taysir in the Karun Desert.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karun Desert",
+   "type": "location",
+   "aliases": [],
+   "description": "Desert where the Red Taysir lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ring of Maruf",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ring that Taysir used to leave his version of Rabiah.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Karun Desert, Red Taysir encountered his soul brother Apprentice Taysir and Sorceress Queen Nailah.",
+   "participants": [
+    "Red Taysir",
+    "Apprentice Taysir",
+    "Nailah"
+   ],
+   "location": "Karun Desert",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he encountered his soul brother, the Black-Green Apprentice Taysir, and the Sorceress Queen Nailah"
+  },
+  {
+   "summary": "Apprentice Taysir gave Nomad Taysir the Ring of Maruf, which he used to leave his version of Rabiah forever.",
+   "participants": [
+    "Apprentice Taysir",
+    "Red Taysir",
+    "Ring of Maruf"
+   ],
+   "location": "Rabiah",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Apprentice Taysir gave Nomad Taysir the Ring of Maruf , which he used to leave his version of Rabiah behind forever."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Red Taysir",
+   "relation": "member_of",
+   "target": "Desert Nomads of Rabiah",
+   "note": "Its most famous member.",
+   "paragraph": 1,
+   "quote": "The most famous member of these nomads was the Red Taysir"
+  },
+  {
+   "source": "Red Taysir",
+   "relation": "family",
+   "target": "Apprentice Taysir",
+   "note": "Called his soul brother.",
+   "paragraph": 1,
+   "quote": "he encountered his soul brother, the Black-Green Apprentice Taysir"
+  }
+ ],
+ "rejected": []
+}

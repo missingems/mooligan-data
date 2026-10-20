@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-20T02:35:04Z",
+ "extracted_at": "2026-10-20T02:36:39Z",
  "storyline": "",
  "entities": [
   {
@@ -45,6 +45,13 @@
    "aliases": [],
    "description": "Serpent race that resurrected Kura in her original form.",
    "presence": "mentioned"
+  },
+  {
+   "name": "Jugan",
+   "type": "character",
+   "aliases": [],
+   "description": "Former protector of the Jukai Forest, whom Kura reincarnates.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -76,22 +83,19 @@
   {
    "source": "Kura",
    "relation": "other",
+   "target": "Jugan",
+   "note": "Kura is the reincarnation of Jugan",
+   "paragraph": 0,
+   "quote": "She is the reincarnation of Jugan"
+  },
+  {
+   "source": "Kura",
+   "relation": "other",
    "target": "Jukai Forest",
    "note": "guardian of the forest",
    "paragraph": 1,
    "quote": "continues to act as guardian of Jukai Forest"
   }
  ],
- "rejected": [
-  {
-   "kind": "relation",
-   "reason": "unlisted entity",
-   "source": "Kura",
-   "relation": "other",
-   "target": "Jugan",
-   "note": "Kura is the reincarnation of Jugan",
-   "paragraph": 0,
-   "quote": "She is the reincarnation of Jugan"
-  }
- ]
+ "rejected": []
 }

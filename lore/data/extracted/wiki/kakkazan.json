@@ -1,0 +1,91 @@
+{
+ "page": "wiki/kakkazan",
+ "url": "https://mtg.wiki/page/Kakkazan",
+ "title": "Kakkazan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kakkazan",
+   "type": "character",
+   "aliases": [],
+   "description": "A spirit (kami) of Kamigawa shaped like an upright crocodile with ruby scales and eight arms, who controlled three other kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ryusaki Kumano",
+   "type": "character",
+   "aliases": [],
+   "description": "A yamabushi whose plateau Kakkazan climbed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kakkazan was a spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami of Ash",
+   "type": "creature",
+   "aliases": [],
+   "description": "A three-legged spider-like kami supporting the body of a grey old man, controlled by Kakkazan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami of Searing Wind",
+   "type": "creature",
+   "aliases": [
+    "Searing Wind"
+   ],
+   "description": "A three-legged spider-like kami supporting a lidless orange eye, controlled by Kakkazan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami of Black Glass",
+   "type": "creature",
+   "aliases": [
+    "Black Glass"
+   ],
+   "description": "A three-legged spider-like kami supporting a featureless head, controlled by Kakkazan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kakkazan climbed Ryusaki Kumano's plateau in search of the yamabushi's rumored secret but was defeated.",
+   "participants": [
+    "Kakkazan",
+    "Ryusaki Kumano"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kakkazan climbed Ryusaki Kumano 's plateau in search of the yamabushi 's rumored secret but was defeated."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kakkazan",
+   "relation": "leader_of",
+   "target": "Kami of Ash",
+   "note": "Kakkazan controlled it.",
+   "paragraph": 1,
+   "quote": "Kakkazan also controlled three other kami , the Kami of Ash, Searing Wind, and Black Glass."
+  },
+  {
+   "source": "Ryusaki Kumano",
+   "relation": "enemy",
+   "target": "Kakkazan",
+   "note": "Kakkazan sought his secret and was defeated.",
+   "paragraph": 2,
+   "quote": "Kakkazan climbed Ryusaki Kumano 's plateau in search of the yamabushi 's rumored secret but was defeated."
+  }
+ ],
+ "rejected": []
+}

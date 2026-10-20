@@ -6,7 +6,7 @@
  "model": "claude-sonnet-5-5 (Claude Code session)",
  "prompt_version": 1,
  "effort": null,
- "extracted_at": "2026-10-20T02:36:32Z",
+ "extracted_at": "2026-10-20T02:36:40Z",
  "storyline": "Ravnica",
  "entities": [
   {
@@ -75,6 +75,20 @@
    "aliases": [],
    "description": "Parun of the Simic Combine.",
    "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild founded by Azor I.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild founded by Niv-Mizzet.",
+   "presence": "mentioned"
   }
  ],
  "events": [
@@ -89,11 +103,8 @@
    "quote": "they became the signatories of the original Guildpact"
   }
  ],
- "relations": [],
- "rejected": [
+ "relations": [
   {
-   "kind": "relation",
-   "reason": "unlisted entity",
    "source": "Azor I",
    "relation": "leader_of",
    "target": "Azorius Senate",
@@ -102,8 +113,6 @@
    "quote": "Azorius Senate : Azor I"
   },
   {
-   "kind": "relation",
-   "reason": "unlisted entity",
    "source": "Niv-Mizzet",
    "relation": "leader_of",
    "target": "Izzet League",
@@ -111,5 +120,6 @@
    "paragraph": 5,
    "quote": "The Izzet League : Niv-Mizzet"
   }
- ]
+ ],
+ "rejected": []
 }

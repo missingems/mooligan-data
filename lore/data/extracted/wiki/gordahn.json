@@ -1,0 +1,108 @@
+{
+ "page": "wiki/gordahn",
+ "url": "https://mtg.wiki/page/Gordahn",
+ "title": "Gordahn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gordahn",
+   "type": "location",
+   "aliases": [],
+   "description": "A small village on Mirrankkar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrankkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Gordahn lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mezlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who arrived on Mirrankkar, defeated Jehadt and was named Gordahn's champion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taishiar",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrived on Mirrankkar with Mezlok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minoch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mezlok's grandfather, whose name the chief knew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jehadt",
+   "type": "character",
+   "aliases": [],
+   "description": "Gordahn's warder who claimed the right to represent the village and lost to Mezlok.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mezlok and Taishiar arrive on Mirrankkar and a boy leads them to Gordahn, where the chief welcomes them.",
+   "participants": [
+    "Mezlok",
+    "Taishiar"
+   ],
+   "location": "Gordahn",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He led them back to his village of Gordahn"
+  },
+  {
+   "summary": "Jehadt claims the right to represent Gordahn and duels Mezlok, who easily wins.",
+   "participants": [
+    "Mezlok",
+    "Jehadt"
+   ],
+   "location": "Gordahn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mezlok and Jehadt dueled, with Mezlok easily defeating his challenger."
+  },
+  {
+   "summary": "Mezlok is announced as Gordahn's champion in the wizards' duel.",
+   "participants": [
+    "Mezlok"
+   ],
+   "location": "Gordahn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mezlok was then announced to be Gordahn's champion in the wizards' duel."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mezlok",
+   "relation": "family",
+   "target": "Minoch",
+   "note": "Minoch was his grandfather.",
+   "paragraph": 1,
+   "quote": "who knew of Mezlok and even the name of his grandfather, Minoch ."
+  },
+  {
+   "source": "Gordahn",
+   "relation": "located_in",
+   "target": "Mirrankkar",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Gordahn is a small village on Mirrankkar ."
+  }
+ ],
+ "rejected": []
+}

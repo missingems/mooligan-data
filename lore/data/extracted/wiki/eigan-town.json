@@ -1,0 +1,80 @@
+{
+ "page": "wiki/eigan-town",
+ "url": "https://mtg.wiki/page/Eigan_Town",
+ "title": "Eigan Town",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:39Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Eigan Town",
+   "type": "location",
+   "aliases": [
+    "Eternal Rock Town"
+   ],
+   "description": "Town built around the castle Eiganjo on Kamigawa, in the Araba; protected during the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle around which Eigan Town was built.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Araba",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined part of the Towabara Plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takeshi Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Daimyo who protected Eigan Town.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Eigan Town was protected.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Eigan Town.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War, Daimyo Takeshi Konda protects Eigan Town; guards venture out only to fight the kami.",
+   "participants": [
+    "Takeshi Konda"
+   ],
+   "location": "Eigan Town",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "His guards would remain inside Eigan Town"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Takeshi Konda",
+   "relation": "leader_of",
+   "target": "Eigan Town",
+   "note": "The town was under his protection.",
+   "paragraph": 1,
+   "quote": "Eigan Town was under the protection of the Daimyo"
+  }
+ ],
+ "rejected": []
+}
