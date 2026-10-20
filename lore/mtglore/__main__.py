@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,era-ingest,build,publish} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,era-ingest,build,publish,app} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall", "era-ingest", "build", "publish"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall", "era-ingest", "build", "publish", "app"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -24,6 +24,13 @@ def main() -> int:
     parser.add_argument("--wait", type=float, default=float(os.environ.get("LORE_WAIT_SECONDS", "18000")), help="extract: seconds to wait for the batch")
     args = parser.parse_args()
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+
+    if args.step == "app":
+        from .app import export
+
+        out = args.out if args.out != parser.get_default("out") else Path(__file__).resolve().parent.parent / "site" / "dist" / "app"
+        logging.info("App feed: %s", json.dumps(export(args.data, out)))
+        return 0
 
     if args.step == "publish":
         from .publish import publish

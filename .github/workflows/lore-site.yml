@@ -40,6 +40,7 @@ jobs:
           cache-dependency-path: lore/site/package-lock.json
       - run: pip install -r requirements.txt
       - run: python -m mtglore publish
+      - run: python -m mtglore app
       - working-directory: lore/site
         run: npm ci && npm test && npm run build
       - name: Upload to R2
@@ -54,6 +55,11 @@ jobs:
           # The page and script change with every build; the data files are re-sent only when they changed.
           aws s3 sync dist/data s3://mtg-meta-data/lore/data --endpoint-url "$R2_ENDPOINT" --delete --only-show-errors \
             --content-type application/json --cache-control "public, max-age=3600"
+          # The app's feed: lore/app/ (see docs/data-format.md).
+          aws s3 sync dist/app s3://mtg-meta-data/lore/app --endpoint-url "$R2_ENDPOINT" --delete --only-show-errors \
+            --exclude "*" --include "*.json" --exclude "report.json" --content-type application/json --cache-control "public, max-age=3600"
+          aws s3 sync dist/app s3://mtg-meta-data/lore/app --endpoint-url "$R2_ENDPOINT" --delete --only-show-errors \
+            --exclude "*" --include "*.md" --content-type "text/markdown; charset=utf-8" --cache-control "public, max-age=3600"
           for file in index.html app.js style.css; do
             aws s3 cp "dist/$file" "s3://mtg-meta-data/lore/$file" --endpoint-url "$R2_ENDPOINT" --only-show-errors --cache-control "public, max-age=300"
           done

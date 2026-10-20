@@ -20,6 +20,10 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `locator/{place}.json` | Upcoming in-store events near one place, from Wizards' locator | `max-age=300` |
 | `locator/index.json` | The places published, with their coordinates | `max-age=300` |
 | `premier/schedule.json` | Premier play: Pro Tours, Regional Championships, Spotlight Series, Worlds, CommandFests | `max-age=300` |
+| `lore/app/cards.json` | Each card (by Scryfall `oracle_id`) to the story characters, planes and places it depicts | `max-age=3600` |
+| `lore/app/sets.json` | Each set's key characters and places, by Scryfall set code | `max-age=3600` |
+| `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
+| `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
 | `state/*.json` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, EDHREC check times. Apps can ignore them | `no-cache` |
 
@@ -540,3 +544,92 @@ Wizards' premier play calendar, read from magic.gg's schedule page each run: eve
 - **`url`** is where magic.gg sends readers, usually an announcement article or the organiser's site.
 
 Regional Championship Qualifiers (RCQs) are store events and are not in this calendar: they appear in `locator/{place}.json` with `rules_level` of `COMPETITIVE`, and in the tournament feed's `events` with `kind` of `rcq` once results are posted.
+
+## Lore: `lore/app/…`
+
+The Magic story, keyed to cards and sets, for "View lore" on a card and key characters on a set. Built by `python -m mtglore app` in `lore/` from the lore index (see [`lore/README.md`](../lore/README.md)) and Scryfall's card catalog, and uploaded by the `Lore site` workflow. The same index drives the web preview at `lore/index.html`. Ids are the index's entity ids (`jace-beleren`, `dominaria`), stable across rebuilds unless an entity is renamed.
+
+### `lore/app/cards.json`
+
+```json
+{"schema": 1, "generated_at": "2026-10-20T01:43:18Z",
+ "cards": {"00037840-6089-42ec-8c5c-281f9f474504": ["nissa-revane"]}}
+```
+
+A card's Scryfall `oracle_id` to the entities it depicts, usually one. A card missing from the map has no lore page; don't show "View lore". Only confident matches are listed:
+
+- legendary creatures and planeswalkers, when the card's name (or the part before its comma, or a planeswalker's type) agrees word for word with the entity's own name: "Jace, the Mind Sculptor" and "Jace, Wielder of Mysteries" → `jace-beleren`, "Dragonlord Kolaghan" → `kolaghan`;
+- lands named for a place or plane: "Kor Haven" → `kor-haven`;
+- planes (Planechase): "Llanowar" (`Plane — Dominaria`) → `dominaria`, `llanowar`;
+- legendary artifacts named for a story artifact: "Weatherlight" → `weatherlight`.
+
+Two entities sharing a name about equally, or a card printed only in Universes Beyond and other crossover sets, give no match.
+
+### `lore/app/sets.json`
+
+```json
+{"schema": 1, "generated_at": "…",
+ "sets": {"dom": [{"id": "liliana-vess", "name": "Liliana Vess", "type": "planeswalker", "role": "main", "mentions": 122}, …]}}
+```
+
+Each story set (expansions, core sets, draft innovation; not reprint editions or crossovers), by Scryfall set code, to at most 12 entities, most important first. `type` is `character`, `planeswalker`, `plane`, `location`, `faction` or `artifact`. `role` is `main` for the four characters the set is most about and its leading place, else `supporting`. `mentions` counts the facts linking the entity to the set. A fact belongs to a set when it comes from the set's flavor text, from a wiki section tagged with the set, from a story whose storyline is named for the set, or else from a story published within about six weeks before to four months after the set's release.
+
+### `lore/app/entities.json`
+
+```json
+{"schema": 1, "generated_at": "…", "entities": {"teferi": {
+  "name": "Teferi", "type": "planeswalker",
+  "summary": "Teferi is a centuries-old time-magic mage and planeswalker of Zhalfir, …",
+  "portrait_oracle_id": "5f0fa785-37ab-46a8-9ec0-6f8b29576d93",
+  "sets": ["mir", "vis", "usg", "dom", "war", …]}}}
+```
+
+Every entity with a page: those with a written bio, those a card depicts, and those key to a set. `portrait_oracle_id` is the card that shows them best (one named exactly for them, else their latest planeswalker card, else their latest card), or `null`. `sets` are the story sets they're key to or first printed in, by release date.
+
+### `lore/app/entities/{id}.md`
+
+One entity's page in [playgraph](https://github.com/missingems/playgraph) primer markdown (`feat/primers-api`): front matter, `##` sections, `[[Card Name]]` links and a `:::cards` block. Every file parses with playgraph's `exportPrimer` without diagnostics.
+
+```markdown
+---
+id: teferi
+name: Teferi
+type: planeswalker
+title: Teferi
+planes: [Dominaria, Zhalfir]
+updated: 2026-10-20
+---
+
+## Who they are
+
+Teferi is a centuries-old time-magic mage … ([story](https://magic.wizards.com/…#:~:text=…))
+
+## Story
+
+### Mirage
+
+- Teferi phases out Zhalfir … ([MTG Wiki](https://mtg.wiki/page/Teferi#:~:text=…))
+
+## Relationships
+
+- Teferi mentor of Jhoira: … ([story](…))
+
+## Cards
+
+:::cards
+[[Teferi, Hero of Dominaria]] Dominaria, 2018
+:::
+
+## Sources
+
+- "…". Magic Story, Wizards of the Coast, 10 Apr 2018.
+
+From MTG Wiki, by MTG Wiki contributors under CC BY-NC-SA 4.0 (…):
+
+- "Teferi", section "Biography". MTG Wiki contributors, CC BY-NC-SA 4.0.
+```
+
+- `## Who they are` (`## What it is` for places, factions and artifacts): the written bio and where things stand, or the index's description.
+- `## Story`: events in story order under one `###` per set (else storyline, era or year); a long life keeps its turning points, at most 80 lines.
+- `## Relationships`: at most 30, official sources first.
+- Every fact ends with a link to the exact line it rests on. The link says `story` (Magic Story, the old wizards.com columns), `card` (flavor text) or `MTG Wiki` (fan-written). Keep wiki-sourced lines credited: `## Sources` lists the MTG Wiki pages under their CC BY-NC-SA 4.0 credit, apart from the official ones.

@@ -91,6 +91,10 @@ def test_build_joins_names_across_pages(tmp_path):
     assert names["the mind sculptor"] == ["jace-beleren"]
     storylines = json.loads((tmp_path / "index" / "storylines.json").read_text())
     assert storylines[0]["name"] == "March of the Machine"
+    # A relation keeps who it is from; where the fact is from is its citation's.
+    [relation] = jace["relations"]
+    assert (relation["source"], relation["relation"], relation["target"]) == ("vraska", "romantic", "jace-beleren")
+    assert relation["citation"]["source"] == "wizards"
 
 
 def test_an_alias_joins_two_named_entities_only_when_it_shortens_the_name():

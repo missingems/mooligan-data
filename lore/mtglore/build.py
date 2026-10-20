@@ -298,12 +298,13 @@ def build(directory: Path) -> dict:
                     continue
                 reprinted.add(key)
             relations.append({
+                # common first: its "source" (where the fact is from) must not replace the relation's own source.
+                **common,
                 "id": f"{slug}-r{number}",
                 "source": resolve(relation["source"]),
                 "relation": relation["relation"],
                 "target": resolve(relation["target"]),
                 "note": relation["note"],
-                **common,
                 "paragraph": relation["paragraph"],
                 "quote": relation["quote"],
                 "link": link(relation["paragraph"], relation["quote"]),

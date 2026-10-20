@@ -10,6 +10,8 @@ python -m mtglore prompt stories/<slug>          # what the batch would send Cla
 python -m mtglore ingest stories/<slug> raw.json # check and save an extraction made some other way
 python -m mtglore recheck                        # run every saved extraction through the quote check again
 python -m mtglore publish                        # the site's data → site/dist/data
+python -m mtglore scrape-scryfall                # Scryfall's card catalog → data/scryfall (oracle ids, printings, sets)
+python -m mtglore app                            # the app's feed → site/dist/app (see docs/data-format.md, LORE_HANDOFF.md)
 ```
 
 The first full extraction was made without the API: Claude Code sub-agents (Claude Sonnet 5.5) read each page with `prompt` and wrote its JSON, which `ingest` ran through the same quote check; their files say so under `model`. `recheck` runs every saved extraction through the check again, as after the check is made stricter.
