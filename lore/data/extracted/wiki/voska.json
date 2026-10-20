@@ -1,0 +1,119 @@
+{
+ "page": "wiki/voska",
+ "url": "https://mtg.wiki/page/Voska",
+ "title": "Voska",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Voska",
+   "type": "character",
+   "aliases": [],
+   "description": "Red mage of the Dark Age on Dominaria who taught Jodah his first magic and was killed by the Church of Tal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Voska's apprentice, who received the Reflecting Mirror and fled the Church of Tal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reflecting Mirror",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item Voska gave Jodah that let him keep his sanity during his immortal lifespan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church that arrested Voska and later tried to lure Jodah back with a rumor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Primata Delphine",
+   "type": "character",
+   "aliases": [],
+   "description": "Church of Tal leader whose grip Jodah escaped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sima",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured by the Church while investigating Voska's disappearance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Voska lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Church of Tal arrested Voska, he staged an escape with Jodah, letting Jodah flee Primata Delphine.",
+   "participants": [
+    "Voska",
+    "Jodah",
+    "Church of Tal",
+    "Primata Delphine"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Voska staged an escape with Jodah, allowing his apprentice to flee the grip of Primata Delphine"
+  },
+  {
+   "summary": "Voska was found and shot full of crossbow bolts.",
+   "participants": [
+    "Voska"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Voska himself was found and shot full of crossbow bolts."
+  },
+  {
+   "summary": "The Church spread a rumor that Voska survived to lure Jodah back, and captured Sima instead.",
+   "participants": [
+    "Church of Tal",
+    "Jodah",
+    "Sima",
+    "Voska"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They instead captured Sima trying to investigate the matter of Voska's disappearance."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Voska",
+   "relation": "mentor_of",
+   "target": "Jodah",
+   "note": "Voska taught Jodah the first skills of magic.",
+   "paragraph": 1,
+   "quote": "Voska had a major influence in teaching the first skills of magic to Jodah"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Voska",
+   "note": "The Church arrested Voska.",
+   "paragraph": 1,
+   "quote": "After being arrested by the Church of Tal"
+  }
+ ],
+ "rejected": []
+}

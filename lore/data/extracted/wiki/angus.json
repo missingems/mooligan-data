@@ -1,0 +1,124 @@
+{
+ "page": "wiki/angus",
+ "url": "https://mtg.wiki/page/Angus",
+ "title": "Angus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Angus",
+   "type": "character",
+   "aliases": [
+    "Brother Angus"
+   ],
+   "description": "Holy man who witnessed an attack on Serra, carried off her dying body, and built a temple that became the Cathedral of Serra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who was attacked on the Plains of Sursi and blessed the land with her passing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Unnamed planeswalker",
+   "type": "character",
+   "aliases": [],
+   "description": "Jealous planeswalker who attacked Serra on the Plains of Sursi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Plains of Sursi",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Serra was attacked and died, now a sanctuary.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cathedral of Serra",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple built by Angus in Serra's honor, where Serra Angels sometimes appear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Song of All",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Work whose cantos 1001 to 1020, Brother Angus's Lament, were added by Angus.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Angus distracted Serra's assailant and ran off with her dying body.",
+   "participants": [
+    "Angus",
+    "Serra",
+    "Unnamed planeswalker"
+   ],
+   "location": "Plains of Sursi",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He distracted Serra's planeswalker assailant and ran off with Serra's dying body."
+  },
+  {
+   "summary": "Serra blessed the land with her passing as a sanctuary against dark forces.",
+   "participants": [
+    "Serra"
+   ],
+   "location": "Plains of Sursi",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Serra blessed the land with her passing"
+  },
+  {
+   "summary": "Angus comforted Serra in her last days and built a temple in her honor, the origin of the Cathedral of Serra.",
+   "participants": [
+    "Angus",
+    "Serra",
+    "Cathedral of Serra"
+   ],
+   "location": "Cathedral of Serra",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Angus made her comfortable in her last days and built a temple in her honor"
+  },
+  {
+   "summary": "Angus added cantos to the Song of All after Serra imparted her wisdom to him.",
+   "participants": [
+    "Angus",
+    "Serra",
+    "Song of All"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He added them after Serra had imparted her wisdom to him before dying."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Unnamed planeswalker",
+   "relation": "enemy",
+   "target": "Serra",
+   "note": "A jealous planeswalker attacked Serra.",
+   "paragraph": 0,
+   "quote": "a jealous, unnamed planeswalker attack Serra on the Plains of Sursi"
+  },
+  {
+   "source": "Angus",
+   "relation": "created",
+   "target": "Cathedral of Serra",
+   "note": "He built the temple that became the Cathedral.",
+   "paragraph": 1,
+   "quote": "built a temple in her honor: the origins of the Cathedral of Serra"
+  }
+ ],
+ "rejected": []
+}

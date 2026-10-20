@@ -1,0 +1,89 @@
+{
+ "page": "wiki/shanid",
+ "url": "https://mtg.wiki/page/Shanid",
+ "title": "Shanid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shanid",
+   "type": "character",
+   "aliases": [
+    "knight-ambassador of New Argive"
+   ],
+   "description": "Human knight and knight-ambassador of New Argive, paranoid and ruthless in hunting Phyrexian sleeper agents in the Balduvian Steppe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stenn",
+   "type": "character",
+   "aliases": [],
+   "description": "Man who dispatched Shanid to uncover Phyrexian sleeper agents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "The homeland Shanid serves as knight-ambassador.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvian Steppe",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Shanid searches for Phyrexian sleeper agents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose infiltrators Shanid hunts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Shanid is from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Stenn dispatches Shanid to uncover Phyrexian sleeper agents in the Balduvian Steppe; Shanid leaves a trail of burned villages.",
+   "participants": [
+    "Shanid",
+    "Stenn"
+   ],
+   "location": "Balduvian Steppe",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "has left a trail of burned villages behind him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shanid",
+   "relation": "serves",
+   "target": "Stenn",
+   "note": "Shanid is dispatched by Stenn, the man he answers to.",
+   "paragraph": 1,
+   "quote": "Dispatched by Stenn to uncover signs of Phyrexian sleeper agents"
+  },
+  {
+   "source": "Shanid",
+   "relation": "member_of",
+   "target": "New Argive",
+   "note": "Shanid is its knight-ambassador.",
+   "paragraph": 1,
+   "quote": "knight-ambassador of New Argive"
+  }
+ ],
+ "rejected": []
+}

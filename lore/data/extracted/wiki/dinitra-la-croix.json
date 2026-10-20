@@ -1,0 +1,98 @@
+{
+ "page": "wiki/dinitra-la-croix",
+ "url": "https://mtg.wiki/page/Dinitra_La_Croix",
+ "title": "Dinitra La Croix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dinitra La Croix",
+   "type": "character",
+   "aliases": [],
+   "description": "A sorceress who fought in the Great Magus War on Antausia and conquered Beldingard for its mana pools.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Magus War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war fought on Antausia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Antausia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Great Magus War was fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beldingard",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm with pure magical energy pools, conquered and held by Dinitra for nearly 80 years.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ignatius Firestorm",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader who challenged Dinitra with an army that harnessed the energies of Beldingard's pools.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valdusian Tomer",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Ignatius Firestorm.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dinitra learns of the pure magical energy pools of Beldingard and conquers the realm to access its mana.",
+   "participants": [
+    "Dinitra La Croix"
+   ],
+   "location": "Beldingard",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She conquered the realm so she would have direct access to its mana pools and held the area for nearly 80 years."
+  },
+  {
+   "summary": "Ignatius Firestorm and Valdusian Tomer challenge Dinitra with an army that harnesses the same energies; she watches in horror.",
+   "participants": [
+    "Ignatius Firestorm",
+    "Valdusian Tomer",
+    "Dinitra La Croix"
+   ],
+   "location": "Beldingard",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ignatius Firestorm and his apprentice Valdusian Tomer challenged her with an army"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Valdusian Tomer",
+   "relation": "serves",
+   "target": "Ignatius Firestorm",
+   "note": "Tomer is Ignatius's apprentice.",
+   "paragraph": 2,
+   "quote": "Ignatius Firestorm and his apprentice Valdusian Tomer"
+  },
+  {
+   "source": "Ignatius Firestorm",
+   "relation": "enemy",
+   "target": "Dinitra La Croix",
+   "note": "Ignatius challenged her with an army.",
+   "paragraph": 2,
+   "quote": "challenged her with an army"
+  }
+ ],
+ "rejected": []
+}

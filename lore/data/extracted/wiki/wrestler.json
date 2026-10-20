@@ -1,0 +1,81 @@
+{
+ "page": "wiki/wrestler",
+ "url": "https://mtg.wiki/page/Wrestler",
+ "title": "Wrestler",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Slaying Mantis",
+   "type": "creature",
+   "aliases": [],
+   "description": "A humanoid mantis wearing a Lucha libre style mask and boots, the Unstable wrestler card.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cogwork Wrestlers",
+   "type": "faction",
+   "aliases": [
+    "cogwork wrestler"
+   ],
+   "description": "Gnomes who wrestle within the Core of Paradise on Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brog",
+   "type": "character",
+   "aliases": [],
+   "description": "A Brazen Coalition orc defeated in a sparring match by a Cogwork Wrestler.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brazen Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction on Ixalan of which the orc Brog is a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where gnomes wrestle in the Core of Paradise.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Core of Paradise",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Ixalan where gnomes who wrestle live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Cogwork Wrestler defeats the orc Brog in a sparring match despite being half his size.",
+   "participants": [
+    "Cogwork Wrestlers",
+    "Brog"
+   ],
+   "location": "Core of Paradise",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "One defeated a Brazen Coalition orc named Brog in a sparing match despite being half his size"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brog",
+   "relation": "member_of",
+   "target": "Brazen Coalition",
+   "note": "Brog is a Brazen Coalition orc.",
+   "paragraph": 1,
+   "quote": "a Brazen Coalition orc named Brog"
+  }
+ ],
+ "rejected": []
+}

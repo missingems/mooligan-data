@@ -1,0 +1,68 @@
+{
+ "page": "wiki/phoebe",
+ "url": "https://mtg.wiki/page/Phoebe",
+ "title": "Phoebe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:38:10Z",
+ "storyline": "Unstable",
+ "entities": [
+  {
+   "name": "Phoebe",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary human spy from Bablovia, self-proclaimed head of the Agents of S.N.E.A.K., who controls mechanical arms and smoky tendrils.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agents of S.N.E.A.K.",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization led by whoever possesses the Golden Ruler.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golden Ruler",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item whose holder becomes the organization's official leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "X",
+   "type": "character",
+   "aliases": [],
+   "description": "Shadowy figure paid by different sources to steal the Golden Ruler.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bablovia",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Phoebe is from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Phoebe",
+   "relation": "leader_of",
+   "target": "Agents of S.N.E.A.K.",
+   "note": "Self-proclaimed head of the organization.",
+   "paragraph": 1,
+   "quote": "the self-proclaimed head of the Agents of S.N.E.A.K. ."
+  },
+  {
+   "source": "X",
+   "relation": "enemy",
+   "target": "Phoebe",
+   "note": "X is paid to steal the Golden Ruler, causing leadership changes.",
+   "paragraph": 1,
+   "quote": "Most leadership changes are attributed to a shadowy figure known only as X who is constantly paid by different sources to steal the Golden Ruler."
+  }
+ ],
+ "rejected": []
+}
