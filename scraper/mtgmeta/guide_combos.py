@@ -141,6 +141,9 @@ def main(argv: Sequence[str], find_combos: Callable[[dict], List[dict]] = find) 
         if not guide:
             missing += 1
             continue
+        if guide.get("generator"):
+            log.info("Combos %s: built from data, which holds its own combos", slug)
+            continue
         enriched = with_combos(guide, find_combos)
         if "combos" not in enriched:
             failed += 1

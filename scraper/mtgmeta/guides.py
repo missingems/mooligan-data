@@ -50,7 +50,6 @@ MIN_SAMPLE = 30
 MIN_BRACKET_SHARE = 0.10
 MAX_STYLE_CARDS = 60
 MAX_BRACKET_CARDS = 30
-MAX_COMBOS = 30
 SIGNATURE_CARDS = 3
 REFRESH_DAYS = 7
 # Spellbook reads at most 600 cards besides the commanders.
@@ -352,7 +351,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
         combos = [combo for combo in pool.combos if combo["id"] in combo_ids]
         used |= combo_ids
         styles.append({
-            "id": card_slug(theme["name"]),
+            "id": theme["slug"] or card_slug(theme["name"]),
             "name": theme["name"],
             "summary": guide_text.style_summary(
                 page["name"], theme["name"], theme["decks"], base.decks, levels, most_played(split, levels),
@@ -387,7 +386,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
         "url": page.get("url"),
         "styles": styles,
         "brackets": brackets,
-        "combos": [combo for combo in pool.combos if combo["id"] in used][:MAX_COMBOS],
+        "combos": [combo for combo in pool.combos if combo["id"] in used],
     }
 
 

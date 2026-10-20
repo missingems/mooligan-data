@@ -288,6 +288,26 @@ def test_a_run_builds_the_never_built_first_and_leaves_the_rest_for_later(tmp_pa
     assert result.written == ["edh/commanders/atraxa-grand-unifier/guide.json"] and result.deferred == [SLUG]
 
 
+def test_style_ids_are_edhrecs_theme_slugs_so_counters_themes_stay_apart(tmp_path):
+    themes = [{"slug": "plus-1-plus-1-counters", "name": "+1/+1 Counters", "decks": 400}, {"slug": "minus-1-minus-1-counters", "name": "-1/-1 Counters", "decks": 300}]
+    setup(tmp_path, published(themes=themes))
+    pages = {**PAGES, f"{EDHREC}/{SLUG}/plus-1-plus-1-counters.json": PAGES[f"{EDHREC}/{SLUG}/infect.json"],
+             f"{EDHREC}/{SLUG}/minus-1-minus-1-counters.json": PAGES[f"{EDHREC}/{SLUG}/infect.json"]}
+
+    build(tmp_path, fetch=Fetch(pages))
+
+    assert [(style["id"], style["name"]) for style in guide(tmp_path)["styles"]] == [
+        ("plus-1-plus-1-counters", "+1/+1 Counters"), ("minus-1-minus-1-counters", "-1/-1 Counters")]
+
+
+def test_every_combo_a_deck_names_is_in_the_guide(tmp_path):
+    build(tmp_path)
+
+    written = guide(tmp_path)
+    ids = {combo["id"] for combo in written["combos"]}
+    assert {each for style in written["styles"] for deck in style["lists"] for each in deck["combos"]} == ids
+
+
 def test_a_commander_spellbook_cannot_read_is_not_written(tmp_path):
     result = build(tmp_path, spellbook=Spellbook(fail=True))
 
