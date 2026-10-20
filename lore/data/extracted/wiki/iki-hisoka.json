@@ -1,0 +1,180 @@
+{
+ "page": "wiki/iki-hisoka",
+ "url": "https://mtg.wiki/page/Iki_Hisoka",
+ "title": "Iki Hisoka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:45:27Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Iki Hisoka",
+   "type": "character",
+   "aliases": [
+    "Sensei Iki Hisoka",
+    "Hisoka"
+   ],
+   "description": "Sensei and headmaster of the Minamo Academy on Kamigawa, killed by Hidetsugu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "School headed by Hisoka, mostly destroyed by Hidetsugu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre shaman who destroyed most of Minamo and killed Hisoka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kobo",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Hidetsugu killed by Choryu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Choryu",
+   "type": "character",
+   "aliases": [],
+   "description": "Minamo student who killed Kobo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Performed the crime that started the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mochi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Smiling Kami of the Crescent Moon who made Hisoka a puppet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soratami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Moon-dwelling people who made Hisoka a puppet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ogre faction that avenged Kobo upon the school.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War started by Konda's crime in Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Hisoka was present for Konda's crime.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hisoka becomes first a teacher and later headmaster of the Minamo Academy.",
+   "participants": [
+    "Iki Hisoka",
+    "Minamo Academy"
+   ],
+   "location": "Minamo Academy",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he became first a teacher, and later headmaster of the school"
+  },
+  {
+   "summary": "Hisoka is present in Eiganjo when Konda commits the crime that starts the Kami War.",
+   "participants": [
+    "Iki Hisoka",
+    "Konda",
+    "Kami War"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was present in Eiganjo when Konda performed the crime that started the Kami War"
+  },
+  {
+   "summary": "Choryu kills Kobo, bringing the Hyozan Reckoners' revenge upon the school.",
+   "participants": [
+    "Choryu",
+    "Kobo",
+    "Hyozan Reckoners"
+   ],
+   "location": "Minamo Academy",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he brought the revenge of the Hyozan Reckoners upon the school"
+  },
+  {
+   "summary": "Hidetsugu destroys most of the school and refuses Hisoka's parley.",
+   "participants": [
+    "Hidetsugu",
+    "Iki Hisoka",
+    "Minamo Academy"
+   ],
+   "location": "Minamo Academy",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "When the ogre attacked and destroyed most of the school"
+  },
+  {
+   "summary": "Hisoka is killed by Hidetsugu.",
+   "participants": [
+    "Iki Hisoka",
+    "Hidetsugu"
+   ],
+   "location": "Minamo Academy",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Hisoka's life ended in the jaws of Hidetsugu"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hidetsugu",
+   "relation": "killed",
+   "target": "Iki Hisoka",
+   "note": "Killed him in the attack on Minamo.",
+   "paragraph": 2,
+   "quote": "Hisoka's life ended in the jaws of Hidetsugu"
+  },
+  {
+   "source": "Iki Hisoka",
+   "relation": "leader_of",
+   "target": "Minamo Academy",
+   "note": "Headmaster.",
+   "paragraph": 0,
+   "quote": "was a headmaster of the Minamo Academy"
+  },
+  {
+   "source": "Kobo",
+   "relation": "serves",
+   "target": "Hidetsugu",
+   "note": "Apprentice of the ogre shaman.",
+   "paragraph": 2,
+   "quote": "he brought the revenge of the Hyozan Reckoners upon the school"
+  }
+ ],
+ "rejected": []
+}

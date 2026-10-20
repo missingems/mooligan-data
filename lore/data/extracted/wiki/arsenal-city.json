@@ -1,0 +1,131 @@
+{
+ "page": "wiki/arsenal-city",
+ "url": "https://mtg.wiki/page/Arsenal_City",
+ "title": "Arsenal City",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:45:06Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Arsenal City",
+   "type": "location",
+   "aliases": [],
+   "description": "Jamuraan city-state of the Kipamu League on the northern coast, where its war machines were built.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kipamu League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jamuraan alliance whose war machines were built in Arsenal City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mageta",
+   "type": "character",
+   "aliases": [],
+   "description": "Proud commanding officer of Arsenal City's forces who led a counterattack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to inspect the troops and helped organize the campaign.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rayne",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped organize the campaign against the Keldons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped organize the campaign against the Keldons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who defeated Mageta's army and besieged Arsenal City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kinymu",
+   "type": "location",
+   "aliases": [],
+   "description": "City that sent troops with Arsenal City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion of Jamuraa during which Arsenal City was besieged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Barrin inspects the troops sent by Arsenal City and Kinymu, commanded by Mageta.",
+   "participants": [
+    "Barrin",
+    "Mageta"
+   ],
+   "location": "Arsenal City",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Mageta was the commanding officer"
+  },
+  {
+   "summary": "Mageta narrowly survives the Keldons' defeat of his army and returns to Arsenal City.",
+   "participants": [
+    "Mageta",
+    "Keldons"
+   ],
+   "location": "Arsenal City",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Mageta narrowly survived the subsequent defeat of his army at the hands of the Keldons"
+  },
+  {
+   "summary": "During the Keldons' siege Mageta leads a counterattack that wins the crucial battle.",
+   "participants": [
+    "Mageta",
+    "Keldons",
+    "Arsenal City"
+   ],
+   "location": "Arsenal City",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Mageta led the foot-soldiers in a counterattack"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arsenal City",
+   "relation": "member_of",
+   "target": "Kipamu League",
+   "note": "City-state part of the League.",
+   "paragraph": 0,
+   "quote": "Arsenal City was a Jamuraan city-state which was part of the Kipamu League"
+  },
+  {
+   "source": "Mageta",
+   "relation": "enemy",
+   "target": "Keldons",
+   "note": "Fought them at Arsenal City.",
+   "paragraph": 2,
+   "quote": "Mageta led the foot-soldiers in a counterattack"
+  }
+ ],
+ "rejected": []
+}

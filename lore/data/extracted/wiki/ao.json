@@ -1,0 +1,96 @@
+{
+ "page": "wiki/ao",
+ "url": "https://mtg.wiki/page/Ao",
+ "title": "Ao",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:45:04Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Ao",
+   "type": "creature",
+   "aliases": [
+    "Ao, the Dawn Sky"
+   ],
+   "description": "Dragon spirit of Kamigawa, reincarnation of Yosei, who avoids mortal affairs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yosei",
+   "type": "creature",
+   "aliases": [
+    "Yosei, the Morning Star"
+   ],
+   "description": "Divine dragon guardian spirit of Kamigawa's plains and Eiganjo, ripped apart by O-Kagachi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Opponent who tore Yosei apart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortified city Yosei once guarded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the dragon spirit.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yosei is ripped apart in a clash with O-Kagachi and is reborn as Ao.",
+   "participants": [
+    "Yosei",
+    "O-Kagachi",
+    "Ao"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "being ripped apart during a clash with O-Kagachi"
+  },
+  {
+   "summary": "Ao refuses to reclaim his old mantle as Eiganjo's defender after the city rose from its ruins.",
+   "participants": [
+    "Ao",
+    "Eiganjo"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ao has refused to reclaim his old mantle as Eiganjo's defender"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ao",
+   "relation": "other",
+   "target": "Yosei",
+   "note": "Reincarnation of Yosei.",
+   "paragraph": 0,
+   "quote": "He is the reincarnation of Yosei"
+  },
+  {
+   "source": "O-Kagachi",
+   "relation": "killed",
+   "target": "Yosei",
+   "note": "Ripped him apart in a clash.",
+   "paragraph": 1,
+   "quote": "being ripped apart during a clash with O-Kagachi"
+  }
+ ],
+ "rejected": []
+}
