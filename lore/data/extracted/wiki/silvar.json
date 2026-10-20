@@ -1,0 +1,90 @@
+{
+ "page": "wiki/silvar",
+ "url": "https://mtg.wiki/page/Silvar",
+ "title": "Silvar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Silvar",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant Cat Nightmare of Ikoria who lives in the chasms of the Savai triome; bonded to Trynn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trynn",
+   "type": "character",
+   "aliases": [],
+   "description": "Former Coppercoat and secret bonder of Silvar who stayed in Drannith and feeds corrupt officials to Silvar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Ikoria where Trynn lives and whose government is corrupt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Savai",
+   "type": "location",
+   "aliases": [],
+   "description": "Triome of Ikoria whose chasms Silvar inhabits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coppercoats",
+   "type": "faction",
+   "aliases": [],
+   "description": "Drannith's city guard, of which Trynn was a member.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trynn stays in Drannith after her eludha, keeping her identity as a bonder secret.",
+   "participants": [
+    "Trynn"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "She keeps her identity as a bonder secret"
+  },
+  {
+   "summary": "Trynn lures corrupt officials outside Drannith and feeds them to Silvar.",
+   "participants": [
+    "Trynn",
+    "Silvar"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she lures them outside the city and feeds them to her partner, Silvar."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trynn",
+   "relation": "ally",
+   "target": "Silvar",
+   "note": "Trynn is Silvar's bonder.",
+   "paragraph": 0,
+   "quote": "Its bonder is"
+  },
+  {
+   "source": "Trynn",
+   "relation": "member_of",
+   "target": "Coppercoats",
+   "note": "Trynn is a former Coppercoat.",
+   "paragraph": 1,
+   "quote": "As a former Coppercoat"
+  }
+ ],
+ "rejected": []
+}

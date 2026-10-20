@@ -1,0 +1,98 @@
+{
+ "page": "wiki/duskmantle",
+ "url": "https://mtg.wiki/page/Duskmantle",
+ "title": "Duskmantle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Duskmantle",
+   "type": "location",
+   "aliases": [],
+   "description": "Guildhall of House Dimir on Ravnica, a hidden castle in the Undercity, later recreated by Lazav.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose guildhall was Duskmantle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Duskmantle is.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Duskmantle lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of House Dimir during the original Duskmantle; he died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "Recreated Duskmantle in a different part of the Undercity.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Szadek's demise the location and entry to Duskmantle were lost.",
+   "participants": [
+    "Szadek",
+    "Duskmantle"
+   ],
+   "location": "Undercity",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After Szadek's demise, both the location and way of gaining entry were lost"
+  },
+  {
+   "summary": "Lazav recreated Duskmantle elsewhere in the Undercity, shielded by memory wards.",
+   "participants": [
+    "Lazav",
+    "Duskmantle"
+   ],
+   "location": "Undercity",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Lazav recreated the structure in a different part of the Undercity"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Duskmantle",
+   "relation": "located_in",
+   "target": "Undercity",
+   "note": "Hidden castle in the Undercity.",
+   "paragraph": 1,
+   "quote": "It was a hidden castle located in the Undercity"
+  },
+  {
+   "source": "Lazav",
+   "relation": "created",
+   "target": "Duskmantle",
+   "note": "Recreated it.",
+   "paragraph": 1,
+   "quote": "Lazav recreated the structure"
+  }
+ ],
+ "rejected": []
+}

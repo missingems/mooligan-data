@@ -1,0 +1,108 @@
+{
+ "page": "wiki/samiks",
+ "url": "https://mtg.wiki/page/Samiks",
+ "title": "Samiks",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:48Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Samiks",
+   "type": "character",
+   "aliases": [],
+   "description": "A Balduvian warrior and one of the Marked Ones who died of plague after delivering a message and the Nova Pentacle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kailo",
+   "type": "character",
+   "aliases": [],
+   "description": "A person Samiks waited to give a message about Lim-Dûl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zaraya",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of the Nova Pentacle from Samiks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Said to have poisoned the waters of Samiks's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nova Pentacle",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An item Samiks gave to Zaraya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marked Ones",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group in the Ice Age of Dominaria that Samiks belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Ice Age.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dying of plague, Samiks waits in armor on a tree to deliver a message about Lim-Dûl poisoning the waters.",
+   "participants": [
+    "Samiks",
+    "Kailo",
+    "Zaraya",
+    "Lim-Dûl"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he still went to deliver a message to Kailo and Zaraya about Lim-Dûl poisoning the waters of his homeland"
+  },
+  {
+   "summary": "Samiks gives Zaraya the Nova Pentacle and dies.",
+   "participants": [
+    "Samiks",
+    "Zaraya",
+    "Nova Pentacle"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was Samiks who gave Zaraya the Nova Pentacle and died afterwards."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samiks",
+   "relation": "member_of",
+   "target": "Marked Ones",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Samiks was one of the Marked Ones in the Ice Age of Dominaria"
+  },
+  {
+   "source": "Lim-Dûl",
+   "relation": "enemy",
+   "target": "Samiks",
+   "note": "Lim-Dûl poisoned the waters of Samiks's homeland.",
+   "paragraph": 1,
+   "quote": "about Lim-Dûl poisoning the waters of his homeland"
+  }
+ ],
+ "rejected": []
+}

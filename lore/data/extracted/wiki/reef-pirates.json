@@ -1,0 +1,81 @@
+{
+ "page": "wiki/reef-pirates",
+ "url": "https://mtg.wiki/page/Reef_pirates",
+ "title": "Reef pirates",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:28Z",
+ "storyline": "Ulgrotha",
+ "entities": [
+  {
+   "name": "Reef pirates",
+   "type": "faction",
+   "aliases": [],
+   "description": "Zombie corsairs on the seas of Ulgrotha, led by Zeki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zeki",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Reef pirates, knowledgeable about the waters and the seeking of treasures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose seas the Reef pirates sail.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea dwarves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rivals of the Reef pirates over the oceans of Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a vault of horrors on Ulgrotha.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zeki battles the sea dwarves over the oceans of Ulgrotha.",
+   "participants": [
+    "Zeki",
+    "Reef pirates",
+    "Sea dwarves"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He battles over the oceans of Ulgrotha with the sea dwarves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zeki",
+   "relation": "leader_of",
+   "target": "Reef pirates",
+   "note": "Leads the zombie crew",
+   "paragraph": 1,
+   "quote": "They are led by a man named Zeki"
+  },
+  {
+   "source": "Reef pirates",
+   "relation": "enemy",
+   "target": "Sea dwarves",
+   "note": "Battle over the oceans",
+   "paragraph": 1,
+   "quote": "He battles over the oceans of Ulgrotha with the sea dwarves"
+  }
+ ],
+ "rejected": []
+}

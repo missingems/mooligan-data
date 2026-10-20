@@ -1,0 +1,75 @@
+{
+ "page": "wiki/eternal-creature-type",
+ "url": "https://mtg.wiki/page/Eternal_%28creature_type%29",
+ "title": "Eternal (creature type)",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:01Z",
+ "storyline": "Marvel Super Heroes",
+ "entities": [
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [
+    "Homo immortalis"
+   ],
+   "description": "A group of 100 immortal humanoids with superhuman powers, created by the Celestials millions of years ago.",
+   "presence": "appears"
+  },
+  {
+   "name": "Celestials",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who created the Eternals and Deviants after discovering early humans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Deviants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Another species created by the Celestials.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thanos",
+   "type": "character",
+   "aliases": [],
+   "description": "A mutated Eternal with Deviant Syndrome caused by Deviant genes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Celestials create the Eternals after discovering early humans.",
+   "participants": [
+    "Celestials",
+    "Eternals"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "are a group of 100 humanoids created by the Celestials millions of years ago after they discovered early humans."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Celestials",
+   "relation": "created",
+   "target": "Eternals",
+   "note": "Created millions of years ago.",
+   "paragraph": 1,
+   "quote": "are a group of 100 humanoids created by the Celestials millions of years ago after they discovered early humans."
+  },
+  {
+   "source": "Thanos",
+   "relation": "member_of",
+   "target": "Eternals",
+   "note": "A mutated Eternal with Deviant Syndrome.",
+   "paragraph": 1,
+   "quote": "Thanos is notably a mutated Eternal with Deviant Syndrome caused by Deviant genes"
+  }
+ ],
+ "rejected": []
+}

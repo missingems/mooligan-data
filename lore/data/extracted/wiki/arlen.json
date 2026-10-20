@@ -1,0 +1,119 @@
+{
+ "page": "wiki/arlen",
+ "url": "https://mtg.wiki/page/Arlen",
+ "title": "Arlen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:31Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Arlen",
+   "type": "character",
+   "aliases": [],
+   "description": "A sorcerer of the Institute of Arcane Study on Dominaria who traveled to Kush and was killed by Leshrac Nightwalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feathers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Arlen's horse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leshrac Nightwalker",
+   "type": "character",
+   "aliases": [
+    "Leshrac"
+   ],
+   "description": "A being who manifested on Dominaria despite being trapped in Phyrexia and killed Arlen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Institute of Arcane Study",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dominarian institution of which Arlen was a sorcerer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on Aerona that Arlen traveled to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Farndrel",
+   "type": "location",
+   "aliases": [],
+   "description": "Town of Kush from which Arlen was kicked out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Arlen lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arlen traveled to Kush to discover the reason for the Festival of Estark.",
+   "participants": [
+    "Arlen",
+    "Feathers",
+    "Kush"
+   ],
+   "location": "Kush",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He traveled with his horse Feathers to the land of Kush on Aerona"
+  },
+  {
+   "summary": "Arlen was kicked out of the town of Farndrel.",
+   "participants": [
+    "Arlen",
+    "Farndrel"
+   ],
+   "location": "Farndrel",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was kicked out when he visited the town of Farndrel"
+  },
+  {
+   "summary": "Arlen fell asleep outside the village and was killed by Leshrac Nightwalker.",
+   "participants": [
+    "Arlen",
+    "Leshrac Nightwalker"
+   ],
+   "location": "Farndrel",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he fell asleep and was killed by Leshrac Nightwalker"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Leshrac Nightwalker",
+   "relation": "killed",
+   "target": "Arlen",
+   "note": "Killed him as he slept",
+   "paragraph": 1,
+   "quote": "he fell asleep and was killed by Leshrac Nightwalker"
+  },
+  {
+   "source": "Arlen",
+   "relation": "member_of",
+   "target": "Institute of Arcane Study",
+   "note": "Sorcerer of the Institute",
+   "paragraph": 0,
+   "quote": "Arlen was a sorcerer of the Institute of Arcane Study on Dominaria"
+  }
+ ],
+ "rejected": []
+}

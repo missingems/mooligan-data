@@ -1,0 +1,123 @@
+{
+ "page": "wiki/meteor-hammer",
+ "url": "https://mtg.wiki/page/Meteor_Hammer",
+ "title": "Meteor Hammer",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Meteor Hammer",
+   "type": "concept",
+   "aliases": [],
+   "description": "A spell Tetsuo Umezawa used to destroy the Imperial Shrine, making Jorgan Hage's warhammer fall from the edge of the atmosphere like a meteor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "The mage who used the Meteor Hammer spell to destroy the Imperial Shrine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kolo Meha",
+   "type": "character",
+   "aliases": [],
+   "description": "Teacher who taught Tetsuo the Meteor Hammer spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jorgan Hage",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the warhammer used in the Meteor Hammer spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperial Shrine",
+   "type": "location",
+   "aliases": [],
+   "description": "The shrine that gave Nicol Bolas the mana base he needed to manifest in Dominaria; destroyed by the Meteor Hammer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Tyrannical ruler of the Madaran Empire who needed the Imperial Shrine's mana base to manifest in Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madaran Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire liberated from Nicol Bolas's tyrannical rule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Nicol Bolas sought to manifest.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tetsuo Umezawa used the Meteor Hammer spell to destroy the Imperial Shrine, robbing Nicol Bolas of the mana base he needed to manifest in Dominaria.",
+   "participants": [
+    "Tetsuo Umezawa",
+    "Nicol Bolas"
+   ],
+   "location": "Imperial Shrine",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "used by Tetsuo Umezawa to destroy the Imperial Shrine"
+  },
+  {
+   "summary": "Kolo Meha taught Tetsuo the Meteor Hammer spell.",
+   "participants": [
+    "Kolo Meha",
+    "Tetsuo Umezawa"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Tetsuo was taught this spell by Kolo Meha"
+  },
+  {
+   "summary": "The spell helped destroy Nicol Bolas and liberate the Madaran Empire.",
+   "participants": [
+    "Tetsuo Umezawa",
+    "Nicol Bolas"
+   ],
+   "location": "Madaran Empire",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The spell was instrumental in the destruction of Nicol Bolas and the liberation of the Madaran Empire from his tyrannical rule."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kolo Meha",
+   "relation": "mentor_of",
+   "target": "Tetsuo Umezawa",
+   "note": "Taught him the Meteor Hammer spell",
+   "paragraph": 1,
+   "quote": "Tetsuo was taught this spell by Kolo Meha"
+  },
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "Destroyed the shrine that Bolas needed",
+   "paragraph": 0,
+   "quote": "rob Nicol Bolas of the mana base he needed to manifest in Dominaria"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,139 @@
+{
+ "page": "wiki/arcus",
+ "url": "https://mtg.wiki/page/Arcus",
+ "title": "Arcus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Arcus",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard of Mors Ridge and member of its High Council; teacher of Ad'amra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mors Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Town attacked in the Battle at Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Council of Mors Ridge",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ruling council of the town.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "Told the Legend of Mors Ridge by Arcus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ad'amra",
+   "type": "character",
+   "aliases": [],
+   "description": "Student of Arcus's magic who receives a map to Rhuell's cave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the orc and undead horde that attacked Mors Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ham",
+   "type": "character",
+   "aliases": [],
+   "description": "Appeared in false human form; actually the Elder Dragon Chromium Rhuell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "creature",
+   "aliases": [
+    "Rhuell"
+   ],
+   "description": "Elder Dragon, Ham's original form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Rhuell and Palladia-Mors during the attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle at Mors Ridge",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Palladia-Mors's horde attacked the city.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Palladia-Mors's horde of orcs and undead attacks Mors Ridge.",
+   "participants": [
+    "Palladia-Mors"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "horde of orcs and undead attacked the city."
+  },
+  {
+   "summary": "Arcus casts a spell transforming Ham back into the Elder Dragon Chromium Rhuell.",
+   "participants": [
+    "Arcus",
+    "Ham",
+    "Chromium Rhuell"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Arcus cast a spell, transforming Ham from his false human form"
+  },
+  {
+   "summary": "Arcus gives Ad'amra a map to the cave where Rhuell went after the battle.",
+   "participants": [
+    "Arcus",
+    "Ad'amra"
+   ],
+   "location": "Mors Ridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He then gave Ad’amra a map"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arcus",
+   "relation": "mentor_of",
+   "target": "Ad'amra",
+   "note": "He taught her magic.",
+   "paragraph": 0,
+   "quote": "taught magic to"
+  },
+  {
+   "source": "Arcus",
+   "relation": "member_of",
+   "target": "High Council of Mors Ridge",
+   "note": "He was a member of the council.",
+   "paragraph": 0,
+   "quote": "Arcus was a member of the High Council of Mors Ridge"
+  }
+ ],
+ "rejected": []
+}

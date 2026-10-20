@@ -1,0 +1,106 @@
+{
+ "page": "wiki/jolav",
+ "url": "https://mtg.wiki/page/Jolav",
+ "title": "Jolav",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jolav",
+   "type": "character",
+   "aliases": [],
+   "description": "Aristocratic human from Urborg, younger brother of Crovax, slaughtered by Phyrexian creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "Jolav's elder brother, who left to join the Weatherlight crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Jolav's family estate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selenia",
+   "type": "character",
+   "aliases": [],
+   "description": "The Windgrace family's guardian angel, controlled by an artifact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Morinfen",
+   "type": "creature",
+   "aliases": [],
+   "description": "Phyrexian creature that slaughtered Crovax's family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gallowbraid",
+   "type": "creature",
+   "aliases": [],
+   "description": "Phyrexian creature that slaughtered Crovax's family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ship whose crew Crovax joined.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Crovax leaves to join the Weatherlight crew and explore Dominaria, taking the artifact that controlled Selenia, while Jolav stays on the estate.",
+   "participants": [
+    "Crovax",
+    "Jolav"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "stayed behind on his family's estate when Crovax left"
+  },
+  {
+   "summary": "Morinfen and Gallowbraid slaughter Jolav and the rest of Crovax's family.",
+   "participants": [
+    "Morinfen",
+    "Gallowbraid",
+    "Jolav"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "slaughter Jolav and the rest of Crovax's family"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jolav",
+   "relation": "family",
+   "target": "Crovax",
+   "note": "Younger brother.",
+   "paragraph": 0,
+   "quote": "the younger brother of"
+  },
+  {
+   "source": "Morinfen",
+   "relation": "killed",
+   "target": "Jolav",
+   "note": "Slaughtered Jolav.",
+   "paragraph": 1,
+   "quote": "slaughter Jolav and the rest of Crovax's family"
+  }
+ ],
+ "rejected": []
+}

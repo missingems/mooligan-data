@@ -1,0 +1,83 @@
+{
+ "page": "wiki/mundungu",
+ "url": "https://mtg.wiki/page/Mundungu",
+ "title": "Mundungu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Mundungu",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of mages of the Shaper Guild and the Shadow Guild of Zhalfir on Dominaria who built the tombs of Aku.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aku",
+   "type": "location",
+   "aliases": [],
+   "description": "City built by the Mundungu in the Uuserk Marshes to hold the pillar tombs of Zhalfirin royalty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy whose demons the Mundungu kept away from Aku during the Mirage War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the Mundungu kept Kaervek's demons from Aku.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian land of the Mundungu.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Mundungu built the tombs of Aku.",
+   "participants": [
+    "Mundungu",
+    "Aku"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Mundungu built the tombs of Aku"
+  },
+  {
+   "summary": "The Mundungu and their djinn kept Kaervek's demons from Aku and were instrumental to his defeat.",
+   "participants": [
+    "Mundungu",
+    "Kaervek"
+   ],
+   "location": "Aku",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "were instrumental to his defeat"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mundungu",
+   "relation": "enemy",
+   "target": "Kaervek",
+   "note": "Kept his demons away and helped defeat him",
+   "paragraph": 1,
+   "quote": "kept the demons of Kaervek away from it during the Mirage War"
+  }
+ ],
+ "rejected": []
+}

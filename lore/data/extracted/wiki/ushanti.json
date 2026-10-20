@@ -1,0 +1,132 @@
+{
+ "page": "wiki/ushanti",
+ "url": "https://mtg.wiki/page/Ushanti",
+ "title": "Ushanti",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:08Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Ushanti",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin seer and healer of Mirrodin, advisor to the kha Raksha Golden Cub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raksha Golden Cub",
+   "type": "character",
+   "aliases": [
+    "Raksha",
+    "the kha"
+   ],
+   "description": "Leonin kha of Taj-Nar; Ushanti's advisor; lover of her daughter Rishan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rishan",
+   "type": "character",
+   "aliases": [],
+   "description": "Ushanti's daughter, Raksha's lover, killed in a Leveler attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Ushanti lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taj-Nar",
+   "type": "location",
+   "aliases": [],
+   "description": "Leonin city from which Ushanti was banished.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Green Sun",
+   "type": "concept",
+   "aliases": [],
+   "description": "Sun released from the Radix, whose release Ushanti saw portents about.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Radix",
+   "type": "concept",
+   "aliases": [],
+   "description": "Source from which the Green Sun was released.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leveler",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature whose attack killed Rishan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vanishing",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Ushanti disappeared from Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ushanti sees portents of doom after the Green Sun is released from the Radix.",
+   "participants": [
+    "Ushanti"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "She saw portents of doom after the Green Sun was released from the Radix."
+  },
+  {
+   "summary": "Rishan is killed in a Leveler attack; Raksha, suspecting Ushanti, banishes her from Taj-Nar.",
+   "participants": [
+    "Rishan",
+    "Raksha Golden Cub",
+    "Ushanti"
+   ],
+   "location": "Taj-Nar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Raksha had her banished from Taj-Nar"
+  },
+  {
+   "summary": "Ushanti disappears from Mirrodin during the Vanishing.",
+   "participants": [
+    "Ushanti"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ushanti disappeared from Mirrodin during the Vanishing"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ushanti",
+   "relation": "serves",
+   "target": "Raksha Golden Cub",
+   "note": "She was his advisor.",
+   "paragraph": 1,
+   "quote": "She was also advisor to the kha"
+  },
+  {
+   "source": "Ushanti",
+   "relation": "family",
+   "target": "Rishan",
+   "note": "Rishan was her daughter.",
+   "paragraph": 1,
+   "quote": "Ushanti's daughter Rishan became Raksha's lover"
+  }
+ ],
+ "rejected": []
+}

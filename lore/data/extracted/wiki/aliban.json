@@ -1,0 +1,73 @@
+{
+ "page": "wiki/aliban",
+ "url": "https://mtg.wiki/page/Aliban",
+ "title": "Aliban",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aliban",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin wizard and attendant to Crank, who became the second goblin king of Koskun Keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crank",
+   "type": "character",
+   "aliases": [],
+   "description": "First goblin king of Koskun Keep, summoned away by a planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Goblin keep ruled by Crank and then Aliban.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aliban's Towers",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Towers Aliban created.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Crank was summoned away by a planeswalker and Aliban became the second goblin king.",
+   "participants": [
+    "Aliban",
+    "Crank"
+   ],
+   "location": "Koskun Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he thus became the second goblin king"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aliban",
+   "relation": "serves",
+   "target": "Crank",
+   "note": "Personal attendant to Koskun Keep's first goblin king.",
+   "paragraph": 0,
+   "quote": "personal attendant to Koskun Keep 's first goblin king"
+  },
+  {
+   "source": "Aliban",
+   "relation": "created",
+   "target": "Aliban's Towers",
+   "note": "He created them.",
+   "paragraph": 1,
+   "quote": "He created Aliban's Towers"
+  }
+ ],
+ "rejected": []
+}
