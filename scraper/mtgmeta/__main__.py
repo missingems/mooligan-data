@@ -4,6 +4,7 @@ DIR holds the previous snapshots and deck id list on the way in, and the files
 to publish on the way out.
 
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
+`python -m mtgmeta guides DIR --top 5` asks Claude for the top commanders' guides (see guides.py).
 """
 from __future__ import annotations
 
@@ -238,6 +239,10 @@ def main() -> int:
         from .clusters import main as clusters
 
         return clusters(sys.argv[2:])
+    if sys.argv[1:2] == ["guides"]:
+        from .guides import main as guides
+
+        return guides(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket")
     args = parser.parse_args()
