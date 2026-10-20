@@ -1,0 +1,132 @@
+{
+ "page": "wiki/maeli",
+ "url": "https://mtg.wiki/page/Maeli",
+ "title": "Maeli",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:01Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Maeli",
+   "type": "character",
+   "aliases": [],
+   "description": "A human boy of Innistrad rescued by Avacyn, who survived the burning of his village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kelse",
+   "type": "character",
+   "aliases": [],
+   "description": "Maeli's mother, who prayed to Avacyn and was burned to ash by her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who rescued Maeli, then fell into madness after Emrakul's presence was felt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose presence on Innistrad corrupted Avacyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sadie",
+   "type": "character",
+   "aliases": [
+    "Ms. Sadie"
+   ],
+   "description": "Ms. Sadie, who adopted Maeli and was later Eldrazified.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cathar",
+   "type": "faction",
+   "aliases": [],
+   "description": "Two Cathar who defended Maeli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Maeli.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Avacyn hears Kelse's prayer and rescues the lost Maeli.",
+   "participants": [
+    "Avacyn",
+    "Kelse",
+    "Maeli"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the angel heard her, and rescued Maeli, returning him to her mother."
+  },
+  {
+   "summary": "The presence of Emrakul makes itself known and Avacyn begins her descent into madness.",
+   "participants": [
+    "Avacyn",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Avacyn started her descent into madness from that point."
+  },
+  {
+   "summary": "Avacyn and her angels burn the village; Kelse sends Maeli running and Avacyn burns her to ash.",
+   "participants": [
+    "Avacyn",
+    "Kelse",
+    "Maeli"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Avacyn herself made particularly sure to burn Kelse to ash."
+  },
+  {
+   "summary": "Maeli is adopted by Ms. Sadie, and later defended by two Cathar after Sadie is Eldrazified.",
+   "participants": [
+    "Maeli",
+    "Sadie",
+    "Cathar"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Maeli was later adopted by Ms. Sadie ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kelse",
+   "relation": "family",
+   "target": "Maeli",
+   "note": "Mother and son.",
+   "paragraph": 1,
+   "quote": "his mother Kelse prayed so hard to Avacyn"
+  },
+  {
+   "source": "Avacyn",
+   "relation": "killed",
+   "target": "Kelse",
+   "note": "Avacyn burned her.",
+   "paragraph": 2,
+   "quote": "Avacyn herself made particularly sure to burn Kelse to ash."
+  }
+ ],
+ "rejected": []
+}

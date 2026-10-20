@@ -1,0 +1,132 @@
+{
+ "page": "wiki/graypelt",
+ "url": "https://mtg.wiki/page/Graypelt",
+ "title": "Graypelt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:45Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Graypelt",
+   "type": "location",
+   "aliases": [],
+   "description": "Small druid encampment on the edge of Turntimber in central Ondu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Turntimber",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient forest beside Graypelt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Graypelt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "Planeswalker who visited Graypelt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who traveled with Nissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveler with Nissa and Sorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Khalled",
+   "type": "character",
+   "aliases": [],
+   "description": "Elderly merfolk cartographer who gave a map to Akoum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mosscrack",
+   "type": "location",
+   "aliases": [],
+   "description": "Place destroyed before the visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rising threat to Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination of the map.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nissa, Sorin and Anowon travel to Graypelt after Mosscrack's destruction and meet Khalled, who gives them a map to Akoum.",
+   "participants": [
+    "Nissa Revane",
+    "Sorin Markov",
+    "Anowon",
+    "Khalled"
+   ],
+   "location": "Graypelt",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "There they met the elderly merfolk cartographer Khalled"
+  },
+  {
+   "summary": "Khalled warns Nissa of the Eldrazi and persuades her to accompany Sorin and Anowon west toward Makindi.",
+   "participants": [
+    "Khalled",
+    "Nissa Revane",
+    "Sorin Markov",
+    "Anowon"
+   ],
+   "location": "Graypelt",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Nissa chose to accompany Sorin and Anowon westward toward Makindi ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Graypelt",
+   "relation": "located_in",
+   "target": "Turntimber",
+   "note": "outer edge",
+   "paragraph": 1,
+   "quote": "on the outer edge of the Turntimber forest"
+  },
+  {
+   "source": "Khalled",
+   "relation": "ally",
+   "target": "Nissa Revane",
+   "note": "gave her a map and advice",
+   "paragraph": 3,
+   "quote": "who provided them with a map to Akoum"
+  }
+ ],
+ "rejected": []
+}

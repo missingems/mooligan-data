@@ -1,0 +1,130 @@
+{
+ "page": "wiki/ana",
+ "url": "https://mtg.wiki/page/Ana",
+ "title": "Ana",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:04Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Ana",
+   "type": "character",
+   "aliases": [
+    "Lady Ana"
+   ],
+   "description": "A minor noble of the Forward Order in the Caligo Forest, a healer and mentor of Liliana Vess, killed by Josu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Ana Iora"
+   ],
+   "description": "Planeswalker and Ana's student, who ignited her spark after Josu's death and later used Ana's name as pseudonym Ana Iora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Josu",
+   "type": "character",
+   "aliases": [],
+   "description": "Liliana's brother, corrupted by their father's enemies and driven insane by a cure.",
+   "presence": "appears"
+  },
+  {
+   "name": "Forward Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of which Ana was a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caligo Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of Ana and the Forward Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esis Tree",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Tree whose roots were sought to cure Josu; its groves were razed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Liliana ended up after igniting her spark.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ana tasks Liliana to gather roots of the Esis Tree to cure Josu, but the groves are razed and a strange man offers a cure.",
+   "participants": [
+    "Ana",
+    "Liliana Vess",
+    "Josu"
+   ],
+   "location": "Caligo Forest",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ana tasked Liliana to gather the roots of the Esis Tree for his cure."
+  },
+  {
+   "summary": "Liliana uses the cure; Josu is driven insane and kills several servants, Ana among them.",
+   "participants": [
+    "Liliana Vess",
+    "Josu",
+    "Ana"
+   ],
+   "location": "Caligo Forest",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Several of the servants, Ana among them, were killed by Josu."
+  },
+  {
+   "summary": "Liliana turns Josu's victims into zombies to fight him and ignites her planeswalker spark, ending up on Innistrad.",
+   "participants": [
+    "Liliana Vess",
+    "Josu"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she ignited her planeswalker's spark and ended up on Innistrad ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ana",
+   "relation": "mentor_of",
+   "target": "Liliana Vess",
+   "note": "Ana was her mentor.",
+   "paragraph": 0,
+   "quote": "She was the mentor of Liliana Vess"
+  },
+  {
+   "source": "Josu",
+   "relation": "killed",
+   "target": "Ana",
+   "note": "Josu killed several servants including Ana.",
+   "paragraph": 2,
+   "quote": "Several of the servants, Ana among them, were killed by Josu."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "family",
+   "target": "Josu",
+   "note": "Josu is her brother.",
+   "paragraph": 1,
+   "quote": "Liliana's brother Josu"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,191 @@
+{
+ "page": "wiki/edara",
+ "url": "https://mtg.wiki/page/Edara",
+ "title": "Edara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:46Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Lady Edara",
+   "type": "character",
+   "aliases": [
+    "Edara"
+   ],
+   "description": "Beautiful lady of the island state of Jehesic in the Dark Age of Terisiare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jehesic",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortified island state ruled by Edara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Peemel of Iwset",
+   "type": "character",
+   "aliases": [
+    "Lord Peemel",
+    "Peemel"
+   ],
+   "description": "Lord who longed to claim Jehesic, proposed to Edara and kidnapped her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iwset",
+   "type": "location",
+   "aliases": [],
+   "description": "Domain of Lord Peemel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ferantia",
+   "type": "character",
+   "aliases": [],
+   "description": "Traitorous sorceress who betrayed Edara and was stabbed by Apepei.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apepei",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf, Edara's secret lover who killed Ferantia and Digody.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ihesia",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's general-in-chief taken prisoner by Jehesic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Digody",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's advisor who stabbed him; slain by Apepei.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yunnie",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Peemel's late wife who shattered the Sigil and left Iwset.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sigil of Iwset",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Shattered by Yunnie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Offero",
+   "type": "character",
+   "aliases": [],
+   "description": "Schemer in the background.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Edara repeatedly turned down Peemel's marriage proposal.",
+   "participants": [
+    "Lady Edara",
+    "Lord Peemel of Iwset"
+   ],
+   "location": "Jehesic",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he proposed a marriage, which she repeatedly turned down"
+  },
+  {
+   "summary": "Ferantia betrayed Edara openly but was stabbed to death by Apepei.",
+   "participants": [
+    "Ferantia",
+    "Lady Edara",
+    "Apepei"
+   ],
+   "location": "Jehesic",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she was stabbed to death by Edara's secret lover, the dwarf Apepei"
+  },
+  {
+   "summary": "Peemel kidnapped Edara to trade for his captured general Ihesia.",
+   "participants": [
+    "Lord Peemel of Iwset",
+    "Lady Edara",
+    "Ihesia"
+   ],
+   "location": "Jehesic",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Edara was kidnapped by Lord Peemel"
+  },
+  {
+   "summary": "Digody stabbed Peemel in the back, and Apepei slew Digody.",
+   "participants": [
+    "Digody",
+    "Lord Peemel of Iwset",
+    "Apepei"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Apepei in turn slew Digody"
+  },
+  {
+   "summary": "Yunnie refused marriage to Edara, shattering the Sigil and leaving Iwset; Edara and Apepei began their combined rule.",
+   "participants": [
+    "Yunnie",
+    "Lady Edara",
+    "Apepei"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Yunnie refused this, shattering the Sigil and leaving Iwset"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lady Edara",
+   "relation": "leader_of",
+   "target": "Jehesic",
+   "note": "Lady and ruler.",
+   "paragraph": 2,
+   "quote": "Lady Edara ruled the island state of Jehesic"
+  },
+  {
+   "source": "Apepei",
+   "relation": "romantic",
+   "target": "Lady Edara",
+   "note": "Secret lover.",
+   "paragraph": 2,
+   "quote": "Edara's secret lover, the dwarf Apepei"
+  },
+  {
+   "source": "Apepei",
+   "relation": "killed",
+   "target": "Ferantia",
+   "note": "Stabbed her.",
+   "paragraph": 2,
+   "quote": "she was stabbed to death by Edara's secret lover, the dwarf Apepei"
+  },
+  {
+   "source": "Digody",
+   "relation": "killed",
+   "target": "Lord Peemel of Iwset",
+   "note": "Stabbed him in the back.",
+   "paragraph": 3,
+   "quote": "he was stabbed in the back by his advisor Digody"
+  }
+ ],
+ "rejected": []
+}

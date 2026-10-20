@@ -1,0 +1,139 @@
+{
+ "page": "wiki/carth",
+ "url": "https://mtg.wiki/page/Carth",
+ "title": "Carth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:01Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Carth",
+   "type": "character",
+   "aliases": [
+    "Son of Carth",
+    "Lion of Carth",
+    "Carth the Lion"
+   ],
+   "description": "Native of Corondor with the Mark of the Elder Druid, called the Lion of Carth, who founded House Carthalion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Land on Dominaria where Carth was born.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [
+    "Dihada"
+   ],
+   "description": "Evil demon planeswalker who destroyed Carth's hometown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [],
+   "description": "Dihada's champion who murdered a hundred of Carth's tribesfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakkon Blackblade",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker summoned to Dominaria by Carth's trick.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blackblade-Dihada War",
+   "type": "event",
+   "aliases": [],
+   "description": "War started by Dakkon's binding to the plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Carthalion",
+   "type": "faction",
+   "aliases": [],
+   "description": "House founded by Carth on Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent Carth traveled to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Carth took part in an uprising against Dihada that failed; Sol'Kanar murdered a hundred of his tribesfolk including his mother and sister.",
+   "participants": [
+    "Carth",
+    "Geyadrone Dihada",
+    "Sol'Kanar"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Carth was forced to watch as Dihada's champion, Sol'Kanar , murdered one hundred of his tribesfolk"
+  },
+  {
+   "summary": "Captured, Carth was tricked by a disguised Dihada into summoning and binding Dakkon Blackblade to Dominaria.",
+   "participants": [
+    "Carth",
+    "Geyadrone Dihada",
+    "Dakkon Blackblade"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a disguised Dihada tricked him into summoning Dakkon Blackblade to Dominaria and binding him to the plane"
+  },
+  {
+   "summary": "Carth and Dakkon escaped Dihada, became friends and traveled to Terisiare, where Carth founded House Carthalion.",
+   "participants": [
+    "Carth",
+    "Dakkon Blackblade"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the son of Carth founded House Carthalion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Carth",
+   "relation": "enemy",
+   "target": "Geyadrone Dihada",
+   "note": "led uprising against her",
+   "paragraph": 1,
+   "quote": "Carth the Lion took part in an uprising against the evil planeswalker Geyadrone Dihada"
+  },
+  {
+   "source": "Carth",
+   "relation": "ally",
+   "target": "Dakkon Blackblade",
+   "note": "formed a bond of friendship",
+   "paragraph": 3,
+   "quote": "form a bond of friendship"
+  },
+  {
+   "source": "Sol'Kanar",
+   "relation": "serves",
+   "target": "Geyadrone Dihada",
+   "note": "champion",
+   "paragraph": 1,
+   "quote": "Dihada's champion, Sol'Kanar"
+  }
+ ],
+ "rejected": []
+}

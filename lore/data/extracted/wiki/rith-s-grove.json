@@ -1,0 +1,172 @@
+{
+ "page": "wiki/rith-s-grove",
+ "url": "https://mtg.wiki/page/Rith%27s_Grove",
+ "title": "Rith's Grove",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:57Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Rith's Grove",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the treefolk Nemata, who hosted the prison of the primeval dragon Rith, in Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nemata",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant magnigoth treefolk who holds Rith's prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rith, the Awakener",
+   "type": "creature",
+   "aliases": [
+    "Rith"
+   ],
+   "description": "Primeval dragon of Yavimaya, imprisoned in Nemata.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhammidarigaaz",
+   "type": "creature",
+   "aliases": [
+    "Darigaaz"
+   ],
+   "description": "Red primeval dragon who entered the grove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rokun",
+   "type": "creature",
+   "aliases": [],
+   "description": "Black dragon killed by Darigaaz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon Nations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dragons who entered Rith's Grove.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Numena",
+   "type": "faction",
+   "aliases": [],
+   "description": "Green Numena who captured Rith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kavu",
+   "type": "creature",
+   "aliases": [],
+   "description": "Native creatures who sang to wake Nemata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Primevals",
+   "type": "event",
+   "aliases": [],
+   "description": "When Rith was captured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in 4205.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest containing the grove.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Fall of the Primevals Rith is captured by the green Numena and put inside Nemata.",
+   "participants": [
+    "Rith, the Awakener",
+    "Nemata",
+    "Numena"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Rith , was captured by the green Numena , and put inside the Magnigoth Treefolk Nemata"
+  },
+  {
+   "summary": "Darigaaz and the Dragon Nations enter the grove; Darigaaz fights and kills Rokun.",
+   "participants": [
+    "Rhammidarigaaz",
+    "Rokun"
+   ],
+   "location": "Rith's Grove",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Rokun was killed"
+  },
+  {
+   "summary": "Rokun's blood loosens Nemata's grip and Rith frees herself.",
+   "participants": [
+    "Rith, the Awakener",
+    "Nemata"
+   ],
+   "location": "Rith's Grove",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she was able to free herself from her imprisonment"
+  },
+  {
+   "summary": "The kavu's song wakes Nemata, who with other treefolk recaptures Rith in Urborg and returns.",
+   "participants": [
+    "Nemata",
+    "Rith, the Awakener",
+    "Kavu"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nemata and hundreds of other treefolk left the forest to recapture Rith, which they eventually did in Urborg"
+  },
+  {
+   "summary": "During the second Phyrexian invasion Rith escapes again and Nemata sets out to recapture her.",
+   "participants": [
+    "Rith, the Awakener",
+    "Nemata"
+   ],
+   "location": "Rith's Grove",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rith suddenly escaped her grove again"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rhammidarigaaz",
+   "relation": "killed",
+   "target": "Rokun",
+   "note": "Killed him in a fight.",
+   "paragraph": 2,
+   "quote": "Rokun was killed"
+  },
+  {
+   "source": "Nemata",
+   "relation": "enemy",
+   "target": "Rith, the Awakener",
+   "note": "Her jailer.",
+   "paragraph": 1,
+   "quote": "put inside the Magnigoth Treefolk Nemata"
+  }
+ ],
+ "rejected": []
+}

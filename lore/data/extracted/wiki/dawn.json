@@ -1,0 +1,139 @@
+{
+ "page": "wiki/dawn",
+ "url": "https://mtg.wiki/page/Dawn",
+ "title": "Dawn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:46Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Dawn",
+   "type": "character",
+   "aliases": [],
+   "description": "Determined, inventive young native survivor of Duskmourn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rill",
+   "type": "character",
+   "aliases": [],
+   "description": "Returning forager injured.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunset",
+   "type": "character",
+   "aliases": [],
+   "description": "Returning forager injured.",
+   "presence": "appears"
+  },
+  {
+   "name": "City",
+   "type": "character",
+   "aliases": [],
+   "description": "Forager who revealed allegiance to the Cult of Valgavoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Valgavoth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult City serves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benefactors",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of survivors who pulled Dawn to safety.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carnival",
+   "type": "location",
+   "aliases": [],
+   "description": "Survivor community where Dawn lived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [
+    "the House"
+   ],
+   "description": "The House, plane of monsters.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dawn spots the returning foragers Rill, Sunset and City and notices City's odd behavior.",
+   "participants": [
+    "Dawn",
+    "Rill",
+    "Sunset",
+    "City"
+   ],
+   "location": "Carnival",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she spotted the returning foragers Rill , Sunset , and City"
+  },
+  {
+   "summary": "City reveals his allegiance to the Cult of Valgavoth and monsters breach the Carnival fence; Dawn flees.",
+   "participants": [
+    "City",
+    "Dawn",
+    "Cult of Valgavoth"
+   ],
+   "location": "Carnival",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She turned and ran, desperate to find a way to escape the impending destruction"
+  },
+  {
+   "summary": "City offers Dawn the choice of joining the cult or death, then leaves.",
+   "participants": [
+    "City",
+    "Dawn"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "join their cult or face death"
+  },
+  {
+   "summary": "The Benefactors pull Dawn to safety after she battles a glitch ghost.",
+   "participants": [
+    "Benefactors",
+    "Dawn"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she was pulled to safety by a group of survivors called the Benefactors"
+  }
+ ],
+ "relations": [
+  {
+   "source": "City",
+   "relation": "member_of",
+   "target": "Cult of Valgavoth",
+   "note": "He revealed his allegiance.",
+   "paragraph": 2,
+   "quote": "he revealed his allegiance to the Cult of Valgavoth"
+  },
+  {
+   "source": "Dawn",
+   "relation": "enemy",
+   "target": "City",
+   "note": "She fled the traitor.",
+   "paragraph": 2,
+   "quote": "leaving her injured friends and the traitor behind"
+  }
+ ],
+ "rejected": []
+}

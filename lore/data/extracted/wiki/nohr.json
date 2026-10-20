@@ -1,0 +1,165 @@
+{
+ "page": "wiki/nohr",
+ "url": "https://mtg.wiki/page/Nohr",
+ "title": "Nohr",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nohr",
+   "type": "character",
+   "aliases": [],
+   "description": "A weasel-faced weatherworker on Cridhe with weathersense who caused the Parting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cridhe",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose natural order and people were fragmented by the Parting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parting",
+   "type": "event",
+   "aliases": [
+    "the Parting"
+   ],
+   "description": "Cataclysm in which Nohr split the Clan Tree, splitting Cridhe in two.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atalanta",
+   "type": "creature",
+   "aliases": [],
+   "description": "Nohr's pet eagle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haen",
+   "type": "character",
+   "aliases": [
+    "Keeper Haen"
+   ],
+   "description": "Nohr's childhood friend, chosen as Keeper of the Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [],
+   "description": "Stranger who gave Nohr the sword Soulslayer and the idea of gaining planeswalkerhood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soulslayer",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical sword given to Nohr by Malvos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Tree of Cridhe",
+   "type": "artifact",
+   "aliases": [
+    "Clan Tree"
+   ],
+   "description": "Tree of life force that Nohr split, killing it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maker",
+   "type": "deity",
+   "aliases": [],
+   "description": "Cridhe's creator-god who laid an ancient curse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inys Nohr",
+   "type": "character",
+   "aliases": [],
+   "description": "Person named in honor of Nohr.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Haen is chosen as Keeper of the Tree and Nohr grows envious of his friend.",
+   "participants": [
+    "Haen",
+    "Nohr"
+   ],
+   "location": "Cridhe",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Nohr grew envious of his friend"
+  },
+  {
+   "summary": "Malvos gives Nohr the sword Soulslayer; Nohr swears to break the Clan Tree to gain planeswalkerhood.",
+   "participants": [
+    "Nohr",
+    "Malvos",
+    "Soulslayer"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nohr swore to break the Clan Tree of Cridhe to gain planeswalkerhood"
+  },
+  {
+   "summary": "Despite Haen's protests, Nohr splits the tree, causing the Parting and killing the tree.",
+   "participants": [
+    "Nohr",
+    "Haen",
+    "Clan Tree of Cridhe",
+    "Parting"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nohr split the tree, causing the Parting"
+  },
+  {
+   "summary": "Nohr is wounded by the tip of his own sword, lodged in his chest.",
+   "participants": [
+    "Nohr",
+    "Soulslayer"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Nohr was wounded in this act by the tip of his own sword"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nohr",
+   "relation": "ally",
+   "target": "Haen",
+   "note": "childhood friends, later betrayed",
+   "paragraph": 2,
+   "quote": "Haen and Nohr were childhood friends."
+  },
+  {
+   "source": "Malvos",
+   "relation": "other",
+   "target": "Nohr",
+   "note": "gave him the sword and the idea to break the tree",
+   "paragraph": 2,
+   "quote": "an idea which had been given to him by Malvos"
+  },
+  {
+   "source": "Nohr",
+   "relation": "killed",
+   "target": "Clan Tree of Cridhe",
+   "note": "killed the tree's life force",
+   "paragraph": 2,
+   "quote": "killing it and shattering its stability"
+  }
+ ],
+ "rejected": []
+}

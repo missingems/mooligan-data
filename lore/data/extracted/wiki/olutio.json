@@ -1,0 +1,124 @@
+{
+ "page": "wiki/olutio",
+ "url": "https://mtg.wiki/page/Olutio",
+ "title": "Olutio",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:50Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Olutio",
+   "type": "character",
+   "aliases": [],
+   "description": "A gruff man of Innistrad, experienced in forbidden rites, partly responsible for the return of the angel Liesa, killed by the Buried Lord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liesa",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose return Olutio helped bring about.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Algli",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally who killed a ghoulcaller with Olutio and learned of the Buried Lord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sruta",
+   "type": "character",
+   "aliases": [],
+   "description": "Collaborator in the ritual who left in frustration.",
+   "presence": "appears"
+  },
+  {
+   "name": "Buried Lord",
+   "type": "creature",
+   "aliases": [],
+   "description": "A being thought to ensure the eternal rest of the dead, awakened as a ravenous demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Olutio lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After losing his daughter to a ghoulcaller, Olutio seeks Algli and they use forbidden rites to slay the ghoulcaller and rebury the dead.",
+   "participants": [
+    "Olutio",
+    "Algli"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Together, they used Olutio’s forbidden rites to slay the ghoulcaller and rebury the dead."
+  },
+  {
+   "summary": "Olutio introduces Algli to the Buried Lord.",
+   "participants": [
+    "Olutio",
+    "Algli",
+    "Buried Lord"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He introduced Algli to the concept of the Buried Lord"
+  },
+  {
+   "summary": "Olutio, Algli and Sruta attempt for years to summon the Buried Lord, culminating in a final ritual.",
+   "participants": [
+    "Olutio",
+    "Algli",
+    "Sruta",
+    "Buried Lord"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "enduring many years of failed attempts"
+  },
+  {
+   "summary": "The ritual appears to fail and Sruta leaves; Olutio follows and is killed by the awakened Buried Lord.",
+   "participants": [
+    "Olutio",
+    "Sruta",
+    "Buried Lord"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "only to meet his end at the hands of the Buried Lord"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Buried Lord",
+   "relation": "killed",
+   "target": "Olutio",
+   "note": "Gutted him after awakening as a demon.",
+   "paragraph": 4,
+   "quote": "only to meet his end at the hands of the Buried Lord"
+  },
+  {
+   "source": "Olutio",
+   "relation": "ally",
+   "target": "Algli",
+   "note": "Collaborated on rituals.",
+   "paragraph": 3,
+   "quote": "Olutio collaborated with Algli and Sruta"
+  }
+ ],
+ "rejected": []
+}

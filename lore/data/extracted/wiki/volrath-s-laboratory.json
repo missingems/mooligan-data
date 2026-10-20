@@ -1,0 +1,178 @@
+{
+ "page": "wiki/volrath-s-laboratory",
+ "url": "https://mtg.wiki/page/Volrath%27s_Laboratory",
+ "title": "Volrath's Laboratory",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:00Z",
+ "storyline": "Rath and Mercadia",
+ "entities": [
+  {
+   "name": "Volrath's Laboratory",
+   "type": "location",
+   "aliases": [],
+   "description": "Room in the Stronghold where the Evincar of Rath placed many experiments, shifted to Urborg during the Rathi Overlay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [
+    "Evincar of Rath",
+    "the Evincar"
+   ],
+   "description": "Evincar of Rath whose experiments aimed at transcendence of the flesh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Structure containing the laboratory, later shifted to Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Evincar's domain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Dominaria to which the Stronghold shifted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath's Dungeon",
+   "type": "location",
+   "aliases": [],
+   "description": "Housed in the same building as the lab.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moggs",
+   "type": "faction",
+   "aliases": [
+    "Mogg"
+   ],
+   "description": "Creatures adapted from goblins in the lab.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight Crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crew who entered the laboratory searching for Sisay and Takara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain whose shapeshifter double appeared in a vat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takara",
+   "type": "character",
+   "aliases": [],
+   "description": "Sought by the crew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [],
+   "description": "Smashed the laboratory's glassware.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirri",
+   "type": "character",
+   "aliases": [],
+   "description": "Smashed the laboratory's glassware.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that shifted the Stronghold to Urborg.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the assault on Rath, part of the Weatherlight crew enters the laboratory searching for Sisay and Takara and finds experiments, including Sisay in a vat.",
+   "participants": [
+    "Weatherlight Crew",
+    "Sisay",
+    "Takara",
+    "Volrath's Laboratory"
+   ],
+   "location": "Volrath's Laboratory",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They found several of his twisted experiments and saw Sisay in one of the vats"
+  },
+  {
+   "summary": "The Sisay in the vat turns out to be a shapeshifter and attacks; it is killed.",
+   "participants": [
+    "Sisay",
+    "Gerrard",
+    "Mirri"
+   ],
+   "location": "Volrath's Laboratory",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she turned out to be a shapeshifter and attacked them"
+  },
+  {
+   "summary": "Gerrard and Mirri smash the glass tubs, vats and tubes before moving on.",
+   "participants": [
+    "Gerrard",
+    "Mirri"
+   ],
+   "location": "Volrath's Laboratory",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Gerrard and Mirri smashed all the glass tubs, vats and tubes they could find"
+  },
+  {
+   "summary": "During the Rathi Overlay the laboratory shifts with the Stronghold to Urborg.",
+   "participants": [
+    "Volrath's Laboratory",
+    "Stronghold",
+    "Urborg"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the laboratory was shifted with the rest of the Stronghold to Urborg on Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Volrath",
+   "relation": "created",
+   "target": "Moggs",
+   "note": "adapted from goblins in the lab",
+   "paragraph": 2,
+   "quote": "The moggs were first adapted from normal goblins within this chamber"
+  },
+  {
+   "source": "Volrath's Laboratory",
+   "relation": "located_in",
+   "target": "Stronghold",
+   "note": "",
+   "paragraph": 0,
+   "quote": "located inside the Stronghold 's structure"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,93 @@
+{
+ "page": "wiki/evelyn",
+ "url": "https://mtg.wiki/page/Evelyn",
+ "title": "Evelyn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:55Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Evelyn, the Covetous",
+   "type": "character",
+   "aliases": [
+    "Evelyn"
+   ],
+   "description": "A vampire rogue of the Maestros family in New Capenna, the first to receive Xander's vampiric gift and a collector of artifacts from the old world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "New Capenna crime family with many long-lived members through Xander's vampiric gift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [
+    "Old Capenna"
+   ],
+   "description": "The plane and city where Evelyn lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xander",
+   "type": "character",
+   "aliases": [
+    "Lord Xander"
+   ],
+   "description": "Lord who gave the gift of vampirism and once was Evelyn's lover; keeps private archives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [],
+   "description": "District where exceptionally aged sphinxes reside.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crime family with a small number of elderly rhox.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xander gives Evelyn the first gift of vampirism.",
+   "participants": [
+    "Xander",
+    "Evelyn, the Covetous"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The first to receive the gift of vampirism from Xander"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Evelyn, the Covetous",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "vampire rogue",
+   "paragraph": 0,
+   "quote": "is a vampire rogue of the Maestros family in New Capenna"
+  },
+  {
+   "source": "Evelyn, the Covetous",
+   "relation": "romantic",
+   "target": "Xander",
+   "note": "former lover, long ago",
+   "paragraph": 2,
+   "quote": "Once, she called Lord Xander a lover"
+  }
+ ],
+ "rejected": []
+}

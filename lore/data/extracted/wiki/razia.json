@@ -1,0 +1,122 @@
+{
+ "page": "wiki/razia",
+ "url": "https://mtg.wiki/page/Razia",
+ "title": "Razia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:46Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "An archangel of fire and parun of the Boros Legion on Ravnica, second signatory of the Guildpact; killed by Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Ravnican guild with Razia as its heart and soul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azor",
+   "type": "character",
+   "aliases": [],
+   "description": "First signatory of the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "Pact signed by Azor and Razia among others.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who killed Razia by impaling her with her sword, while enslaved by Augustin IV.",
+   "presence": "appears"
+  },
+  {
+   "name": "Augustin IV",
+   "type": "character",
+   "aliases": [],
+   "description": "Enslaved Szadek at the time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed the lupul that posed as Razia, with Pivlic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pivlic",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped destroy the lupul posing as Razia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Razia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Szadek, enslaved by Augustin IV, kills Razia by impaling her with her sword.",
+   "participants": [
+    "Szadek",
+    "Razia",
+    "Augustin IV"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she was killed by Szadek , who impaled her with her sword"
+  },
+  {
+   "summary": "A lupul poses as Razia until Agrus Kos and Pivlic destroy it.",
+   "participants": [
+    "Agrus Kos",
+    "Pivlic"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "it was ultimately destroyed by Agrus Kos and Pivlic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Szadek",
+   "relation": "killed",
+   "target": "Razia",
+   "note": "Impaled her with her sword",
+   "paragraph": 2,
+   "quote": "she was killed by Szadek , who impaled her with her sword"
+  },
+  {
+   "source": "Razia",
+   "relation": "leader_of",
+   "target": "Boros Legion",
+   "note": "Parun of the Boros Legion",
+   "paragraph": 0,
+   "quote": "the parun of the Boros Legion on Ravnica"
+  }
+ ],
+ "rejected": []
+}

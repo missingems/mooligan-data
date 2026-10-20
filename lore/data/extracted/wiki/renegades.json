@@ -1,0 +1,154 @@
+{
+ "page": "wiki/renegades",
+ "url": "https://mtg.wiki/page/Renegades",
+ "title": "Renegades",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:47Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "A rebel faction in Ghirapur on Kaladesh led by Pia Nalaar, who opposed the corrupt Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Government of Ghirapur accused of corruption by the Renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leaking Spire",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Symbol of the Renegades, an upside-down Aether Collection Tower.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gonti",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a hidden cache of artifacts the Renegades turned into weapons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Hub",
+   "type": "location",
+   "aliases": [],
+   "description": "Site attacked by the Renegades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group distracted by a diversion attack while the Consulate retook the Aether Hub.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [],
+   "description": "Participant in a diversion attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [],
+   "description": "Participant in a diversion attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated, after which the Consulate yielded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City where the Renegades operated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Renegades.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Renegades attack the Aether Hub and its personnel yield.",
+   "participants": [
+    "Renegades",
+    "Aether Hub"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the renegades attacked the Aether Hub"
+  },
+  {
+   "summary": "The Consulate retakes the Aether Hub while the Gatewatch is distracted by a diversion attack by Baral and Dovin Baan.",
+   "participants": [
+    "Consulate",
+    "Gatewatch",
+    "Baral",
+    "Dovin Baan"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Consulate took control of the Aether Hub again"
+  },
+  {
+   "summary": "After Tezzeret's final defeat, the Consulate yields and Renegades are integrated into it.",
+   "participants": [
+    "Consulate",
+    "Renegades",
+    "Tezzeret"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "After the final defeat of Tezzeret , the Consulate yielded."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "leader_of",
+   "target": "Renegades",
+   "note": "Led the Renegades",
+   "paragraph": 0,
+   "quote": "They were led by Pia Nalaar ."
+  },
+  {
+   "source": "Renegades",
+   "relation": "enemy",
+   "target": "Consulate",
+   "note": "Believed it was corrupt",
+   "paragraph": 1,
+   "quote": "The Renegades believed that the Consulate was corrupt"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,100 @@
+{
+ "page": "wiki/parisha",
+ "url": "https://mtg.wiki/page/Parisha",
+ "title": "Parisha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:03Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Parisha",
+   "type": "character",
+   "aliases": [],
+   "description": "An Azorius arrester of the Ninth Precinct who captured Vadax Gor using Fblthp as bait.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fblthp",
+   "type": "character",
+   "aliases": [],
+   "description": "A homunculus used as bait.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vadax Gor",
+   "type": "character",
+   "aliases": [],
+   "description": "A Rakdos renegade suspected in two disappearances.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild Parisha serves.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "Azorius city where mission details were read.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of the renegade Vadax Gor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Parisha picks up Fblthp in the Azorius gardens to use as bait for Vadax Gor.",
+   "participants": [
+    "Parisha",
+    "Fblthp",
+    "Vadax Gor"
+   ],
+   "location": "New Prahv",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Spotting Fblthp in the Azorius gardens, she approached him and bid him come with her to New Prahv"
+  },
+  {
+   "summary": "Vadax Gor snatches Fblthp; Parisha chases him down, throws an arrester's circle and rescues Fblthp.",
+   "participants": [
+    "Parisha",
+    "Vadax Gor",
+    "Fblthp"
+   ],
+   "location": "New Prahv",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she threw an arrester's circle on the criminal and wrestled Fblthp from his grip."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Parisha",
+   "relation": "enemy",
+   "target": "Vadax Gor",
+   "note": "She hunted and captured him.",
+   "paragraph": 1,
+   "quote": "Parisha was on the hunt for the Rakdos renegade Vadax Gor"
+  },
+  {
+   "source": "Parisha",
+   "relation": "member_of",
+   "target": "Azorius",
+   "note": "She is an Azorius arrester.",
+   "paragraph": 0,
+   "quote": "Parisha is an Azorius arrester serving the Ninth Precinct."
+  }
+ ],
+ "rejected": []
+}

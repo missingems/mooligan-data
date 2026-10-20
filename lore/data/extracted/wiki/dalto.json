@@ -1,0 +1,100 @@
+{
+ "page": "wiki/dalto",
+ "url": "https://mtg.wiki/page/Dalto",
+ "title": "Dalto",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:44Z",
+ "storyline": "Shandalar",
+ "entities": [
+  {
+   "name": "Dalto",
+   "type": "character",
+   "aliases": [],
+   "description": "Mercenary on Shandalar hired to bring back a chest holding the key to the Onakke Catacombs; touch-averse, silent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who burst in to hire the mercenaries to break into the viceroy's palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harcu",
+   "type": "character",
+   "aliases": [],
+   "description": "Mercenary who raised his sword to attack Liliana and was disintegrated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Onakke Catacombs",
+   "type": "location",
+   "aliases": [],
+   "description": "Place whose key was in the chest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Viceroy",
+   "type": "character",
+   "aliases": [],
+   "description": "Viceroy Liliana planned to kill.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liliana kicked the door down and proposed hiring the mercenaries to break into the viceroy's palace.",
+   "participants": [
+    "Liliana Vess",
+    "Dalto"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Liliana Vess interrupted them by kicking the door down and barging in"
+  },
+  {
+   "summary": "An angel disintegrated Harcu with golden light as he charged Liliana.",
+   "participants": [
+    "Harcu",
+    "Liliana Vess"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the angel filled his body with golden light until he disintegrated"
+  },
+  {
+   "summary": "The angel declared Dalto damned for all time and disintegrated him.",
+   "participants": [
+    "Dalto"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The angel announced that Dalto was damned for all time"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Dalto",
+   "note": "Intended to hire him.",
+   "paragraph": 1,
+   "quote": "She planned to hire the mercenaries to break into the viceroy's palace."
+  }
+ ],
+ "rejected": []
+}
