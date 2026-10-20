@@ -30,6 +30,7 @@ Each step only does what is new: scrape skips pages already saved, extract skips
 | `state/batch.json` | The batch in flight, while there is one, so the next run collects it rather than paying twice |
 | `eras.json` | When each MTG Wiki section's story is set, so the wiki's undated events can be put in order: `{page: {section: {era, label, date}}}`, where `era` is the set code of the set that told it (or a year), and `date` that set's release date (see `mtglore/eras.py`, `python -m mtglore era-ingest <file>`) |
 | `merges.json` | Hand-kept fixes to how names are grouped: `same` (lists of names for one entity), `different` (pairs to keep apart), `rename` (a name to the name the entity should go by), `storylines` (a storyline's name to the spelling to use) |
+| `index/` | Not committed: `build` writes it from the rest, in about half a minute, and the workflows build it before they publish |
 | `index/entities.json` | Every entity, most pages first: id, name, type, aliases, description, pages, first and last seen |
 | `index/entity/<id>.json` | One entity with its `timeline` (events in story order), `relations`, and `pages_say` (what each page says of them) |
 | `index/events.json`, `relations.json` | All of them, in story order, each with a `link` that opens the page with the quote highlighted |

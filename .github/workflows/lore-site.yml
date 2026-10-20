@@ -1,6 +1,7 @@
 name: Lore site
 
-# Builds the lore site (lore/site) from the committed index: `mtglore publish` writes the data, esbuild the page.
+# Builds the lore index from the committed extractions (`mtglore build`), then the site (`mtglore publish` writes the
+# data, esbuild the page) and the app's feed (`mtglore app`).
 # With "publish" ticked, or on a push that edits lore/site/publish.json, it uploads the result to the R2 bucket under lore/, where it is served at
 # https://data.mooligan.com/lore/index.html. Nothing outside lore/ in the bucket is touched.
 on:
@@ -39,6 +40,7 @@ jobs:
           cache: npm
           cache-dependency-path: lore/site/package-lock.json
       - run: pip install -r requirements.txt
+      - run: python -m mtglore build
       - run: python -m mtglore publish
       - run: python -m mtglore app
       - working-directory: lore/site
