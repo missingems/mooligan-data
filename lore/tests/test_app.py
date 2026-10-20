@@ -118,4 +118,7 @@ def test_narratives_keep_only_sentences_their_set_events_support():
         {"text": "See [[Some Card]].", "cites": ["e1"]},
     ], known, set(), "dom", rejected)
     assert [k["text"] for k in kept] == ["The sky broke.", 'They said "the stars fell like rain".']
-    assert [r["reason"] for r in rejected] == ["cites", "quote"]
+    assert [r["reason"] for r in rejected] == ["cites", "quote", "card"]
+    rejected = []
+    check_sentences([{"text": "One.", "cites": ["e1"]}] * 6, known, set(), "dom", rejected)
+    assert [r["reason"] for r in rejected] == ["too long"]

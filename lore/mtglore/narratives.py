@@ -23,7 +23,7 @@ from .app import Feed, _pick
 # Per set, at most this many of an entity's events go into its input; per set summary, this many of the set's.
 MAX_ENTITY_EVENTS = 40
 MAX_SET_EVENTS = 120
-MAX_SENTENCES = 4
+MAX_SENTENCES = 5
 
 ENTITY_INSTRUCTIONS = """Write, for each set below, a short paragraph telling what happened to this entity in \
 that set's story, for a Magic fan reading its page in an app. Use only the events listed under that set: do not \
@@ -123,6 +123,8 @@ def _cards_hold(text: str, cards: Set[str]) -> bool:
 
 def check_sentences(items: List[dict], known: Dict[str, dict], cards: Set[str], part: str, rejected: List[dict]) -> List[dict]:
     kept = []
+    # Past the limit, sentences are refused out loud, so the writer merges them rather than losing an ending.
+    rejected += [{"part": part, "reason": "too long", **item} for item in items[MAX_SENTENCES:]]
     for item in items[:MAX_SENTENCES]:
         text = (item.get("text") or "").strip()
         cites = [c.strip() for c in item.get("cites", []) if c.strip()]
