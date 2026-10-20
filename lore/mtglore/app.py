@@ -266,12 +266,36 @@ def _sentence(text: str) -> str:
     return text if not text or text[-1] in ".!?\"”’)" else text + "."
 
 
+# Pages that tell the story itself, rather than look back on it (the wiki) or glimpse it (flavor text).
+STORY_PAGES = ("stories/", "profiles/", "archive/")
+
+
+def _spread(items: List[dict], count: int) -> List[dict]:
+    """`count` of `items` spaced evenly from the first to the last, so a story keeps its start and its ending."""
+    if count <= 0:
+        return []
+    if len(items) <= count:
+        return items
+    if count == 1:
+        return items[-1:]
+    return [items[round(i * (len(items) - 1) / (count - 1))] for i in range(count)]
+
+
 def _pick(events: List[dict], count: int) -> List[dict]:
-    """The `count` events that tell the most, major ones first, kept in story order."""
+    """The `count` events that tell the arc: the story's own events before the wiki's look back, the major ones
+    first, spread from beginning to end so the climax stays in; kept in story order."""
     if len(events) <= count:
         return events
-    ranked = sorted(range(len(events)), key=lambda i: (events[i]["importance"] != "major", i))[:count]
-    return [events[i] for i in sorted(ranked)]
+    story = [e for e in events if e["page"].startswith(STORY_PAGES)]
+    pool = story if len(story) >= count else events
+    major = [e for e in pool if e["importance"] == "major"]
+    if len(major) >= count:
+        chosen = _spread(major, count)
+    else:
+        minor = [e for e in pool if e["importance"] != "major"]
+        chosen = major + _spread(minor, count - len(major))
+    order = {id(e): i for i, e in enumerate(events)}
+    return sorted(chosen, key=lambda e: order[id(e)])
 
 
 class Story:

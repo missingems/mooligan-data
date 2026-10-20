@@ -1156,7 +1156,7 @@ Teferi, now mortal, is living with his family when Jhoira asks him to join the W
 
 - `credit` (front matter): present when any of the page's text comes from MTG Wiki, which is CC BY-NC-SA 4.0. Show it, for example as a small footnote, whenever the page is shown. A page told only from official sources has no `credit`.
 - `## Who they are` (`## What it is` for places, factions and artifacts): the written bio, then a paragraph on where things stand; or the index's description.
-- `## Story`: one `###` per set (else storyline, era or year) in story order, each with one short paragraph. For the sets the entity is key to, the paragraph is written as a story (`lore/data/narratives`); for the others, it tells up to four of its events from that set.
+- `## Story`: one `###` per set (else storyline, era or year) in story order, each with one short paragraph. For the sets the entity is key to, the paragraph is written as a story (`lore/data/narratives`); for the others, it tells up to four of its events from that set, chosen the same way as the timeline's.
 - `## Cards`: the cards that depict the entity, oldest first. `[[Card Name]]` also appears in the prose where it reads naturally, only for the entity's own cards.
 - The page carries no links or source list. Which line each sentence rests on stays in the lore index (`lore/data/narratives`, `lore/data/bios` and the index's citations), and the web preview shows it.
 
@@ -1183,7 +1183,7 @@ Teferi, now mortal, is living with his family when Jhoira asks him to join the W
 ```
 
 - `## In {Set Name}`: the same paragraph as the set's section in the entity's page. Where the set has none of the entity's events and the entity is only on its cards, it is what the cards show of them.
-- `## Timeline`: at most 10 of the entity's events in that set, one short line each, in story order; the major ones are kept first when there are more. It is left out when there are none.
+- `## Timeline`: at most 10 of the entity's events in that set, one short line each, in story order. When there are more, it keeps the story's own events before the wiki's, the major ones first, spread from the first to the last so the set's ending stays in. It is left out when there are none.
 - `credit`: as for the entity pages.
 
 ## Who they are
