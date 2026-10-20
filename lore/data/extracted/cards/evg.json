@@ -1,0 +1,208 @@
+{
+ "page": "cards/evg",
+ "url": "https://scryfall.com/sets/evg",
+ "title": "Duel Decks Anthology: Elves vs. Goblins: card flavor text",
+ "story_date": "2014-12-05",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Llanowar",
+   "type": "location",
+   "aliases": [],
+   "description": "An elven forest realm whose elves impose harsh penalties on trespassers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawn's Light Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "A palace of the elves of Lys Alana with high tiers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wren's Run",
+   "type": "location",
+   "aliases": [],
+   "description": "A shaded elven place reached by the Lys Alana huntmaster's horn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "An elven home whose huntmasters sound a silver horn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A powerful artifact whose power pulses in the veins of elves and speaks to them with a voice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wirewood",
+   "type": "location",
+   "aliases": [],
+   "description": "An elven forest home whose elves clash with goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seton",
+   "type": "character",
+   "aliases": [],
+   "description": "A centaur druid who speaks of life's lessons coming from breathing and noticing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moonglove",
+   "type": "concept",
+   "aliases": [],
+   "description": "A substance that, diluted, can etch living tissue and, concentrated, can kill a giant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akki",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins whose shells provide protection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirk Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A ridge from which goblins poured like lava and where shamans gather herbs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ib Halfheart",
+   "type": "character",
+   "aliases": [
+    "Ib Halfheart, Goblin Tactician"
+   ],
+   "description": "A goblin tactician who orders everyone but himself to charge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Frogtosser Games",
+   "type": "event",
+   "aliases": [],
+   "description": "A goblin festival including the lighting of the Flaming Boggart.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flaming Boggart",
+   "type": "concept",
+   "aliases": [],
+   "description": "A goblin effigy lit at the Frogtosser Games.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "A dementia summoner who enjoys the sounds goblins make when they die.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auntie Grub",
+   "type": "character",
+   "aliases": [
+    "Auntie"
+   ],
+   "description": "A boggart of tales who caught a goat and was greeted by her warren with hot tar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boggarts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins who revel in discovering new sensations and live in warrens.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kumano",
+   "type": "character",
+   "aliases": [],
+   "description": "A teacher who tells his pupils each holds the strength of a landslide.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In a tale, Auntie Grub caught a goat and her warren greeted her with hot tar.",
+   "participants": [
+    "Auntie Grub"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "Auntie Grub had caught a goat, a bleating doe that still squirmed in her arms."
+  },
+  {
+   "summary": "In a tale, Auntie Grub discovered the fire had made the goat smell delicious.",
+   "participants": [
+    "Auntie Grub"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 38,
+   "quote": "the fire had turned the goat into something that smelled delicious."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dawn's Light Palace",
+   "relation": "other",
+   "target": "Wren's Run",
+   "note": "both reached by the sound of the Lys Alana huntmaster's horn",
+   "paragraph": 5,
+   "quote": "From the highest tiers of Dawn's Light Palace to the deepest shade of Wren's Run, the silver notes of the horn shimmer through the air"
+  },
+  {
+   "source": "Braids",
+   "relation": "enemy",
+   "target": "Boggarts",
+   "note": "Braids enjoys goblins dying",
+   "paragraph": 33,
+   "quote": "They make funny little popping sounds when they die."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "The goblins laughed as an elf ran away from them, until more elves came back.",
+   "participants": [],
+   "location": "Wirewood",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "The goblins laughed as the elf ran away, until more came back."
+  },
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "Goblins poured from the Skirk Ridge, burning and devouring everything in their path.",
+   "participants": [],
+   "location": "Skirk Ridge",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "They poured from the Skirk Ridge like lava, burning and devouring everything in their path."
+  },
+  {
+   "kind": "relation",
+   "reason": "unlisted entity",
+   "source": "Kumano",
+   "relation": "mentor_of",
+   "target": "Kumano",
+   "note": "Kumano teaches pupils (unnamed)",
+   "paragraph": 37,
+   "quote": "—Kumano, to his pupils"
+  }
+ ]
+}

@@ -1,0 +1,921 @@
+{
+ "page": "cards/sld",
+ "url": "https://scryfall.com/sets/sld",
+ "title": "Secret Lair Drop: card flavor text",
+ "story_date": "2022-12-02",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "Secret Lair Drop",
+ "entities": [
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose lost prophecy speaks of the Swarm rising to rule all.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes, where an ancient eye opens; one student says it took everything from her family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thalia, Guardian of Thraben",
+   "type": "character",
+   "aliases": [
+    "Thalia",
+    "Guardian of Thraben"
+   ],
+   "description": "A protector sworn to defend the people of Thraben, even from angels, who would rather be a heretic than betray her conscience.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "A place Thalia guards and keeps safe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Captain Lannery Storm",
+   "type": "character",
+   "aliases": [],
+   "description": "A pirate captain who speaks of ships going missing in the Stormwreck Sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stormwreck Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "A sea where ships go missing all the time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valor's Reach",
+   "type": "location",
+   "aliases": [],
+   "description": "A place whose entrance is watched by statues of its twin founders and first champions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Markov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "A manor where vampires hold soirees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon whose subjects congregate in Ayagor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Surrak, the Hunt Caller",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter whose duty is to keep Atarka's feeding bowl full.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayagor",
+   "type": "location",
+   "aliases": [
+    "the Dragon's Bowl"
+   ],
+   "description": "The place where Atarka and her subjects congregate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karametra",
+   "type": "deity",
+   "aliases": [],
+   "description": "A deity of harvest whose worshippers plant countless seeds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Queen Marchesa",
+   "type": "character",
+   "aliases": [
+    "Marchesa"
+   ],
+   "description": "A queen who calls Brago a forgotten fool; many of her subjects have died for her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brago",
+   "type": "character",
+   "aliases": [],
+   "description": "A former ruler whose tomb is now the last memorial to a forgotten fool.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "A ruling power whose defeat opened the forges of Ghirapur to all.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city from which inventions pour forth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian of great ingenuity whose domain hosts terrible experiments, and who welcomes a new Phyrexian Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian known for inhumanity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana",
+    "Professor Vess"
+   ],
+   "description": "A planeswalker necromancer from Dominaria who sold her soul to four demons for powerful gifts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon who gave Liliana power over death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kothophed",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon who gave Liliana eternal youth carved into her skin as tattoos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Razaketh",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon who gave Liliana sway over the living.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "A monstrous being invoked as the ultimate foe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rielle",
+   "type": "character",
+   "aliases": [],
+   "description": "A teacher who promises a girl to teach her how to make the future brighter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Michiko Konda",
+   "type": "character",
+   "aliases": [
+    "Michiko"
+   ],
+   "description": "A woman who could not stand by while Kamigawa suffered for her father's actions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane that suffered and was saved by Toshiro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [
+    "Toshiro"
+   ],
+   "description": "A self-interested trickster who ended up saving all of Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [
+    "Heartless Hidetsugu"
+   ],
+   "description": "A powerful figure who held over a dozen oni in blood oath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reki",
+   "type": "character",
+   "aliases": [],
+   "description": "A man whose tattoos were transcribed after his death to write The History of Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The History of Kamigawa",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A volume written from Reki's tattoos and stories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [
+    "Kaito"
+   ],
+   "description": "A planeswalker ninja skilled with technology and blade, searching the Multiverse for his sister.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who refuses to reveal where her son is.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A schemer working with someone after more than the Emperor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Emperor",
+   "type": "character",
+   "aliases": [],
+   "description": "A ruler who chooses to face the real enemy rather than be hunted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xenagos, the Reveler",
+   "type": "character",
+   "aliases": [
+    "Xenagos"
+   ],
+   "description": "A reveler who enjoys arson at parties.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greensleeves, High Wizard of the Domains",
+   "type": "character",
+   "aliases": [
+    "Greensleeves"
+   ],
+   "description": "A wizard who speaks of the spirits of the Whispering Woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest with mysterious, mercurial spirits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "A land where slivers nested in great numbers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riptide Project",
+   "type": "faction",
+   "aliases": [],
+   "description": "A research project experimenting on slivers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hastric",
+   "type": "character",
+   "aliases": [],
+   "description": "A Thunian scout who observes slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merrik Aidar",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of a Benalish patrol beset by slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "deity",
+   "aliases": [],
+   "description": "A figure who speaks of sliver instincts and Skyshroud's depletion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud",
+   "type": "location",
+   "aliases": [],
+   "description": "A depleted land whose rangers fight slivers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard of the Weatherlight"
+   ],
+   "description": "A man of the Weatherlight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A ship whose timbers slivers broke against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sliver Queen",
+   "type": "creature",
+   "aliases": [],
+   "description": "The lost progenitor of the slivers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "A long-dead figure who wanted slivers to be instruments of destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The world from which slivers came, and whose overlay trapped some between worlds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endrek Sahr",
+   "type": "character",
+   "aliases": [],
+   "description": "A master breeder of thrulls fascinated by slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adom Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "A Benalish hero who witnessed a sliver attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Llanach",
+   "type": "character",
+   "aliases": [],
+   "description": "A Skyshroud ranger who fought slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who made a music box from Krark's thumb as a child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krark's Thumb",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A wayward digit said to bring its owner luck.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel to whom travelers pray now that Avacyn is gone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who is gone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakkon Blackblade",
+   "type": "character",
+   "aliases": [],
+   "description": "Wielder of the Blackblade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker mind mage from Vryn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vryn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Jace's plane of origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker pyromancer from Kaladesh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Chandra's plane of origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker auramancer from Naya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker summoner of unknown origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Liliana's plane of origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "A power whose zealots live only for conquest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "A land to which night will one day come.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narvek Riag",
+   "type": "character",
+   "aliases": [],
+   "description": "A kithkin prophet foretelling night coming to Lorwyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure of faith who unleashed her wrath in blinding light.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saheeli",
+   "type": "character",
+   "aliases": [],
+   "description": "An inventor who works with Breya and loves someone in Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breya",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer who works with Saheeli.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [],
+   "description": "A strategist who promises the city for eight walkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [
+    "Stitcher Geralf"
+   ],
+   "description": "A stitcher whose messages are always bad news.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Vess",
+   "type": "faction",
+   "aliases": [],
+   "description": "A house whose purple banner symbolizes death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reito",
+   "type": "location",
+   "aliases": [],
+   "description": "A town destroyed in one of the first battles of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war in which Reito was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darien",
+   "type": "character",
+   "aliases": [],
+   "description": "The last king of Kjeldor, who fulfilled his dream of unification.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "A kingdom succeeded by New Argive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "A being in whose wake faith was trodden.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liliana Vess sold her soul to four demons in exchange for powerful gifts.",
+   "participants": [
+    "Liliana Vess"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 55,
+   "quote": "She sold her soul to four demons for powerful gifts."
+  },
+  {
+   "summary": "Griselbrand granted Liliana power over death.",
+   "participants": [
+    "Griselbrand",
+    "Liliana Vess"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 54,
+   "quote": "Power over death was Griselbrand's gift."
+  },
+  {
+   "summary": "Kothophed granted Liliana eternal youth in the form of tattoos.",
+   "participants": [
+    "Kothophed",
+    "Liliana Vess"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 56,
+   "quote": "Kothophed bestowed upon Liliana eternal youth, carved into her skin as intricate tattoos."
+  },
+  {
+   "summary": "Razaketh granted Liliana sway over the living.",
+   "participants": [
+    "Razaketh",
+    "Liliana Vess"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 57,
+   "quote": "From Razaketh, Liliana gained sway over the living."
+  },
+  {
+   "summary": "After the Consulate's defeat, Ghirapur's forges were opened to all.",
+   "participants": [
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 48,
+   "quote": "After the Consulate's defeat, the forges were opened to all."
+  },
+  {
+   "summary": "Michiko acts against Kamigawa's suffering caused by her father.",
+   "participants": [
+    "Michiko Konda"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 91,
+   "quote": "Michiko could not sit idly by while Kamigawa suffered for her father's actions."
+  },
+  {
+   "summary": "Toshiro, looking out for himself, ended up saving all of Kamigawa.",
+   "participants": [
+    "Toshiro Umezawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 93,
+   "quote": "Though only looking out for himself, Toshiro ended up saving all of Kamigawa."
+  },
+  {
+   "summary": "After Reki's death, monks spent ten years transcribing his tattoos into The History of Kamigawa.",
+   "participants": [
+    "Reki",
+    "The History of Kamigawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 95,
+   "quote": "After his death, monks spent ten years transcribing the tattoos from Reki's body and gathering stories from those who spoke with him."
+  },
+  {
+   "summary": "Following his sister's clues, Kaito found his friend dead at a monster's hands.",
+   "participants": [
+    "Kaito Shizuki"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 148,
+   "quote": "Kaito followed the clues his sister gave him, only to find his friend dead at the hands of a monster."
+  },
+  {
+   "summary": "Slivers multiplied in Otaria beyond their numbers on Rath.",
+   "participants": [
+    "Otaria",
+    "Rath"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 226,
+   "quote": "Within weeks, more slivers nested in Otaria than ever existed on Rath."
+  },
+  {
+   "summary": "Riptide wizards' magic killed the first wave of slivers, but the second was immune.",
+   "participants": [
+    "Riptide Project"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 199,
+   "quote": "The first wave of slivers perished from the Riptide wizards' magic. The second wave shrugged off their spells like water."
+  },
+  {
+   "summary": "Slivers attacked the Weatherlight.",
+   "participants": [
+    "Weatherlight"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 228,
+   "quote": "A bristling wave of slivers broke against the *Weatherlight's* timbers."
+  },
+  {
+   "summary": "Reito was destroyed in an early battle of the Kami War.",
+   "participants": [
+    "Kami War"
+   ],
+   "location": "Reito",
+   "importance": "minor",
+   "paragraph": 791,
+   "quote": "Destroyed in one of the first battles of the Kami War, the town of Reito still grieved."
+  },
+  {
+   "summary": "Darien fulfilled his dream of unification and became the last king of Kjeldor.",
+   "participants": [
+    "Darien"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 1268,
+   "quote": "With his dream of unification fulfilled, Darien became the last king of Kjeldor."
+  },
+  {
+   "summary": "Jin-Gitaxias welcomes a newly compleated Phyrexian Planeswalker.",
+   "participants": [
+    "Jin-Gitaxias"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 390,
+   "quote": "\"Wake up, new Phyrexian Planeswalker! You will not be the last.\" —Jin-Gitaxias"
+  },
+  {
+   "summary": "Serra unleashed her wrath in blinding light.",
+   "participants": [
+    "Serra"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 800,
+   "quote": "The skies parted, and Serra unleashed her wrath in blinding light."
+  },
+  {
+   "summary": "Saheeli and Breya bring their invention to life together.",
+   "participants": [
+    "Saheeli",
+    "Breya"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1151,
+   "quote": "\"That's it!\" they exclaimed in unison as their vision sprang to life."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Griselbrand",
+   "note": "received power over death from the demon",
+   "paragraph": 54,
+   "quote": "Power over death was Griselbrand's gift."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Kothophed",
+   "note": "received eternal youth from the demon",
+   "paragraph": 56,
+   "quote": "Kothophed bestowed upon Liliana eternal youth, carved into her skin as intricate tattoos."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Razaketh",
+   "note": "received sway over the living from the demon",
+   "paragraph": 57,
+   "quote": "From Razaketh, Liliana gained sway over the living."
+  },
+  {
+   "source": "Thalia, Guardian of Thraben",
+   "relation": "serves",
+   "target": "Thraben",
+   "note": "guardian of Thraben",
+   "paragraph": 554,
+   "quote": "Thalia uses every tool at her disposal to keep Thraben safe."
+  },
+  {
+   "source": "Surrak, the Hunt Caller",
+   "relation": "serves",
+   "target": "Atarka",
+   "note": "keeps Atarka's bowl full",
+   "paragraph": 43,
+   "quote": "It is my duty to keep that bowl full."
+  },
+  {
+   "source": "Atarka",
+   "relation": "located_in",
+   "target": "Ayagor",
+   "note": "congregates there with her subjects",
+   "paragraph": 43,
+   "quote": "Atarka and her subjects congregate in Ayagor, the Dragon's Bowl."
+  },
+  {
+   "source": "Queen Marchesa",
+   "relation": "enemy",
+   "target": "Brago",
+   "note": "scorns him as a forgotten fool",
+   "paragraph": 47,
+   "quote": "Now it stands as the last memorial to a forgotten fool."
+  },
+  {
+   "source": "Slobad",
+   "relation": "other",
+   "target": "Krark's Thumb",
+   "note": "made a music box out of it",
+   "paragraph": 135,
+   "quote": "As a child, Slobad fashioned a music box out of the wayward digit."
+  },
+  {
+   "source": "Gerrard",
+   "relation": "member_of",
+   "target": "Weatherlight",
+   "note": "Gerrard of the Weatherlight",
+   "paragraph": 209,
+   "quote": "—Gerrard of the *Weatherlight*"
+  },
+  {
+   "source": "Volrath",
+   "relation": "other",
+   "target": "Sliver Queen",
+   "note": "slivers became what he wanted them to be",
+   "paragraph": 243,
+   "quote": "Though Volrath is long dead, the slivers have become everything he wanted them to be"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "The Emperor",
+   "note": "his ally is after the Emperor and more",
+   "paragraph": 389,
+   "quote": "\"Whoever Tezzeret is working with is after more than the Emperor.\" —Tamiyo"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "other",
+   "target": "Vryn",
+   "note": "plane of origin",
+   "paragraph": 577,
+   "quote": "Plane of Origin: Vryn"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Dominaria",
+   "note": "plane of origin",
+   "paragraph": 578,
+   "quote": "Plane of Origin: Dominaria"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "other",
+   "target": "Kaladesh",
+   "note": "plane of origin",
+   "paragraph": 580,
+   "quote": "Plane of Origin: Kaladesh"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "other",
+   "target": "Jace Beleren",
+   "note": "comments on his disappearing acts",
+   "paragraph": 920,
+   "quote": "\"Nicely done, Jace. You always were good at disappearing acts.\" —Liliana Vess"
+  },
+  {
+   "source": "Darien",
+   "relation": "leader_of",
+   "target": "Kjeldor",
+   "note": "last king of Kjeldor",
+   "paragraph": 1268,
+   "quote": "Darien became the last king of Kjeldor."
+  },
+  {
+   "source": "Saheeli",
+   "relation": "ally",
+   "target": "Breya",
+   "note": "collaborate on an invention",
+   "paragraph": 1151,
+   "quote": "\"And we adjust for the flow of mana . . .\" added Breya."
+  },
+  {
+   "source": "Toshiro Umezawa",
+   "relation": "other",
+   "target": "Kamigawa",
+   "note": "saved Kamigawa",
+   "paragraph": 93,
+   "quote": "Toshiro ended up saving all of Kamigawa."
+  },
+  {
+   "source": "Sigarda",
+   "relation": "other",
+   "target": "Avacyn",
+   "note": "remains after Avacyn is gone",
+   "paragraph": 262,
+   "quote": "\"Avacyn is gone, yet you remain.\" —Traveler's prayer to Sigarda"
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "other",
+   "target": "Kamigawa",
+   "note": "held oni in blood oath",
+   "paragraph": 94,
+   "quote": "Hidetsugu held over a dozen oni in blood oath."
+  }
+ ],
+ "rejected": []
+}

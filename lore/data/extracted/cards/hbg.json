@@ -1,0 +1,133 @@
+{
+ "page": "cards/hbg",
+ "url": "https://scryfall.com/sets/hbg",
+ "title": "Alchemy Horizons: Baldur's Gate: card flavor text",
+ "story_date": "2022-07-07",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Alchemy Horizons: Baldur's Gate",
+ "entities": [
+  {
+   "name": "Coast Way",
+   "type": "location",
+   "aliases": [],
+   "description": "A road rumored to have bandits along it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Bormul",
+   "type": "character",
+   "aliases": [],
+   "description": "A landowner who claims an owlbear has been trampling her fields.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baldur's Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "A city whose rumor mill centers on a bakery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seatower of Balduran",
+   "type": "location",
+   "aliases": [],
+   "description": "An imposing seatower used as a prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wyrm's Crossing",
+   "type": "location",
+   "aliases": [],
+   "description": "A bridge where traffic has halted amid cries of alarm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lizard Marsh",
+   "type": "location",
+   "aliases": [],
+   "description": "A marsh, presumably home to lizards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Outer City",
+   "type": "location",
+   "aliases": [],
+   "description": "Slums outside Baldur's Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dusthawk Hill",
+   "type": "location",
+   "aliases": [],
+   "description": "A hill with caves below rumored to house a den of werewolves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Jannath",
+   "type": "character",
+   "aliases": [],
+   "description": "A lord who sent the reader to secure a mine from gnoll raiders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ramazith's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "A tower rumored to hide powerful artifacts and untold wealth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rilsa Rael",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who seems to need a large amount of hiexel bark.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The reader arrives at Baldur's Gate with instructions to go to the bakery, the heart of the rumor mill.",
+   "participants": [
+    "Baldur's Gate"
+   ],
+   "location": "Baldur's Gate",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "You arrive at Baldur's Gate with instructions to head straight to the heart of the rumor mill: the bakery."
+  },
+  {
+   "summary": "Traffic on Wyrm's Crossing halts amid distant cries of alarm.",
+   "participants": [
+    "Wyrm's Crossing"
+   ],
+   "location": "Wyrm's Crossing",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "you hear distant cries of alarm, and you notice that all traffic on the bridge has come to a halt."
+  },
+  {
+   "summary": "Lord Jannath sends the reader to secure a mine from gnoll raiders, but neither gnolls nor miners are found.",
+   "participants": [
+    "Lord Jannath"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "Lord Jannath sent you to secure the mine from gnoll raiders, but so far you haven't seen any gnolls . . . or, for that matter, any miners."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dusthawk Hill",
+   "relation": "located_in",
+   "target": "Outer City",
+   "note": "Rumors of the werewolf den are heard in the Outer City slums.",
+   "paragraph": 12,
+   "quote": "As you explore the slums of the Outer City, you keep hearing rumors of a den of werewolves in the caves below Dusthawk Hill."
+  }
+ ],
+ "rejected": []
+}

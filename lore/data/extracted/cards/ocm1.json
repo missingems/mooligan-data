@@ -1,0 +1,87 @@
+{
+ "page": "cards/ocm1",
+ "url": "https://scryfall.com/sets/ocm1",
+ "title": "Commander's Arsenal Oversized: card flavor text",
+ "story_date": "2012-11-02",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Azusa, Lost but Seeking",
+   "type": "character",
+   "aliases": [
+    "Azusa"
+   ],
+   "description": "A wanderer who has left Jukai Forest and considers all of Kamigawa her home and its people her family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest on Kamigawa that Azusa says is not her home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Azusa calls her home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sliver Queen",
+   "type": "creature",
+   "aliases": [],
+   "description": "The mother of slivers, whose children are ever part of her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zur the Enchanter",
+   "type": "character",
+   "aliases": [
+    "Zur"
+   ],
+   "description": "An enchanter who stayed aloof from Terisiare's suffering, intent only on his own perfection.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "A land that suffered while Zur remained aloof.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Azusa, Lost but Seeking",
+   "relation": "other",
+   "target": "Kamigawa",
+   "note": "Considers Kamigawa her home",
+   "paragraph": 0,
+   "quote": "My home is Kamigawa, its people my family."
+  },
+  {
+   "source": "Jukai Forest",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "Azusa contrasts the forest with Kamigawa as a whole",
+   "paragraph": 0,
+   "quote": "I do not miss Jukai Forest. It is not my home. My home is Kamigawa, its people my family."
+  },
+  {
+   "source": "Zur the Enchanter",
+   "relation": "other",
+   "target": "Terisiare",
+   "note": "Remained aloof from its suffering",
+   "paragraph": 2,
+   "quote": "Zur remained aloof from Terisiare's suffering, intent only on his own perfection."
+  }
+ ],
+ "rejected": []
+}

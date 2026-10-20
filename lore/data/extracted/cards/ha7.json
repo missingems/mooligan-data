@@ -1,0 +1,43 @@
+{
+ "page": "cards/ha7",
+ "url": "https://scryfall.com/sets/ha7",
+ "title": "Historic Anthology 7: card flavor text",
+ "story_date": "2023-07-18",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Agosto",
+   "type": "character",
+   "aliases": [
+    "Azorius imperator"
+   ],
+   "description": "An Azorius imperator quoted on the subject of undoing deeds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "A guild whose leader holds the title of imperator.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Agosto",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "Agosto is the Azorius imperator.",
+   "paragraph": 1,
+   "quote": "—Agosto, Azorius imperator"
+  }
+ ],
+ "rejected": []
+}

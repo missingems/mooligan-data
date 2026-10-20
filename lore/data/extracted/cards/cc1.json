@@ -1,0 +1,124 @@
+{
+ "page": "cards/cc1",
+ "url": "https://scryfall.com/sets/cc1",
+ "title": "Commander Collection: Green: card flavor text",
+ "story_date": "2020-12-04",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Omnath, Locus of Mana",
+   "type": "creature",
+   "aliases": [],
+   "description": "A ravenous primordial being of pure mana that emerged from the Roil.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Roil",
+   "type": "concept",
+   "aliases": [
+    "Roil"
+   ],
+   "description": "The phenomenon from which Omnath emerged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of forces that tore across Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "plane",
+   "aliases": [],
+   "description": "A land that Urza's forces tore across, and which responded in kind.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azusa",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of a diary reflecting on harmony with the land and the kami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Diary of Azusa",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An in-world writing by Azusa about the land, the kami, and living in harmony with the world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yisan, the Wanderer Bard",
+   "type": "character",
+   "aliases": [
+    "Yisan"
+   ],
+   "description": "A wandering bard who speaks of controlling others with song.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who holds that absolute power is the only true authority.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Omnath, a ravenous primordial being of pure mana, emerges from the Roil.",
+   "participants": [
+    "Omnath, Locus of Mana",
+    "The Roil"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "From the Roil emerged a ravenous primordial being of pure mana."
+  },
+  {
+   "summary": "Urza's forces tear across Argoth, and Argoth responds in kind.",
+   "participants": [
+    "Urza",
+    "Argoth"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Urza's forces tore across Argoth, and Argoth responded in kind."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Omnath, Locus of Mana",
+   "relation": "other",
+   "target": "The Roil",
+   "note": "Omnath emerged from the Roil.",
+   "paragraph": 0,
+   "quote": "From the Roil emerged a ravenous primordial being of pure mana."
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Argoth",
+   "note": "Urza's forces attacked Argoth, which fought back.",
+   "paragraph": 1,
+   "quote": "Urza's forces tore across Argoth, and Argoth responded in kind."
+  },
+  {
+   "source": "Azusa",
+   "relation": "created",
+   "target": "Diary of Azusa",
+   "note": "Azusa is the author of the diary.",
+   "paragraph": 2,
+   "quote": "—Diary of Azusa"
+  }
+ ],
+ "rejected": []
+}

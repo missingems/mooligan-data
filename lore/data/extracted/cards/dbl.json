@@ -1,0 +1,936 @@
+{
+ "page": "cards/dbl",
+ "url": "https://scryfall.com/sets/dbl",
+ "title": "Innistrad: Double Feature: card flavor text",
+ "story_date": "2022-01-28",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Innistrad: Double Feature",
+ "entities": [
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the story takes place, beset by werewolves, vampires, geists and stitchers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "The archangel formerly worshipped on Innistrad, now gone after her unmaking.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel to whom the people of Innistrad pray; she battled Sorin and later tore free from her bindings to summon her Host of Herons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who manipulates time; he helped search for and recover the Moonsilver Key.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "A vampire planeswalker who raced to his grandfather's crypt and battled Sigarda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edgar Markov",
+   "type": "character",
+   "aliases": [
+    "Edgar",
+    "Edgar, Charmed Groom"
+   ],
+   "description": "Sorin's grandfather, an ancient vampire awakened to be the groom in the Voldaren-Markov wedding.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olivia Voldaren",
+   "type": "character",
+   "aliases": [
+    "Olivia",
+    "Olivia, Crimson Bride"
+   ],
+   "description": "Voldaren vampire lord whose grand wedding aimed to unite the vampire bloodlines under her rule.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heida",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior fighting the werewolf beasts through a long night.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker who sought clues to the Moonsilver Key in Thraben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arlinn Kord",
+   "type": "character",
+   "aliases": [
+    "Arlinn"
+   ],
+   "description": "A werewolf planeswalker with her own loyal pack; she helped recover the Moonsilver Key and objected at the Voldaren-Markov wedding.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and ghost-slayer who dispatched spirits in Thraben and saved Berit's village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Moonsilver Key",
+   "type": "artifact",
+   "aliases": [
+    "the key"
+   ],
+   "description": "The long-lost key to the Celestus's Sungold Lock, needed to restore the day-night balance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Celestus",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mechanism governing the balance of day and night, at the center of the witches' ritual.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sungold Lock",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Part of the Celestus mechanism, which must be reunited with the Moonsilver Key.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [],
+   "description": "A cathar of the Order of Saint Traft who fought monsters for a lifetime and was doomed to become a vampire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thalia, Guardian of Thraben",
+   "type": "character",
+   "aliases": [
+    "Thalia"
+   ],
+   "description": "A cathar leader vowing to cleanse Thraben for the living.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tovolar",
+   "type": "character",
+   "aliases": [],
+   "description": "A cunning werewolf leader whose howlpack terrorizes villages and whose howl commands even Arlinn's pack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tovolar's howlpack",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tovolar's werewolf pack, growing bolder, smarter and stronger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dire-Strain",
+   "type": "faction",
+   "aliases": [],
+   "description": "Werewolves who kept hunting after Tovolar's howlpack scattered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "A city of Innistrad whose districts lie in ruins and are patrolled by cathars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "A province of Innistrad with narrow ravines, festivals and effigy burnings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "A province of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "A stormy province of Innistrad whose people rekindled their will to fight at dawn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "A coastal province with chaotic tides and violent storms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulvenwald",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of Innistrad where old powers stirred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Somberwald",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest where unseen threats lurk above travelers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lurenbraum Fortress",
+   "type": "location",
+   "aliases": [
+    "Lurenbraum barrier"
+   ],
+   "description": "Olivia's fortress, site of the wedding, protected by a barrier passable with red invitations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crimson Ballroom",
+   "type": "location",
+   "aliases": [],
+   "description": "A ballroom in Lurenbraum Fortress that received unexpected guests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Markov catacombs",
+   "type": "location",
+   "aliases": [],
+   "description": "Catacombs from which the Moonsilver Key was recovered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cathars",
+   "type": "faction",
+   "aliases": [
+    "cathar"
+   ],
+   "description": "Holy warriors of Innistrad who defend villages against monsters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parish-Blades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite cathars trained to delay and frustrate beasts hunting the crossways.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Saint Traft",
+   "type": "faction",
+   "aliases": [],
+   "description": "A cathar order to which Odric and Grete belong.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quiver of Kessig",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order of cathars specializing in ranged combat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dawnhart witches",
+   "type": "faction",
+   "aliases": [
+    "Dawnhart"
+   ],
+   "description": "A coven focusing magic on nature and community, who worship Ghrin-Danu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Katilda, Dawnhart Prime",
+   "type": "character",
+   "aliases": [
+    "Katilda"
+   ],
+   "description": "Leader of the Dawnhart witches, who warns that the land is sending a warning.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghrin-Danu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A power revered by the Dawnhart witches who has not abandoned them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirsdag cult",
+   "type": "faction",
+   "aliases": [
+    "Skirsdag"
+   ],
+   "description": "A demon-worshipping cult that turned to Ormendahl after Griselbrand's defeat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "character",
+   "aliases": [
+    "Ormendahl, the Corrupter",
+    "Great Ormendahl"
+   ],
+   "description": "A demon worshipped by the Skirsdag cult, offering power at a price.",
+   "presence": "appears"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "character",
+   "aliases": [],
+   "description": "A defeated demon formerly worshipped by the Skirsdag cult.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jerren",
+   "type": "character",
+   "aliases": [],
+   "description": "A faithful servant of Ormendahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Voldaren",
+   "type": "faction",
+   "aliases": [
+    "House Voldaren"
+   ],
+   "description": "An ascendant vampire bloodline demanding blood tithes from villagers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falkenrath",
+   "type": "faction",
+   "aliases": [
+    "Falkenrath bloodline"
+   ],
+   "description": "A vampire bloodline descended from a vicious falconer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stromkirk",
+   "type": "faction",
+   "aliases": [
+    "Stromkirk line"
+   ],
+   "description": "A vampire bloodline, some of whom borrow from the blood tithes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anje Falkenrath",
+   "type": "character",
+   "aliases": [
+    "Lady Anje"
+   ],
+   "description": "A Falkenrath vampire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Runo Stromkirk",
+   "type": "character",
+   "aliases": [],
+   "description": "A Stromkirk vampire who warns alchemists on behalf of Lord Krothuss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Krothuss",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure guarding the secrets of the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghoulcaller Gisa",
+   "type": "character",
+   "aliases": [
+    "Gisa"
+   ],
+   "description": "A ghoulcaller who commands zombies and competes with her brother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [
+    "Geralf, Visionary Stitcher"
+   ],
+   "description": "A stitcher whose prowess continues to grow; Gisa's brother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ludevic",
+   "type": "character",
+   "aliases": [],
+   "description": "A necro-alchemist who keeps laboratory notes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garl",
+   "type": "character",
+   "aliases": [],
+   "description": "A stitcher's assistant working for Ludevic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Travails",
+   "type": "event",
+   "aliases": [],
+   "description": "Past dark times featuring killer angels, mad cultists and Eldrazi monstrosities.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Harvesttide",
+   "type": "event",
+   "aliases": [],
+   "description": "A festival on Innistrad, the site of a tragedy when werewolves struck.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Voldaren-Markov wedding",
+   "type": "event",
+   "aliases": [
+    "Voldaren-Markov union"
+   ],
+   "description": "Olivia Voldaren's wedding to Edgar Markov, the event of the century.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blessed Sleep",
+   "type": "concept",
+   "aliases": [],
+   "description": "The rest given to the dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrosities fought during the Travails.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Host of Herons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sigarda's angelic host.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Berit",
+   "type": "character",
+   "aliases": [],
+   "description": "A villager who became a vampire slayer after Kaya saved her village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silverstreak",
+   "type": "creature",
+   "aliases": [],
+   "description": "A gryff who lost her rider but still helps humankind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geor",
+   "type": "character",
+   "aliases": [],
+   "description": "A Havengul fisher.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ivold",
+   "type": "character",
+   "aliases": [],
+   "description": "An inventor whose device reveals geists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halana",
+   "type": "character",
+   "aliases": [],
+   "description": "A Kessig ranger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "A Kessig trapper who travels with Halana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Verna",
+   "type": "character",
+   "aliases": [],
+   "description": "A priest of Sigarda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vildin-Pack",
+   "type": "faction",
+   "aliases": [],
+   "description": "A werewolf pack led by Rahilda.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rahilda",
+   "type": "character",
+   "aliases": [],
+   "description": "Alpha of the Vildin-Pack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker on the forests of Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quietus Cult",
+   "type": "faction",
+   "aliases": [],
+   "description": "A cult that seeks wisdom from the dead rather than demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatstaf",
+   "type": "location",
+   "aliases": [],
+   "description": "A town whose cobbled streets echoed with howls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashmouth",
+   "type": "location",
+   "aliases": [],
+   "description": "A burning chasm where ancient evils dwell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teferi steps into a fight and freezes time around attacking werewolves.",
+   "participants": [
+    "Teferi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Teferi stepped calmly into the fray. Suddenly the sun paused in the sky and the werewolves' snarls froze on their faces."
+  },
+  {
+   "summary": "Sorin races to his grandfather's resting-crypt but finds someone got there first.",
+   "participants": [
+    "Sorin Markov",
+    "Edgar Markov"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "Sensing a plot, Sorin raced to his grandfather's resting-crypt. But someone else had gotten there first."
+  },
+  {
+   "summary": "Heida fells a beast and seeks another foe.",
+   "participants": [
+    "Heida"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 28,
+   "quote": "Heida allowed herself a moment of satisfaction as she watched the beast fall, then turned to seek another foe."
+  },
+  {
+   "summary": "Chandra, Teferi and Arlinn search for clues to the Moonsilver Key while Kaya dispatches spirits.",
+   "participants": [
+    "Chandra Nalaar",
+    "Teferi",
+    "Arlinn Kord",
+    "Kaya",
+    "Moonsilver Key"
+   ],
+   "location": "Thraben",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "Chandra, Teferi, and Arlinn sought clues to the Moonsilver Key's whereabouts while Kaya dispatched the spirits obstructing their path."
+  },
+  {
+   "summary": "While Sigarda and Sorin battle, Arlinn and Teferi recover the key from the Markov catacombs.",
+   "participants": [
+    "Sigarda",
+    "Sorin Markov",
+    "Arlinn Kord",
+    "Teferi",
+    "Moonsilver Key"
+   ],
+   "location": "Markov catacombs",
+   "importance": "major",
+   "paragraph": 64,
+   "quote": "As Sigarda and Sorin battled, Arlinn and Teferi recovered the key from the Markov catacombs."
+  },
+  {
+   "summary": "Tovolar's howl sounds and is answered from within the Harvesttide festival.",
+   "participants": [
+    "Tovolar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 124,
+   "quote": "When Tovolar's howl sounded from the woods, it was answered from the heart of the festival."
+  },
+  {
+   "summary": "Tovolar joins the battle and cathars fall.",
+   "participants": [
+    "Tovolar",
+    "Cathars"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 128,
+   "quote": "The cathars fell like leaves as Tovolar himself joined the fray."
+  },
+  {
+   "summary": "Tovolar's howl of command turns Arlinn's own loyal pack.",
+   "participants": [
+    "Tovolar",
+    "Arlinn Kord"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 132,
+   "quote": "Tovolar's howl of command was too much to resist, even for Arlinn's own loyal pack."
+  },
+  {
+   "summary": "Witches, werewolves and cathars defend the Sungold Lock against Tovolar's assault.",
+   "participants": [
+    "Sungold Lock",
+    "Tovolar",
+    "Dawnhart witches",
+    "Cathars"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 153,
+   "quote": "Witch, werewolf, and cathar stood shoulder to shoulder around the Sungold Lock at the center of the ritual, ready to stop Tovolar's assault—or die trying."
+  },
+  {
+   "summary": "The Dawnhart witches lash out at the werewolves after their ritual is disrupted.",
+   "participants": [
+    "Dawnhart witches"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 158,
+   "quote": "Brimming with power from their disrupted ritual, the Dawnhart witches lashed out at the werewolf intruders."
+  },
+  {
+   "summary": "Bats carry wedding invitations from Lurenbraum Fortress to every bloodline.",
+   "participants": [
+    "Lurenbraum Fortress"
+   ],
+   "location": "Lurenbraum Fortress",
+   "importance": "minor",
+   "paragraph": 273,
+   "quote": "Swarms of bats poured from Lurenbraum Fortress carrying wedding invitations to vampires of every bloodline."
+  },
+  {
+   "summary": "With Olivia distracted, Sigarda breaks her bindings and summons the Host of Herons.",
+   "participants": [
+    "Sigarda",
+    "Olivia Voldaren",
+    "Host of Herons"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 225,
+   "quote": "With Olivia distracted, Sigarda tore free from her bindings and summoned her Host of Herons."
+  },
+  {
+   "summary": "Kaya saves Berit's village, inspiring Berit to become a vampire slayer.",
+   "participants": [
+    "Kaya",
+    "Berit"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 231,
+   "quote": "When Kaya saved her village, Berit realized even vampires could be killed."
+  },
+  {
+   "summary": "Odric succumbs to a vampire's curse and becomes a monster.",
+   "participants": [
+    "Odric"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 286,
+   "quote": "But after a lifetime of fighting monsters, he was doomed to become one himself."
+  },
+  {
+   "summary": "Arlinn interrupts the Voldaren-Markov wedding before the officiant can ask for objections.",
+   "participants": [
+    "Arlinn Kord",
+    "Voldaren-Markov wedding"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 327,
+   "quote": "Before the officiant even had a chance to ask if anyone objected to the Voldaren-Markov union, Arlinn made her opinion known."
+  },
+  {
+   "summary": "The defenses of Lurenbraum Fortress falter and the Crimson Ballroom is invaded.",
+   "participants": [
+    "Lurenbraum Fortress",
+    "Crimson Ballroom"
+   ],
+   "location": "Lurenbraum Fortress",
+   "importance": "minor",
+   "paragraph": 311,
+   "quote": "When the defenses around Lurenbraum Fortress faltered, the Crimson Ballroom received some unexpected guests."
+  },
+  {
+   "summary": "Dawn returns to Stensia after weeks of darkness.",
+   "participants": [
+    "Stensia"
+   ],
+   "location": "Stensia",
+   "importance": "major",
+   "paragraph": 309,
+   "quote": "After weeks of unending darkness, a glimpse of dawn was all the people of Stensia needed to rekindle their will to fight."
+  },
+  {
+   "summary": "Tovolar's howlpack scatters, but Dire-Strain survivors keep hunting.",
+   "participants": [
+    "Tovolar's howlpack",
+    "Dire-Strain"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 366,
+   "quote": "Tovolar's howlpack had scattered, but the Dire-Strain survivors were still on the hunt."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sorin Markov",
+   "relation": "family",
+   "target": "Edgar Markov",
+   "note": "Grandson",
+   "paragraph": 12,
+   "quote": "Sensing a plot, Sorin raced to his grandfather's resting-crypt."
+  },
+  {
+   "source": "Olivia Voldaren",
+   "relation": "romantic",
+   "target": "Edgar Markov",
+   "note": "Betrothed in the Voldaren-Markov union",
+   "paragraph": 327,
+   "quote": "Voldaren-Markov union"
+  },
+  {
+   "source": "Sigarda",
+   "relation": "enemy",
+   "target": "Sorin Markov",
+   "note": "They battled",
+   "paragraph": 64,
+   "quote": "As Sigarda and Sorin battled"
+  },
+  {
+   "source": "Arlinn Kord",
+   "relation": "ally",
+   "target": "Teferi",
+   "note": "Recovered the key together",
+   "paragraph": 64,
+   "quote": "Arlinn and Teferi recovered the key from the Markov catacombs."
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "Searched together for the key",
+   "paragraph": 29,
+   "quote": "Chandra, Teferi, and Arlinn sought clues to the Moonsilver Key's whereabouts while Kaya dispatched the spirits obstructing their path."
+  },
+  {
+   "source": "Tovolar",
+   "relation": "leader_of",
+   "target": "Tovolar's howlpack",
+   "note": "",
+   "paragraph": 88,
+   "quote": "Tovolar's howlpack was getting bolder, smarter, and stronger."
+  },
+  {
+   "source": "Tovolar",
+   "relation": "enemy",
+   "target": "Arlinn Kord",
+   "note": "Turned her pack against her",
+   "paragraph": 132,
+   "quote": "Tovolar's howl of command was too much to resist, even for Arlinn's own loyal pack."
+  },
+  {
+   "source": "Moonsilver Key",
+   "relation": "other",
+   "target": "Sungold Lock",
+   "note": "The lock's long-lost key",
+   "paragraph": 189,
+   "quote": "the Celestus mechanism's Sungold Lock must be reunited with its long-lost key."
+  },
+  {
+   "source": "Katilda, Dawnhart Prime",
+   "relation": "leader_of",
+   "target": "Dawnhart witches",
+   "note": "Dawnhart Prime",
+   "paragraph": 162,
+   "quote": "—Katilda, Dawnhart Prime"
+  },
+  {
+   "source": "Dawnhart witches",
+   "relation": "serves",
+   "target": "Ghrin-Danu",
+   "note": "Worship",
+   "paragraph": 181,
+   "quote": "\"The angels may have abandoned us, but Ghrin-Danu has not.\""
+  },
+  {
+   "source": "Odric",
+   "relation": "member_of",
+   "target": "Order of Saint Traft",
+   "note": "",
+   "paragraph": 185,
+   "quote": "—Odric, Order of Saint Traft"
+  },
+  {
+   "source": "Thalia, Guardian of Thraben",
+   "relation": "other",
+   "target": "Thraben",
+   "note": "Guardian of the city",
+   "paragraph": 226,
+   "quote": "\"Thraben belongs to the living. I will not rest until it is cleansed.\""
+  },
+  {
+   "source": "Skirsdag cult",
+   "relation": "serves",
+   "target": "Ormendahl",
+   "note": "Worship after Griselbrand's defeat",
+   "paragraph": 75,
+   "quote": "Skirsdag cultists believe that the right poison \"purifies\" a tainted soul before it makes its way to Ormendahl."
+  },
+  {
+   "source": "Jerren",
+   "relation": "serves",
+   "target": "Ormendahl",
+   "note": "",
+   "paragraph": 95,
+   "quote": "\"Ah, Jerren. You've been such a faithful, useful insect.\""
+  },
+  {
+   "source": "Ghoulcaller Gisa",
+   "relation": "family",
+   "target": "Geralf",
+   "note": "Siblings",
+   "paragraph": 98,
+   "quote": "\"Let's see my brother's stitched-up little toys compete with this.\""
+  },
+  {
+   "source": "Olivia Voldaren",
+   "relation": "member_of",
+   "target": "Voldaren",
+   "note": "",
+   "paragraph": 223,
+   "quote": "—Olivia Voldaren"
+  },
+  {
+   "source": "Anje Falkenrath",
+   "relation": "member_of",
+   "target": "Falkenrath",
+   "note": "",
+   "paragraph": 130,
+   "quote": "—Anje Falkenrath"
+  },
+  {
+   "source": "Runo Stromkirk",
+   "relation": "serves",
+   "target": "Lord Krothuss",
+   "note": "Warns on his behalf",
+   "paragraph": 262,
+   "quote": "Lord Krothuss will not be so merciful next time."
+  },
+  {
+   "source": "Garl",
+   "relation": "serves",
+   "target": "Ludevic",
+   "note": "Assistant",
+   "paragraph": 259,
+   "quote": "Garl! Go chase it away.\" —Ludevic, necro-alchemist"
+  },
+  {
+   "source": "Verna",
+   "relation": "serves",
+   "target": "Sigarda",
+   "note": "Priest",
+   "paragraph": 56,
+   "quote": "—Verna, priest of Sigarda"
+  },
+  {
+   "source": "Sigarda",
+   "relation": "leader_of",
+   "target": "Host of Herons",
+   "note": "",
+   "paragraph": 225,
+   "quote": "summoned her Host of Herons."
+  },
+  {
+   "source": "Kaya",
+   "relation": "other",
+   "target": "Berit",
+   "note": "Saved Berit's village, inspiring her",
+   "paragraph": 231,
+   "quote": "When Kaya saved her village, Berit realized even vampires could be killed."
+  },
+  {
+   "source": "Rahilda",
+   "relation": "leader_of",
+   "target": "Vildin-Pack",
+   "note": "Alpha",
+   "paragraph": 318,
+   "quote": "—Rahilda, Vildin-Pack alpha"
+  },
+  {
+   "source": "Halana",
+   "relation": "ally",
+   "target": "Alena",
+   "note": "Travel companions",
+   "paragraph": 349,
+   "quote": "—Halana, to Alena"
+  }
+ ],
+ "rejected": []
+}

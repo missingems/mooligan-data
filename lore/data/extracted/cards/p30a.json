@@ -1,0 +1,169 @@
+{
+ "page": "cards/p30a",
+ "url": "https://scryfall.com/sets/p30a",
+ "title": "30th Anniversary Play Promos: card flavor text",
+ "story_date": "2022-09-02",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose light empowers the Serra Angel's wings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "A master wizard who speaks of emptying the mind to fill it with knowledge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people with a saying about finding shelter where only angels can reach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "Niv-Mizzet, the Firemind"
+   ],
+   "description": "The Firemind, credited here with a cryptic equation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bishop Cawle",
+   "type": "character",
+   "aliases": [],
+   "description": "A bishop of Elgaud who laments a massacred parish.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elgaud",
+   "type": "location",
+   "aliases": [],
+   "description": "The place Bishop Cawle is from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragonlord Atarka",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragonlord from whom no one is safe when she's hungry.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker whom Chandra thanks for stepping in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who thanks Jace for butting in.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [
+    "Urza, Prince of Kroog"
+   ],
+   "description": "The prince consort of Kroog who funds his extravagant research with Yotia's coffers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yotia",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm whose coffers fund Urza's research.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of which Urza is prince.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vito",
+   "type": "character",
+   "aliases": [
+    "Vito, Thorn of the Dusk Rose"
+   ],
+   "description": "The Thorn of the Dusk Rose, who speaks of redemption through the blood of the wicked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dovin",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose veto is the card's name.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An entire parish is massacred, as Bishop Cawle of Elgaud reports.",
+   "participants": [
+    "Bishop Cawle"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "The entire parish is gone. This was no execution. This was a massacre."
+  },
+  {
+   "summary": "Jace intervenes on Chandra's behalf and she thanks him.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jace Beleren"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "\"Nobody asked you to butt in, Jace. But thanks.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandra Nalaar",
+   "relation": "ally",
+   "target": "Jace Beleren",
+   "note": "",
+   "paragraph": 12,
+   "quote": "\"Nobody asked you to butt in, Jace. But thanks.\""
+  },
+  {
+   "source": "Bishop Cawle",
+   "relation": "located_in",
+   "target": "Elgaud",
+   "note": "",
+   "paragraph": 10,
+   "quote": "Bishop Cawle of Elgaud"
+  },
+  {
+   "source": "Urza",
+   "relation": "other",
+   "target": "Yotia",
+   "note": "Prince consort whose research is funded by Yotia's coffers",
+   "paragraph": 17,
+   "quote": "The prince consort was happy to let Yotia's coffers fund his extravagant research."
+  }
+ ],
+ "rejected": []
+}

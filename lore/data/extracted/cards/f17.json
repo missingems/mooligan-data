@@ -1,0 +1,105 @@
+{
+ "page": "cards/f17",
+ "url": "https://scryfall.com/sets/f17",
+ "title": "Friday Night Magic 2017: card flavor text",
+ "story_date": "2017-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kep",
+   "type": "character",
+   "aliases": [
+    "Lunarch inquisitor"
+   ],
+   "description": "A Lunarch inquisitor quoted in flavor text.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A planeswalker who asks Chandra about her plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker who answers Gideon's question incredulously.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "A city whose dreams are powered by aether.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Hold",
+   "type": "location",
+   "aliases": [],
+   "description": "An illegal research facility in a derelict merchant ship that became a wellspring of renegade intelligence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lunarch Inquisitors",
+   "type": "faction",
+   "aliases": [
+    "Lunarch"
+   ],
+   "description": "An order of inquisitors to which Kep belongs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gideon asks Chandra what her plan is, and she replies incredulously.",
+   "participants": [
+    "Gideon Jura",
+    "Chandra Nalaar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "\"What's your plan?\" Gideon asked. \"Are you serious?\" Chandra replied."
+  },
+  {
+   "summary": "The Hold, an illegal research facility in a derelict ship, becomes a source of renegade intelligence.",
+   "participants": [
+    "The Hold"
+   ],
+   "location": "The Hold",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "The Hold, an illegal research facility in a derelict merchant ship, became a wellspring of renegade intelligence."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kep",
+   "relation": "member_of",
+   "target": "Lunarch Inquisitors",
+   "note": "Kep is a Lunarch inquisitor",
+   "paragraph": 0,
+   "quote": "—Kep, Lunarch inquisitor"
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "They discuss a plan together",
+   "paragraph": 2,
+   "quote": "\"What's your plan?\" Gideon asked. \"Are you serious?\" Chandra replied."
+  }
+ ],
+ "rejected": []
+}

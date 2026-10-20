@@ -1,0 +1,41 @@
+{
+ "page": "cards/pf23",
+ "url": "https://scryfall.com/sets/pf23",
+ "title": "MagicFest 2023: card flavor text",
+ "story_date": "2023-07-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "MagicFest 2023",
+ "entities": [
+  {
+   "name": "Gandalf",
+   "type": "character",
+   "aliases": [
+    "Gandalf, Friend of the Shire"
+   ],
+   "description": "Gandalf, called Friend of the Shire, who remarks that Hobbits can still surprise him after a hundred years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hobbits",
+   "type": "creature",
+   "aliases": [],
+   "description": "A people whom Gandalf says can still surprise you at a pinch.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Gandalf",
+   "relation": "other",
+   "target": "Hobbits",
+   "note": "Gandalf has known Hobbits a long time and remarks on their capacity to surprise.",
+   "paragraph": 0,
+   "quote": "After a hundred years, Hobbits can still surprise you at a pinch."
+  }
+ ],
+ "rejected": []
+}

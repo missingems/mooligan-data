@@ -1,0 +1,63 @@
+{
+ "page": "cards/unk",
+ "url": "https://scryfall.com/sets/unk",
+ "title": "Unknown Event: card flavor text",
+ "story_date": "2024-08-03",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Davvol",
+   "type": "character",
+   "aliases": [
+    "Davvol, Evincar of Rath"
+   ],
+   "description": "The Evincar of Rath, quoted on a card about his birthday.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of which Davvol is Evincar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where, according to a joking note, nobody talks about wurmstorms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wurmstorms",
+   "type": "concept",
+   "aliases": [],
+   "description": "A phenomenon associated with Tarkir that, jokingly, nobody talks about.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Davvol",
+   "relation": "leader_of",
+   "target": "Rath",
+   "note": "Davvol holds the title Evincar of Rath.",
+   "paragraph": 20,
+   "quote": "—Davvol, Evincar of Rath"
+  },
+  {
+   "source": "Wurmstorms",
+   "relation": "located_in",
+   "target": "Tarkir",
+   "note": "Wurmstorms are associated with Tarkir.",
+   "paragraph": 26,
+   "quote": "Why isn't anybody on Tarkir talking about wurmstorms??"
+  }
+ ],
+ "rejected": []
+}

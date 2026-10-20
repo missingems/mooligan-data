@@ -1,0 +1,68 @@
+{
+ "page": "cards/pjou",
+ "url": "https://scryfall.com/sets/pjou",
+ "title": "Journey into Nyx Promos: card flavor text",
+ "story_date": "2014-04-26",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Journey into Nyx",
+ "entities": [
+  {
+   "name": "Nyx",
+   "type": "plane",
+   "aliases": [],
+   "description": "The night-sky realm said to belong to the gods of Theros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose skies the Dawnbringer Charioteers claim as their own.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iroas",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Theros, twin of Mogis, said to differ from him in appearance and personality.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mogis",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Theros, twin of Iroas, said to differ from him in appearance and personality.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Theros whose forge sends out sparks that fill the belly of every dragon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Nyx",
+   "relation": "other",
+   "target": "Theros",
+   "note": "Nyx is the gods' realm, set against the skies of Theros",
+   "paragraph": 0,
+   "quote": "Nyx may belong to the gods, but the skies of Theros are ours."
+  },
+  {
+   "source": "Iroas",
+   "relation": "family",
+   "target": "Mogis",
+   "note": "twin gods",
+   "paragraph": 2,
+   "quote": "Iroas and Mogis are as different in appearance as they are in personality."
+  }
+ ],
+ "rejected": []
+}

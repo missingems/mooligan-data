@@ -1,0 +1,251 @@
+{
+ "page": "cards/pneo",
+ "url": "https://scryfall.com/sets/pneo",
+ "title": "Kamigawa: Neon Dynasty Promos: card flavor text",
+ "story_date": "2022-02-18",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Michiko Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman who worked to heal the land and entrusts the future to her sister, per her journal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Onyx-Eye",
+   "type": "character",
+   "aliases": [],
+   "description": "Architect of Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Kamigawa whose architect is Onyx-Eye; site of an uprising.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emire",
+   "type": "character",
+   "aliases": [],
+   "description": "Director of the Saiba Futurists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saiba Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction directed by Emire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Risona",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Asari Uprisers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Asari Uprisers",
+   "type": "faction",
+   "aliases": [
+    "Asari Uprising"
+   ],
+   "description": "A rebel faction led by Risona, joined by Isshin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiki-Jiki",
+   "type": "character",
+   "aliases": [],
+   "description": "A being blessed by Keiga who would one day master the art of duplication.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keiga, the Tide Star",
+   "type": "deity",
+   "aliases": [
+    "Keiga"
+   ],
+   "description": "A kami who blessed Kiki-Jiki.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "A city built using timber clear-cut from the Jukai Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A once-peaceful forest that grew violently hostile to outsiders after being clear-cut.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperial Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The palace at whose gates two visions of freedom clashed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greasefang, Okiba Boss",
+   "type": "character",
+   "aliases": [
+    "Greasefang"
+   ],
+   "description": "A deadly Okiba boss with a bike and a dangerous bite.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hinata, Dawn-Crowned",
+   "type": "character",
+   "aliases": [
+    "Hinata"
+   ],
+   "description": "A figure associated with hope and sunlit hooves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isshin, Two Heavens as One",
+   "type": "character",
+   "aliases": [
+    "Isshin"
+   ],
+   "description": "A swordsman trained by the Imperials who joined the Asari Uprising.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperials",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Imperial faction that trained Isshin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raiyuu, Storm's Edge",
+   "type": "character",
+   "aliases": [
+    "Raiyuu"
+   ],
+   "description": "A warrior who considers the tempest the only ally needed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Michiko Konda writes that she must entrust the future to her sister.",
+   "participants": [
+    "Michiko Konda"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "now I must entrust the future to my sister"
+  },
+  {
+   "summary": "Kiki-Jiki is blessed by Keiga, the Tide Star.",
+   "participants": [
+    "Kiki-Jiki",
+    "Keiga, the Tide Star"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Blessed by Keiga, the Tide Star, Kiki-Jiki would one day master the art of duplication."
+  },
+  {
+   "summary": "Isshin, disillusioned with the Imperials, joins the Asari Uprising.",
+   "participants": [
+    "Isshin, Two Heavens as One",
+    "Imperials",
+    "Asari Uprisers"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "he gave his heart—and his swords—to the Asari Uprising"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emire",
+   "relation": "leader_of",
+   "target": "Saiba Futurists",
+   "note": "director",
+   "paragraph": 2,
+   "quote": "Emire, director of the Saiba Futurists"
+  },
+  {
+   "source": "Risona",
+   "relation": "leader_of",
+   "target": "Asari Uprisers",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Risona, leader of the Asari Uprisers"
+  },
+  {
+   "source": "Onyx-Eye",
+   "relation": "other",
+   "target": "Eiganjo",
+   "note": "architect of Eiganjo",
+   "paragraph": 1,
+   "quote": "Onyx-Eye, architect of Eiganjo"
+  },
+  {
+   "source": "Keiga, the Tide Star",
+   "relation": "other",
+   "target": "Kiki-Jiki",
+   "note": "blessed Kiki-Jiki",
+   "paragraph": 5,
+   "quote": "Blessed by Keiga, the Tide Star, Kiki-Jiki would one day master the art of duplication."
+  },
+  {
+   "source": "Isshin, Two Heavens as One",
+   "relation": "member_of",
+   "target": "Asari Uprisers",
+   "note": "joined after leaving the Imperials",
+   "paragraph": 11,
+   "quote": "he gave his heart—and his swords—to the Asari Uprising"
+  },
+  {
+   "source": "Imperials",
+   "relation": "mentor_of",
+   "target": "Isshin, Two Heavens as One",
+   "note": "trained him",
+   "paragraph": 11,
+   "quote": "Trained by the Imperials but disillusioned by their rigidity"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "After being clear-cut to build Towashi, the Jukai Forest becomes hostile to outsiders.",
+   "participants": [],
+   "location": "Jukai Forest",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "After large sections were clear-cut to build Towashi, the once-peaceful Jukai Forest grew violently hostile to outsiders."
+  },
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "Two visions of freedom clash at the gates of the Imperial Palace.",
+   "participants": [],
+   "location": "Imperial Palace",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Two different visions of freedom clashed at the gates of the Imperial Palace."
+  }
+ ]
+}

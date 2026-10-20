@@ -1,0 +1,115 @@
+{
+ "page": "cards/j16",
+ "url": "https://scryfall.com/sets/j16",
+ "title": "Judge Gift Cards 2016: card flavor text",
+ "story_date": "2016-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Speaker of flavor text on Mana Drain, who holds that power is wasted on the weak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azusa, Lost but Seeking",
+   "type": "character",
+   "aliases": [
+    "Azusa"
+   ],
+   "description": "A wanderer who considers all of Kamigawa her home and its people her family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest on Kamigawa that Azusa says is not her home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Azusa calls her home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riku of Two Reflections",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker who once gazed into a light that now burns in his mind, denying him rest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zur the Enchanter",
+   "type": "character",
+   "aliases": [
+    "Zur"
+   ],
+   "description": "An enchanter who remained aloof from Terisiare's suffering, intent on his own perfection.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "A land whose suffering Zur ignored.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Riku of Two Reflections gazed into a light that now burns in his mind, forever denying him rest (recounted as a memory).",
+   "participants": [
+    "Riku of Two Reflections"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "I gazed once into that light. Now it burns in my mind, forever denying me rest."
+  },
+  {
+   "summary": "Zur stays aloof from Terisiare's suffering, focused on his own perfection.",
+   "participants": [
+    "Zur the Enchanter"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Zur remained aloof from Terisiare's suffering, intent only on his own perfection."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azusa, Lost but Seeking",
+   "relation": "other",
+   "target": "Kamigawa",
+   "note": "Considers Kamigawa her home",
+   "paragraph": 1,
+   "quote": "My home is Kamigawa, its people my family."
+  },
+  {
+   "source": "Jukai Forest",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "Implied by Azusa's contrast; forest on Kamigawa",
+   "paragraph": 1,
+   "quote": "I do not miss Jukai Forest. It is not my home. My home is Kamigawa"
+  },
+  {
+   "source": "Zur the Enchanter",
+   "relation": "other",
+   "target": "Terisiare",
+   "note": "Remained aloof from its suffering",
+   "paragraph": 4,
+   "quote": "Zur remained aloof from Terisiare's suffering"
+  }
+ ],
+ "rejected": []
+}

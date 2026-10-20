@@ -1,0 +1,121 @@
+{
+ "page": "cards/pd3",
+ "url": "https://scryfall.com/sets/pd3",
+ "title": "Premium Deck Series: Graveborn: card flavor text",
+ "story_date": "2011-11-18",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "A shard of Alara whose fables tell of the Inkwell Leviathan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inkwell Leviathan",
+   "type": "creature",
+   "aliases": [],
+   "description": "A sea creature of Esper fable that swallowed the seventh sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dravin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gruul deserter who dropped his sword upon seeing an archon in battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [
+    "Gruul Clans"
+   ],
+   "description": "A faction from which Dravin deserted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blazing Archon",
+   "type": "creature",
+   "aliases": [],
+   "description": "A golden-maned, mail-clad archon whose glory made a warrior abandon battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and necromancer who speaks of depriving others of their most precious secret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who declares that others will learn to earn death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sitrik",
+   "type": "character",
+   "aliases": [],
+   "description": "A birth priest who calls death an outmoded concept.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who dreams of vile plague.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In Esper fable, the Inkwell Leviathan swallows the seventh sea.",
+   "participants": [
+    "Inkwell Leviathan"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "\"Into its maw went the seventh sea, never to be seen again while the world remains.\""
+  },
+  {
+   "summary": "Dravin sees an archon in battle, drops his sword, and deserts the Gruul.",
+   "participants": [
+    "Dravin",
+    "Gruul",
+    "Blazing Archon"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "I dropped my sword and wept at the idiocy of war."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dravin",
+   "relation": "other",
+   "target": "Gruul",
+   "note": "Deserter from the Gruul",
+   "paragraph": 4,
+   "quote": "—Dravin, Gruul deserter"
+  },
+  {
+   "source": "Inkwell Leviathan",
+   "relation": "located_in",
+   "target": "Esper",
+   "note": "Creature of Esper fable",
+   "paragraph": 3,
+   "quote": "—Esper fable"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,51 @@
+{
+ "page": "cards/h17",
+ "url": "https://scryfall.com/sets/h17",
+ "title": "HasCon 2017: card flavor text",
+ "story_date": "2017-09-20",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "HasCon 2017",
+ "entities": [
+  {
+   "name": "Grimlock",
+   "type": "character",
+   "aliases": [
+    "Grimlock, Dinobot Leader",
+    "Grimlock, Ferocious King"
+   ],
+   "description": "A Dinobot who considers himself the smartest of the Dinobots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dinobots",
+   "type": "faction",
+   "aliases": [
+    "Dinobot"
+   ],
+   "description": "The group Grimlock belongs to and leads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garj Grabclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin sergeant.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Grimlock",
+   "relation": "member_of",
+   "target": "Dinobots",
+   "note": "Calls himself the smartest Dinobot.",
+   "paragraph": 1,
+   "quote": "Grimlock smartest Dinobot."
+  }
+ ],
+ "rejected": []
+}

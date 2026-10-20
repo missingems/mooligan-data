@@ -1,0 +1,113 @@
+{
+ "page": "cards/v14",
+ "url": "https://scryfall.com/sets/v14",
+ "title": "From the Vault: Annihilation: card flavor text",
+ "story_date": "2014-08-22",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane once split into five shards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Child of Alara",
+   "type": "creature",
+   "aliases": [
+    "The progeny of the Maelstrom"
+   ],
+   "description": "A being born of the Maelstrom that shows no allegiance or mercy to any of the five shards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maelstrom",
+   "type": "concept",
+   "aliases": [],
+   "description": "The phenomenon whose progeny is the Child of Alara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard whose nations stood united against a common threat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Horse clans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clans whose wisdom advises keeping only mount, blade, and wits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elvish dawnhands",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who test relics' worthiness before collecting them for the safehold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olantin",
+   "type": "location",
+   "aliases": [],
+   "description": "A lost coastal polis of legend whose inhabitants' hubris enraged Heliod.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "The sun god, enraged by the hubris of Olantin's inhabitants.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The nations of Bant forget their war and unite against a common threat.",
+   "participants": [
+    "Bant"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Their war forgotten, the nations of Bant stood united in the face of a common threat."
+  },
+  {
+   "summary": "In legend, the hubris of Olantin's inhabitants enrages the sun god Heliod and the polis is lost.",
+   "participants": [
+    "Olantin",
+    "Heliod"
+   ],
+   "location": "Olantin",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Child of Alara",
+   "relation": "other",
+   "target": "Maelstrom",
+   "note": "Progeny of the Maelstrom",
+   "paragraph": 2,
+   "quote": "The progeny of the Maelstrom shows no allegiance—and no mercy—to any of the five shards."
+  },
+  {
+   "source": "Heliod",
+   "relation": "enemy",
+   "target": "Olantin",
+   "note": "Enraged by its inhabitants' hubris",
+   "paragraph": 7,
+   "quote": "whose inhabitants' hubris enraged the sun god Heliod."
+  }
+ ],
+ "rejected": []
+}

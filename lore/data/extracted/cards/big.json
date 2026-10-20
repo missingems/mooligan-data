@@ -1,0 +1,124 @@
+{
+ "page": "cards/big",
+ "url": "https://scryfall.com/sets/big",
+ "title": "The Big Score: card flavor text",
+ "story_date": "2024-04-19",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "The Big Score",
+ "entities": [
+  {
+   "name": "Mora",
+   "type": "character",
+   "aliases": [],
+   "description": "A loner who didn't want friends but didn't mind having someone to watch her back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bristly Bill",
+   "type": "character",
+   "aliases": [],
+   "description": "A cactusfolk gardener.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Bertram Graywater",
+   "type": "character",
+   "aliases": [],
+   "description": "A baron who decries varmints befouling the streets of Prosperity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prosperity",
+   "type": "location",
+   "aliases": [],
+   "description": "A place with streets described as shining.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fomori",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group whose inscription speaks of devouring the hope of a world.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Loot",
+   "type": "creature",
+   "aliases": [
+    "Loot, the Key to Everything"
+   ],
+   "description": "The vault's ultimate prize, which wasn't what Kellan had imagined.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "One who sought the vault's ultimate prize.",
+   "presence": "appears"
+  },
+  {
+   "name": "Angeline",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who revealed a side of herself no one had seen before.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kellan discovers that the vault's ultimate prize, Loot, is not what he imagined.",
+   "participants": [
+    "Kellan",
+    "Loot"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The vault's ultimate prize wasn't exactly what Kellan had imagined."
+  },
+  {
+   "summary": "Angeline reveals a side of herself no one had seen before.",
+   "participants": [
+    "Angeline"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "No one had seen this side of Angeline before, not even her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kellan",
+   "relation": "other",
+   "target": "Loot",
+   "note": "Kellan sought the vault's prize, which turned out to be Loot.",
+   "paragraph": 5,
+   "quote": "The vault's ultimate prize wasn't exactly what Kellan had imagined."
+  },
+  {
+   "source": "Baron Bertram Graywater",
+   "relation": "other",
+   "target": "Prosperity",
+   "note": "He is outraged at varmints befouling Prosperity's streets.",
+   "paragraph": 3,
+   "quote": "\"How dare these varmints befoul the shining streets of Prosperity?\" —Baron Bertram Graywater"
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "When the vault door opens, ancient war machines rumble to life.",
+   "participants": [],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "When the vault door opened, ancient war machines rumbled to life."
+  }
+ ]
+}

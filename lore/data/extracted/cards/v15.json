@@ -1,0 +1,124 @@
+{
+ "page": "cards/v15",
+ "url": "https://scryfall.com/sets/v15",
+ "title": "From the Vault: Angels: card flavor text",
+ "story_date": "2015-08-21",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "From the Vault: Angels",
+ "entities": [
+  {
+   "name": "Akroma, Angel of Wrath",
+   "type": "creature",
+   "aliases": [],
+   "description": "An angel whose flavor text speaks of wrath inflicted on the deserving.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [
+    "Aurelia, the Warleader"
+   ],
+   "description": "An angel warleader who fights on the frontlines, calling for war, unlike Razia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel described as aloof and untouchable, contrasted with Aurelia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [
+    "Avacyn, Angel of Hope"
+   ],
+   "description": "An angel imprisoned in the Helvault who emerged free when it was shattered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A silver monolith that served as Avacyn's prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iona, Shield of Emeria",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel whose flavor text proclaims the righteous shall no longer cower before evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emeria",
+   "type": "deity",
+   "aliases": [],
+   "description": "The figure Iona is the shield of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jenara, Asura of War",
+   "type": "character",
+   "aliases": [],
+   "description": "A war asura who passes over wounded soldiers to focus on their foe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tariel, Reckoner of Souls",
+   "type": "character",
+   "aliases": [
+    "Tariel"
+   ],
+   "description": "An angel who, per a priest's teaching, is one of the fates faced after death alongside paradise and damnation.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A golden helix bursts from the Helvault, shattering the silver monolith, and Avacyn emerges free from her prison.",
+   "participants": [
+    "Avacyn",
+    "Helvault"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "A thunderous explosion shattered the silver monolith and Avacyn emerged, free from her prison at last."
+  },
+  {
+   "summary": "Jenara appears before wounded soldiers but passes over them to confront their foe.",
+   "participants": [
+    "Jenara, Asura of War"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "But she passed over them, her eyes firmly on their foe."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Avacyn",
+   "relation": "located_in",
+   "target": "Helvault",
+   "note": "Was imprisoned in the Helvault until it shattered.",
+   "paragraph": 2,
+   "quote": "Avacyn emerged, free from her prison at last."
+  },
+  {
+   "source": "Aurelia",
+   "relation": "other",
+   "target": "Razia",
+   "note": "Contrasted as differing leaders; Aurelia is on the frontlines where Razia was aloof.",
+   "paragraph": 1,
+   "quote": "Where Razia was aloof and untouchable, Aurelia is on the frontlines, calling for war."
+  }
+ ],
+ "rejected": []
+}

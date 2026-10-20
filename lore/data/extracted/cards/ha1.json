@@ -1,0 +1,99 @@
+{
+ "page": "cards/ha1",
+ "url": "https://scryfall.com/sets/ha1",
+ "title": "Historic Anthology 1: card flavor text",
+ "story_date": "2019-11-21",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kithkin",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people whose minds are linked by the thoughtweft; ambidexterity is common among them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thoughtweft",
+   "type": "concept",
+   "aliases": [],
+   "description": "The link that connects the minds of the kithkin, sharing knacks between them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isanke",
+   "type": "character",
+   "aliases": [
+    "Halimar seastalker"
+   ],
+   "description": "A Halimar seastalker who speaks about journeys and learning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halimar",
+   "type": "location",
+   "aliases": [],
+   "description": "A place from which the seastalker Isanke hails.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose song calls the faeries home, and who feasts on the stolen dreams and rumors they bring her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Faeries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who return home at Oona's song and serve her stolen dreams and rumors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "One who never relinquished a grudge, letting it burn until the moment of vengeance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group regarded by some as savage simpletons, whose shamans hold subtle power.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Kithkin",
+   "relation": "other",
+   "target": "Thoughtweft",
+   "note": "The thoughtweft links kithkin minds",
+   "paragraph": 1,
+   "quote": "The thoughtweft links the minds of the left- and right-handed, giving each the knack of the other."
+  },
+  {
+   "source": "Isanke",
+   "relation": "located_in",
+   "target": "Halimar",
+   "note": "Isanke is a Halimar seastalker",
+   "paragraph": 2,
+   "quote": "—Isanke, Halimar seastalker"
+  },
+  {
+   "source": "Faeries",
+   "relation": "serves",
+   "target": "Oona",
+   "note": "Faeries return home and serve Oona stolen dreams and rumors",
+   "paragraph": 3,
+   "quote": "All the faeries return home, but it is Oona who feasts—on the stolen dreams and rumors they serve her."
+  }
+ ],
+ "rejected": []
+}

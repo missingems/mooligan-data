@@ -1,0 +1,55 @@
+{
+ "page": "cards/purl",
+ "url": "https://scryfall.com/sets/purl",
+ "title": "URL/Convention Promos: card flavor text",
+ "story_date": "2015-01-23",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hoggoth",
+   "type": "deity",
+   "aliases": [
+    "Hoary Hosts of Hoggoth"
+   ],
+   "description": "A power invoked by name in an oath used to deny a spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spider-Man",
+   "type": "character",
+   "aliases": [],
+   "description": "A hero whom none of the Sinister Six could defeat alone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sinister Six",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of six foes of Spider-Man who believe that together they would be unstoppable.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borg",
+   "type": "faction",
+   "aliases": [],
+   "description": "A collective described by a speaker who calls herself the beginning, the end and the one who is many.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Sinister Six",
+   "relation": "enemy",
+   "target": "Spider-Man",
+   "note": "The Sinister Six band together to defeat Spider-Man.",
+   "paragraph": 3,
+   "quote": "None of them could defeat Spider-Man alone."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,74 @@
+{
+ "page": "cards/pw23",
+ "url": "https://scryfall.com/sets/pw23",
+ "title": "Wizards Play Network 2023: card flavor text",
+ "story_date": "2023-01-01",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Oviya Pashiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A sage lifecrafter quoted on inspiration.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sam",
+   "type": "character",
+   "aliases": [],
+   "description": "A patient person who waited through the winter for spring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "A place whose opening unleashed horrors along with the Immortal Sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Sun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact unleashed when Orazca was opened.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sam waits patiently through the winter, and spring surpasses his hopes.",
+   "participants": [
+    "Sam"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "All through the winter Sam remained as patient as he could. Spring surpassed his wildest hopes."
+  },
+  {
+   "summary": "The opening of Orazca unleashes the Immortal Sun and other horrors.",
+   "participants": [
+    "Immortal Sun"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Opening Orazca unleashed more horrors than just the Immortal Sun."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Immortal Sun",
+   "relation": "located_in",
+   "target": "Orazca",
+   "note": "Unleashed when Orazca was opened.",
+   "paragraph": 3,
+   "quote": "Opening Orazca unleashed more horrors than just the Immortal Sun."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,102 @@
+{
+ "page": "cards/pmat",
+ "url": "https://scryfall.com/sets/pmat",
+ "title": "March of the Machine: The Aftermath Promos: card flavor text",
+ "story_date": "2024-02-09",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "March of the Machine: The Aftermath",
+ "entities": [
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose angels, after vanquishing their ancient enemy, turned against their former captors, the demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Ikoria that was reduced to ruins and became a playground for the plane's monsters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orn",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Ikoria that was previously reduced to a playground for monsters, as Drannith later was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane known for its monsters, home to Drannith and Orn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian"
+   ],
+   "description": "Invaders whose architectural designs had to be removed from rebuilt cities, though their materials were reused.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With their ancient enemy vanquished, the angels of New Capenna turn their attention to the demons who once held them captive.",
+   "participants": [
+    "New Capenna"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "With their ancient enemy vanquished, the angels of New Capenna turned their eyes to their former captors: demons."
+  },
+  {
+   "summary": "Survivors rebuild a city, removing the Phyrexian design but reusing its materials.",
+   "participants": [
+    "Phyrexians"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Phyrexian design had to go, but the materials could be put to good use."
+  },
+  {
+   "summary": "Drannith is reduced to ruins and becomes a playground for Ikoria's monsters, as Orn was before it.",
+   "participants": [
+    "Drannith",
+    "Orn"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Like Orn before it, Drannith was reduced to a playground for Ikoria's monsters."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drannith",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Like Orn before it, Drannith was reduced to a playground for Ikoria's monsters."
+  },
+  {
+   "source": "Orn",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Like Orn before it, Drannith was reduced to a playground for Ikoria's monsters."
+  }
+ ],
+ "rejected": []
+}

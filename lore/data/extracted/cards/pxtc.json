@@ -1,0 +1,226 @@
+{
+ "page": "cards/pxtc",
+ "url": "https://scryfall.com/sets/pxtc",
+ "title": "XLN Treasure Chest: card flavor text",
+ "story_date": "2017-11-24",
+ "model": "claude-opus-5-5",
+ "prompt_version": 1,
+ "effort": "medium",
+ "extracted_at": "2026-10-20T03:38:58Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Adrian Adanto",
+   "type": "character",
+   "aliases": [
+    "Adrian Adanto of Lujio"
+   ],
+   "description": "A conquistador of Lujio who claims land in the name of the queen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azcanta",
+   "type": "location",
+   "aliases": [
+    "The Sunken Ruin"
+   ],
+   "description": "A sunken ruin housing all the learning of a long-forgotten age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arguel",
+   "type": "character",
+   "aliases": [],
+   "description": "A man whose vision led him into the jungles of Ixalan to a lost temple.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with jungles where lost temples lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Aclazotz",
+   "type": "location",
+   "aliases": [],
+   "description": "The lost temple of a bat-god of night in the jungles of Ixalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "deity",
+   "aliases": [],
+   "description": "A bat-god of night, eternal enemy to the Threefold Sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Threefold Sun",
+   "type": "deity",
+   "aliases": [],
+   "description": "A solar deity, eternal enemy of the bat-god of night.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ripley Vance",
+   "type": "character",
+   "aliases": [
+    "Captain Vance"
+   ],
+   "description": "A pirate captain who carved cliffs with cannon fire to form a fortress home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spitfire Bastion",
+   "type": "location",
+   "aliases": [],
+   "description": "The fortress Ripley Vance commands, carved from the cliffs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Itlimoc, Cradle of the Sun",
+   "type": "location",
+   "aliases": [
+    "Itlimoc"
+   ],
+   "description": "Land blessed with fertility by humans and merfolk before the Sun Empire was born.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "An empire whose birth came after humans and merfolk blessed the land.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lost Vale",
+   "type": "location",
+   "aliases": [],
+   "description": "A place in the interior where pirates seeking treasure found something far greater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who studies a compass pointing toward a cryptic objective.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaumatic Compass",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A compass that Jace says indicates an aetheric azimuth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [
+    "Spires of Orazca"
+   ],
+   "description": "A place with spires described as a cryptic objective.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Treasure Cove",
+   "type": "location",
+   "aliases": [],
+   "description": "A cove of treasure.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Adrian Adanto claims land in the name of the queen.",
+   "participants": [
+    "Adrian Adanto"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "\"I claim this land in the name of the queen.\""
+  },
+  {
+   "summary": "Arguel's vision leads him into the jungles of Ixalan to the lost Temple of Aclazotz.",
+   "participants": [
+    "Arguel"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Arguel's vision led him into the jungles of Ixalan ..."
+  },
+  {
+   "summary": "Captain Vance carves the cliffs with a broadside assault to form her new home, a fortress she now commands instead of a ship.",
+   "participants": [
+    "Ripley Vance"
+   ],
+   "location": "Spitfire Bastion",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "With a broadside assault, Captain Vance carved the cliffs to form her new home."
+  },
+  {
+   "summary": "In the distant past, before the Sun Empire, humans and merfolk joined magic to bless the land with fertility.",
+   "participants": [
+    "Sun Empire"
+   ],
+   "location": "Itlimoc, Cradle of the Sun",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Before the Sun Empire was born, humans and merfolk joined their magic to invoke a blessing of fertility on the land."
+  },
+  {
+   "summary": "Jace Beleren interprets the Thaumatic Compass as pointing toward a cryptic objective.",
+   "participants": [
+    "Jace Beleren",
+    "Thaumatic Compass"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "\"Clearly, it indicates the aetheric azimuth of ...\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aclazotz",
+   "relation": "enemy",
+   "target": "Threefold Sun",
+   "note": "Eternal enemies.",
+   "paragraph": 3,
+   "quote": "... to the lost temple of a bat-god of night, eternal enemy to the Threefold Sun."
+  },
+  {
+   "source": "Ripley Vance",
+   "relation": "leader_of",
+   "target": "Spitfire Bastion",
+   "note": "Commands the fortress.",
+   "paragraph": 5,
+   "quote": "Now instead of a ship, Ripley Vance commands a fortress."
+  },
+  {
+   "source": "Temple of Aclazotz",
+   "relation": "located_in",
+   "target": "Ixalan",
+   "note": "In the jungles of Ixalan.",
+   "paragraph": 2,
+   "quote": "Arguel's vision led him into the jungles of Ixalan ..."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "event",
+   "reason": "unlisted participant",
+   "summary": "Pirates venture into the interior for treasure and find something far greater.",
+   "participants": [],
+   "location": "Lost Vale",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "The pirates had ventured into the interior for treasure. They found something far greater."
+  }
+ ]
+}
