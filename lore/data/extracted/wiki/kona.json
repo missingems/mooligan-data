@@ -1,0 +1,66 @@
+{
+ "page": "wiki/kona",
+ "url": "https://mtg.wiki/page/Kona",
+ "title": "Kona",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:44Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Kona",
+   "type": "creature",
+   "aliases": [
+    "Kona, Rescue Beastie"
+   ],
+   "description": "A friendly, intelligent beastie of Duskmourn with six feet, two tails and four human-like hands, who carries messages and supplies between survivor groups.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kona lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beasties",
+   "type": "faction",
+   "aliases": [],
+   "description": "Masked creatures of Duskmourn that help survivors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cellarspawn",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures Kona's jaws can pulverize.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kona carries messages and supplies between survivor groups, giving each a better chance at obtaining resources.",
+   "participants": [
+    "Kona"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she helps carry messages and supplies between multiple groups"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kona",
+   "relation": "ally",
+   "target": "Beasties",
+   "note": "She is one of the beasties.",
+   "paragraph": 0,
+   "quote": "Kona is a beastie on Duskmourn"
+  }
+ ],
+ "rejected": []
+}

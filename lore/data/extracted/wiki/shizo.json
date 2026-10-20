@@ -1,0 +1,73 @@
+{
+ "page": "wiki/shizo",
+ "url": "https://mtg.wiki/page/Shizo",
+ "title": "Shizo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:48Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Shizo",
+   "type": "location",
+   "aliases": [],
+   "description": "A battlefield swamp on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "Bamboo forest turned bog.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shirei",
+   "type": "character",
+   "aliases": [],
+   "description": "A spirit who remains at Shizo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nezumi",
+   "type": "faction",
+   "aliases": [
+    "nezumi gangs"
+   ],
+   "description": "Rat gangs living in Shizo's darkness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler whose rise came a century later.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "891 samurai were killed in one battle between two daimyo's armies, turning the meadow into a mire.",
+   "participants": [
+    "Shizo"
+   ],
+   "location": "Shizo",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After 891 samurai were killed all in one battle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shirei",
+   "relation": "located_in",
+   "target": "Shizo",
+   "note": "Only spirit staying there",
+   "paragraph": 3,
+   "quote": "only a single spirit, Shirei"
+  }
+ ],
+ "rejected": []
+}

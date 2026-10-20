@@ -1,0 +1,60 @@
+{
+ "page": "wiki/maelstrom-wanderer",
+ "url": "https://mtg.wiki/page/Maelstrom_Wanderer",
+ "title": "Maelstrom Wanderer",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:33Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Maelstrom Wanderer",
+   "type": "creature",
+   "aliases": [
+    "the Wanderer"
+   ],
+   "description": "60-foot-tall walking storm of quasi-living magic, an elemental of Alara spawned by the Maelstrom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maelstrom",
+   "type": "location",
+   "aliases": [],
+   "description": "Point where the five shards of Alara merged; a whirlpool of mana, aether and magic, mostly gone now.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose five shards merged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The five shards of Alara merged at the Maelstrom.",
+   "participants": [
+    "Maelstrom",
+    "Alara"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Maelstrom was the point at which the five shards of the plane of Alara merged"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Maelstrom",
+   "relation": "created",
+   "target": "Maelstrom Wanderer",
+   "note": "Spawned it.",
+   "paragraph": 0,
+   "quote": "is an elemental of Alara spawned by the Maelstrom"
+  }
+ ],
+ "rejected": []
+}

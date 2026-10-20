@@ -1,0 +1,122 @@
+{
+ "page": "wiki/armix",
+ "url": "https://mtg.wiki/page/Armix",
+ "title": "Armix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:44Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Armix",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Experimental filigree golem of Alara made entirely of new etherium by Breya; loyal but brutal and reckless.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane merged by the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that merged the shards of Alara into a single plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara lacking materials for new etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard where Breya found carmot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breya",
+   "type": "character",
+   "aliases": [],
+   "description": "Human researcher of Esper who led an expedition into Jund and created Armix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carmot",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Red stone, the missing ingredient for new etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Noble Work",
+   "type": "concept",
+   "aliases": [],
+   "description": "Esper's endeavor that needed etherium to continue.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Breya leads an expedition into Jund and returns with carmot.",
+   "participants": [
+    "Breya"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She led an expedition into Jund and returned with carmot"
+  },
+  {
+   "summary": "Breya creates Armix, a golem made entirely of new etherium.",
+   "participants": [
+    "Breya",
+    "Armix"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she created Armix, an experimental golem made entirely of brand-new etherium"
+  },
+  {
+   "summary": "Armix becomes violent and unpredictable; Breya decides it is time for her own Noble Work.",
+   "participants": [
+    "Armix",
+    "Breya"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Armix became violent and unpredictable"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Breya",
+   "relation": "created",
+   "target": "Armix",
+   "note": "She built it to test her hypothesis.",
+   "paragraph": 1,
+   "quote": "she created Armix, an experimental golem made entirely of brand-new etherium"
+  },
+  {
+   "source": "Armix",
+   "relation": "serves",
+   "target": "Breya",
+   "note": "It follows her orders.",
+   "paragraph": 2,
+   "quote": "Armix was still loyal and followed orders"
+  }
+ ],
+ "rejected": []
+}

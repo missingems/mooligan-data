@@ -1,0 +1,100 @@
+{
+ "page": "wiki/rath-cycle",
+ "url": "https://mtg.wiki/page/Rath_Cycle",
+ "title": "Rath Cycle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:38Z",
+ "storyline": "Tempest",
+ "entities": [
+  {
+   "name": "Rath Cycle",
+   "type": "event",
+   "aliases": [],
+   "description": "Storyline in Rath and Storm following the Weatherlight's adventure into Rath and back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ship whose crew ventures into Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane the Weatherlight enters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [
+    "Captain Sisay"
+   ],
+   "description": "Captain of the Weatherlight, kidnapped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Crew member whose old acquaintance became evincar of Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Evincar of Rath",
+   "type": "character",
+   "aliases": [],
+   "description": "Gerrard's old acquaintance, recently become evincar, who lured the crew to Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crovax's Estate",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of an attack.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Captain Sisay was kidnapped by an old acquaintance of Gerrard Capashen who recently became evincar of Rath.",
+   "participants": [
+    "Sisay",
+    "Gerrard Capashen",
+    "Evincar of Rath"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Captain Sisay has recently been kidnapped by an old \"acquaintance\" of Gerrard Capashen 's who recently became evincar of Rath"
+  },
+  {
+   "summary": "The crew planeshifts to Rath and learns why the evincar lured them there.",
+   "participants": [
+    "Weatherlight",
+    "Rath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "From there, they planeshift to Rath"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sisay",
+   "relation": "leader_of",
+   "target": "Weatherlight",
+   "note": "Captain.",
+   "paragraph": 1,
+   "quote": "Captain Sisay has recently been kidnapped"
+  }
+ ],
+ "rejected": []
+}

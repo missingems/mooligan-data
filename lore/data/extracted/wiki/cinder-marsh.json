@@ -1,0 +1,99 @@
+{
+ "page": "wiki/cinder-marsh",
+ "url": "https://mtg.wiki/page/Cinder_Marsh",
+ "title": "Cinder Marsh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:58Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Cinder Marsh",
+   "type": "location",
+   "aliases": [],
+   "description": "Nasty area of sludge and ash on Rath where the Stronghold's furnaces exhausted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Cinder Marsh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress at the Hub, reached through the Cinder Marsh exhaust vents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "Skyship that passed through the Cinder Marsh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slivers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures that swarmed the Weatherlight crew in the Stronghold's depths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Cinder Marsh shifted to Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hub",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the Stronghold lay.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Weatherlight enters an inactive exhaust vent and is swarmed by slivers.",
+   "participants": [
+    "Weatherlight",
+    "Slivers"
+   ],
+   "location": "Cinder Marsh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "There, the slivers swarmed them."
+  },
+  {
+   "summary": "During the Rathi Overlay, Cinder Marsh is shifted to Dominaria.",
+   "participants": [
+    "Cinder Marsh",
+    "Rathi Overlay"
+   ],
+   "location": "Cinder Marsh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Cinder Marsh was shifted to Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cinder Marsh",
+   "relation": "located_in",
+   "target": "Rath",
+   "note": "",
+   "paragraph": 0,
+   "quote": "a nasty area of the plane of Rath"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,85 @@
+{
+ "page": "wiki/flann",
+ "url": "https://mtg.wiki/page/Flann",
+ "title": "Flann",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:36Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Flann",
+   "type": "character",
+   "aliases": [
+    "the Wanderer"
+   ],
+   "description": "Ash treefolk of Lorwyn known as the Wanderer, giver of great knowledge; died of burns.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fionnsutha",
+   "type": "character",
+   "aliases": [],
+   "description": "Young ash who inherited the mantle of Wanderer from Flann.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adair River Span",
+   "type": "character",
+   "aliases": [],
+   "description": "Dear friend of Flann, searching for her unaware of her death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Flann lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Flann is caught in a great forest fire, burnt and dying.",
+   "participants": [
+    "Flann"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Flann was caught in a great forest fire that left her burnt and dying"
+  },
+  {
+   "summary": "Fionnsutha finds Flann, who passes on the mantle of Wanderer and her bag of magical tools before dying.",
+   "participants": [
+    "Flann",
+    "Fionnsutha"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Flann passed the mantle of Wanderer to Fionnsutha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Flann",
+   "relation": "mentor_of",
+   "target": "Fionnsutha",
+   "note": "Predecessor as the Wanderer",
+   "paragraph": 2,
+   "quote": "Fionnsutha gives them much more cryptic advice than Flann would have"
+  },
+  {
+   "source": "Flann",
+   "relation": "ally",
+   "target": "Adair River Span",
+   "note": "Dear friend",
+   "paragraph": 3,
+   "quote": "Flann was a dear friend of Adair River Span"
+  }
+ ],
+ "rejected": []
+}

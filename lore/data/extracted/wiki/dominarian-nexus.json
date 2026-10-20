@@ -1,0 +1,82 @@
+{
+ "page": "wiki/dominarian-nexus",
+ "url": "https://mtg.wiki/page/Dominarian_Nexus",
+ "title": "Dominarian Nexus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:28Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Dominarian Nexus",
+   "type": "concept",
+   "aliases": [
+    "Shard of the Twelve Worlds"
+   ],
+   "description": "A stable system of twelve planes orbiting Dominaria, created by the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "The explosion ending the Brothers' War that created the Shard and the Nexus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war ended by the Sylex Blast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shard of the Twelve Worlds",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The shard created by the Sylex Blast energy that crystallized the planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "One of the planes orbiting Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane at the center of the nexus.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Sylex Blast ends the Brothers' War and creates the Shard of the Twelve Worlds, crystallizing the planes into the Dominarian Nexus.",
+   "participants": [
+    "Sylex Blast",
+    "Shard of the Twelve Worlds",
+    "Dominarian Nexus"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "crystallized the planes inside into a stable, closed system"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sylex Blast",
+   "relation": "created",
+   "target": "Dominarian Nexus",
+   "note": "The blast's energy created the Shard and the nexus.",
+   "paragraph": 1,
+   "quote": "It was created soon after the Brothers' War with the Sylex Blast"
+  }
+ ],
+ "rejected": []
+}

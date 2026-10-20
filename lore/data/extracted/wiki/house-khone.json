@@ -1,0 +1,150 @@
+{
+ "page": "wiki/house-khone",
+ "url": "https://mtg.wiki/page/House_Khone",
+ "title": "House Khone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:33Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "House Khone",
+   "type": "faction",
+   "aliases": [
+    "House Jet"
+   ],
+   "description": "One of the five powerful houses in Arathoxia, ruled by a Black Knight; also known as House Jet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "City with five powerful houses, ruined by Ravidel's invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord of House Khone",
+   "type": "character",
+   "aliases": [
+    "Black Knight"
+   ],
+   "description": "Black Knight who ruled the house; survived the fortress's destruction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [],
+   "description": "Came into possession of the black Mox.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Stole the black Mox, used it to activate the Mox Beacon, and invaded Arathoxia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mox Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device activated using the black Mox.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Barge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Vessel whose blast destroyed the Black Fortress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Black Fortress",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress of House Khone in Arathoxia, destroyed in the invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Home to which the Lord relocated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Man whom the Lord refused to aid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that followed the ruin of Arathoxia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Black Fortress was destroyed in Ravidel's invasion of Arathoxia, obliterated by a blast from the Planar Barge.",
+   "participants": [
+    "Ravidel",
+    "Planar Barge",
+    "Black Fortress",
+    "Arathoxia"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Black Fortress in Arathoxia was destroyed in Ravidel’s invasion of the city, obliterated by a blast from the Planar Barge."
+  },
+  {
+   "summary": "The Lord of the house survived, having left his fortress before its destruction.",
+   "participants": [
+    "Lord of House Khone"
+   ],
+   "location": "Arathoxia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Lord of the house survived, however, having left his fortress before its destruction."
+  },
+  {
+   "summary": "The Lord relocated to Golthonor and refused to aid Jared Carthalion out of fear of Ravidel's revenge.",
+   "participants": [
+    "Lord of House Khone",
+    "Jared Carthalion",
+    "Ravidel"
+   ],
+   "location": "Golthonor",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "where he later refused to aid Jared Carthalion out of fear of Ravidel's revenge."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord of House Khone",
+   "relation": "leader_of",
+   "target": "House Khone",
+   "note": "",
+   "paragraph": 0,
+   "quote": "ruled by the Lord of House Khone"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "enemy",
+   "target": "House Khone",
+   "note": "Invaded Arathoxia and destroyed its fortress.",
+   "paragraph": 2,
+   "quote": "The Black Fortress in Arathoxia was destroyed in Ravidel’s invasion of the city"
+  }
+ ],
+ "rejected": []
+}

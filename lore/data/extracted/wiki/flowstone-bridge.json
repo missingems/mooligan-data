@@ -1,0 +1,134 @@
+{
+ "page": "wiki/flowstone-bridge",
+ "url": "https://mtg.wiki/page/Flowstone_Bridge",
+ "title": "Flowstone Bridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Flowstone Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Flowstone span over a bottomless pit in the Stronghold that guards itself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Citadel on Rath later shifted to Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight Crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crew that crossed the bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard Capashen"
+   ],
+   "description": "Threw a shapeshifter onto the bridge as bait.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "Stormed the citadel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sivvi en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Stormed the citadel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grizzlegom",
+   "type": "character",
+   "aliases": [],
+   "description": "Stormed the citadel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the assault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Place the Stronghold was shifted to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Shifting of the Stronghold to Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gerrard distracts the bridge with a shapeshifter as live bait so the crew can cross.",
+   "participants": [
+    "Gerrard",
+    "Weatherlight Crew",
+    "Flowstone Bridge"
+   ],
+   "location": "Flowstone Bridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Gerrard had the idea of \"distracting\" the bridge with live bait"
+  },
+  {
+   "summary": "During the Rathi Overlay the Stronghold shifts to Urborg.",
+   "participants": [
+    "Flowstone Bridge",
+    "Stronghold"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Flowstone Bridge was shifted with the rest of the Stronghold to Urborg on Dominaria ."
+  },
+  {
+   "summary": "Eladamri, Sivvi en-Vec and Grizzlegom storm the citadel; the bridge does not resist.",
+   "participants": [
+    "Eladamri",
+    "Sivvi en-Vec",
+    "Grizzlegom",
+    "Flowstone Bridge"
+   ],
+   "location": "Flowstone Bridge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "It did not resist their passage."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Flowstone Bridge",
+   "relation": "located_in",
+   "target": "Stronghold",
+   "note": "Span within the Stronghold.",
+   "paragraph": 0,
+   "quote": "over a bottomless pit in the Stronghold"
+  }
+ ],
+ "rejected": []
+}

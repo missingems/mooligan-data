@@ -1,0 +1,138 @@
+{
+ "page": "wiki/soul-trap",
+ "url": "https://mtg.wiki/page/Soul_Trap",
+ "title": "Soul Trap",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:16Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Soul Trap",
+   "type": "artifact",
+   "aliases": [
+    "Soul Traps"
+   ],
+   "description": "Machines designed by Memnarch to abduct inhabitants from other planes to populate Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Designer of the soul traps, killed by Glissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Memnarch, destroying the soul traps; her spark powered Karn's spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Returned to his plane after Memnarch's death and restored souls using Glissa's spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Vanishing",
+   "type": "event",
+   "aliases": [],
+   "description": "What descendants called the return of the kidnapped inhabitants home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane populated by abduction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Progress Engine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexians studying soul trap remnants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Those who study the remnants to spread phyresis.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch abducts inhabitants from other planes for centuries using soul traps.",
+   "participants": [
+    "Memnarch",
+    "Soul Trap"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The abductions went on for centuries."
+  },
+  {
+   "summary": "Glissa kills Memnarch and all soul traps are destroyed.",
+   "participants": [
+    "Glissa",
+    "Memnarch",
+    "Soul Trap"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When Glissa eventually killed Memnarch, all the existing soul traps were destroyed."
+  },
+  {
+   "summary": "Karn restores the dead and returns the kidnapped inhabitants to their homes in the Vanishing.",
+   "participants": [
+    "Karn",
+    "Glissa",
+    "The Vanishing"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He could restore the souls of everyone who died, using the power of Glissa's spark"
+  },
+  {
+   "summary": "Phyrexians of the Progress Engine study soul trap remnants to spread phyresis.",
+   "participants": [
+    "Progress Engine",
+    "Soul Trap"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Remnants of the soul traps are studied by the Phyrexians of the Progress Engine"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Soul Trap",
+   "note": "Designed the machines.",
+   "paragraph": 0,
+   "quote": "Soul Traps were machines designed by Memnarch"
+  },
+  {
+   "source": "Glissa",
+   "relation": "killed",
+   "target": "Memnarch",
+   "note": "She killed him.",
+   "paragraph": 1,
+   "quote": "When Glissa eventually killed Memnarch"
+  }
+ ],
+ "rejected": []
+}

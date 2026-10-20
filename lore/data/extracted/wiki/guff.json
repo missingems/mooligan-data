@@ -1,0 +1,126 @@
+{
+ "page": "wiki/guff",
+ "url": "https://mtg.wiki/page/Guff",
+ "title": "Guff",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:03Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Guff",
+   "type": "character",
+   "aliases": [
+    "Commodore Guff"
+   ],
+   "description": "Commodore Guff, very old planeswalker who lived in a hidden library on Dominaria and was one of the Nine Titans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the hidden library.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the crusade against Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Enemy of Urza's crusade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nine Titans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of planeswalkers in Urza's crusade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bo Levar",
+   "type": "character",
+   "aliases": [],
+   "description": "Convinced Guff to change what he knew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose Black Cloud of Death killed Guff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Cloud of Death",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Yawgmoth's weapon that killed Guff.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Guff joined Urza's crusade against Phyrexia as one of the Nine Titans.",
+   "participants": [
+    "Guff",
+    "Urza",
+    "Nine Titans"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He joined Urza on his crusade against Phyrexia as one of the"
+  },
+  {
+   "summary": "Bo Levar convinced Guff to change what he knew about Phyrexia's victory, and Guff erased the important parts.",
+   "participants": [
+    "Bo Levar",
+    "Guff"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Guff erased the important parts since Phyrexia lost the invasion"
+  },
+  {
+   "summary": "Yawgmoth's Black Cloud of Death killed Guff in seconds.",
+   "participants": [
+    "Yawgmoth",
+    "Guff"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was killed by"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Guff",
+   "relation": "member_of",
+   "target": "Nine Titans",
+   "note": "Joined as one of the Nine Titans.",
+   "paragraph": 2,
+   "quote": "as one of the"
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "killed",
+   "target": "Guff",
+   "note": "His Black Cloud of Death killed Guff.",
+   "paragraph": 2,
+   "quote": "was killed by"
+  }
+ ],
+ "rejected": []
+}

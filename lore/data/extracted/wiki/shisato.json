@@ -1,0 +1,110 @@
+{
+ "page": "wiki/shisato",
+ "url": "https://mtg.wiki/page/Shisato",
+ "title": "Shisato",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:28Z",
+ "storyline": "Kamigawa: Champions",
+ "entities": [
+  {
+   "name": "Shisato",
+   "type": "character",
+   "aliases": [],
+   "description": "An orochi renegade known for cunning and ruthlessness whose venom could kill another orochi; she hunted Dosan's monks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dosan",
+   "type": "character",
+   "aliases": [
+    "Dosan the Falling Leaf"
+   ],
+   "description": "Leader whose monks Shisato hunted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kashi tribe",
+   "type": "faction",
+   "aliases": [
+    "Kashi"
+   ],
+   "description": "Orochi tribe whose rituals Shisato could not join; led by Sosuke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sosuke",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Kashi tribe who acknowledged Shisato as a skilled hunter and killer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest whose human monks Shisato hunted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orochi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Snake-like people divided into tribes and castes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shisato kills her opponent in ritual combat instead of merely besting him, touching off a chain of vendettas.",
+   "participants": [
+    "Shisato"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "when she killed her opponent instead of just besting him, she touched off a chain of vendettas"
+  },
+  {
+   "summary": "Four orochi warriors fight Shisato to avenge their kin, and she slays all four.",
+   "participants": [
+    "Shisato"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Four orochi warriors fought her to avenge their fallen kin, and Shisato slew all four"
+  },
+  {
+   "summary": "Feared and distrusted by the orochi, Shisato grows bitter, ventures from the colonies and begins hunting the Jukai Forest's human monks.",
+   "participants": [
+    "Shisato"
+   ],
+   "location": "Jukai Forest",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eventually, she began to hunt bigger prey: the Jukai Forest’s human monks"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sosuke",
+   "relation": "leader_of",
+   "target": "Kashi tribe",
+   "note": "He is the tribe's leader.",
+   "paragraph": 2,
+   "quote": "its leader Sosuke acknowledged that she was a skilled hunter and killer"
+  },
+  {
+   "source": "Shisato",
+   "relation": "enemy",
+   "target": "Dosan",
+   "note": "She hunted Dosan's monks.",
+   "paragraph": 0,
+   "quote": "She hunted Dosan 's monks."
+  }
+ ],
+ "rejected": []
+}

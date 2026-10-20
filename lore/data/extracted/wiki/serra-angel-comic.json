@@ -1,0 +1,150 @@
+{
+ "page": "wiki/serra-angel-comic",
+ "url": "https://mtg.wiki/page/Serra_Angel_%28comic%29",
+ "title": "Serra Angel (comic)",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Young man from Dominaria who lost his castle to the wizard Dreygar and summoned creatures to regain it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreygar",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who took Aldon's castle and was killed by Aldon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Angel",
+   "type": "creature",
+   "aliases": [],
+   "description": "Angel summoned by Aldon who shows him the beauty of the world and perishes in battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sengir vampire",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature summoned by Aldon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Frozen shade",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature summoned by Aldon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bog wraith",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature summoned by Aldon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallen angel",
+   "type": "creature",
+   "aliases": [],
+   "description": "Angel sent by Dreygar to seduce Aldon, killed by Aldon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Aldon comes from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Aldon loses his castle to the wizard Dreygar.",
+   "participants": [
+    "Aldon",
+    "Dreygar"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "lost his castle to the wizard Dreygar"
+  },
+  {
+   "summary": "Aldon summons a Sengir vampire, a frozen shade and a bog wraith to help regain his castle.",
+   "participants": [
+    "Aldon",
+    "Sengir vampire",
+    "Frozen shade",
+    "Bog wraith"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He summons a Sengir vampire , a frozen shade , and a bog wraith"
+  },
+  {
+   "summary": "Aldon summons a Serra Angel who shows him the beauty of the world.",
+   "participants": [
+    "Aldon",
+    "Serra Angel"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "later summons a Serra Angel"
+  },
+  {
+   "summary": "Dreygar sends a fallen angel to seduce Aldon.",
+   "participants": [
+    "Dreygar",
+    "Fallen angel",
+    "Aldon"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Dreygar then sends a fallen angel to seduce Aldon."
+  },
+  {
+   "summary": "Aldon and his creatures assault the castle; Aldon kills the fallen angel and Dreygar and rules his castle again, but the Serra Angel perishes.",
+   "participants": [
+    "Aldon",
+    "Dreygar",
+    "Fallen angel",
+    "Serra Angel"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Aldon kills the fallen angel and Dreygar, and once again rules his castle."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aldon",
+   "relation": "killed",
+   "target": "Dreygar",
+   "note": "Aldon kills Dreygar in the assault.",
+   "paragraph": 2,
+   "quote": "Aldon kills the fallen angel and Dreygar"
+  },
+  {
+   "source": "Dreygar",
+   "relation": "enemy",
+   "target": "Aldon",
+   "note": "Dreygar took Aldon's castle.",
+   "paragraph": 2,
+   "quote": "lost his castle to the wizard Dreygar"
+  }
+ ],
+ "rejected": []
+}

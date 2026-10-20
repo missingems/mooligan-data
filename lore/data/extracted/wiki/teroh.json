@@ -1,0 +1,172 @@
+{
+ "page": "wiki/teroh",
+ "url": "https://mtg.wiki/page/Teroh",
+ "title": "Teroh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:27Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Teroh",
+   "type": "character",
+   "aliases": [
+    "Major Teroh"
+   ],
+   "description": "Aven major and de facto leader of the northern Order's crusade army on Otaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Military order on Otaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pianna",
+   "type": "character",
+   "aliases": [],
+   "description": "Former leader of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirtar",
+   "type": "character",
+   "aliases": [],
+   "description": "Pianna's successor; died with her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bretath",
+   "type": "character",
+   "aliases": [],
+   "description": "New Order leader Teroh served under.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemy of the Order that sent Chainer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal assassin who killed Teroh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skellum",
+   "type": "character",
+   "aliases": [],
+   "description": "Chainer's master, killed by Teroh in a pit-fight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eesha",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander who inherited the Sword of Leadership and command of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sword of Leadership",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Sword received by Teroh and later passed to Eesha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Pianna and Kirtar died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where the Order operates.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teroh rises to lead the northern Order's crusade army after Pianna and Kirtar die.",
+   "participants": [
+    "Teroh",
+    "Pianna",
+    "Kirtar"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Teroh came to power during the Battle for the Mirari"
+  },
+  {
+   "summary": "Teroh organizes an ill-planned crusade against the Cabal.",
+   "participants": [
+    "Teroh",
+    "Cabal"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "organized an ill-planned crusade against the Cabal"
+  },
+  {
+   "summary": "Chainer kills Teroh and others in a Samite hospital with flesh-eating insects.",
+   "participants": [
+    "Chainer",
+    "Teroh"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "killing the Major, the other Order troops recovering there and many innocent Samite healers"
+  },
+  {
+   "summary": "Eesha inherits the Sword of Leadership and command of the Order.",
+   "participants": [
+    "Eesha"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "both the Sword of Leadership and the full command of the Order were passed on to Commander Eesha"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chainer",
+   "relation": "killed",
+   "target": "Teroh",
+   "note": "Assassinated him in reprisal",
+   "paragraph": 2,
+   "quote": "killing the Major, the other Order troops recovering there"
+  },
+  {
+   "source": "Teroh",
+   "relation": "enemy",
+   "target": "Cabal",
+   "note": "Crusaded against it",
+   "paragraph": 1,
+   "quote": "organized an ill-planned crusade against the Cabal"
+  },
+  {
+   "source": "Teroh",
+   "relation": "member_of",
+   "target": "The Order",
+   "note": "Aven leader of the Order",
+   "paragraph": 0,
+   "quote": "Major Teroh was an Aven leader of the Order on Otaria"
+  }
+ ],
+ "rejected": []
+}

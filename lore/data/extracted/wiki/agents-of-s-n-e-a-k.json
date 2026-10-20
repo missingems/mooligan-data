@@ -1,0 +1,61 @@
+{
+ "page": "wiki/agents-of-s-n-e-a-k",
+ "url": "https://mtg.wiki/page/Agents_of_S.N.E.A.K.",
+ "title": "Agents of S.N.E.A.K.",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Agents of S.N.E.A.K.",
+   "type": "faction",
+   "aliases": [],
+   "description": "Bablovian kleptocracy of bad spies with cool toys, led by whoever holds the Golden Ruler.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golden Ruler",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item whose holder leads the organization.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phoebe",
+   "type": "character",
+   "aliases": [],
+   "description": "Current leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "X",
+   "type": "character",
+   "aliases": [],
+   "description": "Shadowy figure paid to steal the Golden Ruler.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Phoebe",
+   "relation": "leader_of",
+   "target": "Agents of S.N.E.A.K.",
+   "note": "Current leader.",
+   "paragraph": 1,
+   "quote": "The current leader is Phoebe ."
+  },
+  {
+   "source": "X",
+   "relation": "other",
+   "target": "Golden Ruler",
+   "note": "Constantly paid to steal it.",
+   "paragraph": 1,
+   "quote": "constantly paid by different sources to steal the Golden Ruler."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,127 @@
+{
+ "page": "wiki/haakon",
+ "url": "https://mtg.wiki/page/Haakon",
+ "title": "Haakon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Haakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Undead leader of the Order of Stromgald and lord of Tresserhorn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of Stromgald",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead knightly order led by Haakon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heidar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planned to counteract the World Spell; Haakon joined his cause.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Darien",
+   "type": "character",
+   "aliases": [
+    "Darien"
+   ],
+   "description": "King of Kjeldor who duelled Haakon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Kjeldor",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle ended by Haakon's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation Haakon's Order was to keep at bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Spell Heidar sought to counteract.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Haakon joins Heidar's plan to counteract the World Spell and reverse the Thaw.",
+   "participants": [
+    "Haakon",
+    "Heidar"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Haakon joined the cause of Heidar in his plan to counteract the World Spell"
+  },
+  {
+   "summary": "Haakon duels King Darien from dusk till dawn on the fourth day of the Battle of Kjeldor.",
+   "participants": [
+    "Haakon",
+    "King Darien"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Haakon fought a duel against King Darien that lasted from dusk till dawn."
+  },
+  {
+   "summary": "Darien's men rush Haakon; he cuts many down but is overwhelmed and dies, and his army retreats, ending the battle.",
+   "participants": [
+    "Haakon",
+    "King Darien",
+    "Order of Stromgald"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "His army quickly retreated upon his death, ending the battle of Kjeldor."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Haakon",
+   "relation": "leader_of",
+   "target": "Order of Stromgald",
+   "note": "Its undead leader.",
+   "paragraph": 0,
+   "quote": "Haakon was the undead leader of the Order of Stromgald in Terisiare"
+  },
+  {
+   "source": "Haakon",
+   "relation": "ally",
+   "target": "Heidar",
+   "note": "Joined his cause.",
+   "paragraph": 1,
+   "quote": "Haakon joined the cause of Heidar"
+  },
+  {
+   "source": "Haakon",
+   "relation": "enemy",
+   "target": "King Darien",
+   "note": "Duelled him.",
+   "paragraph": 2,
+   "quote": "Haakon fought a duel against King Darien"
+  }
+ ],
+ "rejected": []
+}

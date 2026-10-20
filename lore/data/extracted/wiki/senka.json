@@ -1,0 +1,111 @@
+{
+ "page": "wiki/senka",
+ "url": "https://mtg.wiki/page/Senka",
+ "title": "Senka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:17Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Senka",
+   "type": "character",
+   "aliases": [
+    "Stealer of Serets"
+   ],
+   "description": "Guildless rogue of Ravnica called the Stealer of Serets, on an Azorius most-wanted list.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dinrova Building",
+   "type": "location",
+   "aliases": [],
+   "description": "Dimir building Senka broke into.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dinrova Horror",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster Senka released that devoured Dimir guards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose building Senka burgled.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that put Senka on its most-wanted list.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose armored transport was consumed by the horror.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Senka evades Dimir safeguards and breaks into the Dinrova Building.",
+   "participants": [
+    "Senka",
+    "Dimir"
+   ],
+   "location": "Dinrova Building",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Senka somehow managed to evade Dimir detection spells and traps and broke into the Dinrova Building ."
+  },
+  {
+   "summary": "Senka releases a Dinrova Horror, which devours the Dimir guards and consumes an Orzhov transport.",
+   "participants": [
+    "Senka",
+    "Dinrova Horror"
+   ],
+   "location": "Dinrova Building",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The horror devoured the Dimir guards, escaped the building, and consumed a passing Orzhov Armored Transport."
+  },
+  {
+   "summary": "The Azorius learn Senka's name and add her to their most wanted list.",
+   "participants": [
+    "Azorius",
+    "Senka"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "only once they had learned her name did they put her on their most wanted list."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azorius",
+   "relation": "enemy",
+   "target": "Senka",
+   "note": "",
+   "paragraph": 0,
+   "quote": "At one point she was on an Azorius list of the ten most wanted criminals."
+  },
+  {
+   "source": "Senka",
+   "relation": "enemy",
+   "target": "Dimir",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Senka somehow managed to evade Dimir detection spells and traps"
+  }
+ ],
+ "rejected": []
+}

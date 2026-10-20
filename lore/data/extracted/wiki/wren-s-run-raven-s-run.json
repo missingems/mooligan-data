@@ -1,0 +1,107 @@
+{
+ "page": "wiki/wren-s-run-raven-s-run",
+ "url": "https://mtg.wiki/page/Wren%27s_Run/Raven%27s_Run",
+ "title": "Wren's Run/Raven's Run",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:59Z",
+ "storyline": "Shadowmoor",
+ "entities": [
+  {
+   "name": "Raven's Run",
+   "type": "location",
+   "aliases": [
+    "Ravens' Run"
+   ],
+   "description": "Gloomy Shadowmoor counterpart of Wren's Run.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strongroot",
+   "type": "location",
+   "aliases": [],
+   "description": "Last safehold in the forest, fell to Amur's black poplars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Joram Twohorns",
+   "type": "character",
+   "aliases": [
+    "Joram"
+   ],
+   "description": "Born in Strongroot and evicted at 14 for having no horns; renamed himself after being given horns by the sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amur Brokenlimb",
+   "type": "character",
+   "aliases": [],
+   "description": "Canker witch treefolk who gave Joram the copper sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Copper sphere",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Sphere that granted Joram horns at a price.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "Transformation preceding the events.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Joram is evicted from Strongroot at 14 for having no horns.",
+   "participants": [
+    "Joram Twohorns",
+    "Strongroot"
+   ],
+   "location": "Raven's Run",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "until he was evicted from the village at 14 years of age for having no horns"
+  },
+  {
+   "summary": "Amur gives Joram the copper sphere, granting him horns.",
+   "participants": [
+    "Amur Brokenlimb",
+    "Joram Twohorns",
+    "Copper sphere"
+   ],
+   "location": "Raven's Run",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "who gave him the copper sphere, which granted him the wish of getting horns"
+  },
+  {
+   "summary": "The sphere's payment spreads the Canker curse to Strongroot's defenders and the safehold falls to Amur's black poplars.",
+   "participants": [
+    "Joram Twohorns",
+    "Amur Brokenlimb",
+    "Strongroot"
+   ],
+   "location": "Strongroot",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "it fell to Amur's black poplars"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Amur Brokenlimb",
+   "relation": "created",
+   "target": "Copper sphere",
+   "note": "gave it to Joram",
+   "paragraph": 1,
+   "quote": "who gave him the copper sphere"
+  }
+ ],
+ "rejected": []
+}

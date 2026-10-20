@@ -1,0 +1,91 @@
+{
+ "page": "wiki/asenue",
+ "url": "https://mtg.wiki/page/Asenue",
+ "title": "Asenue",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:36Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Asenue",
+   "type": "character",
+   "aliases": [],
+   "description": "An Amonkheti warrior and master blademaster who fought to the last during the Final Hours, later part of the Dreadhorde.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Asenue fought Eternals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead warriors Asenue fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Final Hours",
+   "type": "event",
+   "aliases": [],
+   "description": "The last days of Amonkhet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian-aligned horde on Ravnica Asenue joined as undead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Asenue again.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Hour of Eternity Asenue fought two Eternals on the streets of Naktamun, knowing she would lose.",
+   "participants": [
+    "Asenue",
+    "Eternals"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Asenue faced two Eternals in a desperate battle on the streets of Naktamun"
+  },
+  {
+   "summary": "Asenue became part of the Dreadhorde on Ravnica and was re-killed by Samut.",
+   "participants": [
+    "Asenue",
+    "Samut",
+    "Dreadhorde"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She became part of the Dreadhorde on Ravnica and was re-killed by Samut"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samut",
+   "relation": "killed",
+   "target": "Asenue",
+   "note": "Killed her after she joined the Dreadhorde.",
+   "paragraph": 1,
+   "quote": "re-killed by Samut"
+  }
+ ],
+ "rejected": []
+}

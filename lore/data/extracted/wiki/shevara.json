@@ -1,0 +1,84 @@
+{
+ "page": "wiki/shevara",
+ "url": "https://mtg.wiki/page/Shevara",
+ "title": "Shevara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:45Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Shevara",
+   "type": "character",
+   "aliases": [],
+   "description": "A scout and warrior of the Rotrue elves on Duskmourn, daughter of the king.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rotrue Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "The last free forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rotrue",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves enveloped by House.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House",
+   "type": "creature",
+   "aliases": [],
+   "description": "A predatory entity that consumed Duskmourn.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shevara spotted unaccompanied human children playing in the woods, a sign House had reached the forest.",
+   "participants": [
+    "Shevara"
+   ],
+   "location": "Rotrue Wood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Shevara one day spotted ominous, unaccompanied human children playing in the woods"
+  },
+  {
+   "summary": "House enveloped the Rotrue and sealed the forest in a glass conservatory.",
+   "participants": [
+    "House",
+    "Rotrue",
+    "Shevara"
+   ],
+   "location": "Rotrue Wood",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "House enveloped the Rotrue, ensnaring the elves and their forest within its sinister walls"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shevara",
+   "relation": "member_of",
+   "target": "Rotrue",
+   "note": "Elf of the Rotrue",
+   "paragraph": 0,
+   "quote": "a scout and warrior of the Rotrue elves"
+  },
+  {
+   "source": "House",
+   "relation": "enemy",
+   "target": "Rotrue",
+   "note": "Consumed them",
+   "paragraph": 2,
+   "quote": "House enveloped the Rotrue"
+  }
+ ],
+ "rejected": []
+}

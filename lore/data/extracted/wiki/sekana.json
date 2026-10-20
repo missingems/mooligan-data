@@ -1,0 +1,145 @@
+{
+ "page": "wiki/sekana",
+ "url": "https://mtg.wiki/page/Sekana",
+ "title": "Sekana",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:40Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Sekana",
+   "type": "location",
+   "aliases": [],
+   "description": "A fishing port near the Talon Gates on Madara, the only seaport on southwestern Madara that could launch large ships.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Sekana lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talon Gates",
+   "type": "location",
+   "aliases": [],
+   "description": "Gates near Sekana; a reproduction stands above its stairway.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War at whose onset Wasitora made Sekana her home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wasitora",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cat-dragon who made Sekana her home and became Tetsuo's deputy there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Imperial champion who challenged Wasitora, then appointed her deputy, later renouncing his title.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Land Wurm",
+   "type": "creature",
+   "aliases": [],
+   "description": "Invading creature that interrupted the duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Force that came to destroy Sekana to lure Tetsuo out.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wasitora's kittens",
+   "type": "creature",
+   "aliases": [],
+   "description": "Slaughtered the kentsu forces sent to Sekana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madaran Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nekoru-occupied empire of which Sekana is a prosperous town.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nekoru",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cat folk occupying the Madaran Empire.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wasitora makes Sekana her home; Tetsuo challenges her to a duel.",
+   "participants": [
+    "Wasitora",
+    "Tetsuo Umezawa"
+   ],
+   "location": "Sekana",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The imperial champion Tetsuo Umezawa challenged her to a duel"
+  },
+  {
+   "summary": "An Elder Land Wurm interrupts the fight; after Wasitora helps defeat it, Tetsuo appoints her his deputy.",
+   "participants": [
+    "Wasitora",
+    "Tetsuo Umezawa",
+    "Elder Land Wurm"
+   ],
+   "location": "Sekana",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tetsuo appointed her as his deputy in Sekana"
+  },
+  {
+   "summary": "The kentsu come to destroy Sekana to lure Tetsuo out but are slaughtered by Wasitora's kittens.",
+   "participants": [
+    "Kentsu",
+    "Wasitora's kittens"
+   ],
+   "location": "Sekana",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the forces that were sent there were slaughtered by Wasitora's kittens"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wasitora",
+   "relation": "serves",
+   "target": "Tetsuo Umezawa",
+   "note": "Appointed his deputy in Sekana.",
+   "paragraph": 2,
+   "quote": "Tetsuo appointed her as his deputy in Sekana"
+  },
+  {
+   "source": "Sekana",
+   "relation": "located_in",
+   "target": "Madara",
+   "note": "Port near the Talon Gates.",
+   "paragraph": 0,
+   "quote": "Sekana was a fisherman's port near the Talon Gates on Madara"
+  }
+ ],
+ "rejected": []
+}

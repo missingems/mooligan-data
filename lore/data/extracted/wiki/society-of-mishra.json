@@ -1,0 +1,163 @@
+{
+ "page": "wiki/society-of-mishra",
+ "url": "https://mtg.wiki/page/Society_of_Mishra",
+ "title": "Society of Mishra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Society of Mishra",
+   "type": "faction",
+   "aliases": [],
+   "description": "Secret cult of Phyrexian sympathizers within the Tolarian Academies, worshipers of Mishra and Gix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rona, Disciple of Gix",
+   "type": "character",
+   "aliases": [
+    "Rona"
+   ],
+   "description": "Leader of the Society of Mishra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Worshiped by the society.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "Worshiped by the society.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient order the society is a spiritual successor to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolarian Academies",
+   "type": "faction",
+   "aliases": [],
+   "description": "Institution within which the cult hid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian helped by the society in staging a new invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Academy at Lat-Nam",
+   "type": "location",
+   "aliases": [],
+   "description": "Became a haven for dark research.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which the Tolarians excised the society.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chancellor Uthras",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the society at Tolaria West.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Traveler",
+   "type": "character",
+   "aliases": [],
+   "description": "Thwarted the society's hive-mind device.",
+   "presence": "appears"
+  },
+  {
+   "name": "Death of Belzenlok",
+   "type": "event",
+   "aliases": [],
+   "description": "Event shortly after the society's Tolaria West activities.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The society helps Sheoldred stage a new invasion and takes control of the Academy at Lat-Nam.",
+   "participants": [
+    "Society of Mishra",
+    "Sheoldred",
+    "Academy at Lat-Nam"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The society helped Sheoldred in staging a new invasion of the plane."
+  },
+  {
+   "summary": "After the New Phyrexian Invasion the Tolarians excise the Society of Mishra.",
+   "participants": [
+    "Tolarian Academies",
+    "Society of Mishra"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Tolarians excised the Society of Mishra from their ranks"
+  },
+  {
+   "summary": "The Traveler thwarts the society's attempt to create a hive-mind device.",
+   "participants": [
+    "Society of Mishra",
+    "Chancellor Uthras",
+    "The Traveler"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They attempted to create a hive-mind device but were thwarted by The Traveler"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rona, Disciple of Gix",
+   "relation": "leader_of",
+   "target": "Society of Mishra",
+   "note": "leader",
+   "paragraph": 0,
+   "quote": "Their leader was Rona"
+  },
+  {
+   "source": "Society of Mishra",
+   "relation": "ally",
+   "target": "Sheoldred",
+   "note": "helped her invasion",
+   "paragraph": 1,
+   "quote": "The society helped Sheoldred"
+  },
+  {
+   "source": "Society of Mishra",
+   "relation": "enemy",
+   "target": "The Traveler",
+   "note": "thwarted by",
+   "paragraph": 3,
+   "quote": "were thwarted by The Traveler"
+  }
+ ],
+ "rejected": []
+}

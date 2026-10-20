@@ -1,0 +1,150 @@
+{
+ "page": "wiki/brisela",
+ "url": "https://mtg.wiki/page/Brisela",
+ "title": "Brisela",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:43Z",
+ "storyline": "Eldritch Moon",
+ "entities": [
+  {
+   "name": "Brisela, Voice of Nightmares",
+   "type": "creature",
+   "aliases": [
+    "Brisela"
+   ],
+   "description": "An Eldrazi horror formed by melding the archangels Bruna and Gisela during the Emrakul incursion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bruna",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel of Innistrad who fell under Emrakul's influence and melded into Brisela.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisela",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel of Innistrad who fell under Emrakul's influence and melded into Brisela.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan whose corruption reshaped Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Brisela spread terror.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Thraben",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle where Brisela was defeated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Brisela.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saint Traft",
+   "type": "character",
+   "aliases": [],
+   "description": "Spirit who guided Thalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "Aided Thalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meld",
+   "type": "concept",
+   "aliases": [],
+   "description": "Process that fused Bruna and Gisela.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bruna and Gisela fell under Emrakul's influence.",
+   "participants": [
+    "Bruna",
+    "Gisela",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Bruna and Gisela fell under Emrakul’s influence"
+  },
+  {
+   "summary": "Bruna and Gisela were fused through Meld into Brisela.",
+   "participants": [
+    "Bruna",
+    "Gisela",
+    "Brisela, Voice of Nightmares"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they were physically fused through a process called Meld"
+  },
+  {
+   "summary": "Thalia, guided by Saint Traft and aided by Sigarda, defeated Brisela at the Battle of Thraben.",
+   "participants": [
+    "Thalia",
+    "Saint Traft",
+    "Sigarda",
+    "Brisela, Voice of Nightmares"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Thalia , guided by the spirit of Saint Traft and aided by Sigarda , confronted and defeated the abomination"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thalia",
+   "relation": "killed",
+   "target": "Brisela, Voice of Nightmares",
+   "note": "Defeated it",
+   "paragraph": 3,
+   "quote": "confronted and defeated the abomination"
+  },
+  {
+   "source": "Sigarda",
+   "relation": "ally",
+   "target": "Thalia",
+   "note": "Aided her",
+   "paragraph": 3,
+   "quote": "aided by Sigarda"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,128 @@
+{
+ "page": "wiki/kiran-nalaar",
+ "url": "https://mtg.wiki/page/Kiran_Nalaar",
+ "title": "Kiran Nalaar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kiran Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Inventor, father of Chandra Nalaar and husband of Pia Nalaar, killed by Consulate troops.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Fire mage daughter of Kiran and Pia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Pia"
+   ],
+   "description": "Inventor wife of Kiran, jailed after Burarat burned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City the family fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Burarat",
+   "type": "location",
+   "aliases": [],
+   "description": "Village hiding place burned down by Consulate troops.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Baral",
+   "type": "character",
+   "aliases": [],
+   "description": "Consulate captain whose troops burned Burarat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ghirapur government forces hunting the fire mage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Echoverse",
+   "type": "concept",
+   "aliases": [],
+   "description": "Alternate reality where Kiran helped run the Consulate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Discovering Chandra is a fire mage, Kiran and Pia flee Ghirapur to escape the Consulate.",
+   "participants": [
+    "Kiran Nalaar",
+    "Pia Nalaar",
+    "Chandra Nalaar",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "they fled Ghirapur to escape the Consulate forces"
+  },
+  {
+   "summary": "Captain Baral's troops burn down Burarat; Kiran is killed, Chandra taken to be executed, Pia jailed.",
+   "participants": [
+    "Captain Baral",
+    "Kiran Nalaar",
+    "Chandra Nalaar",
+    "Pia Nalaar"
+   ],
+   "location": "Burarat",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kiran was killed, Chandra was taken away to be executed and Pia was jailed."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kiran Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Father.",
+   "paragraph": 0,
+   "quote": "Kiran Nalaar was the father of Chandra Nalaar"
+  },
+  {
+   "source": "Kiran Nalaar",
+   "relation": "family",
+   "target": "Pia Nalaar",
+   "note": "Husband.",
+   "paragraph": 0,
+   "quote": "the husband of Pia Nalaar ."
+  },
+  {
+   "source": "Captain Baral",
+   "relation": "killed",
+   "target": "Kiran Nalaar",
+   "note": "His troops burned Burarat and Kiran was killed.",
+   "paragraph": 1,
+   "quote": "burned down by the troops of Captain Baral"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,125 @@
+{
+ "page": "wiki/spice-isles",
+ "url": "https://mtg.wiki/page/Spice_Isles",
+ "title": "Spice Isles",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Spice Isles",
+   "type": "location",
+   "aliases": [
+    "Spice Islands"
+   ],
+   "description": "Chain of sparsely populated islands in the Domains of Dominaria, west of Aerona, used by sailors as rest stops.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent east of the Spice Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoltun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire that conquered the Spice Isles from the pirates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Realm that assumed control of the Spice Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria West",
+   "type": "location",
+   "aliases": [],
+   "description": "Place that became the home of the Spice Isles during the Time Spiral crisis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanctum",
+   "type": "location",
+   "aliases": [],
+   "description": "Haven for planeswalkers in the Spice Isles shielded by Thran metal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran metal",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Nearly indestructible, perpetually growing metal created by the Thran in the Mana Rig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time Spiral crisis",
+   "type": "event",
+   "aliases": [],
+   "description": "Crisis during which the isles became home of Tolaria West.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Spice Isles, ruled by pirates, are conquered by the Sheoltun Empire.",
+   "participants": [
+    "Sheoltun Empire",
+    "Spice Isles"
+   ],
+   "location": "Spice Isles",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "ruled by pirates before they were conquered by the Sheoltun Empire"
+  },
+  {
+   "summary": "Benalia assumes control of the Spice Isles.",
+   "participants": [
+    "Benalia",
+    "Spice Isles"
+   ],
+   "location": "Spice Isles",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Later, Benalia assumed control over them."
+  },
+  {
+   "summary": "Benalia loses its hold during the Rift Era but reestablishes itself in the Mending Era.",
+   "participants": [
+    "Benalia",
+    "Spice Isles"
+   ],
+   "location": "Spice Isles",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Benalia lost its hold during the Rift Era"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sanctum",
+   "relation": "located_in",
+   "target": "Spice Isles",
+   "note": "Sanctum lies within the isles.",
+   "paragraph": 2,
+   "quote": "Within the present-day Spice Isles, a haven for planeswalkers exists called Sanctum."
+  },
+  {
+   "source": "Benalia",
+   "relation": "leader_of",
+   "target": "Spice Isles",
+   "note": "Benalia assumed control over the islands.",
+   "paragraph": 1,
+   "quote": "Later, Benalia assumed control over them."
+  }
+ ],
+ "rejected": []
+}

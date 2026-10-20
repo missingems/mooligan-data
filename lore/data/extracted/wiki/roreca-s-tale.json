@@ -1,0 +1,100 @@
+{
+ "page": "wiki/roreca-s-tale",
+ "url": "https://mtg.wiki/page/Roreca%27s_Tale",
+ "title": "Roreca's Tale",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Roreca's Tale",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Short story about the fight between planeswalkers Worzel and Thomil on Ergamon, told by Roreca; first published in 1994.",
+   "presence": "appears"
+  },
+  {
+   "name": "Worzel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose wards alert her to Thomil; she fights him with summoned creatures and spells.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thomil",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker and Worzel's old enemy who flees Ergamon after his Lord of the Pit turns on him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Roreca",
+   "type": "character",
+   "aliases": [],
+   "description": "Worzel's familiar, who tells the tale.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord of the Pit",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon summoned by Thomil that attacks him instead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ergamon",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the fight takes place.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Worzel's wards alert her to the presence of her old enemy Thomil while traveling Ergamon, and they fight with summoned creatures and spells.",
+   "participants": [
+    "Worzel",
+    "Thomil",
+    "Ergamon"
+   ],
+   "location": "Ergamon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Worzel's wards alert her to the presence of Thomil, an old enemy."
+  },
+  {
+   "summary": "Thomil summons a Lord of the Pit, which Worzel holds off until it attacks Thomil; he flees the plane.",
+   "participants": [
+    "Thomil",
+    "Lord of the Pit",
+    "Worzel"
+   ],
+   "location": "Ergamon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "resulting in the demon attacking Thomil instead"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Worzel",
+   "relation": "enemy",
+   "target": "Thomil",
+   "note": "Old enemies.",
+   "paragraph": 1,
+   "quote": "the presence of Thomil, an old enemy"
+  },
+  {
+   "source": "Roreca",
+   "relation": "serves",
+   "target": "Worzel",
+   "note": "Worzel's familiar.",
+   "paragraph": 0,
+   "quote": "as told by Worzel's familiar Roreca"
+  }
+ ],
+ "rejected": []
+}

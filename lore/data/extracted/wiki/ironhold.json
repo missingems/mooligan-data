@@ -1,0 +1,139 @@
+{
+ "page": "wiki/ironhold",
+ "url": "https://mtg.wiki/page/Ironhold",
+ "title": "Ironhold",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ironhold",
+   "type": "location",
+   "aliases": [],
+   "description": "Major city and fortress of the Iron Kingdom on Corondor, formerly Gan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iron Kingdom",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kingdom founded by Mandek Ironfist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Fallen angel who destroyed the people of Gan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [],
+   "description": "Bound Trine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [
+    "Mandek"
+   ],
+   "description": "Warlord who ordered Gan's destruction and founded the Iron Kingdom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gan",
+   "type": "location",
+   "aliases": [],
+   "description": "City that became Ironhold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rahel",
+   "type": "character",
+   "aliases": [],
+   "description": "Trine's former sister who killed her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Absolution of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Trine's death and absolution.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trine destroyed all Ganarians of Gan on Mandek's orders.",
+   "participants": [
+    "Trine",
+    "Mandek Ironfist"
+   ],
+   "location": "Ironhold",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "all living 100,457 Ganarians of Gan were destroyed by the fallen angel Trine"
+  },
+  {
+   "summary": "Mandek took over the city and founded the Iron Kingdom, renaming it Ironhold.",
+   "participants": [
+    "Mandek Ironfist"
+   ],
+   "location": "Ironhold",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mandek took over the city and founded the Iron Kingdom centered there"
+  },
+  {
+   "summary": "Rahel killed Trine and absolved her.",
+   "participants": [
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Ironhold",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the fallen angel was killed by her former sister, Rahel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rahel",
+   "relation": "killed",
+   "target": "Trine",
+   "note": "Killed her former sister",
+   "paragraph": 2,
+   "quote": "the fallen angel was killed by her former sister, Rahel"
+  },
+  {
+   "source": "Mandek Ironfist",
+   "relation": "leader_of",
+   "target": "Iron Kingdom",
+   "note": "Founder",
+   "paragraph": 1,
+   "quote": "founded the Iron Kingdom"
+  },
+  {
+   "source": "Xarl",
+   "relation": "enemy",
+   "target": "Trine",
+   "note": "Bound her",
+   "paragraph": 0,
+   "quote": "where Trine the fallen angel was bound by Xarl"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,115 @@
+{
+ "page": "wiki/princess-lucrezia",
+ "url": "https://mtg.wiki/page/Princess_Lucrezia",
+ "title": "Princess Lucrezia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:46Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Princess Lucrezia",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary human wizard who ruled the city-state of Lucrezia in south-western Jamuraa, constantly at war with Fysmatan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lucrezia",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state in south-western Jamuraa ruled by the Princess.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fysmatan",
+   "type": "location",
+   "aliases": [],
+   "description": "Port city on the Sea of Serenity ruled by a shah, at war with Lucrezia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lucrezian marines",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite unit of Lucrezia's navy that enslaved the Unawanna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenaries led by Adira Strongheart who opposed Lucrezia and freed the Unawanna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Robaran Mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Unawanna",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribe of island natives enslaved by Lucrezian marines.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lucrezian marines enslave the Unawanna to build a flotilla of warships.",
+   "participants": [
+    "Lucrezian marines",
+    "Unawanna"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lucrezian marines had enslaved the Unawanna"
+  },
+  {
+   "summary": "The Robaran Mercenaries attack the marines, free the slaves and sell the new ships to Fysmatan.",
+   "participants": [
+    "Robaran Mercenaries",
+    "Lucrezian marines",
+    "Unawanna",
+    "Fysmatan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Robaran Mercenaries attacked the marines and freed the slaves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Princess Lucrezia",
+   "relation": "leader_of",
+   "target": "Lucrezia",
+   "note": "She ruled the city-state.",
+   "paragraph": 0,
+   "quote": "who ruled a city-state of the same name in south-western Jamuraa"
+  },
+  {
+   "source": "Princess Lucrezia",
+   "relation": "enemy",
+   "target": "Fysmatan",
+   "note": "She was constantly at war with its shah.",
+   "paragraph": 1,
+   "quote": "The Princess was constantly at war with the shah of Fysmatan"
+  },
+  {
+   "source": "Adira Strongheart",
+   "relation": "leader_of",
+   "target": "Robaran Mercenaries",
+   "note": "She leads them.",
+   "paragraph": 2,
+   "quote": "the Robaran Mercenaries , led by Adira Strongheart"
+  }
+ ],
+ "rejected": []
+}

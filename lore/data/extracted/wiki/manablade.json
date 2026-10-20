@@ -1,0 +1,79 @@
+{
+ "page": "wiki/manablade",
+ "url": "https://mtg.wiki/page/Manablade",
+ "title": "Manablade",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Manablade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A rare short dagger forged by the Church of the Incarnate Soul that severs the mana bonds of mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of the Incarnate Soul",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forgers of the manablades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who speculated manablades might contain etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Etherium",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A metal Jace speculated composes manablades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Possesses one of the manablades.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jace Beleren speculates that manablades are at least partially composed of etherium.",
+   "participants": [
+    "Jace Beleren"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jace Beleren speculated that they might be at least partially composed of etherium"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Church of the Incarnate Soul",
+   "relation": "created",
+   "target": "Manablade",
+   "note": "The Church forged manablades.",
+   "paragraph": 0,
+   "quote": "a rare weapon forged by the Church of the Incarnate Soul"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "other",
+   "target": "Manablade",
+   "note": "He possesses one.",
+   "paragraph": 2,
+   "quote": "One of the manablades is in possession of Tezzeret"
+  }
+ ],
+ "rejected": []
+}

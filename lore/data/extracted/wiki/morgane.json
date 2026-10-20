@@ -1,0 +1,110 @@
+{
+ "page": "wiki/morgane",
+ "url": "https://mtg.wiki/page/Morgane",
+ "title": "Morgane",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:39Z",
+ "storyline": "Shandalar",
+ "entities": [
+  {
+   "name": "Morgane",
+   "type": "character",
+   "aliases": [
+    "Morgane, the Great Druid"
+   ],
+   "description": "A druid of Shandalar, the Great Druid, who commanded the Green Guild until its downfall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Green Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of druids and creatures led by Morgane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil planeswalker who corrupted the guildlords as a benevolent advisor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian of Shandalar",
+   "type": "character",
+   "aliases": [],
+   "description": "Betrayed by the guilds during Arzakon's War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the guilds betrayed the Guardian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane defended by the guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the guilds, including Morgane.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Corrupted by Arzakon, the guildlords betrayed the Guardian of Shandalar to open the path for Arzakon.",
+   "participants": [
+    "Arzakon",
+    "Morgane",
+    "Guildlords",
+    "Guardian of Shandalar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Together, they betrayed the Guardian of Shandalar during Arzakon's War"
+  },
+  {
+   "summary": "The Guildlords, including Morgane, were defeated and Arzakon was banned from the plane.",
+   "participants": [
+    "Morgane",
+    "Guildlords",
+    "Arzakon"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arzakon was banned from entering the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Morgane",
+   "relation": "leader_of",
+   "target": "Green Guild",
+   "note": "Took command of the guild.",
+   "paragraph": 0,
+   "quote": "who took command of the Green Guild until its downfall"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "other",
+   "target": "Guildlords",
+   "note": "Corrupted them as a benevolent advisor.",
+   "paragraph": 2,
+   "quote": "corrupted by the evil Planeswalker Arzakon 's influence"
+  }
+ ],
+ "rejected": []
+}

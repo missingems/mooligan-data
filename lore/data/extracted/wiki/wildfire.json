@@ -1,0 +1,89 @@
+{
+ "page": "wiki/wildfire",
+ "url": "https://mtg.wiki/page/Wildfire",
+ "title": "Wildfire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:38Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Wildfire",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of flame and lava, home of djinn, efreet and goblins, ruled by Emberwilde Caliph Jan bin Jan and the Emberwilde Order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jan bin Jan",
+   "type": "character",
+   "aliases": [
+    "Emberwilde Caliph Jan bin Jan"
+   ],
+   "description": "Emberwilde Caliph ruling Wildfire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emberwilde Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of Suq'Ata mages who pledged allegiance to Wildfire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wildfire Efreeti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Main servants of the Emberwilde Djinn, used as emissaries to Suq'Ata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian land with which Wildfire trades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane linked to Wildfire by portals.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Beings of Wildfire teach Dominarian goblins to harness fire magic, knowing they could not master it.",
+   "participants": [
+    "Wildfire",
+    "Wildfire Efreeti"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "responsible for teaching the goblins of Dominaria how to harness fire magic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jan bin Jan",
+   "relation": "leader_of",
+   "target": "Wildfire",
+   "note": "Ruler of the plane.",
+   "paragraph": 0,
+   "quote": "ruled by the Emberwilde Caliph Jan bin Jan"
+  },
+  {
+   "source": "Wildfire Efreeti",
+   "relation": "serves",
+   "target": "Emberwilde Order",
+   "note": "Main servants of the Emberwilde Djinn.",
+   "paragraph": 1,
+   "quote": "The Wildfire Efreeti are the main servants of the Emberwilde Djinn"
+  }
+ ],
+ "rejected": []
+}

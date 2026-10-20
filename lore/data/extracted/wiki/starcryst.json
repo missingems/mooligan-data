@@ -1,0 +1,110 @@
+{
+ "page": "wiki/starcryst",
+ "url": "https://mtg.wiki/page/Starcryst",
+ "title": "Starcryst",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Starcryst",
+   "type": "character",
+   "aliases": [
+    "Starcryst, the Astral Visionary"
+   ],
+   "description": "Astral Visionary, a mysterious merfolk of Shandalar who took command of the Blue Guild until its downfall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blue Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of Shandalar commanded by Starcryst, with thought invokers, sea dragons and merfolk shamans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Starcryst was a guildlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil planeswalker who corrupted the guildlords and was banned from Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian of Shandalar",
+   "type": "character",
+   "aliases": [],
+   "description": "Protector of Shandalar betrayed by the guildlords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the guildlords betrayed the Guardian of Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the guilds of Shandalar corrupted by Arzakon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The guildlords, corrupted by Arzakon, betrayed the Guardian of Shandalar during Arzakon's War.",
+   "participants": [
+    "Guildlords",
+    "Starcryst",
+    "Arzakon",
+    "Guardian of Shandalar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Together, they betrayed the Guardian of Shandalar during Arzakon's War"
+  },
+  {
+   "summary": "The Guildlords including Starcryst were defeated and Arzakon was banned from the plane.",
+   "participants": [
+    "Guildlords",
+    "Starcryst",
+    "Arzakon"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arzakon was banned from entering the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Starcryst",
+   "relation": "leader_of",
+   "target": "Blue Guild",
+   "note": "He took command of the Blue Guild.",
+   "paragraph": 0,
+   "quote": "who took command of the Blue Guild until its downfall"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "enemy",
+   "target": "Guildlords",
+   "note": "Arzakon corrupted them.",
+   "paragraph": 2,
+   "quote": "were corrupted by the evil Planeswalker Arzakon 's influence"
+  }
+ ],
+ "rejected": []
+}

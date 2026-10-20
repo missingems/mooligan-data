@@ -1,0 +1,135 @@
+{
+ "page": "wiki/founding-the-conclave-of-mages",
+ "url": "https://mtg.wiki/page/Founding_the_Conclave_of_Mages",
+ "title": "Founding the Conclave of Mages",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "A school founded by Ashnod and Tawnos to study artifice and magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Founding the Conclave of Mages",
+   "type": "event",
+   "aliases": [],
+   "description": "The founding event in the earliest Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [
+    "Nod"
+   ],
+   "description": "Artificer who co-founded the Conclave under the name Nod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [
+    "Duck"
+   ],
+   "description": "Artificer who co-founded the Conclave as Duck.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [],
+   "description": "Recognized Duck as Tawnos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jarsyl",
+   "type": "character",
+   "aliases": [],
+   "description": "Kayla's grandson who joined the Conclave early.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group the founders hid from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Monastery of Gix",
+   "type": "location",
+   "aliases": [],
+   "description": "Abandoned ruins used as the Conclave's base.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashnod and Tawnos founded the Conclave under the names Nod and Duck.",
+   "participants": [
+    "Ashnod",
+    "Tawnos"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The founders were known as \"Nod\" and \"Duck\""
+  },
+  {
+   "summary": "Kayla bin-Kroog realized Duck was Tawnos and had not died.",
+   "participants": [
+    "Kayla bin-Kroog",
+    "Tawnos",
+    "Jarsyl"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "finally realizing he had not died in his factory fire 11 years prior"
+  },
+  {
+   "summary": "Jarsyl joined the Conclave shortly after its founding.",
+   "participants": [
+    "Jarsyl"
+   ],
+   "location": "Monastery of Gix",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jarsyl joined the Conclave shortly after its founding"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "leader_of",
+   "target": "Conclave of Mages",
+   "note": "Co-founder",
+   "paragraph": 1,
+   "quote": "The founders were known as \"Nod\" and \"Duck\""
+  },
+  {
+   "source": "Jarsyl",
+   "relation": "member_of",
+   "target": "Conclave of Mages",
+   "note": "Early member",
+   "paragraph": 2,
+   "quote": "becoming one of its earliest members"
+  },
+  {
+   "source": "Kayla bin-Kroog",
+   "relation": "family",
+   "target": "Jarsyl",
+   "note": "Grandmother",
+   "paragraph": 1,
+   "quote": "from her grandson"
+  }
+ ],
+ "rejected": []
+}

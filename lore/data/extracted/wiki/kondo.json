@@ -1,0 +1,159 @@
+{
+ "page": "wiki/kondo",
+ "url": "https://mtg.wiki/page/Kondo",
+ "title": "Kondo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:39Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Sidar Kondo",
+   "type": "character",
+   "aliases": [
+    "Kondo"
+   ],
+   "description": "Head of a Jamuraan warclan during the Mirage War, slain by his own son Vuel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Raised by Kondo as his son; saved Vuel at the last moment of his trial.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Silver golem and guardian of Gerrard, given to Kondo's charge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vuel",
+   "type": "character",
+   "aliases": [],
+   "description": "Kondo's true son, crippled by poisoned warpaint, exiled, who later attacked the clan and slew Kondo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starke il-Vec",
+   "type": "character",
+   "aliases": [
+    "Starke"
+   ],
+   "description": "Poisoned the ceremonial warpaint used on Vuel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard's Legacy",
+   "type": "artifact",
+   "aliases": [
+    "Legacy"
+   ],
+   "description": "Artifact parts of which Vuel stole.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kondo clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jamuraan warclan led by Kondo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Kondo headed the clan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where Vuel wandered.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kondo is given charge of Gerrard Capashen and his guardian Karn and raises Gerrard as his son.",
+   "participants": [
+    "Sidar Kondo",
+    "Gerrard Capashen",
+    "Karn",
+    "Vuel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kondo raised Gerrard as his son, placing him alongside his true son Vuel in the hierarchy of the clan"
+  },
+  {
+   "summary": "Starke il-Vec poisons Vuel's ceremonial warpaint; Vuel is crippled and fails his trial, saved by Gerrard.",
+   "participants": [
+    "Starke il-Vec",
+    "Vuel",
+    "Gerrard Capashen"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Vuel was crippled when Starke il -Vec poisoned the ceremonial warpaint used on Vuel for the ritual"
+  },
+  {
+   "summary": "Exiled Vuel steals parts of Gerrard's Legacy and raises a mercenary army to attack the Kondo clan.",
+   "participants": [
+    "Vuel",
+    "Gerrard's Legacy",
+    "Kondo clan"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Vuel stole parts of Gerrard's Legacy , amassing an army of mercenaries"
+  },
+  {
+   "summary": "In the attack, Kondo is slain by his own son.",
+   "participants": [
+    "Sidar Kondo",
+    "Vuel"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kondo was slain by his own son"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vuel",
+   "relation": "killed",
+   "target": "Sidar Kondo",
+   "note": "Vuel slew his father.",
+   "paragraph": 1,
+   "quote": "Kondo was slain by his own son"
+  },
+  {
+   "source": "Sidar Kondo",
+   "relation": "family",
+   "target": "Vuel",
+   "note": "Father and true son.",
+   "paragraph": 1,
+   "quote": "his true son Vuel"
+  },
+  {
+   "source": "Sidar Kondo",
+   "relation": "leader_of",
+   "target": "Kondo clan",
+   "note": "Head of the warclan.",
+   "paragraph": 0,
+   "quote": "Sidar Kondo was head of a Jamuraan warclan during the Mirage War"
+  }
+ ],
+ "rejected": []
+}

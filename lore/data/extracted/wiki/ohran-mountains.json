@@ -1,0 +1,149 @@
+{
+ "page": "wiki/ohran-mountains",
+ "url": "https://mtg.wiki/page/Ohran_Mountains",
+ "title": "Ohran Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ohran Mountains",
+   "type": "location",
+   "aliases": [
+    "Colekgan Mountains",
+    "Ohrans"
+   ],
+   "description": "A large mountainous region in central Gulmany, part of the Terisian Isles on Dominaria, formerly the Colekgan Mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gulmany",
+   "type": "location",
+   "aliases": [],
+   "description": "An island of the Terisian Isles on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Terisian Isles lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ohran Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "The southwestern spur of the mountains, the only accessible part during the Ice Age; Urza and Xantcha made a home there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The age that locked the Colekgan Mountains heavily in ice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "The period after the Ice Age, after which the Colekgans took the name Ohran Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "A flood that displaced the homes and towns of western Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "School of the Unseen",
+   "type": "faction",
+   "aliases": [],
+   "description": "A school whose wizards and sages helped evacuate, rescue and resettle flood victims.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Made a home in the Ohran Ridge with Xantcha, then relocated to Tolaria to found the Tolarian Academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived with Urza in the Ohran Ridge until her death in Koilos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Xantcha died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Island where Urza relocated to found the Tolarian Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "faction",
+   "aliases": [],
+   "description": "Academy founded by Urza on Tolaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wizards and sages of the School of the Unseen travel across western Terisiare as far north as the Ohran Mountains, evacuating and resettling flood victims.",
+   "participants": [
+    "School of the Unseen"
+   ],
+   "location": "Ohran Mountains",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they helped evacuate, rescue, and resettle those whose homes and towns were lost to the floods"
+  },
+  {
+   "summary": "Urza and Xantcha make a home in the Ohran Ridge until Xantcha dies in Koilos and Urza goes to Tolaria to found the Tolarian Academy.",
+   "participants": [
+    "Urza",
+    "Xantcha"
+   ],
+   "location": "Ohran Ridge",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Urza and Xantcha made a home for themselves in the Ohran Ridge"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ohran Mountains",
+   "relation": "located_in",
+   "target": "Gulmany",
+   "note": "The range is in central Gulmany.",
+   "paragraph": 0,
+   "quote": "a large mountainous region in central Gulmany"
+  },
+  {
+   "source": "Urza",
+   "relation": "ally",
+   "target": "Xantcha",
+   "note": "They shared a home in the Ohran Ridge.",
+   "paragraph": 4,
+   "quote": "Urza and Xantcha made a home for themselves in the Ohran Ridge"
+  }
+ ],
+ "rejected": []
+}

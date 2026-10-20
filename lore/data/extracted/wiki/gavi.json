@@ -1,0 +1,80 @@
+{
+ "page": "wiki/gavi",
+ "url": "https://mtg.wiki/page/Gavi",
+ "title": "Gavi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gavi",
+   "type": "character",
+   "aliases": [],
+   "description": "Human shaman on Ikoria who lives in the wilds of Raugrin as adopted mother to a brood of cat dinosaurs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Gavi lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raugrin",
+   "type": "location",
+   "aliases": [],
+   "description": "Monster-infested wilds of Ikoria where Gavi lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who respects Gavi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cat dinosaurs",
+   "type": "creature",
+   "aliases": [],
+   "description": "Brood of cat dinosaurs adopted and protected by Gavi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gavi finds a newly hatched nest of cat dinosaurs whose mother was killed by a hunter, and the brood imprints on her.",
+   "participants": [
+    "Gavi",
+    "Cat dinosaurs"
+   ],
+   "location": "Raugrin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The mother cat dino had been killed by a hunter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gavi",
+   "relation": "other",
+   "target": "Cat dinosaurs",
+   "note": "Adopted as surrogate mother by the litter.",
+   "paragraph": 1,
+   "quote": "she was adopted as a surrogated mother by a litter of baby cat dinosaurs"
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "ally",
+   "target": "Gavi",
+   "note": "Gavi earned Vivien's respect.",
+   "paragraph": 2,
+   "quote": "She is one of the few humans that had earned the respect of the planeswalker Vivien Reid"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,117 @@
+{
+ "page": "wiki/mwigo",
+ "url": "https://mtg.wiki/page/Mwigo",
+ "title": "Mwigo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:26Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Sidar Mwigo",
+   "type": "character",
+   "aliases": [
+    "Mwigo",
+    "Sidar Mwigo of Tefemburu"
+   ],
+   "description": "Zhalfirin army leader of Tefemburu, one of the first to fight Kaervek, martyr of Ufunguo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy whose forces swept through the Uktabi Jungle and Salamzuri.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfirin army",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army led by Sidar Mwigo against Kaervek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirage Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Dominaria in which Mwigo fought Kaervek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ufunguo",
+   "type": "location",
+   "aliases": [],
+   "description": "Border town whose people Mwigo's army saved.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tefemburu",
+   "type": "location",
+   "aliases": [],
+   "description": "City Mwigo is from and refuge of Ufunguo's people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Salamzuri",
+   "type": "location",
+   "aliases": [],
+   "description": "City swept past by Kaervek's forces and refuge for refugees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uktabi Jungle",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven realm Kaervek's forces swept past.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mwigo orders the people of Ufunguo to evacuate as Kaervek's forces approach.",
+   "participants": [
+    "Sidar Mwigo",
+    "Kaervek",
+    "Ufunguo"
+   ],
+   "location": "Ufunguo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sidar Mwigo and her troops ordered the people of Ufunguo to evacuate"
+  },
+  {
+   "summary": "Mwigo's army rides out to attack Kaervek's troops and is killed in battle, buying time for the other cities.",
+   "participants": [
+    "Sidar Mwigo",
+    "Zhalfirin army",
+    "Kaervek"
+   ],
+   "location": "Ufunguo",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Sidar Mwigo and her army allowed the people of Ufunguo to escape"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sidar Mwigo",
+   "relation": "enemy",
+   "target": "Kaervek",
+   "note": "Fought his forces.",
+   "paragraph": 0,
+   "quote": "to directly fight Kaervek during the Mirage Wars"
+  },
+  {
+   "source": "Sidar Mwigo",
+   "relation": "leader_of",
+   "target": "Zhalfirin army",
+   "note": "Commanded her army.",
+   "paragraph": 1,
+   "quote": "the Sidar commanded her army to ride forth"
+  }
+ ],
+ "rejected": []
+}

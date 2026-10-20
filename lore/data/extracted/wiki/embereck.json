@@ -1,0 +1,174 @@
+{
+ "page": "wiki/embereck",
+ "url": "https://mtg.wiki/page/Embereck",
+ "title": "Embereck",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Embereck",
+   "type": "character",
+   "aliases": [
+    "Ash Warlord Embereck",
+    "Crusher of Cottages"
+   ],
+   "description": "Elemental planeswalker native to Dominaria, the Ash Warlord, specializing in red mana; killed by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Rival who possessed the Golgothian Sylex and killed Embereck in the Planeswalker War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose dwelling in the White Woods Embereck destroyed; he escaped unharmed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed Ravidel's Sylex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient artifact that resurfaced after the Ice Age and was held by Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gathering of the Sages of Minorad",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council of sages that Embereck joined and later left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Embereck fought and was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mox Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Beacon whose activation called Embereck back to Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian region Embereck was called back to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "White Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Eskil's dwelling.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Embereck fights Ravidel over the resurfaced Golgothian Sylex; Ravidel is left in possession of it.",
+   "participants": [
+    "Embereck",
+    "Ravidel",
+    "Golgothian Sylex"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Embereck fought Ravidel over the resurfaced Golgothian Sylex"
+  },
+  {
+   "summary": "Embereck joins the Gathering of the Sages of Minorad but leaves when they decide not to interfere with Ravidel.",
+   "participants": [
+    "Embereck",
+    "Gathering of the Sages of Minorad",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Embereck joined the Gathering of the Sages of Minorad but left the council"
+  },
+  {
+   "summary": "Embereck destroys Eskil's dwelling, wrongly blaming him for the Mox Beacon.",
+   "participants": [
+    "Embereck",
+    "Eskil",
+    "Mox Beacon"
+   ],
+   "location": "White Woods",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Embereck destroyed Eskil's dwelling in the White Woods"
+  },
+  {
+   "summary": "Embereck agrees to join the battle against Ravidel.",
+   "participants": [
+    "Embereck",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Embereck agreed to join the battle."
+  },
+  {
+   "summary": "Embereck is overpowered and killed by Ravidel in the Planeswalker War.",
+   "participants": [
+    "Embereck",
+    "Ravidel",
+    "Planeswalker War"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "was overpowered and killed by Ravidel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Embereck",
+   "note": "Overpowered and killed him in the war.",
+   "paragraph": 4,
+   "quote": "was overpowered and killed by Ravidel"
+  },
+  {
+   "source": "Embereck",
+   "relation": "enemy",
+   "target": "Ravidel",
+   "note": "Fought him over the Sylex and in the war.",
+   "paragraph": 1,
+   "quote": "Embereck fought Ravidel over the resurfaced Golgothian Sylex"
+  },
+  {
+   "source": "Jared Carthalion",
+   "relation": "other",
+   "target": "Golgothian Sylex",
+   "note": "Destroyed Ravidel's Sylex.",
+   "paragraph": 3,
+   "quote": "Ravidel's Sylex had been destroyed by Jared Carthalion"
+  }
+ ],
+ "rejected": []
+}

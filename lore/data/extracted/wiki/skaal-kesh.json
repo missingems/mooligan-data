@@ -1,0 +1,111 @@
+{
+ "page": "wiki/skaal-kesh",
+ "url": "https://mtg.wiki/page/Skaal_Kesh",
+ "title": "Skaal Kesh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:41Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Skaal Kesh",
+   "type": "creature",
+   "aliases": [],
+   "description": "A zombie dragon from Jund raised into undeath by Meren's necromancy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meren",
+   "type": "character",
+   "aliases": [
+    "Meren of Clan Nel Toth"
+   ],
+   "description": "Meren of Clan Nel Toth, a necromancer who sought vengeance on her old master Kael.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kael",
+   "type": "character",
+   "aliases": [],
+   "description": "Meren's old master, fed to Skaal Kesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Nel Toth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Meren's people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "The shard of Alara where Skaal Kesh and Clan Nel Toth live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Jund.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Meren returns to Jund wanting vengeance on her old master Kael and tracks down her people's camp.",
+   "participants": [
+    "Meren",
+    "Kael",
+    "Clan Nel Toth",
+    "Jund"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she wanted to kill her old master, Kael"
+  },
+  {
+   "summary": "Meren overpowers Kael and feeds him to Skaal Kesh.",
+   "participants": [
+    "Meren",
+    "Kael",
+    "Skaal Kesh"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she fed Kael to Skaal Kesh"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Meren",
+   "relation": "created",
+   "target": "Skaal Kesh",
+   "note": "Meren raised the dragon into undeath.",
+   "paragraph": 0,
+   "quote": "raised into undeath by the necromancy of Meren"
+  },
+  {
+   "source": "Meren",
+   "relation": "killed",
+   "target": "Kael",
+   "note": "She fed Kael to Skaal Kesh.",
+   "paragraph": 1,
+   "quote": "she fed Kael to Skaal Kesh"
+  },
+  {
+   "source": "Meren",
+   "relation": "member_of",
+   "target": "Clan Nel Toth",
+   "note": "Meren belongs to Clan Nel Toth.",
+   "paragraph": 0,
+   "quote": "Meren of Clan Nel Toth"
+  }
+ ],
+ "rejected": []
+}

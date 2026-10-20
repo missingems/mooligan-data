@@ -1,0 +1,119 @@
+{
+ "page": "wiki/wrenna",
+ "url": "https://mtg.wiki/page/Wrenna",
+ "title": "Wrenna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Wrenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Country in North Aerona on Dominaria, home of the Knights of Jenges; described as succumbing to corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jenges",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Wrenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Jenges",
+   "type": "faction",
+   "aliases": [
+    "Order of Wrenna",
+    "Black Knights of Jenges"
+   ],
+   "description": "Order of Wrenna, later the Black Knights of Jenges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Torsten Von Ursus",
+   "type": "character",
+   "aliases": [],
+   "description": "Knight who left Wrenna and founded Benalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm founded by Torsten Von Ursus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terrill",
+   "type": "character",
+   "aliases": [],
+   "description": "Black Knight who joined Gull's wizard-hunting army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of a wizard-hunting army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Haakon",
+   "type": "character",
+   "aliases": [],
+   "description": "King of the Badlands defeated by the Stone Brain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated and subjugated King Haakon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Wrenna lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A terrible mage seizes the throne of Wrenna and corrupts the Order; Torsten Von Ursus leaves and later founds Benalia.",
+   "participants": [
+    "Torsten Von Ursus",
+    "Knights of Jenges",
+    "Wrenna"
+   ],
+   "location": "Wrenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a terrible mage seized the throne of Wrenna and started corrupting the Order"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Torsten Von Ursus",
+   "relation": "member_of",
+   "target": "Knights of Jenges",
+   "note": "Left the Order",
+   "paragraph": 2,
+   "quote": "the knight Torsten Von Ursus left the Order and the realm"
+  },
+  {
+   "source": "Jenges",
+   "relation": "located_in",
+   "target": "Wrenna",
+   "note": "Capital",
+   "paragraph": 1,
+   "quote": "The capital of Wrenna, Jenges"
+  }
+ ],
+ "rejected": []
+}

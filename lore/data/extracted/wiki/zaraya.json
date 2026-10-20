@@ -1,0 +1,146 @@
+{
+ "page": "wiki/zaraya",
+ "url": "https://mtg.wiki/page/Zaraya",
+ "title": "Zaraya",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:00Z",
+ "storyline": "Ice Age Saga",
+ "entities": [
+  {
+   "name": "Zaraya",
+   "type": "character",
+   "aliases": [
+    "Sir Zaraya"
+   ],
+   "description": "Commander of the Knights of Kjeldor during the Ice Age, a celebrated knight who knew the spell Winds of Kataba.",
+   "presence": "appears"
+  },
+  {
+   "name": "Knights of Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order commanded by Zaraya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balo Kailo",
+   "type": "character",
+   "aliases": [
+    "Lord Kailo"
+   ],
+   "description": "Lord and former lover of Zaraya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Severin",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Zaraya and Balo Kailo, killed on a mission.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marked Ones of Balduvia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Aided by Zaraya's band.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Necromancer whose undead minions were fought off.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Received the Nova Pentacle from Zaraya; cast the World Spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nova Pentacle",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Given to Freyalise, later used by Jaeuhl Carthalion.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell cast by Freyalise in which Zaraya participated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation Zaraya helped unite.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zaraya and Balo Kailo split after their son Severin is killed on a mission under her command.",
+   "participants": [
+    "Zaraya",
+    "Balo Kailo",
+    "Severin"
+   ],
+   "location": "Kjeldor",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "they split up after their son Severin was killed in a mission under her command"
+  },
+  {
+   "summary": "Zaraya leads a band of six to aid the Marked Ones of Balduvia and fights off Lim-Dûl's undead minions.",
+   "participants": [
+    "Zaraya",
+    "Balo Kailo",
+    "Marked Ones of Balduvia",
+    "Lim-Dûl"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Together they managed to fight off Lim-Dûl 's undead minions."
+  },
+  {
+   "summary": "Zaraya gives the Nova Pentacle to Freyalise and takes part in the World Spell.",
+   "participants": [
+    "Zaraya",
+    "Freyalise",
+    "Nova Pentacle",
+    "World Spell"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Zaraya gave the Nova Pentacle to Freyalise"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zaraya",
+   "relation": "leader_of",
+   "target": "Knights of Kjeldor",
+   "note": "commander",
+   "paragraph": 0,
+   "quote": "was the commander of the Knights of Kjeldor"
+  },
+  {
+   "source": "Zaraya",
+   "relation": "romantic",
+   "target": "Balo Kailo",
+   "note": "former lovers",
+   "paragraph": 1,
+   "quote": "She was once the lover of Lord Balo Kailo"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,169 @@
+{
+ "page": "wiki/laina",
+ "url": "https://mtg.wiki/page/Laina",
+ "title": "Laina",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Laina",
+   "type": "character",
+   "aliases": [
+    "Lady Laina"
+   ],
+   "description": "Lady Laina, leader of the Fyndhorn Elves and their elvish council during the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fyndhorn Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves led by Laina who sought a new home in Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Received the Ice Cauldron from Laina for the World Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Cauldron",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item Laina provided Freyalise for the World Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaysa",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf whom Laina was reluctant to let participate; captured with Laina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taaveti",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveler who ventured into Yavimaya with Laina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveler who ventured into Yavimaya with Laina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveler who ventured into Yavimaya with Laina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Accompanied the elves into Yavimaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest the party entered in search of a new home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gorilla Chieftain",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured Laina and Kaysa; later the gorillas allied with the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heart of Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Place cleansed by the allied elves and gorillas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian War Beast",
+   "type": "creature",
+   "aliases": [],
+   "description": "Attacked the expedition in Yavimaya.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Laina provided Freyalise with the Ice Cauldron for the World Spell.",
+   "participants": [
+    "Laina",
+    "Freyalise",
+    "Ice Cauldron"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Laina was the one who provided Freyalise with the Ice Cauldron for the World Spell."
+  },
+  {
+   "summary": "Laina's party ventured into Yavimaya seeking a new home and was attacked by a Phyrexian War Beast and the forest.",
+   "participants": [
+    "Laina",
+    "Fyndhorn Elves",
+    "Taaveti",
+    "Jaeuhl Carthalion",
+    "Kaysa",
+    "Jaya Ballard",
+    "Knights of Kjeldor",
+    "Phyrexian War Beast"
+   ],
+   "location": "Yavimaya",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They were attacked first by a Phyrexian War Beast and then by the forest itself"
+  },
+  {
+   "summary": "Laina and Kaysa were taken captive by the Gorilla Chieftain; the elves and gorillas later allied to cleanse the Heart of Yavimaya.",
+   "participants": [
+    "Laina",
+    "Kaysa",
+    "Gorilla Chieftain",
+    "Fyndhorn Elves"
+   ],
+   "location": "Heart of Yavimaya",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the elves and gorillas later allied in cleansing the Heart of Yavimaya"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Laina",
+   "relation": "leader_of",
+   "target": "Fyndhorn Elves",
+   "note": "She led the elvish council.",
+   "paragraph": 0,
+   "quote": "Lady Laina was the leader of the Fyndhorn Elves"
+  },
+  {
+   "source": "Gorilla Chieftain",
+   "relation": "enemy",
+   "target": "Laina",
+   "note": "He took Laina captive.",
+   "paragraph": 3,
+   "quote": "Laina and Kaysa were taken captive by the Gorilla Chieftain"
+  }
+ ],
+ "rejected": []
+}

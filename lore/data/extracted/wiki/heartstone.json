@@ -1,0 +1,82 @@
+{
+ "page": "wiki/heartstone",
+ "url": "https://mtg.wiki/page/Heartstone",
+ "title": "Heartstone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:24Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Heartstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Object a Phyrexian newt receives when created; glows while it lives, turns black at death, and gives sentience.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian newt",
+   "type": "creature",
+   "aliases": [],
+   "description": "Phyrexian creature given sentience by a heartstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose heartstone was used by Urza to give sentience to Karn after her sacrifice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Used Xantcha's heartstone to give Karn sentience.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "silver golem Karn"
+   ],
+   "description": "Silver golem given sentience by Xantcha's heartstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings given sentience by heartstones.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Xantcha's sacrifice, Urza used her blackened heartstone to give sentience to the silver golem Karn.",
+   "participants": [
+    "Urza",
+    "Xantcha",
+    "Karn"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After her sacrifice, Xantcha 's heartstone was used by Urza to give sentience to the silver golem Karn ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Karn",
+   "note": "Gave Karn sentience with the heartstone.",
+   "paragraph": 1,
+   "quote": "used by Urza to give sentience to the silver golem Karn"
+  }
+ ],
+ "rejected": []
+}

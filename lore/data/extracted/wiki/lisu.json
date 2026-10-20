@@ -1,0 +1,82 @@
+{
+ "page": "wiki/lisu",
+ "url": "https://mtg.wiki/page/Lisu",
+ "title": "Lisu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lisu",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Argenti in the Edemi Islands, lying in the shadow of a castle fortress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argenti",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the Edemi Islands of Madara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caleria",
+   "type": "character",
+   "aliases": [
+    "Lady Caleria"
+   ],
+   "description": "Lady whose reign brought stability to Lisu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Attackers who destroyed much of Lisu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Orca",
+   "type": "character",
+   "aliases": [],
+   "description": "Used by the Kentsu to destroy Caleria's castle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Lisu was damaged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Kentsu destroyed much of Lisu and used Lady Orca to destroy Caleria's castle.",
+   "participants": [
+    "Kentsu",
+    "Lady Orca",
+    "Caleria"
+   ],
+   "location": "Lisu",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Kentsu caused much destruction in Lisu"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Caleria",
+   "relation": "leader_of",
+   "target": "Lisu",
+   "note": "Her reign brought stability",
+   "paragraph": 1,
+   "quote": "the stability of Lady Caleria 's reign"
+  }
+ ],
+ "rejected": []
+}

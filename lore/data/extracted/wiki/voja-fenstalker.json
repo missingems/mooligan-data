@@ -1,0 +1,137 @@
+{
+ "page": "wiki/voja-fenstalker",
+ "url": "https://mtg.wiki/page/Voja_Fenstalker",
+ "title": "Voja Fenstalker",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Voja Fenstalker",
+   "type": "creature",
+   "aliases": [
+    "Voja"
+   ],
+   "description": "Massive white wolf, former companion of Tolsimir Wolfblood of the Selesnya Conclave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolsimir Wolfblood",
+   "type": "character",
+   "aliases": [
+    "Tolsimir"
+   ],
+   "description": "Elven evangelist of the Selesnya Conclave, killed by Yarus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild of Tolsimir and Voja.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Biracazir",
+   "type": "creature",
+   "aliases": [],
+   "description": "Son of Voja.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "Shapeshifter whose infiltration Voja foiled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yarus",
+   "type": "character",
+   "aliases": [],
+   "description": "Killer of Tolsimir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forces opposed in the War of the Spark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which they opposed the Dreadhorde.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Voja tracks Lazav through multiple form changes and forces him to retreat.",
+   "participants": [
+    "Voja Fenstalker",
+    "Lazav"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "tracking the shapeshifter through multiple form changes"
+  },
+  {
+   "summary": "Tolsimir and Voja fight the Dreadhorde in the War of the Spark.",
+   "participants": [
+    "Tolsimir Wolfblood",
+    "Voja Fenstalker",
+    "Dreadhorde"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "they fought to oppose the forces of the Dreadhorde ."
+  },
+  {
+   "summary": "Yarus kills Tolsimir; Voja is unable to prevent it.",
+   "participants": [
+    "Yarus",
+    "Tolsimir Wolfblood",
+    "Voja Fenstalker"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Voja was unable to prevent Tolsimir getting killed by Yarus ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Voja Fenstalker",
+   "relation": "family",
+   "target": "Biracazir",
+   "note": "Father.",
+   "paragraph": 1,
+   "quote": "Voja is the father of Biracazir ."
+  },
+  {
+   "source": "Yarus",
+   "relation": "killed",
+   "target": "Tolsimir Wolfblood",
+   "note": "Killed him.",
+   "paragraph": 3,
+   "quote": "getting killed by Yarus ."
+  },
+  {
+   "source": "Voja Fenstalker",
+   "relation": "enemy",
+   "target": "Lazav",
+   "note": "Foiled his infiltration.",
+   "paragraph": 1,
+   "quote": "he once foiled Lazav 's attempts to infiltrate Selesnya territory"
+  }
+ ],
+ "rejected": []
+}

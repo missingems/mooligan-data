@@ -1,0 +1,115 @@
+{
+ "page": "wiki/kradak",
+ "url": "https://mtg.wiki/page/Kradak",
+ "title": "Kradak",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kradak",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary first Warlord of Keld and first Doyen who led refugees from Parma and bonded with the Mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Land founded through Kradak's pact with Jezal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jezal",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Keldon stragglers who made a pact with Kradak.",
+   "presence": "appears"
+  },
+  {
+   "name": "Astor",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord to whom Kradak appeared in a vision.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parma",
+   "type": "location",
+   "aliases": [],
+   "description": "Place the refugees fled from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mountain",
+   "type": "location",
+   "aliases": [],
+   "description": "Lone volcano where Kradak forged a bond with the land.",
+   "presence": "appears"
+  },
+  {
+   "name": "Book of Keld",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Book based on stories Kradak dictated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldon Twilight",
+   "type": "event",
+   "aliases": [],
+   "description": "Coming event Kradak warned Astor about.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kradak reaches the summit of the Mountain and forges a bond with the land, learning to call the Flame.",
+   "participants": [
+    "Kradak",
+    "The Mountain"
+   ],
+   "location": "The Mountain",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he forged a bond with the land and was granted the secret of calling a magical force"
+  },
+  {
+   "summary": "Kradak and Jezal make a pact, founding Keld; Kradak becomes the first Doyen.",
+   "participants": [
+    "Kradak",
+    "Jezal"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Thus was the founding of Keld"
+  },
+  {
+   "summary": "Kradak appears in a vision to Astor warning of the Keldon Twilight.",
+   "participants": [
+    "Kradak",
+    "Astor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Kradak appeared in a vision to the warlord Astor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kradak",
+   "relation": "leader_of",
+   "target": "Keld",
+   "note": "First Warlord",
+   "paragraph": 0,
+   "quote": "Kradak was the legendary first Warlord of Keld"
+  }
+ ],
+ "rejected": []
+}

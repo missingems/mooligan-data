@@ -1,0 +1,152 @@
+{
+ "page": "wiki/coralhelm",
+ "url": "https://mtg.wiki/page/Coralhelm",
+ "title": "Coralhelm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:12Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Coralhelm",
+   "type": "location",
+   "aliases": [
+    "Coralhelm Refuge"
+   ],
+   "description": "A floating waterfall city of conch shells in the Umara Gorge on Tazeem, new capital of Zendikar's merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Noyan Dar",
+   "type": "character",
+   "aliases": [
+    "Coralhelm Commander"
+   ],
+   "description": "Founder of Coralhelm, its Commander, a lullmage and scholar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk Enclave",
+   "type": "location",
+   "aliases": [
+    "Enclave"
+   ],
+   "description": "Original island city of the merfolk, destroyed by the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Destroyers of the old merfolk Enclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for Zendikar",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle during which Coralhelm was built.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tazeem",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar holding Coralhelm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Umara Gorge",
+   "type": "location",
+   "aliases": [],
+   "description": "Gorge where Coralhelm is built.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halimar",
+   "type": "location",
+   "aliases": [],
+   "description": "Place below the gorge's mouth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Zendikar's merfolk, for whom Coralhelm is capital.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Coralhelm.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eldrazi destroy the merfolk Enclave.",
+   "participants": [
+    "Eldrazi",
+    "Merfolk Enclave"
+   ],
+   "location": "Tazeem",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "was destroyed by the Eldrazi"
+  },
+  {
+   "summary": "Noyan Dar founds Coralhelm during the Battle for Zendikar.",
+   "participants": [
+    "Noyan Dar",
+    "Coralhelm"
+   ],
+   "location": "Umara Gorge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a young settlement founded by"
+  },
+  {
+   "summary": "Coralhelm becomes a sanctuary for merfolk refugees, led by Noyan Dar.",
+   "participants": [
+    "Noyan Dar",
+    "Coralhelm",
+    "Merfolk"
+   ],
+   "location": "Coralhelm",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Coralhelm has become a sanctuary for merfolk refugees from across Zendikar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Noyan Dar",
+   "relation": "leader_of",
+   "target": "Coralhelm",
+   "note": "Commander of the refuge.",
+   "paragraph": 3,
+   "quote": "leads the refuge as both lullmage and scholar"
+  },
+  {
+   "source": "Coralhelm",
+   "relation": "located_in",
+   "target": "Tazeem",
+   "note": "On the continent.",
+   "paragraph": 0,
+   "quote": "on the continent of Tazeem on Zendikar"
+  },
+  {
+   "source": "Eldrazi",
+   "relation": "enemy",
+   "target": "Merfolk",
+   "note": "Destroyed their Enclave.",
+   "paragraph": 1,
+   "quote": "was destroyed by the Eldrazi"
+  }
+ ],
+ "rejected": []
+}

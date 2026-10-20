@@ -1,0 +1,164 @@
+{
+ "page": "wiki/galina",
+ "url": "https://mtg.wiki/page/Galina",
+ "title": "Galina",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:47Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Galina III",
+   "type": "character",
+   "aliases": [
+    "Empress Galina III",
+    "Her Serene Highness",
+    "Galina"
+   ],
+   "description": "Empress of the Vodalian merfolk empire in the Voda Sea; founded New Vodalia and reigned until killed by Yawgmoth's death cloud.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vodalian merfolk empire",
+   "type": "faction",
+   "aliases": [
+    "Vodalia"
+   ],
+   "description": "Merfolk empire in the Voda Sea near Sarpadia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karel Volnikov",
+   "type": "character",
+   "aliases": [
+    "Marshall Karel Volnikov"
+   ],
+   "description": "Marshall who led the Vodalian army against the homarids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Homarids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who overwhelmed Vodalia by breeding and flourishing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akoroun",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage who created the magic portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Etlan Shiis",
+   "type": "location",
+   "aliases": [],
+   "description": "Distant colony the Vodalians were to be transported to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Vodalia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire reformed by Galina after defeating the local merfolk kingdom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose death cloud killed Galina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Galina still reigned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Voda Sea.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Homarids invade; Karel Volnikov leads the Vodalian army, which is later overwhelmed.",
+   "participants": [
+    "Karel Volnikov",
+    "Homarids"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Marshall Karel Volnikov led the Vodalian army against them"
+  },
+  {
+   "summary": "Vodalia is abandoned and many subjects follow Galina through Akoroun's magic portal, arriving three thousand years in the future.",
+   "participants": [
+    "Galina III",
+    "Akoroun"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "arrive three thousand years in the future"
+  },
+  {
+   "summary": "Galina's army defeats the local merfolk kingdom and reforms the empire as New Vodalia.",
+   "participants": [
+    "Galina III",
+    "New Vodalia"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Galina's army defeated the local merfolk kingdom, and reformed the empire as New Vodalia"
+  },
+  {
+   "summary": "Galina is killed by Yawgmoth's death cloud, ending her thousand-year reign.",
+   "participants": [
+    "Galina III",
+    "Yawgmoth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Her thousand-year reign ended when she was killed by Yawgmoth 's death cloud"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Galina III",
+   "relation": "leader_of",
+   "target": "Vodalian merfolk empire",
+   "note": "Empress.",
+   "paragraph": 0,
+   "quote": "was the ruler of the Vodalian merfolk empire"
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "killed",
+   "target": "Galina III",
+   "note": "His death cloud killed her.",
+   "paragraph": 3,
+   "quote": "she was killed by Yawgmoth 's death cloud"
+  },
+  {
+   "source": "Karel Volnikov",
+   "relation": "serves",
+   "target": "Galina III",
+   "note": "Led the Vodalian army.",
+   "paragraph": 2,
+   "quote": "Marshall Karel Volnikov led the Vodalian army against them"
+  }
+ ],
+ "rejected": []
+}

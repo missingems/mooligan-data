@@ -1,0 +1,127 @@
+{
+ "page": "wiki/kabira",
+ "url": "https://mtg.wiki/page/Kabira",
+ "title": "Kabira",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:21Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Kabira",
+   "type": "location",
+   "aliases": [],
+   "description": "Plateau on Agadeem, off Ondu, once a crossroads settlement; ruined by the Eldrazi, now a hunting ground for kor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agadeem",
+   "type": "location",
+   "aliases": [],
+   "description": "Island off the coast of Ondu containing Kabira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent off whose coast Agadeem lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Kabira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kabira Conservatory",
+   "type": "location",
+   "aliases": [],
+   "description": "Small academy run by Viniva sponsoring hedron research.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Viniva",
+   "type": "character",
+   "aliases": [],
+   "description": "Merfolk who ran the Kabira Conservatory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Eldrazi of Ulamog's lineage badly hit Kabira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "character",
+   "aliases": [],
+   "description": "Eldrazi titan whose lineage struck Kabira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rise of the Eldrazi",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Kabira was corrupted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hunters now at Kabira.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Rise of the Eldrazi, Ulamog's lineage badly hits Kabira, leaving a corrupted ruin.",
+   "participants": [
+    "Kabira",
+    "Eldrazi",
+    "Ulamog"
+   ],
+   "location": "Kabira",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kabira was badly hit by Eldrazi of Ulamog 's lineage"
+  },
+  {
+   "summary": "The landscape recovers and kor come to hunt herd animals on Kabira's plateaus and gorges.",
+   "participants": [
+    "Kabira",
+    "Kor"
+   ],
+   "location": "Kabira",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The landscape later recovered"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kabira",
+   "relation": "located_in",
+   "target": "Agadeem",
+   "note": "On the island of Agadeem.",
+   "paragraph": 0,
+   "quote": "on the island of Agadeem off the coast of Ondu"
+  },
+  {
+   "source": "Viniva",
+   "relation": "leader_of",
+   "target": "Kabira Conservatory",
+   "note": "Ran the academy.",
+   "paragraph": 1,
+   "quote": "run by the merfolk Viniva"
+  }
+ ],
+ "rejected": []
+}
