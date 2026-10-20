@@ -76,7 +76,9 @@ def citation(page: dict, paragraph: Optional[int] = None, quote: Optional[str] =
         text = f"{work} ({series}, {date[:4]}), flavor text. Wizards of the Coast." if date else f"{work} ({series}), flavor text. Wizards of the Coast."
     elif source == "mtg-wiki":
         work, series, url = title, "MTG Wiki", page.get("url", "")
-        publisher, official, license_ = "MTG Wiki contributors", False, page.get("license") or "CC BY-NC-SA 4.0"
+        # Pages store the licence with its attribution ("CC BY-NC-SA 4.0, MTG Wiki contributors"); keep just the licence.
+        license_ = (page.get("license") or "CC BY-NC-SA 4.0").split(",")[0].strip()
+        publisher, official = "MTG Wiki contributors", False
         section = f", section \"{para['section']}\"" if para.get("section") else ""
         text = f"\"{title}\"{section}. MTG Wiki contributors, {license_}."
     elif source == "wizards-archive":

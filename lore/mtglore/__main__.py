@@ -1,4 +1,4 @@
-"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,build} [--data DIR]`. See lore/README.md."""
+"""Entry point: `python -m mtglore {scrape,scrape-cards,scrape-archive,scrape-wiki,extract,ingest,prompt,recheck,bio-input,bio-ingest,era-ingest,build,publish} [--data DIR]`. See lore/README.md."""
 from __future__ import annotations
 
 import argparse
@@ -12,10 +12,11 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "era-ingest", "build"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "era-ingest", "build", "publish"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
+    parser.add_argument("--out", type=Path, default=Path(__file__).resolve().parent.parent / "site" / "dist" / "data", help="publish: where to write the site's data")
     parser.add_argument("--data", type=Path, default=Path(__file__).resolve().parent.parent / "data")
     parser.add_argument("--refresh", action="store_true", help="scrape: fetch pages already saved again")
     parser.add_argument("--limit", type=int, help="extract: at most this many pages in the batch")
@@ -23,6 +24,12 @@ def main() -> int:
     parser.add_argument("--wait", type=float, default=float(os.environ.get("LORE_WAIT_SECONDS", "18000")), help="extract: seconds to wait for the batch")
     args = parser.parse_args()
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+
+    if args.step == "publish":
+        from .publish import publish
+
+        logging.info("Published %s", json.dumps(publish(args.data, args.out)))
+        return 0
 
     if args.step == "scrape":
         from .site import Site, scrape

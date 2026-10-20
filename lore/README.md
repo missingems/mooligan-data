@@ -9,6 +9,7 @@ python -m mtglore build     # one index → data/index
 python -m mtglore prompt stories/<slug>          # what the batch would send Claude for one page
 python -m mtglore ingest stories/<slug> raw.json # check and save an extraction made some other way
 python -m mtglore recheck                        # run every saved extraction through the quote check again
+python -m mtglore publish                        # the site's data → site/dist/data
 ```
 
 The first full extraction was made without the API: Claude Code sub-agents (Claude Sonnet 5.5) read each page with `prompt` and wrote its JSON, which `ingest` ran through the same quote check; their files say so under `model`. `recheck` runs every saved extraction through the check again, as after the check is made stricter.
@@ -61,3 +62,11 @@ Story order is the day a page first came out, then its place in its storyline's 
 An old wizards.com column the Internet Archive holds under several dates is indexed once, from its earliest copy; `index/review.json` lists the copies left out.
 
 The text is Wizards of the Coast's. It is kept here, in a private repository, to build the index; what an app shows of it should be the short quotes and the links back.
+
+## The site
+
+`site/` is a static page over the index: search, a page per entity (its bio, timeline, relations and sources, every fact with a chip that shows its quote and links to it), and questions. `python -m mtglore publish` cuts the index down to what the browser loads (`search.json`, one `e/<id>.json` per entity, `meta.json`; quotes only, no page text), and `npm run build` in `site/` bundles the script next to it in `site/dist`. `npm run serve` builds and serves it on port 8000; `npm test` checks the question code.
+
+A question is answered in the browser. The names in it pick the entities (up to three); `site/src/ask.js` takes the facts on them that fit the question best, numbers them, and, if the visitor has added their own Anthropic API key in settings, has Claude write an answer from those facts alone, citing one after every sentence. Sentences that cite nothing, or a fact Claude wasn't given, are dropped before the answer is shown. Without a key the page shows the bios and the facts. The key stays in the visitor's browser and goes straight to Anthropic; the site has no server. A question that names nothing from the story is turned away before any call.
+
+The `Lore site` workflow builds it from the committed index and, when run with "publish", uploads it to the R2 bucket under `lore/`.

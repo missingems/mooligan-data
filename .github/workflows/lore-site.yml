@@ -1,0 +1,56 @@
+name: Lore site
+
+# Builds the lore site (lore/site) from the committed index: `mtglore publish` writes the data, esbuild the page.
+# With "publish" ticked it uploads the result to the R2 bucket under lore/, where it is served at
+# https://data.mooligan.com/lore/index.html. Nothing outside lore/ in the bucket is touched.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Upload to R2 under lore/
+        type: boolean
+        default: false
+
+concurrency:
+  group: lore-site
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: lore
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: lore/requirements.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: lore/site/package-lock.json
+      - run: pip install -r requirements.txt
+      - run: python -m mtglore publish
+      - working-directory: lore/site
+        run: npm ci && npm test && npm run build
+      - name: Upload to R2
+        if: inputs.publish
+        working-directory: lore/site
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        run: |
+          # The page and script change with every build; the data files are re-sent only when they changed.
+          aws s3 sync dist/data s3://mtg-meta-data/lore/data --endpoint-url "$R2_ENDPOINT" --delete --only-show-errors \
+            --content-type application/json --cache-control "public, max-age=3600"
+          for file in index.html app.js style.css; do
+            aws s3 cp "dist/$file" "s3://mtg-meta-data/lore/$file" --endpoint-url "$R2_ENDPOINT" --only-show-errors --cache-control "public, max-age=300"
+          done
+          echo "::notice::Published to https://data.mooligan.com/lore/index.html"
