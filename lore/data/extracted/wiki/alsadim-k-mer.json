@@ -1,0 +1,110 @@
+{
+ "page": "wiki/alsadim-k-mer",
+ "url": "https://mtg.wiki/page/Alsadim_K%27mer",
+ "title": "Alsadim K'mer",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Alsadim K'mer",
+   "type": "character",
+   "aliases": [
+    "Alsadim K'mer, the Sainted One"
+   ],
+   "description": "Sainted One, a cleric of Shandalar who took command of the White Guild until its downfall.",
+   "presence": "appears"
+  },
+  {
+   "name": "White Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of Shandalar commanded by Alsadim K'mer, with clerics, crusaders, paladins and arch angels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Alsadim K'mer was a guildlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arzakon",
+   "type": "character",
+   "aliases": [],
+   "description": "Evil planeswalker who corrupted the guildlords posing as a benevolent advisor and was banned from Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guardian of Shandalar",
+   "type": "character",
+   "aliases": [],
+   "description": "Protector of Shandalar betrayed by the guildlords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the guildlords betrayed the Guardian of Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the guilds of Shandalar corrupted by Arzakon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The guildlords, corrupted by Arzakon, betrayed the Guardian of Shandalar during Arzakon's War.",
+   "participants": [
+    "Guildlords",
+    "Alsadim K'mer",
+    "Arzakon",
+    "Guardian of Shandalar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Together, they betrayed the Guardian of Shandalar during Arzakon's War"
+  },
+  {
+   "summary": "The Guildlords including Alsadim K'mer were defeated and Arzakon was banned from the plane.",
+   "participants": [
+    "Guildlords",
+    "Alsadim K'mer",
+    "Arzakon"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arzakon was banned from entering the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Alsadim K'mer",
+   "relation": "leader_of",
+   "target": "White Guild",
+   "note": "He took command of the White Guild.",
+   "paragraph": 0,
+   "quote": "who took command of the White Guild until its downfall"
+  },
+  {
+   "source": "Arzakon",
+   "relation": "enemy",
+   "target": "Guildlords",
+   "note": "Arzakon corrupted them.",
+   "paragraph": 2,
+   "quote": "were corrupted by the evil Planeswalker Arzakon 's influence"
+  }
+ ],
+ "rejected": []
+}

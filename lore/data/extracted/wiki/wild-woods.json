@@ -1,0 +1,77 @@
+{
+ "page": "wiki/wild-woods",
+ "url": "https://mtg.wiki/page/Wild_Woods",
+ "title": "Wild Woods",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Wild Woods",
+   "type": "location",
+   "aliases": [
+    "The Wild Woods"
+   ],
+   "description": "A vast forest in North Aerona, east of the Whispering Woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighboring haunted forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where the forest lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "White Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Village once on the border of the woods, home to Greensleeves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Resident of White Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wrenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Lies east of the Wild Woods.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Wild Woods",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "A forest in North Aerona.",
+   "paragraph": 0,
+   "quote": "The Wild Woods is a vast forest in North Aerona on Dominaria ."
+  },
+  {
+   "source": "Greensleeves",
+   "relation": "located_in",
+   "target": "White Ridge",
+   "note": "White Ridge was his home.",
+   "paragraph": 1,
+   "quote": "the village of White Ridge , home to Greensleeves"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,167 @@
+{
+ "page": "wiki/boreal-glacier",
+ "url": "https://mtg.wiki/page/Boreal_Glacier",
+ "title": "Boreal Glacier",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:56Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Boreal Glacier",
+   "type": "location",
+   "aliases": [
+    "the Boreal Glacier"
+   ],
+   "description": "One of the four great glaciers covering parts of Terisiare during the Ice Age; the smallest and least destructive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent on Dominaria covered in glaciers during the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Terisiare lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tresserhorn",
+   "type": "location",
+   "aliases": [
+    "fortress of Tresserhorn"
+   ],
+   "description": "A keep from which the Boreal Glacier was visible.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "He showed Jodah the view of the Boreal Glacier from Tresserhorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Shown the glacier view by Lim-Dûl during his stay at Tresserhorn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Frost Marsh",
+   "type": "location",
+   "aliases": [],
+   "description": "A soggy, blackened swamp formed by the glacier at the base of the keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvian Steppes",
+   "type": "location",
+   "aliases": [],
+   "description": "Land partly cut off by the Boreal Glacier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvia",
+   "type": "faction",
+   "aliases": [],
+   "description": "A newly forming nation to which part of the Steppes became inaccessible.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Boreal",
+   "type": "location",
+   "aliases": [],
+   "description": "An isolated spur of the Balduvian Steppes cut off by the glacier, later covered by the Sea of Laments.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rimewind",
+   "type": "faction",
+   "aliases": [],
+   "description": "A cult that made its home in the Boreal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rimewind Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "A keep built by the Cult of Rimewind in the coldest part of Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya River",
+   "type": "location",
+   "aliases": [],
+   "description": "A river fed by the Boreal Glacier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "The event during which the Boreal Glacier retreated fully.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea of Laments",
+   "type": "location",
+   "aliases": [],
+   "description": "A sea that rose over the Boreal and Rimewind Keep.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Boreal Glacier cut off part of the Balduvian Steppes, creating the Boreal, home to the Cult of Rimewind.",
+   "participants": [
+    "Boreal Glacier",
+    "Cult of Rimewind",
+    "Balduvia"
+   ],
+   "location": "Balduvian Steppes",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This isolated spur of land became known as the Boreal and became home to the Cult of Rimewind"
+  },
+  {
+   "summary": "During the Flooding of Terisiare the Boreal Glacier retreated fully and the Sea of Laments covered the Boreal and Rimewind Keep.",
+   "participants": [
+    "Boreal Glacier",
+    "Sea of Laments",
+    "Rimewind Keep"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Sea of Laments rose over the land, covering the Boreal and Rimewind Keep fully."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Boreal Glacier",
+   "relation": "located_in",
+   "target": "Terisiare",
+   "note": "One of four great glaciers covering parts of Terisiare.",
+   "paragraph": 0,
+   "quote": "The Boreal Glacier was one of the four great glaciers covering parts of Terisiare during the Ice Age on Dominaria ."
+  },
+  {
+   "source": "Cult of Rimewind",
+   "relation": "created",
+   "target": "Rimewind Keep",
+   "note": "The cult built the keep.",
+   "paragraph": 2,
+   "quote": "who built Rimewind Keep in the very coldest part of Terisiare"
+  }
+ ],
+ "rejected": []
+}

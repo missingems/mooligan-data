@@ -1,0 +1,158 @@
+{
+ "page": "wiki/eldritch-moon",
+ "url": "https://mtg.wiki/page/Eldritch_Moon",
+ "title": "Eldritch Moon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:54Z",
+ "storyline": "Shadows over Innistrad block",
+ "entities": [
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose last protections have faded after Avacyn's death and which Emrakul now corrupts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "The archangel whose death left Innistrad without protection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who summoned Emrakul to Innistrad to take revenge on Sorin Markov.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [
+    "Titan of Corruption",
+    "Warper of Biology"
+   ],
+   "description": "Eldrazi titan who twists all living things into Eldrazi Horrors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire planeswalker against whom Nahiri seeks revenge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who brings the Gatewatch to Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of planeswalkers brought by Jace to help Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker who brings hordes of undead immune to Emrakul's influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi Horrors",
+   "type": "creature",
+   "aliases": [],
+   "description": "Living things twisted by Emrakul through five increasing levels of corruption.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With Avacyn dead, Innistrad's last protections fade.",
+   "participants": [
+    "Avacyn",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "With the death of Avacyn , the last protections over Innistrad have faded."
+  },
+  {
+   "summary": "Nahiri summons Emrakul to Innistrad to take revenge on Sorin Markov.",
+   "participants": [
+    "Nahiri",
+    "Emrakul",
+    "Sorin Markov",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Nahiri has summoned Emrakul to the plane, to take revenge on Sorin Markov ."
+  },
+  {
+   "summary": "Emrakul twists plants, animals and sentient beings into Eldrazi Horrors.",
+   "participants": [
+    "Emrakul",
+    "Eldrazi Horrors"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "twists all things living, be it plants, animals, or sentient beings, into Eldrazi Horrors"
+  },
+  {
+   "summary": "Jace brings the Gatewatch and Liliana brings hordes of undead as unlikely allies to save Innistrad.",
+   "participants": [
+    "Jace Beleren",
+    "Gatewatch",
+    "Liliana Vess",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jace Beleren brings the Gatewatch , and Liliana Vess brings hordes of undead immune to Emrakul's influence."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nahiri",
+   "relation": "enemy",
+   "target": "Sorin Markov",
+   "note": "Summoned Emrakul for revenge on him.",
+   "paragraph": 3,
+   "quote": "to take revenge on Sorin Markov"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Gatewatch",
+   "note": "Brings the Gatewatch to Innistrad.",
+   "paragraph": 3,
+   "quote": "Jace Beleren brings the Gatewatch"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "ally",
+   "target": "Jace Beleren",
+   "note": "The two are described as unlikely allies.",
+   "paragraph": 3,
+   "quote": "Innistrad's fate rests in the hands of unlikely allies"
+  }
+ ],
+ "rejected": []
+}

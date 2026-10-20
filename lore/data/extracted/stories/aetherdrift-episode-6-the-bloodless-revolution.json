@@ -1,0 +1,826 @@
+{
+ "page": "stories/aetherdrift-episode-6-the-bloodless-revolution",
+ "url": "https://magic.wizards.com/en/news/magic-story/aetherdrift-episode-6-the-bloodless-revolution",
+ "title": "Aetherdrift | Episode 6: The Bloodless Revolution",
+ "story_date": "2025-01-20",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:51:58Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker pyromancer who defies Jace to protect Loot, is mind-struck, and is healed by Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Renegade Prime"
+   ],
+   "description": "Chandra's mother who joins Team Avishkar and is nearly killed by a guard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [],
+   "description": "The goblin engineer who pilots the crashing car and later sends drones to scout.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "creature",
+   "aliases": [
+    "the little guy"
+   ],
+   "description": "A small creature Jace mind-controls and then carries off.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A mind mage working with the Consulate's guards who mind-controls the racers and takes Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon who fights alongside Jace, hesitates, and leaves with him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sita Varma",
+   "type": "character",
+   "aliases": [
+    "Spitfire",
+    "Sita"
+   ],
+   "description": "The masked racer who injects aether and rescues the Nalaars, then becomes part of Team Avishkar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mohar Varma",
+   "type": "character",
+   "aliases": [],
+   "description": "Sita's father who lectures her during his coup attempt and is later jailed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "Chandra's girlfriend, a non-planeswalker who commands vines and finds Chandra wounded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth",
+   "type": "deity",
+   "aliases": [
+    "the archangel",
+    "the angel"
+   ],
+   "description": "A radiant archangel who fights the dragon, heals Chandra and warns of dragon outbreaks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vin",
+   "type": "character",
+   "aliases": [],
+   "description": "A commentator who broadcasts the finish-line fight and is saved by Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Winter",
+   "type": "character",
+   "aliases": [],
+   "description": "A racer who tries to reach the finish line on a broken leg and is dragged back to hell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zahur",
+   "type": "character",
+   "aliases": [],
+   "description": "The Champions' leader who calls the hippos pulling the chariot over the finish line.",
+   "presence": "appears"
+  },
+  {
+   "name": "Basri Ket",
+   "type": "character",
+   "aliases": [
+    "Basri"
+   ],
+   "description": "The sand-bending champion who shields civilians and crosses the finish line first.",
+   "presence": "appears"
+  },
+  {
+   "name": "Far Fortune",
+   "type": "character",
+   "aliases": [],
+   "description": "An Endriders racer mind-controlled by Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Howler",
+   "type": "character",
+   "aliases": [],
+   "description": "A mind-controlled racer who splinters a scaffold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Redshift",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin whose rockets land near Chandra while controlled.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral",
+   "type": "character",
+   "aliases": [],
+   "description": "Someone who told Chandra that Jace and Vraska were alive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Dragon",
+   "type": "creature",
+   "aliases": [
+    "a dragon"
+   ],
+   "description": "A fire-breathing dragon that attacks Ghirapur during the race's end, part of a primordial storm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate Guards",
+   "type": "faction",
+   "aliases": [
+    "Consulate thugs",
+    "the Consulate's goons"
+   ],
+   "description": "Armed goons loyal to Mohar who hold the finish line.",
+   "presence": "appears"
+  },
+  {
+   "name": "Team Avishkar",
+   "type": "faction",
+   "aliases": [],
+   "description": "The informal alliance of Chandra, Pia and Sita after the race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Champions of Amonkhet",
+   "type": "faction",
+   "aliases": [
+    "the Amonkheti"
+   ],
+   "description": "The Amonkheti team that wins the Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aetherspark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The prize awarded to the Champions of Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The city on Avishkar where the finish line is.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Kaladesh, renamed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The desert plane of the winning Champions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where a man in blue stands with a creature in his arms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Planar routes through which dragons arrive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [
+    "the race"
+   ],
+   "description": "The race that ends in a showdown at the finish line.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Falling toward Ghirapur, Chandra sees the crowd panicking instead of celebrating.",
+   "participants": [
+    "Chandra Nalaar",
+    "Pia Nalaar",
+    "Daretti",
+    "Loot"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "But as she realizes that the masses below are not celebrating but panicking, a different feeling takes hold."
+  },
+  {
+   "summary": "Pia identifies the guards below as Consulate thugs.",
+   "participants": [
+    "Pia Nalaar",
+    "Consulate Guards",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "From the colors, those are Consulate thugs"
+  },
+  {
+   "summary": "Chandra scorches a roof to slow the falling car, then jumps clear.",
+   "participants": [
+    "Chandra Nalaar",
+    "Daretti",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "She aims for a sturdy-looking roof instead, then scorches the side of the same building all the way down to try and slow them down."
+  },
+  {
+   "summary": "Chandra lands in a cart of racing-team plush toys.",
+   "participants": [
+    "Chandra Nalaar",
+    "Loot"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "She lands in a cart of plush toys themed after each of the racing teams."
+  },
+  {
+   "summary": "Chandra sees Jace flanked by the Consulate's goons, with Vraska at his side.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jace Beleren",
+    "Vraska",
+    "Consulate Guards"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 17,
+   "quote": "Her eyes find him where she least expected him: flanked on either side by the Consulate's powerfully muscled goons."
+  },
+  {
+   "summary": "Jace raises a hand and Loot's eyes go blank.",
+   "participants": [
+    "Jace Beleren",
+    "Loot",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 20,
+   "quote": "Jace raises a hand, and the little guy's eyes go blank."
+  },
+  {
+   "summary": "A storm and a screeching dragon roar over Ghirapur.",
+   "participants": [
+    "The Dragon"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "Worse is the horrible, screeching roar of what can only be a dragon."
+  },
+  {
+   "summary": "The city's defenses open fire at the dragon.",
+   "participants": [
+    "The Dragon",
+    "Ghirapur"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 26,
+   "quote": "Bolts of aether fire at the massive silhouette soaring above the skies of Ghirapur."
+  },
+  {
+   "summary": "The dragon melts a roof cannon.",
+   "participants": [
+    "The Dragon"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "Its blazing breath melts one of the roof-mounted defense cannons to little more than slag."
+  },
+  {
+   "summary": "Chandra refuses to hand Loot over to Jace.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jace Beleren",
+    "Loot"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 35,
+   "quote": "I told Loot I would look after him,"
+  },
+  {
+   "summary": "Jace sends armored guards to attack Chandra.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Consulate Guards"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "A wave of his hands sends the armored toughs charging straight at her."
+  },
+  {
+   "summary": "Chandra's fireball passes through an illusion of Jace.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 43,
+   "quote": "An illusion. Of course."
+  },
+  {
+   "summary": "Chandra sees that the golden wall trapped racers including the Aether Rangers.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sita Varma"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "The Aether Rangers aren't the only ones who got caught in the trap, either."
+  },
+  {
+   "summary": "Jace casts a spell of misty white that turns the wrecked racers' eyes white and makes them attack Chandra.",
+   "participants": [
+    "Jace Beleren",
+    "Far Fortune",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 53,
+   "quote": "Spirals of magic flash around Jace; a net of misty white surrounds the racers still pulling themselves from the wrecks."
+  },
+  {
+   "summary": "Racers charge Chandra as one, including Captain Howler and Redshift.",
+   "participants": [
+    "Far Fortune",
+    "Captain Howler",
+    "Redshift",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 54,
+   "quote": "As one, they charge."
+  },
+  {
+   "summary": "Vraska orders her group to apprehend Chandra hidden in a wreck.",
+   "participants": [
+    "Vraska",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 64,
+   "quote": "The pyromancer's in there. Apprehend her."
+  },
+  {
+   "summary": "Guarded by her father, Sita plans to use her last aether canister to cross the finish line.",
+   "participants": [
+    "Sita Varma",
+    "Mohar Varma"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "Most important of all, she still has one canister left."
+  },
+  {
+   "summary": "Guards seize Pia and put a blade to her throat as Chandra is dragged away.",
+   "participants": [
+    "Pia Nalaar",
+    "Chandra Nalaar",
+    "Consulate Guards"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 97,
+   "quote": "The guards grab Pia by the hair, put a blade to her throat"
+  },
+  {
+   "summary": "Sita injects aether instead of racing to the Aetherspark.",
+   "participants": [
+    "Sita Varma"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 99,
+   "quote": "Canister meets port; aether meets bloodstream."
+  },
+  {
+   "summary": "Sita breaks free and disarms the guards to save Pia.",
+   "participants": [
+    "Sita Varma",
+    "Pia Nalaar",
+    "Mohar Varma",
+    "Consulate Guards"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 100,
+   "quote": "Sita throws off the hands keeping her in place, rushes past her hapless father, and dives straight for Pia Nalaar."
+  },
+  {
+   "summary": "Chandra, Pia and Sita fight together as Team Avishkar.",
+   "participants": [
+    "Chandra Nalaar",
+    "Pia Nalaar",
+    "Sita Varma",
+    "Team Avishkar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 108,
+   "quote": "Engine, wheels, and transmission. Chandra, Pia, and Sita."
+  },
+  {
+   "summary": "Daretti sends drones to scout and Loot wakes from Jace's control.",
+   "participants": [
+    "Daretti",
+    "Loot"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 109,
+   "quote": "Even Loot's woken up"
+  },
+  {
+   "summary": "Vin broadcasts live from behind a statue as the fight rages.",
+   "participants": [
+    "Vin"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 113,
+   "quote": "It's your in- vin -cible pal Vin, reporting live from the Ghirapur Grand Prix."
+  },
+  {
+   "summary": "Jace unleashes a punishing mind attack on Chandra and the others.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Team Avishkar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 124,
+   "quote": "Whatever magic Jace is using against her is nasty stuff"
+  },
+  {
+   "summary": "Jace picks up the little creature from Chandra's crumpled form.",
+   "participants": [
+    "Jace Beleren",
+    "Loot",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 126,
+   "quote": "He watches as Jace picks up something from Chandra's crumpled form—a little creature of some kind."
+  },
+  {
+   "summary": "An archangel shields Vin from the dragon's fire.",
+   "participants": [
+    "Elspeth",
+    "Vin",
+    "The Dragon"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 132,
+   "quote": "Hovering before Vin is an angel."
+  },
+  {
+   "summary": "Nissa arrives riding vines toward the stadium to reach Chandra.",
+   "participants": [
+    "Nissa Revane"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 136,
+   "quote": "Nissa surfs through the streets toward the Ghirapur Stadium."
+  },
+  {
+   "summary": "Nissa sees Elspeth fighting the dragon.",
+   "participants": [
+    "Nissa Revane",
+    "Elspeth",
+    "The Dragon"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 139,
+   "quote": "Elspeth's got the dragon handled."
+  },
+  {
+   "summary": "Nissa finds Chandra, Pia and Sita collapsed.",
+   "participants": [
+    "Nissa Revane",
+    "Chandra Nalaar",
+    "Pia Nalaar",
+    "Sita Varma"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 142,
+   "quote": "Crumpled before the remnants of a great ship: Chandra, Pia, and that other girl she'd seen on the broadcast."
+  },
+  {
+   "summary": "Nissa sees Jace scoop up the limp creature.",
+   "participants": [
+    "Nissa Revane",
+    "Jace Beleren",
+    "Loot",
+    "Vraska"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 145,
+   "quote": "She turns to see Jace scooping up a limp, small creature."
+  },
+  {
+   "summary": "Jace calls Vraska away, leaving with Loot.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska",
+    "Loot",
+    "Nissa Revane"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 151,
+   "quote": "We're leaving, Vraska,"
+  },
+  {
+   "summary": "Nissa begs them to stay but a magical fog covers their escape.",
+   "participants": [
+    "Nissa Revane",
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 155,
+   "quote": "But by then, a haze of magical fog overtakes the clearing, and Nissa knows it's no use."
+  },
+  {
+   "summary": "Winter, with a broken leg, tries to cross the undefended finish line on foot.",
+   "participants": [
+    "Winter"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 162,
+   "quote": "The rules don't say anything about crossing the finish line on foot."
+  },
+  {
+   "summary": "Basri shields civilians with sand that turns to glass in the dragon's heat.",
+   "participants": [
+    "Basri Ket",
+    "Zahur",
+    "Champions of Amonkhet",
+    "The Dragon"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 175,
+   "quote": "Basri Ket conjured waves of sand to shield the fleeing civilians"
+  },
+  {
+   "summary": "Zahur and Basri realize they have crossed the finish line first, and Zahur declares the Aetherspark's blessing.",
+   "participants": [
+    "Zahur",
+    "Basri Ket",
+    "Champions of Amonkhet",
+    "Aetherspark"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 176,
+   "quote": "For life, for death, for Amonkhet."
+  },
+  {
+   "summary": "A door appears and Winter is dragged back to hell as the Amonkheti win.",
+   "participants": [
+    "Winter",
+    "Champions of Amonkhet"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 177,
+   "quote": "But they will make no mention of the man so close to victory dragged with awful finality back to hell."
+  },
+  {
+   "summary": "Elspeth heals Chandra's injuries with concentrated light.",
+   "participants": [
+    "Elspeth",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 184,
+   "quote": "Concentrated light illuminates Chandra's forehead, her back, her ribs"
+  },
+  {
+   "summary": "Elspeth warns that a storm of primordial magic is leaving dragons on planes that never knew them.",
+   "participants": [
+    "Elspeth",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 195,
+   "quote": "A raging storm of primordial magic has been flowing between worlds, leaving dragons in its wake."
+  },
+  {
+   "summary": "Elspeth blesses Chandra and Nissa and vanishes in a flash.",
+   "participants": [
+    "Elspeth",
+    "Chandra Nalaar",
+    "Nissa Revane"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 200,
+   "quote": "And many blessings on your relationship."
+  },
+  {
+   "summary": "Sita reveals her father Mohar is in jail for attempting a coup.",
+   "participants": [
+    "Sita Varma",
+    "Pia Nalaar",
+    "Mohar Varma"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 214,
+   "quote": "Considering he's in jail, I think he has worse things to worry about"
+  },
+  {
+   "summary": "Chandra hugs Sita and introduces Nissa.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sita Varma",
+    "Nissa Revane"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 216,
+   "quote": "You really saved me and mom out there!"
+  },
+  {
+   "summary": "The Champions receive the Aetherspark together as a team.",
+   "participants": [
+    "Zahur",
+    "Basri Ket",
+    "Champions of Amonkhet",
+    "Aetherspark"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 231,
+   "quote": "When they receive the Aetherspark, it is as a team—no one person's hand touches it before any other."
+  },
+  {
+   "summary": "On a cliff overlooking the steppes of Tarkir, a man in blue and a woman stand while a sleeping, restless creature is held in his arms.",
+   "participants": [
+    "Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 233,
+   "quote": "A creature is asleep in his arms."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Work together as a pair.",
+   "paragraph": 17,
+   "quote": "Vraska is at his side."
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Chandra Nalaar",
+   "note": "Jace opposes her when she shields Loot.",
+   "paragraph": 21,
+   "quote": "Chandra, let's not make this difficult."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "romantic",
+   "target": "Nissa Revane",
+   "note": "Girlfriends.",
+   "paragraph": 218,
+   "quote": "This is my girlfriend, Nissa"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Mother and daughter.",
+   "paragraph": 28,
+   "quote": "When she spots her mother helping onlookers evacuate"
+  },
+  {
+   "source": "Elspeth",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "Heals her and fights the dragon.",
+   "paragraph": 201,
+   "quote": "Thanks for the help, too."
+  },
+  {
+   "source": "Mohar Varma",
+   "relation": "family",
+   "target": "Sita Varma",
+   "note": "Father and daughter.",
+   "paragraph": 72,
+   "quote": "You've never been the boor, Sita."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "member_of",
+   "target": "Team Avishkar",
+   "note": "Part of Team Avishkar.",
+   "paragraph": 108,
+   "quote": "After a race across three planes, Team Avishkar is finally in alignment."
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "member_of",
+   "target": "Team Avishkar",
+   "note": "Part of Team Avishkar.",
+   "paragraph": 108,
+   "quote": "After a race across three planes, Team Avishkar is finally in alignment."
+  },
+  {
+   "source": "Sita Varma",
+   "relation": "member_of",
+   "target": "Team Avishkar",
+   "note": "Part of Team Avishkar.",
+   "paragraph": 108,
+   "quote": "After a race across three planes, Team Avishkar is finally in alignment."
+  }
+ ],
+ "rejected": []
+}

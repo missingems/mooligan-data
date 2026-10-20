@@ -1,0 +1,147 @@
+{
+ "page": "wiki/primal-clay",
+ "url": "https://mtg.wiki/page/Primal_clay",
+ "title": "Primal clay",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:20Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Primal Clay",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A technology discovered by Tawnos and used by Argive in the Brothers' War to make clay statues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clay Statue",
+   "type": "artifact",
+   "aliases": [
+    "Clay Statues"
+   ],
+   "description": "Nine-foot artificial bronze-colored creatures made of primal clay that entrap enemies' weapons and limbs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Discovered primal clay and created the clay statues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "Side of the Brothers' War that used clay statues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Dominaria in which clay statues were used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned a clay statue over 3000 years later.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Greensleeves' brother who found a clay statue on an island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Housed clay statues in the Hall of Artifact Creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Activated the statues to defend the academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "K'rrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian leader whose forces invaded the academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Brothers' War.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tawnos creates clay statues from primal clay for Argive.",
+   "participants": [
+    "Tawnos",
+    "Argive"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The clay statues were created by Tawnos from primal clay."
+  },
+  {
+   "summary": "Over 3000 years later Greensleeves summons a clay statue after Gull discovers one on an island.",
+   "participants": [
+    "Greensleeves",
+    "Gull"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Greensleeves summoned a clay statue after her brother Gull discovered one on an island."
+  },
+  {
+   "summary": "Barrin activates the academy's clay statues against K'rrik's invading Phyrexians.",
+   "participants": [
+    "Barrin",
+    "K'rrik",
+    "Tolarian Academy"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Barrin activated them as part of the academy's defenses"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tawnos",
+   "relation": "created",
+   "target": "Clay Statue",
+   "note": "Created from primal clay",
+   "paragraph": 2,
+   "quote": "The clay statues were created by Tawnos from primal clay."
+  },
+  {
+   "source": "Gull",
+   "relation": "family",
+   "target": "Greensleeves",
+   "note": "Siblings",
+   "paragraph": 3,
+   "quote": "her brother Gull"
+  }
+ ],
+ "rejected": []
+}

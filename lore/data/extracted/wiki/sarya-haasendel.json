@@ -1,0 +1,155 @@
+{
+ "page": "wiki/sarya-haasendel",
+ "url": "https://mtg.wiki/page/Sarya_Haasendel",
+ "title": "Sarya Haasendel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:29Z",
+ "storyline": "Sarpadia",
+ "entities": [
+  {
+   "name": "Sarya Haasendel",
+   "type": "character",
+   "aliases": [
+    "Captain Sarya Haasendel",
+    "Sarya"
+   ],
+   "description": "A dwarven captain in Sarpadia who took command after General Danhelm was slain and led survivors into an abandoned mine.",
+   "presence": "appears"
+  },
+  {
+   "name": "General Danhelm",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarven leader slain at Gurn Keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gurn Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Keep attacked by the orc-goblin alliance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orc-goblin alliance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Attackers of Gurn Keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kolevi of Havenwood",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of Sarya's plea, who expressed regret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Ellsworth of Icatia",
+   "type": "character",
+   "aliases": [],
+   "description": "Forwarded the plea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thurzen Klathe",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord High Priest of the Order of the Ebon Hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [
+    "Ebon Hand"
+   ],
+   "description": "Sent a mercenary company to answer the plea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivra Jursdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the mercenary company that joined the orcs and goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Sarpadian Empires",
+   "type": "event",
+   "aliases": [],
+   "description": "The time of Sarya's service.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An orc-goblin alliance attacks Gurn Keep and General Danhelm is slain.",
+   "participants": [
+    "Orc-goblin alliance",
+    "General Danhelm"
+   ],
+   "location": "Gurn Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the dwarven leader General Danhelm was slain"
+  },
+  {
+   "summary": "Sarya takes control and leads the surviving dwarves into an abandoned mine.",
+   "participants": [
+    "Sarya Haasendel"
+   ],
+   "location": "Gurn Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Sarya, taking control, led the surviving dwarves into a nearby abandoned mine"
+  },
+  {
+   "summary": "Sarya's plea is forwarded to the Order of the Ebon Hand, the only nation to pledge aid.",
+   "participants": [
+    "Sarya Haasendel",
+    "Kolevi of Havenwood",
+    "Lady Ellsworth of Icatia",
+    "Thurzen Klathe"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the only nation that pledged aid was the Order of the Ebon Hand"
+  },
+  {
+   "summary": "Jursdotter's forces are seen among the orcs and goblins, having joined them.",
+   "participants": [
+    "Ivra Jursdotter",
+    "Order of the Ebon Hand",
+    "Orc-goblin alliance"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jursdotter's forces were seen amongst the orcs and goblins"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sarya Haasendel",
+   "relation": "serves",
+   "target": "General Danhelm",
+   "note": "Took command after his death.",
+   "paragraph": 1,
+   "quote": "Sarya, taking control"
+  },
+  {
+   "source": "Ivra Jursdotter",
+   "relation": "serves",
+   "target": "Order of the Ebon Hand",
+   "note": "Led its mercenary company.",
+   "paragraph": 2,
+   "quote": "a mercenary company led by Ivra Jursdotter"
+  }
+ ],
+ "rejected": []
+}

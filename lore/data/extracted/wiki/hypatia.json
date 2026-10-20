@@ -1,0 +1,98 @@
+{
+ "page": "wiki/hypatia",
+ "url": "https://mtg.wiki/page/Hypatia",
+ "title": "Hypatia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:39Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Hypatia",
+   "type": "character",
+   "aliases": [],
+   "description": "A grange-mage turned Meletian warrior who bonded with a pegasus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meletian temple",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple dedicated to Karametra where Hypatia trained.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karametra",
+   "type": "deity",
+   "aliases": [],
+   "description": "Goddess to whom Hypatia's temple was dedicated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "City Hypatia defended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletian army",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army Hypatia served in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pegasus",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hypatia's companion who rescued her.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hypatia trained as a grange-mage then joined the Meletian army.",
+   "participants": [
+    "Hypatia",
+    "Meletian army"
+   ],
+   "location": "Meletis",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Taking up sword and shield as a warrior of the Meletian army"
+  },
+  {
+   "summary": "Wounded in battle, Hypatia was rescued by a pegasus she prayed for.",
+   "participants": [
+    "Hypatia",
+    "Pegasus"
+   ],
+   "location": "Meletis",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a single pegasus descended and allowed her to mount its back"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hypatia",
+   "relation": "member_of",
+   "target": "Meletian army",
+   "note": "Warrior in it",
+   "paragraph": 0,
+   "quote": "a warrior of the Meletian army"
+  },
+  {
+   "source": "Hypatia",
+   "relation": "ally",
+   "target": "Pegasus",
+   "note": "Unbreakable bond",
+   "paragraph": 1,
+   "quote": "Hypatia and her pegasus companion formed a powerful and unbreakable bond"
+  }
+ ],
+ "rejected": []
+}

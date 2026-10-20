@@ -1,0 +1,157 @@
+{
+ "page": "wiki/jofridus",
+ "url": "https://mtg.wiki/page/Jofridus",
+ "title": "Jofridus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:58Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Jofridus",
+   "type": "character",
+   "aliases": [
+    "Father Jofridus"
+   ],
+   "description": "Cathar father of Thraben Cathedral and secret Skirsdag cultist who was killed by Raben Amsel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skirsdag",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult to which Jofridus secretly belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben Cathedral",
+   "type": "location",
+   "aliases": [],
+   "description": "Cathedral where Jofridus served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church Jofridus appeared devoted to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raben Amsel",
+   "type": "character",
+   "aliases": [
+    "Raben"
+   ],
+   "description": "Man saved and mentored by Jofridus who later killed him and donned the demonic yoke.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reika Eberhardt",
+   "type": "character",
+   "aliases": [],
+   "description": "Victim murdered by Jofridus, later a demon-possessed form slain by Raben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloodletter",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Cursed blade used to kill Jofridus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Demonic yoke",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Yoke fused to Jofridus's flesh, donned by Raben.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jofridus saved Raben from execution and mentored him.",
+   "participants": [
+    "Jofridus",
+    "Raben Amsel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Raben Amsel , whom he saved from execution and mentored"
+  },
+  {
+   "summary": "Jofridus coldly murdered Reika Eberhardt and tried to corrupt Raben with promises of eternal life.",
+   "participants": [
+    "Jofridus",
+    "Reika Eberhardt",
+    "Raben Amsel"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "his cold-blooded murder of Reika Eberhardt"
+  },
+  {
+   "summary": "Raben confronted Jofridus in a cavern beneath Thraben Cathedral, slew a possessed Reika, and killed Jofridus with the Bloodletter.",
+   "participants": [
+    "Raben Amsel",
+    "Jofridus",
+    "Reika Eberhardt",
+    "Bloodletter"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "ultimately killed him with the cursed blade, the Bloodletter"
+  },
+  {
+   "summary": "Raben donned the demonic yoke, embracing a cursed existence to pursue vengeance and justice.",
+   "participants": [
+    "Raben Amsel",
+    "Demonic yoke"
+   ],
+   "location": "Thraben Cathedral",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Raben donned the demonic yoke that had fused with Jofridus"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jofridus",
+   "relation": "member_of",
+   "target": "Skirsdag",
+   "note": "secret cultist",
+   "paragraph": 0,
+   "quote": "secretly a Skirsdag cultist"
+  },
+  {
+   "source": "Jofridus",
+   "relation": "mentor_of",
+   "target": "Raben Amsel",
+   "note": "saved and mentored him",
+   "paragraph": 2,
+   "quote": "Raben Amsel , whom he saved from execution and mentored"
+  },
+  {
+   "source": "Raben Amsel",
+   "relation": "killed",
+   "target": "Jofridus",
+   "note": "decapitated him",
+   "paragraph": 3,
+   "quote": "ultimately killed him with the cursed blade, the Bloodletter"
+  },
+  {
+   "source": "Jofridus",
+   "relation": "killed",
+   "target": "Reika Eberhardt",
+   "note": "murdered her",
+   "paragraph": 2,
+   "quote": "his cold-blooded murder of Reika Eberhardt"
+  }
+ ],
+ "rejected": []
+}

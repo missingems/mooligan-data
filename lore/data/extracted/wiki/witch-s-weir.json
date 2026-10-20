@@ -1,0 +1,93 @@
+{
+ "page": "wiki/witch-s-weir",
+ "url": "https://mtg.wiki/page/Witch%27s_Weir",
+ "title": "Witch's Weir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:05Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Witch's Weir",
+   "type": "location",
+   "aliases": [],
+   "description": "The southern branch of Buzzard's Bay on the Storm Coast of western Jamuraa; the safest part of the bay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Buzzard's Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "A huge bay in Jamuraa that includes a port town of the same name.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [
+    "Emperor Johan of Tirras"
+   ],
+   "description": "Emperor of Tirras who journeyed to Buzzard's Bay looking for the library of Shauku.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hebe",
+   "type": "character",
+   "aliases": [],
+   "description": "A bookseller tortured and killed by Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a famous library whose domain lay in Arboria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent where the weir lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 3334 AR Emperor Johan of Tirras journeys to Buzzard's Bay seeking Shauku's famous library, finding only a small book shop.",
+   "participants": [
+    "Johan",
+    "Buzzard's Bay",
+    "Shauku"
+   ],
+   "location": "Buzzard's Bay",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "looking for the famous library of Shauku"
+  },
+  {
+   "summary": "Johan tortures the location of Shauku's domain out of the bookseller Hebe and kills her.",
+   "participants": [
+    "Johan",
+    "Hebe"
+   ],
+   "location": "Buzzard's Bay",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "before he killed her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Johan",
+   "relation": "killed",
+   "target": "Hebe",
+   "note": "Johan killed the bookseller after torturing her.",
+   "paragraph": 2,
+   "quote": "before he killed her"
+  }
+ ],
+ "rejected": []
+}

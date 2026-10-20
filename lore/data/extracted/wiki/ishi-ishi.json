@@ -1,0 +1,97 @@
+{
+ "page": "wiki/ishi-ishi",
+ "url": "https://mtg.wiki/page/Ishi-Ishi",
+ "title": "Ishi-Ishi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:09Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Ishi-Ishi",
+   "type": "character",
+   "aliases": [
+    "King of the Flaming Pebbles"
+   ],
+   "description": "An akki vigilante of the Sokenzan Mountains, a crack shot with a sling fond of goats, called King of the Flaming Pebbles; killed by the Mountain Kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mountain Kami",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami who killed Ishi-Ishi and burned his body.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akki",
+   "type": "faction",
+   "aliases": [],
+   "description": "The goblin-like people who carried off Ishi-Ishi's shell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzan Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "The mountains where Ishi-Ishi lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Ishi-Ishi lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ishi-Ishi hurls flaming pebbles with his sling at the kami invaders of his mountain home.",
+   "participants": [
+    "Ishi-Ishi",
+    "Sokenzan Mountains"
+   ],
+   "location": "Sokenzan Mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "constantly used his sling to hurl flaming pebbles"
+  },
+  {
+   "summary": "Ishi-Ishi flies over the Sokenzan Mountains on a goat and finds the persimmon tree of plenty.",
+   "participants": [
+    "Ishi-Ishi",
+    "Sokenzan Mountains"
+   ],
+   "location": "Sokenzan Mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "found the persimmon tree of plenty"
+  },
+  {
+   "summary": "Ishi-Ishi is killed by the Mountain Kami and his body incinerated; the akki carry off his shell and leave an inscription.",
+   "participants": [
+    "Ishi-Ishi",
+    "Mountain Kami",
+    "Akki"
+   ],
+   "location": "Sokenzan Mountains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He was eventually killed by the Mountain Kami"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mountain Kami",
+   "relation": "killed",
+   "target": "Ishi-Ishi",
+   "note": "They killed him and incinerated his body.",
+   "paragraph": 1,
+   "quote": "He was eventually killed by the Mountain Kami"
+  }
+ ],
+ "rejected": []
+}

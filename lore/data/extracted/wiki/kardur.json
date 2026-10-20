@@ -1,0 +1,92 @@
+{
+ "page": "wiki/kardur",
+ "url": "https://mtg.wiki/page/Kardur",
+ "title": "Kardur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kardur",
+   "type": "character",
+   "aliases": [
+    "Doomscourge"
+   ],
+   "description": "Kardur, the Doomscourge, a fearsome demon berserker jarl of Immersturm on Kaldheim imprisoned beneath the earth by rival demon leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Immersturm",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of the demons on Kaldheim, where they are bound by runes placed by the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Kardur hails from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fields of Elskul",
+   "type": "location",
+   "aliases": [],
+   "description": "Desolate fields where demon armies wage warfare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Demon jarls",
+   "type": "faction",
+   "aliases": [],
+   "description": "Demon warlords of Immersturm who raid and war endlessly.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rival demon leaders combine their strength to imprison Kardur hundreds of miles below the surface.",
+   "participants": [
+    "Demon jarls",
+    "Kardur"
+   ],
+   "location": "Immersturm",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the rival demon leaders combined their strength to imprison Kardur deep beneath the earth"
+  },
+  {
+   "summary": "Kardur gradually claws his way back toward the surface.",
+   "participants": [
+    "Kardur"
+   ],
+   "location": "Immersturm",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kardur is gradually clawing his way back toward the surface"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Demon jarls",
+   "relation": "enemy",
+   "target": "Kardur",
+   "note": "They imprisoned him.",
+   "paragraph": 1,
+   "quote": "the rival demon leaders combined their strength to imprison Kardur deep beneath the earth"
+  },
+  {
+   "source": "Kardur",
+   "relation": "member_of",
+   "target": "Demon jarls",
+   "note": "He is among the warlords.",
+   "paragraph": 1,
+   "quote": "Among these warlords, Kardur stood out as one of the most terrifying and relentless jarls"
+  }
+ ],
+ "rejected": []
+}

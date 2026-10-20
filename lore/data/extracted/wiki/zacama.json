@@ -1,0 +1,119 @@
+{
+ "page": "wiki/zacama",
+ "url": "https://mtg.wiki/page/Zacama",
+ "title": "Zacama",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zacama",
+   "type": "creature",
+   "aliases": [
+    "Zacama, all calamity"
+   ],
+   "description": "Three-headed Elder Dinosaur of Ixalan embodying the Threefold Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose opening revealed the elder dinosaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [],
+   "description": "Tamed Zacama as a mount.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etali",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder dinosaur who was compleated and killed by Zacama.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Zacama.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Zacama fought Etali.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Threefold Sun",
+   "type": "concept",
+   "aliases": [],
+   "description": "Embodied by Zacama.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The opening of Orazca reveals the elder dinosaurs held in stasis.",
+   "participants": [
+    "Orazca",
+    "Zacama"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The opening of Orazca revealed the enormous elder dinosaurs"
+  },
+  {
+   "summary": "Huatli tames Zacama and uses her as a mount.",
+   "participants": [
+    "Huatli",
+    "Zacama"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Zacama was tamed and used as a mount by Huatli ."
+  },
+  {
+   "summary": "Summoned to Orazca by Huatli, Zacama arrives last and vanquishes the compleated Etali.",
+   "participants": [
+    "Zacama",
+    "Huatli",
+    "Etali"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "tearing off his arm and head"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Huatli",
+   "relation": "other",
+   "target": "Zacama",
+   "note": "Tamed her and rode her as a mount.",
+   "paragraph": 3,
+   "quote": "Zacama was tamed and used as a mount by Huatli ."
+  },
+  {
+   "source": "Zacama",
+   "relation": "killed",
+   "target": "Etali",
+   "note": "Tore off his arm and head.",
+   "paragraph": 4,
+   "quote": "was ultimately responsible for vanquishing the compleated Etali"
+  }
+ ],
+ "rejected": []
+}

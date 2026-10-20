@@ -1,0 +1,87 @@
+{
+ "page": "wiki/burning-isles",
+ "url": "https://mtg.wiki/page/Burning_Isles",
+ "title": "Burning Isles",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:18Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Burning Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Highly volcanic archipelago in the easternmost Domains of Dominaria, claimed by a dozen lords.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Burning Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent south of the Burning Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Land east of the Burning Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shipbuilders' Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that began logging the Burning Isles' woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent as an envoy to stop the Shipbuilders' Guild.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Shipbuilders' Guild began systematically logging the woods of the Burning Isles, and Multani was sent as an envoy to stop them.",
+   "participants": [
+    "Shipbuilders' Guild",
+    "Multani"
+   ],
+   "location": "Burning Isles",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Multani was sent as an envoy to stop them."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Burning Isles",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "",
+   "paragraph": 0,
+   "quote": "on the plane of Dominaria"
+  },
+  {
+   "source": "Multani",
+   "relation": "enemy",
+   "target": "Shipbuilders' Guild",
+   "note": "Sent to stop their logging",
+   "paragraph": 2,
+   "quote": "Multani was sent as an envoy to stop them."
+  }
+ ],
+ "rejected": []
+}

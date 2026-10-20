@@ -1,0 +1,89 @@
+{
+ "page": "wiki/novijen",
+ "url": "https://mtg.wiki/page/Novijen",
+ "title": "Novijen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:59Z",
+ "storyline": "Dissension",
+ "entities": [
+  {
+   "name": "Novijen",
+   "type": "location",
+   "aliases": [
+    "Simic Guildhall"
+   ],
+   "description": "The Simic Guildhall on Ravnica, a living genetics laboratory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic",
+   "type": "faction",
+   "aliases": [
+    "Simic Combine"
+   ],
+   "description": "Guild that owned Novijen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Momir Vig",
+   "type": "character",
+   "aliases": [],
+   "description": "Progenitor who used Novijen's greenhouse for biomanalogical architecture.",
+   "presence": "appears"
+  },
+  {
+   "name": "Project Kraj",
+   "type": "creature",
+   "aliases": [
+    "cytoplast monster"
+   ],
+   "description": "Cytoplast monster that went out of control during the Dissension.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quietmen",
+   "type": "faction",
+   "aliases": [],
+   "description": "Deconstructed the parts of Project Kraj.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Project Kraj goes out of control during the Dissension and incorporates Novijen as its head.",
+   "participants": [
+    "Project Kraj",
+    "Novijen"
+   ],
+   "location": "Novijen",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Novijen was incorporated as the head of the cytoplast monster"
+  },
+  {
+   "summary": "After Project Kraj's demise the quietmen deconstruct all parts.",
+   "participants": [
+    "Quietmen",
+    "Project Kraj"
+   ],
+   "location": "Novijen",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "all parts were deconstructed by the quietmen"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Momir Vig",
+   "relation": "other",
+   "target": "Novijen",
+   "note": "Used its greenhouse as an experiment.",
+   "paragraph": 1,
+   "quote": "the greenhouse in the upper part of the guildhall that the progenitor Momir Vig used"
+  }
+ ],
+ "rejected": []
+}

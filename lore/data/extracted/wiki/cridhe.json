@@ -1,0 +1,228 @@
+{
+ "page": "wiki/cridhe",
+ "url": "https://mtg.wiki/page/Cridhe",
+ "title": "Cridhe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:07Z",
+ "storyline": "The Cursed Land",
+ "entities": [
+  {
+   "name": "Cridhe",
+   "type": "plane",
+   "aliases": [],
+   "description": "A small plane composed mostly of a single island, created by the Maker and home to humans and elves, setting of the novel The Cursed Land.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maker",
+   "type": "deity",
+   "aliases": [
+    "the Maker",
+    "the god who created this plane"
+   ],
+   "description": "A being who created Cridhe and whose ancient curse came true at the Parting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Tree",
+   "type": "artifact",
+   "aliases": [
+    "Clan Tree of Cridhe"
+   ],
+   "description": "The heart of the plane, containing all of its mana; destroyed in the Parting and recreated in the Mending.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nohr",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who destroyed the Clan Tree trying to become a planeswalker, cursing himself and his descendants with madness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [],
+   "description": "Instigated Nohr's destruction of the tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haen",
+   "type": "character",
+   "aliases": [],
+   "description": "Ancestor of the Heanish who foretold the Mending of the Clan Tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aylith",
+   "type": "character",
+   "aliases": [
+    "Keeper Aylith"
+   ],
+   "description": "Keeper, descendant of Haen, who broke the curse on Nazir and helped mend the Clan Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nazir",
+   "type": "character",
+   "aliases": [
+    "Felonarch Nazir"
+   ],
+   "description": "Healed wizard and Felonarch, descendant of Nohr, who had a prophetic vision and helped mend the Clan Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crephas",
+   "type": "character",
+   "aliases": [],
+   "description": "Created lumini, makana and the ardre fungus; went mad before engineering the Albions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inys Haen",
+   "type": "location",
+   "aliases": [],
+   "description": "Residence of the Heanish in the central mountainous region.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inys Nohr",
+   "type": "location",
+   "aliases": [],
+   "description": "Residence of the Nohrish on the east coast.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Parting",
+   "type": "event",
+   "aliases": [],
+   "description": "The destruction of the tree around 3043 AR that split the isle in two and plunged the plane into a climate crisis.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mending of the Clan Tree",
+   "type": "event",
+   "aliases": [
+    "the Mending"
+   ],
+   "description": "The recreation of the Clan Tree 520 years after the Parting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Long Winter",
+   "type": "event",
+   "aliases": [
+    "the Long Winter"
+   ],
+   "description": "A cold period caused by the erratic seasons after the Parting.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Instigated by Malvos, Nohr destroys the Clan Tree trying to become a planeswalker; the isle splits in two and Nohr and his descendants are cursed with madness.",
+   "participants": [
+    "Nohr",
+    "Malvos",
+    "Clan Tree",
+    "The Parting"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "the wizard Nohr destroyed the tree trying to become a planeswalker"
+  },
+  {
+   "summary": "After the Parting, clouds obscure the sun and the climate collapses; crops wither and Nohrland dies.",
+   "participants": [
+    "Cridhe",
+    "Long Winter"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Clouds immediately obscured the sun, creating a permanent daily twilight and nightly darkness."
+  },
+  {
+   "summary": "In Year 520, Aylith and Nazir mend the Clan Tree and the seasons return to normal.",
+   "participants": [
+    "Aylith",
+    "Nazir",
+    "Clan Tree"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 14,
+   "quote": "Keeper Aylith and Felonarch Nazir descendants of Haen and Nohr, mended the Clan Tree ."
+  },
+  {
+   "summary": "Aylith breaks the curse on Nazir and together they recreate the Clan Tree from the last acorn, fulfilling Haen's prophecy.",
+   "participants": [
+    "Aylith",
+    "Nazir",
+    "Haen",
+    "The Mending of the Clan Tree"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "the Keeper Aylith used her powers to break the curse on Nazir ."
+  },
+  {
+   "summary": "Nazir has a prophetic vision of what the plane will look like in 1000 years.",
+   "participants": [
+    "Nazir"
+   ],
+   "location": "Cridhe",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the healed wizard Nazir had a prophetic vision of what the plane would look like 1000 years in the future"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Maker",
+   "relation": "created",
+   "target": "Cridhe",
+   "note": "Created the plane.",
+   "paragraph": 1,
+   "quote": "Cridhe was created by a being called the Maker"
+  },
+  {
+   "source": "Nohr",
+   "relation": "enemy",
+   "target": "Clan Tree",
+   "note": "Destroyed it.",
+   "paragraph": 12,
+   "quote": "the wizard Nohr destroyed the tree"
+  },
+  {
+   "source": "Malvos",
+   "relation": "other",
+   "target": "Nohr",
+   "note": "Instigated Nohr to destroy the tree.",
+   "paragraph": 12,
+   "quote": "after being instigated by Malvos"
+  },
+  {
+   "source": "Aylith",
+   "relation": "ally",
+   "target": "Nazir",
+   "note": "Broke his curse and mended the tree with him.",
+   "paragraph": 15,
+   "quote": "Together they spoke the litany of light"
+  },
+  {
+   "source": "Inys Haen",
+   "relation": "located_in",
+   "target": "Cridhe",
+   "note": "In the central mountainous region.",
+   "paragraph": 3,
+   "quote": "residence of the Heanish (the descendants of Haen ) in the central mountainous region"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,168 @@
+{
+ "page": "wiki/hazezon-tamar",
+ "url": "https://mtg.wiki/page/Hazezon_Tamar",
+ "title": "Hazezon Tamar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [
+    "Tetrarch of the Free Realm of Bryce",
+    "governor",
+    "lord paramount",
+    "suzerain",
+    "pasha"
+   ],
+   "description": "Governor of Bryce on Dominaria, an aging man of keen mind who rallied allies to end Johan's War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [
+    "Free Realm of Bryce"
+   ],
+   "description": "City-state governed by Hazezon Tamar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Bryce.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "A conflict between Bryce and Tirras orchestrated by Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state in conflict with Bryce.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Orchestrated the war with Tirras; died ending the war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Hazezon's ex-wife, leader of the Robaran Mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mercenaries led by Adira Strongheart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaeger Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "A strange tiger man of the forest of Efrava who aided Hazezon; died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Jaeger who allied with Hazezon and ended Johan's War by ensuring Johan's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Belladonna",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hazezon's horse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hazezon rallies his ex-wife Adira Strongheart and the Robaran Mercenaries with the aid of Jaeger Ojanen.",
+   "participants": [
+    "Hazezon Tamar",
+    "Adira Strongheart",
+    "Robaran Mercenaries",
+    "Jaeger Ojanen"
+   ],
+   "location": "Bryce",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hazezon rallied his ex-wife Adira Strongheart and her Robaran Mercenaries with the aid of Jaeger Ojanen"
+  },
+  {
+   "summary": "After Jaeger's death, Hazezon allies with Jedit Ojanen and ends Johan's War by ensuring Johan's death.",
+   "participants": [
+    "Hazezon Tamar",
+    "Jedit Ojanen",
+    "Johan"
+   ],
+   "location": "Bryce",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hazezon allied with Jaeger's son, Jedit Ojanen , eventually ending Johan's War by ensuring his death."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hazezon Tamar",
+   "relation": "leader_of",
+   "target": "Bryce",
+   "note": "Governor",
+   "paragraph": 0,
+   "quote": "Hazezon Tamar was the governor of Bryce on Dominaria"
+  },
+  {
+   "source": "Hazezon Tamar",
+   "relation": "family",
+   "target": "Adira Strongheart",
+   "note": "Ex-wife",
+   "paragraph": 3,
+   "quote": "his ex-wife Adira Strongheart"
+  },
+  {
+   "source": "Jedit Ojanen",
+   "relation": "family",
+   "target": "Jaeger Ojanen",
+   "note": "Son",
+   "paragraph": 3,
+   "quote": "Jaeger's son, Jedit Ojanen"
+  },
+  {
+   "source": "Hazezon Tamar",
+   "relation": "ally",
+   "target": "Jedit Ojanen",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Hazezon allied with Jaeger's son, Jedit Ojanen"
+  },
+  {
+   "source": "Hazezon Tamar",
+   "relation": "enemy",
+   "target": "Johan",
+   "note": "Ended Johan's War by ensuring his death",
+   "paragraph": 3,
+   "quote": "eventually ending Johan's War by ensuring his death"
+  }
+ ],
+ "rejected": []
+}

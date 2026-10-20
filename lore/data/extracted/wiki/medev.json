@@ -1,0 +1,186 @@
+{
+ "page": "wiki/medev",
+ "url": "https://mtg.wiki/page/Medev",
+ "title": "Medev",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:54Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Medev",
+   "type": "location",
+   "aliases": [],
+   "description": "A Neurok settlement of tin on the shores of the Quicksilver Sea of Mirrodin, ruled by Bruenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bruenna",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage and leader of Medev who aided Glissa and later fled to the Tangle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf who arrived in Medev with Slobad and Bosh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin who arrived in Medev with Glissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bosh",
+   "type": "character",
+   "aliases": [],
+   "description": "Iron golem who arrived in Medev with Glissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "The being who destroyed Medev in anger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pontifex",
+   "type": "character",
+   "aliases": [],
+   "description": "Vedalken whose death disrupted Memnarch's plans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vedalken Empire",
+   "type": "faction",
+   "aliases": [
+    "Vedalken"
+   ],
+   "description": "Empire that enslaved the Neurok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Neurok",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Medev enslaved by the vedalken.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quicksilver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea on Mirrodin where Medev stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lumengrid",
+   "type": "location",
+   "aliases": [],
+   "description": "Place to which Bruenna smuggled the heroes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tangle",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest where Bruenna fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Medev.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glissa, Slobad and Bosh arrived in Medev and tried to get information from Bruenna, who saw through them.",
+   "participants": [
+    "Glissa",
+    "Slobad",
+    "Bosh",
+    "Bruenna"
+   ],
+   "location": "Medev",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "When Glissa , Slobad , and Bosh arrived in Medev"
+  },
+  {
+   "summary": "Aerophin attacked Medev; Bruenna and Glissa fought them, and Bruenna smuggled the heroes to Lumengrid on a metal tank.",
+   "participants": [
+    "Bruenna",
+    "Glissa",
+    "Slobad",
+    "Bosh"
+   ],
+   "location": "Medev",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The village was then attacked by aerophin"
+  },
+  {
+   "summary": "Bruenna helped stop Pontifex, leading to his death and disrupting Memnarch's plans to ascend.",
+   "participants": [
+    "Bruenna",
+    "Pontifex",
+    "Memnarch"
+   ],
+   "location": "Medev",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Bruenna was partly responsible for stopping Pontifex"
+  },
+  {
+   "summary": "Memnarch sent levelers and aerophins to destroy Medev, killing all inhabitants but Bruenna, who fled to the Tangle.",
+   "participants": [
+    "Memnarch",
+    "Bruenna",
+    "Medev",
+    "Tangle"
+   ],
+   "location": "Medev",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "destroying the village and killing all its inhabitants save Bruenna herself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bruenna",
+   "relation": "leader_of",
+   "target": "Medev",
+   "note": "She ruled the village.",
+   "paragraph": 1,
+   "quote": "ruled by the mage Bruenna"
+  },
+  {
+   "source": "Vedalken Empire",
+   "relation": "enemy",
+   "target": "Neurok",
+   "note": "The Vedalken enslaved the Neurok people.",
+   "paragraph": 1,
+   "quote": "enslaving the Neurok people to work for the Vedalken Empire"
+  },
+  {
+   "source": "Memnarch",
+   "relation": "enemy",
+   "target": "Bruenna",
+   "note": "He destroyed her village after earning his ire.",
+   "paragraph": 3,
+   "quote": "having earned Memnarch 's ire"
+  }
+ ],
+ "rejected": []
+}

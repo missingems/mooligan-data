@@ -1,0 +1,147 @@
+{
+ "page": "wiki/kellan-boldt",
+ "url": "https://mtg.wiki/page/Kellan_Boldt",
+ "title": "Kellan Boldt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kellan Boldt",
+   "type": "character",
+   "aliases": [
+    "Prodigal Sorcerer"
+   ],
+   "description": "A Prodigal Sorcerer, once son and heir to the Duchy of Kelsh on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghavos",
+   "type": "character",
+   "aliases": [
+    "Archmage Ghavos"
+   ],
+   "description": "Archmage who apprenticed Kellan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enthril",
+   "type": "character",
+   "aliases": [],
+   "description": "A ship-mage who helped Kellan against the pirates and vanished after casting a spell on the ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "School on Tolaria West where Kellan was accepted to study.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duchy of Kelsh",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian duchy of which Kellan was heir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kellan's story takes place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scourge of Fleets",
+   "type": "creature",
+   "aliases": [
+    "giant kraken"
+   ],
+   "description": "A giant kraken that attacked Kellan and Enthril's ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Perimeter of the Dire Waves",
+   "type": "location",
+   "aliases": [],
+   "description": "A deadly storm-tossed area of the sea that pirates would not cross.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spice Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the Tolarian Academy.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kellan is apprenticed to Archmage Ghavos and trained with a sextant as a focus.",
+   "participants": [
+    "Kellan Boldt",
+    "Ghavos"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kellan was apprenticed to Archmage Ghavos and was trained in the use of a sextant as a focus."
+  },
+  {
+   "summary": "Kellan's ship is assailed by pirates on the way to Tolaria West; Kellan and Enthril hold them off until the ship crosses the Perimeter of the Dire Waves.",
+   "participants": [
+    "Kellan Boldt",
+    "Enthril"
+   ],
+   "location": "Perimeter of the Dire Waves",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "his ship was assailed by pirates during the voyage"
+  },
+  {
+   "summary": "A giant kraken smashes the ship; Enthril warps the wreck into a hot-air balloon and disappears.",
+   "participants": [
+    "Kellan Boldt",
+    "Enthril",
+    "Scourge of Fleets"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "A badly wounded Enthril cast a chaotic Eternal Dominion spell"
+  },
+  {
+   "summary": "Kellan lets the balloon drift past the Tolarian Academy into the unknown, seeking adventure.",
+   "participants": [
+    "Kellan Boldt"
+   ],
+   "location": "Spice Isles",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Kellan let the course of the balloon change and headed past the school and into the unknown."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ghavos",
+   "relation": "mentor_of",
+   "target": "Kellan Boldt",
+   "note": "Kellan was his apprentice.",
+   "paragraph": 1,
+   "quote": "Kellan was apprenticed to Archmage Ghavos"
+  },
+  {
+   "source": "Kellan Boldt",
+   "relation": "located_in",
+   "target": "Duchy of Kelsh",
+   "note": "Son and heir to the Duchy.",
+   "paragraph": 0,
+   "quote": "once son and heir to the Duchy of Kelsh on the plane of Dominaria"
+  }
+ ],
+ "rejected": []
+}

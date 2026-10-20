@@ -1,0 +1,90 @@
+{
+ "page": "wiki/aldon-s-castle",
+ "url": "https://mtg.wiki/page/Aldon%27s_Castle",
+ "title": "Aldon's Castle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aldon's Castle",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle in the Western Domains ruled by Aldon and his family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Western Domains",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Aldon's Castle stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of the castle who retook it with his allies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreygar",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who overtook the castle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Angels",
+   "type": "creature",
+   "aliases": [],
+   "description": "Allies of Aldon who helped retake the castle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell after which Aldon's rule began.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The wizard Dreygar overtakes the castle and sends Aldon into hiding.",
+   "participants": [
+    "Dreygar",
+    "Aldon"
+   ],
+   "location": "Aldon's Castle",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The wizard Dreygar overtook the castle and sent Aldon into hiding"
+  },
+  {
+   "summary": "Aldon, with Serra Angels, a vampire, a bog wraith and a frozen shade, retakes the castle.",
+   "participants": [
+    "Aldon",
+    "Serra Angels"
+   ],
+   "location": "Aldon's Castle",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Aldon, with the aid of his Serra Angels , vampire , bog wraith , and frozen shade , retook the castle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aldon",
+   "relation": "enemy",
+   "target": "Dreygar",
+   "note": "Dreygar seized his castle and Aldon retook it.",
+   "paragraph": 2,
+   "quote": "The wizard Dreygar overtook the castle and sent Aldon into hiding"
+  }
+ ],
+ "rejected": []
+}

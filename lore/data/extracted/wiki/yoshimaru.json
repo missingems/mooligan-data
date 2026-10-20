@@ -1,0 +1,158 @@
+{
+ "page": "wiki/yoshimaru",
+ "url": "https://mtg.wiki/page/Yoshimaru",
+ "title": "Yoshimaru",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Yoshimaru",
+   "type": "creature",
+   "aliases": [
+    "Stray Emperor"
+   ],
+   "description": "A loyal dog and companion of the Emperor of Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor of Kamigawa",
+   "type": "character",
+   "aliases": [
+    "the Emperor",
+    "the emperor"
+   ],
+   "description": "The current emperor of Kamigawa, a planeswalker, mentored by Light-Paws.",
+   "presence": "appears"
+  },
+  {
+   "name": "Light-Paws",
+   "type": "character",
+   "aliases": [],
+   "description": "The Emperor's mentor who gave her a puppy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aminatou",
+   "type": "character",
+   "aliases": [],
+   "description": "Cared for Yoshimaru on Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Emperor's home plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Yoshimaru was left with Aminatou.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the Emperor braved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Desparkening",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that freed the emperor of uncontrollable planeswalking.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Echoverse Yoshimaru led street dogs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Echoverse Yoshimaru",
+   "type": "creature",
+   "aliases": [
+    "Stray Emperor",
+    "Yoshimaru"
+   ],
+   "description": "Echoverse version of Yoshimaru, the feared leader of a pack of street dogs in Towashi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On her first day of training the Emperor's mentor Light-Paws gives her a puppy to raise; it becomes Yoshimaru.",
+   "participants": [
+    "Light-Paws",
+    "Emperor of Kamigawa",
+    "Yoshimaru"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "her mentor Light-Paws gave her a puppy, telling her to raise it by hand"
+  },
+  {
+   "summary": "When the emperor disappears, Yoshimaru searches and guards her throne for years.",
+   "participants": [
+    "Yoshimaru",
+    "Emperor of Kamigawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "For years, he guarded her throne, awaiting her return"
+  },
+  {
+   "summary": "After the Desparkening the emperor returns home to Kamigawa and reunites with Yoshimaru.",
+   "participants": [
+    "Emperor of Kamigawa",
+    "Yoshimaru"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "returned home to Kamigawa, reuniting with Yoshimaru"
+  },
+  {
+   "summary": "Yoshimaru is left in Aminatou's care on Ravnica while his master braves Duskmourn, then returns to Kamigawa with her.",
+   "participants": [
+    "Yoshimaru",
+    "Aminatou",
+    "Emperor of Kamigawa"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "left in the care of Aminatou while his master braved the plane of Duskmourn"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yoshimaru",
+   "relation": "serves",
+   "target": "Emperor of Kamigawa",
+   "note": "loyal companion dog",
+   "paragraph": 0,
+   "quote": "Yoshimaru is a dog and companion of the Emperor in Kamigawa"
+  },
+  {
+   "source": "Light-Paws",
+   "relation": "mentor_of",
+   "target": "Emperor of Kamigawa",
+   "note": "",
+   "paragraph": 1,
+   "quote": "her mentor Light-Paws gave her a puppy"
+  }
+ ],
+ "rejected": []
+}

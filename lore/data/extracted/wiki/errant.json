@@ -1,0 +1,177 @@
+{
+ "page": "wiki/errant",
+ "url": "https://mtg.wiki/page/Errant",
+ "title": "Errant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:42Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Errant",
+   "type": "character",
+   "aliases": [],
+   "description": "A human rogue and graffiti artist affiliated with the Maestros family in New Capenna; daughter of Anhelo and Serena and wife of Parnesse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [
+    "Maestros family"
+   ],
+   "description": "Crime family of New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Errant lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [
+    "Angelo"
+   ],
+   "description": "Errant's father, compleated during the invasion; died in the explosion of Park Heights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serena",
+   "type": "character",
+   "aliases": [],
+   "description": "Errant's mother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parnesse",
+   "type": "character",
+   "aliases": [],
+   "description": "Errant's husband.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiero Vespin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Maestro assassin and art dealer who targeted Errant and Parnesse's nuptials.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Attacked New Capenna during the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Atraxa attacked New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "Location Errant tried to blow up; it collapsed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Giada",
+   "type": "character",
+   "aliases": [],
+   "description": "Protected Errant unseen and ensured she was rescued.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fiero Vespin targets Errant and Parnesse's wedding.",
+   "participants": [
+    "Fiero Vespin",
+    "Errant",
+    "Parnesse"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "nuptials were targeted by"
+  },
+  {
+   "summary": "After Atraxa attacks the plane, Errant's father Anhelo is compleated.",
+   "participants": [
+    "Atraxa",
+    "Anhelo",
+    "Errant"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Errant's father was compleated"
+  },
+  {
+   "summary": "Anhelo faces Errant trying to stop her from blowing up Park Heights, fails, and dies in the explosion.",
+   "participants": [
+    "Anhelo",
+    "Errant"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He failed and died in the explosion."
+  },
+  {
+   "summary": "Giada secretly shields Errant and ensures she is rescued as Park Heights collapses.",
+   "participants": [
+    "Giada",
+    "Errant"
+   ],
+   "location": "Park Heights",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "it was Giada at the end who ensured Errant was rescued by one of her sisters"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Errant",
+   "relation": "family",
+   "target": "Anhelo",
+   "note": "daughter",
+   "paragraph": 0,
+   "quote": "She is the daughter of Anhelo and Serena"
+  },
+  {
+   "source": "Errant",
+   "relation": "romantic",
+   "target": "Parnesse",
+   "note": "wife",
+   "paragraph": 0,
+   "quote": "and the wife of Parnesse"
+  },
+  {
+   "source": "Errant",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "affiliated",
+   "paragraph": 0,
+   "quote": "affiliated with the Maestros family in New Capenna"
+  },
+  {
+   "source": "Giada",
+   "relation": "ally",
+   "target": "Errant",
+   "note": "protected her unseen",
+   "paragraph": 3,
+   "quote": "Giada was there with her every step of the way"
+  }
+ ],
+ "rejected": []
+}

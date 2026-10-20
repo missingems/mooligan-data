@@ -1,0 +1,99 @@
+{
+ "page": "wiki/cytoplast",
+ "url": "https://mtg.wiki/page/Cytoplast",
+ "title": "Cytoplast",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:41Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Cytoplast",
+   "type": "artifact",
+   "aliases": [
+    "Cytoplasts"
+   ],
+   "description": "Small blue-green masses of living magical tissue that convey genetic information between life-forms; invented by Momir Vig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Momir Vig",
+   "type": "character",
+   "aliases": [],
+   "description": "Designer of the cytoplasts who allied with Svogthir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally of Vig in his Project Kraj.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Project Kraj",
+   "type": "event",
+   "aliases": [],
+   "description": "Vig's plan to cleanse Ravnica and start over.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild whose members accepted cytoplast surgery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where cytoplasts were created.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vig creates a new cytoplast that bonds on contact so he can improve Ravnica's people without consent.",
+   "participants": [
+    "Momir Vig"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This allowed Vig to improve the people of Ravnica without needing their consent."
+  },
+  {
+   "summary": "Vig allies with Svogthir and plans Project Kraj to cleanse Ravnica.",
+   "participants": [
+    "Momir Vig",
+    "Svogthir"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Vig allied with Svogthir and planned to create and activate his Project Kraj"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Momir Vig",
+   "relation": "created",
+   "target": "Cytoplast",
+   "note": "Designed them",
+   "paragraph": 0,
+   "quote": "Cytoplasts were a bio-magical invention of Momir Vig 's design on Ravnica"
+  },
+  {
+   "source": "Momir Vig",
+   "relation": "ally",
+   "target": "Svogthir",
+   "note": "Allied",
+   "paragraph": 3,
+   "quote": "Vig allied with Svogthir"
+  }
+ ],
+ "rejected": []
+}

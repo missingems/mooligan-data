@@ -1,0 +1,121 @@
+{
+ "page": "wiki/lazotep-mines",
+ "url": "https://mtg.wiki/page/Lazotep_Mines",
+ "title": "Lazotep Mines",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:05Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Lazotep Mines",
+   "type": "location",
+   "aliases": [],
+   "description": "Mines outside Naktamun on Amonkhet, worked by anointed mummies, hidden source of lazotep used to create the Eternals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lazotep",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A rare magical metallic-blue mineral, strong yet light, used for cartouches, tomb seals and the armor of the Eternals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Lazotep Mines lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City near which the mines are scattered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "An immortal legion of the worthy dead encased in lazotep armor, waiting for the God-Pharaoh's return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh"
+   ],
+   "description": "The God-Pharaoh, whose return the Eternals await; planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crypt of the Eternals",
+   "type": "location",
+   "aliases": [],
+   "description": "Where embalming rites bond with lazotep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "God Trials",
+   "type": "event",
+   "aliases": [],
+   "description": "Trials whose completing initiates' corpses were carried on funerary barges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gate to the Afterlife",
+   "type": "location",
+   "aliases": [],
+   "description": "Sealed gate that funerary barges pass through to the necropolis.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Anointed mummies mine lazotep beneath the desert outside Naktamun.",
+   "participants": [
+    "Lazotep Mines"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "these mines were worked tirelessly by anointed mummies"
+  },
+  {
+   "summary": "Lazotep is secretly hidden aboard funerary barges and delivered to the necropolis to coat the bodies of the chosen dead, forging the Eternals.",
+   "participants": [
+    "Lazotep",
+    "Eternals",
+    "Nicol Bolas"
+   ],
+   "location": "Gate to the Afterlife",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "forging an army in waiting for the prophesied return of Nicol Bolas"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lazotep Mines",
+   "relation": "located_in",
+   "target": "Naktamun",
+   "note": "on the arid outskirts",
+   "paragraph": 1,
+   "quote": "Scattered across the arid outskirts of Naktamun"
+  },
+  {
+   "source": "Eternals",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "an army in waiting for the God-Pharaoh",
+   "paragraph": 3,
+   "quote": "an eternal service to the God-Pharaoh"
+  }
+ ],
+ "rejected": []
+}

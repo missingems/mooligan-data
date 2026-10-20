@@ -1,0 +1,90 @@
+{
+ "page": "wiki/dalek",
+ "url": "https://mtg.wiki/page/Dalek",
+ "title": "Dalek",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:08Z",
+ "storyline": "Doctor Who",
+ "entities": [
+  {
+   "name": "Daleks",
+   "type": "faction",
+   "aliases": [
+    "Dalek"
+   ],
+   "description": "Warrior race of genetically engineered cyborg mutants in armored shells, bent on universal domination.",
+   "presence": "appears"
+  },
+  {
+   "name": "Davros",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Daleks on Skaro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skaro",
+   "type": "plane",
+   "aliases": [],
+   "description": "Planet where the Daleks were created.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Doctor",
+   "type": "character",
+   "aliases": [],
+   "description": "Archenemy of the Daleks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time Lords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Fought the Daleks in the Last Great Time War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Last Great Time War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Daleks and Time Lords that nearly destroyed the Daleks.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Daleks fight the Time Lords in the Last Great Time War, ending in near-total destruction of the Dalek race.",
+   "participants": [
+    "Daleks",
+    "Time Lords",
+    "Last Great Time War"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "fought the Time Lords in the Last Great Time War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Davros",
+   "relation": "created",
+   "target": "Daleks",
+   "note": "Created them on Skaro.",
+   "paragraph": 2,
+   "quote": "genetically engineered mutants created by Davros on the planet Skaro"
+  },
+  {
+   "source": "Daleks",
+   "relation": "enemy",
+   "target": "The Doctor",
+   "note": "Archenemies.",
+   "paragraph": 2,
+   "quote": "they are the archenemies of The Doctor"
+  }
+ ],
+ "rejected": []
+}

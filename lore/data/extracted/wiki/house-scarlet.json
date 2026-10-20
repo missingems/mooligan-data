@@ -1,0 +1,169 @@
+{
+ "page": "wiki/house-scarlet",
+ "url": "https://mtg.wiki/page/House_Scarlet",
+ "title": "House Scarlet",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:38Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "House Scarlet",
+   "type": "faction",
+   "aliases": [
+    "House Ruby"
+   ],
+   "description": "One of five powerful houses in Arathoxia, also called House Ruby, ruled by Adam Carthalion and then the Scarlet Vizier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "City with five powerful houses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adam Carthalion",
+   "type": "character",
+   "aliases": [
+    "Lord Adam Carthalion"
+   ],
+   "description": "Lord of House Scarlet; his death left the house to the Scarlet Vizier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarlet Vizier",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of House Scarlet after Adam's death, ward-keeper of Liana; killed in Ravidel's invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [],
+   "description": "Ward of the Scarlet Vizier who came to possess the red Mox.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Stole the Moxes, used them to activate the Mox Beacon, invaded Arathoxia and took Castle Melmereth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mox Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device activated with the stolen Moxes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planar Barge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Its blast obliterated the Scarlet Estate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarlet Estate",
+   "type": "location",
+   "aliases": [],
+   "description": "House Scarlet's estate in Arathoxia, obliterated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Adam's son, true Lord of the house, who led the attack on Castle Melmereth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Melmereth",
+   "type": "location",
+   "aliases": [],
+   "description": "House Scarlet's seat of power north of Arathoxia, taken by Ravidel and destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Carthalion",
+   "type": "faction",
+   "aliases": [],
+   "description": "House Jared brought through the Planeswalker War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that followed the destruction of Castle Melmereth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravidel steals the Moxes and uses them to activate the Mox Beacon.",
+   "participants": [
+    "Ravidel"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Moxes were later stolen by Ravidel and used to activate the Mox Beacon"
+  },
+  {
+   "summary": "The Scarlet Vizier is killed in Ravidel's invasion and the Scarlet Estate is obliterated by a blast from the Planar Barge.",
+   "participants": [
+    "Scarlet Vizier",
+    "Ravidel"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Scarlet Vizier was killed in Ravidel’s invasion of the city"
+  },
+  {
+   "summary": "Jared Carthalion and his allies attack Castle Melmereth, destroying it and ending House Scarlet's presence.",
+   "participants": [
+    "Jared Carthalion",
+    "Ravidel"
+   ],
+   "location": "Castle Melmereth",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jared Carthalion and his allies attacked the castle, and it too was destroyed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Scarlet Vizier",
+   "relation": "leader_of",
+   "target": "House Scarlet",
+   "note": "Ruled it after Adam's death.",
+   "paragraph": 0,
+   "quote": "ruled by Lord Adam Carthalion , and after his death, the Scarlet Vizier"
+  },
+  {
+   "source": "Jared Carthalion",
+   "relation": "family",
+   "target": "Adam Carthalion",
+   "note": "Adam's son.",
+   "paragraph": 2,
+   "quote": "Jared Carthalion , Adam's son"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Scarlet Vizier",
+   "note": "Killed in his invasion.",
+   "paragraph": 2,
+   "quote": "The Scarlet Vizier was killed in Ravidel’s invasion of the city"
+  }
+ ],
+ "rejected": []
+}

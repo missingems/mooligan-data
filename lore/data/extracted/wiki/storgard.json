@@ -1,0 +1,224 @@
+{
+ "page": "wiki/storgard",
+ "url": "https://mtg.wiki/page/Storgard",
+ "title": "Storgard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:37Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Storgard",
+   "type": "location",
+   "aliases": [
+    "Glacier Kingdom of Storgard"
+   ],
+   "description": "A kingdom in the Sardian Mountains of Terisiare ruled by five clans, destroyed by the glaciers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Miko",
+   "type": "character",
+   "aliases": [
+    "King Miko"
+   ],
+   "description": "Last king of Storgard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zilgeth",
+   "type": "character",
+   "aliases": [
+    "Councillor Zilgeth"
+   ],
+   "description": "Ruby clan leader, killed fighting a Johtull wurm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Selected to replace Zilgeth; later ascended.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriel Kjeldos",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan Emerald leader who suggested abandoning the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jason Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Clan Emerald champion who won the duel against Freyalise.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Compelled Miko to arrange a duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Involved in Storgard's destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hurn",
+   "type": "character",
+   "aliases": [],
+   "description": "Led Clan Pearl and its military commander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorthun",
+   "type": "character",
+   "aliases": [],
+   "description": "Led Clan Sapphire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arimaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Led Clan Onyx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stone Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council of five clans advising the king.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Emerald",
+   "type": "faction",
+   "aliases": [
+    "Emerald"
+   ],
+   "description": "Clan that survived the fall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Pearl",
+   "type": "faction",
+   "aliases": [
+    "Pearl"
+   ],
+   "description": "Clan that left and survived the fall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Storgard",
+   "type": "event",
+   "aliases": [],
+   "description": "Destruction of the kingdom by the glaciers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "Founded by the refugees' descendants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soldev",
+   "type": "location",
+   "aliases": [],
+   "description": "City built on Storgard's ruins.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zilgeth is killed fighting a Johtull wurm around 2434 AR.",
+   "participants": [
+    "Zilgeth"
+   ],
+   "location": "Storgard",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Around 2434 AR councillor Zilgeth was killed while fighting a Johtull wurm."
+  },
+  {
+   "summary": "Tevesh Szat compels Miko to arrange a duel between Freyalise and Jason Carthalion, which Jason wins.",
+   "participants": [
+    "Tevesh Szat",
+    "Miko",
+    "Freyalise",
+    "Jason Carthalion"
+   ],
+   "location": "Storgard",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After Jason won the duel, Freyalise ascended."
+  },
+  {
+   "summary": "The house of Clan Emerald is blown up and Emerald and Pearl leave the capital.",
+   "participants": [
+    "Clan Emerald",
+    "Clan Pearl"
+   ],
+   "location": "Storgard",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the house of Clan Emerald was blown up in an explosion that killed sixteen"
+  },
+  {
+   "summary": "Storgard falls to the glaciers, claiming the remaining citizens.",
+   "participants": [
+    "Storgard",
+    "Fall of Storgard"
+   ],
+   "location": "Storgard",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Fall of Storgard happened not long after, claiming any remaining citizens."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Miko",
+   "relation": "leader_of",
+   "target": "Storgard",
+   "note": "Last king.",
+   "paragraph": 1,
+   "quote": "The last king before the destruction by the glaciers of Lim-Dûl and Tevesh Szat was Miko ."
+  },
+  {
+   "source": "Hurn",
+   "relation": "leader_of",
+   "target": "Clan Pearl",
+   "note": "",
+   "paragraph": 3,
+   "quote": "led by Hurn"
+  },
+  {
+   "source": "Jason Carthalion",
+   "relation": "serves",
+   "target": "Clan Emerald",
+   "note": "Champion.",
+   "paragraph": 7,
+   "quote": "championed by Jason Carthalion"
+  },
+  {
+   "source": "Jason Carthalion",
+   "relation": "enemy",
+   "target": "Freyalise",
+   "note": "Dueled her.",
+   "paragraph": 3,
+   "quote": "after Jason Carthalion dueled Freyalise"
+  }
+ ],
+ "rejected": []
+}

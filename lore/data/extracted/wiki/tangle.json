@@ -1,0 +1,140 @@
+{
+ "page": "wiki/tangle",
+ "url": "https://mtg.wiki/page/Tangle",
+ "title": "Tangle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:20Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "The Tangle",
+   "type": "location",
+   "aliases": [
+    "Tangle",
+    "Hunter's Maze"
+   ],
+   "description": "A huge expanse of copper structures on Mirrodin that was the closest thing to a forest, center of Sylvok and Viridian elf cultures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The metal plane on which the Tangle lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "Invaders who infected the Tangle with lamina and built nine layers on Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Viridian elves",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Elves who dwell in the Tangle's metal spires and send their dead to the Radix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylvok",
+   "type": "faction",
+   "aliases": [
+    "Sylvok druids"
+   ],
+   "description": "Druids who inhabit the Tangle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trolls",
+   "type": "faction",
+   "aliases": [],
+   "description": "Keepers of Tel-Jilad who guide the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Radix",
+   "type": "location",
+   "aliases": [
+    "Radix",
+    "green lacuna"
+   ],
+   "description": "A sacred copper clearing where the elves send their dead and banish unnatural devices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tel-Jilad",
+   "type": "location",
+   "aliases": [
+    "Tree of Tales"
+   ],
+   "description": "The largest tree, home of the elves and trolls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Araneas",
+   "type": "character",
+   "aliases": [],
+   "description": "Honored by the Sylvok with the Araneas Altar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lyese",
+   "type": "concept",
+   "aliases": [],
+   "description": "A light that shone above the Tangle after it appeared.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With Phyrexia's advance, the Tangle is infected by lamina fungus, rotting the ground.",
+   "participants": [
+    "The Tangle",
+    "Phyrexia"
+   ],
+   "location": "The Tangle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Tangle was infected by the growth of lamina"
+  },
+  {
+   "summary": "After the Phyrexians build nine layers on Mirrodin, the Tangle is transplanted to the fourth layer as the Hunter's Maze.",
+   "participants": [
+    "The Tangle",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Tangle was transplanted to the fourth layer, becoming the Hunter's Maze"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Viridian elves",
+   "relation": "member_of",
+   "target": "The Tangle",
+   "note": "They made dwellings in the tree-like spires.",
+   "paragraph": 2,
+   "quote": "The elves made their dwellings in the tree-like metal spires here"
+  },
+  {
+   "source": "Trolls",
+   "relation": "other",
+   "target": "Viridian elves",
+   "note": "Trolls guide the elves as keepers of Tel-Jilad.",
+   "paragraph": 2,
+   "quote": "under the guidance of the trolls"
+  }
+ ],
+ "rejected": []
+}

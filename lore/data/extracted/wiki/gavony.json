@@ -1,0 +1,132 @@
+{
+ "page": "wiki/gavony",
+ "url": "https://mtg.wiki/page/Gavony",
+ "title": "Gavony",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:32Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad's most populous and defended province, anchored by Thraben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Gavony.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "Great fortress-city and parish of Gavony.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church that stood as the shield of humanity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel whose disappearance left Gavony vulnerable.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mikaeus",
+   "type": "character",
+   "aliases": [
+    "the Lunarch"
+   ],
+   "description": "Revered Lunarch who tried to keep Gavony calm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hanweir",
+   "type": "location",
+   "aliases": [],
+   "description": "Village that declared independence and was mutated by Emrakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi who mutated Hanweir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Province southeast of Gavony.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Avacyn disappears and the geists and undead rise to torment Gavony.",
+   "participants": [
+    "Avacyn",
+    "Gavony"
+   ],
+   "location": "Gavony",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "With the disappearance of Avacyn , the geists of the dead rose in bunches to torment the living."
+  },
+  {
+   "summary": "Mikaeus, his power waning, tries to calm the people and solve Avacyn's disappearance.",
+   "participants": [
+    "Mikaeus",
+    "Avacyn"
+   ],
+   "location": "Gavony",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mikaeus frantically tried to solve the mystery of the disappearance of Avacyn"
+  },
+  {
+   "summary": "Hanweir declares independence from Videns Parish and Gavony, then is mutated by Emrakul into an Eldrazi Ooze.",
+   "participants": [
+    "Hanweir",
+    "Emrakul"
+   ],
+   "location": "Gavony",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "the complete town was mutated by Emrakul into an Eldrazi Ooze"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gavony",
+   "relation": "located_in",
+   "target": "Innistrad",
+   "note": "province",
+   "paragraph": 0,
+   "quote": "Gavony is Innistrad’s most populous and staunchly defended province"
+  },
+  {
+   "source": "Mikaeus",
+   "relation": "serves",
+   "target": "Avacyn",
+   "note": "his power waned without her",
+   "paragraph": 3,
+   "quote": "Without the grace and guidance of the archangel , his power waned"
+  }
+ ],
+ "rejected": []
+}

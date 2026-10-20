@@ -1,0 +1,138 @@
+{
+ "page": "wiki/rigida",
+ "url": "https://mtg.wiki/page/Rigida",
+ "title": "Rigida",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:47Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Rigida",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient humanoid ice beings who rose to power at the start of the Ice Age and ruled the Glacial Kingdom over most of Almaaz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glacial Kingdom",
+   "type": "location",
+   "aliases": [],
+   "description": "Rigida civilization ruling most of Almaaz during the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Land ruled by the Rigida.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Three Sisters",
+   "type": "faction",
+   "aliases": [],
+   "description": "The last of the Rigida.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drufalden",
+   "type": "character",
+   "aliases": [],
+   "description": "Last remaining Rigida, who killed the other two sisters and reigned from an ice palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "Songmage who broke Drufalden's hold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era begun at 450 AR in which the Rigida rose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "End of the frozen millennia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the Rigida lost Almaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borderlands of Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Drufalden's reign.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Drufalden kills the other two Rigida sisters and becomes the sole remaining Rigida.",
+   "participants": [
+    "Drufalden",
+    "Three Sisters"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After killing the two others, Drufalden was the sole remaining"
+  },
+  {
+   "summary": "In 3050 AR Ogwater Rifkin breaks Drufalden's hold and the ice of her queendom melts.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Drufalden"
+   ],
+   "location": "Borderlands of Almaaz",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "her hold was broken by the songmage Ogwater Rifkin"
+  },
+  {
+   "summary": "With the Flooding of Terisiare the Rigida lose their grip on Almaaz.",
+   "participants": [
+    "Rigida",
+    "Almaaz",
+    "Flooding of Terisiare"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Rigida lost their grip on Almaaz"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drufalden",
+   "relation": "member_of",
+   "target": "Rigida",
+   "note": "The last of the Rigida.",
+   "paragraph": 2,
+   "quote": "The last of the Rigida were known as the Three Sisters."
+  },
+  {
+   "source": "Ogwater Rifkin",
+   "relation": "enemy",
+   "target": "Drufalden",
+   "note": "He broke her hold.",
+   "paragraph": 2,
+   "quote": "her hold was broken by the songmage Ogwater Rifkin"
+  }
+ ],
+ "rejected": []
+}

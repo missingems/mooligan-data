@@ -1,0 +1,167 @@
+{
+ "page": "wiki/yisan",
+ "url": "https://mtg.wiki/page/Yisan",
+ "title": "Yisan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:39Z",
+ "storyline": "Time Spiral",
+ "entities": [
+  {
+   "name": "Yisan",
+   "type": "character",
+   "aliases": [],
+   "description": "Human rogue and bard from Shandalar who summons beasts with his lyre Tolumnus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jalira",
+   "type": "character",
+   "aliases": [],
+   "description": "Yisan's adventuring partner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolumnus",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Yisan's lyre.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Yisan comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lesh",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Yisan and Jalira picked pockets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hastric",
+   "type": "character",
+   "aliases": [],
+   "description": "Thunian whose journal described the route to the Skep; he was transformed into a sliver.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dexros",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander of the guard who caught the thieves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skep",
+   "type": "location",
+   "aliases": [],
+   "description": "Place with sliver caves where many died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sliver Hivelord",
+   "type": "creature",
+   "aliases": [],
+   "description": "Sliver who returned Yisan and Jalira to human form and let them leave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talrand",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Kapsho.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kapsho",
+   "type": "location",
+   "aliases": [],
+   "description": "Place ruled by Talrand that they avoided.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hum",
+   "type": "concept",
+   "aliases": [],
+   "description": "The telepathic voice of every sliver combined.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yisan and Jalira rob Hastric but are caught by Dexros; Yisan keeps Hastric's journal describing the route to the Skep.",
+   "participants": [
+    "Yisan",
+    "Jalira",
+    "Hastric",
+    "Dexros"
+   ],
+   "location": "Lesh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Yisan kept Hastric's journal, which described the route to the Skep."
+  },
+  {
+   "summary": "They journey toward the Skep seeking riches from corpses, passing the Onakke catacombs and Kalonian Wilds and avoiding Kapsho.",
+   "participants": [
+    "Yisan",
+    "Jalira",
+    "Talrand"
+   ],
+   "location": "Skep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "staying away from Kapsho and its ruler, Talrand ."
+  },
+  {
+   "summary": "At the sliver caves Yisan and Jalira are transformed into slivers and join the Hum; the Sliver Hivelord returns them to human form.",
+   "participants": [
+    "Yisan",
+    "Jalira",
+    "Sliver Hivelord"
+   ],
+   "location": "Skep",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "when the Sliver Hivelord crossed paths with them, they found themselves returning to their normal human selves"
+  },
+  {
+   "summary": "The two are allowed to take loot and leave; Jalira goes to Martyne while Yisan stays to study the slivers, mimicking their hum.",
+   "participants": [
+    "Yisan",
+    "Jalira",
+    "Sliver Hivelord"
+   ],
+   "location": "Skep",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Yisan opted to skip out on his share and instead stay in the Skep to study the creatures."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yisan",
+   "relation": "ally",
+   "target": "Jalira",
+   "note": "adventuring partner",
+   "paragraph": 1,
+   "quote": "Yisan and his adventuring partner, Jalira"
+  },
+  {
+   "source": "Dexros",
+   "relation": "enemy",
+   "target": "Yisan",
+   "note": "caught and forced him to return stolen goods",
+   "paragraph": 2,
+   "quote": "He forced them to return the stolen items"
+  }
+ ],
+ "rejected": []
+}

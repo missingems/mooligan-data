@@ -1,0 +1,161 @@
+{
+ "page": "wiki/crosis",
+ "url": "https://mtg.wiki/page/Crosis",
+ "title": "Crosis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Crosis",
+   "type": "creature",
+   "aliases": [
+    "The Purger"
+   ],
+   "description": "One of the five Primeval Dragons of Dominaria, the black dragon god known as The Purger, whose word of death kills those who hear it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Primeval Dragons",
+   "type": "faction",
+   "aliases": [
+    "Primevals"
+   ],
+   "description": "Five dragon gods of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Piru",
+   "type": "deity",
+   "aliases": [],
+   "description": "Birthed Crosis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "creature",
+   "aliases": [
+    "Chromium"
+   ],
+   "description": "Sired Crosis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Primevals",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Crosis was imprisoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "Black Numena who imprisoned Crosis in a tar pit in Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the tar pit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rith",
+   "type": "creature",
+   "aliases": [],
+   "description": "Primeval whose death weakened the others.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhammidarigaaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "Primeval whose death weakened the others.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [
+    "Captain Sisay"
+   ],
+   "description": "Captain of the Weatherlight who rammed Crosis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Skyship that rammed Crosis back into his tar pit.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Crosis is imprisoned in a tar pit in Urborg by Kuberr during the Fall of the Primevals.",
+   "participants": [
+    "Crosis",
+    "Kuberr"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Crosis was imprisoned in a tar pit in Urborg by the black Numena Kuberr"
+  },
+  {
+   "summary": "The other four Primevals sacrifice themselves to free Crosis, who resurrects them.",
+   "participants": [
+    "Crosis",
+    "Primeval Dragons"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Crosis resurrected the others, completing the pantheon."
+  },
+  {
+   "summary": "After the deaths of Rith and Rhammidarigaaz, Sisay rams the Weatherlight into Crosis, driving him back into his prison.",
+   "participants": [
+    "Sisay",
+    "Weatherlight",
+    "Crosis"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Captain Sisay rammed the Weatherlight into the dragon, driving him back into his tar pit prison."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Piru",
+   "relation": "created",
+   "target": "Crosis",
+   "note": "She birthed him.",
+   "paragraph": 0,
+   "quote": "He was birthed by Piru"
+  },
+  {
+   "source": "Kuberr",
+   "relation": "enemy",
+   "target": "Crosis",
+   "note": "Kuberr imprisoned him.",
+   "paragraph": 3,
+   "quote": "imprisoned in a tar pit in Urborg by the black Numena Kuberr"
+  },
+  {
+   "source": "Sisay",
+   "relation": "enemy",
+   "target": "Crosis",
+   "note": "She drove him back into prison.",
+   "paragraph": 5,
+   "quote": "Captain Sisay rammed the Weatherlight into the dragon"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,117 @@
+{
+ "page": "wiki/filigree-texts",
+ "url": "https://mtg.wiki/page/Filigree_Texts",
+ "title": "Filigree Texts",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:36Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Filigree Texts",
+   "type": "artifact",
+   "aliases": [
+    "Etherium Texts"
+   ],
+   "description": "Sacred collection of twenty-three vedalken volumes, written as poems in etherium filigree, housed in the Sanctum Arcanum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanctum Arcanum",
+   "type": "location",
+   "aliases": [],
+   "description": "Esper building housing the Filigree Texts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard where the vedalken keep the Texts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vedalken",
+   "type": "faction",
+   "aliases": [],
+   "description": "Blue people who revere the Texts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Codex Etherium",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Secret text kept in the Vault of the Seekers of Carmot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group whose Vault holds the Codex Etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sharuum",
+   "type": "character",
+   "aliases": [
+    "Hegemon of Esper"
+   ],
+   "description": "Hegemon of Esper who quoted the Texts to explain the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event Sharuum explained by quoting the Texts.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vedalken augurs declare the tomes sacred and they are transcribed into etherium.",
+   "participants": [
+    "Vedalken",
+    "Filigree Texts"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the tomes were transcribed into etherium decades ago after vedalken augurs declared them sacred"
+  },
+  {
+   "summary": "Sharuum quotes the Texts to explain the Conflux.",
+   "participants": [
+    "Sharuum",
+    "Filigree Texts",
+    "Conflux"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "once quoted the Texts to explain the Conflux"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Filigree Texts",
+   "relation": "located_in",
+   "target": "Sanctum Arcanum",
+   "note": "Housed there.",
+   "paragraph": 3,
+   "quote": "Housed in the Sanctum Arcanum"
+  },
+  {
+   "source": "Sharuum",
+   "relation": "leader_of",
+   "target": "Esper",
+   "note": "Hegemon of Esper.",
+   "paragraph": 4,
+   "quote": "Sharuum , the Hegemon of Esper"
+  }
+ ],
+ "rejected": []
+}

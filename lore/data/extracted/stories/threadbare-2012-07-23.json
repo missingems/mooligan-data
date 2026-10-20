@@ -1,0 +1,175 @@
+{
+ "page": "stories/threadbare-2012-07-23",
+ "url": "https://magic.wizards.com/en/news/magic-story/threadbare-2012-07-23",
+ "title": "Threadbare",
+ "story_date": "2012-07-23",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:30:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Stuffy Doll",
+   "type": "character",
+   "aliases": [
+    "the doll",
+    "emissary of pain"
+   ],
+   "description": "A burlap-and-cotton doll that has survived countless battles and torments, wonders whether it was made to suffer, and now follows a nomad shaman.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nomad shaman",
+   "type": "character",
+   "aliases": [
+    "the shaman"
+   ],
+   "description": "A mighty nomad shaman, a contender in an epic struggle for power, who carries the doll and battles a famous crusader.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crusader",
+   "type": "character",
+   "aliases": [
+    "the crusader",
+    "famous crusader"
+   ],
+   "description": "A famous knight with a silver helm who leads a legion and is oblivious to the approaching meteor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Evil toymaker",
+   "type": "character",
+   "aliases": [
+    "the toymaker"
+   ],
+   "description": "A toymaker who bought the doll from bandits and was arrested by villagers after his stuffed-bear minion was incinerated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stuffed bear",
+   "type": "creature",
+   "aliases": [
+    "stuffed-bear minion"
+   ],
+   "description": "A stuffed minion possessed by the spirit of a murdered man, incinerated in its first battle with villagers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slaughter of the Arches",
+   "type": "event",
+   "aliases": [],
+   "description": "A rain-soaked battle in which the doll was pierced by a golden blade and questioned its purpose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meteor",
+   "type": "concept",
+   "aliases": [
+    "red dot",
+    "harbinger of destruction"
+   ],
+   "description": "A red dot in the night sky growing larger, a meteor that is about to end the battle.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Slaughter of the Arches, the doll is pierced in the belly by a golden blade and wonders whether it was made to suffer.",
+   "participants": [
+    "Stuffy Doll",
+    "Slaughter of the Arches"
+   ],
+   "location": "Slaughter of the Arches",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "a golden blade pierced my belly."
+  },
+  {
+   "summary": "The doll seeks answers from mages, monks and philosophers, none of whom help except to try to use it.",
+   "participants": [
+    "Stuffy Doll"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "None had answers for a doll in the midst of an existential crisis"
+  },
+  {
+   "summary": "The doll is kidnapped by bandits and sold to an evil toymaker, whose stuffed-bear minion dies in battle with villagers, leaving the doll on the street.",
+   "participants": [
+    "Stuffy Doll",
+    "Evil toymaker",
+    "Stuffed bear"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "I was kidnapped by bandits and sold to an evil toymaker."
+  },
+  {
+   "summary": "A nomad caravan seizes the doll from the roadside and puts it in a shaman's pack.",
+   "participants": [
+    "Stuffy Doll",
+    "Nomad shaman"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "As I was plucked from the roadside and shoved into a shaman's pack"
+  },
+  {
+   "summary": "The doll, now a follower of the nomad shaman, watches her battle a legion of knights and a famous crusader while a meteor approaches.",
+   "participants": [
+    "Stuffy Doll",
+    "Nomad shaman",
+    "Crusader",
+    "Meteor"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Tonight, we're locked in battle with a legion of knights, as she pits herself against a famous crusader."
+  },
+  {
+   "summary": "The doll accepts its fate as the meteor bears down and the battle is about to be over for the crusader.",
+   "participants": [
+    "Stuffy Doll",
+    "Crusader",
+    "Meteor"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "Over for the crusader anyway."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Stuffy Doll",
+   "relation": "serves",
+   "target": "Nomad shaman",
+   "note": "The doll is her follower.",
+   "paragraph": 13,
+   "quote": "Today, I'm the follower of a mighty nomad shaman."
+  },
+  {
+   "source": "Nomad shaman",
+   "relation": "enemy",
+   "target": "Crusader",
+   "note": "She pits herself against the famous crusader.",
+   "paragraph": 13,
+   "quote": "as she pits herself against a famous crusader."
+  },
+  {
+   "source": "Evil toymaker",
+   "relation": "serves",
+   "target": "Stuffed bear",
+   "note": "The toymaker had the stuffed bear as his minion.",
+   "paragraph": 10,
+   "quote": "He had a stuffed-bear minion who was possessed by the spirit of murdered man."
+  }
+ ],
+ "rejected": []
+}

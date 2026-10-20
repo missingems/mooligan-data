@@ -1,0 +1,191 @@
+{
+ "page": "cards/scg",
+ "url": "https://scryfall.com/sets/scg",
+ "title": "Scourge: card flavor text",
+ "story_date": "2003-05-26",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:27:46Z",
+ "storyline": "Odyssey Block",
+ "entities": [
+  {
+   "name": "Karona",
+   "type": "deity",
+   "aliases": [
+    "Karona, false god"
+   ],
+   "description": "A false god who commands her followers to rise and destroy enemies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [
+    "Ixidor, reality sculptor"
+   ],
+   "description": "A reality sculptor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pemmin",
+   "type": "character",
+   "aliases": [
+    "Riptide survivor"
+   ],
+   "description": "A Riptide survivor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [
+    "dementia summoner"
+   ],
+   "description": "A Cabal dementia summoner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Varv",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who burned his home, weapons and killed his friend Furt in rage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Furt",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin killed by his friend Varv.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "A druid who again felt the Mirari's pull.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact with a strong pull on Kamahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A death-worshipping order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raven Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "A guild that seeks refuge with the Cabal in Aphetto.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riptide Project",
+   "type": "faction",
+   "aliases": [],
+   "description": "A project whose grounds are now populated by slivers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirk Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A ridge that collapsed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "A city with Unspeakable Symbols.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krosa",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest whose ancient carvings glow again.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daru Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Plains where midnight looked like sunrise.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Skirk Ridge collapses and goblins build a rope system to hold it.",
+   "participants": [
+    "Skirk Ridge"
+   ],
+   "location": "Skirk Ridge",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "After the Skirk Ridge collapsed, the goblins erected a system of ropes and pulleys to hold up what was left."
+  },
+  {
+   "summary": "Varv destroys his home and weapons in rage and kills his friend Furt.",
+   "participants": [
+    "Varv",
+    "Furt"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 52,
+   "quote": "Only when the anger passed did Varv realize he had burned down his home, destroyed his weapons, and killed his friend Furt."
+  },
+  {
+   "summary": "Kamahl feels the full force of the Mirari's pull once again.",
+   "participants": [
+    "Kamahl",
+    "Mirari"
+   ],
+   "location": "Krosa",
+   "importance": "minor",
+   "paragraph": 70,
+   "quote": "Once again, Kamahl felt the full force of the Mirari's pull, but he had learned much since the last time."
+  },
+  {
+   "summary": "The Riptide Project's grounds are now populated only by slivers.",
+   "participants": [
+    "Riptide Project"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 56,
+   "quote": "The grounds of the Riptide Project are now populated only by slivers, broken beakers, and the lonely screeching of gulls."
+  },
+  {
+   "summary": "Goblins pour from Skirk Ridge like lava.",
+   "participants": [
+    "Skirk Ridge"
+   ],
+   "location": "Skirk Ridge",
+   "importance": "major",
+   "paragraph": 50,
+   "quote": "They poured from the Skirk Ridge like lava, burning and devouring everything in their path."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Varv",
+   "relation": "killed",
+   "target": "Furt",
+   "note": "in a rage",
+   "paragraph": 52,
+   "quote": "killed his friend Furt."
+  }
+ ],
+ "rejected": []
+}

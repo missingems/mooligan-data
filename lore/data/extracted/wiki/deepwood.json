@@ -1,0 +1,73 @@
+{
+ "page": "wiki/deepwood",
+ "url": "https://mtg.wiki/page/Deepwood",
+ "title": "Deepwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Deepwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Sacred forest on Mercadia where Ramos fell, home to vine dryads and the domain of Ouramos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramos",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon engine whose bones were housed in Deepwood where he fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ouramos",
+   "type": "location",
+   "aliases": [],
+   "description": "Domain of the dryads in the center of Deepwood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Henge of Ramos",
+   "type": "location",
+   "aliases": [],
+   "description": "Sacred crater collecting mana, grave and crash-landing site of Ramos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Deepwood lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ramos fell in Deepwood, which holds his grave and crash-landing site guarded by vine dryads.",
+   "participants": [
+    "Ramos",
+    "Deepwood",
+    "Henge of Ramos"
+   ],
+   "location": "Deepwood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the grave and crash-landing site of Ramos, where his bones were housed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ouramos",
+   "relation": "located_in",
+   "target": "Deepwood",
+   "note": "Dryad domain at the center of the forest",
+   "paragraph": 1,
+   "quote": "In the center of Deepwood is a clearing, where the dryad domain of"
+  }
+ ],
+ "rejected": []
+}

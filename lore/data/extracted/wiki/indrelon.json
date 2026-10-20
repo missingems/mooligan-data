@@ -1,0 +1,134 @@
+{
+ "page": "wiki/indrelon",
+ "url": "https://mtg.wiki/page/Indrelon",
+ "title": "Indrelon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Indrelon",
+   "type": "artifact",
+   "aliases": [
+    "the Magic Mirror",
+    "Magic Mirror"
+   ],
+   "description": "Legendary magical artifact of Eldraine and true leader of the court of Vantress; it grants knighthood in exchange for secrets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Court of Vantress",
+   "type": "faction",
+   "aliases": [
+    "Vantress"
+   ],
+   "description": "Eldraine court that the Mirror truly leads.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Vantress",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle rising from a mist-shrouded lake in Lochmere, above where the Mirror rests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lochmere",
+   "type": "location",
+   "aliases": [],
+   "description": "Remote part of the realm containing Castle Vantress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Mirror is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerra Grandsquall",
+   "type": "character",
+   "aliases": [],
+   "description": "Moved the mirror from Castle Vantress.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beluna Grandsquall",
+   "type": "character",
+   "aliases": [],
+   "description": "Giant in whose bedroom in Stormkeld the mirror ended up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormkeld",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the mirror ended up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which the mirror was moved.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "According to legend, a foolish redcap's question to a wise sage lingers after the sage's death and forms the Mirror.",
+   "participants": [
+    "Indrelon"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Following the sage's death, the question magically remained, swirling in on itself, forming the Mirror."
+  },
+  {
+   "summary": "Aspirant knights tell the Mirror a secret it did not know, and it may bestow knighthood.",
+   "participants": [
+    "Indrelon"
+   ],
+   "location": "Castle Vantress",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "An aspirant knight must tell the Magic Mirror a secret it did not already know"
+  },
+  {
+   "summary": "After the New Phyrexian Invasion, Gerra Grandsquall moves the mirror to Beluna Grandsquall's bedroom in Stormkeld.",
+   "participants": [
+    "Gerra Grandsquall",
+    "Indrelon",
+    "Beluna Grandsquall"
+   ],
+   "location": "Stormkeld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the mirror was moved by Gerra Grandsquall from Castle Vantress"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Indrelon",
+   "relation": "leader_of",
+   "target": "Court of Vantress",
+   "note": "true leader",
+   "paragraph": 0,
+   "quote": "the true leader of the court of Vantress"
+  },
+  {
+   "source": "Indrelon",
+   "relation": "located_in",
+   "target": "Castle Vantress",
+   "note": "rests far under the castle",
+   "paragraph": 1,
+   "quote": "It is currently located far under Castle Vantress ."
+  }
+ ],
+ "rejected": []
+}

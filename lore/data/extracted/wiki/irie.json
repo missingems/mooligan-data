@@ -1,0 +1,156 @@
+{
+ "page": "wiki/irie",
+ "url": "https://mtg.wiki/page/Irie",
+ "title": "Irie",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Irie",
+   "type": "character",
+   "aliases": [],
+   "description": "A young human apprentice to Muzzio at the High City of Paliano on Fiora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muzzio",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer in Paliano who builds constructs that record conversations, hoping to guide Fiora's society.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High City",
+    "High Paliano"
+   ],
+   "description": "City on Fiora with a High City and Low City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Paliano lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Academy of Paliano",
+   "type": "faction",
+   "aliases": [
+    "the academy"
+   ],
+   "description": "Academy Irie could not afford to enter and whose Chancellor vote Muzzio failed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "High Paliano Board of Senior Advisors",
+   "type": "faction",
+   "aliases": [],
+   "description": "Body that voted on the Chancellor of the Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grand Library",
+   "type": "location",
+   "aliases": [],
+   "description": "Library from which Irie retrieved parts and books.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Muzzio takes on Irie as his apprentice since Irie could not afford the academy.",
+   "participants": [
+    "Muzzio",
+    "Irie"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Muzzio had seen the potential in him and brought him on as his apprentice"
+  },
+  {
+   "summary": "Muzzio fails to secure the vote to become Chancellor and summons Irie.",
+   "participants": [
+    "Muzzio",
+    "Irie",
+    "High Paliano Board of Senior Advisors"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Muzzio had failed to secure the vote to become Chancellor of the Academy"
+  },
+  {
+   "summary": "Muzzio shows Irie the secret lower workshop with more than a hundred constructs and a scale model of Paliano.",
+   "participants": [
+    "Muzzio",
+    "Irie"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "more than a hundred mechanical constructs stood in rows"
+  },
+  {
+   "summary": "Muzzio asks whether Irie thinks he has killed anyone and denies ever having done so.",
+   "participants": [
+    "Muzzio",
+    "Irie"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Muzzio denied having ever killed anyone"
+  },
+  {
+   "summary": "Muzzio explains his constructs record what they hear onto wax cylinders to gather information.",
+   "participants": [
+    "Muzzio",
+    "Irie"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "every construct in Paliano is either built with or from Muzzio's designs"
+  },
+  {
+   "summary": "Muzzio tells Irie he hopes Fiora could become like places that blend machine perfection with organic life.",
+   "participants": [
+    "Muzzio",
+    "Irie",
+    "Fiora"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Muzzio hoped Fiora one day could be like those places"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muzzio",
+   "relation": "mentor_of",
+   "target": "Irie",
+   "note": "master and apprentice",
+   "paragraph": 0,
+   "quote": "Irie is the young human apprentice to Muzzio"
+  },
+  {
+   "source": "Muzzio",
+   "relation": "created",
+   "target": "Paliano",
+   "note": "designed its constructs",
+   "paragraph": 5,
+   "quote": "every construct in Paliano is either built with or from Muzzio's designs"
+  }
+ ],
+ "rejected": []
+}

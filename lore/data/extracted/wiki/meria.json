@@ -1,0 +1,112 @@
+{
+ "page": "wiki/meria",
+ "url": "https://mtg.wiki/page/Meria",
+ "title": "Meria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:41Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Meria",
+   "type": "character",
+   "aliases": [],
+   "description": "A young elven artificer and leader of Yavimaya's elves who pledged her people to the Coalition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [
+    "Jodah the Eternal"
+   ],
+   "description": "Jodah the Eternal, who sought Yavimaya's support against the Second Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rona",
+   "type": "character",
+   "aliases": [],
+   "description": "Attacked Yavimaya piloting a dragon engine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "The alliance against the Phyrexians, which Meria pledged her people to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest on Dominaria led by Meria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of the Mana Rig",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Meria led the Yavimayan forces.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jodah travels to Yavimaya to ask for the elves' support against the Second Phyrexian Invasion.",
+   "participants": [
+    "Jodah",
+    "Meria"
+   ],
+   "location": "Yavimaya",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jodah the Eternal traveled to Yavimaya to ask for the elves' support"
+  },
+  {
+   "summary": "Rona attacks Yavimaya in a dragon engine; Jodah and Meria defeat it with a Thran Damping Sphere.",
+   "participants": [
+    "Rona",
+    "Jodah",
+    "Meria"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Only the concerted efforts of Jonah and Meria, and their use of an old Thran Damping Sphere made it possible to defeat the Dragon Engine."
+  },
+  {
+   "summary": "Meria pledges her people to the Coalition and leads Yavimayan forces at the Battle of the Mana Rig.",
+   "participants": [
+    "Meria",
+    "Coalition"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Meria pledged her people to the Coalition "
+  }
+ ],
+ "relations": [
+  {
+   "source": "Meria",
+   "relation": "leader_of",
+   "target": "Yavimaya",
+   "note": "She leads the forest's elves.",
+   "paragraph": 0,
+   "quote": "she is the leader of the forest's elves"
+  },
+  {
+   "source": "Meria",
+   "relation": "member_of",
+   "target": "Coalition",
+   "note": "She pledged her people to it.",
+   "paragraph": 2,
+   "quote": "Meria pledged her people to the Coalition "
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,141 @@
+{
+ "page": "wiki/croag",
+ "url": "https://mtg.wiki/page/Croag",
+ "title": "Croag",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:32Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Croag",
+   "type": "character",
+   "aliases": [
+    "General Croag"
+   ],
+   "description": "A Phyrexian member of Yawgmoth's Inner Circle and lord over the Evincar of Rath, overseer of Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose Inner Circle Croag belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Place Croag oversaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Davvol",
+   "type": "character",
+   "aliases": [],
+   "description": "Evincar of Rath who schemed against Croag and was trapped by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatha",
+   "type": "character",
+   "aliases": [],
+   "description": "Person Croag sought regarding the Bloodline Project.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodline Project",
+   "type": "event",
+   "aliases": [],
+   "description": "Project whose progress Croag wanted to uncover.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kreig of Keld",
+   "type": "character",
+   "aliases": [],
+   "description": "Fighter who seriously wounded Croag.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure Croag was tasked to find and kill.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Death Pits of Rath",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Davvol was trapped.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Croag and Davvol bring Dominarian populations to Rath.",
+   "participants": [
+    "Croag",
+    "Davvol"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "brought Dominarian populations to Rath"
+  },
+  {
+   "summary": "Croag is seriously wounded in battle by Kreig of Keld while seeking Gatha.",
+   "participants": [
+    "Croag",
+    "Kreig of Keld",
+    "Gatha"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was seriously wounded by Kreig of Keld in a battle"
+  },
+  {
+   "summary": "Having recovered, Croag defeats Davvol's negator and traps Davvol in the Death Pits of Rath.",
+   "participants": [
+    "Croag",
+    "Davvol"
+   ],
+   "location": "Death Pits of Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he defeated Davvol's negator and trapped Davvol"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Croag",
+   "relation": "member_of",
+   "target": "Yawgmoth",
+   "note": "Member of Yawgmoth's Inner Circle.",
+   "paragraph": 0,
+   "quote": "a Phyrexian member of Yawgmoth 's Inner Circle"
+  },
+  {
+   "source": "Croag",
+   "relation": "enemy",
+   "target": "Davvol",
+   "note": "Davvol schemed against him and Croag trapped him.",
+   "paragraph": 3,
+   "quote": "Davvol devised ways to get rid of him"
+  },
+  {
+   "source": "Croag",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "Tasked to find and kill Urza.",
+   "paragraph": 3,
+   "quote": "General Croag's task was also to find and kill Urza"
+  }
+ ],
+ "rejected": []
+}

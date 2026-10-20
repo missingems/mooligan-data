@@ -1,0 +1,135 @@
+{
+ "page": "wiki/maha",
+ "url": "https://mtg.wiki/page/Maha",
+ "title": "Maha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:49Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Maha",
+   "type": "creature",
+   "aliases": [
+    "Great Maha",
+    "Great-Night Owl",
+    "Night Owl",
+    "Eclipse Owl",
+    "Season of Long Night"
+   ],
+   "description": "Enormous Calamity Beast owl on Bloomburrow, antagonist of the Dragonstorm Arc.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Glarb",
+   "type": "character",
+   "aliases": [
+    "Glarb"
+   ],
+   "description": "Ruler of Fountainport who hired Cruelclaw to steal Maha's egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fountainport",
+   "type": "location",
+   "aliases": [],
+   "description": "City ruled by Glarb.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cruelclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "Weaselfolk mercenary hired to steal Maha's egg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pondside",
+   "type": "location",
+   "aliases": [],
+   "description": "Village destroyed by Maha's rampage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Hero who returned Maha's egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragonhawk",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beast that fought Maha.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "King Glarb hires Cruelclaw to steal Maha's egg to gain control of a Calamity Beast.",
+   "participants": [
+    "King Glarb",
+    "Cruelclaw",
+    "Maha"
+   ],
+   "location": "Fountainport",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "King Glarb of Fountainport hired the weaselfolk mercenary Cruelclaw to steal"
+  },
+  {
+   "summary": "Maha rampages across Valley and destroys Pondside.",
+   "participants": [
+    "Maha"
+   ],
+   "location": "Pondside",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "resulting in the destruction of the village of Pondside"
+  },
+  {
+   "summary": "Mabel and her companions defeat Glarb and his mercenaries.",
+   "participants": [
+    "Mabel",
+    "King Glarb"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they defeated him and his mercenaries"
+  },
+  {
+   "summary": "Mabel returns Maha's egg and Maha ceases its rampage and departs peacefully.",
+   "participants": [
+    "Mabel",
+    "Maha"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Maha ceased its rampage and departed peacefully"
+  }
+ ],
+ "relations": [
+  {
+   "source": "King Glarb",
+   "relation": "enemy",
+   "target": "Maha",
+   "note": "Stole its egg.",
+   "paragraph": 2,
+   "quote": "hoping to gain control of a Calamity Beast"
+  },
+  {
+   "source": "Mabel",
+   "relation": "ally",
+   "target": "Maha",
+   "note": "Returned its egg.",
+   "paragraph": 3,
+   "quote": "Mabel returned Maha's stolen egg to it"
+  }
+ ],
+ "rejected": []
+}

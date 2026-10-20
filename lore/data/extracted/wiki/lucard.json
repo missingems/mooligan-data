@@ -1,0 +1,103 @@
+{
+ "page": "wiki/lucard",
+ "url": "https://mtg.wiki/page/Lucard",
+ "title": "Lucard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:16Z",
+ "storyline": "Rivals of Ixalan",
+ "entities": [
+  {
+   "name": "King Lucard",
+   "type": "character",
+   "aliases": [
+    "Lucard"
+   ],
+   "description": "Vampire king of the island of Luneau on Ixalan, weary and fragile; his fate is uncertain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "Planeswalker who enacted a plan to escape by transforming a spider and summoning the monstrosaur's spirit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marcois Jean-Jaquent",
+   "type": "character",
+   "aliases": [
+    "Baron of Vernot"
+   ],
+   "description": "Baron of Vernot who cruelly vivisected the monstrosaur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monstrosaur",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature vivisected by the baron and revived by Vivien in a rampage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Luneau",
+   "type": "location",
+   "aliases": [],
+   "description": "Island ruled by Lucard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vivien enlarges a spider to cause panic and summons the spirit of the monstrosaur, which wreaks havoc in the ballroom.",
+   "participants": [
+    "Vivien Reid",
+    "Monstrosaur"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Vivien used her magic to transform a small spider into a giant"
+  },
+  {
+   "summary": "The ballroom collapses and King Lucard's fate is left uncertain.",
+   "participants": [
+    "King Lucard"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The precise fate of King Lucard is not detailed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "King Lucard",
+   "relation": "leader_of",
+   "target": "Luneau",
+   "note": "Vampire king.",
+   "paragraph": 0,
+   "quote": "is the vampire king of the island of Luneau"
+  },
+  {
+   "source": "Marcois Jean-Jaquent",
+   "relation": "enemy",
+   "target": "Monstrosaur",
+   "note": "Vivisected it.",
+   "paragraph": 3,
+   "quote": "which had been cruelly vivisected by Marcois Jean-Jaquent"
+  }
+ ],
+ "rejected": []
+}

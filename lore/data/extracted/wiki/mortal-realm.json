@@ -1,0 +1,240 @@
+{
+ "page": "wiki/mortal-realm",
+ "url": "https://mtg.wiki/page/Mortal_Realm",
+ "title": "Mortal Realm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:43:58Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Mortal Realm",
+   "type": "location",
+   "aliases": [
+    "material plane"
+   ],
+   "description": "The sunlit main landscape of Theros where living mortals dwell, and the only Therosian realm directly enterable by planeswalking.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of gods, heroes and monsters that contains the Mortal Realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "A gleaming coastal polis of temples and philosophy governed by the council known as the Twelve.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "A martial polis guarding the northern frontier, governed by a monarch advised by elders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Setessa",
+   "type": "location",
+   "aliases": [],
+   "description": "A polis within the Nessian Wood, ruled by a council during the absence of Karametra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nessian Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "An ancient forest sacred to the god Nylea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skophos",
+   "type": "location",
+   "aliases": [],
+   "description": "The labyrinthine minotaur city governed by priests and warlord tyrants devoted to Mogis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Asphodel",
+   "type": "location",
+   "aliases": [],
+   "description": "A necropolis of the Returned on the Despair Lands, ruled by the Aphonai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Odunos",
+   "type": "location",
+   "aliases": [],
+   "description": "A city of the Returned who despise the living, ruled by Tymaret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymaret",
+   "type": "character",
+   "aliases": [
+    "the Murder King"
+   ],
+   "description": "The ruler of Odunos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Returned",
+   "type": "faction",
+   "aliases": [
+    "Returned"
+   ],
+   "description": "Undead beings who escaped the underworld at the cost of their identities.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god whose summer solstice holiday is described; he is now dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karametra",
+   "type": "deity",
+   "aliases": [],
+   "description": "The deific ruler of Setessa, currently absent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "The huntress god to whom the Nessian Wood is sacred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mogis",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god worshipped in Skophos, whose eye is the blood moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phenax",
+   "type": "deity",
+   "aliases": [],
+   "description": "A trickster god worshipped by the Returned and hunted by Erebos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thassa",
+   "type": "deity",
+   "aliases": [],
+   "description": "The sea god who rules the Siren Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Underworld",
+   "type": "location",
+   "aliases": [
+    "Underworld"
+   ],
+   "description": "The realm of the dead whose influence blights parts of the Mortal Realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Siren Sea",
+   "type": "location",
+   "aliases": [
+    "Great Sea"
+   ],
+   "description": "A vast ocean bordering western Theros.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Twelve",
+   "type": "faction",
+   "aliases": [
+    "Twelve"
+   ],
+   "description": "The philosopher council that governs Meletis.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Returned escape the underworld via the Path of Phenax, losing their identities, and gather in the necropoleis.",
+   "participants": [
+    "The Returned",
+    "Phenax",
+    "The Underworld"
+   ],
+   "location": "Mortal Realm",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The necropoleis of Asphodel and Odunos house the Returned, undead beings who have escaped the underworld at the cost of their identities."
+  },
+  {
+   "summary": "Heliod has died, leaving it unclear whether his solstice holiday is still celebrated.",
+   "participants": [
+    "Heliod"
+   ],
+   "location": "Mortal Realm",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "whether this holiday is still celebrated after Heliod's death is unknown."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mortal Realm",
+   "relation": "located_in",
+   "target": "Theros",
+   "note": "main landscape of the plane",
+   "paragraph": 0,
+   "quote": "The Mortal Realm is the main landscape of Theros , where the living mortals dwell."
+  },
+  {
+   "source": "The Twelve",
+   "relation": "leader_of",
+   "target": "Meletis",
+   "note": "philosopher council that governs the polis",
+   "paragraph": 4,
+   "quote": "Meletis is governed by the philosopher council known as the Twelve"
+  },
+  {
+   "source": "Karametra",
+   "relation": "leader_of",
+   "target": "Setessa",
+   "note": "its deific ruler, currently absent",
+   "paragraph": 4,
+   "quote": "Setessa by a Ruling Council during the absence of its deific ruler, Karametra."
+  },
+  {
+   "source": "Tymaret",
+   "relation": "leader_of",
+   "target": "Odunos",
+   "note": "the Murder King",
+   "paragraph": 27,
+   "quote": "Ruled by Tymaret , the Murder King"
+  },
+  {
+   "source": "Setessa",
+   "relation": "located_in",
+   "target": "Nessian Wood",
+   "note": "nestled within the forest",
+   "paragraph": 22,
+   "quote": "Setessa - a sprawling polis nestled within the vast Nessian Wood"
+  },
+  {
+   "source": "Thassa",
+   "relation": "leader_of",
+   "target": "Siren Sea",
+   "note": "rules the sea",
+   "paragraph": 28,
+   "quote": "It is ruled by the sea god Thassa"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,147 @@
+{
+ "page": "wiki/kroxa",
+ "url": "https://mtg.wiki/page/Kroxa",
+ "title": "Kroxa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kroxa",
+   "type": "creature",
+   "aliases": [
+    "Kroxa, Titan of Death's Hunger"
+   ],
+   "description": "The titan of Death's Hunger on Theros, imprisoned in the Underworld and possessed by endless hunger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the gods and titans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Underworld",
+   "type": "location",
+   "aliases": [
+    "Underworld"
+   ],
+   "description": "Where the gods sealed the titans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of fate who volunteered to be the titans' jailer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who broke Kroxa's chains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kunoros",
+   "type": "character",
+   "aliases": [],
+   "description": "Entrusted to control Kroxa; acts as his warden.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion of Theros",
+   "type": "event",
+   "aliases": [
+    "Phyrexian Invasion"
+   ],
+   "description": "Invasion whose Invasion Tree penetrated the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian forces"
+   ],
+   "description": "Invaders consumed by Kroxa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "City Kroxa would eat in a day if freed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The gods sealed the titans away in the Underworld, with Klothys as eternal jailer.",
+   "participants": [
+    "Klothys",
+    "Kroxa"
+   ],
+   "location": "The Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the gods sealed the titans away in the Underworld"
+  },
+  {
+   "summary": "Kroxa consumed the advancing Phyrexian forces so utterly that no remnants remained.",
+   "participants": [
+    "Kroxa",
+    "Phyrexians"
+   ],
+   "location": "The Underworld",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kroxa consumed the invading forces so utterly that no remnants remained"
+  },
+  {
+   "summary": "Athreos broke Kroxa's chains, and entrusted Kunoros to guide him against the Phyrexians.",
+   "participants": [
+    "Athreos",
+    "Kroxa",
+    "Kunoros"
+   ],
+   "location": "The Underworld",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Athreos chose to break Kroxa’s chains"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kunoros",
+   "relation": "serves",
+   "target": "Athreos",
+   "note": "entrusted to guide Kroxa along routes Athreos dictates",
+   "paragraph": 3,
+   "quote": "Athreos entrusted Kunoros with the task of controlling and guiding the titan."
+  },
+  {
+   "source": "Athreos",
+   "relation": "other",
+   "target": "Kroxa",
+   "note": "freed him from his chains",
+   "paragraph": 3,
+   "quote": "Athreos chose to break Kroxa’s chains"
+  },
+  {
+   "source": "Kroxa",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "destroys the invaders",
+   "paragraph": 3,
+   "quote": "Kroxa's destructive power is directed primarily against the Phyrexian invaders"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,191 @@
+{
+ "page": "wiki/nova-pentacle",
+ "url": "https://mtg.wiki/page/Nova_Pentacle",
+ "title": "Nova Pentacle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:12Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Nova Pentacle",
+   "type": "artifact",
+   "aliases": [
+    "Reflecting Star"
+   ],
+   "description": "A Dominarian star-shaped artifact that bound its wearer to the earth, preventing planeswalking or being summoned, and increased their power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samiks",
+   "type": "character",
+   "aliases": [
+    "Samiks of the Marked Ones"
+   ],
+   "description": "Of the Marked Ones; first known wielder of the Nova Pentacle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [],
+   "description": "Poisoned Samiks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zaraya",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Knights of Kjeldor who received the pentacle from Samiks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order led by Zaraya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Received the pentacle from Zaraya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Used the pentacle against Tevesh Szat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Enemy against whom the pentacle was used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Received the Nova Pentacle from the druid Chaney in 4074 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chaney",
+   "type": "character",
+   "aliases": [],
+   "description": "Druid who gave the pentacle to Greensleeves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "Invisibly stole the pentacle and made copies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "character",
+   "aliases": [],
+   "description": "Controller of spellcasters who resisted Greensleeves's summoning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shield of the Ice Prince",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item reflected back at a priest of Yawgmoth by the pentacle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the artifact.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samiks, dying of plague after being poisoned by Lim-Dûl, gives the pentacle to Zaraya.",
+   "participants": [
+    "Samiks",
+    "Zaraya",
+    "Lim-Dûl"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "After Samiks was poisoned by Lim-Dûl and dying of plague, he gave the artifact to Zaraya"
+  },
+  {
+   "summary": "Zaraya gives it to Freyalise for Jaeuhl Carthalion to use against Tevesh Szat; he reflects the Shield of the Ice Prince.",
+   "participants": [
+    "Zaraya",
+    "Freyalise",
+    "Jaeuhl Carthalion",
+    "Tevesh Szat"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He used the pentacle to reflect the Shield of the Ice Prince back at a priest of Yawgmoth ."
+  },
+  {
+   "summary": "Greensleeves receives the pentacle from the druid Chaney.",
+   "participants": [
+    "Greensleeves",
+    "Chaney"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Greensleeves received the Nova Pentacle from the druid Chaney"
+  },
+  {
+   "summary": "Towser invisibly steals the pentacle and makes copies.",
+   "participants": [
+    "Towser",
+    "Greensleeves"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Towser invisibly stole the Nova Pentacle from Greensleeves and created several copies of it"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zaraya",
+   "relation": "leader_of",
+   "target": "Knights of Kjeldor",
+   "note": "Leader.",
+   "paragraph": 2,
+   "quote": "Zaraya , leader of the Knights of Kjeldor"
+  },
+  {
+   "source": "Lim-Dûl",
+   "relation": "enemy",
+   "target": "Samiks",
+   "note": "Poisoned him.",
+   "paragraph": 2,
+   "quote": "After Samiks was poisoned by Lim-Dûl"
+  },
+  {
+   "source": "Towser",
+   "relation": "enemy",
+   "target": "Greensleeves",
+   "note": "Stole the artifact.",
+   "paragraph": 3,
+   "quote": "Towser invisibly stole the Nova Pentacle from Greensleeves"
+  }
+ ],
+ "rejected": []
+}

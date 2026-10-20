@@ -1,0 +1,120 @@
+{
+ "page": "wiki/kavu",
+ "url": "https://mtg.wiki/page/Kavu",
+ "title": "Kavu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:04Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Kavu",
+   "type": "creature",
+   "aliases": [
+    "dingo lizards"
+   ],
+   "description": "Carnivorous mutant reptiles native to Dominaria, revived by Multani's magic during the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kav",
+   "type": "faction",
+   "aliases": [
+    "Kavu-folk"
+   ],
+   "description": "Sapient Kavu-folk of the Edge, native to Kavaron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shattered homeworld of the Kav.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaronic Federal Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization of the Kav.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "Entity whose magic revived the Kavu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hallar",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven knight with a strong bond to the Kavu steed Serahane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serahane",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hallar's Kavu steed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the Kavu fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home of the Kavu.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Phyrexian Invasion Multani's magic revives the Kavu, who go about fighting the war.",
+   "participants": [
+    "Kavu",
+    "Multani"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "During the Phyrexian Invasion , Multani 's magic revived them, and they immediately went about fighting the war."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hallar",
+   "relation": "ally",
+   "target": "Serahane",
+   "note": "rides it in battle",
+   "paragraph": 10,
+   "quote": "Hallar in particular is considered to have a particularly strong bond with their Kavu steed, Serahane ."
+  },
+  {
+   "source": "Multani",
+   "relation": "other",
+   "target": "Kavu",
+   "note": "revived them",
+   "paragraph": 8,
+   "quote": "Multani 's magic revived them"
+  },
+  {
+   "source": "Kav",
+   "relation": "located_in",
+   "target": "Kavaron",
+   "note": "native planet",
+   "paragraph": 11,
+   "quote": "They are native to the planet Kavaron"
+  }
+ ],
+ "rejected": []
+}

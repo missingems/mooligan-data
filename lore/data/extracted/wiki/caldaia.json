@@ -1,0 +1,114 @@
+{
+ "page": "wiki/caldaia",
+ "url": "https://mtg.wiki/page/Caldaia",
+ "title": "Caldaia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:32Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "The Caldaia",
+   "type": "location",
+   "aliases": [
+    "Caldaia"
+   ],
+   "description": "Bottom industrial tier of New Capenna and the home of the Riveteers.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Metropolis containing the Caldaia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dominant crime family of the Caldaia, led by Ziatora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ziatora",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Riveteers who redesigned the Caldaia.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Treza",
+   "type": "location",
+   "aliases": [],
+   "description": "Riveteers' headquarters, a warehouse lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Verts",
+   "type": "location",
+   "aliases": [],
+   "description": "Notorious apartment district occupied by the Riveteers.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which the resistance was organized in the Treza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mezzio",
+   "type": "location",
+   "aliases": [],
+   "description": "Tier above the Caldaia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ziatora and the Riveteers give the Caldaia a utilitarian redesign.",
+   "participants": [
+    "Ziatora",
+    "Riveteers"
+   ],
+   "location": "The Caldaia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "It was given a utilitarian redesign by Ziatora and the Riveteers."
+  },
+  {
+   "summary": "During the New Phyrexian Invasion the resistance is organized in the Treza.",
+   "participants": [
+    "Riveteers",
+    "New Phyrexian Invasion"
+   ],
+   "location": "The Treza",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "During the New Phyrexian Invasion , the resistance was organized in the Treza."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ziatora",
+   "relation": "leader_of",
+   "target": "Riveteers",
+   "note": "boss of the family",
+   "paragraph": 6,
+   "quote": "Headquarters of the Riveteers and the family's boss, Ziatora"
+  },
+  {
+   "source": "The Caldaia",
+   "relation": "located_in",
+   "target": "New Capenna",
+   "note": "bottom tier",
+   "paragraph": 0,
+   "quote": "The Caldaia is the bottom tier of the metropolis of New Capenna"
+  }
+ ],
+ "rejected": []
+}

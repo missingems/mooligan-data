@@ -1,0 +1,61 @@
+{
+ "page": "wiki/edric",
+ "url": "https://mtg.wiki/page/Edric",
+ "title": "Edric",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:29Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Edric",
+   "type": "character",
+   "aliases": [],
+   "description": "Spymaster of the port city of Trest on Fiora, with a network of spies, couriers and familiars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trest",
+   "type": "location",
+   "aliases": [],
+   "description": "Port city on Fiora where Edric is spymaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Trest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empress of Kinnesta",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler who consults Edric before coastal maneuvers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Edric",
+   "relation": "located_in",
+   "target": "Trest",
+   "note": "Spymaster of Trest.",
+   "paragraph": 0,
+   "quote": "Edric is the spymaster of Trest"
+  },
+  {
+   "source": "Empress of Kinnesta",
+   "relation": "ally",
+   "target": "Edric",
+   "note": "She consults him before maneuvers.",
+   "paragraph": 1,
+   "quote": "is wise enough to consult with Edric"
+  }
+ ],
+ "rejected": []
+}

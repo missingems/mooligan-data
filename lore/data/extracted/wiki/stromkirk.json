@@ -1,0 +1,133 @@
+{
+ "page": "wiki/stromkirk",
+ "url": "https://mtg.wiki/page/Stromkirk",
+ "title": "Stromkirk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:29Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Stromkirk",
+   "type": "faction",
+   "aliases": [
+    "Stromkirk line",
+    "Stromkirk vampires"
+   ],
+   "description": "A bloodline of Innistrad vampires who concentrate their power in Nephalia rather than join Stensian politics.",
+   "presence": "appears"
+  },
+  {
+   "name": "Runo Stromkirk",
+   "type": "character",
+   "aliases": [
+    "Runo"
+   ],
+   "description": "Progenitor of the Stromkirk vampire line, a high priest in life who worshiped a god of the sea and storms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad province where the Stromkirk vampires centre their power, known for its woodcraft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad province of the Stensian vampires and their politics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drunau",
+   "type": "location",
+   "aliases": [],
+   "description": "Nephalian place where the Stromkirk have their ancestral manor and centre of commerce.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Stromkirk vampires live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi spawn",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi offspring into which Stromkirk coastal cultists were transformed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Stromkirk vampires choose to concentrate their power in Nephalia instead of joining Stensian vampire politics.",
+   "participants": [
+    "Stromkirk",
+    "Nephalia",
+    "Stensia"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Unwilling to take part in the political and social machinations of Stensian vampires, those of the Stromkirk line chose to concentrate their power in Nephalia instead."
+  },
+  {
+   "summary": "Runo Stromkirk uses glamors and his fortune to turn the human populace of Nephalia into artisans, becoming a secret patron.",
+   "participants": [
+    "Runo Stromkirk",
+    "Nephalia"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Runo became a kind of secret Nephalian patron, supporting master craftsmen and commissioning buildings, towers, and ships"
+  },
+  {
+   "summary": "The Stromkirk establish their ancestral manor and commerce centre at Drunau, keeping humans with delicious blood as pampered livestock.",
+   "participants": [
+    "Stromkirk",
+    "Drunau"
+   ],
+   "location": "Drunau",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Drunau is where the Stromkirk vampires have established their ancestral manor and their center of commerce outside of Stensia."
+  },
+  {
+   "summary": "Stromkirk vampires who joined the Nephalian coastal cults are among the first on Innistrad to be transformed into Eldrazi spawn.",
+   "participants": [
+    "Stromkirk",
+    "Eldrazi spawn"
+   ],
+   "location": "Nephalia",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "were among the first of Innistrad's denizens to be transformed into Eldrazi spawn"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Runo Stromkirk",
+   "relation": "leader_of",
+   "target": "Stromkirk",
+   "note": "progenitor of the line",
+   "paragraph": 1,
+   "quote": "Some Stromkirk elders have achieved the ability to transform themselves into mist."
+  },
+  {
+   "source": "Stromkirk",
+   "relation": "located_in",
+   "target": "Nephalia",
+   "note": "concentrate their power there",
+   "paragraph": 0,
+   "quote": "those of the Stromkirk line chose to concentrate their power in Nephalia instead."
+  }
+ ],
+ "rejected": []
+}

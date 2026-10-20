@@ -1,0 +1,154 @@
+{
+ "page": "wiki/sylvok",
+ "url": "https://mtg.wiki/page/Sylvok",
+ "title": "Sylvok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:55Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Sylvok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Reclusive human ethnic group of the Tangle on Mirrodin, practicing a druidic religion; extinct after Melira died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tangle",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Mirrodin where the Sylvok lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Sylvok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Araneas Altar",
+   "type": "location",
+   "aliases": [],
+   "description": "Eight-sided shrine the Sylvok built around the Lacunae to honor Lord Araneas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Araneas",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure honored at the Araneas Altar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vanishing",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in which half the Sylvok population disappeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benzir",
+   "type": "character",
+   "aliases": [
+    "Arch-druid Benzir of Temple Might"
+   ],
+   "description": "Young druid who became de facto leader and began animal worship after a vision quest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessla",
+   "type": "character",
+   "aliases": [
+    "Kessla of Temple Might"
+   ],
+   "description": "Notable Sylvok of Temple Might who probably survived without corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Melira",
+   "type": "character",
+   "aliases": [
+    "Melira, Sylvok Outcast"
+   ],
+   "description": "Sylvok Outcast; the last Sylvok, whose death made them extinct.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Arrival of which destroyed or compleated most Sylvok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which the Sylvok became extinct.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Half the Sylvok disappeared in the Vanishing, and Benzir became de facto leader.",
+   "participants": [
+    "Sylvok",
+    "Benzir"
+   ],
+   "location": "Tangle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Half the Sylvok population disappeared in the Vanishing"
+  },
+  {
+   "summary": "Benzir's vision quest led to animal worship among the Sylvok.",
+   "participants": [
+    "Benzir",
+    "Sylvok"
+   ],
+   "location": "Tangle",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "This has led to a culture of animal worship among the Sylvok"
+  },
+  {
+   "summary": "New Phyrexia's arrival destroyed or compleated most Sylvok.",
+   "participants": [
+    "Sylvok",
+    "Melira",
+    "Kessla"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The vast majority were either destroyed or compleated"
+  },
+  {
+   "summary": "The Sylvok became extinct when Melira died.",
+   "participants": [
+    "Sylvok",
+    "Melira"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Sylvok became extinct when Melira died"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Benzir",
+   "relation": "leader_of",
+   "target": "Sylvok",
+   "note": "De facto leader",
+   "paragraph": 4,
+   "quote": "became the de facto leader"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,96 @@
+{
+ "page": "wiki/tulan",
+ "url": "https://mtg.wiki/page/Tulan",
+ "title": "Tulan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:03Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Tulan",
+   "type": "character",
+   "aliases": [
+    "Master of the Gray House of Kestha"
+   ],
+   "description": "Master of the Gray House of Kestha in Estark, gluttonous and considered the least dangerous House Master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel",
+   "type": "character",
+   "aliases": [
+    "Grand Master of Arena"
+   ],
+   "description": "Grand Master of Arena who decided to destroy the four Houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uriah",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of Zarel's fighters who sapped Tulan's strength and set him aflame.",
+   "presence": "appears"
+  },
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "The destruction of the House of Oor-tael, in which Tulan took part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "The city containing the Gray House of Kestha.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tulan takes part in the Night of Fire, the destruction of the House of Oor-tael.",
+   "participants": [
+    "Tulan",
+    "Night of Fire"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "He participated in the Night of Fire"
+  },
+  {
+   "summary": "Zarel decides to destroy the four Houses; Uriah saps Tulan's strength, Tulan destroys his spell satchel and throws himself off the wall as Uriah sets him aflame.",
+   "participants": [
+    "Tulan",
+    "Zarel",
+    "Uriah"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "threw himself off the wall of his House"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Uriah",
+   "relation": "serves",
+   "target": "Zarel",
+   "note": "Uriah is captain of Zarel's fighters.",
+   "paragraph": 2,
+   "quote": "Uriah , the captain of Zarel's fighters"
+  },
+  {
+   "source": "Zarel",
+   "relation": "enemy",
+   "target": "Tulan",
+   "note": "Zarel decided to destroy the Houses.",
+   "paragraph": 2,
+   "quote": "decided to destroy the four Houses"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,158 @@
+{
+ "page": "wiki/albiuto",
+ "url": "https://mtg.wiki/page/Albiuto",
+ "title": "Albiuto",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Albiuto",
+   "type": "location",
+   "aliases": [],
+   "description": "A floating settlement on Albiuto Lake in the mountains of Zhalfir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose mountains hold Albiuto.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vuel",
+   "type": "character",
+   "aliases": [],
+   "description": "Stole the Legacy artifacts from Gerrard and fled to Albiuto.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Vuel's step-brother, robbed of the Legacy artifacts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starke il-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose meddling caused Vuel to fail his rite of passage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Followed Vuel to Albiuto and was deactivated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Collected Karn and the Touchstone as part of her quest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Phased Zhalfir out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Touchstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Vuel used to deactivate Karn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sidar Kondo",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose village lies eight leagues away.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4193 AR Vuel fails his rite of passage, steals Gerrard's Legacy artifacts and sells some at Albiuto.",
+   "participants": [
+    "Vuel",
+    "Gerrard Capashen",
+    "Starke il-Vec"
+   ],
+   "location": "Albiuto",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Vuel stole the Legacy artifacts from his step-brother Gerrard Capashen and brought them to Albiuto"
+  },
+  {
+   "summary": "Karn confronts Vuel, who uses the Touchstone to freeze Karn as a statue for 11 years.",
+   "participants": [
+    "Karn",
+    "Vuel",
+    "Touchstone"
+   ],
+   "location": "Albiuto",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Vuel used the Touchstone to deactivate Karn"
+  },
+  {
+   "summary": "Sisay collects Karn and the Touchstone.",
+   "participants": [
+    "Sisay",
+    "Karn"
+   ],
+   "location": "Albiuto",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "until Sisay collected him and the Touchstone as part of her quest"
+  },
+  {
+   "summary": "When Teferi phases Zhalfir out, Albiuto goes with it, later returning.",
+   "participants": [
+    "Teferi",
+    "Albiuto"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "When Teferi phased Zhalfir out , Albiuto went with it"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vuel",
+   "relation": "enemy",
+   "target": "Karn",
+   "note": "Deactivated him.",
+   "paragraph": 2,
+   "quote": "Vuel used the Touchstone to deactivate Karn"
+  },
+  {
+   "source": "Vuel",
+   "relation": "family",
+   "target": "Gerrard Capashen",
+   "note": "Step-brothers.",
+   "paragraph": 2,
+   "quote": "his step-brother Gerrard Capashen"
+  },
+  {
+   "source": "Albiuto",
+   "relation": "located_in",
+   "target": "Zhalfir",
+   "note": "Part of the plane.",
+   "paragraph": 3,
+   "quote": "Albiuto now exists as part of the plane of Zhalfir."
+  }
+ ],
+ "rejected": []
+}

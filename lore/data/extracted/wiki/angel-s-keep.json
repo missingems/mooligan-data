@@ -1,0 +1,106 @@
+{
+ "page": "wiki/angel-s-keep",
+ "url": "https://mtg.wiki/page/Angel%27s_Keep",
+ "title": "Angel's Keep",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Angel's Keep",
+   "type": "location",
+   "aliases": [
+    "Angel Keep"
+   ],
+   "description": "Castle fortress built by Xarl in the Wolf's Hackle in Golthonor on Corondor, where the fallen angel Trine was imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [
+    "Archmage Xarl Angel-Keeper"
+   ],
+   "description": "Archmage Xarl Angel-Keeper, builder of Angel's Keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [
+    "Warlord Mandek Ironfist"
+   ],
+   "description": "Warlord of the Iron Kingdom who granted the tower to Xarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Fallen angel imprisoned in the keep who escaped after Xarl's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wolf's Hackle",
+   "type": "location",
+   "aliases": [],
+   "description": "Swampy mountains in Golthonor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iron Kingdom",
+   "type": "faction",
+   "aliases": [],
+   "description": "Realm of Mandek Ironfist.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Warlord Mandek Ironfist granted the tower in the Wolf's Hackle to Xarl during the Time of Legends.",
+   "participants": [
+    "Mandek Ironfist",
+    "Xarl",
+    "Angel's Keep"
+   ],
+   "location": "Angel's Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "granted to Xarl by Warlord Mandek Ironfist of the Iron Kingdom"
+  },
+  {
+   "summary": "Trine escaped the keep after Xarl's death, greatly damaging it.",
+   "participants": [
+    "Trine",
+    "Angel's Keep",
+    "Xarl"
+   ],
+   "location": "Angel's Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the keep was greatly damaged when Trine escaped after Xarl's death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Xarl",
+   "relation": "created",
+   "target": "Angel's Keep",
+   "note": "Built the fortress",
+   "paragraph": 0,
+   "quote": "built by Xarl"
+  },
+  {
+   "source": "Mandek Ironfist",
+   "relation": "leader_of",
+   "target": "Iron Kingdom",
+   "note": "Warlord of the Iron Kingdom",
+   "paragraph": 1,
+   "quote": "Warlord Mandek Ironfist of the Iron Kingdom"
+  }
+ ],
+ "rejected": []
+}

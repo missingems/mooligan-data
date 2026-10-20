@@ -1,0 +1,116 @@
+{
+ "page": "wiki/praetor",
+ "url": "https://mtg.wiki/page/Praetor",
+ "title": "Praetor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:37Z",
+ "storyline": "Phyrexia",
+ "entities": [
+  {
+   "name": "Praetors",
+   "type": "faction",
+   "aliases": [
+    "Praetor"
+   ],
+   "description": "Phyrexian rulers representing differing philosophies on what New Phyrexia should look like.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the Praetors rule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ota",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dwellers of a dark world wanting back the suns, called praetorian by Ventaisen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ventaisen",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon who called the Ota praetorian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tourach",
+   "type": "character",
+   "aliases": [
+    "Dark Judge",
+    "Ebon Hand"
+   ],
+   "description": "Avatar of Tourach is the Ebon Praetor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ebon Praetor",
+   "type": "character",
+   "aliases": [],
+   "description": "Avatar of Tourach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanguine Praetor",
+   "type": "character",
+   "aliases": [],
+   "description": "Avatar of one of Ravnica's old gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "First known Phyrexian Praetor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Ota are described as praetorian by the dragon Ventaisen.",
+   "participants": [
+    "Ventaisen",
+    "Ota"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Ota are described as \"praetorian\" by the dragon Ventaisen"
+  },
+  {
+   "summary": "Gix is identified as the first known Phyrexian Praetor.",
+   "participants": [
+    "Gix"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Gix , the first known Phyrexian Praetor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ebon Praetor",
+   "relation": "other",
+   "target": "Tourach",
+   "note": "Avatar of Tourach.",
+   "paragraph": 4,
+   "quote": "the avatar of Tourach"
+  },
+  {
+   "source": "Gix",
+   "relation": "member_of",
+   "target": "Praetors",
+   "note": "First known Phyrexian Praetor.",
+   "paragraph": 6,
+   "quote": "the first known Phyrexian Praetor"
+  }
+ ],
+ "rejected": []
+}

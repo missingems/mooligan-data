@@ -1,0 +1,122 @@
+{
+ "page": "wiki/melek",
+ "url": "https://mtg.wiki/page/Melek",
+ "title": "Melek",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:39Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Melek",
+   "type": "character",
+   "aliases": [],
+   "description": "An icy, loosely humanoid elemental wizard of the Izzet League, created as the Izzet maze runner, killed by Ral Zarek and later resurrected as liaison to the Agency.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet researcher of the Implicit Maze who sapped Melek's energy to become the runner; planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "Ravnican guild that created Melek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Implicit Maze",
+   "type": "event",
+   "aliases": [
+    "the maze"
+   ],
+   "description": "A race between the guilds, run by Izzet's chosen runner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Investigative agency to which Melek acts as Izzet liaison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Melek lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Izzet mages create Melek to run the Implicit Maze, and Ral is assigned to coordinate instead.",
+   "participants": [
+    "Melek",
+    "Ral Zarek",
+    "Izzet League"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Melek was created by Izzet mages to run the Implicit Maze against the other guilds"
+  },
+  {
+   "summary": "Ral Zarek saps Melek's elemental energy, killing him, and becomes the runner.",
+   "participants": [
+    "Ral Zarek",
+    "Melek"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ral sapped Melek's elemental energy, thus killing Melek and becoming the runner."
+  },
+  {
+   "summary": "Melek is resurrected as the Izzet liaison to the Agency.",
+   "participants": [
+    "Melek",
+    "Ravnican Agency of Magicological Investigations"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Melek was resurrected to act as an ongoing liaison for the Izzet"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ral Zarek",
+   "relation": "killed",
+   "target": "Melek",
+   "note": "Sapped his energy to take his place as runner",
+   "paragraph": 2,
+   "quote": "Ral sapped Melek's elemental energy, thus killing Melek and becoming the runner."
+  },
+  {
+   "source": "Izzet League",
+   "relation": "created",
+   "target": "Melek",
+   "note": "Izzet mages created him",
+   "paragraph": 2,
+   "quote": "Melek was created by Izzet mages"
+  },
+  {
+   "source": "Melek",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "A weird wizard of the Izzet League",
+   "paragraph": 0,
+   "quote": "Melek is a weird wizard of the Izzet League on Ravnica ."
+  }
+ ],
+ "rejected": []
+}

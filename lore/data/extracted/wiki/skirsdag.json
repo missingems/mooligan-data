@@ -1,0 +1,158 @@
+{
+ "page": "wiki/skirsdag",
+ "url": "https://mtg.wiki/page/Skirsdag",
+ "title": "Skirsdag",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:56Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Skirsdag",
+   "type": "faction",
+   "aliases": [],
+   "description": "A secret demon cult centered in Thraben, born from ancient demon-worship, with members throughout church, nobility and trades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [
+    "High City of Thraben"
+   ],
+   "description": "The High City where the Skirsdag are centered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Thraben.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon who rose to eclipse all other demons and disappeared with Avacyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel who disappeared at the same time as Griselbrand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "creature",
+   "aliases": [
+    "Profane Prince"
+   ],
+   "description": "A demon in whose name the Skirsdag came to control the Lunarch Council.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lunarch Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council controlled by the Skirsdag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Withengar",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon freed from Elbrus by the cultists, who killed Saint Traft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saint Traft",
+   "type": "character",
+   "aliases": [],
+   "description": "A monster slayer tricked by the cultists and killed by Withengar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elbrus",
+   "type": "artifact",
+   "aliases": [
+    "the Binding Blade"
+   ],
+   "description": "A sword binding Withengar's essence.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Skirsdag gained prominence as Griselbrand rose in power.",
+   "participants": [
+    "Skirsdag",
+    "Griselbrand"
+   ],
+   "location": "Thraben",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Skirsdag gained prominence as well"
+  },
+  {
+   "summary": "In the name of Ormendahl, the Skirsdag came to control the Lunarch Council.",
+   "participants": [
+    "Skirsdag",
+    "Ormendahl",
+    "Lunarch Council"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they came to control the Lunarch Council"
+  },
+  {
+   "summary": "The cultists tricked Saint Traft, blinding him and swapping his sword for Elbrus.",
+   "participants": [
+    "Skirsdag",
+    "Saint Traft",
+    "Elbrus"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "tricking the monster slayer named Saint Traft into a trap"
+  },
+  {
+   "summary": "Traft slew the cultists with Elbrus, summoning Withengar, who killed him.",
+   "participants": [
+    "Saint Traft",
+    "Withengar",
+    "Elbrus",
+    "Skirsdag"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Withengar ended Traft's life while laughing."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Withengar",
+   "relation": "killed",
+   "target": "Saint Traft",
+   "note": "Ended his life while laughing.",
+   "paragraph": 3,
+   "quote": "Withengar ended Traft's life while laughing."
+  },
+  {
+   "source": "Skirsdag",
+   "relation": "serves",
+   "target": "Ormendahl",
+   "note": "They act in his name.",
+   "paragraph": 2,
+   "quote": "In the name of this Profane Prince"
+  }
+ ],
+ "rejected": []
+}

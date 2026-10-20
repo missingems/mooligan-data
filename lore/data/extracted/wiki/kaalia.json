@@ -1,0 +1,131 @@
+{
+ "page": "wiki/kaalia",
+ "url": "https://mtg.wiki/page/Kaalia",
+ "title": "Kaalia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:05Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Kaalia",
+   "type": "character",
+   "aliases": [
+    "Lia",
+    "Kaa Lia",
+    "Kaalia of the Vast"
+   ],
+   "description": "A powerful double-winged human cleric from Alara who can beckon angels, dragons and demons to battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Kaalia's home plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard where Kaalia was born.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eos",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined castle near Kaalia's birthplace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nefarox",
+   "type": "character",
+   "aliases": [
+    "Grixis Demon Nefarox"
+   ],
+   "description": "Grixis demon whose servants destroyed Kaalia's village and who killed her family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nira",
+   "type": "character",
+   "aliases": [],
+   "description": "Nacatl who saved Lia and named her Kaa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Kaalia was born.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Servants of Nefarox destroy Lia's village; Nira saves her and, recognizing her abilities, enlists her to destroy the dragon skeleton's keystone.",
+   "participants": [
+    "Nefarox",
+    "Nira",
+    "Kaalia"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Lia was saved by the Nacatl Nira"
+  },
+  {
+   "summary": "Kaalia destroys the dragon skeleton, but Nefarox rises and kills her family, the villagers and Nira.",
+   "participants": [
+    "Kaalia",
+    "Nefarox",
+    "Nira"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nefarox rose and killed her family, all the villagers, and Nira"
+  },
+  {
+   "summary": "Kaalia awakens empty with a fractured soul and grows consumed by a thirst for revenge.",
+   "participants": [
+    "Kaalia"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "her soul was fractured, and a growing hatred soon grew in the cracks"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nira",
+   "relation": "ally",
+   "target": "Kaalia",
+   "note": "saved and named her",
+   "paragraph": 1,
+   "quote": "she named the girl Kaa (\"power\") Lia"
+  },
+  {
+   "source": "Nefarox",
+   "relation": "killed",
+   "target": "Nira",
+   "note": "killed Nira with Kaalia's family",
+   "paragraph": 2,
+   "quote": "Nefarox rose and killed her family, all the villagers, and Nira"
+  },
+  {
+   "source": "Kaalia",
+   "relation": "enemy",
+   "target": "Nefarox",
+   "note": "driven by revenge",
+   "paragraph": 2,
+   "quote": "an unholy thirst for revenge"
+  }
+ ],
+ "rejected": []
+}

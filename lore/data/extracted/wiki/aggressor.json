@@ -1,0 +1,109 @@
+{
+ "page": "wiki/aggressor",
+ "url": "https://mtg.wiki/page/Aggressor",
+ "title": "Aggressor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:57Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Aggressor",
+   "type": "creature",
+   "aliases": [
+    "Aggro"
+   ],
+   "description": "A giant fluffy cat, guardian of the Gods' Hall of Starnheim and effectively a pet of the Valkyries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Aggressor lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [
+    "Gods' Hall of Starnheim"
+   ],
+   "description": "Realm where Aggressor guards the Gods' Hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valkyries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Winged beings of Starnheim whom Aggressor lives among.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niko Aris",
+   "type": "character",
+   "aliases": [
+    "Niko"
+   ],
+   "description": "Character guided by Aggressor to the Valkyries to warn of Koma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koma",
+   "type": "creature",
+   "aliases": [
+    "Cosmos Serpent Koma"
+   ],
+   "description": "The Cosmos Serpent whose threat Niko warned the Valkyries about.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Aggressor leads Niko through the feast crowd into a quieter hall and to the Valkyries.",
+   "participants": [
+    "Aggressor",
+    "Niko Aris",
+    "Valkyries"
+   ],
+   "location": "Starnheim",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "showing an interest in Niko Aris as he led them through the crowd and into a quieter hall"
+  },
+  {
+   "summary": "Koma arrives terrifyingly at the gathering, confirming Niko's warnings; Aggressor flees to the rafters.",
+   "participants": [
+    "Koma",
+    "Niko Aris",
+    "Aggressor",
+    "Valkyries"
+   ],
+   "location": "Starnheim",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Aggressor ran off to shelter in the rafters upon Koma's appearance."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aggressor",
+   "relation": "serves",
+   "target": "Valkyries",
+   "note": "effectively their pet",
+   "paragraph": 1,
+   "quote": "effectively a pet of the Valkyries"
+  },
+  {
+   "source": "Aggressor",
+   "relation": "ally",
+   "target": "Niko Aris",
+   "note": "guided them to the Valkyries",
+   "paragraph": 3,
+   "quote": "Aggressor played a role in guiding Niko through the feast and into the presence of the Valkyries."
+  }
+ ],
+ "rejected": []
+}

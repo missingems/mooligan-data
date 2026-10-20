@@ -1,0 +1,96 @@
+{
+ "page": "wiki/qhattib",
+ "url": "https://mtg.wiki/page/Qhattib",
+ "title": "Qhattib",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:36Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Qhattib",
+   "type": "character",
+   "aliases": [
+    "Vizier Qhattib"
+   ],
+   "description": "Vizier of Amiqat, ruler of Suq'Ata during the Mirage Wars, assassinated by Hilel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "location",
+   "aliases": [],
+   "description": "Country ruled by Qhattib.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telim'Tor",
+   "type": "character",
+   "aliases": [],
+   "description": "Held military command in Suq'Ata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark mage opposed in the Mirage Wars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hilel",
+   "type": "character",
+   "aliases": [],
+   "description": "Breathstealer who assassinated Qhattib.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breathstealers of Urborg",
+   "type": "faction",
+   "aliases": [],
+   "description": "Aided Kaervek; remained in Suq'Ata afterward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Dominaria's Jamuraa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Qhattib is assassinated by the Breathstealer Hilel shortly after the war.",
+   "participants": [
+    "Hilel",
+    "Qhattib"
+   ],
+   "location": "Suq'Ata",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he was assassinated by the Breathstealer Hilel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hilel",
+   "relation": "killed",
+   "target": "Qhattib",
+   "note": "assassinated him",
+   "paragraph": 1,
+   "quote": "he was assassinated by the Breathstealer Hilel"
+  },
+  {
+   "source": "Qhattib",
+   "relation": "leader_of",
+   "target": "Suq'Ata",
+   "note": "ruler",
+   "paragraph": 0,
+   "quote": "was the ruler of Suq'Ata during the Mirage Wars"
+  }
+ ],
+ "rejected": []
+}

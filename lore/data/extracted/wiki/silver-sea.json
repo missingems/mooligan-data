@@ -1,0 +1,203 @@
+{
+ "page": "wiki/silver-sea",
+ "url": "https://mtg.wiki/page/Silver_Sea",
+ "title": "Silver Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:09Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Silver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "A long, narrow inland sea on the island of Almaaz in the Terisian Isles of Dominaria, later submerged beneath the Lat-Nam Straits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the Terisian Isles of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the Terisian Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lat-Nam Straits",
+   "type": "location",
+   "aliases": [],
+   "description": "Waters that eventually submerged the Silver Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "The end of the Ice Age, during which the Silver Sea came into being.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drufalen",
+   "type": "character",
+   "aliases": [
+    "Drufalden"
+   ],
+   "description": "An ice sorceress who cast a spell locking the Borderlands' water into an icy realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borderlands",
+   "type": "location",
+   "aliases": [],
+   "description": "Region frozen by Drufalen's cold kingdom, later made an island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarrazan River",
+   "type": "location",
+   "aliases": [],
+   "description": "River whose waters shrank as Drufalen's kingdom grew and rose again after the melting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wyrvil",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighboring orc kingdom separated from the Borderlands by the Silver Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rotapan",
+   "type": "character",
+   "aliases": [],
+   "description": "Half-orc overking whose domain lay on the border of the Silver Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chelydrus",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elusive sea drake worshipped by Rotapan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "A songmage who melted Drufalen's ice realm with song magic in 3050 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Thaw, Drufalen casts a spell locking the Borderlands' water into an icy realm, creating the Silver Sea.",
+   "participants": [
+    "Drufalen",
+    "Silver Sea",
+    "Borderlands"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "cast a spell that would lock the water of the Borderlands into an icy realm"
+  },
+  {
+   "summary": "Sea levels fall, connecting the Borderlands with Almaaz and creating the Silver Sea in the middle.",
+   "participants": [
+    "Silver Sea",
+    "Almaaz",
+    "Borderlands"
+   ],
+   "location": "Almaaz",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "while also creating the Silver Sea in the middle"
+  },
+  {
+   "summary": "Rotapan makes his domain on the Silver Sea's border, worshipping the sea drake Chelydrus.",
+   "participants": [
+    "Rotapan",
+    "Chelydrus",
+    "Silver Sea"
+   ],
+   "location": "Silver Sea",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "worshipping an elusive sea drake named Chelydrus"
+  },
+  {
+   "summary": "Ogwater Rifkin releases the ice's hold on Drufalen's realm with song magic, causing a massive melting that floods the Silver Sea.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Drufalen",
+    "Silver Sea",
+    "Sarrazan River"
+   ],
+   "location": "Borderlands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "released the hold of the ice on her realm through song magic"
+  },
+  {
+   "summary": "Meltwater connects the Silver Sea to the ocean and submerges it beneath the Lat-Nam Straits; the sea is lost.",
+   "participants": [
+    "Silver Sea",
+    "Lat-Nam Straits"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Silver Sea thus joined the greater ocean and was lost."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Silver Sea",
+   "relation": "located_in",
+   "target": "Almaaz",
+   "note": "inland sea on the island",
+   "paragraph": 0,
+   "quote": "The Silver Sea was a long, narrow inland sea on the island of Almaaz"
+  },
+  {
+   "source": "Drufalen",
+   "relation": "created",
+   "target": "Silver Sea",
+   "note": "her spell caused the sea to form",
+   "paragraph": 1,
+   "quote": "The Silver Sea came into being during the Thaw"
+  },
+  {
+   "source": "Rotapan",
+   "relation": "other",
+   "target": "Chelydrus",
+   "note": "worshipped the sea drake",
+   "paragraph": 2,
+   "quote": "worshipping an elusive sea drake named Chelydrus"
+  },
+  {
+   "source": "Ogwater Rifkin",
+   "relation": "enemy",
+   "target": "Drufalen",
+   "note": "undid her ice realm with song magic",
+   "paragraph": 3,
+   "quote": "released the hold of the ice on her realm through song magic"
+  }
+ ],
+ "rejected": []
+}

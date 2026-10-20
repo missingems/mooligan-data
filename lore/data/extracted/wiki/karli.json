@@ -1,0 +1,119 @@
+{
+ "page": "wiki/karli",
+ "url": "https://mtg.wiki/page/Karli",
+ "title": "Karli",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Karli",
+   "type": "character",
+   "aliases": [
+    "Karli of the Singing Moon"
+   ],
+   "description": "A short desert wizard of Aerona who joined Towser's army of wizards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of an army of wizards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Karli's home, part of the Domains of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose army Karli attacked, with Greensleeves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Victor to whom Karli swore allegiance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device binding wizards, from which Karli was free.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Lat-Nam",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Karli was on the losing side.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karli attacks the army of Gull and Greensleeves with a tornado and summoned raiders and flying men.",
+   "participants": [
+    "Karli",
+    "Gull",
+    "Greensleeves"
+   ],
+   "location": "Aerona",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Karli attacked the army of Gull and Greensleeves with a tornado"
+  },
+  {
+   "summary": "Karli fights in the Battle of Lat-Nam on the losing side.",
+   "participants": [
+    "Karli",
+    "Towser"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She participated in the Battle of Lat-Nam , but was on the losing side"
+  },
+  {
+   "summary": "Karli swears allegiance to Greensleeves to save her magic from being drained.",
+   "participants": [
+    "Karli",
+    "Greensleeves"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "ended up swearing allegiance and loyalty to Greensleeves to save her magic from being drained completely"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karli",
+   "relation": "member_of",
+   "target": "Towser",
+   "note": "joined his army of wizards",
+   "paragraph": 2,
+   "quote": "She joined Towser 's army of wizards"
+  },
+  {
+   "source": "Karli",
+   "relation": "serves",
+   "target": "Greensleeves",
+   "note": "swore allegiance",
+   "paragraph": 2,
+   "quote": "swearing allegiance and loyalty to Greensleeves"
+  }
+ ],
+ "rejected": []
+}

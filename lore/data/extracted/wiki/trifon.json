@@ -1,0 +1,101 @@
+{
+ "page": "wiki/trifon",
+ "url": "https://mtg.wiki/page/Trifon",
+ "title": "Trifon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:45Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Trifon",
+   "type": "character",
+   "aliases": [],
+   "description": "Amphibious marine troll of Ravnica, speaker for Zonot Four, who quashes dissent with brute force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zonot Four",
+   "type": "location",
+   "aliases": [],
+   "description": "Zonot led by Trifon, brutal and direct in culture.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zonot Three",
+   "type": "location",
+   "aliases": [],
+   "description": "Zonot whose biomancers work with Zonot Four.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vannifar",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure Trifon lent his full support to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari",
+   "type": "faction",
+   "aliases": [],
+   "description": "Source of the life-forms that infected the zonot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the zonots.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trifon becomes speaker of Zonot Four after the zonot is infected by Golgari life-forms.",
+   "participants": [
+    "Trifon",
+    "Zonot Four",
+    "Golgari"
+   ],
+   "location": "Zonot Four",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Trifon became the speaker of Zonot Four after the zonot was \"infected\" by Golgari life-forms."
+  },
+  {
+   "summary": "Trifon lends his full support to Vannifar, and the biomancers of Zonot Three and Four work closely on defense.",
+   "participants": [
+    "Trifon",
+    "Vannifar",
+    "Zonot Three",
+    "Zonot Four"
+   ],
+   "location": "Zonot Four",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Trifon lent his full support to Vannifar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trifon",
+   "relation": "leader_of",
+   "target": "Zonot Four",
+   "note": "He is its speaker.",
+   "paragraph": 0,
+   "quote": "serves as the speaker for Zonot Four"
+  },
+  {
+   "source": "Trifon",
+   "relation": "ally",
+   "target": "Vannifar",
+   "note": "Lent her his full support.",
+   "paragraph": 2,
+   "quote": "Trifon lent his full support to Vannifar"
+  }
+ ],
+ "rejected": []
+}

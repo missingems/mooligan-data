@@ -1,0 +1,107 @@
+{
+ "page": "wiki/hunter-maze",
+ "url": "https://mtg.wiki/page/Hunter_Maze",
+ "title": "Hunter Maze",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:34Z",
+ "storyline": "New Phyrexia",
+ "entities": [
+  {
+   "name": "Hunter Maze",
+   "type": "location",
+   "aliases": [
+    "Tangle of Mirrodin"
+   ],
+   "description": "Fourth sphere of New Phyrexia, a nightmarish jungle formerly the Tangle of Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Phyrexian-ruled Mirrodin built in nine spheres.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vorinclex",
+   "type": "character",
+   "aliases": [],
+   "description": "Praetor who rules the Hunter Maze from a lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Vorinclex's lieutenant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vicious Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian force in the Hunter Maze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrex",
+   "type": "location",
+   "aliases": [],
+   "description": "Desolate surface of Mirrodin's hollowed shell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Tangle is corrupted by lamina as New Phyrexia's conquest spreads.",
+   "participants": [
+    "Hunter Maze"
+   ],
+   "location": "Hunter Maze",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the original Mirran forest known as the Tangle became corrupted by lamina"
+  },
+  {
+   "summary": "The Phyrexians construct nine spheres and relocate and transform the Tangle into the fourth sphere.",
+   "participants": [
+    "New Phyrexia",
+    "Hunter Maze"
+   ],
+   "location": "Hunter Maze",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Tangle was relocated and transformed into the fourth sphere: the Hunter Maze"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vorinclex",
+   "relation": "leader_of",
+   "target": "Hunter Maze",
+   "note": "praetor domain",
+   "paragraph": 0,
+   "quote": "became the domain of the praetor Vorinclex"
+  },
+  {
+   "source": "Glissa",
+   "relation": "serves",
+   "target": "Vorinclex",
+   "note": "his lieutenant",
+   "paragraph": 0,
+   "quote": "his lieutenant Glissa"
+  },
+  {
+   "source": "Hunter Maze",
+   "relation": "located_in",
+   "target": "New Phyrexia",
+   "note": "fourth sphere",
+   "paragraph": 0,
+   "quote": "The Hunter Maze is the fourth sphere of New Phyrexia"
+  }
+ ],
+ "rejected": []
+}

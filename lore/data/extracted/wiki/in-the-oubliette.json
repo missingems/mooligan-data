@@ -1,0 +1,166 @@
+{
+ "page": "wiki/in-the-oubliette",
+ "url": "https://mtg.wiki/page/In_the_Oubliette",
+ "title": "In the Oubliette",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:34Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer captured during the Tomakul Campaign and imprisoned in the Oubliette.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Mishra's artificer sent to torture Tawnos, who secretly helped him escape and was banished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler who banished Ashnod and set his sights on Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oubliette",
+   "type": "location",
+   "aliases": [],
+   "description": "Fallaji prison cell in Tomakul that opens only from the top.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomakul",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Tawnos was imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomakul Campaign",
+   "type": "event",
+   "aliases": [],
+   "description": "Campaign during which Tawnos was captured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Staff of Zegon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Staff Tawnos fashioned from a skull and wire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Whispered in Mishra's ear, turning him against Ashnod.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire from which Ashnod was banished.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Ashnod fled and Mishra's next campaign target.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tawnos was surrounded by enemy troops, captured and put in the Oubliette.",
+   "participants": [
+    "Tawnos"
+   ],
+   "location": "Tomakul",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Tawnos was surrounded by enemy troops and captured"
+  },
+  {
+   "summary": "Sent by Mishra to torture Tawnos, Ashnod used the rack only for show and slipped him powerstone earrings and wire to make a Staff of Zegon.",
+   "participants": [
+    "Ashnod",
+    "Tawnos"
+   ],
+   "location": "Oubliette",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she slipped him her powerstone earrings and the wire needed for him to fashion his own Staff of Zegon"
+  },
+  {
+   "summary": "Tawnos drained the guards' strength with the staff and escaped.",
+   "participants": [
+    "Tawnos"
+   ],
+   "location": "Oubliette",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tawnos used his makeshift staff to drain the guards' strength"
+  },
+  {
+   "summary": "Mishra, whispered to by the Brotherhood of Gix, banished Ashnod from Fallaji lands.",
+   "participants": [
+    "Mishra",
+    "Ashnod",
+    "Brotherhood of Gix"
+   ],
+   "location": "Tomakul",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he did not believe her and banished her from any lands belonging to the Fallaji Empire"
+  },
+  {
+   "summary": "Ashnod left on a horse for Terisia City, and Mishra set his sights on that city.",
+   "participants": [
+    "Ashnod",
+    "Mishra"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he set his sights on that very city for his next campaign"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "Sent by him to torture Tawnos.",
+   "paragraph": 1,
+   "quote": "Ashnod was sent by Mishra to torture him"
+  },
+  {
+   "source": "Ashnod",
+   "relation": "ally",
+   "target": "Tawnos",
+   "note": "Secretly helped him escape.",
+   "paragraph": 1,
+   "quote": "she slipped him her powerstone earrings"
+  },
+  {
+   "source": "Brotherhood of Gix",
+   "relation": "other",
+   "target": "Mishra",
+   "note": "Whispered in his ear.",
+   "paragraph": 2,
+   "quote": "The Brotherhood of Gix had whispered in his ears"
+  }
+ ],
+ "rejected": []
+}

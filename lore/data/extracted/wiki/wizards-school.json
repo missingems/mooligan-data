@@ -1,0 +1,114 @@
+{
+ "page": "wiki/wizards-school",
+ "url": "https://mtg.wiki/page/Wizards%27_School",
+ "title": "Wizards' School",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:49Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Wizards' School",
+   "type": "faction",
+   "aliases": [],
+   "description": "Institute of magical study on Ulgrotha, built by Feroz on the Floating Island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [
+    "First Master"
+   ],
+   "description": "Planeswalker who created the Wizards' School and later vanished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reveka",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the school during Homelands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Drove the dwarves of New Freedom from their home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea Dwarves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dwarves who sailed the seas and found the school built on their island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Floating Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island where the school was built.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Wizards",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ruling body led by a Wizard Savant, keeping the seas open and neutral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Feroz builds a great school on the Floating Island, astonishing the returning Sea Dwarves.",
+   "participants": [
+    "Feroz",
+    "Sea Dwarves"
+   ],
+   "location": "Floating Island",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he built a great school there and created wells of fresh water"
+  },
+  {
+   "summary": "The First Master vanishes, leaving magical texts; after chaos a Council of Wizards is formed.",
+   "participants": [
+    "Feroz",
+    "Council of Wizards"
+   ],
+   "location": "Floating Island",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the First Master vanished, leaving behind a number of his magical texts"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Feroz",
+   "relation": "created",
+   "target": "Wizards' School",
+   "note": "Founder.",
+   "paragraph": 0,
+   "quote": "created by the planeswalker Feroz"
+  },
+  {
+   "source": "Reveka",
+   "relation": "leader_of",
+   "target": "Wizards' School",
+   "note": "Led it during Homelands.",
+   "paragraph": 0,
+   "quote": "the school was led by Reveka"
+  }
+ ],
+ "rejected": []
+}

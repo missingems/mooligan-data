@@ -1,0 +1,89 @@
+{
+ "page": "wiki/agnomakhos",
+ "url": "https://mtg.wiki/page/Agnomakhos",
+ "title": "Agnomakhos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Agnomakhos",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Archon tyrants of Theros who ruled the empire of Trax for hundreds of years, riding a flying bull into battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trax",
+   "type": "faction",
+   "aliases": [],
+   "description": "Massive empire of centaurs, humans, leonin, minotaurs and satyrs ruled by the Archon tyrants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kynaios",
+   "type": "character",
+   "aliases": [],
+   "description": "King who led the rebellion that toppled Trax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tiro",
+   "type": "character",
+   "aliases": [],
+   "description": "King who led the rebellion that toppled Trax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "First polis, born from the ashes of Trax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leonin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Used as Agnomakhos's army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trax fell to a rebellion led by kings Kynaios and Tiro, and Meletis was born from its ashes.",
+   "participants": [
+    "Kynaios",
+    "Tiro",
+    "Agnomakhos",
+    "Trax"
+   ],
+   "location": "Meletis",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Eventually, the empire of Trax fell to a rebellion led by kings Kynaios and Tiro"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agnomakhos",
+   "relation": "leader_of",
+   "target": "Trax",
+   "note": "Leader of the Archon tyrants ruling Trax.",
+   "paragraph": 0,
+   "quote": "was the leader of the Archon tyrants of Theros"
+  },
+  {
+   "source": "Kynaios",
+   "relation": "enemy",
+   "target": "Agnomakhos",
+   "note": "Led the rebellion against Trax.",
+   "paragraph": 1,
+   "quote": "fell to a rebellion led by kings Kynaios and Tiro"
+  }
+ ],
+ "rejected": []
+}

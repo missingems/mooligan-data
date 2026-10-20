@@ -1,0 +1,148 @@
+{
+ "page": "wiki/lan-d-avenant",
+ "url": "https://mtg.wiki/page/%C3%89lan_d%27Avenant",
+ "title": "Élan d'Avenant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Élan d'Avenant",
+   "type": "character",
+   "aliases": [
+    "Élan"
+   ],
+   "description": "An archer squire of the Order of the D'Avenant on Dominaria, sent to kill Jared Carthalion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the D'Avenant",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order on Dominaria to which Élan belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hamath",
+   "type": "location",
+   "aliases": [],
+   "description": "Town with which an alliance was to be sealed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [
+    "Jared"
+   ],
+   "description": "Man believed to be a minion of Ravidel; target of Élan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [
+    "the Battlemage"
+   ],
+   "description": "Battlemage who dueled Jared and incinerated Élan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [
+    "Kristina"
+   ],
+   "description": "Took Jared away before Élan could kill him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Exarch Amadis",
+   "type": "character",
+   "aliases": [],
+   "description": "Exarch whose magic shook the tree during the battle against the Calthyn Elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calthyn Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves fought in the battle in the White Woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "White Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Woods where Élan followed Jared and Kristina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of this story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Élan is to kill Jared Carthalion to seal an alliance with Hamath, but Kristina takes him away first.",
+   "participants": [
+    "Élan d'Avenant",
+    "Jared Carthalion",
+    "Kristina of the Woods"
+   ],
+   "location": "Hamath",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "However, before she could kill him, Kristina of the Woods took him away."
+  },
+  {
+   "summary": "Élan follows them to the White Woods but falls from her hiding tree when Exarch Amadis' magic shakes it.",
+   "participants": [
+    "Élan d'Avenant",
+    "Exarch Amadis",
+    "Calthyn Elves"
+   ],
+   "location": "White Woods",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Élan followed Jared and Kristina to the White Woods"
+  },
+  {
+   "summary": "Jared accidentally summons Élan during a duel with Ravidel, and the Battlemage incinerates her.",
+   "participants": [
+    "Élan d'Avenant",
+    "Jared Carthalion",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Jared accidentally summoned her during a duel with Ravidel, and the Battlemage incinerated her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Élan d'Avenant",
+   "note": "Incinerated her.",
+   "paragraph": 0,
+   "quote": "Jared accidentally summoned her during a duel with Ravidel, and the Battlemage incinerated her."
+  },
+  {
+   "source": "Élan d'Avenant",
+   "relation": "member_of",
+   "target": "Order of the D'Avenant",
+   "note": "Archer squire.",
+   "paragraph": 0,
+   "quote": "Élan d'Avenant was an archer squire of the Order of the D'Avenant on Dominaria ."
+  }
+ ],
+ "rejected": []
+}

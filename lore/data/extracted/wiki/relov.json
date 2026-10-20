@@ -1,0 +1,131 @@
+{
+ "page": "wiki/relov",
+ "url": "https://mtg.wiki/page/Relov",
+ "title": "Relov",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Relov",
+   "type": "character",
+   "aliases": [],
+   "description": "Corrupt Azorius arbiter who signed fraudulent orders for bribes; killed by Vraska.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who killed Relov by turning him to stone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "Issued the Mass Arrest Order to 'clean up' the Golgari Swarm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leonos II",
+   "type": "character",
+   "aliases": [
+    "Grand Arbiter Leonos"
+   ],
+   "description": "Grand Arbiter who killed Relov's proposal and whose new statue Relov approved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Javy",
+   "type": "character",
+   "aliases": [],
+   "description": "Requested stricter limits on executions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mass Arrest Order",
+   "type": "event",
+   "aliases": [],
+   "description": "Order issued by Isperia against the Golgari Swarm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Failsafe Initiative",
+   "type": "faction",
+   "aliases": [],
+   "description": "Joint Azorius and Boros venture led by Relov that rescued children.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "Guild Relov served as arbiter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Prahv",
+   "type": "location",
+   "aliases": [],
+   "description": "Azorius city where Relov was petrified.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild targeted by the Mass Arrest Order.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As arbiter, Relov signs the Mass Arrest Order to clean up the Golgari Swarm.",
+   "participants": [
+    "Relov",
+    "Isperia",
+    "Golgari Swarm"
+   ],
+   "location": "New Prahv",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "one of his first actions was the signing of the Mass Arrest Order"
+  },
+  {
+   "summary": "As the last living signatory, Relov is turned to stone by Vraska and placed at the entrance to New Prahv.",
+   "participants": [
+    "Relov",
+    "Vraska"
+   ],
+   "location": "New Prahv",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was personally killed by Vraska , by being turned to stone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vraska",
+   "relation": "killed",
+   "target": "Relov",
+   "note": "Turned him to stone",
+   "paragraph": 3,
+   "quote": "he was personally killed by Vraska , by being turned to stone"
+  },
+  {
+   "source": "Relov",
+   "relation": "member_of",
+   "target": "Azorius Senate",
+   "note": "Arbiter",
+   "paragraph": 0,
+   "quote": "Relov was a corrupt Azorius arbiter from Ravnica"
+  }
+ ],
+ "rejected": []
+}

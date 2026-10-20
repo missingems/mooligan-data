@@ -1,0 +1,101 @@
+{
+ "page": "wiki/glasspool",
+ "url": "https://mtg.wiki/page/Glasspool",
+ "title": "Glasspool",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:00Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Glasspool",
+   "type": "location",
+   "aliases": [],
+   "description": "Huge, hexagonal lake on Akoum, the only notable fixed body of water there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Glasspool.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glass Haven",
+   "type": "location",
+   "aliases": [],
+   "description": "Kor Haven on the shores of Glasspool.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ior",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined sacred pilgrimage site at the bottom of Glasspool, over 6000 years old.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Zendikari people who gathered around Glasspool and consider Ior sacred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Their return prompted the kor to gather at Glasspool.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Roil",
+   "type": "concept",
+   "aliases": [],
+   "description": "Seismic upheaval that fails to affect Glasspool.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the eldrazi's return, the kor gather around Glasspool, carving dwellings into the peaks and protecting the lake with webbing of hooks and ropes.",
+   "participants": [
+    "Kor",
+    "Eldrazi"
+   ],
+   "location": "Glasspool",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "kor gathered in the area around Glasspool"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Glasspool",
+   "relation": "located_in",
+   "target": "Akoum",
+   "note": "Lake on the continent.",
+   "paragraph": 0,
+   "quote": "Glasspool is a lake on the continent of Akoum"
+  },
+  {
+   "source": "Ior",
+   "relation": "located_in",
+   "target": "Glasspool",
+   "note": "Ruin at the bottom of the lake.",
+   "paragraph": 3,
+   "quote": "Ior is a ruined site at the bottom of Glasspool"
+  }
+ ],
+ "rejected": []
+}

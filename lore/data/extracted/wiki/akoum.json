@@ -1,0 +1,183 @@
+{
+ "page": "wiki/akoum",
+ "url": "https://mtg.wiki/page/Akoum",
+ "title": "Akoum",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:50:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "One of Zendikar's seven continents, a red-aligned mountainous land around a supervolcano, geologically unstable from the Roil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of which Akoum is a continent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makindi Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "An ancient empire of which Akoum was part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kargan tribes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Fierce nomadic humans of the Teeth who ride dragons they raise from stolen eggs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who gathered at Glasspool during the Eldrazi's return and were beaten by the Kargan tribes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akoum Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "A floating fortress ruin shattered by the Kargan tribes, now broken sky dungeons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goma Fada",
+   "type": "faction",
+   "aliases": [
+    "the Walking City"
+   ],
+   "description": "An enormous caravan of kor, humans and elves that wanders Akoum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ora Ondar",
+   "type": "location",
+   "aliases": [
+    "the Khalni Garden"
+   ],
+   "description": "An exceptional Life Bloom lasting almost a century with an elven settlement tending kolya trees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ser Amaran",
+   "type": "character",
+   "aliases": [],
+   "description": "The druid leading a cult of elves who eat kolya fruit religiously.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "The founder of the League of Anowon training camp in the Teeth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhulodok",
+   "type": "creature",
+   "aliases": [],
+   "description": "Whose passage carved the Windblast Gorge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ancient beings whose return sent the kor to gather at Glasspool.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As the Makindi Empire crumbled, the Kargan tribes mastered Akoum's dragons and rode them to victory over the kor, shattering the Akoum Skyclave.",
+   "participants": [
+    "Kargan tribes",
+    "Kor",
+    "Akoum Skyclave",
+    "Makindi Empire"
+   ],
+   "location": "Akoum",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Kargan tribes mastered the dragons of Akoum and rode them to victory against the kor"
+  },
+  {
+   "summary": "During the Eldrazi's return, kor gather around Glasspool and carve dwellings in the surrounding peaks.",
+   "participants": [
+    "Kor",
+    "Eldrazi"
+   ],
+   "location": "Akoum",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "During the eldrazi's return, kor gathered in the area around Glasspool"
+  },
+  {
+   "summary": "A cult of elves led by Ser Amaran treats the kolya tree as a gift from the gods and eats its fruit religiously.",
+   "participants": [
+    "Ser Amaran",
+    "Ora Ondar"
+   ],
+   "location": "Ora Ondar",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "believes the kolya tree to be a gift from the gods"
+  },
+  {
+   "summary": "Zhulodok's passage carves the Windblast Gorge through Akoum's mountains.",
+   "participants": [
+    "Zhulodok"
+   ],
+   "location": "Akoum",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "The gorge was originally carved by the passage of Zhulodok through Akoum's mountains."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akoum",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "One of the seven continents.",
+   "paragraph": 0,
+   "quote": "one of the seven continents of Zendikar"
+  },
+  {
+   "source": "Akoum",
+   "relation": "member_of",
+   "target": "Makindi Empire",
+   "note": "Once part of the empire.",
+   "paragraph": 5,
+   "quote": "Akoum was once part of the ancient Makindi Empire"
+  },
+  {
+   "source": "Ser Amaran",
+   "relation": "leader_of",
+   "target": "Ora Ondar",
+   "note": "Leads the elven cult at the garden.",
+   "paragraph": 13,
+   "quote": "led by the druid Ser Amaran"
+  },
+  {
+   "source": "Anowon",
+   "relation": "created",
+   "target": "Akoum",
+   "note": "Founded the League of Anowon training camp in the Teeth of Akoum.",
+   "paragraph": 17,
+   "quote": "founded by Anowon high in the Teeth"
+  }
+ ],
+ "rejected": []
+}

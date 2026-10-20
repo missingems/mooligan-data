@@ -1,0 +1,217 @@
+{
+ "page": "wiki/agyrem",
+ "url": "https://mtg.wiki/page/Agyrem",
+ "title": "Agyrem",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:58Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Agyrem",
+   "type": "location",
+   "aliases": [
+    "Ghost Quarter",
+    "Aygrem"
+   ],
+   "description": "The Ghost Quarter of Ravnica, where ghosts of the dead linger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Agyrem.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Schism",
+   "type": "event",
+   "aliases": [
+    "The Schism"
+   ],
+   "description": "A rift giving access to Agyrem, accidentally created by Zomaj Hauc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zomaj Hauc",
+   "type": "character",
+   "aliases": [
+    "Hauc"
+   ],
+   "description": "Izzet magelord who created the Schism and betrayed Niv-Mizzet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon betrayed by Hauc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped kill the dragon hatchlings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped kill the hatchlings and apprehended Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [
+    "vampire parun Szadek"
+   ],
+   "description": "A vampire parun who became a ghost and took over Agyrem.",
+   "presence": "appears"
+  },
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros guildmaster and parun, killed battling Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parhelion",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Warship Razia flew through the Schism.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros",
+   "type": "faction",
+   "aliases": [
+    "Boros angels"
+   ],
+   "description": "Guild led by Razia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of Zomaj Hauc.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "Broken pact whose laws remained in Agyrem.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that dissolved the ghost-world anomaly.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zomaj Hauc accidentally creates the Schism while making a living space for ancient dragons.",
+   "participants": [
+    "Zomaj Hauc",
+    "Niv-Mizzet"
+   ],
+   "location": "Agyrem",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was accidentally created by Zomaj Hauc in 9965 Z.C."
+  },
+  {
+   "summary": "Hauc betrays Niv-Mizzet and the hatchlings are killed by Teysa Karlov, Agrus Kos and friends.",
+   "participants": [
+    "Zomaj Hauc",
+    "Niv-Mizzet",
+    "Teysa Karlov",
+    "Agrus Kos"
+   ],
+   "location": "Agyrem",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the hatchlings were killed by Teysa Karlov , Agrus Kos , and their friends"
+  },
+  {
+   "summary": "Razia flies the Parhelion through the Schism to fight Szadek; Razia is killed with countless Boros angels.",
+   "participants": [
+    "Razia",
+    "Szadek",
+    "Boros",
+    "Parhelion"
+   ],
+   "location": "Agyrem",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Razia was killed, along with countless Boros angels"
+  },
+  {
+   "summary": "Agrus Kos apprehends Szadek, who is banished into Agyrem, laid over Ravnica as the Schism is healed.",
+   "participants": [
+    "Agrus Kos",
+    "Szadek"
+   ],
+   "location": "Agyrem",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the vampire was banished into Agyrem"
+  },
+  {
+   "summary": "At the Mending the ghost-world anomaly dissolves and the trapped spirits pass on.",
+   "participants": [
+    "Agyrem"
+   ],
+   "location": "Agyrem",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the trapped spirits were able to pass on to the aether"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zomaj Hauc",
+   "relation": "enemy",
+   "target": "Niv-Mizzet",
+   "note": "betrayed him",
+   "paragraph": 2,
+   "quote": "Hauc betrayed Niv-Mizzet"
+  },
+  {
+   "source": "Szadek",
+   "relation": "enemy",
+   "target": "Razia",
+   "note": "fought and killed her",
+   "paragraph": 3,
+   "quote": "to do battle with Szadek and his spectral army in Agyrem"
+  },
+  {
+   "source": "Razia",
+   "relation": "leader_of",
+   "target": "Boros",
+   "note": "guildmaster",
+   "paragraph": 3,
+   "quote": "Razia , the Boros guildmaster and parun"
+  },
+  {
+   "source": "Agyrem",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Agyrem was the Ghost Quarter of Ravnica"
+  }
+ ],
+ "rejected": []
+}

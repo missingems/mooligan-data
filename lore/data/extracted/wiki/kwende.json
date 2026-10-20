@@ -1,0 +1,135 @@
+{
+ "page": "wiki/kwende",
+ "url": "https://mtg.wiki/page/Kwende",
+ "title": "Kwende",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kwende",
+   "type": "character",
+   "aliases": [],
+   "description": "Human knight from Femeref on Dominaria, descended from followers of Mageta the Lion, who wields crystalline minotaur-made blades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Femeref",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where Kwende's ancestors settled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mageta the Lion",
+   "type": "character",
+   "aliases": [],
+   "description": "Renowned Zhalfirin general who turned the tide against Keldon invaders and was phased out of time with Zhalfir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Land phased out of time by Teferi's magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [
+    "Teferi Akosa"
+   ],
+   "description": "Planeswalker who phased Zhalfir out of time; Kwende tried to murder him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders defeated by Mageta about 350 years earlier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talruum Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the minotaurs who made Kwende's blades.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mending",
+   "type": "event",
+   "aliases": [
+    "Mending"
+   ],
+   "description": "Event shortly after which Kwende tried to murder Teferi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Kwende defended Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kwende's ancestors, outside Zhalfir when Teferi worked his magic, settle in Femeref.",
+   "participants": [
+    "Kwende",
+    "Teferi",
+    "Femeref"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kwende's ancestors were outside Zhalfir when Teferi worked his magic"
+  },
+  {
+   "summary": "Shortly after the Mending, Kwende attempts to murder Teferi as revenge for phasing Zhalfir.",
+   "participants": [
+    "Kwende",
+    "Teferi"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He attempted to murder Teferi , shortly after the Mending , as revenge for the phasing of Zhalfir."
+  },
+  {
+   "summary": "Kwende fights in defense of Dominaria during the New Phyrexian Invasion.",
+   "participants": [
+    "Kwende",
+    "New Phyrexian Invasion"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kwende fought in defense of Dominaria during the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kwende",
+   "relation": "enemy",
+   "target": "Teferi",
+   "note": "Kwende tried to kill him over the phasing of Zhalfir.",
+   "paragraph": 3,
+   "quote": "He attempted to murder Teferi"
+  },
+  {
+   "source": "Kwende",
+   "relation": "family",
+   "target": "Mageta the Lion",
+   "note": "Kwende is descended from followers of the general whom he idolizes.",
+   "paragraph": 0,
+   "quote": "He is descended from the Zhalfirin general Mageta the Lion whom he idolized."
+  }
+ ],
+ "rejected": []
+}

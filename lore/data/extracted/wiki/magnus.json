@@ -1,0 +1,145 @@
+{
+ "page": "wiki/magnus",
+ "url": "https://mtg.wiki/page/Magnus",
+ "title": "Magnus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Magnus",
+   "type": "character",
+   "aliases": [
+    "Lord Magnus"
+   ],
+   "description": "Lord Magnus, Dominarian druid and avatar of the woods on southern Argenti, residing in the Sylvan Library.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylvan Library",
+   "type": "location",
+   "aliases": [],
+   "description": "Place from which Magnus controls plant life and wildlife.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argenti",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Caleria",
+   "type": "character",
+   "aliases": [
+    "Caleria"
+   ],
+   "description": "Rebel allied with Magnus against the Empire of Madara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Empire of Madara",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire against which Caleria rebelled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Magnus allied with Caleria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders of Argenti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ayesha Tanaka",
+   "type": "character",
+   "aliases": [],
+   "description": "Took Magnus from the Sylvan Library and was forced to end the kentsu invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kei Takahashi",
+   "type": "character",
+   "aliases": [],
+   "description": "Student of Ayesha Tanaka.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Magnus allies with Lady Caleria in her rebellion against the Empire of Madara.",
+   "participants": [
+    "Magnus",
+    "Lady Caleria"
+   ],
+   "location": "Argenti",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Magnus allied with Lady Caleria in her rebellion against the Empire of Madara"
+  },
+  {
+   "summary": "Ayesha Tanaka takes Magnus from the Sylvan Library; he dies.",
+   "participants": [
+    "Ayesha Tanaka",
+    "Magnus"
+   ],
+   "location": "Sylvan Library",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ayesha Tanaka took him from the Sylvan Library."
+  },
+  {
+   "summary": "The forest, through Magnus, forces Ayesha to help end the kentsu invasion in exchange for her cure.",
+   "participants": [
+    "Magnus",
+    "Ayesha Tanaka"
+   ],
+   "location": "Sylvan Library",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Ayesha was forced to help end the kentsu invasion in exchange for her cure."
+  },
+  {
+   "summary": "Magnus retakes his seat in the Sylvan Library and rejoins Caleria to exact reparations.",
+   "participants": [
+    "Magnus",
+    "Lady Caleria"
+   ],
+   "location": "Sylvan Library",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Magnus then joined Caleria once more, this time to exact reparations from Madara."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Magnus",
+   "relation": "ally",
+   "target": "Lady Caleria",
+   "note": "Allied in rebellion",
+   "paragraph": 2,
+   "quote": "Magnus allied with Lady Caleria in her rebellion against the Empire of Madara"
+  },
+  {
+   "source": "Ayesha Tanaka",
+   "relation": "mentor_of",
+   "target": "Kei Takahashi",
+   "note": "Teacher and student",
+   "paragraph": 2,
+   "quote": "her student Kei Takahashi"
+  }
+ ],
+ "rejected": []
+}

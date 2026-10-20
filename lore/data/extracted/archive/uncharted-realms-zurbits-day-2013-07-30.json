@@ -1,0 +1,188 @@
+{
+ "page": "archive/uncharted-realms-zurbits-day-2013-07-30",
+ "url": "https://web.archive.org/web/20200528103152/https://magic.wizards.com/en/articles/archive/uncharted-realms/zurbits-day-2013-07-30",
+ "title": "Zurbit's Day",
+ "story_date": "2013-07-30",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:42:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Relno",
+   "type": "character",
+   "aliases": [
+    "Master"
+   ],
+   "description": "A nervous inventor-mage who lives in a tower on an island lab and asks his noble backer Emina for money to finish his greatest work.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emina",
+   "type": "character",
+   "aliases": [],
+   "description": "A noble who backs Relno's work and whose family he made wealthy and powerful.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zurbit",
+   "type": "creature",
+   "aliases": [],
+   "description": "Relno's faithful one-eyed homunculus who avenges the ransacking of the tower by merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pip",
+   "type": "creature",
+   "aliases": [],
+   "description": "Relno's orange-striped cat, whom Zurbit enlarges with a potion to a whale-sized size.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merfolk raiders",
+   "type": "faction",
+   "aliases": [
+    "merfolk",
+    "finny folk"
+   ],
+   "description": "A small group of merfolk living on a reef offshore who rob land-dwellers along the Kapsho.",
+   "presence": "appears"
+  },
+  {
+   "name": "Relno's tower",
+   "type": "location",
+   "aliases": [
+    "tower",
+    "island lab",
+    "workshop"
+   ],
+   "description": "Relno's tall tower laboratory on an island, ransacked by merfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Martyne",
+   "type": "location",
+   "aliases": [],
+   "description": "Place from which pieces of Relno's work will be shipped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kapsho",
+   "type": "location",
+   "aliases": [],
+   "description": "Waters whose shores the merfolk raid.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Relno firmly asks the noble Emina for more money and she agrees to five thousand.",
+   "participants": [
+    "Relno",
+    "Emina"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "\"Done. Get out.\""
+  },
+  {
+   "summary": "Relno sails home eager to finish his greatest work, planning elementals and a shipment from Martyne.",
+   "participants": [
+    "Relno"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Finally, he had the funds he needed to finish his greatest work—it would be glorious."
+  },
+  {
+   "summary": "Zurbit discovers the tower ransacked and a window pried open by merfolk.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk raiders",
+    "Relno's tower"
+   ],
+   "location": "Relno's tower",
+   "importance": "major",
+   "paragraph": 20,
+   "quote": "They had made off with the lot."
+  },
+  {
+   "summary": "Zurbit rows to the merfolk reef with Pip and drops a message in a flask.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk raiders"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "He stuffed the message into a flask and made sure that it could be read."
+  },
+  {
+   "summary": "A merfolk surfaces and hisses at Zurbit with contempt.",
+   "participants": [
+    "Zurbit",
+    "Merfolk raiders"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "The merfolk's eyes were cold and smug as it submerged under the waves with a final hiss of contempt."
+  },
+  {
+   "summary": "Zurbit gives Pip a green potion and pushes him out over the reef as the cat grows to the size of a small whale.",
+   "participants": [
+    "Zurbit",
+    "Pip",
+    "Merfolk raiders"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 36,
+   "quote": "Then he began to row with all his might, as Pip grew to the size of a small whale."
+  },
+  {
+   "summary": "Relno returns to find the tower in disarray; Zurbit claims he was just letting in some sea air.",
+   "participants": [
+    "Relno",
+    "Zurbit",
+    "Pip"
+   ],
+   "location": "Relno's tower",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "\"Just letting in a little sea air.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zurbit",
+   "relation": "serves",
+   "target": "Relno",
+   "note": "Faithful homunculus.",
+   "paragraph": 14,
+   "quote": "his faithful homunculus, Zurbit."
+  },
+  {
+   "source": "Merfolk raiders",
+   "relation": "enemy",
+   "target": "Zurbit",
+   "note": "They robbed the tower and he takes revenge.",
+   "paragraph": 23,
+   "quote": "these finny folk were robbers and cutthroats"
+  },
+  {
+   "source": "Relno",
+   "relation": "other",
+   "target": "Emina",
+   "note": "Relno relies on Emina's financial backing.",
+   "paragraph": 2,
+   "quote": "He was the one whose genius made her family wealthy and powerful."
+  }
+ ],
+ "rejected": []
+}

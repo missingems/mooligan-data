@@ -1,0 +1,77 @@
+{
+ "page": "wiki/sedraxis",
+ "url": "https://mtg.wiki/page/Sedraxis",
+ "title": "Sedraxis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:44Z",
+ "storyline": "Grixis",
+ "entities": [
+  {
+   "name": "Sedraxis",
+   "type": "location",
+   "aliases": [
+    "the Crumbling Necropolis"
+   ],
+   "description": "Conquered capital of Vithia on Grixis, a crumbling necropolis ruled by the Lich King Sedris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vithia",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose capital was Sedraxis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Sedraxis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lich King Sedris",
+   "type": "character",
+   "aliases": [
+    "Sedris"
+   ],
+   "description": "Ruler of Sedraxis who lets chaos reign.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sedraxis is conquered by the dark forces of Grixis, becoming a necropolis and the Lich King Sedris's lair.",
+   "participants": [
+    "Sedraxis",
+    "Lich King Sedris"
+   ],
+   "location": "Grixis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "after being conquered by the dark forces of"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lich King Sedris",
+   "relation": "leader_of",
+   "target": "Sedraxis",
+   "note": "He rules the necropolis.",
+   "paragraph": 1,
+   "quote": "The Lich King Sedris rules this place"
+  },
+  {
+   "source": "Sedraxis",
+   "relation": "located_in",
+   "target": "Vithia",
+   "note": "It was Vithia's capital.",
+   "paragraph": 2,
+   "quote": "Sedraxis was once the capital city of Vithia"
+  }
+ ],
+ "rejected": []
+}

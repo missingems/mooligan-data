@@ -1,0 +1,857 @@
+{
+ "page": "stories/edge-of-eternities-episode-7",
+ "url": "https://magic.wizards.com/en/news/magic-story/edge-of-eternities-episode-7",
+ "title": "Edge of Eternities | Episode 7",
+ "story_date": "2025-07-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:42:29Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Haliya",
+   "type": "character",
+   "aliases": [
+    "Squire"
+   ],
+   "description": "Syr Vondam's squire in the Sunstar Free Company, who goes alone into Taro-duend to stop Alpharael, refuses to order a massacre, and is ultimately felled by Alpharael.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Vondam",
+   "type": "character",
+   "aliases": [
+    "Vondam",
+    "Syr"
+   ],
+   "description": "A Solar Knight who survived a black hole through his skull, fears he is an anstruth under the object's influence, and directs the search for Alpharael.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alpharael",
+   "type": "character",
+   "aliases": [],
+   "description": "A fugitive Monoist who wakes on the Seriema with a hole through his right hand, hears the voice of the object, and has the stone's help in escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sami",
+   "type": "character",
+   "aliases": [
+    "Captain Sami"
+   ],
+   "description": "Captain of the Seriema who deduces that the stone makes them lucky, but is later shot by Haliya as they return to the ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tannuk",
+   "type": "character",
+   "aliases": [
+    "Tan"
+   ],
+   "description": "Sami's Kav first mate who hides Sami under his poncho from the Free Company and is later shot by Haliya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quinidad",
+   "type": "character",
+   "aliases": [],
+   "description": "A squire who taught Haliya to see in battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cataphrin",
+   "type": "character",
+   "aliases": [],
+   "description": "An acquaintance of Haliya who would explain Summist interpretation of situations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Santaphor",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Haliya imagines would pretend not to understand and ask for explanations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isidor",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Haliya imagines would leap into action.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raphaella",
+   "type": "character",
+   "aliases": [],
+   "description": "Alpharael's twin sister who plunged into the Next Eternity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slats",
+   "type": "character",
+   "aliases": [
+    "Captain Slats"
+   ],
+   "description": "The Dawnsire's Astelli captain, who foresaw Vondam's death; Vondam left without telling him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Metalman",
+   "type": "character",
+   "aliases": [],
+   "description": "The patron to whom Sami intends to deliver the stone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirri",
+   "type": "character",
+   "aliases": [],
+   "description": "Someone Sami wants the Metalman to help find.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Metalman's artifact",
+   "type": "artifact",
+   "aliases": [
+    "the object",
+    "the anathema",
+    "the rock",
+    "the stone"
+   ],
+   "description": "A stone that speaks to Alpharael in a dream, lets him pass his finger through a hole in his hand, and bends luck and past events around him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anathalmanac",
+   "type": "artifact",
+   "aliases": [
+    "the anathalmanac"
+   ],
+   "description": "A catalog of terrors given to Vondam and Haliya that lays out protocols for handling the object, including radiant resignation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sundog",
+   "type": "artifact",
+   "aliases": [
+    "the barque",
+    "Barque"
+   ],
+   "description": "The Sunstar palestar that carries Vondam and Haliya to Taro-duend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seriema",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Sami's ship, hidden in a cave off the slag fields, where Alpharael wakes and where Haliya finds him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dawnsire",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The Sunstar ship Vondam and Haliya left in secret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taro-duend",
+   "type": "location",
+   "aliases": [],
+   "description": "A Kav settlement on stilts on Kavaron That Is where the Free Company searches for Alpharael and the Kav resist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kavaron",
+   "type": "location",
+   "aliases": [
+    "Kavaron That Is"
+   ],
+   "description": "The ruined Kav world where the story takes place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Uthros",
+   "type": "location",
+   "aliases": [],
+   "description": "The place Sami and Tannuk are to meet the Metalman, for which their ship lacks fuel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "plane",
+   "aliases": [],
+   "description": "The dead star system the Sunstar mission hopes to reignite and where the object is believed to be.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunstar Free Company",
+   "type": "faction",
+   "aliases": [
+    "Free Company",
+    "Sunstar"
+   ],
+   "description": "The Sunstar fighting order searching Taro-duend for Alpharael.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monoism",
+   "type": "faction",
+   "aliases": [
+    "Monoists",
+    "True Faith"
+   ],
+   "description": "The faith of Alpharael, believing all futures end in black holes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "INEVITA",
+   "type": "deity",
+   "aliases": [],
+   "description": "What survives at the end of time; a deity Monoists beg to draw them down.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anstruth",
+   "type": "concept",
+   "aliases": [
+    "anathematic"
+   ],
+   "description": "A blasphemy against reality, an outcome engineered by the object.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Sum",
+   "type": "concept",
+   "aliases": [
+    "Sum"
+   ],
+   "description": "The Sunstar measure of life that must be increased, treated as a real hard figure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moratorio Cosmogrand",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Sunstar unit whose photophoroi help Haliya make her first combat descent.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Haliya, aboard the Sundog, stares guiltily at the hole in Vondam's skull and thinks of Alpharael.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam"
+   ],
+   "location": "Sundog",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Haliya catches herself staring at the hole in Syr Vondam's skull again."
+  },
+  {
+   "summary": "Vondam and Haliya left the Dawnsire in a secret rush, telling no one, not even Captain Slats.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "Dawnsire",
+    "Slats",
+    "Sundog"
+   ],
+   "location": "Sundog",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "They left the Dawnsire in a secret rush, telling no one, not even Captain Slats."
+  },
+  {
+   "summary": "Vondam says they are going to find and kill Alpharael, not for revenge.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "Alpharael"
+   ],
+   "location": "Sundog",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "All he will say is that they are going to find and kill Alpharael."
+  },
+  {
+   "summary": "Vondam orders the Sundog to repeat its demand that Taro-duend hand over the spy and to launch Hopelights for surveillance.",
+   "participants": [
+    "Syr Vondam",
+    "Sundog",
+    "Taro-duend"
+   ],
+   "location": "Kavaron",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "Give them another chance to hand over the spy. Launch the Hopelights."
+  },
+  {
+   "summary": "Vondam gives Haliya a quartz crystal containing the anathalmanac.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "Anathalmanac"
+   ],
+   "location": "Sundog",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "He gives her a quartz memory crystal."
+  },
+  {
+   "summary": "Vondam explains his belief that an anathema object in Sothera is calling for a wielder and threatens the Sunstar mission.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "The Metalman's artifact",
+    "Sothera"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 33,
+   "quote": "I believe one such object is in Sothera."
+  },
+  {
+   "summary": "Vondam says the object manipulated Slats's vision, Vondam's death and survival to draw Alpharael to it.",
+   "participants": [
+    "Syr Vondam",
+    "The Metalman's artifact",
+    "Alpharael",
+    "Slats"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 37,
+   "quote": "The object manipulated everything."
+  },
+  {
+   "summary": "Haliya reads protocol seven, radiant resignation, requiring destruction of everything the object touches.",
+   "participants": [
+    "Haliya",
+    "Anathalmanac"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 50,
+   "quote": "7. Radiant resignation. Destroy yourself, all those about you, and the Object, by the most immediate and violent means available."
+  },
+  {
+   "summary": "Vondam declares that his judgment cannot be trusted and Haliya is now effectively the knight.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 58,
+   "quote": "In a sense, Haliya, you are now the knight and I the squire."
+  },
+  {
+   "summary": "Vondam asks Haliya whether she could order the destruction of all Taro-duend if needed.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "Taro-duend"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 70,
+   "quote": "Can you destroy it all?"
+  },
+  {
+   "summary": "Haliya refuses to help kill a settlement of innocents.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam",
+    "Taro-duend"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 77,
+   "quote": "I won't do it. I'm not going to kill a settlement full of defenseless innocents."
+  },
+  {
+   "summary": "Haliya proposes to go down to Taro-duend herself to find and kill Alpharael.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam",
+    "Alpharael"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 81,
+   "quote": "You don't go down there. I do."
+  },
+  {
+   "summary": "Haliya persuades Vondam to let her go in his place by invoking a knight's trust.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam"
+   ],
+   "location": "Sundog",
+   "importance": "major",
+   "paragraph": 90,
+   "quote": "He would give her a chance to be worthy of his trust."
+  },
+  {
+   "summary": "Alpharael dreams of his past and his twin Raphaella being chosen for the Plummet, while a voice speaks to him.",
+   "participants": [
+    "Alpharael",
+    "Raphaella",
+    "The Metalman's artifact"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 94,
+   "quote": "One twin cast into the singularity. One twin turned away."
+  },
+  {
+   "summary": "The voice reveals Alpharael has already used it, changing the Hopelight's past so the Kav arrived as walking corpses.",
+   "participants": [
+    "The Metalman's artifact",
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 97,
+   "quote": "Alpharael's used me already, to get rid of the Kav."
+  },
+  {
+   "summary": "The voice tells Alpharael why he was meant to wield it.",
+   "participants": [
+    "The Metalman's artifact",
+    "Alpharael",
+    "INEVITA"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 111,
+   "quote": "Do you understand, Alpharael, why you were meant to wield me?"
+  },
+  {
+   "summary": "Alpharael wakes strapped in a bunk on the Seriema.",
+   "participants": [
+    "Alpharael",
+    "Seriema"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 117,
+   "quote": "\"I live,\" he croaks."
+  },
+  {
+   "summary": "Alpharael discovers a transparent hole through his right hand.",
+   "participants": [
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 122,
+   "quote": "A hole right through his hand, palm to dorsum."
+  },
+  {
+   "summary": "Alpharael sees Sunstar Free Company knights and photophoroi landing at Taro-duend to search for him.",
+   "participants": [
+    "Alpharael",
+    "Sunstar Free Company",
+    "Taro-duend"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 137,
+   "quote": "And from that ship rains an armored rain: the tiny figures of Solar Knights descending on spikes of plasma."
+  },
+  {
+   "summary": "Alpharael finds Sami's note saying they are out for fuel and he is locked in.",
+   "participants": [
+    "Alpharael",
+    "Sami"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 145,
+   "quote": "Gone out for fuel—back soon."
+  },
+  {
+   "summary": "Alpharael unlocks his cabin hatch by threading a finger through the hole in his hand.",
+   "participants": [
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 154,
+   "quote": "He drives his left index finger through the hole in his right hand."
+  },
+  {
+   "summary": "Alpharael goes to the cargo bay and restarts the stasis cask to retrieve what is inside.",
+   "participants": [
+    "Alpharael",
+    "The Metalman's artifact"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 162,
+   "quote": "He rubs at the hole in his hand as the cask whirs up to real time."
+  },
+  {
+   "summary": "The Free Company sweeps Taro-duend with drones and infantry.",
+   "participants": [
+    "Sunstar Free Company",
+    "Taro-duend"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 165,
+   "quote": "The Free Company is everywhere."
+  },
+  {
+   "summary": "The Kav of Taro-duend resist the Free Company by sabotage and obstruction.",
+   "participants": [
+    "Sunstar Free Company",
+    "Taro-duend",
+    "Tannuk"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 169,
+   "quote": "In an act of aggressive, unilateral solidarity, the Kav are raising thirteen kinds of hell."
+  },
+  {
+   "summary": "Tannuk hides Sami under his poncho as they move through the chaos.",
+   "participants": [
+    "Tannuk",
+    "Sami"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 175,
+   "quote": "You could not ask for a better first mate or a worse fugitive than Tannuk."
+  },
+  {
+   "summary": "Sami concludes the stone is making them lucky enough to avoid detection.",
+   "participants": [
+    "Sami",
+    "Tannuk",
+    "The Metalman's artifact"
+   ],
+   "location": "Taro-duend",
+   "importance": "major",
+   "paragraph": 191,
+   "quote": "It's the rock, Tannuk. The rock is lucky."
+  },
+  {
+   "summary": "A Free Company officer fires a microwave weapon on the crowd.",
+   "participants": [
+    "Sunstar Free Company",
+    "Sami",
+    "Tannuk"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 194,
+   "quote": "One of the Free Company officers fires up a microwave weapon."
+  },
+  {
+   "summary": "Sami speculates that a similar past rewrite emptied Sigma's Reach of its people.",
+   "participants": [
+    "Sami",
+    "Tannuk"
+   ],
+   "location": "Taro-duend",
+   "importance": "major",
+   "paragraph": 208,
+   "quote": "Maybe there were people there, before we showed up."
+  },
+  {
+   "summary": "Sami refuses to give up the stone because the Metalman is their hope of finding Mirri.",
+   "participants": [
+    "Sami",
+    "Tannuk",
+    "The Metalman",
+    "Mirri"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 213,
+   "quote": "then he wouldn't fix our ship. And then who'd look for Mirri?"
+  },
+  {
+   "summary": "Haliya makes her first combat descent to Taro-duend alone.",
+   "participants": [
+    "Haliya",
+    "Moratorio Cosmogrand"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 214,
+   "quote": "A team of photophoroi from the Moratorio Cosmogrand help her make her first combat descent."
+  },
+  {
+   "summary": "Haliya builds a triple-jointed pendulum to shield herself from the object by tying her actions to scripture.",
+   "participants": [
+    "Haliya",
+    "Anathalmanac"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 224,
+   "quote": "3. Pendulum, encoding faith. Fashion from gleanings a triple-jointed pendulum. Dangle it from thy armor."
+  },
+  {
+   "summary": "In the third cave she checks, Haliya finds the Seriema.",
+   "participants": [
+    "Haliya",
+    "Seriema"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 235,
+   "quote": "In the third cave she checks, she finds a ship called the Seriema"
+  },
+  {
+   "summary": "Haliya plants charges on the Seriema before going in.",
+   "participants": [
+    "Haliya",
+    "Seriema"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 242,
+   "quote": "Plant a charge under the Seriema 's folded airfoil."
+  },
+  {
+   "summary": "Alpharael tries to wish on the stone for rescue but nothing happens.",
+   "participants": [
+    "Alpharael",
+    "The Metalman's artifact"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 245,
+   "quote": "Bring Captain Sami back here safely. Get us off this planet and away from the Sunstar knights."
+  },
+  {
+   "summary": "Haliya enters the cargo bay and Alpharael tries to banish her with the stone.",
+   "participants": [
+    "Haliya",
+    "Alpharael",
+    "The Metalman's artifact"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 253,
+   "quote": "Alpharael brandishes the rock at her and shouts, \"Vanish!\""
+  },
+  {
+   "summary": "Haliya stuns Alpharael with her bladiator.",
+   "participants": [
+    "Haliya",
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 256,
+   "quote": "The bright figure shoots him."
+  },
+  {
+   "summary": "Haliya puts a dead-man bomb in Alpharael's mouth to protect herself from the object's influence.",
+   "participants": [
+    "Haliya",
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 266,
+   "quote": "That's a bomb,\" she says. \"If it doesn't get my passcode every ten seconds, it'll blow up."
+  },
+  {
+   "summary": "Haliya asks Alpharael to use the object to change the past so she was the one he killed, sparing Vondam.",
+   "participants": [
+    "Haliya",
+    "Alpharael",
+    "Syr Vondam"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 271,
+   "quote": "I need you to change things so that I was the one you killed"
+  },
+  {
+   "summary": "The Free Company search at Taro-duend collapses under Kav resistance.",
+   "participants": [
+    "Sunstar Free Company",
+    "Taro-duend"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 276,
+   "quote": "The Free Company search is falling apart."
+  },
+  {
+   "summary": "A Hopelight pilot destroys half the airport while firing at a laser source.",
+   "participants": [
+    "Sunstar Free Company",
+    "Taro-duend"
+   ],
+   "location": "Taro-duend",
+   "importance": "minor",
+   "paragraph": 281,
+   "quote": "I blew up half the airport ."
+  },
+  {
+   "summary": "Haliya urges Alpharael to change the past.",
+   "participants": [
+    "Haliya",
+    "Alpharael",
+    "The Metalman's artifact"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 286,
+   "quote": "\"Do it,\" she urges him."
+  },
+  {
+   "summary": "Haliya tells Vondam she has Alpharael and offers to be the one the object changed.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam",
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 295,
+   "quote": "I can be the one it changed. You can be yourself again."
+  },
+  {
+   "summary": "Vondam orders Haliya to kill Alpharael and return with the object.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya",
+    "Alpharael"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 306,
+   "quote": "Haliya, I am ordering you to kill him and return with the object."
+  },
+  {
+   "summary": "Haliya tells Vondam to proceed with protocol seven and fire on her, the object and the Kav.",
+   "participants": [
+    "Haliya",
+    "Syr Vondam",
+    "Anathalmanac"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 313,
+   "quote": "You have to fire. Destroy me, the object, and the Kav."
+  },
+  {
+   "summary": "Vondam orders Haliya to get out and move to the slag field for extraction.",
+   "participants": [
+    "Syr Vondam",
+    "Haliya"
+   ],
+   "location": "Seriema",
+   "importance": "minor",
+   "paragraph": 322,
+   "quote": "Move to the slag field for extraction."
+  },
+  {
+   "summary": "As a human and a Kav, apparently Sami and Tannuk, reach the Seriema's ramp, Haliya shoots the human through the heart.",
+   "participants": [
+    "Haliya",
+    "Sami",
+    "Seriema"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 328,
+   "quote": "She lases the human through the heart."
+  },
+  {
+   "summary": "Haliya kills the grieving Kav, apparently Tannuk, with her bladiator.",
+   "participants": [
+    "Haliya",
+    "Tannuk"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 328,
+   "quote": "It takes a surprisingly long fraction of a second for her bladiator to burn through the Kav's throat and kill it, too."
+  },
+  {
+   "summary": "Alpharael jabs himself with a jet injector and the injection passes through the hole in his hand and into Haliya, paralyzing her.",
+   "participants": [
+    "Alpharael",
+    "Haliya"
+   ],
+   "location": "Seriema",
+   "importance": "major",
+   "paragraph": 333,
+   "quote": "Only the injection has gone through his hand, through her armor, and into her ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Haliya",
+   "relation": "serves",
+   "target": "Syr Vondam",
+   "note": "Haliya is Vondam's squire.",
+   "paragraph": 5,
+   "quote": "It was a joke, Squire."
+  },
+  {
+   "source": "Syr Vondam",
+   "relation": "enemy",
+   "target": "Alpharael",
+   "note": "Vondam is hunting Alpharael.",
+   "paragraph": 13,
+   "quote": "All he will say is that they are going to find and kill Alpharael."
+  },
+  {
+   "source": "Haliya",
+   "relation": "enemy",
+   "target": "Alpharael",
+   "note": "Haliya blames Alpharael for Vondam's wound.",
+   "paragraph": 2,
+   "quote": "She let the coward Alpharael throw a black hole through her knight's skull."
+  },
+  {
+   "source": "Quinidad",
+   "relation": "mentor_of",
+   "target": "Haliya",
+   "note": "Quinidad taught Haliya to see in battle.",
+   "paragraph": 79,
+   "quote": "little Quinidad who taught Haliya how to see in battle"
+  },
+  {
+   "source": "Alpharael",
+   "relation": "family",
+   "target": "Raphaella",
+   "note": "Raphaella is Alpharael's twin sister.",
+   "paragraph": 93,
+   "quote": "shot from his artificial womb alongside his twin sister"
+  },
+  {
+   "source": "Tannuk",
+   "relation": "serves",
+   "target": "Sami",
+   "note": "Tannuk is Sami's first mate.",
+   "paragraph": 175,
+   "quote": "You could not ask for a better first mate or a worse fugitive than Tannuk."
+  },
+  {
+   "source": "The Metalman's artifact",
+   "relation": "other",
+   "target": "Alpharael",
+   "note": "The object chooses Alpharael as its wielder.",
+   "paragraph": 111,
+   "quote": "Do you understand, Alpharael, why you were meant to wield me?"
+  }
+ ],
+ "rejected": []
+}

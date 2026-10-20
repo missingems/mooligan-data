@@ -1,0 +1,495 @@
+{
+ "page": "stories/episode-1-an-offer-of-revenge",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-1-an-offer-of-revenge",
+ "title": "Outlaws of Thunder Junction | Episode 1: An Offer of Revenge",
+ "story_date": "2024-03-11",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:36:52Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Archie Dixon",
+   "type": "character",
+   "aliases": [
+    "Archie"
+   ],
+   "description": "A courier hired by the Sterling Company who is killed by Akul's Hellspurs while carrying a sack of coal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "character",
+   "aliases": [
+    "Akul the Unrepentant"
+   ],
+   "description": "A dragon and feared leader of the Hellspurs who hunts for the last key.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [
+    "the Hellspurs"
+   ],
+   "description": "The outlaw gang led by the dragon Akul that ambushes and kills the Sterling guards and Archie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [
+    "Sterling Company guards",
+    "Sterling Company mercenary"
+   ],
+   "description": "A wealthy company on Thunder Junction that hires couriers and mercenaries and has invested in Ral's research.",
+   "presence": "appears"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [
+    "Annie"
+   ],
+   "description": "A retired outlaw and former Freestrider who can see through illusions with her golden eye and lives in Saddlebrush with her palominos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fortune",
+   "type": "creature",
+   "aliases": [],
+   "description": "Annie's horned, intelligent horse-like companion who comes and goes with the sunset.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mr. Towning",
+   "type": "character",
+   "aliases": [],
+   "description": "The pepper-gray storekeeper of Saddlebrush who splits Annie's loot with her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [
+    "Oko, Thief of Crowns"
+   ],
+   "description": "A fae shapeshifter and notorious trickster who recruits Annie for a heist on Akul, and Kellan's father.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [
+    "Kellan Inquisitive"
+   ],
+   "description": "A young fae from Eldraine working at Omenport who flew to catch a falling worker, and who is searching for his father Oko.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Ral",
+    "Mr. Zarek"
+   ],
+   "description": "A planeswalker developing a communication relay through the Omenpaths, who hires Kellan onto his security detail.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon in Ravnica collaborating with Ral on communicating through the Omenpaths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [],
+   "description": "Kellan's former boss, who told him his father was on Thunder Junction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Annie's nephew",
+   "type": "character",
+   "aliases": [],
+   "description": "A nephew nearly killed by Akul, the reason Annie left outlaw life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenport",
+   "type": "location",
+   "aliases": [],
+   "description": "A town on Thunder Junction built around an Omenpath, with a half-built relay tower.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saddlebrush",
+   "type": "location",
+   "aliases": [],
+   "description": "A small, remote town in the wastes where Annie lives on a ranch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prosperity",
+   "type": "location",
+   "aliases": [],
+   "description": "The wealthiest town on Thunder Junction and headquarters of the Sterling Company.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Wild West plane of outlaws, deserts and Omenpaths where the story is set.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [
+    "Omenpaths"
+   ],
+   "description": "A portal between planes, with one at Omenport crackling with blue energy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Relay tower",
+   "type": "artifact",
+   "aliases": [
+    "the unfinished relay tower",
+    "communications hub"
+   ],
+   "description": "A tower being built at Omenport to communicate through Omenpaths, which suffers a power surge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freestriders",
+   "type": "faction",
+   "aliases": [],
+   "description": "An outlaw crew Annie rode with in her early days.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Kellan's home plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Niv-Mizzet works with Ral on the Omenpath relay.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Archie waits for an hour in Omenport until a masked stranger from another plane arrives through the Omenpath and hands him a burlap sack.",
+   "participants": [
+    "Archie Dixon",
+    "Sterling Company"
+   ],
+   "location": "Omenport",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "In his outstretched fist was a burlap sack."
+  },
+  {
+   "summary": "Archie sets off across the desert in a carriage with two Sterling guards, expecting bandits.",
+   "participants": [
+    "Archie Dixon",
+    "Sterling Company"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "His employer would never have provided two Sterling Company guards unless the job carried risks."
+  },
+  {
+   "summary": "A wall of fire stops the carriage and the Hellspurs kill the Sterling guards.",
+   "participants": [
+    "Hellspurs",
+    "Archie Dixon",
+    "Sterling Company"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "Nearly a dozen holes appeared across the side of the carriage, and the Sterling guards fell immediately."
+  },
+  {
+   "summary": "Akul splits the carriage, takes the sack and declares the last key his, but finds only coal and flies into a rage.",
+   "participants": [
+    "Akul",
+    "Archie Dixon",
+    "Hellspurs"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "\"Finally. The last key is mine.\""
+  },
+  {
+   "summary": "Archie dies in the burning sand while the real key gets farther away from Akul.",
+   "participants": [
+    "Archie Dixon",
+    "Akul"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 29,
+   "quote": "For all he cared about punctuality, he never expected to be so early to his own death."
+  },
+  {
+   "summary": "Annie Flash follows the smoke on Fortune, recognises Akul's work in the burned carriage and finds an untouched lockbox of cash.",
+   "participants": [
+    "Annie Flash",
+    "Fortune",
+    "Akul"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "A lockbox sat inside, untouched."
+  },
+  {
+   "summary": "Annie deduces that the Hellspurs left the money because they were after something bigger.",
+   "participants": [
+    "Annie Flash",
+    "Hellspurs",
+    "Akul"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 43,
+   "quote": "But they left the money behind—which meant they were after something else."
+  },
+  {
+   "summary": "Annie brings the lockbox to Mr. Towning and they split the cash fifty-fifty.",
+   "participants": [
+    "Annie Flash",
+    "Mr. Towning"
+   ],
+   "location": "Saddlebrush",
+   "importance": "minor",
+   "paragraph": 55,
+   "quote": "Annie watched him divide the cash into two equal parts."
+  },
+  {
+   "summary": "Oko, disguised as a city man, approaches Annie on her porch and she sees through his illusion with her golden eye.",
+   "participants": [
+    "Annie Flash",
+    "Oko"
+   ],
+   "location": "Saddlebrush",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "My name is Oko—and your ability to see through illusions is exactly why I've been looking for you."
+  },
+  {
+   "summary": "Oko offers Annie revenge by recruiting her for a heist against Akul, and she refuses.",
+   "participants": [
+    "Oko",
+    "Annie Flash",
+    "Akul"
+   ],
+   "location": "Saddlebrush",
+   "importance": "major",
+   "paragraph": 79,
+   "quote": "I've been putting a team together to steal something important from an outlaw you may know as Akul."
+  },
+  {
+   "summary": "Oko leaves a saloon matchbook and hints that the Hellspurs could easily find her town.",
+   "participants": [
+    "Oko",
+    "Annie Flash",
+    "Hellspurs"
+   ],
+   "location": "Saddlebrush",
+   "importance": "minor",
+   "paragraph": 85,
+   "quote": "If it was this easy for me to find you, imagine how easy it will be if the Hellspurs ever decide to come looking."
+  },
+  {
+   "summary": "Annie realises her old ghosts have followed her to the only place she cares about.",
+   "participants": [
+    "Annie Flash"
+   ],
+   "location": "Saddlebrush",
+   "importance": "minor",
+   "paragraph": 90,
+   "quote": "her old ghosts had followed her to the only place left in the world that she truly cared about."
+  },
+  {
+   "summary": "Kellan works at the half-built relay tower in Omenport and reflects on the Omenpath that brought him from Eldraine.",
+   "participants": [
+    "Kellan"
+   ],
+   "location": "Omenport",
+   "importance": "minor",
+   "paragraph": 93,
+   "quote": "It was hard to believe it had only been a few weeks since he'd stepped through the portal."
+  },
+  {
+   "summary": "A technician's fault sends lightning through the relay tower and a worker falls from the scaffolding.",
+   "participants": [
+    "Relay tower",
+    "Ral Zarek"
+   ],
+   "location": "Omenport",
+   "importance": "minor",
+   "paragraph": 105,
+   "quote": "From the height of the tower, the man fell."
+  },
+  {
+   "summary": "Kellan flies up on golden dust and catches the falling worker midair.",
+   "participants": [
+    "Kellan"
+   ],
+   "location": "Omenport",
+   "importance": "major",
+   "paragraph": 107,
+   "quote": "Golden dust burst from his feet as he flew toward the man and wrapped his arms around him midair"
+  },
+  {
+   "summary": "Ral dismisses the accident and walks away without looking at the fallen worker.",
+   "participants": [
+    "Ral Zarek"
+   ],
+   "location": "Omenport",
+   "importance": "minor",
+   "paragraph": 109,
+   "quote": "He marched away without another glance toward the fallen worker."
+  },
+  {
+   "summary": "Kellan tells the worker that Ezrim told him his father was on this plane and that he is looking for him.",
+   "participants": [
+    "Kellan",
+    "Ezrim"
+   ],
+   "location": "Omenport",
+   "importance": "major",
+   "paragraph": 117,
+   "quote": "My last boss, Ezrim—he told me my dad was on this plane."
+  },
+  {
+   "summary": "The overseer reassigns Kellan to Ral's security detail for a trip to Sterling Company headquarters in Prosperity.",
+   "participants": [
+    "Kellan",
+    "Ral Zarek"
+   ],
+   "location": "Omenport",
+   "importance": "major",
+   "paragraph": 130,
+   "quote": "Mr. Zarek thinks someone with your skillset should be on his security detail instead of working out here in the heat."
+  },
+  {
+   "summary": "Kellan hopes someone in Prosperity can tell him about Oko and resolves to meet his father.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "Ral Zarek"
+   ],
+   "location": "Omenport",
+   "importance": "minor",
+   "paragraph": 135,
+   "quote": "The odds of at least someone in the city having information about Oko were bound to be high."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akul",
+   "relation": "leader_of",
+   "target": "Hellspurs",
+   "note": "Akul is the dragon leader of the Hellspurs.",
+   "paragraph": 20,
+   "quote": "There was no mistaking the leader of the Hellspurs."
+  },
+  {
+   "source": "Akul",
+   "relation": "killed",
+   "target": "Archie Dixon",
+   "note": "Akul's attack leaves Archie dying in the carriage.",
+   "paragraph": 23,
+   "quote": "His mortality was slipping away with every staggered breath, eyes wide with panic."
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "enemy",
+   "target": "Akul",
+   "note": "Akul almost killed Annie's nephew.",
+   "paragraph": 82,
+   "quote": "since the day Akul almost killed her nephew"
+  },
+  {
+   "source": "Oko",
+   "relation": "family",
+   "target": "Kellan",
+   "note": "Oko is Kellan's father, though they have never met.",
+   "paragraph": 138,
+   "quote": "Besides, he was Oko's son, and that meant something."
+  },
+  {
+   "source": "Oko",
+   "relation": "enemy",
+   "target": "Akul",
+   "note": "Oko is putting together a team to steal from Akul.",
+   "paragraph": 79,
+   "quote": "I've been putting a team together to steal something important from an outlaw you may know as Akul."
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "ally",
+   "target": "Fortune",
+   "note": "Annie and Fortune are well suited companions.",
+   "paragraph": 67,
+   "quote": "They were well suited to one another that way"
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "ally",
+   "target": "Mr. Towning",
+   "note": "Annie splits her loot with Mr. Towning for the town's safety.",
+   "paragraph": 59,
+   "quote": "I'm not sure our little town would've survived this long if it hadn't been for you."
+  },
+  {
+   "source": "Kellan",
+   "relation": "serves",
+   "target": "Ral Zarek",
+   "note": "Kellan is assigned to Ral's security detail.",
+   "paragraph": 130,
+   "quote": "Mr. Zarek thinks someone with your skillset should be on his security detail"
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "ally",
+   "target": "Niv-Mizzet",
+   "note": "Ral and Niv-Mizzet develop an Omenpath communication method together.",
+   "paragraph": 98,
+   "quote": "Ral—along with Niv-Mizzet, back in Ravnica—was developing a way to communicate through the Omenpaths"
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "serves",
+   "target": "Sterling Company",
+   "note": "The Sterling Company invested in Ral's research and protects it with mercenaries.",
+   "paragraph": 99,
+   "quote": "The Sterling Company had already invested in Ral's research."
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "member_of",
+   "target": "Freestriders",
+   "note": "Annie served with the Freestriders in her early days.",
+   "paragraph": 35,
+   "quote": "She'd seen plenty of carriage fires during her early days with the Freestriders."
+  }
+ ],
+ "rejected": []
+}

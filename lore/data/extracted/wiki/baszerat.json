@@ -1,0 +1,84 @@
+{
+ "page": "wiki/baszerat",
+ "url": "https://mtg.wiki/page/Baszerat",
+ "title": "Baszerat",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Baszerat",
+   "type": "location",
+   "aliases": [],
+   "description": "Small nation in southwestern Gulmany in the Terisian Isles on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Morvern",
+   "type": "location",
+   "aliases": [],
+   "description": "Nearby country and long-standing rival of Baszerat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian sleeper agents",
+   "type": "faction",
+   "aliases": [],
+   "description": "Agents who infiltrated Morvern during the Thaw and inflamed relations with Baszerat.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Thaw",
+   "type": "event",
+   "aliases": [
+    "Thaw"
+   ],
+   "description": "Event of 3245 AR during which Phyrexian sleeper agents infiltrated Morvern.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gulmany",
+   "type": "location",
+   "aliases": [],
+   "description": "Land in the Terisian Isles containing Baszerat.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Thaw, Phyrexian sleeper agents infiltrate Morvern and inflame relations, sparking war between Morvern and Baszerat.",
+   "participants": [
+    "Phyrexian sleeper agents",
+    "Morvern",
+    "Baszerat",
+    "The Thaw"
+   ],
+   "location": "Morvern",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Phyrexian sleeper agents infiltrated Morvern and inflamed relations"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baszerat",
+   "relation": "enemy",
+   "target": "Morvern",
+   "note": "Long-standing rivalry, then war.",
+   "paragraph": 2,
+   "quote": "Baszerat has a long-standing rivalry with the nearby country of Morvern"
+  },
+  {
+   "source": "Phyrexian sleeper agents",
+   "relation": "enemy",
+   "target": "Baszerat",
+   "note": "Incited war against Baszerat.",
+   "paragraph": 2,
+   "quote": "inflamed relations"
+  }
+ ],
+ "rejected": []
+}

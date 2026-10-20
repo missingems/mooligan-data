@@ -1,0 +1,188 @@
+{
+ "page": "wiki/daria",
+ "url": "https://mtg.wiki/page/Daria",
+ "title": "Daria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:10Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Daria",
+   "type": "character",
+   "aliases": [],
+   "description": "A young human planeswalker from Ulgrotha recruited by Urza as one of the Nine Titans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Recruited Daria into the Nine Titans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nine Titans",
+   "type": "faction",
+   "aliases": [
+    "Urza's Nine Titans"
+   ],
+   "description": "Planeswalkers recruited by Urza to attack Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taysir",
+   "type": "character",
+   "aliases": [],
+   "description": "Adopted and apprenticed Daria after he was reborn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Persuaded to ascend with Daria's help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Trapped Daria with Leshrac, and later betrayed the Titans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped trap Daria in an Amber Prison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amber Prison",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prison on the Null Moon that held Daria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Null Moon",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of Daria's imprisonment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Daria arrived first for the Planeswalker War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Target of the Titans' attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Daria's home plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Daria is abandoned by her parents, who feared her powers, and is adopted by Taysir.",
+   "participants": [
+    "Daria",
+    "Taysir"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Daria was abandoned by her parents, who feared her innate powers."
+  },
+  {
+   "summary": "Daria helps convince Jared Carthalion to ascend.",
+   "participants": [
+    "Daria",
+    "Jared Carthalion"
+   ],
+   "location": "Corondor",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She helped convince Jared Carthalion to ascend ."
+  },
+  {
+   "summary": "Tevesh Szat and Leshrac trap Daria in an Amber Prison on the Null Moon.",
+   "participants": [
+    "Tevesh Szat",
+    "Leshrac",
+    "Daria"
+   ],
+   "location": "Null Moon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she was trapped in an Amber Prison on the Null Moon by Tevesh Szat and Leshrac"
+  },
+  {
+   "summary": "Daria dies when Tevesh Szat betrays the Titans.",
+   "participants": [
+    "Daria",
+    "Tevesh Szat",
+    "Nine Titans"
+   ],
+   "location": "Phyrexia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Daria was killed there when Tevesh Szat betrayed the Titans."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Taysir",
+   "relation": "mentor_of",
+   "target": "Daria",
+   "note": "Adopted and apprenticed her",
+   "paragraph": 2,
+   "quote": "she was adopted and apprenticed by Taysir"
+  },
+  {
+   "source": "Daria",
+   "relation": "member_of",
+   "target": "Nine Titans",
+   "note": "Recruited by Urza",
+   "paragraph": 0,
+   "quote": "She was recruited by Urza as one of the Nine Titans ."
+  },
+  {
+   "source": "Tevesh Szat",
+   "relation": "killed",
+   "target": "Daria",
+   "note": "Betrayed the Titans, killing her",
+   "paragraph": 3,
+   "quote": "Daria was killed there when Tevesh Szat betrayed the Titans."
+  }
+ ],
+ "rejected": []
+}

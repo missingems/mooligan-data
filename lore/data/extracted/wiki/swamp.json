@@ -1,0 +1,39 @@
+{
+ "page": "wiki/swamp",
+ "url": "https://mtg.wiki/page/Swamp",
+ "title": "Swamp",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Caliman",
+   "type": "location",
+   "aliases": [],
+   "description": "Region whose salt marshes conceal the city of Dakmor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakmor",
+   "type": "location",
+   "aliases": [],
+   "description": "City concealed by the salt marshes of Caliman.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Dakmor",
+   "relation": "located_in",
+   "target": "Caliman",
+   "note": "Hidden in its salt marshes.",
+   "paragraph": 3,
+   "quote": "The salt marshes of Caliman conceal the city of Dakmor"
+  }
+ ],
+ "rejected": []
+}

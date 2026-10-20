@@ -1,0 +1,182 @@
+{
+ "page": "wiki/flarg",
+ "url": "https://mtg.wiki/page/Flarg",
+ "title": "Flarg",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:22Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Flarg",
+   "type": "location",
+   "aliases": [
+    "The Flarg"
+   ],
+   "description": "A cluster of mountains in the north of the Balduvian Steppe, in New Argive, historically home to goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balduvian Steppe",
+   "type": "location",
+   "aliases": [
+    "Balduvian Steppes",
+    "Malpiri Plains"
+   ],
+   "description": "Plains region containing the Flarg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation including the Flarg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Flarg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins of the Flarg",
+   "type": "faction",
+   "aliases": [
+    "goblin hordes"
+   ],
+   "description": "Goblins who raided far south during the Dark Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tivadar of Thorn",
+   "type": "character",
+   "aliases": [],
+   "description": "Rallied the Church of Tal for a crusade against goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church rallied by Tivadar against goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rasputin Dreamweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "Aided Tivadar's Crusade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tivadar's Crusade",
+   "type": "event",
+   "aliases": [],
+   "description": "Years-long campaign to exterminate goblins from civilized lands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Pitdown",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle preceding the crusade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raiders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin faction that exterminated the Packers in a cricket game.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Packers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin faction that exterminated the Raiders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argivian University",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sent representatives to excavate the ruins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Flood that raised the Sea of Laments.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Flarg's goblins raid far south across the plains during the Dark Age.",
+   "participants": [
+    "Goblins of the Flarg"
+   ],
+   "location": "Flarg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Goblins of the Flarg were particularly active during the second era"
+  },
+  {
+   "summary": "Tivadar of Thorn rallies the Church of Tal and, aided by Rasputin Dreamweaver, wages a crusade that decimates the goblin hordes.",
+   "participants": [
+    "Tivadar of Thorn",
+    "Church of Tal",
+    "Rasputin Dreamweaver",
+    "Goblins of the Flarg"
+   ],
+   "location": "Flarg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the goblin hordes had been decimated, retreating into their northern abodes"
+  },
+  {
+   "summary": "A goblin cricket game escalates until the Raiders and Packers exterminate each other, ending the goblin threat.",
+   "participants": [
+    "Raiders",
+    "Packers",
+    "Argivian University"
+   ],
+   "location": "Flarg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Raiders and the Packers exterminated each other"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tivadar of Thorn",
+   "relation": "leader_of",
+   "target": "Church of Tal",
+   "note": "Rallied it around the crusade",
+   "paragraph": 2,
+   "quote": "Tivadar of Thorn rallied the Church of Tal around a new cause"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Goblins of the Flarg",
+   "note": "Crusade to exterminate goblins",
+   "paragraph": 2,
+   "quote": "the extermination of the goblin threat from the civilized lands"
+  },
+  {
+   "source": "Flarg",
+   "relation": "located_in",
+   "target": "Balduvian Steppe",
+   "note": "",
+   "paragraph": 0,
+   "quote": "a cluster of mountains in the northern part of the"
+  }
+ ],
+ "rejected": []
+}

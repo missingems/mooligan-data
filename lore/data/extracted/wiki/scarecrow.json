@@ -1,0 +1,98 @@
+{
+ "page": "wiki/scarecrow",
+ "url": "https://mtg.wiki/page/Scarecrow",
+ "title": "Scarecrow",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:22Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Wickerfolk",
+   "type": "creature",
+   "aliases": [],
+   "description": "Living constructs of wood on Duskmourn that used to be humans, transformed by a warlock ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Demonic overlord of Duskmourn whose Ascension spurred people to ward off fear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [
+    "the House"
+   ],
+   "description": "Plane where wickerfolk exist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hauntwoods",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Duskmourn where wickerfolk are usually found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadowmoor scarecrows",
+   "type": "creature",
+   "aliases": [
+    "scarecrows of Shadowmoor"
+   ],
+   "description": "Scarecrows built by kithkin to farm and ward off visitors, some now independent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reaper King",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Shadowmoor scarecrows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kithkin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creators of Shadowmoor's scarecrows.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Warlocks discover a ritual that turns people into living wood, creating the wickerfolk.",
+   "participants": [
+    "Wickerfolk",
+    "Valgavoth"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "A group of warlocks discovered a ritual to transform them"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Reaper King",
+   "relation": "leader_of",
+   "target": "Shadowmoor scarecrows",
+   "note": "",
+   "paragraph": 6,
+   "quote": "These scarecrows are led by the Reaper King"
+  },
+  {
+   "source": "Kithkin",
+   "relation": "created",
+   "target": "Shadowmoor scarecrows",
+   "note": "cobblesmiths and hedge mages built them",
+   "paragraph": 6,
+   "quote": "were created by kithkin cobblesmiths and hedge mages"
+  }
+ ],
+ "rejected": []
+}

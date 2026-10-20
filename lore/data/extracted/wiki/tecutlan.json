@@ -1,0 +1,120 @@
+{
+ "page": "wiki/tecutlan",
+ "url": "https://mtg.wiki/page/Tecutlan",
+ "title": "Tecutlan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:42Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Tecutlan",
+   "type": "location",
+   "aliases": [
+    "Searing Rift"
+   ],
+   "description": "Legendary lava-filled cave on Ixalan known as the Searing Rift, with Oltec ruins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amalia",
+   "type": "character",
+   "aliases": [
+    "Amalia Benavides Aguirre"
+   ],
+   "description": "Followed a map through the caverns; saved and took responsibility for Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bartolomé",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveled with Amalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vito",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveled with Amalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrived via Omenpath from Eldraine under attack from pale goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beckett Brass",
+   "type": "character",
+   "aliases": [],
+   "description": "Dug into Tecutlan with her Tunnel-Grinder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Core of Paradise",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination of Amalia's group.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pale goblins",
+   "type": "creature",
+   "aliases": [],
+   "description": "Goblins attacking Kellan.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Amalia, Bartolomé and Vito follow a map to the caverns on their way to the Core of Paradise.",
+   "participants": [
+    "Amalia",
+    "Bartolomé",
+    "Vito"
+   ],
+   "location": "Tecutlan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "followed a map that led to the caverns on their way to the Core of Paradise"
+  },
+  {
+   "summary": "Amalia saves Kellan, who arrived from Eldraine under attack from pale goblins, and takes responsibility for him.",
+   "participants": [
+    "Amalia",
+    "Kellan",
+    "Pale goblins"
+   ],
+   "location": "Tecutlan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Amalia saved and took responsibility for him"
+  },
+  {
+   "summary": "Beckett Brass digs into Tecutlan with her Tunnel-Grinder.",
+   "participants": [
+    "Beckett Brass"
+   ],
+   "location": "Tecutlan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Beckett Brass dug into it with her Tunnel-Grinder"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Amalia",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "saved and took responsibility",
+   "paragraph": 1,
+   "quote": "Amalia saved and took responsibility for him"
+  }
+ ],
+ "rejected": []
+}

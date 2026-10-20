@@ -1,0 +1,142 @@
+{
+ "page": "wiki/hanweir",
+ "url": "https://mtg.wiki/page/Hanweir",
+ "title": "Hanweir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:02Z",
+ "storyline": "Eldritch Moon",
+ "entities": [
+  {
+   "name": "Hanweir",
+   "type": "location",
+   "aliases": [
+    "The Town"
+   ],
+   "description": "Agricultural village in Videns Parish, Gavony, consumed by Emrakul's influence and fused into a single Eldrazi ooze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Videns Parish",
+   "type": "location",
+   "aliases": [],
+   "description": "Parish of Gavony containing Hanweir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Province of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Hanweir stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi Titan whose influence transformed Hanweir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Archangel whose madness raised tensions in Videns Parish.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oliver Hayfield",
+   "type": "character",
+   "aliases": [],
+   "description": "Editor-in-chief of The Hanweir Chronicle who documented the village's paranoia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Moiren",
+   "type": "character",
+   "aliases": [],
+   "description": "Cathar who with two dozen others slew the Town after the Travails.",
+   "presence": "appears"
+  },
+  {
+   "name": "Head Councilman Reade",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Hanweir's nine-member council.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hanweir declares independence from Videns Parish and Gavony and walls itself in with no gate.",
+   "participants": [
+    "Hanweir"
+   ],
+   "location": "Hanweir",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the village declared independence from both Videns Parish and Gavony province"
+  },
+  {
+   "summary": "Under Emrakul's influence, women give birth only to twins and the council forbids anyone leaving.",
+   "participants": [
+    "Hanweir",
+    "Emrakul"
+   ],
+   "location": "Hanweir",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "women in Hanweir began giving birth only to twins"
+  },
+  {
+   "summary": "The citizens and town fuse into a single Eldrazi ooze that spreads across Videns Parish.",
+   "participants": [
+    "Hanweir",
+    "Emrakul"
+   ],
+   "location": "Videns Parish",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "fused body and soul into a single protoplasmic mass"
+  },
+  {
+   "summary": "Moiren and two dozen cathars slay the Town after the Travails.",
+   "participants": [
+    "Moiren",
+    "Hanweir"
+   ],
+   "location": "Videns Parish",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "was slain by Moiren and a group of two dozen other cathars"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hanweir",
+   "relation": "located_in",
+   "target": "Videns Parish",
+   "note": "Village within the parish",
+   "paragraph": 0,
+   "quote": "thriving agricultural village in Videns Parish"
+  },
+  {
+   "source": "Moiren",
+   "relation": "killed",
+   "target": "Hanweir",
+   "note": "Slew the ooze Town",
+   "paragraph": 10,
+   "quote": "was slain by Moiren and a group of two dozen other cathars"
+  }
+ ],
+ "rejected": []
+}

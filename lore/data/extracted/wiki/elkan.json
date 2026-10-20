@@ -1,0 +1,109 @@
+{
+ "page": "wiki/elkan",
+ "url": "https://mtg.wiki/page/Elkan",
+ "title": "Elkan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Elkan",
+   "type": "character",
+   "aliases": [],
+   "description": "Young Junior Mage of Balduvia who commanded the orc general Groth Jonar and was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Groth Jonar",
+   "type": "character",
+   "aliases": [
+    "General Jonar",
+    "Jonar"
+   ],
+   "description": "Orcish general who killed Elkan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balduvia",
+   "type": "location",
+   "aliases": [],
+   "description": "Land Elkan served as Junior Mage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "Realm whose knights fought Balduvia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flarg",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins recruited by Elkan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balesh Pass",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the battle against Kjeldor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Balesh Pass",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle where Jonar used the Flarg goblins as a distraction.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elkan lets his schemes slip to Jonar before the battle; Jonar angrily traps the goblins as a distraction and attacks the Kjeldor knights.",
+   "participants": [
+    "Elkan",
+    "Groth Jonar",
+    "Flarg"
+   ],
+   "location": "Balesh Pass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jonar locked the goblins in a trap between allies and enemies"
+  },
+  {
+   "summary": "After the rout, Jonar stabs Elkan in the belly, killing him.",
+   "participants": [
+    "Groth Jonar",
+    "Elkan"
+   ],
+   "location": "Balesh Pass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jonar responded by stabbing Elkan in the belly with his sword, killing him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Groth Jonar",
+   "relation": "killed",
+   "target": "Elkan",
+   "note": "Stabbed him",
+   "paragraph": 2,
+   "quote": "Jonar responded by stabbing Elkan in the belly with his sword, killing him"
+  },
+  {
+   "source": "Elkan",
+   "relation": "other",
+   "target": "Groth Jonar",
+   "note": "Commanded the general",
+   "paragraph": 2,
+   "quote": "commander over the orcish general Groth Jonar"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,121 @@
+{
+ "page": "wiki/traken",
+ "url": "https://mtg.wiki/page/Traken",
+ "title": "Traken",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:59Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Traken",
+   "type": "character",
+   "aliases": [],
+   "description": "An inquisitor lieutenant of the Church of Avacyn on Innistrad who warned of the zombie infestation near Thraben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "The church Traken serves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [],
+   "description": "Orchestrated the zombie infestation with Geralf.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [],
+   "description": "Orchestrated the zombie infestation with Gisa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alwin",
+   "type": "character",
+   "aliases": [
+    "Bishop Alwin"
+   ],
+   "description": "Bishop reluctant to act on Traken's warnings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thalia",
+   "type": "character",
+   "aliases": [],
+   "description": "Gave orders to Traken as undead neared Thraben.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grimgrin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Caused devastation in the zombie infestation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "City defended during the siege.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Traken.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Traken repeatedly warns Bishop Alwin about the escalating zombie threat, but Alwin is reluctant to act.",
+   "participants": [
+    "Traken",
+    "Alwin"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He repeatedly informed Bishop Alwin about the escalating threat"
+  },
+  {
+   "summary": "Traken is involved in Thraben's defense during the siege and witnesses the breach of the gates.",
+   "participants": [
+    "Traken",
+    "Thalia"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "witnessing firsthand the catastrophic breach of the gates and the ensuing chaos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Traken",
+   "relation": "member_of",
+   "target": "Church of Avacyn",
+   "note": "He is an inquisitor lieutenant of the church.",
+   "paragraph": 0,
+   "quote": "Traken is an inquisitor lieutenant of the Church of Avacyn on the plane of Innistrad ."
+  },
+  {
+   "source": "Traken",
+   "relation": "serves",
+   "target": "Thalia",
+   "note": "He worked under her orders.",
+   "paragraph": 2,
+   "quote": "Traken worked under Thalia 's orders"
+  }
+ ],
+ "rejected": []
+}

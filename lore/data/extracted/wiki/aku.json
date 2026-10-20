@@ -1,0 +1,210 @@
+{
+ "page": "wiki/aku",
+ "url": "https://mtg.wiki/page/Aku",
+ "title": "Aku",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:31Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Aku",
+   "type": "location",
+   "aliases": [],
+   "description": "Floating fortress city in the Uuserk Marshes of Jamuraa, now part of the plane of Zhalfir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Aku now belongs to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Uuserk Marshes",
+   "type": "location",
+   "aliases": [
+    "Uuserk"
+   ],
+   "description": "Region in which Aku stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where Aku was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mundungu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alliance of Shadow Guild and Shaper Guild mages that built Aku.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord whose demons were kept from Aku and who was defeated; held in the Amber Prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amber Prison",
+   "type": "artifact",
+   "aliases": [
+    "Amber Prisons"
+   ],
+   "description": "Prison holding Kaervek, buried in a pillar tomb of Aku.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amber Tombs",
+   "type": "location",
+   "aliases": [],
+   "description": "Domed chamber where prisoners were kept secure.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Phased out northwestern Jamuraa to spare it from the Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed the time rift over the Zhalfirin Void.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wrenn and Realmbreaker",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who returned Zhalfir to the multiverse by switching it with New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose place Zhalfir's landmass took.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion Aku was phased out to avoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Zhalfir was returned.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The mundungu built Aku to hold the pillar tombs of Zhalfirin royalty.",
+   "participants": [
+    "Mundungu",
+    "Aku"
+   ],
+   "location": "Uuserk Marshes",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The city was constructed to hold the pillar tombs of Zhalfirin royalty"
+  },
+  {
+   "summary": "Aku's mages and djinn kept Kaervek's demons away and helped defeat him.",
+   "participants": [
+    "Aku",
+    "Kaervek"
+   ],
+   "location": "Aku",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "were instrumental to his defeat"
+  },
+  {
+   "summary": "Teferi phased Aku out with northwestern Jamuraa to spare it from the Phyrexian Invasion.",
+   "participants": [
+    "Teferi",
+    "Aku"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "to spare it from the horrors of the Phyrexian Invasion"
+  },
+  {
+   "summary": "Jeska destroyed the time rift over the Zhalfirin Void, forever losing Aku from Dominaria.",
+   "participants": [
+    "Jeska",
+    "Aku"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "It was forever lost from Dominaria after Jeska destroyed the time rift over the Zhalfirin Void."
+  },
+  {
+   "summary": "Wrenn and Realmbreaker returned Zhalfir to the multiverse by swapping it with New Phyrexia.",
+   "participants": [
+    "Wrenn and Realmbreaker",
+    "Zhalfir",
+    "New Phyrexia"
+   ],
+   "location": "Zhalfir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "returned the phased-out Zhalfir to the multiverse by switching the landmass' place with that of New Phyrexia"
+  },
+  {
+   "summary": "A warding pendulum snapped and fell during Kaervek's escape.",
+   "participants": [
+    "Kaervek"
+   ],
+   "location": "Amber Tombs",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "it snapped and fell to the chamber's floor during Kaervek 's escape"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mundungu",
+   "relation": "created",
+   "target": "Aku",
+   "note": "Built the city.",
+   "paragraph": 1,
+   "quote": "Aku was built by the mundungu"
+  },
+  {
+   "source": "Aku",
+   "relation": "located_in",
+   "target": "Zhalfir",
+   "note": "Now part of the plane.",
+   "paragraph": 3,
+   "quote": "Aku now exists as part of the plane of Zhalfir."
+  },
+  {
+   "source": "Aku",
+   "relation": "enemy",
+   "target": "Kaervek",
+   "note": "Its mages kept his demons away.",
+   "paragraph": 1,
+   "quote": "Its powerful mages and flesh-hungry djinn kept the demons of Kaervek away from it during the war"
+  }
+ ],
+ "rejected": []
+}

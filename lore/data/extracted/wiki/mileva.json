@@ -1,0 +1,122 @@
+{
+ "page": "wiki/mileva",
+ "url": "https://mtg.wiki/page/Mileva",
+ "title": "Mileva",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:46Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Mileva",
+   "type": "character",
+   "aliases": [
+    "Mileva the Stalwart"
+   ],
+   "description": "Competent Boros soldier of Ravnica's Tenth District, later a Legionnaire and detective.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Mileva lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "Mileva's home district.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajic",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent Mileva to defend her home during the War of the Spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Mileva received a battlefield promotion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead attacking the Tenth District.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Agency Mileva began working with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murders at Karlov Manor",
+   "type": "event",
+   "aliases": [],
+   "description": "Case during which Mileva became a detective.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose uniform Mileva still wore.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mileva serves as a guard in the Tenth District.",
+   "participants": [
+    "Mileva"
+   ],
+   "location": "Tenth District",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Mileva served as a guard in the Tenth District"
+  },
+  {
+   "summary": "During the War of the Spark Mileva receives a Battlefield Promotion and Tajic sends her to defend her home.",
+   "participants": [
+    "Mileva",
+    "Tajic"
+   ],
+   "location": "Tenth District",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Mileva received a Battlefield Promotion"
+  },
+  {
+   "summary": "Mileva begins working with the Agency and becomes a detective during the Murders at Karlov Manor.",
+   "participants": [
+    "Mileva"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Mileva became a detective"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tajic",
+   "relation": "leader_of",
+   "target": "Mileva",
+   "note": "He sent her to defend the Tenth.",
+   "paragraph": 3,
+   "quote": "Tajic sent Mileva to defend her home"
+  }
+ ],
+ "rejected": []
+}

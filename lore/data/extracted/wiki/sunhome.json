@@ -1,0 +1,80 @@
+{
+ "page": "wiki/sunhome",
+ "url": "https://mtg.wiki/page/Sunhome",
+ "title": "Sunhome",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sunhome",
+   "type": "location",
+   "aliases": [
+    "Fortress of the Legion"
+   ],
+   "description": "Guildhall and primary stronghold of the Boros on Ravnica, the Fortress of the Legion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Guild whose soldiers are housed at Sunhome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "League of Wojek",
+   "type": "faction",
+   "aliases": [],
+   "description": "Boros law enforcement arm headquartered at Sunhome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunhome Guard",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite veterans guarding Sunhome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Sunhome stands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Sunhome",
+   "relation": "other",
+   "target": "Boros Legion",
+   "note": "Guildhall and stronghold of the Boros",
+   "paragraph": 0,
+   "quote": "Sunhome is the Guildhall and primary stronghold of the Boros on Ravnica"
+  },
+  {
+   "source": "League of Wojek",
+   "relation": "located_in",
+   "target": "Sunhome",
+   "note": "Headquarters",
+   "paragraph": 2,
+   "quote": "Sunhome also houses the headquarters of the League of Wojek"
+  },
+  {
+   "source": "Sunhome Guard",
+   "relation": "serves",
+   "target": "Sunhome",
+   "note": "Protectors of the guildhall",
+   "paragraph": 2,
+   "quote": "who serve as both protectors of the guildhall"
+  }
+ ],
+ "rejected": []
+}

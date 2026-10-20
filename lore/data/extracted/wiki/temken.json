@@ -1,0 +1,136 @@
+{
+ "page": "wiki/temken",
+ "url": "https://mtg.wiki/page/Temken",
+ "title": "Temken",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:00Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Temken",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven mage from Argoth who gathered Survivors of the Brothers' War to find a new home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwenna",
+   "type": "character",
+   "aliases": [],
+   "description": "Survivor plagued by guilt over her role in the Sylex Blast, who trapped the shadow inside herself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "Disaster that destroyed Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War whose survivors Temken gathered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Lost homeland of Temken and the Survivors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titania",
+   "type": "character",
+   "aliases": [],
+   "description": "Lost along with Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaea",
+   "type": "deity",
+   "aliases": [],
+   "description": "Spirit of the land whose magic remains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadow of the bayou",
+   "type": "creature",
+   "aliases": [],
+   "description": "Malevolent evil spirit that fed on despair in the dark bayou.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Temken meets Gwenna in a dark bayou and shows her Gaea's magic remains in the land.",
+   "participants": [
+    "Temken",
+    "Gwenna",
+    "Gaea"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Temken showed Gwenna that Gaea was not dead"
+  },
+  {
+   "summary": "The swamp's shadow attacks Temken, who is guided to Gwenna's village of Survivors.",
+   "participants": [
+    "Temken",
+    "Gwenna",
+    "Shadow of the bayou"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Weakened, but not defeated, Temken was guided to Gwenna's village of Survivors"
+  },
+  {
+   "summary": "Gwenna traps the shadow inside herself so the villagers can leave with Temken, who absolves her of her sins.",
+   "participants": [
+    "Gwenna",
+    "Temken",
+    "Shadow of the bayou"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gwenna stopped it, trapping it inside herself"
+  },
+  {
+   "summary": "Temken leads the Survivors away from the bayou forever.",
+   "participants": [
+    "Temken"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Temken then led the larger band of Survivors away from the bayou forever."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gwenna",
+   "relation": "other",
+   "target": "Sylex Blast",
+   "note": "Plagued by guilt over her role in it.",
+   "paragraph": 1,
+   "quote": "was plagued by guilt over her role in the disaster"
+  },
+  {
+   "source": "Gwenna",
+   "relation": "enemy",
+   "target": "Shadow of the bayou",
+   "note": "Trapped it within herself.",
+   "paragraph": 3,
+   "quote": "trapping it inside herself"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,77 @@
+{
+ "page": "wiki/moliq",
+ "url": "https://mtg.wiki/page/Moliq",
+ "title": "Moliq",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:01Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Moliq",
+   "type": "character",
+   "aliases": [
+    "Motiq"
+   ],
+   "description": "Kor soldier and shieldmate from Zendikar, formerly an architect and civic leader of a community in the Makindi Trenches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Makindi Trenches",
+   "type": "location",
+   "aliases": [],
+   "description": "Near-vertical crags where Moliq's community stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Queller",
+   "type": "creature",
+   "aliases": [],
+   "description": "Avatar of retribution that devastated Moliq's community.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Moliq lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A World Queller, enraged at the community's audacity, wreaks havoc on Moliq's outpost and kills hundreds.",
+   "participants": [
+    "World Queller",
+    "Moliq"
+   ],
+   "location": "Makindi Trenches",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "wreaked havoc there, killing hundreds."
+  },
+  {
+   "summary": "Moliq becomes a shieldmate devoted to protecting the party's mages and scholars.",
+   "participants": [
+    "Moliq"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Since then he became a shieldmate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "World Queller",
+   "relation": "enemy",
+   "target": "Moliq",
+   "note": "The World Queller destroyed his community.",
+   "paragraph": 1,
+   "quote": "an avatar of retribution - a World Queller - enraged at the audacity of his fledgling community"
+  }
+ ],
+ "rejected": []
+}

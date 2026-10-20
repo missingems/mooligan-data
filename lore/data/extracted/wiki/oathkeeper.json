@@ -1,0 +1,70 @@
+{
+ "page": "wiki/oathkeeper",
+ "url": "https://mtg.wiki/page/Oathkeeper",
+ "title": "Oathkeeper",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Oathkeeper",
+   "type": "artifact",
+   "aliases": [
+    "Oathkeeper, Takeno's Daisho"
+   ],
+   "description": "Legendary daisho, a matched pair of samurai swords, of Munetsugu Takeno during the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Munetsugu Takeno",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Eiganjo samurai forces of Takeshi Konda.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takeshi Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Daimyo whose forces Takeno led.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Oathkeeper.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Munetsugu Takeno",
+   "relation": "other",
+   "target": "Oathkeeper",
+   "note": "Oathkeeper was his personal daisho.",
+   "paragraph": 1,
+   "quote": "Oathkeeper was the famous personal daishō"
+  },
+  {
+   "source": "Munetsugu Takeno",
+   "relation": "serves",
+   "target": "Takeshi Konda",
+   "note": "He led the Eiganjo samurai forces of the daimyo.",
+   "paragraph": 1,
+   "quote": "the leader of the Eiganjo samurai forces of daimyo Takeshi Konda"
+  }
+ ],
+ "rejected": []
+}

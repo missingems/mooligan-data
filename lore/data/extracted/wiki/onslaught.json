@@ -1,0 +1,164 @@
+{
+ "page": "wiki/onslaught",
+ "url": "https://mtg.wiki/page/Onslaught",
+ "title": "Onslaught",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:34Z",
+ "storyline": "Onslaught block",
+ "entities": [
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent of Dominaria where the Onslaught story takes place, about a century after the Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The devastated plane on which Otaria lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [
+    "Kamahl, Fist of Krosa"
+   ],
+   "description": "A man who relocates to the Krosan Forest with the Mirari and becomes a druid of Krosa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krosan Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest whose residents are mutated and grown gigantic by the Mirari's power.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mirari",
+   "type": "artifact",
+   "aliases": [
+    "Mirari"
+   ],
+   "description": "A powerful artifact that begins to transform the Krosan Forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's sister, transformed by foul Cabal healing magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [
+    "Phage the Untouchable"
+   ],
+   "description": "Jeska's transformed identity, a pit fighter whose touch brings death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "An illusionist who discovers his powers of reality sculpting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akroma",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel created by Ixidor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group whose foul healing magic transforms Jeska.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kamahl relocates to the Krosan Forest with the Mirari and becomes a druid of Krosa.",
+   "participants": [
+    "Kamahl",
+    "The Mirari",
+    "Krosan Forest"
+   ],
+   "location": "Krosan Forest",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Kamahl has relocated to the Krosan Forest with the Mirari and becomes a druid of Krosa."
+  },
+  {
+   "summary": "The Mirari's power begins mutating the forest's residents, growing some to gigantic proportions.",
+   "participants": [
+    "The Mirari",
+    "Krosan Forest"
+   ],
+   "location": "Krosan Forest",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The power of the Mirari begins to work on the forest, mutating its residents and growing some of them to gigantic proportions."
+  },
+  {
+   "summary": "Cabal healing magic transforms Jeska into Phage, a pit fighter whose touch brings death.",
+   "participants": [
+    "Jeska",
+    "Phage",
+    "Cabal"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Kamahl's sister Jeska is transformed by foul Cabal healing magic, into Phage"
+  },
+  {
+   "summary": "Ixidor discovers his reality-sculpting powers and uses them to create the angel Akroma.",
+   "participants": [
+    "Ixidor",
+    "Akroma"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Ixidor uses his new power to create the angel Akroma ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jeska",
+   "relation": "family",
+   "target": "Kamahl",
+   "note": "his sister",
+   "paragraph": 7,
+   "quote": "Kamahl's sister Jeska"
+  },
+  {
+   "source": "Ixidor",
+   "relation": "created",
+   "target": "Akroma",
+   "note": "created her with reality sculpting",
+   "paragraph": 7,
+   "quote": "Ixidor uses his new power to create the angel Akroma ."
+  },
+  {
+   "source": "Phage",
+   "relation": "other",
+   "target": "Jeska",
+   "note": "Phage is Jeska's transformed form",
+   "paragraph": 0,
+   "quote": "Jeska is transformed into Phage"
+  }
+ ],
+ "rejected": []
+}

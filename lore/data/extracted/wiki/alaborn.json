@@ -1,0 +1,98 @@
+{
+ "page": "wiki/alaborn",
+ "url": "https://mtg.wiki/page/Alaborn",
+ "title": "Alaborn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Alaborn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Militaristic, egalitarian human nation of the southern plains of Caliman on Dominaria that used firearms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caliman",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Alaborn lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trokin",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Alaborn, famous for its festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tojira",
+   "type": "character",
+   "aliases": [],
+   "description": "Swamp queen whom Alaborn's forces battled before the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Alaborn's survival is unknown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin tribes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mountain tribes that inflicted humiliating defeats on Alaborn.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alaborn's forces met the goblin tribes of the mountains and suffered humiliating defeats, saved only by ingenious military inventions.",
+   "participants": [
+    "Alaborn",
+    "Goblin tribes"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "humiliating military defeats followed"
+  },
+  {
+   "summary": "Shortly before the Phyrexian Invasion, Alaborn's forces battled the swamp queen Tojira.",
+   "participants": [
+    "Alaborn",
+    "Tojira"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the forces of Alaborn battled the swamp queen Tojira"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Trokin",
+   "relation": "other",
+   "target": "Alaborn",
+   "note": "Trokin was Alaborn's capital.",
+   "paragraph": 1,
+   "quote": "Alaborn's capital was Trokin"
+  },
+  {
+   "source": "Alaborn",
+   "relation": "enemy",
+   "target": "Tojira",
+   "note": "They battled.",
+   "paragraph": 3,
+   "quote": "the forces of Alaborn battled the swamp queen Tojira"
+  }
+ ],
+ "rejected": []
+}

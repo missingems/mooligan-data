@@ -1,0 +1,134 @@
+{
+ "page": "wiki/pitre",
+ "url": "https://mtg.wiki/page/Pitre",
+ "title": "Pitre",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:29Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Pitre",
+   "type": "character",
+   "aliases": [],
+   "description": "Thatcher and would-be vampire slayer from Hanweir on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorelei",
+   "type": "character",
+   "aliases": [],
+   "description": "Mayor's daughter whom Pitre loved; she beheaded him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jurgen Garensun",
+   "type": "character",
+   "aliases": [],
+   "description": "Mayor of Hanweir who saw Pitre as unworthy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thatu Reiniger",
+   "type": "character",
+   "aliases": [],
+   "description": "Powerful vampire lord who fatally wounded Pitre.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raben Amsel",
+   "type": "character",
+   "aliases": [],
+   "description": "Came seeking the cursed blade and burned Pitre's corpse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hanweir",
+   "type": "location",
+   "aliases": [],
+   "description": "Town on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erdwal",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Pitre went to hunt a vampire.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pitre kills a young vampire and is mistakenly hailed a hero, then leaves Hanweir for Erdwal to hunt a real vampire.",
+   "participants": [
+    "Pitre"
+   ],
+   "location": "Hanweir",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Pitre left Hanweir for Erdwal to hunt a real vampire"
+  },
+  {
+   "summary": "Pitre is fatally wounded by Thatu Reiniger and returns to Hanweir to die.",
+   "participants": [
+    "Pitre",
+    "Thatu Reiniger"
+   ],
+   "location": "Hanweir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Pitre was fatally wounded by Thatu"
+  },
+  {
+   "summary": "Lorelei beheads Pitre to prevent his turning into a vampire.",
+   "participants": [
+    "Lorelei",
+    "Pitre"
+   ],
+   "location": "Hanweir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Lorelei beheaded him"
+  },
+  {
+   "summary": "Raben Amsel has Pitre's corpse exhumed and ends the curse by burning it.",
+   "participants": [
+    "Raben Amsel",
+    "Pitre"
+   ],
+   "location": "Hanweir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Amsel ended the curse on Pitre's corpse by burning it."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thatu Reiniger",
+   "relation": "killed",
+   "target": "Pitre",
+   "note": "fatal wound",
+   "paragraph": 3,
+   "quote": "Pitre was fatally wounded by Thatu"
+  },
+  {
+   "source": "Pitre",
+   "relation": "romantic",
+   "target": "Lorelei",
+   "note": "unreciprocated by her father",
+   "paragraph": 1,
+   "quote": "deeply in love with Lorelei"
+  },
+  {
+   "source": "Lorelei",
+   "relation": "family",
+   "target": "Jurgen Garensun",
+   "note": "daughter of the mayor",
+   "paragraph": 1,
+   "quote": "the daughter of the mayor, Jurgen Garensun"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,98 @@
+{
+ "page": "wiki/squirrel",
+ "url": "https://mtg.wiki/page/Squirrel",
+ "title": "Squirrel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:24Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Squirrelfolk",
+   "type": "faction",
+   "aliases": [
+    "squirrels",
+    "Squirrel"
+   ],
+   "description": "One of the animalfolk of Bloomburrow, notorious as necromancers and graverobbers and stewards of the life-death cycle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane inhabited by animalfolk, including squirrelfolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calamity Graveyard",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where squirrelfolk worship the life-death cycle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Terrible forces of nature whose bones squirrelfolk collect and bury.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Direshade Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "A company of mercenaries led by the weaselfolk Cruelclaw, which some squirrelfolk joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cruelclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A weaselfolk who leads the Direshade Company of mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose squirrels are known as scurrids.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Some squirrelfolk joined the Direshade Company of mercenaries under Cruelclaw.",
+   "participants": [
+    "Squirrelfolk",
+    "Direshade Company",
+    "Cruelclaw"
+   ],
+   "location": "Bloomburrow",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Some squirrelfolk joined the Direshade Company of mercenaries under the weaselfolk Cruelclaw ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Squirrelfolk",
+   "relation": "member_of",
+   "target": "Direshade Company",
+   "note": "some squirrelfolk joined",
+   "paragraph": 7,
+   "quote": "Some squirrelfolk joined the Direshade Company of mercenaries under the weaselfolk Cruelclaw ."
+  },
+  {
+   "source": "Cruelclaw",
+   "relation": "leader_of",
+   "target": "Direshade Company",
+   "note": "weaselfolk commander of the mercenaries",
+   "paragraph": 7,
+   "quote": "Some squirrelfolk joined the Direshade Company of mercenaries under the weaselfolk Cruelclaw ."
+  }
+ ],
+ "rejected": []
+}

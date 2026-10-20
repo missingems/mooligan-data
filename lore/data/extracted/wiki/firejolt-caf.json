@@ -1,0 +1,63 @@
+{
+ "page": "wiki/firejolt-caf",
+ "url": "https://mtg.wiki/page/Firejolt_Caf%C3%A9",
+ "title": "Firejolt Café",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:39Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Firejolt Café",
+   "type": "location",
+   "aliases": [],
+   "description": "Popular café at the edge of the Archway Commons on Strixhaven's Central Campus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ellina Tanglewood",
+   "type": "character",
+   "aliases": [
+    "Ellina"
+   ],
+   "description": "Elven mage and manager who alone brews the Firejolt latte.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The university where the café stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Archway Commons",
+   "type": "location",
+   "aliases": [],
+   "description": "Campus area beside the café.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Ellina Tanglewood",
+   "relation": "leader_of",
+   "target": "Firejolt Café",
+   "note": "Manager.",
+   "paragraph": 0,
+   "quote": "brewed exclusively by the elven manager, Ellina Tanglewood"
+  },
+  {
+   "source": "Firejolt Café",
+   "relation": "located_in",
+   "target": "Strixhaven",
+   "note": "",
+   "paragraph": 0,
+   "quote": "located at the edge of the Archway Commons on Strixhaven 's Central Campus"
+  }
+ ],
+ "rejected": []
+}

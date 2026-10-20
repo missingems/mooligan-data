@@ -1,0 +1,129 @@
+{
+ "page": "wiki/muzzio",
+ "url": "https://mtg.wiki/page/Muzzio",
+ "title": "Muzzio",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:16Z",
+ "storyline": "Alara Reborn",
+ "entities": [
+  {
+   "name": "Muzzio",
+   "type": "character",
+   "aliases": [
+    "Professor Muzzio"
+   ],
+   "description": "Visionary human artificer at the High City of Paliano on Fiora, who became vice-chancellor of the Academy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High Paliano"
+   ],
+   "description": "High City on Fiora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Paliano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin artificer, Muzzio's former teacher.",
+   "presence": "appears"
+  },
+  {
+   "name": "Black Rose",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Muzzio is rumored to serve.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sydri",
+   "type": "character",
+   "aliases": [],
+   "description": "Dropout rumored to still have Muzzio as patron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brago",
+   "type": "character",
+   "aliases": [
+    "King Brago"
+   ],
+   "description": "Ruler of Paliano whose ghostly reign led to Muzzio's exile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grenzo",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin prison warden tipped off by Daretti.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Muzzio blackmails and removes three senior advisors and becomes vice-chancellor after all.",
+   "participants": [
+    "Muzzio"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Muzzio became vice-chancellor, after all"
+  },
+  {
+   "summary": "Daretti tips off Grenzo about Muzzio's storehouse of cogwork warriors.",
+   "participants": [
+    "Daretti",
+    "Grenzo",
+    "Muzzio"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "After Daretti tipped Grenzo"
+  },
+  {
+   "summary": "Brago outlaws cogwork constructs, closes the Academy and exiles Muzzio.",
+   "participants": [
+    "Brago",
+    "Muzzio"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Brago outlawed cogwork constructs, closed the Academy, and exiled Muzzio"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muzzio",
+   "relation": "other",
+   "target": "Daretti",
+   "note": "Former pupil, suspected of killing him.",
+   "paragraph": 1,
+   "quote": "is a former pupil of the goblin artificer"
+  },
+  {
+   "source": "Brago",
+   "relation": "enemy",
+   "target": "Muzzio",
+   "note": "Exiled him.",
+   "paragraph": 4,
+   "quote": "closed the Academy, and exiled Muzzio"
+  }
+ ],
+ "rejected": []
+}

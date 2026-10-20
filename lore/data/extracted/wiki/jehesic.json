@@ -1,0 +1,227 @@
+{
+ "page": "wiki/jehesic",
+ "url": "https://mtg.wiki/page/Jehesic",
+ "title": "Jehesic",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jehesic",
+   "type": "location",
+   "aliases": [],
+   "description": "A small fortified island nation in the Lat-Nam Straits on Terisiare, ruled by Lady Edara, engulfed by the Great Glacier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iwset",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation across the strait from Jehesic ruled by Lord Peemel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edara",
+   "type": "character",
+   "aliases": [],
+   "description": "Lady of Jehesic, known for her beauty and defiance of Peemel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Peemel",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord of Iwset who declared war when Edara refused to marry him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ferantia",
+   "type": "character",
+   "aliases": [],
+   "description": "Edara's treacherous sorceress who betrayed her and was slain by Apepei.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apepei",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarven lover of Edara who slew Ferantia and Digody.",
+   "presence": "appears"
+  },
+  {
+   "name": "Digody",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's advisor who assassinated him and was killed by Apepei.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yunnie",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's heir who refused the throne.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ihesia",
+   "type": "character",
+   "aliases": [],
+   "description": "Iwset general captured by Jehesic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Offero",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure who contested Edara and Apepei's claim to Iwset.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iwset-Jehesic War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Iwset and Jehesic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on which Jehesic lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Glacier",
+   "type": "concept",
+   "aliases": [],
+   "description": "The advance of ice that engulfed Jehesic.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lord Peemel of Iwset declares war on Jehesic after Lady Edara refuses to marry him.",
+   "participants": [
+    "Peemel",
+    "Edara"
+   ],
+   "location": "Jehesic",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When she refused, Peemel declared war."
+  },
+  {
+   "summary": "Jehesic's sorceress Ferantia betrays Edara but is slain by Edara's secret lover Apepei.",
+   "participants": [
+    "Ferantia",
+    "Edara",
+    "Apepei"
+   ],
+   "location": "Jehesic",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jehesic's sorceress Ferantia betrayed Edara"
+  },
+  {
+   "summary": "Jehesic sinks Iwset's navy and captures its general, Ihesia.",
+   "participants": [
+    "Jehesic",
+    "Ihesia"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jehesic sank Iwset's navy and captured its general"
+  },
+  {
+   "summary": "Peemel kidnaps Edara but is assassinated by his advisor Digody; Apepei kills Digody.",
+   "participants": [
+    "Peemel",
+    "Edara",
+    "Digody",
+    "Apepei"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Peemel kidnapped Edara, but was assassinated by his advisor Digody"
+  },
+  {
+   "summary": "With Yunnie refusing the throne, Edara and Apepei forge an uneasy union of Jehesic and Iwset.",
+   "participants": [
+    "Edara",
+    "Apepei",
+    "Yunnie"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Edara and Apepei forged an uneasy union of Jehesic and Iwset"
+  },
+  {
+   "summary": "The Great Glacier engulfs Jehesic.",
+   "participants": [
+    "Jehesic",
+    "Great Glacier"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the advance of the Great Glacier eventually engulfed the island nation"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Edara",
+   "relation": "leader_of",
+   "target": "Jehesic",
+   "note": "Lady of Jehesic.",
+   "paragraph": 0,
+   "quote": "Ruled by Lady Edara"
+  },
+  {
+   "source": "Edara",
+   "relation": "romantic",
+   "target": "Apepei",
+   "note": "Apepei is her secret lover.",
+   "paragraph": 1,
+   "quote": "Edara's secret lover Apepei"
+  },
+  {
+   "source": "Apepei",
+   "relation": "killed",
+   "target": "Ferantia",
+   "note": "He slew the traitorous sorceress.",
+   "paragraph": 1,
+   "quote": "was slain by Edara's secret lover Apepei"
+  },
+  {
+   "source": "Apepei",
+   "relation": "killed",
+   "target": "Digody",
+   "note": "He killed Digody after Peemel's assassination.",
+   "paragraph": 2,
+   "quote": "Apepei killed Digody in turn"
+  },
+  {
+   "source": "Digody",
+   "relation": "killed",
+   "target": "Peemel",
+   "note": "His advisor assassinated him.",
+   "paragraph": 2,
+   "quote": "was assassinated by his advisor Digody"
+  },
+  {
+   "source": "Peemel",
+   "relation": "enemy",
+   "target": "Edara",
+   "note": "He declared war when she refused him.",
+   "paragraph": 1,
+   "quote": "When she refused, Peemel declared war."
+  }
+ ],
+ "rejected": []
+}

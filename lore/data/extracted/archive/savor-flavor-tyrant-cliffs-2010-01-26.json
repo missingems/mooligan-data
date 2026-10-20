@@ -1,0 +1,144 @@
+{
+ "page": "archive/savor-flavor-tyrant-cliffs-2010-01-26",
+ "url": "https://web.archive.org/web/20170317193814/http://magic.wizards.com:80/en/articles/archive/savor-flavor/tyrant-cliffs-2010-01-26",
+ "title": "The Tyrant of the Cliffs",
+ "story_date": "2010-01-26",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:27Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Kazuul",
+   "type": "character",
+   "aliases": [
+    "Kazuul, Tyrant of the Cliffs",
+    "the ogre slavemaster"
+   ],
+   "description": "An ogre slavemaster who commands a small army of warrior-slaves and demands tribute from anyone climbing the cliffs of Murasa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazuul's warrior-slaves",
+   "type": "faction",
+   "aliases": [
+    "Ogre Warrior slaves"
+   ],
+   "description": "The chained ogre brutes and other slaves of Kazuul, who attack expeditions that refuse to pay his tribute.",
+   "presence": "appears"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Zendikar ringed by terrible cliffs and treacherous currents, said to hold hidden treasures and wild mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of varied environments focused on land and exploration.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sejiri",
+   "type": "location",
+   "aliases": [],
+   "description": "The polar region of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker and vampire who lives long by feeding on the lifeblood of other creatures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana",
+   "type": "character",
+   "aliases": [],
+   "description": "A black-aligned planeswalker who gained eternal youth and power through a contract with demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "An old planeswalker with a vast arsenal of spellcraft who has been worse for wear since the Mending.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "the Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "The event that made planeswalkers mortal.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Travelers who try to sail around Murasa are drawn in and wreck their ships against its cliffs.",
+   "participants": [
+    "Murasa"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "It's impossible to sail past Zendikar's continent of Murasa."
+  },
+  {
+   "summary": "Kazuul demands a tribute from anyone attempting to climb Murasa's cliffs, and sets his slaves on those who refuse.",
+   "participants": [
+    "Kazuul",
+    "Kazuul's warrior-slaves"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "All he asks—all he asks!—is a tribute."
+  },
+  {
+   "summary": "The Mending is recalled as having made planeswalkers mortal.",
+   "participants": [
+    "Nicol Bolas",
+    "the Mending"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 22,
+   "quote": "although he's been much the worse for wear since the Mending made planeswalkers mortal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kazuul",
+   "relation": "leader_of",
+   "target": "Kazuul's warrior-slaves",
+   "note": "He commands the slave army.",
+   "paragraph": 7,
+   "quote": "He commands a small army of warrior-slaves."
+  },
+  {
+   "source": "Liliana",
+   "relation": "other",
+   "target": "Sorin",
+   "note": "Both are black planeswalkers cited as extending their lives.",
+   "paragraph": 22,
+   "quote": "Liliana, for her part, took a daring but straightforward route to eternal youth and power: a contract with demons."
+  },
+  {
+   "source": "Murasa",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "Murasa is a continent of Zendikar.",
+   "paragraph": 0,
+   "quote": "It's impossible to sail past Zendikar's continent of Murasa."
+  }
+ ],
+ "rejected": []
+}

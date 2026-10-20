@@ -1,0 +1,186 @@
+{
+ "page": "wiki/aboshan-trench",
+ "url": "https://mtg.wiki/page/Aboshan_Trench",
+ "title": "Aboshan Trench",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:19Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Aboshan Trench",
+   "type": "location",
+   "aliases": [],
+   "description": "An area of the Mer Empire that formerly was part of continental Otaria, sunk beneath the sea by Emperor Aboshan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor Aboshan",
+   "type": "character",
+   "aliases": [
+    "Aboshan"
+   ],
+   "description": "Mer emperor who found the Mirari, sank part of Otaria and withered and died from its power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Llawan",
+   "type": "character",
+   "aliases": [
+    "Empress Llawan"
+   ],
+   "description": "Aboshan's widow, who named the trench and trapped Laquatus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Llawan's scheming enemy, lured into the Otaria Chasm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rillu Veza",
+   "type": "character",
+   "aliases": [],
+   "description": "Llawan's advisor who surveyed the land and planted portal crystals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An immensely powerful artifact found by Aboshan that drew on its wielder's essence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mer Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The undersea empire that claimed the trench.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria Chasm",
+   "type": "location",
+   "aliases": [],
+   "description": "A feature of the trench used in Llawan's trap for Laquatus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent that formerly included the trench.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krosa",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest region where Laquatus escaped and fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borben",
+   "type": "location",
+   "aliases": [],
+   "description": "A coastal town that was part of the lost land.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "The 4305 AR event during which Aboshan found the Mirari.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Battle for the Mirari in 4305 AR, Emperor Aboshan finds the Mirari buried in silt in an imperial treasury.",
+   "participants": [
+    "Emperor Aboshan",
+    "Mirari"
+   ],
+   "location": "Mer Empire",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Mirari was found by Emperor Aboshan , buried in silt in the lower levels of an imperial treasury"
+  },
+  {
+   "summary": "Aboshan uses the Mirari to raise giant waves that claim a stretch of Otaria's coast.",
+   "participants": [
+    "Emperor Aboshan",
+    "Mirari"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "creating giant crashing waves that claimed the stretch of coast that later would be named the Aboshan Trench"
+  },
+  {
+   "summary": "The Mirari draws on Aboshan's essence and he withers and dies, ending the spell.",
+   "participants": [
+    "Emperor Aboshan",
+    "Mirari"
+   ],
+   "location": "Aboshan Trench",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the spell quickly caused Aboshan to wither away and die"
+  },
+  {
+   "summary": "Llawan has Rillu Veza plant portal crystals in the Otaria Chasm as a trap for Laquatus.",
+   "participants": [
+    "Llawan",
+    "Rillu Veza",
+    "Laquatus"
+   ],
+   "location": "Otaria Chasm",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "who had her advisor Rillu Veza survey the new Mer land and plant portal crystals in the Otaria Chasm"
+  },
+  {
+   "summary": "Laquatus is lured by a false map into the Otaria Chasm and trapped; he escapes into Krosa but his army is wiped out by Llawan.",
+   "participants": [
+    "Laquatus",
+    "Llawan"
+   ],
+   "location": "Otaria Chasm",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "his army was wiped out by Llawan in the meantime, leading to Laquatus's downfall in the forest"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emperor Aboshan",
+   "relation": "romantic",
+   "target": "Llawan",
+   "note": "Llawan was his widow.",
+   "paragraph": 3,
+   "quote": "named by Aboshan's widow, Llawan"
+  },
+  {
+   "source": "Llawan",
+   "relation": "enemy",
+   "target": "Laquatus",
+   "note": "Her scheming enemy, whom she trapped.",
+   "paragraph": 3,
+   "quote": "Llawan's scheming enemy, Laquatus"
+  },
+  {
+   "source": "Rillu Veza",
+   "relation": "serves",
+   "target": "Llawan",
+   "note": "Her advisor.",
+   "paragraph": 3,
+   "quote": "her advisor Rillu Veza"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,141 @@
+{
+ "page": "wiki/eye-of-yawgmoth",
+ "url": "https://mtg.wiki/page/Eye_of_Yawgmoth",
+ "title": "Eye of Yawgmoth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Eye of Yawgmoth",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A Phyrexian recording device implanted in Belbe, connected to Yawgmoth so he could see everything.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian progenitor who saw through the Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belbe",
+   "type": "character",
+   "aliases": [
+    "Belve"
+   ],
+   "description": "Killed and resurrected by Phyrexians and implanted with the Eye; fell in love with Ertai and was killed by Eladamri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "Observed by Yawgmoth; loved by Belbe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Party to the conflict Yawgmoth observed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "Party to the conflict on Rath; his Coronation was where Belbe died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Belbe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane observed through the Eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crovax's Coronation",
+   "type": "event",
+   "aliases": [],
+   "description": "Event at which Belbe was killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eye of Yawgmoth was implanted in Belbe's body soon after she had been killed and resurrected by Phyrexians.",
+   "participants": [
+    "Belbe",
+    "Eye of Yawgmoth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was implanted in Belbe 's body soon after she had been killed and resurrected by Phyrexians"
+  },
+  {
+   "summary": "Belbe fell in love with Ertai and tried to blind the Eye with mana-radiation.",
+   "participants": [
+    "Belbe",
+    "Ertai",
+    "Eye of Yawgmoth"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Belbe eventually fell in love with Ertai"
+  },
+  {
+   "summary": "Eladamri killed Belbe during Crovax's Coronation.",
+   "participants": [
+    "Eladamri",
+    "Belbe"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Belve was eventually killed by Eladamri during Crovax's Coronation"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Belbe",
+   "relation": "romantic",
+   "target": "Ertai",
+   "note": "Belbe fell in love with Ertai.",
+   "paragraph": 1,
+   "quote": "Belbe eventually fell in love with Ertai"
+  },
+  {
+   "source": "Eladamri",
+   "relation": "killed",
+   "target": "Belbe",
+   "note": "Killed during Crovax's Coronation.",
+   "paragraph": 1,
+   "quote": "Belve was eventually killed by Eladamri during Crovax's Coronation"
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "other",
+   "target": "Eye of Yawgmoth",
+   "note": "The device was directly connected to Yawgmoth.",
+   "paragraph": 1,
+   "quote": "The device was directly connected to Yawgmoth"
+  }
+ ],
+ "rejected": []
+}

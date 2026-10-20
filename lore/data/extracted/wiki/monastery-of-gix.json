@@ -1,0 +1,110 @@
+{
+ "page": "wiki/monastery-of-gix",
+ "url": "https://mtg.wiki/page/Monastery_of_Gix",
+ "title": "Monastery of Gix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:42Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Monastery of Gix",
+   "type": "location",
+   "aliases": [],
+   "description": "A monastery in far north Terisiare built over an abyss near Ronom Lake, home to the Brotherhood of Gix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "A religious cult worshipping the machine god Gix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gix",
+   "type": "deity",
+   "aliases": [],
+   "description": "A machine god worshipped by the Brotherhood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rising church that began the First Talite Crusade purge of Gixian lands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization built from the monastery's ruins around 75 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ith",
+   "type": "character",
+   "aliases": [],
+   "description": "Imprisoned in a cage over the pit where the abyss had been.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where the cult traveled after being turned mechanical.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "Where monks activated the portal to Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "First Talite Crusade",
+   "type": "event",
+   "aliases": [],
+   "description": "Church of Tal's purge of the Gixian lands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Monks from the monastery travel to Koilos and activate the portal to Phyrexia.",
+   "participants": [
+    "Brotherhood of Gix"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "several of the monks from the monastery traveled to Koilos and activated the portal to Phyrexia"
+  },
+  {
+   "summary": "The Church of Tal begins the First Talite Crusade with a purge of the Gixian lands; the monastery is abandoned.",
+   "participants": [
+    "Church of Tal",
+    "Brotherhood of Gix"
+   ],
+   "location": "Monastery of Gix",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the rising Church of Tal began the First Talite Crusade with a purge of the Gixian lands"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brotherhood of Gix",
+   "relation": "serves",
+   "target": "Gix",
+   "note": "They worship the machine god Gix.",
+   "paragraph": 1,
+   "quote": "a religious cult worshipping a machine god named Gix"
+  }
+ ],
+ "rejected": []
+}

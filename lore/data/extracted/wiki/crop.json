@@ -1,0 +1,121 @@
+{
+ "page": "wiki/crop",
+ "url": "https://mtg.wiki/page/Crop",
+ "title": "Crop",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:53Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Crop",
+   "type": "faction",
+   "aliases": [
+    "crops"
+   ],
+   "description": "Social units of up to twenty people on Amonkhet who undergo the Trials of the Five Gods together.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where crops exist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City where people were assigned their crop at age five.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who administers the final trial.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Dragon whose Dreadhorde was also organized in crops.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "Bolas's army of resurrected warriors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tah crop",
+   "type": "faction",
+   "aliases": [
+    "Tah (Fist) crop"
+   ],
+   "description": "Crop of Samut and Djeru which Gideon temporarily joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker who temporarily joined the Tah crop.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the Ceremony of Measurement the worthy are regrouped into new crops and the unworthy are culled on the Day of Harvesting.",
+   "participants": [
+    "Crop"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Those found worthy were reassembled into a new crop"
+  },
+  {
+   "summary": "Only one member of a crop can pass the final trial and be rewarded with the afterlife.",
+   "participants": [
+    "Crop"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "only one member of a crop could prove worthy"
+  },
+  {
+   "summary": "Bolas's crop-organized Dreadhorde is defeated along with Bolas.",
+   "participants": [
+    "Dreadhorde",
+    "Nicol Bolas"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "These crops were defeated along with Nicol Bolas"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "member_of",
+   "target": "Tah crop",
+   "note": "temporarily, for the Trial of Ambition",
+   "paragraph": 9,
+   "quote": "which Gideon temporarily joined for the Trial of Ambition"
+  }
+ ],
+ "rejected": []
+}

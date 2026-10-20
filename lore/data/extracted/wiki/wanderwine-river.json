@@ -1,0 +1,133 @@
+{
+ "page": "wiki/wanderwine-river",
+ "url": "https://mtg.wiki/page/Wanderwine_River",
+ "title": "Wanderwine River",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:34Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Wanderwine River",
+   "type": "location",
+   "aliases": [
+    "Wanderwine",
+    "Big River"
+   ],
+   "description": "Greatest river in Lorwyn, sourced at Mount Tanufel and heavily trafficked by merrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mount Tanufel",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the spring from which the river flows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Source",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elemental guarding the spring of the Wanderwine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merrow",
+   "type": "faction",
+   "aliases": [],
+   "description": "Lorwyn people whose crannogs line the river.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Captain Sygg",
+   "type": "character",
+   "aliases": [],
+   "description": "Ferryman and riverguide on the Wanderwine in 4520 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "Flamekin ferried across the river by Sygg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vendilion clique",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faeries ferried across by Sygg, who rescued the passengers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kinsbaile",
+   "type": "location",
+   "aliases": [],
+   "description": "Kithkin clachan the crossing led to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arbomander",
+   "type": "creature",
+   "aliases": [
+    "arbomanders"
+   ],
+   "description": "Giant amphibian that attacked Sygg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the river.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4520 AR Captain Sygg ferried Ashling, a kithkin family and the Vendilion clique across the river.",
+   "participants": [
+    "Captain Sygg",
+    "Ashling",
+    "Vendilion clique"
+   ],
+   "location": "Wanderwine River",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he brought the flamekin Ashling , a kithkin family, and the Vendilion clique across the river"
+  },
+  {
+   "summary": "An arbomander attacked and knocked Sygg unconscious; the faeries reluctantly rescued the passengers.",
+   "participants": [
+    "Arbomander",
+    "Captain Sygg",
+    "Vendilion clique"
+   ],
+   "location": "Wanderwine River",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the faeries reluctantly rescued the passengers from the river"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wanderwine River",
+   "relation": "located_in",
+   "target": "Lorwyn",
+   "note": "Greatest river there.",
+   "paragraph": 0,
+   "quote": "the greatest river in Lorwyn"
+  },
+  {
+   "source": "Arbomander",
+   "relation": "enemy",
+   "target": "Captain Sygg",
+   "note": "Attacked him.",
+   "paragraph": 4,
+   "quote": "he was attacked by an arbomander and knocked unconscious"
+  }
+ ],
+ "rejected": []
+}

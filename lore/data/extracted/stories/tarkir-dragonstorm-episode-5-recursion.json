@@ -1,0 +1,500 @@
+{
+ "page": "stories/tarkir-dragonstorm-episode-5-recursion",
+ "url": "https://magic.wizards.com/en/news/magic-story/tarkir-dragonstorm-episode-5-recursion",
+ "title": "Tarkir: Dragonstorm | Episode 5: Recursion",
+ "story_date": "2025-03-12",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:45Z",
+ "storyline": "Tarkir: Dragonstorm",
+ "entities": [
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [
+    "the leonin Planeswalker"
+   ],
+   "description": "A leonin planeswalker, uncompleated after serving Phyrexia, who apologizes to Elspeth for trying to kill her but refuses to join her and Narset.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [
+    "the archangel"
+   ],
+   "description": "An archangel and planeswalker with candle-flame glowing eyes who forgives Ajani and travels with Narset into the dragonstorms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [
+    "the Jeskai waymaster",
+    "the Jeskai monk"
+   ],
+   "description": "Waymaster of the Jeskai who leads Elspeth through the dragonstorms to a hidden temple and the Meditation Realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Felothar",
+   "type": "character",
+   "aliases": [
+    "Khan Felothar",
+    "the new khan of the Abzan"
+   ],
+   "description": "The soldierly Abzan khan, who rules with her Council of Houses and decides to prepare Arashin's defenses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nur",
+   "type": "character",
+   "aliases": [],
+   "description": "The Abzan djinni who arrives to back up Ajani's report of Sarkhan's dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beyza",
+   "type": "character",
+   "aliases": [
+    "the djinni from House Zanhar"
+   ],
+   "description": "A scarred djinni of House Zanhar, the House of Grit, who doubts Narset's warning and is teased by Nur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A mind mage and planeswalker who threw off compleation and appears in the Meditation Realm with Loot, claiming to be fixing his mistakes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "creature",
+   "aliases": [],
+   "description": "A young, golden-furred, sleeping creature held in a blue light, whose mind contains a map of the Multiverse and every Omenpath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan"
+   ],
+   "description": "A planeswalker who commands wild dragons, with hundreds of dragons already in his army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melira",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman of unique resistance to phyresis who saved Ajani and died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "the praetor"
+   ],
+   "description": "The Phyrexian praetor to whom Ajani wanted to offer Elspeth's corpse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A friend who Narset notes was compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojutai",
+   "type": "character",
+   "aliases": [
+    "the Great Teacher"
+   ],
+   "description": "The Jeskai dragonlord whose archives Narset studied.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arashin",
+   "type": "location",
+   "aliases": [],
+   "description": "The Abzan city whose fortifications are being raised for the dragon threat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stormplains",
+   "type": "location",
+   "aliases": [
+    "the stormplains"
+   ],
+   "description": "Plains of Tarkir where the dragonstorms warp the land and from which Narset and Elspeth enter the storm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temple in the heart of the storms",
+   "type": "location",
+   "aliases": [
+    "the temple"
+   ],
+   "description": "An ancient, massive temple at the foot of which Narset and Elspeth emerge; its architecture is unknown even to Ojutai's records.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "A ragged, ancient portal in the temple's antechamber that leads to the Meditation Realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meditation Realm",
+   "type": "plane",
+   "aliases": [],
+   "description": "A mirrored, shifting realm of endless water and stairs where Narset has been before, appearing different to each viewer and meant to conceal something.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Houses",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Abzan council of house heads advising the khan.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Emesh",
+   "type": "faction",
+   "aliases": [],
+   "description": "An Abzan house whose old representative wants active defenses.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Gudal",
+   "type": "faction",
+   "aliases": [],
+   "description": "An Abzan house whose appointed leader trusts the walls.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Zanhar",
+   "type": "faction",
+   "aliases": [
+    "the House of Grit"
+   ],
+   "description": "An ancient Abzan house of djinn represented by Beyza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [],
+   "description": "The clan sheltering in Arashin and preparing for dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeskai",
+   "type": "faction",
+   "aliases": [],
+   "description": "The clan led by Narset.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragonstorms",
+   "type": "concept",
+   "aliases": [
+    "dragonstorm"
+   ],
+   "description": "Storms that create more wild dragons and warp the land with scales.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose phyresis compleated Ajani and Jace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes that Elspeth has seen.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ajani asks Felothar to release Narset and Elspeth without waiting for consensus so they can try to quell the dragonstorms.",
+   "participants": [
+    "Ajani",
+    "Felothar",
+    "Narset",
+    "Elspeth",
+    "Council of Houses"
+   ],
+   "location": "Arashin",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "they need to go on their way to see if there is a way to quell the dragonstorms."
+  },
+  {
+   "summary": "Felothar frees the three and announces evacuation and fortification of Arashin.",
+   "participants": [
+    "Felothar",
+    "Ajani",
+    "Narset",
+    "Elspeth"
+   ],
+   "location": "Arashin",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "You three are free to go."
+  },
+  {
+   "summary": "Narset warns that Sarkhan could bring thousands of dragons against Arashin, and the council doubts her.",
+   "participants": [
+    "Narset",
+    "Sarkhan Vol",
+    "Beyza",
+    "Council of Houses"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "It will be thousands of dragons."
+  },
+  {
+   "summary": "Nur arrives and confirms that hundreds of dragons are already in Sarkhan's army.",
+   "participants": [
+    "Nur",
+    "Beyza",
+    "Sarkhan Vol"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 28,
+   "quote": "My scouts report there are already hundreds of dragons in Sarkhan's army."
+  },
+  {
+   "summary": "Felothar declares the Abzan will focus on preparation and dismisses the visitors, providing them with supplies.",
+   "participants": [
+    "Felothar",
+    "Ajani",
+    "Narset",
+    "Elspeth"
+   ],
+   "location": "Arashin",
+   "importance": "minor",
+   "paragraph": 32,
+   "quote": "You will be provisioned with whatever you might need."
+  },
+  {
+   "summary": "Ajani confesses to Elspeth that he joined Phyrexia willingly and apologizes for trying to kill her.",
+   "participants": [
+    "Ajani",
+    "Elspeth",
+    "Narset",
+    "Phyrexia"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "I was not forced. I was not compelled. I did it willingly."
+  },
+  {
+   "summary": "Elspeth tells Ajani he was forgiven before their fight began, and Narset invites him to help stop the dragonstorms.",
+   "participants": [
+    "Elspeth",
+    "Ajani",
+    "Narset"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 56,
+   "quote": "You were forgiven before our fight even began."
+  },
+  {
+   "summary": "Ajani refuses to join them and walks away.",
+   "participants": [
+    "Ajani",
+    "Elspeth",
+    "Narset"
+   ],
+   "location": "Arashin",
+   "importance": "major",
+   "paragraph": 64,
+   "quote": "And he was gone before Elspeth or Narset could say another word"
+  },
+  {
+   "summary": "Narset and Elspeth step into the dragonstorm, shielded by blue light, and walk toward a bright light amid forming dragons.",
+   "participants": [
+    "Narset",
+    "Elspeth",
+    "Dragonstorms"
+   ],
+   "location": "Stormplains",
+   "importance": "major",
+   "paragraph": 72,
+   "quote": "Narset stepped into the storm and Elspeth followed."
+  },
+  {
+   "summary": "The storm falls silent and they find a massive ancient temple that Narset does not recognize from any records.",
+   "participants": [
+    "Narset",
+    "Elspeth",
+    "Temple in the heart of the storms",
+    "Ojutai"
+   ],
+   "location": "Temple in the heart of the storms",
+   "importance": "major",
+   "paragraph": 76,
+   "quote": "There is a temple in the heart of the storms,"
+  },
+  {
+   "summary": "Narset and Elspeth find an Omenpath in a subterranean antechamber and step through.",
+   "participants": [
+    "Narset",
+    "Elspeth",
+    "Omenpath"
+   ],
+   "location": "Temple in the heart of the storms",
+   "importance": "major",
+   "paragraph": 86,
+   "quote": "Nothing to do but step through, then,"
+  },
+  {
+   "summary": "Elspeth sees endless water while Narset sees stairs, and they realize this Meditation Realm is a distraction hiding something.",
+   "participants": [
+    "Narset",
+    "Elspeth",
+    "Meditation Realm"
+   ],
+   "location": "Meditation Realm",
+   "importance": "major",
+   "paragraph": 93,
+   "quote": "The Meditation Realm. I've been here before."
+  },
+  {
+   "summary": "Narset hears a weeping voice whispering a name, and Jace Beleren appears.",
+   "participants": [
+    "Narset",
+    "Elspeth",
+    "Jace Beleren"
+   ],
+   "location": "Meditation Realm",
+   "importance": "major",
+   "paragraph": 114,
+   "quote": "Jace Beleren stood on a rime of white sand"
+  },
+  {
+   "summary": "Jace reveals he escaped compleation by force of will, and Narset theorizes how.",
+   "participants": [
+    "Jace Beleren",
+    "Narset",
+    "Elspeth"
+   ],
+   "location": "Meditation Realm",
+   "importance": "major",
+   "paragraph": 121,
+   "quote": "I was on my way to that, yes. But I am not anymore."
+  },
+  {
+   "summary": "Jace introduces Loot, a creature whose mind holds a map of every Omenpath, and Narset questions whether Loot consented to this state.",
+   "participants": [
+    "Jace Beleren",
+    "Loot",
+    "Narset",
+    "Elspeth"
+   ],
+   "location": "Meditation Realm",
+   "importance": "major",
+   "paragraph": 144,
+   "quote": "He is a map of everything ."
+  },
+  {
+   "summary": "Jace evades Elspeth's question, saying he did what he needed to.",
+   "participants": [
+    "Jace Beleren",
+    "Narset",
+    "Elspeth",
+    "Loot"
+   ],
+   "location": "Meditation Realm",
+   "importance": "major",
+   "paragraph": 152,
+   "quote": "What I needed to."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Felothar",
+   "relation": "leader_of",
+   "target": "Abzan",
+   "note": "the Abzan khan",
+   "paragraph": 0,
+   "quote": "The problem with the new khan of the Abzan , Ajani thought"
+  },
+  {
+   "source": "Ajani",
+   "relation": "enemy",
+   "target": "Elspeth",
+   "note": "tried to kill her while compleated, now seeks forgiveness",
+   "paragraph": 4,
+   "quote": "He had tried to kill her."
+  },
+  {
+   "source": "Elspeth",
+   "relation": "ally",
+   "target": "Ajani",
+   "note": "old friend who forgives him",
+   "paragraph": 37,
+   "quote": "It was still Ajani's old friend."
+  },
+  {
+   "source": "Ajani",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "was her servant while compleated",
+   "paragraph": 5,
+   "quote": "to offer her corpse to Elesh Norn"
+  },
+  {
+   "source": "Narset",
+   "relation": "ally",
+   "target": "Elspeth",
+   "note": "colleagues exploring the dragonstorms",
+   "paragraph": 59,
+   "quote": "come and help us stop the dragonstorms."
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "other",
+   "target": "Loot",
+   "note": "carries Loot and uses his mind as a map; Narset doubts Loot consented",
+   "paragraph": 144,
+   "quote": "without Loot, I'd have never found my way here."
+  },
+  {
+   "source": "Elspeth",
+   "relation": "enemy",
+   "target": "Jace Beleren",
+   "note": "ran him through with her sword while he was compleated",
+   "paragraph": 117,
+   "quote": "Run through by your sword, yes,"
+  },
+  {
+   "source": "Nur",
+   "relation": "member_of",
+   "target": "Abzan",
+   "note": "an Abzan djinni giving scout reports",
+   "paragraph": 28,
+   "quote": "My scouts report there are already hundreds of dragons in Sarkhan's army."
+  }
+ ],
+ "rejected": []
+}

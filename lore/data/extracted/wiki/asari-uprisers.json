@@ -1,0 +1,94 @@
+{
+ "page": "wiki/asari-uprisers",
+ "url": "https://mtg.wiki/page/Asari_Uprisers",
+ "title": "Asari Uprisers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:29Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Asari Uprisers",
+   "type": "faction",
+   "aliases": [
+    "Hisaku Uprisers"
+   ],
+   "description": "Decentralized anti-Imperial revolutionaries based in Sokenzan City on Kamigawa, led by Risona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Risona",
+   "type": "character",
+   "aliases": [],
+   "description": "Charismatic renegade, a former Imperial who leads the Asari Uprisers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperials",
+   "type": "faction",
+   "aliases": [],
+   "description": "Authoritarian rulers the Uprisers oppose; their emperor has disappeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzan City",
+   "type": "location",
+   "aliases": [
+    "Sokenzanshi"
+   ],
+   "description": "Mountain city of artisans and artificers where the Uprisers are based.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Uprisers live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the emperor disappears the Uprisers begin preparing a large-scale coup.",
+   "participants": [
+    "Asari Uprisers",
+    "Imperials"
+   ],
+   "location": "Sokenzan City",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After the emperor disappeared, the Uprisers began preparing a large-scale coup."
+  },
+  {
+   "summary": "Risona resigned as an Imperial to protest the leaderless regime and now leads the Uprisers.",
+   "participants": [
+    "Risona"
+   ],
+   "location": "Sokenzan City",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "a former Imperial who resigned to protest the current, leaderless regime"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Risona",
+   "relation": "leader_of",
+   "target": "Asari Uprisers",
+   "note": "",
+   "paragraph": 2,
+   "quote": "They are led by Risona"
+  },
+  {
+   "source": "Asari Uprisers",
+   "relation": "enemy",
+   "target": "Imperials",
+   "note": "Clash in the streets",
+   "paragraph": 1,
+   "quote": "Uprisers frequently clash with Imperial enforcers in the middle of the streets"
+  }
+ ],
+ "rejected": []
+}

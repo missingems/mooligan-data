@@ -1,0 +1,83 @@
+{
+ "page": "wiki/last-ride",
+ "url": "https://mtg.wiki/page/Last_Ride",
+ "title": "Last Ride",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:07Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "The Last Ride",
+   "type": "artifact",
+   "aliases": [
+    "Last Ride"
+   ],
+   "description": "Legendary vehicle from Duskmourn with a skull design, used by Winter and possessed by the Speed Demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Winter",
+   "type": "character",
+   "aliases": [],
+   "description": "Character who used the Last Ride.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Speed Demon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon that possessed and powers the Last Ride.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon who sent the Last Ride to the Ghirapur Grand Prix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Race to which Valgavoth sent the Last Ride.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Valgavoth sends the Last Ride to the Ghirapur Grand Prix.",
+   "participants": [
+    "Valgavoth",
+    "The Last Ride",
+    "Speed Demon"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "It was sent by Valgavoth to be used in the Ghirapur Grand Prix"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Winter",
+   "relation": "other",
+   "target": "The Last Ride",
+   "note": "Winter used the vehicle.",
+   "paragraph": 1,
+   "quote": "a vehicle used by Winter"
+  },
+  {
+   "source": "Speed Demon",
+   "relation": "other",
+   "target": "The Last Ride",
+   "note": "The demon possesses and powers it.",
+   "paragraph": 1,
+   "quote": "possessed by the Speed Demon"
+  }
+ ],
+ "rejected": []
+}

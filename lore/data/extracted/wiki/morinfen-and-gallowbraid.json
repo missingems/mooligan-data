@@ -1,0 +1,169 @@
+{
+ "page": "wiki/morinfen-and-gallowbraid",
+ "url": "https://mtg.wiki/page/Morinfen_and_Gallowbraid",
+ "title": "Morinfen and Gallowbraid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Morinfen",
+   "type": "creature",
+   "aliases": [],
+   "description": "Winged Phyrexian Horror, partner of Gallowbraid and bane of Crovax.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gallowbraid",
+   "type": "creature",
+   "aliases": [],
+   "description": "Wingless Phyrexian Horror who killed Rofellos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "Man whose estate in Urborg was attacked by the Horrors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight captain who helped bring Crovax home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard Capashen"
+   ],
+   "description": "Weatherlight crew member.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight Crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crew that helped Crovax defend his estate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of the Phyrexian Horrors, who bound Selenia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selenia",
+   "type": "character",
+   "aliases": [],
+   "description": "Guardian angel summoned by Crovax, pulled away bound by Volrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rofellos",
+   "type": "character",
+   "aliases": [],
+   "description": "Crew member killed by Gallowbraid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Attack on Crovax's Estate",
+   "type": "event",
+   "aliases": [],
+   "description": "Assault on Crovax's family estate in Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Crovax's family estate.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Weatherlight Crew brings Crovax home to Urborg to repel the Attack on Crovax's Estate.",
+   "participants": [
+    "Sisay",
+    "Gerrard",
+    "Weatherlight Crew",
+    "Crovax"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "brought Crovax home to his family estate in Urborg to repel the Attack on Crovax's Estate"
+  },
+  {
+   "summary": "Crovax summons Selenia and defeats Volrath's servants.",
+   "participants": [
+    "Crovax",
+    "Selenia",
+    "Volrath"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Crovax summoned the guardian angel Selenia and defeated Volrath's servants."
+  },
+  {
+   "summary": "Gallowbraid kills Rofellos in the battle.",
+   "participants": [
+    "Gallowbraid",
+    "Rofellos"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Rofellos was killed by Gallowbraid."
+  },
+  {
+   "summary": "Selenia is forcefully pulled away, bound by Volrath, as Crovax breaks the artifact freeing her.",
+   "participants": [
+    "Crovax",
+    "Selenia",
+    "Volrath"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Crovax was aggrieved when she was forcefully pulled away, bound by Volrath."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gallowbraid",
+   "relation": "killed",
+   "target": "Rofellos",
+   "note": "Killed in battle.",
+   "paragraph": 1,
+   "quote": "Rofellos was killed by Gallowbraid."
+  },
+  {
+   "source": "Morinfen",
+   "relation": "enemy",
+   "target": "Crovax",
+   "note": "Bane of Crovax.",
+   "paragraph": 0,
+   "quote": "two Phyrexian Horrors which were the bane of Crovax"
+  },
+  {
+   "source": "Morinfen",
+   "relation": "other",
+   "target": "Gallowbraid",
+   "note": "Partners.",
+   "paragraph": 0,
+   "quote": "The partners were the first Phyrexians to show up in Dominaria"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,81 @@
+{
+ "page": "wiki/kollema-hall",
+ "url": "https://mtg.wiki/page/Kollema_Hall",
+ "title": "Kollema Hall",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:30Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Kollema Hall",
+   "type": "location",
+   "aliases": [
+    "Kollemma Hall"
+   ],
+   "description": "Central landmark of Lorehold College at Strixhaven University, a ten-story hub of historical scholarship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorehold College",
+   "type": "faction",
+   "aliases": [
+    "Lorehold"
+   ],
+   "description": "College of Strixhaven University focused on history.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University containing Lorehold College.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magister Kollema",
+   "type": "character",
+   "aliases": [
+    "Kollema"
+   ],
+   "description": "One of Lorehold's founding professors, namesake of the hall, with a statue at its center.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zertha DeSantos",
+   "type": "character",
+   "aliases": [],
+   "description": "Lorehold professor and magical healer overseeing the infirmary intake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Magister's Masquerade",
+   "type": "event",
+   "aliases": [],
+   "description": "Annual costume ball hosted at the hall for third-year students.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Magister Kollema",
+   "relation": "member_of",
+   "target": "Lorehold College",
+   "note": "One of its founding professors.",
+   "paragraph": 1,
+   "quote": "Magister Kollema , one of Lorehold 's founding professors"
+  },
+  {
+   "source": "Kollema Hall",
+   "relation": "located_in",
+   "target": "Lorehold College",
+   "note": "A central landmark.",
+   "paragraph": 0,
+   "quote": "Kollema Hall is one of the central landmarks of the Lorehold College at Strixhaven University"
+  }
+ ],
+ "rejected": []
+}

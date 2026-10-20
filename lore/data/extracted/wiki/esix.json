@@ -1,0 +1,75 @@
+{
+ "page": "wiki/esix",
+ "url": "https://mtg.wiki/page/Esix",
+ "title": "Esix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Esix, Fractal Bloom",
+   "type": "creature",
+   "aliases": [
+    "Esix"
+   ],
+   "description": "A fractal of Quandrix College, a living theorem obsessed with infinity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quandrix College",
+   "type": "faction",
+   "aliases": [],
+   "description": "College of Strixhaven whose students created Esix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Quandrix students tasked with an infinite equation accidentally created Esix.",
+   "participants": [
+    "Quandrix College",
+    "Esix, Fractal Bloom"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "a group of Quandrix students accidentally created Esix, a living theorem obsessed with infinity"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Quandrix College",
+   "relation": "created",
+   "target": "Esix, Fractal Bloom",
+   "note": "Quandrix students accidentally created it.",
+   "paragraph": 1,
+   "quote": "a group of Quandrix students accidentally created Esix"
+  },
+  {
+   "source": "Esix, Fractal Bloom",
+   "relation": "member_of",
+   "target": "Quandrix College",
+   "note": "It is a fractal of the college.",
+   "paragraph": 0,
+   "quote": "is a fractal of the Quandrix College of Strixhaven University on Arcavios"
+  }
+ ],
+ "rejected": []
+}

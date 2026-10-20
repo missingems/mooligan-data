@@ -1,0 +1,194 @@
+{
+ "page": "wiki/azar",
+ "url": "https://mtg.wiki/page/Azar",
+ "title": "Azar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Azar",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard from Shandalar, apprentice of Kenan Sahrmal, whose body was taken over by Lim-Dul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kenan Sahrmal",
+   "type": "character",
+   "aliases": [
+    "Sahrmal"
+   ],
+   "description": "Wizard who took Azar and the Guardian as apprentices and buried Azar's body.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Guardian",
+   "type": "character",
+   "aliases": [
+    "Guardian"
+   ],
+   "description": "Fellow apprentice of Kenan Sahrmal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dul",
+   "type": "character",
+   "aliases": [
+    "Lim-Dûl"
+   ],
+   "description": "Necromancer whose soul seized Azar's body and later started the Wizards' War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dul's War",
+   "type": "event",
+   "aliases": [
+    "Lim-Dûl's War"
+   ],
+   "description": "War during which Azar fought Lim-Dul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizards' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War started when Lim-Dul rose from the grave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact used to power the Great Barrier of Shandalar, in which Lim-Dul was imprisoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skavius Slan",
+   "type": "character",
+   "aliases": [],
+   "description": "Immortal lich lord, the soulless body of Azar, who commanded the Black Guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Black Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild commanded by Skavius Slan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arzakon's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Skavius Slan was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Azar is from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Azar destroys Lim-Dul's body, but Lim-Dul takes control of Azar's body and the two souls are trapped together.",
+   "participants": [
+    "Azar",
+    "Lim-Dul"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Lim-Dûl was prepared for this and managed to take control of Azar's body."
+  },
+  {
+   "summary": "Sahrmal quietly buries the rigid body in a necropolis.",
+   "participants": [
+    "Kenan Sahrmal",
+    "Azar"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "so Sahrmal quietly buried it in a necropolis."
+  },
+  {
+   "summary": "Lim-Dul wins the battle of souls, banishes Azar, rises from the grave and starts the Wizards' War.",
+   "participants": [
+    "Lim-Dul",
+    "Azar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Lim-Dûl won the battle of souls, banishing Azar from his body"
+  },
+  {
+   "summary": "Lim-Dul is defeated and imprisoned in the Chain Veil.",
+   "participants": [
+    "Lim-Dul",
+    "Chain Veil"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he was eventually defeated and imprisoned in the Chain Veil"
+  },
+  {
+   "summary": "Azar's soulless body rises on its own as Skavius Slan and takes command of the Black Guild.",
+   "participants": [
+    "Skavius Slan",
+    "Black Guild",
+    "Azar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "It rose on its own and took the name Skavius Slan"
+  },
+  {
+   "summary": "Skavius Slan is destroyed in Arzakon's War, ending Azar's haunted body.",
+   "participants": [
+    "Skavius Slan",
+    "Azar"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Skavius Slan was destroyed and Azar's long haunted body finally came to an end."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azar",
+   "relation": "other",
+   "target": "Kenan Sahrmal",
+   "note": "Azar was Sahrmal's apprentice.",
+   "paragraph": 1,
+   "quote": "Azar was an apprentice of Kenan Sahrmal"
+  },
+  {
+   "source": "Azar",
+   "relation": "enemy",
+   "target": "Lim-Dul",
+   "note": "Azar fought Lim-Dul and was displaced by him.",
+   "paragraph": 1,
+   "quote": "Azar fought Lim-Dûl"
+  },
+  {
+   "source": "Skavius Slan",
+   "relation": "leader_of",
+   "target": "Black Guild",
+   "note": "Took command of the Black Guild.",
+   "paragraph": 3,
+   "quote": "Then it took command of the Black Guild"
+  }
+ ],
+ "rejected": []
+}

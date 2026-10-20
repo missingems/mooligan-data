@@ -1,0 +1,141 @@
+{
+ "page": "wiki/seshiro",
+ "url": "https://mtg.wiki/page/Seshiro",
+ "title": "Seshiro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:06Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Seshiro",
+   "type": "character",
+   "aliases": [
+    "Seshiro the Anointed"
+   ],
+   "description": "Snake monk called the Anointed, orochi Broodmaster during the Kami War, son of Suzue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Suzue",
+   "type": "character",
+   "aliases": [],
+   "description": "Orochi mother of Seshiro, fatally wounded by a kami of decay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dosan",
+   "type": "character",
+   "aliases": [],
+   "description": "Monk of Okina saved by Seshiro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sosuke",
+   "type": "character",
+   "aliases": [],
+   "description": "Child of Seshiro, leader of the Kashi tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sachi",
+   "type": "character",
+   "aliases": [],
+   "description": "Child of Seshiro, leader of the Sakura tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaseto",
+   "type": "character",
+   "aliases": [],
+   "description": "Archmage who carried on Seshiro's wisdom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orochi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Snake people of Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War on Kamigawa during which Seshiro was Broodmaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Okina",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple where human monks taught Seshiro.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Suzue brings Seshiro to the Okina temple to be taught martial arts by human monks.",
+   "participants": [
+    "Suzue",
+    "Seshiro"
+   ],
+   "location": "Okina",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Seshiro was brought by his mother to the Okina temple"
+  },
+  {
+   "summary": "Suzue, Seshiro and Dosan are attacked by a kami of decay; Seshiro saves Dosan but Suzue is fatally wounded.",
+   "participants": [
+    "Seshiro",
+    "Suzue",
+    "Dosan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Seshiro saved Dosan, but Suzue was fatally wounded."
+  },
+  {
+   "summary": "Seshiro becomes Broodmaster of the orochi colonies.",
+   "participants": [
+    "Seshiro",
+    "Orochi"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "became Broodmaster, as foretold by the shamans"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Suzue",
+   "relation": "family",
+   "target": "Seshiro",
+   "note": "Mother and son.",
+   "paragraph": 2,
+   "quote": "Son of Suzue"
+  },
+  {
+   "source": "Seshiro",
+   "relation": "leader_of",
+   "target": "Orochi",
+   "note": "Broodmaster of the orochi colonies.",
+   "paragraph": 0,
+   "quote": "Broodmaster of the Orochi colonies of Kamigawa during the Kami War"
+  },
+  {
+   "source": "Kaseto",
+   "relation": "other",
+   "target": "Seshiro",
+   "note": "Carried on his wisdom.",
+   "paragraph": 4,
+   "quote": "Seshiro's wisdom would be carried on by the Archmage Kaseto"
+  }
+ ],
+ "rejected": []
+}

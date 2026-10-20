@@ -1,0 +1,122 @@
+{
+ "page": "wiki/great-glacier",
+ "url": "https://mtg.wiki/page/Great_Glacier",
+ "title": "Great Glacier",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Great Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the great glaciers covering parts of Terisiare during the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent on Dominaria covered by glaciers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage who raised a Glacial Wall at the glacier's edge to protect the School of the Unseen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "School of the Unseen",
+   "type": "faction",
+   "aliases": [],
+   "description": "Magical school protected by the glacier.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glacial Wall",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical wall Jodah erected at the glacier's edge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Period of extreme cold on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "Period when glaciers began to melt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Flooding after which the glacier retreated fully.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lat-Nam",
+   "type": "location",
+   "aliases": [],
+   "description": "Island connected to the mainland when the glacier locked up the sea.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Great Glacier grew over Lat-Nam straits and buried places such as Eln Forest and Shingol.",
+   "participants": [
+    "Great Glacier"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The glacier grew over the Lat-Nam straits and the western shore of the continent"
+  },
+  {
+   "summary": "Jodah used the glacier to protect the School of the Unseen with a Glacial Wall.",
+   "participants": [
+    "Jodah",
+    "School of the Unseen",
+    "Glacial Wall"
+   ],
+   "location": "Great Glacier",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jodah utilized the presence of the glacier to the benefit of the School of the Unseen"
+  },
+  {
+   "summary": "During the Flooding of Terisiare the Great Glacier retreated fully.",
+   "participants": [
+    "Great Glacier",
+    "Flooding of Terisiare"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Great Glacier retreated fully"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jodah",
+   "relation": "serves",
+   "target": "School of the Unseen",
+   "note": "Protected it with a wall",
+   "paragraph": 2,
+   "quote": "Jodah utilized the presence of the glacier to the benefit of the School of the Unseen"
+  }
+ ],
+ "rejected": []
+}

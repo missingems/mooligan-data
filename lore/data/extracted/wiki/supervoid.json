@@ -1,0 +1,155 @@
+{
+ "page": "wiki/supervoid",
+ "url": "https://mtg.wiki/page/Supervoid",
+ "title": "Supervoid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Supervoid",
+   "type": "concept",
+   "aliases": [
+    "supervoids"
+   ],
+   "description": "A singularity ringed in a photon collar, different from a true black hole; one thousand have been made or found by Monoists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monoists",
+   "type": "faction",
+   "aliases": [
+    "Monoist faith"
+   ],
+   "description": "Faith that creates and reveres supervoids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monasteriat",
+   "type": "faction",
+   "aliases": [],
+   "description": "Congress of monks administering Monoist doctrine from the Lip of Susur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lip of Susur",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Monoist faith, the photon collar ringing Point Prime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Point Prime",
+   "type": "location",
+   "aliases": [],
+   "description": "First and most holy supervoid of the Monoist faith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Faller",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure observed approaching the center of every supervoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zero Point",
+   "type": "concept",
+   "aliases": [],
+   "description": "Center of every supervoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "INEVITA",
+   "type": "concept",
+   "aliases": [],
+   "description": "The promised future beyond the Zero Point.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [
+    "Sothera system"
+   ],
+   "description": "Star system that the Monoists collapsed into a supervoid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Celestial Palatinate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemy of the Monoists in the Entropy War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Entropy War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between the Monoists and the Celestial Palatinate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sekhar",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A bead that causes singularity induction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Horizon javelins",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Colossal star-reviving weapons.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Monoists collapse the star Sothera into a supervoid using sekhar.",
+   "participants": [
+    "Monoists",
+    "Sothera",
+    "Sekhar"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Monoists caused it to instead collapse in on itself into a supervoid"
+  },
+  {
+   "summary": "The Celestial Palatinate fights to re-ignite Sothera with horizon javelins.",
+   "participants": [
+    "Celestial Palatinate",
+    "Sothera",
+    "Horizon javelins"
+   ],
+   "location": "Sothera",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Celestial Palatinate fights them to instead re-ignite the star"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Monoists",
+   "relation": "enemy",
+   "target": "Celestial Palatinate",
+   "note": "Fight over Sothera in the Entropy War.",
+   "paragraph": 3,
+   "quote": "The Sothera system is a pivotal front in the Entropy War with the Celestial Palatinate ."
+  },
+  {
+   "source": "Monasteriat",
+   "relation": "member_of",
+   "target": "Monoists",
+   "note": "Administers Monoist doctrine.",
+   "paragraph": 2,
+   "quote": "The Monasteriat is a congress of monks who administer Monoist doctrine"
+  }
+ ],
+ "rejected": []
+}

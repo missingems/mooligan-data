@@ -1,0 +1,99 @@
+{
+ "page": "wiki/martyrs-of-korlis",
+ "url": "https://mtg.wiki/page/Martyrs_of_Korlis",
+ "title": "Martyrs of Korlis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:21Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Martyrs of Korlis",
+   "type": "faction",
+   "aliases": [],
+   "description": "Young idealists of Korlis slaughtered by the Fallaji; later a band in Gull's army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who slaughtered the Martyrs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the Martyrs died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nazarius",
+   "type": "character",
+   "aliases": [],
+   "description": "Fanatic who led a band of Martyrs in Gull's army 4000 years later.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the wizard-hunting army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korlis",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Martyrs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Fallaji slaughter the Martyrs, prompting an Argivian and Korlisian army to march south.",
+   "participants": [
+    "Martyrs of Korlis",
+    "Fallaji"
+   ],
+   "location": "Korlis",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Their deaths electrified the southern of the two Combined Kingdoms"
+  },
+  {
+   "summary": "4000 years later Nazarius leads a band of Martyrs in Gull's army.",
+   "participants": [
+    "Nazarius",
+    "Gull",
+    "Martyrs of Korlis"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "a man named Nazarius , a fanatic with misty eyes, led a band of the Martyrs of Korlis"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fallaji",
+   "relation": "killed",
+   "target": "Martyrs of Korlis",
+   "note": "Slaughtered them",
+   "paragraph": 0,
+   "quote": "slaughtered by the Fallaji during the Brothers' War"
+  },
+  {
+   "source": "Nazarius",
+   "relation": "leader_of",
+   "target": "Martyrs of Korlis",
+   "note": "Led a band",
+   "paragraph": 2,
+   "quote": "led a band of the Martyrs of Korlis"
+  }
+ ],
+ "rejected": []
+}

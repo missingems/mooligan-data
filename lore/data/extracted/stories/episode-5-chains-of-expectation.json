@@ -1,0 +1,620 @@
+{
+ "page": "stories/episode-5-chains-of-expectation",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-5-chains-of-expectation",
+ "title": "Murders at Karlov Manor | Episode 5: Chains of Expectation",
+ "story_date": "2024-01-11",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:48:51Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [
+    "Proft",
+    "the detective"
+   ],
+   "description": "An Agency detective who frees Etrata and investigates her missing time, discovering strange yellow-gray powder in her hideout.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etrata",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dimir vampire assassin who cooperates with Proft to clear her name.",
+   "presence": "appears"
+  },
+  {
+   "name": "Massacre Girl",
+   "type": "character",
+   "aliases": [],
+   "description": "A Rakdos assassin with a painted red grin hired to kill the man who caught Etrata.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Planeswalker Kaya"
+   ],
+   "description": "A planeswalker leading the Agency's investigation who visits Vitu-Ghazi to read the Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [
+    "Inspector Kellan"
+   ],
+   "description": "A cheerful young Agency investigator who wields woven-basket elemental swords and accompanies Kaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolsimir",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf of the Selesnya Conclave who accompanies the wolf Voja and escorts Kaya to the Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Voja",
+   "type": "creature",
+   "aliases": [],
+   "description": "A massive white wolf Kaya knows, loyal to Tolsimir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trostani",
+   "type": "character",
+   "aliases": [],
+   "description": "The three-bodied dryad through whom the Worldsoul of Ravnica speaks, who receives Kaya in Vitu-Ghazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ses",
+   "type": "character",
+   "aliases": [],
+   "description": "The dryad of order, the rightmost body of Trostani.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cim",
+   "type": "character",
+   "aliases": [],
+   "description": "The dryad of harmony, the left body of Trostani.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oba",
+   "type": "character",
+   "aliases": [],
+   "description": "The dryad of life, now the central body of Trostani, who rebukes Kaya for being absent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mat'Selesnya",
+   "type": "character",
+   "aliases": [],
+   "description": "The Selesnya voice who told Trostani that Vitu-Ghazi needed space to recover.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [
+    "the demon Rakdos"
+   ],
+   "description": "A demon bound by the Guildpact to the Cult of Rakdos to channel his murderous influence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Judith",
+   "type": "character",
+   "aliases": [],
+   "description": "The Rakdos figure who directed Kaya to the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [],
+   "description": "The murdered Simic leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa"
+   ],
+   "description": "The Orzhov leader whose death is already spreading as news.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [],
+   "description": "The Agency head to whom Kaya must report.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "The Selesnya living guildhall, now reconfigured as a manor wrapped in roots on a remote moor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "A district where Kellan says his friend went to explore a ruin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild city-plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The founding contract of the guilds, kept in book form in Vitu-Ghazi, whose Rakdos section reveals the demon's murderous influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Worldsoul",
+   "type": "concept",
+   "aliases": [],
+   "description": "The living soul of Ravnica that speaks through Trostani.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnya",
+    "the Conclave"
+   ],
+   "description": "The guild that holds Vitu-Ghazi and the surrounding park.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos Cult",
+   "type": "faction",
+   "aliases": [
+    "Cult of Rakdos",
+    "Rakdos"
+   ],
+   "description": "The guild bound to placate the demon Rakdos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "The spy guild that protects its territory and does not sanction unauthorized hits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The law guild from whose custody Etrata was freed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "The guild of Kaya and Teysa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "The independent investigative body Proft and Kellan belong to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders who damaged Vitu-Ghazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "God-Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Phyrexian-aligned beings who deeply damaged Vitu-Ghazi.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Etrata leads Proft along a Dimir street and opens a concealed entrance to her hideout.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "With a weary grinding sound, a section of the wall slightly smaller than an ordinary door shifted and slid inward"
+  },
+  {
+   "summary": "Etrata says she remembers nothing of the party or of getting ready for it.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "I don't remember going to that party, much less getting ready for it"
+  },
+  {
+   "summary": "Proft explains he is helping her because her case is the most interesting puzzle since the invasion.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 20,
+   "quote": "Right now, you represent the most interesting puzzle set before me since the invasion."
+  },
+  {
+   "summary": "Proft finds a fine yellow-gray powder on Etrata's bedside table and pillow.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 37,
+   "quote": "There, dusted across the wood and onto the nearby pillowcase, was a fine yellowish-gray powder."
+  },
+  {
+   "summary": "Proft scrapes the powder into a jar for evidence.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "he scraped as much of it as he could into the open jar before sealing it firmly."
+  },
+  {
+   "summary": "Etrata decides to defend Proft against an attacker in the hall.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "With a frustrated sigh, Etrata turned, pulling two more knives from inside her shirt, and leapt for the fight behind her."
+  },
+  {
+   "summary": "A figure in red and black attacks Proft; Etrata knocks her away and recognizes Massacre Girl.",
+   "participants": [
+    "Massacre Girl",
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 48,
+   "quote": "Proft was on the ground, a figure dressed in red and black crouching over him, a knife in either hand."
+  },
+  {
+   "summary": "Massacre Girl reveals she was hired to kill the man who caught Etrata.",
+   "participants": [
+    "Massacre Girl",
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 65,
+   "quote": "I was supposed to kill the man who caught you."
+  },
+  {
+   "summary": "Etrata claims Proft and says they are finding out who really killed Zegana; Massacre Girl stands down.",
+   "participants": [
+    "Etrata",
+    "Massacre Girl",
+    "Alquist Proft",
+    "Zegana"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 66,
+   "quote": "I'm helping him find out who really killed Zegana."
+  },
+  {
+   "summary": "Massacre Girl leaves, promising there is always next time.",
+   "participants": [
+    "Massacre Girl",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 75,
+   "quote": "There's always next time."
+  },
+  {
+   "summary": "Proft says he will take Etrata to an old friend not associated with the Agency.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 83,
+   "quote": "To see an old friend of mine"
+  },
+  {
+   "summary": "Kaya recalls Vitu-Ghazi's dormancy after the God-Eternals' damage and sets out with Kellan.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "God-Eternals"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 85,
+   "quote": "When last Kaya had seen Vitu-Ghazi, the great living guildhall had been dormant"
+  },
+  {
+   "summary": "A carriage driver reproaches Kaya for being absent during the Phyrexian invasion.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 88,
+   "quote": "And you could have been here when the Phyrexians came."
+  },
+  {
+   "summary": "Kellan reveals a friend came with him to Ravnica and is exploring the Rubblebelt.",
+   "participants": [
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 97,
+   "quote": "A friend of my own came with me."
+  },
+  {
+   "summary": "Kellan explains that Vitu-Ghazi was moved to the moor to recover after the invasion.",
+   "participants": [
+    "Kellan",
+    "Kaya",
+    "Trostani",
+    "Mat'Selesnya"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 104,
+   "quote": "Mat'Selesnya told Trostani that Vitu-Ghazi needed space to put down new root structures"
+  },
+  {
+   "summary": "A massive white wolf charges Kaya and Kellan.",
+   "participants": [
+    "Voja",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 111,
+   "quote": "A massive white wolf was loping toward them"
+  },
+  {
+   "summary": "Kaya identifies the wolf as Voja and tells Kellan to defend only.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Voja"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "His name is Voja."
+  },
+  {
+   "summary": "Tolsimir arrives and Kaya explains they are investigating Zegana's death.",
+   "participants": [
+    "Tolsimir",
+    "Voja",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 130,
+   "quote": "Inspector Kellan and I are investigating the matter of Zegana's death"
+  },
+  {
+   "summary": "Tolsimir hints that another guild leader has been harmed and tells Kaya to look within her own guild.",
+   "participants": [
+    "Tolsimir",
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 131,
+   "quote": "you might look within your own guild, Planeswalker Kaya."
+  },
+  {
+   "summary": "Kaya sees Vitu-Ghazi's new form as a manor wrapped in roots.",
+   "participants": [
+    "Kaya",
+    "Tolsimir"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 135,
+   "quote": "The towering guildhall had reconfigured itself as it came to rest in the open moor."
+  },
+  {
+   "summary": "Trostani appears as three dryads from the oak and agrees to let Kaya consult the Guildpact.",
+   "participants": [
+    "Trostani",
+    "Ses",
+    "Cim",
+    "Oba",
+    "Kaya"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 139,
+   "quote": "Three dryads, each one an individual, and collectively the singular entity through which the Worldsoul of Ravnica was said to speak."
+  },
+  {
+   "summary": "Oba rebukes Kaya, noting deaths occurred while she was gone.",
+   "participants": [
+    "Oba",
+    "Kaya"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 144,
+   "quote": "Like all the deaths while you were gone?"
+  },
+  {
+   "summary": "Tolsimir lowers a protective bubble so Kaya and Kellan can read the original Guildpact.",
+   "participants": [
+    "Tolsimir",
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 151,
+   "quote": "A bubble of magical force surrounded an open book."
+  },
+  {
+   "summary": "Kaya reads that the founders bound the demon Rakdos to a people to contain his murderous influence over Ravnica.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Rakdos"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 158,
+   "quote": "by binding the demon Rakdos to a people of his own, we can prevent his continuing to instill murderous rage in the citizens of Ravnica"
+  },
+  {
+   "summary": "Kaya connects Etrata's missing memory to Rakdos's influence and resolves to report to Ezrim.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Etrata",
+    "Ezrim",
+    "Judith"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 161,
+   "quote": "We need to report this to Ezrim as soon as possible."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Etrata",
+   "relation": "ally",
+   "target": "Alquist Proft",
+   "note": "helps him find the real killer",
+   "paragraph": 66,
+   "quote": "I'm helping him find out who really killed Zegana."
+  },
+  {
+   "source": "Alquist Proft",
+   "relation": "member_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "he is with the Agency",
+   "paragraph": 4,
+   "quote": "now that I'm with the Agency"
+  },
+  {
+   "source": "Massacre Girl",
+   "relation": "member_of",
+   "target": "Rakdos Cult",
+   "note": "a Rakdos assassin",
+   "paragraph": 78,
+   "quote": "You're lucky whoever sent her hired a Rakdos"
+  },
+  {
+   "source": "Massacre Girl",
+   "relation": "ally",
+   "target": "Etrata",
+   "note": "fellow assassins and colleagues",
+   "paragraph": 80,
+   "quote": "A colleague. She does good work."
+  },
+  {
+   "source": "Tolsimir",
+   "relation": "member_of",
+   "target": "Selesnya Conclave",
+   "note": "guards Vitu-Ghazi",
+   "paragraph": 149,
+   "quote": "She's still adjusting to the new shape of Vitu-Ghazi"
+  },
+  {
+   "source": "Voja",
+   "relation": "other",
+   "target": "Tolsimir",
+   "note": "Tolsimir's wolf companion",
+   "paragraph": 127,
+   "quote": "setting a hand on Voja's shoulder"
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Kellan",
+   "note": "investigating partners",
+   "paragraph": 101,
+   "quote": "She gestured grandly for him to lead the way"
+  },
+  {
+   "source": "Judith",
+   "relation": "serves",
+   "target": "Rakdos",
+   "note": "Rakdos is her parun",
+   "paragraph": 160,
+   "quote": "Would Judith really implicate her own parun?"
+  },
+  {
+   "source": "Rakdos Cult",
+   "relation": "serves",
+   "target": "Rakdos",
+   "note": "bound to placate the demon",
+   "paragraph": 156,
+   "quote": "to placate the demon Rakdos through blood and through fire"
+  }
+ ],
+ "rejected": []
+}

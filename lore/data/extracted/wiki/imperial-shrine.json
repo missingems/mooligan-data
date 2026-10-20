@@ -1,0 +1,116 @@
+{
+ "page": "wiki/imperial-shrine",
+ "url": "https://mtg.wiki/page/Imperial_Shrine",
+ "title": "Imperial Shrine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Imperial Shrine",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the highest-ranking officers of the Madaran Empire had audiences with Nicol Bolas, located amid three strong mana lines; destroyed by Tetsuo's Meteor Hammer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madaran Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire whose officers met Nicol Bolas at the Imperial Shrine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "the elder dragon"
+   ],
+   "description": "Elder dragon and emperor who partially manifested in the shrine due to his need for mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ramses Overdark",
+   "type": "character",
+   "aliases": [
+    "imperial regent"
+   ],
+   "description": "Imperial regent who stayed in the Shrine and lost his final battle there to Tetsuo Umezawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Ramses Overdark in the Shrine and destroyed it with a Meteor Hammer spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Ramses Overdark was promoted to imperial regent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suido River",
+   "type": "location",
+   "aliases": [],
+   "description": "Source of blue mana line near the shrine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gitte-Yatay Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Source of red mana line near the shrine.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ramses Overdark fought and lost his final battle against Tetsuo Umezawa in the Imperial Shrine.",
+   "participants": [
+    "Ramses Overdark",
+    "Tetsuo Umezawa"
+   ],
+   "location": "Imperial Shrine",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "it was there that he fought, and lost, his final battle against Tetsuo Umezawa"
+  },
+  {
+   "summary": "The Shrine was destroyed by Tetsuo's Meteor Hammer spell.",
+   "participants": [
+    "Tetsuo Umezawa",
+    "Imperial Shrine"
+   ],
+   "location": "Imperial Shrine",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Shrine was destroyed shortly after that by Tetsuo’s Meteor Hammer spell."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "enemy",
+   "target": "Ramses Overdark",
+   "note": "Tetsuo defeated Ramses in battle.",
+   "paragraph": 2,
+   "quote": "his final battle against Tetsuo Umezawa"
+  },
+  {
+   "source": "Ramses Overdark",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Ramses served the emperor as imperial regent.",
+   "paragraph": 2,
+   "quote": "After being promoted to imperial regent during the Madara-Edemi War"
+  }
+ ],
+ "rejected": []
+}

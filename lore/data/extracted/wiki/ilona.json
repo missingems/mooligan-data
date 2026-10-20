@@ -1,0 +1,121 @@
+{
+ "page": "wiki/ilona",
+ "url": "https://mtg.wiki/page/Ilona",
+ "title": "Ilona",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:23Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Ilona",
+   "type": "character",
+   "aliases": [],
+   "description": "Orzhov potentate and kingpin leading one of the Syndicate's cartels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Syndicate"
+   ],
+   "description": "Ravnican guild whose cartels Ilona leads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Kazmyr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ilona's winged pet thrull.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bilagru",
+   "type": "character",
+   "aliases": [],
+   "description": "Executioner hired by Ilona to claim lives of debtors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Symond Halm",
+   "type": "character",
+   "aliases": [],
+   "description": "Playwright who borrowed gold from Ilona for a play and risked his life.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius prison",
+   "type": "location",
+   "aliases": [],
+   "description": "Prison where Symond hid after killing a vedalken.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ilona had Symond Halm sign a contract that put his life on the line should his play fail.",
+   "participants": [
+    "Ilona",
+    "Symond Halm"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she had him sign a contract that put his life on the line should he fail."
+  },
+  {
+   "summary": "Ilona and Lord Kazmyr watched the poorly attended premiere and sent Kazmyr and Bilagru after Symond.",
+   "participants": [
+    "Ilona",
+    "Lord Kazmyr",
+    "Bilagru",
+    "Symond Halm"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Ilona sent Lord Kazmyr and Bilagru to follow him."
+  },
+  {
+   "summary": "Symond killed a vedalken to be imprisoned; Ilona resolved to claim his debt even by breaking into an Azorius prison.",
+   "participants": [
+    "Symond Halm",
+    "Ilona"
+   ],
+   "location": "Azorius prison",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Symond killed a vedalken man to be put into prison"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ilona",
+   "relation": "leader_of",
+   "target": "Orzhov Syndicate",
+   "note": "leader of one of its cartels",
+   "paragraph": 0,
+   "quote": "leader of one of the Syndicate's cartels"
+  },
+  {
+   "source": "Ilona",
+   "relation": "other",
+   "target": "Lord Kazmyr",
+   "note": "owner of pet thrull",
+   "paragraph": 0,
+   "quote": "She has a winged pet thrull named Lord Kazmyr"
+  },
+  {
+   "source": "Bilagru",
+   "relation": "serves",
+   "target": "Ilona",
+   "note": "executioner hired by Ilona",
+   "paragraph": 0,
+   "quote": "has hired the executioner Bilagru"
+  }
+ ],
+ "rejected": []
+}

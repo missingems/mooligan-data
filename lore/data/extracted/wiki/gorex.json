@@ -1,0 +1,80 @@
+{
+ "page": "wiki/gorex",
+ "url": "https://mtg.wiki/page/Gorex",
+ "title": "Gorex",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:41Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Gorex",
+   "type": "creature",
+   "aliases": [],
+   "description": "Massive zombie turtle of Nephalia, reanimated by Jadar as a beast of burden.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jadar",
+   "type": "character",
+   "aliases": [],
+   "description": "Nephalia's foremost ghoulcaller who reanimated the turtle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Morkrut marsh",
+   "type": "location",
+   "aliases": [],
+   "description": "Marsh where Jadar dredged corpses and found the turtle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Nephalia lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jadar finds a massive turtle corpse in the marsh, enlarges it with magic, and reanimates it as his cart and horse.",
+   "participants": [
+    "Jadar",
+    "Gorex"
+   ],
+   "location": "Morkrut marsh",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "A little magic made it even larger, and then a lot of magic reanimated it"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jadar",
+   "relation": "created",
+   "target": "Gorex",
+   "note": "He reanimated the turtle.",
+   "paragraph": 1,
+   "quote": "A little magic made it even larger"
+  },
+  {
+   "source": "Gorex",
+   "relation": "serves",
+   "target": "Jadar",
+   "note": "Gorex is his primary transport.",
+   "paragraph": 1,
+   "quote": "it now serves as Jadar's primary means of transport."
+  }
+ ],
+ "rejected": []
+}

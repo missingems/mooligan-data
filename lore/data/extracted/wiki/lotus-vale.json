@@ -1,0 +1,99 @@
+{
+ "page": "wiki/lotus-vale",
+ "url": "https://mtg.wiki/page/Lotus_Vale",
+ "title": "Lotus Vale",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:34Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lotus Vale",
+   "type": "location",
+   "aliases": [
+    "The Lotus Vale"
+   ],
+   "description": "Garden on Tolaria where Black Lotuses were grown, destroyed with Tolaria by Barrin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Island destroyed by Barrin during the first Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of wizards that tended the Lotus Vale, led by Barrin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Led the Tolarian Academy wizards and obliterated Tolaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Lotus",
+   "type": "artifact",
+   "aliases": [
+    "Black Lotuses"
+   ],
+   "description": "Plants grown in the Lotus Vale.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "First Phyrexian invasion during which Tolaria was destroyed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Barrin obliterates Tolaria, destroying the Lotus Vale, during the first Phyrexian Invasion.",
+   "participants": [
+    "Barrin",
+    "Lotus Vale"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "when Barrin obliterated the island during the first Phyrexian Invasion of Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tolarian Academy",
+   "relation": "other",
+   "target": "Lotus Vale",
+   "note": "Its wizards tended the garden.",
+   "paragraph": 0,
+   "quote": "It was tended by the wizards of the Tolarian Academy"
+  },
+  {
+   "source": "Barrin",
+   "relation": "leader_of",
+   "target": "Tolarian Academy",
+   "note": "Led the wizards.",
+   "paragraph": 0,
+   "quote": "led by Barrin"
+  },
+  {
+   "source": "Lotus Vale",
+   "relation": "located_in",
+   "target": "Tolaria",
+   "note": "A garden on Tolaria.",
+   "paragraph": 0,
+   "quote": "a garden on Tolaria"
+  }
+ ],
+ "rejected": []
+}

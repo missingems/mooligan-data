@@ -1,0 +1,162 @@
+{
+ "page": "wiki/warree-tarcha",
+ "url": "https://mtg.wiki/page/Warree_Tarcha",
+ "title": "Warree Tarcha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:35Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Warree Tarcha",
+   "type": "character",
+   "aliases": [
+    "Tarcha"
+   ],
+   "description": "An old kithkin augur of Kinscaer in Shadowmoor, capable of potent white-mana protective spells; became Acting Cenn and was killed by Oona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling the Destroyer",
+   "type": "character",
+   "aliases": [
+    "Ashling"
+   ],
+   "description": "Attacker of Kinscaer who killed Donal Alloway and was teleported to the edge of the world by Tarcha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Donal Alloway",
+   "type": "character",
+   "aliases": [],
+   "description": "The cenn of Kinscaer, killed by Ashling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [
+    "the fae queen"
+   ],
+   "description": "The fae queen who offered Kinscaer protection, then killed Tarcha and the kithkin of Kinscaer with her vines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Returned to Kinscaer with his friends and was greeted by Oona's simulacrum of Tarcha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kinscaer",
+   "type": "location",
+   "aliases": [],
+   "description": "A kithkin doun in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The realm where Tarcha lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kithkin",
+   "type": "faction",
+   "aliases": [],
+   "description": "The people of Kinscaer, whose mindweft power Oona absorbed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashling attacks Kinscaer, distracts Tarcha, and kills Cenn Donal Alloway and others.",
+   "participants": [
+    "Ashling the Destroyer",
+    "Warree Tarcha",
+    "Donal Alloway"
+   ],
+   "location": "Kinscaer",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Ashling killed the cenn Donal Alloway and a few other denizens of the doun."
+  },
+  {
+   "summary": "Tarcha teleports Ashling to the edge of the world.",
+   "participants": [
+    "Warree Tarcha",
+    "Ashling the Destroyer"
+   ],
+   "location": "Kinscaer",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Tarcha then used her power to teleport Ashling to the edge of the world"
+  },
+  {
+   "summary": "Oona offers Kinscaer protection in exchange for support against Ashling; Tarcha reluctantly agrees.",
+   "participants": [
+    "Oona",
+    "Warree Tarcha"
+   ],
+   "location": "Kinscaer",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tarcha reluctantly agreed, believing that she was doing the best for her people."
+  },
+  {
+   "summary": "Oona kills Tarcha and everyone in Kinscaer with her vines and absorbs their power.",
+   "participants": [
+    "Oona",
+    "Warree Tarcha",
+    "Kithkin"
+   ],
+   "location": "Kinscaer",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Oona's help meant killing Tarcha and everybody in Kinscaer with her vines"
+  },
+  {
+   "summary": "Oona's simulacrum of Tarcha greets Rhys and his friends and later battles Ashling.",
+   "participants": [
+    "Oona",
+    "Rhys",
+    "Ashling the Destroyer"
+   ],
+   "location": "Kinscaer",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Oona's simulacrum of Tarcha then greeted Rhys and his friends after their return and later battled Ashling."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oona",
+   "relation": "killed",
+   "target": "Warree Tarcha",
+   "note": "Killed her with vines",
+   "paragraph": 2,
+   "quote": "Oona's help meant killing Tarcha and everybody in Kinscaer with her vines"
+  },
+  {
+   "source": "Ashling the Destroyer",
+   "relation": "killed",
+   "target": "Donal Alloway",
+   "note": "Killed the cenn",
+   "paragraph": 1,
+   "quote": "Ashling killed the cenn Donal Alloway"
+  },
+  {
+   "source": "Warree Tarcha",
+   "relation": "member_of",
+   "target": "Kinscaer",
+   "note": "Lived in the doun of Kinscaer",
+   "paragraph": 0,
+   "quote": "She lived in the doun of Kinscaer ."
+  }
+ ],
+ "rejected": []
+}

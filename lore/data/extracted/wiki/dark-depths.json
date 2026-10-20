@@ -1,0 +1,73 @@
+{
+ "page": "wiki/dark-depths",
+ "url": "https://mtg.wiki/page/Dark_Depths",
+ "title": "Dark Depths",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:01Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Dark Depths",
+   "type": "location",
+   "aliases": [],
+   "description": "Great crypt beneath the sea deep within the Ronom Glacier where Marit Lage was imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marit Lage",
+   "type": "character",
+   "aliases": [],
+   "description": "Imprisoned in the Dark Depths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ronom Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "Glacier above the Dark Depths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "Melting following the World Spell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell after which the Thaw began.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the World Spell the Thaw melts the Ronom Glacier, which would have freed Marit Lage.",
+   "participants": [
+    "The Thaw",
+    "Marit Lage",
+    "Ronom Glacier"
+   ],
+   "location": "Dark Depths",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This would have freed Marit Lage"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marit Lage",
+   "relation": "located_in",
+   "target": "Dark Depths",
+   "note": "imprisoned there",
+   "paragraph": 1,
+   "quote": "where Marit Lage was once imprisoned"
+  }
+ ],
+ "rejected": []
+}

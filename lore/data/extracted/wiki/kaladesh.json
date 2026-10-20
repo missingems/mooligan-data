@@ -1,0 +1,132 @@
+{
+ "page": "wiki/kaladesh",
+ "url": "https://mtg.wiki/page/Kaladesh",
+ "title": "Kaladesh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:38:38Z",
+ "storyline": "Kaladesh",
+ "entities": [
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [
+    "Avishkar"
+   ],
+   "description": "A plane where natural mages are rare and devices fueled by aether do the work of magic; later renamed Avishkar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker born on Kaladesh who returns and saves her mother from her nemesis Baral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [],
+   "description": "Chandra's nemesis on Kaladesh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A scheming planeswalker who confronts the Gatewatch on Kaladesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "The planeswalker group that unexpectedly confronts Tezzeret on Kaladesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The government that rules Kaladesh, whose forces and works are nearly omnipresent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aether",
+   "type": "concept",
+   "aliases": [],
+   "description": "Magical energy that fuels automatons, thopters and other artifact creatures on Kaladesh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker featured on Kaladesh boosters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker featured on Kaladesh boosters.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandra returns to Kaladesh and saves her mother from her nemesis Baral.",
+   "participants": [
+    "Chandra Nalaar",
+    "Baral",
+    "Kaladesh"
+   ],
+   "location": "Kaladesh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Chandra returns to Kaladesh and saves her mother from her nemesis Baral ."
+  },
+  {
+   "summary": "The Gatewatch is unexpectedly confronted by the scheming Tezzeret.",
+   "participants": [
+    "Gatewatch",
+    "Tezzeret"
+   ],
+   "location": "Kaladesh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Gatewatch unexpectedly is confronted by the scheming Tezzeret ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Consulate",
+   "relation": "leader_of",
+   "target": "Kaladesh",
+   "note": "Kaladesh is ruled by the Consulate",
+   "paragraph": 4,
+   "quote": "Kaladesh is ruled by the Consulate ."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "enemy",
+   "target": "Baral",
+   "note": "Baral is her nemesis",
+   "paragraph": 3,
+   "quote": "saves her mother from her nemesis Baral"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Gatewatch",
+   "note": "confronts them on Kaladesh",
+   "paragraph": 3,
+   "quote": "The Gatewatch unexpectedly is confronted by the scheming Tezzeret ."
+  }
+ ],
+ "rejected": []
+}

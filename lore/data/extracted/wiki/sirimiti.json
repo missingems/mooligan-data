@@ -1,0 +1,178 @@
+{
+ "page": "wiki/sirimiti",
+ "url": "https://mtg.wiki/page/Sirimiti",
+ "title": "Sirimiti",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sirimiti",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary sorceress of the Ice Age of Dominaria, master of crystalline magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pharon",
+   "type": "character",
+   "aliases": [],
+   "description": "400-year-old wizard who bested Sirimiti and became her lover.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Kjeld",
+   "type": "character",
+   "aliases": [
+    "Kjeld"
+   ],
+   "description": "King whose wizards Sirimiti tested; forced Pharon to choose between her and the throne.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sparkfell",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer defeated by Sirimiti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ezni Orimander",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer defeated by Sirimiti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gund the Gemcutter",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer defeated by Sirimiti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [
+    "Kjeld"
+   ],
+   "description": "Kingdom whose throne Pharon served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corbye",
+   "type": "location",
+   "aliases": [],
+   "description": "Island said in legend to have been launched into the air.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Null Moon",
+   "type": "location",
+   "aliases": [],
+   "description": "Legend claims it was created when Corbye was launched into the air.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sirimiti arrives at the capital of Kjeld on a feldspar sled drawn by white dire wolves.",
+   "participants": [
+    "Sirimiti"
+   ],
+   "location": "King Kjeld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She arrived at the then-capital of Kjeld from somewhere in the north"
+  },
+  {
+   "summary": "Sirimiti bests Sparkfell, Ezni Orimander and Gund the Gemcutter.",
+   "participants": [
+    "Sirimiti",
+    "Sparkfell",
+    "Ezni Orimander",
+    "Gund the Gemcutter"
+   ],
+   "location": "King Kjeld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Sparkfell , Ezni Orimander , and Gund the Gemcutter all tried their hands against her and succumbed."
+  },
+  {
+   "summary": "Pharon defeats Sirimiti with a slow plant growth spell.",
+   "participants": [
+    "Pharon",
+    "Sirimiti"
+   ],
+   "location": "King Kjeld",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Only Pharon managed to best her"
+  },
+  {
+   "summary": "Pharon and Sirimiti become lovers.",
+   "participants": [
+    "Pharon",
+    "Sirimiti"
+   ],
+   "location": "King Kjeld",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "After their duel, they became lovers"
+  },
+  {
+   "summary": "Kjeld forces Pharon to choose; he picks the throne and Sirimiti leaves him for good.",
+   "participants": [
+    "King Kjeld",
+    "Pharon",
+    "Sirimiti"
+   ],
+   "location": "King Kjeld",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Pharon chose the latter, and Sirimiti left him for good."
+  },
+  {
+   "summary": "A legend says Sirimiti sailed a flying ship, leading to the creation of the Null Moon; the wiki calls this false.",
+   "participants": [
+    "Sirimiti",
+    "Corbye",
+    "Null Moon"
+   ],
+   "location": "Corbye",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "This story is an established falsehood"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pharon",
+   "relation": "romantic",
+   "target": "Sirimiti",
+   "note": "lovers who parted",
+   "paragraph": 3,
+   "quote": "After their duel, they became lovers"
+  },
+  {
+   "source": "Pharon",
+   "relation": "serves",
+   "target": "King Kjeld",
+   "note": "chose the throne",
+   "paragraph": 3,
+   "quote": "King Kjeld forced Pharon to choose between the love of Sirimiti and serving the throne of Kjeldor"
+  },
+  {
+   "source": "Pharon",
+   "relation": "enemy",
+   "target": "Sirimiti",
+   "note": "defeated her in a duel",
+   "paragraph": 2,
+   "quote": "Only Pharon managed to best her"
+  }
+ ],
+ "rejected": []
+}

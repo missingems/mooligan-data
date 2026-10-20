@@ -1,0 +1,159 @@
+{
+ "page": "wiki/pinnacle",
+ "url": "https://mtg.wiki/page/Pinnacle",
+ "title": "Pinnacle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:56Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Pinnacle",
+   "type": "faction",
+   "aliases": [
+    "Pinnacle Space"
+   ],
+   "description": "An intergalactic alliance of races that manages a large part of the Edge, aiming for peace, cooperation and mutual prosperity.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Edge",
+   "type": "location",
+   "aliases": [
+    "Edge"
+   ],
+   "description": "The region of space part of which Pinnacle manages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Species who gave Pinnacle faster-than-light technology and handle extraversal ejecta.",
+   "presence": "appears"
+  },
+  {
+   "name": "Common Agreement",
+   "type": "concept",
+   "aliases": [],
+   "description": "Pinnacle's shared understanding of the universe and its truths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mallowmass",
+   "type": "concept",
+   "aliases": [
+    "mallow"
+   ],
+   "description": "Pinnacle's economic system based on reputation, exchange and guest right, with a purple flower emblem.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternity columns",
+   "type": "artifact",
+   "aliases": [
+    "eternity drives"
+   ],
+   "description": "Technology developed from Drix FTL secrets, run by directors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pinnacle Strategic Corps",
+   "type": "faction",
+   "aliases": [],
+   "description": "The decision-making administrators of Pinnacle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pinnacle Tactical Corps",
+   "type": "faction",
+   "aliases": [
+    "PTC"
+   ],
+   "description": "Rank and file of the intergalactic administration handling tactical presence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Entropy War",
+   "type": "event",
+   "aliases": [],
+   "description": "Most significant ongoing conflict within Pinnacle space.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fomori-Eldrazi war",
+   "type": "event",
+   "aliases": [],
+   "description": "War whose Eldrazi contamination the Drix address.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Object both sides of the Entropy War pursued by violating their agreements.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [],
+   "description": "System where Pinnacle limits the Entropy War conflict.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pinnacle's founding alliance encounters the Drix, who share FTL secrets in exchange for authority over extraversal ejecta.",
+   "participants": [
+    "Pinnacle",
+    "Drix"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "This alliance encountered the Drix in their second century of expansion and integrated them into Pinnacle administration"
+  },
+  {
+   "summary": "Both sides of the Entropy War infiltrate Pinnacle and violate their agreements in pursuit of the Endstone.",
+   "participants": [
+    "Pinnacle",
+    "Entropy War",
+    "Endstone"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "both sides infiltrated Pinnacle, and eventually violated their agreements in pursuit of the Endstone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drix",
+   "relation": "member_of",
+   "target": "Pinnacle",
+   "note": "integrated into Pinnacle administration",
+   "paragraph": 3,
+   "quote": "integrated them into Pinnacle administration"
+  },
+  {
+   "source": "Pinnacle Tactical Corps",
+   "relation": "member_of",
+   "target": "Pinnacle",
+   "note": "",
+   "paragraph": 7,
+   "quote": "the personnel of Pinnacle Tactical Corps (PTC)"
+  },
+  {
+   "source": "Pinnacle Strategic Corps",
+   "relation": "member_of",
+   "target": "Pinnacle",
+   "note": "",
+   "paragraph": 6,
+   "quote": "the members of Pinnacle Strategic Corps are decision-making individuals"
+  }
+ ],
+ "rejected": []
+}

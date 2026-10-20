@@ -1,0 +1,184 @@
+{
+ "page": "archive/savor-flavor-tyrant-cliffs-2010-01-27",
+ "url": "https://web.archive.org/web/20170321022437/http://magic.wizards.com:80/en/articles/archive/savor-flavor/tyrant-cliffs-2010-01-27",
+ "title": "The Tyrant of the Cliffs",
+ "story_date": "2010-01-27",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:42:30Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of varied environments, focused on land and exploration.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Zendikar with perpendicular cliffs, treasure-laden interior and wild mana, ringed by treacherous waters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kazuul",
+   "type": "character",
+   "aliases": [
+    "Kazuul, Tyrant of the Cliffs",
+    "Tyrant of the Cliffs"
+   ],
+   "description": "An ogre slavemaster and self-styled businessman, Tyrant of the Cliffs, who commands warrior-slaves and demands tribute from those scaling Murasa's cliffs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazuul's Warrior-Slaves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kazuul's chained slaves and ogre brutes who attack expeditions that refuse to pay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sejiri",
+   "type": "location",
+   "aliases": [],
+   "description": "The polar region of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "A planeswalker who subsists for millennia as a vampire feeding on lifeblood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A planeswalker who took a contract with demons for eternal youth and power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Nicol Bolas, Planeswalker"
+   ],
+   "description": "An old planeswalker with a cross-planar arsenal of life-extending spells, worse for wear since the Mending.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "The event that made planeswalkers mortal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Demons",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beings with whom Liliana made her contract.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kazuul demands tribute from anyone attempting to ascend the cliffs of Murasa.",
+   "participants": [
+    "Kazuul",
+    "Murasa"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "All he asks—all he asks!—is a tribute."
+  },
+  {
+   "summary": "Kazuul commands a small army of warrior-slaves.",
+   "participants": [
+    "Kazuul",
+    "Kazuul's Warrior-Slaves"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "He commands a small army of warrior-slaves."
+  },
+  {
+   "summary": "Kazuul's warrior-slaves attack those who refuse his tribute, and travelers become his slaves.",
+   "participants": [
+    "Kazuul's Warrior-Slaves",
+    "Kazuul"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Where do you think Kazuul gets his slaves?"
+  },
+  {
+   "summary": "Liliana makes a contract with demons to gain eternal youth and power.",
+   "participants": [
+    "Liliana Vess",
+    "Demons"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 22,
+   "quote": "Liliana, for her part, took a daring but straightforward route to eternal youth and power: a contract with demons."
+  },
+  {
+   "summary": "The Mending makes planeswalkers mortal, wearing down Nicol Bolas.",
+   "participants": [
+    "The Mending",
+    "Nicol Bolas"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 22,
+   "quote": "since the Mending made planeswalkers mortal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Murasa",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "Murasa is a continent of Zendikar.",
+   "paragraph": 0,
+   "quote": "Zendikar's continent of Murasa"
+  },
+  {
+   "source": "Kazuul",
+   "relation": "leader_of",
+   "target": "Kazuul's Warrior-Slaves",
+   "note": "Kazuul commands the warrior-slaves.",
+   "paragraph": 7,
+   "quote": "He commands a small army of warrior-slaves."
+  },
+  {
+   "source": "Kazuul",
+   "relation": "located_in",
+   "target": "Murasa",
+   "note": "Kazuul reigns over the pass on Murasa's cliffs.",
+   "paragraph": 9,
+   "quote": "he, Kazuul, Tyrant of the Cliffs, reigns over the pass"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "ally",
+   "target": "Demons",
+   "note": "Liliana has a contract with demons.",
+   "paragraph": 22,
+   "quote": "a contract with demons"
+  }
+ ],
+ "rejected": []
+}

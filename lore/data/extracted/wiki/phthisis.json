@@ -1,0 +1,75 @@
+{
+ "page": "wiki/phthisis",
+ "url": "https://mtg.wiki/page/Phthisis",
+ "title": "Phthisis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Phthisis",
+   "type": "concept",
+   "aliases": [],
+   "description": "Disease caused by long exposure to powerstone radiation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Used phthisis to exile enemies to the Caves of the Damned and discovered a flawed treatment.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dyfed",
+   "type": "character",
+   "aliases": [],
+   "description": "Confronted Yawgmoth that phthisis was never contagious.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caves of the Damned",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Yawgmoth exiled enemies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dyfed confronts Yawgmoth that phthisis was never contagious.",
+   "participants": [
+    "Dyfed",
+    "Yawgmoth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Dyfed confronted Yawgmoth that phthisis was never contagious"
+  },
+  {
+   "summary": "Yawgmoth discovers a metal-powder treatment but omits lead so patients turn corrupted.",
+   "participants": [
+    "Yawgmoth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he neglected to include lead in the mixture"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Dyfed",
+   "note": "Dyfed confronts his lie",
+   "paragraph": 1,
+   "quote": "Dyfed confronted Yawgmoth that phthisis was never contagious"
+  }
+ ],
+ "rejected": []
+}

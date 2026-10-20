@@ -1,0 +1,123 @@
+{
+ "page": "wiki/vorik",
+ "url": "https://mtg.wiki/page/Vorik",
+ "title": "Vorik",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:00Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Vorik",
+   "type": "character",
+   "aliases": [
+    "Commander Vorik"
+   ],
+   "description": "Human captain of the Sea Gate militia who became commander-general of the Zendikari troops; died of Eldrazi corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Vorik established a camp during the final assault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who helped Vorik bring survivors to Sky Rock and became his successor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sky Rock",
+   "type": "location",
+   "aliases": [],
+   "description": "Floating hedron where the survivors were brought.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazri",
+   "type": "character",
+   "aliases": [
+    "General Tazri"
+   ],
+   "description": "General and Vorik's most trusted advisor, passed over as successor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "character",
+   "aliases": [],
+   "description": "Eldrazi whose spawn wounded Vorik.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rise of the Eldrazi",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Vorik became commander-general.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vorik's camp at Sea Gate is overwhelmed by the Eldrazi; he leads the survivors out of the ravine.",
+   "participants": [
+    "Vorik",
+    "Sea Gate"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Vorik led the survivors out of the ravine"
+  },
+  {
+   "summary": "Gideon Jura helps the injured Vorik bring the survivors to Sky Rock.",
+   "participants": [
+    "Gideon Jura",
+    "Vorik",
+    "Sky Rock"
+   ],
+   "location": "Sky Rock",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Gideon Jura helped the injured commander to bring the survivors to Sky Rock"
+  },
+  {
+   "summary": "Vorik, corrupted by wounds from Ulamog's spawn, names Gideon his successor before dying.",
+   "participants": [
+    "Vorik",
+    "Gideon Jura",
+    "Tazri",
+    "Ulamog"
+   ],
+   "location": "Sky Rock",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Before dying, he named Gideon his successor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gideon Jura",
+   "relation": "ally",
+   "target": "Vorik",
+   "note": "helped and succeeded him",
+   "paragraph": 2,
+   "quote": "Gideon Jura helped the injured commander"
+  },
+  {
+   "source": "Tazri",
+   "relation": "serves",
+   "target": "Vorik",
+   "note": "trusted advisor",
+   "paragraph": 2,
+   "quote": "General Tazri , his most trusted advisor"
+  }
+ ],
+ "rejected": []
+}

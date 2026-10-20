@@ -1,0 +1,99 @@
+{
+ "page": "wiki/isobel",
+ "url": "https://mtg.wiki/page/Isobel",
+ "title": "Isobel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Isobel",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel of Innistrad in the Flight of Alabaster who was driven mad, joined Avacyn's rampage and was slain by humans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Flight of Alabaster",
+   "type": "faction",
+   "aliases": [],
+   "description": "Angel flight led by Bruna to which Isobel belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bruna",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who led the Flight of Alabaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Greatest angel of Innistrad, whose disappearance concerned Isobel and who later led a rampage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Isobel lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Isobel expresses concern over Avacyn's disappearance.",
+   "participants": [
+    "Isobel",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Isobel expressed great concern over Avacyn's disappearance"
+  },
+  {
+   "summary": "Driven to madness, Isobel joins Avacyn's rampage and is slain by humans.",
+   "participants": [
+    "Isobel",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "was consequently slain by the humans she once protected"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Isobel",
+   "relation": "member_of",
+   "target": "Flight of Alabaster",
+   "note": "Part of the flight.",
+   "paragraph": 0,
+   "quote": "a part of The Flight of Alabaster led by Bruna"
+  },
+  {
+   "source": "Bruna",
+   "relation": "leader_of",
+   "target": "Flight of Alabaster",
+   "note": "Led the flight.",
+   "paragraph": 0,
+   "quote": "led by Bruna"
+  },
+  {
+   "source": "Isobel",
+   "relation": "ally",
+   "target": "Avacyn",
+   "note": "Joined Avacyn's rampage.",
+   "paragraph": 1,
+   "quote": "Isobel joined Avacyn's rampage against the people of Innistrad"
+  }
+ ],
+ "rejected": []
+}

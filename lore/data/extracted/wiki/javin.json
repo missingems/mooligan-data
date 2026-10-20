@@ -1,0 +1,164 @@
+{
+ "page": "wiki/javin",
+ "url": "https://mtg.wiki/page/Javin",
+ "title": "Javin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Javin",
+   "type": "character",
+   "aliases": [],
+   "description": "Argivian archaeologist and last living member of the Circle who excavated old Sumifa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "Buried city Javin excavated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argivia",
+   "type": "location",
+   "aliases": [],
+   "description": "Javin's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Circle",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order Javin was the last member of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark prince, Javin's distant ancestor and Cheyne's enemy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cheyne",
+   "type": "character",
+   "aliases": [],
+   "description": "Javin's foster son who found the Holy Book of the Confessors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thedeso",
+   "type": "character",
+   "aliases": [],
+   "description": "King of Sumifa who died during the excavation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samor",
+   "type": "character",
+   "aliases": [],
+   "description": "Buried figure Javin hoped to find.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Holy Book of the Confessors",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Holy book found by Cheyne.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riolla Hifrata",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent assassins after Cheyne.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vashki",
+   "type": "character",
+   "aliases": [],
+   "description": "Claria's former servant who picked up the holy book.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Luquin",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf healer who cured Javin's scorpion poison.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Javin discovers a reference to buried Sumifa and is sent to excavate it with Cheyne.",
+   "participants": [
+    "Javin",
+    "Cheyne"
+   ],
+   "location": "Argivia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Javin discovered a reference to the buried city of old Sumifa"
+  },
+  {
+   "summary": "Cheyne finds the holy book and fights assassins sent by Riolla Hifrata.",
+   "participants": [
+    "Cheyne",
+    "Riolla Hifrata"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "It was Cheyne who found the book"
+  },
+  {
+   "summary": "Javin reveals to Cheyne that his spell protected Cheyne from Porros, then passes out from a scorpion sting.",
+   "participants": [
+    "Javin",
+    "Cheyne",
+    "Porros"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Javin then passed out from his injury"
+  },
+  {
+   "summary": "Luquin cures Javin of the scorpion poison.",
+   "participants": [
+    "Luquin",
+    "Javin",
+    "Cheyne"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "who cured Javin of the scorpion poison"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Javin",
+   "relation": "family",
+   "target": "Cheyne",
+   "note": "Foster father and son.",
+   "paragraph": 2,
+   "quote": "foster son"
+  },
+  {
+   "source": "Javin",
+   "relation": "family",
+   "target": "Porros",
+   "note": "Distant descendant.",
+   "paragraph": 1,
+   "quote": "He was a distant descendant of the dark prince"
+  }
+ ],
+ "rejected": []
+}

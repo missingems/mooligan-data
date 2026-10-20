@@ -1,0 +1,178 @@
+{
+ "page": "wiki/aldon",
+ "url": "https://mtg.wiki/page/Aldon",
+ "title": "Aldon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:00Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "A human figure from a Dominarian fable who struggled to reclaim his castle from the wizard Dreygar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreygar",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who took Aldon's castle and was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Angel",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel summoned by Aldon who fell in love with him and later died fighting the fallen angel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallen angel",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel sent by Dreygar to seduce and corrupt Aldon, who betrayed him and killed the Serra Angel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dark Amulet",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An amulet of black mana that Aldon retrieved from one of Dreygar's summons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aldon's Hovel",
+   "type": "location",
+   "aliases": [],
+   "description": "A cottage in the swamps where Aldon took refuge, later transformed into a place of greenery.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aldon's castle",
+   "type": "location",
+   "aliases": [],
+   "description": "The castle Aldon lost to Dreygar and later reclaimed.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dreygar takes Aldon's castle in the western Domains and Aldon goes into exile in the swamplands.",
+   "participants": [
+    "Aldon",
+    "Dreygar"
+   ],
+   "location": "Aldon's castle",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Aldon was a young man who lost his castle to the wizard Dreygar"
+  },
+  {
+   "summary": "Aldon retrieves a Dark Amulet from one of Dreygar's summons.",
+   "participants": [
+    "Aldon",
+    "Dark Amulet"
+   ],
+   "location": "Aldon's Hovel",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "One of Dreygar's summons held a Dark Amulet that Aldon retrieved."
+  },
+  {
+   "summary": "Using the amulet's black mana, Aldon summons a vampire, a frozen shade and a bog wraith as allies.",
+   "participants": [
+    "Aldon",
+    "Dark Amulet"
+   ],
+   "location": "Aldon's Hovel",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "His first allies were a vampire"
+  },
+  {
+   "summary": "Aldon summons a Serra Angel, who shows him the beauty of the world; they fall in love.",
+   "participants": [
+    "Aldon",
+    "Serra Angel"
+   ],
+   "location": "Aldon's Hovel",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They grew close and fell in love."
+  },
+  {
+   "summary": "Dreygar sends a fallen angel who seduces and corrupts Aldon.",
+   "participants": [
+    "Dreygar",
+    "Fallen angel",
+    "Aldon"
+   ],
+   "location": "Aldon's castle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Dreygar, determined to keep his hold on the castle, responded by sending a fallen angel to seduce and corrupt Aldon."
+  },
+  {
+   "summary": "Aldon assaults the castle; the fallen angel betrays him, the two angels slay each other, and Aldon kills Dreygar.",
+   "participants": [
+    "Aldon",
+    "Dreygar",
+    "Serra Angel",
+    "Fallen angel"
+   ],
+   "location": "Aldon's castle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The two angels slew each other, and Aldon killed Dreygar in a rage."
+  },
+  {
+   "summary": "Aldon reclaims and rules his castle, forever mourning his lost love.",
+   "participants": [
+    "Aldon"
+   ],
+   "location": "Aldon's castle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Aldon reclaimed his castle and ruled it once again"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aldon",
+   "relation": "killed",
+   "target": "Dreygar",
+   "note": "Killed in a rage during the assault.",
+   "paragraph": 4,
+   "quote": "Aldon killed Dreygar in a rage"
+  },
+  {
+   "source": "Aldon",
+   "relation": "romantic",
+   "target": "Serra Angel",
+   "note": "They fell in love.",
+   "paragraph": 2,
+   "quote": "They grew close and fell in love."
+  },
+  {
+   "source": "Fallen angel",
+   "relation": "killed",
+   "target": "Serra Angel",
+   "note": "The two angels slew each other.",
+   "paragraph": 4,
+   "quote": "The two angels slew each other"
+  },
+  {
+   "source": "Fallen angel",
+   "relation": "serves",
+   "target": "Dreygar",
+   "note": "Her true loyalty was to Dreygar.",
+   "paragraph": 4,
+   "quote": "showing her true loyalty to Dreygar"
+  }
+ ],
+ "rejected": []
+}

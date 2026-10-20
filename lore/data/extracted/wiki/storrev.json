@@ -1,0 +1,131 @@
+{
+ "page": "wiki/storrev",
+ "url": "https://mtg.wiki/page/Storrev",
+ "title": "Storrev",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:42Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Storrev",
+   "type": "character",
+   "aliases": [],
+   "description": "A Devkarin elven lich and leader of the Erstwhile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erstwhile",
+   "type": "faction",
+   "aliases": [],
+   "description": "A zombie faction within the Golgari Swarm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "Guild of Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Gorgon who freed the Erstwhile.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jarad vod Savo",
+   "type": "character",
+   "aliases": [],
+   "description": "Golgari guildmaster.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mazirek",
+   "type": "character",
+   "aliases": [],
+   "description": "Who awakened the Erstwhile; betrayed Vraska.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon allied with Mazirek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos Comedy Troupe",
+   "type": "faction",
+   "aliases": [],
+   "description": "Killed Mazirek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict period.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Storrev turned on Jarad and joined Vraska's alliance.",
+   "participants": [
+    "Storrev",
+    "Vraska",
+    "Jarad vod Savo"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Storrev turned tables on her master and joined Vraska's alliance"
+  },
+  {
+   "summary": "Storrev had Mazirek killed by a Rakdos Comedy Troupe.",
+   "participants": [
+    "Storrev",
+    "Mazirek",
+    "Rakdos Comedy Troupe"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Storrev misled him and had him killed by a Rakdos Comedy Troupe"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Storrev",
+   "relation": "leader_of",
+   "target": "Erstwhile",
+   "note": "Leader",
+   "paragraph": 0,
+   "quote": "leader of the Erstwhile"
+  },
+  {
+   "source": "Storrev",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Remains ally",
+   "paragraph": 3,
+   "quote": "Storrev remains an ally of Vraska"
+  },
+  {
+   "source": "Storrev",
+   "relation": "killed",
+   "target": "Mazirek",
+   "note": "Arranged his death",
+   "paragraph": 2,
+   "quote": "had him killed by a Rakdos Comedy Troupe"
+  }
+ ],
+ "rejected": []
+}

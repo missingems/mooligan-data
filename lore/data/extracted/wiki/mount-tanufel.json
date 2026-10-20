@@ -1,0 +1,126 @@
+{
+ "page": "wiki/mount-tanufel",
+ "url": "https://mtg.wiki/page/Mount_Tanufel",
+ "title": "Mount Tanufel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mount Tanufel",
+   "type": "location",
+   "aliases": [],
+   "description": "Tallest peak in Lorwyn, sacred mountain and birthplace of the flamekin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Mount Tanufel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Kulrath",
+   "type": "location",
+   "aliases": [],
+   "description": "Shadowmoor equivalent of Mount Tanufel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flamekin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elemental race born on Mount Tanufel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rimekin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Race with a settlement in the snowy peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wanderwine River",
+   "type": "location",
+   "aliases": [
+    "Wanderwine"
+   ],
+   "description": "River with headwaters on Mount Tanufel, most merrow-trafficked in Lorwyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Source",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elemental guarding the Wanderwine's headwaters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ember Fell",
+   "type": "location",
+   "aliases": [],
+   "description": "Flamekin monastery in the Mount Tanufel region built of obsidian.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [
+    "the Extinguisher"
+   ],
+   "description": "Flamekin who took the greater elemental's power for herself and became the Extinguisher.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [],
+   "description": "Greater elemental whose wisdom was to join the flamekin flame.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Ashling's ritual took place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Great Aurora ritual on Mount Tanufel, Ashling takes the elemental's power for herself and becomes the Extinguisher.",
+   "participants": [
+    "Ashling",
+    "Colfenor"
+   ],
+   "location": "Mount Tanufel",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ashling decided to take the greater elemental's power for herself and became the Extinguisher."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mount Tanufel",
+   "relation": "located_in",
+   "target": "Lorwyn",
+   "note": "tallest peak",
+   "paragraph": 0,
+   "quote": "Mount Tanufel is the tallest peak in Lorwyn"
+  },
+  {
+   "source": "The Source",
+   "relation": "other",
+   "target": "Wanderwine River",
+   "note": "guards its headwaters",
+   "paragraph": 2,
+   "quote": "guarded by an elemental called The Source"
+  }
+ ],
+ "rejected": []
+}

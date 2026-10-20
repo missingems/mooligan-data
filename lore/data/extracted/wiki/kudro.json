@@ -1,0 +1,109 @@
+{
+ "page": "wiki/kudro",
+ "url": "https://mtg.wiki/page/Kudro",
+ "title": "Kudro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:12Z",
+ "storyline": "Ikoria",
+ "entities": [
+  {
+   "name": "Kudro",
+   "type": "character",
+   "aliases": [
+    "General Kudro"
+   ],
+   "description": "General and stern Commander of the Coppercoats, military leader of Drannith, and father of Jirina Kudro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jirina Kudro",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter of Kudro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coppercoats",
+   "type": "faction",
+   "aliases": [],
+   "description": "Drannith's military led by Kudro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Ikoria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "Crazed bonder who murdered Kudro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Drannith.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kudro refuses Lukka's help defending Drannith and kills his flying tiger.",
+   "participants": [
+    "Kudro",
+    "Lukka"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kudro refused the help of the crazed bonder Lukka in the defense of Drannith and killed his flying tiger."
+  },
+  {
+   "summary": "Lukka murders Kudro before his daughter's eyes.",
+   "participants": [
+    "Lukka",
+    "Kudro",
+    "Jirina Kudro"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he was murdered by Lukka before the eyes of his daughter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kudro",
+   "relation": "family",
+   "target": "Jirina Kudro",
+   "note": "Father",
+   "paragraph": 0,
+   "quote": "He was the father of Jirina Kudro ."
+  },
+  {
+   "source": "Kudro",
+   "relation": "leader_of",
+   "target": "Coppercoats",
+   "note": "Commander",
+   "paragraph": 0,
+   "quote": "the stern Commander of the Coppercoats"
+  },
+  {
+   "source": "Lukka",
+   "relation": "killed",
+   "target": "Kudro",
+   "note": "Murdered him",
+   "paragraph": 2,
+   "quote": "he was murdered by Lukka before the eyes of his daughter"
+  }
+ ],
+ "rejected": []
+}

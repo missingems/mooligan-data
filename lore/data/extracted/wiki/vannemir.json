@@ -1,0 +1,188 @@
+{
+ "page": "wiki/vannemir",
+ "url": "https://mtg.wiki/page/Vannemir",
+ "title": "Vannemir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vannemir",
+   "type": "character",
+   "aliases": [],
+   "description": "Terisian warrior raised from the dead to save his world from Heidar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heidar",
+   "type": "character",
+   "aliases": [
+    "Master of Rimewind"
+   ],
+   "description": "Tyrant whose rule Vannemir's quest prevented.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ysidra",
+   "type": "character",
+   "aliases": [],
+   "description": "Valkyrie who resurrected Vannemir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guldark",
+   "type": "character",
+   "aliases": [
+    "Warlord Guldark"
+   ],
+   "description": "Torgash warlord Vannemir killed in a duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torgash",
+   "type": "faction",
+   "aliases": [],
+   "description": "Orc clan of raiders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pik",
+   "type": "character",
+   "aliases": [],
+   "description": "Blind boy whose family was brutalized by orcs; identified the raiding clan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taaveti of Kelsinko",
+   "type": "character",
+   "aliases": [],
+   "description": "Explained Vannemir's mission and gave information about Ysidra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isa",
+   "type": "creature",
+   "aliases": [
+    "Fylgja"
+   ],
+   "description": "Fylgja spirit bound to Vannemir's Runeblade, which healed him in the duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Runeblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Weapon of great power carried by Vannemir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [
+    "Terisia"
+   ],
+   "description": "World being saved from Heidar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vannemir dies defending his village from orc raiders and is resurrected by the Valkyrie Ysidra.",
+   "participants": [
+    "Vannemir",
+    "Ysidra"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He died defending his village from orc raiders, only to be resurrected by a Valkyrie named Ysidra"
+  },
+  {
+   "summary": "Vannemir is given a mission to rescue a prisoner from Guldark and prevent Heidar's tyranny.",
+   "participants": [
+    "Vannemir",
+    "Guldark",
+    "Heidar"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "to rescue a prisoner from the Torgash warlord Guldark"
+  },
+  {
+   "summary": "Vannemir challenges Guldark to a duel in the Torgash camp.",
+   "participants": [
+    "Vannemir",
+    "Guldark",
+    "Torgash"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Vannemir strode into the Torgash camp and challenged Warlord Guldark to a duel."
+  },
+  {
+   "summary": "Isa heals Vannemir several times, letting him kill Guldark and his shaman and disperse the raiders.",
+   "participants": [
+    "Vannemir",
+    "Isa",
+    "Guldark",
+    "Torgash"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "allowing him to kill both Guldark and his shaman, and disperse the remaining raiders"
+  },
+  {
+   "summary": "Vannemir frees Pik's sister and an elven girl, setting Terisiare on the path to victory.",
+   "participants": [
+    "Vannemir",
+    "Pik",
+    "Heidar"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Vannemir fulfilled his mission"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vannemir",
+   "relation": "killed",
+   "target": "Guldark",
+   "note": "in a duel",
+   "paragraph": 3,
+   "quote": "allowing him to kill both Guldark and his shaman, and disperse the remaining raiders"
+  },
+  {
+   "source": "Vannemir",
+   "relation": "enemy",
+   "target": "Heidar",
+   "note": "quest to stop him",
+   "paragraph": 0,
+   "quote": "to fulfill his destiny and save his world from being destroyed by"
+  },
+  {
+   "source": "Vannemir",
+   "relation": "ally",
+   "target": "Pik",
+   "note": "cared for the blind boy",
+   "paragraph": 3,
+   "quote": "the blind boy Pik, who identified the clan of Torgash raiders"
+  },
+  {
+   "source": "Vannemir",
+   "relation": "ally",
+   "target": "Taaveti of Kelsinko",
+   "note": "aided his quest",
+   "paragraph": 3,
+   "quote": "He was aided in his quest by Taaveti of Kelsinko"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,82 @@
+{
+ "page": "wiki/danhelm",
+ "url": "https://mtg.wiki/page/Danhelm",
+ "title": "Danhelm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:21Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Danhelm",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarven general and leader of the dwarven army in Sarpadia, killed at Gurn Keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gurn Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Dwarven keep attacked by an orc-goblin alliance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where the dwarven army served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dwarven army of Sarpadia",
+   "type": "faction",
+   "aliases": [],
+   "description": "The dwarven army led by Danhelm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of the Sarpadian Empires",
+   "type": "event",
+   "aliases": [],
+   "description": "The collapse of the Sarpadian empires during which Danhelm led the dwarves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An orc-goblin alliance attacks Gurn Keep, and many dwarves fall to their sheer numbers.",
+   "participants": [
+    "Danhelm",
+    "Gurn Keep"
+   ],
+   "location": "Gurn Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "When an orc - goblin alliance attacked Gurn Keep , many dwarves fell at their sheer number."
+  },
+  {
+   "summary": "Danhelm is killed from behind by an orcish spear while defending his land.",
+   "participants": [
+    "Danhelm"
+   ],
+   "location": "Gurn Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "was killed from behind by an orcish spear"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Danhelm",
+   "relation": "leader_of",
+   "target": "Dwarven army of Sarpadia",
+   "note": "He led the dwarven army in Sarpadia.",
+   "paragraph": 0,
+   "quote": "leader of the dwarven army in Sarpadia"
+  }
+ ],
+ "rejected": []
+}

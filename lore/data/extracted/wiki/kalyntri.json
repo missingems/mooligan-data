@@ -1,0 +1,128 @@
+{
+ "page": "wiki/kalyntri",
+ "url": "https://mtg.wiki/page/Kalyntri",
+ "title": "Kalyntri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kalyntri",
+   "type": "creature",
+   "aliases": [],
+   "description": "Vicious, arrogant dragon who terrorized the Kapsho Sea of Shandalar for over three hundred years until slain by Talrand's drakes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talrand the Sky Summoner",
+   "type": "character",
+   "aliases": [
+    "Talrand"
+   ],
+   "description": "Merfolk who summoned drakes and killed Kalyntri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kapsho Sea",
+   "type": "location",
+   "aliases": [
+    "Kapsho",
+    "Kapsho seas"
+   ],
+   "description": "Sea of Shandalar ruled by Kalyntri as his kingdom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Kapsho Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drakes",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures summoned by Talrand, delivered from dragon rule in return for their aid.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Talrand visits one of Kalyntri's lairs; Kalyntri blasts him with flame but the merfolk had teleported away.",
+   "participants": [
+    "Talrand the Sky Summoner",
+    "Kalyntri"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The merfolk had teleported away before being struck by the fire."
+  },
+  {
+   "summary": "Talrand returns a year later proclaiming dominion over the Kapsho seas, enraging Kalyntri.",
+   "participants": [
+    "Talrand the Sky Summoner",
+    "Kalyntri"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Kalyntri was enraged and sought the merfolk out to eliminate him once and for all."
+  },
+  {
+   "summary": "Talrand summons rain made of drakes which overwhelm Kalyntri.",
+   "participants": [
+    "Talrand the Sky Summoner",
+    "Kalyntri",
+    "Drakes"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the raindrops were not made of water, but of drakes"
+  },
+  {
+   "summary": "A geyser topples Kalyntri onto the beach and the drakes swarm him; one tears out his throat.",
+   "participants": [
+    "Kalyntri",
+    "Drakes",
+    "Talrand the Sky Summoner"
+   ],
+   "location": "Kapsho Sea",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The drake then eagerly scampered over to Kalyntri's struggling body and tore out the dragon's throat."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drakes",
+   "relation": "killed",
+   "target": "Kalyntri",
+   "note": "summoned by Talrand",
+   "paragraph": 2,
+   "quote": "The drake then eagerly scampered over to Kalyntri's struggling body and tore out the dragon's throat."
+  },
+  {
+   "source": "Talrand the Sky Summoner",
+   "relation": "killed",
+   "target": "Kalyntri",
+   "note": "slew him with his drakes",
+   "paragraph": 0,
+   "quote": "until he was slain by Talrand the Sky Summoner and his drakes"
+  },
+  {
+   "source": "Talrand the Sky Summoner",
+   "relation": "leader_of",
+   "target": "Drakes",
+   "note": "summoned and commanded them",
+   "paragraph": 2,
+   "quote": "Talrand summoned forth large drops of rain from the stormcloud above"
+  }
+ ],
+ "rejected": []
+}

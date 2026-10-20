@@ -1,0 +1,124 @@
+{
+ "page": "wiki/logan",
+ "url": "https://mtg.wiki/page/Logan",
+ "title": "Logan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Logan",
+   "type": "character",
+   "aliases": [],
+   "description": "Keeper of Inys Haen, sixth in the line of Haen the First, a very old man who gave his Keeper's Memories to his daughter and died in the raiders' fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inys Haen",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Logan kept.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haen the First",
+   "type": "character",
+   "aliases": [
+    "Haen"
+   ],
+   "description": "Logan's ancestor, first of the Keepers, whose Seeing was more powerful.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aylith",
+   "type": "character",
+   "aliases": [],
+   "description": "Logan's daughter, to whom he passed his Keeper's Memories.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selka",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter Logan fathered at nearly age 80.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inys Nohr",
+   "type": "location",
+   "aliases": [],
+   "description": "Place from which raiders attacked Inys Haen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Parting",
+   "type": "event",
+   "aliases": [
+    "Parting"
+   ],
+   "description": "Event that damaged the Clan Tree of Cridhe; years are counted from it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Tree of Cridhe",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Tree severely damaged during the Parting.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In year 520 of the Parting Logan performs part of the spring ritual before raiders from Inys Nohr attack.",
+   "participants": [
+    "Logan",
+    "Inys Nohr"
+   ],
+   "location": "Inys Haen",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the elderly Logan performed part of the spring ritual before being attacked by raiders from Inys Nohr"
+  },
+  {
+   "summary": "Logan bestows his Keeper's Memories on Aylith and throws her clear of the fire before being consumed by it.",
+   "participants": [
+    "Logan",
+    "Aylith"
+   ],
+   "location": "Inys Haen",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He managed to bestow his Keeper's Memories to his daughter Aylith and throw her clear of the fire"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Logan",
+   "relation": "family",
+   "target": "Aylith",
+   "note": "Her father.",
+   "paragraph": 2,
+   "quote": "his daughter Aylith"
+  },
+  {
+   "source": "Logan",
+   "relation": "family",
+   "target": "Haen the First",
+   "note": "Descendant, sixth in the line.",
+   "paragraph": 0,
+   "quote": "sixth in the line of his ancestor Haen the First"
+  },
+  {
+   "source": "Logan",
+   "relation": "leader_of",
+   "target": "Inys Haen",
+   "note": "He is Keeper.",
+   "paragraph": 0,
+   "quote": "Logan was the Keeper of Inys Haen"
+  }
+ ],
+ "rejected": []
+}

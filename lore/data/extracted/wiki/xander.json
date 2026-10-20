@@ -1,0 +1,155 @@
+{
+ "page": "wiki/xander",
+ "url": "https://mtg.wiki/page/Xander",
+ "title": "Xander",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:05Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Xander",
+   "type": "character",
+   "aliases": [
+    "Lord Xander"
+   ],
+   "description": "Vampire crime-lord and boss of the Maestros family in New Capenna, killed by Ob Nixilis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [
+    "Maestros family"
+   ],
+   "description": "The crime family led by Xander in New Capenna, running galleries, museums and assassins for hire.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane where Xander is a crime-lord.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who killed Xander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archdemons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Demons who offered Xander eternal life and appointed the five heads of families.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Evelyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Xander's former lover and a vampire he sired.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "Xander's deputy, to whom he willed control of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Xander was killed on New Year's night.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xander, an ailing artist, accepts the archdemons' gift of eternal life and unwittingly becomes a vampire.",
+   "participants": [
+    "Xander",
+    "Archdemons"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He was offered the gift of eternal life from the plane's archdemons"
+  },
+  {
+   "summary": "Xander becomes one of the five family heads and signatories of the contract that created New Capenna.",
+   "participants": [
+    "Xander",
+    "Archdemons"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He was one of the five heads of families that were appointed by the archdemons"
+  },
+  {
+   "summary": "Ob Nixilis kills Xander on New Year's night during the Crescendo.",
+   "participants": [
+    "Ob Nixilis",
+    "Xander"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Xander was killed by Ob Nixilis"
+  },
+  {
+   "summary": "Xander wills control of the Maestros to his deputy Anhelo.",
+   "participants": [
+    "Xander",
+    "Anhelo",
+    "Maestros"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He willed control of the Maestros to his deputy, Anhelo ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ob Nixilis",
+   "relation": "killed",
+   "target": "Xander",
+   "note": "Killed during the Crescendo.",
+   "paragraph": 4,
+   "quote": "Xander was killed by Ob Nixilis"
+  },
+  {
+   "source": "Xander",
+   "relation": "leader_of",
+   "target": "Maestros",
+   "note": "Boss of the family.",
+   "paragraph": 0,
+   "quote": "Lord Xander was the crime-lord and boss of the Maestros family in New Capenna"
+  },
+  {
+   "source": "Xander",
+   "relation": "romantic",
+   "target": "Evelyn",
+   "note": "Former lover.",
+   "paragraph": 2,
+   "quote": "including his former lover Evelyn"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "serves",
+   "target": "Xander",
+   "note": "His deputy.",
+   "paragraph": 4,
+   "quote": "He willed control of the Maestros to his deputy, Anhelo ."
+  }
+ ],
+ "rejected": []
+}

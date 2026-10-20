@@ -1,0 +1,121 @@
+{
+ "page": "wiki/nira",
+ "url": "https://mtg.wiki/page/Nira",
+ "title": "Nira",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nira",
+   "type": "character",
+   "aliases": [],
+   "description": "Nacatl scout and Sunstriker born on Naya who came to Bant after the destruction wrought by followers of Nefarox; killed by Nefarox.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lia",
+   "type": "character",
+   "aliases": [
+    "Kaalia",
+    "Kaa Lia"
+   ],
+   "description": "Girl Nira saved, who practiced stone breaking; renamed Kaa Lia or Kaalia and destroyed the dragon skeleton's keystone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nefarox",
+   "type": "character",
+   "aliases": [],
+   "description": "Grixis demon whose servants destroyed a village on Bant; he rose and killed Lia's family, the villagers and Nira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara where a village was destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara where Nira was born and raised.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara that is home to the demon Nefarox.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Nira lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Servants of Nefarox destroyed a whole village on Bant and Nira saved the girl Lia.",
+   "participants": [
+    "Nefarox",
+    "Nira",
+    "Lia"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Nira saved the girl Lia"
+  },
+  {
+   "summary": "Nira named the girl Kaa Lia and asked her to destroy the keystone of the dragon skeleton the servants were reanimating; Kaalia succeeded.",
+   "participants": [
+    "Nira",
+    "Lia"
+   ],
+   "location": "Bant",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kaalia successfully destroyed the dragon skeleton"
+  },
+  {
+   "summary": "Nefarox rose and killed Lia's family, the remaining villagers and Nira.",
+   "participants": [
+    "Nefarox",
+    "Nira",
+    "Lia"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Nefarox rose and killed her family, all the remaining villagers, and Nira herself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nefarox",
+   "relation": "killed",
+   "target": "Nira",
+   "note": "Nefarox killed Nira.",
+   "paragraph": 1,
+   "quote": "Nefarox rose and killed her family, all the remaining villagers, and Nira herself."
+  },
+  {
+   "source": "Nira",
+   "relation": "ally",
+   "target": "Lia",
+   "note": "Nira saved and guided Lia.",
+   "paragraph": 1,
+   "quote": "Nira saved the girl Lia"
+  }
+ ],
+ "rejected": []
+}

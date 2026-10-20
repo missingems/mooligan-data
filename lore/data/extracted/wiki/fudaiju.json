@@ -1,0 +1,103 @@
+{
+ "page": "wiki/fudaiju",
+ "url": "https://mtg.wiki/page/Fudaiju",
+ "title": "Fudaiju",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:20Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Fudaiju",
+   "type": "location",
+   "aliases": [],
+   "description": "Giant tree in Jukai forest, with the Spiral Path and a Sacred Bell, defended by monks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazuki",
+   "type": "character",
+   "aliases": [],
+   "description": "Budoka monk who believed Fudaiju was taller than Boseiju and the Center Tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jugan",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami who sided with mortals against fellow kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayumi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami who reclaimed abandoned places and slaughtered the monks of Fudaiju.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War of the kami against mortals on Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Silk",
+   "type": "event",
+   "aliases": [],
+   "description": "Great Battle of Kamigawa lasting six years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest containing Fudaiju.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Fudaiju.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fudaiju is attacked by the kami and defended by Jugan, starting the six-year Battle of Silk.",
+   "participants": [
+    "Jugan",
+    "Fudaiju"
+   ],
+   "location": "Fudaiju",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This started one of the Great Battles of Kamigawa , the Battle of Silk, which lasted six years."
+  },
+  {
+   "summary": "After six years Ayumi answers the bell and slaughters every monk, leaving Fudaiju depopulated.",
+   "participants": [
+    "Ayumi"
+   ],
+   "location": "Fudaiju",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she slaughtered every last monk, leaving Fudaiju depopulated"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ayumi",
+   "relation": "killed",
+   "target": "Fudaiju",
+   "note": "Slaughtered its monks",
+   "paragraph": 3,
+   "quote": "she slaughtered every last monk"
+  }
+ ],
+ "rejected": []
+}

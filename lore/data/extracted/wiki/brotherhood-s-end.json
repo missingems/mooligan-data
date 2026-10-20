@@ -1,0 +1,134 @@
+{
+ "page": "wiki/brotherhood-s-end",
+ "url": "https://mtg.wiki/page/Brotherhood%27s_End",
+ "title": "Brotherhood's End",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:23Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Brotherhood's End",
+   "type": "event",
+   "aliases": [],
+   "description": "A spontaneous clash at Tocasia's Digsite between Urza and Mishra, each yearning for the other's powerstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Mishra, who fought him at Tocasia's Digsite; the Fallaji diggers would not follow him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother of Urza who fled after the clash; the Fallaji would have followed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "Mentor of the brothers, killed in the explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia's Digsite",
+   "type": "location",
+   "aliases": [],
+   "description": "Excavation camp where the brothers clashed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [
+    "Fallaji diggers"
+   ],
+   "description": "Diggers who would have followed Mishra but not Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the brothers found the two halves of the powerstone months earlier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza and Mishra fought with their powerstones, each yearning for the other's stone.",
+   "participants": [
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Tocasia's Digsite",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The disagreement over who should wield both escalated into a fight"
+  },
+  {
+   "summary": "An explosion from the uncontrolled stones killed Tocasia as she tried to intervene.",
+   "participants": [
+    "Tocasia",
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Tocasia's Digsite",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a powerful explosion caused the death of Tocasia"
+  },
+  {
+   "summary": "Mishra fled and the excavation camp fell apart.",
+   "participants": [
+    "Mishra"
+   ],
+   "location": "Tocasia's Digsite",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mishra fled, and the excavation camp fell apart without Tocasia's influence."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tocasia",
+   "relation": "mentor_of",
+   "target": "Urza",
+   "note": "Mentor of the brothers.",
+   "paragraph": 1,
+   "quote": "The brothers' mentor Tocasia tried to intervene"
+  },
+  {
+   "source": "Tocasia",
+   "relation": "mentor_of",
+   "target": "Mishra",
+   "note": "Mentor of the brothers.",
+   "paragraph": 1,
+   "quote": "The brothers' mentor Tocasia tried to intervene"
+  },
+  {
+   "source": "Urza",
+   "relation": "family",
+   "target": "Mishra",
+   "note": "Brothers.",
+   "paragraph": 0,
+   "quote": "each brother yearning for the other's powerstone"
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "They fought over the powerstones.",
+   "paragraph": 1,
+   "quote": "the brothers used their stones against each other"
+  }
+ ],
+ "rejected": []
+}

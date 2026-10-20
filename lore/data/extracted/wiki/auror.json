@@ -1,0 +1,175 @@
+{
+ "page": "wiki/auror",
+ "url": "https://mtg.wiki/page/Auror",
+ "title": "Auror",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:54Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Auror",
+   "type": "location",
+   "aliases": [],
+   "description": "A barbarian village in a mountain valley in the Pardic Mountains on Otaria, Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balthor Rockfist",
+   "type": "character",
+   "aliases": [
+    "Balthor"
+   ],
+   "description": "A dwarf war veteran accepted into the barbarian tribe of Auror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Matoc",
+   "type": "character",
+   "aliases": [],
+   "description": "A war veteran from Auror who brought Balthor to his village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Galdan",
+   "type": "character",
+   "aliases": [],
+   "description": "The chieftain of Auror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a staff that Balthor reforged into a sword.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Matoc's grandson who brought the Mirari-infused sword to Auror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact that warped Kamahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talon",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's greatest challenger, who took leadership of the barbarian tribes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who returned to Otaria to view the damage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "The conflict brought to Auror by Kamahl.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4205 AR Balthor Rockfist and Matoc arrived at Auror; Balthor fought Galdan in a duel and was accepted into the tribe.",
+   "participants": [
+    "Balthor Rockfist",
+    "Matoc",
+    "Galdan"
+   ],
+   "location": "Auror",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Galdan accepted Balthor into their tribe"
+  },
+  {
+   "summary": "Balthor reforged Urza's staff into a great sword for Matoc.",
+   "participants": [
+    "Balthor Rockfist",
+    "Matoc",
+    "Urza"
+   ],
+   "location": "Auror",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Balthor then reforged Urza 's staff, recovered in battle, into a great sword for Matoc"
+  },
+  {
+   "summary": "Kamahl brought the Mirari-infused sword to Auror and forced a challenge; the barbarians refused to follow him, and after wounding his sister he ceded leadership to Talon.",
+   "participants": [
+    "Kamahl",
+    "Talon",
+    "Mirari"
+   ],
+   "location": "Auror",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "ceded the leadership over the barbarian tribes to Talon"
+  },
+  {
+   "summary": "In 4500 AR Jeska returned to Auror and found it in ruins.",
+   "participants": [
+    "Jeska"
+   ],
+   "location": "Auror",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she noted that the buildings were all in ruins"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Galdan",
+   "relation": "leader_of",
+   "target": "Auror",
+   "note": "Village chieftain.",
+   "paragraph": 1,
+   "quote": "the village's chieftain Galdan"
+  },
+  {
+   "source": "Kamahl",
+   "relation": "family",
+   "target": "Matoc",
+   "note": "Matoc's grandson.",
+   "paragraph": 2,
+   "quote": "Matoc's grandson Kamahl"
+  },
+  {
+   "source": "Talon",
+   "relation": "leader_of",
+   "target": "Auror",
+   "note": "Took leadership of the barbarian tribes from Kamahl.",
+   "paragraph": 2,
+   "quote": "ceded the leadership over the barbarian tribes to Talon"
+  },
+  {
+   "source": "Balthor Rockfist",
+   "relation": "ally",
+   "target": "Matoc",
+   "note": "War veteran companions.",
+   "paragraph": 1,
+   "quote": "the war veterans Balthor Rockfist and Matoc arrived at Auror"
+  }
+ ],
+ "rejected": []
+}

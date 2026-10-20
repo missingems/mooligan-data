@@ -1,0 +1,121 @@
+{
+ "page": "wiki/jenges",
+ "url": "https://mtg.wiki/page/Jenges",
+ "title": "Jenges",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jenges",
+   "type": "location",
+   "aliases": [],
+   "description": "City of Wrenna on the east shore of North Aerona, on the Sea of Whales; home of the Knights of Jenges.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenna",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation containing Jenges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Jenges",
+   "type": "faction",
+   "aliases": [
+    "Black Knights of Jenges"
+   ],
+   "description": "Order of knights based in Jenges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Torsten Von Ursus",
+   "type": "character",
+   "aliases": [],
+   "description": "Knight who left the Knights of Jenges and founded Benalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Founded by Torsten Von Ursus in Sheoltun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoltun",
+   "type": "location",
+   "aliases": [],
+   "description": "Fading capital where Benalia was founded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terrill",
+   "type": "character",
+   "aliases": [],
+   "description": "Wrennan who belonged to the Black Knights of Jenges before joining Gull's army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of an army of wizard-hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Jenges.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A terrible mage seizes the throne of Jenges, and Torsten Von Ursus leaves the Order and realm and goes on to found Benalia in Sheoltun.",
+   "participants": [
+    "Torsten Von Ursus",
+    "Jenges"
+   ],
+   "location": "Jenges",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a terrible mage seized the throne of Jenges"
+  },
+  {
+   "summary": "In 4074 AR, Terrill of the Black Knights of Jenges joins Gull's army of wizard-hunters.",
+   "participants": [
+    "Terrill",
+    "Gull"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Terrill from Wrenna belonged to the Black Knights of Jenges before he joined Gull 's army of wizard-hunters"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Torsten Von Ursus",
+   "relation": "member_of",
+   "target": "Knights of Jenges",
+   "note": "He was one of the nation's knights before leaving.",
+   "paragraph": 1,
+   "quote": "Torsten Von Ursus , one of the nation's knights"
+  },
+  {
+   "source": "Torsten Von Ursus",
+   "relation": "created",
+   "target": "Benalia",
+   "note": "He founded Benalia.",
+   "paragraph": 1,
+   "quote": "he eventually founded Benalia in the fading capital of Sheoltun"
+  }
+ ],
+ "rejected": []
+}

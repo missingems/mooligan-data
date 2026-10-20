@@ -1,0 +1,156 @@
+{
+ "page": "wiki/severo-jr",
+ "url": "https://mtg.wiki/page/Severo_Jr.",
+ "title": "Severo Jr.",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:45Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Severo Jr.",
+   "type": "character",
+   "aliases": [
+    "Severo",
+    "Antonio Swift"
+   ],
+   "description": "A vengeful human man in New Capenna with a personal vendetta against Anhelo; his own schemes led to his demise.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the events take place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [
+    "Angelo"
+   ],
+   "description": "Target of Severo's revenge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Severo Sr.",
+   "type": "character",
+   "aliases": [],
+   "description": "Severo's father, allegedly killed by Anhelo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction whose transport Severo crashed into; they tried to retrieve stolen Halo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toluz",
+   "type": "character",
+   "aliases": [],
+   "description": "Intervened to stop the Riveteers from killing Anhelo.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Disguised as Antonio Swift, Severo tricks Anhelo into taking a cab ride.",
+   "participants": [
+    "Severo Jr.",
+    "Anhelo"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Severo, disguised as Antonio Swift, tricked Anhelo into taking a cab ride."
+  },
+  {
+   "summary": "Severo reveals his identity and accuses Anhelo of killing his father Severo Sr.",
+   "participants": [
+    "Severo Jr.",
+    "Anhelo",
+    "Severo Sr."
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He accused Anhelo of killing his father, Severo Sr., on his birthday three years prior."
+  },
+  {
+   "summary": "Anhelo stabs Severo in the chest with his dagger, but the cab still flies off the road and crashes into a Riveteer transport.",
+   "participants": [
+    "Anhelo",
+    "Severo Jr.",
+    "Riveteers"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Angelo reached out and stabbed Severo in the chest with his dagger"
+  },
+  {
+   "summary": "Severo laughs even while dying, leaving Anhelo injured and surrounded by Riveteers.",
+   "participants": [
+    "Severo Jr.",
+    "Anhelo",
+    "Riveteers"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Severo laughed maniacally even while dying"
+  },
+  {
+   "summary": "Toluz's timely intervention stops the Riveteers from killing Anhelo.",
+   "participants": [
+    "Toluz",
+    "Anhelo",
+    "Riveteers"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Only Toluz 's timely intervention stopped Anhelo from being killed by the Riveteers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Severo Jr.",
+   "relation": "enemy",
+   "target": "Anhelo",
+   "note": "personal vendetta",
+   "paragraph": 1,
+   "quote": "a personal vendetta against Anhelo"
+  },
+  {
+   "source": "Severo Jr.",
+   "relation": "family",
+   "target": "Severo Sr.",
+   "note": "son",
+   "paragraph": 3,
+   "quote": "killing his father, Severo Sr."
+  },
+  {
+   "source": "Anhelo",
+   "relation": "killed",
+   "target": "Severo Jr.",
+   "note": "stabbed him in the cab",
+   "paragraph": 3,
+   "quote": "Angelo reached out and stabbed Severo in the chest with his dagger"
+  },
+  {
+   "source": "Toluz",
+   "relation": "ally",
+   "target": "Anhelo",
+   "note": "saved him from the Riveteers",
+   "paragraph": 4,
+   "quote": "Only Toluz 's timely intervention stopped Anhelo from being killed by the Riveteers"
+  }
+ ],
+ "rejected": []
+}

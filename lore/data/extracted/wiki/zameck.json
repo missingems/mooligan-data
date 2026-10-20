@@ -1,0 +1,92 @@
+{
+ "page": "wiki/zameck",
+ "url": "https://mtg.wiki/page/Zameck",
+ "title": "Zameck",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zameck",
+   "type": "location",
+   "aliases": [],
+   "description": "The current Simic Guildhall on Ravnica, a living structure within Zonot Seven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zonot Seven",
+   "type": "location",
+   "aliases": [],
+   "description": "A water-filled sinkhole in Precinct Five of the Tenth District, the only zonot fully within Ravnica City proper, housing Zameck.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic",
+    "the Combine"
+   ],
+   "description": "The Ravnican guild of biological experimenters whose guildhall is Zameck.",
+   "presence": "appears"
+  },
+  {
+   "name": "Novijen",
+   "type": "location",
+   "aliases": [],
+   "description": "The Simic's previous headquarters, destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane where the Simic Combine dwells.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prime Speaker",
+   "type": "character",
+   "aliases": [],
+   "description": "High-ranking Simic leader who may meet rare visitors in Zameck's main chamber.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Novijen was destroyed, the Simic built the new guildhall Zameck within Zonot Seven.",
+   "participants": [
+    "Simic Combine",
+    "Zameck",
+    "Novijen",
+    "Zonot Seven"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "constructed within Zonot Seven after the destruction of their previous headquarters, Novijen"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zameck",
+   "relation": "located_in",
+   "target": "Zonot Seven",
+   "note": "guildhall inside the sinkhole",
+   "paragraph": 1,
+   "quote": "hidden beneath the streets inside Zonot Seven"
+  },
+  {
+   "source": "Zameck",
+   "relation": "other",
+   "target": "Simic Combine",
+   "note": "current Simic guildhall",
+   "paragraph": 0,
+   "quote": "Zameck is the current Simic Guildhall on Ravnica"
+  }
+ ],
+ "rejected": []
+}

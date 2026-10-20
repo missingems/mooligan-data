@@ -1,0 +1,145 @@
+{
+ "page": "wiki/telemar",
+ "url": "https://mtg.wiki/page/Telemar",
+ "title": "Telemar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Telemar",
+   "type": "location",
+   "aliases": [
+    "Bridge City of Telemar"
+   ],
+   "description": "Bridge City connecting the island of Corundis with mainland Corondor on Dominaria, built atop Primor Bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corundis",
+   "type": "location",
+   "aliases": [],
+   "description": "Island connected to Corondor by Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Mainland connected to Corundis by Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Primor Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Bridge on which Telemar was built.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gwendolyn Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Born in Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Sapphire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Eventually moved to Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grenfell Mor",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed by Sandruu in the unpublished comic Planeswalkers War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sandruu",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Grenfell Mor in the unpublished comic Planeswalkers War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Activated the Grey Chime at Telemar, destroying it in the unpublished comic Planeswalkers War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grey Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact activated by Leshrac at Telemar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Telemar was built as a fort to defend the island and grew into a city; House Sapphire eventually moved there.",
+   "participants": [
+    "Telemar",
+    "House Sapphire"
+   ],
+   "location": "Telemar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Originally it was built as a fort to defend the island, but it grew into a city over the years."
+  },
+  {
+   "summary": "In the unpublished comic Planeswalkers War, Sandruu killed Grenfell Mor and Leshrac destroyed Telemar with the Grey Chime.",
+   "participants": [
+    "Sandruu",
+    "Grenfell Mor",
+    "Leshrac",
+    "Telemar"
+   ],
+   "location": "Telemar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Grenfell Mor was killed by Sandruu , and Telemar was destroyed when Leshrac activated the Grey Chime there."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Telemar",
+   "relation": "located_in",
+   "target": "Corondor",
+   "note": "Connects Corundis to mainland Corondor",
+   "paragraph": 0,
+   "quote": "connected the island of Corundis with mainland Corondor on Dominaria"
+  },
+  {
+   "source": "Sandruu",
+   "relation": "killed",
+   "target": "Grenfell Mor",
+   "note": "In the unpublished comic Planeswalkers War",
+   "paragraph": 3,
+   "quote": "Grenfell Mor was killed by Sandruu"
+  },
+  {
+   "source": "Gwendolyn Carthalion",
+   "relation": "other",
+   "target": "Telemar",
+   "note": "Born there",
+   "paragraph": 2,
+   "quote": "Telemar was the birthplace of Gwendolyn Carthalion"
+  }
+ ],
+ "rejected": []
+}

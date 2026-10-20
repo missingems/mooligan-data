@@ -1,0 +1,178 @@
+{
+ "page": "wiki/great-aurora",
+ "url": "https://mtg.wiki/page/Great_Aurora",
+ "title": "Great Aurora",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:33Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "A cyclical planar event that alternately transformed Lorwyn into Shadowmoor and back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "The bright world transformed into Shadowmoor by the Great Aurora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The shadowy, distorted counterpart of Lorwyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "The fae queen who orchestrated the Great Aurora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf killed by Oona and replaced with a faerie vessel; the new Maralen became independent and claimed Oona's title.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that disrupted the fabric of planes across the Multiverse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sygg",
+   "type": "character",
+   "aliases": [],
+   "description": "A merrow ferryman twisted into a cutthroat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "An outcast elf who became a safewright of the Wilt-Leaf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vendilion clique",
+   "type": "faction",
+   "aliases": [],
+   "description": "Maralen's loyalty-bound clique.",
+   "presence": "appears"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [],
+   "description": "Ancient treefolk sage whose lingering magic shielded the Sapling of Colfenor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brigid Baeli",
+   "type": "character",
+   "aliases": [],
+   "description": "Protected through her bond with the Crescent of Morningtide.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [
+    "the Extinguisher"
+   ],
+   "description": "The elemental who triggered the Aurora and became the Extinguisher.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fusion of Lorwyn-Shadowmoor",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that followed the Aurora and Ashling's rampage.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fearing the Aurora, Oona kills Maralen and replaces her body with a faerie vessel as a mental duplicate.",
+   "participants": [
+    "Oona",
+    "Maralen"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Oona sought to preserve herself by killing the elf Maralen and replacing her body with a faerie vessel"
+  },
+  {
+   "summary": "The new Maralen becomes independent and turns against Oona.",
+   "participants": [
+    "Maralen",
+    "Oona"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a flaw in this act of self-replication allowed this new \" Maralen \" to become truly independent"
+  },
+  {
+   "summary": "The Aurora twists Sygg into a cutthroat and makes Rhys a safewright.",
+   "participants": [
+    "Sygg",
+    "Rhys"
+   ],
+   "location": "Lorwyn",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The merrow Sygg was twisted from a genial ferryman into a merciless cutthroat."
+  },
+  {
+   "summary": "Ashling ignites the transformation and becomes the Extinguisher, rampaging across the plane.",
+   "participants": [
+    "Ashling"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "she ignited the transformation and became a destructive force of nature known as the Extinguisher"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oona",
+   "relation": "killed",
+   "target": "Maralen",
+   "note": "Killed the elf Maralen to replace her body.",
+   "paragraph": 2,
+   "quote": "killing the elf Maralen"
+  },
+  {
+   "source": "Maralen",
+   "relation": "enemy",
+   "target": "Oona",
+   "note": "Turned against Oona and claimed her title.",
+   "paragraph": 2,
+   "quote": "eventually turning against Oona and emerging as a rival for control over the fae"
+  },
+  {
+   "source": "Oona",
+   "relation": "created",
+   "target": "Great Aurora",
+   "note": "Orchestrated it.",
+   "paragraph": 1,
+   "quote": "the Great Aurora was orchestrated by the fae queen Oona"
+  }
+ ],
+ "rejected": []
+}

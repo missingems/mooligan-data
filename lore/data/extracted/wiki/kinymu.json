@@ -1,0 +1,129 @@
+{
+ "page": "wiki/kinymu",
+ "url": "https://mtg.wiki/page/Kinymu",
+ "title": "Kinymu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kinymu",
+   "type": "location",
+   "aliases": [],
+   "description": "Jamuraan city-state of the Kipamu League, a hundred leagues inland.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kipamu League",
+   "type": "faction",
+   "aliases": [],
+   "description": "League of Jamuraan city-states defending against the Keldons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [
+    "Keldon forces"
+   ],
+   "description": "Invading forces that defeated the Kipamu League army.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prophecy War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the Keldons invaded Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Renowned mage who inspected the combined forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mageta",
+   "type": "character",
+   "aliases": [],
+   "description": "Commanding officer of the army at Kinymu and Arsenal City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arsenal City",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose forces were combined with Kinymu's.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isel",
+   "type": "character",
+   "aliases": [],
+   "description": "Master carver who carved an angel inside a fallen seashell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seashell cameo",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Cameo carved from a seashell that fell from the empty sky.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion shortly after which the Keldons withdrew from Jamuraa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Barrin inspects the forces of Kinymu and Arsenal City and finds Mageta in command; the army is defeated by the Keldons.",
+   "participants": [
+    "Barrin",
+    "Mageta",
+    "Keldons"
+   ],
+   "location": "Kinymu",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "ultimately suffered defeat at the hands of the Keldons"
+  },
+  {
+   "summary": "A seashell falls from the empty sky; master carver Isel carves an angel, part woman and part bird, inside it.",
+   "participants": [
+    "Isel",
+    "Seashell cameo"
+   ],
+   "location": "Kinymu",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Isel carved both"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kinymu",
+   "relation": "member_of",
+   "target": "Kipamu League",
+   "note": "Forms part of it",
+   "paragraph": 0,
+   "quote": "forms part of the Kipamu League"
+  },
+  {
+   "source": "Mageta",
+   "relation": "leader_of",
+   "target": "Kipamu League",
+   "note": "Army's commanding officer",
+   "paragraph": 1,
+   "quote": "he found Mageta serving as the army’s commanding officer"
+  }
+ ],
+ "rejected": []
+}

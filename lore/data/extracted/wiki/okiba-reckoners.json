@@ -1,0 +1,131 @@
+{
+ "page": "wiki/okiba-reckoners",
+ "url": "https://mtg.wiki/page/Okiba_Reckoners",
+ "title": "Okiba Reckoners",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:47Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Okiba Reckoners",
+   "type": "faction",
+   "aliases": [
+    "Okiba"
+   ],
+   "description": "Nezumi gang of spies, ninjas, rogues and bikers in the Reckoners affiliation, led by Greasefang.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greasefang",
+   "type": "character",
+   "aliases": [],
+   "description": "Cunning nezumi leader of the Okiba.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ink-Eyes",
+   "type": "character",
+   "aliases": [],
+   "description": "Became part of the Okiba but was ostracized young.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Affiliation of criminal gangs on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rival gang of the Okiba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dokuchi Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang that merged into the Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang that merged into the Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War before which the Okiba had roots.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Okiba ride.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Okiba, Hyozan, Dokuchi and Mukotai Reckoners merge into a larger affiliation.",
+   "participants": [
+    "Okiba Reckoners",
+    "Hyozan Reckoners",
+    "Dokuchi Reckoners",
+    "Mukotai Reckoners"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Okiba and Hyozan together with the Dokuchi and Mukotai Reckoners merged into a larger affilitation of Reckoners"
+  },
+  {
+   "summary": "Under Greasefang the Okiba grow in number and influence in Towashi's undercity.",
+   "participants": [
+    "Greasefang",
+    "Okiba Reckoners"
+   ],
+   "location": "Towashi Undercity",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Under her command, the Okiba Reckoners have grown in number and influence"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Greasefang",
+   "relation": "leader_of",
+   "target": "Okiba Reckoners",
+   "note": "She leads the Okiba.",
+   "paragraph": 3,
+   "quote": "Now, the Okiba are led by the cunning, resourceful Greasefang"
+  },
+  {
+   "source": "Okiba Reckoners",
+   "relation": "enemy",
+   "target": "Hyozan Reckoners",
+   "note": "They were rival gangs.",
+   "paragraph": 1,
+   "quote": "were a rival gang to the Hyozan Reckoners"
+  },
+  {
+   "source": "Okiba Reckoners",
+   "relation": "member_of",
+   "target": "Reckoners",
+   "note": "Part of the larger affiliation.",
+   "paragraph": 0,
+   "quote": "part of the larger Reckoners affiliation on Kamigawa"
+  }
+ ],
+ "rejected": []
+}

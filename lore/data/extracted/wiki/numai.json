@@ -1,0 +1,113 @@
+{
+ "page": "wiki/numai",
+ "url": "https://mtg.wiki/page/Numai",
+ "title": "Numai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:25Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Numai",
+   "type": "location",
+   "aliases": [
+    "swamp home"
+   ],
+   "description": "A human settlement of stilt houses in the Takenuma swamp of Kamigawa; once a prosperous city, now a loose group of half-deteriorated buildings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp containing Numai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Numai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uramon",
+   "type": "character",
+   "aliases": [],
+   "description": "Rich, powerful resident living in a restored manor house.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rat's Nest",
+   "type": "location",
+   "aliases": [],
+   "description": "Filthy, sagging tavern on stilts in Numai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mahotsukai cult",
+   "type": "faction",
+   "aliases": [
+    "mahotsukai"
+   ],
+   "description": "Cult of powerful black jushi based in Numai during the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiku",
+   "type": "character",
+   "aliases": [],
+   "description": "Greatest of the mahotsukai black jushi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Resident of Numai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Numai was the cult's base.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War Numai becomes the base of the mahotsukai cult.",
+   "participants": [
+    "Mahotsukai cult",
+    "Kiku",
+    "Toshiro Umezawa"
+   ],
+   "location": "Numai",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "During the Kami War , it was the base of the mahotsukai cult"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Numai",
+   "relation": "located_in",
+   "target": "Takenuma",
+   "note": "swamp settlement",
+   "paragraph": 0,
+   "quote": "Numai (NOO-meye; lit. “swamp home”) is a human settlement in the Takenuma swamp of the plane of Kamigawa ."
+  },
+  {
+   "source": "Kiku",
+   "relation": "leader_of",
+   "target": "Mahotsukai cult",
+   "note": "the greatest of the jushi",
+   "paragraph": 3,
+   "quote": "the greatest of which was Kiku"
+  }
+ ],
+ "rejected": []
+}

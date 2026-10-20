@@ -1,0 +1,125 @@
+{
+ "page": "wiki/sauruven-hellwald",
+ "url": "https://mtg.wiki/page/Sauruven_Hellwald",
+ "title": "Sauruven Hellwald",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sauruven Hellwald",
+   "type": "character",
+   "aliases": [],
+   "description": "Black Knight of the Schwartzenritterein order, servant of the planeswalker Thomil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Schwartzenritterein",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of Black Knights.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thomil",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker, Sauruven's master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eumenes",
+   "type": "character",
+   "aliases": [],
+   "description": "Mourning Hurloon Minotaur whom Sauruven befriended and later killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eurynomous",
+   "type": "character",
+   "aliases": [],
+   "description": "Eumenes' mate, killed by a Stone Giant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone Giant",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant that killed Eurynomous; killed by Sauruven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gurdurngs",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian location where Sauruven met Eumenes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sauruven meets the mourning minotaur Eumenes in the Gurdurngs and helps with the lamentation ritual.",
+   "participants": [
+    "Sauruven Hellwald",
+    "Eumenes"
+   ],
+   "location": "Gurdurngs",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Saruven met the mourning Hurloon Minotaur Eumenes"
+  },
+  {
+   "summary": "Thomil summons Sauruven to a duel against Eumenes, summoned by the opposing planeswalker; Sauruven kills him.",
+   "participants": [
+    "Thomil",
+    "Sauruven Hellwald",
+    "Eumenes"
+   ],
+   "location": "Gurdurngs",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sauruven killed the minotaur"
+  },
+  {
+   "summary": "Sauruven kills the Stone Giant that killed Eurynomous.",
+   "participants": [
+    "Sauruven Hellwald",
+    "Stone Giant"
+   ],
+   "location": "Gurdurngs",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "went and killed the Stone Giant"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sauruven Hellwald",
+   "relation": "serves",
+   "target": "Thomil",
+   "note": "master",
+   "paragraph": 0,
+   "quote": "His master was the planeswalker Thomil"
+  },
+  {
+   "source": "Sauruven Hellwald",
+   "relation": "member_of",
+   "target": "Schwartzenritterein",
+   "note": "Black Knight",
+   "paragraph": 0,
+   "quote": "a Black Knight of the Schwartzenritterein order"
+  },
+  {
+   "source": "Sauruven Hellwald",
+   "relation": "killed",
+   "target": "Eumenes",
+   "note": "in a planeswalkers' duel",
+   "paragraph": 2,
+   "quote": "Sauruven killed the minotaur"
+  }
+ ],
+ "rejected": []
+}

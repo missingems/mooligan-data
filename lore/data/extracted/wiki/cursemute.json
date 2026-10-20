@@ -1,0 +1,161 @@
+{
+ "page": "wiki/cursemute",
+ "url": "https://mtg.wiki/page/Cursemute",
+ "title": "Cursemute",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:21Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "The Cursemute",
+   "type": "event",
+   "aliases": [
+    "Cursemute"
+   ],
+   "description": "A powerful ritual by Avacyn that transformed and suppressed Innistrad's curses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "The archangel who cast the Cursemute and later fell to madness and was destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane afflicted by curses and monsters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatstaf",
+   "type": "location",
+   "aliases": [],
+   "description": "Remote village whose people appealed for relief from lycanthropy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatstaf Grotto",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Avacyn appeared before the villagers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wolfir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Noble wolf-like protectors Avacyn made from willing werewolves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "The church whose cause the Wolfir served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose corruption by the Chain Veil was dulled by the Cursemute.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [
+    "the Veil"
+   ],
+   "description": "Artifact whose hold on Garruk was dulled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prison that was sundered, releasing Avacyn.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The villagers of Gatstaf plead for relief from lycanthropy.",
+   "participants": [
+    "Gatstaf"
+   ],
+   "location": "Gatstaf",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "where the people pleaded for relief from lycanthropy"
+  },
+  {
+   "summary": "Avacyn appears at Gatstaf Grotto and offers the afflicted a choice to swear loyalty as guardians.",
+   "participants": [
+    "Avacyn"
+   ],
+   "location": "Gatstaf Grotto",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Avacyn offered the afflicted a choice"
+  },
+  {
+   "summary": "The Gatstaf werewolves accept, and Avacyn transforms the willing into the Wolfir in the Cursemute.",
+   "participants": [
+    "Avacyn",
+    "Wolfir"
+   ],
+   "location": "Gatstaf Grotto",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she transformed the willing into the Wolfir"
+  },
+  {
+   "summary": "The Cursemute dulls the Chain Veil's hold on Garruk Wildspeaker.",
+   "participants": [
+    "Garruk Wildspeaker",
+    "Chain Veil"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "granting the planeswalker fleeting relief"
+  },
+  {
+   "summary": "Avacyn is driven to madness and destroyed; the Cursemute unravels and werewolves regain their hunger.",
+   "participants": [
+    "Avacyn",
+    "Wolfir"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The wolfir faded, and many werewolves regained their savage hunger"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Avacyn",
+   "relation": "created",
+   "target": "Wolfir",
+   "note": "Transformed willing werewolves into Wolfir.",
+   "paragraph": 3,
+   "quote": "she transformed the willing into the Wolfir"
+  },
+  {
+   "source": "Wolfir",
+   "relation": "serves",
+   "target": "Church of Avacyn",
+   "note": "Devoted to the Church's cause.",
+   "paragraph": 3,
+   "quote": "devoted to the Church of Avacyn"
+  }
+ ],
+ "rejected": []
+}

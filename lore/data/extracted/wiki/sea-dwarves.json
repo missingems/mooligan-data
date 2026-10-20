@@ -1,0 +1,96 @@
+{
+ "page": "wiki/sea-dwarves",
+ "url": "https://mtg.wiki/page/Sea_dwarves",
+ "title": "Sea dwarves",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sea dwarves",
+   "type": "faction",
+   "aliases": [
+    "dwarves of the Floating Isle"
+   ],
+   "description": "Dwarves of the Floating Isle, descendants of dwarves who fled the mountains after Sengir's invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Floating Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Home the sea dwarves made on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose invasion drove dwarves from the mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited the sea dwarves and created the Wizards' School for them.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizards' School",
+   "type": "location",
+   "aliases": [],
+   "description": "School created by Feroz for the sea dwarves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan of the Gentle Wave",
+   "type": "faction",
+   "aliases": [],
+   "description": "A clan of the sea dwarves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the sea dwarves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Feroz visited the sea dwarves and created the Wizards' School for them.",
+   "participants": [
+    "Feroz",
+    "Sea dwarves"
+   ],
+   "location": "Floating Isle",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "where they were later visited by Feroz , who created the Wizards' School for them"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Clan of the Gentle Wave",
+   "relation": "member_of",
+   "target": "Sea dwarves",
+   "note": "One of the clans.",
+   "paragraph": 1,
+   "quote": "The sea dwarves were divided into clans, like the Clan of the Gentle Wave ."
+  },
+  {
+   "source": "Feroz",
+   "relation": "created",
+   "target": "Wizards' School",
+   "note": "He created it for the sea dwarves.",
+   "paragraph": 1,
+   "quote": "who created the Wizards' School for them"
+  }
+ ],
+ "rejected": []
+}

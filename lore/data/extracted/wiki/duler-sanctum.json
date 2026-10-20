@@ -1,0 +1,109 @@
+{
+ "page": "wiki/duler-sanctum",
+ "url": "https://mtg.wiki/page/Duler_Sanctum",
+ "title": "Duler Sanctum",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Duler Sanctum",
+   "type": "location",
+   "aliases": [],
+   "description": "Pristine home of the Duler Angels on Lat-Nam in the Terisian Isles of Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duler Angels",
+   "type": "faction",
+   "aliases": [],
+   "description": "Angels of human origin living on Lat-Nam.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lat-Nam",
+   "type": "location",
+   "aliases": [],
+   "description": "Island of the Terisian Isles where the Duler Angels live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrived on Lat-Nam with a retinue and later parleyed with the Duler Angels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuni",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Greensleeves' retinue whose sword killed a captured angel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stone Brain",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item Greensleeves showed the angels.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Greensleeves' retinue is attacked by the Duler Angels on Lat-Nam and beats them back, killing a few.",
+   "participants": [
+    "Greensleeves",
+    "Duler Angels"
+   ],
+   "location": "Lat-Nam",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "they were soon attacked by the Duler Angels."
+  },
+  {
+   "summary": "A captured angel kills himself on Kuni's sword.",
+   "participants": [
+    "Kuni",
+    "Duler Angels"
+   ],
+   "location": "Lat-Nam",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "One was captured, but killed himself on Kuni 's sword."
+  },
+  {
+   "summary": "Greensleeves shows the angels the Stone Brain and parleys with them, ending hostilities.",
+   "participants": [
+    "Greensleeves",
+    "Duler Angels",
+    "Stone Brain"
+   ],
+   "location": "Duler Sanctum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "earning their respect and ceasing the hostilities."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Duler Angels",
+   "relation": "located_in",
+   "target": "Lat-Nam",
+   "note": "Their sanctum is on Lat-Nam.",
+   "paragraph": 0,
+   "quote": "Duler Sanctum is the home of the Duler Angels of Lat-Nam"
+  }
+ ],
+ "rejected": []
+}

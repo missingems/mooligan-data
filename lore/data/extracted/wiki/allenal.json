@@ -1,0 +1,113 @@
+{
+ "page": "wiki/allenal",
+ "url": "https://mtg.wiki/page/Allenal",
+ "title": "Allenal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Allenal",
+   "type": "character",
+   "aliases": [],
+   "description": "Half-elven, 400-year-old queen of the Llanowar elfhame Ruadach who swore revenge on the Phyrexians for killing her mother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruadach",
+   "type": "faction",
+   "aliases": [],
+   "description": "Llanowar elfhame ruled by Allenal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terena",
+   "type": "character",
+   "aliases": [
+    "Queen Terena"
+   ],
+   "description": "Allenal's mother, who ruled for 600 years until killed in the Phyrexian invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who killed Terena and have returned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "First Phyrexian invasion of Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Queen Terena was killed in the Phyrexian invasion.",
+   "participants": [
+    "Terena",
+    "Phyrexians",
+    "Phyrexian invasion"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Terena ruled for 600 years until she was killed in the Phyrexian invasion"
+  },
+  {
+   "summary": "Young Allenal swore she would take revenge one day.",
+   "participants": [
+    "Allenal",
+    "Phyrexians"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the young Queen Allenal swore she would take revenge one day"
+  },
+  {
+   "summary": "The Phyrexians have returned, giving Allenal her chance for revenge.",
+   "participants": [
+    "Allenal",
+    "Phyrexians"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Now that the Phyrexians have returned, she has her chance."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Allenal",
+   "relation": "family",
+   "target": "Terena",
+   "note": "Daughter.",
+   "paragraph": 1,
+   "quote": "She was born as the daughter of Queen Terena"
+  },
+  {
+   "source": "Allenal",
+   "relation": "leader_of",
+   "target": "Ruadach",
+   "note": "Queen.",
+   "paragraph": 1,
+   "quote": "The half-elf Queen Allenal, of the Llanowar elfhame Ruadach"
+  },
+  {
+   "source": "Phyrexians",
+   "relation": "killed",
+   "target": "Terena",
+   "note": "",
+   "paragraph": 2,
+   "quote": "When her mother was killed by the interplanar invaders hundreds of years ago"
+  }
+ ],
+ "rejected": []
+}

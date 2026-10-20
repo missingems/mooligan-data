@@ -1,0 +1,204 @@
+{
+ "page": "wiki/ezuri",
+ "url": "https://mtg.wiki/page/Ezuri",
+ "title": "Ezuri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:44Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Ezuri",
+   "type": "character",
+   "aliases": [],
+   "description": "A Viridian elf, former bandit turned hero who organized resistance to the Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Compleated Ezuri",
+   "type": "character",
+   "aliases": [
+    "Claw of Progress",
+    "Ezuri"
+   ],
+   "description": "Phyrexian-compleated version of Ezuri, a cunning hunter and agent of New Phyrexia who captures his former allies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane invaded and compleated by Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Progress Engine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jin-Gitaxias's blue-aligned faction of Phyrexians that compleated Ezuri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "Praetor leading the Progress Engine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Dominated and altered the Tangle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "Planeswalker who threatened Ezuri and searched for Karn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koth",
+   "type": "character",
+   "aliases": [],
+   "description": "Companion of Elspeth and Venser.",
+   "presence": "appears"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who insisted on finding Karn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure the companions sought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melira",
+   "type": "character",
+   "aliases": [],
+   "description": "Rescued by the trio; invited by Ezuri to stay but continued with the companions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "His Phyrexians attacked Ezuri's camp.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Phyrexian version of Mirrodin whose will Ezuri serves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tangle",
+   "type": "location",
+   "aliases": [],
+   "description": "Viridian forest dominated and altered by Glissa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ezuri organizes Viridian elves to fight the Phyrexian invaders and sets up refugee camps for Auriok, Sylvok and Vulshok survivors.",
+   "participants": [
+    "Ezuri"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He began organizing his fellow Viridian elves into groups that would fight the invaders"
+  },
+  {
+   "summary": "After Glissa alters the Tangle, Ezuri gathers the remaining elves and Sylvok in the treetops and joins the resistance.",
+   "participants": [
+    "Ezuri",
+    "Glissa"
+   ],
+   "location": "Tangle",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He soon led them to join the resistance movement for Mirrodin"
+  },
+  {
+   "summary": "Ezuri refuses to let Elspeth, Koth and Venser go further, preferring his heroic leadership; Elspeth threatens him and he backs down.",
+   "participants": [
+    "Ezuri",
+    "Elspeth Tirel",
+    "Koth",
+    "Venser"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "When Elspeth threatened Ezuri, however, the elf backed down"
+  },
+  {
+   "summary": "At Ezuri's camp, Melira refuses to stay behind; Tezzeret's Phyrexians attack the camp as the companions leave.",
+   "participants": [
+    "Ezuri",
+    "Melira",
+    "Elspeth Tirel",
+    "Tezzeret"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "the camp was attacked by Tezzeret 's Phyrexians"
+  },
+  {
+   "summary": "Ezuri is captured and compleated by the Progress Engine, becoming the Claw of Progress.",
+   "participants": [
+    "Ezuri",
+    "Compleated Ezuri",
+    "Progress Engine"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "He eventually was captured and compleated by the Progress Engine"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Compleated Ezuri",
+   "relation": "serves",
+   "target": "New Phyrexia",
+   "note": "agent of New Phyrexia's will",
+   "paragraph": 6,
+   "quote": "Ezuri became an agent of New Phyrexia's will"
+  },
+  {
+   "source": "Compleated Ezuri",
+   "relation": "member_of",
+   "target": "Progress Engine",
+   "note": "compleated by it",
+   "paragraph": 6,
+   "quote": "He eventually was captured and compleated by the Progress Engine"
+  },
+  {
+   "source": "Ezuri",
+   "relation": "enemy",
+   "target": "Elspeth Tirel",
+   "note": "initially obstructed the companions' quest and was threatened by Elspeth",
+   "paragraph": 4,
+   "quote": "When Elspeth threatened Ezuri, however, the elf backed down"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,161 @@
+{
+ "page": "wiki/arvad",
+ "url": "https://mtg.wiki/page/Arvad",
+ "title": "Arvad",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:21Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Arvad",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire and former Benalish knight, security chief of Jhoira's crew on the Weatherlight, who struggles to uphold knightly ideals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of the Weatherlight, to whom Arvad swore allegiance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "Rebuilt skyship Arvad guards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazarov",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant of the Sengir line who turned Arvad into a vampire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tiana",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who introduced Arvad to Jhoira and was defended by him at the construction site.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bogardan phoenix",
+   "type": "creature",
+   "aliases": [],
+   "description": "Attacked the Weatherlight's construction site.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shanna",
+   "type": "character",
+   "aliases": [],
+   "description": "Searched for spare parts with Tiana and Raff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raff",
+   "type": "character",
+   "aliases": [],
+   "description": "Searched for spare parts with Tiana and Shanna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Arvad was left in charge of the Weatherlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Second Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which the Weatherlight was compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [
+    "Benalish"
+   ],
+   "description": "Realm Arvad served as a knight.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kazarov turns Arvad into a vampire.",
+   "participants": [
+    "Kazarov",
+    "Arvad"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kazarov , a descendant of the notorious Sengir line, turned Arvad into a vampire."
+  },
+  {
+   "summary": "Compelled to the Weatherlight's construction site, Arvad helps Tiana defend the ship against a Bogardan phoenix; Tiana introduces him to Jhoira and he swears allegiance.",
+   "participants": [
+    "Arvad",
+    "Tiana",
+    "Jhoira",
+    "Bogardan phoenix"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The angel introduced Arvad to Jhoira, after which he swore allegiance to the captain."
+  },
+  {
+   "summary": "During the Second Phyrexian Invasion Arvad is left in charge of the Weatherlight on Otaria but cannot prevent its Compleation.",
+   "participants": [
+    "Arvad",
+    "Weatherlight",
+    "Tiana",
+    "Shanna",
+    "Raff"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he was unable to prevent the ship's Compleation"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kazarov",
+   "relation": "created",
+   "target": "Arvad",
+   "note": "turned him into a vampire",
+   "paragraph": 2,
+   "quote": "Kazarov , a descendant of the notorious Sengir line, turned Arvad into a vampire."
+  },
+  {
+   "source": "Arvad",
+   "relation": "serves",
+   "target": "Jhoira",
+   "note": "swore allegiance as security chief",
+   "paragraph": 3,
+   "quote": "after which he swore allegiance to the captain"
+  },
+  {
+   "source": "Arvad",
+   "relation": "ally",
+   "target": "Tiana",
+   "note": "helped her defend the ship",
+   "paragraph": 3,
+   "quote": "he helped Tiana defend the ship against the attack of a Bogardan phoenix"
+  }
+ ],
+ "rejected": []
+}

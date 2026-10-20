@@ -1,0 +1,61 @@
+{
+ "page": "wiki/goblin-king",
+ "url": "https://mtg.wiki/page/Goblin_King",
+ "title": "Goblin King",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Goblin King",
+   "type": "concept",
+   "aliases": [],
+   "description": "Title of Dominarian goblin kings, who gain the position by assassinating the previous king.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Numsgil",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin King who killed Blog.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blog",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin King who killed Unkful and was killed by Numsgil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Unkful",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin King killed by Blog.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Numsgil",
+   "relation": "killed",
+   "target": "Blog",
+   "note": "Succeeded him as Goblin King by killing him.",
+   "paragraph": 2,
+   "quote": "Numsgil who killed Blog who killed Unkful"
+  },
+  {
+   "source": "Blog",
+   "relation": "killed",
+   "target": "Unkful",
+   "note": "Succeeded him as Goblin King by killing him.",
+   "paragraph": 2,
+   "quote": "Numsgil who killed Blog who killed Unkful"
+  }
+ ],
+ "rejected": []
+}

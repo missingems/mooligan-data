@@ -1,0 +1,391 @@
+{
+ "page": "stories/testing-dark-waters-2018-10-17",
+ "url": "https://magic.wizards.com/en/news/magic-story/testing-dark-waters-2018-10-17",
+ "title": "Testing the Dark Waters",
+ "story_date": "2018-10-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:29:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Leighbet",
+   "type": "character",
+   "aliases": [
+    "Leighbet Becham",
+    "Master Chemister Becham"
+   ],
+   "description": "An ambitious Izzet attendant and former analyst who discovers rift-tainted plants that confer immunity to electricity, runs an unsanctioned lab, kills test subjects and finally kills the Dimir spy Tamsyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamsyn Sweene",
+   "type": "character",
+   "aliases": [
+    "Tamsyn",
+    "Tammy"
+   ],
+   "description": "A shapeshifting Dimir spy who poses as a blastseeker to infiltrate Leighbet's lab and steal her serum, then tries to kill her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kel'teth",
+   "type": "character",
+   "aliases": [],
+   "description": "A laid-back Golgari troll with mushrooms growing under his arms who guides Leighbet through the sewers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Master Dax Foley",
+   "type": "character",
+   "aliases": [
+    "Master Dax",
+    "Dax Foley"
+   ],
+   "description": "A high-level Izzet chemister specializing in arcane metallurgy and practical alchemy, whom Leighbet serves as an attendant and who dismisses her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon guildmaster of the Izzet League, mentioned for how old the bolts are.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet",
+    "the League",
+    "Izmundi"
+   ],
+   "description": "The Ravnican guild of chemisters and inventors for which Leighbet works; the Izmundi demand ever more significant discoveries.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "The Ravnican guild of spies that sends Tamsyn to infiltrate small labs and steal discoveries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "The Ravnican guild of the undercity, whose troll hires Leighbet to investigate the electric-proof fatbergs and whose reclaimers scavenge the sewers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "The biomancer guild whose lab pays Leighbet to be a test subject and transforms her into a fanged, clawed creature.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District Sewers",
+   "type": "location",
+   "aliases": [
+    "the sewers",
+    "the undercity"
+   ],
+   "description": "The vast sewers beneath Ravnica's Tenth District where fatbergs have become immune to electrical magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spatial Rift",
+   "type": "concept",
+   "aliases": [
+    "the rift"
+   ],
+   "description": "A black rift floating in the sewer water whose magic makes nearby plants, and later Leighbet's serum recipients, immune to electricity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fatbergs",
+   "type": "concept",
+   "aliases": [
+    "fatberg"
+   ],
+   "description": "Rafts of coagulated fats and waste that clog the sewers and have become impervious to electrical magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laboratory of Elemental Metastream Dynamics and Coil Field Fractalization",
+   "type": "location",
+   "aliases": [
+    "the lab"
+   ],
+   "description": "Leighbet's boilerpit lab, officially recognized by the Izmundi thanks to Tamsyn's maneuvering.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sewer Sirens",
+   "type": "creature",
+   "aliases": [],
+   "description": "Rabid creatures in the sewers that attack anyone who puts a hand in their mouth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arc Drake",
+   "type": "creature",
+   "aliases": [
+    "drake"
+   ],
+   "description": "A drake sent into the sewers to vaporize fatbergs that breathes electricity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city plane where the story takes place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Leighbet, moonlighting as an analyst, follows the Golgari troll Kel'teth through the Tenth District sewers to find what is making fatbergs immune to electricity.",
+   "participants": [
+    "Leighbet",
+    "Kel'teth",
+    "Tenth District Sewers"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "No time for gawking, I'm afraid,"
+  },
+  {
+   "summary": "Kel'teth saves Leighbet from a sewer siren by throwing cement at it.",
+   "participants": [
+    "Kel'teth",
+    "Leighbet",
+    "Sewer Sirens"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Rabid as all get-out, but they can't attack you unless you put your hand in their mouth."
+  },
+  {
+   "summary": "Leighbet scans a fatberg and detects a powerful, unrecognized arcane trace, then leaves the sleeping Kel'teth to follow it.",
+   "participants": [
+    "Leighbet",
+    "Kel'teth",
+    "Fatbergs"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "whatever's causing this sizzle is powerful."
+  },
+  {
+   "summary": "Leighbet opens a grate with stored mana, finds a spatial rift ringed by plants, and survives an eel shock after her canister explodes.",
+   "participants": [
+    "Leighbet",
+    "Spatial Rift"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "major",
+   "paragraph": 22,
+   "quote": "For a long, long moment, my entire body seizes up and my world goes white."
+  },
+  {
+   "summary": "Leighbet deduces that contact with the rift made the plants, and over time the fatbergs, immune to electricity and takes samples.",
+   "participants": [
+    "Leighbet",
+    "Spatial Rift",
+    "Fatbergs"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "Contact with the rift must have imbued them with immunity to electrical magic."
+  },
+  {
+   "summary": "Leighbet demands a promotion from Master Dax, is fired and loses her access and title, and starts an unsanctioned lab in the boilerpit beneath her apartment.",
+   "participants": [
+    "Leighbet",
+    "Master Dax Foley",
+    "Izzet League"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "that just leaves you standing at the front steps of the Lightning Rod, a box full of your desk belongings in your arms."
+  },
+  {
+   "summary": "Leighbet hires Tamsyn Sweene as a blastseeker, who claims past experience and passes a practical test.",
+   "participants": [
+    "Leighbet",
+    "Tamsyn Sweene"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "Tamsyn Sweene. Call me Tammy, and we've got a problem."
+  },
+  {
+   "summary": "Their serum, made from rift plant samples, makes a lab mouse completely impervious to electricity.",
+   "participants": [
+    "Leighbet",
+    "Tamsyn Sweene"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "It's completely impervious to electricity."
+  },
+  {
+   "summary": "Tamsyn tells a false story of her chemister's death and talks Leighbet into hiring her by promising to get the lab approved without sanctions.",
+   "participants": [
+    "Tamsyn Sweene",
+    "Leighbet"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 48,
+   "quote": "I can get your lab declared an Innovative Niche Workshop."
+  },
+  {
+   "summary": "Tamsyn gets the lab officially recognized by the Izmundi and recruits five paid test subjects, and the serum protects all of them from electric shocks.",
+   "participants": [
+    "Tamsyn Sweene",
+    "Leighbet"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 79,
+   "quote": "The other four tests go exactly the same, successes all around."
+  },
+  {
+   "summary": "Tamsyn convinces Leighbet that the test subjects must be silenced and poisons all five with a lethal sleep elixir, and Leighbet goes along with it.",
+   "participants": [
+    "Tamsyn Sweene",
+    "Leighbet"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 88,
+   "quote": "I already gave them all a hyper-concentrated dose of sleep elixir laced with an ethereal death accelerant."
+  },
+  {
+   "summary": "Desperate for money, Leighbet signs up for paid experiments and is transformed by Simic biomancers into a clawed, fanged monster, then flees into the sewers.",
+   "participants": [
+    "Leighbet",
+    "Simic Combine"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 96,
+   "quote": "my teeth are reshuffling, becoming jagged and ragged like a mouthful of fangs."
+  },
+  {
+   "summary": "Tamsyn finds Leighbet in the sewers and reveals she is a shapeshifting Dimir spy who never was a blastseeker.",
+   "participants": [
+    "Tamsyn Sweene",
+    "Leighbet",
+    "House Dimir"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "major",
+   "paragraph": 107,
+   "quote": "There was no chemister, Leighbet. I never was a blastseeker."
+  },
+  {
+   "summary": "Tamsyn attacks Leighbet with electricity and declares the serum a Dimir discovery; an arc drake's electric breath hits them in the water.",
+   "participants": [
+    "Tamsyn Sweene",
+    "Leighbet",
+    "Arc Drake"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "minor",
+   "paragraph": 114,
+   "quote": "your serum is a Dimir discovery now. Goodbye, Leighbet."
+  },
+  {
+   "summary": "Leighbet builds a makeshift ballast from sewer junk, stuns Tamsyn with a thrown welding jar and redirects her own blast back at her.",
+   "participants": [
+    "Leighbet",
+    "Tamsyn Sweene"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "minor",
+   "paragraph": 123,
+   "quote": "When the next blast orb comes, I meet it with my makeshift ballast."
+  },
+  {
+   "summary": "Leighbet's Simic transformation wears off, and she kills Tamsyn by snapping her spine to keep the discovery from Dimir.",
+   "participants": [
+    "Leighbet",
+    "Tamsyn Sweene"
+   ],
+   "location": "Tenth District Sewers",
+   "importance": "major",
+   "paragraph": 127,
+   "quote": "as Tamsyn's vertebrae snap, I take comfort that she doesn't know pain for long."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Leighbet",
+   "relation": "killed",
+   "target": "Tamsyn Sweene",
+   "note": "She breaks Tamsyn's neck in the sewers.",
+   "paragraph": 127,
+   "quote": "as Tamsyn's vertebrae snap, I take comfort that she doesn't know pain for long."
+  },
+  {
+   "source": "Tamsyn Sweene",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "She reveals she is a Dimir spy.",
+   "paragraph": 108,
+   "quote": "\"A Dimir spy.\""
+  },
+  {
+   "source": "Leighbet",
+   "relation": "serves",
+   "target": "Master Dax Foley",
+   "note": "She was his attendant before being fired.",
+   "paragraph": 19,
+   "quote": "I serve as an attendant to Master Dax Foley, a high-level chemister"
+  },
+  {
+   "source": "Leighbet",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "A lowly attendant until she is dismissed.",
+   "paragraph": 24,
+   "quote": "I'd be lying if I said I hadn't noticed the pressure mounting within the Izzet League lately"
+  },
+  {
+   "source": "Kel'teth",
+   "relation": "member_of",
+   "target": "Golgari Swarm",
+   "note": "Leighbet's Golgari guide.",
+   "paragraph": 1,
+   "quote": "my Golgari guide"
+  },
+  {
+   "source": "Tamsyn Sweene",
+   "relation": "enemy",
+   "target": "Leighbet",
+   "note": "She tries to kill Leighbet and steal her serum.",
+   "paragraph": 114,
+   "quote": "A mind like yours is a terrible thing to waste"
+  }
+ ],
+ "rejected": []
+}

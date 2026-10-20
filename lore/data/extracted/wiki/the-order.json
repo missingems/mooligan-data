@@ -1,0 +1,167 @@
+{
+ "page": "wiki/the-order",
+ "url": "https://mtg.wiki/page/The_Order",
+ "title": "The Order",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:17Z",
+ "storyline": "Odyssey and Onslaught",
+ "entities": [
+  {
+   "name": "The Order",
+   "type": "faction",
+   "aliases": [
+    "Northern Order",
+    "Southern Order"
+   ],
+   "description": "A white-aligned military and religious group across Otaria, with human nomad and aven warrior members, split into Northern and Southern branches.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Land where the Order was based.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ancestor",
+   "type": "deity",
+   "aliases": [],
+   "description": "Mysterious entity at the center of the Order's beliefs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Dangerous artifact the Order sought to destroy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Repeatedly in conflict with the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group the Order tolerated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teroh",
+   "type": "character",
+   "aliases": [
+    "Major Teroh"
+   ],
+   "description": "Order member who launched a crusade against the Cabal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eesha",
+   "type": "character",
+   "aliases": [
+    "Commander Eesha"
+   ],
+   "description": "Allied with the Cabal to destroy the Mirari; led the diminished Northern Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirtar",
+   "type": "character",
+   "aliases": [
+    "Lieutenant Kirtar"
+   ],
+   "description": "Participated in pit fights; destroyed the Northern Order's citadel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pianna",
+   "type": "character",
+   "aliases": [
+    "Captain Pianna"
+   ],
+   "description": "Order leader who died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose coming marks a later time.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Order sought out and destroyed dangerous artifacts such as the Mirari, repeatedly conflicting with Kamahl.",
+   "participants": [
+    "The Order",
+    "Mirari",
+    "Kamahl"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Order repeatedly conflicted with Kamahl"
+  },
+  {
+   "summary": "Eesha allied with the Cabal to destroy the Mirari.",
+   "participants": [
+    "Eesha",
+    "Cabal",
+    "Mirari"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Eesha allied with the Cabal to destroy the Mirari"
+  },
+  {
+   "summary": "Kirtar destroyed the Northern Order's citadel, killing much of its leadership including Pianna and Teroh; the Northern Order largely fell apart.",
+   "participants": [
+    "Kirtar",
+    "Pianna",
+    "Teroh",
+    "The Order"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Northern Order largely fell apart"
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Order",
+   "relation": "enemy",
+   "target": "Kamahl",
+   "note": "repeated conflict",
+   "paragraph": 2,
+   "quote": "the Order repeatedly conflicted with Kamahl"
+  },
+  {
+   "source": "Eesha",
+   "relation": "leader_of",
+   "target": "The Order",
+   "note": "Northern Order commander",
+   "paragraph": 4,
+   "quote": "under the leadership of Commander Eesha"
+  },
+  {
+   "source": "Eesha",
+   "relation": "ally",
+   "target": "Cabal",
+   "note": "allied to destroy the Mirari",
+   "paragraph": 3,
+   "quote": "Eesha allied with the Cabal to destroy the Mirari"
+  }
+ ],
+ "rejected": []
+}

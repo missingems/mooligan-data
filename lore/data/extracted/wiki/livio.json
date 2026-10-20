@@ -1,0 +1,97 @@
+{
+ "page": "wiki/livio",
+ "url": "https://mtg.wiki/page/Livio",
+ "title": "Livio",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:54Z",
+ "storyline": "Fiora",
+ "entities": [
+  {
+   "name": "Livio",
+   "type": "character",
+   "aliases": [
+    "Livio, Oathsworn Sentinel"
+   ],
+   "description": "A knight from Fiora who renounced his noble family to defend the common folk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of political games, deception and treachery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [
+    "Queen Marchesa"
+   ],
+   "description": "The queen who views Livio as an amusing wild card and now wants to talk with him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High City of Paliano"
+   ],
+   "description": "The High City where Livio defeats cutthroats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Livio's father",
+   "type": "character",
+   "aliases": [],
+   "description": "A noble who ordered a village destroyed to spite another noble.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Livio watched his father order a village destroyed to spite another noble, then tore off the family crest and renounced his family name and title.",
+   "participants": [
+    "Livio",
+    "Livio's father"
+   ],
+   "location": "Fiora",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He ripped the family crest off his doublet"
+  },
+  {
+   "summary": "Livio dispatched some of the queen's men who were shaking down a local merchant, so Marchesa wants a talk.",
+   "participants": [
+    "Livio",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he dispatched some of the queen's men who were shaking down a local merchant"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Livio",
+   "relation": "family",
+   "target": "Livio's father",
+   "note": "Livio is the only heir to his father's noble house but renounced it.",
+   "paragraph": 1,
+   "quote": "The only heir to a noble house"
+  },
+  {
+   "source": "Marchesa",
+   "relation": "enemy",
+   "target": "Livio",
+   "note": "She views him as an amusing wild card and now wants a talk.",
+   "paragraph": 2,
+   "quote": "Now, Marchesa thinks she and Livio should have a little talk."
+  }
+ ],
+ "rejected": []
+}

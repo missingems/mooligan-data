@@ -1,0 +1,139 @@
+{
+ "page": "wiki/chunth",
+ "url": "https://mtg.wiki/page/Chunth",
+ "title": "Chunth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Chunth",
+   "type": "character",
+   "aliases": [
+    "Elder Chunth",
+    "The First One"
+   ],
+   "description": "Elder troll of Mirrodin, The First One, leader of the trolls who recorded history on the Tree of Tales; hated the metallic world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Warrior of the Tangle, the likely target of the leveler attack, kidnapped by the trolls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Being who brought Chunth to Mirrodin and who will be Glissa's greatest obstacle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Metallic plane that Chunth detested; revealed to be hollow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tree of Tales",
+   "type": "location",
+   "aliases": [],
+   "description": "Tree within the Tangle where trolls record history.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Tangle",
+   "type": "location",
+   "aliases": [
+    "Tangle"
+   ],
+   "description": "Forest region of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vedalken",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction that produced the serum from blinkmoths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Levelers",
+   "type": "faction",
+   "aliases": [
+    "leveler"
+   ],
+   "description": "Attackers who kill everyone at their targets' homes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chunth, a troll brought to Mirrodin by Memnarch, meets Glissa.",
+   "participants": [
+    "Chunth",
+    "Glissa",
+    "Memnarch"
+   ],
+   "location": "The Tangle",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Chunth hailed from another, unnamed world and was brought to Mirrodin by Memnarch ."
+  },
+  {
+   "summary": "Chunth tells Glissa about the levelers and that her flares show ancestral memories from another world.",
+   "participants": [
+    "Chunth",
+    "Glissa"
+   ],
+   "location": "The Tangle",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Chunth also revealed that her flares showed her ancestral memories from another world"
+  },
+  {
+   "summary": "A renegade troll attacks Glissa; Chunth saves her but is mortally wounded, and the renegade steals her serum.",
+   "participants": [
+    "Chunth",
+    "Glissa"
+   ],
+   "location": "The Tangle",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Chunth managed to save Glissa but was mortally wounded in the process."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chunth",
+   "relation": "leader_of",
+   "target": "Tree of Tales",
+   "note": "He led the trolls who recorded history there.",
+   "paragraph": 0,
+   "quote": "He was the leader of the trolls who recorded the history on the Tree of Tales within the Tangle ."
+  },
+  {
+   "source": "Memnarch",
+   "relation": "other",
+   "target": "Chunth",
+   "note": "Memnarch brought Chunth to Mirrodin.",
+   "paragraph": 1,
+   "quote": "was brought to Mirrodin by Memnarch ."
+  },
+  {
+   "source": "Chunth",
+   "relation": "ally",
+   "target": "Glissa",
+   "note": "He saved her and died.",
+   "paragraph": 3,
+   "quote": "Chunth managed to save Glissa but was mortally wounded in the process."
+  }
+ ],
+ "rejected": []
+}

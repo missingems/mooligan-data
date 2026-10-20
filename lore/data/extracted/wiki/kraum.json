@@ -1,0 +1,92 @@
+{
+ "page": "wiki/kraum",
+ "url": "https://mtg.wiki/page/Kraum",
+ "title": "Kraum",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:09Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kraum",
+   "type": "creature",
+   "aliases": [
+    "Kraum, Ludevic's Opus"
+   ],
+   "description": "A legendary zombie horror of Innistrad with two heads, flying on galvanic membranes, created by Ludevic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ludevic",
+   "type": "character",
+   "aliases": [
+    "Ludevic of Ulm"
+   ],
+   "description": "Infamous necro-alchemist who created Kraum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf Cecani",
+   "type": "character",
+   "aliases": [],
+   "description": "Ludevic's apprentice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selhoff",
+   "type": "location",
+   "aliases": [],
+   "description": "Seaside town above whose rooftops Kraum flies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Kraum was sent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Kraum.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ludevic of Ulm sent Kraum to Thunder Junction to make sure Geralf Cecani got into the right kind of trouble.",
+   "participants": [
+    "Ludevic",
+    "Kraum",
+    "Geralf Cecani"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "sent Kraum to Thunder Junction to make sure Geralf Cecani got into the right kind of trouble"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ludevic",
+   "relation": "created",
+   "target": "Kraum",
+   "note": "Kraum was created by Ludevic.",
+   "paragraph": 1,
+   "quote": "Kraum was created by the infamous necro-alchemist Ludevic"
+  },
+  {
+   "source": "Ludevic",
+   "relation": "mentor_of",
+   "target": "Geralf Cecani",
+   "note": "Geralf is his apprentice.",
+   "paragraph": 2,
+   "quote": "Concerned for his apprentice's welfare"
+  }
+ ],
+ "rejected": []
+}

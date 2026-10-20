@@ -1,0 +1,112 @@
+{
+ "page": "wiki/radomir",
+ "url": "https://mtg.wiki/page/Radomir",
+ "title": "Radomir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:52Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Radomir",
+   "type": "character",
+   "aliases": [],
+   "description": "A Boros legionnaire and guildmage from Sunhome on Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ambroz Benakov",
+   "type": "character",
+   "aliases": [
+    "Pontiff Benakov"
+   ],
+   "description": "A pontiff in the area who was secretly responsible for kidnapping and extortion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tanek",
+   "type": "character",
+   "aliases": [],
+   "description": "A thief who stole Benakov's coin purse and was recruited by Radomir as a spy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "The Boros military guild to which Radomir belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunhome",
+   "type": "location",
+   "aliases": [],
+   "description": "The Boros fortress from which Radomir hails.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Radomir serves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Radomir, assigned to watch rising tensions, sees the thief Tanek trip the pontiff and steal his coin purse, and pursues him.",
+   "participants": [
+    "Radomir",
+    "Tanek",
+    "Ambroz Benakov"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Radomir witnessed the thief Tanek trip the pontiff up"
+  },
+  {
+   "summary": "Tanek reveals that Pontiff Benakov was responsible for the kidnapping and extortion; Radomir recruits Tanek as a spy and pays him two gold.",
+   "participants": [
+    "Radomir",
+    "Tanek",
+    "Ambroz Benakov"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Radomir recruited Tanek as a spy"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Radomir",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "He is a Boros legionnaire.",
+   "paragraph": 0,
+   "quote": "Radomir is a Boros legionnaire and guildmage"
+  },
+  {
+   "source": "Tanek",
+   "relation": "serves",
+   "target": "Radomir",
+   "note": "Recruited as Radomir's spy.",
+   "paragraph": 1,
+   "quote": "Radomir recruited Tanek as a spy"
+  },
+  {
+   "source": "Radomir",
+   "relation": "enemy",
+   "target": "Ambroz Benakov",
+   "note": "Radomir learned Benakov was behind the extortion.",
+   "paragraph": 1,
+   "quote": "it was none other than Pontiff Benakov himself who was responsible"
+  }
+ ],
+ "rejected": []
+}

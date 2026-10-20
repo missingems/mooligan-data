@@ -1,0 +1,195 @@
+{
+ "page": "wiki/codie",
+ "url": "https://mtg.wiki/page/Codie",
+ "title": "Codie",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:24Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Codex Vocifera",
+   "type": "artifact",
+   "aliases": [
+    "Codie"
+   ],
+   "description": "Ancient animated, self-aware codex of the Strixhaven Biblioplex, nicknamed Codie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [
+    "Strixhaven Biblioplex"
+   ],
+   "description": "Library of Strixhaven University.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zarida Mincely",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of the Codex Vocifera.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zimone Wola",
+   "type": "character",
+   "aliases": [],
+   "description": "Student whom Codie informed of the fate of her grandmother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nimiroti Wola",
+   "type": "character",
+   "aliases": [],
+   "description": "Zimone's grandmother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "alternate Ral Zarek"
+   ],
+   "description": "Alternate version who Codie assisted in finding a Blood Age tome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaults of Turrau",
+   "type": "location",
+   "aliases": [],
+   "description": "Place storing a Blood Age tome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theorist",
+   "type": "character",
+   "aliases": [],
+   "description": "Echoverse figure who restricts access to the Echoverse Codie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hexhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Echoverse location where an alternate Codie exists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorehold",
+   "type": "faction",
+   "aliases": [],
+   "description": "College whose scholars speculated tomes could animate themselves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [],
+   "description": "College whose scholars speculated tomes could animate themselves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lorehold and Silverquill scholars speculate that a tome could serve as a vessel for its own animative spellcasting.",
+   "participants": [
+    "Lorehold",
+    "Silverquill"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lorehold and Silverquill scholars speculated that, under the proper conditions, a tome could serve as a vessel for its own animative spellcasting"
+  },
+  {
+   "summary": "Zarida Mincely authors the Codex Vocifera.",
+   "participants": [
+    "Zarida Mincely",
+    "Codex Vocifera"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Codex Vocifera was authored by Zarida Mincely between 91 and 249:2 MA."
+  },
+  {
+   "summary": "The codex self-actualizes after being checked out by students and transported through time.",
+   "participants": [
+    "Codex Vocifera"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "before self-actualizing sometime after 557:8 MA"
+  },
+  {
+   "summary": "Codie informs Zimone Wola about the fate of her grandmother.",
+   "participants": [
+    "Codex Vocifera",
+    "Zimone Wola",
+    "Nimiroti Wola"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Codie played a key role in informing Zimone Wola about the fate of her grandmother"
+  },
+  {
+   "summary": "Codie assists an alternate Ral Zarek in locating a Blood Age tome in the Vaults of Turrau.",
+   "participants": [
+    "Codex Vocifera",
+    "Ral Zarek",
+    "Vaults of Turrau"
+   ],
+   "location": "Vaults of Turrau",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "It later assisted an alternate Ral Zarek in locating a Blood Age tome stored in the Vaults of Turrau."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zarida Mincely",
+   "relation": "created",
+   "target": "Codex Vocifera",
+   "note": "Authored it.",
+   "paragraph": 3,
+   "quote": "The Codex Vocifera was authored by Zarida Mincely between 91 and 249:2 MA."
+  },
+  {
+   "source": "Codex Vocifera",
+   "relation": "located_in",
+   "target": "Biblioplex",
+   "note": "Associated with and logged in the Biblioplex.",
+   "paragraph": 0,
+   "quote": "is an animated codex associated with the Biblioplex of Strixhaven University on Arcavios"
+  },
+  {
+   "source": "Codex Vocifera",
+   "relation": "ally",
+   "target": "Zimone Wola",
+   "note": "Informed her of her grandmother's fate.",
+   "paragraph": 4,
+   "quote": "Codie played a key role in informing Zimone Wola about the fate of her grandmother"
+  }
+ ],
+ "rejected": []
+}

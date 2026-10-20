@@ -1,0 +1,202 @@
+{
+ "page": "stories/black-rose-2014-05-21",
+ "url": "https://magic.wizards.com/en/news/magic-story/black-rose-2014-05-21",
+ "title": "The Black Rose",
+ "story_date": "2014-05-21",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:30:38Z",
+ "storyline": "Conspiracy",
+ "entities": [
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [
+    "the Black Rose"
+   ],
+   "description": "A poison-ringed crime boss of Paliano whose network of spies and rogues controls much of the High City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ervos Trax",
+   "type": "character",
+   "aliases": [
+    "Ervos"
+   ],
+   "description": "A charming criminal boss of the lowlands, Marchesa's longtime business partner, who poisons himself to deny her his death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pietro Lokosh",
+   "type": "character",
+   "aliases": [],
+   "description": "A sub-lieutenant in Marchesa's organization whom Ervos names as a target for extortion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grenzo",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure with whom Marchesa has arrangements, said by Ervos to guard the sewers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "the High City",
+    "the City"
+   ],
+   "description": "The High City of Fiora where Marchesa's mansion stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Paliano stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talon",
+   "type": "location",
+   "aliases": [],
+   "description": "A city and its docks at the edge of Ervos's lowland criminal empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thousand Steps",
+   "type": "location",
+   "aliases": [],
+   "description": "The long stair from the lowlands up into the High City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [
+    "Custodi guards"
+   ],
+   "description": "Guards of the city whom Ervos considers recruiting.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marchesa entertains her longtime business partner Ervos Trax at dinner in her mansion in Paliano.",
+   "participants": [
+    "Marchesa",
+    "Ervos Trax",
+    "Paliano"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Marchesa was entertaining a guest and business partner from the lowlands, Ervos Trax."
+  },
+  {
+   "summary": "Ervos announces over dinner that he is going to have Marchesa killed, because his network is moving into the High City and she is his only obstacle.",
+   "participants": [
+    "Ervos Trax",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "I think I am going to have you killed"
+  },
+  {
+   "summary": "Ervos walks Marchesa through why a direct attack or poisoning would fail, noting her zombie guards, escape routes and food precautions.",
+   "participants": [
+    "Ervos Trax",
+    "Marchesa",
+    "Grenzo"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 26,
+   "quote": "So, killing you through your food would be out of the question."
+  },
+  {
+   "summary": "Ervos explains the plan to corrupt a trusted lieutenant such as Pietro Lokosh, and Marchesa names him before Ervos does.",
+   "participants": [
+    "Ervos Trax",
+    "Marchesa",
+    "Pietro Lokosh"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 33,
+   "quote": "Pietro Lokosh?"
+  },
+  {
+   "summary": "Ervos, coughing blood, reveals that he has poisoned himself because one of them would have to die.",
+   "participants": [
+    "Ervos Trax",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 39,
+   "quote": "So instead of letting you kill me, I would poison myself"
+  },
+  {
+   "summary": "Marchesa admits she planned to have Ervos killed in two nights and that she will now be blamed; she praises his play.",
+   "participants": [
+    "Marchesa",
+    "Ervos Trax"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 40,
+   "quote": "I had planned to have you killed at your secret penthouse in your sleep two nights from now."
+  },
+  {
+   "summary": "Ervos dies slumped into his plate, and Marchesa leaves to summon her butler, who has already dug a hole for the body.",
+   "participants": [
+    "Ervos Trax",
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 42,
+   "quote": "then slumped forward, face into his plate, dead."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marchesa",
+   "relation": "ally",
+   "target": "Ervos Trax",
+   "note": "Longstanding business partners who are also rivals.",
+   "paragraph": 2,
+   "quote": "Marchesa and Ervos were longstanding business partners."
+  },
+  {
+   "source": "Ervos Trax",
+   "relation": "enemy",
+   "target": "Marchesa",
+   "note": "Ervos plans her murder to take over the High City.",
+   "paragraph": 15,
+   "quote": "You, Dear Friend, are my only obstacle."
+  },
+  {
+   "source": "Pietro Lokosh",
+   "relation": "serves",
+   "target": "Marchesa",
+   "note": "Pietro is one of Marchesa's sub-lieutenants.",
+   "paragraph": 35,
+   "quote": "As one of your sub-lieutenants, Pietro Lokosh would be the sort of person I would use."
+  },
+  {
+   "source": "Marchesa",
+   "relation": "located_in",
+   "target": "Paliano",
+   "note": "Her mansion is among the elite homes of the High City.",
+   "paragraph": 1,
+   "quote": "Situated among the elite of Paliano, the High City"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,109 @@
+{
+ "page": "wiki/zulaport",
+ "url": "https://mtg.wiki/page/Zulaport",
+ "title": "Zulaport",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zulaport",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal city on Beyeen, rebuilt after the Eldrazi tsunami as a floating settlement.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beyeen",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in Ondu on Zendikar where Zulaport lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Zulaport is located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Indorel",
+   "type": "character",
+   "aliases": [],
+   "description": "Powerful vampire who controlled Zulaport's economy and still lurks in its shadows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient beings whose awakening brought a tsunami that devastated Zulaport.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nearby communities that helped rebuild Zulaport as a floating settlement.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eldrazi awaken and a massive tsunami swallows much of Zulaport.",
+   "participants": [
+    "Eldrazi",
+    "Zulaport"
+   ],
+   "location": "Zulaport",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "devastation struck the city in the form of a massive tsunami that swallowed much of Zulaport"
+  },
+  {
+   "summary": "Merfolk from nearby communities help rebuild Zulaport as a floating settlement.",
+   "participants": [
+    "Merfolk",
+    "Zulaport"
+   ],
+   "location": "Zulaport",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "merfolk from nearby communities helped rebuild Zulaport as a floating settlement"
+  },
+  {
+   "summary": "Indorel's stranglehold on Zulaport's commerce is broken.",
+   "participants": [
+    "Indorel",
+    "Zulaport"
+   ],
+   "location": "Zulaport",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "her stranglehold on its commerce has been broken"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Indorel",
+   "relation": "other",
+   "target": "Zulaport",
+   "note": "Controlled its economy through thugs before the Eldrazi.",
+   "paragraph": 1,
+   "quote": "Its thriving economy was controlled by the powerful vampire Indorel"
+  },
+  {
+   "source": "Zulaport",
+   "relation": "located_in",
+   "target": "Beyeen",
+   "note": "Coastal city on the island.",
+   "paragraph": 0,
+   "quote": "Zulaport is a coastal city on the island of Beyeen"
+  }
+ ],
+ "rejected": []
+}

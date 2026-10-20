@@ -1,0 +1,136 @@
+{
+ "page": "wiki/hooraree",
+ "url": "https://mtg.wiki/page/Hooraree",
+ "title": "Hooraree",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hooraree",
+   "type": "faction",
+   "aliases": [],
+   "description": "Oldest of the four cat warrior tribes of the Sukurvian Desert, keepers of cat warrior lore.",
+   "presence": "appears"
+  },
+  {
+   "name": "Efravans",
+   "type": "faction",
+   "aliases": [
+    "Efrava"
+   ],
+   "description": "Cat warrior tribe, allies of the Hooraree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sulaki",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cat warrior tribe that exchanged cubs with the Hooraree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited the Hooraree in 3336 AR and warned them of Johan's War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terrent Amese",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the cat warriors, believed by the Hooraree to be a god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarwood elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who claimed the Scarwood jungle and killed intruders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War of the emperor from Tirras against the cat warriors and humans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [
+    "the emperor from Tirras"
+   ],
+   "description": "Emperor from Tirras who attacked.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jedit Ojanen visits the Hooraree in 3336 AR and sees they have outgrown their oasis.",
+   "participants": [
+    "Jedit Ojanen",
+    "Hooraree"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "When Jedit Ojanen visited them in 3336 AR , he realized that the Hooraree had outgrown their oasis"
+  },
+  {
+   "summary": "Young Hooraree who tried to resettle the Scarwood disappeared, probably killed by the Scarwood elves.",
+   "participants": [
+    "Hooraree",
+    "Scarwood elves"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "They were most likely killed by the Scarwood elves"
+  },
+  {
+   "summary": "Once the menace is clear, the Hooraree join the Efravans and humans against the emperor from Tirras.",
+   "participants": [
+    "Hooraree",
+    "Efravans",
+    "Johan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "they joined the Efravans and their human allies in the battle against the emperor from Tirras"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hooraree",
+   "relation": "ally",
+   "target": "Efravans",
+   "note": "joined them against Johan",
+   "paragraph": 6,
+   "quote": "they joined the Efravans and their human allies in the battle"
+  },
+  {
+   "source": "Hooraree",
+   "relation": "enemy",
+   "target": "Scarwood elves",
+   "note": "elves killed the settlers",
+   "paragraph": 5,
+   "quote": "They were most likely killed by the Scarwood elves"
+  },
+  {
+   "source": "Terrent Amese",
+   "relation": "created",
+   "target": "Hooraree",
+   "note": "their creator",
+   "paragraph": 2,
+   "quote": "golden age of Terrent Amese , their creator, whom they believe to be a god"
+  }
+ ],
+ "rejected": []
+}

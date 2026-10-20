@@ -1,0 +1,196 @@
+{
+ "page": "wiki/baankis",
+ "url": "https://mtg.wiki/page/Baankis",
+ "title": "Baankis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:09Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Baankis",
+   "type": "character",
+   "aliases": [
+    "Officer Baankis",
+    "Bunkus",
+    "Sergeant Baankis"
+   ],
+   "description": "A soldier of the Otarian Order under Major Teroh, killed by Chainer and the first absorbed into his dementia space.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otarian Order",
+   "type": "faction",
+   "aliases": [
+    "the Order"
+   ],
+   "description": "The military order on Dominaria that Baankis served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Otarian Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Major Teroh",
+   "type": "character",
+   "aliases": [
+    "Teroh"
+   ],
+   "description": "Baankis's commanding officer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "A man who killed Baankis and absorbed him into his dementia space.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dementia space",
+   "type": "concept",
+   "aliases": [],
+   "description": "Chainer's realm into which Baankis was absorbed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "City outside which Baankis waited for Chainer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Chainer discovered and Baankis's squad tried to take.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Roup's tavern",
+   "type": "location",
+   "aliases": [],
+   "description": "Tavern Chainer fled to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skellum",
+   "type": "character",
+   "aliases": [],
+   "description": "Chainer's master, killed in the pit fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fulla",
+   "type": "character",
+   "aliases": [
+    "Braids"
+   ],
+   "description": "Fighter with Skellum in the pit match, defeated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Justicar Gobal",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of Teroh's pit fighting team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yewma",
+   "type": "character",
+   "aliases": [],
+   "description": "Druid on Teroh's pit fighting team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Arranged the match to ensure Skellum's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Chainer's dementia assault.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baankis, Teroh and a Nantuko tried to take the Mirari but Chainer fled; Skellum came to take his pupil away.",
+   "participants": [
+    "Baankis",
+    "Major Teroh",
+    "Chainer",
+    "Skellum"
+   ],
+   "location": "Cabal City",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he tried to take the artifact, but Chainer managed to flee to Roup's tavern"
+  },
+  {
+   "summary": "Baankis fought in Teroh's pit team against Skellum and Fulla; the Order team won and Skellum was killed.",
+   "participants": [
+    "Baankis",
+    "Major Teroh",
+    "Skellum",
+    "Fulla",
+    "Justicar Gobal",
+    "Yewma"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Order team was victorious, with Braids defeated and Skellum killed"
+  },
+  {
+   "summary": "Chainer choked the injured Baankis to death with a chain and took him into his dementia space.",
+   "participants": [
+    "Chainer",
+    "Baankis"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Chainer summoned one of his chains to wrap around the Sergeant's neck and slowly choked him to death."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chainer",
+   "relation": "killed",
+   "target": "Baankis",
+   "note": "Choked him to death.",
+   "paragraph": 4,
+   "quote": "slowly choked him to death"
+  },
+  {
+   "source": "Baankis",
+   "relation": "serves",
+   "target": "Major Teroh",
+   "note": "Under his command.",
+   "paragraph": 0,
+   "quote": "who stood under the command of Major Teroh"
+  },
+  {
+   "source": "Baankis",
+   "relation": "member_of",
+   "target": "Otarian Order",
+   "note": "Soldier.",
+   "paragraph": 0,
+   "quote": "Officer Baankis was a soldier in the Otarian Order on Dominaria"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,75 @@
+{
+ "page": "wiki/coppercoats",
+ "url": "https://mtg.wiki/page/Coppercoats",
+ "title": "Coppercoats",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:37Z",
+ "storyline": "Ikoria",
+ "entities": [
+  {
+   "name": "Coppercoats",
+   "type": "faction",
+   "aliases": [
+    "Drannith Defense Force"
+   ],
+   "description": "Drannith Defense Force, the best-resourced military of Ikoria: militia, defense mages and magistrates led by a General.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "Walled city on Ikoria defended by the Coppercoats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Drannith lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcane Corps",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mages of the Coppercoats who fight monsters with spells and maintain the crystal alarm system.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Drannith's Coppercoats defend the city by beating monsters back from within its walls.",
+   "participants": [
+    "Coppercoats",
+    "Drannith"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "they faced monstrous threats head-on, beating them back from within their walls"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Coppercoats",
+   "relation": "located_in",
+   "target": "Drannith",
+   "note": "Defense force of Drannith.",
+   "paragraph": 0,
+   "quote": "The Drannith Defense Force , informally called the Coppercoats"
+  },
+  {
+   "source": "Arcane Corps",
+   "relation": "member_of",
+   "target": "Coppercoats",
+   "note": "Uniformed defense mages within the militia.",
+   "paragraph": 1,
+   "quote": "the mages of the Arcane Corps engaged monsters directly"
+  }
+ ],
+ "rejected": []
+}

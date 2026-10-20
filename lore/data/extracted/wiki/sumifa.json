@@ -1,0 +1,207 @@
+{
+ "page": "wiki/sumifa",
+ "url": "https://mtg.wiki/page/Sumifa",
+ "title": "Sumifa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:22Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Almaaz on the Terisian Isles of Dominaria; the oldest city of Terisiare still standing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Sumifa",
+   "type": "location",
+   "aliases": [
+    "first city of Sumifa"
+   ],
+   "description": "The first city, buried by a sandstorm in 35 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom whose capital is Sumifa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caelus Nin",
+   "type": "deity",
+   "aliases": [
+    "God of Time"
+   ],
+   "description": "Patron God of Sumifa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother in the Brothers' War whom the songmages joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Samor the Collector",
+   "type": "character",
+   "aliases": [
+    "Samor"
+   ],
+   "description": "Mishra's slave who created a secret Circle of mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Porros the Raptor",
+   "type": "character",
+   "aliases": [
+    "Porros"
+   ],
+   "description": "Sumifan royal heir cursed into a sand wraith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Circle",
+   "type": "faction",
+   "aliases": [],
+   "description": "Samor's secret circle of mages shielding Sumifa and Almaaz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Songmages",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sumifan mages who joined Mishra's side.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ninnites",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers of the Raptor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of Sumifa",
+   "type": "event",
+   "aliases": [],
+   "description": "Burial of the old city in 35 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the songmages joined Mishra.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Songmages join Mishra's side to avoid ruination of their homeland.",
+   "participants": [
+    "Songmages",
+    "Mishra"
+   ],
+   "location": "Old Sumifa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the songmages of Sumifa joined the war on the side of Mishra"
+  },
+  {
+   "summary": "Samor creates a secret Circle to shield Almaaz; Porros tries to seize it.",
+   "participants": [
+    "Samor the Collector",
+    "Porros the Raptor",
+    "Circle"
+   ],
+   "location": "Old Sumifa",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mishra's slave Samor the Collector, created a secret Circle of mages himself."
+  },
+  {
+   "summary": "Porros slashes Samor's throat; dying Samor curses him into a sand wraith.",
+   "participants": [
+    "Porros the Raptor",
+    "Samor the Collector"
+   ],
+   "location": "Old Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "a dying Samor cursed Porros into becoming a taloned sand wraith."
+  },
+  {
+   "summary": "Porros summons a desert twister burying Sumifa.",
+   "participants": [
+    "Porros the Raptor",
+    "Old Sumifa"
+   ],
+   "location": "Old Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Porros summoned a massive desert twister over the city, burying it under tons of desert sand."
+  },
+  {
+   "summary": "A new Sumifa is founded around 1300 AR.",
+   "participants": [
+    "Sumifa"
+   ],
+   "location": "Almaaz",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Around 1300 AR, a new city of the same name was built not far from the first city's site."
+  },
+  {
+   "summary": "Ruins of ancient Sumifa are excavated around 3050 AR.",
+   "participants": [
+    "Old Sumifa"
+   ],
+   "location": "Almaaz",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "an excavation site would bring to light the ruins of ancient Sumifa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Porros the Raptor",
+   "relation": "killed",
+   "target": "Samor the Collector",
+   "note": "slashed his throat",
+   "paragraph": 4,
+   "quote": "slashed his throat with a piece of broken mirror"
+  },
+  {
+   "source": "Samor the Collector",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "slave",
+   "paragraph": 3,
+   "quote": "Mishra's slave Samor the Collector"
+  },
+  {
+   "source": "Sumifa",
+   "relation": "located_in",
+   "target": "Almaaz",
+   "note": "capital",
+   "paragraph": 0,
+   "quote": "Sumifa is the capital of Almaaz"
+  },
+  {
+   "source": "Songmages",
+   "relation": "ally",
+   "target": "Mishra",
+   "note": "sided with him",
+   "paragraph": 2,
+   "quote": "joined the war on the side of Mishra"
+  }
+ ],
+ "rejected": []
+}

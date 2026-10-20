@@ -1,0 +1,185 @@
+{
+ "page": "wiki/jerren",
+ "url": "https://mtg.wiki/page/Jerren",
+ "title": "Jerren",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:56Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Bishop Jerren",
+   "type": "character",
+   "aliases": [
+    "Jerren"
+   ],
+   "description": "Human cleric of Innistrad, bishop of Sigarda and secret Skirsdag cultist who abused orphans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heron's Grace Orphanage",
+   "type": "location",
+   "aliases": [],
+   "description": "Orphanage where Jerren abused the boys in his care.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tim",
+   "type": "character",
+   "aliases": [],
+   "description": "Orphan who attacked Jerren after being turned into a werewolf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sigarda",
+   "type": "deity",
+   "aliases": [],
+   "description": "Angel whose church Jerren served as bishop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lunarch council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Council Jerren partly sat on and then handed to Ormendahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirsdag Cult",
+   "type": "faction",
+   "aliases": [],
+   "description": "Demon-worshipping cult Jerren secretly belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon whose restoration Jerren dedicated his life to; defeated by Liliana Vess.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who defeated Griselbrand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon who told Jerren to dedicate the cult to him and took the Lunarch Council's reins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Corrupted Ormendahl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Thraben",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Jerren and the Council were killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Travails",
+   "type": "event",
+   "aliases": [
+    "Travails"
+   ],
+   "description": "Period before which Jerren served Griselbrand's restoration.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tim, an orphan turned werewolf, attacks Bishop Jerren.",
+   "participants": [
+    "Tim",
+    "Bishop Jerren"
+   ],
+   "location": "Heron's Grace Orphanage",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was attacked by Tim"
+  },
+  {
+   "summary": "Liliana Vess defeats Griselbrand and Jerren grows despondent.",
+   "participants": [
+    "Liliana Vess",
+    "Griselbrand",
+    "Bishop Jerren"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "When Liliana Vess defeated Griselbrand, Jerren grew despondent and suggestible"
+  },
+  {
+   "summary": "Ormendahl instructs Jerren to dedicate the cult to him, and Jerren obliges.",
+   "participants": [
+    "Ormendahl",
+    "Bishop Jerren"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The cultist obliged"
+  },
+  {
+   "summary": "Jerren steps down from the Lunarch Council, handing it to Ormendahl.",
+   "participants": [
+    "Bishop Jerren",
+    "Ormendahl"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jerren stepped down from his position on the Lunarch Council"
+  },
+  {
+   "summary": "Jerren is killed along with the rest of the Council at the Battle of Thraben.",
+   "participants": [
+    "Bishop Jerren"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jerren was killed along with the rest of the Council during the Battle of Thraben"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bishop Jerren",
+   "relation": "member_of",
+   "target": "Skirsdag Cult",
+   "note": "Secret member.",
+   "paragraph": 2,
+   "quote": "he was also a secret member of the demon"
+  },
+  {
+   "source": "Bishop Jerren",
+   "relation": "serves",
+   "target": "Ormendahl",
+   "note": "Dedicated the cult to him.",
+   "paragraph": 2,
+   "quote": "instructing Jerren to dedicate the cult to him instead"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Griselbrand",
+   "note": "She defeated him.",
+   "paragraph": 2,
+   "quote": "When Liliana Vess defeated Griselbrand"
+  }
+ ],
+ "rejected": []
+}

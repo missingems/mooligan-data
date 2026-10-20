@@ -1,0 +1,112 @@
+{
+ "page": "wiki/tenihas",
+ "url": "https://mtg.wiki/page/Tenihas",
+ "title": "Tenihas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:14Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Tenihas",
+   "type": "character",
+   "aliases": [
+    "Bloodchief Tenihas"
+   ],
+   "description": "Bloodchief of House Ghet in Malakir, mentor of Anowon, betrayed and killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Tenihas's heir, the first son of House Ghet, accused of killing him.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Ghet",
+   "type": "faction",
+   "aliases": [],
+   "description": "The vampire house led by Tenihas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malakir",
+   "type": "location",
+   "aliases": [],
+   "description": "Vampire homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Famished gods",
+   "type": "deity",
+   "aliases": [],
+   "description": "Mysterious gods vampires anciently served per ancient texts.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tenihas mentored Anowon, who was fascinated by ancient texts on vampires' servitude to famished gods; Tenihas forbade exploring them, breeding animosity.",
+   "participants": [
+    "Tenihas",
+    "Anowon",
+    "Famished gods"
+   ],
+   "location": "Malakir",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tenihas did not want Anowon to explore these ancient texts"
+  },
+  {
+   "summary": "Tenihas was brutally murdered in his bedroom, his retinue slaughtered; a surviving witness accused Anowon.",
+   "participants": [
+    "Tenihas",
+    "Anowon"
+   ],
+   "location": "Malakir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "One night, Bloodchief Tenihas was brutally murdered in his bedroom."
+  },
+  {
+   "summary": "Anowon did not return home for many decades.",
+   "participants": [
+    "Anowon"
+   ],
+   "location": "Malakir",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Anowon did not return to his homeland for many decades"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anowon",
+   "relation": "killed",
+   "target": "Tenihas",
+   "note": "Accused of killing him in a rage.",
+   "paragraph": 3,
+   "quote": "The only surviving witness accused Anowon of killing Tenihas in a fit of rage before vanishing."
+  },
+  {
+   "source": "Tenihas",
+   "relation": "mentor_of",
+   "target": "Anowon",
+   "note": "Mentored and guided him.",
+   "paragraph": 2,
+   "quote": "Tenihas mentored Anowon"
+  },
+  {
+   "source": "Tenihas",
+   "relation": "leader_of",
+   "target": "House Ghet",
+   "note": "Bloodchief.",
+   "paragraph": 0,
+   "quote": "Tenihas was the Bloodchief of House Ghet in Malakir"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,220 @@
+{
+ "page": "wiki/undercity-ravnica",
+ "url": "https://mtg.wiki/page/Undercity_%28Ravnica%29",
+ "title": "Undercity (Ravnica)",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:40:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Undercity",
+   "type": "location",
+   "aliases": [
+    "the Undercity"
+   ],
+   "description": "The dark lower levels of the City of Ravnica beneath the Tenth District, a labyrinth of ruins, tunnels and communities that shelters outcasts and guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [
+    "City of Ravnica"
+   ],
+   "description": "The city-plane built ever upward over countless generations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "The district of Ravnica above which the Undercity sprawls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "The secretive guild whose spies move through the Undercity and whose guildhall is Duskmantle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "The decay-harvesting guild whose guildhall is Korozda, with kraul and Erstwhile allies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [
+    "Rakdos"
+   ],
+   "description": "The riotous guild whose stronghold is Rix Maadi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "The mutagenic guild whose researchers use the flooded depths and zonots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmantle",
+   "type": "location",
+   "aliases": [],
+   "description": "The secretive guildhall of House Dimir, protected by memory wards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nightveil",
+   "type": "location",
+   "aliases": [],
+   "description": "A network of caves beneath the Tenth District where high-ranking Dimir operatives keep hidden estates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Korozda",
+   "type": "location",
+   "aliases": [
+    "the Maze of Decay"
+   ],
+   "description": "The underground guildhall of the Golgari Swarm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Svogthos",
+   "type": "location",
+   "aliases": [
+    "the Hollow Tomb"
+   ],
+   "description": "The Golgari's former guildhall, an ancient Orzhov cathedral, once the lair of the lich parun Svogthir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "A lich parun who reigned from Svogthos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rix Maadi",
+   "type": "location",
+   "aliases": [
+    "the Dungeon Palace"
+   ],
+   "description": "The cavernous stronghold of the Cult of Rakdos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [
+    "demon lord"
+   ],
+   "description": "The demon lord of the Cult of Rakdos who takes displeasing cultists to the Jester's Crypt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon whose victims' statues fill the Statuary; character is also a planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Invasion Tree",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A Phyrexian tree whose spreading branches tore sections of the Undercity open and thrust them skyward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which the Undercity was torn open.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Risen Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "The sections of the Undercity raised to the surface and exposed to sunlight.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the New Phyrexian Invasion, sections of the Undercity are torn open and thrust skyward by the Invasion Tree's branches, exposing buried terrain to sunlight.",
+   "participants": [
+    "Undercity",
+    "Invasion Tree",
+    "New Phyrexian Invasion",
+    "Risen Undercity"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 21,
+   "quote": "massive sections of its hidden tunnels and ruins were torn open and thrust skyward by the spreading branches of the Invasion Tree"
+  },
+  {
+   "summary": "Exposure to sunlight gives rise to new species and plant mutations in the Risen Undercity, studied by botanists and Simic researchers.",
+   "participants": [
+    "Risen Undercity",
+    "Simic Combine"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 21,
+   "quote": "This so-called Risen Undercity gave rise to new species and unusual plant mutations"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Undercity",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "Lies beneath the Tenth District.",
+   "paragraph": 0,
+   "quote": "These shadowy depths sprawl beneath the streets and towers of the Tenth District"
+  },
+  {
+   "source": "Duskmantle",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "It is House Dimir's guildhall.",
+   "paragraph": 8,
+   "quote": "The secretive guildhall of House Dimir lies hidden somewhere in the Undercity."
+  },
+  {
+   "source": "Korozda",
+   "relation": "member_of",
+   "target": "Golgari Swarm",
+   "note": "It is the Golgari's guildhall.",
+   "paragraph": 15,
+   "quote": "the sprawling underground guildhall of the Golgari Swarm"
+  },
+  {
+   "source": "Rix Maadi",
+   "relation": "member_of",
+   "target": "Cult of Rakdos",
+   "note": "It is the Cult's stronghold.",
+   "paragraph": 17,
+   "quote": "The cavernous stronghold of the Cult of Rakdos"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,161 @@
+{
+ "page": "archive/savor-flavor-everything-dies-2010-12-14",
+ "url": "https://web.archive.org/web/20220626011233/https://magic.wizards.com/en/articles/archive/savor-flavor/everything-dies-2010-12-14",
+ "title": "Everything* Dies",
+ "story_date": "2010-12-14",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:59Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "the silver golem"
+   ],
+   "description": "The silver golem who created the artificial world Argentum, later called Mirrodin, and unwittingly infected it with Phyrexian corruption.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [
+    "Argentum"
+   ],
+   "description": "The artificial metal world created by Karn, slowly consumed by Phyrexia, with a hollow core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "faction",
+   "aliases": [
+    "the Phyrexians"
+   ],
+   "description": "The oil-blooded civilization growing within Mirrodin since its beginning, at war with the Mirrans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrans",
+   "type": "faction",
+   "aliases": [],
+   "description": "The peoples of Mirrodin who fight Phyrexia using darksteel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "darksteel",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An indestructible, magical dark metal found on Mirrodin, shaped only by powerful artificers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vault of Whispers",
+   "type": "location",
+   "aliases": [],
+   "description": "A vault vampires hope to take from Geth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geth",
+   "type": "character",
+   "aliases": [],
+   "description": "Holder of the Vault of Whispers, whom vampires hope to supplant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bleak Coven",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire warriors and assassins from Rey-Goor who work as mercenaries, taking the bodies and souls of rivals as payment.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nim Onslaught",
+   "type": "event",
+   "aliases": [],
+   "description": "An event after which more vampires were spawned and their nature changed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people who increasingly chose to become vampires rather than nim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rey-Goor",
+   "type": "location",
+   "aliases": [],
+   "description": "Area where the Mephidross Swamp has spread into the periphery of the Tangle Forest.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn creates Argentum, later Mirrodin, and a drop of Phyrexian oil within him infects the world.",
+   "participants": [
+    "Karn",
+    "Mirrodin",
+    "Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "A single drop of the oil was all it took."
+  },
+  {
+   "summary": "After the Nim Onslaught, Moriok increasingly chose to become vampires, and vampire communities contest territory around the Vault of Whispers.",
+   "participants": [
+    "Moriok",
+    "Nim Onslaught",
+    "Vault of Whispers"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "Moriok increasingly chose the latter, and now entire communities of vampires exist"
+  },
+  {
+   "summary": "The Mirrans fight Phyrexia and turn to darksteel to aid them.",
+   "participants": [
+    "Mirrans",
+    "Phyrexia",
+    "darksteel"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "they've turned to darksteel to aid in their fight"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Mirrodin",
+   "note": "created Argentum, later Mirrodin",
+   "paragraph": 3,
+   "quote": "the silver golem Karn created the artificial world Argentum, later called the plane of Mirrodin"
+  },
+  {
+   "source": "Mirrans",
+   "relation": "enemy",
+   "target": "Phyrexia",
+   "note": "fighting over Mirrodin",
+   "paragraph": 27,
+   "quote": "the Mirrans fight that civilization of oil-blooded necro-monstrosities that share their plane"
+  },
+  {
+   "source": "Bleak Coven",
+   "relation": "located_in",
+   "target": "Rey-Goor",
+   "note": "vampires from Rey-Goor",
+   "paragraph": 31,
+   "quote": "the Bleak Coven vampires are from Rey-Goor"
+  }
+ ],
+ "rejected": []
+}

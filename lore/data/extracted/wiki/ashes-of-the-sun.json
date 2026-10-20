@@ -1,0 +1,147 @@
+{
+ "page": "wiki/ashes-of-the-sun",
+ "url": "https://mtg.wiki/page/Ashes_of_the_Sun",
+ "title": "Ashes of the Sun",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:18Z",
+ "storyline": "Ashes of the Sun",
+ "entities": [
+  {
+   "name": "Ayesh",
+   "type": "character",
+   "aliases": [],
+   "description": "Last survivor of Oneah who tells its stories and trains goblins in Mirtiin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oneah",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose cities were destroyed by a goblin invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myrrax",
+   "type": "character",
+   "aliases": [],
+   "description": "Minotaur king of Mirtiin who drugs and trains goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scaraya",
+   "type": "character",
+   "aliases": [],
+   "description": "Minotaur clan leader who helps train goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Betalem",
+   "type": "character",
+   "aliases": [],
+   "description": "Priest from Stahaan who sees the goblins and Ayesh as taboo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tlik",
+   "type": "character",
+   "aliases": [],
+   "description": "Ayesh's star pupil, the one surviving goblin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirtiin",
+   "type": "location",
+   "aliases": [
+    "Mirtiin Mountains",
+    "Mirtrii"
+   ],
+   "description": "Minotaur kingdom where goblins are trained.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stahaan",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighboring minotaur kingdom that invades Mirtiin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins who destroyed Oneah and are trained by Ayesh.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ayesh gets drunk, picks a fight with goblins, and is saved by minotaurs from Mirtiin.",
+   "participants": [
+    "Ayesh",
+    "Goblins"
+   ],
+   "location": "Mirtiin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she is saved by some minotaurs from Mirtiin"
+  },
+  {
+   "summary": "Ayesh learns Myrrax and Scaraya are drugging goblins to train them fearless, and agrees to help.",
+   "participants": [
+    "Ayesh",
+    "Myrrax",
+    "Scaraya"
+   ],
+   "location": "Mirtiin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "are drugging goblins and training them to overcome fear"
+  },
+  {
+   "summary": "Civil war and a Stahaan invasion cause the trained goblins to revert and be killed, except Tlik.",
+   "participants": [
+    "Betalem",
+    "Stahaan",
+    "Goblins",
+    "Tlik"
+   ],
+   "location": "Mirtiin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "This proves too much for the goblins, who revert to their wild ways and are killed."
+  },
+  {
+   "summary": "Ayesh and Tlik flee; Ayesh is poisoned and Tlik saves her, realizing he belongs to neither goblins nor humans.",
+   "participants": [
+    "Ayesh",
+    "Tlik"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Ayesh gets poisoned and Tlik saves her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Myrrax",
+   "relation": "leader_of",
+   "target": "Mirtiin",
+   "note": "The Minotaur king.",
+   "paragraph": 3,
+   "quote": "the Minotaur king, Myrrax"
+  },
+  {
+   "source": "Tlik",
+   "relation": "ally",
+   "target": "Ayesh",
+   "note": "Her star pupil who saves her.",
+   "paragraph": 4,
+   "quote": "Ayesh's star pupil Tlik"
+  }
+ ],
+ "rejected": []
+}

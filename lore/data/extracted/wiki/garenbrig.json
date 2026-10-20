@@ -1,0 +1,162 @@
+{
+ "page": "wiki/garenbrig",
+ "url": "https://mtg.wiki/page/Garenbrig",
+ "title": "Garenbrig",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:27Z",
+ "storyline": "Throne of Eldraine",
+ "entities": [
+  {
+   "name": "Garenbrig",
+   "type": "faction",
+   "aliases": [
+    "court of Garenbrig"
+   ],
+   "description": "The green-aligned court of the Realm on Eldraine, ruled by giants and exemplifying Strength.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Garenbrig lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yorvo",
+   "type": "character",
+   "aliases": [
+    "King Yorvo"
+   ],
+   "description": "Giant king of Garenbrig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Henge",
+   "type": "artifact",
+   "aliases": [
+    "Henge"
+   ],
+   "description": "Massive stone ring built by giants, a sundial and portal to the Wilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Garenbrig",
+   "type": "location",
+   "aliases": [],
+   "description": "Enormous giant-built castle beneath and around a stone outcropping.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vantress",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighboring court.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wilds",
+   "type": "location",
+   "aliases": [
+    "Wilds"
+   ],
+   "description": "Wild region that Garenbrig borders and the Henge connects to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elven Lords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers who once enslaved mankind and were overthrown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Garenbrig and all other courts fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormkeld",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Yorvo reappeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Skitter",
+   "type": "character",
+   "aliases": [],
+   "description": "Rat who rules the dwarven ruins beneath Edgewall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edgewall Keep",
+   "type": "location",
+   "aliases": [
+    "Edgewall"
+   ],
+   "description": "Village near the Boundary Lands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mankind overthrows the Elven Lords, the five knightly courts are created, and Garenbrig is established around the Great Henge.",
+   "participants": [
+    "Garenbrig",
+    "Elven Lords",
+    "Great Henge"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The court of Garenbrig was established around the Great Henge ."
+  },
+  {
+   "summary": "Garenbrig falls to the New Phyrexian invaders.",
+   "participants": [
+    "Garenbrig",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Garenbrig",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Garenbrig and all other courts fell before the invaders."
+  },
+  {
+   "summary": "Yorvo disappears from the castle during the Invasion and reappears in Stormkeld months later.",
+   "participants": [
+    "Yorvo",
+    "Stormkeld"
+   ],
+   "location": "Castle Garenbrig",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Yorvo disappeared from the castle during the Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yorvo",
+   "relation": "leader_of",
+   "target": "Garenbrig",
+   "note": "King of Garenbrig.",
+   "paragraph": 2,
+   "quote": "Garenbrig is ruled by King Yorvo , a giant ."
+  },
+  {
+   "source": "Great Henge",
+   "relation": "located_in",
+   "target": "Castle Garenbrig",
+   "note": "Stands atop the outcropping.",
+   "paragraph": 3,
+   "quote": "Atop the outcropping stands the Great Henge and its portal."
+  }
+ ],
+ "rejected": []
+}

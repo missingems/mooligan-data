@@ -1,0 +1,147 @@
+{
+ "page": "wiki/vile-cauldron",
+ "url": "https://mtg.wiki/page/Vile_Cauldron",
+ "title": "Vile Cauldron",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:53Z",
+ "storyline": "Eldraine",
+ "entities": [
+  {
+   "name": "Vile Cauldron",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Large metal cauldron of green bubbling liquid that boils down the essence of whatever is put within it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talion",
+   "type": "character",
+   "aliases": [],
+   "description": "Original owner who gave the cauldron to Agatha and later got it back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agatha",
+   "type": "character",
+   "aliases": [],
+   "description": "Witch who received the cauldron, enchanted Peter and was boiled alive by Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Peter",
+   "type": "character",
+   "aliases": [
+    "Wolf Knight"
+   ],
+   "description": "Woodsman enchanted by Agatha into the Wolf Knight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Imodane",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured by Agatha, who prepared to cook her into a stew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Slew Agatha by pushing her into her cauldron, then returned it to Talion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wicked Slumber",
+   "type": "concept",
+   "aliases": [],
+   "description": "Spell cast to end the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion ended by the Wicked Slumber.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the cauldron.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Talion gives the cauldron to Agatha in exchange for her and her sisters' help casting the Wicked Slumber.",
+   "participants": [
+    "Talion",
+    "Agatha",
+    "Vile Cauldron"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "It was originally owned by Talion , who gave it to Agatha"
+  },
+  {
+   "summary": "Agatha enchants the woodsman Peter into the Wolf Knight and, with his help, captures Syr Imodane.",
+   "participants": [
+    "Agatha",
+    "Peter",
+    "Syr Imodane"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she enchanted the woodsman Peter , turning him into the Wolf Knight"
+  },
+  {
+   "summary": "Kellan slays Agatha by pushing her into her cauldron and boiling her alive.",
+   "participants": [
+    "Kellan",
+    "Agatha",
+    "Vile Cauldron"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kellan slew the witch by pushing her into her cauldron and boiling her alive"
+  },
+  {
+   "summary": "Kellan takes ownership of the cauldron and later returns it to Talion.",
+   "participants": [
+    "Kellan",
+    "Talion",
+    "Vile Cauldron"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kellan took ownership of the Cauldron after that and later returned it to Talion."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kellan",
+   "relation": "killed",
+   "target": "Agatha",
+   "note": "Pushed her into her cauldron.",
+   "paragraph": 1,
+   "quote": "Kellan slew the witch by pushing her into her cauldron and boiling her alive"
+  },
+  {
+   "source": "Talion",
+   "relation": "other",
+   "target": "Vile Cauldron",
+   "note": "Original owner.",
+   "paragraph": 1,
+   "quote": "It was originally owned by Talion"
+  }
+ ],
+ "rejected": []
+}

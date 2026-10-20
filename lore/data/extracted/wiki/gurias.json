@@ -1,0 +1,137 @@
+{
+ "page": "wiki/gurias",
+ "url": "https://mtg.wiki/page/Gurias",
+ "title": "Gurias",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:23Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Gurias of Tolaria",
+   "type": "character",
+   "aliases": [
+    "Gurias"
+   ],
+   "description": "Young wizard from the Smoke Mountains of Aerona who bullied villagers and attacked Greensleeves's Grove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tobias",
+   "type": "character",
+   "aliases": [],
+   "description": "Old wizard in the hills near the Smoke Mountains whose apprentice Gurias was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Defender of villagers who subdued Gurias and later blasted him with Ball Lightning.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doris",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Greensleeves's bodyguards, killed by Gurias.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bywater",
+   "type": "location",
+   "aliases": [],
+   "description": "Town near the village Gurias bullied.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves's Grove",
+   "type": "location",
+   "aliases": [],
+   "description": "Grove attacked by wizards including Gurias.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of the Smoke Mountains.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gurias, bored with apprenticeship to Tobias, bullied villagers near Bywater for money, food and horses.",
+   "participants": [
+    "Gurias of Tolaria",
+    "Tobias"
+   ],
+   "location": "Bywater",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "began bullying the inhabitants of a village near the town of Bywater"
+  },
+  {
+   "summary": "Greensleeves subdued Gurias, tagging him with the Stone Brain.",
+   "participants": [
+    "Greensleeves",
+    "Gurias of Tolaria"
+   ],
+   "location": "Bywater",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she came to help the villagers and quickly subdued the inexperienced wizard"
+  },
+  {
+   "summary": "Gurias killed Doris during the attack on Greensleeves's Grove.",
+   "participants": [
+    "Gurias of Tolaria",
+    "Doris"
+   ],
+   "location": "Greensleeves's Grove",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After seeing him kill Doris"
+  },
+  {
+   "summary": "Greensleeves blasted Gurias with Ball Lightning, leaving only his skull.",
+   "participants": [
+    "Greensleeves",
+    "Gurias of Tolaria"
+   ],
+   "location": "Greensleeves's Grove",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Greensleeves lost her temper and blasted him with a Ball Lightning"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tobias",
+   "relation": "mentor_of",
+   "target": "Gurias of Tolaria",
+   "note": "Gurias was his apprentice.",
+   "paragraph": 2,
+   "quote": "Gurias was an apprentice of Tobias"
+  },
+  {
+   "source": "Greensleeves",
+   "relation": "killed",
+   "target": "Gurias of Tolaria",
+   "note": "Blasted him with Ball Lightning.",
+   "paragraph": 3,
+   "quote": "Greensleeves lost her temper and blasted him with a Ball Lightning"
+  },
+  {
+   "source": "Gurias of Tolaria",
+   "relation": "killed",
+   "target": "Doris",
+   "note": "Killed her at the Grove.",
+   "paragraph": 3,
+   "quote": "After seeing him kill Doris"
+  }
+ ],
+ "rejected": []
+}

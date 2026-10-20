@@ -1,0 +1,205 @@
+{
+ "page": "wiki/thallid",
+ "url": "https://mtg.wiki/page/Thallid",
+ "title": "Thallid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Thallid",
+   "type": "creature",
+   "aliases": [
+    "Thallids"
+   ],
+   "description": "Fungus creatures created by infusing fungus with green mana, farmed as cattle to produce saprolings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saproling",
+   "type": "creature",
+   "aliases": [
+    "saprolings"
+   ],
+   "description": "Food source produced by thallids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Place where thallids were created after the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Sarpadian food sources dwindled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thelon",
+   "type": "character",
+   "aliases": [],
+   "description": "Elven druid who infused fungus with green mana to create thallids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group whose methods and thrulls were used in making thallids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kolevi",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder druid with whom Thelon shared the secret of thallid origins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lalani",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder druid with whom Thelon shared the secret of thallid origins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sarpadian elves who farmed thallids and were eventually overrun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thrulls",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creatures of the Ebon Hand who coexist with thallids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Icatia",
+   "type": "location",
+   "aliases": [],
+   "description": "Sarpadian empire destroyed with thallid help.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sporoloth",
+   "type": "creature",
+   "aliases": [
+    "Sporoloths"
+   ],
+   "description": "Fungus creatures resembling thallids that appeared from the future during the Time Spiral crisis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slimefoot",
+   "type": "character",
+   "aliases": [],
+   "description": "Thallid grown from a spore on the Weatherlight, an unofficial member of Jhoira's crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Reconstructed skyship.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [
+    "Captain Jhoira"
+   ],
+   "description": "Captain of the Weatherlight.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thelon creates thallids by infusing fungus with green mana.",
+   "participants": [
+    "Thelon",
+    "Thallid",
+    "Order of the Ebon Hand"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "infused the fungus with green mana to create a living creature that produced saprolings"
+  },
+  {
+   "summary": "Thallids gain sentience and the elves split over destroying or aiding them.",
+   "participants": [
+    "Thallid",
+    "Elves"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The elves would be split into two factions"
+  },
+  {
+   "summary": "The elves are overrun by their creations.",
+   "participants": [
+    "Elves",
+    "Thallid"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "would eventually be overrun by their creations"
+  },
+  {
+   "summary": "Thallids help orcs, goblins and thrulls destroy Icatia.",
+   "participants": [
+    "Thallid",
+    "Thrulls",
+    "Icatia"
+   ],
+   "location": "Sarpadia",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Thallids would assist the orcs , goblins , and thrulls in destroying Icatia"
+  },
+  {
+   "summary": "Slimefoot grows from a spore on the Weatherlight and joins the crew.",
+   "participants": [
+    "Slimefoot",
+    "Weatherlight",
+    "Jhoira"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "became an unofficial member of Captain Jhoira 's crew"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thelon",
+   "relation": "created",
+   "target": "Thallid",
+   "note": "Made them from fungus",
+   "paragraph": 3,
+   "quote": "Thelon , an elven druid"
+  },
+  {
+   "source": "Slimefoot",
+   "relation": "serves",
+   "target": "Jhoira",
+   "note": "Unofficial crew member",
+   "paragraph": 7,
+   "quote": "unofficial member of Captain Jhoira 's crew"
+  }
+ ],
+ "rejected": []
+}

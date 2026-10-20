@@ -1,0 +1,143 @@
+{
+ "page": "wiki/tuktuk",
+ "url": "https://mtg.wiki/page/Tuktuk",
+ "title": "Tuktuk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:32Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Tuktuk the Explorer",
+   "type": "character",
+   "aliases": [
+    "Tuktuk"
+   ],
+   "description": "An adventurous, curious but foolish goblin of Zendikar who died in an Eldrazi-tainted ruin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuktuk the Returned",
+   "type": "character",
+   "aliases": [
+    "Tuktuk"
+   ],
+   "description": "A stone golem in goblin form animated by Tuktuk's mind and memories, made chief of the Tuktuk tribe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Tuktuk lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tuktuk tribe",
+   "type": "faction",
+   "aliases": [
+    "Tuktuk clan"
+   ],
+   "description": "The goblin clan Tuktuk the Returned led as chief.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zada",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin who listened to Tuktuk's advice and ended up consuming him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient monstrous entities whose influence tainted the ruin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hedron",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A powerful relic embedded in the ruin's wall that Tuktuk touched.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tuktuk vows to bring back the most extraordinary artifact ever seen by goblinkind and ventures into a perilous ruin.",
+   "participants": [
+    "Tuktuk the Explorer"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tuktuk vowed to return with the most extraordinary artifact ever seen by goblinkind."
+  },
+  {
+   "summary": "Tuktuk touches an enormous hedron, triggering a rune trap whose explosion kills him and releases Eldrazi magic.",
+   "participants": [
+    "Tuktuk the Explorer",
+    "Hedron"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he touched the relic, unwittingly triggering an ancient rune trap"
+  },
+  {
+   "summary": "Eldrazi-soaked magic fuses stone from the chamber into a golem, which holds Tuktuk's mind and memories.",
+   "participants": [
+    "Tuktuk the Returned",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "his mind and memories became trapped within the stone"
+  },
+  {
+   "summary": "The golem-goblin emerges, is dubbed Tuktuk the Returned and made chief of the clan, later called the Tuktuk tribe.",
+   "participants": [
+    "Tuktuk the Returned",
+    "Tuktuk tribe"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "They dubbed him Tuktuk the Returned, and he became the most famous of his people."
+  },
+  {
+   "summary": "Tuktuk teaches goblins to grow stronger by eating hedrons; Zada, heeding his advice, ends up consuming Tuktuk himself.",
+   "participants": [
+    "Tuktuk the Returned",
+    "Zada"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Zada , listening to Tuktuk's wise advice, ended up consuming Tuktuk himself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tuktuk the Returned",
+   "relation": "leader_of",
+   "target": "Tuktuk tribe",
+   "note": "Made chief of the clan.",
+   "paragraph": 7,
+   "quote": "That very day, he was made chief of the clan, which went on to be called the Tuktuk tribe."
+  },
+  {
+   "source": "Zada",
+   "relation": "killed",
+   "target": "Tuktuk the Returned",
+   "note": "Consumed him.",
+   "paragraph": 8,
+   "quote": "Zada , listening to Tuktuk's wise advice, ended up consuming Tuktuk himself."
+  }
+ ],
+ "rejected": []
+}

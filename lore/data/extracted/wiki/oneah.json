@@ -1,0 +1,159 @@
+{
+ "page": "wiki/oneah",
+ "url": "https://mtg.wiki/page/Oneah",
+ "title": "Oneah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Oneah",
+   "type": "location",
+   "aliases": [
+    "Oneahn Empire"
+   ],
+   "description": "Island east of Aerona in the Domains of Dominaria, and the enlightened nation destroyed by goblins; abandoned by the time of the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent west of Oneah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblins of the Red Mountains",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hordes that destroyed Oneah in the Goblin War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayesh ni hata Kan",
+   "type": "character",
+   "aliases": [],
+   "description": "Oneahn who believed she was the only survivor of the Fall of Oneah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ittono Khairt ni Hata Kan",
+   "type": "character",
+   "aliases": [],
+   "description": "Oneahn survivor who became a knight in Amjad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amjad",
+   "type": "location",
+   "aliases": [],
+   "description": "Small human nation in the north of Oneah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xa-On",
+   "type": "location",
+   "aliases": [
+    "Oneah City"
+   ],
+   "description": "Beautiful capital of the Oneahn Empire and last city to fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited abandoned Oneah before the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tahngarth",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited abandoned Oneah with Sisay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Juju Bubble",
+   "type": "location",
+   "aliases": [],
+   "description": "Place the survivor directed Sisay and Tahngarth toward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin War",
+   "type": "event",
+   "aliases": [
+    "Fall of Oneah"
+   ],
+   "description": "War around 4165 AR in which goblins destroyed Oneah.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Goblin hordes from the Red Mountains destroy the whole Oneahn Empire around 4165 AR.",
+   "participants": [
+    "Goblins of the Red Mountains",
+    "Oneah"
+   ],
+   "location": "Oneah",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The whole country was destroyed by hordes of goblins from the Red Mountains"
+  },
+  {
+   "summary": "Ittono Khairt ni Hata Kan survives and becomes a knight in Amjad.",
+   "participants": [
+    "Ittono Khairt ni Hata Kan",
+    "Amjad"
+   ],
+   "location": "Amjad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Ittono Khairt ni Hata Kan also survived, becoming a knight in Amjad"
+  },
+  {
+   "summary": "Sisay and Tahngarth visit the city abandoned for thirty years and find a survivor who points them toward the Juju Bubble.",
+   "participants": [
+    "Sisay",
+    "Tahngarth",
+    "Juju Bubble"
+   ],
+   "location": "Oneah",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "who pointed them in the direction of the Juju Bubble"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ittono Khairt ni Hata Kan",
+   "relation": "member_of",
+   "target": "Amjad",
+   "note": "knight",
+   "paragraph": 3,
+   "quote": "becoming a knight in Amjad"
+  },
+  {
+   "source": "Sisay",
+   "relation": "ally",
+   "target": "Tahngarth",
+   "note": "traveled together",
+   "paragraph": 12,
+   "quote": "When Sisay and Tahngarth visited the city"
+  },
+  {
+   "source": "Goblins of the Red Mountains",
+   "relation": "enemy",
+   "target": "Oneah",
+   "note": "destroyed it",
+   "paragraph": 3,
+   "quote": "The whole country was destroyed by hordes of goblins from the Red Mountains"
+  }
+ ],
+ "rejected": []
+}

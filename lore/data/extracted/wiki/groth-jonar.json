@@ -1,0 +1,114 @@
+{
+ "page": "wiki/groth-jonar",
+ "url": "https://mtg.wiki/page/Groth_Jonar",
+ "title": "Groth Jonar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:22Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Groth Jonar",
+   "type": "character",
+   "aliases": [],
+   "description": "Tall Balduvian orc warrior, clansmaster and general of the orc armies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elkan",
+   "type": "character",
+   "aliases": [],
+   "description": "Balduvian mage assigned with Jonar who was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldorans",
+   "type": "faction",
+   "aliases": [
+    "Kjeldor"
+   ],
+   "description": "Enemy of the Balduvians, whose knights fought at Balesh Pass.",
+   "presence": "appears"
+  },
+  {
+   "name": "Flarg goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins recruited by Elkan and sacrificed by Jonar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balesh Pass",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of a battle between Balduvians and Kjeldorans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balduvia",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of Groth Jonar's orc clans.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elkan recruited Flarg goblins for the battle of Balesh Pass, against Jonar's protests.",
+   "participants": [
+    "Elkan",
+    "Groth Jonar",
+    "Flarg goblins"
+   ],
+   "location": "Balesh Pass",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Elkan recruited goblins of the Flarg to participate in the battle of Balesh Pass"
+  },
+  {
+   "summary": "Angered by Elkan's scheme, Jonar trapped the goblins as a distraction and attacked Kjeldor's knights, who suffered heavy losses and retreated.",
+   "participants": [
+    "Groth Jonar",
+    "Flarg goblins",
+    "Kjeldorans"
+   ],
+   "location": "Balesh Pass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jonar locked the goblins in a trap between allies and enemies"
+  },
+  {
+   "summary": "Jonar stabbed Elkan in the belly, killing him, and let the remaining knights retreat, claiming their battle standard.",
+   "participants": [
+    "Groth Jonar",
+    "Elkan",
+    "Kjeldorans"
+   ],
+   "location": "Balesh Pass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jonar responded by stabbing Elkan in the belly with his sword, killing him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Groth Jonar",
+   "relation": "killed",
+   "target": "Elkan",
+   "note": "stabbed him with his sword",
+   "paragraph": 2,
+   "quote": "Jonar responded by stabbing Elkan in the belly with his sword, killing him."
+  },
+  {
+   "source": "Groth Jonar",
+   "relation": "leader_of",
+   "target": "Balduvia",
+   "note": "general of the Balduvian orc clans",
+   "paragraph": 1,
+   "quote": "general of the Balduvian orc clans"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,92 @@
+{
+ "page": "wiki/saurid-autocracy",
+ "url": "https://mtg.wiki/page/Saurid_Autocracy",
+ "title": "Saurid Autocracy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:57Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Saurid Autocracy",
+   "type": "faction",
+   "aliases": [],
+   "description": "The mightiest state on Muraganda, a kingdom of saurids and their human subjects ruled by the autarch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muraganda",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Autocracy is the mightiest state.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Autarch",
+   "type": "character",
+   "aliases": [
+    "the autarch"
+   ],
+   "description": "Sole leader of the Autocracy, revered as a divine monarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mimeoplasm",
+   "type": "creature",
+   "aliases": [],
+   "description": "An ooze regarded by the saurids as a great figure, if not a living god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose advance teams were deployed to Muraganda.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Advance teams from Avishkar were deployed to Muraganda a year before the race.",
+   "participants": [
+    "Avishkar"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Advance teams from Avishkar were deployed to Muraganda a year before the beginning of the race"
+  },
+  {
+   "summary": "The Autocracy used its agreements with Avishkar to advance its borders and claim to speak for the plane.",
+   "participants": [
+    "Saurid Autocracy",
+    "Avishkar"
+   ],
+   "location": "Muraganda",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "assured themselves the prime position of \"speaking\" for the plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Autarch",
+   "relation": "leader_of",
+   "target": "Saurid Autocracy",
+   "note": "Sole leader",
+   "paragraph": 2,
+   "quote": "the autarch , the sole leader of the Autocracy"
+  },
+  {
+   "source": "Saurid Autocracy",
+   "relation": "located_in",
+   "target": "Muraganda",
+   "note": "",
+   "paragraph": 0,
+   "quote": "The Saurid Autocracy is the mightiest state on the plane of Muraganda ."
+  }
+ ],
+ "rejected": []
+}

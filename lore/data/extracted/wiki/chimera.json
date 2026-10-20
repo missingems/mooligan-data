@@ -1,0 +1,92 @@
+{
+ "page": "wiki/chimera",
+ "url": "https://mtg.wiki/page/Chimera",
+ "title": "Chimera",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Chimera",
+   "type": "creature",
+   "aliases": [
+    "chimeras"
+   ],
+   "description": "A mythological fire-breathing monster of disparate parts; on Theros, magical fusions of creatures' life essences.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keranos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God on Theros who, in an Akroan tale, created chimeras to test Renata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Renata",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunter in an Akroan tale who slew Keranos's creations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where chimeras are magical fusions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hofri Ghostforge",
+   "type": "character",
+   "aliases": [
+    "Professor Hofri Ghostforge"
+   ],
+   "description": "Professor on Arcavios who has employed a chimera spirit statue as a docent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Hofri Ghostforge teaches.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In an Akroan tale, Keranos creates a deadly beast to test Renata; she slays the first chimera of Theros effortlessly.",
+   "participants": [
+    "Keranos",
+    "Renata",
+    "Chimera"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "When Renata slayed this lion-ram-dragon creation effortlessly (the first chimera of Theros)"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Keranos",
+   "relation": "created",
+   "target": "Chimera",
+   "note": "Suspected and, per an Akroan tale, said to have created chimeras.",
+   "paragraph": 9,
+   "quote": "Keranos created another combination of deadlier beasts to challenge her."
+  },
+  {
+   "source": "Renata",
+   "relation": "enemy",
+   "target": "Chimera",
+   "note": "She slayed Keranos's creations.",
+   "paragraph": 9,
+   "quote": "She slayed that beast too, and all the other countless Keranos' creations."
+  }
+ ],
+ "rejected": []
+}

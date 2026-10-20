@@ -1,0 +1,132 @@
+{
+ "page": "wiki/devil-s-breach",
+ "url": "https://mtg.wiki/page/Devil%27s_Breach",
+ "title": "Devil's Breach",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:45Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Devil's Breach",
+   "type": "location",
+   "aliases": [],
+   "description": "Fiery cave in the rocky hills of Kessig on Innistrad, dwelling of devils whose nightly raids threaten the countryside.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad containing Devil's Breach.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Kessig lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inquisitor Verena",
+   "type": "character",
+   "aliases": [
+    "Verena"
+   ],
+   "description": "Cathar from Avabruck who returned to Kessig to protect villagers and stayed to hunt the devils.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cathars",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of soldiers that Verena led to Kessig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lunarch Inquisition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization that recalled Verena's troop to Gavony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose shattering is said to have widened the cave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose absence emboldened monsters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Travails",
+   "type": "event",
+   "aliases": [],
+   "description": "Period of danger on Innistrad during which devils made twisting paths through the woods.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Devils created torch-lit twisting paths through the woods around the Breach.",
+   "participants": [
+    "Devil's Breach"
+   ],
+   "location": "Kessig",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the devils created torch-lit, twisting paths through the surrounding woods"
+  },
+  {
+   "summary": "Verena returned to Kessig with Cathar soldiers to protect villagers but met mistrust.",
+   "participants": [
+    "Inquisitor Verena",
+    "Cathars"
+   ],
+   "location": "Kessig",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Verena arrived with a company of Cathar soldiers but faced mistrust and fear from the people she was trying to protect."
+  },
+  {
+   "summary": "Verena defied the Lunarch Inquisition's recall to Gavony and camped near Devil's Breach, organizing volunteer patrols against the devils.",
+   "participants": [
+    "Inquisitor Verena",
+    "Lunarch Inquisition",
+    "Devil's Breach"
+   ],
+   "location": "Devil's Breach",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Verena defied her orders and stayed behind."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Devil's Breach",
+   "relation": "located_in",
+   "target": "Kessig",
+   "note": "cave in Kessig",
+   "paragraph": 0,
+   "quote": "Devil's Breach is a fiery cave in the rocky hills of Kessig on Innistrad ."
+  },
+  {
+   "source": "Inquisitor Verena",
+   "relation": "enemy",
+   "target": "Devil's Breach",
+   "note": "hunts the devils emerging from it",
+   "paragraph": 2,
+   "quote": "organized volunteer patrols of warriors and rangers to hunt the devils and stop their raids"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,190 @@
+{
+ "page": "wiki/dralnu",
+ "url": "https://mtg.wiki/page/Dralnu",
+ "title": "Dralnu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:35Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Dralnu",
+   "type": "character",
+   "aliases": [],
+   "description": "An undead necromancer and lich from Urborg who aided the Coalition forces before betraying them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lich lady",
+   "type": "character",
+   "aliases": [
+    "the lich lady"
+   ],
+   "description": "The unnamed Urborgan necromancer who reanimated Dralnu, whom he later killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vhelnish",
+   "type": "location",
+   "aliases": [],
+   "description": "A city Dralnu converted into a working city.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Dralnu was a hidden power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Metathran",
+   "type": "faction",
+   "aliases": [
+    "metathran forces",
+    "metathran army"
+   ],
+   "description": "Forces that Dralnu allied with against Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agnate",
+   "type": "character",
+   "aliases": [],
+   "description": "Metathran figure infected by Dralnu with a plague.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grizzlegom",
+   "type": "character",
+   "aliases": [
+    "Commander Grizzlegom"
+   ],
+   "description": "Commander who exposed Dralnu's betrayal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thaddeus",
+   "type": "character",
+   "aliases": [],
+   "description": "Metathran commander whom Dralnu resembled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which Dralnu allied with the metathran.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dralnu falls in battle and is reanimated as a zombie by an Urborgan necromancer.",
+   "participants": [
+    "Dralnu",
+    "Lich lady"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he fell in battle and was reanimated by an unknown Urborgan necromancer"
+  },
+  {
+   "summary": "Dralnu kills his master and takes control of her undead legions and Vhelnish.",
+   "participants": [
+    "Dralnu",
+    "Lich lady",
+    "Vhelnish"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Then he killed his master and took control of her undead legions."
+  },
+  {
+   "summary": "During the Phyrexian Invasion Dralnu allies with the metathran and helps them advance toward the Stronghold.",
+   "participants": [
+    "Dralnu",
+    "Metathran"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Dralnu allied with the metathran forces on Urborg"
+  },
+  {
+   "summary": "Dralnu infects Agnate with a plague during an alliance ritual to seize the metathran army.",
+   "participants": [
+    "Dralnu",
+    "Agnate",
+    "Metathran"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he also infected Agnate with a plague to take control of the metathran army"
+  },
+  {
+   "summary": "Grizzlegom exposes the betrayal; Dralnu accuses Grizzlegom of killing Agnate.",
+   "participants": [
+    "Grizzlegom",
+    "Dralnu",
+    "Agnate"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Commander Grizzlegom realized this and revealed Dralnu's betrayal to the metathran generals."
+  },
+  {
+   "summary": "Dralnu is judged guilty and executed; his phylacteries and minions are destroyed.",
+   "participants": [
+    "Dralnu",
+    "Grizzlegom",
+    "Metathran"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Dralnu was deemed guilty of the murder and was executed."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dralnu",
+   "relation": "killed",
+   "target": "Lich lady",
+   "note": "He killed his master.",
+   "paragraph": 2,
+   "quote": "Then he killed his master and took control of her undead legions."
+  },
+  {
+   "source": "Dralnu",
+   "relation": "enemy",
+   "target": "Grizzlegom",
+   "note": "Grizzlegom exposed his betrayal.",
+   "paragraph": 3,
+   "quote": "Commander Grizzlegom realized this and revealed Dralnu's betrayal to the metathran generals."
+  },
+  {
+   "source": "Dralnu",
+   "relation": "ally",
+   "target": "Metathran",
+   "note": "Allied before betraying them.",
+   "paragraph": 3,
+   "quote": "Dralnu allied with the metathran forces on Urborg"
+  },
+  {
+   "source": "Dralnu",
+   "relation": "killed",
+   "target": "Agnate",
+   "note": "Dralnu infected Agnate with plague; Dralnu accused Grizzlegom of killing Agnate, which was technically true.",
+   "paragraph": 3,
+   "quote": "he also infected Agnate with a plague to take control of the metathran army"
+  }
+ ],
+ "rejected": []
+}

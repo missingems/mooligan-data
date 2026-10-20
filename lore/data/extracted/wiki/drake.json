@@ -1,0 +1,194 @@
+{
+ "page": "wiki/drake",
+ "url": "https://mtg.wiki/page/Drake",
+ "title": "Drake",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Drake",
+   "type": "creature",
+   "aliases": [
+    "drakes"
+   ],
+   "description": "A creature type for flying reptiles similar to dragons but smaller and less powerful, with wings replacing one set of limbs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wyvern",
+   "type": "creature",
+   "aliases": [
+    "wyverns"
+   ],
+   "description": "Particularly large drakes with a birdlike gait, found on Jamuraa and Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crucius",
+   "type": "character",
+   "aliases": [],
+   "description": "A sphinx who perfected his designs on drakes before infusing the first humanoid with etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ethersworn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Those who carry out Crucius's Noble Work on Esper.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Alaran shard above which etherium-infused drakes soar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Created the species Teferi's Drakes while studying at the Tolarian Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "Used Teferi's Drakes to defend the Tolarian Academy against Kerrick's forces.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kerrick",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of forces that attacked the Tolarian Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caliphear the Nightmare",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed an Azure Drake with his attendants in the Great Salt Marshes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hakim Loreweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "Tamed an Azure Drake and used it as a pet and transport.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talrand",
+   "type": "character",
+   "aliases": [],
+   "description": "A hydromancer allied with the drakes of the Kapsho Sea against dragons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Imported Mirrodin's wildlife, including drakes, via soul traps.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [
+    "University"
+   ],
+   "description": "The school where Teferi created his drakes and Barrin defended it.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teferi creates Teferi's Drakes at the Tolarian Academy, and Barrin uses them to defend the university against Kerrick's forces.",
+   "participants": [
+    "Teferi",
+    "Barrin",
+    "Kerrick",
+    "Tolarian Academy"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "they were used by Barrin in the defense of the University against Kerrick 's forces."
+  },
+  {
+   "summary": "An Azure Drake is killed by Caliphear the Nightmare and his attendants.",
+   "participants": [
+    "Caliphear the Nightmare"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "An Azure Drake attacked and was killed by Caliphear the Nightmare and his attendants"
+  },
+  {
+   "summary": "Hakim Loreweaver tames an Azure Drake.",
+   "participants": [
+    "Hakim Loreweaver"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "Another Azure Drake was tamed by Hakim Loreweaver , who used it as a pet and a means of traveling."
+  },
+  {
+   "summary": "Crucius and the Ethersworn perfect their designs on drakes before infusing the first humanoid with etherium.",
+   "participants": [
+    "Crucius",
+    "Ethersworn"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "spent years perfecting their designs on drakes before infusing the first humanoid."
+  },
+  {
+   "summary": "The drakes of the Kapsho Sea ally with Talrand against the dragons.",
+   "participants": [
+    "Talrand",
+    "Drake"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 19,
+   "quote": "the drakes of the Kapsho Sea have allied with the hydromancer Talrand against the dragons that used to tyrannize the sea."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Teferi",
+   "relation": "created",
+   "target": "Drake",
+   "note": "Created Teferi's Drakes.",
+   "paragraph": 12,
+   "quote": "Teferi created a species of drakes, Teferi's Drakes"
+  },
+  {
+   "source": "Drake",
+   "relation": "serves",
+   "target": "Talrand",
+   "note": "Serve him in exchange for protection.",
+   "paragraph": 19,
+   "quote": "In exchange for protection, they now serve Talrand."
+  },
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Drake",
+   "note": "Imported Mirrodin's wildlife via soul traps.",
+   "paragraph": 15,
+   "quote": "they were imported via soul traps by Memnarch"
+  }
+ ],
+ "rejected": []
+}

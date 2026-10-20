@@ -1,0 +1,193 @@
+{
+ "page": "wiki/battle-of-halcyon",
+ "url": "https://mtg.wiki/page/Battle_of_Halcyon",
+ "title": "Battle of Halcyon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:10Z",
+ "storyline": "Thran-Phyrexian War",
+ "entities": [
+  {
+   "name": "Battle of Halcyon",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle on Dominaria around -5000 AR, part of the Thran-Phyrexian War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Thran leader who bombed the enemy fleets and later turned the refugees into Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yataghan",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Yawgmoth's war caravel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyon",
+   "type": "location",
+   "aliases": [],
+   "description": "Thran city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xod",
+   "type": "character",
+   "aliases": [],
+   "description": "Turned into a wall-walking Phyrexian who helped Yawgmoth ascend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rebbec",
+   "type": "character",
+   "aliases": [],
+   "description": "Learned of Yawgmoth's poisoning of Glacian.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glacian",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker poisoned by Yawgmoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dyfed",
+   "type": "character",
+   "aliases": [],
+   "description": "Tortured captive killed by Phyrexia's world soul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane where Yawgmoth took Rebbec.",
+   "presence": "appears"
+  },
+  {
+   "name": "Null Sphere",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Machine sent into orbit by artificers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose location Yawgmoth learned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran Temple",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple destroyed by the white cloud.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yawgmoth bombs the airship fleets from the Yataghan but is shot down and falls.",
+   "participants": [
+    "Yawgmoth",
+    "Yataghan"
+   ],
+   "location": "Halcyon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "sending Yawgmoth plummeting to the sandy slopes below"
+  },
+  {
+   "summary": "Xod helps Yawgmoth ascend; he annihilates the dwarven and human armies with stonechargers.",
+   "participants": [
+    "Yawgmoth",
+    "Xod"
+   ],
+   "location": "Halcyon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He used stonechargers to annihilate both the dwarven and the human army of the desert just outside Halcyon"
+  },
+  {
+   "summary": "Yawgmoth sedates Rebbec, takes her to Phyrexia and invades her mind.",
+   "participants": [
+    "Yawgmoth",
+    "Rebbec",
+    "Glacian"
+   ],
+   "location": "Phyrexia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Yawgmoth sedated her and brought them both to Phyrexia"
+  },
+  {
+   "summary": "The artificers send the Null Sphere into orbit, at the cost of their lives.",
+   "participants": [
+    "Null Sphere"
+   ],
+   "location": "Halcyon",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the artificers working in the Null Sphere managed to send it into orbit, denying Yawgmoth its power"
+  },
+  {
+   "summary": "Yawgmoth topples the stone silos, the cloud engulfs Halcyon and survivors flee into Phyrexia.",
+   "participants": [
+    "Yawgmoth",
+    "Halcyon",
+    "Thran Temple"
+   ],
+   "location": "Halcyon",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The white cloud enveloped Halcyon, forcing everyone to flee into the Caves of the Damned"
+  },
+  {
+   "summary": "Glacian dies and his spark powers the heartstone, letting Rebbec close the portal to Phyrexia.",
+   "participants": [
+    "Glacian",
+    "Rebbec"
+   ],
+   "location": "Halcyon",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rebbec was able to close the portal to Phyrexia, leaving her to face the white cloud of death alone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Glacian",
+   "note": "Poisoned him.",
+   "paragraph": 2,
+   "quote": "the truth about his poisoning of Glacian"
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Rebbec",
+   "note": "She learned the truth and he sedated her.",
+   "paragraph": 2,
+   "quote": "Yawgmoth sedated her"
+  },
+  {
+   "source": "Rebbec",
+   "relation": "romantic",
+   "target": "Yawgmoth",
+   "note": "Former love.",
+   "paragraph": 2,
+   "quote": "she did manage to hide her former love for him from him"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,137 @@
+{
+ "page": "wiki/smoke-mountains",
+ "url": "https://mtg.wiki/page/Smoke_Mountains",
+ "title": "Smoke Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Smoke Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Rugged mountain region in northern Aerona on Dominaria, northeast of the Whispering Woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Landmass of Dominaria containing the Smoke Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the Smoke Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whispering Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest southwest of the Smoke Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Short Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ogre tribe occupying the northern stretches of the mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stone giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Giants dwelling in the higher, remote northwestern areas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bywater",
+   "type": "location",
+   "aliases": [],
+   "description": "Town in the Smoke Mountains disturbed repeatedly by the wizard Gurias.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gurias",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who repeatedly disturbed the lands around Bywater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myrion",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortified walled city that endured a siege by Immugio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immugio",
+   "type": "character",
+   "aliases": [],
+   "description": "Half-giant wizard who besieged Myrion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hammerheim",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress at the easternmost tip of the range near the Sea of Whales.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea of Whales",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea near which Hammerheim stands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Myrion endures a siege conducted by the half-giant wizard Immugio.",
+   "participants": [
+    "Immugio",
+    "Myrion"
+   ],
+   "location": "Smoke Mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "a walled settlement that endured a siege conducted by the half-giant wizard Immugio"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Short Hand",
+   "relation": "located_in",
+   "target": "Smoke Mountains",
+   "note": "The ogres occupy the northerly stretches.",
+   "paragraph": 0,
+   "quote": "the ogres of the Short Hand tribe, who occupy the more northerly stretches of the mountains"
+  },
+  {
+   "source": "Immugio",
+   "relation": "enemy",
+   "target": "Myrion",
+   "note": "Immugio besieged the city.",
+   "paragraph": 1,
+   "quote": "endured a siege conducted by the half-giant wizard Immugio"
+  },
+  {
+   "source": "Hammerheim",
+   "relation": "located_in",
+   "target": "Smoke Mountains",
+   "note": "It stands at the easternmost tip of the range.",
+   "paragraph": 1,
+   "quote": "At the easternmost tip of the mountain range"
+  }
+ ],
+ "rejected": []
+}

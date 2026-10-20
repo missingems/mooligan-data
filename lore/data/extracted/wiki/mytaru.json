@@ -1,0 +1,193 @@
+{
+ "page": "wiki/mytaru",
+ "url": "https://mtg.wiki/page/Mytaru",
+ "title": "Mytaru",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mytaru",
+   "type": "character",
+   "aliases": [],
+   "description": "Minotaur of the Urhaalan clan in Dominaria's Dark Age who sacrificed himself in the Living Armor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urhaalan",
+   "type": "faction",
+   "aliases": [
+    "Utyeehn clan",
+    "House Mytaaurun"
+   ],
+   "description": "Minotaur clan of Urhaalan Valley.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yunnie",
+   "type": "character",
+   "aliases": [],
+   "description": "Human boy adopted by the clan, Mytaru's blood-brother, wearer of the Living Armor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sacumon",
+   "type": "character",
+   "aliases": [],
+   "description": "Manipulated the minotaurs into war with the elves, using coal golems.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niroso",
+   "type": "faction",
+   "aliases": [],
+   "description": "Maker of coal golems.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tiyint",
+   "type": "creature",
+   "aliases": [],
+   "description": "Stone avatar of a legendary Urhaalan hero that turned on its creators.",
+   "presence": "appears"
+  },
+  {
+   "name": "Living Armor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Armor Yunnie wore, whose magic rebounds damage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pardano",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Aesor, killed in a cave-in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aesor",
+   "type": "character",
+   "aliases": [],
+   "description": "Father of Pardano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yunnie and Mytaru become blood-brothers.",
+   "participants": [
+    "Mytaru",
+    "Yunnie"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "eventually became blood-brothers during a ceremony"
+  },
+  {
+   "summary": "Mytaru, misled by Sacumon, helps instigate war against the elves.",
+   "participants": [
+    "Mytaru",
+    "Sacumon",
+    "Urhaalan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Mytaru became one of the instigators of the war"
+  },
+  {
+   "summary": "Mytaru disowns Yunnie and has him expelled from the clan.",
+   "participants": [
+    "Mytaru",
+    "Yunnie"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "an enraged Mytaru disowned his new blood-brother and had him expelled from his clan"
+  },
+  {
+   "summary": "Mytaru awakens the stone avatar of Tiyint, which slaughters elves, then turns on the Urhaalan.",
+   "participants": [
+    "Mytaru",
+    "Tiyint",
+    "Urhaalan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the giant stone minotaur turned on its creators, killing many of the Urhaalan"
+  },
+  {
+   "summary": "Pardano is killed in a cave-in caused by Tiyint's earthquakes.",
+   "participants": [
+    "Pardano",
+    "Aesor",
+    "Tiyint"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Pardano , son of Aesor , was killed in a cave-in caused by one of these earthquakes."
+  },
+  {
+   "summary": "Mytaru dons the Living Armor and is crushed by Tiyint, draining Tiyint's life force.",
+   "participants": [
+    "Mytaru",
+    "Tiyint",
+    "Living Armor"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Tiyint grabbed Mytaru and squeezed him in his hand"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mytaru",
+   "relation": "member_of",
+   "target": "Urhaalan",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Mytaru was a minotaur of the Urhaalan clan"
+  },
+  {
+   "source": "Mytaru",
+   "relation": "family",
+   "target": "Yunnie",
+   "note": "blood-brother until disowning him",
+   "paragraph": 2,
+   "quote": "eventually became blood-brothers during a ceremony"
+  },
+  {
+   "source": "Sacumon",
+   "relation": "enemy",
+   "target": "Urhaalan",
+   "note": "used coal golems to wipe out minotaur villages",
+   "paragraph": 3,
+   "quote": "Sacumon continued to use her coal golems to wipe out entire minotaur villages"
+  },
+  {
+   "source": "Tiyint",
+   "relation": "killed",
+   "target": "Mytaru",
+   "note": "crushed him in its hand",
+   "paragraph": 3,
+   "quote": "even as it crushed Mytaru to death"
+  }
+ ],
+ "rejected": []
+}

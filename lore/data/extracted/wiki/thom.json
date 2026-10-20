@@ -1,0 +1,169 @@
+{
+ "page": "wiki/thom",
+ "url": "https://mtg.wiki/page/Thom",
+ "title": "Thom",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:35Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Thom",
+   "type": "character",
+   "aliases": [],
+   "description": "A Cabal cultist masquerading as a Tolarian student on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult to which Thom belongs, whose Stronghold is presided over by Belzenlok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member Thom tried to kill, who then held him with a spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raff",
+   "type": "character",
+   "aliases": [],
+   "description": "Youthful, earnest Tolarian who used a magical interrogation technique on Thom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana",
+   "type": "character",
+   "aliases": [],
+   "description": "Enveloped in a black cloud by Thom's spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon",
+   "type": "character",
+   "aliases": [],
+   "description": "Target of an attack by Thom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naban",
+   "type": "character",
+   "aliases": [],
+   "description": "Left the room in cold fury during the interrogation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Presides over the Cabal Stronghold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "The crew Thom deceived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "The Cabal's base where Belzenlok presides.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where events occur.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thom poses as an innocent Tolarian student who stayed behind to help and admits finding a device at the crime scene.",
+   "participants": [
+    "Thom",
+    "Jodah",
+    "Weatherlight crew"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Thom deceived Jodah and the rest of the Weatherlight crew by pretending to be an innocent student"
+  },
+  {
+   "summary": "Thom attacks Jodah with a dark globe of death magic, revealing his Cabal allegiance.",
+   "participants": [
+    "Thom",
+    "Jodah",
+    "Cabal"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he attacked Jodah with a dark globe of death magic, revealing his allegiance to the Cabal"
+  },
+  {
+   "summary": "Thom envelops Liliana in a black cloud and attacks Gideon.",
+   "participants": [
+    "Thom",
+    "Liliana",
+    "Gideon"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Thom cast a spell that enveloped Liliana in a black cloud and attempted to attack Gideon"
+  },
+  {
+   "summary": "Captured, Thom is held rigid by Jodah's spell and interrogated by Raff, which sends Naban from the room in fury; the Cabal Stronghold's location is learned.",
+   "participants": [
+    "Thom",
+    "Jodah",
+    "Raff",
+    "Naban",
+    "Belzenlok"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This enabled the team to discover the location of the Cabal Stronghold, where Belzenlok presided."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thom",
+   "relation": "member_of",
+   "target": "Cabal",
+   "note": "A Cabal agent in disguise",
+   "paragraph": 0,
+   "quote": "Thom is a Cabal cultist masquerading as a Tolarian student"
+  },
+  {
+   "source": "Thom",
+   "relation": "enemy",
+   "target": "Jodah",
+   "note": "Tried to kill him",
+   "paragraph": 2,
+   "quote": "Thom then attempted to kill Jodah with a powerful spell"
+  },
+  {
+   "source": "Belzenlok",
+   "relation": "leader_of",
+   "target": "Cabal",
+   "note": "Presides over the Cabal Stronghold",
+   "paragraph": 2,
+   "quote": "the Cabal Stronghold, where Belzenlok presided"
+  }
+ ],
+ "rejected": []
+}

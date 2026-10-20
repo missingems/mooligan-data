@@ -1,0 +1,211 @@
+{
+ "page": "wiki/the-battle-of-kjeldor",
+ "url": "https://mtg.wiki/page/The_Battle_of_Kjeldor",
+ "title": "The Battle of Kjeldor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:24Z",
+ "storyline": "Coldsnap",
+ "entities": [
+  {
+   "name": "Battle of Kjeldor",
+   "type": "event",
+   "aliases": [
+    "the Battle of Kjeldor"
+   ],
+   "description": "Four-night battle between the undead hordes of Haakon of Tresserhorn and the defenders of Kjeldor under King Darien.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "The city whose northern fields the defenders hold against Stromgald's army.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Darien",
+   "type": "character",
+   "aliases": [
+    "Darien"
+   ],
+   "description": "King of Kjeldor who fights at the forefront and finally kills Haakon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haakon",
+   "type": "character",
+   "aliases": [
+    "Haakon of Tresserhorn",
+    "the Stromgald general"
+   ],
+   "description": "The towering Stromgald general in black armor who leads the undead army and is finally killed by Darien.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stromgald",
+   "type": "faction",
+   "aliases": [
+    "Stromgald army"
+   ],
+   "description": "The army, partly undead, that attacks Kjeldor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor army",
+   "type": "faction",
+   "aliases": [
+    "the Kjeldor defenders"
+   ],
+   "description": "The defenders led by the narrator, with Field Marshals and a Jotun squad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jotun squad",
+   "type": "faction",
+   "aliases": [
+    "Jötun squad"
+   ],
+   "description": "A specialized unit of giants deployed by the narrator after the second night.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent on which the narrator says his men are the mightiest army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The first Stromgald attack comes after three days of waiting; the defenders cut down the vanguard and hold the line, though some enemies get back up.",
+   "participants": [
+    "Stromgald",
+    "Kjeldor army"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Our line held, however, and when the first wave reached us, they were stopped cold."
+  },
+  {
+   "summary": "The second night's two-part attack, with knights breaking through, is slowed by the defenders' placement and closed in on by reinforcements.",
+   "participants": [
+    "Stromgald",
+    "Kjeldor army"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "As the knights broke through, we closed ranks behind them."
+  },
+  {
+   "summary": "The narrator deploys the Jotun squad of giants who had seen what Stromgald does to a land.",
+   "participants": [
+    "Kjeldor army",
+    "Jotun squad"
+   ],
+   "location": "Kjeldor",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "It was at this time that I decided to deploy our Jötun squad ."
+  },
+  {
+   "summary": "On the third night the dead from both sides keep rising and fighting; a fallen Jotun is seen again as a Stromgald zombie, and the defenders grow stronger, ending with less than half their numbers.",
+   "participants": [
+    "Stromgald",
+    "Kjeldor army",
+    "Jotun squad"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "By the time the fighting was finally over, we had less than half of our original numbers."
+  },
+  {
+   "summary": "On the fourth night only Haakon comes forward; Darien goes out to face him and the two leaders fight for hours.",
+   "participants": [
+    "Haakon",
+    "King Darien"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 15,
+   "quote": "The two leaders of the armies fought for hours."
+  },
+  {
+   "summary": "The defenders realize the Stromgald army is watching from beyond and, understanding Darien would die for them, swarm out and charge.",
+   "participants": [
+    "Kjeldor army",
+    "King Darien",
+    "Haakon",
+    "Stromgald"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 17,
+   "quote": "As one, we swarmed out of our emplacements and charged."
+  },
+  {
+   "summary": "Slowed by the soldiers' waves, Haakon is finished off by Darien, and his army slinks away; Kjeldor wins.",
+   "participants": [
+    "King Darien",
+    "Haakon",
+    "Stromgald",
+    "Kjeldor army"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "Darien, who looked a lot more bloodied up close, was able to finish him off."
+  },
+  {
+   "summary": "As the defenders regroup, the narrator sees black smoke on the horizon and hears a faint alien sound.",
+   "participants": [
+    "Kjeldor army"
+   ],
+   "location": "Kjeldor",
+   "importance": "minor",
+   "paragraph": 21,
+   "quote": "I saw lines of thick black smoke rising into the dawn sky."
+  }
+ ],
+ "relations": [
+  {
+   "source": "King Darien",
+   "relation": "killed",
+   "target": "Haakon",
+   "note": "Finished off the Stromgald general after the soldiers slowed him.",
+   "paragraph": 18,
+   "quote": "was able to finish him off"
+  },
+  {
+   "source": "Haakon",
+   "relation": "leader_of",
+   "target": "Stromgald",
+   "note": "The Stromgald general.",
+   "paragraph": 13,
+   "quote": "All that we saw was Haakon , the Stromgald general"
+  },
+  {
+   "source": "King Darien",
+   "relation": "leader_of",
+   "target": "Kjeldor army",
+   "note": "King at the forefront of the defenders.",
+   "paragraph": 0,
+   "quote": "with King Darien himself at the forefront"
+  },
+  {
+   "source": "Stromgald",
+   "relation": "enemy",
+   "target": "Kjeldor army",
+   "note": "Attacked Kjeldor over four nights.",
+   "paragraph": 2,
+   "quote": "a rampaging horde of Stromgald's meanest, most vicious fighters"
+  }
+ ],
+ "rejected": []
+}

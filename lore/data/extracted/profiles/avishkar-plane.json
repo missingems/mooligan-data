@@ -1,0 +1,113 @@
+{
+ "page": "profiles/avishkar-plane",
+ "url": "https://magic.wizards.com/en/story/avishkar-plane",
+ "title": "Avishkar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:38:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [
+    "Kaladesh"
+   ],
+   "description": "A plane of inspired invention, formerly known as Kaladesh, whose life depends on aether and which is now united under the Avishkar Assembly.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aether",
+   "type": "concept",
+   "aliases": [],
+   "description": "A raw magical energy critical to Avishkar's ecosystem and culture of invention.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Avishkar's former governing body, which acted as an oppressive force trying to control aether technology and stifle innate magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Avishkar Assembly",
+   "type": "faction",
+   "aliases": [],
+   "description": "The new planar government that unites Avishkar after the revolution.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "A rebel group that thwarted the Consulate's plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "A race the Avishkar Assembly plans to resurrect to honor the plane's new beginnings.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Consulate is overthrown in a popular, nearly bloodless revolution, and Kaladesh is reborn as Avishkar.",
+   "participants": [
+    "Avishkar",
+    "The Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The ruling Consulate has been overthrown in a popular, nearly bloodless revolution."
+  },
+  {
+   "summary": "The plane is united under the new Avishkar Assembly, which plans to resurrect the Ghirapur Grand Prix.",
+   "participants": [
+    "The Avishkar Assembly",
+    "Ghirapur Grand Prix"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The plane is now united under a new planar government called the Avishkar Assembly"
+  },
+  {
+   "summary": "The Consulate announces a month-long fair that is secretly a deception to gather and control the plane's newest technologies.",
+   "participants": [
+    "The Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "In truth, the Fair was a deception"
+  },
+  {
+   "summary": "The rebel Renegades thwart the Consulate's plan, clearing the way for Avishkar's new beginnings.",
+   "participants": [
+    "The Renegades",
+    "The Consulate"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Their plan was thwarted by a rebel group known as the Renegades"
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Renegades",
+   "relation": "enemy",
+   "target": "The Consulate",
+   "note": "The Renegades thwarted the Consulate's plan.",
+   "paragraph": 5,
+   "quote": "Their plan was thwarted by a rebel group known as the Renegades"
+  }
+ ],
+ "rejected": []
+}

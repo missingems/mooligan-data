@@ -1,0 +1,143 @@
+{
+ "page": "wiki/savai",
+ "url": "https://mtg.wiki/page/Savai",
+ "title": "Savai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:05Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Savai",
+   "type": "location",
+   "aliases": [],
+   "description": "One of Ikoria's three-color triome regions, an arid land of plains, canyons and caves ruled by prides of monster cats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Savai lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Snapdax",
+   "type": "creature",
+   "aliases": [],
+   "description": "The apex monster of Savai, a Cat-clade predator whose lair is in the Unundo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Egali",
+   "type": "location",
+   "aliases": [],
+   "description": "A fertile, verdant plain in the lower elevations of Savai.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Argalith",
+   "type": "location",
+   "aliases": [
+    "Argalith"
+   ],
+   "description": "The largest single crystal in the world and central landmark of Egali.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [
+    "Drannith Ruins",
+    "the invincible city"
+   ],
+   "description": "Fortified human stronghold built around the Argalith, destroyed in the New Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that destroyed Drannith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jal Korcha",
+   "type": "location",
+   "aliases": [
+    "the Terror Road"
+   ],
+   "description": "Monumental road extending thousands of miles across the continent from Drannith to Lavabrink.",
+   "presence": "appears"
+  },
+  {
+   "name": "Unundo",
+   "type": "location",
+   "aliases": [
+    "the caverns of Unundo"
+   ],
+   "description": "Vast swampy cave system beneath Savai that shelters humans and other vulnerable species.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glondo Gorge",
+   "type": "location",
+   "aliases": [
+    "the gorge of Glondo"
+   ],
+   "description": "A bottomless vertical drop deep within the Unundo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cat clade",
+   "type": "faction",
+   "aliases": [
+    "Ikorian cats"
+   ],
+   "description": "The dominant clade of monsters in Savai, hunting in coordinated prides.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Drannith, once the invincible city, is destroyed in the New Phyrexian Invasion and lies in ruins.",
+   "participants": [
+    "Drannith",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Egali",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It was ultimately destroyed during the New Phyrexian Invasion , and now lies in ruins."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Snapdax",
+   "relation": "located_in",
+   "target": "Unundo",
+   "note": "its lair",
+   "paragraph": 6,
+   "quote": "The lair of Snapdax , the apex monster of Savai, is located somewhere within the Unundo."
+  },
+  {
+   "source": "Savai",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "triome region",
+   "paragraph": 0,
+   "quote": "Savai is one of Ikoria's three-color triome regions"
+  },
+  {
+   "source": "Drannith",
+   "relation": "located_in",
+   "target": "Egali",
+   "note": "city built around the Argalith",
+   "paragraph": 4,
+   "quote": "The fortified city of Drannith was originally constructed around this green crystal"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,238 @@
+{
+ "page": "wiki/great-marsh",
+ "url": "https://mtg.wiki/page/Great_Marsh",
+ "title": "Great Marsh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:50Z",
+ "storyline": "Betrayal of Tamingazin",
+ "entities": [
+  {
+   "name": "Great Marsh",
+   "type": "location",
+   "aliases": [
+    "Grand Marais"
+   ],
+   "description": "A large area of bogs on Tamingazin in Otaria, setting of a decisive mission.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamingazin",
+   "type": "location",
+   "aliases": [
+    "Valley of Tamingazin"
+   ],
+   "description": "Subcontinent and valley defended against the Suder invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suderbod",
+   "type": "faction",
+   "aliases": [
+    "Suder"
+   ],
+   "description": "Invading nation, loyal En'Jaga warriors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "En'Jaga",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant, monstrous soldiers of the marsh loyal to Suderbod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Attalo",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fierce giant tortoises of the marsh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Betrayal of Tamingazin",
+   "type": "event",
+   "aliases": [],
+   "description": "The betrayal during the Suder invasion of the Valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Recin",
+   "type": "character",
+   "aliases": [],
+   "description": "An exiled Garan elf who retrieved the Magewall Hub.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kitrin",
+   "type": "character",
+   "aliases": [],
+   "description": "A young mage who killed Solin with her tracking crystal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Magewall Hub",
+   "type": "artifact",
+   "aliases": [
+    "Magewall"
+   ],
+   "description": "Artifact maintaining the Valley's magical defenses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aligarius Timni",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who stole the Hub, later guilt-ridden and helped escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ursal Daleel",
+   "type": "character",
+   "aliases": [],
+   "description": "Suderbod ambassador and mastermind, devoured by an attalo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hemarch Solin",
+   "type": "character",
+   "aliases": [
+    "Solin"
+   ],
+   "description": "Cruel leader of Suderbod killed by Kitrin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tallibeth Tarngold",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Valley's defenders.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Recin and Kitrin enter the marsh to retrieve the stolen Magewall Hub.",
+   "participants": [
+    "Recin",
+    "Kitrin",
+    "Magewall Hub",
+    "Aligarius Timni",
+    "Ursal Daleel"
+   ],
+   "location": "Great Marsh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Their goal was to retrieve the Magewall Hub"
+  },
+  {
+   "summary": "Recin and Kitrin are captured by En'Jaga and imprisoned in Solin's camp.",
+   "participants": [
+    "Recin",
+    "Kitrin",
+    "En'Jaga",
+    "Hemarch Solin"
+   ],
+   "location": "Great Marsh",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The marsh had now become a prison for the two."
+  },
+  {
+   "summary": "Kitrin kills Solin with her tracking crystal thrown as a dagger.",
+   "participants": [
+    "Kitrin",
+    "Hemarch Solin"
+   ],
+   "location": "Great Marsh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kitrin used her tracking crystal as a throwing dagger, killing Solin in the process."
+  },
+  {
+   "summary": "Aligarius helps them escape; they incapacitate Ursal and flee with the Hub.",
+   "participants": [
+    "Aligarius Timni",
+    "Recin",
+    "Kitrin",
+    "Ursal Daleel",
+    "Magewall Hub"
+   ],
+   "location": "Great Marsh",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "fled the camp with the Magewall Hub in hand"
+  },
+  {
+   "summary": "Aligarius reactivates the Magewall while Recin fights the guard and an attalo devours Ursal.",
+   "participants": [
+    "Aligarius Timni",
+    "Recin",
+    "Ursal Daleel",
+    "Attalo",
+    "Magewall Hub"
+   ],
+   "location": "Great Marsh",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "a hungry attalo , a monstrous swamp tortoise , devoured the ambassador whole"
+  },
+  {
+   "summary": "Kitrin rescues Recin from drowning; the reappearing Magewall halts the Suder army and Tallibeth's defenders push them back.",
+   "participants": [
+    "Kitrin",
+    "Recin",
+    "Tallibeth Tarngold",
+    "Magewall Hub"
+   ],
+   "location": "Tamingazin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Kitrin rescued Recin from drowning"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kitrin",
+   "relation": "killed",
+   "target": "Hemarch Solin",
+   "note": "Threw her tracking crystal.",
+   "paragraph": 3,
+   "quote": "Kitrin used her tracking crystal as a throwing dagger, killing Solin in the process."
+  },
+  {
+   "source": "Ursal Daleel",
+   "relation": "enemy",
+   "target": "Recin",
+   "note": "Pursued him in the marsh.",
+   "paragraph": 4,
+   "quote": "they were pursued by a recovered Ursal and his guard"
+  },
+  {
+   "source": "Aligarius Timni",
+   "relation": "ally",
+   "target": "Recin",
+   "note": "Helped Recin and Kitrin escape.",
+   "paragraph": 3,
+   "quote": "aided Recin and Kitrin in escaping the Suderbod camp"
+  },
+  {
+   "source": "En'Jaga",
+   "relation": "serves",
+   "target": "Suderbod",
+   "note": "Loyal soldiers.",
+   "paragraph": 3,
+   "quote": "vicious, monstrous soldiers loyal to Suderbod"
+  },
+  {
+   "source": "Hemarch Solin",
+   "relation": "leader_of",
+   "target": "Suderbod",
+   "note": "Its leader.",
+   "paragraph": 3,
+   "quote": "Suderbod’s leader, Hemarch Solin"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,161 @@
+{
+ "page": "wiki/ferzhin",
+ "url": "https://mtg.wiki/page/Ferzhin",
+ "title": "Ferzhin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:57Z",
+ "storyline": "War of the Spark",
+ "entities": [
+  {
+   "name": "Ferzhin",
+   "type": "character",
+   "aliases": [],
+   "description": "Older minotaur lieutenant of the Boros Legion, second in command after Aurelia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros",
+    "the Legion"
+   ],
+   "description": "Ravnican guild of soldiers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros leader whom Ferzhin serves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "Azorius leader who was assassinated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "To be made the new living Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose territory Ferzhin's troops crossed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Domri Rade",
+   "type": "character",
+   "aliases": [
+    "Domri"
+   ],
+   "description": "Gruul leader fought by Ferzhin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose officials Ferzhin challenged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane being defended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict on Ravnica.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ferzhin challenges the Azorius officials in guild talks on defending Ravnica.",
+   "participants": [
+    "Ferzhin",
+    "Aurelia",
+    "Azorius"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "She challenged the Azorius officials, emphasizing the Legion's role in maintaining justice."
+  },
+  {
+   "summary": "After Isperia's assassination Ferzhin shows leadership and joins a council of war.",
+   "participants": [
+    "Ferzhin",
+    "Isperia",
+    "Aurelia"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Ferzhin demonstrated leadership in the ensuing chaos"
+  },
+  {
+   "summary": "Ferzhin fights Domri Rade, is wounded, and defeats him with a headbutt.",
+   "participants": [
+    "Ferzhin",
+    "Domri Rade",
+    "Gruul"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Despite being wounded by Domri, she defeated him with a headbutt."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ferzhin",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "lieutenant",
+   "paragraph": 0,
+   "quote": "Ferzhin is a minotaur officer of the"
+  },
+  {
+   "source": "Ferzhin",
+   "relation": "serves",
+   "target": "Aurelia",
+   "note": "lieutenant",
+   "paragraph": 3,
+   "quote": "As Aurelia 's lieutenant"
+  },
+  {
+   "source": "Ferzhin",
+   "relation": "enemy",
+   "target": "Domri Rade",
+   "note": "fought and defeated him",
+   "paragraph": 6,
+   "quote": "fighting the Gruul leader Domri Rade directly"
+  },
+  {
+   "source": "Domri Rade",
+   "relation": "leader_of",
+   "target": "Gruul",
+   "note": "",
+   "paragraph": 6,
+   "quote": "fighting the Gruul leader Domri Rade directly"
+  }
+ ],
+ "rejected": []
+}

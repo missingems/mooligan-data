@@ -1,0 +1,156 @@
+{
+ "page": "wiki/grenzo",
+ "url": "https://mtg.wiki/page/Grenzo",
+ "title": "Grenzo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:24Z",
+ "storyline": "Ravnica: Grenzo",
+ "entities": [
+  {
+   "name": "Grenzo",
+   "type": "character",
+   "aliases": [],
+   "description": "Scheming goblin of Paliano on Fiora, former dungeon warden and leader of the goblin underclass.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [],
+   "description": "High City on Fiora.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Paliano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selvala",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf who killed King Brago and was released by Grenzo.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Brago",
+   "type": "character",
+   "aliases": [],
+   "description": "King killed by Selvala.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muzzio",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer targeted by Grenzo's plan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [],
+   "description": "Queen who fired Grenzo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who became Grenzo's ally.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Grenzo traveled to via omenpaths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Grenzo traveled to Thunder Junction.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Grenzo released Selvala from the dungeons to kill Muzzio, but the plan backfired when she released the constructs in his tunnels.",
+   "participants": [
+    "Grenzo",
+    "Selvala",
+    "Muzzio"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Grenzo released her from the dungeons in a bid to kill the artificer Muzzio"
+  },
+  {
+   "summary": "Marchesa became queen and fired Grenzo as dungeon keeper; he became leader of a thieving goblin gang.",
+   "participants": [
+    "Marchesa",
+    "Grenzo"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "When Marchesa became queen, she fired Grenzo as dungeon keeper."
+  },
+  {
+   "summary": "Grenzo found an ally in Daretti.",
+   "participants": [
+    "Grenzo",
+    "Daretti"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He found an ally in the planeswalker Daretti"
+  },
+  {
+   "summary": "After the New Phyrexian Invasion Grenzo traveled to Thunder Junction and became a jailer.",
+   "participants": [
+    "Grenzo"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "There he became a jailer."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Grenzo",
+   "relation": "ally",
+   "target": "Daretti",
+   "note": "ally",
+   "paragraph": 3,
+   "quote": "He found an ally in the planeswalker Daretti"
+  },
+  {
+   "source": "Selvala",
+   "relation": "killed",
+   "target": "King Brago",
+   "note": "killed him",
+   "paragraph": 2,
+   "quote": "After the elf Selvala killed king Brago"
+  },
+  {
+   "source": "Marchesa",
+   "relation": "enemy",
+   "target": "Grenzo",
+   "note": "fired him",
+   "paragraph": 3,
+   "quote": "she fired Grenzo as dungeon keeper"
+  }
+ ],
+ "rejected": []
+}

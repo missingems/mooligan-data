@@ -1,0 +1,237 @@
+{
+ "page": "wiki/kobo",
+ "url": "https://mtg.wiki/page/Kobo",
+ "title": "Kobo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:14Z",
+ "storyline": "Champions of Kamigawa",
+ "entities": [
+  {
+   "name": "Kobo",
+   "type": "character",
+   "aliases": [],
+   "description": "Young human apprentice of the ogre shaman Hidetsugu on Kamigawa, formerly a budoka monk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre shaman who trained Kobo and avenged his death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest where Kobo's monastery stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain where Kobo sought a yamabushi master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshi Umezawa",
+   "type": "character",
+   "aliases": [
+    "Toshi"
+   ],
+   "description": "Came to Hidetsugu for help and traveled with Kobo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang Kobo joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myojin of Infinite Rage",
+   "type": "deity",
+   "aliases": [],
+   "description": "Kami whose minions Toshi and Kobo defeated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Princess Michiko Konda",
+   "type": "character",
+   "aliases": [
+    "Michiko"
+   ],
+   "description": "Princess whose party Toshi and Kobo met.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orochi",
+   "type": "faction",
+   "aliases": [
+    "snakefolk"
+   ],
+   "description": "Snakefolk who overwhelmed Kobo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Choryu",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who drowned Kobo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo School",
+   "type": "location",
+   "aliases": [],
+   "description": "Destroyed by Hidetsugu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oboro",
+   "type": "location",
+   "aliases": [],
+   "description": "Attacked by Hidetsugu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mochi",
+   "type": "character",
+   "aliases": [],
+   "description": "Consumed by Hidetsugu.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rejected by the yamabushi, Kobo meets the ogre shaman Hidetsugu and becomes his apprentice.",
+   "participants": [
+    "Kobo",
+    "Hidetsugu"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he met the ogre shaman Hidetsugu, who was looking for an apprentice"
+  },
+  {
+   "summary": "Over five years Kobo endures Hidetsugu's abuse and training in ogre blood and chaos magic.",
+   "participants": [
+    "Kobo",
+    "Hidetsugu"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Hidetsugu trained Kobo in the ways of ogre blood and chaos magic"
+  },
+  {
+   "summary": "Hidetsugu sends Kobo with Toshi Umezawa to Jukai for field experience.",
+   "participants": [
+    "Hidetsugu",
+    "Kobo",
+    "Toshi Umezawa"
+   ],
+   "location": "Jukai",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He then sent the youth with Toshi, to gain some \"field experience\"."
+  },
+  {
+   "summary": "Toshi and Kobo defeat three kami minions of the Myojin of Infinite Rage.",
+   "participants": [
+    "Toshi Umezawa",
+    "Kobo",
+    "Myojin of Infinite Rage"
+   ],
+   "location": "Jukai",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "defeated three kami minions of the Myojin of Infinite Rage"
+  },
+  {
+   "summary": "Orochi overwhelm Kobo with numbers and poison, and tie him to trees.",
+   "participants": [
+    "Kobo",
+    "Orochi",
+    "Princess Michiko Konda"
+   ],
+   "location": "Jukai",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he was overwhelmed by their sheer numbers and poison"
+  },
+  {
+   "summary": "Choryu drowns the helpless Kobo.",
+   "participants": [
+    "Choryu",
+    "Kobo"
+   ],
+   "location": "Jukai",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The wizard Choryu abused the situation to drown Kobo"
+  },
+  {
+   "summary": "Hidetsugu avenges Kobo by torturing Choryu, destroying Minamo School, attacking Oboro and consuming Mochi.",
+   "participants": [
+    "Hidetsugu",
+    "Choryu",
+    "Minamo School",
+    "Oboro",
+    "Mochi"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "His death was eventually avenged by Hidetsugu who tortured Choryu for months"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kobo",
+   "relation": "serves",
+   "target": "Hidetsugu",
+   "note": "apprentice",
+   "paragraph": 0,
+   "quote": "Kobo was a young human apprentice of the ogre shaman Hidetsugu"
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "mentor_of",
+   "target": "Kobo",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Hidetsugu trained Kobo in the ways of ogre blood and chaos magic"
+  },
+  {
+   "source": "Choryu",
+   "relation": "killed",
+   "target": "Kobo",
+   "note": "drowned him",
+   "paragraph": 5,
+   "quote": "The wizard Choryu abused the situation to drown Kobo"
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "enemy",
+   "target": "Choryu",
+   "note": "avenged Kobo",
+   "paragraph": 6,
+   "quote": "His death was eventually avenged by Hidetsugu who tortured Choryu for months"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,120 @@
+{
+ "page": "wiki/basilisk",
+ "url": "https://mtg.wiki/page/Basilisk",
+ "title": "Basilisk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Basilisk",
+   "type": "creature",
+   "aliases": [
+    "basilisks"
+   ],
+   "description": "Giant, many-legged reptiles that can turn enemies to stone with their gaze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuya",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hapatra's pet basilisk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hapatra",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of a pet basilisk named Tuya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [],
+   "description": "Amonkhet god whose Trial of Strength involves basilisks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned two basilisks at Castle Melmereth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed one of Jared's basilisks himself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Melmereth",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of a fight where Jared summoned basilisks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "Ravnican guild whose experimentation produced Ravnica's basilisks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pharika",
+   "type": "deity",
+   "aliases": [],
+   "description": "Theros god said to have hidden secrets in basilisk blood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lowland Basilisk",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Rath basilisk that dissolves victims into flowstone.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jared Carthalion summons two basilisks to fight at Castle Melmereth; both die, one by Ravidel's hand.",
+   "participants": [
+    "Jared Carthalion",
+    "Ravidel",
+    "Basilisk"
+   ],
+   "location": "Castle Melmereth",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "both were killed, one by Ravidel himself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hapatra",
+   "relation": "other",
+   "target": "Tuya",
+   "note": "Owner of pet basilisk",
+   "paragraph": 3,
+   "quote": "Hapatra has a pet basilisk named Tuya."
+  },
+  {
+   "source": "Simic Combine",
+   "relation": "created",
+   "target": "Basilisk",
+   "note": "Ravnican basilisks came from Simic experimentation",
+   "paragraph": 7,
+   "quote": "The basilisks on Ravnica were the result of Simic experimentation."
+  }
+ ],
+ "rejected": []
+}

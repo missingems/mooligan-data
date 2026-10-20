@@ -1,0 +1,98 @@
+{
+ "page": "wiki/tomb-of-urami",
+ "url": "https://mtg.wiki/page/Tomb_of_Urami",
+ "title": "Tomb of Urami",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:55Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Tomb of Urami",
+   "type": "location",
+   "aliases": [],
+   "description": "Gateway in the swamps of Takenuma on Kamigawa through which the oni Urami erupts to feed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urami",
+   "type": "character",
+   "aliases": [],
+   "description": "Oni who struck a deal with ogre-magi for food and kept them in servitude.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogre-magi",
+   "type": "faction",
+   "aliases": [
+    "ogres"
+   ],
+   "description": "Ogres who built Urami's gateway and lured people to it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamps where the tomb lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urami strikes a deal with ogre-magi, promising forbidden secrets for free reign to consume their lands, but never keeps his end.",
+   "participants": [
+    "Urami",
+    "Ogre-magi"
+   ],
+   "location": "Takenuma",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The oni never fulfilled his end of the bargain"
+  },
+  {
+   "summary": "The ogres construct a gateway through which Urami erupts to feed.",
+   "participants": [
+    "Ogre-magi",
+    "Urami",
+    "Tomb of Urami"
+   ],
+   "location": "Takenuma",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The ogres constructed a gateway through which Urami erupted to feed"
+  },
+  {
+   "summary": "The ogres mark the gate as a tomb and spread rumors of Urami's demise to lure people.",
+   "participants": [
+    "Ogre-magi",
+    "Urami"
+   ],
+   "location": "Takenuma",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "spread rumors of Urami's demise"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ogre-magi",
+   "relation": "serves",
+   "target": "Urami",
+   "note": "kept in perpetual servitude",
+   "paragraph": 1,
+   "quote": "preferring instead to keep the ogres in perpetual servitude"
+  },
+  {
+   "source": "Ogre-magi",
+   "relation": "created",
+   "target": "Tomb of Urami",
+   "note": "built the gateway",
+   "paragraph": 2,
+   "quote": "The ogres constructed a gateway"
+  }
+ ],
+ "rejected": []
+}

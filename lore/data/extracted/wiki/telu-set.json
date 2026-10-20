@@ -1,0 +1,101 @@
+{
+ "page": "wiki/telu-set",
+ "url": "https://mtg.wiki/page/Telu-Set",
+ "title": "Telu-Set",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:22Z",
+ "storyline": "Muraganda",
+ "entities": [
+  {
+   "name": "Telu-Set",
+   "type": "faction",
+   "aliases": [
+    "allied chiefdoms of the Telu-Set"
+   ],
+   "description": "Alliance of five human clans on Muraganda; anti-magic magehunters and null-mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muraganda",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Telu-Set live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saurid Autocracy",
+   "type": "faction",
+   "aliases": [
+    "the Autocracy"
+   ],
+   "description": "Power whose border forces fought the Telu-Set to a stalemate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telu",
+   "type": "location",
+   "aliases": [],
+   "description": "Magic-torn homeland the Telu-Set fled, destroyed by warring mages.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mon'Telu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan in the central stronghold of the Telu-Set.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telu'Ahn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan in the islands of the Coral Canyons.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Telu-Set cavalry and magehunters fought the Autocracy's border forces to a stalemate.",
+   "participants": [
+    "Telu-Set",
+    "Saurid Autocracy"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "have fought the Autocracy's border forces to a stalemate"
+  },
+  {
+   "summary": "Warring mages destroyed Telu generations ago.",
+   "participants": [
+    "Telu"
+   ],
+   "location": "Telu",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "pointing back to the magical destruction of Telu by warring mages generations prior"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mon'Telu",
+   "relation": "member_of",
+   "target": "Telu-Set",
+   "note": "Clan of the five",
+   "paragraph": 4,
+   "quote": "Mon'Telu , situated in the central stronghold of the Telu-Set."
+  },
+  {
+   "source": "Telu'Ahn",
+   "relation": "member_of",
+   "target": "Telu-Set",
+   "note": "Clan of the five",
+   "paragraph": 5,
+   "quote": "Telu'Ahn , situated in the islands of the Coral Canyons."
+  }
+ ],
+ "rejected": []
+}

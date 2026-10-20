@@ -1,0 +1,167 @@
+{
+ "page": "wiki/arcum-dagsson",
+ "url": "https://mtg.wiki/page/Arcum_Dagsson",
+ "title": "Arcum Dagsson",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:52:42Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Arcum Dagsson",
+   "type": "character",
+   "aliases": [
+    "Dagsson",
+    "Arcum"
+   ],
+   "description": "A diminutive Soldevi researcher and machinist in Kjeldor who built a weathervane and later tried to make amends for the destruction of Soldev.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soldev",
+   "type": "location",
+   "aliases": [],
+   "description": "A Kjeldoran city where Arcum Dagsson worked; it was destroyed by out-of-control war beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "The land Soldev belonged to and which Arcum Dagsson wished to aid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Royal Academy of Magic",
+   "type": "location",
+   "aliases": [],
+   "description": "An academy in Krov that held a copy of Arcum's weathervane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krov",
+   "type": "location",
+   "aliases": [],
+   "description": "The city housing the Royal Academy of Magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gustha Ebbasdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "A character who brought Jodah to see Arcum's weathervane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [
+    "Archmage Eternal"
+   ],
+   "description": "The Archmage Eternal, skeptical of Arcum's weather predictions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soldevi Adnates",
+   "type": "faction",
+   "aliases": [],
+   "description": "Meddlers whose interference caused the war beasts to go out of control.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian War Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Excavated Phyrexian machines that went out of control and destroyed Soldev.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soldevi Steam Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Machines built by Arcum and the Soldevi machinists that went out of control.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heidar",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Ice Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexians led by Heidar whom Arcum helped stop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "Ancient war whose artifacts the Soldevi machinists studied.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arcum shows Jodah and Gustha Ebbasdotter his weathervane, predicting a deepening winter; Jodah is skeptical.",
+   "participants": [
+    "Arcum Dagsson",
+    "Gustha Ebbasdotter",
+    "Jodah"
+   ],
+   "location": "Royal Academy of Magic",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Although Arcum tried to prove to Jodah that these predictions were true, the Archmage Eternal was skeptical"
+  },
+  {
+   "summary": "Soldevi machinists, Arcum among them, copy ancient artifact designs; the excavated war beasts and steam beasts go out of control and destroy Soldev.",
+   "participants": [
+    "Arcum Dagsson",
+    "Soldevi Adnates",
+    "Phyrexian War Beasts",
+    "Soldevi Steam Beasts"
+   ],
+   "location": "Soldev",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "went out of control due to the meddling of the Soldevi Adnates and destroyed the city"
+  },
+  {
+   "summary": "Arcum devotes his life to atonement, helps stop the Ice Phyrexians, warns Kjeldor, and dies of a heart attack.",
+   "participants": [
+    "Arcum Dagsson",
+    "Ice Phyrexians",
+    "Heidar"
+   ],
+   "location": "Kjeldor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He died of a heart attack not long after."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arcum Dagsson",
+   "relation": "enemy",
+   "target": "Ice Phyrexians",
+   "note": "Played a significant role in stopping them",
+   "paragraph": 3,
+   "quote": "played a significant role in stopping Heidar"
+  },
+  {
+   "source": "Arcum Dagsson",
+   "relation": "created",
+   "target": "Soldevi Steam Beasts",
+   "note": "His own creations",
+   "paragraph": 3,
+   "quote": "as well as his own Soldevi Steam Beasts"
+  }
+ ],
+ "rejected": []
+}

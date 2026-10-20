@@ -1,0 +1,109 @@
+{
+ "page": "wiki/drone",
+ "url": "https://mtg.wiki/page/Drone",
+ "title": "Drone",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:37Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Drones",
+   "type": "creature",
+   "aliases": [
+    "Drone"
+   ],
+   "description": "Artificial guard and shock-troop beings created by the vedalken of Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vedalken",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creators of the drones, masters of the Lumengrid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Neurok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Slaves of the vedalken who disabled their drones at the Battle of the Synod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of the Synod",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Neurok disabled vedalken defenses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lumengrid",
+   "type": "location",
+   "aliases": [],
+   "description": "Vedalken land guarded by drones.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirran resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Used hoverguards as spies against Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Phyrexian-held Mirrodin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the Battle of the Synod the Neurok use stolen information to disable the vedalken drone defenses.",
+   "participants": [
+    "Neurok",
+    "Vedalken",
+    "Drones",
+    "Battle of the Synod"
+   ],
+   "location": "Lumengrid",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Neurok used information stolen from vedalken libraries to disable their wanderguard and hoverguard defenses"
+  },
+  {
+   "summary": "The Mirran resistance uses hoverguards as spies against the Phyrexians.",
+   "participants": [
+    "Mirran resistance",
+    "Drones"
+   ],
+   "location": "New Phyrexia",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the Mirran resistance used hoverguards as spies against their Phyrexian enemies"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vedalken",
+   "relation": "created",
+   "target": "Drones",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Drones were living yet artificial beings created by the Vedalken of Mirrodin"
+  },
+  {
+   "source": "Neurok",
+   "relation": "enemy",
+   "target": "Vedalken",
+   "note": "Neurok were enslaved and struck a decisive blow.",
+   "paragraph": 4,
+   "quote": "causing a decisive blow against the vedalken"
+  }
+ ],
+ "rejected": []
+}

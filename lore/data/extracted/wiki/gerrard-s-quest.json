@@ -1,0 +1,134 @@
+{
+ "page": "wiki/gerrard-s-quest",
+ "url": "https://mtg.wiki/page/Gerrard%27s_Quest",
+ "title": "Gerrard's Quest",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:05Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [
+    "Gerrard Capashen"
+   ],
+   "description": "Hero given a Legacy of great power, who goes to Rath to rescue his captain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Flying ship crewed by Gerrard and his friends.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord of the plane of Rath, who captured Gerrard's captain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane ruled by Volrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Predator",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Volrath's battleship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Fierce leader of Volrath's forces who boards the Weatherlight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vec",
+   "type": "faction",
+   "aliases": [],
+   "description": "Allies who help Gerrard and the Weatherlight crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Allies who help Gerrard and the Weatherlight crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose future is at stake.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Predator attacks the Weatherlight above the Plains of Rath and Greven il-Vec's forces board her to steal Gerrard's legacy.",
+   "participants": [
+    "Volrath",
+    "Greven il-Vec",
+    "Gerrard",
+    "Weatherlight",
+    "Predator"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Volrath's forces, led by the fierce Greven il-Vec , board the Weatherlight in an attempt to steal Gerrard's mysterious legacy."
+  },
+  {
+   "summary": "Gerrard and the Weatherlight crew, helped by the Vec and Skyshroud Elves, head toward Volrath's fortress to save captured shipmates.",
+   "participants": [
+    "Gerrard",
+    "Vec",
+    "Skyshroud Elves",
+    "Volrath"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "With the help of new allies, the Vec and the Skyshroud Elves , Gerrard and the Weatherlight crew begin the treacherous path towards Volrath's fortress ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gerrard",
+   "relation": "enemy",
+   "target": "Volrath",
+   "note": "Gerrard must rescue his captain from Volrath.",
+   "paragraph": 1,
+   "quote": "his captain , has been captured by the forces of Volrath , lord of the plane of Rath"
+  },
+  {
+   "source": "Gerrard",
+   "relation": "ally",
+   "target": "Skyshroud Elves",
+   "note": "The elves help Gerrard's crew.",
+   "paragraph": 3,
+   "quote": "With the help of new allies, the Vec and the Skyshroud Elves"
+  },
+  {
+   "source": "Greven il-Vec",
+   "relation": "serves",
+   "target": "Volrath",
+   "note": "Leads Volrath's forces.",
+   "paragraph": 2,
+   "quote": "Volrath's forces, led by the fierce Greven il-Vec"
+  }
+ ],
+ "rejected": []
+}

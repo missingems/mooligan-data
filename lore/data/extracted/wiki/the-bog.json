@@ -1,0 +1,178 @@
+{
+ "page": "wiki/the-bog",
+ "url": "https://mtg.wiki/page/The_Bog",
+ "title": "The Bog",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:02Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "The Bog",
+   "type": "location",
+   "aliases": [],
+   "description": "Perfectly circular black pool in the woods of the Kessig Approaches on Innistrad, feared by the forest's terrors and home to an ancient entity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kessig Approaches",
+   "type": "location",
+   "aliases": [
+    "the Approaches"
+   ],
+   "description": "Forest region of Innistrad where the Bog lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Entity of the Bog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Terrible, vast, ancient entity living in the Bog that tied the villagers' souls to it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prioress Merlinde",
+   "type": "character",
+   "aliases": [
+    "Merlinde"
+   ],
+   "description": "Church of Avacyn prioress sent to teach the people of the Approaches the correct path of faith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church that sent Merlinde to the Approaches.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Priory of the Nameless Angel",
+   "type": "location",
+   "aliases": [],
+   "description": "Priory built by Merlinde to convert the people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tacenda Verlasen",
+   "type": "character",
+   "aliases": [
+    "Tacenda"
+   ],
+   "description": "Sister of Willia, born with powers, who made people follow the Bog again.",
+   "presence": "appears"
+  },
+  {
+   "name": "Willia Verlasen",
+   "type": "character",
+   "aliases": [
+    "Willia"
+   ],
+   "description": "Sister of Tacenda, converted by Merlinde at about fourteen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Bog lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Entity of the Bog resides there for centuries, tying the villagers' souls to it.",
+   "participants": [
+    "Entity of the Bog",
+    "The Bog"
+   ],
+   "location": "The Bog",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It seeped into the souls of the villagers and tied them to it."
+  },
+  {
+   "summary": "Merlinde arrives, looks into the Bog and finds something terrible, vast and ancient.",
+   "participants": [
+    "Prioress Merlinde",
+    "The Bog",
+    "Church of Avacyn"
+   ],
+   "location": "The Bog",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "There, she found something terrible, vast, and ancient."
+  },
+  {
+   "summary": "Merlinde builds the priory of the Nameless Angel and converts souls to the Angel.",
+   "participants": [
+    "Prioress Merlinde",
+    "Priory of the Nameless Angel"
+   ],
+   "location": "Kessig Approaches",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "they gave themselves to the Angel instead of the Bog"
+  },
+  {
+   "summary": "Tacenda and Willia are born and manifest powers, turning the people back to the Bog.",
+   "participants": [
+    "Tacenda Verlasen",
+    "Willia Verlasen",
+    "Prioress Merlinde"
+   ],
+   "location": "Kessig Approaches",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "It made the people follow the Bog again"
+  },
+  {
+   "summary": "When the girls are about fourteen, Merlinde converts Willia.",
+   "participants": [
+    "Prioress Merlinde",
+    "Willia Verlasen"
+   ],
+   "location": "Kessig Approaches",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Merlinde turned the tide around again by converting Willia."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Bog",
+   "relation": "located_in",
+   "target": "Kessig Approaches",
+   "note": "pool in the woods",
+   "paragraph": 0,
+   "quote": "in the woods of the Kessig Approaches on Innistrad"
+  },
+  {
+   "source": "Prioress Merlinde",
+   "relation": "serves",
+   "target": "Church of Avacyn",
+   "note": "sent by the Church",
+   "paragraph": 5,
+   "quote": "sent to the region by the Church of Avacyn"
+  },
+  {
+   "source": "Tacenda Verlasen",
+   "relation": "family",
+   "target": "Willia Verlasen",
+   "note": "sisters",
+   "paragraph": 6,
+   "quote": "Tacenda Verlasen and he sister Willia were born"
+  },
+  {
+   "source": "Prioress Merlinde",
+   "relation": "enemy",
+   "target": "Entity of the Bog",
+   "note": "she works to convert people away from it",
+   "paragraph": 5,
+   "quote": "she could not fight it with conventional prayers or wards"
+  }
+ ],
+ "rejected": []
+}

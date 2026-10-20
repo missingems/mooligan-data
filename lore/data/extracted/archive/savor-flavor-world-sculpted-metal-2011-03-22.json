@@ -1,0 +1,150 @@
+{
+ "page": "archive/savor-flavor-world-sculpted-metal-2011-03-22",
+ "url": "https://web.archive.org/web/20160331054548/http://magic.wizards.com:80/en/articles/archive/savor-flavor/world-sculpted-metal-2011-03-22",
+ "title": "A World Sculpted from Metal",
+ "story_date": "2011-03-22",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:13Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [
+    "Argentum"
+   ],
+   "description": "An artificial metallic plane built by Karn, first called Argentum, filled with artifacts and magically animated metal creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "Silver Golem"
+   ],
+   "description": "Creator of Mirrodin, who made its first three golems in his own image on his artificial plane of Argentum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure who nearly wiped out Mirrodin's ancient golems when he began his grand experiment of populating the plane with soul-trapped species from other worlds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golems of Mirrodin",
+   "type": "faction",
+   "aliases": [
+    "golems",
+    "ancient golems"
+   ],
+   "description": "An ancient metallic race on Mirrodin, mostly wiped out by Memnarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose expanding rebirth strikes Mirrodin in the Scars of Mirrodin era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Small magically animated metallic life-forms of Mirrodin; some enterprising myr generate artifact creatures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gold-flecked soldiers of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leonin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Pteron-riding knights of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glimmervoid",
+   "type": "location",
+   "aliases": [],
+   "description": "A high vantage point on Mirrodin from which the three ancient golems regard the landscape.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tangle Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "The coppery forest of Mirrodin where Signal Pests crawl and bound.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Razor Fields",
+   "type": "location",
+   "aliases": [],
+   "description": "Area of Mirrodin searched by Thermal Navigators.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn creates the first three beings, golems, on his artificial plane of Argentum, later called Mirrodin.",
+   "participants": [
+    "Karn",
+    "Mirrodin",
+    "Golems of Mirrodin"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 36,
+   "quote": "The three golems in the art of Precursor Golem are meant to show the first three beings created by Karn on his artificial plane of Argentum"
+  },
+  {
+   "summary": "Memnarch begins his grand experiment, mostly wiping out the ancient golems and populating the plane with soul-trapped species from other worlds.",
+   "participants": [
+    "Memnarch",
+    "Golems of Mirrodin",
+    "Mirrodin"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 34,
+   "quote": "they were mostly wiped out by Memnarch when he began his grand experiment"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Golems of Mirrodin",
+   "note": "Karn created the first three golems",
+   "paragraph": 36,
+   "quote": "The three golems in the art of Precursor Golem are meant to show the first three beings created by Karn on his artificial plane of Argentum"
+  },
+  {
+   "source": "Memnarch",
+   "relation": "enemy",
+   "target": "Golems of Mirrodin",
+   "note": "Memnarch mostly wiped them out",
+   "paragraph": 34,
+   "quote": "they were mostly wiped out by Memnarch when he began his grand experiment"
+  },
+  {
+   "source": "Glimmervoid",
+   "relation": "located_in",
+   "target": "Mirrodin",
+   "note": "Glimmervoid is on Mirrodin",
+   "paragraph": 36,
+   "quote": "These three ancient golems regard the Mirrodin landscape from a high vantage point in the Glimmervoid"
+  }
+ ],
+ "rejected": []
+}

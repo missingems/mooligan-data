@@ -1,0 +1,73 @@
+{
+ "page": "wiki/mindosz",
+ "url": "https://mtg.wiki/page/Mindosz",
+ "title": "Mindosz",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mindosz",
+   "type": "character",
+   "aliases": [],
+   "description": "An unlucky Izzet magelord titled Heretic, immolated by Niv-Mizzet for claiming mizzium could be melted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The Firemind, dragon leader of the Izzet who killed Mindosz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild of Mindosz and Niv-Mizzet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mizzium",
+   "type": "concept",
+   "aliases": [],
+   "description": "A metal said to be impervious.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mindosz opposed Niv-Mizzet, claiming mizzium could be melted, and was immolated by the Firemind's breath in 3203 Z.C.",
+   "participants": [
+    "Mindosz",
+    "Niv-Mizzet"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Mindosz, earning the title Heretic, was immolated by the Firemind's breath in 3203 Z.C."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Niv-Mizzet",
+   "relation": "killed",
+   "target": "Mindosz",
+   "note": "He immolated Mindosz with dragon fire.",
+   "paragraph": 0,
+   "quote": "was immolated by the Firemind's breath"
+  },
+  {
+   "source": "Mindosz",
+   "relation": "member_of",
+   "target": "Izzet",
+   "note": "Mindosz was an Izzet magelord.",
+   "paragraph": 0,
+   "quote": "Mindosz was an unlucky Izzet magelord"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,100 @@
+{
+ "page": "wiki/toxrill",
+ "url": "https://mtg.wiki/page/Toxrill",
+ "title": "Toxrill",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:45Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Toxrill",
+   "type": "creature",
+   "aliases": [
+    "Toxrill, the Corrosive"
+   ],
+   "description": "Massive, rapidly reproducing slug horror created by the Temple of Toxrill, revered as a divine figure in Nephalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temple of Toxrill",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nephalian cult that created Toxrill.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spawn of Grolnok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rival Nephalian cult that allegedly summoned an avatar of its god.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grolnok",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the Spawn of Grolnok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Innistrad nation with many cults.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Nephalia lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Spawn of Grolnok allegedly summon an avatar of their god.",
+   "participants": [
+    "Spawn of Grolnok",
+    "Grolnok"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "When the Spawn of Grolnok allegedly summoned an avatar of their god"
+  },
+  {
+   "summary": "In response the Temple of Toxrill performs an ancient rite on a slug infused with demon blood, creating Toxrill, which consumes half the temple.",
+   "participants": [
+    "Temple of Toxrill",
+    "Toxrill"
+   ],
+   "location": "Nephalia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a massive, rapidly reproducing horror that immediately consumed half of the temple itself"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Temple of Toxrill",
+   "relation": "enemy",
+   "target": "Spawn of Grolnok",
+   "note": "Longstanding rivalry.",
+   "paragraph": 1,
+   "quote": "the longstanding rivalry between the Temple of Toxrill and the Spawn of Grolnok"
+  },
+  {
+   "source": "Temple of Toxrill",
+   "relation": "created",
+   "target": "Toxrill",
+   "note": "Their ritual produced Toxrill.",
+   "paragraph": 1,
+   "quote": "This ritual was conducted on a slug infused with demon blood, resulting in the creation of Toxrill"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,138 @@
+{
+ "page": "wiki/markov-manor",
+ "url": "https://mtg.wiki/page/Markov_Manor",
+ "title": "Markov Manor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:32Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Markov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Infamous vampire stronghold in Stensia, ancestral seat of the Markov bloodline, now a floating ruin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edgar Markov",
+   "type": "character",
+   "aliases": [
+    "Edgar"
+   ],
+   "description": "Creator of the vampire race and builder of the manor; survived the attack and married Olivia Voldaren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [
+    "Nahiri the Lithomancer"
+   ],
+   "description": "Planeswalker who tore up Markov Manor seeking revenge on Sorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "Edgar's descendant, leader rallying surviving Markovs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olivia Voldaren",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who married Edgar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose chaos corrupted many vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose sundering preceded Nahiri's arrival.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Helvault's sundering Nahiri comes to Markov Manor seeking revenge on Sorin, and wrenches the manor from the mountainside.",
+   "participants": [
+    "Nahiri",
+    "Sorin Markov",
+    "Markov Manor"
+   ],
+   "location": "Markov Manor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "wrenching the entire structure and a massive chunk of bedrock from the mountainside"
+  },
+  {
+   "summary": "Vampires inside are trapped in the reshaped stone; Edgar survives and later marries Olivia Voldaren.",
+   "participants": [
+    "Edgar Markov",
+    "Olivia Voldaren"
+   ],
+   "location": "Markov Manor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Edgar was thought to have perished in the attack, but he survived and later married Olivia Voldaren"
+  },
+  {
+   "summary": "Under Sorin, the surviving Markovs are rallied to reclaim their ancestral seat.",
+   "participants": [
+    "Sorin Markov",
+    "Markov Manor"
+   ],
+   "location": "Markov Manor",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "the surviving Markovs were rallied to reclaim their ancestral seat"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Edgar Markov",
+   "relation": "created",
+   "target": "Markov Manor",
+   "note": "builder",
+   "paragraph": 2,
+   "quote": "The manor was built by Edgar Markov"
+  },
+  {
+   "source": "Nahiri",
+   "relation": "enemy",
+   "target": "Sorin Markov",
+   "note": "he imprisoned her",
+   "paragraph": 3,
+   "quote": "for imprisoning her millennia ago"
+  },
+  {
+   "source": "Edgar Markov",
+   "relation": "romantic",
+   "target": "Olivia Voldaren",
+   "note": "married",
+   "paragraph": 4,
+   "quote": "later married Olivia Voldaren"
+  }
+ ],
+ "rejected": []
+}

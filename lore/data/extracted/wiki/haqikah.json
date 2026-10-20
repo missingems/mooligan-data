@@ -1,0 +1,213 @@
+{
+ "page": "wiki/haqikah",
+ "url": "https://mtg.wiki/page/Haqikah",
+ "title": "Haqikah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:53Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Haqikah",
+   "type": "character",
+   "aliases": [
+    "Haq"
+   ],
+   "description": "A young human vizier of Hazoret from Naktamun on Amonkhet who guided Samut and Djeru's band.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Haq's home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [
+    "Hazoret the Fervent"
+   ],
+   "description": "A god of Amonkhet whom Haq served as vizier, who fought the Scorpion God.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "A survivor who experienced a planeswalk and later re-killed Haq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "A survivor in Samut's small band.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh"
+   ],
+   "description": "The God-Pharaoh whose cruelty and looming threat the survivors face.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bontu",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god who betrayed Hazoret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [],
+   "description": "A fallen god the group passed in Naktamun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Scorpion God",
+   "type": "deity",
+   "aliases": [
+    "Scorpion God"
+   ],
+   "description": "A god that pursued Hazoret and was reduced to ash by her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "The undead army on Ravnica of which Haq became part.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Haq was re-killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samut, Djeru and their band encountered Haq, who joined them and told of Bontu's betrayal and the God-Pharaoh's cruelty.",
+   "participants": [
+    "Samut",
+    "Djeru",
+    "Haqikah",
+    "Bontu",
+    "Hazoret"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He had witnessed the battle between Bontu and Hazoret"
+  },
+  {
+   "summary": "Haq guided the group past the fallen god Rhonas, where they mourned and resolved to fight.",
+   "participants": [
+    "Haqikah",
+    "Samut",
+    "Djeru",
+    "Rhonas"
+   ],
+   "location": "Naktamun",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "leading them past the fallen god Rhonas"
+  },
+  {
+   "summary": "Hazoret appeared, injured and pursued by the Scorpion God; the survivors battled it and Hazoret reduced the god to ash.",
+   "participants": [
+    "Hazoret",
+    "The Scorpion God",
+    "Samut",
+    "Djeru",
+    "Haqikah"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hazoret delivered the final blow, reducing the god to ash."
+  },
+  {
+   "summary": "Samut experienced a planeswalk, returning with new abilities.",
+   "participants": [
+    "Samut"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Samut experienced a planeswalk"
+  },
+  {
+   "summary": "Haq, seen as part of the Dreadhorde on Ravnica, was re-killed by Samut.",
+   "participants": [
+    "Haqikah",
+    "Samut",
+    "Dreadhorde"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "where he was re-killed by Samut"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Haqikah",
+   "relation": "serves",
+   "target": "Hazoret",
+   "note": "Haq was her vizier.",
+   "paragraph": 1,
+   "quote": "Haq was a young vizier of Hazoret"
+  },
+  {
+   "source": "Haqikah",
+   "relation": "ally",
+   "target": "Samut",
+   "note": "He joined her band.",
+   "paragraph": 2,
+   "quote": "encountered Haq, who joined them"
+  },
+  {
+   "source": "Samut",
+   "relation": "killed",
+   "target": "Haqikah",
+   "note": "On Ravnica when he was part of the Dreadhorde.",
+   "paragraph": 5,
+   "quote": "where he was re-killed by Samut"
+  },
+  {
+   "source": "Hazoret",
+   "relation": "killed",
+   "target": "The Scorpion God",
+   "note": "Reduced it to ash.",
+   "paragraph": 3,
+   "quote": "Hazoret delivered the final blow, reducing the god to ash."
+  },
+  {
+   "source": "Bontu",
+   "relation": "enemy",
+   "target": "Hazoret",
+   "note": "Bontu's betrayal.",
+   "paragraph": 2,
+   "quote": "informing them of Bontu's betrayal"
+  }
+ ],
+ "rejected": []
+}

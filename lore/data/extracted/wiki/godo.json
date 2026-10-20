@@ -1,0 +1,197 @@
+{
+ "page": "wiki/godo",
+ "url": "https://mtg.wiki/page/Godo",
+ "title": "Godo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:58Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Godo",
+   "type": "character",
+   "aliases": [
+    "Godo, Bandit Warlord"
+   ],
+   "description": "Human warlord of the sanzoku bandits in the Sokenzan mountains of Kamigawa, wielder of the log-and-chain Tenza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanzoku",
+   "type": "faction",
+   "aliases": [],
+   "description": "Bandit gangs of the Sokenzan mountains united under Godo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain range where Godo's bandits live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Godo lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tenza",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Godo's flail-like spiked log on a chain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [
+    "Daimyo Konda"
+   ],
+   "description": "Daimyo whose forces tried to subjugate the Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pipe, the Skyfire Kirin",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical sword used by Godo's great-grandfather to take control of his bandit tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ganzan Pass",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Godo's parents perished.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yamazaki",
+   "type": "character",
+   "aliases": [
+    "the brothers Yamazaki"
+   ],
+   "description": "Brothers and lieutenants of Godo sent to Hidetsugu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre who gave Godo a tile imprisoning the Yuki-onna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yuki-onna",
+   "type": "creature",
+   "aliases": [],
+   "description": "Imprisoned snow spirit used against Konda's men who turned on Godo's men.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Pulled the Yuki-onna back to her original reign.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hall of the Bandit Lord",
+   "type": "location",
+   "aliases": [],
+   "description": "Stone building in Godo's territory near Towabara.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Godo's parents perish in Ganzan Pass; he unites the scattered sanzoku gangs.",
+   "participants": [
+    "Godo",
+    "Sanzoku",
+    "Ganzan Pass"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "united the scattered Sanzoku gangs under his leadership"
+  },
+  {
+   "summary": "Godo wages a guerilla war against Konda.",
+   "participants": [
+    "Godo",
+    "Konda"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "waged a guerilla war against Konda for almost ten years"
+  },
+  {
+   "summary": "Hidetsugu gives Godo a tile with the imprisoned Yuki-onna to use against Konda's men.",
+   "participants": [
+    "Hidetsugu",
+    "Godo",
+    "Yuki-onna"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "gave him a tile with the imprisoned Yuki-onna"
+  },
+  {
+   "summary": "The Yuki-onna turns on Godo's men and Godo faces her himself.",
+   "participants": [
+    "Godo",
+    "Yuki-onna"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Yuki-onna's power was too great, and she started to prey upon his men"
+  },
+  {
+   "summary": "Toshiro Umezawa pulls the Yuki-onna back to her original reign just before she kills Godo.",
+   "participants": [
+    "Yuki-onna",
+    "Toshiro Umezawa",
+    "Godo"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Yuki-onna was pulled back to her original reign"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Godo",
+   "relation": "leader_of",
+   "target": "Sanzoku",
+   "note": "United the gangs",
+   "paragraph": 3,
+   "quote": "united the scattered Sanzoku gangs under his leadership"
+  },
+  {
+   "source": "Godo",
+   "relation": "enemy",
+   "target": "Konda",
+   "note": "Guerilla war",
+   "paragraph": 4,
+   "quote": "waged a guerilla war against Konda"
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "ally",
+   "target": "Godo",
+   "note": "Advised him",
+   "paragraph": 4,
+   "quote": "advised him to use her against Konda's men"
+  }
+ ],
+ "rejected": []
+}

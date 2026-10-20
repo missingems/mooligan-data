@@ -1,0 +1,111 @@
+{
+ "page": "wiki/kothophed",
+ "url": "https://mtg.wiki/page/Kothophed",
+ "title": "Kothophed",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kothophed",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon, one of four who dealt with Liliana Vess after the Mending; gave her eternal youth as tattoos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker bound to Kothophed, who killed him with the power of the Chain Veil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact retrieved from the Onakke Catacombs that freed Liliana of Kothophed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Onakke Catacombs",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Shandalar where the Chain Veil was.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Onakke Catacombs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the demons dealt with Liliana.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kothophed sends Liliana to retrieve the Chain Veil from the Onakke Catacombs.",
+   "participants": [
+    "Kothophed",
+    "Liliana Vess",
+    "Chain Veil"
+   ],
+   "location": "Onakke Catacombs",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "she was sent to retrieve the Chain Veil from the Onakke Catacombs on Shandalar"
+  },
+  {
+   "summary": "Liliana takes the Chain Veil and throws off Kothophed's yoke.",
+   "participants": [
+    "Liliana Vess",
+    "Chain Veil",
+    "Kothophed"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she was granted enough power to throw off the yoke he had placed upon her"
+  },
+  {
+   "summary": "Liliana kills the dying Kothophed with the power of the Veil.",
+   "participants": [
+    "Liliana Vess",
+    "Kothophed"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Liliana finished the demon with the power of the Veil"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "killed",
+   "target": "Kothophed",
+   "note": "finished him with the Veil",
+   "paragraph": 1,
+   "quote": "Liliana finished the demon with the power of the Veil"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "serves",
+   "target": "Kothophed",
+   "note": "servitude until the Chain Veil",
+   "paragraph": 1,
+   "quote": "as part of her servitude towards him"
+  }
+ ],
+ "rejected": []
+}

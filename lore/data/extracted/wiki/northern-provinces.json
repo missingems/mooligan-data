@@ -1,0 +1,162 @@
+{
+ "page": "wiki/northern-provinces",
+ "url": "https://mtg.wiki/page/Northern_Provinces",
+ "title": "Northern Provinces",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:21Z",
+ "storyline": "Ice Age Saga",
+ "entities": [
+  {
+   "name": "Northern Provinces",
+   "type": "location",
+   "aliases": [
+    "Kjeldoran Hinterlands"
+   ],
+   "description": "A collection of farmsteads and small city-states on Terisiare during the Dark Age, later resettled by Kjeldorans.",
+   "presence": "appears"
+  },
+  {
+   "name": "Giva Province",
+   "type": "location",
+   "aliases": [],
+   "description": "A province in the Northern Provinces that housed Jarsyl's farmstead and was frozen over at the start of the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thorn",
+   "type": "location",
+   "aliases": [],
+   "description": "A city-state of the Northern Provinces, birthplace of Tivadar, that fell in the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jarsyl",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage who stayed in the Conclave of Mages and built a mage tower on his farmstead in Giva Province.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Born on the failing farmstead in Giva Province, where he spent his first years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tivadar",
+   "type": "character",
+   "aliases": [
+    "Tivadar of Thorn"
+   ],
+   "description": "Legendary figure born in Thorn who reformed the Church of Tal to focus on goblins and led a crusade against them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rasputin Dreamweaver",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard who aided Tivadar's Crusade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A church reformed by Tivadar to focus on the goblin threat rather than magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tivadar's Crusade",
+   "type": "event",
+   "aliases": [],
+   "description": "The campaign in which Tivadar and his Knightly Order threw back the Goblin Invasions, ending the Dark Ages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argive",
+   "type": "location",
+   "aliases": [
+    "New Argive"
+   ],
+   "description": "A nation that survived the Brothers' War and into the Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldorans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hardy people who later re-settled the Northern Provinces.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As temperatures kept rising, Argive's larger cities fell apart, leaving farmsteads and villages known as the Northern Provinces.",
+   "participants": [
+    "Northern Provinces",
+    "Argive"
+   ],
+   "location": "Northern Provinces",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the larger cities of old were unable to sustain themselves and fell apart"
+  },
+  {
+   "summary": "Jarsyl's farmstead in Giva fails as the land turns swampy, and Jodah is born and spends his first years there before his family abandons it.",
+   "participants": [
+    "Jarsyl",
+    "Jodah",
+    "Giva Province"
+   ],
+   "location": "Giva Province",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Jodah was born and spent his first few years on the farm"
+  },
+  {
+   "summary": "Giva Province is frozen over and depopulated at the start of the Ice Age.",
+   "participants": [
+    "Giva Province"
+   ],
+   "location": "Giva Province",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "was frozen over and depopulated during the Start of the Ice Age"
+  },
+  {
+   "summary": "Tivadar and his Knightly Order, aided by Rasputin Dreamweaver, throw back the Goblin Invasions and end the Dark Ages.",
+   "participants": [
+    "Tivadar",
+    "Rasputin Dreamweaver",
+    "Tivadar's Crusade"
+   ],
+   "location": "Northern Provinces",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "temporarily restored civilization to Terisiare by throwing back the Goblin Invasions"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tivadar",
+   "relation": "other",
+   "target": "Church of Tal",
+   "note": "Tivadar reformed the Church to focus on goblins.",
+   "paragraph": 4,
+   "quote": "Tivadar would eventually reform the Church to focus on the threat of the rampaging goblins"
+  },
+  {
+   "source": "Rasputin Dreamweaver",
+   "relation": "ally",
+   "target": "Tivadar",
+   "note": "Aided Tivadar's crusade.",
+   "paragraph": 4,
+   "quote": "aided by the wizard Rasputin Dreamweaver"
+  }
+ ],
+ "rejected": []
+}

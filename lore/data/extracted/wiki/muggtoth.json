@@ -1,0 +1,118 @@
+{
+ "page": "wiki/muggtoth",
+ "url": "https://mtg.wiki/page/Muggtoth",
+ "title": "Muggtoth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:05Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Muggtoth",
+   "type": "character",
+   "aliases": [],
+   "description": "A zombie cyclops from Dominaria who could foresee his potential death; killed by Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who emerged from a time rift and killed Muggtoth and Vissk with ghostfire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vissk",
+   "type": "character",
+   "aliases": [],
+   "description": "Person who had seen Muggtoth in a vision of the future.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pinaphet",
+   "type": "character",
+   "aliases": [],
+   "description": "Vissk's apprentice who gave Muggtoth an antidote.",
+   "presence": "appears"
+  },
+  {
+   "name": "Viperwick pollen",
+   "type": "concept",
+   "aliases": [],
+   "description": "Poison that slowly and painfully afflicted Muggtoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home plane of Muggtoth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Muggtoth, suffering from Viperwick pollen poisoning, meets Vissk, who had seen him in a vision.",
+   "participants": [
+    "Muggtoth",
+    "Vissk"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he encountered Vissk , who had seen Muggtoth in a vision of the future."
+  },
+  {
+   "summary": "Pinaphet gives Muggtoth an antidote that relieves some pain.",
+   "participants": [
+    "Pinaphet",
+    "Muggtoth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He had his apprentice Pinaphet give him an antidote which relieved some pain."
+  },
+  {
+   "summary": "A time rift opens and Ugin kills Muggtoth and Vissk with ghostfire; Muggtoth dies at peace.",
+   "participants": [
+    "Ugin",
+    "Muggtoth",
+    "Vissk"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "a time rift opened revealing Ugin , who killed Muggtoth and Vissk with ghostfire ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ugin",
+   "relation": "killed",
+   "target": "Muggtoth",
+   "note": "With ghostfire.",
+   "paragraph": 1,
+   "quote": "a time rift opened revealing Ugin , who killed Muggtoth and Vissk with ghostfire ."
+  },
+  {
+   "source": "Ugin",
+   "relation": "killed",
+   "target": "Vissk",
+   "note": "With ghostfire.",
+   "paragraph": 1,
+   "quote": "a time rift opened revealing Ugin , who killed Muggtoth and Vissk with ghostfire ."
+  },
+  {
+   "source": "Pinaphet",
+   "relation": "serves",
+   "target": "Vissk",
+   "note": "Apprentice of Vissk.",
+   "paragraph": 1,
+   "quote": "He had his apprentice Pinaphet give him an antidote which relieved some pain."
+  }
+ ],
+ "rejected": []
+}

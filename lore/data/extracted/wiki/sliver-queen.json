@@ -1,0 +1,104 @@
+{
+ "page": "wiki/sliver-queen",
+ "url": "https://mtg.wiki/page/Sliver_Queen",
+ "title": "Sliver Queen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:38Z",
+ "storyline": "Rath",
+ "entities": [
+  {
+   "name": "Sliver Queen",
+   "type": "character",
+   "aliases": [],
+   "description": "The center of the sliver hive mind on Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Manipulated the Sliver Queen into becoming his minion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [
+    "silver golem Karn"
+   ],
+   "description": "The silver golem who persuaded the Sliver Queen to give him the Legacy items.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legacy items",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Items guarded by the Sliver Queen that Karn persuaded her to give him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that placed the Sliver Queen's lair in the heart of a volcano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the sliver hive.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Volrath manipulated the Sliver Queen into becoming his minion.",
+   "participants": [
+    "Volrath",
+    "Sliver Queen"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The queen was manipulated by Volrath into becoming his minion"
+  },
+  {
+   "summary": "Karn persuaded the Sliver Queen to give him the Legacy items.",
+   "participants": [
+    "Karn",
+    "Sliver Queen",
+    "Legacy items"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the silver golem Karn managed to persuade her into giving them to him"
+  },
+  {
+   "summary": "The Sliver Queen and much of her brood were killed when the Rathi Overlay placed her lair in a volcano.",
+   "participants": [
+    "Sliver Queen",
+    "Rathi Overlay"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She and much of her brood were killed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sliver Queen",
+   "relation": "serves",
+   "target": "Volrath",
+   "note": "Manipulated into being his minion",
+   "paragraph": 1,
+   "quote": "The queen was manipulated by Volrath into becoming his minion"
+  }
+ ],
+ "rejected": []
+}

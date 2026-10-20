@@ -1,0 +1,125 @@
+{
+ "page": "wiki/griffin",
+ "url": "https://mtg.wiki/page/Griffin",
+ "title": "Griffin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Griffin",
+   "type": "creature",
+   "aliases": [
+    "Griffins"
+   ],
+   "description": "A fabled race of semi-intelligent beasts resembling a cross between a bird of prey and a large cat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zuberi, Golden Feather",
+   "type": "character",
+   "aliases": [
+    "Zuberi"
+   ],
+   "description": "A legendary griffin, ancestor of Zeriam.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zeriam",
+   "type": "character",
+   "aliases": [],
+   "description": "A descendant of Zuberi and one of the few remaining griffins of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker who phased Zhalfir out of the time stream.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "location",
+   "aliases": [],
+   "description": "Land phased out by Teferi, taking most griffins with it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God served by skeletal griffins that catch souls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ixalan faction whose desire the griffins share.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Thune",
+   "type": "faction",
+   "aliases": [],
+   "description": "Fight alongside an order of griffin riders on Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "Ravnican guild whose knights ride griffins.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teferi phases Zhalfir out of the time stream, taking most of Dominaria's griffins with it.",
+   "participants": [
+    "Teferi",
+    "Zhalfir",
+    "Griffin"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "When Zhalfir was phased out of the time stream by the Planeswalker Teferi"
+  },
+  {
+   "summary": "Ravnican griffins adapt to hunting in the streets after the oceans dry up.",
+   "participants": [
+    "Griffin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Ravnican griffins were originally piscivores"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zeriam",
+   "relation": "family",
+   "target": "Zuberi, Golden Feather",
+   "note": "Descendant.",
+   "paragraph": 4,
+   "quote": "a descendant of the legendary griffin Zuberi"
+  },
+  {
+   "source": "Griffin",
+   "relation": "serves",
+   "target": "Athreos",
+   "note": "Skeletal griffins serve him.",
+   "paragraph": 14,
+   "quote": "Skeletal griffins also serve Athreos to catch the souls of the unwilling dead."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,98 @@
+{
+ "page": "wiki/arine",
+ "url": "https://mtg.wiki/page/Arine",
+ "title": "Arine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Arine",
+   "type": "character",
+   "aliases": [],
+   "description": "Friend of Liliana Vess in her youth who lived at Vess Manor; presumably died in the curse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker; as a young healer she accidentally turned her brother into a zombie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Josu Vess",
+   "type": "character",
+   "aliases": [
+    "Josu"
+   ],
+   "description": "Liliana's brother, struck by a mage-blade and later turned into a zombie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Ana",
+   "type": "character",
+   "aliases": [],
+   "description": "Resident of Vess Manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vess Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Liliana's family where Arine lived.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arine interrupts Liliana to tell her the battlefield caravan has arrived and Josu was struck by a mage-blade and needs healing.",
+   "participants": [
+    "Arine",
+    "Liliana Vess",
+    "Josu Vess",
+    "Vess Manor"
+   ],
+   "location": "Vess Manor",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Arine interrupted them to deliver the news that Liliana's brother Josu had been struck by a mage-blade"
+  },
+  {
+   "summary": "Liliana turns Josu into a zombie unintentionally and the household is struck by a curse.",
+   "participants": [
+    "Liliana Vess",
+    "Josu Vess",
+    "Vess Manor"
+   ],
+   "location": "Vess Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Liliana later turned Josu into a zombie without intending to"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arine",
+   "relation": "ally",
+   "target": "Liliana Vess",
+   "note": "Friend in her youth.",
+   "paragraph": 1,
+   "quote": "Arine was a friend of Liliana 's"
+  },
+  {
+   "source": "Josu Vess",
+   "relation": "family",
+   "target": "Liliana Vess",
+   "note": "Her brother.",
+   "paragraph": 0,
+   "quote": "Liliana's parents and her brother Josu Vess"
+  }
+ ],
+ "rejected": []
+}

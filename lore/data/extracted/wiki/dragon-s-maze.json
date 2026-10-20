@@ -1,0 +1,152 @@
+{
+ "page": "wiki/dragon-s-maze",
+ "url": "https://mtg.wiki/page/Dragon%27s_Maze",
+ "title": "Dragon's Maze",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:04Z",
+ "storyline": "Return to Ravnica",
+ "entities": [
+  {
+   "name": "Implicit Maze",
+   "type": "concept",
+   "aliases": [
+    "the maze"
+   ],
+   "description": "A system of mana paths through Ravnica's guildgates and districts that manifested after the Guildpact was destroyed; whoever wins it gains great power for their guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "An Izzet planeswalker who discovered the Implicit Maze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The Izzet dragon who instructed Ral and announced the guild champions' race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose notes were used to find the maze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azor I",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of the Azorius Senate who created the maze to be revealed if the Guildpact dissolved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The contract binding the guilds, destroyed before the maze appeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Forum of Azor",
+   "type": "location",
+   "aliases": [],
+   "description": "The place at the end of the maze where great power lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Transguild Promenade",
+   "type": "location",
+   "aliases": [],
+   "description": "The meeting point where the guild champions begin the maze race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild-ruled plane containing the maze.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Guildpact is destroyed, the Implicit Maze manifests across Ravnica.",
+   "participants": [
+    "Implicit Maze",
+    "Guildpact"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "manifested after the Guildpact was destroyed"
+  },
+  {
+   "summary": "Ral Zarek discovers the maze on Niv-Mizzet's instruction using Jace's notes.",
+   "participants": [
+    "Ral Zarek",
+    "Niv-Mizzet",
+    "Jace Beleren",
+    "Implicit Maze"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "it was discovered by Ral Zarek"
+  },
+  {
+   "summary": "Niv-Mizzet announces that each guild will send one champion to run the maze.",
+   "participants": [
+    "Niv-Mizzet"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Niv-Mizzet has announced that each guild will send one champion as its delegate in the running of the maze"
+  },
+  {
+   "summary": "At the appointed time the champions meet at the Transguild Promenade and race through the maze.",
+   "participants": [
+    "Implicit Maze",
+    "Transguild Promenade"
+   ],
+   "location": "Transguild Promenade",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "At an appointed time, the champions meet at the Transguild Promenade and embark on a race through the twists and turns of the maze."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azor I",
+   "relation": "created",
+   "target": "Implicit Maze",
+   "note": "Created to be revealed if the Guildpact dissolved.",
+   "paragraph": 3,
+   "quote": "The maze was created by Azor I to be revealed in case the Guildpact dissolved."
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "serves",
+   "target": "Niv-Mizzet",
+   "note": "Acted on Niv-Mizzet's instruction.",
+   "paragraph": 3,
+   "quote": "On the instruction of Niv-Mizzet"
+  },
+  {
+   "source": "Implicit Maze",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "Runs through Ravnica's guildgates and districts.",
+   "paragraph": 3,
+   "quote": "through the guildgates and districts of Ravnica"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,155 @@
+{
+ "page": "wiki/old-voda-sea",
+ "url": "https://mtg.wiki/page/Old_Voda_Sea",
+ "title": "Old Voda Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Old Voda Sea",
+   "type": "location",
+   "aliases": [
+    "Voda Sea"
+   ],
+   "description": "Current name of the sea surrounding Sarpadia on Dominaria, once home to the Vodalian empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vodalian Merfolk",
+   "type": "faction",
+   "aliases": [
+    "Vodalia"
+   ],
+   "description": "Merfolk empire ruled by a militant, magic-wielding upper class.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empress Galina III",
+   "type": "character",
+   "aliases": [],
+   "description": "Vodalian ruler who led her subjects through a portal to Etlan Shiis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karel Volnikov",
+   "type": "character",
+   "aliases": [
+    "Marshall Karel Volnikov"
+   ],
+   "description": "Marshall who led the Vodalian army against the homarids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Homarids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who overwhelmed the merfolk through their ability to breed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Svyelun",
+   "type": "deity",
+   "aliases": [],
+   "description": "Goddess of the Pearl Moon with temples across the ocean floor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dromar",
+   "type": "creature",
+   "aliases": [],
+   "description": "Blue primeval dragon once housed in Dromar's Cavern.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dromar's Cavern",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient Vodalian tomb in the Old Voda part of the trench.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Isolated continent surrounded by the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Etlan Shiis",
+   "type": "location",
+   "aliases": [],
+   "description": "Far-away place where the merfolk renamed a sea Voda Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Svyelunite Temple",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruins found in the Old Voda Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Sarpadian Empires",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which merfolk abandoned the Vodalian empire.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Homarids invade Vodalian territory and Marshall Karel Volnikov leads the army against them.",
+   "participants": [
+    "Homarids",
+    "Karel Volnikov",
+    "Vodalian Merfolk"
+   ],
+   "location": "Old Voda Sea",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Marshall Karel Volnikov led the Vodalian army against them."
+  },
+  {
+   "summary": "Vodalia is abandoned and many follow Empress Galina III through a portal to Etlan Shiis.",
+   "participants": [
+    "Empress Galina III",
+    "Vodalian Merfolk"
+   ],
+   "location": "Old Voda Sea",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "many of its subjects followed Empress Galina III through a portal to far away Etlan Shiis"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Homarids",
+   "relation": "enemy",
+   "target": "Vodalian Merfolk",
+   "note": "The homarids invaded and overwhelmed the merfolk.",
+   "paragraph": 4,
+   "quote": "When the homarids invaded their territory"
+  },
+  {
+   "source": "Empress Galina III",
+   "relation": "leader_of",
+   "target": "Vodalian Merfolk",
+   "note": "She ruled after the emperor died.",
+   "paragraph": 4,
+   "quote": "leaving Empress Galina III as the ruler"
+  },
+  {
+   "source": "Dromar's Cavern",
+   "relation": "located_in",
+   "target": "Old Voda Sea",
+   "note": "The tomb lies deep in the Old Voda part of the trench.",
+   "paragraph": 2,
+   "quote": "Deep in the Old Voda part of the deep-sea trench lies Dromar's Cavern"
+  }
+ ],
+ "rejected": []
+}

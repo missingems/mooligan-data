@@ -1,0 +1,156 @@
+{
+ "page": "wiki/cho-akhan",
+ "url": "https://mtg.wiki/page/Cho-Akhan",
+ "title": "Cho-Akhan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Cho-Akhan",
+   "type": "character",
+   "aliases": [
+    "'Akhan"
+   ],
+   "description": "A Cho-Arrim herbalist of the Rushwood on Mercadia who wielded the Ancestral Mask.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sia-am-Erh",
+   "type": "character",
+   "aliases": [],
+   "description": "An ancient shaman whose tomb held the Ancestral Mask.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ancestral Mask",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mask worn by Sia-am-Erh that took control of 'Akhan and bonded her to the dead Cho-Arrim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Ran",
+   "type": "character",
+   "aliases": [],
+   "description": "'Akhan's brother, who died of plague.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Shadi",
+   "type": "character",
+   "aliases": [],
+   "description": "One of 'Akhan's two mothers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Fihad",
+   "type": "character",
+   "aliases": [],
+   "description": "One of 'Akhan's two mothers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose plague struck 'Akhan's village.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rushwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest on Mercadia where 'Akhan's village lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Cho-Akhan lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "'Akhan finds the tomb of Sia-am-Erh and the Ancestral Mask while seeking herbs.",
+   "participants": [
+    "Cho-Akhan",
+    "Sia-am-Erh",
+    "Ancestral Mask"
+   ],
+   "location": "Rushwood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "'Akhan happened upon the ancient tomb of the shaman Sia-am-Erh"
+  },
+  {
+   "summary": "After plague from Mercadia City kills her brother, 'Akhan decides to wield the mask to protect her village.",
+   "participants": [
+    "Cho-Akhan",
+    "Cho-Ran",
+    "Ancestral Mask",
+    "Mercadia City"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "she decided to wield the Ancestral Mask to protect her village and conquer the plaguebearers from the city."
+  },
+  {
+   "summary": "The mask takes control of 'Akhan and plunges her into the River, where she bonds with the dead Cho-Arrim.",
+   "participants": [
+    "Cho-Akhan",
+    "Ancestral Mask"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Ancestral Mask took control of 'Akhan's body and plummeted her into the River"
+  },
+  {
+   "summary": "'Akhan and her two mothers prepare for war with Mercadia City.",
+   "participants": [
+    "Cho-Akhan",
+    "Cho-Shadi",
+    "Cho-Fihad",
+    "Mercadia City"
+   ],
+   "location": "Rushwood",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "'Akhan and her two mothers, Cho-Shadi and Cho-Fihad , prepared for war with Mercadia City."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cho-Akhan",
+   "relation": "family",
+   "target": "Cho-Ran",
+   "note": "Brother.",
+   "paragraph": 1,
+   "quote": "her brother Cho-Ran died from the sickness"
+  },
+  {
+   "source": "Cho-Akhan",
+   "relation": "family",
+   "target": "Cho-Shadi",
+   "note": "One of her two mothers.",
+   "paragraph": 3,
+   "quote": "'Akhan and her two mothers, Cho-Shadi and Cho-Fihad"
+  },
+  {
+   "source": "Cho-Akhan",
+   "relation": "enemy",
+   "target": "Mercadia City",
+   "note": "She prepared for war with it.",
+   "paragraph": 3,
+   "quote": "prepared for war with Mercadia City."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,110 @@
+{
+ "page": "wiki/murmuring-bosk",
+ "url": "https://mtg.wiki/page/Murmuring_Bosk",
+ "title": "Murmuring Bosk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:12Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Murmuring Bosk",
+   "type": "location",
+   "aliases": [
+    "the Bosk"
+   ],
+   "description": "A sacred grove of Lorwyn treefolk in the Great Forest, now in ruin but beginning to regrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of Lorwyn containing the Bosk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the treefolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Treefolk",
+   "type": "faction",
+   "aliases": [
+    "Lorwyn treefolk"
+   ],
+   "description": "Parliamentary tree-people who began as ordinary trees in the Bosk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf who arrived at the Bosk in 4520 AR to plant Colfenor's cone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Colfenor",
+   "type": "character",
+   "aliases": [],
+   "description": "Treefolk who asked Rhys to plant his cone at the Bosk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rising",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which treefolk gained the ability to walk freely.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Bosk is found leveled, uprooted, hacked and burned by unknown hands.",
+   "participants": [
+    "Murmuring Bosk",
+    "Treefolk"
+   ],
+   "location": "Murmuring Bosk",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The trees were torn out of the ground, hacked, and burned, all by unknown hands that acted with sustained will."
+  },
+  {
+   "summary": "Rhys arrives in 4520 AR at Colfenor's request and plants Colfenor's cone; later he finds the Bosk regrowing.",
+   "participants": [
+    "Rhys",
+    "Colfenor",
+    "Murmuring Bosk"
+   ],
+   "location": "Murmuring Bosk",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Rhys planted Colfenor's cone there."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Murmuring Bosk",
+   "relation": "located_in",
+   "target": "Great Forest",
+   "note": "Sacred grove in the Great Forest.",
+   "paragraph": 0,
+   "quote": "The Murmuring Bosk was a sacred grove of Lorwyn treefolk in the Great Forest ."
+  },
+  {
+   "source": "Rhys",
+   "relation": "serves",
+   "target": "Colfenor",
+   "note": "Went to plant his cone at his request.",
+   "paragraph": 4,
+   "quote": "after Colfenor asked him to plant his cone there"
+  }
+ ],
+ "rejected": []
+}

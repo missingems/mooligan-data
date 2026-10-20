@@ -1,0 +1,131 @@
+{
+ "page": "wiki/risona",
+ "url": "https://mtg.wiki/page/Risona",
+ "title": "Risona",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:09Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Risona",
+   "type": "character",
+   "aliases": [],
+   "description": "A human samurai and artificer of Kamigawa, leader of the Asari Uprisers, now a prisoner of the Imperial Palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Asari Uprisers",
+   "type": "faction",
+   "aliases": [
+    "Hisaku Uprisers"
+   ],
+   "description": "Artisans and warriors led by Risona who believe the empire should be abolished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzanshi",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain town where Risona was born and which fell short on food one deadly winter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperial Court",
+   "type": "faction",
+   "aliases": [
+    "Imperials"
+   ],
+   "description": "Court that fell into chaos when the emperor disappeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emperor",
+   "type": "character",
+   "aliases": [
+    "planeswalking Emperor"
+   ],
+   "description": "Planeswalking emperor who briefly returned to lead troops against the Uprisers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Site attacked by the Uprisers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Imperial Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Risona is held prisoner.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Risona.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the emperor vanishes, the Imperial Court falls into chaos and Sokenzanshi starves in winter; Risona loses trust in the Court.",
+   "participants": [
+    "Risona",
+    "Imperial Court"
+   ],
+   "location": "Sokenzanshi",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Risona would never trust the Imperial Court again."
+  },
+  {
+   "summary": "Risona and fellow artisans and warriors form the Asari Uprisers and plan a coup.",
+   "participants": [
+    "Risona",
+    "Asari Uprisers",
+    "Imperial Court"
+   ],
+   "location": "Sokenzanshi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Many of her fellow artisans and warriors joined her and formed the Asari Uprisers."
+  },
+  {
+   "summary": "The Uprisers attack Eiganjo and are defeated by Imperial troops under the briefly returned Emperor; Risona is imprisoned.",
+   "participants": [
+    "Asari Uprisers",
+    "Emperor",
+    "Risona"
+   ],
+   "location": "Eiganjo",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Risona is currently a prisoner of the Imperial Palace."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Risona",
+   "relation": "leader_of",
+   "target": "Asari Uprisers",
+   "note": "",
+   "paragraph": 0,
+   "quote": "She is the leader of the Asari Uprisers"
+  },
+  {
+   "source": "Asari Uprisers",
+   "relation": "enemy",
+   "target": "Imperial Court",
+   "note": "planned a coup against the Imperials",
+   "paragraph": 3,
+   "quote": "The planned a coup to replace the Imperials with a government that would have its citizens' interest at heart."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,87 @@
+{
+ "page": "wiki/rundvelt",
+ "url": "https://mtg.wiki/page/Rundvelt",
+ "title": "Rundvelt",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:05Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rundvelt",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountainous area of Aerona occupied by goblins, south of Sursi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pashalik Mons",
+   "type": "character",
+   "aliases": [],
+   "description": "Most famous Rundvelt goblin, a leader around 4000 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rulik Mons",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant who allied nine tribes into one warband to join the Coalition in 4562 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alliance joined by Rulik's warband.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rundvelt goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblins who mastered Rock Sleds and siege equipment.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing Rundvelt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4562 AR Rulik Mons allied nine tribes into a single warband to join the Coalition.",
+   "participants": [
+    "Rulik Mons",
+    "Coalition"
+   ],
+   "location": "Rundvelt",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "In 4562 AR, Mons's descendant Rulik Mons would ally nine tribes into a single warband to join the Coalition ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rulik Mons",
+   "relation": "family",
+   "target": "Pashalik Mons",
+   "note": "Descendant.",
+   "paragraph": 1,
+   "quote": "Mons's descendant Rulik Mons"
+  },
+  {
+   "source": "Rundvelt",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "A mountainous area in Aerona.",
+   "paragraph": 0,
+   "quote": "Rundvelt is a mountainous area in Aerona , occupied by goblins ."
+  }
+ ],
+ "rejected": []
+}

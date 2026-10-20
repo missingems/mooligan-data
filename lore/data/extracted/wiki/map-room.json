@@ -1,0 +1,190 @@
+{
+ "page": "wiki/map-room",
+ "url": "https://mtg.wiki/page/Map_Room",
+ "title": "Map Room",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:06Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Map Room",
+   "type": "location",
+   "aliases": [],
+   "description": "A cavernous chamber in the Evincar of Rath's quarters inside the Stronghold, displaying a living map of Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Structure on Rath later shifted to Urborg on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Evincar of Rath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler whose quarters hold the Map Room.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane assaulted by the Weatherlight Crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Rath was to merge with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Dominaria where the Stronghold was shifted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight Crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crew that entered the Map Room while searching for Sisay and Takara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler who discovered the intruders; his masters planned to invade Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member who urged them deeper into the Stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crovax",
+   "type": "character",
+   "aliases": [],
+   "description": "Crew member who suffered a megrim attack near Selenia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selenia",
+   "type": "character",
+   "aliases": [],
+   "description": "Presence whose proximity caused Crovax's attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Person the crew searched for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takara",
+   "type": "character",
+   "aliases": [],
+   "description": "Person the crew searched for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "Infiltrator who helped destroy the Map Room.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sivvi en-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Infiltrator who helped destroy the Map Room.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grizzlegom",
+   "type": "character",
+   "aliases": [],
+   "description": "Infiltrator who helped destroy the Map Room.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which the Stronghold shifted to Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Part of the Weatherlight Crew enters the Map Room and learns that Volrath's masters plan to invade Dominaria; an alarm sounds.",
+   "participants": [
+    "Weatherlight Crew",
+    "Gerrard",
+    "Crovax",
+    "Volrath"
+   ],
+   "location": "Map Room",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They realized the ambition of Volrath 's masters was to invade Dominaria"
+  },
+  {
+   "summary": "During the Rathi Overlay the Map Room is shifted with the Stronghold to Urborg.",
+   "participants": [
+    "Map Room",
+    "Stronghold"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Map Room was shifted with the rest of the Stronghold to Urborg on Dominaria"
+  },
+  {
+   "summary": "Eladamri, Sivvi en-Vec and Grizzlegom, angered by the invasion map, destroy the entire room.",
+   "participants": [
+    "Eladamri",
+    "Sivvi en-Vec",
+    "Grizzlegom",
+    "Map Room"
+   ],
+   "location": "Map Room",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they proceeded to destroy the entire room and all its mechanisms"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Map Room",
+   "relation": "located_in",
+   "target": "Stronghold",
+   "note": "part of the Evincar's quarters",
+   "paragraph": 0,
+   "quote": "located inside the Stronghold 's structure"
+  },
+  {
+   "source": "Eladamri",
+   "relation": "enemy",
+   "target": "Map Room",
+   "note": "destroyed it with his allies",
+   "paragraph": 3,
+   "quote": "they proceeded to destroy the entire room and all its mechanisms"
+  }
+ ],
+ "rejected": []
+}

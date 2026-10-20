@@ -1,0 +1,85 @@
+{
+ "page": "wiki/laelia",
+ "url": "https://mtg.wiki/page/Laelia",
+ "title": "Laelia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:17Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Laelia",
+   "type": "character",
+   "aliases": [
+    "Blade Reforged"
+   ],
+   "description": "Spirit warrior affiliated with Strixhaven University on Arcavios, who realized upon awakening that she had died long ago.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios where Laelia founded a dueling club.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Laelia's Dueling Club",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dueling club Laelia founded at Strixhaven to train students in magical combat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Awakening as a spirit, Laelia is overcome with anger on realizing she died long ago.",
+   "participants": [
+    "Laelia"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Laelia was overcome with anger upon realizing she had died long ago"
+  },
+  {
+   "summary": "Laelia founds a dueling club at Strixhaven to train students in magical combat.",
+   "participants": [
+    "Laelia",
+    "Laelia's Dueling Club"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Laelia founded a dueling club at Strixhaven"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Laelia",
+   "relation": "leader_of",
+   "target": "Laelia's Dueling Club",
+   "note": "She founded and runs it.",
+   "paragraph": 1,
+   "quote": "Laelia founded a dueling club at Strixhaven"
+  },
+  {
+   "source": "Laelia",
+   "relation": "member_of",
+   "target": "Strixhaven University",
+   "note": "Affiliated with the university.",
+   "paragraph": 0,
+   "quote": "is a spirit warrior affiliated with Strixhaven University on the plane of Arcavios"
+  }
+ ],
+ "rejected": []
+}

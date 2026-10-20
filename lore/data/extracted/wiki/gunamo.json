@@ -1,0 +1,86 @@
+{
+ "page": "wiki/gunamo",
+ "url": "https://mtg.wiki/page/Gunamo",
+ "title": "Gunamo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Commander Gunamo",
+   "type": "character",
+   "aliases": [
+    "Gunamo"
+   ],
+   "description": "Aerathi commander in the Kentsu on Dominaria who was torn in half by killer vines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayesha Tanaka",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose attack on the Sylvan Library Gunamo's troops accompanied; she was overwhelmed by the forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvan Library",
+   "type": "location",
+   "aliases": [],
+   "description": "Place attacked by Ayesha Tanaka and Gunamo's troops.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Military force on Dominaria in which Gunamo was a commander.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gunamo's troops accompany Ayesha Tanaka's attack on the Sylvan Library and succeed.",
+   "participants": [
+    "Commander Gunamo",
+    "Ayesha Tanaka"
+   ],
+   "location": "Sylvan Library",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "His troops accompanied Ayesha Tanaka on her attack on the Sylvan Library"
+  },
+  {
+   "summary": "Ayesha is overwhelmed by the forest and Gunamo is torn in half by killer vines.",
+   "participants": [
+    "Commander Gunamo",
+    "Ayesha Tanaka"
+   ],
+   "location": "Sylvan Library",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Gunamo was torn in half by killer vines"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Commander Gunamo",
+   "relation": "member_of",
+   "target": "Kentsu",
+   "note": "Aerathi commander in the Kentsu.",
+   "paragraph": 0,
+   "quote": "was an Aerathi commander in the Kentsu on Dominaria"
+  },
+  {
+   "source": "Commander Gunamo",
+   "relation": "ally",
+   "target": "Ayesha Tanaka",
+   "note": "His troops accompanied her attack.",
+   "paragraph": 1,
+   "quote": "His troops accompanied Ayesha Tanaka"
+  }
+ ],
+ "rejected": []
+}

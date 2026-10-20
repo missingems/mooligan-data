@@ -1,0 +1,179 @@
+{
+ "page": "wiki/maro-sorcerer",
+ "url": "https://mtg.wiki/page/Maro-Sorcerer",
+ "title": "Maro-Sorcerer",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:27Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Maro-Sorcerer",
+   "type": "creature",
+   "aliases": [
+    "Force of Nature",
+    "maro"
+   ],
+   "description": "Elemental manifestation of the land, brought about by strong magic or nature's will.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gaea",
+   "type": "deity",
+   "aliases": [
+    "Worldsoul"
+   ],
+   "description": "The Worldsoul of Dominaria, whom some forces of nature serve.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calthyn elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who fought the Kieryn for the privilege to speak with the Great Spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kieryn elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who fought the Calthyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Spirit",
+   "type": "creature",
+   "aliases": [],
+   "description": "Force of nature that told Jared Carthalion that Ravidel was alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Told by the Great Spirit that Ravidel lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Said to be alive and seeking Liana and her Moxen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liana",
+   "type": "character",
+   "aliases": [],
+   "description": "Sought by Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreygar",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned a Force of Nature and gave it the Dark Amulet.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated the Force of Nature summoned by Dreygar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned another Force of Nature.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multani",
+   "type": "creature",
+   "aliases": [],
+   "description": "The first Force of Nature called a maro-sorcerer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [],
+   "description": "Maro-sorcerer corrupted into a monster by Geyadrone Dihada.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who corrupted Sol'Kanar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Amulet",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item given to a summoned Force of Nature.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Calthyn and Kieryn elves fight for the privilege of speaking with the Great Spirit; everything it touches withers.",
+   "participants": [
+    "Calthyn elves",
+    "Kieryn elves",
+    "Great Spirit"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Calthyn elves and the Kieryn elves fought each other for the privilege to speak with the Great Spirit."
+  },
+  {
+   "summary": "Dreygar summons a Force of Nature and gives it the Dark Amulet, but Aldon defeats it.",
+   "participants": [
+    "Dreygar",
+    "Aldon",
+    "Dark Amulet"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "but was defeated by Aldon"
+  },
+  {
+   "summary": "Geyadrone Dihada corrupts the maro-sorcerer Sol'Kanar into a monster to better serve her.",
+   "participants": [
+    "Geyadrone Dihada",
+    "Sol'Kanar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was corrupted into a monster by the planeswalker Geyadrone Dihada"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Geyadrone Dihada",
+   "relation": "enemy",
+   "target": "Sol'Kanar",
+   "note": "Corrupted him to serve her",
+   "paragraph": 2,
+   "quote": "so that he might better serve her"
+  },
+  {
+   "source": "Maro-Sorcerer",
+   "relation": "serves",
+   "target": "Gaea",
+   "note": "Some forces of nature are her servants",
+   "paragraph": 1,
+   "quote": "some of which are servants of the Worldsoul, Gaea"
+  }
+ ],
+ "rejected": []
+}

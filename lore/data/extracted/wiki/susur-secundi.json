@@ -1,0 +1,157 @@
+{
+ "page": "wiki/susur-secundi",
+ "url": "https://mtg.wiki/page/Susur_Secundi",
+ "title": "Susur Secundi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:57Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Susur Secundi",
+   "type": "location",
+   "aliases": [
+    "Anuki"
+   ],
+   "description": "Planet closest to the supervoid Sothera in the Edge, colonized by the Monoists; the Kav called it Anuki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [],
+   "description": "Supervoid in the Edge near Susur Secundi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monoists",
+   "type": "faction",
+   "aliases": [
+    "Monasteriat"
+   ],
+   "description": "Order that colonized Susur Secundi, treating its labyrinths as holy sites of the Immortal Faller.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kav",
+   "type": "faction",
+   "aliases": [
+    "Kav of Kavaron"
+   ],
+   "description": "People who first explored the planet as Anuki and did not contest the Monoist claim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Immortal Faller",
+   "type": "deity",
+   "aliases": [],
+   "description": "Being whose designs the Monoists see in the planet's underground structures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pinnacle",
+   "type": "character",
+   "aliases": [],
+   "description": "Opened the Sothera system to the rest of the Edge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Monastery Singul",
+   "type": "location",
+   "aliases": [],
+   "description": "Monastery under construction in orbit above the planet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dawnsire",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Spacecraft that fired upon Monastery Singul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lip of Susur",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the Monoist order's capital monastery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edge",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Sothera lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Kav explored Anuki centuries ago but found it not worth exploiting.",
+   "participants": [
+    "Kav",
+    "Susur Secundi"
+   ],
+   "location": "Susur Secundi",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they found it thick with common minerals and not worth exploiting"
+  },
+  {
+   "summary": "After Pinnacle opened Sothera, the Monoists came to Anuki, were elated at its labyrinths and claimed it; the Kav did not contest.",
+   "participants": [
+    "Monoists",
+    "Kav",
+    "Pinnacle",
+    "Susur Secundi"
+   ],
+   "location": "Susur Secundi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Kav did not contest their claim."
+  },
+  {
+   "summary": "The Monoists rename Anuki Susur Secundi and make it their main staging ground in the Sothera system.",
+   "participants": [
+    "Monoists",
+    "Susur Secundi"
+   ],
+   "location": "Susur Secundi",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the main staging ground for Monoists in the Sothera system"
+  },
+  {
+   "summary": "Dawnsire fires on Monastery Singul after a Monoist strike on the spacecraft.",
+   "participants": [
+    "Dawnsire",
+    "Monastery Singul",
+    "Monoists"
+   ],
+   "location": "Monastery Singul",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Was fired upon by Dawnsire after a Monoist strike on the spacecraft"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Monoists",
+   "relation": "located_in",
+   "target": "Susur Secundi",
+   "note": "colonized it",
+   "paragraph": 0,
+   "quote": "It is colonized by the Monoists"
+  },
+  {
+   "source": "Susur Secundi",
+   "relation": "located_in",
+   "target": "Sothera",
+   "note": "closest planet to the supervoid",
+   "paragraph": 0,
+   "quote": "the closest planet to the supervoid Sothera in the Edge"
+  }
+ ],
+ "rejected": []
+}

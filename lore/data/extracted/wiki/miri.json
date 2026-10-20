@@ -1,0 +1,120 @@
+{
+ "page": "wiki/miri",
+ "url": "https://mtg.wiki/page/Miri",
+ "title": "Miri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:41Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Miri",
+   "type": "character",
+   "aliases": [],
+   "description": "A human Orzhov tithe taker on Ravnica who joins the Selesnyan Conclave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Miri belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnyan Conclave"
+   ],
+   "description": "Guild in which Miri spends time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Danika",
+   "type": "character",
+   "aliases": [],
+   "description": "Miri's podmate who showed her kindness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "The great tree where Miri found a vulnerable spot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Miri subdued a citizen who refused the new 30% tithing rate.",
+   "participants": [
+    "Miri"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "a citizen resisted the new 30% tithing rate and made threats, leading her to subdue him forcefully"
+  },
+  {
+   "summary": "Miri took a spy's Selesnyan robes after witnessing his punishment; her father caught her wearing them.",
+   "participants": [
+    "Miri"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Miri witnessed the brutal punishment of a spy and impulsively took the spy's Selesnyan robes"
+  },
+  {
+   "summary": "Danika swapped plants with Miri so she could succeed at the growth spell.",
+   "participants": [
+    "Miri",
+    "Danika"
+   ],
+   "location": "Selesnya Conclave",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Danika's selfless act of swapping their plants"
+  },
+  {
+   "summary": "Miri discovered a vulnerable spot in Vitu-Ghazi but chose honesty and gave her father an artifact from her mother.",
+   "participants": [
+    "Miri",
+    "Vitu-Ghazi"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "Miri chose honesty and presented her father with a valuable artifact gifted by her mother"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Miri",
+   "relation": "member_of",
+   "target": "Orzhov Syndicate",
+   "note": "tithe taker",
+   "paragraph": 0,
+   "quote": "Miri is a human tithe taker, part of the Orzhov Syndicate on the plane of Ravnica"
+  },
+  {
+   "source": "Danika",
+   "relation": "ally",
+   "target": "Miri",
+   "note": "podmate",
+   "paragraph": 7,
+   "quote": "especially Danika, who showed her kindness and solidarity"
+  }
+ ],
+ "rejected": []
+}

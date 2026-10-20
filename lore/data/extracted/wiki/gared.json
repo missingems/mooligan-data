@@ -1,0 +1,193 @@
+{
+ "page": "wiki/gared",
+ "url": "https://mtg.wiki/page/Gared",
+ "title": "Gared",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gared",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunchback assistant of Liliana Vess on Innistrad, formerly Dierk's assistant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker whom Gared assists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dierk",
+   "type": "character",
+   "aliases": [],
+   "description": "Geistmage and Gared's former master, killed by Eldrazi werewolves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Gared lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Dierk and Gared experimented with; the experiment failed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lurenbaum Fortress",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress where Olivia's vampires cast long shadows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Olivia Voldaren",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire with whom Liliana parleyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Liliana amassed a horde of zombies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Thraben",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle Gared did not take part in directly.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Dealt with by Liliana at Thraben.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Liliana faced at Thraben.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi werewolves",
+   "type": "creature",
+   "aliases": [
+    "Eldrazi werewolf horrors"
+   ],
+   "description": "Horrors that killed Dierk.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gared stands by Dierk as they study the Chain Veil; the experiment fails and Liliana packs to leave.",
+   "participants": [
+    "Gared",
+    "Dierk",
+    "Liliana Vess",
+    "Chain Veil"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Gared remained steadfast, offering his support as Liliana packed her belongings to depart."
+  },
+  {
+   "summary": "Dierk is killed by Eldrazi werewolves.",
+   "participants": [
+    "Dierk",
+    "Eldrazi werewolves"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "In the wake of Dierk's demise at the hands of Eldrazi werewolves"
+  },
+  {
+   "summary": "Gared and Liliana go to Lurenbaum Fortress and the vampires of Olivia Voldaren.",
+   "participants": [
+    "Gared",
+    "Liliana Vess",
+    "Olivia Voldaren",
+    "Lurenbaum Fortress"
+   ],
+   "location": "Lurenbaum Fortress",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Together, they ventured to Lurenbaum Fortress"
+  },
+  {
+   "summary": "After Liliana's parley with Olivia, Gared retrieves his blood-stained coat from Dierk's body.",
+   "participants": [
+    "Gared",
+    "Dierk",
+    "Liliana Vess",
+    "Olivia Voldaren"
+   ],
+   "location": "Lurenbaum Fortress",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Gared solemnly retrieved his blood-stained coat from the lifeless form of his former mentor"
+  },
+  {
+   "summary": "Gared accompanies Liliana to Thraben but waits outside during the battle.",
+   "participants": [
+    "Gared",
+    "Liliana Vess",
+    "Tamiyo",
+    "Gatewatch"
+   ],
+   "location": "Thraben",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Gared did not participate in the Battle of Thraben directly, waiting outside"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gared",
+   "relation": "serves",
+   "target": "Liliana Vess",
+   "note": "assistant",
+   "paragraph": 0,
+   "quote": "Gared is a hunchback assistant of Liliana Vess on"
+  },
+  {
+   "source": "Gared",
+   "relation": "serves",
+   "target": "Dierk",
+   "note": "former master",
+   "paragraph": 0,
+   "quote": "after his former master, the geistmage"
+  },
+  {
+   "source": "Eldrazi werewolves",
+   "relation": "killed",
+   "target": "Dierk",
+   "note": "",
+   "paragraph": 4,
+   "quote": "In the wake of Dierk's demise at the hands of Eldrazi werewolves"
+  }
+ ],
+ "rejected": []
+}

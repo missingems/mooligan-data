@@ -1,0 +1,138 @@
+{
+ "page": "wiki/teshunda",
+ "url": "https://mtg.wiki/page/Teshunda",
+ "title": "Teshunda",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:47Z",
+ "storyline": "Phyrexian Invasion",
+ "entities": [
+  {
+   "name": "Sidar Teshunda",
+   "type": "character",
+   "aliases": [
+    "Teshunda"
+   ],
+   "description": "Magistrate and general of Femeref on Jamuraa who welcomed the Efravan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niambi",
+   "type": "character",
+   "aliases": [],
+   "description": "Speaker and advisor who persuaded Teshunda to visit the Efravan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Awateh",
+   "type": "character",
+   "aliases": [
+    "Grand Historian Awateh"
+   ],
+   "description": "Council member against aiding the Efravan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pallar Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin woman sheltering with the Efravan, mother of Lark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Efravan",
+   "type": "faction",
+   "aliases": [
+    "Efravan people"
+   ],
+   "description": "Refugees sheltering in a secluded mine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Voices",
+   "type": "faction",
+   "aliases": [],
+   "description": "Governing body of Femeref.",
+   "presence": "appears"
+  },
+  {
+   "name": "Femeref",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Jamuraa governed by Teshunda.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Niambi challenges the decree against aiding the Efravan caravan before the Council.",
+   "participants": [
+    "Niambi",
+    "Sidar Teshunda",
+    "Awateh",
+    "Council of Voices"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Niambi , a speaker and advisor, who challenged a decree preventing aid to the Efravan caravan"
+  },
+  {
+   "summary": "Niambi persuades Teshunda to visit the Efravan in their mine.",
+   "participants": [
+    "Niambi",
+    "Sidar Teshunda",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "persuaded Teshunda to visit the Efravan people"
+  },
+  {
+   "summary": "Teshunda is moved by the Efravan, including Pallar Ojanen and her infant Lark.",
+   "participants": [
+    "Sidar Teshunda",
+    "Pallar Ojanen",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "These simple, domestic moments touched Teshunda deeply"
+  },
+  {
+   "summary": "Teshunda rules to welcome the Efravan to Femeref despite his council.",
+   "participants": [
+    "Sidar Teshunda",
+    "Efravan",
+    "Council of Voices"
+   ],
+   "location": "Femeref",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "he welcomed the Efravan to Femeref in a final ruling"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sidar Teshunda",
+   "relation": "leader_of",
+   "target": "Femeref",
+   "note": "magistrate",
+   "paragraph": 0,
+   "quote": "Sidar Teshunda is the magistrate of Femeref"
+  },
+  {
+   "source": "Niambi",
+   "relation": "serves",
+   "target": "Sidar Teshunda",
+   "note": "advisor",
+   "paragraph": 3,
+   "quote": "Niambi , a speaker and advisor"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,520 @@
+{
+ "page": "stories/planeswalkers-guide-to-edge-of-eternities",
+ "url": "https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-to-edge-of-eternities",
+ "title": "Planeswalker's Guide to Edge of Eternities",
+ "story_date": "2025-06-20",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:43:29Z",
+ "storyline": "Edge of Eternities",
+ "entities": [
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who has arrived in Pinnacle space from outside, working through Mm'menon to learn the system and find a way across the Chaos Wall back to the Multiverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mm'menon",
+   "type": "character",
+   "aliases": [],
+   "description": "An Illvoi, formerly of the Uthros Combine, who supplies Tezzeret with Pinnacle briefings and intelligence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regent Maximum Taman IV",
+   "type": "character",
+   "aliases": [
+    "the Regent Maximum",
+    "Regent Maximum"
+   ],
+   "description": "The divine emperor of the Celestial Palatinate and living leader of the Summist faith.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sothera",
+   "type": "location",
+   "aliases": [
+    "the Sothera system",
+    "the Sotheran supervoid"
+   ],
+   "description": "The supervoid at the heart of the Sothera system, once a young star about to go nova, collapsed by the Monoists as their thousandth supervoid and ringed by a photon collar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Susur Secundi",
+   "type": "location",
+   "aliases": [
+    "Anuki"
+   ],
+   "description": "The dark, labyrinth-crossed world closest to Sothera, settled by the Monoists and renamed in honor of Susur; their main staging ground.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kavaron",
+   "type": "location",
+   "aliases": [
+    "Kavaron Before",
+    "Kavaron That Is"
+   ],
+   "description": "The crumbling Kav homeworld, split into a stabilized half, Kavaron Before, and a churning ruin, Kavaron That Is.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Evendo",
+   "type": "location",
+   "aliases": [],
+   "description": "An icebound world being terraformed by Eumidians, co-orbiting Sothera opposite Kavaron and coveted by the Kavaronic Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adagia",
+   "type": "location",
+   "aliases": [],
+   "description": "A windy world and the main base of the Sunstar Free Company.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uthros",
+   "type": "location",
+   "aliases": [],
+   "description": "A titanic gas giant, the gateway to the Sothera system, where the Uthros Combine has a deep research installation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Infinite Guideline",
+   "type": "location",
+   "aliases": [
+    "Infinite Guideline Station",
+    "Guideline Station"
+   ],
+   "description": "Pinnacle's eternity column and main transit hub in the Sothera system.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wurmwall",
+   "type": "location",
+   "aliases": [],
+   "description": "A treacherous asteroid belt ringing the Sothera system, home to greatwurms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garden of Apeiron",
+   "type": "location",
+   "aliases": [
+    "the Garden"
+   ],
+   "description": "An uncharted anomalous region between the Wurmwall and Uthros that swallows ships and appears to be moving toward Sothera.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Point Prime",
+   "type": "location",
+   "aliases": [
+    "Lip of Susur"
+   ],
+   "description": "The first and most holy supervoid of Monoism, ringed by the Lip of Susur where the Monasteriat sits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vu",
+   "type": "location",
+   "aliases": [],
+   "description": "The ancient capital and last imperial city of the Kav on Kavaron Before.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chaos Wall",
+   "type": "concept",
+   "aliases": [],
+   "description": "The barrier of howling recombinant particles at one end of the annular universe, which FTL travel pierces.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quiet Wall",
+   "type": "concept",
+   "aliases": [],
+   "description": "The border where observation crumbles at the redshifted end of the annular universe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Weft",
+   "type": "concept",
+   "aliases": [
+    "the Eternities",
+    "Weft"
+   ],
+   "description": "The parallel lamellae behind the Chaos Wall through which eternity drives and Drix weftwalkers travel faster than light.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternity columns",
+   "type": "artifact",
+   "aliases": [
+    "eternity column"
+   ],
+   "description": "Pinnacle-built, kilometers-long superpositional installations that sling ships fitted with eternity drives between stars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternity drive",
+   "type": "artifact",
+   "aliases": [
+    "eternity drives"
+   ],
+   "description": "A ship system that emulates a Drix seam-ripper and opens and closes the door into the Weft.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seam-ripper",
+   "type": "artifact",
+   "aliases": [
+    "seam-rippers"
+   ],
+   "description": "Drix magnifying anchors that amplify and direct weftwalking while anchoring the Drix to their home lamella.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fabric of All Being",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An ancient artifact predating the Fomori-Eldrazi conflict, kept on the Drix beam world, containing the fates of all things and used to unlock weftwalking and identify Eldrazi potential.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moxite",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A rare fuel source that powers interstellar flight, rich in magical energy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sekhar",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A bead that causes singularity induction, used by Monoists to create a supervoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Horizon javelins",
+   "type": "artifact",
+   "aliases": [
+    "horizon javelin",
+    "the javelin"
+   ],
+   "description": "Colossal star-reviving weapons the Summists use to reignite collapsed supervoids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pinnacle",
+   "type": "faction",
+   "aliases": [
+    "Pinnacle Strategic Corps",
+    "Pinnacle Tactical Corps"
+   ],
+   "description": "The interstellar alliance that opened Sothera to travel, built eternity columns, and runs on mallowmass instead of currency.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Drix",
+   "type": "faction",
+   "aliases": [
+    "Drix"
+   ],
+   "description": "Solitary weftwalkers who gave Pinnacle the secrets of FTL travel and hunt Eldrazi contamination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Illvoi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Large gelatinous medusaform beings from a gas giant who practice cloudsculpting and joined Pinnacle's scientific arm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uthros Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "A private Illvoi research group headquartered on Uthros with Administration, Research and Development, and Security branches.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Monoists",
+   "type": "faction",
+   "aliases": [
+    "Monasteriat"
+   ],
+   "description": "Followers of the unitary faith of the Immortal Faller governed by the Monasteriat, who seek the Sotheran supervoid as their thousandth and promote INEVITA.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Celestial Palatinate",
+   "type": "faction",
+   "aliases": [
+    "the Palatinate"
+   ],
+   "description": "A dynastic absolute monarchy whose state religion is Summism, at war with the Monasteriat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunstar Free Company",
+   "type": "faction",
+   "aliases": [
+    "Sunstar"
+   ],
+   "description": "The Palatinate's favored cause-mercenary regiment and de facto state army, based on Adagia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kav",
+   "type": "faction",
+   "aliases": [
+    "Kavaronic Empire"
+   ],
+   "description": "The only species native to Sothera, who mined their world to ruin and are evacuating.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eumidians",
+   "type": "faction",
+   "aliases": [],
+   "description": "A terrasymbiotic species that spreads via seedships and is terraforming Evendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Astelli",
+   "type": "faction",
+   "aliases": [],
+   "description": "Living remains of stars consumed by supervoids, who fled the Monoists and seeded the doctrine of Summism.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Susurians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Massive beings born from the Lip of Susur who founded Monoism and command gravitational threads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cosmogrands",
+   "type": "faction",
+   "aliases": [],
+   "description": "The near-absolute monarchs of the Palatinate who rule worlds and enact the Regent's will.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Faller",
+   "type": "deity",
+   "aliases": [
+    "the Faller"
+   ],
+   "description": "The messianic figure of Monoism observed approaching the Zero Point of every supervoid.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bright Sum",
+   "type": "deity",
+   "aliases": [
+    "Grand Cosmocordance",
+    "Summism"
+   ],
+   "description": "The living prophetic compass of Summism, the faith of the Palatinate, articulating the Grand Cosmocordance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "INEVITA",
+   "type": "concept",
+   "aliases": [],
+   "description": "The promised end of the universe in Monoist thought, which Summists regard as anathema.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mallowmass",
+   "type": "concept",
+   "aliases": [
+    "mallow"
+   ],
+   "description": "Pinnacle's economic system based on reputation and the duties of host and guest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Common Agreement",
+   "type": "concept",
+   "aliases": [],
+   "description": "Pinnacle's shared understanding of the universe and its truths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fomori-Eldrazi conflict",
+   "type": "event",
+   "aliases": [
+    "Fomori-Eldrazi war"
+   ],
+   "description": "An ancient war in which the Drix allied with the Fomori before their disappearance.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pinnacle, drawn by the Kav's furious emigration, comes to Sothera, builds the eternity column Infinite Guideline and opens the system to the Edge.",
+   "participants": [
+    "Pinnacle",
+    "Kav",
+    "Infinite Guideline",
+    "Sothera"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 70,
+   "quote": "We came to Sothera, constructed an FTL outpost—an eternity column designated Infinite Guideline —and opened the system to the rest of the connected Edge."
+  },
+  {
+   "summary": "The Monoists capture Sothera's collapse and turn it inward into a supervoid, making it their thousandth.",
+   "participants": [
+    "Monoists",
+    "Sothera",
+    "Sekhar"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 71,
+   "quote": "Sothera is that thousandth supervoid."
+  },
+  {
+   "summary": "The Kav begin an exodus from Kavaron after centuries of mining that destabilized their world.",
+   "participants": [
+    "Kav",
+    "Kavaron"
+   ],
+   "location": "Kavaron",
+   "importance": "major",
+   "paragraph": 98,
+   "quote": "Decades have passed since Exodus Day, when the first Kav shuttle lifted the first flight of refugees off Kavaron's unstable surface."
+  },
+  {
+   "summary": "The Monoists settle Anuki and rename it Susur Secundi.",
+   "participants": [
+    "Monoists",
+    "Susur Secundi"
+   ],
+   "location": "Susur Secundi",
+   "importance": "minor",
+   "paragraph": 75,
+   "quote": "It has been decades since the Monoists settled Anuki and renamed it Susur Secundi"
+  },
+  {
+   "summary": "The Palatinate sends Sunstar Free Company knights to stop the Monoists and deploy a horizon javelin at Sothera.",
+   "participants": [
+    "Celestial Palatinate",
+    "Sunstar Free Company",
+    "Monoists",
+    "Horizon javelins"
+   ],
+   "location": "Sothera",
+   "importance": "major",
+   "paragraph": 53,
+   "quote": "the Palatinate has dispatched a force of Sunstar Free Company knights to drive the Monoists out and deploy one of their javelins"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tezzeret",
+   "relation": "other",
+   "target": "Mm'menon",
+   "note": "Tezzeret directs Mm'menon to fetch intelligence and technical specifications",
+   "paragraph": 21,
+   "quote": "Mm'menon, have our contacts procure additional technical specifications of Guideline Station for me, and steal a codebook."
+  },
+  {
+   "source": "Celestial Palatinate",
+   "relation": "enemy",
+   "target": "Monoists",
+   "note": "at war over faiths and Sothera",
+   "paragraph": 52,
+   "quote": "The Celestial Palatinate and the Monasteriat are at war."
+  },
+  {
+   "source": "Sunstar Free Company",
+   "relation": "serves",
+   "target": "Celestial Palatinate",
+   "note": "favored regiment and de facto state army",
+   "paragraph": 48,
+   "quote": "the Sunstar Free Company is the current favored regiment of the Regent Maximum"
+  },
+  {
+   "source": "Regent Maximum Taman IV",
+   "relation": "leader_of",
+   "target": "Celestial Palatinate",
+   "note": "divine emperor",
+   "paragraph": 44,
+   "quote": "under the command of divine emperor, the Regent Maximum Taman IV."
+  },
+  {
+   "source": "The Drix",
+   "relation": "ally",
+   "target": "Pinnacle",
+   "note": "the Drix shared the secrets of faster-than-light travel with Pinnacle",
+   "paragraph": 25,
+   "quote": "the Drix shared the secrets of faster-than-light travel with Pinnacle"
+  },
+  {
+   "source": "Illvoi",
+   "relation": "member_of",
+   "target": "Pinnacle",
+   "note": "the Illvoi joined Pinnacle",
+   "paragraph": 33,
+   "quote": "The Illvoi joined Pinnacle"
+  },
+  {
+   "source": "Uthros Combine",
+   "relation": "located_in",
+   "target": "Uthros",
+   "note": "headquartered on Uthros",
+   "paragraph": 35,
+   "quote": "a private research group headquartered on Uthros"
+  },
+  {
+   "source": "Astelli",
+   "relation": "enemy",
+   "target": "Monoists",
+   "note": "Astelli fled and then prepared others for war against the Monoists",
+   "paragraph": 106,
+   "quote": "These teachings became the foundations of the current Summist faith of the Celestial Palatinate"
+  },
+  {
+   "source": "Astelli",
+   "relation": "ally",
+   "target": "Sunstar Free Company",
+   "note": "found a strong ally in the Sunstar Free Company",
+   "paragraph": 106,
+   "quote": "The Astelli have, for the time being, found a strong ally in the Sunstar Free Company of the Palatinate"
+  },
+  {
+   "source": "Susurians",
+   "relation": "created",
+   "target": "Monoists",
+   "note": "the species that divined the first tenets of Monoism and founded the faith",
+   "paragraph": 40,
+   "quote": "the species that divined the first tenets of Monoism and founded the faith"
+  },
+  {
+   "source": "Evendo",
+   "relation": "other",
+   "target": "Kav",
+   "note": "the Kavaronic Empire plans to invade Evendo once terraformed",
+   "paragraph": 86,
+   "quote": "who are already designing invasion plans to take the world for their own once the Eumidians have finished remaking it"
+  },
+  {
+   "source": "Eumidians",
+   "relation": "located_in",
+   "target": "Evendo",
+   "note": "terraforming Evendo",
+   "paragraph": 85,
+   "quote": "Evendo has since undergone decades of Eumidian-directed terraformation."
+  }
+ ],
+ "rejected": []
+}

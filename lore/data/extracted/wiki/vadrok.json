@@ -1,0 +1,161 @@
+{
+ "page": "wiki/vadrok",
+ "url": "https://mtg.wiki/page/Vadrok",
+ "title": "Vadrok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:06Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Vadrok, the Thunder-Raptor",
+   "type": "creature",
+   "aliases": [
+    "Vadrok"
+   ],
+   "description": "The apex monster of the Raugrin triome on Ikoria, a massive catlike dragon with blue-white flame.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raugrin",
+   "type": "location",
+   "aliases": [
+    "Vadrok Turf"
+   ],
+   "description": "Triome of Ikoria ruled by Vadrok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Vadrok lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shroka Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "Tall rocky columns in Raugrin where Vadrok nests.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ketria",
+   "type": "location",
+   "aliases": [],
+   "description": "Triome partly in Vadrok's hunting grounds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who believes Vadrok has the longest hunting ground.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rielle",
+   "type": "character",
+   "aliases": [],
+   "description": "Sage who alone knows the myth of the burned human sanctuary.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion of Ikoria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jirina Kudro",
+   "type": "character",
+   "aliases": [],
+   "description": "Led survivors of Drannith to Vadrok's lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City destroyed in the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated planeswalker leading the invasion.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Long ago Vadrok burned a human sanctuary to ash, erasing all memory of it.",
+   "participants": [
+    "Vadrok, the Thunder-Raptor",
+    "Rielle"
+   ],
+   "location": "Raugrin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Long ago Vadrok burned a human sanctuary to ash."
+  },
+  {
+   "summary": "Jirina Kudro leads Drannith survivors into Vadrok's lair to lure in Lukka.",
+   "participants": [
+    "Jirina Kudro",
+    "Lukka",
+    "Vadrok, the Thunder-Raptor",
+    "Drannith"
+   ],
+   "location": "Raugrin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Jirina Kudro led a column of survivors from the destroyed city of Drannith into Vadrok's lair"
+  },
+  {
+   "summary": "Vadrok's flames strip Lukka's corrupted biomass, letting Vadrok extract the planeswalker, and it discards Lukka's corpse.",
+   "participants": [
+    "Vadrok, the Thunder-Raptor",
+    "Lukka"
+   ],
+   "location": "Raugrin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the apex monster's magical flames stripped Lukka's corrupted biomass, letting Vadrok extract the planeswalker"
+  },
+  {
+   "summary": "Vadrok turns to the citizens but declines to attack and departs.",
+   "participants": [
+    "Vadrok, the Thunder-Raptor",
+    "Jirina Kudro"
+   ],
+   "location": "Raugrin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "declined to attack and departed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vadrok, the Thunder-Raptor",
+   "relation": "leader_of",
+   "target": "Raugrin",
+   "note": "Apex monster ruling its skies.",
+   "paragraph": 1,
+   "quote": "Vadrok rules the skies of Raugrin."
+  },
+  {
+   "source": "Vadrok, the Thunder-Raptor",
+   "relation": "enemy",
+   "target": "Lukka",
+   "note": "Battled and extracted him from his compleated form.",
+   "paragraph": 4,
+   "quote": "Lukka arrived and battled Vadrok"
+  }
+ ],
+ "rejected": []
+}

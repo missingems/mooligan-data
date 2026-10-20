@@ -1,0 +1,144 @@
+{
+ "page": "wiki/surgical-bay",
+ "url": "https://mtg.wiki/page/Surgical_Bay",
+ "title": "Surgical Bay",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:37Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Surgical Bay",
+   "type": "location",
+   "aliases": [
+    "Fifth sphere"
+   ],
+   "description": "The fifth sphere of New Phyrexia, dominated by the Progress Engine of Jin-Gitaxias, a toxic quicksilver sea of experimentation.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The layered Phyrexia with nine spheres.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian praetor who repurposed the region as his domain of experimentation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Progress Engine",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Phyrexian faction devoted to advancing knowledge and efficiency at any cost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose Quicksilver Sea became the Surgical Bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quicksilver Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea of Mirrodin corrupted by glistening oil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kraynox",
+   "type": "character",
+   "aliases": [],
+   "description": "Originally envisioned the region as his Fourth Sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who traveled through the Surgical Bay seeking Karn. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koth",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who traveled through the Surgical Bay seeking Karn. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who traveled through the Surgical Bay seeking Karn. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker the others searched for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fathom Ward",
+   "type": "location",
+   "aliases": [],
+   "description": "A submerged sea monster installation holding the last doses of blinkmoth serum.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jin-Gitaxias overtakes the region, drains the Quicksilver Sea and converts it into a domain of experimentation, creating the Surgical Bay.",
+   "participants": [
+    "Jin-Gitaxias",
+    "Kraynox"
+   ],
+   "location": "Surgical Bay",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Draining the Quicksilver Sea from above, he pooled its contents into this subterranean reservoir and converted it into a domain of experimentation."
+  },
+  {
+   "summary": "Searching for Karn, Elspeth, Koth and Venser travel through the Surgical Bay.",
+   "participants": [
+    "Elspeth Tirel",
+    "Koth",
+    "Venser",
+    "Karn"
+   ],
+   "location": "Surgical Bay",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "planeswalkers Elspeth Tirel , Koth , and Venser traveled through the Surgical Bay"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "leader_of",
+   "target": "Progress Engine",
+   "note": "The bay is the seat of his faction.",
+   "paragraph": 5,
+   "quote": "Jin-Gitaxias made it the seat of his faction’s anatomical, mechanical, and psychological experimentation"
+  },
+  {
+   "source": "Surgical Bay",
+   "relation": "located_in",
+   "target": "New Phyrexia",
+   "note": "Fifth sphere.",
+   "paragraph": 0,
+   "quote": "The Surgical Bay is the fifth sphere of New Phyrexia"
+  }
+ ],
+ "rejected": []
+}

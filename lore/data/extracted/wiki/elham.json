@@ -1,0 +1,112 @@
+{
+ "page": "wiki/elham",
+ "url": "https://mtg.wiki/page/Elham",
+ "title": "Elham",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:44Z",
+ "storyline": "Phyrexia: All Will Be One",
+ "entities": [
+  {
+   "name": "Elham",
+   "type": "character",
+   "aliases": [],
+   "description": "Auriok woman and seasoned Mirran Resistance member with a gold prosthetic calf, former leader of Neyali's cell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Neyali",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the resistance cell in the Furnace Layer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirran Resistance",
+   "type": "faction",
+   "aliases": [],
+   "description": "Resistance against the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reyana",
+   "type": "character",
+   "aliases": [],
+   "description": "Disappeared resistance member Neyali decides to rescue.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Salvage Complex",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Reyana was believed held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Furnace Layer",
+   "type": "location",
+   "aliases": [],
+   "description": "Layer of Mirrex where the cell operates.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elham once leads the cell before Neyali takes over and remains a central figure.",
+   "participants": [
+    "Elham",
+    "Neyali"
+   ],
+   "location": "Furnace Layer",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Elham once led the Mirran Resistance cell before Neyali took over"
+  },
+  {
+   "summary": "Elham discusses Reyana's disappearance with Neyali.",
+   "participants": [
+    "Elham",
+    "Neyali",
+    "Reyana"
+   ],
+   "location": "Furnace Layer",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Elham participated in discussions with Neyali"
+  },
+  {
+   "summary": "Neyali decides to rescue Reyana and Elham follows her order to stay while Neyali goes down alone.",
+   "participants": [
+    "Neyali",
+    "Elham",
+    "Reyana",
+    "Salvage Complex"
+   ],
+   "location": "Salvage Complex",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she followed Neyali's orders and respected her decision to go down to the pit alone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elham",
+   "relation": "member_of",
+   "target": "Mirran Resistance",
+   "note": "Seasoned member.",
+   "paragraph": 1,
+   "quote": "member of the Mirran Resistance"
+  },
+  {
+   "source": "Elham",
+   "relation": "serves",
+   "target": "Neyali",
+   "note": "She follows Neyali's orders.",
+   "paragraph": 2,
+   "quote": "she followed Neyali's orders"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,137 @@
+{
+ "page": "wiki/thranegeld",
+ "url": "https://mtg.wiki/page/Thranegeld",
+ "title": "Thranegeld",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:31Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Thranegeld",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarven docent and artificer at the Tolarian Academy of Lat-Nam, found dead in his chambers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Academy",
+   "type": "location",
+   "aliases": [
+    "Tolarian Academy of Lat-Nam"
+   ],
+   "description": "Academy of Lat-Nam where Thranegeld taught.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian agents",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "Phyrexian infiltrators suspected in the academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulf",
+   "type": "character",
+   "aliases": [],
+   "description": "Struggling student whom Thranegeld assigned a project on Corondor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Mysterious ancient realm lost to civilization.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon King of Corondor, subject of a lost tome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silas Brotten",
+   "type": "character",
+   "aliases": [],
+   "description": "Disguised docent and Phyrexian agent who targeted Ulf and the tome.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thranegeld assigns Ulf a project on the history of Corondor and checks with a magical device that he is not a Phyrexian agent.",
+   "participants": [
+    "Thranegeld",
+    "Ulf"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "assigned him a special project on the history of Corondor"
+  },
+  {
+   "summary": "Ulf finds a lost tome on Sol'Kanar and Thranegeld advises him to keep it hidden.",
+   "participants": [
+    "Ulf",
+    "Thranegeld",
+    "Sol'Kanar"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Thranegeld advised Ulf to keep it hidden and not to trust anyone else with its contents"
+  },
+  {
+   "summary": "Thranegeld is found dead in his chambers, likely killed by Silas Brotten in Phyrexian form.",
+   "participants": [
+    "Thranegeld",
+    "Silas Brotten"
+   ],
+   "location": "Tolarian Academy",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Thranegeld met a grim fate, found dead in his chambers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thranegeld",
+   "relation": "serves",
+   "target": "Tolarian Academy",
+   "note": "Docent.",
+   "paragraph": 0,
+   "quote": "Thranegeld was a dwarven docent at the Tolarian Academy of Lat-Nam"
+  },
+  {
+   "source": "Thranegeld",
+   "relation": "mentor_of",
+   "target": "Ulf",
+   "note": "Teacher of the struggling student.",
+   "paragraph": 3,
+   "quote": "He played a pivotal role in the life of Ulf"
+  },
+  {
+   "source": "Silas Brotten",
+   "relation": "killed",
+   "target": "Thranegeld",
+   "note": "Likely killed him in his Phyrexian form.",
+   "paragraph": 5,
+   "quote": "likely Silas Brotten himself in his Phyrexian form"
+  },
+  {
+   "source": "Silas Brotten",
+   "relation": "member_of",
+   "target": "Phyrexian agents",
+   "note": "Disguised docent.",
+   "paragraph": 4,
+   "quote": "Phyrexian agents within the academy, including a disguised docent, Silas Brotten"
+  }
+ ],
+ "rejected": []
+}

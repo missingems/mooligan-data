@@ -1,0 +1,109 @@
+{
+ "page": "wiki/kotori",
+ "url": "https://mtg.wiki/page/Kotori",
+ "title": "Kotori",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:41Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Kotori",
+   "type": "character",
+   "aliases": [],
+   "description": "A 20-year-old soratami pilot and Futurist from Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Katsumasa",
+   "type": "character",
+   "aliases": [],
+   "description": "Futurist researcher who trained Kotori.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shorikai",
+   "type": "creature",
+   "aliases": [
+    "Kotori-Shorikai"
+   ],
+   "description": "A kami housed inside the Epoch Engine, bonded to Kotori.",
+   "presence": "appears"
+  },
+  {
+   "name": "Epoch Engine",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A prototype mech piloted by Kotori.",
+   "presence": "appears"
+  },
+  {
+   "name": "Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group running the Vehicular Exploration Program.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otawara",
+   "type": "location",
+   "aliases": [],
+   "description": "City Kotori and Shorikai decided to leave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kotori trained seven years under Katsumasa before volunteering to pilot the Epoch Engine.",
+   "participants": [
+    "Kotori",
+    "Katsumasa",
+    "Epoch Engine"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she trained under him for 7 years before volunteering to pilot the Epoch Engine"
+  },
+  {
+   "summary": "Kotori and Shorikai decided to leave Otawara after the mech refused to deliver a final blow.",
+   "participants": [
+    "Kotori",
+    "Shorikai",
+    "Futurists"
+   ],
+   "location": "Otawara",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the two decided to leave Otawara and forge their path"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Katsumasa",
+   "relation": "mentor_of",
+   "target": "Kotori",
+   "note": "Her teacher and researcher",
+   "paragraph": 2,
+   "quote": "Katsumasa's most trusted protégé"
+  },
+  {
+   "source": "Kotori",
+   "relation": "ally",
+   "target": "Shorikai",
+   "note": "Emotional bond",
+   "paragraph": 2,
+   "quote": "She established an emotional bond with the kami Shorikai"
+  }
+ ],
+ "rejected": []
+}

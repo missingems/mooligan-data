@@ -1,0 +1,132 @@
+{
+ "page": "wiki/goose-mother",
+ "url": "https://mtg.wiki/page/Goose_Mother",
+ "title": "Goose Mother",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:53:53Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Goose Mother",
+   "type": "creature",
+   "aliases": [
+    "The Goose Mother"
+   ],
+   "description": "A giant multi-headed bird hydra of Eldraine that lays a golden egg every hour; born from a witch's stew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Goose Mother lives in the Wilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witch",
+   "type": "character",
+   "aliases": [
+    "enterprising witch"
+   ],
+   "description": "A witch who created the Goose Mother and was devoured by it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fae folk",
+   "type": "faction",
+   "aliases": [
+    "fae folk of Eldraine's wilds"
+   ],
+   "description": "Have a symbiotic relationship with the Goose Mother, trading meat for treasures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wilds",
+   "type": "location",
+   "aliases": [
+    "Wilds"
+   ],
+   "description": "Region of Eldraine where the Goose Mother lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Goose Mother and Other Tales",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An Eldraine folktale of which the Goose Mother is a subject.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that came centuries after the Goose Mother's creation.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A witch creates a stew of hydra's blood and goose feathers from which the Goose Mother is born; it grows to prodigious size.",
+   "participants": [
+    "Witch",
+    "Goose Mother"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "an enterprising witch created a frothy stew composed of hydra 's blood and goose feathers, from which the Goose Mother was born"
+  },
+  {
+   "summary": "The witch hacks at the sleeping Goose Mother's neck with a cleaver, but two more heads sprout.",
+   "participants": [
+    "Witch",
+    "Goose Mother"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "two more heads sprouted in place of the first"
+  },
+  {
+   "summary": "Enraged, the Goose Mother devours the witch and rampages into the Wilds, where it still lives.",
+   "participants": [
+    "Goose Mother",
+    "Witch"
+   ],
+   "location": "The Wilds",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Enraged, the Goose Mother devoured the witch and rampaged deep into the Wilds"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Witch",
+   "relation": "created",
+   "target": "Goose Mother",
+   "note": "From hydra blood and goose feathers",
+   "paragraph": 4,
+   "quote": "an enterprising witch created a frothy stew"
+  },
+  {
+   "source": "Goose Mother",
+   "relation": "killed",
+   "target": "Witch",
+   "note": "Devoured her",
+   "paragraph": 4,
+   "quote": "Enraged, the Goose Mother devoured the witch"
+  },
+  {
+   "source": "Fae folk",
+   "relation": "ally",
+   "target": "Goose Mother",
+   "note": "Symbiotic relationship",
+   "paragraph": 1,
+   "quote": "have developed a symbiotic relationship with the Goose Mother"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,145 @@
+{
+ "page": "wiki/moorland",
+ "url": "https://mtg.wiki/page/Moorland",
+ "title": "Moorland",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:59Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Moorland",
+   "type": "location",
+   "aliases": [
+    "the Moorlands"
+   ],
+   "description": "The largest and most sparsely populated parish of Gavony, with bleak moors and supernatural threats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Innistrad containing the Moorland and Nearheath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nearheath",
+   "type": "location",
+   "aliases": [],
+   "description": "The well-settled parish of Gavony beside the Moorland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Gavony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drogskol",
+   "type": "faction",
+   "aliases": [],
+   "description": "An army of protective spirits, once a large militia that fell to a horde of the unhallowed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grimgrin",
+   "type": "creature",
+   "aliases": [],
+   "description": "A horrific skaab monstrosity created by Geralf.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [],
+   "description": "Necro-alchemist who created Grimgrin and uses Trostad as a base.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of forces contesting Angel Road with Geralf.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony Riders",
+   "type": "faction",
+   "aliases": [],
+   "description": "An elite cavalry housed in Rider's Lock.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ormendahl",
+   "type": "character",
+   "aliases": [],
+   "description": "A demon with a secret lair at Westvale Abbey.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Drogskol, once a large militia, fell to a horde of the unhallowed and became protective spirits.",
+   "participants": [
+    "Drogskol"
+   ],
+   "location": "Moorland",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They were once a large militia that fell to a horde of the unhallowed ."
+  },
+  {
+   "summary": "Geralf creates and sets loose the skaab Grimgrin on the moorland.",
+   "participants": [
+    "Geralf",
+    "Grimgrin"
+   ],
+   "location": "Moorland",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "a horrific skaab monstrosity created and set loose by the necro-alchemist Geralf"
+  },
+  {
+   "summary": "Trostad is overrun with skaabs shortly before the Siege of Thraben.",
+   "participants": [
+    "Geralf"
+   ],
+   "location": "Moorland",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "was overrun with skaabs shortly before the Siege of Thraben"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Geralf",
+   "relation": "created",
+   "target": "Grimgrin",
+   "note": "",
+   "paragraph": 3,
+   "quote": "created and set loose by the necro-alchemist Geralf"
+  },
+  {
+   "source": "Gisa",
+   "relation": "enemy",
+   "target": "Geralf",
+   "note": "Their forces contest Angel Road.",
+   "paragraph": 4,
+   "quote": "contested boundary between the forces of Gisa and Geralf"
+  },
+  {
+   "source": "Moorland",
+   "relation": "located_in",
+   "target": "Gavony",
+   "note": "",
+   "paragraph": 0,
+   "quote": "parish of Gavony"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,177 @@
+{
+ "page": "wiki/mayael",
+ "url": "https://mtg.wiki/page/Mayael",
+ "title": "Mayael",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:50Z",
+ "storyline": "Conflux",
+ "entities": [
+  {
+   "name": "Mayael",
+   "type": "character",
+   "aliases": [
+    "Anima",
+    "Mayael the Anima"
+   ],
+   "description": "A female shaman and de facto leader of the Cylian elves on Alara, known on Naya as the Anima.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cylian elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves of Alara led by Mayael.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Mayael lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara where Mayael is called the Anima.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sacellum",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple crafted from living jungle trees where Mayael was named successor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Whitecover Gaze",
+   "type": "concept",
+   "aliases": [],
+   "description": "Ritual blinding the Anima in exchange for prophetic magical sight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cylia",
+   "type": "character",
+   "aliases": [],
+   "description": "The first Anima, who experienced Progenitus when Alara was sundered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Progenitus",
+   "type": "deity",
+   "aliases": [],
+   "description": "Great hydra god of Naya consulted by Mayael.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley of the Ancients",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Mayael consulted Progenitus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Relic of Progenitus",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item Mayael used to call up Progenitus's spirit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker present at the ritual who spoke against conflict.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The dying previous Anima names Mayael her successor and has her undergo the Whitecover Gaze, blinding herself for magical sight.",
+   "participants": [
+    "Mayael"
+   ],
+   "location": "Sacellum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Anima named Mayael as her successor"
+  },
+  {
+   "summary": "During the ritual Mayael experiences the past lives of all previous Anima back to Cylia.",
+   "participants": [
+    "Mayael",
+    "Cylia",
+    "Progenitus"
+   ],
+   "location": "Sacellum",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Mayael experienced the past lives of all previous Anima"
+  },
+  {
+   "summary": "Mayael journeys to the Valley of the Ancients and calls up Progenitus's spirit with the Relic.",
+   "participants": [
+    "Mayael",
+    "Progenitus"
+   ],
+   "location": "Valley of the Ancients",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she called up the spirit of the beast and sought its advice"
+  },
+  {
+   "summary": "A dark force disturbs the ritual; Mayael mistakes it for Progenitus and it demands the Cylian elves prepare for war.",
+   "participants": [
+    "Mayael",
+    "Cylian elves"
+   ],
+   "location": "Valley of the Ancients",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "It demanded that the Cylian elves prepare for war."
+  },
+  {
+   "summary": "Ajani Goldmane speaks against conflict but is unheeded.",
+   "participants": [
+    "Ajani Goldmane",
+    "Mayael"
+   ],
+   "location": "Valley of the Ancients",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Ajani Goldmane was present for this ritual and tried to speak against conflict"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mayael",
+   "relation": "leader_of",
+   "target": "Cylian elves",
+   "note": "de facto leader",
+   "paragraph": 0,
+   "quote": "de facto leader of the Cylian elves from Alara"
+  },
+  {
+   "source": "Mayael",
+   "relation": "serves",
+   "target": "Progenitus",
+   "note": "seeks the wisdom of her god",
+   "paragraph": 3,
+   "quote": "so sought the wisdom of Progenitus"
+  },
+  {
+   "source": "Mayael",
+   "relation": "other",
+   "target": "Cylia",
+   "note": "successor in the line of Anima",
+   "paragraph": 2,
+   "quote": "back to the first, Cylia"
+  }
+ ],
+ "rejected": []
+}

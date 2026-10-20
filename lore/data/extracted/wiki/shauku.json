@@ -1,0 +1,201 @@
+{
+ "page": "wiki/shauku",
+ "url": "https://mtg.wiki/page/Shauku",
+ "title": "Shauku",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:27Z",
+ "storyline": "Mirage",
+ "entities": [
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [
+    "the Endbringer"
+   ],
+   "description": "An ancient vampire of Femeref descent who reigns in Aku and drains life from others.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aku",
+   "type": "location",
+   "aliases": [],
+   "description": "Shauku's domain in the Uuserk Marshes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [
+    "Emperor Johan of Tirras"
+   ],
+   "description": "Emperor lured into Shauku's service.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cosmic Horror",
+   "type": "creature",
+   "aliases": [],
+   "description": "Being trapped beneath the ruin by a ring of fire; it summons a Falling Star.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amber Prison",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Crystal prison in which Shauku locked Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Robaran Mercenaries who frees Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Knocked Shauku back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Asked Shauku to aid his conquest of Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi Akosa",
+   "type": "character",
+   "aliases": [],
+   "description": "Temporal planeswalker who phased out Zhalfir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falling Star",
+   "type": "event",
+   "aliases": [],
+   "description": "Meteor that destroyed the ruin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirage Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Kaervek approached Shauku.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhalfir",
+   "type": "location",
+   "aliases": [],
+   "description": "Land Shauku moved to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shauku lures Emperor Johan to her lair with promises of knowledge, then gives him a tome that drains his knowledge.",
+   "participants": [
+    "Shauku",
+    "Johan",
+    "Cosmic Horror"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "it instead drained his pre-existing knowledge into its pages."
+  },
+  {
+   "summary": "Shauku detects Johan and locks him in an Amber Prison.",
+   "participants": [
+    "Shauku",
+    "Johan",
+    "Amber Prison"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "locked him into an Amber Prison ."
+  },
+  {
+   "summary": "Adira Strongheart's mercenaries free Johan; Jedit Ojanen knocks Shauku back and the freed Cosmic Horror summons a Falling Star that obliterates the ruin.",
+   "participants": [
+    "Adira Strongheart",
+    "Johan",
+    "Jedit Ojanen",
+    "Shauku",
+    "Cosmic Horror",
+    "Falling Star"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the freed Cosmic Horror summoned a Falling Star to obliterate the entire ruin."
+  },
+  {
+   "summary": "Shauku secretly survives the impact.",
+   "participants": [
+    "Shauku"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "but she had secretly fled her lair and survived the impact."
+  },
+  {
+   "summary": "Kaervek asks Shauku to aid his conquest of Jamuraa; she declines.",
+   "participants": [
+    "Kaervek",
+    "Shauku"
+   ],
+   "location": "Zhalfir",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "she was approached by Kaervek to aid him in his conquest of Jamuraa , but she declined."
+  },
+  {
+   "summary": "Teferi Akosa phases out Aku and Zhalfir during the Phyrexian Invasion.",
+   "participants": [
+    "Teferi Akosa",
+    "Shauku"
+   ],
+   "location": "Aku",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Aku and all its surroundings were phased out along with the rest of Zhalfir by the temporal planeswalker Teferi Akosa ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shauku",
+   "relation": "enemy",
+   "target": "Johan",
+   "note": "imprisoned him",
+   "paragraph": 4,
+   "quote": "locked him into an Amber Prison ."
+  },
+  {
+   "source": "Shauku",
+   "relation": "located_in",
+   "target": "Aku",
+   "note": "reigns there",
+   "paragraph": 2,
+   "quote": "She reigns in Aku within the Uuserk Marshes"
+  },
+  {
+   "source": "Jedit Ojanen",
+   "relation": "enemy",
+   "target": "Shauku",
+   "note": "knocked her back",
+   "paragraph": 4,
+   "quote": "Shauku was knocked back by Jedit Ojanen"
+  }
+ ],
+ "rejected": []
+}

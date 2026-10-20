@@ -1,0 +1,203 @@
+{
+ "page": "wiki/zar-ojanen",
+ "url": "https://mtg.wiki/page/Zar_Ojanen",
+ "title": "Zar Ojanen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zar Ojanen",
+   "type": "character",
+   "aliases": [
+    "Zar"
+   ],
+   "description": "Leonin warrior from Efrava who leads a caravan of Efravan refugees through Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pallar Ojanen",
+   "type": "character",
+   "aliases": [
+    "Pallar"
+   ],
+   "description": "Zar's pregnant sister who gives birth to Lark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lark Ojanen",
+   "type": "character",
+   "aliases": [
+    "Lark"
+   ],
+   "description": "Pallar's newborn daughter and Zar's niece.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Formidable mercenary from whom Zar is descended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efrava",
+   "type": "location",
+   "aliases": [],
+   "description": "Once-lush region of Dominaria lost to a catastrophe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efravan",
+   "type": "faction",
+   "aliases": [
+    "Efravan refugees"
+   ],
+   "description": "Leonin and mixed humanoid refugees from Efrava.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niambi",
+   "type": "character",
+   "aliases": [],
+   "description": "Healer who interprets dreams and aids the refugees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Denik",
+   "type": "character",
+   "aliases": [],
+   "description": "Niambi's husband who provides safe passage and supplies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teshunda",
+   "type": "character",
+   "aliases": [
+    "Magistrate Teshunda"
+   ],
+   "description": "Magistrate who opposes then grants asylum to the refugees.",
+   "presence": "appears"
+  },
+  {
+   "name": "Femeref",
+   "type": "location",
+   "aliases": [],
+   "description": "City where the Efravan are granted asylum.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Advancing forces the refugees flee.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where Zar's caravan travels.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Efravan flee Phyrexian forces; Zar, Pallar and others seek shelter.",
+   "participants": [
+    "Zar Ojanen",
+    "Pallar Ojanen",
+    "Efravan",
+    "Phyrexians"
+   ],
+   "location": "Jamuraa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "fled their home to escape the advancing Phyrexian forces."
+  },
+  {
+   "summary": "Niambi and Denik aid the refugees despite prejudice from locals and Teshunda's council.",
+   "participants": [
+    "Niambi",
+    "Denik",
+    "Teshunda",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Together, they faced prejudice and hostility from the local population and city officials"
+  },
+  {
+   "summary": "Niambi appeals to Teshunda using a dream of birds tending a sick tree.",
+   "participants": [
+    "Niambi",
+    "Teshunda"
+   ],
+   "location": "Femeref",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Niambi appealed to Magistrate Teshunda to reconsider his opposition to the refugees."
+  },
+  {
+   "summary": "Pallar gives birth to Lark in the abandoned mine; Teshunda is moved to grant asylum in Femeref.",
+   "participants": [
+    "Pallar Ojanen",
+    "Lark Ojanen",
+    "Zar Ojanen",
+    "Teshunda",
+    "Efravan"
+   ],
+   "location": "Femeref",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Teshunda was moved to grant asylum to the Efravan in the city of Femeref ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zar Ojanen",
+   "relation": "family",
+   "target": "Pallar Ojanen",
+   "note": "sister",
+   "paragraph": 0,
+   "quote": "is the sister of Pallar Ojanen as well as the aunt of Lark Ojanen ."
+  },
+  {
+   "source": "Zar Ojanen",
+   "relation": "family",
+   "target": "Lark Ojanen",
+   "note": "aunt",
+   "paragraph": 0,
+   "quote": "is the sister of Pallar Ojanen as well as the aunt of Lark Ojanen ."
+  },
+  {
+   "source": "Zar Ojanen",
+   "relation": "leader_of",
+   "target": "Efravan",
+   "note": "leads traveling caravan",
+   "paragraph": 1,
+   "quote": "leads a traveling caravan of Efravan throughout Jamuraa"
+  },
+  {
+   "source": "Niambi",
+   "relation": "ally",
+   "target": "Efravan",
+   "note": "healer aiding refugees",
+   "paragraph": 3,
+   "quote": "became a compassionate ally to the refugees"
+  },
+  {
+   "source": "Niambi",
+   "relation": "family",
+   "target": "Denik",
+   "note": "husband",
+   "paragraph": 3,
+   "quote": "Her husband, Denik , supported their efforts"
+  }
+ ],
+ "rejected": []
+}

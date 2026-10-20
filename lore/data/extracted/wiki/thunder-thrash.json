@@ -1,0 +1,128 @@
+{
+ "page": "wiki/thunder-thrash",
+ "url": "https://mtg.wiki/page/Thunder_Thrash",
+ "title": "Thunder Thrash",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:20Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Thunder Thrash",
+   "type": "faction",
+   "aliases": [
+    "Skyclaw Thrash",
+    "Lost Thrash",
+    "Etherium Thunder",
+    "Thunderers"
+   ],
+   "description": "A criminal Viashino clan from Jund that came to Esper and gained etherium enhancements.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jkkhah",
+   "type": "character",
+   "aliases": [
+    "Elder Jkkhah"
+   ],
+   "description": "The elder who led the Thunder Thrash's raid on the etherium storehouse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard where the thrash originated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of intellect where the thrash raided.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the thrash.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper mages",
+   "type": "faction",
+   "aliases": [
+    "Esper army"
+   ],
+   "description": "Esper forces that fought the thrash.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The thrash's blood-raids take them to Esper, where they first succeed but lose numbers as mages adapt.",
+   "participants": [
+    "Thunder Thrash",
+    "Esper mages"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The mages quickly adapted to their strength, however, and they started to lose many of their numbers."
+  },
+  {
+   "summary": "Jkkhah leads the thrash against a wartime etherium storehouse, overpowering its guardians.",
+   "participants": [
+    "Jkkhah",
+    "Thunder Thrash"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They overpowered the vedalken and homunculus guardians"
+  },
+  {
+   "summary": "The thrash emerges with illicit etherium enhancements.",
+   "participants": [
+    "Thunder Thrash"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Thunder Thrash emerged with strange etherium enhancements"
+  },
+  {
+   "summary": "The Thunderers fly and destroy the Esper strike force.",
+   "participants": [
+    "Thunder Thrash",
+    "Esper mages"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The Esper strike force was quickly dispatched"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jkkhah",
+   "relation": "leader_of",
+   "target": "Thunder Thrash",
+   "note": "Elder who led the thrash.",
+   "paragraph": 0,
+   "quote": "led by Elder Jkkhah"
+  },
+  {
+   "source": "Thunder Thrash",
+   "relation": "enemy",
+   "target": "Esper mages",
+   "note": "Fought and raided Esper.",
+   "paragraph": 4,
+   "quote": "The Esper strike force was quickly dispatched"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,136 @@
+{
+ "page": "wiki/arasta",
+ "url": "https://mtg.wiki/page/Arasta",
+ "title": "Arasta",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Arasta",
+   "type": "character",
+   "aliases": [
+    "Rakni, Mother of Spiders",
+    "Arasta of the Endless Web"
+   ],
+   "description": "A gigantic humanoid spider of Theros, once a dryad under Nylea's care, warped by Phenax.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of Theros who treated the dryad Arasta as a sister and later drove her away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phenax",
+   "type": "deity",
+   "aliases": [],
+   "description": "Envious god who warped Arasta into a monstrous spider.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enorasi",
+   "type": "location",
+   "aliases": [],
+   "description": "A gnarled olive tree deep within the Nessian Wood where Arasta makes her lair; it grants visions of the future or madness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nessian Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of Theros that holds Enorasi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who planted the tree Enorasi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Arasta lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phenax warps the beloved dryad Arasta into a monstrous spider.",
+   "participants": [
+    "Phenax",
+    "Arasta"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She was warped into a monstrous spider creature by the envious god Phenax"
+  },
+  {
+   "summary": "Horrified, Nylea drives Arasta away.",
+   "participants": [
+    "Nylea",
+    "Arasta"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Horrified by the unfamiliar creature, Nylea drove Arasta away."
+  },
+  {
+   "summary": "Arasta makes her home in the olive tree Enorasi in the Nessian Wood.",
+   "participants": [
+    "Arasta",
+    "Enorasi",
+    "Nessian Wood"
+   ],
+   "location": "Nessian Wood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Arasta made her home in the gnarled olive tree Enorasi, deep within the Nessian Wood"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arasta",
+   "relation": "other",
+   "target": "Nylea",
+   "note": "Arasta was once a dryad under Nylea's care, treated as a sister.",
+   "paragraph": 1,
+   "quote": "Arasta was originally a beloved dryad under Nylea 's care, who treated her as a sister."
+  },
+  {
+   "source": "Phenax",
+   "relation": "enemy",
+   "target": "Arasta",
+   "note": "Phenax warped her into a monster out of envy.",
+   "paragraph": 1,
+   "quote": "She was warped into a monstrous spider creature by the envious god Phenax"
+  },
+  {
+   "source": "Klothys",
+   "relation": "created",
+   "target": "Enorasi",
+   "note": "Klothys planted the tree.",
+   "paragraph": 2,
+   "quote": "The tree, planted by Klothys"
+  },
+  {
+   "source": "Enorasi",
+   "relation": "located_in",
+   "target": "Nessian Wood",
+   "note": "The tree stands deep within the wood.",
+   "paragraph": 1,
+   "quote": "deep within the Nessian Wood"
+  }
+ ],
+ "rejected": []
+}

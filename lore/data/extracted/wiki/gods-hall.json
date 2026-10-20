@@ -1,0 +1,181 @@
+{
+ "page": "wiki/gods-hall",
+ "url": "https://mtg.wiki/page/Gods%27_Hall",
+ "title": "Gods' Hall",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:16Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Gods' Hall",
+   "type": "location",
+   "aliases": [
+    "Hall of the Skoti"
+   ],
+   "description": "Grand structure now lodged in the roots of the World Tree in Istfell, once in the Gods' Realm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Istfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of spirits on Kaldheim where the Gods' Hall now stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Istfell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gods' Realm",
+   "type": "location",
+   "aliases": [],
+   "description": "Original location of the Hall of the Skoti.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "Tree in whose roots the Gods' Hall is lodged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valki",
+   "type": "deity",
+   "aliases": [],
+   "description": "Trickster god who tricked his brother Toralf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toralf",
+   "type": "deity",
+   "aliases": [],
+   "description": "Strongest son of the Skoti, tricked by Valki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halvar",
+   "type": "deity",
+   "aliases": [],
+   "description": "Sensible god who warned Toralf of a trick.",
+   "presence": "appears"
+  },
+  {
+   "name": "Windfell",
+   "type": "creature",
+   "aliases": [],
+   "description": "Wild spirit horse captured by Valki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saga of Valki's Deceit",
+   "type": "event",
+   "aliases": [],
+   "description": "The saga telling how the Gods' Hall came to Istfell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gates of Istfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Gates where Toralf caught Windfell.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Valki shows Toralf and Halvar a godstone harness and claims he cannot tame the captured Windfell.",
+   "participants": [
+    "Valki",
+    "Toralf",
+    "Halvar",
+    "Windfell"
+   ],
+   "location": "Gods' Hall",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He told Toralf and Halvar that he had captured the spirit horse Windfell"
+  },
+  {
+   "summary": "Provoked by the word impossible, Toralf takes the harness and Windfell flees over the gate.",
+   "participants": [
+    "Toralf",
+    "Windfell",
+    "Halvar"
+   ],
+   "location": "Gods' Hall",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "At the word impossible, Toralf stood taller."
+  },
+  {
+   "summary": "Toralf chases Windfell for three days and harnesses him at the Gates of Istfell.",
+   "participants": [
+    "Toralf",
+    "Windfell"
+   ],
+   "location": "Gates of Istfell",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "For three days, Toralf pursued Windfell"
+  },
+  {
+   "summary": "The harness triggers runic magic that pulls the Hall from the Gods' Realm into the roots of the World Tree; Valki has vanished.",
+   "participants": [
+    "Toralf",
+    "Valki",
+    "Gods' Hall",
+    "World Tree"
+   ],
+   "location": "Istfell",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Toralf's mighty strength had triggered the runic magic, which pulled the Hall from the Gods' Realm to the bottom of the World Tree"
+  },
+  {
+   "summary": "The gods' halfhearted efforts to move the Hall back are hindered by magic seeping from the World Tree.",
+   "participants": [
+    "Gods' Hall",
+    "World Tree"
+   ],
+   "location": "Istfell",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "The gods keep saying they should move it back to the Gods' Realm"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gods' Hall",
+   "relation": "located_in",
+   "target": "Istfell",
+   "note": "Now stands in Istfell.",
+   "paragraph": 0,
+   "quote": "The Gods' Hall is a grand structure located in the realm of Istfell on the plane of Kaldheim ."
+  },
+  {
+   "source": "Valki",
+   "relation": "family",
+   "target": "Toralf",
+   "note": "Brothers.",
+   "paragraph": 2,
+   "quote": "When Toralf asked his brother what troubled him"
+  },
+  {
+   "source": "Valki",
+   "relation": "enemy",
+   "target": "Toralf",
+   "note": "Valki tricked Toralf.",
+   "paragraph": 0,
+   "quote": "in which Valki tricked Toralf into triggering runic magic"
+  }
+ ],
+ "rejected": []
+}

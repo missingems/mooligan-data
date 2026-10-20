@@ -1,0 +1,191 @@
+{
+ "page": "wiki/skemfar",
+ "url": "https://mtg.wiki/page/Skemfar",
+ "title": "Skemfar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:26Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Skemfar",
+   "type": "plane",
+   "aliases": [],
+   "description": "One of the ten realms of Kaldheim; a shadowy realm of towering trees and peat bogs, home to the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing ten realms, including Skemfar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elves of Skemfar",
+   "type": "faction",
+   "aliases": [
+    "wood elves",
+    "shadow elves",
+    "the elves"
+   ],
+   "description": "Distant descendants of the Einir who live in Skemfar; wood elves and shadow elves are reunited under a new king.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaspera Trees",
+   "type": "location",
+   "aliases": [],
+   "description": "Seven towering trees that serve as prisons where the Skoti bound the surviving Einir leaders; the elves revere them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Einir",
+   "type": "faction",
+   "aliases": [],
+   "description": "The elves' divine ancestors, defeated by the Skoti; their surviving leaders are imprisoned in the Jaspera trees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skoti",
+   "type": "faction",
+   "aliases": [],
+   "description": "The gods of the current age, who defeated the Einir and forbade Koma from entering any realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Harald",
+   "type": "character",
+   "aliases": [],
+   "description": "King of the elves who claims to have received a vision of a united elf dynasty from a Jaspera tree's fruit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jormund",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest elf settlement, an ancient city built when the elves were gods; Harthhall is at its heart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harthhall",
+   "type": "location",
+   "aliases": [],
+   "description": "Newly built home of the King at the heart of Jormund.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serpent Tunnels",
+   "type": "location",
+   "aliases": [],
+   "description": "Network of tunnels left by Koma that the elves hold sacred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koma, Cosmos Serpent",
+   "type": "creature",
+   "aliases": [
+    "Koma",
+    "the Cosmos Serpent"
+   ],
+   "description": "The Cosmos Serpent revered by the elves, forbidden by the Skoti from entering any realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion for which Skemfar was a major site.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bretagard",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm whose Kirda Sea is linked to Skemfar by an omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirda Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea in Bretagard connected by an omenpath to Skemfar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Skoti imprison the surviving Einir leaders in the Jaspera trees as a warning.",
+   "participants": [
+    "Skoti",
+    "Einir",
+    "Jaspera Trees"
+   ],
+   "location": "Skemfar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "said to be prisons where the Skoti imprisoned the surviving leaders of the Einir"
+  },
+  {
+   "summary": "Harald eats a Jaspera fruit, sleeps beneath its boughs, and claims a vision of a united elf dynasty.",
+   "participants": [
+    "Harald",
+    "Jaspera Trees"
+   ],
+   "location": "Skemfar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "claims to have received a vision of a united elf dynasty"
+  },
+  {
+   "summary": "An omenpath opens to the Kirda Sea during the New Phyrexian Invasion, spawning a new river in Skemfar.",
+   "participants": [
+    "Skemfar",
+    "Bretagard",
+    "Kirda Sea",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Skemfar",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Skemfar was a major site of the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skemfar",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Skemfar is one of the ten realms of the plane of Kaldheim"
+  },
+  {
+   "source": "Skoti",
+   "relation": "enemy",
+   "target": "Einir",
+   "note": "the Skoti defeated the Einir",
+   "paragraph": 4,
+   "quote": "about the Skoti defeating the Einir"
+  },
+  {
+   "source": "Skoti",
+   "relation": "enemy",
+   "target": "Koma, Cosmos Serpent",
+   "note": "the Skoti forbade Koma from entering any realm",
+   "paragraph": 4,
+   "quote": "have forbidden him from entering any of the realms"
+  },
+  {
+   "source": "Harald",
+   "relation": "leader_of",
+   "target": "Elves of Skemfar",
+   "note": "king of the elves",
+   "paragraph": 2,
+   "quote": "king of the elves"
+  }
+ ],
+ "rejected": []
+}

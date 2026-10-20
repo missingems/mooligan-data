@@ -1,0 +1,140 @@
+{
+ "page": "wiki/sarpadian-mountains",
+ "url": "https://mtg.wiki/page/Sarpadian_Mountains",
+ "title": "Sarpadian Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:50Z",
+ "storyline": "Sarpadia",
+ "entities": [
+  {
+   "name": "Sarpadian Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "A range on the north coast of Sarpadia, home of a lost dwarven empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria containing the mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crimson Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "Vast southern range where dwarves continued to live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dwarven empire of the Sarpadian Mountains",
+   "type": "faction",
+   "aliases": [
+    "dwarf empire"
+   ],
+   "description": "Dwarven empire whose name was lost after orcs and goblins destroyed it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orcs and goblins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Destroyers of the dwarven empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaylen",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf hero killed in combat by an orc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymolin Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "Kaylen's lover who fled and sought her brother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose rise was set in motion by Tymolin's search.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of the Sarpadian Empires",
+   "type": "event",
+   "aliases": [],
+   "description": "Fall of the empires of Sarpadia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Orcs and goblins destroy the dwarven empire; the dwarf hero Kaylen is killed by an orc.",
+   "participants": [
+    "Orcs and goblins",
+    "Kaylen",
+    "Dwarven empire of the Sarpadian Mountains"
+   ],
+   "location": "Sarpadian Mountains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the dwarf hero Kaylen was killed in combat by an orc"
+  },
+  {
+   "summary": "Tymolin flees and seeks her brother, setting in motion the rise of Tevesh Szat.",
+   "participants": [
+    "Tymolin Loneglade",
+    "Tevesh Szat"
+   ],
+   "location": "Sarpadian Mountains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Tymolin sought out her brother"
+  },
+  {
+   "summary": "Dwarves continue to live in the southern Crimson Peaks, unaware their homelands were lost.",
+   "participants": [
+    "Crimson Peaks"
+   ],
+   "location": "Crimson Peaks",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "unaware that their core homelands to the north had been lost"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Orcs and goblins",
+   "relation": "enemy",
+   "target": "Dwarven empire of the Sarpadian Mountains",
+   "note": "They destroyed it.",
+   "paragraph": 1,
+   "quote": "when the orcs and goblins destroyed it"
+  },
+  {
+   "source": "Tymolin Loneglade",
+   "relation": "romantic",
+   "target": "Kaylen",
+   "note": "Lovers.",
+   "paragraph": 1,
+   "quote": "his lover"
+  },
+  {
+   "source": "Sarpadian Mountains",
+   "relation": "located_in",
+   "target": "Sarpadia",
+   "note": "On its north coast.",
+   "paragraph": 0,
+   "quote": "on the north coast of"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,154 @@
+{
+ "page": "wiki/swift-arm",
+ "url": "https://mtg.wiki/page/Swift-Arm",
+ "title": "Swift-Arm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Swift-Arm",
+   "type": "character",
+   "aliases": [],
+   "description": "A kitsune of the Hyozan Reckoners who runs the elite Golden-Tail Academy for Imperial samurai on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Kamigawa group of which Swift-Arm is a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Swift-Arm lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golden-Tail Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "An elite academy for Imperial samurai run by Swift-Arm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [
+    "Kaito"
+   ],
+   "description": "A planeswalker whose training Swift-Arm oversaw in the Imperial Palace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Light-Paws",
+   "type": "character",
+   "aliases": [],
+   "description": "An Imperial figure who decided Kaito and Eiko should no longer spar and later ended Kaito's training with the Emperor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiko",
+   "type": "character",
+   "aliases": [],
+   "description": "Kaito's sister and former sparring partner.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Emperor of Kamigawa",
+   "type": "character",
+   "aliases": [
+    "Emperor"
+   ],
+   "description": "The ruler of Kamigawa, who became Kaito's sparring partner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperial Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The palace on Kamigawa where Kaito trained.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Swift-Arm was assigned to oversee Kaito's training after Light-Paws decided Kaito and Eiko should no longer be sparring partners.",
+   "participants": [
+    "Swift-Arm",
+    "Kaito Shizuki",
+    "Light-Paws",
+    "Eiko"
+   ],
+   "location": "Imperial Palace",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he was assigned to oversee Kaito's training after Light-Paws decided that Kaito and his sister, Eiko , should no longer be sparring partners"
+  },
+  {
+   "summary": "Swift-Arm introduced Kaito to his new sparring partner, the Emperor of Kamigawa.",
+   "participants": [
+    "Swift-Arm",
+    "Kaito Shizuki",
+    "The Emperor of Kamigawa"
+   ],
+   "location": "Imperial Palace",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Swift-Arm introduced Kaito to his new sparring partner, who turned out to be the Emperor of Kamigawa herself."
+  },
+  {
+   "summary": "Light-Paws informed Kaito he would no longer train with the Emperor, ending Swift-Arm's involvement as Kaito rejected the role of samurai.",
+   "participants": [
+    "Light-Paws",
+    "Kaito Shizuki",
+    "Swift-Arm"
+   ],
+   "location": "Imperial Palace",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Light-Paws informed Kaito that he would no longer train with the Emperor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Swift-Arm",
+   "relation": "member_of",
+   "target": "Hyozan Reckoners",
+   "note": "Swift-Arm is a kitsune member.",
+   "paragraph": 0,
+   "quote": "Swift-Arm is a kitsune member of the Hyozan Reckoners from Kamigawa ."
+  },
+  {
+   "source": "Swift-Arm",
+   "relation": "leader_of",
+   "target": "Golden-Tail Academy",
+   "note": "He runs the academy.",
+   "paragraph": 1,
+   "quote": "Swift-Arm is a kitsune who runs the elite Golden-Tail Academy for Imperial samurai ."
+  },
+  {
+   "source": "Swift-Arm",
+   "relation": "mentor_of",
+   "target": "Kaito Shizuki",
+   "note": "He oversaw Kaito's training; the role later diminished.",
+   "paragraph": 2,
+   "quote": "he was assigned to oversee Kaito's training"
+  },
+  {
+   "source": "Kaito Shizuki",
+   "relation": "family",
+   "target": "Eiko",
+   "note": "Eiko is Kaito's sister.",
+   "paragraph": 2,
+   "quote": "Kaito and his sister, Eiko"
+  }
+ ],
+ "rejected": []
+}

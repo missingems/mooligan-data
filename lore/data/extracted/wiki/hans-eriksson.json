@@ -1,0 +1,85 @@
+{
+ "page": "wiki/hans-eriksson",
+ "url": "https://mtg.wiki/page/Hans_Eriksson",
+ "title": "Hans Eriksson",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:35Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Hans Eriksson",
+   "type": "character",
+   "aliases": [],
+   "description": "A human scout from the Ice Age and brother of Saffi Eriksdotter, who survived the lhurgoyf's attacks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saffi Eriksdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "Hans's sister, killed by a lhurgoyf while on guard duty.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lhurgoyf",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature that killed Saffi and later attacked the town mead hall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balduvia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region in the grip of the great Ice Age.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A lhurgoyf attacks Hans and Saffi on guard duty, killing Saffi while Hans runs to warn the town.",
+   "participants": [
+    "Lhurgoyf",
+    "Saffi Eriksdotter",
+    "Hans Eriksson"
+   ],
+   "location": "Balduvia",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "His sister was killed in the attack, whereas Hans ran to the town to warn others."
+  },
+  {
+   "summary": "The lhurgoyf attacks the mead hall, but Hans again stays unharmed.",
+   "participants": [
+    "Lhurgoyf",
+    "Hans Eriksson"
+   ],
+   "location": "Balduvia",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "The lhurgoyf later attacked the town mead hall where the warriors gathered"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hans Eriksson",
+   "relation": "family",
+   "target": "Saffi Eriksdotter",
+   "note": "Brother of Saffi",
+   "paragraph": 0,
+   "quote": "He was the brother of Saffi Eriksdotter ."
+  },
+  {
+   "source": "Lhurgoyf",
+   "relation": "killed",
+   "target": "Saffi Eriksdotter",
+   "note": "Killed her in an attack on guard duty",
+   "paragraph": 0,
+   "quote": "His sister was killed in the attack"
+  }
+ ],
+ "rejected": []
+}

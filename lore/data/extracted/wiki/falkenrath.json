@@ -1,0 +1,141 @@
+{
+ "page": "wiki/falkenrath",
+ "url": "https://mtg.wiki/page/Falkenrath",
+ "title": "Falkenrath",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:05Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Falkenrath",
+   "type": "faction",
+   "aliases": [
+    "Falkenrath line",
+    "Gorgers"
+   ],
+   "description": "One of the main vampire bloodlines on Innistrad, concentrated in Stensia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Falkenrath live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where the Falkenrath line is concentrated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Falkenrath",
+   "type": "location",
+   "aliases": [],
+   "description": "Gothic castle in the Geier Reach housing Falkenrath vampires; destroyed by Avacyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geier Reach",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Stensia containing Castle Falkenrath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose return and emergence from the Helvault led angels to strike the Falkenrath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose corruption changed the Falkenrath into batlike monsters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anje Falkenrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Particularly old Falkenrath scion who leads a hunting pack and wants to reclaim Castle Falkenrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heron's Grace",
+   "type": "location",
+   "aliases": [],
+   "description": "Monastery founded on the ruins of Castle Falkenrath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sigarda",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose protection followed Avacyn's return.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Avacyn destroyed Castle Falkenrath, scattering the bloodline.",
+   "participants": [
+    "Avacyn",
+    "Castle Falkenrath",
+    "Falkenrath"
+   ],
+   "location": "Castle Falkenrath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Avacyn destroyed Castle Falkenrath during the events of Shadows Over Innistrad"
+  },
+  {
+   "summary": "Emrakul's corruption changed the Falkenrath into batlike monsters.",
+   "participants": [
+    "Emrakul",
+    "Falkenrath"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the corruption changed them into batlike monsters"
+  },
+  {
+   "summary": "Anje Falkenrath gathered a hunting pack to reclaim Castle Falkenrath from the monks.",
+   "participants": [
+    "Anje Falkenrath",
+    "Castle Falkenrath"
+   ],
+   "location": "Castle Falkenrath",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she wants to reclaim Castle Falkenrath from the monks who live there"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anje Falkenrath",
+   "relation": "member_of",
+   "target": "Falkenrath",
+   "note": "Old scion of the line",
+   "paragraph": 3,
+   "quote": "a particularly old scion of the family named Anje Falkenrath"
+  },
+  {
+   "source": "Castle Falkenrath",
+   "relation": "located_in",
+   "target": "Geier Reach",
+   "note": "Between the passes",
+   "paragraph": 2,
+   "quote": "In the middle strip of the Geier Reach"
+  }
+ ],
+ "rejected": []
+}

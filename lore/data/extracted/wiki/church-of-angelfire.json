@@ -1,0 +1,100 @@
+{
+ "page": "wiki/church-of-angelfire",
+ "url": "https://mtg.wiki/page/Church_of_Angelfire",
+ "title": "Church of Angelfire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:40Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Church of Angelfire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Benalian church named for Gabriel Angelfire, once the most popular in Benalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gabriel Angelfire",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose spirit is said to burn on.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Serra",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church whose worship was once condemned in Benalia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoltun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Benalia's forerunner that lost control of eastern Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Croger",
+   "type": "faction",
+   "aliases": [],
+   "description": "House that held to Angelfire traditionalism.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Epityr",
+   "type": "location",
+   "aliases": [],
+   "description": "Settlement that rebelled against the Sheoltun.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A priest of Serra calls forth Serra Angels to free Epityr, the last straw for the Sheoltun Empire.",
+   "participants": [
+    "Church of Serra",
+    "Epityr",
+    "Sheoltun Empire"
+   ],
+   "location": "Epityr",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a priest of Serra called forth the Serra Angels to free the town"
+  },
+  {
+   "summary": "Serranism becomes Benalia's state religion again but House Croger keeps to Angelfire.",
+   "participants": [
+    "House Croger",
+    "Church of Angelfire",
+    "Church of Serra"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "House Croger held on to Angelfire traditionalism"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Church of Angelfire",
+   "relation": "other",
+   "target": "Gabriel Angelfire",
+   "note": "Named after him.",
+   "paragraph": 1,
+   "quote": "The church is named after Gabriel Angelfire"
+  },
+  {
+   "source": "House Croger",
+   "relation": "member_of",
+   "target": "Church of Angelfire",
+   "note": "Held to its traditionalism.",
+   "paragraph": 3,
+   "quote": "House Croger held on to Angelfire traditionalism"
+  }
+ ],
+ "rejected": []
+}

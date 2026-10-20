@@ -1,0 +1,83 @@
+{
+ "page": "wiki/obsidian-well",
+ "url": "https://mtg.wiki/page/Obsidian_Well",
+ "title": "Obsidian Well",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Obsidian Well",
+   "type": "location",
+   "aliases": [],
+   "description": "City of dragons carved inside a mountain on Dominaria during the reign of the Primevals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Primevals",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers whose reign saw the dragons' city; they fell c. -17,000 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rokin",
+   "type": "character",
+   "aliases": [],
+   "description": "Slave from Mitrokin village held in the Obsidian Well.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Obsidian Well stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mitrokin",
+   "type": "location",
+   "aliases": [],
+   "description": "Village Rokin came from.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The dragons of the Obsidian Well keep and torment many slaves, among them Rokin.",
+   "participants": [
+    "Rokin",
+    "Obsidian Well"
+   ],
+   "location": "Obsidian Well",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The dragons kept many slaves"
+  },
+  {
+   "summary": "When the Primevals fall, the slaves revolt and kill the dragon leaders.",
+   "participants": [
+    "Primevals",
+    "Obsidian Well"
+   ],
+   "location": "Obsidian Well",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the slaves revolted and killed the dragon leaders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rokin",
+   "relation": "other",
+   "target": "Obsidian Well",
+   "note": "slave held there",
+   "paragraph": 1,
+   "quote": "One of these slaves was Rokin from Mitrokin village."
+  }
+ ],
+ "rejected": []
+}

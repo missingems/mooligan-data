@@ -1,0 +1,84 @@
+{
+ "page": "wiki/house-kavrel",
+ "url": "https://mtg.wiki/page/House_Kavrel",
+ "title": "House Kavrel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "House Kavrel",
+   "type": "faction",
+   "aliases": [
+    "House Pearl"
+   ],
+   "description": "One of the five powerful houses of Arathoxia, ruled by Tobias Kavrel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tobias Kavrel",
+   "type": "character",
+   "aliases": [],
+   "description": "Human lord of House Kavrel, killed by demonic hordes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Invaded Arathoxia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "Land of the five houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Demonic Hordes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Summoned hordes that overran House Kavrel.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In Ravidel's invasion House Kavrel falls first, overrun with its leader by the Demonic Hordes and obliterated by a Planar Barge blast.",
+   "participants": [
+    "Ravidel",
+    "House Kavrel",
+    "Tobias Kavrel",
+    "Demonic Hordes"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "House Kavrel was destroyed in Ravidel’s invasion of Arathoxia as the first to fall"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tobias Kavrel",
+   "relation": "leader_of",
+   "target": "House Kavrel",
+   "note": "lord",
+   "paragraph": 0,
+   "quote": "ruled by Tobias Kavrel"
+  },
+  {
+   "source": "Demonic Hordes",
+   "relation": "killed",
+   "target": "Tobias Kavrel",
+   "note": "killed in invasion",
+   "paragraph": 2,
+   "quote": "he was killed by the summoned demonic hordes"
+  }
+ ],
+ "rejected": []
+}

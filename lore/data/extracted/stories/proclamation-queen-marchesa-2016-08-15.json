@@ -1,0 +1,116 @@
+{
+ "page": "stories/proclamation-queen-marchesa-2016-08-15",
+ "url": "https://magic.wizards.com/en/news/magic-story/proclamation-queen-marchesa-2016-08-15",
+ "title": "Proclamation by Queen Marchesa",
+ "story_date": "2016-08-15",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:29:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [
+    "Queen Marchesa",
+    "the Black Rose"
+   ],
+   "description": "The new queen of Paliano, who claims to be King Brago's designated heir and proclaims her rule to the High City.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Brago",
+   "type": "character",
+   "aliases": [
+    "Brago",
+    "Brago, King of Paliano"
+   ],
+   "description": "The long-reigning king of Paliano, whose ghost has now passed beyond the veil according to Marchesa's proclamation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [
+    "the sacred order of Custodi"
+   ],
+   "description": "The sacred order that Marchesa says recognized her as Brago's one true successor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High City",
+    "the High City"
+   ],
+   "description": "The city whose people Marchesa addresses and whose throne she claims.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marchesa announces to the people that King Brago is no more and has passed beyond the veil.",
+   "participants": [
+    "Marchesa",
+    "King Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Brago, King of Paliano, is no more."
+  },
+  {
+   "summary": "Marchesa declares herself Brago's designated heir, recognized by the Custodi, and vows to uphold the laws of Paliano.",
+   "participants": [
+    "Marchesa",
+    "King Brago",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "As his designated heir, recognized by the sacred order of Custodi as his one true successor"
+  },
+  {
+   "summary": "Marchesa disbands the post of Captain of the Guard and puts the soldiers under her own command.",
+   "participants": [
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the post of Captain of the Guard is disbanded."
+  },
+  {
+   "summary": "Marchesa warns would-be rebels that treason will be met with the harshest punishments.",
+   "participants": [
+    "Marchesa"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "treason will be answered, as it always has been, with the harshest punishments"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marchesa",
+   "relation": "other",
+   "target": "King Brago",
+   "note": "She claims to be his designated heir and true successor.",
+   "paragraph": 6,
+   "quote": "true heir to the throne of Paliano"
+  },
+  {
+   "source": "Marchesa",
+   "relation": "leader_of",
+   "target": "Paliano",
+   "note": "She styles herself sole sovereign of the High City.",
+   "paragraph": 6,
+   "quote": "sole sovereign of the High City"
+  }
+ ],
+ "rejected": []
+}

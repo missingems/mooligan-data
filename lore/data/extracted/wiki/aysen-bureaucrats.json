@@ -1,0 +1,95 @@
+{
+ "page": "wiki/aysen-bureaucrats",
+ "url": "https://mtg.wiki/page/Aysen_bureaucrats",
+ "title": "Aysen bureaucrats",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:52:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aysen bureaucrats",
+   "type": "faction",
+   "aliases": [],
+   "description": "The elected officials and advisors of Aysen on Ulgrotha, representing its towns and villages and infamous for formalism.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "A mostly democratic land on Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Aysen lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Onella",
+   "type": "location",
+   "aliases": [],
+   "description": "City of Aysen where the bureaucrats meet three times a year.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abbey matrons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Maintain Aysen's daily affairs, mediating disputes and acting as a police force.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra inquisitors",
+   "type": "faction",
+   "aliases": [],
+   "description": "Inquisitors persuading the bureaucrats that the Death speakers are a menace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Death speakers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Suspected dark sorcerers the Serra inquisitors want rounded up.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Serra inquisitors work to convince the bureaucrats to round up the Death speakers.",
+   "participants": [
+    "Serra inquisitors",
+    "Aysen bureaucrats",
+    "Death speakers"
+   ],
+   "location": "Aysen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Serra inquisitors have been hard at work convincing the many representatives that the Death speakers are a menace"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Abbey matrons",
+   "relation": "serves",
+   "target": "Aysen",
+   "note": "Run the daily affairs of Aysen",
+   "paragraph": 1,
+   "quote": "The daily affairs and bureaucracy are maintained by the abbey matrons"
+  },
+  {
+   "source": "Serra inquisitors",
+   "relation": "enemy",
+   "target": "Death speakers",
+   "note": "Want them rounded up",
+   "paragraph": 3,
+   "quote": "the Death speakers are a menace and should be rounded up as soon as possible"
+  }
+ ],
+ "rejected": []
+}

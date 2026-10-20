@@ -1,0 +1,123 @@
+{
+ "page": "cards/pal00",
+ "url": "https://scryfall.com/sets/pal00",
+ "title": "Arena League 2000: card flavor text",
+ "story_date": "2000-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "A Yawgmoth praetor who claims to decide who is worthy of their works.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian master served by praetors such as Gix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rana",
+   "type": "character",
+   "aliases": [],
+   "description": "A Suq'Ata market fool who asks about apes wearing golden furs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard adept who chides with 'Temper, temper.'",
+   "presence": "appears"
+  },
+  {
+   "name": "Daudi",
+   "type": "character",
+   "aliases": [],
+   "description": "A Femeref tutor who says he only reveals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "faction",
+   "aliases": [],
+   "description": "People whose saying says medicines exist for all afflictions but idleness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Femeref",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Jamuraa; Daudi is a Femeref tutor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gix declares that praetors decide who is worthy of their works.",
+   "participants": [
+    "Gix"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "We decide who is worthy of our works."
+  },
+  {
+   "summary": "Rana asks whether apes wear golden furs when they marry.",
+   "participants": [
+    "Rana"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Is it true that the apes wear furs of gold when they marry?"
+  },
+  {
+   "summary": "Ertai chides an opponent with 'Temper, temper.'",
+   "participants": [
+    "Ertai"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Temper, temper."
+  },
+  {
+   "summary": "Daudi says he does not teach but simply reveals.",
+   "participants": [
+    "Daudi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "I do not teach. I simply reveal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gix",
+   "relation": "serves",
+   "target": "Yawgmoth",
+   "note": "Gix is a Yawgmoth praetor.",
+   "paragraph": 0,
+   "quote": "Yawgmoth praetor"
+  },
+  {
+   "source": "Daudi",
+   "relation": "member_of",
+   "target": "Femeref",
+   "note": "Daudi is a Femeref tutor.",
+   "paragraph": 3,
+   "quote": "Femeref tutor"
+  }
+ ],
+ "rejected": []
+}

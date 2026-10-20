@@ -1,0 +1,171 @@
+{
+ "page": "wiki/ranar",
+ "url": "https://mtg.wiki/page/Ranar",
+ "title": "Ranar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:13Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Ranar the Ever-Watchful",
+   "type": "character",
+   "aliases": [
+    "Ranar",
+    "Ranar of Istfell"
+   ],
+   "description": "A spirit warrior of Kaldheim, once a warrior who guarded a kingdom's children, now guardian of the pass between Istfell and Starnheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Egon",
+   "type": "deity",
+   "aliases": [
+    "Bjorn of Beskir"
+   ],
+   "description": "A god who disguised himself as Bjorn of Beskir to enter Starnheim and was killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Bear",
+   "type": "creature",
+   "aliases": [
+    "the King"
+   ],
+   "description": "Entity guarding the passage atop King Bear's Tower, killed by Egon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Firja",
+   "type": "character",
+   "aliases": [],
+   "description": "A valkyrie who ordered Ranar to kill Egon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valkyries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who took Ranar and named him guardian of Istfell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Ranar is a spirit warrior.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Istfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Spirit realm Ranar guards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm Egon tried to enter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Bear's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Tower where the passage between Istfell and Starnheim lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Passage that closed trapping the jarl's warband in the invaders' realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which Ranar's kingdom was assaulted by raiders.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During a Doomskar the jarl's warband is trapped when the Omenpath closes, leaving Ranar to guard the kingdom's children.",
+   "participants": [
+    "Ranar the Ever-Watchful"
+   ],
+   "location": "Kaldheim",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "leaving Ranar alone to guard the kingdom's children"
+  },
+  {
+   "summary": "Ranar refuses to abandon his post, protects and trains the children, then lets the Valkyries take him and is named guardian of Istfell.",
+   "participants": [
+    "Ranar the Ever-Watchful",
+    "Valkyries"
+   ],
+   "location": "Istfell",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They named him the guardian of Istfell"
+  },
+  {
+   "summary": "Egon, disguised as Bjorn, convinces Ranar to help him reach Starnheim; atop the tower he reveals himself and kills King Bear.",
+   "participants": [
+    "Egon",
+    "Ranar the Ever-Watchful",
+    "King Bear"
+   ],
+   "location": "King Bear's Tower",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Bjorn revealed that he was Egon and killed the King"
+  },
+  {
+   "summary": "Firja commands Ranar to kill Egon and names Ranar guardian of the pass; the cycle will repeat as Ranar forgets.",
+   "participants": [
+    "Firja",
+    "Ranar the Ever-Watchful",
+    "Egon"
+   ],
+   "location": "Istfell",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Firja commanded Ranar to kill Egon so that the god would return to the Cosmos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Egon",
+   "relation": "killed",
+   "target": "King Bear",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Bjorn revealed that he was Egon and killed the King"
+  },
+  {
+   "source": "Ranar the Ever-Watchful",
+   "relation": "killed",
+   "target": "Egon",
+   "note": "on Firja's command",
+   "paragraph": 3,
+   "quote": "Firja commanded Ranar to kill Egon so that the god would return to the Cosmos"
+  },
+  {
+   "source": "Ranar the Ever-Watchful",
+   "relation": "serves",
+   "target": "Valkyries",
+   "note": "guardian they appointed",
+   "paragraph": 2,
+   "quote": "They named him the guardian of Istfell"
+  }
+ ],
+ "rejected": []
+}

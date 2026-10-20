@@ -1,0 +1,160 @@
+{
+ "page": "wiki/mox",
+ "url": "https://mtg.wiki/page/Mox",
+ "title": "Mox",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Moxen",
+   "type": "artifact",
+   "aliases": [
+    "Mox",
+    "moxes"
+   ],
+   "description": "Pieces of jewelry containing gemstones that produce mana; in story, a powerful collection of mana-infused gems owned by Liana of Minorad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [
+    "Liana"
+   ],
+   "description": "Owner of the Moxen, who gave them to Kristina of the Woods and Jared Carthalion during her duel with Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of the Moxen from Liana, who fought Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Recipient of the Moxen from Liana, who fought Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Dueled Liana at Minorad and claimed the Moxen had once been his; used three Moxen to activate the Mox Beacon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Altair of Coloni",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Ravidel with Jared and Kristina at the Dueling Chasm of Golthonor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caliphear the Nightmare",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Ravidel with Jared and Kristina at the Dueling Chasm of Golthonor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minorad",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Liana dueled Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Dueling Chasm of Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the battle against Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mox Beacon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Device Ravidel activated using Mox Jet, Mox Ruby and Mox Sapphire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mox Jasper",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A Mox formed on Tarkir after the Dragonstorms imbued the land with dragonfire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moxite",
+   "type": "concept",
+   "aliases": [
+    "managold"
+   ],
+   "description": "A rare fuel source in the Edge used in nuclear moxite reactors for sub-light travel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Recognized moxite's magical potential, similar to etherium.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liana gives the Moxen to Kristina and Jared during her duel with Ravidel so he will not take them.",
+   "participants": [
+    "Liana of Minorad",
+    "Kristina of the Woods",
+    "Jared Carthalion",
+    "Ravidel"
+   ],
+   "location": "Minorad",
+   "importance": "minor",
+   "paragraph": 33,
+   "quote": "Liana gave them to Kristina of the Woods and Jared Carthalion during her duel with Ravidel at Minorad so that he would not take them."
+  },
+  {
+   "summary": "At the Dueling Chasm of Golthonor, Ravidel uses Mox Jet, Mox Ruby and Mox Sapphire to activate the Mox Beacon against Jared and his allies.",
+   "participants": [
+    "Ravidel",
+    "Jared Carthalion",
+    "Kristina of the Woods",
+    "Altair of Coloni",
+    "Caliphear the Nightmare",
+    "Mox Beacon"
+   ],
+   "location": "The Dueling Chasm of Golthonor",
+   "importance": "minor",
+   "paragraph": 33,
+   "quote": "Ravidel used the Mox Jet , Mox Ruby , and Mox Sapphire to activate the Mox Beacon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liana of Minorad",
+   "relation": "other",
+   "target": "Moxen",
+   "note": "Owner of the Moxen",
+   "paragraph": 33,
+   "quote": "mana-infused gems owned by Liana of Minorad"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "enemy",
+   "target": "Jared Carthalion",
+   "note": "Ravidel fought Jared, Kristina and their allies",
+   "paragraph": 33,
+   "quote": "at the battle with Jared, Kristina, Altair of Coloni and Caliphear the Nightmare against Ravidel"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,95 @@
+{
+ "page": "wiki/somberwald",
+ "url": "https://mtg.wiki/page/Somberwald",
+ "title": "Somberwald",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:23Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Somberwald",
+   "type": "location",
+   "aliases": [],
+   "description": "A forested region of drooping pines in the Geier Reach mountains of Stensia on Innistrad, a refuge for wildlife and a dangerous wilderness.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stensia",
+   "type": "location",
+   "aliases": [],
+   "description": "Province of Innistrad containing Somberwald, dominated by vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Somberwald.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kessig",
+   "type": "location",
+   "aliases": [],
+   "description": "Region from which wildlife were driven into Somberwald.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Her death preceded the forest becoming a Dronepack hunting ground.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dronepack",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction of werewolves corrupted by Emrakul's flesh-warping influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose influence corrupted the Dronepack.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Following Avacyn's death, Somberwald becomes a hunting ground for the Dronepack, werewolves corrupted by Emrakul.",
+   "participants": [
+    "Avacyn",
+    "Dronepack",
+    "Emrakul"
+   ],
+   "location": "Somberwald",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Following the death of Avacyn , the forest became a hunting ground for the Dronepack"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Somberwald",
+   "relation": "located_in",
+   "target": "Stensia",
+   "note": "",
+   "paragraph": 1,
+   "quote": "located in the Geier Reach mountains within Stensia province on the plane of Innistrad"
+  },
+  {
+   "source": "Dronepack",
+   "relation": "serves",
+   "target": "Emrakul",
+   "note": "Corrupted by its influence",
+   "paragraph": 3,
+   "quote": "a faction of werewolves corrupted by the flesh-warping influence of Emrakul"
+  }
+ ],
+ "rejected": []
+}

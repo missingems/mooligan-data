@@ -1,0 +1,206 @@
+{
+ "page": "wiki/pipe",
+ "url": "https://mtg.wiki/page/Pipe",
+ "title": "Pipe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:23:54Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Pipe",
+   "type": "deity",
+   "aliases": [
+    "Skyfire Kirin"
+   ],
+   "description": "One of the five legendary kirin kami of Kamigawa, representing red, who argues for non-interference in the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silverbeard",
+   "type": "deity",
+   "aliases": [],
+   "description": "One of the five kirin, who plays a chess-like game with Pipe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scale",
+   "type": "deity",
+   "aliases": [],
+   "description": "A kirin who retorts to Pipe and calls the scout a fool.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dew",
+   "type": "deity",
+   "aliases": [],
+   "description": "A kirin who vanishes from the teahouse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thorn",
+   "type": "deity",
+   "aliases": [],
+   "description": "A kirin who remains in the teahouse with Pipe at the end.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kirin kami",
+   "type": "faction",
+   "aliases": [
+    "five kirin",
+    "five legendary kirin kami"
+   ],
+   "description": "Five legendary kami who meet every 1,000 years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between kami and mortals during which the kirin met.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo",
+   "type": "location",
+   "aliases": [],
+   "description": "Location with a painting containing the teahouse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [
+    "Sokenzan range"
+   ],
+   "description": "Mountain range where Pipe in sword form was found in a snowbank.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bandit scout",
+   "type": "character",
+   "aliases": [
+    "the scout"
+   ],
+   "description": "A scout who finds the sword, tricks his warchief into oni, and becomes a great bandit chief.",
+   "presence": "appears"
+  },
+  {
+   "name": "Godo",
+   "type": "character",
+   "aliases": [],
+   "description": "Great-grandson of the scout, highly thought of by the bandit tribes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oni",
+   "type": "creature",
+   "aliases": [],
+   "description": "Feral beasts with barbed tails and iron tusks that kill the warchief and his men.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akki",
+   "type": "creature",
+   "aliases": [],
+   "description": "Goblin-like creatures who kill the bandit chief.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As the Kami War begins, the five kirin meet in a teahouse inside a painting in Minamo; Pipe argues for non-interference.",
+   "participants": [
+    "Pipe",
+    "Silverbeard",
+    "Scale",
+    "Dew",
+    "Thorn",
+    "Kami War",
+    "Minamo"
+   ],
+   "location": "Minamo",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Pipe argued for non-interference"
+  },
+  {
+   "summary": "In sword form Pipe is found by a scout, who tricks his warchief into the oni's ravine and takes the sword and pendant.",
+   "participants": [
+    "Pipe",
+    "Bandit scout",
+    "Oni"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The scout waited until the echoes of their screams died"
+  },
+  {
+   "summary": "The scout becomes chief with the flaming sword and unites tribes in an alliance, winning victories over samurai forts.",
+   "participants": [
+    "Bandit scout",
+    "Pipe"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the scout had risen higher than any chief before him, bringing several tribes together in an alliance"
+  },
+  {
+   "summary": "The scout is killed by akki after the sword slips from his hand.",
+   "participants": [
+    "Bandit scout",
+    "Akki",
+    "Pipe"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Akki smashed his head with a rock moments later and he fell to his death."
+  },
+  {
+   "summary": "Scale calls the scout a fool and accuses Pipe of manipulation; the kirin disperse and Pipe vanishes in flame.",
+   "participants": [
+    "Scale",
+    "Pipe",
+    "Silverbeard",
+    "Dew",
+    "Thorn"
+   ],
+   "location": "Minamo",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Pipe then disappeared in a blistering hot wave of flame and smoke"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Scale",
+   "relation": "enemy",
+   "target": "Pipe",
+   "note": "Accuses Pipe of manipulating humans and kami",
+   "paragraph": 5,
+   "quote": "Pipe always seeks to manipulate humans and Kami"
+  },
+  {
+   "source": "Bandit scout",
+   "relation": "killed",
+   "target": "Pipe",
+   "note": "Not killed; scout wielded Pipe as a sword",
+   "paragraph": 4,
+   "quote": "when the scout drew the sword, it flared with an unearthly flame"
+  }
+ ],
+ "rejected": []
+}

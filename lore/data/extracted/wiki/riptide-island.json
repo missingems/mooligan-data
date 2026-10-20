@@ -1,0 +1,144 @@
+{
+ "page": "wiki/riptide-island",
+ "url": "https://mtg.wiki/page/Riptide_Island",
+ "title": "Riptide Island",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:19Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Riptide Island",
+   "type": "location",
+   "aliases": [],
+   "description": "A hidden island off the southeastern coast of Otaria, site of the Riptide Project.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent near Riptide Island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Riptide Project",
+   "type": "faction",
+   "aliases": [],
+   "description": "A secret research collaboration of cephalid and Otarian wizards that recreated slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Empress Llawan",
+   "type": "character",
+   "aliases": [
+    "Llawan"
+   ],
+   "description": "Ruler of the cephalid empire who founded the Riptide Project to end prejudice against air-breathers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slivers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures revived by the Project that escaped control and swarmed the island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pemmin",
+   "type": "character",
+   "aliases": [],
+   "description": "A researcher who survived and fled the island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "The power from which the Riptide Project hid its existence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which the island was populated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Empress Llawan allies her best sorcerers with Otarian wizards, creating the Riptide Project on the island.",
+   "participants": [
+    "Empress Llawan",
+    "Riptide Project"
+   ],
+   "location": "Riptide Island",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "she established an alliance between her best sorcerers and some powerful Otarian wizards"
+  },
+  {
+   "summary": "The Project's wizards revive a dead sliver and breed new types with new powers.",
+   "participants": [
+    "Riptide Project",
+    "Slivers"
+   ],
+   "location": "Riptide Island",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Project’s wizards revived it, breeding new types with new powers"
+  },
+  {
+   "summary": "The slivers, with no queen to control them, swarm Riptide Island and kill most of the researchers; survivors such as Pemmin flee.",
+   "participants": [
+    "Slivers",
+    "Pemmin",
+    "Riptide Project"
+   ],
+   "location": "Riptide Island",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the slivers eventually swarmed all over Riptide Island, killing most of the researchers"
+  },
+  {
+   "summary": "A sliver in the form of a junior researcher slips out of Riptide and the slivers spread across mainland Otaria.",
+   "participants": [
+    "Slivers"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Taking the form of a junior researcher, the first sliver slipped out of Riptide."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Empress Llawan",
+   "relation": "created",
+   "target": "Riptide Project",
+   "note": "She established the alliance behind it.",
+   "paragraph": 2,
+   "quote": "she established an alliance between her best sorcerers and some powerful Otarian wizards"
+  },
+  {
+   "source": "Riptide Island",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "Off the coast of Otaria.",
+   "paragraph": 0,
+   "quote": "Riptide Island is an island off the coast of Otaria"
+  },
+  {
+   "source": "Riptide Project",
+   "relation": "created",
+   "target": "Slivers",
+   "note": "Revived and bred them.",
+   "paragraph": 3,
+   "quote": "the Project’s wizards revived it, breeding new types with new powers"
+  }
+ ],
+ "rejected": []
+}

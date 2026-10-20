@@ -1,0 +1,125 @@
+{
+ "page": "wiki/stahaan",
+ "url": "https://mtg.wiki/page/Stahaan",
+ "title": "Stahaan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Stahaan",
+   "type": "location",
+   "aliases": [],
+   "description": "An island in the extreme north of the Domains on Dominaria, and the name of the dominant minotaur tribe there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stahaan minotaurs",
+   "type": "faction",
+   "aliases": [
+    "Stahaan"
+   ],
+   "description": "A xenophobic, orthodox minotaur nation led by the Speaker of Stone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirtiin",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sister nation of minotaurs living in the Mirtiin Mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurloon minotaurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Minotaurs exiled from Stahaan as heretics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Speaker of Stone",
+   "type": "character",
+   "aliases": [],
+   "description": "A matriarch-priestess who is the nation's spiritual and political leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Stahaan lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boiling Lake",
+   "type": "location",
+   "aliases": [],
+   "description": "A hot spring lake on Stahaan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cryvern Peak",
+   "type": "location",
+   "aliases": [],
+   "description": "An icy and isolated mountain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Null Divva",
+   "type": "location",
+   "aliases": [],
+   "description": "A remote human settlement known for glass production.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lemeya",
+   "type": "deity",
+   "aliases": [],
+   "description": "Whose sacred texts are preserved in the Holy Library.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Hurloon minotaurs are exiled from Stahaan as heretics for believing humans and minotaurs share a common ancestor.",
+   "participants": [
+    "Hurloon minotaurs",
+    "Stahaan minotaurs"
+   ],
+   "location": "Stahaan",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "The Hurloon minotaurs were exiled from Stahaan as heretics"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Stahaan minotaurs",
+   "relation": "ally",
+   "target": "Mirtiin",
+   "note": "Sister nation on the same island.",
+   "paragraph": 8,
+   "quote": "serving as a sister nation to the Mirtiin"
+  },
+  {
+   "source": "Speaker of Stone",
+   "relation": "leader_of",
+   "target": "Stahaan minotaurs",
+   "note": "Spiritual and political leader.",
+   "paragraph": 8,
+   "quote": "led by the Speaker of Stone"
+  },
+  {
+   "source": "Stahaan minotaurs",
+   "relation": "enemy",
+   "target": "Hurloon minotaurs",
+   "note": "Exiled them as heretics.",
+   "paragraph": 9,
+   "quote": "The Hurloon minotaurs were exiled from Stahaan as heretics"
+  }
+ ],
+ "rejected": []
+}

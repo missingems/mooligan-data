@@ -1,0 +1,142 @@
+{
+ "page": "wiki/archie-dixon",
+ "url": "https://mtg.wiki/page/Archie_Dixon",
+ "title": "Archie Dixon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:31Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Archie Dixon",
+   "type": "character",
+   "aliases": [],
+   "description": "Punctual freelance human courier in Omenport on Thunder Junction, killed delivering a sack for the Sterling Company.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Archie worked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenport",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Archie lived and worked.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hired Archie to transport a burlap sack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group led by Akul that ambushed Archie's carriage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fearsome scorpion dragon leading the Hellspurs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bertram Graywater",
+   "type": "character",
+   "aliases": [],
+   "description": "Man who used Archie as a dupe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Paths whose opening brought Archie to Thunder Junction.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Archie was hired by the Sterling Company to carry a mysterious burlap sack across Thunder Junction.",
+   "participants": [
+    "Archie Dixon",
+    "Sterling Company"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was hired by the Sterling Company to transport a mysterious burlap sack across Thunder Junction"
+  },
+  {
+   "summary": "Hellspurs led by Akul ambushed the carriage, killing the guards and mortally wounding Archie.",
+   "participants": [
+    "Hellspurs",
+    "Akul",
+    "Archie Dixon"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "killing the guards and leaving Archie mortally wounded"
+  },
+  {
+   "summary": "Akul seized the sack and found only lumps of coal.",
+   "participants": [
+    "Akul"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Akul seized it, only to discover it contained nothing but lumps of coal"
+  },
+  {
+   "summary": "Archie died in the broken carriage, realizing Bertram Graywater had used him as a dupe.",
+   "participants": [
+    "Archie Dixon",
+    "Bertram Graywater"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "realizing he had been used as a dupe by Bertram Graywater"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akul",
+   "relation": "leader_of",
+   "target": "Hellspurs",
+   "note": "Led the ambush.",
+   "paragraph": 2,
+   "quote": "a group of Hellspurs led by the fearsome scorpion dragon Akul"
+  },
+  {
+   "source": "Hellspurs",
+   "relation": "killed",
+   "target": "Archie Dixon",
+   "note": "Left him mortally wounded.",
+   "paragraph": 2,
+   "quote": "leaving Archie mortally wounded"
+  },
+  {
+   "source": "Archie Dixon",
+   "relation": "serves",
+   "target": "Sterling Company",
+   "note": "Hired courier.",
+   "paragraph": 2,
+   "quote": "He was hired by the Sterling Company"
+  }
+ ],
+ "rejected": []
+}

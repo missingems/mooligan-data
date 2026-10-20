@@ -1,0 +1,185 @@
+{
+ "page": "wiki/merret",
+ "url": "https://mtg.wiki/page/Merret",
+ "title": "Merret",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:51Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Merret",
+   "type": "character",
+   "aliases": [],
+   "description": "Dockworker and covert agent for House Dimir with a magically gifted son.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Secretive Ravnican guild Merret works for.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tashi",
+   "type": "character",
+   "aliases": [],
+   "description": "Merret's wife, who makes minor healing salves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grimbly Wothis",
+   "type": "character",
+   "aliases": [
+    "Grimbly"
+   ],
+   "description": "Merret's boss at the docks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lazav",
+   "type": "character",
+   "aliases": [],
+   "description": "Dimir leader who took an interest in Merret's magical child.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aunt Bea",
+   "type": "character",
+   "aliases": [
+    "Bea"
+   ],
+   "description": "Secret Dimir agent installed in Merret's home to care for the boy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merritson",
+   "type": "character",
+   "aliases": [],
+   "description": "Merret's magical child, kept under Lazav's protection after the War of the Spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "War after which Merritson remained under Lazav's protection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Merret lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Merret clears fog from the harbor on his boss's orders, revealing a Simic schooner that turns invisible.",
+   "participants": [
+    "Merret",
+    "Grimbly Wothis"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Merret managed to clear the fog just enough to reveal a Simic schooner"
+  },
+  {
+   "summary": "Merret breaks into his boss's home, steals bread and drinks an Elixir of Focus, then escapes invisibly.",
+   "participants": [
+    "Merret",
+    "Grimbly Wothis"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "drank an Elixir of Focus, which heightened his magical abilities"
+  },
+  {
+   "summary": "Grimbly discovers Merret's baby's magic and tries to take the child; the baby vanishes and reappears with a mysterious fruit.",
+   "participants": [
+    "Grimbly Wothis",
+    "Merret",
+    "Merritson"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Grimbly stormed in, discovered the baby's newfound magical abilities, and attempted to take the child."
+  },
+  {
+   "summary": "Lazav reveals himself, lets the parents raise the boy under safeguards, sends Grimbly away with memory erased and installs Aunt Bea.",
+   "participants": [
+    "Lazav",
+    "Grimbly Wothis",
+    "Aunt Bea",
+    "Merret",
+    "Tashi"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Suddenly, Lazav revealed himself from the corner where he had been sitting all along."
+  },
+  {
+   "summary": "Merret's and Tashi's memories are altered to accept Bea as family.",
+   "participants": [
+    "Merret",
+    "Tashi",
+    "Aunt Bea"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Merret and Tashi's memories were also altered to forget the altercation with Grimbly"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Merret",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "covert agent",
+   "paragraph": 0,
+   "quote": "covert agent for House Dimir"
+  },
+  {
+   "source": "Merret",
+   "relation": "family",
+   "target": "Tashi",
+   "note": "wife",
+   "paragraph": 2,
+   "quote": "deeply committed to his wife, Tashi, and their children"
+  },
+  {
+   "source": "Merret",
+   "relation": "serves",
+   "target": "Grimbly Wothis",
+   "note": "his boss",
+   "paragraph": 3,
+   "quote": "His boss, Grimbly Wothis , ordered him to clear the fog"
+  },
+  {
+   "source": "Lazav",
+   "relation": "leader_of",
+   "target": "House Dimir",
+   "note": "",
+   "paragraph": 6,
+   "quote": "Lazav installed a secret Dimir agent named \"Aunt Bea\""
+  },
+  {
+   "source": "Merritson",
+   "relation": "family",
+   "target": "Merret",
+   "note": "son",
+   "paragraph": 7,
+   "quote": "The child was later named Merritson"
+  }
+ ],
+ "rejected": []
+}

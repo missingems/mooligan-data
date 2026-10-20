@@ -1,0 +1,124 @@
+{
+ "page": "wiki/kula",
+ "url": "https://mtg.wiki/page/Kula",
+ "title": "Kula",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kula",
+   "type": "character",
+   "aliases": [],
+   "description": "A large anchorite and druid of Dominaria who could spot lies and joined a party of dragonslayers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaan",
+   "type": "character",
+   "aliases": [],
+   "description": "Pixie who recruited Kula to kill the dragon enslaving his people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Donner Rus",
+   "type": "character",
+   "aliases": [],
+   "description": "Party member who betrayed the group and died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tania Cayce",
+   "type": "character",
+   "aliases": [],
+   "description": "Party member who betrayed the group, was revived by Vaan, and killed the dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mak Fawa",
+   "type": "creature",
+   "aliases": [
+    "the dragon"
+   ],
+   "description": "The mechanical dragon that enslaved Vaan's people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hand of Righteous Retribution",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Powerful magical sword Tania used to kill the dragon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vaan asks Kula to help kill the dragon that enslaved his people and she joins.",
+   "participants": [
+    "Kula",
+    "Vaan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "she agreed to join his party of dragonslayers"
+  },
+  {
+   "summary": "Donner Rus and Tania Cayce betray the group; Donner dies and Tania is revived by Vaan.",
+   "participants": [
+    "Donner Rus",
+    "Tania Cayce",
+    "Vaan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "This cost Donner his life, but Tania was brought back by Vaan"
+  },
+  {
+   "summary": "Tania kills the dragon with the Hand of Righteous Retribution.",
+   "participants": [
+    "Tania Cayce",
+    "Mak Fawa",
+    "Kula"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "it was Tania who killed the beast with the Hand of Righteous Retribution"
+  },
+  {
+   "summary": "Kula offers to train Tania as a druid; she declines.",
+   "participants": [
+    "Kula",
+    "Tania Cayce"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kula offered to train Tania in the ways of the druids, but Tania decided to decline."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tania Cayce",
+   "relation": "killed",
+   "target": "Mak Fawa",
+   "note": "Slew the dragon.",
+   "paragraph": 4,
+   "quote": "it was Tania who killed the beast"
+  },
+  {
+   "source": "Kula",
+   "relation": "ally",
+   "target": "Vaan",
+   "note": "Joined his party.",
+   "paragraph": 2,
+   "quote": "she agreed to join his party of dragonslayers"
+  }
+ ],
+ "rejected": []
+}

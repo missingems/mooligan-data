@@ -1,0 +1,135 @@
+{
+ "page": "wiki/eruth",
+ "url": "https://mtg.wiki/page/Eruth",
+ "title": "Eruth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:34Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Eruth",
+   "type": "character",
+   "aliases": [
+    "Eruth of Lambholt"
+   ],
+   "description": "Young woman of Innistrad with clairvoyant death dreams, now a gibbering lunatic in the Natterknolls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torens",
+   "type": "character",
+   "aliases": [],
+   "description": "Former Cathar who freed Eruth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [],
+   "description": "Entity bound in a magical circle at Traublassen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dark Lady",
+   "type": "creature",
+   "aliases": [],
+   "description": "Entity who helped Eruth evade captors and whom Umbris feared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose arrival deepened Eruth's madness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inquisitors",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church investigators who declared Eruth a heretic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "Eruth's home town.",
+   "presence": "appears"
+  },
+  {
+   "name": "Traublassen",
+   "type": "location",
+   "aliases": [],
+   "description": "Town where Eruth was imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Natterknolls",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Eruth lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Inquisitors declare Eruth a heretic and plan to execute her; she flees to the Natterknolls.",
+   "participants": [
+    "Eruth",
+    "Inquisitors"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Evading the Cathars, she fled Lambholt to the Natterknolls"
+  },
+  {
+   "summary": "In Traublassen, Eruth is imprisoned as a possible sacrifice for Umbris.",
+   "participants": [
+    "Eruth",
+    "Umbris"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Eruth was imprisoned in the local keep"
+  },
+  {
+   "summary": "Torens frees Eruth and, at her urging, breaks Umbris's circle; Umbris frees the villagers from their overlord.",
+   "participants": [
+    "Torens",
+    "Eruth",
+    "Umbris"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The entity accepted a temporary truce and freed the villagers from their evil overlord"
+  },
+  {
+   "summary": "Eruth stays in Traublassen to guide the freed villagers.",
+   "participants": [
+    "Eruth"
+   ],
+   "location": "Traublassen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Eruth stayed behind in Traublassen to give guidance to the newly freed villagers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Torens",
+   "relation": "ally",
+   "target": "Eruth",
+   "note": "freed her",
+   "paragraph": 3,
+   "quote": "Eruth was freed by the former Cathar Torens"
+  }
+ ],
+ "rejected": []
+}

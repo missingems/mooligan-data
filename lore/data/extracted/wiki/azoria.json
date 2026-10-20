@@ -1,0 +1,85 @@
+{
+ "page": "wiki/azoria",
+ "url": "https://mtg.wiki/page/Azoria",
+ "title": "Azoria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Azoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Small plane in the Shard of the Twelve Worlds, mostly sea with desert islands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [
+    "Szat"
+   ],
+   "description": "Fought Freyalise on Azoria; gained a large source of black mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyed Azoria's islands to cut off Szat's blue mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Summit of the Null Moon",
+   "type": "event",
+   "aliases": [],
+   "description": "Gathering after which Szat and Freyalise fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shard of the Twelve Worlds",
+   "type": "location",
+   "aliases": [],
+   "description": "Group of planes containing Azoria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tevesh Szat and Freyalise fight on Azoria after the Summit of the Null Moon.",
+   "participants": [
+    "Tevesh Szat",
+    "Freyalise"
+   ],
+   "location": "Azoria",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "where Tevesh Szat and Freyalise fought after the Summit of the Null Moon"
+  },
+  {
+   "summary": "Freyalise destroys all the islands to cut off Szat's blue mana, killing countless inhabitants, but leaves him a large source of black mana.",
+   "participants": [
+    "Freyalise",
+    "Tevesh Szat"
+   ],
+   "location": "Azoria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "All of the islands were destroyed by Freyalise to cut off Szat's blue mana supplies"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Freyalise",
+   "relation": "enemy",
+   "target": "Tevesh Szat",
+   "note": "fought on Azoria",
+   "paragraph": 0,
+   "quote": "where Tevesh Szat and Freyalise fought"
+  }
+ ],
+ "rejected": []
+}

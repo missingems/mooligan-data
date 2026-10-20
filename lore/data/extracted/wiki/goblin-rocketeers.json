@@ -1,0 +1,143 @@
+{
+ "page": "wiki/goblin-rocketeers",
+ "url": "https://mtg.wiki/page/Goblin_Rocketeers",
+ "title": "Goblin Rocketeers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:36Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Goblin Rocketeers",
+   "type": "faction",
+   "aliases": [
+    "Rocketeers"
+   ],
+   "description": "Racing team of clever and daring goblins from an unknown plane that competed in the Ghirapur Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Redshift",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin co-captain of the Rocketeers who believes they achieved their mission to surpass the velocity barrier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daretti",
+   "type": "character",
+   "aliases": [],
+   "description": "Former planeswalker who bankrolled the team as unofficial co-captain, hoping for new interplanar travel after losing his spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "BOOSTGOD",
+   "type": "deity",
+   "aliases": [],
+   "description": "Deity of speed worshipped by the goblins, confined by a velocity limit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Race on Avishkar in which the Rocketeers competed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Rocketeers arrived through a temporary Omenpath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "Chaotic city on Avishkar around which the Grand Prix orbits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muraganda",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of the third leg of the race, where saurid raiders laid a trap.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saurid raiders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Raiders who laid a trap on the course in Muraganda.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Rocketeers arrive on Avishkar via a temporary Omenpath after breaking the velocity barrier.",
+   "participants": [
+    "Redshift",
+    "Goblin Rocketeers",
+    "BOOSTGOD"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Redshift and his crew effectively broke through an enforced speed boundary and traveled through a fleeting Omenpath, arriving safely on Avishkar."
+  },
+  {
+   "summary": "The Rocketeers abandon their exploration mission and, funded by Daretti, mount a campaign to win the Grand Prix.",
+   "participants": [
+    "Redshift",
+    "Goblin Rocketeers",
+    "Daretti",
+    "Ghirapur Grand Prix"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "They abandoned their initial mission of exploration beyond the velocity limit."
+  },
+  {
+   "summary": "The Rocketeers lead the first three legs but are first to cross a trap laid by saurid raiders in Muraganda.",
+   "participants": [
+    "Goblin Rocketeers",
+    "Saurid raiders"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "they were the first to cross a trap laid on the course by saurid raiders"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Redshift",
+   "relation": "leader_of",
+   "target": "Goblin Rocketeers",
+   "note": "co-captain",
+   "paragraph": 1,
+   "quote": "Redshift, who serves as the current co-captain of the Rocketeers"
+  },
+  {
+   "source": "Daretti",
+   "relation": "ally",
+   "target": "Goblin Rocketeers",
+   "note": "benefactor and unofficial co-captain",
+   "paragraph": 4,
+   "quote": "their adoptive benefactor and unofficial co-captain, Daretti"
+  },
+  {
+   "source": "Goblin Rocketeers",
+   "relation": "serves",
+   "target": "BOOSTGOD",
+   "note": "worship the deity",
+   "paragraph": 4,
+   "quote": "worship of the BOOSTGOD"
+  }
+ ],
+ "rejected": []
+}

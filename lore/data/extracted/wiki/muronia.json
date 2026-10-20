@@ -1,0 +1,92 @@
+{
+ "page": "wiki/muronia",
+ "url": "https://mtg.wiki/page/Muronia",
+ "title": "Muronia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:34Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Muronia",
+   "type": "location",
+   "aliases": [],
+   "description": "A blighted land on the eastern side of North Aerona succumbing to a mysterious corruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muronian Order",
+   "type": "faction",
+   "aliases": [
+    "Muronian dervishes"
+   ],
+   "description": "A holy order whose missionary dervishes warn of the doom on the day of Ragalka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garth One-Eye",
+   "type": "character",
+   "aliases": [],
+   "description": "Used a Muronian dervish's habit and cowl to hide his identity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gull",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of an anti-wizard crusade that included three Muronian dervishes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "The period during which Garth disguised himself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "The land containing Muronia.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Time of Troubles Garth One-Eye uses a Muronian dervish's habit and cowl to hide his identity.",
+   "participants": [
+    "Garth One-Eye",
+    "Muronian Order"
+   ],
+   "location": "Muronia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Garth One-Eye used a Muronian dervish's habit and cowl"
+  },
+  {
+   "summary": "Three Muronian dervishes become part of Gull's anti-wizard crusade.",
+   "participants": [
+    "Muronian Order",
+    "Gull"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Three Muronian dervishes were a part of Gull"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muronian Order",
+   "relation": "ally",
+   "target": "Gull",
+   "note": "Three dervishes joined his crusade.",
+   "paragraph": 3,
+   "quote": "Three Muronian dervishes were a part of Gull"
+  }
+ ],
+ "rejected": []
+}

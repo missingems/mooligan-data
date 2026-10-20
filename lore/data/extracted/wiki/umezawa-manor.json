@@ -1,0 +1,118 @@
+{
+ "page": "wiki/umezawa-manor",
+ "url": "https://mtg.wiki/page/Umezawa_Manor",
+ "title": "Umezawa Manor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:22Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Umezawa Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancestral home of Clan Umezawa, one of the largest buildings on Madara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Umezawa",
+   "type": "faction",
+   "aliases": [],
+   "description": "Family whose ancestral home is the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [
+    "Imperial Champion"
+   ],
+   "description": "Inherited and expanded the manor; killed Xira Arien.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon planeswalker Tetsuo battled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Presumably the builder of the manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ayesha Tanaka",
+   "type": "character",
+   "aliases": [],
+   "description": "Used the schoolhouse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kei Takahashi",
+   "type": "character",
+   "aliases": [],
+   "description": "Used the schoolhouse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xira Arien",
+   "type": "character",
+   "aliases": [],
+   "description": "Attacked the manor in the Madara-Edemi War and was killed by Tetsuo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which the manor was attacked.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xira Arien attacks the manor but is thwarted by Tetsuo, who chases her down and kills her.",
+   "participants": [
+    "Xira Arien",
+    "Tetsuo Umezawa",
+    "Umezawa Manor"
+   ],
+   "location": "Umezawa Manor",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "who afterwards chased her down and killed her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "killed",
+   "target": "Xira Arien",
+   "note": "Chased her down after she attacked the manor.",
+   "paragraph": 6,
+   "quote": "who afterwards chased her down and killed her"
+  },
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "member_of",
+   "target": "Clan Umezawa",
+   "note": "Owner of the ancestral manor.",
+   "paragraph": 5,
+   "quote": "Tetsuo Umezawa inherited the manor when he was young"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,139 @@
+{
+ "page": "wiki/kunoros",
+ "url": "https://mtg.wiki/page/Kunoros",
+ "title": "Kunoros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kunoros",
+   "type": "creature",
+   "aliases": [
+    "Hound of Athreos"
+   ],
+   "description": "Three-headed cerberus, Hound of Athreos, guardian dog of the god Athreos who guards the Underworld on Theros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God on Theros whose guardian dog is Kunoros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kroxa",
+   "type": "creature",
+   "aliases": [],
+   "description": "Titan of death's hunger who devours Phyrexians in the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane invaded by the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Underworld",
+   "type": "location",
+   "aliases": [
+    "Underworld"
+   ],
+   "description": "Realm on Theros guarded by Kunoros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Invasion Tree",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Phyrexian tree whose branches pierced into the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invading forces who compleat all they touch.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Invasion Tree's branches pierce the Underworld and Phyrexian forces march through, compleating all they touch.",
+   "participants": [
+    "Phyrexians"
+   ],
+   "location": "The Underworld",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the branches of the Invasion Tree pierced into the Underworld itself"
+  },
+  {
+   "summary": "Kroxa devours the Phyrexians so thoroughly that no trace remains.",
+   "participants": [
+    "Kroxa",
+    "Phyrexians"
+   ],
+   "location": "The Underworld",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "who devoured them so thoroughly that no trace of them remained"
+  },
+  {
+   "summary": "Athreos strikes Kroxa's chains and sets him loose within the Underworld.",
+   "participants": [
+    "Athreos",
+    "Kroxa"
+   ],
+   "location": "The Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Athreos chose to strike Kroxa's chains and set him loose within the Underworld"
+  },
+  {
+   "summary": "Athreos charges Kunoros with keeping Kroxa in check so it cannot escape to the mortal realm.",
+   "participants": [
+    "Athreos",
+    "Kunoros",
+    "Kroxa"
+   ],
+   "location": "The Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Athreos charged Kunoros with keeping him in check"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kunoros",
+   "relation": "serves",
+   "target": "Athreos",
+   "note": "Kunoros is the guardian dog of Athreos.",
+   "paragraph": 0,
+   "quote": "is the guardian dog of the god Athreos on Theros"
+  },
+  {
+   "source": "Kunoros",
+   "relation": "other",
+   "target": "Kroxa",
+   "note": "Kunoros shepherds the paroled Kroxa.",
+   "paragraph": 1,
+   "quote": "Kunoros shepherds the paroled Kroxa"
+  },
+  {
+   "source": "Kroxa",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "Kroxa devours the invading Phyrexians.",
+   "paragraph": 1,
+   "quote": "who devoured them so thoroughly that no trace of them remained"
+  }
+ ],
+ "rejected": []
+}

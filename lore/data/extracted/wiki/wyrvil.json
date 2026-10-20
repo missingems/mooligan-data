@@ -1,0 +1,94 @@
+{
+ "page": "wiki/wyrvil",
+ "url": "https://mtg.wiki/page/Wyrvil",
+ "title": "Wyrvil",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Wyrvil",
+   "type": "location",
+   "aliases": [],
+   "description": "Fractious orc kingdom in western Almaaz in the Terisian Isles, ruled by underkings and overkings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Land containing Wyrvil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Island group containing Almaaz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Wyrvil is.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rotapan",
+   "type": "character",
+   "aliases": [],
+   "description": "Small, aged half-orc overking of fierce fighting capabilities who ruled southernmost Wyrvil in 3050 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erg Desert",
+   "type": "location",
+   "aliases": [],
+   "description": "Desert raided and foraged by underkings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose caravan was destroyed by orcs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A caravan from Sumifa is destroyed by an aggressive orc band, and the western erg route is abandoned, ending trade with Wyrvil.",
+   "participants": [
+    "Sumifa",
+    "Wyrvil"
+   ],
+   "location": "Erg Desert",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the caravan route through the western erg was abandoned completely, stopping all trade between Sumifa and Wyrvil"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rotapan",
+   "relation": "leader_of",
+   "target": "Wyrvil",
+   "note": "He was overking of the southernmost realm of Wyrvil.",
+   "paragraph": 1,
+   "quote": "who ruled the southernmost realm of Wyrvil in 3050 AR"
+  },
+  {
+   "source": "Wyrvil",
+   "relation": "located_in",
+   "target": "Almaaz",
+   "note": "In western Almaaz.",
+   "paragraph": 0,
+   "quote": "Wyrvil is an orc kingdom in western Almaaz"
+  }
+ ],
+ "rejected": []
+}

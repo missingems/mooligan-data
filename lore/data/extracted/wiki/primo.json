@@ -1,0 +1,70 @@
+{
+ "page": "wiki/primo",
+ "url": "https://mtg.wiki/page/Primo",
+ "title": "Primo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:02Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Primo",
+   "type": "creature",
+   "aliases": [
+    "Primo, the Indivisible"
+   ],
+   "description": "A legendary fractal wolf created by Zimone Wola, her friend and defender.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zimone Wola",
+   "type": "character",
+   "aliases": [
+    "Zimone"
+   ],
+   "description": "Created the fractal Primo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Zimone went before deciding not to unsummon Primo.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After returning from Duskmourn, Zimone found herself unwilling to unsummon Primo.",
+   "participants": [
+    "Zimone Wola",
+    "Primo"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "after returning from Duskmourn , she found herself unwilling to unsummon him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zimone Wola",
+   "relation": "created",
+   "target": "Primo",
+   "note": "Primo is a fractal created by Zimone.",
+   "paragraph": 0,
+   "quote": "Primo is a legendary fractal wolf created by Zimone Wola"
+  },
+  {
+   "source": "Primo",
+   "relation": "ally",
+   "target": "Zimone Wola",
+   "note": "Her friend and stalwart defender.",
+   "paragraph": 1,
+   "quote": "taking his role as Zimone's friend and stalwart defender very seriously."
+  }
+ ],
+ "rejected": []
+}

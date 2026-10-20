@@ -1,0 +1,161 @@
+{
+ "page": "wiki/fall-of-the-college-of-lat-nam",
+ "url": "https://mtg.wiki/page/Fall_of_the_College_of_Lat-Nam",
+ "title": "Fall of the College of Lat-Nam",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:11Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Fall of the College of Lat-Nam",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in the Brothers' War that left the first school of magic in ruins.",
+   "presence": "appears"
+  },
+  {
+   "name": "College of Lat-Nam",
+   "type": "location",
+   "aliases": [
+    "Lat-Nam"
+   ],
+   "description": "The first school of magic on Terisiare, founded by Drafna and Hurkyl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drafna",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder who survived and founded a new school in the City of Shadows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurkyl",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder killed in the fall of Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Besieged Terisia City; uninterested in magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City of the Third Path that fell in 45 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Third Path",
+   "type": "faction",
+   "aliases": [
+    "Union of the Third Path"
+   ],
+   "description": "Scholars who smuggled relics out of Terisia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loran",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveled elsewhere with the Golgothian Sylex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Never on Lat-Nam.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who purified the site 4000 years later.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "City of Shadows",
+   "type": "location",
+   "aliases": [],
+   "description": "New hidden school of magic.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Terisia City falls after Mishra's siege; Hurkyl is killed.",
+   "participants": [
+    "Mishra",
+    "Hurkyl",
+    "Terisia City"
+   ],
+   "location": "Terisia City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hurkyl was among those who were killed"
+  },
+  {
+   "summary": "Drafna removes valuable artifacts, leaving only books for Mishra, who is enraged.",
+   "participants": [
+    "Drafna",
+    "Mishra"
+   ],
+   "location": "Terisia City",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "leaving only books and scrolls for Mishra to find"
+  },
+  {
+   "summary": "The College of Lat-Nam is laid waste, becoming a poisoned glass desert for 4000 years.",
+   "participants": [
+    "College of Lat-Nam",
+    "Mishra"
+   ],
+   "location": "College of Lat-Nam",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "it was \"laid to waste\""
+  },
+  {
+   "summary": "Drafna and others survive and found a hidden new school in the City of Shadows.",
+   "participants": [
+    "Drafna",
+    "Third Path",
+    "City of Shadows"
+   ],
+   "location": "City of Shadows",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Drafna and others of the Third Path survived"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Drafna",
+   "relation": "created",
+   "target": "College of Lat-Nam",
+   "note": "With Hurkyl.",
+   "paragraph": 1,
+   "quote": "where Drafna and Hurkyl had established the College of Lat-Nam many years earlier"
+  },
+  {
+   "source": "Mishra",
+   "relation": "enemy",
+   "target": "Third Path",
+   "note": "Besieged their city.",
+   "paragraph": 2,
+   "quote": "Mishra set his eyes on Terisia City and eventually caused its downfall after months of siege"
+  }
+ ],
+ "rejected": []
+}

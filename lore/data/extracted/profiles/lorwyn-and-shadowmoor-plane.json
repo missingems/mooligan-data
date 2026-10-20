@@ -1,0 +1,143 @@
+{
+ "page": "profiles/lorwyn-and-shadowmoor-plane",
+ "url": "https://magic.wizards.com/en/story/lorwyn-and-shadowmoor-plane",
+ "title": "Lorwyn & Shadowmoor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "An idyllic world of perpetual midsummer where races of fable live together in harmony; it transforms into Shadowmoor every three centuries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "The dark mirror-image of Lorwyn, in perpetual dusk and gloom, whose races are transformed into darker versions of themselves.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Elves of Lorwyn",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Lorwyn's most favored and feared race, who consider themselves paragons of beauty; in Shadowmoor they are humbled and heroic.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Flamekin",
+   "type": "faction",
+   "aliases": [
+    "flamekin"
+   ],
+   "description": "Hot-tempered, transcendence-seeking people of Lorwyn who become smoking skeletons seeking revenge in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Faeries",
+   "type": "faction",
+   "aliases": [
+    "faeries",
+    "the fae"
+   ],
+   "description": "The only race unchanged by the transformation, who dwell in Glen Elendra and are the fulcrum of the transforming plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "The home of the faeries, unchanged between Lorwyn and Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [
+    "queen of the fae"
+   ],
+   "description": "The queen of the faeries, who caused the plane's transformation.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Every three centuries Lorwyn's cycle transforms the plane into Shadowmoor.",
+   "participants": [
+    "Lorwyn",
+    "Shadowmoor"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "every three centuries, that cycle transforms the plane into Shadowmoor."
+  },
+  {
+   "summary": "In Shadowmoor the plane's races, without memory of their previous selves, are transformed and locked in a struggle for survival.",
+   "participants": [
+    "Shadowmoor"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Here, the plane's races, without knowledge of their previous selves, are locked in a life-and-death struggle for survival."
+  },
+  {
+   "summary": "The flamekin become smoking skeletons seeking revenge while the vain elves become humbled and heroic.",
+   "participants": [
+    "The Flamekin",
+    "The Elves of Lorwyn"
+   ],
+   "location": "Shadowmoor",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "the flamekin are now smoking skeletons seeking revenge."
+  },
+  {
+   "summary": "Oona, queen of the faeries, causes the plane's transformation.",
+   "participants": [
+    "Oona",
+    "The Faeries"
+   ],
+   "location": "Glen Elendra",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "for it was their queen, Oona, who caused it."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oona",
+   "relation": "leader_of",
+   "target": "The Faeries",
+   "note": "Their queen.",
+   "paragraph": 7,
+   "quote": "for it was their queen, Oona, who caused it."
+  },
+  {
+   "source": "Glen Elendra",
+   "relation": "other",
+   "target": "The Faeries",
+   "note": "Their home, unchanged by the transformation.",
+   "paragraph": 7,
+   "quote": "the faeries and their home of Glen Elendra"
+  },
+  {
+   "source": "Shadowmoor",
+   "relation": "other",
+   "target": "Lorwyn",
+   "note": "Shadowmoor is Lorwyn's mirror-image.",
+   "paragraph": 4,
+   "quote": "The mirror-image of Lorwyn, Shadowmoor is a realm of perpetual dusk and gloom."
+  }
+ ],
+ "rejected": []
+}

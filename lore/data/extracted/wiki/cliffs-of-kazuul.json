@@ -1,0 +1,82 @@
+{
+ "page": "wiki/cliffs-of-kazuul",
+ "url": "https://mtg.wiki/page/Cliffs_of_Kazuul",
+ "title": "Cliffs of Kazuul",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:55Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Cliffs of Kazuul",
+   "type": "location",
+   "aliases": [],
+   "description": "A guarded mountain passage into the continent of Murasa on Zendikar, the only maintained ascent of Murasa's Wall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazuul",
+   "type": "character",
+   "aliases": [],
+   "description": "An ogre slave-master and current ruler of the pass who demands tribute.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent on Zendikar the cliffs lead into.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [
+    "Tajuru elves"
+   ],
+   "description": "The elves who set up the cliff ascent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the cliffs lie.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kazuul, an ogre slave-master, rules the pass and demands tribute from any who seek passage.",
+   "participants": [
+    "Kazuul",
+    "Cliffs of Kazuul"
+   ],
+   "location": "Cliffs of Kazuul",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "an ogre slave-master who demands tribute from any who seek passage"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kazuul",
+   "relation": "leader_of",
+   "target": "Cliffs of Kazuul",
+   "note": "He is the pass's current ruler.",
+   "paragraph": 1,
+   "quote": "the pass's current ruler"
+  },
+  {
+   "source": "Cliffs of Kazuul",
+   "relation": "located_in",
+   "target": "Murasa",
+   "note": "A passage into Murasa.",
+   "paragraph": 0,
+   "quote": "a guarded mountain passage into the continent of Murasa"
+  }
+ ],
+ "rejected": []
+}

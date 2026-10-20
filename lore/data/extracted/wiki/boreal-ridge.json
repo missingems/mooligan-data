@@ -1,0 +1,87 @@
+{
+ "page": "wiki/boreal-ridge",
+ "url": "https://mtg.wiki/page/Boreal_Ridge",
+ "title": "Boreal Ridge",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:19Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Boreal Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Rimekin settlement of 100 residents on a frosty cliff in Shadowmoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarak",
+   "type": "character",
+   "aliases": [],
+   "description": "Rimekin leader of Boreal Ridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Forge",
+   "type": "location",
+   "aliases": [],
+   "description": "Smithy at Boreal Ridge tempering iron with frozen flames.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Boreal Ridge lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item whose branch created the cliffside during the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Boreal Ridge's cliff formed in 4562 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A branch of Realmbreaker creates the unnatural cliffside during the New Phyrexian Invasion, and rimekin later build the first buildings.",
+   "participants": [
+    "Realmbreaker",
+    "Boreal Ridge"
+   ],
+   "location": "Boreal Ridge",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Boreal Ridge formed when a branch of Realmbreaker created an unnatural cliffside"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sarak",
+   "relation": "leader_of",
+   "target": "Boreal Ridge",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The community is led by the rimekin Sarak."
+  },
+  {
+   "source": "Ice Forge",
+   "relation": "located_in",
+   "target": "Boreal Ridge",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Boreal Ridge hosts Ice Forge"
+  }
+ ],
+ "rejected": []
+}

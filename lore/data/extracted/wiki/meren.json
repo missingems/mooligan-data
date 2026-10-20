@@ -1,0 +1,158 @@
+{
+ "page": "wiki/meren",
+ "url": "https://mtg.wiki/page/Meren",
+ "title": "Meren",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:27Z",
+ "storyline": "Modern Horizons 3",
+ "entities": [
+  {
+   "name": "Meren",
+   "type": "character",
+   "aliases": [
+    "Meren of Clan Nel Toth"
+   ],
+   "description": "Human necromancer from Jund on Alara, exiled by her clan, who learned necromancy on Grixis and took vengeance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kael",
+   "type": "character",
+   "aliases": [],
+   "description": "Village elder and Meren's trainer and mentor, devoured by her dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clan Nel Toth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jund clan of Meren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara where Meren learned necromancy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the shards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skaal Kesh",
+   "type": "creature",
+   "aliases": [],
+   "description": "Great dragon Meren reanimated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreamfire Draught",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Potion drunk by shaman apprentices.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Meren is forced to drink the Dreamfire Draught and face an elemental; she destroys it using necromancy.",
+   "participants": [
+    "Meren",
+    "Kael",
+    "Clan Nel Toth"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "destroyed the elemental using what she would eventually learn to be necromancy"
+  },
+  {
+   "summary": "The elders deem her dangerous, let her fight the Draught, and she survives and leaves the clan for Grixis.",
+   "participants": [
+    "Meren",
+    "Kael",
+    "Clan Nel Toth"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Meren survived this, though, and left Clan Nel Toth"
+  },
+  {
+   "summary": "Trained in Grixis, Meren reanimates a great dragon, Skaal Kesh.",
+   "participants": [
+    "Meren",
+    "Skaal Kesh"
+   ],
+   "location": "Grixis",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "reanimated a great dragon she deemed Skaal Kesh"
+  },
+  {
+   "summary": "Meren attacks her old home, killing most of its residents.",
+   "participants": [
+    "Meren",
+    "Clan Nel Toth"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she entered her old home and attacked it, killing most of the residents"
+  },
+  {
+   "summary": "Meren duels Kael and the dragon devours him; she resolves to topple Jund.",
+   "participants": [
+    "Meren",
+    "Kael",
+    "Skaal Kesh"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "she gestured to the dragon, which then devoured the man"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kael",
+   "relation": "mentor_of",
+   "target": "Meren",
+   "note": "trained her",
+   "paragraph": 1,
+   "quote": "She was trained under a village elder known as Kael"
+  },
+  {
+   "source": "Meren",
+   "relation": "member_of",
+   "target": "Clan Nel Toth",
+   "note": "exiled",
+   "paragraph": 0,
+   "quote": "Meren ( /mɛərən/, MAIR-en ) of Clan Nel Toth is a human necromancer"
+  },
+  {
+   "source": "Meren",
+   "relation": "killed",
+   "target": "Kael",
+   "note": "dragon devoured him",
+   "paragraph": 5,
+   "quote": "she gestured to the dragon, which then devoured the man"
+  }
+ ],
+ "rejected": []
+}

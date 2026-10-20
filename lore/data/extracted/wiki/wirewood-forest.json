@@ -1,0 +1,77 @@
+{
+ "page": "wiki/wirewood-forest",
+ "url": "https://mtg.wiki/page/Wirewood_Forest",
+ "title": "Wirewood Forest",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Wirewood Forest",
+   "type": "location",
+   "aliases": [
+    "Wirewood"
+   ],
+   "description": "Open, airy forest in southern Otaria bordering the Skirk Ridge; home to Otaria's only elves, now a living cage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent containing Wirewood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wirewood elves",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Elves who migrated to Wirewood after the Phyrexian Invasion and mutated into green-skinned plant creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Influence mutated the elves and the forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion of Dominaria",
+   "type": "event",
+   "aliases": [],
+   "description": "Destroyed the elves' homes.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Under the influence of the Mirari, many Wirewood elves mutate into green-skinned plant creatures and the forest becomes a living cage.",
+   "participants": [
+    "Wirewood elves",
+    "Mirari",
+    "Wirewood Forest"
+   ],
+   "location": "Wirewood Forest",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "many of the elves mutated into green-skinned plant creatures"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wirewood Forest",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "In the continent's southern reaches.",
+   "paragraph": 1,
+   "quote": "Located in the continent's southern reaches"
+  }
+ ],
+ "rejected": []
+}

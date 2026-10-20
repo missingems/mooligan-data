@@ -1,0 +1,94 @@
+{
+ "page": "wiki/jeleva",
+ "url": "https://mtg.wiki/page/Jeleva",
+ "title": "Jeleva",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:35Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Jeleva",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire wizard of Nephalia who steals the minds of wizards and wages a private war against the Church of Avacyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "The Innistrad region where Jeleva lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Havengul",
+   "type": "location",
+   "aliases": [],
+   "description": "City near which Jeleva has a mansion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Runo Stromkirk",
+   "type": "character",
+   "aliases": [],
+   "description": "Jeleva's ancestor, a participant in the coastal cult.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "The church that has put a price on Jeleva's head.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gisa Cecani",
+   "type": "character",
+   "aliases": [],
+   "description": "A ghoulcaller who moved to Havengul and crossed paths with Jeleva.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Jeleva lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jeleva and Gisa Cecani crossed paths; Jeleva decided stealing Gisa's mind would harm her own and told local vampires to leave Gisa alone.",
+   "participants": [
+    "Jeleva",
+    "Gisa Cecani"
+   ],
+   "location": "Havengul",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "she instructed the local vampires to leave the ghoulcaller alone"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Church of Avacyn",
+   "relation": "enemy",
+   "target": "Jeleva",
+   "note": "The Church has put a price on her head.",
+   "paragraph": 2,
+   "quote": "has put a price on her head"
+  },
+  {
+   "source": "Jeleva",
+   "relation": "family",
+   "target": "Runo Stromkirk",
+   "note": "She descends from Runo but opposes him.",
+   "paragraph": 1,
+   "quote": "A descendant of Runo Stromkirk"
+  }
+ ],
+ "rejected": []
+}

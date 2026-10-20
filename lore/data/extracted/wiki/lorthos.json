@@ -1,0 +1,127 @@
+{
+ "page": "wiki/lorthos",
+ "url": "https://mtg.wiki/page/Lorthos",
+ "title": "Lorthos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:44Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Lorthos",
+   "type": "creature",
+   "aliases": [],
+   "description": "A monstrous octopus of Zendikar's oceans, believed by merfolk to control the tide.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiora",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned Lorthos to retake Sea Gate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned Kozilek from beneath Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan that destroyed Lorthos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan whose brood held Sea Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "City Kiora tried to retake.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speaker Sutina",
+   "type": "character",
+   "aliases": [],
+   "description": "Joraga leader seen near Lorthos at Sunder Bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunder Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Murasa where Lorthos was seen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Lorthos lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kiora summons Lorthos and rides it with merfolk to retake Sea Gate from Ulamog's brood.",
+   "participants": [
+    "Kiora",
+    "Lorthos"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lorthos was summoned by Kiora in an attempt to retake Sea Gate from Ulamog 's brood of Eldrazi"
+  },
+  {
+   "summary": "Kozilek slices Lorthos in half with its arm blades.",
+   "participants": [
+    "Kozilek",
+    "Lorthos"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the titan destroyed Lorthos by slicing it in half using its arm blades"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kiora",
+   "relation": "other",
+   "target": "Lorthos",
+   "note": "Summoned it",
+   "paragraph": 2,
+   "quote": "Lorthos was summoned by Kiora"
+  },
+  {
+   "source": "Kozilek",
+   "relation": "killed",
+   "target": "Lorthos",
+   "note": "Sliced it in half",
+   "paragraph": 2,
+   "quote": "the titan destroyed Lorthos by slicing it in half using its arm blades"
+  },
+  {
+   "source": "Ob Nixilis",
+   "relation": "other",
+   "target": "Kozilek",
+   "note": "Summoned it from beneath Zendikar",
+   "paragraph": 2,
+   "quote": "Ob Nixilis had summoned Kozilek from underneath Zendikar"
+  }
+ ],
+ "rejected": []
+}

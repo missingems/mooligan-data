@@ -1,0 +1,124 @@
+{
+ "page": "wiki/statue-trial-of-kroog",
+ "url": "https://mtg.wiki/page/Statue_Trial_of_Kroog",
+ "title": "Statue Trial of Kroog",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:09Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Statue Trial of Kroog",
+   "type": "event",
+   "aliases": [],
+   "description": "Contest at the end of the Time of Legends in which suitors tried to move a great statue to win Kayla bin-Kroog's hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter of the Warlord of Kroog, offered in marriage to whoever moved the statue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Warlord of Kroog",
+   "type": "character",
+   "aliases": [
+    "the king"
+   ],
+   "description": "Kayla's father, who set the statue trial.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer who entered the contest because of the Jalum Tome.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jalum Tome",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Part of Kayla's dowry that inspired Urza to participate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korlis",
+   "type": "location",
+   "aliases": [],
+   "description": "Town outside which Kayla's first betrothed drowned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shielded Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea where Kayla's first betrothed's ship went down.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "Town with the great statue in its square.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avenger",
+   "type": "artifact",
+   "aliases": [
+    "Urza's first Avenger"
+   ],
+   "description": "Urza's first Avenger, a construct that moved the statue.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kayla's first betrothed drowns when his ship goes down in the Shielded Sea outside Korlis.",
+   "participants": [
+    "Kayla bin-Kroog"
+   ],
+   "location": "Shielded Sea",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kayla bin-Kroog 's first betrothed drowned when his ship went down in the Shielded Sea outside Korlis ."
+  },
+  {
+   "summary": "Urza's first Avenger moves the statue where all other contestants failed, and the king allows Urza to marry Kayla.",
+   "participants": [
+    "Urza",
+    "Avenger",
+    "Warlord of Kroog",
+    "Kayla bin-Kroog"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "All other contestants failed, but Urza's first Avenger succeeded"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kayla bin-Kroog",
+   "relation": "family",
+   "target": "Warlord of Kroog",
+   "note": "The Warlord is her father.",
+   "paragraph": 1,
+   "quote": "Kayla's father, the Warlord of Kroog"
+  },
+  {
+   "source": "Urza",
+   "relation": "created",
+   "target": "Avenger",
+   "note": "Urza's first Avenger succeeded in the trial.",
+   "paragraph": 1,
+   "quote": "Urza's first Avenger succeeded"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,191 @@
+{
+ "page": "wiki/fall-of-penregon",
+ "url": "https://mtg.wiki/page/Fall_of_Penregon",
+ "title": "Fall of Penregon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fall of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "The abandonment of Penregon to advancing glaciers, casting a shadow over the Dark Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Penregon",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Argive in the northernmost reaches, first city to fall to the ice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation whose capital was Penregon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in 64 AR whose shockwave damaged Penregon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [
+    "Kayla"
+   ],
+   "description": "Ruler who led Penregon's rebuilding and eventually evacuated it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Besieged Penregon unsuccessfully in 69 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Siege of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "Unsuccessful siege of 69 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Built the armed civil automatons defending Penregon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kher Ridges",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains in whose shadow Penregon lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myrel",
+   "type": "character",
+   "aliases": [],
+   "description": "Kayla's guard captain, sent on an expedition.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era whose glaciers claimed Terisiare's holdings.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent claimed by the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Age",
+   "type": "event",
+   "aliases": [],
+   "description": "New era overshadowed by the Fall of Penregon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Penregon is damaged by the Sylex Blast's shockwave and Kayla bin-Kroog begins rebuilding.",
+   "participants": [
+    "Penregon",
+    "Kayla bin-Kroog",
+    "Sylex Blast"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "rebuilding efforts by Kayla bin-Kroog were initiated"
+  },
+  {
+   "summary": "The Church of Tal besieges Penregon in 69 AR but fails against Tawnos's automatons.",
+   "participants": [
+    "Church of Tal",
+    "Tawnos",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the siege was unsuccessful through the use of armed civil automatons built by Tawnos"
+  },
+  {
+   "summary": "Glaciers grow each year and scouts find warmer lands to the southwest.",
+   "participants": [
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Scouts also found greener pastures to the southwest"
+  },
+  {
+   "summary": "Kayla sends her people away each year and sends guard captain Myrel on an expedition.",
+   "participants": [
+    "Kayla bin-Kroog",
+    "Myrel"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Kayla sent more of her people away each year"
+  },
+  {
+   "summary": "Kayla leaves with the last group; the stubborn holdouts stay and are taken by the ice.",
+   "participants": [
+    "Kayla bin-Kroog",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the last holdouts stayed counting their gold until the ice took them"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Penregon",
+   "relation": "located_in",
+   "target": "Argive",
+   "note": "capital",
+   "paragraph": 1,
+   "quote": "capital of Argive"
+  },
+  {
+   "source": "Tawnos",
+   "relation": "created",
+   "target": "Penregon",
+   "note": "built the automatons defending it",
+   "paragraph": 1,
+   "quote": "armed civil automatons built by Tawnos defending the city"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Penregon",
+   "note": "besieged it",
+   "paragraph": 1,
+   "quote": "the Siege of Penregon by the Church of Tal"
+  }
+ ],
+ "rejected": []
+}

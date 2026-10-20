@@ -1,0 +1,125 @@
+{
+ "page": "wiki/pita",
+ "url": "https://mtg.wiki/page/Pita",
+ "title": "Pita",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:00Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Pita",
+   "type": "character",
+   "aliases": [],
+   "description": "Eager, anxious Oriq cultist on Arcavios who believes destroying Strixhaven would democratize magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult seeking to dismantle Strixhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Extus Narr",
+   "type": "character",
+   "aliases": [
+    "Extus"
+   ],
+   "description": "Masked Oriq with a more measured approach.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zimone Wola",
+   "type": "character",
+   "aliases": [
+    "Zimone"
+   ],
+   "description": "Student who sent Pita and Extus into the wall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dean Kianne",
+   "type": "character",
+   "aliases": [
+    "Kianne"
+   ],
+   "description": "Dean whose arrival caused the Oriq to flee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "University the Oriq want to dismantle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pita and Extus talked with Zimone when she woke, Pita urging haste.",
+   "participants": [
+    "Pita",
+    "Extus Narr",
+    "Zimone Wola"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Pita was present when Zimone Wola woke up"
+  },
+  {
+   "summary": "Zimone sent Pita and Extus crashing into the wall with a braid of ribbons; Pita raised his hands to show they did not come to fight.",
+   "participants": [
+    "Zimone Wola",
+    "Pita",
+    "Extus Narr"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Pita raised his hands, signaling they were not there to fight"
+  },
+  {
+   "summary": "Dean Kianne arrived, a standoff ensued, and the Oriq fled.",
+   "participants": [
+    "Dean Kianne",
+    "Pita",
+    "Extus Narr"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "which resulted in the Oriq fleeing the scene"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pita",
+   "relation": "member_of",
+   "target": "Oriq",
+   "note": "cultist",
+   "paragraph": 0,
+   "quote": "Pita is an Oriq cultist on Arcavios"
+  },
+  {
+   "source": "Pita",
+   "relation": "ally",
+   "target": "Extus Narr",
+   "note": "fellow Oriq",
+   "paragraph": 1,
+   "quote": "similar to Extus Narr"
+  }
+ ],
+ "rejected": []
+}

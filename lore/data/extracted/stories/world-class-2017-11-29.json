@@ -1,0 +1,696 @@
+{
+ "page": "stories/world-class-2017-11-29",
+ "url": "https://magic.wizards.com/en/news/magic-story/world-class-2017-11-29",
+ "title": "World Class",
+ "story_date": "2017-11-29",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:30:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ms. Skiffle",
+   "type": "character",
+   "aliases": [],
+   "description": "A teacher in Bablovia who runs a class of oral projects on the government.",
+   "presence": "appears"
+  },
+  {
+   "name": "Martina",
+   "type": "character",
+   "aliases": [],
+   "description": "A cynical student who presents on the Carta Scientia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anabelle",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who presents on the structure of the Bablovian meta-government and would like to join the League of Dastardly Doom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kareem",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who tells the story of the founding of the Order of the Widget.",
+   "presence": "appears"
+  },
+  {
+   "name": "Juanita",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who presents on the Agents of S.N.E.A.K.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harold",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who presents on the League of Dastardly Doom.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ming-na",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who presents on the Goblin Explosioneers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nadima",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who presents on the Crossbreed Labs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stewart",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who ignores his assigned topic to claim squirrels secretly run Bablovia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grand Calcutron",
+   "type": "character",
+   "aliases": [
+    "Calvin Granderson",
+    "Calcutron Granderson"
+   ],
+   "description": "The machine-bodied founder and leader of the Order of the Widget, formerly the inventor Calvin Granderson.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phoebe",
+   "type": "character",
+   "aliases": [
+    "Head of S.N.E.A.K."
+   ],
+   "description": "The self-proclaimed current leader of the Agents of S.N.E.A.K.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "X",
+   "type": "character",
+   "aliases": [],
+   "description": "A shadowy figure paid by various sources to steal the Golden Ruler.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ol' Buzzbark",
+   "type": "character",
+   "aliases": [
+    "alpha goblin"
+   ],
+   "description": "The current alpha goblin of the Goblin Explosioneers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dr. Julius Jumblemorph",
+   "type": "character",
+   "aliases": [
+    "Dr. Julius Jameson",
+    "Dr. Jameson"
+   ],
+   "description": "A scientist who perfected genetic splicing and heads the Crossbreed Labs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dr. Luisa Rodriguez",
+   "type": "character",
+   "aliases": [],
+   "description": "A scientist who worked with Jameson on a cancer cure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dr. Hana Tanaka",
+   "type": "character",
+   "aliases": [],
+   "description": "A scientist who worked with Jameson on a cancer cure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Major Monologue",
+   "type": "character",
+   "aliases": [],
+   "description": "A would-be supervillain whose support group became the League of Dastardly Doom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thorna Grabbler",
+   "type": "character",
+   "aliases": [],
+   "description": "The head of Steamflogger Industries who recruited the goblins and formed the Goblin Explosioneers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Von Count",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of the Legion of Evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Big Idea",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of the Legion of Evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grusilda",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of the Legion of Evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mary O'Kill",
+   "type": "character",
+   "aliases": [],
+   "description": "A member of the Legion of Evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dr. Malevolence",
+   "type": "character",
+   "aliases": [],
+   "description": "A supervillain for whom Harold plans to build a freeze ray.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bablovia",
+   "type": "plane",
+   "aliases": [],
+   "description": "A science-obsessed world governed by a pentarchy of five factions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carta Scientia",
+   "type": "artifact",
+   "aliases": [
+    "Science Charter"
+   ],
+   "description": "The oldest document in Bablovia, which lets sciences form their own governments.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Widget",
+   "type": "faction",
+   "aliases": [
+    "Widgeteers"
+   ],
+   "description": "A technocracy led by the Grand Calcutron whose members upgrade their bodies with technology.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agents of S.N.E.A.K.",
+   "type": "faction",
+   "aliases": [
+    "S.N.E.A.K."
+   ],
+   "description": "A kleptocracy of spies that began as a job board and does not know its own purpose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "League of Dastardly Doom",
+   "type": "faction",
+   "aliases": [
+    "the League"
+   ],
+   "description": "An oligarchy of supervillains ruled by a cabal, which licenses supervillainy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin Explosioneers",
+   "type": "faction",
+   "aliases": [
+    "Explosioneers"
+   ],
+   "description": "A goblin faction with a chaotic government that took over Steamflogger Industries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crossbreed Labs",
+   "type": "faction",
+   "aliases": [],
+   "description": "A geniocracy that alters people into their animal true forms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Legion of Evil",
+   "type": "faction",
+   "aliases": [],
+   "description": "The cabal that currently rules the League of Dastardly Doom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Society of Vile",
+   "type": "faction",
+   "aliases": [],
+   "description": "A former ruling cabal of the League.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan of Cruelty",
+   "type": "faction",
+   "aliases": [],
+   "description": "A former ruling cabal of the League which blackmailed the other factions with a weather machine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Men of Malice",
+   "type": "faction",
+   "aliases": [],
+   "description": "The first ruling cabal of the League, originally a subgroup about poor trap planning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Steamflogger Industries",
+   "type": "faction",
+   "aliases": [],
+   "description": "A steel mill company taken over by goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golden Ruler",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The object whose possessor leads the Agents of S.N.E.A.K.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Port Gizmo",
+   "type": "location",
+   "aliases": [],
+   "description": "A lovely place Calvin visited on a day trip.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ms. Skiffle opens the first day of oral projects on Bablovian government.",
+   "participants": [
+    "Ms. Skiffle"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Today's the first day for our oral projects."
+  },
+  {
+   "summary": "Martina presents on the Carta Scientia and editorializes against Bablovia's governments.",
+   "participants": [
+    "Martina",
+    "Ms. Skiffle",
+    "Carta Scientia"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "It's the oldest document in all of Bablovia."
+  },
+  {
+   "summary": "Anabelle explains that Bablovia is a pentarchy of five organizations.",
+   "participants": [
+    "Anabelle",
+    "Order of the Widget",
+    "Agents of S.N.E.A.K.",
+    "League of Dastardly Doom",
+    "Goblin Explosioneers",
+    "Crossbreed Labs"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Bablovia is currently what is known as a pentarchy."
+  },
+  {
+   "summary": "Anabelle explains the Order of the Widget is led by the machine Grand Calcutron.",
+   "participants": [
+    "Anabelle",
+    "Grand Calcutron",
+    "Order of the Widget"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "Their leader is the Grand Calcutron, a machine that runs the Order with absolute authority."
+  },
+  {
+   "summary": "Anabelle explains that leadership of S.N.E.A.K. goes to whoever holds the Golden Ruler, now Phoebe.",
+   "participants": [
+    "Anabelle",
+    "Phoebe",
+    "X",
+    "Golden Ruler",
+    "Agents of S.N.E.A.K."
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "Their current leader, as of last week, is Phoebe, the self-proclaimed Head of S.N.E.A.K."
+  },
+  {
+   "summary": "Anabelle describes the League's ruling Legion of Evil and its predecessor cabals.",
+   "participants": [
+    "Anabelle",
+    "Legion of Evil",
+    "Society of Vile",
+    "Clan of Cruelty",
+    "Men of Malice",
+    "League of Dastardly Doom"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "The group that currently controls the League is a cabal known as the Legion of Evil."
+  },
+  {
+   "summary": "Anabelle describes the Goblin Explosioneers' chaotic rule under Ol' Buzzbark.",
+   "participants": [
+    "Anabelle",
+    "Ol' Buzzbark",
+    "Goblin Explosioneers"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 16,
+   "quote": "is named Ol' Buzzbark."
+  },
+  {
+   "summary": "Anabelle names Dr. Julius Jumblemorph as head of the Crossbreed Labs.",
+   "participants": [
+    "Anabelle",
+    "Dr. Julius Jumblemorph",
+    "Crossbreed Labs"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "The current head of the Crossbreed Labs is Dr. Julius Jumblemorph."
+  },
+  {
+   "summary": "Anabelle recounts that the League, led by the Clan of Cruelty, once blackmailed the other factions with a weather machine to change the law.",
+   "participants": [
+    "Anabelle",
+    "League of Dastardly Doom",
+    "Clan of Cruelty",
+    "Agents of S.N.E.A.K."
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "the League of Dastardly Doom, led by the Clan of Cruelty, blackmailed the other factions with a weather machine."
+  },
+  {
+   "summary": "Kareem tells how Calvin Granderson founded the Order of the Widget.",
+   "participants": [
+    "Kareem",
+    "Grand Calcutron",
+    "Order of the Widget"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "The organization was founded 54 years ago by a man named Calvin Granderson."
+  },
+  {
+   "summary": "Craving toast on vacation, Calvin replaces his left hand with a toaster (flashback).",
+   "participants": [
+    "Kareem",
+    "Grand Calcutron",
+    "Port Gizmo"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "he replaced his left hand with a toaster."
+  },
+  {
+   "summary": "Calvin forms the Order of the Widget to support those following his self-upgrade movement.",
+   "participants": [
+    "Grand Calcutron",
+    "Order of the Widget"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 37,
+   "quote": "He formed the Order of the Widget as a means to give support to the large number of people who embraced this new self-help ideology."
+  },
+  {
+   "summary": "Calvin becomes the machine known as the Grand Calcutron after replacing most of his body.",
+   "participants": [
+    "Grand Calcutron"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "Calvin Granderson became Calcutron Granderson and eventually the Grand Calcutron."
+  },
+  {
+   "summary": "Juanita reports that no S.N.E.A.K. agent she interviewed knows its agenda.",
+   "participants": [
+    "Juanita",
+    "Agents of S.N.E.A.K."
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "I talked to 34 agents for my report. No one knows."
+  },
+  {
+   "summary": "Juanita explains S.N.E.A.K. began as a job board that turned into the center of organized crime.",
+   "participants": [
+    "Juanita",
+    "Agents of S.N.E.A.K."
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 50,
+   "quote": "The Agents of S.N.E.A.K. started out as a job-share board."
+  },
+  {
+   "summary": "Harold explains that the League began as a supervillain support group started by Major Monologue.",
+   "participants": [
+    "Harold",
+    "Major Monologue",
+    "League of Dastardly Doom"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 65,
+   "quote": "It started, interestingly, as a supervillain support group."
+  },
+  {
+   "summary": "The poor-trap-planning subgroup becomes the Men of Malice, the first step toward an official organization.",
+   "participants": [
+    "Harold",
+    "Men of Malice"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 66,
+   "quote": "One subgroup, poor trap planning, ended up becoming the Men of Malice"
+  },
+  {
+   "summary": "Ming-na tells of Steamflogger Industries, a steel mill, and its recruitment of goblins.",
+   "participants": [
+    "Ming-na",
+    "Thorna Grabbler",
+    "Steamflogger Industries"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 76,
+   "quote": "It all started years ago with Steamflogger Industries."
+  },
+  {
+   "summary": "Thorna Grabbler lures a goblin clan to work in the factory with hammers and technology (flashback).",
+   "participants": [
+    "Thorna Grabbler",
+    "Goblin Explosioneers"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "The entire clan of goblins chose to come work in the factory."
+  },
+  {
+   "summary": "Thorna forms the Goblin Explosioneers as a political faction.",
+   "participants": [
+    "Thorna Grabbler",
+    "Goblin Explosioneers"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 79,
+   "quote": "She let the goblins choose the name and ended up with the Goblin Explosioneers."
+  },
+  {
+   "summary": "The goblins take over Steamflogger Industries as workers, management and finally Thorna leave.",
+   "participants": [
+    "Goblin Explosioneers",
+    "Thorna Grabbler",
+    "Steamflogger Industries"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 80,
+   "quote": "The goblins had taken over Steamflogger Industries."
+  },
+  {
+   "summary": "Nadima tells how three scientists seeking a cancer cure accidentally grew a tail on a subject.",
+   "participants": [
+    "Nadima",
+    "Dr. Julius Jumblemorph",
+    "Dr. Luisa Rodriguez",
+    "Dr. Hana Tanaka"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 86,
+   "quote": "Instead, the subject grew a tail."
+  },
+  {
+   "summary": "Dr. Jameson gives himself wings and opens the procedure to students.",
+   "participants": [
+    "Dr. Julius Jumblemorph"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 88,
+   "quote": "Dr. Jameson undertook the procedure to get a pair of wings."
+  },
+  {
+   "summary": "Dr. Jameson adds dinosaur DNA and renames himself Dr. Julius Jumblemorph.",
+   "participants": [
+    "Dr. Julius Jumblemorph"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 89,
+   "quote": "After he mixed in dinosaur DNA, he chose to change his name and became Dr. Julius Jumblemorph."
+  },
+  {
+   "summary": "Jumblemorph wins over politicians to make the Crossbreed Labs its own government.",
+   "participants": [
+    "Dr. Julius Jumblemorph",
+    "Crossbreed Labs"
+   ],
+   "location": "Bablovia",
+   "importance": "major",
+   "paragraph": 93,
+   "quote": "Dr. Jumblemorph convinced a few politicians to help him after allowing them to find their true selves."
+  },
+  {
+   "summary": "Stewart relates that white mice went extinct from overuse in experiments.",
+   "participants": [
+    "Stewart"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 106,
+   "quote": "In the end, the last white mouse died thirteen years ago."
+  },
+  {
+   "summary": "Stewart claims the Crossbreed Labs improved squirrels as replacement subjects and that squirrels secretly run all five factions.",
+   "participants": [
+    "Stewart",
+    "Crossbreed Labs"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 111,
+   "quote": "I believe all five factions are secretly being run by the squirrels."
+  },
+  {
+   "summary": "Ms. Skiffle ends the class.",
+   "participants": [
+    "Ms. Skiffle",
+    "Stewart"
+   ],
+   "location": "Bablovia",
+   "importance": "minor",
+   "paragraph": 114,
+   "quote": "Class dismissed!"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Grand Calcutron",
+   "relation": "leader_of",
+   "target": "Order of the Widget",
+   "note": "Machine leader with absolute authority.",
+   "paragraph": 13,
+   "quote": "Their leader is the Grand Calcutron, a machine that runs the Order with absolute authority."
+  },
+  {
+   "source": "Grand Calcutron",
+   "relation": "created",
+   "target": "Order of the Widget",
+   "note": "Founded as Calvin Granderson.",
+   "paragraph": 34,
+   "quote": "The organization was founded 54 years ago by a man named Calvin Granderson."
+  },
+  {
+   "source": "Phoebe",
+   "relation": "leader_of",
+   "target": "Agents of S.N.E.A.K.",
+   "note": "Current self-proclaimed head.",
+   "paragraph": 14,
+   "quote": "Their current leader, as of last week, is Phoebe, the self-proclaimed Head of S.N.E.A.K."
+  },
+  {
+   "source": "Legion of Evil",
+   "relation": "leader_of",
+   "target": "League of Dastardly Doom",
+   "note": "The ruling cabal.",
+   "paragraph": 15,
+   "quote": "The group that currently controls the League is a cabal known as the Legion of Evil."
+  },
+  {
+   "source": "Ol' Buzzbark",
+   "relation": "leader_of",
+   "target": "Goblin Explosioneers",
+   "note": "Alpha goblin, not exactly a leader.",
+   "paragraph": 16,
+   "quote": "is named Ol' Buzzbark."
+  },
+  {
+   "source": "Dr. Julius Jumblemorph",
+   "relation": "leader_of",
+   "target": "Crossbreed Labs",
+   "note": "Current head of the Labs.",
+   "paragraph": 17,
+   "quote": "The current head of the Crossbreed Labs is Dr. Julius Jumblemorph."
+  },
+  {
+   "source": "Thorna Grabbler",
+   "relation": "created",
+   "target": "Goblin Explosioneers",
+   "note": "She formed the faction from the goblin workers.",
+   "paragraph": 79,
+   "quote": "She let the goblins choose the name and ended up with the Goblin Explosioneers."
+  },
+  {
+   "source": "Major Monologue",
+   "relation": "created",
+   "target": "League of Dastardly Doom",
+   "note": "His supervillain support group became the League.",
+   "paragraph": 65,
+   "quote": "It started, interestingly, as a supervillain support group."
+  },
+  {
+   "source": "Clan of Cruelty",
+   "relation": "enemy",
+   "target": "Agents of S.N.E.A.K.",
+   "note": "The League led by the Clan of Cruelty blackmailed the other factions.",
+   "paragraph": 18,
+   "quote": "the League of Dastardly Doom, led by the Clan of Cruelty, blackmailed the other factions with a weather machine."
+  }
+ ],
+ "rejected": []
+}

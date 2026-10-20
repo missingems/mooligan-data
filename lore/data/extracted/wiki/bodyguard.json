@@ -1,0 +1,75 @@
+{
+ "page": "wiki/bodyguard",
+ "url": "https://mtg.wiki/page/Bodyguard",
+ "title": "Bodyguard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Burke",
+   "type": "character",
+   "aliases": [],
+   "description": "Bodyguard for Ambassador Laquatus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [
+    "Ambassador Laquatus"
+   ],
+   "description": "Ambassador guarded by Burke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Asked to be a bodyguard for the Cabal Patriarch right before killing him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Cabal whom Chainer killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chainer is asked to be the Cabal Patriarch's bodyguard right before killing him.",
+   "participants": [
+    "Chainer",
+    "Cabal Patriarch"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Chainer was asked to be a bodyguard for the Cabal Patriarch right before killing him."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Burke",
+   "relation": "serves",
+   "target": "Laquatus",
+   "note": "Burke was Laquatus's bodyguard.",
+   "paragraph": 2,
+   "quote": "Burke was a bodyguard for Ambassador Laquatus"
+  },
+  {
+   "source": "Chainer",
+   "relation": "killed",
+   "target": "Cabal Patriarch",
+   "note": "Chainer killed him.",
+   "paragraph": 2,
+   "quote": "right before killing him."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,113 @@
+{
+ "page": "wiki/signing-of-the-guildpact",
+ "url": "https://mtg.wiki/page/Signing_of_the_Guildpact",
+ "title": "Signing of the Guildpact",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:50Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Signing of the Guildpact",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that marked the start of Zal Concordant time reckoning in Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ancient living document signed with blood and magic by each of the paruns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Guildpact was signed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cisarzim",
+   "type": "character",
+   "aliases": [],
+   "description": "Led one side in a long war on Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros parun who led a side in the war and was the Guildpact's second signatory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azor",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of the first draft of the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Golgari parun, third signatory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Paruns",
+   "type": "faction",
+   "aliases": [],
+   "description": "Founders of the ten Ravnican guilds and signatories of the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild whose Jelenn Column complex preserves the first draft.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After a long war led by Cisarzim and Razia, the Guildpact is created, dividing duties across the guilds.",
+   "participants": [
+    "Cisarzim",
+    "Razia"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Guildpact was created on the plane of Ravnica after a long war"
+  },
+  {
+   "summary": "The paruns sign the Guildpact in blood and magic; Razia is second and Svogthir third.",
+   "participants": [
+    "Paruns",
+    "Razia",
+    "Svogthir",
+    "Azor"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Its second signatory was the Boros parun"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azor",
+   "relation": "created",
+   "target": "Guildpact",
+   "note": "Authored the first draft.",
+   "paragraph": 2,
+   "quote": "authored by Azor himself"
+  }
+ ],
+ "rejected": []
+}

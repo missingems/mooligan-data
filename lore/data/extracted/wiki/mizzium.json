@@ -1,0 +1,125 @@
+{
+ "page": "wiki/mizzium",
+ "url": "https://mtg.wiki/page/Mizzium",
+ "title": "Mizzium",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:18Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Mizzium",
+   "type": "artifact",
+   "aliases": [
+    "mizzium alloy"
+   ],
+   "description": "A magic-infused, durable, fireproof copper-gold alloy used by the Izzet League, invented by Niv-Mizzet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild that employs mizzium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where mizzium is made.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The Izzet parun who invented mizzium and named it after himself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Text Niv-Mizzet etched from memory onto a droplet of water.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mizzium Foundry",
+   "type": "location",
+   "aliases": [],
+   "description": "The only place on Ravnica where mizzium is smelted, guarded by viashino.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laboratory of Metallurgy",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where mizzium is further processed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Invizomizzium",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A refined, translucent form of mizzium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pyraquin",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Zomaj Hauc's flight sphere, made of dragon-forged invizomizzium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zomaj Hauc",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the Pyraquin flight sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaluzax",
+   "type": "character",
+   "aliases": [],
+   "description": "Izzet Observation Corps member who flies an observosphere.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "While etching the Guildpact onto a water droplet, Niv-Mizzet invents mizzium and names it after himself.",
+   "participants": [
+    "Niv-Mizzet",
+    "Mizzium",
+    "Guildpact"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He named this new wondermetal \"mizzium\" after himself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Niv-Mizzet",
+   "relation": "created",
+   "target": "Mizzium",
+   "note": "Invented the alloy.",
+   "paragraph": 0,
+   "quote": "It was invented by and named after their parun Niv-Mizzet"
+  },
+  {
+   "source": "Izzet League",
+   "relation": "other",
+   "target": "Mizzium",
+   "note": "Employs the alloy.",
+   "paragraph": 0,
+   "quote": "employed by the Izzet League of Ravnica"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,75 @@
+{
+ "page": "wiki/strongrock",
+ "url": "https://mtg.wiki/page/Strongrock",
+ "title": "Strongrock",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Strongrock",
+   "type": "location",
+   "aliases": [],
+   "description": "A small fortress at the base of Koskun Keep where bandits escort merchants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koskun Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Keep at whose base Strongrock lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strongrock.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the bandits loyal to him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandler",
+   "type": "character",
+   "aliases": [],
+   "description": "Thief who hangs out at Strongrock.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Joven",
+   "type": "character",
+   "aliases": [],
+   "description": "Thief who hangs out at Strongrock.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Strongrock",
+   "relation": "located_in",
+   "target": "Koskun Keep",
+   "note": "At the base of the keep.",
+   "paragraph": 0,
+   "quote": "Strongrock is a small fortress at the base of Koskun Keep , on Ulgrotha ."
+  },
+  {
+   "source": "Chandler",
+   "relation": "enemy",
+   "target": "Eron the Relentless",
+   "note": "Eron is chagrined at their hanging out at Strongrock.",
+   "paragraph": 2,
+   "quote": "The thieves Chandler and Joven are known to hang out here, much to Eron's chagrin."
+  }
+ ],
+ "rejected": []
+}

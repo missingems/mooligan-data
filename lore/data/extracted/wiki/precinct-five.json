@@ -1,0 +1,191 @@
+{
+ "page": "wiki/precinct-five",
+ "url": "https://mtg.wiki/page/Precinct_Five",
+ "title": "Precinct Five",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Precinct Five",
+   "type": "location",
+   "aliases": [],
+   "description": "The intellectual core of the Tenth District of Ravnica City, renowned for universities, libraries and secret labs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tenth District",
+   "type": "location",
+   "aliases": [],
+   "description": "A district of Ravnica City containing Precinct Five.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zonot Seven",
+   "type": "location",
+   "aliases": [],
+   "description": "The Simic Combine's sinkhole habitat and seat, the only zonot inside Ravnica City; it holds Zameck.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zameck",
+   "type": "location",
+   "aliases": [],
+   "description": "The Simic guildhall within Zonot Seven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild of biological research whose seat is Zonot Seven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild that runs labs and workshops and built the Blistercoils.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "The secretive guild whose operatives secretly control the Ismeri Library.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild of law, which quickly hushes violent crime in the precinct.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ismeri Library",
+   "type": "location",
+   "aliases": [],
+   "description": "One of Ravnica's greatest libraries, used by House Dimir as a covert hub for coded messages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prism University",
+   "type": "location",
+   "aliases": [],
+   "description": "A crystal-walled university teaching general magical theory, considered a rival of Strixhaven University after the opening of the Omenpaths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "A university on Arcavios that Prism University rivals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Blistercoils",
+   "type": "location",
+   "aliases": [
+    "Blistercoils"
+   ],
+   "description": "Enormous Izzet waterwheels near Zonot Seven's north end, and the nearby neighborhood of labs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hightower",
+   "type": "location",
+   "aliases": [],
+   "description": "A western neighborhood full of schools and academies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thinktank Enclave",
+   "type": "location",
+   "aliases": [],
+   "description": "An independent guildless city built on a raft of Golgari garbage, formerly run by the Izzet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hendrik Azmerak",
+   "type": "character",
+   "aliases": [
+    "B.H.",
+    "Grand Arbiter Hendrik Azmerak"
+   ],
+   "description": "Grand Arbiter who governs the Thinktank Enclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [
+    "Prime Speaker Zegana"
+   ],
+   "description": "Simic Prime Speaker whom visitors may meet in Zameck.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An emergency led to the Thinktank Enclave's temporary and then permanent sovereignty from the Izzet.",
+   "participants": [
+    "Thinktank Enclave",
+    "Izzet League"
+   ],
+   "location": "Thinktank Enclave",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "Formerly run by the Izzet, an emergency prompted the temporary and subsequently permanent sovereignty of this city."
+  },
+  {
+   "summary": "With the opening of the Omenpaths in 4562 AR, Prism University came to be considered a rival of Strixhaven University.",
+   "participants": [
+    "Prism University",
+    "Strixhaven University"
+   ],
+   "location": "Precinct Five",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "it is considered a rival of Strixhaven University"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zameck",
+   "relation": "located_in",
+   "target": "Zonot Seven",
+   "note": "The Simic guildhall lies in the zonot.",
+   "paragraph": 12,
+   "quote": "holds Zameck , the Simic guildhall"
+  },
+  {
+   "source": "House Dimir",
+   "relation": "other",
+   "target": "Ismeri Library",
+   "note": "Secretly controls it as a covert hub.",
+   "paragraph": 3,
+   "quote": "House Dimir operatives move unseen here, secretly controlling the Ismeri Library"
+  },
+  {
+   "source": "Hendrik Azmerak",
+   "relation": "leader_of",
+   "target": "Thinktank Enclave",
+   "note": "Governs it as Grand Arbiter.",
+   "paragraph": 11,
+   "quote": "It is governed by Grand Arbiter Hendrik \"B.H.\" Azmerak."
+  },
+  {
+   "source": "Prism University",
+   "relation": "enemy",
+   "target": "Strixhaven University",
+   "note": "Considered rivals.",
+   "paragraph": 10,
+   "quote": "it is considered a rival of Strixhaven University"
+  }
+ ],
+ "rejected": []
+}

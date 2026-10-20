@@ -1,0 +1,223 @@
+{
+ "page": "wiki/vec",
+ "url": "https://mtg.wiki/page/Vec",
+ "title": "Vec",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:59Z",
+ "storyline": "Rath Cycle",
+ "entities": [
+  {
+   "name": "Vec",
+   "type": "faction",
+   "aliases": [
+    "Vec tribe"
+   ],
+   "description": "A human tribe, possibly from Dominaria, trapped on Rath by Volrath's will and split into the independent en-Vec and the traitorous il-Vec.",
+   "presence": "appears"
+  },
+  {
+   "name": "en-Vec",
+   "type": "faction",
+   "aliases": [],
+   "description": "Semi-nomadic, devout Vec who stayed independent and resisted Volrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "il-Vec",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vec traitors who defected to Volrath's service; rogues, opportunists and fire mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor",
+   "type": "faction",
+   "aliases": [
+    "Kor tribe"
+   ],
+   "description": "A human-like race originating on Zendikar, trapped on Rath, divided into il-Kor and en-Kor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dal",
+   "type": "faction",
+   "aliases": [
+    "Dal tribe"
+   ],
+   "description": "A human tribe of warriors and wizards, the only Rathi tribe with permanent settlements, split into en-Dal and il-Dal.",
+   "presence": "appears"
+  },
+  {
+   "name": "en-Dal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dal faithful to their tribe.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "il-Dal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dal traitors who served the evincar of Rath; many became shadow creatures after the Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Evincar of Rath",
+   "type": "character",
+   "aliases": [
+    "Evincar"
+   ],
+   "description": "Ruler of Rath who experimented on the tribes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Evincar who trapped the Vec on Rath and commanded the il-Vec.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Kor, Vec and Dal lived in exile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Korvecdal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Collective name from the three tribes Kor, Vec and Dal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [
+    "Overlay",
+    "overlay"
+   ],
+   "description": "Event that moved Rath's peoples onto Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oleg il-Dal",
+   "type": "character",
+   "aliases": [
+    "Weaver King"
+   ],
+   "description": "Dal man who became the Weaver King, a psychic vampire and manipulator.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takara en-Dal",
+   "type": "character",
+   "aliases": [],
+   "description": "Half il-Vec, half en-Dal; daughter of Aniyeh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aniyeh en-Dal",
+   "type": "character",
+   "aliases": [],
+   "description": "Mother of Takara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "City of Traitors",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the heart of the Stronghold whose inhabitants were trapped in the shadow-world after the Overlay.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Vec are trapped on Rath by Volrath's will and divide into en-Vec and il-Vec.",
+   "participants": [
+    "Vec",
+    "Volrath",
+    "en-Vec",
+    "il-Vec",
+    "Rath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "who were trapped on the plane of Rath by the will of Volrath"
+  },
+  {
+   "summary": "The en-Vec unite with Rath's other peoples to resist Volrath.",
+   "participants": [
+    "en-Vec",
+    "Volrath"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The en -Vec united with the other peoples of Rath in resisting Volrath."
+  },
+  {
+   "summary": "After the Overlay, many City of Traitors inhabitants are trapped in the shadow-world.",
+   "participants": [
+    "il-Vec",
+    "City of Traitors",
+    "Rathi Overlay"
+   ],
+   "location": "City of Traitors",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "many of the inhabitants of the City of Traitors , located at the heart of the Stronghold , were trapped in the shadow -world between worlds."
+  },
+  {
+   "summary": "The Dal are transferred to Dominaria during the overlay.",
+   "participants": [
+    "Dal",
+    "Rathi Overlay"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "The Dal were transferred to Dominaria during the overlay."
+  }
+ ],
+ "relations": [
+  {
+   "source": "il-Vec",
+   "relation": "serves",
+   "target": "Volrath",
+   "note": "defected to his service",
+   "paragraph": 3,
+   "quote": "who defected to Volrath's service"
+  },
+  {
+   "source": "en-Vec",
+   "relation": "enemy",
+   "target": "Volrath",
+   "note": "resisted him",
+   "paragraph": 4,
+   "quote": "The en -Vec united with the other peoples of Rath in resisting Volrath."
+  },
+  {
+   "source": "Oleg il-Dal",
+   "relation": "member_of",
+   "target": "il-Dal",
+   "note": "became the Weaver King",
+   "paragraph": 11,
+   "quote": "Oleg il- Dal, the Weaver King"
+  },
+  {
+   "source": "Takara en-Dal",
+   "relation": "family",
+   "target": "Aniyeh en-Dal",
+   "note": "Aniyeh is Takara's mother",
+   "paragraph": 10,
+   "quote": "Aniyeh en- Dal (mother of Takara)"
+  }
+ ],
+ "rejected": []
+}

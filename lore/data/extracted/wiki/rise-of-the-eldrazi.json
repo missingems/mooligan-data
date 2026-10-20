@@ -1,0 +1,173 @@
+{
+ "page": "wiki/rise-of-the-eldrazi",
+ "url": "https://mtg.wiki/page/Rise_of_the_Eldrazi",
+ "title": "Rise of the Eldrazi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:48Z",
+ "storyline": "Zendikar block",
+ "entities": [
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with a reputation as a deathtrap that for millennia served as a prison for the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [
+    "Eldrazi Drones"
+   ],
+   "description": "Colorless astral monstrosities native to the Blind Eternities who have been released from their prison on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes from which the Eldrazi come.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brood lineage",
+   "type": "concept",
+   "aliases": [
+    "brood lineages"
+   ],
+   "description": "The lineage of drones and subordinate beings each colossal Eldrazi spawns, reflecting the progenitor's image.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi Spawn",
+   "type": "creature",
+   "aliases": [],
+   "description": "0/1 colorless Eldrazi creature tokens that can be sacrificed for mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [
+    "Emrakul, the Aeons Torn"
+   ],
+   "description": "A colossal colorless Eldrazi given as a Prerelease promotional card.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [
+    "Ulamog, the Infinite Gyre"
+   ],
+   "description": "A colossal Eldrazi featured on booster art.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [
+    "Kozilek, Butcher of Truth"
+   ],
+   "description": "The first Eldrazi previewed from the set, bearing annihilator.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eye of Ugin",
+   "type": "location",
+   "aliases": [
+    "Eye of Ugin seal"
+   ],
+   "description": "The seal whose release unleashed the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker dealing with the aftermath of releasing the Eye of Ugin seal in the webcomic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan the Mad"
+   ],
+   "description": "A planeswalker who returns as a card and appears in the Enter the Eldrazi webcomic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker featured as a card in the set.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tuktuk the Explorer",
+   "type": "character",
+   "aliases": [
+    "Tuktuk the Returned"
+   ],
+   "description": "A 1/1 Goblin legend that becomes a 5/5 Goblin Golem named Tuktuk the Returned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enter the Eldrazi",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A three-part webcomic from April 2010 about Jace and Sarkhan after the seal's release.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eldrazi, long imprisoned on Zendikar, are released, making the plane's perils deadlier.",
+   "participants": [
+    "Eldrazi",
+    "Zendikar"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Eldrazi have been released."
+  },
+  {
+   "summary": "Jace and Sarkhan deal with the aftermath of releasing the Eye of Ugin seal.",
+   "participants": [
+    "Jace Beleren",
+    "Sarkhan Vol",
+    "Eye of Ugin"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Enter the Eldrazi is a webcomic about Jace and Sarkhan as they deal with the aftermath of releasing the Eye of Ugin seal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eldrazi",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "imprisoned there for millennia",
+   "paragraph": 4,
+   "quote": "for millennia, the plane has served as a prison for the Eldrazi"
+  },
+  {
+   "source": "Eldrazi Spawn",
+   "relation": "serves",
+   "target": "Eldrazi",
+   "note": "tokens produced by brood lineage creatures and sacrificed to cast Eldrazi",
+   "paragraph": 27,
+   "quote": "These 0/1 colorless creatures can be sacrificed to add one colorless mana"
+  }
+ ],
+ "rejected": []
+}

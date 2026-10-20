@@ -1,0 +1,412 @@
+{
+ "page": "stories/episode-1-travelers-2021-01-07",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-1-travelers-2021-01-07",
+ "title": "Episode 1: Travelers",
+ "story_date": "2021-01-07",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:35:52Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Kaya Far-Traveler"
+   ],
+   "description": "A planeswalker ghost-assassin and former Orzhov guildmaster, hired anonymously to hunt a monster devouring townsfolk on Kaldheim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inga Rune-Eyes",
+   "type": "character",
+   "aliases": [
+    "Inga",
+    "Rune-Eyes"
+   ],
+   "description": "The blind clan leader of the Omenseekers, whose white sight knows where her clan members go and who casts holding spells with a lantern.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alrund",
+   "type": "deity",
+   "aliases": [
+    "Asi"
+   ],
+   "description": "A god of Kaldheim who travels in mortal guise as the old Omenseeker advisor Asi, with a raven Hakka, and who shields the party and promises Cosima's longship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hakka",
+   "type": "creature",
+   "aliases": [],
+   "description": "The raven that perches on Asi's shoulder and brings him information.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hras",
+   "type": "character",
+   "aliases": [],
+   "description": "A young hunter of Sevalgr who saw the monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hersir",
+   "type": "character",
+   "aliases": [
+    "the hersir",
+    "the alderman"
+   ],
+   "description": "The leader of the village of Sevalgr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Monster",
+   "type": "creature",
+   "aliases": [
+    "the monster",
+    "the creature"
+   ],
+   "description": "A twelve-foot pink-fleshed monster with fused extra arms and bone-like mask that absorbs people, regenerates, and flees into a metal vein in the cave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarulf",
+   "type": "creature",
+   "aliases": [
+    "Sarulf the Realm Eater",
+    "the Dread-Wolf"
+   ],
+   "description": "A Cosmos Monster, a wolf said to eat realms, feared by an Omenseeker as the culprit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cosima",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god of Kaldheim whose longship will aid Kaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toski",
+   "type": "deity",
+   "aliases": [],
+   "description": "The squirrel messenger of the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenseekers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A clan of legendary explorers led by Inga Rune-Eyes, with tattooed navigational maps.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cosmos Monsters",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings created at the birth of the world who dwell in the void between realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sevalgr",
+   "type": "location",
+   "aliases": [],
+   "description": "A fishing village that has lost many people to disappearances.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aldergard",
+   "type": "location",
+   "aliases": [
+    "the Aldergard forest"
+   ],
+   "description": "An old and strange forest near Sevalgr, where the monster's cave lies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bretagard",
+   "type": "location",
+   "aliases": [],
+   "description": "The realm of Kaldheim where the events occur.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "The giant tree linking the realms of Kaldheim, visible in the sky.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm whose light atop the World Tree will guide Kaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immersturm",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm of demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirda Pillars",
+   "type": "location",
+   "aliases": [],
+   "description": "The place from which Kaya traveled with the Omenseekers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Viking plane of nine realms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Kaya recently left behind.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "A collision of the realms bringing war and chaos, which Alrund fears approaches.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cosima's longship",
+   "type": "artifact",
+   "aliases": [
+    "longship of Cosima"
+   ],
+   "description": "A god's longship that can travel between realms, promised to Kaya.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Omenseekers arrive by ship at Sevalgr, a village plagued by disappearances.",
+   "participants": [
+    "Omenseekers",
+    "Inga Rune-Eyes",
+    "Alrund"
+   ],
+   "location": "Sevalgr",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "There could be no mistaking them. Omenseekers."
+  },
+  {
+   "summary": "Villagers say the disappearances are murders, and a young hunter, Hras, reports that a monster did it.",
+   "participants": [
+    "Inga Rune-Eyes",
+    "Hras",
+    "Hersir"
+   ],
+   "location": "Sevalgr",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "A monster. It was a monster."
+  },
+  {
+   "summary": "Inga orders a war party into the Aldergard forest, noting Kaya came up with the idea.",
+   "participants": [
+    "Inga Rune-Eyes",
+    "Alrund",
+    "Kaya"
+   ],
+   "location": "Sevalgr",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "I want a war party ready to set off within the hour."
+  },
+  {
+   "summary": "In the Aldergard, Asi and an Omenseeker discuss whether the culprit is the Cosmos Monster Sarulf.",
+   "participants": [
+    "Alrund",
+    "Kaya",
+    "Sarulf"
+   ],
+   "location": "Aldergard",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "He is one of the Cosmos Monsters."
+  },
+  {
+   "summary": "Asi's raven Hakka returns and leads the party to a cave.",
+   "participants": [
+    "Alrund",
+    "Hakka",
+    "Kaya"
+   ],
+   "location": "Aldergard",
+   "importance": "minor",
+   "paragraph": 38,
+   "quote": "my friend may have found us a lead"
+  },
+  {
+   "summary": "In the cave Kaya spots strange metallic veins and warns an Omenseeker not to touch them.",
+   "participants": [
+    "Kaya",
+    "Inga Rune-Eyes"
+   ],
+   "location": "Aldergard",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "veins of some kind of metal ran along the wall and ceiling of the cave"
+  },
+  {
+   "summary": "The party finds a monster feeding on a dire bear; it kills Omenseekers by fusing with and absorbing them.",
+   "participants": [
+    "Monster",
+    "Kaya",
+    "Omenseekers"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 58,
+   "quote": "one was pinned beneath the creature, screaming as the spindly arms sank into his face"
+  },
+  {
+   "summary": "Inga freezes the monster's arm with a lantern spell and Kaya severs it with her dagger.",
+   "participants": [
+    "Inga Rune-Eyes",
+    "Kaya",
+    "Monster"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 65,
+   "quote": "lopping it off at the shoulder"
+  },
+  {
+   "summary": "The monster absorbs a dead Omenseeker and regrows its arm.",
+   "participants": [
+    "Monster"
+   ],
+   "location": "Aldergard",
+   "importance": "minor",
+   "paragraph": 67,
+   "quote": "He disappeared into the raw pink flesh, slowly absorbed."
+  },
+  {
+   "summary": "Kaya phases through the cave wall to escape being cornered and then cuts through one of the monster's legs.",
+   "participants": [
+    "Kaya",
+    "Monster"
+   ],
+   "location": "Aldergard",
+   "importance": "minor",
+   "paragraph": 76,
+   "quote": "she jammed all the arcane power she could muster into her blade and lunged"
+  },
+  {
+   "summary": "Asi glows with divine light, revealed as Alrund, and shields the party with a barrier; the monster flees into the metal vein.",
+   "participants": [
+    "Alrund",
+    "Monster",
+    "Kaya",
+    "Inga Rune-Eyes"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 86,
+   "quote": "it seemed to sink into the metal, as it if were a thick and viscous liquid"
+  },
+  {
+   "summary": "Alrund explains gods travel in mortal guise and Kaya berates him for letting the monster escape.",
+   "participants": [
+    "Alrund",
+    "Kaya",
+    "Inga Rune-Eyes"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 89,
+   "quote": "It suits the gods, from time to time, to travel in mortal guise"
+  },
+  {
+   "summary": "Alrund promises Kaya the longship of Cosima to pursue the creature across realms.",
+   "participants": [
+    "Alrund",
+    "Kaya",
+    "Cosima's longship"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 97,
+   "quote": "the longship of Cosima will aid you in this quest"
+  },
+  {
+   "summary": "Alrund opens a doorway into the void and warns of a coming Doomskar.",
+   "participants": [
+    "Alrund",
+    "Kaya",
+    "Inga Rune-Eyes"
+   ],
+   "location": "Aldergard",
+   "importance": "major",
+   "paragraph": 104,
+   "quote": "I fear a Doomskar approaches—one unlike any in living memory."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Inga Rune-Eyes",
+   "relation": "leader_of",
+   "target": "Omenseekers",
+   "note": "Inga is the clan leader.",
+   "paragraph": 3,
+   "quote": "Inga Rune-Eyes, the clan leader of the Omenseekers"
+  },
+  {
+   "source": "Alrund",
+   "relation": "serves",
+   "target": "Inga Rune-Eyes",
+   "note": "Asi has been her advisor; he is actually the god Alrund.",
+   "paragraph": 87,
+   "quote": "those sightless white eyes stayed fixed on her former advisor"
+  },
+  {
+   "source": "Hakka",
+   "relation": "serves",
+   "target": "Alrund",
+   "note": "The raven is Asi's companion.",
+   "paragraph": 36,
+   "quote": "Hakka's back."
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Inga Rune-Eyes",
+   "note": "Kaya hunts the monster alongside Inga's party.",
+   "paragraph": 22,
+   "quote": "Inga, leader of the Omenseekers, was the first person Kaya had met on this plane"
+  },
+  {
+   "source": "Kaya",
+   "relation": "enemy",
+   "target": "Monster",
+   "note": "Kaya hunts and fights the monster.",
+   "paragraph": 92,
+   "quote": "We had weakened it,"
+  },
+  {
+   "source": "Monster",
+   "relation": "killed",
+   "target": "Omenseekers",
+   "note": "It kills and absorbs Omenseekers in the cave.",
+   "paragraph": 67,
+   "quote": "He disappeared into the raw pink flesh, slowly absorbed."
+  }
+ ],
+ "rejected": []
+}

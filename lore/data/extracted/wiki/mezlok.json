@@ -1,0 +1,105 @@
+{
+ "page": "wiki/mezlok",
+ "url": "https://mtg.wiki/page/Mezlok",
+ "title": "Mezlok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mezlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Proud young human planeswalker and wizard, great-grandson of Minoch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minoch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mezlok's great-grandfather.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taishiar",
+   "type": "character",
+   "aliases": [],
+   "description": "Mezlok's servant and companion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jehadt",
+   "type": "character",
+   "aliases": [],
+   "description": "Warder of Gordahn who challenged Mezlok to a duel and lost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gordahn",
+   "type": "location",
+   "aliases": [],
+   "description": "Village whose chief chose Mezlok as duelist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrankkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane hosting the contest of mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obsidias",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Mezlok had a run-in with a rival.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jehadt challenges Mezlok to a duel, loses and teleports away.",
+   "participants": [
+    "Jehadt",
+    "Mezlok"
+   ],
+   "location": "Gordahn",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jehadt was offended by this and challenged Mezlok to a duel. He lost and teleported away, hoping to face Mezlok again someday."
+  },
+  {
+   "summary": "Mezlok, chosen by Gordahn, is the final entry in the contest.",
+   "participants": [
+    "Mezlok",
+    "Gordahn"
+   ],
+   "location": "Mirrankkar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Mezlok, chosen by Gordahn, was the final entry in the contest."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Taishiar",
+   "relation": "serves",
+   "target": "Mezlok",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Taishiar was his servant."
+  },
+  {
+   "source": "Mezlok",
+   "relation": "enemy",
+   "target": "Jehadt",
+   "note": "duelled and defeated him",
+   "paragraph": 2,
+   "quote": "Jehadt was offended by this and challenged Mezlok to a duel."
+  }
+ ],
+ "rejected": []
+}

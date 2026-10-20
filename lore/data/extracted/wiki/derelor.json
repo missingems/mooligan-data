@@ -1,0 +1,208 @@
+{
+ "page": "wiki/derelor",
+ "url": "https://mtg.wiki/page/Derelor",
+ "title": "Derelor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:26Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Derelor",
+   "type": "creature",
+   "aliases": [
+    "derelors"
+   ],
+   "description": "Big centaur-like thrull with a giant frog head, summoned at least twice with widespread devastation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Summoned a derelor in Sarpadia against the Farrelites.",
+   "presence": "appears"
+  },
+  {
+   "name": "Farrelites",
+   "type": "faction",
+   "aliases": [],
+   "description": "Target of the derelor; their camp was annihilated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who killed the derelor and annihilated the Farrelite camp, enraged by his sister's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymolin Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "Sister of Tevesh Szat, whose death enraged him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oliver Farrel",
+   "type": "character",
+   "aliases": [],
+   "description": "Zealot killed in Szat's attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaylesh",
+   "type": "character",
+   "aliases": [],
+   "description": "Priestess killed in Szat's attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sianna",
+   "type": "character",
+   "aliases": [],
+   "description": "Champion killed in Szat's attack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endrek Sahr",
+   "type": "character",
+   "aliases": [],
+   "description": "Thrull breeder given an execution order after the derelor failed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirsch",
+   "type": "character",
+   "aliases": [
+    "Kirch"
+   ],
+   "description": "Black mage who summoned the derelor in Mercadia City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raitrick",
+   "type": "character",
+   "aliases": [],
+   "description": "Sorcerer fused with the derelor to create the Delraich.",
+   "presence": "appears"
+  },
+  {
+   "name": "Delraich",
+   "type": "creature",
+   "aliases": [],
+   "description": "Warped amalgam of thrull and sorcerer that murdered Sleedge and his men.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sleedge",
+   "type": "character",
+   "aliases": [],
+   "description": "Caravan leader murdered by the delraich.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the first derelor was summoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the second derelor was summoned.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Order of the Ebon Hand's derelor was killed immediately by Tevesh Szat's Fireball.",
+   "participants": [
+    "Order of the Ebon Hand",
+    "Tevesh Szat",
+    "Derelor"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was immediately killed by a Fireball cast by the planeswalker Tevesh Szat"
+  },
+  {
+   "summary": "Szat annihilated the entire Farrelite camp, killing Oliver Farrel, Vaylesh and Sianna.",
+   "participants": [
+    "Tevesh Szat",
+    "Oliver Farrel",
+    "Vaylesh",
+    "Sianna",
+    "Farrelites"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Szat went on to annihilate the entire camp"
+  },
+  {
+   "summary": "Kirsch's derelor was fused with the sorcerer Raitrick, creating the Delraich.",
+   "participants": [
+    "Kirsch",
+    "Raitrick",
+    "Delraich"
+   ],
+   "location": "Mercadia City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kirsch cast the spell using his vomit and Raitrick's blood"
+  },
+  {
+   "summary": "The delraich murdered caravan leader Sleedge and all his men.",
+   "participants": [
+    "Delraich",
+    "Sleedge"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "murdering him and all his men and leaving his camp in tatters"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tevesh Szat",
+   "relation": "killed",
+   "target": "Derelor",
+   "note": "Killed the Sarpadian derelor with Fireball.",
+   "paragraph": 2,
+   "quote": "was immediately killed by a Fireball cast by the planeswalker Tevesh Szat"
+  },
+  {
+   "source": "Tevesh Szat",
+   "relation": "family",
+   "target": "Tymolin Loneglade",
+   "note": "Sister.",
+   "paragraph": 2,
+   "quote": "enraged at the death of his sister, Tymolin Loneglade"
+  },
+  {
+   "source": "Kirsch",
+   "relation": "created",
+   "target": "Delraich",
+   "note": "Cast the spell creating it.",
+   "paragraph": 3,
+   "quote": "Kirsch cast the spell using his vomit and Raitrick's blood, creating the Delraich"
+  },
+  {
+   "source": "Delraich",
+   "relation": "killed",
+   "target": "Sleedge",
+   "note": "Murdered him and his men.",
+   "paragraph": 3,
+   "quote": "murdering him and all his men"
+  }
+ ],
+ "rejected": []
+}

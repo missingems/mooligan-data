@@ -1,0 +1,61 @@
+{
+ "page": "wiki/mudbutton-warren",
+ "url": "https://mtg.wiki/page/Mudbutton_Warren",
+ "title": "Mudbutton Warren",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:42Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Mudbutton Warren",
+   "type": "location",
+   "aliases": [],
+   "description": "A boggart warren on Lorwyn of huts in trees above a swamp, home to 300 residents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greasewretch Warren",
+   "type": "location",
+   "aliases": [],
+   "description": "Shadowmoor counterpart of Mudbutton Warren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Auntie Gobgot",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the eldest residents, who leads the warren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the warren.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Auntie Gobgot",
+   "relation": "leader_of",
+   "target": "Mudbutton Warren",
+   "note": "Leads the warren.",
+   "paragraph": 1,
+   "quote": "The warren is led by Auntie Gobgot"
+  },
+  {
+   "source": "Mudbutton Warren",
+   "relation": "located_in",
+   "target": "Lorwyn",
+   "note": "It is a warren on Lorwyn.",
+   "paragraph": 0,
+   "quote": "Mudbutton Warren is a boggart warren on Lorwyn"
+  }
+ ],
+ "rejected": []
+}

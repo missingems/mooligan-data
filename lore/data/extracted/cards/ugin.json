@@ -1,0 +1,133 @@
+{
+ "page": "cards/ugin",
+ "url": "https://scryfall.com/sets/ugin",
+ "title": "Ugin's Fate: card flavor text",
+ "story_date": "2015-01-17",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:53Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "the Great Teacher"
+   ],
+   "description": "The Spirit Dragon, a planeswalker whose magic reaches beyond the dragons and who helped trap the Eldrazi on Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "A planeswalker (character) from whom Ugin learned little while trapping the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker (character) from whom Ugin gleaned the rudiments of lithomancy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings trapped on Zendikar by Ugin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Eldrazi were trapped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose history was rewritten by the changing of a single moment in its past.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Surrak",
+   "type": "character",
+   "aliases": [
+    "Surrak, the Hunt Caller"
+   ],
+   "description": "The Hunt Caller, who scorns the ainok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jilaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A Temur whisperer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sultai",
+   "type": "faction",
+   "aliases": [],
+   "description": "A clan that saw Ugin's power as one more resource to exploit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ainok",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people scorned by Surrak.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The changing of a single moment in Tarkir's past rewrites its history.",
+   "participants": [
+    "Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "The changing of a single moment in Tarkir's past altered its future, rewriting its history."
+  },
+  {
+   "summary": "Ugin traps the Eldrazi on Zendikar, learning little from Sorin but the rudiments of lithomancy from Nahiri.",
+   "participants": [
+    "Ugin",
+    "Sorin Markov",
+    "Nahiri",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "While trapping the Eldrazi on Zendikar, Ugin learned little from Sorin"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ugin",
+   "relation": "enemy",
+   "target": "Eldrazi",
+   "note": "Ugin trapped the Eldrazi on Zendikar",
+   "paragraph": 12,
+   "quote": "While trapping the Eldrazi on Zendikar, Ugin learned little from Sorin"
+  },
+  {
+   "source": "Nahiri",
+   "relation": "mentor_of",
+   "target": "Ugin",
+   "note": "Ugin gleaned lithomancy from Nahiri",
+   "paragraph": 12,
+   "quote": "he gleaned the rudiments of lithomancy from Nahiri"
+  }
+ ],
+ "rejected": []
+}

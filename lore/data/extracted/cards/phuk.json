@@ -1,0 +1,97 @@
+{
+ "page": "cards/phuk",
+ "url": "https://scryfall.com/sets/phuk",
+ "title": "Hachette UK: card flavor text",
+ "story_date": "2006-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:26:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Marrow-Gnawer",
+   "type": "character",
+   "aliases": [],
+   "description": "Nezumi who united three gangs and is called first lord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meloku the Clouded Mirror",
+   "type": "character",
+   "aliases": [
+    "Meloku"
+   ],
+   "description": "A Soratami who despises the nezumi yet finds them useful.",
+   "presence": "appears"
+  },
+  {
+   "name": "Split-Tail",
+   "type": "character",
+   "aliases": [],
+   "description": "Old nezumi who stole scrolls from the Minamo School.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minamo School",
+   "type": "faction",
+   "aliases": [],
+   "description": "School robbed by Split-Tail.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nezumi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rat folk whose first shamans were born after the theft.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marrow-Gnawer unites three nezumi gangs by slaying their leaders in a night.",
+   "participants": [
+    "Marrow-Gnawer",
+    "Nezumi"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Marrow-Gnawer united three nezumi gangs when he slew their leaders in a single night."
+  },
+  {
+   "summary": "Split-Tail steals scrolls from the Minamo School, leading to the first nezumi shamans.",
+   "participants": [
+    "Split-Tail",
+    "Minamo School",
+    "Nezumi"
+   ],
+   "location": "Minamo School",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Four generations ago, old Split-Tail stole a bundle of scrolls from the Minamo School."
+  },
+  {
+   "summary": "Meloku voices disgust at the nezumi.",
+   "participants": [
+    "Meloku the Clouded Mirror",
+    "Nezumi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "These nezumi, they disgust me."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marrow-Gnawer",
+   "relation": "leader_of",
+   "target": "Nezumi",
+   "note": "called their first lord",
+   "paragraph": 0,
+   "quote": "Now they call him their first lord."
+  }
+ ],
+ "rejected": []
+}

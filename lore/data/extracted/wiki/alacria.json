@@ -1,0 +1,84 @@
+{
+ "page": "wiki/alacria",
+ "url": "https://mtg.wiki/page/Alacria",
+ "title": "Alacria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Alacria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A small plane of the Multiverse, a vast city of more than a dozen districts with a rich sporting tradition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane linked to Alacria via a stable Omenpath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alacrian Quickbeasts",
+   "type": "faction",
+   "aliases": [
+    "Quickbeasts"
+   ],
+   "description": "Alacria's racing team sent to the second Ghirapur Grand Prix, led by Caradora.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caradora",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Alacrian Quickbeasts team, riding Lagorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lagorin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Caradora's mount.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alacria visits the first Ghirapur Grand Prix and sends the Alacrian Quickbeasts to race in the second.",
+   "participants": [
+    "Alacria",
+    "Alacrian Quickbeasts",
+    "Caradora",
+    "Lagorin"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "sent the Alacrian Quickbeasts to race in the second"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Caradora",
+   "relation": "leader_of",
+   "target": "Alacrian Quickbeasts",
+   "note": "She leads the team with her mount Lagorin.",
+   "paragraph": 3,
+   "quote": "The team is led by Caradora and her mount"
+  },
+  {
+   "source": "Alacria",
+   "relation": "other",
+   "target": "Avishkar",
+   "note": "Linked by a stable Omenpath.",
+   "paragraph": 2,
+   "quote": "Alacria is linked to Avishkar via a stable Omenpath"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,70 @@
+{
+ "page": "wiki/teetering-peaks",
+ "url": "https://mtg.wiki/page/Teetering_Peaks",
+ "title": "Teetering Peaks",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Teetering Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "Massive boulders perched on narrow rock spires in the Teetering Stone Canyon, Makindi Trenches, Ondu, Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teetering Stone Canyon",
+   "type": "location",
+   "aliases": [],
+   "description": "Canyon containing the Teetering Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Makindi Trenches",
+   "type": "location",
+   "aliases": [
+    "Makindi"
+   ],
+   "description": "Region of Ondu on Zendikar containing the Teetering Stone Canyon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar containing the Makindi Trenches.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose unstable gravity keeps the Teetering Peaks steady.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Teetering Peaks",
+   "relation": "located_in",
+   "target": "Teetering Stone Canyon",
+   "note": "Perched throughout the canyon.",
+   "paragraph": 0,
+   "quote": "throughout the Teetering Stone Canyon, part of the Makindi Trenches of Ondu on the plane of Zendikar"
+  },
+  {
+   "source": "Teetering Stone Canyon",
+   "relation": "located_in",
+   "target": "Makindi Trenches",
+   "note": "Canyon is part of the Makindi Trenches.",
+   "paragraph": 0,
+   "quote": "part of the Makindi Trenches of Ondu on the plane of Zendikar"
+  }
+ ],
+ "rejected": []
+}

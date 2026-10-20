@@ -1,0 +1,103 @@
+{
+ "page": "wiki/blorpityblorpboop",
+ "url": "https://mtg.wiki/page/Blorpityblorpboop",
+ "title": "Blorpityblorpboop",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:32Z",
+ "storyline": "Unfinity",
+ "entities": [
+  {
+   "name": "Ambassador Blorpityblorpboop",
+   "type": "character",
+   "aliases": [
+    "Blorpityblorpboop"
+   ],
+   "description": "An alien advisor and de facto leader of the Blorbians, a guest and resident of Myra the Magnificent's Intergalactic Astrotorium of Fun after the destruction of Blorb-12.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blorbians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Aliens, life-long guests of the park, unbeatable at its arcade and carnival games.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Rex Nebula",
+   "type": "character",
+   "aliases": [
+    "Rex Nebula"
+   ],
+   "description": "Man who destroyed the Blorbians' homeworld and has a friendly rivalry with the Ambassador.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blorb-12",
+   "type": "plane",
+   "aliases": [],
+   "description": "Homeworld of the Blorbians, destroyed by Captain Rex Nebula.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Myra the Magnificent's Intergalactic Astrotorium of Fun",
+   "type": "location",
+   "aliases": [],
+   "description": "The park where the Blorbians reside.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Captain Rex Nebula destroyed the Blorbians' homeworld Blorb-12.",
+   "participants": [
+    "Captain Rex Nebula",
+    "Blorbians"
+   ],
+   "location": "Blorb-12",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "the destruction of their homeworld Blorb-12 at the hands of Captain Rex Nebula"
+  },
+  {
+   "summary": "The Ambassador and Rex Nebula sometimes have dinner together despite a friendly rivalry.",
+   "participants": [
+    "Ambassador Blorpityblorpboop",
+    "Captain Rex Nebula"
+   ],
+   "location": "Myra the Magnificent's Intergalactic Astrotorium of Fun",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Sometimes they even have dinner together."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ambassador Blorpityblorpboop",
+   "relation": "leader_of",
+   "target": "Blorbians",
+   "note": "De facto leader",
+   "paragraph": 1,
+   "quote": "Blorpityblorpboop is the de facto leader of the Blorbians"
+  },
+  {
+   "source": "Captain Rex Nebula",
+   "relation": "enemy",
+   "target": "Blorbians",
+   "note": "Destroyed their homeworld",
+   "paragraph": 0,
+   "quote": "the destruction of their homeworld Blorb-12 at the hands of Captain Rex Nebula"
+  },
+  {
+   "source": "Ambassador Blorpityblorpboop",
+   "relation": "other",
+   "target": "Captain Rex Nebula",
+   "note": "Friendly rivalry",
+   "paragraph": 2,
+   "quote": "Rex Nebula and the Ambassador have a friendly rivalry"
+  }
+ ],
+ "rejected": []
+}

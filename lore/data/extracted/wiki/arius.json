@@ -1,0 +1,92 @@
+{
+ "page": "wiki/arius",
+ "url": "https://mtg.wiki/page/Arius",
+ "title": "Arius",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Arius, Flyby Trawler",
+   "type": "character",
+   "aliases": [
+    "Arius",
+    "Arius, the Flyby Trawler"
+   ],
+   "description": "Hammerhead Chordatan pirate who flies a rocket-powered glider; member of the Keelhaulers racing team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keelhaulers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racing team of Chordatan pirates under Captain Howler in the Ghirapur Grand Prix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Captain Howler",
+   "type": "character",
+   "aliases": [
+    "Howler"
+   ],
+   "description": "Captain of the Keelhaulers racing team.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Race in which the Keelhaulers participated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Arius has taken up residence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muraganda",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Arius traveled to with his team.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arius traveled to Muraganda with his team.",
+   "participants": [
+    "Arius, Flyby Trawler",
+    "Keelhaulers"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He traveled to Muraganda with his team."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arius, Flyby Trawler",
+   "relation": "member_of",
+   "target": "Keelhaulers",
+   "note": "",
+   "paragraph": 0,
+   "quote": "member of the Keelhaulers racing team under Captain Howler that participated in the Ghirapur Grand Prix"
+  },
+  {
+   "source": "Arius, Flyby Trawler",
+   "relation": "serves",
+   "target": "Captain Howler",
+   "note": "Crewed under him.",
+   "paragraph": 2,
+   "quote": "Arius was a member of Howler's boisterous crew"
+  }
+ ],
+ "rejected": []
+}

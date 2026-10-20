@@ -1,0 +1,185 @@
+{
+ "page": "wiki/caligo-morass",
+ "url": "https://mtg.wiki/page/Caligo_Morass",
+ "title": "Caligo Morass",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:02Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Caligo Morass",
+   "type": "location",
+   "aliases": [
+    "Caligo Forest"
+   ],
+   "description": "A marshy delta in Benalia on the northern coast of Dominaria, childhood home of Liliana Vess.",
+   "presence": "appears"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Dominaria containing the Caligo Morass.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the Caligo Morass lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vess Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "A once-grand estate overshadowing the town of Vess, Liliana's family home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vess",
+   "type": "location",
+   "aliases": [],
+   "description": "A small town at the heart of the Caligo Morass.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A planeswalker necromancer who grew up in the Caligo Forest and returned centuries later to rebuild the manor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Josu Vess",
+   "type": "character",
+   "aliases": [
+    "Josu"
+   ],
+   "description": "Liliana's brother, whom she turned into a lich with a false remedy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raven Man",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure Liliana first met while seeking a cure for her sick brother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction under Belzenlok whose rise corrupted the region.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "A demon who led the Cabal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "An Elder Dragon to whom Liliana was contracted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who sacrificed himself on Liliana's behalf.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle that took a heavy toll on Liliana.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liliana grows up in her manor and meets the Raven Man while trying to cure her sick brother.",
+   "participants": [
+    "Liliana Vess",
+    "Raven Man",
+    "Josu Vess"
+   ],
+   "location": "Vess Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "where she first met the Raven Man while trying to find a cure for her sick brother"
+  },
+  {
+   "summary": "Liliana gives her brother Josu a false remedy that turns him into a lich.",
+   "participants": [
+    "Liliana Vess",
+    "Josu Vess"
+   ],
+   "location": "Vess Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This was where Liliana gave her brother Josu a false remedy, which instead turned him into a lich"
+  },
+  {
+   "summary": "Liliana first planeswalks away, leaving her household and manor to fall.",
+   "participants": [
+    "Liliana Vess"
+   ],
+   "location": "Caligo Morass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "from where she first planeswalked away, leaving her household and manor to fall"
+  },
+  {
+   "summary": "With the rise of the Cabal under Belzenlok, the forest, town and manor succumb to corruption and decay.",
+   "participants": [
+    "Cabal",
+    "Belzenlok"
+   ],
+   "location": "Caligo Morass",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the entire region — forest, town, and manor — succumbed to corruption and decay"
+  },
+  {
+   "summary": "Centuries later, freed from her contracts, Liliana returns and begins rebuilding the manor's husk.",
+   "participants": [
+    "Liliana Vess"
+   ],
+   "location": "Vess Manor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She began rebuilding the manor's husk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "family",
+   "target": "Josu Vess",
+   "note": "Her brother.",
+   "paragraph": 2,
+   "quote": "Liliana gave her brother Josu a false remedy"
+  },
+  {
+   "source": "Belzenlok",
+   "relation": "leader_of",
+   "target": "Cabal",
+   "note": "The Cabal rose under Belzenlok.",
+   "paragraph": 2,
+   "quote": "the rise of the Cabal under Belzenlok"
+  }
+ ],
+ "rejected": []
+}

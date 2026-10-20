@@ -1,0 +1,201 @@
+{
+ "page": "wiki/giant",
+ "url": "https://mtg.wiki/page/Giant",
+ "title": "Giant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:05Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Giants",
+   "type": "creature",
+   "aliases": [
+    "Giant"
+   ],
+   "description": "A species of massive, humanlike creatures, mostly dim and violent and most strongly aligned with red mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Frost giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Intelligent, secretive giants of Kaldheim's Surtland who use runic magic to divine the Cosmos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fire giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "Brutal, impulsive giants of Surtland who raid and war on the frost giants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Storm Giants",
+   "type": "faction",
+   "aliases": [],
+   "description": "A larger variety of giants living in the Kingdom of Storms in Eldraine's clouds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yorvo",
+   "type": "character",
+   "aliases": [],
+   "description": "A giant and the king of Garenbrig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beluna Grandsquall",
+   "type": "character",
+   "aliases": [],
+   "description": "The queen of the Kingdom of Storms, ruling from the castle of Stormkeld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jötun",
+   "type": "faction",
+   "aliases": [
+    "Giants of the Jötun tribe"
+   ],
+   "description": "A tribe of Dominarian giants that aided the Kjeldorans in the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of Stromgald",
+   "type": "faction",
+   "aliases": [],
+   "description": "The order the Kjeldorans fought during the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agnomakhos",
+   "type": "character",
+   "aliases": [],
+   "description": "An archon who used the war against the giants as a pretense for evil actions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titans",
+   "type": "creature",
+   "aliases": [],
+   "description": "Extremely powerful elder giants who ruled Theros's ancient past before being sealed away in the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hurda",
+   "type": "creature",
+   "aliases": [
+    "Hurdas"
+   ],
+   "description": "A docile species of giants on Zendikar used as pack animals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Turntimber Tribe",
+   "type": "faction",
+   "aliases": [],
+   "description": "A tribe of Zendikar giants on Ondu who practice druidism.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild whose giants are known as sunder shamans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with giants of all colors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with giant tribes and hurdas.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Ice Age some Jötun giants aid the Kjeldorans against the Order of Stromgald.",
+   "participants": [
+    "Jötun",
+    "Order of Stromgald"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "some Giants of the Jötun tribe aided the Kjeldorans in the fight against the Order of Stromgald ."
+  },
+  {
+   "summary": "On Theros, the gods battle the titans and seal them in the Underworld, where they remain until they break free.",
+   "participants": [
+    "Titans"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "The gods of Theros battled them and sealed them away in the Underworld, where they remained until they broke free."
+  },
+  {
+   "summary": "During the Age of Trax Theros giants have kingdoms, and Agnomakhos uses the war against them as a pretext for evil actions.",
+   "participants": [
+    "Giants",
+    "Agnomakhos"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 22,
+   "quote": "Agnomakhos used the war against the giants as a pretense for his evil actions"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yorvo",
+   "relation": "leader_of",
+   "target": "Giants",
+   "note": "king of Garenbrig, himself a giant",
+   "paragraph": 3,
+   "quote": "Garenbrig's king, Yorvo , is himself a giant."
+  },
+  {
+   "source": "Fire giants",
+   "relation": "enemy",
+   "target": "Frost giants",
+   "note": "locked in constant conflict",
+   "paragraph": 5,
+   "quote": "The frost and fire giants of Surtland are locked in constant conflict."
+  },
+  {
+   "source": "Beluna Grandsquall",
+   "relation": "leader_of",
+   "target": "Storm Giants",
+   "note": "rules the Kingdom of Storms",
+   "paragraph": 4,
+   "quote": "ruled by Queen Beluna Grandsquall from the castle of Stormkeld."
+  },
+  {
+   "source": "Giants",
+   "relation": "enemy",
+   "target": "Agnomakhos",
+   "note": "he used the war against them as pretense",
+   "paragraph": 22,
+   "quote": "Agnomakhos used the war against the giants as a pretense for his evil actions"
+  },
+  {
+   "source": "Jötun",
+   "relation": "enemy",
+   "target": "Order of Stromgald",
+   "note": "the Jötun fought the Order alongside the Kjeldorans",
+   "paragraph": 2,
+   "quote": "aided the Kjeldorans in the fight against the Order of Stromgald ."
+  }
+ ],
+ "rejected": []
+}

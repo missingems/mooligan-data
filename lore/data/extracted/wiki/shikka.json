@@ -1,0 +1,105 @@
+{
+ "page": "wiki/shikka",
+ "url": "https://mtg.wiki/page/Shikka",
+ "title": "Shikka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:28Z",
+ "storyline": "Planar Chaos",
+ "entities": [
+  {
+   "name": "Shikka",
+   "type": "character",
+   "aliases": [],
+   "description": "A proud cat warrior who stays to protect her dry, gray forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirri",
+   "type": "character",
+   "aliases": [
+    "Mirri-vampire"
+   ],
+   "description": "Planar Chaos-shifted vampiric version of Mirri, cursed and malevolent, who slaughters the forest's cats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Time-shifted renowned ancestor of the cats, followed by others who leave the forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Talack",
+   "type": "character",
+   "aliases": [],
+   "description": "Shikka's companion, convinced by her to stay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Forest of the cats",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest that has become dry and gray, home to Shikka.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Shikka chooses to stay and protect the forest rather than follow Jedit, persuading Talack to stay too.",
+   "participants": [
+    "Shikka",
+    "Talack",
+    "Jedit Ojanen"
+   ],
+   "location": "Forest of the cats",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She chose to stay, convincing her companion Talack to do the same."
+  },
+  {
+   "summary": "Vampiric Mirri slaughters the forest's cats; Shikka and Talack flee.",
+   "participants": [
+    "Mirri",
+    "Shikka",
+    "Talack"
+   ],
+   "location": "Forest of the cats",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Shikka is forced to flee for her life with Talack"
+  },
+  {
+   "summary": "The surviving cats band together for protection.",
+   "participants": [
+    "Shikka"
+   ],
+   "location": "Forest of the cats",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the surviving cats band together for protection and solace"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shikka",
+   "relation": "ally",
+   "target": "Talack",
+   "note": "Companion",
+   "paragraph": 3,
+   "quote": "convincing her companion Talack to do the same"
+  },
+  {
+   "source": "Mirri",
+   "relation": "enemy",
+   "target": "Shikka",
+   "note": "Attacks the forest's cats",
+   "paragraph": 3,
+   "quote": "begins slaughtering the forest cats"
+  }
+ ],
+ "rejected": []
+}

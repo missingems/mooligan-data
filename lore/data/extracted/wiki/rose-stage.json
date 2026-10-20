@@ -1,0 +1,86 @@
+{
+ "page": "wiki/rose-stage",
+ "url": "https://mtg.wiki/page/Rose_Stage",
+ "title": "Rose Stage",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:17Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Rose Stage",
+   "type": "location",
+   "aliases": [
+    "The Rose Stage"
+   ],
+   "description": "Strixhaven University's premier outdoor venue for performance, competition and creative expression on the Silverquill campus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "The university whose Silverquill campus holds the Rose Stage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [
+    "Silverquill campus"
+   ],
+   "description": "The Strixhaven college whose campus hosts the Rose Stage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Playactors Drama Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "The most frequent user of the Rose Stage, hosting rehearsals, performances and festivals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven Show Band Association",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group that provides music at the Rose Stage Festival and hands out kazoos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rose Stage Festival",
+   "type": "event",
+   "aliases": [],
+   "description": "The annual campus-wide celebration of performing arts and improvisation held at the Rose Stage.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Every year the Rose Stage hosts the Rose Stage Festival, where volunteers act out random prompts from the Playactors Drama Guild until a faculty member shuts it down.",
+   "participants": [
+    "Rose Stage Festival",
+    "Playactors Drama Guild",
+    "Strixhaven Show Band Association"
+   ],
+   "location": "Rose Stage",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Every year, the Rose Stage hosts the Rose Stage Festival"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rose Stage",
+   "relation": "located_in",
+   "target": "Silverquill",
+   "note": "on the Silverquill campus",
+   "paragraph": 1,
+   "quote": "The Rose Stage is a popular outdoor performance space on the Silverquill campus of Strixhaven University."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,184 @@
+{
+ "page": "wiki/godsend",
+ "url": "https://mtg.wiki/page/Godsend",
+ "title": "Godsend",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:37Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Godsend",
+   "type": "artifact",
+   "aliases": [
+    "Sword of Chaos"
+   ],
+   "description": "Swordspear wielded by Elspeth Tirel on Theros, reforged from the Sword of Chaos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "Planeswalker who wielded Godsend, was killed by Heliod, and later became an Archangel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who reforged the sword and later stabbed Elspeth with it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who raised arms against Heliod and crafted the Sword of Chaos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Polukranos, World Eater",
+   "type": "creature",
+   "aliases": [
+    "Polukranos"
+   ],
+   "description": "Hydra whose resting place was damaged and who fell to Theros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who helped seal Polukranos under the Nessian Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xenagos",
+   "type": "character",
+   "aliases": [],
+   "description": "Foe Elspeth defeated in Nyx by stabbing him with Godsend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nyx",
+   "type": "location",
+   "aliases": [],
+   "description": "Celestial realm of Theros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Underworld of Erebos",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the dying Elspeth was confined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Godsend was wielded.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Purphoros and Heliod clash, damaging Nyx and sending Polukranos falling to Theros, where Nylea and Heliod seal him.",
+   "participants": [
+    "Purphoros",
+    "Heliod",
+    "Polukranos, World Eater",
+    "Nylea"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the hydra fell to Theros where it was sealed by Nylea and Heliod under the Nessian Forest"
+  },
+  {
+   "summary": "Elspeth, newly arrived on Theros, grasps the falling Sword of Chaos and planeswalks away.",
+   "participants": [
+    "Elspeth Tirel",
+    "Godsend"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She saw the Sword of Chaos falling from the sky, grasped it, and planeswalked away."
+  },
+  {
+   "summary": "Heliod reforges the sword into the Godsend and Elspeth uses it to defeat Polukranos.",
+   "participants": [
+    "Heliod",
+    "Elspeth Tirel",
+    "Polukranos, World Eater"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Elspeth used her new weapon to defeat the awakened Polukranos."
+  },
+  {
+   "summary": "Elspeth defeats Xenagos in Nyx, but Heliod stabs her with Godsend, which shatters; she is confined to the Underworld.",
+   "participants": [
+    "Elspeth Tirel",
+    "Xenagos",
+    "Heliod"
+   ],
+   "location": "Nyx",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he stabbed her with the sword spear, which shattered afterward."
+  },
+  {
+   "summary": "After escaping the Underworld and becoming an Archangel, Elspeth conjures a facsimile of the Sword of Chaos.",
+   "participants": [
+    "Elspeth Tirel"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Elspeth conjured a facsimile of the Sword of Chaos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Purphoros",
+   "relation": "created",
+   "target": "Godsend",
+   "note": "He crafted the Sword of Chaos that became Godsend.",
+   "paragraph": 1,
+   "quote": "he crafted the Sword of Chaos"
+  },
+  {
+   "source": "Heliod",
+   "relation": "killed",
+   "target": "Elspeth Tirel",
+   "note": "He stabbed her with the sword spear.",
+   "paragraph": 3,
+   "quote": "he stabbed her with the sword spear, which shattered afterward."
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "killed",
+   "target": "Xenagos",
+   "note": "Stabbed him with Godsend.",
+   "paragraph": 3,
+   "quote": "Elspeth also defeated Xenagos , stabbing him with Godsend."
+  },
+  {
+   "source": "Purphoros",
+   "relation": "enemy",
+   "target": "Heliod",
+   "note": "They clashed.",
+   "paragraph": 1,
+   "quote": "when the God Purphoros raised arms against Heliod"
+  }
+ ],
+ "rejected": []
+}

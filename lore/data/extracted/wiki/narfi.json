@@ -1,0 +1,142 @@
+{
+ "page": "wiki/narfi",
+ "url": "https://mtg.wiki/page/Narfi",
+ "title": "Narfi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:13Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "King Narfi",
+   "type": "character",
+   "aliases": [
+    "Narfi"
+   ],
+   "description": "Zombie wizard and cruel king of Karfell on Kaldheim, made undead by a deal with Egon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karfell",
+   "type": "location",
+   "aliases": [],
+   "description": "Narfi's realm, with packed treasure vaults.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Egon",
+   "type": "deity",
+   "aliases": [],
+   "description": "The strange visitor, future God of the Dead, who made Narfi and his army undead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dread Marn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Narfi's army of raiders that pillage other realms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tibalt",
+   "type": "character",
+   "aliases": [],
+   "description": "Made a deal with Narfi about access to treasures when the Doomskar started.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valki",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god kept in Narfi's dungeon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elves of Kaldheim",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gave Narfi's father the magical longship and sought his armies against the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Draugr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Undead into which Narfi's fallen soldiers rose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "Event giving the Dread Marn chances to pillage.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The elves take back their longship when Narfi refuses to lend his armies to their war against the gods.",
+   "participants": [
+    "King Narfi",
+    "Elves of Kaldheim"
+   ],
+   "location": "Karfell",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the elves took back their longship until he agreed to help"
+  },
+  {
+   "summary": "Egon offers to lead Narfi's army in exchange for protection from death; Narfi agrees, and his fallen soldiers rise as draugr, Narfi himself becoming undead.",
+   "participants": [
+    "King Narfi",
+    "Egon",
+    "Draugr"
+   ],
+   "location": "Karfell",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The visitor revealed himself to be Egon"
+  },
+  {
+   "summary": "Narfi makes a deal with Tibalt, keeping Valki in his dungeon in exchange for access to treasures.",
+   "participants": [
+    "King Narfi",
+    "Tibalt",
+    "Valki",
+    "Dread Marn"
+   ],
+   "location": "Karfell",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Narfi made a deal with Tibalt"
+  }
+ ],
+ "relations": [
+  {
+   "source": "King Narfi",
+   "relation": "leader_of",
+   "target": "Dread Marn",
+   "note": "Maintains the army.",
+   "paragraph": 2,
+   "quote": "King Narfi maintains an army of raiders known as the Dread Marn"
+  },
+  {
+   "source": "King Narfi",
+   "relation": "leader_of",
+   "target": "Karfell",
+   "note": "King of Karfell.",
+   "paragraph": 1,
+   "quote": "Narfi was the king of Karfell"
+  }
+ ],
+ "rejected": []
+}

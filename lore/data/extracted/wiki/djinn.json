@@ -1,0 +1,168 @@
+{
+ "page": "wiki/djinn",
+ "url": "https://mtg.wiki/page/Djinn",
+ "title": "Djinn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Djinn",
+   "type": "creature",
+   "aliases": [
+    "Djinns",
+    "djinns",
+    "efreet"
+   ],
+   "description": "Spirits of air or fire, commonly forced into slavery by mortals to grant wishes, found across many planes and predominantly blue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mahamoti Djinns",
+   "type": "faction",
+   "aliases": [
+    "Mahamoti djinn"
+   ],
+   "description": "The most regal of air spirits, who consider themselves royalty among djinns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aku Djinns",
+   "type": "faction",
+   "aliases": [
+    "Aku Djinn"
+   ],
+   "description": "Fierce djinns used by the people of Zhalfir as protectors of the city-tomb Aku, who helped defeat Kaervek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure the Aku Djinn were instrumental in defeating.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marid",
+   "type": "faction",
+   "aliases": [
+    "marids"
+   ],
+   "description": "The oldest and most respected tribe of djinn, the first to arrive on Dominaria from Rabiah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rabiah",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane from which the first djinn arrived on Dominaria, home to many djinn varieties.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Suleiman",
+   "type": "character",
+   "aliases": [],
+   "description": "A ruler known for his enmity toward the djinn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emberwilde Djinns",
+   "type": "faction",
+   "aliases": [],
+   "description": "The rulers of the fire-based plane of Wildfire, ruled by the Emberwilde Caliph.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emberwilde Caliph",
+   "type": "character",
+   "aliases": [],
+   "description": "The ruler of the Emberwilde Djinns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojutai",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragonlord whose brood conquered the Jeskai lands in Tarkir's new timeline.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nur",
+   "type": "character",
+   "aliases": [],
+   "description": "A djinn who is an emissary of the Abzan Houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild that employs human/djinn hybrids.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In Tarkir's new timeline, Ojutai and his brood conquer Jeskai lands and many djinn submit to dragon worship; after the Stormnexus Ritual, many leave the Way.",
+   "participants": [
+    "Ojutai",
+    "Djinn"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 24,
+   "quote": "In the new timeline, Jeskai lands were conquered by the dragonlord Ojutai and his brood, and many djinn submitted to his teachings of dragon worship."
+  },
+  {
+   "summary": "Several djinns join the coalition at the time of the Phyrexian Invasion.",
+   "participants": [
+    "Djinn"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "At the time of the Phyrexian Invasion , several djinns joined the fight on the side of the coalition"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emberwilde Caliph",
+   "relation": "leader_of",
+   "target": "Emberwilde Djinns",
+   "note": "Rules the group.",
+   "paragraph": 26,
+   "quote": "As a group, they are ruled by the Emberwilde Caliph ."
+  },
+  {
+   "source": "Marid",
+   "relation": "located_in",
+   "target": "Rabiah",
+   "note": "Arrived on Dominaria from Rabiah.",
+   "paragraph": 17,
+   "quote": "The marid were the first djinn to arrive on Dominaria from Rabiah ."
+  },
+  {
+   "source": "King Suleiman",
+   "relation": "enemy",
+   "target": "Djinn",
+   "note": "Known for enmity toward the djinn.",
+   "paragraph": 19,
+   "quote": "King Suleiman was known for his enmity toward the djinn."
+  }
+ ],
+ "rejected": [
+  {
+   "kind": "relation",
+   "reason": "unlisted entity",
+   "source": "Nur",
+   "relation": "serves",
+   "target": "Abzan Houses",
+   "note": "Emissary of the Abzan Houses.",
+   "paragraph": 24,
+   "quote": "the djinn Nur , an emissary of the Abzan Houses"
+  }
+ ]
+}

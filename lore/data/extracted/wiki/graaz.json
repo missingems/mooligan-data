@@ -1,0 +1,65 @@
+{
+ "page": "wiki/graaz",
+ "url": "https://mtg.wiki/page/Graaz",
+ "title": "Graaz",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:09Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Graaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Juggernaut on New Phyrexia, one of Memnarch's levelers that still wanders the surface of Mirrex tearing through everything in its path.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "The one who created Mirrodin's levelers, later deposed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrex",
+   "type": "plane",
+   "aliases": [],
+   "description": "The surface Graaz wanders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane that absorbed many levelers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch is deposed, leaving the levelers to wander confused and leaderless; many are captured and absorbed into New Phyrexia but Graaz remains.",
+   "participants": [
+    "Memnarch",
+    "Graaz"
+   ],
+   "location": "Mirrex",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When he was deposed, they were left to wander the land, confused and leaderless."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Graaz",
+   "note": "Memnarch created Mirrodin's levelers.",
+   "paragraph": 1,
+   "quote": "created by Memnarch to wreak terror across the plane at his behest"
+  }
+ ],
+ "rejected": []
+}

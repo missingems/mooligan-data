@@ -1,0 +1,168 @@
+{
+ "page": "wiki/palmyra",
+ "url": "https://mtg.wiki/page/Palmyra",
+ "title": "Palmyra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Palmyra",
+   "type": "location",
+   "aliases": [],
+   "description": "City in Jamuraa on the River Toloron halfway between Tirras and Bryce, a refuge for misfits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the river's end.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the river's source.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [
+    "Hazezon"
+   ],
+   "description": "Governor of Bryce who dammed the Toloron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [
+    "Adira"
+   ],
+   "description": "Hazezon's ex-wife and pirate leader.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Attempted assassination of Adira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Palmyra became embroiled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Bryce",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle before Hazezon traveled to Palmyra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Palmyra",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which the dam was destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's Joy",
+   "type": "location",
+   "aliases": [],
+   "description": "Artificial lake created by Hazezon's dam.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Toloron",
+   "type": "location",
+   "aliases": [],
+   "description": "River flowing from Tirras to Bryce.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Battle of Bryce, Hazezon travels upriver to Palmyra to negotiate with his ex-wife Adira.",
+   "participants": [
+    "Hazezon Tamar",
+    "Adira Strongheart"
+   ],
+   "location": "Palmyra",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Hazezon Tamar traveled upriver to Palmyra to negotiate with his ex-wife Adira Strongheart ."
+  },
+  {
+   "summary": "Adira joins her pirates with Hazezon's warriors after a botched assassination attempt by Johan.",
+   "participants": [
+    "Adira Strongheart",
+    "Hazezon Tamar",
+    "Johan"
+   ],
+   "location": "Palmyra",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Adira joined her pirates with Hazezon's warriors after a botched assassination attempt by Johan ."
+  },
+  {
+   "summary": "Hazezon dams the Toloron, creating Johan's Joy; Palmyra grows into a bustling township.",
+   "participants": [
+    "Hazezon Tamar",
+    "Johan's Joy"
+   ],
+   "location": "Palmyra",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Hazezon dammed the Toloron, creating an artificial lake above the dam."
+  },
+  {
+   "summary": "In the Battle of Palmyra the dam is destroyed and the lake drains; the city is partly buried by a sandstorm but dug out.",
+   "participants": [
+    "Palmyra",
+    "Battle of Palmyra"
+   ],
+   "location": "Palmyra",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "During the Battle of Palmyra, the dam was destroyed, and the lake drained away."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hazezon Tamar",
+   "relation": "family",
+   "target": "Adira Strongheart",
+   "note": "ex-wife",
+   "paragraph": 6,
+   "quote": "his ex-wife Adira Strongheart"
+  },
+  {
+   "source": "Hazezon Tamar",
+   "relation": "ally",
+   "target": "Adira Strongheart",
+   "note": "joined forces in Johan's War",
+   "paragraph": 6,
+   "quote": "Adira joined her pirates with Hazezon's warriors"
+  },
+  {
+   "source": "Palmyra",
+   "relation": "located_in",
+   "target": "River Toloron",
+   "note": "along the river between Tirras and Bryce",
+   "paragraph": 0,
+   "quote": "It is located along the River Toloron halfway between Tirras and Bryce ."
+  }
+ ],
+ "rejected": []
+}

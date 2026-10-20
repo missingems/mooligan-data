@@ -1,0 +1,144 @@
+{
+ "page": "wiki/beast",
+ "url": "https://mtg.wiki/page/Beast",
+ "title": "Beast",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:48:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Beast",
+   "type": "creature",
+   "aliases": [
+    "Beasts"
+   ],
+   "description": "A catch-all creature type for large, monstrous, animal-like creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alacrian quickbeasts",
+   "type": "creature",
+   "aliases": [
+    "Quickbeast",
+    "quickbeasts"
+   ],
+   "description": "Huge, intelligent, winged creatures of Alacria fueled by aether, which partner with chosen riders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alacria",
+   "type": "location",
+   "aliases": [],
+   "description": "The place whose city districts each have a soul mascot embodied in a quickbeast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beasties",
+   "type": "creature",
+   "aliases": [],
+   "description": "Duskmourn's intelligent masked animals, once the plane's pets, which befriend and protect Survivors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [
+    "the House"
+   ],
+   "description": "The plane whose beasties protect its survivors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valgavoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Being whose Ascension transformed the plane's former pets into beasties.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Spindlewight",
+   "type": "character",
+   "aliases": [],
+   "description": "The beasties' leader who rescued two children, then renounced leadership after a keep-alive saw his maskless face.",
+   "presence": "appears"
+  },
+  {
+   "name": "Survivors",
+   "type": "faction",
+   "aliases": [
+    "keep-alives"
+   ],
+   "description": "The humans of Duskmourn whom beasties befriend and protect.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zagoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Lush forest region of Ikoria associated with herbivorous Beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where herbivorous Beasts are one of the dominant clades.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Beasties originally lived in one large pack; Spindlewight rescued two children and the beasties found their purpose protecting the House's survivors.",
+   "participants": [
+    "Spindlewight",
+    "Beasties",
+    "Survivors"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "When their leader, Spindlewight, rescued two children, the beasties found their purpose in protecting the House's survivors"
+  },
+  {
+   "summary": "A keep-alive sees Spindlewight's maskless face and flees; he renounces leadership and the beasties fracture into multiple packs.",
+   "participants": [
+    "Spindlewight",
+    "Beasties"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "After one of Spindlewight's keep-alives saw his maskless face, they fled into the house, causing him to renounce his leadership"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Beasties",
+   "relation": "ally",
+   "target": "Survivors",
+   "note": "Beasties befriend and protect Survivors.",
+   "paragraph": 8,
+   "quote": "are intelligent animals who befriend and protect Survivors."
+  },
+  {
+   "source": "Spindlewight",
+   "relation": "leader_of",
+   "target": "Beasties",
+   "note": "Led the beasties until he renounced leadership.",
+   "paragraph": 10,
+   "quote": "When their leader, Spindlewight, rescued two children"
+  },
+  {
+   "source": "Beasties",
+   "relation": "located_in",
+   "target": "Duskmourn",
+   "note": "Beasts of Duskmourn.",
+   "paragraph": 8,
+   "quote": "Originally the plane's former pets that transformed during"
+  }
+ ],
+ "rejected": []
+}

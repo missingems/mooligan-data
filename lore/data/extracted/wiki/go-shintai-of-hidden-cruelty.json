@@ -1,0 +1,88 @@
+{
+ "page": "wiki/go-shintai-of-hidden-cruelty",
+ "url": "https://mtg.wiki/page/Go-Shintai_of_Hidden_Cruelty",
+ "title": "Go-Shintai of Hidden Cruelty",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:10Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Go-Shintai of Hidden Cruelty",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A legendary shrine housing a Kami of Hidden Cruelty that offers vengeance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami of Hidden Cruelty",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami inadvertently summoned by a homeless ogre who whispered vengeful thoughts to her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Young ogre",
+   "type": "character",
+   "aliases": [],
+   "description": "Ogre evicted from her cave who summoned the kami and murdered the warlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Violent warlord",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlord who evicted the ogre and was murdered by her.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A violent warlord evicts a young ogre from her cave.",
+   "participants": [
+    "Young ogre",
+    "Violent warlord"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "a young ogre was evicted from her cave by a violent warlord."
+  },
+  {
+   "summary": "Her struggle inadvertently summons a Kami of Hidden Cruelty.",
+   "participants": [
+    "Young ogre",
+    "Kami of Hidden Cruelty"
+   ],
+   "location": "Go-Shintai of Hidden Cruelty",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Her struggle inadvertently summoned a Kami of Hidden Cruelty."
+  },
+  {
+   "summary": "Urged by the kami's whispers, the ogre murders the warlord and flees.",
+   "participants": [
+    "Young ogre",
+    "Violent warlord",
+    "Kami of Hidden Cruelty"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "until she took up arms and murdered the warlord."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Young ogre",
+   "relation": "killed",
+   "target": "Violent warlord",
+   "note": "Murdered him after the kami's whispers.",
+   "paragraph": 1,
+   "quote": "until she took up arms and murdered the warlord."
+  }
+ ],
+ "rejected": []
+}

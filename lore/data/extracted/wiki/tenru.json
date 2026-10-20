@@ -1,0 +1,144 @@
+{
+ "page": "wiki/tenru",
+ "url": "https://mtg.wiki/page/Tenru",
+ "title": "Tenru",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:15Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Tenru",
+   "type": "character",
+   "aliases": [],
+   "description": "Tajuru elf warden on Murasa, Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [
+    "Tajuru elf nation"
+   ],
+   "description": "Elf nation on Murasa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mina",
+   "type": "character",
+   "aliases": [],
+   "description": "Mul Daya twin and Greensinger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Denn",
+   "type": "character",
+   "aliases": [],
+   "description": "Mul Daya twin, Mina's brother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nisede",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Tajuru.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazri",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander at Sea Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi Titan whose brood attacked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mul Daya",
+   "type": "faction",
+   "aliases": [],
+   "description": "Tribe of Mina and Denn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of the final battle against two Eldrazi Titans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Zendikar where Tenru lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tenru encountered the Mul Daya twins Mina and Denn on a scouting mission and brought them to the jaddi grove.",
+   "participants": [
+    "Tenru",
+    "Mina",
+    "Denn"
+   ],
+   "location": "Murasa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tenru encountered the Mul Daya twins Mina and Denn"
+  },
+  {
+   "summary": "Mina tapped the living ground to weaken Eldrazi drones and Denn finished them.",
+   "participants": [
+    "Mina",
+    "Denn",
+    "Kozilek"
+   ],
+   "location": "Murasa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "weakening the Eldrazi drones enough that Denn could finish them off"
+  },
+  {
+   "summary": "Tenru brought Nisede to the twins, who joined the Tajuru and headed for Sea Gate.",
+   "participants": [
+    "Tenru",
+    "Nisede",
+    "Mina",
+    "Denn",
+    "Tazri"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Nisede accepted, and together they headed for Sea Gate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tenru",
+   "relation": "member_of",
+   "target": "Tajuru",
+   "note": "Warden of her people",
+   "paragraph": 0,
+   "quote": "Tenru is a Tajuru elf, a warden of her people"
+  },
+  {
+   "source": "Nisede",
+   "relation": "leader_of",
+   "target": "Tajuru",
+   "note": "Tajuru leader",
+   "paragraph": 3,
+   "quote": "the Tajuru leader"
+  }
+ ],
+ "rejected": []
+}

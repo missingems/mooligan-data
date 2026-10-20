@@ -1,0 +1,128 @@
+{
+ "page": "wiki/pincar-city",
+ "url": "https://mtg.wiki/page/Pincar_City",
+ "title": "Pincar City",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Pincar City",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the nation of Efuan Pincar on Gulmany, the most remote part of the Terisian Isles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Efuan Pincar",
+   "type": "location",
+   "aliases": [],
+   "description": "A nation on Gulmany whose capital is Pincar City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gulmany",
+   "type": "location",
+   "aliases": [],
+   "description": "Great island in the Terisian Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Tabarna",
+   "type": "character",
+   "aliases": [
+    "Tabarna"
+   ],
+   "description": "Ruler of Pincar City in 3245 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Avohir",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple beneath which the Red Stripes erected a black disc connecting to Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Stripes",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that built a black disc beneath the temple of Avohir connecting into Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian praetor who killed Shratta individuals and sent out sleeper agents resembling them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Discovered Gix's presence in the temple and escaped after a mental confrontation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shratta",
+   "type": "faction",
+   "aliases": [],
+   "description": "People killed by Gix and replaced by Phyrexian sleeper agents.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the black disc connected to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Beneath the temple of Avohir, Gix kills Shratta individuals and sends out Phyrexian sleeper agents that look like them.",
+   "participants": [
+    "Gix",
+    "Red Stripes"
+   ],
+   "location": "Pincar City",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the praetor Gix killed Shratta individuals and then sent out Phyrexian sleeper agents that looked like them"
+  },
+  {
+   "summary": "Xantcha discovers Gix inside the temple and, after a mental confrontation, escapes.",
+   "participants": [
+    "Xantcha",
+    "Gix"
+   ],
+   "location": "Temple of Avohir",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Xantcha discovered Gix's presence inside the temple, and after a mental confrontation, she escaped"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pincar City",
+   "relation": "located_in",
+   "target": "Efuan Pincar",
+   "note": "It is the nation's capital.",
+   "paragraph": 0,
+   "quote": "the capital of the nation of Efuan Pincar"
+  },
+  {
+   "source": "Xantcha",
+   "relation": "enemy",
+   "target": "Gix",
+   "note": "She confronted him mentally and escaped.",
+   "paragraph": 2,
+   "quote": "Xantcha discovered Gix's presence inside the temple"
+  }
+ ],
+ "rejected": []
+}

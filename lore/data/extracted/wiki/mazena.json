@@ -1,0 +1,119 @@
+{
+ "page": "wiki/mazena",
+ "url": "https://mtg.wiki/page/Mazena",
+ "title": "Mazena",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:11Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Mazena",
+   "type": "character",
+   "aliases": [
+    "Mazena the Manipulative"
+   ],
+   "description": "A charismatic Selesnyan dryad, one of Trostani's most trusted advisors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trostani",
+   "type": "character",
+   "aliases": [],
+   "description": "Selesnya leader who sent Mazena with orders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ruzi",
+   "type": "character",
+   "aliases": [],
+   "description": "A former Selesnya wolf rider who went rogue after his sister's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cecilee",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruzi's sister, who died after he went to find her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Conclave"
+   ],
+   "description": "The guild to which Mazena belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Ruzi was sent to find his sister.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Mazena.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Trostani sent Mazena to order Ruzi to the Rubblebelt to find his sister Cecilee.",
+   "participants": [
+    "Mazena",
+    "Ruzi",
+    "Trostani",
+    "Cecilee"
+   ],
+   "location": "Selesnya Conclave",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Mazena told Ruzi that he was to leave the Conclave grounds and seek out his sister"
+  },
+  {
+   "summary": "After his sister's death Ruzi left the Conclave and went rogue, branded a traitor.",
+   "participants": [
+    "Ruzi",
+    "Cecilee"
+   ],
+   "location": "Rubblebelt",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he was branded a traitor and an outcast by the Conclave"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mazena",
+   "relation": "serves",
+   "target": "Trostani",
+   "note": "One of her most trusted advisors.",
+   "paragraph": 0,
+   "quote": "is one of Trostani 's most trusted advisors"
+  },
+  {
+   "source": "Ruzi",
+   "relation": "enemy",
+   "target": "Mazena",
+   "note": "Would meet as enemies.",
+   "paragraph": 2,
+   "quote": "they would be doing so as enemies"
+  },
+  {
+   "source": "Ruzi",
+   "relation": "family",
+   "target": "Cecilee",
+   "note": "Sister.",
+   "paragraph": 1,
+   "quote": "find his sister Cecilee"
+  }
+ ],
+ "rejected": []
+}

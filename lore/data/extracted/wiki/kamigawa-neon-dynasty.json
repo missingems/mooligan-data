@@ -1,0 +1,101 @@
+{
+ "page": "wiki/kamigawa-neon-dynasty",
+ "url": "https://mtg.wiki/page/Kamigawa%3A_Neon_Dynasty",
+ "title": "Kamigawa: Neon Dynasty",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:01Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose feudal past has met futuristic modernity, with ninjas and samurai carrying a cyberpunk aesthetic, over 1200 years after the original Kamigawa block.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker confronted, with Kaito Shizuki, by an interplanar danger on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker confronted, with Tamiyo, by an interplanar danger on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperials",
+   "type": "faction",
+   "aliases": [],
+   "description": "The faction that must deal with the Futurists and Uprisers while the Emperor is missing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Futurists",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction with which the Imperials must deal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uprisers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction with which the Imperials must deal.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Emperor of Kamigawa has been missing for ten years.",
+   "participants": [
+    "Kamigawa",
+    "Imperials"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "The Emperor of Kamigawa has been missing for ten years."
+  },
+  {
+   "summary": "While the Imperials deal with Futurists and Uprisers, Tamiyo and Kaito Shizuki face an interplanar danger.",
+   "participants": [
+    "Tamiyo",
+    "Kaito Shizuki",
+    "Imperials",
+    "Futurists",
+    "Uprisers"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "While the Imperials have to deal with Futurists and Uprisers , the planeswalkers Tamiyo and Kaito Shizuki are confronted by an interplanar danger ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tamiyo",
+   "relation": "ally",
+   "target": "Kaito Shizuki",
+   "note": "both confronted by the same interplanar danger",
+   "paragraph": 7,
+   "quote": "the planeswalkers Tamiyo and Kaito Shizuki are confronted by an interplanar danger ."
+  },
+  {
+   "source": "Imperials",
+   "relation": "enemy",
+   "target": "Futurists",
+   "note": "the Imperials have to deal with the Futurists",
+   "paragraph": 7,
+   "quote": "While the Imperials have to deal with Futurists and Uprisers"
+  }
+ ],
+ "rejected": []
+}

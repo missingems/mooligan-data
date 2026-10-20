@@ -1,0 +1,115 @@
+{
+ "page": "wiki/poq",
+ "url": "https://mtg.wiki/page/Poq",
+ "title": "Poq",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:10Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Poq",
+   "type": "character",
+   "aliases": [
+    "Mythweaver Poq"
+   ],
+   "description": "A burly Malamet catfolk shaman and mythweaver of Ixalan's underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Okinec Ahau",
+   "type": "character",
+   "aliases": [
+    "Sovereign Okinec Ahau"
+   ],
+   "description": "Ruler of the Malamet who sentences the Legion of Dusk members to death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malamet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Catfolk realm in the underworld of Ixalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Newcomers judged hostile by Poq's vision.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Malamet live.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At Okinec Ahau's command Poq conjures a green mist that forms a snarling face reacting violently to the Legion of Dusk.",
+   "participants": [
+    "Poq",
+    "Okinec Ahau",
+    "Legion of Dusk"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Poq stepped forward and used his powers to create a swirling green mist that formed into a snarling face."
+  },
+  {
+   "summary": "Poq shakes his head to tell the Sovereign the newcomers are not to be trusted.",
+   "participants": [
+    "Poq",
+    "Okinec Ahau"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "shaking his head to indicate that the newcomers were not to be trusted"
+  },
+  {
+   "summary": "Okinec Ahau sentences the Legion members to death.",
+   "participants": [
+    "Okinec Ahau",
+    "Legion of Dusk"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Sovereign decided to sentence the Legion members to death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Poq",
+   "relation": "serves",
+   "target": "Okinec Ahau",
+   "note": "mythweaver and key advisor",
+   "paragraph": 2,
+   "quote": "Poq is introduced as the mythweaver for Sovereign Okinec Ahau"
+  },
+  {
+   "source": "Okinec Ahau",
+   "relation": "leader_of",
+   "target": "Malamet",
+   "note": "Sovereign",
+   "paragraph": 2,
+   "quote": "the ruler of the Malamet"
+  },
+  {
+   "source": "Poq",
+   "relation": "member_of",
+   "target": "Malamet",
+   "note": "Malamet shaman",
+   "paragraph": 0,
+   "quote": "Mythweaver Poq is a Malamet shaman from Ixalan"
+  }
+ ],
+ "rejected": []
+}

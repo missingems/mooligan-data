@@ -1,0 +1,156 @@
+{
+ "page": "wiki/project-kraj",
+ "url": "https://mtg.wiki/page/Project_Kraj",
+ "title": "Project Kraj",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:41Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Kraj",
+   "type": "creature",
+   "aliases": [],
+   "description": "A twenty-foot-tall body of cytoplasts with a neuroboretum cluster brain, created by Project Kraj; it rampaged and absorbed all cytoplasts, was put in motion by Momir Vig, and was dismembered by the quietmen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Project Kraj",
+   "type": "concept",
+   "aliases": [],
+   "description": "A secret project of Simic guildmaster Momir Vig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Momir Vig",
+   "type": "character",
+   "aliases": [],
+   "description": "Simic guildmaster who activated Kraj and was killed seconds later by Agrus Kos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Spirit who helped Vig activate Kraj, using the body of Savra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Spirit residing in Savra's body, who killed Momir Vig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Savra",
+   "type": "character",
+   "aliases": [],
+   "description": "Body used by Svogthir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon who clashed with Kraj and was absorbed into its body, falling into a coma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild led by Momir Vig, whose bioaugmentation users were harmed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quietmen",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group who later dismembered Kraj's motionless body.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Novijen",
+   "type": "location",
+   "aliases": [],
+   "description": "Area that became Kraj's head.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kraj rampaged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kraj is activated by Vig and Svogthir, and Vig is killed seconds later by Agrus Kos.",
+   "participants": [
+    "Momir Vig",
+    "Svogthir",
+    "Agrus Kos",
+    "Kraj"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "mere seconds after Kraj's activation, Vig was killed by Agrus Kos"
+  },
+  {
+   "summary": "Kraj rampages and absorbs every cytoplast on Ravnica.",
+   "participants": [
+    "Kraj"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kraj went on a blind, instinct-driven rampage into the city."
+  },
+  {
+   "summary": "Kraj absorbs Rakdos into his body, putting him in a coma.",
+   "participants": [
+    "Kraj",
+    "Rakdos"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kraj absorbed Rakdos into his body, putting the demon into a coma."
+  },
+  {
+   "summary": "The quietmen dismember Kraj's motionless body.",
+   "participants": [
+    "Quietmen",
+    "Kraj"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kraj's motionless body was later dismembered by the quietmen ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agrus Kos",
+   "relation": "killed",
+   "target": "Momir Vig",
+   "note": "Killed him seconds after Kraj's activation",
+   "paragraph": 1,
+   "quote": "Vig was killed by Agrus Kos"
+  },
+  {
+   "source": "Momir Vig",
+   "relation": "created",
+   "target": "Kraj",
+   "note": "Activated it as a secret project",
+   "paragraph": 0,
+   "quote": "Project Kraj ( /krɑːʒ/, krahzh ) was a secret project of the Simic guildmaster Momir Vig on Ravnica ."
+  }
+ ],
+ "rejected": []
+}

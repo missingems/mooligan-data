@@ -1,0 +1,230 @@
+{
+ "page": "wiki/cabal-city",
+ "url": "https://mtg.wiki/page/Cabal_City",
+ "title": "Cabal City",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:32Z",
+ "storyline": "Odyssey",
+ "entities": [
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Cabal in Otaria on Dominaria, notable for pit fighting; later ruined and abandoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [
+    "the Cabal"
+   ],
+   "description": "Organization that controlled the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing Cabal City.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [
+    "Patriarch"
+   ],
+   "description": "Ruler of Cabal City, later exiled to Aphetto.",
+   "presence": "appears"
+  },
+  {
+   "name": "Virot Maglan",
+   "type": "character",
+   "aliases": [
+    "Maglan"
+   ],
+   "description": "Founder of the Cabal who made a pact with Kuberr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuberr",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who granted Maglan the power to kill by touch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Dementist who usurped the Cabal and lost control of Mirari power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Pit fighter who fought Chainer with the Order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who returned in 4500 AR to view the damage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Occupant of an embassy in Cabal City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "Spellcaster pit fighter of the Casters' Quarter.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Powerful object that caused the Battle for the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rise of the Cabal",
+   "type": "event",
+   "aliases": [],
+   "description": "Founding of the Cabal in 4050 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "Place the Patriarch was exiled to and where the Cabal relocated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karona's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Aphetto and the Grand Coliseum were destroyed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Virot Maglan pacts with Kuberr and founds the Cabal.",
+   "participants": [
+    "Virot Maglan",
+    "Kuberr",
+    "Cabal"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "Virot Maglan sealed a pact with the god Kuberr and gained the power to kill using touch"
+  },
+  {
+   "summary": "A Krosan dragon badly damages Cabal City.",
+   "participants": [
+    "Cabal City"
+   ],
+   "location": "Cabal City",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "the city was badly damaged when it was attacked by a Krosan dragon"
+  },
+  {
+   "summary": "Chainer usurps the Cabal and exiles the Patriarch; dementia creatures overrun the city.",
+   "participants": [
+    "Chainer",
+    "Cabal Patriarch",
+    "Cabal City"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Chainer usurped rulership of the Cabal and exiled the Patriarch to Aphetto"
+  },
+  {
+   "summary": "Chainer loses control of the Mirari's power in a pit fight against Kamahl; the city is condemned and abandoned.",
+   "participants": [
+    "Chainer",
+    "Kamahl",
+    "Mirari",
+    "Cabal"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "the ruined city was completely abandoned by the Cabal"
+  },
+  {
+   "summary": "After Karona's War the Cabal decays and the ruins become a refugee camp.",
+   "participants": [
+    "Cabal",
+    "Cabal City"
+   ],
+   "location": "Cabal City",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "The ruins of Cabal City turned into a refugee camp for cabalists"
+  },
+  {
+   "summary": "Jeska returns to Otaria and sees the caved-in dome.",
+   "participants": [
+    "Jeska",
+    "Cabal City"
+   ],
+   "location": "Cabal City",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "the arena's dome had long since caved in"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cabal City",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Cabal City was a city located in Otaria"
+  },
+  {
+   "source": "Cabal Patriarch",
+   "relation": "leader_of",
+   "target": "Cabal City",
+   "note": "",
+   "paragraph": 2,
+   "quote": "from which he ran the city"
+  },
+  {
+   "source": "Virot Maglan",
+   "relation": "serves",
+   "target": "Kuberr",
+   "note": "gave up allegiance to anyone else",
+   "paragraph": 11,
+   "quote": "all allegiance to anyone other than Kuberr"
+  },
+  {
+   "source": "Chainer",
+   "relation": "enemy",
+   "target": "Cabal Patriarch",
+   "note": "usurped and exiled him",
+   "paragraph": 13,
+   "quote": "exiled the Patriarch to Aphetto"
+  }
+ ],
+ "rejected": []
+}

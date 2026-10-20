@@ -1,0 +1,165 @@
+{
+ "page": "wiki/shadows-over-innistrad",
+ "url": "https://mtg.wiki/page/Shadows_over_Innistrad",
+ "title": "Shadows over Innistrad",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:12Z",
+ "storyline": "Shadows over Innistrad block",
+ "entities": [
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A gothic horror plane beset by terrible evils on all sides and betrayed by the hope it held most dear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [
+    "Archangel Avacyn",
+    "Avacyn, the Purifier"
+   ],
+   "description": "The angel who has finally returned to Innistrad, though new evils have come with her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "Jace, Unraveler of Secrets"
+   ],
+   "description": "A planeswalker of the Gatewatch who investigates Innistrad's dark mysteries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin",
+    "Sorin, Grim Nemesis"
+   ],
+   "description": "A vampire planeswalker searching for Nahiri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose whereabouts Sorin seeks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of planeswalkers of which Jace is a member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Author of Tamiyo's Journal, quoted on clue tokens.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose insight the secret message references.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "A surviving Eldrazi hinted at by the secret message \"Remember this they came as three\".",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arlinn Kord",
+   "type": "character",
+   "aliases": [
+    "Arlinn, Embraced by the Moon"
+   ],
+   "description": "A planeswalker featured on booster artwork.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Titanic beings, of which Emrakul survives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Avacyn has finally returned to Innistrad, but new evils have come with her and madness plagues the inhabitants.",
+   "participants": [
+    "Avacyn",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Avacyn has finally returned, but what new evils have come with her?"
+  },
+  {
+   "summary": "The forces that had protected the humans have been twisted into something dark and strange.",
+   "participants": [
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the forces that had protected the humans have been twisted into something dark and strange"
+  },
+  {
+   "summary": "Jace Beleren of the Gatewatch investigates Innistrad's dark mysteries.",
+   "participants": [
+    "Jace Beleren",
+    "Gatewatch"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Jace Beleren of the Gatewatch investigates its dark mysteries."
+  },
+  {
+   "summary": "Sorin searches for the whereabouts of Nahiri.",
+   "participants": [
+    "Sorin Markov",
+    "Nahiri"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Meanwhile, Sorin is in search of the whereabouts of Nahiri"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jace Beleren",
+   "relation": "member_of",
+   "target": "Gatewatch",
+   "note": "Jace of the Gatewatch",
+   "paragraph": 3,
+   "quote": "Jace Beleren of the Gatewatch"
+  },
+  {
+   "source": "Sorin Markov",
+   "relation": "other",
+   "target": "Nahiri",
+   "note": "Sorin is searching for her",
+   "paragraph": 3,
+   "quote": "Sorin is in search of the whereabouts of Nahiri"
+  }
+ ],
+ "rejected": []
+}

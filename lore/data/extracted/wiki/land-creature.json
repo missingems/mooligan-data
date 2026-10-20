@@ -1,0 +1,67 @@
+{
+ "page": "wiki/land-creature",
+ "url": "https://mtg.wiki/page/Land_creature",
+ "title": "Land creature",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Land creature",
+   "type": "concept",
+   "aliases": [
+    "creature land",
+    "manland"
+   ],
+   "description": "A permanent that is both a land and a creature, most often a land that can animate itself.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dryad Arbor",
+   "type": "creature",
+   "aliases": [],
+   "description": "The only tournament-legal card that is a land and a creature at all times and in all zones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra's Factory",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The earliest self-animating land, from Antiquities.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Forest Dryad",
+   "type": "creature",
+   "aliases": [],
+   "description": "A token introduced with The Brothers' War that functions identically to Dryad Arbor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mishra's Factory, from Antiquities, was the earliest self-animating land.",
+   "participants": [
+    "Mishra's Factory"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The earliest self-animating land was Mishra's Factory ( Antiquities )."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Forest Dryad",
+   "relation": "other",
+   "target": "Dryad Arbor",
+   "note": "Token that functions identically to Dryad Arbor.",
+   "paragraph": 10,
+   "quote": "it functions identically to Dryad Arbor"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,97 @@
+{
+ "page": "wiki/malcator",
+ "url": "https://mtg.wiki/page/Malcator",
+ "title": "Malcator",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:09Z",
+ "storyline": "New Phyrexia",
+ "entities": [
+  {
+   "name": "Malcator",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian loxodon of New Phyrexia, leader of the executors within the Great Synthesis who judges abominations.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Malcator.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "Praetor who engineered Malcator from the first captured loxodon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirran-Phyrexian War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the first loxodon was captured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Synthesis",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian structure in which Malcator leads the executors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Executors",
+   "type": "faction",
+   "aliases": [],
+   "description": "Phyrexian group led by Malcator.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jin-Gitaxias engineered the original Malcator from the first loxodon captured in the Mirran-Phyrexian War.",
+   "participants": [
+    "Jin-Gitaxias",
+    "Malcator"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The original Malcator was engineered by Jin-Gitaxias from the first loxodon captured during the Mirran-Phyrexian War"
+  },
+  {
+   "summary": "Malcator oversees Jin-Gitaxias's elite research sectives, reinventing creations that fail the Standards of Purity.",
+   "participants": [
+    "Malcator"
+   ],
+   "location": "New Phyrexia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Malcator rigorously inspects the outputs of these sectives"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "created",
+   "target": "Malcator",
+   "note": "Engineered him from a captured loxodon.",
+   "paragraph": 1,
+   "quote": "The original Malcator was engineered by Jin-Gitaxias"
+  },
+  {
+   "source": "Malcator",
+   "relation": "leader_of",
+   "target": "Executors",
+   "note": "Leads the executors.",
+   "paragraph": 0,
+   "quote": "As the leader of the executors within the Great Synthesis"
+  }
+ ],
+ "rejected": []
+}

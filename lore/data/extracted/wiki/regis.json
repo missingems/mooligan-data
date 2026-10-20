@@ -1,0 +1,114 @@
+{
+ "page": "wiki/regis",
+ "url": "https://mtg.wiki/page/Regis",
+ "title": "Regis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:23Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Regis",
+   "type": "creature",
+   "aliases": [],
+   "description": "A large, noble dog familiar belonging to Jinnie Fay of the Cabaretti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jinnie Fay",
+   "type": "character",
+   "aliases": [],
+   "description": "Prominent Cabaretti member and Regis's owner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabaretti leader in whose office the scene took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muri",
+   "type": "creature",
+   "aliases": [],
+   "description": "Jinnie's cat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "The family Jinnie belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Setting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vantoleone",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of Jetmir's office.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "Upcoming event discussed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jinnie converses with Jetmir about the upcoming Crescendo event while Regis lies by her.",
+   "participants": [
+    "Jinnie Fay",
+    "Jetmir",
+    "Regis",
+    "Muri"
+   ],
+   "location": "Vantoleone",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jinnie conversed with Jetmir about the upcoming Crescendo event"
+  },
+  {
+   "summary": "When Jinnie prepares to leave, Regis rises and mirrors her.",
+   "participants": [
+    "Regis",
+    "Jinnie Fay"
+   ],
+   "location": "Vantoleone",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Regis rose and mirrored her actions"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Regis",
+   "relation": "serves",
+   "target": "Jinnie Fay",
+   "note": "Familiar and protector.",
+   "paragraph": 0,
+   "quote": "a dog familiar belonging to"
+  },
+  {
+   "source": "Jinnie Fay",
+   "relation": "member_of",
+   "target": "Cabaretti",
+   "note": "A prominent member.",
+   "paragraph": 0,
+   "quote": "a prominent member of the Cabaretti family"
+  }
+ ],
+ "rejected": []
+}

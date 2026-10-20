@@ -1,0 +1,176 @@
+{
+ "page": "wiki/caves-of-the-damned",
+ "url": "https://mtg.wiki/page/Caves_of_the_Damned",
+ "title": "Caves of the Damned",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:57Z",
+ "storyline": "Thran",
+ "entities": [
+  {
+   "name": "Caves of the Damned",
+   "type": "location",
+   "aliases": [
+    "Koilos"
+   ],
+   "description": "A colony of Untouchables below Halcyon in the Time of the Thran, once a penal colony, later renamed Koilos by Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyon",
+   "type": "location",
+   "aliases": [],
+   "description": "Thran city above the caves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing Halcyon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mana Rig",
+   "type": "location",
+   "aliases": [],
+   "description": "Thran facility whose workers contracted Phthisis from powerstones.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Transported infected to the caves and ushered the last survivors into the portal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "Arranged several escapes through secret passages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dyfed",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who built a permanent portal to Phyrexia in the caves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane populated through the portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran Civil War",
+   "type": "event",
+   "aliases": [],
+   "description": "War at whose end Yawgmoth ushered survivors into the portal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Rediscovered the caves and named them Koilos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-rediscoverer of the caves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-rediscoverer of the caves.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Prisoners in the penal colony overthrow their counselors and take over the caves; Halcyon's guard fails to reclaim them and the city seals off all but one entry.",
+   "participants": [
+    "Caves of the Damned",
+    "Halcyon"
+   ],
+   "location": "Caves of the Damned",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "They banded together, overthrew their counselors and facilitators, and took over the caves."
+  },
+  {
+   "summary": "Yawgmoth transports more infected from Halcyon to the caves while Gix arranges escapes.",
+   "participants": [
+    "Yawgmoth",
+    "Gix"
+   ],
+   "location": "Caves of the Damned",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Gix arranged for several escapes through secret passages"
+  },
+  {
+   "summary": "Dyfed builds a permanent portal between Dominaria and Phyrexia in the caves.",
+   "participants": [
+    "Dyfed",
+    "Phyrexia"
+   ],
+   "location": "Caves of the Damned",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the planeswalker Dyfed built a permanent portal between Dominaria and Phyrexia"
+  },
+  {
+   "summary": "At the end of the Thran Civil War Yawgmoth ushers the last survivors into the portal to populate Phyrexia.",
+   "participants": [
+    "Yawgmoth",
+    "Phyrexia"
+   ],
+   "location": "Caves of the Damned",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Yawgmoth ushered the last survivors into the portal to populate Phyrexia"
+  },
+  {
+   "summary": "After 5,000 years Urza, Mishra and Tocasia rediscover the caves, and Urza renames them Koilos.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Tocasia"
+   ],
+   "location": "Caves of the Damned",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "They then received the new name \" Koilos \" from Urza."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dyfed",
+   "relation": "created",
+   "target": "Caves of the Damned",
+   "note": "built a portal inside the caves",
+   "paragraph": 4,
+   "quote": "the planeswalker Dyfed built a permanent portal between Dominaria and Phyrexia"
+  },
+  {
+   "source": "Caves of the Damned",
+   "relation": "located_in",
+   "target": "Halcyon",
+   "note": "below Halcyon",
+   "paragraph": 0,
+   "quote": "a colony of Untouchables below Halcyon"
+  }
+ ],
+ "rejected": []
+}

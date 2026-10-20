@@ -1,0 +1,210 @@
+{
+ "page": "wiki/dragon-scroll",
+ "url": "https://mtg.wiki/page/Dragon_Scroll",
+ "title": "Dragon Scroll",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:22Z",
+ "storyline": "Rise of the Eldrazi",
+ "entities": [
+  {
+   "name": "Dragon Scroll",
+   "type": "artifact",
+   "aliases": [
+    "Dragon's Fire",
+    "Dragon's Scroll"
+   ],
+   "description": "An artifact containing an obscure fire spell and a hidden map of Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker tricked into stealing the scroll; later finds Ugin's fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramaz",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman and planeswalker who tricked Chandra into stealing the scroll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker assigned to track the thief and erase memories of readers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who handed Chandra over, then helped her escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Mad planeswalker and agent of Nicol Bolas who attacks Chandra in dragon form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "The elder dragon whose agent Sarkhan is.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Infinite Consortium",
+   "type": "faction",
+   "aliases": [],
+   "description": "Hired to retrieve the scroll.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanctum of Stars",
+   "type": "location",
+   "aliases": [],
+   "description": "Museum on Kephalai destroyed by Chandra's attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kephalai",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane holding the Sanctum of Stars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Chandra's home plane where Jace finds her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keral Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Monastery on Regatha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the scroll originated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eye of Ugin",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Zendikar where Chandra meets Sarkhan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon whose invisible fire is hinted at in the scroll.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandra is tricked by Ramaz into stealing the scroll from the Sanctum of Stars.",
+   "participants": [
+    "Chandra Nalaar",
+    "Ramaz",
+    "Sanctum of Stars"
+   ],
+   "location": "Kephalai",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Chandra Nalaar was tricked by the shaman Ramaz"
+  },
+  {
+   "summary": "Jace tracks Chandra to Keral Keep, fights and defeats her, and leaves.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar"
+   ],
+   "location": "Keral Keep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Jace confronted her and a fight broke out."
+  },
+  {
+   "summary": "Chandra's attack destroys the Sanctum of Stars, killing all inside.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sanctum of Stars"
+   ],
+   "location": "Kephalai",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "her attack on a group of soldiers caused the entire Sanctum of Stars"
+  },
+  {
+   "summary": "Gideon turns Chandra over to Kephalai's soldiers but later helps her escape.",
+   "participants": [
+    "Gideon",
+    "Chandra Nalaar"
+   ],
+   "location": "Kephalai",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "turned her over to the soldiers of Kephalai"
+  },
+  {
+   "summary": "Chandra follows the map to the Eye of Ugin, where Sarkhan Vol attacks her as a dragon.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sarkhan Vol"
+   ],
+   "location": "Eye of Ugin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Vol transformed himself into a dragon and attacked Chandra"
+  },
+  {
+   "summary": "Jace and Chandra use Ugin's fire to defeat Sarkhan, triggering the last lock of the Eldrazi confinement spell.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Sarkhan Vol"
+   ],
+   "location": "Eye of Ugin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they unwittingly triggered the last lock of the Eldrazi confinement spell"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sarkhan Vol",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Agent of Bolas.",
+   "paragraph": 3,
+   "quote": "an agent of Nicol Bolas"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "enemy",
+   "target": "Chandra Nalaar",
+   "note": "Hunted her for the scroll.",
+   "paragraph": 1,
+   "quote": "Jace Beleren was assigned to track the thief"
+  }
+ ],
+ "rejected": []
+}

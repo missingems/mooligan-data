@@ -1,0 +1,81 @@
+{
+ "page": "wiki/order-of-the-white-orchid",
+ "url": "https://mtg.wiki/page/Order_of_the_White_Orchid",
+ "title": "Order of the White Orchid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:12Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Order of the White Orchid",
+   "type": "faction",
+   "aliases": [
+    "Knights of the White Orchid"
+   ],
+   "description": "Knightly order of Bant on Alara, likely based in Eos, serving as guides and guardians for travelers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara where the Order is from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eos",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the Order is most likely based.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event during which the Knights fought invaders from Jund.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard whose invaders fought the Knights.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Conflux the Knights of the White Orchid fight invaders from Jund and suffer heavy casualties.",
+   "participants": [
+    "Order of the White Orchid"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "fought against invaders from Jund and suffered heavy casualties"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Order of the White Orchid",
+   "relation": "enemy",
+   "target": "Jund",
+   "note": "Fought Jund invaders during the Conflux.",
+   "paragraph": 1,
+   "quote": "fought against invaders from Jund"
+  },
+  {
+   "source": "Order of the White Orchid",
+   "relation": "located_in",
+   "target": "Bant",
+   "note": "A knightly order of Bant.",
+   "paragraph": 0,
+   "quote": "a knightly order from the Shard of Alara known as Bant"
+  }
+ ],
+ "rejected": []
+}

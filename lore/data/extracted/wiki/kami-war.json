@@ -1,0 +1,235 @@
+{
+ "page": "wiki/kami-war",
+ "url": "https://mtg.wiki/page/Kami_War",
+ "title": "Kami War",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:07Z",
+ "storyline": "Kamigawa Cycle",
+ "entities": [
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [
+    "Kamiran"
+   ],
+   "description": "Devastating twenty-year conflict between mortals and the kami on Kamigawa, central event of the Kamigawa Cycle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Kami War took place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Konda",
+   "type": "character",
+   "aliases": [
+    "Konda",
+    "Lord of Eiganjo"
+   ],
+   "description": "Most powerful ruler on Kamigawa who instigated the war by kidnapping O-Kagachi's child.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [
+    "Eiganjo Castle"
+   ],
+   "description": "Konda's kingdom and castle.",
+   "presence": "appears"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "deity",
+   "aliases": [
+    "the Great Old Serpent"
+   ],
+   "description": "Mightiest of all the kami, whose child was kidnapped by Konda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kyodai",
+   "type": "deity",
+   "aliases": [
+    "the kidnapped scion",
+    "That Which Was Taken"
+   ],
+   "description": "Child and scion of O-Kagachi, imprisoned in a stone disk by Konda and later freed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Michiko Konda",
+   "type": "character",
+   "aliases": [
+    "Princess Michiko Konda"
+   ],
+   "description": "Princess who freed the kidnapped scion and defeated O-Kagachi and Lord Konda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Black magician who aided Michiko Konda.",
+   "presence": "appears"
+  },
+  {
+   "name": "Moonfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Allies of Konda who helped him enact the ritual.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami",
+   "type": "faction",
+   "aliases": [
+    "spirits"
+   ],
+   "description": "Spirits/gods of Kamigawa who turned against the physical world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Ganzan Pass",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Akagi River",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle on the Sokenzan Plateau",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Assault on Eiganjo Castle",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle at Kamitaki Falls",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle of the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Final Battle at Jukai Forest",
+   "type": "event",
+   "aliases": [],
+   "description": "Final battle of the Kami War.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Konda performs an arcane ritual with moonfolk and wizard allies and kidnaps O-Kagachi's child, imprisoning it in a stone disk.",
+   "participants": [
+    "Lord Konda",
+    "Kyodai",
+    "O-Kagachi",
+    "Moonfolk",
+    "Eiganjo"
+   ],
+   "location": "Eiganjo",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Konda tore the god-child out of the spirit realm and brought it into the physical world"
+  },
+  {
+   "summary": "Konda ceases to age and shuts himself in his inner chambers.",
+   "participants": [
+    "Lord Konda"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "From that day forward, Konda ceased to age."
+  },
+  {
+   "summary": "The enraged kami attack the physical world and mortals fight back in a losing battle.",
+   "participants": [
+    "Kami",
+    "Kami War"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The kami began to attack the physical world to reclaim"
+  },
+  {
+   "summary": "In the twentieth year Michiko Konda, aided by Toshiro Umezawa, frees the scion Kyodai and defeats O-Kagachi and Lord Konda, ending the war.",
+   "participants": [
+    "Michiko Konda",
+    "Toshiro Umezawa",
+    "Kyodai",
+    "O-Kagachi",
+    "Lord Konda"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "managed to free the kidnapped scion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Konda",
+   "relation": "enemy",
+   "target": "O-Kagachi",
+   "note": "kidnapped O-Kagachi's child",
+   "paragraph": 1,
+   "quote": "the child and scion of O-Kagachi"
+  },
+  {
+   "source": "Kyodai",
+   "relation": "family",
+   "target": "O-Kagachi",
+   "note": "child and scion of O-Kagachi",
+   "paragraph": 1,
+   "quote": "the child and scion of O-Kagachi"
+  },
+  {
+   "source": "Toshiro Umezawa",
+   "relation": "ally",
+   "target": "Michiko Konda",
+   "note": "aided her",
+   "paragraph": 3,
+   "quote": "with the aid of the black magician Toshiro Umezawa"
+  },
+  {
+   "source": "Moonfolk",
+   "relation": "ally",
+   "target": "Lord Konda",
+   "note": "helped with the ritual",
+   "paragraph": 1,
+   "quote": "with the help of his moonfolk and wizard allies"
+  },
+  {
+   "source": "Michiko Konda",
+   "relation": "enemy",
+   "target": "Lord Konda",
+   "note": "defeated him",
+   "paragraph": 3,
+   "quote": "to defeat both O-Kagachi and Lord Konda"
+  }
+ ],
+ "rejected": []
+}

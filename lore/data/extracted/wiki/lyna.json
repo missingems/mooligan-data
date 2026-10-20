@@ -1,0 +1,141 @@
+{
+ "page": "wiki/lyna",
+ "url": "https://mtg.wiki/page/Lyna",
+ "title": "Lyna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:18Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Lyna",
+   "type": "character",
+   "aliases": [],
+   "description": "Emissary of the Soltari trapped between Dominaria and Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soltari",
+   "type": "faction",
+   "aliases": [],
+   "description": "People trapped between Dominaria and Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who made a deal with Lyna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ertai",
+   "type": "character",
+   "aliases": [],
+   "description": "Studied the Erratic Portal and bargained with Lyna; stranded on Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hanna",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member Lyna spoke to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Skyship that escaped through the portal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshaper",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legacy piece boosting Weatherlight's speed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erratic Portal",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Portal on Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Greven il-Vec",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured Ertai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane built to aid the Phyrexian invasion.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza met Lyna on Rath and they agreed to help each other escape.",
+   "participants": [
+    "Urza",
+    "Lyna"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Lyna wanted Urza's help to escape from Rath."
+  },
+  {
+   "summary": "Lyna approached Ertai at the Erratic Portal and promised to help open it in exchange for letting the Soltari flee.",
+   "participants": [
+    "Lyna",
+    "Ertai",
+    "Erratic Portal"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Lyna approached Ertai when he studied the runes of the Erratic Portal"
+  },
+  {
+   "summary": "The Weatherlight and the Soltari escaped, but Urza deactivated the portal stranding Ertai, who was captured by Greven il-Vec.",
+   "participants": [
+    "Weatherlight",
+    "Urza",
+    "Ertai",
+    "Greven il-Vec",
+    "Soltari"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ertai was stranded on the wrong side and got captured by Greven il-Vec ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lyna",
+   "relation": "leader_of",
+   "target": "Soltari",
+   "note": "Emissary of the Soltari",
+   "paragraph": 0,
+   "quote": "Lyna was the emissary of the Soltari"
+  },
+  {
+   "source": "Lyna",
+   "relation": "ally",
+   "target": "Urza",
+   "note": "Agreed to help one another",
+   "paragraph": 1,
+   "quote": "the two agreed to help one another"
+  }
+ ],
+ "rejected": []
+}

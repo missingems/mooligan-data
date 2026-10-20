@@ -1,0 +1,185 @@
+{
+ "page": "wiki/conqueror-s-foothold",
+ "url": "https://mtg.wiki/page/Conqueror%27s_Foothold",
+ "title": "Conqueror's Foothold",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:32Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Conqueror's Foothold",
+   "type": "location",
+   "aliases": [],
+   "description": "A Legion of Dusk fortress and prison on mainland Ixalan, where captives are executed to sustain vampiric rituals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire conquistadors who colonize Ixalan and may only feed on the blood of their foes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vona de Iedo",
+   "type": "character",
+   "aliases": [
+    "Vona",
+    "the Butcher of Magan",
+    "Vona, the Butcher of Magan"
+   ],
+   "description": "Vampire conquistador who commanded the Foothold and sought the Hierophant's Chalice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adrian Adanto",
+   "type": "character",
+   "aliases": [],
+   "description": "Established the Foothold with the Legion of Dusk during their colonial campaigns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alante",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire cleric of the Order of the Five Sacraments who betrayed Vona, freed the prisoners and secured the Chalice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Five Sacraments",
+   "type": "faction",
+   "aliases": [],
+   "description": "A vampire sect favoring trade with the Sun Empire over subjugation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hierophant's Chalice",
+   "type": "artifact",
+   "aliases": [
+    "the Chalice"
+   ],
+   "description": "An artifact said to create an endless supply of blood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temple of Aclazotz",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple where the Chalice was found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Foothold stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination Vona left for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apostasine Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "Wars in which Vona forged her brutal reputation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "Land conquered by the Legion, in which Vona took part.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vona joined the first fleet to Ixalan and established the Foothold as a stronghold for her own ambitions.",
+   "participants": [
+    "Vona de Iedo",
+    "Conqueror's Foothold"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Vona joined the first fleet to cross the sea to Ixalan ."
+  },
+  {
+   "summary": "Vona discovered a map to the Hierophant's Chalice and used the Foothold and its prisoners to search for it.",
+   "participants": [
+    "Vona de Iedo",
+    "Hierophant's Chalice",
+    "Conqueror's Foothold"
+   ],
+   "location": "Conqueror's Foothold",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Vona discovered a map leading to the Hierophant's Chalice, an artifact said to create an endless supply of blood."
+  },
+  {
+   "summary": "Alante turned against Vona, stole the map, freed the prisoners and led them to the Temple of Aclazotz, securing the Chalice for her order.",
+   "participants": [
+    "Alante",
+    "Vona de Iedo",
+    "Order of the Five Sacraments",
+    "Hierophant's Chalice",
+    "Temple of Aclazotz"
+   ],
+   "location": "Conqueror's Foothold",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Stealing the map, she freed the doomed prisoners and led them to the Temple of Aclazotz ahead of Vona’s forces, ultimately securing the Chalice for her order and thwarting Vona’s plan."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vona de Iedo",
+   "relation": "leader_of",
+   "target": "Conqueror's Foothold",
+   "note": "commanded it until she left for Orazca",
+   "paragraph": 4,
+   "quote": "Until she left for Orazca , Conqueror's Foothold was commanded by Vona de Iedo"
+  },
+  {
+   "source": "Vona de Iedo",
+   "relation": "member_of",
+   "target": "Legion of Dusk",
+   "note": "conquistador",
+   "paragraph": 4,
+   "quote": "As a conquistador, she established the Foothold as a stronghold"
+  },
+  {
+   "source": "Alante",
+   "relation": "member_of",
+   "target": "Order of the Five Sacraments",
+   "note": "vampire cleric",
+   "paragraph": 6,
+   "quote": "Alante , a vampire cleric of the Order of the Five Sacraments"
+  },
+  {
+   "source": "Alante",
+   "relation": "enemy",
+   "target": "Vona de Iedo",
+   "note": "secretly turned against her",
+   "paragraph": 6,
+   "quote": "Alante secretly turned against Vona after learning of her plot."
+  },
+  {
+   "source": "Conqueror's Foothold",
+   "relation": "created",
+   "target": "Adrian Adanto",
+   "note": "established by Adanto and the Legion",
+   "paragraph": 2,
+   "quote": "Conqueror's Foothold is a fortified outpost established by Adrian Adanto and the Legion of Dusk"
+  }
+ ],
+ "rejected": []
+}

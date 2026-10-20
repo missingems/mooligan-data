@@ -1,0 +1,136 @@
+{
+ "page": "wiki/royal-academy-of-magic",
+ "url": "https://mtg.wiki/page/Royal_Academy_of_Magic",
+ "title": "Royal Academy of Magic",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:00Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Royal Academy of Magic",
+   "type": "faction",
+   "aliases": [],
+   "description": "Academy of wizards in Krov, capital of Kjeldor, that crumbled in the Thaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krov",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Kjeldor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation on Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gustha Ebbasdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "Head of the academy and most powerful recognized wizard in Kjeldor, killed in Lim-Dul's Battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Sneaked into the tower and reclaimed Jodah's mirror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dul's Battle",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Gustha was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zur",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard whose followers some spellcasters joined.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Darien",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader unwilling to support one faction over others.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garza Zol",
+   "type": "character",
+   "aliases": [],
+   "description": "Took control of Krov.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rimewind",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult that used Krov's libraries to find Phyrexian war machines.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jaya Ballard snuck into Gustha's tower and reclaimed Jodah's mirror from her owl familiar.",
+   "participants": [
+    "Jaya Ballard",
+    "Gustha Ebbasdotter"
+   ],
+   "location": "Royal Academy of Magic",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jaya Ballard snuck into her tower and reclaimed Jodah's mirror from Gustha's owl familiar"
+  },
+  {
+   "summary": "Gustha was killed in Lim-Dul's Battle and the spellcaster groups went their separate ways, crumbling the academy.",
+   "participants": [
+    "Gustha Ebbasdotter",
+    "Darien"
+   ],
+   "location": "Krov",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the academy quickly crumbled in the first period of the Thaw"
+  },
+  {
+   "summary": "The academy fell with Krov when Garza Zol took control.",
+   "participants": [
+    "Garza Zol"
+   ],
+   "location": "Krov",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Royal Academy as an institution finally fell along with the rest of the city of Krov when Garza Zol took control over it."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gustha Ebbasdotter",
+   "relation": "leader_of",
+   "target": "Royal Academy of Magic",
+   "note": "led the academy",
+   "paragraph": 2,
+   "quote": "the academy was led by Gustha Ebbasdotter"
+  },
+  {
+   "source": "Royal Academy of Magic",
+   "relation": "located_in",
+   "target": "Krov",
+   "note": "located in the capital",
+   "paragraph": 0,
+   "quote": "was located in Krov"
+  }
+ ],
+ "rejected": []
+}

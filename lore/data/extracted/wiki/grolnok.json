@@ -1,0 +1,96 @@
+{
+ "page": "wiki/grolnok",
+ "url": "https://mtg.wiki/page/Grolnok",
+ "title": "Grolnok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Grolnok",
+   "type": "deity",
+   "aliases": [],
+   "description": "A massive frog worshiped as a deity in Nephalia, Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spawn of Grolnok",
+   "type": "faction",
+   "aliases": [
+    "the spawn"
+   ],
+   "description": "Nephalian cult that raised a frog as the one true Grolnok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Temple of Toxrill",
+   "type": "faction",
+   "aliases": [
+    "the temple"
+   ],
+   "description": "Rival Nephalian cult that obtained its own monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gitrog monster",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster whose egg the Spawn of Grolnok believed they obtained.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Innistrad where the cults rival each other.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Spawn of Grolnok perform a ritual on an egg said to be the Gitrog monster's, hatching a humongous frog they call the true Grolnok.",
+   "participants": [
+    "Spawn of Grolnok",
+    "Grolnok",
+    "Gitrog monster"
+   ],
+   "location": "Nephalia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "They cast an arcane ritual on the egg"
+  },
+  {
+   "summary": "Hearing the temple has its own monster, the spawn prepare for their final battle.",
+   "participants": [
+    "Spawn of Grolnok",
+    "Temple of Toxrill"
+   ],
+   "location": "Nephalia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the spawn began preparations for their final battle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Spawn of Grolnok",
+   "relation": "enemy",
+   "target": "Temple of Toxrill",
+   "note": "Bitter rivalry among Nephalia's cults.",
+   "paragraph": 1,
+   "quote": "There is no more bitter a rivalry among Nephalia 's cults than that between the Spawn of Grolnok and the Temple of Toxrill"
+  },
+  {
+   "source": "Spawn of Grolnok",
+   "relation": "serves",
+   "target": "Grolnok",
+   "note": "They dote on their \" god .\"",
+   "paragraph": 1,
+   "quote": "Declaring this monster the one true Grolnok"
+  }
+ ],
+ "rejected": []
+}

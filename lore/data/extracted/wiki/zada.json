@@ -1,0 +1,125 @@
+{
+ "page": "wiki/zada",
+ "url": "https://mtg.wiki/page/Zada",
+ "title": "Zada",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:19Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Zada",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin leader of the Tuktuk tribe who overthrew Tuktuk and eats hedrons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuktuk",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin construct leader shattered and devoured by the goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tuktuk tribe",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin tribe led by Zada.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Monstrous broods consuming Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi Titan that desiccated lands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where the goblins built domes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion Zada fought in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zada convinced the goblins that Tuktuk was contaminated; they overthrew, shattered and devoured him.",
+   "participants": [
+    "Zada",
+    "Tuktuk",
+    "Tuktuk tribe"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The goblins in attendance rose and overthrew Tuktuk"
+  },
+  {
+   "summary": "Zada took over the tribe and settled the goblins in lands already drained by Ulamog.",
+   "participants": [
+    "Zada",
+    "Tuktuk tribe",
+    "Ulamog"
+   ],
+   "location": "Akoum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Zada took over the tribe"
+  },
+  {
+   "summary": "Zada fought in defense of Zendikar during the New Phyrexian Invasion.",
+   "participants": [
+    "Zada",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Zada fought in defense of Zendikar during the New Phyrexian Invasion ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zada",
+   "relation": "leader_of",
+   "target": "Tuktuk tribe",
+   "note": "Took over the tribe",
+   "paragraph": 2,
+   "quote": "Zada took over the tribe"
+  },
+  {
+   "source": "Zada",
+   "relation": "enemy",
+   "target": "Tuktuk",
+   "note": "Overthrew and devoured him",
+   "paragraph": 1,
+   "quote": "The goblins in attendance rose and overthrew Tuktuk"
+  }
+ ],
+ "rejected": []
+}

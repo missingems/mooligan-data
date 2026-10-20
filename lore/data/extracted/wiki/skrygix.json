@@ -1,0 +1,104 @@
+{
+ "page": "wiki/skrygix",
+ "url": "https://mtg.wiki/page/Skrygix",
+ "title": "Skrygix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:34Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Skrygix",
+   "type": "character",
+   "aliases": [],
+   "description": "Tall Gateless goblin student at Hearth Fountain Academic, in Liric's honors history class.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liric",
+   "type": "character",
+   "aliases": [
+    "Professor Liric"
+   ],
+   "description": "Her history professor, secretly a Dimir agent on a mission to erase a memory.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hearth Fountain Academic",
+   "type": "location",
+   "aliases": [],
+   "description": "Exclusive tuition-free school.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gateless",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Skrygix belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Liric serves as an agent.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On the last day of school Skrygix gave Liric a painting of his classroom, which made him laugh.",
+   "participants": [
+    "Skrygix",
+    "Liric"
+   ],
+   "location": "Hearth Fountain Academic",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The drawing made Liric laugh, and he promised her he would hang it in his office at school."
+  },
+  {
+   "summary": "Liric avoided telling Skrygix where he would go for the summer.",
+   "participants": [
+    "Skrygix",
+    "Liric"
+   ],
+   "location": "Hearth Fountain Academic",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "he avoided answering her, merely bidding her a fun summer"
+  },
+  {
+   "summary": "Skrygix did not know her teacher was a Dimir agent on a mission to erase an important memory.",
+   "participants": [
+    "Liric",
+    "Dimir"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She did not know that her teacher was a Dimir agent who was on a mission to erase an important memory from someone special."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liric",
+   "relation": "mentor_of",
+   "target": "Skrygix",
+   "note": "Her professor in honors history.",
+   "paragraph": 0,
+   "quote": "Liric is her professor there in her honors history class"
+  },
+  {
+   "source": "Liric",
+   "relation": "member_of",
+   "target": "Dimir",
+   "note": "Dimir agent.",
+   "paragraph": 3,
+   "quote": "her teacher was a Dimir agent"
+  }
+ ],
+ "rejected": []
+}

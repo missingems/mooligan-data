@@ -1,0 +1,132 @@
+{
+ "page": "wiki/riptide-project",
+ "url": "https://mtg.wiki/page/Riptide_Project",
+ "title": "Riptide Project",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Riptide Project",
+   "type": "faction",
+   "aliases": [],
+   "description": "A conglomeration of blue wizards on Riptide Island founded around 4305 AR to further understanding of surface and Mer magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riptide Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island off mainland Otaria hosting the project.",
+   "presence": "appears"
+  },
+  {
+   "name": "Empress Llawan",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of the Riptide Project.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mer Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire of the merfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slivers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures the project recreated that escaped and spread over Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sliver Queen",
+   "type": "character",
+   "aliases": [],
+   "description": "Controller of slivers, absent from the experiments.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rumored to have an interest in the project.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pemmin",
+   "type": "character",
+   "aliases": [],
+   "description": "The only researcher known to survive the sliver onslaught.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the slivers spread over.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Empress Llawan founded the Riptide Project to repair relations between surface and the Mer Empire.",
+   "participants": [
+    "Empress Llawan",
+    "Riptide Project",
+    "Mer Empire"
+   ],
+   "location": "Riptide Island",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Riptide Project was founded by Empress Llawan"
+  },
+  {
+   "summary": "The project recreated slivers, which without the Sliver Queen ran wild, slaughtered most researchers and spread over Dominaria.",
+   "participants": [
+    "Riptide Project",
+    "Slivers",
+    "Sliver Queen"
+   ],
+   "location": "Riptide Island",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the slivers ran wild and slaughtered most of the researchers"
+  },
+  {
+   "summary": "Pemmin was the only known researcher to survive.",
+   "participants": [
+    "Pemmin",
+    "Slivers"
+   ],
+   "location": "Riptide Island",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "there was only one researcher known to have survived the Slivers' devastating onslaught"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Empress Llawan",
+   "relation": "created",
+   "target": "Riptide Project",
+   "note": "founder",
+   "paragraph": 1,
+   "quote": "The Riptide Project was founded by Empress Llawan"
+  },
+  {
+   "source": "Riptide Project",
+   "relation": "located_in",
+   "target": "Riptide Island",
+   "note": "",
+   "paragraph": 0,
+   "quote": "established around 4305 AR on Riptide Island"
+  }
+ ],
+ "rejected": []
+}

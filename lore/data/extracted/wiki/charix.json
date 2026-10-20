@@ -1,0 +1,96 @@
+{
+ "page": "wiki/charix",
+ "url": "https://mtg.wiki/page/Charix",
+ "title": "Charix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:57Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Charix",
+   "type": "creature",
+   "aliases": [
+    "Charix, the Raging Isle"
+   ],
+   "description": "Charix, the Raging Isle, a continent-sized leviathan crab born from the ruins of the Tazeem Skyclave on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazeem Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "Kor skyclave ruin destroyed by Iona; its pieces fell into the ocean.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Charix lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iona",
+   "type": "character",
+   "aliases": [],
+   "description": "Destroyer of the Tazeem Skyclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skyclaves",
+   "type": "location",
+   "aliases": [],
+   "description": "Kor structures that rose once more.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Iona destroys the Tazeem Skyclave; a ruin housing a kor artifact lands on crab eggs, crushing all but one.",
+   "participants": [
+    "Iona",
+    "Tazeem Skyclave",
+    "Charix"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The eggs were all crushed, except for one."
+  },
+  {
+   "summary": "The surviving crab gorges on the artifact's energy and grows enormous, feeding on further artifacts.",
+   "participants": [
+    "Charix"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the crab, denied normal food, gorged itself on the energy of the artifact"
+  },
+  {
+   "summary": "When the Skyclaves rise again, Charix's food supply is interrupted and he breaches from the depths seeking sustenance.",
+   "participants": [
+    "Charix",
+    "Skyclaves"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Charix has breached from the depths in search of sustenance"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Iona",
+   "relation": "killed",
+   "target": "Tazeem Skyclave",
+   "note": "Iona destroyed the skyclave.",
+   "paragraph": 2,
+   "quote": "When Iona destroyed the Tazeem Skyclave"
+  }
+ ],
+ "rejected": []
+}

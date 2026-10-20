@@ -1,0 +1,107 @@
+{
+ "page": "profiles/amonkhet-plane",
+ "url": "https://magic.wizards.com/en/story/amonkhet-plane",
+ "title": "Amonkhet",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:38:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of dichotomy: a lush river valley and glorious city ringed by endless scorching desert, ruled by animal-headed gods and a God-Pharaoh.",
+   "presence": "appears"
+  },
+  {
+   "name": "The God-Pharaoh",
+   "type": "character",
+   "aliases": [
+    "God-Pharaoh"
+   ],
+   "description": "The wise and benevolent ruler of Amonkhet who promises the people a perfect afterlife, secretly Nicol Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "The God-Pharaoh"
+   ],
+   "description": "A malevolent dragon planeswalker whose schemes reach far beyond Amonkhet, secretly posing as its God-Pharaoh.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gods of Amonkhet",
+   "type": "deity",
+   "aliases": [
+    "gods"
+   ],
+   "description": "Animal-headed gods who walk among the people, each overseeing one of the five trials to the afterlife.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Five Trials",
+   "type": "concept",
+   "aliases": [],
+   "description": "Trials on the path to the afterlife, established by the God-Pharaoh to purify and perfect the people; each cultivates an aspect of mortal perfection.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The people train their bodies and minds and eagerly anticipate being permitted to die in combat.",
+   "participants": [
+    "Amonkhet"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Yet they eagerly anticipate the time when they will be permitted to die in combat and leave this world behind."
+  },
+  {
+   "summary": "Each god oversees one of the five trials and instructs the initiates preparing to face it.",
+   "participants": [
+    "The Gods of Amonkhet",
+    "The Five Trials"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Each god oversees one of the five trials and instructs the initiates who are preparing to face the trial"
+  },
+  {
+   "summary": "The benevolent God-Pharaoh is revealed to be Nicol Bolas.",
+   "participants": [
+    "The God-Pharaoh",
+    "Nicol Bolas"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "is actually Nicol Bolas, the malevolent dragon Planeswalker whose schemes reach far beyond this plane."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The God-Pharaoh",
+   "relation": "other",
+   "target": "Nicol Bolas",
+   "note": "The God-Pharaoh is actually Nicol Bolas.",
+   "paragraph": 3,
+   "quote": "is actually Nicol Bolas, the malevolent dragon Planeswalker whose schemes reach far beyond this plane."
+  },
+  {
+   "source": "The Gods of Amonkhet",
+   "relation": "serves",
+   "target": "The God-Pharaoh",
+   "note": "The gods are custodians of the path established by the God-Pharaoh.",
+   "paragraph": 2,
+   "quote": "The gods are custodians of the path to the afterlife, established by the God-Pharaoh"
+  }
+ ],
+ "rejected": []
+}

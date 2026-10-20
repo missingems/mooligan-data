@@ -1,0 +1,127 @@
+{
+ "page": "wiki/corsen-mon-duur",
+ "url": "https://mtg.wiki/page/Corsen_Mon_Duur",
+ "title": "Corsen Mon Duur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Corsen Mon Duur",
+   "type": "character",
+   "aliases": [
+    "Corsen"
+   ],
+   "description": "Long-bearded dwarf summoned by a planeswalker and left behind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dreadfang",
+   "type": "character",
+   "aliases": [],
+   "description": "Kobold who captured Corsen's kin to lure Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot Niptil",
+   "type": "character",
+   "aliases": [
+    "Loot"
+   ],
+   "description": "Nameless being Dreadfang wanted to retrieve cursed armor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anaytha",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman at the complex who looked like Loot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kyyrao Grrenmw",
+   "type": "character",
+   "aliases": [],
+   "description": "Cat warrior who knelt with Corsen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shinra",
+   "type": "character",
+   "aliases": [],
+   "description": "Cat warrior who knelt with Corsen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Peregrinator Complex",
+   "type": "location",
+   "aliases": [],
+   "description": "Complex holding the treasure and cursed armor.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Corsen is summoned to a planeswalker duel and left behind when his planeswalker loses.",
+   "participants": [
+    "Corsen Mon Duur"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Corsen was summoned to fight in a Planeswalker duel and was left behind when his planeswalker lost"
+  },
+  {
+   "summary": "Dreadfang captures Corsen's brother and nephew to force him to lure Loot.",
+   "participants": [
+    "Dreadfang",
+    "Corsen Mon Duur",
+    "Loot Niptil"
+   ],
+   "location": "Peregrinator Complex",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the kobold Dreadfang captured Corsen’s brother and nephew"
+  },
+  {
+   "summary": "Corsen finds Loot and tells him of Anaytha, who looks like Loot.",
+   "participants": [
+    "Corsen Mon Duur",
+    "Loot Niptil",
+    "Anaytha"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "he told Loot that he had been attacked by kobolds at the Peregrinator Complex"
+  },
+  {
+   "summary": "Loot attacks Dreadfang, who is soon dead; the party leaves the complex.",
+   "participants": [
+    "Loot Niptil",
+    "Dreadfang",
+    "Corsen Mon Duur",
+    "Kyyrao Grrenmw",
+    "Shinra"
+   ],
+   "location": "Peregrinator Complex",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Dreadfang did not believe, but was soon dead."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dreadfang",
+   "relation": "enemy",
+   "target": "Corsen Mon Duur",
+   "note": "held his kin captive",
+   "paragraph": 1,
+   "quote": "the kobold Dreadfang captured Corsen’s brother and nephew"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,206 @@
+{
+ "page": "wiki/biblioplex",
+ "url": "https://mtg.wiki/page/Biblioplex",
+ "title": "Biblioplex",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [
+    "Library of Strixhaven"
+   ],
+   "description": "The vast library at the center of Strixhaven University, said to hold the knowledge of the Multiverse and the most complete archive of magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [
+    "Strixhaven University"
+   ],
+   "description": "The university on Arcavios whose campus the Biblioplex rises above.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Strixhaven stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isabough",
+   "type": "character",
+   "aliases": [],
+   "description": "The Treefolk librarian of the Biblioplex, aided by constructs and gargoyles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Codie",
+   "type": "character",
+   "aliases": [],
+   "description": "A chattering animated book that roams the Biblioplex halls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hall of Oracles",
+   "type": "location",
+   "aliases": [],
+   "description": "A hallowed chamber at the center of the Biblioplex that was ruined in the Oriq attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq Attack on Strixhaven",
+   "type": "event",
+   "aliases": [],
+   "description": "The attack during which Extus Narr infiltrated the Biblioplex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Extus Narr",
+   "type": "character",
+   "aliases": [],
+   "description": "An Oriq who infiltrated the Biblioplex and summoned the Blood Avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blood Avatar",
+   "type": "creature",
+   "aliases": [],
+   "description": "A being summoned in the Hall of Oracles and defeated by the Kenriths.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rowan Kenrith",
+   "type": "character",
+   "aliases": [
+    "Rowan"
+   ],
+   "description": "A planeswalker who helped defeat Extus Narr and the Blood Avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Will Kenrith",
+   "type": "character",
+   "aliases": [
+    "Will"
+   ],
+   "description": "A planeswalker who helped defeat Extus Narr and the Blood Avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Invocation of the Founders",
+   "type": "concept",
+   "aliases": [],
+   "description": "A spell housed in a small chamber of the library, used during the New Phyrexian Invasion to create a massive fractal tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [
+    "the Invasion"
+   ],
+   "description": "The invasion during which the Invocation of the Founders was used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arick Quenthorne",
+   "type": "character",
+   "aliases": [],
+   "description": "A great elven scholar and Strixhaven Director who donated the first holdings of the Scriptoria Collections.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Founder Dragons",
+   "type": "faction",
+   "aliases": [
+    "Oracle of Arcavios"
+   ],
+   "description": "Strixhaven's founders, who with perhaps the Oracle of Arcavios knew how the Biblioplex worked.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Oriq attack Extus Narr infiltrates the Biblioplex and summons the Blood Avatar in the Hall of Oracles.",
+   "participants": [
+    "Extus Narr",
+    "Blood Avatar",
+    "Biblioplex",
+    "Hall of Oracles"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "During the Oriq Attack on Strixhaven , Extus Narr infiltrated the Biblioplex and summoned the Blood Avatar in the Hall of Oracles."
+  },
+  {
+   "summary": "Rowan and Will Kenrith defeat Extus Narr and the Blood Avatar, but the Hall of Oracles collapses.",
+   "participants": [
+    "Rowan Kenrith",
+    "Will Kenrith",
+    "Extus Narr",
+    "Blood Avatar",
+    "Hall of Oracles"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "Extus Narr and the Blood Avatar were defeated by Rowan and Will Kenrith , but the Hall of Oracles collapsed from the magical strain and was left in ruin."
+  },
+  {
+   "summary": "The Invocation of the Founders is used during the Invasion, creating a fractal tree that breaks through the building's ceiling.",
+   "participants": [
+    "Invocation of the Founders",
+    "New Phyrexian Invasion",
+    "Biblioplex"
+   ],
+   "location": "Biblioplex",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "the spell was housed deep within the library, until it was used during the New Phyrexian Invasion , when a massive fractal tree was created in the chamber's center, breaking through the building's ceiling."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Biblioplex",
+   "relation": "located_in",
+   "target": "Strixhaven",
+   "note": "It rises above the campus.",
+   "paragraph": 0,
+   "quote": "an enormous domed building that rises above the rest of the campus in Strixhaven , Arcavios ."
+  },
+  {
+   "source": "Rowan Kenrith",
+   "relation": "enemy",
+   "target": "Extus Narr",
+   "note": "Rowan and Will defeated Extus Narr.",
+   "paragraph": 9,
+   "quote": "Extus Narr and the Blood Avatar were defeated by Rowan and Will Kenrith , but the Hall of Oracles collapsed from the magical strain and was left in ruin."
+  },
+  {
+   "source": "Rowan Kenrith",
+   "relation": "ally",
+   "target": "Will Kenrith",
+   "note": "They fought together.",
+   "paragraph": 9,
+   "quote": "Extus Narr and the Blood Avatar were defeated by Rowan and Will Kenrith , but the Hall of Oracles collapsed from the magical strain and was left in ruin."
+  },
+  {
+   "source": "Hall of Oracles",
+   "relation": "located_in",
+   "target": "Biblioplex",
+   "note": "",
+   "paragraph": 6,
+   "quote": "an awe-inspiring and hallowed chamber at the very center of the Biblioplex, the Central Campus , and Strixhaven itself"
+  }
+ ],
+ "rejected": []
+}

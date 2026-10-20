@@ -1,0 +1,118 @@
+{
+ "page": "wiki/kento",
+ "url": "https://mtg.wiki/page/Kento",
+ "title": "Kento",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kento the Spiritcrafter",
+   "type": "character",
+   "aliases": [
+    "Kento"
+   ],
+   "description": "Orochi green animist from Kamigawa, planeswalker hunter sent by Vronos to capture Garruk; the first killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk",
+   "type": "character",
+   "aliases": [
+    "Garruk Wildspeaker"
+   ],
+   "description": "Planeswalker hunted by Vronos's group; killed Kento in a duel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vronos",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned planeswalkers on Innistrad to capture Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel to whom Garruk was to be brought to be cured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure from whom Garruk escaped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the hunters located Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Vronos summoned the hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Kento's home plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vronos summoned Kento and other planeswalkers on Innistrad to capture Garruk and bring him to Avacyn to be cured.",
+   "participants": [
+    "Vronos",
+    "Kento the Spiritcrafter",
+    "Garruk",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kento was summoned by Vronos on Innistrad"
+  },
+  {
+   "summary": "The hunters located Garruk in Alara; Kento died after a solo duel with him.",
+   "participants": [
+    "Kento the Spiritcrafter",
+    "Garruk"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Kento died of a devastating blow to the chest."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Garruk",
+   "relation": "killed",
+   "target": "Kento the Spiritcrafter",
+   "note": "Killed him in a duel",
+   "paragraph": 0,
+   "quote": "the first to be killed by him"
+  },
+  {
+   "source": "Kento the Spiritcrafter",
+   "relation": "serves",
+   "target": "Vronos",
+   "note": "Sent by Vronos as a hunter",
+   "paragraph": 0,
+   "quote": "one of the Planeswalker hunters sent by Vronos to capture"
+  }
+ ],
+ "rejected": []
+}

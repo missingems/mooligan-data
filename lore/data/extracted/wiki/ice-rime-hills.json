@@ -1,0 +1,105 @@
+{
+ "page": "wiki/ice-rime-hills",
+ "url": "https://mtg.wiki/page/Ice_Rime_Hills",
+ "title": "Ice Rime Hills",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:46Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ice Rime Hills",
+   "type": "location",
+   "aliases": [
+    "Ice-Rime Hills"
+   ],
+   "description": "Region in North Aerona with grassy pine barrens and sacred sites of Keld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [
+    "North Aerona"
+   ],
+   "description": "Part of the Domains of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keld",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation whose sacred sites lie in the hills.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation that contested the region with Keld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oyster Bay",
+   "type": "location",
+   "aliases": [],
+   "description": "Seaport carved into white chalk cliffs, site of a summit in 4561 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Concord",
+   "type": "location",
+   "aliases": [],
+   "description": "Port city visited by Towser's entourage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towser",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose entourage visited Concord.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sedge trolls",
+   "type": "creature",
+   "aliases": [],
+   "description": "Tribe in the swamps that kidnaps and eats travelers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A summit to settle the dispute between Keld and Benalia is held at Oyster Bay.",
+   "participants": [
+    "Keld",
+    "Benalia"
+   ],
+   "location": "Oyster Bay",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "A summit to settle their dispute was held at Oyster Bay in 4561 AR ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Keld",
+   "relation": "enemy",
+   "target": "Benalia",
+   "note": "contested control of the region",
+   "paragraph": 4,
+   "quote": "Control over the region was contested between Keld and Benalia ."
+  },
+  {
+   "source": "Ice Rime Hills",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "North Aerona",
+   "paragraph": 0,
+   "quote": "is a region in North Aerona"
+  }
+ ],
+ "rejected": []
+}

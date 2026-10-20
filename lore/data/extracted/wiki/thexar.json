@@ -1,0 +1,98 @@
+{
+ "page": "wiki/thexar",
+ "url": "https://mtg.wiki/page/Thexar",
+ "title": "Thexar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:55Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Thexar",
+   "type": "character",
+   "aliases": [],
+   "description": "An Anaba minotaur of Ulgrotha who died in a ritual scarring ceremony gone wrong.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the Anaba minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Neth'arna",
+   "type": "character",
+   "aliases": [],
+   "description": "The inexperienced minotaur who oversaw Thexar's scarring ceremony.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anaba",
+   "type": "faction",
+   "aliases": [
+    "Anaba minotaurs"
+   ],
+   "description": "The minotaur people to which Thexar belonged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thexar led his group to their ancestral caverns with his navigational skill.",
+   "participants": [
+    "Thexar",
+    "Anaba"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Thexar played a crucial role in leading his group to their ancestral caverns"
+  },
+  {
+   "summary": "Thexar underwent a scarring ceremony overseen by the inexperienced Neth'arna, which proved fatal.",
+   "participants": [
+    "Thexar",
+    "Neth'arna"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "overseen by the inexperienced Neth'arna , ultimately proved fatal"
+  },
+  {
+   "summary": "Thexar died pleading for death and accusing Neth'arna; the minotaur workers abandoned their tasks to mourn.",
+   "participants": [
+    "Thexar",
+    "Neth'arna",
+    "Anaba"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The collective response of the minotaur workers, who abandoned their tasks to mourn Thexar"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thexar",
+   "relation": "member_of",
+   "target": "Anaba",
+   "note": "An Anaba minotaur.",
+   "paragraph": 0,
+   "quote": "Thexar was an Anaba minotaur from Ulgrotha"
+  },
+  {
+   "source": "Neth'arna",
+   "relation": "killed",
+   "target": "Thexar",
+   "note": "Thexar died in the ceremony she oversaw and accused Neth'arna of betrayal.",
+   "paragraph": 3,
+   "quote": "overseen by the inexperienced Neth'arna , ultimately proved fatal"
+  }
+ ],
+ "rejected": []
+}

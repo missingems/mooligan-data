@@ -1,0 +1,212 @@
+{
+ "page": "wiki/penthikos",
+ "url": "https://mtg.wiki/page/Penthikos",
+ "title": "Penthikos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:00Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Penthikos",
+   "type": "character",
+   "aliases": [],
+   "description": "A human hero of Theros from Akros whose life ended in tragedy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Penthikos lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "City Penthikos defended and which sentenced him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oromai",
+   "type": "character",
+   "aliases": [
+    "king of Akros"
+   ],
+   "description": "The king of Akros who sentenced Penthikos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iroas",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose blessing Penthikos craved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the sun under which Penthikos was chained.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose anvil the rock is compared to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the dead who answered Penthikos's prayer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who ferries souls across the River of the Dead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Returned",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead phalanxes that overwhelmed the Akroan ranks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of the dead that Penthikos crossed into.",
+   "presence": "appears"
+  },
+  {
+   "name": "River of the Dead",
+   "type": "location",
+   "aliases": [],
+   "description": "River crossed to reach the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phoberos",
+   "type": "location",
+   "aliases": [],
+   "description": "Badlands where the Akroan stratians were slaughtered.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Penthikos breaks formation in the Phoberos badlands and charges ahead alone.",
+   "participants": [
+    "Penthikos"
+   ],
+   "location": "Phoberos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Breaking formation and running ahead, he struck down enemies as fast as they came at him"
+  },
+  {
+   "summary": "The Akroan ranks fall into disorder and drown under the advancing Returned while Penthikos is cut off.",
+   "participants": [
+    "Penthikos",
+    "Returned"
+   ],
+   "location": "Phoberos",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he heard his shieldmates curse him as they died"
+  },
+  {
+   "summary": "Penthikos reports to the king of Akros, who sentences him to be chained to the rocks.",
+   "participants": [
+    "Penthikos",
+    "Oromai",
+    "Heliod"
+   ],
+   "location": "Akros",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "And so he was chained to the rocks , to die in the sun of Heliod ."
+  },
+  {
+   "summary": "Penthikos prays for atonement and Erebos answers, freeing him to enter a cave.",
+   "participants": [
+    "Penthikos",
+    "Erebos"
+   ],
+   "location": "Akros",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Erebos 's great voice filled the air, acknowledging his prayer"
+  },
+  {
+   "summary": "In the dark cave Penthikos cuts down shades, each death tearing at his soul.",
+   "participants": [
+    "Penthikos"
+   ],
+   "location": "Underworld",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "the death of each shade ripped at his heart and soul"
+  },
+  {
+   "summary": "At the River of the Dead a scholar of Athreos refuses him passage until a death mask forms on his face.",
+   "participants": [
+    "Penthikos",
+    "Athreos",
+    "Erebos"
+   ],
+   "location": "River of the Dead",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "he felt the matter on his face shift and sculpt itself into a grimacing death mask"
+  },
+  {
+   "summary": "Penthikos is ferried across to the Underworld to take his place among the dead.",
+   "participants": [
+    "Penthikos",
+    "Athreos"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "the ancient barge silently slid forth from the fog"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oromai",
+   "relation": "enemy",
+   "target": "Penthikos",
+   "note": "sentenced him",
+   "paragraph": 4,
+   "quote": "The king of Akros pronounced a sentence over Penthikos"
+  },
+  {
+   "source": "Penthikos",
+   "relation": "serves",
+   "target": "Akros",
+   "note": "fought in its defense",
+   "paragraph": 1,
+   "quote": "stood heroically on Pharagax Bridge in defense of Akros"
+  },
+  {
+   "source": "Penthikos",
+   "relation": "ally",
+   "target": "Erebos",
+   "note": "made a deal with him",
+   "paragraph": 9,
+   "quote": "Penthikos explained he had made a deal with Erebos"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,99 @@
+{
+ "page": "wiki/urdom",
+ "url": "https://mtg.wiki/page/Urdom",
+ "title": "Urdom",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Urdom",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior and alleged hydra-slayer of Tazeem who hired out as a guide across the Teeth of Akoum and was killed by rock lizards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker guided by Urdom across the Teeth of Akoum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sachir",
+   "type": "character",
+   "aliases": [],
+   "description": "Hired Urdom to guide Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose camp Chandra was guided to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teeth of Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Spiked mountain range on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tazeem",
+   "type": "location",
+   "aliases": [],
+   "description": "Urdom's home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fire-breathing rock lizards",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures that attacked Urdom and Chandra.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sachir hires Urdom to guide Chandra Nalaar across the Teeth of Akoum to Anowon's camp for one gold coin.",
+   "participants": [
+    "Sachir",
+    "Urdom",
+    "Chandra Nalaar"
+   ],
+   "location": "Teeth of Akoum",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was hired by Sachir to guide Chandra Nalaar across the Teeth of Akoum to Anowon 's camp for a single gold coin."
+  },
+  {
+   "summary": "Fire-breathing rock lizards attack Urdom and Chandra on the trek and Urdom is killed.",
+   "participants": [
+    "Urdom",
+    "Chandra Nalaar",
+    "Fire-breathing rock lizards"
+   ],
+   "location": "Teeth of Akoum",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he and Chandra were attacked by fire-breathing rock lizards , and Urdom was killed."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fire-breathing rock lizards",
+   "relation": "killed",
+   "target": "Urdom",
+   "note": "As Sachir told it.",
+   "paragraph": 2,
+   "quote": "he and Chandra were attacked by fire-breathing rock lizards , and Urdom was killed."
+  }
+ ],
+ "rejected": []
+}

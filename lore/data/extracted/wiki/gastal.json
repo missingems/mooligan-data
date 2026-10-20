@@ -1,0 +1,159 @@
+{
+ "page": "wiki/gastal",
+ "url": "https://mtg.wiki/page/Gastal",
+ "title": "Gastal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gastal",
+   "type": "plane",
+   "aliases": [],
+   "description": "An apocalyptic wasteland plane of gas, dragonic warlords and road warriors, home of the Endriders and the scorpion dragon Akul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "creature",
+   "aliases": [],
+   "description": "A ferocious scorpion dragon of Gastal who traveled to Thunder Junction and formed the Hellspurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endriders",
+   "type": "faction",
+   "aliases": [
+    "Endrider gangs"
+   ],
+   "description": "Raiding gangs of Gastal; one gang formed a racing team on Avishkar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who attended a meeting on Gastal seeking Phyrexia's origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xantcha",
+   "type": "character",
+   "aliases": [],
+   "description": "Accompanied Urza to the meeting on Gastal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Manatarqua",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker killed at the meeting on Gastal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Far Fortune",
+   "type": "character",
+   "aliases": [],
+   "description": "Led an Endrider gang stranded on Avishkar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [
+    "The Hellspurs"
+   ],
+   "description": "Gang formed by Akul on Thunder Junction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Akul traveled to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Far Fortune's gang was stranded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Paths that connected planes to the Multiverse in 4562 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A meeting of planeswalkers on Gastal was interrupted by an unseen attack, killing Manatarqua; Urza abandoned his plans there.",
+   "participants": [
+    "Urza",
+    "Xantcha",
+    "Manatarqua"
+   ],
+   "location": "Gastal",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the planeswalker Manatarqua was killed."
+  },
+  {
+   "summary": "The Omenpaths opened, and Endrider gangs fled Gastal.",
+   "participants": [
+    "Endriders"
+   ],
+   "location": "Gastal",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Endrider gangs and other inhabitants fled the plane looking for planes for food, water, and easier raiding."
+  },
+  {
+   "summary": "Akul traveled to Thunder Junction and formed the Hellspurs.",
+   "participants": [
+    "Akul",
+    "Hellspurs"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The scorpion dragon Akul to traveled to Thunder Junction and formed The Hellspurs ."
+  },
+  {
+   "summary": "Far Fortune's stranded gang formed the Endriders racing team at the Ghirapur Grand Prix.",
+   "participants": [
+    "Far Fortune",
+    "Endriders"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Far Fortune and her crew found their way to the Ghirapur Grand Prix and formed the Endriders racing team."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Far Fortune",
+   "relation": "leader_of",
+   "target": "Endriders",
+   "note": "Led the gang",
+   "paragraph": 7,
+   "quote": "One gang, led by Far Fortune , ended up stranded on Avishkar."
+  },
+  {
+   "source": "Akul",
+   "relation": "located_in",
+   "target": "Gastal",
+   "note": "Home plane",
+   "paragraph": 0,
+   "quote": "It the home of the Endriders and the ferocious scorpion dragon Akul ."
+  }
+ ],
+ "rejected": []
+}

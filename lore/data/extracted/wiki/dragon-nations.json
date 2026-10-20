@@ -1,0 +1,94 @@
+{
+ "page": "wiki/dragon-nations",
+ "url": "https://mtg.wiki/page/Dragon_Nations",
+ "title": "Dragon Nations",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:27Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Dragon Nations",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dragons of all five colors united to fight the Phyrexians during the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Darigaaz",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the red flight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Primeval Dragons",
+   "type": "faction",
+   "aliases": [
+    "Primevals"
+   ],
+   "description": "Ancient dragons woken by sacrifice, who turned on Dominaria's defenders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion the Dragon Nations fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders the dragons fought.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Dragon Nations' leaders sacrificed themselves to wake the Primeval Dragons, who took control and turned on Dominaria's defenders.",
+   "participants": [
+    "Dragon Nations",
+    "Primeval Dragons"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the leaders of the Dragon Nations sacrificed themselves"
+  },
+  {
+   "summary": "The reborn Darigaaz sacrificed himself again, the Primevals were defeated and the Dragon Nations were freed and dissolved.",
+   "participants": [
+    "Darigaaz",
+    "Primeval Dragons",
+    "Dragon Nations"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After the reborn Darigaaz again sacrificed himself and the rest of the Primevals were defeated"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Darigaaz",
+   "relation": "leader_of",
+   "target": "Dragon Nations",
+   "note": "Leader of the red flight.",
+   "paragraph": 0,
+   "quote": "Darigaaz was the leader of the red flight"
+  },
+  {
+   "source": "Dragon Nations",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "United to fight Phyrexians.",
+   "paragraph": 0,
+   "quote": "united to fight Phyrexians during"
+  }
+ ],
+ "rejected": []
+}

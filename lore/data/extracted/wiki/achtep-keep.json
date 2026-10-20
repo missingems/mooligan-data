@@ -1,0 +1,193 @@
+{
+ "page": "wiki/achtep-keep",
+ "url": "https://mtg.wiki/page/Achtep_Keep",
+ "title": "Achtep Keep",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:36Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Achtep Keep",
+   "type": "location",
+   "aliases": [
+    "Citadel of the Ebon Hand"
+   ],
+   "description": "Capital fortress of the Order of the Ebon Hand in the Western Marshes, seat of Tourach's priesthood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [
+    "Ebon Hand",
+    "the Hand"
+   ],
+   "description": "Order that worshipped Tourach and bred thrulls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tourach",
+   "type": "deity",
+   "aliases": [
+    "Dark Judge",
+    "Ebon Hand",
+    "Ebon Praetor"
+   ],
+   "description": "Founder and primary deity of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thurzen Klathe",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord High Priest of the Order of the Ebon Hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Genkr Nik",
+   "type": "character",
+   "aliases": [
+    "Genkr"
+   ],
+   "description": "Ruler of the Keep who tortures Reod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reod Dai",
+   "type": "character",
+   "aliases": [
+    "Reod"
+   ],
+   "description": "Captive who knew goblin bomb secrets and started a thrull rebellion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eliza",
+   "type": "character",
+   "aliases": [],
+   "description": "Frees Reod during the rebellion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarya Haasendel",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf stranded after the fall of Gurn Keep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivra Jursdotter",
+   "type": "character",
+   "aliases": [
+    "Jursdotter"
+   ],
+   "description": "Mercenary sent south who joined the orcs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thrull rebellion",
+   "type": "event",
+   "aliases": [],
+   "description": "Uprising that overwhelmed the Ebon Hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crimson Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Eliza took Reod.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 170 AR an agent of Genkr Nik captures Reod Dai and brings him to Achtep Keep.",
+   "participants": [
+    "Genkr Nik",
+    "Reod Dai"
+   ],
+   "location": "Achtep Keep",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "an agent of Genkr Nik captured Reod Dai and brought him to Achtep Keep"
+  },
+  {
+   "summary": "Reod plans a thrull rebellion; some thrulls betray him and Genkr tortures him.",
+   "participants": [
+    "Reod Dai",
+    "Genkr Nik",
+    "Order of the Ebon Hand"
+   ],
+   "location": "Achtep Keep",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Reod then hatched a plan to start a thrull rebellion."
+  },
+  {
+   "summary": "The rebellion starts and Eliza frees Reod, taking him to the Crimson Peaks.",
+   "participants": [
+    "Eliza",
+    "Reod Dai",
+    "Thrull rebellion"
+   ],
+   "location": "Crimson Peaks",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "allowing Eliza to free Reod and bring him to the Crimson Peaks"
+  },
+  {
+   "summary": "Thurzen sends Ivra Jursdotter to the dwarves, but she joins the orcs, sealing the dwarves' doom.",
+   "participants": [
+    "Thurzen Klathe",
+    "Ivra Jursdotter",
+    "Sarya Haasendel"
+   ],
+   "location": "Achtep Keep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "sealing the dwarves' doom"
+  },
+  {
+   "summary": "The thrull rebellion overwhelms the Ebon Hand, leaving Achtep Keep in ruin.",
+   "participants": [
+    "Order of the Ebon Hand",
+    "Thrull rebellion",
+    "Achtep Keep"
+   ],
+   "location": "Achtep Keep",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the thrull rebellion eventually overwhelmed them completely, leaving Achtep Keep in ruin"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tourach",
+   "relation": "created",
+   "target": "Order of the Ebon Hand",
+   "note": "Founded the Order and Citadel.",
+   "paragraph": 1,
+   "quote": "The Order of the Ebon Hand and their Citadel were both founded by Tourach"
+  },
+  {
+   "source": "Thurzen Klathe",
+   "relation": "leader_of",
+   "target": "Order of the Ebon Hand",
+   "note": "Lord High Priest.",
+   "paragraph": 1,
+   "quote": "Thurzen Klathe oversaw this site as the Lord High Priest of the Order of the Ebon Hand."
+  },
+  {
+   "source": "Achtep Keep",
+   "relation": "located_in",
+   "target": "Order of the Ebon Hand",
+   "note": "Belonged to the Order.",
+   "paragraph": 0,
+   "quote": "the captial fortress belonging to the Order of the Ebon Hand"
+  }
+ ],
+ "rejected": []
+}

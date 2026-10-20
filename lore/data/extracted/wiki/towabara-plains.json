@@ -1,0 +1,103 @@
+{
+ "page": "wiki/towabara-plains",
+ "url": "https://mtg.wiki/page/Towabara_Plains",
+ "title": "Towabara Plains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:54Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Towabara Plains",
+   "type": "location",
+   "aliases": [
+    "Towabara"
+   ],
+   "description": "Massive plains surrounding the Araba and Eiganjo Castle on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Araba",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined land in Towabara filled with craters from kami attacks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo Castle",
+   "type": "location",
+   "aliases": [
+    "Eiganjo"
+   ],
+   "description": "Fortification of daimyo Takeshi Konda in the center of the Araba.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takeshi Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Daimyo of Eiganjo Castle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami who assaulted the castle during the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Eiganjo was badly damaged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yosei",
+   "type": "creature",
+   "aliases": [],
+   "description": "The Morning Star who guarded Towabara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "City that grew across the former Araba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [],
+   "description": "Oldest and tallest tree on Kamigawa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War, O-Kagachi assaults Eiganjo Castle and badly damages it.",
+   "participants": [
+    "O-Kagachi"
+   ],
+   "location": "Eiganjo Castle",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the castle was assaulted by O-Kagachi and badly damaged"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yosei",
+   "relation": "other",
+   "target": "Towabara Plains",
+   "note": "Guarded it.",
+   "paragraph": 2,
+   "quote": "Towabara was guarded by"
+  }
+ ],
+ "rejected": []
+}

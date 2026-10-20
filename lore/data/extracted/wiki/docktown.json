@@ -1,0 +1,169 @@
+{
+ "page": "wiki/docktown",
+ "url": "https://mtg.wiki/page/Docktown",
+ "title": "Docktown",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:31Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Docktown",
+   "type": "location",
+   "aliases": [],
+   "description": "The harbor district of Cabal City in Otaria on Dominaria, dangerous and crowded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "The city of which Docktown was the harbor district.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Virot Maglan",
+   "type": "character",
+   "aliases": [],
+   "description": "Armed with deathtouch powers from Kuberr, he killed the patrons of the Ilyssa tavern.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vinyata Maglan",
+   "type": "character",
+   "aliases": [],
+   "description": "Virot's sister, who helped him kill the tavern's patrons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "The source of Virot Maglan's deathtouch powers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ilyssa family",
+   "type": "faction",
+   "aliases": [],
+   "description": "A family that kept a tavern in Docktown.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction whose first unofficial member was the Ilyssa tavern owner.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chainer",
+   "type": "character",
+   "aliases": [],
+   "description": "Usurped rulership of the Cabal in 4305 AR and lost control of the Mirari's power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Chainer in a pit fight, together with the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "The event in 4305 AR in which Cabal City was overrun by dementia creatures.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Virot Maglan brings his sister Vinyata to Docktown to demonstrate his deathtouch powers.",
+   "participants": [
+    "Virot Maglan",
+    "Vinyata Maglan"
+   ],
+   "location": "Docktown",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "brought his sister Vinyata Maglan to Docktown to offer her a demonstration"
+  },
+  {
+   "summary": "Virot and Vinyata kill everyone in the Ilyssa tavern except the owner, who begged for his life.",
+   "participants": [
+    "Virot Maglan",
+    "Vinyata Maglan",
+    "Ilyssa family"
+   ],
+   "location": "Docktown",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he and Vinyata killed everyone there except a single except the tavern owner, who begged for his life"
+  },
+  {
+   "summary": "The tavern owner is spared if he gives up his Ilyssa name and obeys Virot, becoming the Cabal's first unofficial member.",
+   "participants": [
+    "Virot Maglan",
+    "Cabal"
+   ],
+   "location": "Docktown",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This unnamed tavern owner was thus the very first unofficial member of the Cabal"
+  },
+  {
+   "summary": "In 4305 AR, Cabal City is overrun by dementia creatures during the Battle for the Mirari as Chainer usurps the Cabal.",
+   "participants": [
+    "Chainer",
+    "Cabal"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Chainer usurped rulership of the Cabal and exiled the Patriarch to Aphetto"
+  },
+  {
+   "summary": "Chainer loses control of the Mirari's power in a pit fight against Kamahl and the Order; the ruined city is abandoned by the Cabal.",
+   "participants": [
+    "Chainer",
+    "Kamahl",
+    "Cabal"
+   ],
+   "location": "Cabal City",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the ruined city was completely abandoned by the Cabal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Virot Maglan",
+   "relation": "family",
+   "target": "Vinyata Maglan",
+   "note": "Siblings.",
+   "paragraph": 2,
+   "quote": "brought his sister Vinyata Maglan to Docktown"
+  },
+  {
+   "source": "Docktown",
+   "relation": "located_in",
+   "target": "Cabal City",
+   "note": "Its harbor district.",
+   "paragraph": 0,
+   "quote": "Docktown was the harbor district of Cabal City"
+  },
+  {
+   "source": "Chainer",
+   "relation": "enemy",
+   "target": "Kamahl",
+   "note": "They fought in a pit fight.",
+   "paragraph": 3,
+   "quote": "in a pit fight against Kamahl and the Order"
+  }
+ ],
+ "rejected": []
+}

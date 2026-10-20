@@ -1,0 +1,149 @@
+{
+ "page": "wiki/shards-of-alara",
+ "url": "https://mtg.wiki/page/Shards_of_Alara",
+ "title": "Shards of Alara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:44:00Z",
+ "storyline": "Alara block",
+ "entities": [
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Once a single mana-rich plane, torn apart by an unknown planeswalker into five incomplete shards.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of rolling hills, forests and glittering beaches dotted with high-rising castles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of sophisticated beauty etched into every artifact, city and inhabitant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "location",
+   "aliases": [],
+   "description": "A hellish shard whose inhabitants buy power at a high price or spiral into despair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard where goblins, lizardmen and humans scour for food and power, ruled by fearsome dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of lush growth whose beauty masks the savage dangers of the jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shards of Alara",
+   "type": "concept",
+   "aliases": [
+    "shards"
+   ],
+   "description": "Five incomplete planes into which Alara broke along color lines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Unknown planeswalker",
+   "type": "character",
+   "aliases": [],
+   "description": "The unnamed planeswalker who tore Alara asunder millennia ago, harvesting its mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [
+    "Ajani Vengeant"
+   ],
+   "description": "A planeswalker whose origins on Alara are the subject of the Flight of the White Cat webcomic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rafiq of the Many",
+   "type": "character",
+   "aliases": [],
+   "description": "A Bant character featured on a List card.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "An unknown planeswalker tears the single plane of Alara asunder millennia ago, harvesting its mana.",
+   "participants": [
+    "Unknown planeswalker",
+    "Alara"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "for an unknown planeswalker tore the plane asunder millennia ago, harvesting of its mana"
+  },
+  {
+   "summary": "The disaster breaks Alara along color lines into five shards, which recover their mana only in part.",
+   "participants": [
+    "Alara",
+    "Shards of Alara"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "This disaster broke Alara along color lines into incomplete planes called shards"
+  },
+  {
+   "summary": "The Flight of the White Cat webcomic tells of Ajani's origins on Alara.",
+   "participants": [
+    "Ajani",
+    "Alara"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Flight of the White Cat is a webcomic about Ajani 's origins on Alara ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Unknown planeswalker",
+   "relation": "created",
+   "target": "Shards of Alara",
+   "note": "his tearing of the plane broke it into shards",
+   "paragraph": 6,
+   "quote": "for an unknown planeswalker tore the plane asunder millennia ago"
+  },
+  {
+   "source": "Bant",
+   "relation": "located_in",
+   "target": "Alara",
+   "note": "a shard of Alara",
+   "paragraph": 9,
+   "quote": "Bant: A shard of rolling hills, forests and glittering beaches."
+  },
+  {
+   "source": "Jund",
+   "relation": "other",
+   "target": "Alara",
+   "note": "a shard ruled by fearsome dragons",
+   "paragraph": 12,
+   "quote": "but all here are ruled by fearsome dragons"
+  }
+ ],
+ "rejected": []
+}

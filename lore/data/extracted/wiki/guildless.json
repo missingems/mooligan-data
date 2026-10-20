@@ -1,0 +1,170 @@
+{
+ "page": "wiki/guildless",
+ "url": "https://mtg.wiki/page/Guildless",
+ "title": "Guildless",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:09Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "The Guildless",
+   "type": "faction",
+   "aliases": [
+    "Unguilded"
+   ],
+   "description": "People on Ravnica who belong to none of the ten guilds, a majority of the plane's inhabitants.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gateless",
+   "type": "faction",
+   "aliases": [
+    "Gateless Movement"
+   ],
+   "description": "Subgroup of the Guildless that actively resists the ten guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "City-plane of ten guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "Guild whose Firemanes led an assault on the Gateless.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nevena",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Gateless, marked for death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Pact whose collapse preceded the reformation of the guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Ravnican society is fragile.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [],
+   "description": "Notable guildless person, member of the R.A.M.I.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "R.A.M.I.",
+   "type": "faction",
+   "aliases": [],
+   "description": "Detective agency whose members are guildless.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Yore",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of guildless people.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Guildpact's collapse, random violence afflicts the reformed guilds, carried out by Ravnicans who refuse to join a guild; they are called the Gateless.",
+   "participants": [
+    "The Gateless",
+    "Guildpact"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "seemingly random acts of violence"
+  },
+  {
+   "summary": "Boros Firemanes lead a victorious assault on the rebels; the Gateless mark their leader Nevena for death.",
+   "participants": [
+    "Boros Legion",
+    "The Gateless",
+    "Nevena"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Boros Firemanes led a victorious assault on the rebels."
+  },
+  {
+   "summary": "Some Angels and Freemages desert to the Gateless.",
+   "participants": [
+    "The Gateless"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Freemages also joined the rebels."
+  },
+  {
+   "summary": "After the New Phyrexian Invasion the guilds fail to keep up, so civilians deliver services themselves.",
+   "participants": [
+    "The Guildless",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "many began to deliver services by themselves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Gateless",
+   "relation": "enemy",
+   "target": "Boros Legion",
+   "note": "the Boros assaulted the rebels",
+   "paragraph": 6,
+   "quote": "Boros Firemanes led a victorious assault on the rebels."
+  },
+  {
+   "source": "The Gateless",
+   "relation": "member_of",
+   "target": "The Guildless",
+   "note": "subgroup",
+   "paragraph": 1,
+   "quote": "The Gateless is a subgroup of the Guildless"
+  },
+  {
+   "source": "Nevena",
+   "relation": "leader_of",
+   "target": "The Gateless",
+   "note": "their leader",
+   "paragraph": 6,
+   "quote": "the Gateless marked their leader Nevena for death"
+  },
+  {
+   "source": "Alquist Proft",
+   "relation": "member_of",
+   "target": "R.A.M.I.",
+   "note": "guildless member",
+   "paragraph": 8,
+   "quote": "Alquist Proft and other members of the R.A.M.I."
+  }
+ ],
+ "rejected": []
+}

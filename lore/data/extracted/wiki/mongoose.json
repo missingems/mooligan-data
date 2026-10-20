@@ -1,0 +1,70 @@
+{
+ "page": "wiki/mongoose",
+ "url": "https://mtg.wiki/page/Mongoose",
+ "title": "Mongoose",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mongoose",
+   "type": "creature",
+   "aliases": [
+    "Mongooses"
+   ],
+   "description": "Slender, ferret-like carnivores found in various parts of Dominaria, noted for killing venomous snakes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where mongooses live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Llanowar",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Blurred Mongoose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Karoo Meerkats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Nimble Mongooses.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Mongoose",
+   "relation": "located_in",
+   "target": "Llanowar",
+   "note": "Blurred Mongoose hunts snakes near rivers",
+   "paragraph": 6,
+   "quote": "Llanowar was home to the Blurred Mongoose, which would hunt snakes near rivers."
+  },
+  {
+   "source": "Mongoose",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "Nimble Mongooses",
+   "paragraph": 8,
+   "quote": "Otaria was home to the Nimble Mongooses, which were said to be faster than a cobra's bite."
+  }
+ ],
+ "rejected": []
+}

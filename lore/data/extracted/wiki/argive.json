@@ -1,0 +1,171 @@
+{
+ "page": "wiki/argive",
+ "url": "https://mtg.wiki/page/Argive",
+ "title": "Argive",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:01Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Argive",
+   "type": "location",
+   "aliases": [
+    "Argive kingdom"
+   ],
+   "description": "The most northerly of the three coastal kingdoms of Terisiare on Dominaria, homeland of Urza and Mishra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Argive lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A native of Argive who became Lord High Protector of the Combined Kingdoms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "A native of Argive and brother of Urza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war between Urza and Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Combined Kingdoms",
+   "type": "faction",
+   "aliases": [],
+   "description": "A union of Argive, Korlis and later the remnants of Yotia, led by Urza as Lord High Protector.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [],
+   "description": "The people who resisted the Combined Kingdoms at Tomakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tomakul",
+   "type": "location",
+   "aliases": [],
+   "description": "A city the Combined Kingdoms nearly besieged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "faction",
+   "aliases": [],
+   "description": "A nation founded around 2400 AR in the area that had been Argive.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "The nation formed when Kjeldor joined with Balduvia at the end of the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Great-great-grandson of Jarsyl who lived in the area of former Argive until his farmstead collapsed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Argive joins with Korlis in 36 AR to form the Combined Kingdoms, with Urza as Lord High Protector.",
+   "participants": [
+    "Argive",
+    "Combined Kingdoms",
+    "Urza"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Argive joined with Korlis in 36 AR to form the Combined Kingdoms"
+  },
+  {
+   "summary": "The Combined Kingdoms nearly besiege Tomakul but fall back before the Fallaji.",
+   "participants": [
+    "Combined Kingdoms",
+    "Fallaji"
+   ],
+   "location": "Tomakul",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "but had to fall back due to overwhelming resistance from the Fallaji"
+  },
+  {
+   "summary": "The Fall of Penregon in 79 AR ends the nation of Argive.",
+   "participants": [
+    "Argive"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Fall of Penregon in 79 AR marked the end of the nation"
+  },
+  {
+   "summary": "Kjeldor is founded in the area of the old Argive around 2400 AR.",
+   "participants": [
+    "Kjeldor"
+   ],
+   "location": "Argive",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "the nation of Kjeldor would be founded in the same area that Argive had been"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "leader_of",
+   "target": "Combined Kingdoms",
+   "note": "He was Lord High Protector.",
+   "paragraph": 3,
+   "quote": "These Combined Kingdoms had Urza as their Lord High Protector."
+  },
+  {
+   "source": "Argive",
+   "relation": "member_of",
+   "target": "Combined Kingdoms",
+   "note": "Argive joined with Korlis to form it.",
+   "paragraph": 3,
+   "quote": "Argive joined with Korlis in 36 AR to form the Combined Kingdoms"
+  },
+  {
+   "source": "Combined Kingdoms",
+   "relation": "enemy",
+   "target": "Fallaji",
+   "note": "They campaigned against Tomakul.",
+   "paragraph": 3,
+   "quote": "They came very close to besieging Tomakul"
+  }
+ ],
+ "rejected": []
+}

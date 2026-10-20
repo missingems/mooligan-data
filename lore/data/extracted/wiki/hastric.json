@@ -1,0 +1,191 @@
+{
+ "page": "wiki/hastric",
+ "url": "https://mtg.wiki/page/Hastric",
+ "title": "Hastric",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hastric",
+   "type": "character",
+   "aliases": [
+    "Hastri"
+   ],
+   "description": "A scout and adventurer from Thune on Shandalar, famous for discovering and describing the Shandalaran slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Hastric lived and the slivers are found.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thune",
+   "type": "location",
+   "aliases": [],
+   "description": "Hastric's home on Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skep",
+   "type": "location",
+   "aliases": [
+    "the Skep"
+   ],
+   "description": "An area near the Eastern Sea that was home to the slivers of Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eastern Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "A sea on Shandalar near the Skep.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slivers",
+   "type": "creature",
+   "aliases": [
+    "Shandalaran slivers"
+   ],
+   "description": "Shape-changing creatures living in the caves of the Skep, led by larger sliver leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yisan",
+   "type": "character",
+   "aliases": [],
+   "description": "An investigator who, with Jalira, followed Hastric's warning to the Skep and was transformed into a sliver.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jalira",
+   "type": "character",
+   "aliases": [],
+   "description": "An investigator who, with Yisan, followed Hastric's warning to the Skep and was transformed into a sliver.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Hum",
+   "type": "concept",
+   "aliases": [
+    "the Thrum",
+    "the Call"
+   ],
+   "description": "A muted sound serving as communication between slivers, which Hastric kept hearing after leaving the Skep.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "While scouting near the Eastern Sea, Hastric is struck by a rockfall and tumbles into the sliver caves of the Skep, where he is transformed into a sliver.",
+   "participants": [
+    "Hastric",
+    "Slivers"
+   ],
+   "location": "Skep",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Hastric found himself transformed into a sliver himself."
+  },
+  {
+   "summary": "Hastric discovers that huge sliver leaders command the others, mimics the slivers to avoid notice, and finds a dragon-sized fossilized sliver and worshipped humanoid slivers.",
+   "participants": [
+    "Hastric",
+    "Slivers"
+   ],
+   "location": "Skep",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He discovered one fossilized sliver that was the size of a dragon"
+  },
+  {
+   "summary": "Hastric slowly backs away into a tunnel and finds evidence in a seaside cave that the slivers once had very different shapes.",
+   "participants": [
+    "Hastric",
+    "Slivers"
+   ],
+   "location": "Skep",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Hastric kept pretending to follow their swaying and writhing motions"
+  },
+  {
+   "summary": "Pursued by spiny slivers, Hastric changes into an aquatic sliver, escapes through the ocean and reverts to human form.",
+   "participants": [
+    "Hastric",
+    "Slivers"
+   ],
+   "location": "Skep",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "managed to change into an aquatic form of sliver and escape their caves through the ocean itself"
+  },
+  {
+   "summary": "Hastric travels Shandalar warning of the danger of the slivers; some call him mad while others form their own expeditions.",
+   "participants": [
+    "Hastric"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Hastric's new prime motivation was to warn the world"
+  },
+  {
+   "summary": "Yisan and Jalira investigate the Skep after hearing Hastric and are transformed into slivers by the sliver leaders.",
+   "participants": [
+    "Yisan",
+    "Jalira",
+    "Slivers"
+   ],
+   "location": "Skep",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "themselves transforming into slivers by the power of the sliver leaders"
+  },
+  {
+   "summary": "Hastric keeps hearing the Hum after leaving, and his name for it changes to the Thrum and then the Call as he descends into madness.",
+   "participants": [
+    "Hastric",
+    "The Hum"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "as he descended into madness"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hastric",
+   "relation": "other",
+   "target": "Slivers",
+   "note": "discovered and described the slivers in detail",
+   "paragraph": 0,
+   "quote": "is famous for having discovered and described the Shandalaran slivers in great detail"
+  },
+  {
+   "source": "Slivers",
+   "relation": "located_in",
+   "target": "Skep",
+   "note": "the Skep was home to the slivers",
+   "paragraph": 1,
+   "quote": "which was home to the slivers of Shandalar"
+  },
+  {
+   "source": "Yisan",
+   "relation": "ally",
+   "target": "Jalira",
+   "note": "investigated the Skep together",
+   "paragraph": 6,
+   "quote": "One such expedition was performed by Yisan and Jalira"
+  }
+ ],
+ "rejected": []
+}

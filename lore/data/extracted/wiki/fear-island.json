@@ -1,0 +1,65 @@
+{
+ "page": "wiki/fear-island",
+ "url": "https://mtg.wiki/page/Fear_Island",
+ "title": "Fear Island",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fear Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island in the Sea of Serenity in southwestern Jamuraa on Dominaria whose fortifications Declan planned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Declan",
+   "type": "character",
+   "aliases": [],
+   "description": "Young man who planned Fear Island's fortifications and later became city architect of Palmyra.",
+   "presence": "appears"
+  },
+  {
+   "name": "King Gaynor",
+   "type": "character",
+   "aliases": [],
+   "description": "King whose navy attacked Fear Island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palmyra",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Declan later became architect.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "King Gaynor attacks Fear Island but Declan's defense splits his navy on the rocks.",
+   "participants": [
+    "King Gaynor",
+    "Declan"
+   ],
+   "location": "Fear Island",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Declan's excellent defense split the king's navy on the rocks of the island"
+  }
+ ],
+ "relations": [
+  {
+   "source": "King Gaynor",
+   "relation": "enemy",
+   "target": "Declan",
+   "note": "Gaynor attacked the island Declan defended.",
+   "paragraph": 1,
+   "quote": "The island was attacked by King Gaynor"
+  }
+ ],
+ "rejected": []
+}

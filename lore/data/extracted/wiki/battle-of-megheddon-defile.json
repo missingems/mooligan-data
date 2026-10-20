@@ -1,0 +1,198 @@
+{
+ "page": "wiki/battle-of-megheddon-defile",
+ "url": "https://mtg.wiki/page/Battle_of_Megheddon_Defile",
+ "title": "Battle of Megheddon Defile",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:40Z",
+ "storyline": "Thran-Phyrexian War",
+ "entities": [
+  {
+   "name": "Battle of Megheddon Defile",
+   "type": "event",
+   "aliases": [],
+   "description": "A battle of the Thran-Phyrexian War c. -5000 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Megheddon Defile",
+   "type": "location",
+   "aliases": [
+    "the Defile"
+   ],
+   "description": "Mountain pass leading to the desert plain by Halcyon, destroyed in the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyon",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Thran Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran Alliance",
+   "type": "faction",
+   "aliases": [
+    "Thran",
+    "Alliance"
+   ],
+   "description": "Army of humans, dwarves, elves, viashino and minotaurs opposing Yawgmoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Halcyte forces who seized the Null Sphere.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halcyte Guard",
+   "type": "faction",
+   "aliases": [
+    "Halcyte"
+   ],
+   "description": "Yawgmoth's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Yawgmoth's first Phyrexians, people mutated in Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Null Sphere",
+   "type": "artifact",
+   "aliases": [
+    "the Sphere"
+   ],
+   "description": "Artifact monitoring, communication and control device that Yawgmoth took over.",
+   "presence": "appears"
+  },
+  {
+   "name": "Curtisworthy",
+   "type": "character",
+   "aliases": [
+    "Dwarven Commander Curtisworthy"
+   ],
+   "description": "Dwarven commander who died as the Defile was obliterated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thran-Phyrexian War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war the battle belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of the Null Sphere",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Yawgmoth installed himself as master of the Sphere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the battle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Thran Alliance's armies come through the defile to the desert plain across from Halcyon, where Yawgmoth lies in wait.",
+   "participants": [
+    "Thran Alliance",
+    "Yawgmoth",
+    "Halcyte Guard"
+   ],
+   "location": "Megheddon Defile",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Yawgmoth had his forces lying in wait"
+  },
+  {
+   "summary": "Yawgmoth's forces ambush the Alliance; the Alliance sends mantis soldiers against his behemoths.",
+   "participants": [
+    "Yawgmoth",
+    "Thran Alliance"
+   ],
+   "location": "Megheddon Defile",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The battle started as an ambush"
+  },
+  {
+   "summary": "Yawgmoth installs himself as master of the Null Sphere in the Battle of the Null Sphere.",
+   "participants": [
+    "Yawgmoth",
+    "Null Sphere"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he installed himself as master of the Sphere"
+  },
+  {
+   "summary": "On the third day the Alliance is trapped behind walls of bodies, unable to retreat or break through.",
+   "participants": [
+    "Thran Alliance",
+    "Halcyte Guard"
+   ],
+   "location": "Megheddon Defile",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They could not retreat into the defile."
+  },
+  {
+   "summary": "Yawgmoth seizes the Alliance's artifacts, turning them on their makers.",
+   "participants": [
+    "Yawgmoth",
+    "Thran Alliance",
+    "Null Sphere"
+   ],
+   "location": "Megheddon Defile",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "causing them to turn on their makers"
+  },
+  {
+   "summary": "The Null Sphere drops a stonecharger that obliterates the Defile as Curtisworthy dies.",
+   "participants": [
+    "Null Sphere",
+    "Curtisworthy",
+    "Megheddon Defile"
+   ],
+   "location": "Megheddon Defile",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "leaving it a blasted waste"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "leader_of",
+   "target": "Halcyte Guard",
+   "note": "His forces.",
+   "paragraph": 1,
+   "quote": "while Yawgmoth had his Halcyte Guard"
+  },
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Thran Alliance",
+   "note": "He fought and destroyed it.",
+   "paragraph": 2,
+   "quote": "Yawgmoth's ranks tore into the Thran Alliance's army at the foot of the defile"
+  }
+ ],
+ "rejected": []
+}

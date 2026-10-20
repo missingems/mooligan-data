@@ -1,0 +1,192 @@
+{
+ "page": "wiki/mephidross",
+ "url": "https://mtg.wiki/page/Mephidross",
+ "title": "Mephidross",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:50Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [
+    "Dross"
+   ],
+   "description": "A toxic swamp of sludge, waste and corroding machines on Mirrodin, center of Moriok culture.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The artificial world where the Mephidross lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "What Mirrodin became when compleated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ish Sah",
+   "type": "location",
+   "aliases": [
+    "Vault of Whispers"
+   ],
+   "description": "A fortress at the center of the swamp.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geth",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of the Moriok who dwelt in Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human occupants of the Dross affected by the Necrogen Mists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nim",
+   "type": "creature",
+   "aliases": [],
+   "description": "Zombies created by the necrogen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mad guardian whose machines fought in the Leveler War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leveler War",
+   "type": "event",
+   "aliases": [],
+   "description": "War against Memnarch's machines and the Nim.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Advanced on Mirrodin, causing the Dross to expand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seven Steel Thanes",
+   "type": "faction",
+   "aliases": [
+    "Thanes"
+   ],
+   "description": "Rulers of fiefdoms within the Dross.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dross Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "A new layer in Phyrexia where the Mephidross was siphoned and the Thanes dwell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraan",
+   "type": "character",
+   "aliases": [
+    "Thane of Blood"
+   ],
+   "description": "Leader of the Bleak Coven of vampire assassins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bleak Coven",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of the most skilled vampire assassins.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Leveler War the Mephidross advances into other territories until Memnarch is put down.",
+   "participants": [
+    "Mephidross",
+    "Memnarch"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "until the mad guardian was put down"
+  },
+  {
+   "summary": "As Phyrexia advances the Dross swallows parts of the Tangle and Razorgrass Fields while the Seven Steel Thanes vie for control.",
+   "participants": [
+    "Mephidross",
+    "Phyrexia",
+    "Seven Steel Thanes"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "jockeying for control over the swamplands"
+  },
+  {
+   "summary": "Mirrodin is compleated into New Phyrexia and the Mephidross is siphoned into the Dross Pits.",
+   "participants": [
+    "Mephidross",
+    "New Phyrexia",
+    "Dross Pits",
+    "Seven Steel Thanes"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "siphoned out entirely into a new layer within Phyrexia, the Dross Pits"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mephidross",
+   "relation": "located_in",
+   "target": "Mirrodin",
+   "note": "A swamp on Mirrodin.",
+   "paragraph": 0,
+   "quote": "on the world of Mirrodin"
+  },
+  {
+   "source": "Geth",
+   "relation": "leader_of",
+   "target": "Moriok",
+   "note": "Their ruler.",
+   "paragraph": 3,
+   "quote": "Geth , the ruler of the Moriok , dwelt"
+  },
+  {
+   "source": "Vraan",
+   "relation": "leader_of",
+   "target": "Bleak Coven",
+   "note": "Leads the vampire assassins.",
+   "paragraph": 12,
+   "quote": "They are led by Vraan , the Thane of Blood."
+  },
+  {
+   "source": "Ish Sah",
+   "relation": "located_in",
+   "target": "Mephidross",
+   "note": "At its center.",
+   "paragraph": 3,
+   "quote": "In the center of the swamps used to be Ish Sah"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,153 @@
+{
+ "page": "wiki/hekma",
+ "url": "https://mtg.wiki/page/Hekma",
+ "title": "Hekma",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:33Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Hekma",
+   "type": "location",
+   "aliases": [
+    "The Hekma"
+   ],
+   "description": "Magical barrier of illusory water protecting Naktamun from the desert and the undead of Shefet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City protected by the Hekma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Naktamun.",
+   "presence": "appears"
+  },
+  {
+   "name": "God-Pharaoh",
+   "type": "deity",
+   "aliases": [],
+   "description": "Ruler said to have raised the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oketra",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who shot golden arrows at threats to the Hekma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kefnet",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who inspected and patched the Hekma with water from the Luxa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hekma Sentinels",
+   "type": "faction",
+   "aliases": [
+    "Hemka Guard"
+   ],
+   "description": "Viziers of Kefnet patrolling the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Locust God",
+   "type": "deity",
+   "aliases": [],
+   "description": "First shattered the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [],
+   "description": "Helped restore the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who helped restore the Hekma.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shefet",
+   "type": "location",
+   "aliases": [],
+   "description": "Desert of cursed undead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that destroyed the Hekma again.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Locust God shatters the Hekma; Hazoret and Sarkhan Vol help restore it.",
+   "participants": [
+    "Locust God",
+    "Hazoret",
+    "Sarkhan Vol"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Hekma was first shattered by the Locust God , then restored through the efforts of Hazoret and Sarkhan Vol ."
+  },
+  {
+   "summary": "The Hekma is destroyed again during the New Phyrexian Invasion.",
+   "participants": [
+    "Hekma",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Naktamun",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "It was destroyed again during the New Phyrexian Invasion ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oketra",
+   "relation": "serves",
+   "target": "Hekma",
+   "note": "protected it with arrows",
+   "paragraph": 3,
+   "quote": "Oketra , who would shoot her radiant golden arrows at anything threatening its stability"
+  },
+  {
+   "source": "Kefnet",
+   "relation": "serves",
+   "target": "Hekma",
+   "note": "inspected and reinforced it",
+   "paragraph": 3,
+   "quote": "Kefnet , who would routinely inspect and reinforce the integrity of the barrier itself"
+  },
+  {
+   "source": "Hekma",
+   "relation": "located_in",
+   "target": "Amonkhet",
+   "note": "protects Naktamun",
+   "paragraph": 0,
+   "quote": "protects the city of Naktamun on the plane of Amonkhet"
+  }
+ ],
+ "rejected": []
+}

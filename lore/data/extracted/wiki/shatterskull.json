@@ -1,0 +1,64 @@
+{
+ "page": "wiki/shatterskull",
+ "url": "https://mtg.wiki/page/Shatterskull",
+ "title": "Shatterskull",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:38:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shatterskull",
+   "type": "location",
+   "aliases": [
+    "Shatterskull Pass",
+    "Hammer Pass"
+   ],
+   "description": "A mountain pass through the Skyfang Mountains on the continent of Murasa on Zendikar, hung with blunted stone fangs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Murasa",
+   "type": "location",
+   "aliases": [],
+   "description": "A continent of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Murasa lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skyfang Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountain range crossed by Shatterskull Pass.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Shatterskull",
+   "relation": "located_in",
+   "target": "Murasa",
+   "note": "Shatterskull is a mountain pass on Murasa.",
+   "paragraph": 0,
+   "quote": "is a mountain pass on the continent of Murasa on Zendikar"
+  },
+  {
+   "source": "Murasa",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "Murasa is a continent of Zendikar.",
+   "paragraph": 0,
+   "quote": "is a mountain pass on the continent of Murasa on Zendikar"
+  }
+ ],
+ "rejected": []
+}

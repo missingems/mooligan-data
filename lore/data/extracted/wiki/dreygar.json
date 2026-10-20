@@ -1,0 +1,76 @@
+{
+ "page": "wiki/dreygar",
+ "url": "https://mtg.wiki/page/Dreygar",
+ "title": "Dreygar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dreygar",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard of the Western Domains who, in a Dominarian fable, took Aldon's Castle and ruled as a tyrant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler who fought Dreygar and finally killed him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aldon's Castle",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle taken by Dreygar's goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra Angel",
+   "type": "creature",
+   "aliases": [],
+   "description": "Angel Aldon was forced to ask to lead the fight; killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dreygar attacks Aldon with a Force of Nature, which is killed, and his goblin horde seizes the castle.",
+   "participants": [
+    "Dreygar",
+    "Aldon"
+   ],
+   "location": "Aldon's Castle",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Dreygar's horde of goblins seized the castle"
+  },
+  {
+   "summary": "Aldon kills Dreygar after the Serra angel and fallen angel die.",
+   "participants": [
+    "Aldon",
+    "Dreygar"
+   ],
+   "location": "Aldon's Castle",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "and Dreygar was killed by Aldon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aldon",
+   "relation": "killed",
+   "target": "Dreygar",
+   "note": "Slew him at the end of the fable",
+   "paragraph": 1,
+   "quote": "and Dreygar was killed by Aldon"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,209 @@
+{
+ "page": "wiki/sulgh",
+ "url": "https://mtg.wiki/page/Sulgh",
+ "title": "Sulgh",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sulgh",
+   "type": "location",
+   "aliases": [
+    "Sulgh Swamp",
+    "Great Sulgh Salt Marsh"
+   ],
+   "description": "Region on the continent of Corondor, southwestern half of the Great Salt Marshes of Western Golthonor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent containing Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khone",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighboring salt marsh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shikar",
+   "type": "location",
+   "aliases": [],
+   "description": "Contrary Kingdom west of Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sivitri Scarzam",
+   "type": "character",
+   "aliases": [],
+   "description": "Began Sivitri's War in Sulgh and then fled the plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sivitri's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War begun in Sulgh by Sivitri Scarzam.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [
+    "Dihada"
+   ],
+   "description": "Conquered the area, ruled southern Corondor, then left Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sol'Kanar the Swamp King",
+   "type": "creature",
+   "aliases": [
+    "Sol'Kanar"
+   ],
+   "description": "Corrupted Force of Nature who ruled Sulgh for millennia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that weakened Sol'Kanar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chondaeh",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed everyone in Khone but Gydolien Mor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gydolien Mor",
+   "type": "character",
+   "aliases": [
+    "Gydolien"
+   ],
+   "description": "Sole survivor of Khone who plotted vengeance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [],
+   "description": "Formed a pact in Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Formed a pact in Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Altair of Coloni",
+   "type": "character",
+   "aliases": [],
+   "description": "Met Kristina and Jared in Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caliphear the Nightmare",
+   "type": "creature",
+   "aliases": [],
+   "description": "Met Kristina and Jared in Sulgh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Contrary Kingdoms",
+   "type": "faction",
+   "aliases": [],
+   "description": "Shikar and Khone, terrorized by Sol'Kanar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sivitri Scarzam begins Sivitri's War in Sulgh.",
+   "participants": [
+    "Sivitri Scarzam"
+   ],
+   "location": "Sulgh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Sulgh was also where Sivitri Scarzam began"
+  },
+  {
+   "summary": "Geyadrone Dihada conquers the area and leaves Sol'Kanar to rule.",
+   "participants": [
+    "Geyadrone Dihada",
+    "Sol'Kanar the Swamp King"
+   ],
+   "location": "Sulgh",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "left the corrupted Force of Nature named Sol'Kanar the Swamp King to rule in her stead"
+  },
+  {
+   "summary": "Chondaeh kills everyone in Khone but Gydolien Mor while Sol'Kanar is weakened.",
+   "participants": [
+    "Chondaeh",
+    "Gydolien Mor",
+    "Sol'Kanar the Swamp King"
+   ],
+   "location": "Khone",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Chondaeh killed everyone in Khone but Gydolien Mor"
+  },
+  {
+   "summary": "Kristina of the Woods and Jared Carthalion form a pact with Altair of Coloni and Caliphear the Nightmare.",
+   "participants": [
+    "Kristina of the Woods",
+    "Jared Carthalion",
+    "Altair of Coloni",
+    "Caliphear the Nightmare"
+   ],
+   "location": "Sulgh",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "formed a pact with them shortly before the Activation of the Mox Beacon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sol'Kanar the Swamp King",
+   "relation": "leader_of",
+   "target": "Sulgh",
+   "note": "Ruled it for millennia.",
+   "paragraph": 3,
+   "quote": "Sulgh became the dominion of Sol'Kanar the Swamp King for millennia"
+  },
+  {
+   "source": "Sol'Kanar the Swamp King",
+   "relation": "enemy",
+   "target": "Contrary Kingdoms",
+   "note": "Terrorized them.",
+   "paragraph": 3,
+   "quote": "he terrorized the two Contrary Kingdoms"
+  },
+  {
+   "source": "Chondaeh",
+   "relation": "other",
+   "target": "Khone",
+   "note": "Killed everyone in Khone but Gydolien Mor.",
+   "paragraph": 3,
+   "quote": "Chondaeh killed everyone in Khone but Gydolien Mor"
+  }
+ ],
+ "rejected": []
+}

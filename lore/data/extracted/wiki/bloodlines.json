@@ -1,0 +1,124 @@
+{
+ "page": "wiki/bloodlines",
+ "url": "https://mtg.wiki/page/Bloodlines",
+ "title": "Bloodlines",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:09Z",
+ "storyline": "Artifacts Cycle",
+ "entities": [
+  {
+   "name": "Bloodlines",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Final novel of the Artifacts Cycle, by Loren L. Coleman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [
+    "Urza Planeswalker"
+   ],
+   "description": "Planeswalker who started the Bloodline Project to create a mortal heir to his Legacy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark lord who orders Urza's death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Croag",
+   "type": "character",
+   "aliases": [],
+   "description": "Inner circle member awakened by Yawgmoth to oversee Rath's creation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "character",
+   "aliases": [],
+   "description": "Being whose creation Croag oversees.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodline Project",
+   "type": "event",
+   "aliases": [],
+   "description": "Urza's project to create a mortal heir to his Legacy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legacy",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Power Tolaria races to find a wielder for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Urza's academy-island racing to find the Legacy's wielder.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Urza starts the Bloodline Project; followers divide over whether it has gone too far.",
+   "participants": [
+    "Urza"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Urza has started the Bloodline Project to create a mortal heir to his Legacy ."
+  },
+  {
+   "summary": "Yawgmoth sends out an edict to kill Urza Planeswalker.",
+   "participants": [
+    "Yawgmoth"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the dark lord Yawgmoth sends out an edict: Kill Urza Planeswalker."
+  },
+  {
+   "summary": "Yawgmoth awakens Croag to oversee the creation of Rath and the death of Urza.",
+   "participants": [
+    "Yawgmoth",
+    "Croag",
+    "Rath"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Yawgmoth has awakened inner circle member Croag"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Urza",
+   "note": "Orders his death",
+   "paragraph": 3,
+   "quote": "Kill Urza Planeswalker."
+  },
+  {
+   "source": "Croag",
+   "relation": "serves",
+   "target": "Yawgmoth",
+   "note": "Awakened by him",
+   "paragraph": 6,
+   "quote": "Yawgmoth has awakened inner circle member Croag"
+  }
+ ],
+ "rejected": []
+}

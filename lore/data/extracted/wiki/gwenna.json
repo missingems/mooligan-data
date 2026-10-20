@@ -1,0 +1,134 @@
+{
+ "page": "wiki/gwenna",
+ "url": "https://mtg.wiki/page/Gwenna",
+ "title": "Gwenna",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:05Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "Gwenna",
+   "type": "character",
+   "aliases": [
+    "Eyes of Gaea"
+   ],
+   "description": "Gwenna, the Eyes of Gaea, elven druid and scout of Dominaria who helped Harbin and later sacrificed herself for the Survivors of the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harbin",
+   "type": "character",
+   "aliases": [],
+   "description": "Person Gwenna helped when he arrived on Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Gwenna's land, which died in the Sylex Blast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "Explosion that destroyed Argoth and caused tsunamis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the shipyards in Korlis that Gwenna attacked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korlis",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Urza's shipyards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gaea",
+   "type": "deity",
+   "aliases": [],
+   "description": "Earth mother whose cry Gwenna heard as Argoth died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temken",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Survivors of the Sylex Blast whom Gwenna helped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Survivors of the Sylex Blast",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group rebuilding their society.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gwenna helps Harbin when he arrives on Argoth.",
+   "participants": [
+    "Gwenna",
+    "Harbin"
+   ],
+   "location": "Argoth",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Gwenna was an elf who helped Harbin when he arrived on Argoth."
+  },
+  {
+   "summary": "During the Sylex Blast Gwenna, attacking Urza's shipyards in Korlis, feels Argoth die and leads her warriors to flee inland from the tsunami.",
+   "participants": [
+    "Gwenna",
+    "Urza",
+    "Argoth"
+   ],
+   "location": "Korlis",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She shouted for her warriors to flee to the hills inland"
+  },
+  {
+   "summary": "About a century later Gwenna sacrifices herself to help Temken and the survivors rebuild their society.",
+   "participants": [
+    "Gwenna",
+    "Temken",
+    "Survivors of the Sylex Blast"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Gwenna sacrificed herself to help Temken and the other Survivors of the Sylex Blast to rebuild their society."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gwenna",
+   "relation": "ally",
+   "target": "Harbin",
+   "note": "She helped him on Argoth.",
+   "paragraph": 1,
+   "quote": "Gwenna was an elf who helped Harbin when he arrived on Argoth."
+  },
+  {
+   "source": "Gwenna",
+   "relation": "ally",
+   "target": "Temken",
+   "note": "She sacrificed herself to help him.",
+   "paragraph": 3,
+   "quote": "Gwenna sacrificed herself to help Temken"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,146 @@
+{
+ "page": "wiki/mercadia-city",
+ "url": "https://mtg.wiki/page/Mercadia_City",
+ "title": "Mercadia City",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital and largest settlement of Mercadia, atop the upside-down Mount Mercadia; a trading empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose capital is Mercadia City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Mercadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Bizarre upside-down mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kyren",
+   "type": "faction",
+   "aliases": [],
+   "description": "Intelligent goblin descendants who secretly controlled the magistrate until the Revolution.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dyfed",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who took Thran nobles to Mercadia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran nobles",
+   "type": "faction",
+   "aliases": [],
+   "description": "Refugees from Yawgmoth's uprising who built Mercadia City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Led an uprising on the Thran home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Revolution on Mercadia",
+   "type": "event",
+   "aliases": [],
+   "description": "Revolution that deposed and exiled the Kyren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveled to Mercadia in 4308 and killed one of the Masters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Masters",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mechanical goblins fused into modified frog mounts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [],
+   "description": "People condemned to death for leaving the forest.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dyfed takes Thran nobles to Mercadia, who later build the city.",
+   "participants": [
+    "Dyfed",
+    "Thran nobles",
+    "Mercadia City",
+    "Yawgmoth"
+   ],
+   "location": "Mercadia",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Many years later, the Thran refugees built the powerful city of Mercadia"
+  },
+  {
+   "summary": "The Revolution on Mercadia deposes and exiles the Kyren.",
+   "participants": [
+    "Kyren",
+    "Revolution on Mercadia"
+   ],
+   "location": "Mercadia City",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "the Kyren were deposed and exiled"
+  },
+  {
+   "summary": "Karona kills one of the Masters in Mercadia.",
+   "participants": [
+    "Karona",
+    "Masters"
+   ],
+   "location": "Mercadia City",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Karona killed one of the Masters and left"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kyren",
+   "relation": "other",
+   "target": "Mercadia City",
+   "note": "Secretly controlled the magistrate",
+   "paragraph": 9,
+   "quote": "puppet leader secretly controlled by the Kyren"
+  },
+  {
+   "source": "Karona",
+   "relation": "killed",
+   "target": "Masters",
+   "note": "Killed one of them",
+   "paragraph": 10,
+   "quote": "Karona killed one of the Masters"
+  }
+ ],
+ "rejected": []
+}

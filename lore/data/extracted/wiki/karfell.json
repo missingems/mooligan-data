@@ -1,0 +1,152 @@
+{
+ "page": "wiki/karfell",
+ "url": "https://mtg.wiki/page/Karfell",
+ "title": "Karfell",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:26Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Karfell",
+   "type": "plane",
+   "aliases": [
+    "Karfell realm"
+   ],
+   "description": "One of the ten realms of Kaldheim, a frigid realm of ruined fortresses inhabited by undead draugr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of ten realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Draugr",
+   "type": "faction",
+   "aliases": [],
+   "description": "Zombies of Karfell who retain their intelligence and memories and are loyal to Narfi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narfi",
+   "type": "character",
+   "aliases": [
+    "King Narfi",
+    "Last High King of Karfell"
+   ],
+   "description": "The Last High King of Karfell, a lich-king ruling from the Port of Marn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dead Marn",
+   "type": "faction",
+   "aliases": [
+    "Dread Marn"
+   ],
+   "description": "Army of raiders maintained by King Narfi that pillages other realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brinebarrow",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient treasure vaults of Karfell, a byword for great wealth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Port of Marn",
+   "type": "location",
+   "aliases": [],
+   "description": "The greatest of the old cities, a fortified port where Narfi holds court.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haunted Edge",
+   "type": "location",
+   "aliases": [],
+   "description": "Seawall protecting the Port of Marn, with thousands of skeletons entombed inside.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skybreen Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Blizzard-wracked range home to paranoid living barbarians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chasm Beast",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature living in Karfell's frigid ocean.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that gives the Dead Marn an opportunity to pillage other realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Transplanar pathway that gives the Dead Marn opportunity to raid.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Whenever a Doomskar or Omenpath opens, the Dead Marn pillage other realms for treasure.",
+   "participants": [
+    "Dead Marn",
+    "Narfi"
+   ],
+   "location": "Karfell",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the Dead Marn pillage other realms in search of more treasure"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Draugr",
+   "relation": "serves",
+   "target": "Narfi",
+   "note": "Give him their allegiance.",
+   "paragraph": 1,
+   "quote": "they give their allegiance to Narfi"
+  },
+  {
+   "source": "Narfi",
+   "relation": "leader_of",
+   "target": "Dead Marn",
+   "note": "Maintains the army.",
+   "paragraph": 1,
+   "quote": "King Narfi maintains an army of raiders known as the Dead Marn"
+  },
+  {
+   "source": "Port of Marn",
+   "relation": "located_in",
+   "target": "Karfell",
+   "note": "Greatest of its old cities.",
+   "paragraph": 3,
+   "quote": "The Port of Marn - the greatest of the old cities"
+  },
+  {
+   "source": "Karfell",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "One of the ten realms.",
+   "paragraph": 0,
+   "quote": "Karfell is one of the ten realms of the plane of Kaldheim"
+  }
+ ],
+ "rejected": []
+}

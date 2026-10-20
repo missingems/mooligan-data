@@ -1,0 +1,169 @@
+{
+ "page": "wiki/dinosaur",
+ "url": "https://mtg.wiki/page/Dinosaur",
+ "title": "Dinosaur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:47:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dinosaurs",
+   "type": "creature",
+   "aliases": [
+    "Dinosaur",
+    "quetzacama"
+   ],
+   "description": "Prehistoric reptile-like creatures found on many planes, most prominently Ixalan, where they are the dominant wildlife.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose jungles are dominated by brightly feathered dinosaurs and home to the Sun Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The human civilization of Ixalan that controls some dinosaurs and rides them into battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kinjalli",
+   "type": "deity",
+   "aliases": [],
+   "description": "The being the Sun Empire believes made the dinosaurs out of stone.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer who taught Sun Empire engineers to build mechanical dinosaurs and kept master keys of her own.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mechanoquetzacama",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Mechanical dinosaurs built for the Sun Empire's invasion of Torrezon, loyal to whoever holds their command codes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Dinosaurs",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ancient, wild gray-scaled, gold-feathered dinosaurs preserved in Orazca that can be commanded through the Immortal Sun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [
+    "Golden City of Orazca"
+   ],
+   "description": "The Golden City where the Elder Dinosaurs were preserved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immortal Sun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact whose power lets the Sun Empire warriors who wield it command the Elder Dinosaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Huatli",
+   "type": "character",
+   "aliases": [],
+   "description": "A Sun Empire warrior who took two years to memorize the tale of the Elder Dinosaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selvala of Alberon",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure on Fiora able to call feathered raptorial dinosaurs and other beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saurid Autocracy",
+   "type": "faction",
+   "aliases": [],
+   "description": "The mightiest state on Muraganda, ruled by humanoid saurids over human subjects called softskins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane to which a dinosaur herd traveled through an Omenpath.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Saheeli Rai teaches Sun Empire engineers to build dozens of mechanical dinosaurs for the invasion of Torrezon.",
+   "participants": [
+    "Saheeli Rai",
+    "Sun Empire",
+    "Mechanoquetzacama"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Saheeli Rai taught Sun Empire engineers to produce dozens of mechanical dinosaurs"
+  },
+  {
+   "summary": "A herd of dinosaurs follows a Scalestorm Summoner through an Omenpath to Thunder Junction.",
+   "participants": [
+    "Dinosaurs",
+    "Thunder Junction"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "A herd of dinosaurs followed a Scalestorm Summoner through an Omenpath to Thunder Junction"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kinjalli",
+   "relation": "created",
+   "target": "Dinosaurs",
+   "note": "Sun Empire belief that Kinjalli made them from stone.",
+   "paragraph": 9,
+   "quote": "The humans of the Sun Empire believe them to be creations of Kinjalli"
+  },
+  {
+   "source": "Saheeli Rai",
+   "relation": "created",
+   "target": "Mechanoquetzacama",
+   "note": "She taught the engineers to produce them.",
+   "paragraph": 10,
+   "quote": "Saheeli Rai taught Sun Empire engineers to produce dozens of mechanical dinosaurs"
+  },
+  {
+   "source": "Sun Empire",
+   "relation": "other",
+   "target": "Dinosaurs",
+   "note": "Controls some dinosaurs without domesticating them.",
+   "paragraph": 9,
+   "quote": "some are controlled by the Sun Empire"
+  },
+  {
+   "source": "Immortal Sun",
+   "relation": "other",
+   "target": "Elder Dinosaurs",
+   "note": "Lets its wielders command the Elder Dinosaurs.",
+   "paragraph": 18,
+   "quote": "the power of the Immortal Sun gives the Sun Empire warriors who wield it the ability to bring these elder dinosaurs under their command"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,77 @@
+{
+ "page": "wiki/valla",
+ "url": "https://mtg.wiki/page/Valla",
+ "title": "Valla",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:49Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Valla",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane that was originally a realm in Kaldheim, split off after a mighty weapon cracked the realm; it still contains an Immersturm region.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose realm Valla originally was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Immersturm",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm of Kaldheim named for a raging storm of magic and populated by demons.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "The tree from which part of the old Valla realm fell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A faction deploys a mighty weapon that cracks the old Valla realm in two; part falls from the World Tree and becomes the plane Valla.",
+   "participants": [
+    "Valla",
+    "Immersturm",
+    "World Tree"
+   ],
+   "location": "Valla",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "One of the combatant factions deployed a mighty weapon, which cracked the realm in twain."
+  },
+  {
+   "summary": "The remnant still attached to the World Tree is consumed by its Immersturm region and comes to be called Immersturm.",
+   "participants": [
+    "Immersturm",
+    "World Tree"
+   ],
+   "location": "Immersturm",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the realm came to be called Immersturm"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Valla",
+   "relation": "other",
+   "target": "Kaldheim",
+   "note": "originally a realm of Kaldheim before it split into a separate plane",
+   "paragraph": 4,
+   "quote": "Valla was originally a realm of Kaldheim"
+  }
+ ],
+ "rejected": []
+}

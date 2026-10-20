@@ -1,0 +1,214 @@
+{
+ "page": "stories/betrayal-2014-05-14",
+ "url": "https://magic.wizards.com/en/news/magic-story/betrayal-2014-05-14",
+ "title": "Betrayal",
+ "story_date": "2014-05-14",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:30:23Z",
+ "storyline": "Conspiracy",
+ "entities": [
+  {
+   "name": "Brago",
+   "type": "character",
+   "aliases": [
+    "King Brago",
+    "Count Brago",
+    "King Eternal",
+    "the king",
+    "Brago, King Eternal"
+   ],
+   "description": "The immortal King Eternal of Paliano, once a living man and Selvala's friend, whose body was preserved by the Custodi until Selvala killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selvala",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf explorer and Brago's friend who helped found Paliano and, at his request, kills him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [
+    "the Custodi"
+   ],
+   "description": "A priestly order formed to preserve King Brago's body, who after his death announce that their king has risen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "the High City of Paliano",
+    "the City"
+   ],
+   "description": "The High City on the plane of Fiora, full of intrigues, founded by Brago and Selvala's Charter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the High City of Paliano stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane mentioned as being far from Fiora.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Charter",
+   "type": "artifact",
+   "aliases": [
+    "Charter"
+   ],
+   "description": "The founding document of Paliano drafted by Brago and Selvala and ratified unanimously.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At a private dinner, Selvala tells the withered King Brago that he is no longer the king she remembers and that she begged him to refuse the Custodi's treatments.",
+   "participants": [
+    "Selvala",
+    "Brago",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "I begged you not to let the Custodi begin their treatments."
+  },
+  {
+   "summary": "Flashback: young Count Brago sees the potential of the City and recognizes he cannot walk the path to it alone.",
+   "participants": [
+    "Brago",
+    "Paliano"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "And he could not walk it alone."
+  },
+  {
+   "summary": "Flashback: Brago and Selvala work inseparably, build a coalition, and together draft the Charter that forges Paliano.",
+   "participants": [
+    "Brago",
+    "Selvala",
+    "The Charter",
+    "Paliano"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 18,
+   "quote": "Together, they drafted the Charter."
+  },
+  {
+   "summary": "Flashback: three years into his reign, Brago is diagnosed with an incurable hereditary illness, and he and Selvala reluctantly agree to the priests' magical preservation treatments.",
+   "participants": [
+    "Brago",
+    "Selvala",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "The Custodi were formed, and the king lived."
+  },
+  {
+   "summary": "Selvala accuses Brago of valuing his own life above those he served and says she would call any other man who spoke so a tyrant.",
+   "participants": [
+    "Selvala",
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 27,
+   "quote": "if I heard those words from any other man's lips, I would know him to be a tyrant."
+  },
+  {
+   "summary": "Brago reveals there will be no more treatments because they have gone too far, and begs Selvala to kill him.",
+   "participants": [
+    "Brago",
+    "Selvala"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 32,
+   "quote": "I cannot die naturally. But I think I must die."
+  },
+  {
+   "summary": "Selvala forgives Brago and stabs him through the heart; his body crumbles to dust as he whispers that she will not, and she is escorted from the room.",
+   "participants": [
+    "Selvala",
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 34,
+   "quote": "His ancient body began to crumble almost immediately"
+  },
+  {
+   "summary": "The Custodi gather in the throne room to plan how to retain power after the king's death.",
+   "participants": [
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "The King is dead."
+  },
+  {
+   "summary": "Brago's spirit appears in a blue mist and orders the Custodi to announce that the king has risen and that their work is complete; they hail him as King Eternal.",
+   "participants": [
+    "Brago",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "All hail Brago, King Eternal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Selvala",
+   "relation": "ally",
+   "target": "Brago",
+   "note": "Former close friends and co-founders of Paliano.",
+   "paragraph": 7,
+   "quote": "That man was my friend."
+  },
+  {
+   "source": "Selvala",
+   "relation": "killed",
+   "target": "Brago",
+   "note": "Selvala stabs Brago's preserved body at his request.",
+   "paragraph": 34,
+   "quote": "She thrust the blade once into the king's heart."
+  },
+  {
+   "source": "Custodi",
+   "relation": "serves",
+   "target": "Brago",
+   "note": "The Custodi were formed to preserve the king and hail him as King Eternal.",
+   "paragraph": 25,
+   "quote": "The Custodi were formed, and the king lived."
+  },
+  {
+   "source": "Brago",
+   "relation": "leader_of",
+   "target": "Paliano",
+   "note": "Brago is king of the High City.",
+   "paragraph": 3,
+   "quote": "The king, Brago, skin pale and cracked, like old parchment paper, rested in an ornate chair."
+  }
+ ],
+ "rejected": []
+}

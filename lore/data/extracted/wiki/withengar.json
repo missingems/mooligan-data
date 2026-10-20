@@ -1,0 +1,141 @@
+{
+ "page": "wiki/withengar",
+ "url": "https://mtg.wiki/page/Withengar",
+ "title": "Withengar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:09Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Withengar",
+   "type": "character",
+   "aliases": [],
+   "description": "A powerful demon of Innistrad, bound in the bone sword Elbrus, infamous for slaying Saint Traft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saint Traft",
+   "type": "character",
+   "aliases": [],
+   "description": "A monster slayer led into a trap by the Skirsdag and slain by Withengar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skirsdag",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cultists who trapped Saint Traft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elbrus, the Binding Blade",
+   "type": "artifact",
+   "aliases": [
+    "Elbrus"
+   ],
+   "description": "A bone sword in which Withengar's essence was bound.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel whose absence caused the events of Dark Ascension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Withengar lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Ascension",
+   "type": "event",
+   "aliases": [],
+   "description": "Events during which Withengar was reincarnated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Skirsdag cultists blind Saint Traft and switch his sword for Elbrus.",
+   "participants": [
+    "Skirsdag",
+    "Saint Traft",
+    "Elbrus, the Binding Blade"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "They blinded him and switched the sword in his hand for"
+  },
+  {
+   "summary": "Traft slays the cultists with Elbrus, inadvertently summoning Withengar.",
+   "participants": [
+    "Saint Traft",
+    "Withengar",
+    "Skirsdag"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "inadvertently summoning Withengar in the process"
+  },
+  {
+   "summary": "Withengar kills Saint Traft.",
+   "participants": [
+    "Withengar",
+    "Saint Traft"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Withengar ended the life of Traft while laughing."
+  },
+  {
+   "summary": "Innistrad's angels destroy Withengar's physical body, and he reverts to pure black mana.",
+   "participants": [
+    "Withengar"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Innistrad's angels vengefully attacked him and destroyed his physical body"
+  },
+  {
+   "summary": "Withengar is reincarnated during Dark Ascension.",
+   "participants": [
+    "Withengar",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Withengar was reincarnated during the events of"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Withengar",
+   "relation": "killed",
+   "target": "Saint Traft",
+   "note": "He slew the monster slayer.",
+   "paragraph": 1,
+   "quote": "Withengar ended the life of Traft while laughing."
+  },
+  {
+   "source": "Skirsdag",
+   "relation": "enemy",
+   "target": "Saint Traft",
+   "note": "They led him into a trap.",
+   "paragraph": 1,
+   "quote": "led a monster slayer named Saint Traft into a trap"
+  }
+ ],
+ "rejected": []
+}

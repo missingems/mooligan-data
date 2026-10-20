@@ -1,0 +1,126 @@
+{
+ "page": "wiki/thunder-islands",
+ "url": "https://mtg.wiki/page/Thunder_Islands",
+ "title": "Thunder Islands",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Thunder Islands",
+   "type": "location",
+   "aliases": [],
+   "description": "Islands in the Jamuraan Sea north of Shimia, home to savage berserkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorens",
+   "type": "character",
+   "aliases": [],
+   "description": "Thunder Islands native enslaved by Emperor Johan, later of the Circle of Seven; killed in the Battle of Efrava.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor Johan",
+   "type": "character",
+   "aliases": [
+    "Johan"
+   ],
+   "description": "Enslaved Lorens to build floating airships.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Lorens built airships.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Band Lorens joined after the slave rebellion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose Circle of Seven included Lorens.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Efrava",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Lorens was killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Lorens built airships.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Emperor Johan of Tirras enslaves Lorens to build floating airships during Johan's War.",
+   "participants": [
+    "Lorens",
+    "Emperor Johan"
+   ],
+   "location": "Tirras",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "was taken into slavery by Emperor Johan of Tirras"
+  },
+  {
+   "summary": "After the slave rebellion Lorens joins the Robaran Mercenaries and becomes one of Adira Strongheart's Circle of Seven.",
+   "participants": [
+    "Lorens",
+    "Robaran Mercenaries",
+    "Adira Strongheart"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lorens joined the Robaran Mercenaries"
+  },
+  {
+   "summary": "Lorens is killed in the Battle of Efrava, never seeing his home again.",
+   "participants": [
+    "Lorens",
+    "Battle of Efrava"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he was killed in the Battle of Efrava"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emperor Johan",
+   "relation": "enemy",
+   "target": "Lorens",
+   "note": "enslaved him",
+   "paragraph": 2,
+   "quote": "was taken into slavery by Emperor Johan of Tirras"
+  },
+  {
+   "source": "Lorens",
+   "relation": "member_of",
+   "target": "Robaran Mercenaries",
+   "note": "joined",
+   "paragraph": 2,
+   "quote": "Lorens joined the Robaran Mercenaries"
+  }
+ ],
+ "rejected": []
+}

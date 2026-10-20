@@ -1,0 +1,62 @@
+{
+ "page": "wiki/mage-tower",
+ "url": "https://mtg.wiki/page/Mage_Tower",
+ "title": "Mage Tower",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:40Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Mage Tower",
+   "type": "concept",
+   "aliases": [],
+   "description": "A competitive team sport played by mage students at Strixhaven, where teams try to steal the opposing mascot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [
+    "Strixhaven University"
+   ],
+   "description": "University of Arcavios where Mage Tower is played.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Strixhaven stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven Stadium",
+   "type": "location",
+   "aliases": [],
+   "description": "Round, self-contained stadium in the Central Campus where Mage Tower is played.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mage Tower Referee Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Body that reviews the legality of magic used in Mage Tower.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Strixhaven Stadium",
+   "relation": "located_in",
+   "target": "Strixhaven",
+   "note": "The stadium is based in the Central Campus of the University.",
+   "paragraph": 1,
+   "quote": "The round and self-contained Strixhaven Stadium is based in the Central Campus of the University."
+  }
+ ],
+ "rejected": []
+}

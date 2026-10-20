@@ -1,0 +1,112 @@
+{
+ "page": "wiki/champions-of-kamigawa",
+ "url": "https://mtg.wiki/page/Champions_of_Kamigawa",
+ "title": "Champions of Kamigawa",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:46:06Z",
+ "storyline": "Kamigawa block",
+ "entities": [
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane based on feudal Japan, threatened when its spirits suddenly war with its mortal inhabitants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami",
+   "type": "creature",
+   "aliases": [
+    "spirits"
+   ],
+   "description": "The spirits that are the essence of everything on Kamigawa and that begin to wage war on mortals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Michiko",
+   "type": "character",
+   "aliases": [],
+   "description": "The daughter of the warlord Konda, who leaves her father's fortress to find the cause of the kami's rage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "A warlord whose fortress offers shrinking safety.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshi Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "A thief and black magic user whom Michiko meets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orochi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Snake-like folk Michiko consults, along with holy monks.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The spirits of Kamigawa suddenly and inexplicably begin to wage war on the plane's mortal inhabitants.",
+   "participants": [
+    "Kami",
+    "Kamigawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the spirits that are the essence of everything on it suddenly and inexplicably begin to wage war with its mortal inhabitants"
+  },
+  {
+   "summary": "Michiko abandons her father's fortress to consult holy monks and the orochi about the kami's rage.",
+   "participants": [
+    "Michiko",
+    "Konda",
+    "Orochi"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "abandons the shrinking safety of her father's fortress to consult holy monks and the orochi"
+  },
+  {
+   "summary": "Michiko meets the thief Toshi Umezawa and realizes she may need unthinkable alliances.",
+   "participants": [
+    "Michiko",
+    "Toshi Umezawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she realizes that to avert the destruction of Kamigawa, she may have to make some unthinkable alliances"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Michiko",
+   "relation": "family",
+   "target": "Konda",
+   "note": "daughter of the warlord",
+   "paragraph": 3,
+   "quote": "Michiko , daughter of the warlord Konda"
+  },
+  {
+   "source": "Kami",
+   "relation": "enemy",
+   "target": "Kamigawa",
+   "note": "wage war on its mortal inhabitants",
+   "paragraph": 3,
+   "quote": "begin to wage war with its mortal inhabitants"
+  }
+ ],
+ "rejected": []
+}

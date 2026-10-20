@@ -1,0 +1,72 @@
+{
+ "page": "wiki/blue-mountains",
+ "url": "https://mtg.wiki/page/Blue_Mountains",
+ "title": "Blue Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Blue Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Vast mountain range on the western subcontinent of Jamuura, Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuura",
+   "type": "location",
+   "aliases": [],
+   "description": "Subcontinent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerathi berserkers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Settlers of the Blue Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose hill tribes survived the flooding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Wall",
+   "type": "location",
+   "aliases": [],
+   "description": "Connected to the Blue Mountains in the south.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the flooding period the glaciers evaporate and flash floods nearly wipe out Tirras's hill tribes, whose washed-down topsoil makes valleys fertile and its population explodes.",
+   "participants": [
+    "Tirras",
+    "Blue Mountains"
+   ],
+   "location": "Blue Mountains",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the hardscrabble hill tribes of Tirras who survived found all their topsoil washed into valley bottoms"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aerathi berserkers",
+   "relation": "located_in",
+   "target": "Blue Mountains",
+   "note": "settle there",
+   "paragraph": 1,
+   "quote": "The Blue Mountains are settled by Aerathi berserkers"
+  }
+ ],
+ "rejected": []
+}

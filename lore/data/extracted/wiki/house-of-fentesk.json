@@ -1,0 +1,132 @@
+{
+ "page": "wiki/house-of-fentesk",
+ "url": "https://mtg.wiki/page/House_of_Fentesk",
+ "title": "House of Fentesk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:52Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "House of Fentesk",
+   "type": "faction",
+   "aliases": [
+    "Fentesk"
+   ],
+   "description": "One of the five Houses in Estark, colored orange, whose fighters are associated with red and white mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City in Kush that holds the five Houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Varnel Buckara",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of House Fentesk from before the Night of Fire until the Time of Troubles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Varena",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the House's most elite fighters who became Grand Master of the Arena.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Okmark",
+   "type": "character",
+   "aliases": [],
+   "description": "A Fentesk fighter who died in an illegal street duel with Garth One-eye.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garth One-eye",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed Okmark in an illegal street duel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Petrakov",
+   "type": "character",
+   "aliases": [],
+   "description": "A merciless Fentesk fighter who killed Farnin of Bolk and Farnin's lover.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Farnin of Bolk",
+   "type": "character",
+   "aliases": [],
+   "description": "A fighter of Bolk killed by Petrakov.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Okmark died in an illegal street duel with Garth One-eye.",
+   "participants": [
+    "Okmark",
+    "Garth One-eye"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "he died in an illegal street duel with Garth One-eye"
+  },
+  {
+   "summary": "Petrakov killed Farnin of Bolk and Farnin's lover.",
+   "participants": [
+    "Petrakov",
+    "Farnin of Bolk"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "who killed both Farnin of Bolk and Farnin's lover"
+  },
+  {
+   "summary": "Varena rose to become Grand Master of the Arena after the Time of Troubles.",
+   "participants": [
+    "Varena"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "rose to become Grand Master of the Arena after the Time of Troubles"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Varnel Buckara",
+   "relation": "leader_of",
+   "target": "House of Fentesk",
+   "note": "He was its master.",
+   "paragraph": 2,
+   "quote": "Varnel Buckara (from before the Night of Fire until the Time of Troubles )"
+  },
+  {
+   "source": "Petrakov",
+   "relation": "killed",
+   "target": "Farnin of Bolk",
+   "note": "He killed Farnin and Farnin's lover.",
+   "paragraph": 6,
+   "quote": "who killed both Farnin of Bolk and Farnin's lover"
+  },
+  {
+   "source": "Garth One-eye",
+   "relation": "killed",
+   "target": "Okmark",
+   "note": "Okmark died in an illegal street duel with him.",
+   "paragraph": 5,
+   "quote": "he died in an illegal street duel with Garth One-eye"
+  }
+ ],
+ "rejected": []
+}

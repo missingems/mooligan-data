@@ -1,0 +1,134 @@
+{
+ "page": "wiki/robaran-mercenaries",
+ "url": "https://mtg.wiki/page/Robaran_Mercenaries",
+ "title": "Robaran Mercenaries",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:32Z",
+ "storyline": "Legend of Jedit Ojanen",
+ "entities": [
+  {
+   "name": "Robaran Mercenaries",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dominarian mercenaries, pirates and adventurers serving Adira Strongheart, based in Palmyra on Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader the mercenaries serve; kept the best as her bodyguards, the Circle of Seven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Most famous leader of the Robarans, led them against the tyrant Johan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Tyrant against whom the mercenaries fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous member of the mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jasmine Boreal",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous member of the mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hunding Gjornersen",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous member of the mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Circle of Seven",
+   "type": "faction",
+   "aliases": [],
+   "description": "Adira's bodyguards drawn from the best mercenaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palmyra",
+   "type": "location",
+   "aliases": [],
+   "description": "Base of the Robaran Mercenaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Efrava",
+   "type": "location",
+   "aliases": [],
+   "description": "Land liberated after the fall of Johan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jedit Ojanen led the mercenaries against the military advances of the tyrant Johan.",
+   "participants": [
+    "Jedit Ojanen",
+    "Johan",
+    "Robaran Mercenaries"
+   ],
+   "location": "Efrava",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "who led the mercenaries against the military advances of the tyrant Johan"
+  },
+  {
+   "summary": "Johan fell and Efrava was liberated.",
+   "participants": [
+    "Johan"
+   ],
+   "location": "Efrava",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "after the fall of Johan and the liberation of Efrava"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Robaran Mercenaries",
+   "relation": "serves",
+   "target": "Adira Strongheart",
+   "note": "In her service.",
+   "paragraph": 0,
+   "quote": "in the service of Adira Strongheart"
+  },
+  {
+   "source": "Jedit Ojanen",
+   "relation": "leader_of",
+   "target": "Robaran Mercenaries",
+   "note": "Most famous leader.",
+   "paragraph": 1,
+   "quote": "The Robarans' most famous leader was Jedit Ojanen"
+  },
+  {
+   "source": "Robaran Mercenaries",
+   "relation": "enemy",
+   "target": "Johan",
+   "note": "Fought him.",
+   "paragraph": 1,
+   "quote": "against the military advances of the tyrant Johan"
+  }
+ ],
+ "rejected": []
+}

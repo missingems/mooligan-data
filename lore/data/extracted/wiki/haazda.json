@@ -1,0 +1,76 @@
+{
+ "page": "wiki/haazda",
+ "url": "https://mtg.wiki/page/Haazda",
+ "title": "Haazda",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:07Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Haazda",
+   "type": "faction",
+   "aliases": [
+    "Hazda"
+   ],
+   "description": "A guildless volunteer law-enforcing corps on Ravnica operating in peripheral areas, later also an independent detective agency.",
+   "presence": "appears"
+  },
+  {
+   "name": "League of Wojek",
+   "type": "faction",
+   "aliases": [
+    "wojeks"
+   ],
+   "description": "The official lawmen whose areas the Haazda do not cover; better trained and armed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "R.A.M.I.",
+   "type": "faction",
+   "aliases": [],
+   "description": "A detective agency compared with the Haazda Investigations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion after which the Haazda founded a detective agency.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the Haazda operate.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the New Phyrexian Invasion the Haazda found an independent detective agency in the same areas.",
+   "participants": [
+    "Haazda",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Haazda founded an independent detective agency"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Haazda",
+   "relation": "other",
+   "target": "League of Wojek",
+   "note": "The Haazda cover areas the official lawmen do not and are less trained.",
+   "paragraph": 1,
+   "quote": "covering areas that are not covered by League of Wojek"
+  }
+ ],
+ "rejected": []
+}

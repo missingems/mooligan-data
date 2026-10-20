@@ -1,0 +1,114 @@
+{
+ "page": "stories/hidden-page-2021-07-07",
+ "url": "https://magic.wizards.com/en/news/magic-story/hidden-page-2021-07-07",
+ "title": "The Hidden Page",
+ "story_date": "2021-07-07",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:49Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sylvene",
+   "type": "character",
+   "aliases": [],
+   "description": "A wizard from Ravnica who came to the Sword Coast decades ago, fell in love, built a demiplane refuge, and later returned to Ravnica with her infant son.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvene's grandson",
+   "type": "character",
+   "aliases": [
+    "her grandson"
+   ],
+   "description": "Sylvene's careless grandson who seeks relics of her power in the Realms, harming others along the way.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Sylvene came from and returned to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sword Coast",
+   "type": "location",
+   "aliases": [],
+   "description": "The region of Faerun where Sylvene lived for a time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Waterdeep",
+   "type": "location",
+   "aliases": [],
+   "description": "A city Sylvene explored on the Sword Coast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvene's demiplane",
+   "type": "plane",
+   "aliases": [
+    "small demiplane"
+   ],
+   "description": "A refuge Sylvene created for her family.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Decades ago Sylvene comes from Ravnica to the Sword Coast, falls in love, and builds a demiplane refuge.",
+   "participants": [
+    "Sylvene",
+    "Sword Coast",
+    "Waterdeep"
+   ],
+   "location": "Sword Coast",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "She built a refuge for them in a small demiplane of her own creation"
+  },
+  {
+   "summary": "Sylvene returns to Ravnica with her infant son and never comes back.",
+   "participants": [
+    "Sylvene",
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "she went home to Ravnica with her infant son and never returned"
+  },
+  {
+   "summary": "Her grandson now seeks her relics in the Realms and harms others along the way.",
+   "participants": [
+    "Sylvene's grandson",
+    "Sylvene"
+   ],
+   "location": "Sword Coast",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Now her grandson seeks to recover relics of her power by exploring Sylvene's history in the Realms"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sylvene's grandson",
+   "relation": "family",
+   "target": "Sylvene",
+   "note": "Grandson of Sylvene.",
+   "paragraph": 1,
+   "quote": "Now her grandson seeks to recover relics of her power"
+  },
+  {
+   "source": "Sylvene",
+   "relation": "created",
+   "target": "Sylvene's demiplane",
+   "note": "She built a refuge in a demiplane of her own creation.",
+   "paragraph": 0,
+   "quote": "She built a refuge for them in a small demiplane of her own creation"
+  }
+ ],
+ "rejected": []
+}

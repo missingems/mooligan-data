@@ -1,0 +1,190 @@
+{
+ "page": "wiki/pili",
+ "url": "https://mtg.wiki/page/Pili",
+ "title": "Pili",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:31Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Pili",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin scout with a damaged back leg who joined Gideon's forces during the Battle for Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "Commander-General Gideon Jura"
+   ],
+   "description": "Planeswalker and commander of the forces fighting the Eldrazi on Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leek",
+   "type": "character",
+   "aliases": [],
+   "description": "Pili's goblin friend, crushed by a rockfall in the goblin hideout near Sea Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "Planeswalker who mourned losing her contact with Zendikar's world-soul and helped Pili and the trapped goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Munda",
+   "type": "character",
+   "aliases": [
+    "Munde"
+   ],
+   "description": "An ally who helped Nissa kill the Eldrazi and clear the cave-in, then told the goblins of Gideon's plan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "Zendikar city near which the goblin hideout lay; Gideon planned to reclaim it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sky Rock",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the injured goblins were carried.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dojir Nomads",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nomads who picked Pili up on their way from the Calcite Flats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [
+    "lesser Eldrazi"
+   ],
+   "description": "Alien invaders of Zendikar whose lesser spawn chased Pili and killed Leek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane invaded by the Eldrazi.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pili, newly revived by Gideon's healers, raves about her friend Leek, lost at Sea Gate; the Dojir Nomads had picked her up.",
+   "participants": [
+    "Pili",
+    "Leek",
+    "Dojir Nomads"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She was picked up by the Dojir Nomads on their way over from the Calcite Flats."
+  },
+  {
+   "summary": "Pili runs past Nissa pursued by lesser Eldrazi; Nissa, aided by Munda, kills them all.",
+   "participants": [
+    "Pili",
+    "Nissa Revane",
+    "Munda",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Nissa faced the creatures and, aided by Munda , killed them all."
+  },
+  {
+   "summary": "Pili finds the goblin hideout collapsed and Leek dead, crushed by a rockfall.",
+   "participants": [
+    "Pili",
+    "Leek"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Leek was one of three to have been crushed by a rockfall inside the ruin."
+  },
+  {
+   "summary": "Nissa and Munda dig out the trapped goblins, and Munda tells them of Gideon and the plan to reclaim Sea Gate.",
+   "participants": [
+    "Nissa Revane",
+    "Munda",
+    "Gideon Jura"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "With careful work and patience, Nissa and Munde cleared away the cave-in, and the goblins made their way out."
+  },
+  {
+   "summary": "Pili blames herself for Leek's death, swears vengeance on the Eldrazi and storms off to join Gideon.",
+   "participants": [
+    "Pili",
+    "Nissa Revane",
+    "Gideon Jura",
+    "Eldrazi"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Her sorrow turned to vengeance, and she swore violent vengeance on the Eldrazi that had killed her friend, then stormed off to join Gideon."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pili",
+   "relation": "ally",
+   "target": "Leek",
+   "note": "Pili's friend",
+   "paragraph": 2,
+   "quote": "Pili was raving something about her friend, Leek"
+  },
+  {
+   "source": "Pili",
+   "relation": "serves",
+   "target": "Gideon Jura",
+   "note": "goblin scout in his forces",
+   "paragraph": 0,
+   "quote": "Pili is a goblin scout who became part of Gideon 's forces during the Battle for Zendikar ."
+  },
+  {
+   "source": "Pili",
+   "relation": "enemy",
+   "target": "Eldrazi",
+   "note": "swore vengeance for Leek",
+   "paragraph": 7,
+   "quote": "she swore violent vengeance on the Eldrazi that had killed her friend"
+  },
+  {
+   "source": "Munda",
+   "relation": "ally",
+   "target": "Nissa Revane",
+   "note": "fought and dug alongside her",
+   "paragraph": 3,
+   "quote": "Nissa faced the creatures and, aided by Munda , killed them all."
+  }
+ ],
+ "rejected": []
+}

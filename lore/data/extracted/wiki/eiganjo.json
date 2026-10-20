@@ -1,0 +1,140 @@
+{
+ "page": "wiki/eiganjo",
+ "url": "https://mtg.wiki/page/Eiganjo",
+ "title": "Eiganjo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:04Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "White-aligned castle city on Kamigawa, seat of Imperial power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Eiganjo stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Takeshi Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Daimyo whose seat of power was Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Michiko Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived in Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yosei, the Morning Star",
+   "type": "creature",
+   "aliases": [
+    "Yosei"
+   ],
+   "description": "Guardian dragon of Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "That Which Was Taken",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item whose blessings protected Eiganjo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "deity",
+   "aliases": [
+    "The Great Serpent"
+   ],
+   "description": "Great Serpent who attacked Eiganjo to recover his stolen offspring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Stole That Which Was Taken and carried it to safety.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kyodai",
+   "type": "deity",
+   "aliases": [],
+   "description": "Guardian spirit of Kamigawa whose main shrine is in Eiganjo's palace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Eiganjo was destroyed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "O-Kagachi manifests and attacks Eiganjo to recover his stolen offspring, reducing it to rubble.",
+   "participants": [
+    "O-Kagachi",
+    "Eiganjo"
+   ],
+   "location": "Eiganjo",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eiganjo was reduced to rubble by the wrath of The Great Serpent."
+  },
+  {
+   "summary": "Toshiro Umezawa steals That Which Was Taken and carries it to safety.",
+   "participants": [
+    "Toshiro Umezawa",
+    "That Which Was Taken"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "That Which was Taken was stolen by Toshiro Umezawa and transported to safety"
+  },
+  {
+   "summary": "Eiganjo is rebuilt on the bones of its former castle.",
+   "participants": [
+    "Eiganjo"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Eiganjo was rebuilt upon the bones of its ancient former castle self"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Takeshi Konda",
+   "relation": "leader_of",
+   "target": "Eiganjo",
+   "note": "Eiganjo was the seat of his power as daimyo.",
+   "paragraph": 1,
+   "quote": "it was the seat of power of daimyo Takeshi Konda"
+  },
+  {
+   "source": "Eiganjo",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "City on Kamigawa.",
+   "paragraph": 0,
+   "quote": "is a major white -aligned location on Kamigawa"
+  }
+ ],
+ "rejected": []
+}

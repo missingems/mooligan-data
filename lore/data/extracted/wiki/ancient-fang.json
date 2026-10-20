@@ -1,0 +1,161 @@
+{
+ "page": "wiki/ancient-fang",
+ "url": "https://mtg.wiki/page/Ancient_Fang",
+ "title": "Ancient Fang",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:45Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Ancient Fang",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Magical dagger from Innistrad holding memories of everyone who used it; can cut wood, ignite things or kill the undead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sifa Grent",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who murdered Drakeston's people with the dagger and gave it to the Cult of Rakdos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dack Fayden",
+   "type": "character",
+   "aliases": [],
+   "description": "Thieving planeswalker from Drakeston who stole the dagger and traveled to Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican cult given the dagger by Sifa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falkenrath",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire bloodline that became Dack's enemy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Innistrad's secret guardian who traded knowledge for the dagger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drakeston",
+   "type": "location",
+   "aliases": [],
+   "description": "Town on Fiora whose people Sifa murdered.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Drakeston.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the dagger's origin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Cult of Rakdos.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sifa Grent uses the Ancient Fang to murder the people of Drakeston.",
+   "participants": [
+    "Sifa Grent",
+    "Ancient Fang"
+   ],
+   "location": "Drakeston",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "murdering the people of Drakeston on Fiora"
+  },
+  {
+   "summary": "Sifa gives the dagger to the Cult of Rakdos.",
+   "participants": [
+    "Sifa Grent",
+    "Cult of Rakdos",
+    "Ancient Fang"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sifa gave the dagger to the Cult of Rakdos on Ravnica"
+  },
+  {
+   "summary": "Dack Fayden steals the dagger and learns who was responsible for Drakeston's death.",
+   "participants": [
+    "Dack Fayden",
+    "Ancient Fang"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he accidently found out who was responsible for the death of everyone he had known"
+  },
+  {
+   "summary": "Dack drives Sifa and her undead away but loses her.",
+   "participants": [
+    "Dack Fayden",
+    "Sifa Grent"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Dack managed to drive Sifa and her minions away"
+  },
+  {
+   "summary": "Sorin Markov trades knowledge of Sifa's origins and Dack's life for the dagger.",
+   "participants": [
+    "Sorin Markov",
+    "Dack Fayden",
+    "Ancient Fang"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Sorin traded knowledge of Sifa's origins and Dack's life for the dagger."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sifa Grent",
+   "relation": "enemy",
+   "target": "Dack Fayden",
+   "note": "Dack seeks revenge for Drakeston.",
+   "paragraph": 2,
+   "quote": "he lost her before he could exact his revenge"
+  },
+  {
+   "source": "Dack Fayden",
+   "relation": "enemy",
+   "target": "Falkenrath",
+   "note": "He gained their enmity.",
+   "paragraph": 2,
+   "quote": "gaining the enmity of the Falkenrath in the process"
+  }
+ ],
+ "rejected": []
+}

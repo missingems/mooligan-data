@@ -1,0 +1,99 @@
+{
+ "page": "wiki/fiero-vespin",
+ "url": "https://mtg.wiki/page/Fiero_Vespin",
+ "title": "Fiero Vespin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:31Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Fiero Vespin",
+   "type": "character",
+   "aliases": [],
+   "description": "An ostentatious art dealer and member of the Maestros family in New Capenna, killed after his schemes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna crime family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anhelo",
+   "type": "character",
+   "aliases": [],
+   "description": "A character tasked with eliminating Fiero Vespin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Errant",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the couple whose wedding Fiero tried to sabotage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parnesse",
+   "type": "character",
+   "aliases": [],
+   "description": "One of the couple whose wedding Fiero tried to sabotage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Fiero lived.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fiero Vespin tries to sabotage the wedding of Errant and Parnesse.",
+   "participants": [
+    "Fiero Vespin",
+    "Errant",
+    "Parnesse"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He attempted to sabotage the high-profile wedding of Errant and Parnesse"
+  },
+  {
+   "summary": "Anhelo orchestrates Fiero's death as a theatrical, symbolic execution.",
+   "participants": [
+    "Anhelo",
+    "Fiero Vespin"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Anhelo, though injured and strained, successfully orchestrated Fiero's death as a theatrical, symbolic execution"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fiero Vespin",
+   "relation": "member_of",
+   "target": "Maestros",
+   "note": "He was a member of the Maestros family.",
+   "paragraph": 1,
+   "quote": "Despite being a member of the Maestros family"
+  },
+  {
+   "source": "Anhelo",
+   "relation": "killed",
+   "target": "Fiero Vespin",
+   "note": "Anhelo orchestrated his death.",
+   "paragraph": 2,
+   "quote": "Anhelo, though injured and strained, successfully orchestrated Fiero's death"
+  }
+ ],
+ "rejected": []
+}

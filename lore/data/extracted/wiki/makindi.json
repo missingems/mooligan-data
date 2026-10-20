@@ -1,0 +1,180 @@
+{
+ "page": "wiki/makindi",
+ "url": "https://mtg.wiki/page/Makindi",
+ "title": "Makindi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:04Z",
+ "storyline": "Zendikar",
+ "entities": [
+  {
+   "name": "Makindi",
+   "type": "location",
+   "aliases": [
+    "Makindi Trenches"
+   ],
+   "description": "Vast mesa-riddled plains in Ondu on Zendikar, once seat of an ancient Kor empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar containing Makindi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Makindi lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient empire that collapsed after a civil war between the city and its Skyclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omnath",
+   "type": "deity",
+   "aliases": [
+    "flickering heart"
+   ],
+   "description": "Primal embodiment of Zendikar's chaotic mana, once imprisoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Binding Circle",
+   "type": "location",
+   "aliases": [],
+   "description": "Ritual site enclosing the broken Prison of Omnath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prison of Omnath",
+   "type": "location",
+   "aliases": [],
+   "description": "Shrine that held Omnath until its breach.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soul Stair",
+   "type": "location",
+   "aliases": [],
+   "description": "Endless spiral staircase below the pit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ritual of Lights",
+   "type": "event",
+   "aliases": [],
+   "description": "Rite performed twice yearly with seventy-seven candles to keep Omnath bound.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Titanic beings explorers hope to find weapons against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who crossed Makindi in 4557 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who crossed Makindi in 4557 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveler who crossed Makindi with Nissa and Sorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Smara",
+   "type": "character",
+   "aliases": [],
+   "description": "Kor prophet met by the travelers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Roil",
+   "type": "concept",
+   "aliases": [],
+   "description": "Disruptive surges on Zendikar.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Kor empire collapses after a civil war between the city and its Skyclave; the Skyclave falls onto Jwar Isle, fracturing the land into the Trenches.",
+   "participants": [
+    "Kor empire",
+    "Makindi"
+   ],
+   "location": "Makindi",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "The Skyclave fell onto Jwar Isle , fracturing the land into the Trenches seen today."
+  },
+  {
+   "summary": "Pilgrims' rites fail as wild mana breaks the circle, releasing Omnath.",
+   "participants": [
+    "Omnath",
+    "Binding Circle",
+    "Ritual of Lights"
+   ],
+   "location": "Binding Circle",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "These rites, however, proved futile"
+  },
+  {
+   "summary": "Nissa, Sorin and Anowon cross Makindi, endure the Roil, meet the kor prophet Smara and battle hazards.",
+   "participants": [
+    "Nissa Revane",
+    "Sorin Markov",
+    "Anowon",
+    "Smara",
+    "Roil"
+   ],
+   "location": "Makindi",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "met the kor prophet Smara"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Binding Circle",
+   "relation": "located_in",
+   "target": "Makindi",
+   "note": "On a prominent mesa.",
+   "paragraph": 4,
+   "quote": "One prominent mesa hosts the Binding Circle"
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "ally",
+   "target": "Sorin Markov",
+   "note": "Traveled together.",
+   "paragraph": 11,
+   "quote": "Nissa Revane , Sorin Markov , and Anowon crossed Makindi"
+  }
+ ],
+ "rejected": []
+}

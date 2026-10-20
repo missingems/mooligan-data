@@ -1,0 +1,78 @@
+{
+ "page": "wiki/hikari",
+ "url": "https://mtg.wiki/page/Hikari",
+ "title": "Hikari",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:02Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Hikari",
+   "type": "creature",
+   "aliases": [
+    "Hikari, Twilight Guardian"
+   ],
+   "description": "Kami of Kamigawa, guardian of the border between day and night, resembling a monstrous samurai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Hikari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord who sent two hundred men against Hikari at sundown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Place to which forty-seven samurai retreated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Konda sent two hundred men against Hikari at sundown; only forty-seven retreated to Eiganjo.",
+   "participants": [
+    "Konda",
+    "Hikari"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "after the battle with Hikari, only forty-seven were able to retreat to"
+  },
+  {
+   "summary": "Konda learned never to send samurai to fight at dusk; rumors spread about the samurai-like kami.",
+   "participants": [
+    "Konda",
+    "Hikari"
+   ],
+   "location": "Eiganjo",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Konda learned that day to never send his samurai to fight at dusk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hikari",
+   "relation": "enemy",
+   "target": "Konda",
+   "note": "Hikari routed Konda's samurai.",
+   "paragraph": 2,
+   "quote": "After the routing of the samurai by Hikari"
+  }
+ ],
+ "rejected": []
+}

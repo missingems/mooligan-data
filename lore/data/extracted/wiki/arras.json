@@ -1,0 +1,111 @@
+{
+ "page": "wiki/arras",
+ "url": "https://mtg.wiki/page/Arras",
+ "title": "Arras",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:24Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Arras",
+   "type": "character",
+   "aliases": [],
+   "description": "Anaba spirit crafter (minotaur shaman) from Ulgrotha, a wise and compassionate guide of his clan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anaba",
+   "type": "faction",
+   "aliases": [
+    "Anaba clan"
+   ],
+   "description": "Minotaur clan of Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Arras lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thexar",
+   "type": "character",
+   "aliases": [],
+   "description": "Dying clan member tended by Arras.",
+   "presence": "appears"
+  },
+  {
+   "name": "Neth'arna",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman responsible for the scarring ritual that went tragically wrong.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feroz's Ban",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell sealing Ulgrotha; fell hundreds of years later.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Arras tends the dying Thexar, wiping away blood and offering comfort.",
+   "participants": [
+    "Arras",
+    "Thexar"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "He knelt beside Thexar, tenderly wiping away the blood and offering comforting words."
+  },
+  {
+   "summary": "Arras sharply reminds Neth'arna that making excuses benefits no one.",
+   "participants": [
+    "Arras",
+    "Neth'arna"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "He sharply reminded Neth’arna that making excuses benefited no one"
+  },
+  {
+   "summary": "Arras tells stories of past warriors to distract Thexar from his pain.",
+   "participants": [
+    "Arras",
+    "Thexar"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Arras sought to distract Thexar from his pain, using tales of past warriors and battles to offer solace"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Arras",
+   "relation": "member_of",
+   "target": "Anaba",
+   "note": "Spirit crafter of the clan.",
+   "paragraph": 0,
+   "quote": "Arras was an Anaba spirit crafter from Ulgrotha"
+  },
+  {
+   "source": "Arras",
+   "relation": "mentor_of",
+   "target": "Neth'arna",
+   "note": "Prepared her to face the consequences of her actions.",
+   "paragraph": 6,
+   "quote": "preparing Neth’arna to face the consequences of her actions and learn from them"
+  }
+ ],
+ "rejected": []
+}

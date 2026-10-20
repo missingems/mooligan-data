@@ -1,0 +1,188 @@
+{
+ "page": "wiki/mutant",
+ "url": "https://mtg.wiki/page/Mutant",
+ "title": "Mutant",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mutant",
+   "type": "concept",
+   "aliases": [
+    "Mutants"
+   ],
+   "description": "A creature type for beings altered by unnatural factors, magical or biological.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact whose power soaks into Otaria, mutating its inhabitants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "A barbarian turned druid who planted the Mirari in the Otarian forest of Krosa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krosa",
+   "type": "location",
+   "aliases": [],
+   "description": "Otarian forest where Kamahl lived and planted the Mirari; its beasts mutate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent whose inhabitants, especially aven, are mutated by the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi Titan that warps and mutates biological life into her spawn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whose will twisted the first phyrexians, mutated Thran humans, through oil baths.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild of biomancers who create mutants; its members often mutate themselves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Momir Vig",
+   "type": "character",
+   "aliases": [],
+   "description": "Simic leader whose declining influence preceded the resurgence of the Combine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vannifar",
+   "type": "character",
+   "aliases": [
+    "Prime Speaker Vannifar"
+   ],
+   "description": "Prime Speaker under whom the Simic mutate intelligent members into super soldiers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Incurables",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ogres on Grixis mutated by stale magical energy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grixis",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara where stale magic mutated some denizens.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krasis",
+   "type": "creature",
+   "aliases": [],
+   "description": "A mix of two species created by Simic experiments, now feral.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crookclaws",
+   "type": "creature",
+   "aliases": [],
+   "description": "Mutant owl aven that grew larger and sprouted wing talons while keeping use of their arms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose Simic biomancers create mutants.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kamahl plants the Mirari in Krosa; its power soaks into the continent and mutates the inhabitants, driving forest beasts mad.",
+   "participants": [
+    "Kamahl",
+    "Mirari",
+    "Krosa",
+    "Otaria"
+   ],
+   "location": "Krosa",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "it was he who planted the Mirari there thinking that without a wielder the artifact would be harmless."
+  },
+  {
+   "summary": "The Mirari's magic washes across Otaria, making many aven taller and more muscular with razor-like talons.",
+   "participants": [
+    "Mirari",
+    "Otaria"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "many aven became taller and more muscular"
+  },
+  {
+   "summary": "Simic biomancers create the mutants of Ravnica in attempts to improve life forms.",
+   "participants": [
+    "Simic Combine"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "were responsible for the mutants of Ravnica in their attempts to improve the life forms of that plane."
+  },
+  {
+   "summary": "Under Prime Speaker Vannifar the Simic mutate their more intelligent members into super soldiers.",
+   "participants": [
+    "Simic Combine",
+    "Vannifar"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "the Simic started to mutate their more intelligent members into super soldiers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kamahl",
+   "relation": "other",
+   "target": "Mirari",
+   "note": "Planted the Mirari in Krosa.",
+   "paragraph": 8,
+   "quote": "it was he who planted the Mirari there"
+  },
+  {
+   "source": "Emrakul",
+   "relation": "created",
+   "target": "Mutant",
+   "note": "Her influence mutates life into her spawn.",
+   "paragraph": 5,
+   "quote": "The Eldrazi Titan Emrakul warps and corrupts biological life, mutating it into her spawn ."
+  }
+ ],
+ "rejected": []
+}

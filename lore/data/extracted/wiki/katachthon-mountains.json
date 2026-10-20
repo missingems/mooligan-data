@@ -1,0 +1,175 @@
+{
+ "page": "wiki/katachthon-mountains",
+ "url": "https://mtg.wiki/page/Katachthon_Mountains",
+ "title": "Katachthon Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:21Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Katachthon Mountains",
+   "type": "location",
+   "aliases": [
+    "the Katachthons"
+   ],
+   "description": "A harsh volcanic range east of Akros on Theros, steeped in old untamed magic said to predate the gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose lands of the Akroans lie in the Katachthons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oraniad Mountains",
+   "type": "location",
+   "aliases": [
+    "Oraniads"
+   ],
+   "description": "Divinely touched mountains, larger than the Katachthons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of the forge and fire, whose home is Mount Velus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Velus",
+   "type": "location",
+   "aliases": [],
+   "description": "An active volcano serving as Purphoros's home in the mortal world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraxes",
+   "type": "creature",
+   "aliases": [],
+   "description": "A red dragon who lairs in Purphoros's first residence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mount Vesios",
+   "type": "location",
+   "aliases": [
+    "the Little Sister"
+   ],
+   "description": "A smaller volcano erupting with Mount Velus, with a monastery of scholars.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mount Sulano",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountain that erupted during the Great Revel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Court of Orestes",
+   "type": "location",
+   "aliases": [],
+   "description": "A crumbling flooded crypt on the Khystonos River where the oracle Orestes is buried.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orestes",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary oracle, the first follower of Phenax, buried in the Court of Orestes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phenax",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose first follower was Orestes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pool of Lyth",
+   "type": "location",
+   "aliases": [],
+   "description": "A pond that grants visions but is filled with Pharika's poison and guarded by three harpy sisters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stolsluko",
+   "type": "character",
+   "aliases": [],
+   "description": "A wolf-toothed night hag whose lair holds an entrance to the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Revel",
+   "type": "event",
+   "aliases": [],
+   "description": "The revel during which Mount Sulano erupted.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mount Sulano erupted during the Great Revel.",
+   "participants": [
+    "Mount Sulano",
+    "Great Revel"
+   ],
+   "location": "Katachthon Mountains",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "A mountain which erupted during the Great Revel ."
+  },
+  {
+   "summary": "The Khystonos River was partially blocked by a rockfall, revealing the Court of Orestes.",
+   "participants": [
+    "Court of Orestes"
+   ],
+   "location": "Katachthon Mountains",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "After being partially blocked by a rockfall, its waters run low."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Purphoros",
+   "relation": "located_in",
+   "target": "Mount Velus",
+   "note": "The volcano is his home in the mortal world.",
+   "paragraph": 7,
+   "quote": "serving as Purphoros's home in the mortal world"
+  },
+  {
+   "source": "Thraxes",
+   "relation": "located_in",
+   "target": "Mount Velus",
+   "note": "The dragon lairs there.",
+   "paragraph": 7,
+   "quote": "the dragon Thraxes also lairs here"
+  },
+  {
+   "source": "Orestes",
+   "relation": "serves",
+   "target": "Phenax",
+   "note": "The first follower of Phenax.",
+   "paragraph": 5,
+   "quote": "the first follower of Phenax"
+  },
+  {
+   "source": "Katachthon Mountains",
+   "relation": "located_in",
+   "target": "Akros",
+   "note": "Range lying east of Akros.",
+   "paragraph": 1,
+   "quote": "a harsh, volcanic range east of Akros"
+  }
+ ],
+ "rejected": []
+}

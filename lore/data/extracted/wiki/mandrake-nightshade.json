@@ -1,0 +1,119 @@
+{
+ "page": "wiki/mandrake-nightshade",
+ "url": "https://mtg.wiki/page/Mandrake_Nightshade",
+ "title": "Mandrake Nightshade",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:52Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mandrake Nightshade",
+   "type": "character",
+   "aliases": [],
+   "description": "An evil black and red mage who destroyed Martuk and fell in his final battle on Mt. Margalus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Magus War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Mandrake destroyed Martuk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Martuk",
+   "type": "location",
+   "aliases": [],
+   "description": "Place destroyed by Mandrake Nightshade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mt. Margalus",
+   "type": "location",
+   "aliases": [
+    "Mandrake's Mountain"
+   ],
+   "description": "Site of Mandrake's final battle, now Mandrake's Mountain and cursed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selena Mistencharmer",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Mandrake with Slides Stardust and cursed the mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slides Stardust",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Mandrake with Selena Mistencharmer and cursed the mountain.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mandrake Nightshade destroys Martuk during the Great Magus War.",
+   "participants": [
+    "Mandrake Nightshade"
+   ],
+   "location": "Martuk",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he destroyed Martuk"
+  },
+  {
+   "summary": "Mandrake summons dragons and pit lords but falls at the hands of Selena Mistencharmer and Slides Stardust.",
+   "participants": [
+    "Mandrake Nightshade",
+    "Selena Mistencharmer",
+    "Slides Stardust"
+   ],
+   "location": "Mt. Margalus",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he summoned several dragons and pit lords, only to fall at the hands of Selena Mistencharmer and Slides Stardust"
+  },
+  {
+   "summary": "Fearing his resurrection, Selena and Slides put a draining curse on the mountain.",
+   "participants": [
+    "Selena Mistencharmer",
+    "Slides Stardust"
+   ],
+   "location": "Mt. Margalus",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they put a dangerous curse on the mountain that would drain anyone who set foot on the mountain"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Selena Mistencharmer",
+   "relation": "killed",
+   "target": "Mandrake Nightshade",
+   "note": "Fell at her hands with Slides Stardust.",
+   "paragraph": 2,
+   "quote": "fall at the hands of Selena Mistencharmer and Slides Stardust"
+  },
+  {
+   "source": "Slides Stardust",
+   "relation": "killed",
+   "target": "Mandrake Nightshade",
+   "note": "Fell at his hands with Selena.",
+   "paragraph": 2,
+   "quote": "fall at the hands of Selena Mistencharmer and Slides Stardust"
+  },
+  {
+   "source": "Selena Mistencharmer",
+   "relation": "ally",
+   "target": "Slides Stardust",
+   "note": "They defeated Mandrake together.",
+   "paragraph": 2,
+   "quote": "Selena and Slides feared his possible resurrection"
+  }
+ ],
+ "rejected": []
+}

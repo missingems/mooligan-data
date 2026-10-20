@@ -1,0 +1,128 @@
+{
+ "page": "wiki/kaldra",
+ "url": "https://mtg.wiki/page/Kaldra",
+ "title": "Kaldra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:04Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Kaldra",
+   "type": "creature",
+   "aliases": [
+    "Kaldra Champion"
+   ],
+   "description": "Gigantic Mirran avatar of blue-white plasma summoned by Glissa, the Kaldra Champion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned Kaldra after collecting the three Kaldra artifacts, later restored them on New Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldra artifacts",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Helmet, shield and sword that summon Kaldra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Took control of the Kaldra Champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Radix",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where the green sun shot through.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Kaldra artifacts came under Phyrexian control.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Took control of the Kaldra artifacts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Living weapons project",
+   "type": "event",
+   "aliases": [],
+   "description": "Phyrexian project integrating the artifacts.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glissa summoned Kaldra after collecting the three Kaldra artifacts.",
+   "participants": [
+    "Glissa",
+    "Kaldra"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "summoned by Glissa after she collected the three so-called Kaldra artifacts"
+  },
+  {
+   "summary": "The Kaldra Champion helped Glissa fight Memnarch's constructs until Memnarch took control of it.",
+   "participants": [
+    "Kaldra",
+    "Glissa",
+    "Memnarch"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "until Memnarch took control of it"
+  },
+  {
+   "summary": "Kaldra was destroyed when the green sun shot through the Radix.",
+   "participants": [
+    "Kaldra"
+   ],
+   "location": "Radix",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "It was destroyed when the green sun shot through the"
+  },
+  {
+   "summary": "On New Phyrexia the Phyrexians integrated the Kaldra artifacts into their Living weapons project; Glissa restored them and grew a new champion.",
+   "participants": [
+    "Glissa",
+    "Phyrexians"
+   ],
+   "location": "New Phyrexia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Glissa was able to restore them and grew a specialized germ creature"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Glissa",
+   "relation": "created",
+   "target": "Kaldra",
+   "note": "Summoned it.",
+   "paragraph": 0,
+   "quote": "summoned by Glissa"
+  }
+ ],
+ "rejected": []
+}

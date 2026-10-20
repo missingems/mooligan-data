@@ -1,0 +1,198 @@
+{
+ "page": "wiki/hammen",
+ "url": "https://mtg.wiki/page/Hammen",
+ "title": "Hammen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:07Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Hammen of Jor",
+   "type": "character",
+   "aliases": [
+    "Hammen",
+    "Hadin gar Kan"
+   ],
+   "description": "Master fighter of the House of Oor-tael in Kush on Dominaria, born with the ability to control mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Oor-tael",
+   "type": "faction",
+   "aliases": [],
+   "description": "House Hammen later rebuilt and became Master of.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Dominaria where the House of Oor-tael stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cullinarn",
+   "type": "character",
+   "aliases": [],
+   "description": "Hammen's master, father of Galin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "Massacre that Hammen escaped by hiding in the sewers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Hammen lived as a beggar and thief.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garth One-Eye",
+   "type": "character",
+   "aliases": [
+    "Garth",
+    "Galin"
+   ],
+   "description": "A mysterious stranger, actually Galin, son of Cullinarn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel",
+   "type": "character",
+   "aliases": [
+    "Grand Master Zarel"
+   ],
+   "description": "Grand Master whose rule Garth challenged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuthuman",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose rule Garth challenged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of Estark",
+   "type": "event",
+   "aliases": [],
+   "description": "Festival whose honor Garth sought to rebuild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "Period after which Hammen rebuilt the House of Oor-tael.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Norreen",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman Hammen harassed; she and Garth named their son after Hammen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Varena",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman Hammen harassed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Hammen escapes the Night of Fire massacre by hiding in sewers for weeks, then abandons his spells and lives in Estark as beggar and thief, heading a brotherhood of pickpockets.",
+   "participants": [
+    "Hammen of Jor",
+    "Cullinarn",
+    "Night of Fire"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He was one of few people to escape the massacre, hiding in the city's sewers for weeks."
+  },
+  {
+   "summary": "Twenty years later Hammen becomes involved with Garth One-Eye's plans to challenge Zarel and Kuthuman and realizes Garth is Galin.",
+   "participants": [
+    "Hammen of Jor",
+    "Garth One-Eye",
+    "Zarel",
+    "Kuthuman"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Hammen realized that Garth was Galin, the son of Cullinarn"
+  },
+  {
+   "summary": "Hammen volunteers to fight in the arena in Garth's stead but is stopped by Garth.",
+   "participants": [
+    "Hammen of Jor",
+    "Garth One-Eye",
+    "Zarel",
+    "Kuthuman"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Hammen volunteered to fight in the arena in his stead, but was stopped by Garth."
+  },
+  {
+   "summary": "After the Time of Troubles Hammen rebuilds the House of Oor-tael and becomes its Master.",
+   "participants": [
+    "Hammen of Jor",
+    "House of Oor-tael"
+   ],
+   "location": "Kush",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he rebuilt the House of Oor-tael, becoming its Master"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hammen of Jor",
+   "relation": "serves",
+   "target": "Cullinarn",
+   "note": "Was his favorite fighter.",
+   "paragraph": 2,
+   "quote": "Hammen was Cullinarn 's favorite fighter before the Night of Fire."
+  },
+  {
+   "source": "Hammen of Jor",
+   "relation": "ally",
+   "target": "Garth One-Eye",
+   "note": "Helped Garth, who called him 'his servant'.",
+   "paragraph": 3,
+   "quote": "Hammen started helping Garth out of curiosity"
+  },
+  {
+   "source": "Hammen of Jor",
+   "relation": "leader_of",
+   "target": "House of Oor-tael",
+   "note": "Master of the rebuilt house.",
+   "paragraph": 4,
+   "quote": "becoming its Master"
+  },
+  {
+   "source": "Garth One-Eye",
+   "relation": "enemy",
+   "target": "Zarel",
+   "note": "Determined to challenge his rule.",
+   "paragraph": 3,
+   "quote": "determined to challenge the rule of Grand Master Zarel"
+  }
+ ],
+ "rejected": []
+}

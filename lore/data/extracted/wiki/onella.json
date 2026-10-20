@@ -1,0 +1,147 @@
+{
+ "page": "wiki/onella",
+ "url": "https://mtg.wiki/page/Onella",
+ "title": "Onella",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:01Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Onella",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital city of the Citizenship of Aysen on Ulgrotha, named after the first Abbot Hazduhr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Citizenship of Aysen",
+   "type": "faction",
+   "aliases": [
+    "Aysen"
+   ],
+   "description": "A Serra-worshiping state on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Onella.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazduhr",
+   "type": "character",
+   "aliases": [
+    "first Abbot Hazduhr"
+   ],
+   "description": "First Abbot, chosen by Serra, for whom Onella is named.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker worshiped in Aysen who chose abbots and gifted gargoyles; left Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose death preceded Serra's failure to save a man.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Convinced Serra to leave Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aysen Abbey",
+   "type": "location",
+   "aliases": [],
+   "description": "Bureaucratic and cultural center of Aysen, built around 3190 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abbey Gargoyles",
+   "type": "creature",
+   "aliases": [
+    "gargoyles"
+   ],
+   "description": "Serra's gift to Onella, protecting it from goblin raids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra Aviary",
+   "type": "location",
+   "aliases": [],
+   "description": "Temple to Serra tended by the young of Onella.",
+   "presence": "appears"
+  },
+  {
+   "name": "Falconer",
+   "type": "character",
+   "aliases": [],
+   "description": "Watches over the Serra Aviary.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Feroz's death, Serra failed to save a man from a runaway cartwheel, and Baron Sengir convinced her to leave Ulgrotha.",
+   "participants": [
+    "Serra",
+    "Baron Sengir",
+    "Feroz"
+   ],
+   "location": "Onella",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Baron Sengir appeared and convinced Serra to leave Ulgrotha altogether."
+  },
+  {
+   "summary": "Aysen Abbey was built in Onella around 3190 AR.",
+   "participants": [
+    "Aysen Abbey"
+   ],
+   "location": "Onella",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Aysen Abbey was built in Onella under the leadership of its Abbot, around 3190 AR."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Onella",
+   "relation": "located_in",
+   "target": "Citizenship of Aysen",
+   "note": "Capital",
+   "paragraph": 0,
+   "quote": "Onella is the capital city of the Citizenship of Aysen"
+  },
+  {
+   "source": "Serra",
+   "relation": "created",
+   "target": "Abbey Gargoyles",
+   "note": "Her gift to the city",
+   "paragraph": 4,
+   "quote": "The gargoyles were Serra's gift to the city of Onella."
+  },
+  {
+   "source": "Serra",
+   "relation": "ally",
+   "target": "Hazduhr",
+   "note": "Chose him as first Abbot",
+   "paragraph": 0,
+   "quote": "It was named after the first Abbot Hazduhr , chosen by Serra herself."
+  }
+ ],
+ "rejected": []
+}

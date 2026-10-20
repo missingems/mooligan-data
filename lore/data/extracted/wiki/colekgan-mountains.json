@@ -1,0 +1,67 @@
+{
+ "page": "wiki/colekgan-mountains",
+ "url": "https://mtg.wiki/page/Colekgan_Mountains",
+ "title": "Colekgan Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Colekgan Mountains",
+   "type": "location",
+   "aliases": [
+    "Colekgans"
+   ],
+   "description": "Mountainous region in northwestern Terisiare on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Triggered an avalanche and captured Loran.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Loran",
+   "type": "character",
+   "aliases": [],
+   "description": "Carried the Golgothian Sylex and was captured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact carried by Loran.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashnod triggers an avalanche and captures a fleeing Loran carrying the Golgothian Sylex.",
+   "participants": [
+    "Ashnod",
+    "Loran"
+   ],
+   "location": "Colekgan Mountains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Ashnod triggered an avalanche that caused her to capture a fleeing Loran"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "enemy",
+   "target": "Loran",
+   "note": "captured her",
+   "paragraph": 1,
+   "quote": "capture a fleeing Loran"
+  }
+ ],
+ "rejected": []
+}

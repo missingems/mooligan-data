@@ -1,0 +1,88 @@
+{
+ "page": "wiki/delney",
+ "url": "https://mtg.wiki/page/Delney",
+ "title": "Delney",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Delney",
+   "type": "character",
+   "aliases": [],
+   "description": "Nonbinary human scout from Ravnica, head of a gang of street urchins in the Tenth District.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildless",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnicans without guild; Delney is one.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dimir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that tried to recruit Delney.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [],
+   "description": "Great detective who hired Delney.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker to whom Delney delivered a message.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murders at Karlov Manor",
+   "type": "event",
+   "aliases": [],
+   "description": "Investigation during which Proft hired Delney.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alquist Proft hires Delney to deliver a message to Kaya during his Karlov Manor investigation.",
+   "participants": [
+    "Alquist Proft",
+    "Delney",
+    "Kaya"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the great detective Alquist Proft hired Delney to deliver a message to the planeswalker Kaya ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Delney",
+   "relation": "member_of",
+   "target": "Guildless",
+   "note": "Part of the Guildless.",
+   "paragraph": 0,
+   "quote": "They are part of the Guildless ."
+  },
+  {
+   "source": "Delney",
+   "relation": "enemy",
+   "target": "Dimir",
+   "note": "Turned down all recruitment offers.",
+   "paragraph": 1,
+   "quote": "Delney has turned down all offers of recruitment"
+  }
+ ],
+ "rejected": []
+}

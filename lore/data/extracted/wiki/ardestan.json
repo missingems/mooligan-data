@@ -1,0 +1,125 @@
+{
+ "page": "wiki/ardestan",
+ "url": "https://mtg.wiki/page/Ardestan",
+ "title": "Ardestan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:18Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ardestan",
+   "type": "location",
+   "aliases": [
+    "Burnished-towered Ardestan"
+   ],
+   "description": "Burnished-towered city in Thune on Shandalar with rune-warded walls, founded by Kenan Sahrmal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thune",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Shandalar containing Ardestan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Ardestan lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bani Bakur",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived in Ardestan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravash Mog",
+   "type": "character",
+   "aliases": [],
+   "description": "Lived in Ardestan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kenan Sahrmal",
+   "type": "character",
+   "aliases": [],
+   "description": "Founder of Ardestan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lim-Dul's War",
+   "type": "event",
+   "aliases": [
+    "Lim-Dûl’s War"
+   ],
+   "description": "War during which Ardestan was attacked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Had left the plane before the war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Had left the plane before the war.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kenan Sahrmal founds Ardestan.",
+   "participants": [
+    "Kenan Sahrmal",
+    "Ardestan"
+   ],
+   "location": "Ardestan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ardestan was founded by Kenan Sahrmal ."
+  },
+  {
+   "summary": "Ardestan is attacked during Lim-Dul's War, twelve years after Leshrac and Tevesh Szat left the plane.",
+   "participants": [
+    "Ardestan",
+    "Lim-Dul's War",
+    "Leshrac",
+    "Tevesh Szat"
+   ],
+   "location": "Ardestan",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The city was attacked during Lim-Dûl’s War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kenan Sahrmal",
+   "relation": "created",
+   "target": "Ardestan",
+   "note": "He founded the city.",
+   "paragraph": 1,
+   "quote": "Ardestan was founded by Kenan Sahrmal ."
+  },
+  {
+   "source": "Ardestan",
+   "relation": "located_in",
+   "target": "Thune",
+   "note": "The city is in Thune.",
+   "paragraph": 0,
+   "quote": "is a city in Thune on the plane of Shandalar"
+  }
+ ],
+ "rejected": []
+}

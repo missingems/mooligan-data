@@ -1,0 +1,165 @@
+{
+ "page": "wiki/zegon",
+ "url": "https://mtg.wiki/page/Zegon",
+ "title": "Zegon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:10Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Zegon",
+   "type": "location",
+   "aliases": [],
+   "description": "A city of the Fallaji Empire on the edge of the Great Desert on Terisiare, not belonging to any Fallaji tribe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The empire Zegon became part of.",
+   "presence": "appears"
+  },
+  {
+   "name": "Qadir",
+   "type": "character",
+   "aliases": [
+    "the Qadir of the Fallaji"
+   ],
+   "description": "The new leader of the Fallaji who brought Mishra to Zegon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother and artificer, whose mak fawa stood at Zegon; took Ashnod as apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mak fawa",
+   "type": "artifact",
+   "aliases": [
+    "dragon engine"
+   ],
+   "description": "Mishra's dragon engine brought to Zegon's walls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Zegon's chief artificer, who armed the guards with staves and became Mishra's apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hajar",
+   "type": "character",
+   "aliases": [],
+   "description": "Mishra's bodyguard, used in Ashnod's demonstration.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Zegon existed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Desert",
+   "type": "location",
+   "aliases": [],
+   "description": "Desert at whose edge Zegon lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zegon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The new Qadir brings Mishra and his mak fawa to Zegon's walls to force submission.",
+   "participants": [
+    "Qadir",
+    "Mishra",
+    "Mak fawa",
+    "Zegon"
+   ],
+   "location": "Zegon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "brought Mishra and his mak fawa to the walls of Zegon to force them to submit to him"
+  },
+  {
+   "summary": "Ashnod's staves let the guards keep the dragon engine at bay.",
+   "participants": [
+    "Ashnod",
+    "Mak fawa"
+   ],
+   "location": "Zegon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "had equipped the guards with staves that enabled them to keep the dragon engine at bay"
+  },
+  {
+   "summary": "Ashnod sneaks into Mishra's camp and demonstrates the staff on Hajar.",
+   "participants": [
+    "Ashnod",
+    "Mishra",
+    "Hajar"
+   ],
+   "location": "Zegon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Ashnod secretly snuck into Mishra's camp at night"
+  },
+  {
+   "summary": "Mishra takes Ashnod as apprentice on condition Zegon submits; Zegon joins the Fallaji Empire.",
+   "participants": [
+    "Mishra",
+    "Ashnod",
+    "Zegon",
+    "Fallaji Empire"
+   ],
+   "location": "Zegon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Mishra agreed to take Ashnod as his apprentice"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "serves",
+   "target": "Zegon",
+   "note": "Its functional chief artificer.",
+   "paragraph": 1,
+   "quote": "the city's functional chief artificer"
+  },
+  {
+   "source": "Ashnod",
+   "relation": "other",
+   "target": "Mishra",
+   "note": "Became his apprentice.",
+   "paragraph": 1,
+   "quote": "Mishra agreed to take Ashnod as his apprentice"
+  },
+  {
+   "source": "Zegon",
+   "relation": "member_of",
+   "target": "Fallaji Empire",
+   "note": "Became part of the empire.",
+   "paragraph": 1,
+   "quote": "becoming part of the"
+  }
+ ],
+ "rejected": []
+}

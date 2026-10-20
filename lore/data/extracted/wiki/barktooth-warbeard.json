@@ -1,0 +1,108 @@
+{
+ "page": "wiki/barktooth-warbeard",
+ "url": "https://mtg.wiki/page/Barktooth_Warbeard",
+ "title": "Barktooth Warbeard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Barktooth Warbeard",
+   "type": "character",
+   "aliases": [],
+   "description": "Old giant soldier and Marshal of the kentsu of Madara, loved by his troops, killed and replaced by the shapeshifter Halfdane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Madara",
+   "type": "faction",
+   "aliases": [
+    "kentsu of Madara"
+   ],
+   "description": "Realm whose kentsu Warbeard served.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kasimir",
+   "type": "character",
+   "aliases": [],
+   "description": "Giant to whom Warbeard's size is compared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halfdane",
+   "type": "character",
+   "aliases": [],
+   "description": "Shapeshifter who replaced Warbeard, ordered by Ramses Overdark to infiltrate the kentsu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ramses Overdark",
+   "type": "character",
+   "aliases": [],
+   "description": "Master of Halfdane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Warbeard led the occupation force on Kusho.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kusho",
+   "type": "location",
+   "aliases": [],
+   "description": "Place occupied by the Madaran force.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Madara-Edemi War Warbeard leads the occupation force on Kusho.",
+   "participants": [
+    "Barktooth Warbeard",
+    "Kusho"
+   ],
+   "location": "Kusho",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Barktooth Warbeard led the occupation force on Kusho"
+  },
+  {
+   "summary": "Warbeard is killed and replaced by the shapeshifter Halfdane, sent by Ramses Overdark to infiltrate the kentsu.",
+   "participants": [
+    "Barktooth Warbeard",
+    "Halfdane",
+    "Ramses Overdark"
+   ],
+   "location": "Kusho",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "was killed and replaced by the shapeshifter Halfdane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Halfdane",
+   "relation": "killed",
+   "target": "Barktooth Warbeard",
+   "note": "Halfdane replaced him after he was killed.",
+   "paragraph": 3,
+   "quote": "was killed and replaced by the shapeshifter Halfdane"
+  },
+  {
+   "source": "Halfdane",
+   "relation": "serves",
+   "target": "Ramses Overdark",
+   "note": "Ordered by his master to infiltrate.",
+   "paragraph": 3,
+   "quote": "ordered by his master Ramses Overdark to infiltrate the kentsu"
+  }
+ ],
+ "rejected": []
+}

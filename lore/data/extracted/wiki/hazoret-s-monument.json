@@ -1,0 +1,151 @@
+{
+ "page": "wiki/hazoret-s-monument",
+ "url": "https://mtg.wiki/page/Hazoret%27s_Monument",
+ "title": "Hazoret's Monument",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:32Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Hazoret's Monument",
+   "type": "location",
+   "aliases": [
+    "House of Hazoret"
+   ],
+   "description": "Sacred pyramid on Amonkhet dedicated to Hazoret, containing the Proving Grounds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazoret",
+   "type": "deity",
+   "aliases": [],
+   "description": "Jackal-headed god of zeal who greets initiates as a loving mother.",
+   "presence": "appears"
+  },
+  {
+   "name": "God-Pharaoh",
+   "type": "deity",
+   "aliases": [],
+   "description": "Ruler promising the afterlife.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Proving Grounds",
+   "type": "location",
+   "aliases": [
+    "Steps of Battle"
+   ],
+   "description": "Trial arena within the monument.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trial of Zeal",
+   "type": "event",
+   "aliases": [],
+   "description": "Final trial of initiates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kefnet",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who inscribes the deeds of each Trial onto temple walls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gate to the Afterlife",
+   "type": "location",
+   "aliases": [],
+   "description": "Gate the worthy pass through.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naktamun",
+   "type": "location",
+   "aliases": [],
+   "description": "City where the monument stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bontu's Monument",
+   "type": "location",
+   "aliases": [],
+   "description": "Monument upriver.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In the Trial of Zeal, the glorified battle through the Steps of Battle; the first round is a free-for-all marked by the Heart Timer.",
+   "participants": [
+    "Hazoret",
+    "Trial of Zeal",
+    "Proving Grounds"
+   ],
+   "location": "Proving Grounds",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "The opening clash is a massive free-for-all"
+  },
+  {
+   "summary": "Hazoret orchestrates duels in the next stage.",
+   "participants": [
+    "Hazoret"
+   ],
+   "location": "Proving Grounds",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Hazoret commands who faces whom"
+  },
+  {
+   "summary": "Hazoret pierces the final champion's chest and forehead with her staff and claims their heart.",
+   "participants": [
+    "Hazoret"
+   ],
+   "location": "Proving Grounds",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "she pierces the champion's chest and forehead with her forked staff"
+  },
+  {
+   "summary": "Kefnet inscribes the deeds of each Trial onto temple walls.",
+   "participants": [
+    "Kefnet",
+    "Hazoret"
+   ],
+   "location": "Hazoret's Monument",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "Kefnet inscribes the deeds of each Trial onto temple walls"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hazoret's Monument",
+   "relation": "located_in",
+   "target": "Naktamun",
+   "note": "Stands near Luxa's headwaters",
+   "paragraph": 2,
+   "quote": "It stands near the Luxa's headwaters in Naktamun"
+  },
+  {
+   "source": "Kefnet",
+   "relation": "serves",
+   "target": "Hazoret",
+   "note": "Acts at her command",
+   "paragraph": 12,
+   "quote": "At Hazoret's command, Kefnet inscribes"
+  }
+ ],
+ "rejected": []
+}

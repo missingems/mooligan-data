@@ -1,0 +1,129 @@
+{
+ "page": "wiki/boragor",
+ "url": "https://mtg.wiki/page/Boragor",
+ "title": "Boragor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:38Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Boragor",
+   "type": "character",
+   "aliases": [],
+   "description": "A human necromancer hermit from Shandalar who worshiped Xathrid, a planeswalker hunter killed by Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vronos",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent planeswalker hunters to capture Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk",
+   "type": "character",
+   "aliases": [
+    "Garruk Wildspeaker"
+   ],
+   "description": "Planeswalker hunted by Vronos's group who killed Boragor with his axe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xathrid",
+   "type": "deity",
+   "aliases": [],
+   "description": "Demon worshiped by Boragor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kento",
+   "type": "character",
+   "aliases": [],
+   "description": "Another hunter, already killed by Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "The one to whom Garruk was to be brought to be cured.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure from whom Garruk escaped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the hunters found Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Vronos summoned the hunters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Boragor's plane of origin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vronos summoned Boragor and other planeswalkers to Innistrad to capture Garruk and bring him to Avacyn.",
+   "participants": [
+    "Vronos",
+    "Boragor",
+    "Garruk"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Boragor was summoned by Vronos in Innistrad"
+  },
+  {
+   "summary": "Garruk found Boragor mid-ritual on Alara; despite his black magic and zombies, Boragor fell before Garruk's axe.",
+   "participants": [
+    "Garruk",
+    "Boragor"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "but he ultimately fell before his axe"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Garruk",
+   "relation": "killed",
+   "target": "Boragor",
+   "note": "Killed him with his axe.",
+   "paragraph": 1,
+   "quote": "but he ultimately fell before his axe"
+  },
+  {
+   "source": "Boragor",
+   "relation": "serves",
+   "target": "Vronos",
+   "note": "One of the hunters sent by Vronos.",
+   "paragraph": 0,
+   "quote": "Boragor was one of the Planeswalker hunters sent by Vronos to capture Garruk"
+  }
+ ],
+ "rejected": []
+}

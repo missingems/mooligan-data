@@ -1,0 +1,97 @@
+{
+ "page": "archive/savor-flavor-key-time-2010-10-12",
+ "url": "https://web.archive.org/web/20211016111039/https://magic.wizards.com/en/articles/archive/savor-flavor/key-time-2010-10-12",
+ "title": "The Key Is Time",
+ "story_date": "2010-10-12",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:40:59Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Viridian elves",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Long-eared elves in copper armor who live in the Tangle.",
+   "presence": "appears"
+  },
+  {
+   "name": "the Tangle",
+   "type": "location",
+   "aliases": [],
+   "description": "A green region of Mirrodin of verdigris-covered trees, part of which merges with the Mephidross.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "nim",
+   "type": "creature",
+   "aliases": [],
+   "description": "Gray-skinned undead made by the necrogen gases of the Mephidross.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "the Mephidross",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of Mirrodin where necrogen gases turn living tissue into nim; home of the Moriok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human dwellers of the Mephidross with dark metal fused into their bodies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rey-Goor",
+   "type": "location",
+   "aliases": [],
+   "description": "The part of the Tangle that merges with the Mephidross.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders whose story continues in the Scars of Mirrodin block.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As depicted in the art of Blunt the Assault, nim attack Viridian elves in the Tangle without harming the unconcerned elves above.",
+   "participants": [
+    "Viridian elves",
+    "nim",
+    "the Tangle"
+   ],
+   "location": "the Tangle",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "They must be nim, the necrogen-plagued undead of the Mephidross."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Moriok",
+   "relation": "located_in",
+   "target": "the Mephidross",
+   "note": "They dwell there.",
+   "paragraph": 22,
+   "quote": "The Moriok dwell in the Mephidross, where necrogen gases slowly turn living tissue into the nim."
+  },
+  {
+   "source": "Rey-Goor",
+   "relation": "located_in",
+   "target": "the Tangle",
+   "note": "A part of the Tangle.",
+   "paragraph": 26,
+   "quote": "the Rey-Goor, which is the name of a part of the Tangle that merges with the Mephidross"
+  }
+ ],
+ "rejected": []
+}

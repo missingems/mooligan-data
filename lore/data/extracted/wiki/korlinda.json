@@ -1,0 +1,147 @@
+{
+ "page": "wiki/korlinda",
+ "url": "https://mtg.wiki/page/Korlinda",
+ "title": "Korlinda",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:07Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "Korlinda",
+   "type": "location",
+   "aliases": [],
+   "description": "Small town on the outskirts of Korlisian territory, more a military camp, site of the Peace Summit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yotian warlord",
+   "type": "character",
+   "aliases": [
+    "the warlord"
+   ],
+   "description": "Leader of Yotian forces assassinated by the Fallaji qadir at the summit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji qadir",
+   "type": "character",
+   "aliases": [
+    "the qadir"
+   ],
+   "description": "Fallaji leader who assassinated the warlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to the summit and saw Mishra for the first time since Tocasia's camp.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Came to the summit and saw Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist whose camp Urza and Mishra had left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sword Marches",
+   "type": "location",
+   "aliases": [],
+   "description": "Territory whose ownership the leaders could not agree on.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Peace Summit at Korlinda",
+   "type": "event",
+   "aliases": [],
+   "description": "Meeting between Yotians and Fallaji.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Yotian warlord and the Fallaji qadir met at Korlinda for a peace summit, with Urza and Mishra attending.",
+   "participants": [
+    "Yotian warlord",
+    "Fallaji qadir",
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Korlinda",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "to strike a peace agreement during the"
+  },
+  {
+   "summary": "Urza and Mishra saw each other for the first time since leaving Tocasia's camp.",
+   "participants": [
+    "Urza",
+    "Mishra"
+   ],
+   "location": "Korlinda",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "they saw each other for the first time since they had left Tocasia's camp"
+  },
+  {
+   "summary": "The leaders could not agree on ownership of the Sword Marches and the qadir assassinated the warlord.",
+   "participants": [
+    "Fallaji qadir",
+    "Yotian warlord"
+   ],
+   "location": "Korlinda",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the qadir assassinated the warlord in a quick fit of rage"
+  },
+  {
+   "summary": "The armies fell into all-out battle and the summit failed.",
+   "participants": [
+    "Yotian warlord",
+    "Fallaji qadir"
+   ],
+   "location": "Korlinda",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The two armies then fell into an all-out battle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fallaji qadir",
+   "relation": "killed",
+   "target": "Yotian warlord",
+   "note": "Assassinated in a fit of rage.",
+   "paragraph": 1,
+   "quote": "the qadir assassinated the warlord in a quick fit of rage"
+  },
+  {
+   "source": "Korlinda",
+   "relation": "located_in",
+   "target": "Terisiare",
+   "note": "Town on ancient Terisiare.",
+   "paragraph": 0,
+   "quote": "on the outskirts of Korlisian territory on ancient Terisiare"
+  }
+ ],
+ "rejected": []
+}

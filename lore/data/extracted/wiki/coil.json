@@ -1,0 +1,169 @@
+{
+ "page": "wiki/coil",
+ "url": "https://mtg.wiki/page/Coil",
+ "title": "Coil",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:20Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "The Coil",
+   "type": "concept",
+   "aliases": [
+    "Coil"
+   ],
+   "description": "A system of 121 Nacatl laws engraved on a giant granite disc, broken in the Breaking of the Coil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marisi",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Nacatl who formed the Claws of Marisi and led the uprising against the Empire of the Clouds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Claws of Marisi",
+   "type": "faction",
+   "aliases": [
+    "Claw",
+    "followers of Marisi"
+   ],
+   "description": "Anti-civilization Nacatl group who rose against the Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pride of Judges",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite Nacatl group who enforced the Coil with threats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Empire of the Clouds",
+   "type": "faction",
+   "aliases": [
+    "Nacatl Empire"
+   ],
+   "description": "The Nacatl empire that dominated Naya and fell to the uprising.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nacatl",
+   "type": "faction",
+   "aliases": [],
+   "description": "Feline people of Naya who followed the Coil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Antali",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Empire of the Clouds, destroyed in the uprising.",
+   "presence": "appears"
+  },
+  {
+   "name": "Binding Wall",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A massive white granite slab outside Antali where the Coil was inscribed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breaking of the Coil",
+   "type": "event",
+   "aliases": [],
+   "description": "The shattering of the Coil by Marisi and his followers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [
+    "Alara"
+   ],
+   "description": "Shard of Alara dominated by the Nacatl.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marisi forms the Claws of Marisi, an anti-civilization group.",
+   "participants": [
+    "Marisi",
+    "Claws of Marisi"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a young Nacatl named Marisi formed an anti-civilization group known as the Claws of Marisi"
+  },
+  {
+   "summary": "Marisi rallies a huge uprising; cities are sacked and the Binding Wall at Antali is defaced and smashed.",
+   "participants": [
+    "Marisi",
+    "Claws of Marisi",
+    "Empire of the Clouds",
+    "Antali",
+    "Binding Wall"
+   ],
+   "location": "Antali",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "During the destruction of Antali, the wall was defaced and in some parts smashed."
+  },
+  {
+   "summary": "The Claws of Marisi and the Pride of Judges fight for dominance in the streets.",
+   "participants": [
+    "Claws of Marisi",
+    "Pride of Judges"
+   ],
+   "location": "Naya",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Soon there was open warfare in the streets as the Claws of Marisi and the Pride of Judges fought for dominance."
+  },
+  {
+   "summary": "Marisi's revolutionaries triumph and the Coil is broken.",
+   "participants": [
+    "Marisi",
+    "Claws of Marisi",
+    "Pride of Judges"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "In the end, Marisi's revolutionaries triumphed and the Coil was broken."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marisi",
+   "relation": "leader_of",
+   "target": "Claws of Marisi",
+   "note": "Founded the group.",
+   "paragraph": 2,
+   "quote": "Marisi formed an anti-civilization group known as the Claws of Marisi"
+  },
+  {
+   "source": "Claws of Marisi",
+   "relation": "enemy",
+   "target": "Pride of Judges",
+   "note": "Fought for dominance.",
+   "paragraph": 3,
+   "quote": "the Claws of Marisi and the Pride of Judges fought for dominance"
+  },
+  {
+   "source": "Claws of Marisi",
+   "relation": "enemy",
+   "target": "Empire of the Clouds",
+   "note": "Rose against it.",
+   "paragraph": 2,
+   "quote": "Marisi rallied a huge uprising against the Empire of the Clouds."
+  }
+ ],
+ "rejected": []
+}

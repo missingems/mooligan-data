@@ -1,0 +1,66 @@
+{
+ "page": "wiki/wort",
+ "url": "https://mtg.wiki/page/Wort",
+ "title": "Wort",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:20Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Auntie Wort",
+   "type": "character",
+   "aliases": [
+    "Wort"
+   ],
+   "description": "Boggart shaman on Lorwyn and leader of a boggart warren; on Shadowmoor a raidmother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Wort is a shaman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Wort is a raidmother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boggart",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures led by Wort.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On Shadowmoor, Wort became a raidmother, leader of the savage and marauding boggarts.",
+   "participants": [
+    "Auntie Wort"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "On Shadowmoor , Wort has become a raidmother, a leader of the savage and marauding boggarts."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Auntie Wort",
+   "relation": "leader_of",
+   "target": "Boggart",
+   "note": "Leads boggarts on both planes",
+   "paragraph": 1,
+   "quote": "a leader of the savage and marauding boggarts"
+  }
+ ],
+ "rejected": []
+}

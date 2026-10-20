@@ -1,0 +1,99 @@
+{
+ "page": "wiki/embercleave",
+ "url": "https://mtg.wiki/page/Embercleave",
+ "title": "Embercleave",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:33Z",
+ "storyline": "Throne of Eldraine",
+ "entities": [
+  {
+   "name": "Embercleave",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A legendary magical sword of Eldraine, once an ordinary knight's sword named by the Irencrag.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Embercleave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Irencrag",
+   "type": "location",
+   "aliases": [],
+   "description": "Crag beside the Burning Yard that speaks to worthy knights and names their swords.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Burning Yard",
+   "type": "location",
+   "aliases": [
+    "The Burning Yard"
+   ],
+   "description": "Massive volcanic-hot boulder where knights of Embereth test their courage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knights of Embereth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Knights who must plunge their sword into the Burning Yard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ianthe",
+   "type": "character",
+   "aliases": [],
+   "description": "Said to be the first to impale the stone with her sword.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion that saw the fall of the Courts.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ianthe is inspired by the Irencrag's taunts to be the first to impale the stone with her sword.",
+   "participants": [
+    "Ianthe",
+    "Irencrag"
+   ],
+   "location": "Burning Yard",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "this taunting inspired Ianthe to be the first to impale the stone with her sword"
+  },
+  {
+   "summary": "The Irencrag bestows a legendary name on a worthy knight's sword, creating the Embercleave.",
+   "participants": [
+    "Irencrag",
+    "Embercleave"
+   ],
+   "location": "Irencrag",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This led to the creation of the Embercleave."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Irencrag",
+   "relation": "created",
+   "target": "Embercleave",
+   "note": "bestowed a legendary name and power",
+   "paragraph": 2,
+   "quote": "it will bestow their sword with a legendary name, forever imbuing it with its power"
+  }
+ ],
+ "rejected": []
+}

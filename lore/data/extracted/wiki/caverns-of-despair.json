@@ -1,0 +1,183 @@
+{
+ "page": "wiki/caverns-of-despair",
+ "url": "https://mtg.wiki/page/Caverns_of_Despair",
+ "title": "Caverns of Despair",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:32Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Caverns of Despair",
+   "type": "location",
+   "aliases": [],
+   "description": "Cave system under Arboria in Jamuraa on Dominaria, used by Shauku as a prison for a Cosmic Horror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arboria",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Jamuraa above the caverns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shauku",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire who enslaved the Cosmic Horror beneath her ruined castle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cosmic Horror",
+   "type": "creature",
+   "aliases": [],
+   "description": "Organic creature fallen from the stars that built the hexagonal tunnels and was enslaved by Shauku.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghosts of the Damned",
+   "type": "creature",
+   "aliases": [],
+   "description": "Spirits haunting the caverns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Floral Spuzzem",
+   "type": "creature",
+   "aliases": [
+    "Spuzzem"
+   ],
+   "description": "Lethal creatures wandering the caverns, formed by eating crystal nectar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akron Legionnaires",
+   "type": "faction",
+   "aliases": [
+    "Aron Legionnaires"
+   ],
+   "description": "Guards patrolling the caverns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crimson Kobolds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Loyal but unintelligent guards of the caverns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falling Star",
+   "type": "event",
+   "aliases": [],
+   "description": "Star impact that formed the caverns.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jedit Ojanen",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the party that freed the Cosmic Horror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Adira Strongheart",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the party that freed the Cosmic Horror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jasmine Boreal",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the party that freed the Cosmic Horror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Circle of Seven",
+   "type": "faction",
+   "aliases": [
+    "Adira's Circle of Seven"
+   ],
+   "description": "Adira's companions.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Falling Star impacts southern Arboria, forming the caverns around the Cosmic Horror.",
+   "participants": [
+    "Cosmic Horror",
+    "Caverns of Despair"
+   ],
+   "location": "Arboria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Caverns of Despair formed in ancient times when a Falling Star impacted in southern Arboria"
+  },
+  {
+   "summary": "Shauku discovers and enslaves the Cosmic Horror.",
+   "participants": [
+    "Shauku",
+    "Cosmic Horror"
+   ],
+   "location": "Caverns of Despair",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She enslaved the creature and put Aron Legionnaires and kobolds into service guarding it."
+  },
+  {
+   "summary": "A party of Jedit, Adira, Jasmine and the Circle of Seven frees the Cosmic Horror, which summons a Falling Star to annihilate the caverns; Shauku secretly escapes.",
+   "participants": [
+    "Jedit Ojanen",
+    "Adira Strongheart",
+    "Jasmine Boreal",
+    "Circle of Seven",
+    "Cosmic Horror",
+    "Shauku"
+   ],
+   "location": "Caverns of Despair",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They freed the Cosmic Horror, which summoned another Falling Star to annihilate the caverns"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Shauku",
+   "relation": "other",
+   "target": "Cosmic Horror",
+   "note": "Enslaved it.",
+   "paragraph": 2,
+   "quote": "She enslaved the creature"
+  },
+  {
+   "source": "Akron Legionnaires",
+   "relation": "serves",
+   "target": "Shauku",
+   "note": "Put into service guarding the horror.",
+   "paragraph": 2,
+   "quote": "She enslaved the creature and put Aron Legionnaires and kobolds into service guarding it."
+  },
+  {
+   "source": "Caverns of Despair",
+   "relation": "located_in",
+   "target": "Arboria",
+   "note": "Beneath it.",
+   "paragraph": 0,
+   "quote": "The Caverns of Despair were a system of caves and tunnels underneath Arboria"
+  }
+ ],
+ "rejected": []
+}

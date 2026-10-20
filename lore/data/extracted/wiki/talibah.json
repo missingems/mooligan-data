@@ -1,0 +1,99 @@
+{
+ "page": "wiki/talibah",
+ "url": "https://mtg.wiki/page/Talibah",
+ "title": "Talibah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Talibah of Emberwilde",
+   "type": "character",
+   "aliases": [
+    "Talibah"
+   ],
+   "description": "Embermage from Dominaria, a thug with power who pledged allegiance to Wildfire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mages of the Emberwilde Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group of Suq'Ata mages pledged to the djinn and efreet of Wildfire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Suq'Ata",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire defended by Wildfire against Kaervek.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wildfire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Djinn and efreet who commanded sorcerers and spirits against Kaervek's legions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark enemy of Suq'Ata in the Mirage Wars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Wildfire defended Suq'Ata against Kaervek.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wildfire was instrumental in defending Suq'Ata against Kaervek during the Mirage Wars.",
+   "participants": [
+    "Wildfire",
+    "Kaervek",
+    "Suq'Ata",
+    "Mirage Wars"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Wildfire was instrumental in defending Suq’Ata against Kaervek during the Mirage Wars"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Talibah of Emberwilde",
+   "relation": "member_of",
+   "target": "Mages of the Emberwilde Order",
+   "note": "",
+   "paragraph": 1,
+   "quote": "She was a member of the Mages of the Emberwilde Order"
+  },
+  {
+   "source": "Mages of the Emberwilde Order",
+   "relation": "serves",
+   "target": "Wildfire",
+   "note": "Pledged allegiance.",
+   "paragraph": 1,
+   "quote": "pledged their allegiance to the djinn and efreet of Wildfire"
+  },
+  {
+   "source": "Wildfire",
+   "relation": "enemy",
+   "target": "Kaervek",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Wildfire was instrumental in defending Suq’Ata against Kaervek during the Mirage Wars"
+  }
+ ],
+ "rejected": []
+}

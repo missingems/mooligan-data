@@ -1,0 +1,188 @@
+{
+ "page": "wiki/festival-of-the-arena",
+ "url": "https://mtg.wiki/page/Festival_of_the_Arena",
+ "title": "Festival of the Arena",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:58Z",
+ "storyline": "The Domains",
+ "entities": [
+  {
+   "name": "Festival of the Arena",
+   "type": "event",
+   "aliases": [
+    "Festival of the Western Realms"
+   ],
+   "description": "Yearly festival in Estark, Kush, where wizards of the five Houses fought magical duels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City in Kush where the Festival was held.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "Land in the Domains with five Houses.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kuthuman",
+   "type": "character",
+   "aliases": [
+    "Grand Master"
+   ],
+   "description": "Ruler under whom the arena was built; secretly euthanized each Festival winner and ascended after the Night of Fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zarel Ewine",
+   "type": "character",
+   "aliases": [
+    "Grand Master Zarel Ewine"
+   ],
+   "description": "Led the Night of Fire massacre and became Grand Master.",
+   "presence": "appears"
+  },
+  {
+   "name": "House Oor-tael",
+   "type": "faction",
+   "aliases": [],
+   "description": "House massacred on the Night of Fire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Night of Fire",
+   "type": "event",
+   "aliases": [],
+   "description": "Massacre of House Oor-tael on the last evening of the 978th Festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garth One-eye",
+   "type": "character",
+   "aliases": [],
+   "description": "Returned during the 998th Festival to take revenge for the Night of Fire and won that Festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "Garth One-eye's actions during the 998th Festival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Walker",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure who traveled with the winner and in reality killed him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Varena of Fentesk",
+   "type": "character",
+   "aliases": [],
+   "description": "Second-place fighter in the 998th Festival.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Night of Fire: Zarel Ewine leads a massacre of House Oor-tael, joined by the other four houses.",
+   "participants": [
+    "Zarel Ewine",
+    "House Oor-tael",
+    "Night of Fire"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Zarel Ewine led a massacre of the House Oor-tael"
+  },
+  {
+   "summary": "Kuthuman capitalizes on the massacre to ascend and Zarel becomes Grand Master.",
+   "participants": [
+    "Kuthuman",
+    "Zarel Ewine"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Zarel became the new Grand Master"
+  },
+  {
+   "summary": "Zarel Ewine allows fighters to declare deathmatches in the 998th Festival.",
+   "participants": [
+    "Zarel Ewine"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "fighters in this and subsequent rounds could unilaterally declare their fight a deathmatch"
+  },
+  {
+   "summary": "Garth One-eye returns during the 998th Festival to take revenge for the Night of Fire, starting the Time of Troubles.",
+   "participants": [
+    "Garth One-eye",
+    "Time of Troubles"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Garth One-eye returned to the city to take his revenge for the Night of Fire"
+  },
+  {
+   "summary": "Garth One-Eye wins the 998th Festival, with Varena of Fentesk second.",
+   "participants": [
+    "Garth One-eye",
+    "Varena of Fentesk"
+   ],
+   "location": "Estark",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Garth One-Eye was the victor, with Varena of Fentesk in second"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zarel Ewine",
+   "relation": "leader_of",
+   "target": "Festival of the Arena",
+   "note": "Grand Master",
+   "paragraph": 5,
+   "quote": "Zarel became the new Grand Master"
+  },
+  {
+   "source": "Zarel Ewine",
+   "relation": "killed",
+   "target": "House Oor-tael",
+   "note": "led the massacre",
+   "paragraph": 5,
+   "quote": "Zarel Ewine led a massacre of the House Oor-tael"
+  },
+  {
+   "source": "Garth One-eye",
+   "relation": "enemy",
+   "target": "Zarel Ewine",
+   "note": "returned for revenge over the Night of Fire",
+   "paragraph": 6,
+   "quote": "Garth One-eye returned to the city to take his revenge for the Night of Fire"
+  },
+  {
+   "source": "Estark",
+   "relation": "located_in",
+   "target": "Kush",
+   "note": "",
+   "paragraph": 0,
+   "quote": "the city located in Kush in the Domains"
+  }
+ ],
+ "rejected": []
+}

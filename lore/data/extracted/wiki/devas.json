@@ -1,0 +1,116 @@
+{
+ "page": "wiki/devas",
+ "url": "https://mtg.wiki/page/Devas",
+ "title": "Devas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:32Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Devas",
+   "type": "location",
+   "aliases": [],
+   "description": "A village in Benalia founded by refugees from Serra's Realm in 3655 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Benalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation in which Devas lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra's Realm",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm whose refugees founded Devas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lyanii",
+   "type": "character",
+   "aliases": [
+    "Warden Lyanii"
+   ],
+   "description": "Almost-immortal Warden who led Devas's defense.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Aided Lyanii and the Serrans.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Capashen",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan whose scions the Serrans trained.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Ortovi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan on whose border Devas was founded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Collapse of Serra's Realm",
+   "type": "event",
+   "aliases": [],
+   "description": "Event Lyanii lived through almost 300 years earlier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Refugees from Serra's Realm found Devas on the border between Clan Capashen and Clan Ortovi lands.",
+   "participants": [
+    "Devas",
+    "Serra's Realm"
+   ],
+   "location": "Devas",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The village of Devas was founded by refugees from Serra's Realm in 3655 AR"
+  },
+  {
+   "summary": "With Urza's aid, Lyanii and the Serrans train the Capashen scions in military matters, eventually leading Benalia to drop its ban on Serranism.",
+   "participants": [
+    "Lyanii",
+    "Urza",
+    "Clan Capashen",
+    "Benalia"
+   ],
+   "location": "Devas",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Lyanii and the Serrans were put in charge of training the Capashen scions in military matters"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lyanii",
+   "relation": "leader_of",
+   "target": "Devas",
+   "note": "Led its defense.",
+   "paragraph": 2,
+   "quote": "Devas's defense was led by the almost-immortal Warden Lyanii"
+  },
+  {
+   "source": "Devas",
+   "relation": "located_in",
+   "target": "Benalia",
+   "note": "A village in Benalia.",
+   "paragraph": 0,
+   "quote": "a village in Benalia"
+  }
+ ],
+ "rejected": []
+}

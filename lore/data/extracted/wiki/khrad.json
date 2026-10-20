@@ -1,0 +1,211 @@
+{
+ "page": "wiki/khrad",
+ "url": "https://mtg.wiki/page/Khrad",
+ "title": "Khrad",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:05:32Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Khrad",
+   "type": "character",
+   "aliases": [],
+   "description": "Prince of Mon'Telu and mighty Telu-Set warrior from Muraganda who abhors magic and was trained as a magehunter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grazak",
+   "type": "creature",
+   "aliases": [],
+   "description": "Khrad's raptor companion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Star-Sword",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Inherited white steel weapon of the Telu-Set champion, the sharpest blade on Muraganda.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telu-Set",
+   "type": "faction",
+   "aliases": [],
+   "description": "Muragandan people who hate magic and hunt its users.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mon'Telu",
+   "type": "location",
+   "aliases": [],
+   "description": "Central Telu-Set stronghold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muraganda",
+   "type": "plane",
+   "aliases": [],
+   "description": "Khrad's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "King Khal",
+   "type": "character",
+   "aliases": [],
+   "description": "Khrad's father, who decreed a warrior must stop the beast and Amarth-Tel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amarth-Tel",
+   "type": "character",
+   "aliases": [],
+   "description": "Ley mage who rode a beast, held Nathala captive and was killed beneath the vehicle's wheels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chatal",
+   "type": "character",
+   "aliases": [],
+   "description": "Fang Druid who told Khrad the beast was a vehicle and gave him an artifact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fang Druids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Druids including Chatal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nathala",
+   "type": "character",
+   "aliases": [],
+   "description": "Telu-Set woman of a different tribe held captive by Amarth-Tel who drove the vehicle over him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarry Spire",
+   "type": "location",
+   "aliases": [],
+   "description": "Amarth-Tel's lair, which disintegrated after his death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speedbrood",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racers Khrad battled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Omenpaths open, an oracle prophesies a beast nearing Mon'Telu that Amarth-Tel would seize; King Khal decrees a champion and Khrad steps forth.",
+   "participants": [
+    "Khrad",
+    "King Khal",
+    "Amarth-Tel"
+   ],
+   "location": "Mon'Telu",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He was chosen as the champion of his people and set forth on his quest."
+  },
+  {
+   "summary": "Khrad catches Amarth-Tel riding the beast with a captive and is easily defeated.",
+   "participants": [
+    "Khrad",
+    "Amarth-Tel"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "However, he was easily defeated by the ley mage."
+  },
+  {
+   "summary": "Chatal tells Khrad the beast is a vehicle and gives him an artifact to control it.",
+   "participants": [
+    "Chatal",
+    "Khrad"
+   ],
+   "location": "Muraganda",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "who told him that the beast was called a vehicle"
+  },
+  {
+   "summary": "Khrad and Grazak reach the Tarry Spire and Khrad frees Nathala, leaving Grazak to guard her.",
+   "participants": [
+    "Khrad",
+    "Grazak",
+    "Nathala",
+    "Amarth-Tel"
+   ],
+   "location": "Tarry Spire",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "He cut her from her bindings"
+  },
+  {
+   "summary": "Khrad and Amarth-Tel fight on the roof; Nathala starts the vehicle with the stolen key and kills Amarth-Tel.",
+   "participants": [
+    "Khrad",
+    "Amarth-Tel",
+    "Nathala"
+   ],
+   "location": "Tarry Spire",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Amarth-Tel was killed beneath the vehicle's wheels."
+  },
+  {
+   "summary": "Khrad apologizes to Nathala for disregarding her skill and accompanies her study of the vehicle, not returning to Mon'Telu for years.",
+   "participants": [
+    "Khrad",
+    "Nathala"
+   ],
+   "location": "Tarry Spire",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Khrad did not return to Mon'Telu for many years."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Khrad",
+   "relation": "family",
+   "target": "King Khal",
+   "note": "his son",
+   "paragraph": 4,
+   "quote": "Khrad, his son, stepped forth"
+  },
+  {
+   "source": "Khrad",
+   "relation": "ally",
+   "target": "Grazak",
+   "note": "raptor companion",
+   "paragraph": 2,
+   "quote": "He also has a deep bond with his raptor companion"
+  },
+  {
+   "source": "Nathala",
+   "relation": "killed",
+   "target": "Amarth-Tel",
+   "note": "ran him over with the vehicle",
+   "paragraph": 7,
+   "quote": "Amarth-Tel was killed beneath the vehicle's wheels."
+  },
+  {
+   "source": "Khrad",
+   "relation": "enemy",
+   "target": "Amarth-Tel",
+   "note": "",
+   "paragraph": 7,
+   "quote": "Khrad and Amarth-Tel engaged in an epic battle on the roof"
+  }
+ ],
+ "rejected": []
+}

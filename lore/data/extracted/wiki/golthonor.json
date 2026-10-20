@@ -1,0 +1,189 @@
+{
+ "page": "wiki/golthonor",
+ "url": "https://mtg.wiki/page/Golthonor",
+ "title": "Golthonor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:21Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [
+    "Iron Kingdom"
+   ],
+   "description": "Region in eastern Corondor, once the Iron Kingdom, known for sand seas and salt marshes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing Golthonor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Balthesa",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient city-state, birthplace of the wizard Xarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xarl",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard born in Balthesa who elevated Elazar to duke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skule",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard under whom Xarl apprenticed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boite",
+   "type": "location",
+   "aliases": [],
+   "description": "Historic duchy, homeland of Eskil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker from Boite, apprenticed to Xarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elazar",
+   "type": "character",
+   "aliases": [],
+   "description": "Sixth Baron of Boite, made duke by Xarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thetia",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state, home of Xarl's wife Eska.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rurik",
+   "type": "character",
+   "aliases": [],
+   "description": "Gave his life to appease Trine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Fallen angel who destroyed the Karians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karia",
+   "type": "location",
+   "aliases": [],
+   "description": "Enemy of Thetia, destroyed by Trine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minorad",
+   "type": "location",
+   "aliases": [],
+   "description": "Tallest, northernmost mountain in Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telemar",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal city built on the Primor Bridge.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xarl departs Balthesa at seven to apprentice under Skule.",
+   "participants": [
+    "Xarl",
+    "Skule",
+    "Balthesa"
+   ],
+   "location": "Balthesa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "At the age of seven, Xarl departed Balthesa to begin his apprenticeship under Skule."
+  },
+  {
+   "summary": "Xarl elevates Elazar to duke in exchange for taking Eskil as apprentice.",
+   "participants": [
+    "Xarl",
+    "Elazar",
+    "Eskil",
+    "Boite"
+   ],
+   "location": "Boite",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was elevated to the rank of duke by Xarl in exchange for giving his son Eskil to the old mage as an apprentice."
+  },
+  {
+   "summary": "Rurik strikes a bargain with Xarl; Trine destroys the Karians and Rurik gives his life.",
+   "participants": [
+    "Rurik",
+    "Xarl",
+    "Trine",
+    "Karia",
+    "Thetia"
+   ],
+   "location": "Thetia",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Rurik gave his own life to appease her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skule",
+   "relation": "mentor_of",
+   "target": "Xarl",
+   "note": "apprenticeship",
+   "paragraph": 1,
+   "quote": "At the age of seven, Xarl departed Balthesa to begin his apprenticeship under Skule."
+  },
+  {
+   "source": "Xarl",
+   "relation": "mentor_of",
+   "target": "Eskil",
+   "note": "took him as apprentice",
+   "paragraph": 2,
+   "quote": "giving his son Eskil to the old mage as an apprentice"
+  },
+  {
+   "source": "Balthesa",
+   "relation": "located_in",
+   "target": "Golthonor",
+   "note": "exact location lost",
+   "paragraph": 1,
+   "quote": "The exact location of Balthesa within Golthonor has been lost to history"
+  },
+  {
+   "source": "Golthonor",
+   "relation": "located_in",
+   "target": "Corondor",
+   "note": "eastern portion",
+   "paragraph": 0,
+   "quote": "is the region occupying the eastern portion of Corondor"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,105 @@
+{
+ "page": "wiki/animal-trap",
+ "url": "https://mtg.wiki/page/Animal_Trap",
+ "title": "Animal Trap",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kolli",
+   "type": "character",
+   "aliases": [],
+   "description": "14-year-old city girl hired as a thief, later turned into a lycanthrope.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dason",
+   "type": "character",
+   "aliases": [],
+   "description": "Told Kolli that Morl was hiring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Morl",
+   "type": "character",
+   "aliases": [],
+   "description": "Fur trapper who hired Kolli and was killed by Kalenth Ush.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kalenth Ush",
+   "type": "character",
+   "aliases": [],
+   "description": "Keldon fur trapper who raised silver wolves, bit Kolli, and was killed by her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keldon",
+   "type": "location",
+   "aliases": [],
+   "description": "City outside whose gates Kalenth Ush lived.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kolli is hired by Morl to find where Kalenth Ush gets his silver wolf hide.",
+   "participants": [
+    "Kolli",
+    "Morl",
+    "Dason",
+    "Kalenth Ush"
+   ],
+   "location": "Keldon",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Morl agreed to pay her if she could discover where the Keldon fur trapper Kalenth Ush was obtaining silver wolf hide from."
+  },
+  {
+   "summary": "Kalenth Ush ambushes Kolli, takes her hostage and bites her, turning her into a lycanthrope.",
+   "participants": [
+    "Kalenth Ush",
+    "Kolli"
+   ],
+   "location": "Keldon",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Then, he bit her and turned her into a lycanthrope ."
+  },
+  {
+   "summary": "Kalenth Ush kills Morl, and Kolli avenges him by killing Kalenth Ush.",
+   "participants": [
+    "Kalenth Ush",
+    "Morl",
+    "Kolli"
+   ],
+   "location": "Keldon",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Kolli avenged Morl's death by killing Kalenth Ush"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kalenth Ush",
+   "relation": "killed",
+   "target": "Morl",
+   "note": "Killed him immediately.",
+   "paragraph": 8,
+   "quote": "Kalenth Ush had followed her and killed Morl immediately."
+  },
+  {
+   "source": "Kolli",
+   "relation": "killed",
+   "target": "Kalenth Ush",
+   "note": "Avenged Morl.",
+   "paragraph": 8,
+   "quote": "Kolli avenged Morl's death by killing Kalenth Ush"
+  }
+ ],
+ "rejected": []
+}

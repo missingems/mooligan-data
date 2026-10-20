@@ -1,0 +1,132 @@
+{
+ "page": "wiki/boseiju",
+ "url": "https://mtg.wiki/page/Boseiju",
+ "title": "Boseiju",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:30Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [
+    "Sacred Mother Tree",
+    "Boseiju, Who Endures"
+   ],
+   "description": "The oldest and tallest tree of the Jukai Forest on Kamigawa, embodied soul of the forest, later compleated by the Phyrexians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [
+    "Jukai"
+   ],
+   "description": "Forest whose soul is Boseiju.",
+   "presence": "appears"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "City that expanded into Jukai Forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Okina",
+   "type": "location",
+   "aliases": [],
+   "description": "The greatest temple of the Jukai, near Boseiju.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War before which Boseiju was already two thousand years old.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Compleated planeswalker who corrupted Boseiju.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which the Boseiju District was targeted.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Towashi's expansion into Jukai Forest drove out kami, who attacked the new buildings.",
+   "participants": [
+    "Towashi",
+    "Jukai Forest"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Enraged, the kami fought back, emerging from the depths of the forest to wreck the newly constructed buildings"
+  },
+  {
+   "summary": "The emperor brokered an agreement halting Towashi's growth into the forest and forbidding the felling of Boseiju.",
+   "participants": [
+    "Towashi",
+    "Boseiju",
+    "Jukai Forest"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He brokered an agreement that the city would halt further growth into the forest."
+  },
+  {
+   "summary": "Boseiju began to grow again until it eclipsed the city's tallest structures.",
+   "participants": [
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "It grew so large and so tall that it came to eclipse even the tallest structures surrounding it."
+  },
+  {
+   "summary": "During the New Phyrexian Invasion Tamiyo corrupted Boseiju and the tree burst apart.",
+   "participants": [
+    "Tamiyo",
+    "Boseiju"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Boseiju itself was corrupted by the compleated planeswalker Tamiyo"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Boseiju",
+   "relation": "located_in",
+   "target": "Jukai Forest",
+   "note": "oldest and tallest tree",
+   "paragraph": 0,
+   "quote": "the oldest and tallest tree of the Jukai Forest"
+  },
+  {
+   "source": "Tamiyo",
+   "relation": "enemy",
+   "target": "Boseiju",
+   "note": "corrupted it",
+   "paragraph": 8,
+   "quote": "Boseiju itself was corrupted by the compleated planeswalker Tamiyo"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,151 @@
+{
+ "page": "wiki/marcois-jean-jaquent",
+ "url": "https://mtg.wiki/page/Marcois_Jean-Jaquent",
+ "title": "Marcois Jean-Jaquent",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:36Z",
+ "storyline": "The Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Marcois Jean-Jaquent",
+   "type": "character",
+   "aliases": [
+    "Baron Marcois",
+    "the Baron"
+   ],
+   "description": "The vampire baron of Vernot on the island of Luneau, cruel and obsessed with the Arkbow; killed by Vivien's monstrosaur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "A planeswalker who disrupted the coliseum spectacle and bonded to the Arkbow. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arkbow",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A mysterious artifact the baron sought to master, which would not obey another hand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Luneau",
+   "type": "location",
+   "aliases": [],
+   "description": "An island on Ixalan where the baron lived.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vernot",
+   "type": "location",
+   "aliases": [],
+   "description": "The barony ruled by Marcois.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Luneau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Royal Menagerie",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where creatures were tormented for the elite's entertainment.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Monstrosaur",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature from Ixalan tortured by the baron, which Vivien summoned to kill him.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At a coliseum spectacle the Baron oversees the torture of animals including a monstrosaur; Vivien tries to intervene.",
+   "participants": [
+    "Marcois Jean-Jaquent",
+    "Vivien Reid",
+    "Monstrosaur"
+   ],
+   "location": "Luneau",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Vivien, horrified, attempted to intervene."
+  },
+  {
+   "summary": "Vivien disrupts the proceedings with magical creatures; the Baron overpowers and subdues her.",
+   "participants": [
+    "Vivien Reid",
+    "Marcois Jean-Jaquent"
+   ],
+   "location": "Luneau",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Baron Marcois overpowered Vivien, casually removing her daggers from his chest."
+  },
+  {
+   "summary": "A guard who tries to use the Arkbow is obliterated, confirming Vivien's claim.",
+   "participants": [
+    "Vivien Reid",
+    "Arkbow"
+   ],
+   "location": "Luneau",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "When a guard attempted to use the Arkbow, he was obliterated"
+  },
+  {
+   "summary": "Vivien enlarges a spider and summons the monstrosaur, which wreaks havoc on the ballroom.",
+   "participants": [
+    "Vivien Reid",
+    "Monstrosaur"
+   ],
+   "location": "Luneau",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "She then summoned the monstrosaur, which wreaked havoc on the ballroom."
+  },
+  {
+   "summary": "The monstrosaur kills the Baron, tearing his body apart.",
+   "participants": [
+    "Monstrosaur",
+    "Marcois Jean-Jaquent"
+   ],
+   "location": "Luneau",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "The monstrosaur caught him in its jaws, tearing his body apart"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Monstrosaur",
+   "relation": "killed",
+   "target": "Marcois Jean-Jaquent",
+   "note": "Summoned by Vivien.",
+   "paragraph": 11,
+   "quote": "The monstrosaur caught him in its jaws, tearing his body apart"
+  },
+  {
+   "source": "Marcois Jean-Jaquent",
+   "relation": "enemy",
+   "target": "Vivien Reid",
+   "note": "He tried to extract the Arkbow's secrets from her.",
+   "paragraph": 8,
+   "quote": "After numerous attempts to extract the secrets of the Arkbow from Vivien"
+  }
+ ],
+ "rejected": []
+}

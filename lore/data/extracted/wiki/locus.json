@@ -1,0 +1,100 @@
+{
+ "page": "wiki/locus",
+ "url": "https://mtg.wiki/page/Locus",
+ "title": "Locus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:11Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Locus",
+   "type": "concept",
+   "aliases": [
+    "Loci"
+   ],
+   "description": "A nonbasic land type for mana-rich observing posts on Mirrodin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Loci to observe his imported creatures.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Praetors of New Phyrexia",
+   "type": "faction",
+   "aliases": [],
+   "description": "The rulers who later took over the Loci.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which the observing posts are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of a location called Locus on Otaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Place where a location named Locus was created by Ixidor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Memnarch creates the Loci to observe his imported creatures.",
+   "participants": [
+    "Memnarch",
+    "Locus"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Created by Memnarch to observe his imported creatures"
+  },
+  {
+   "summary": "The Praetors of New Phyrexia take over the Loci.",
+   "participants": [
+    "Praetors of New Phyrexia",
+    "Locus"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were later taken over by the Praetors of New Phyrexia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Locus",
+   "note": "Built the observing posts.",
+   "paragraph": 3,
+   "quote": "Created by Memnarch to observe his imported creatures"
+  },
+  {
+   "source": "Ixidor",
+   "relation": "created",
+   "target": "Locus",
+   "note": "Created a location named Locus on Otaria.",
+   "paragraph": 5,
+   "quote": "Locus is also a location on Otaria , created by Ixidor"
+  }
+ ],
+ "rejected": []
+}

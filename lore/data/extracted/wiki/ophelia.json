@@ -1,0 +1,177 @@
+{
+ "page": "wiki/ophelia",
+ "url": "https://mtg.wiki/page/Ophelia",
+ "title": "Ophelia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ophelia",
+   "type": "character",
+   "aliases": [],
+   "description": "A human from Kenlefia in Jamuraa who survived the journey to Vacar Slab.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kenlefia",
+   "type": "location",
+   "aliases": [],
+   "description": "Ophelia's home, whose people mete justice only on Vacar Slab.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "The region containing Kenlefia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vacar Slab",
+   "type": "location",
+   "aliases": [],
+   "description": "A place in the desert where Kenlefia dispenses justice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Methos",
+   "type": "character",
+   "aliases": [],
+   "description": "Ophelia's brother, who died of thirst.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abuser",
+   "type": "character",
+   "aliases": [
+    "Markus"
+   ],
+   "description": "The prisoner escorted to Vacar Slab, who gave his name as Markus before dying.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spirokai",
+   "type": "character",
+   "aliases": [],
+   "description": "An Akron Legionnaire who feels no pain and escorted the prisoner with Ophelia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teeth",
+   "type": "character",
+   "aliases": [],
+   "description": "The party's water-bearer, who fell off a cliff, later returned as a zombie and became a mummy.",
+   "presence": "appears"
+  },
+  {
+   "name": "D'Bray",
+   "type": "character",
+   "aliases": [],
+   "description": "The flagbearer, who died of thirst.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cleatin",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gray Ogre protector killed by a Duneclaw.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ophelia joined her brother escorting the prisoner called the Abuser and eight others to Vacar Slab.",
+   "participants": [
+    "Ophelia",
+    "Methos",
+    "Abuser"
+   ],
+   "location": "Kenlefia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ophelia joined her brother in escorting a prisoner they called the Abuser there, along with eight others"
+  },
+  {
+   "summary": "Party members died one by one on the perilous journey.",
+   "participants": [
+    "Teeth",
+    "D'Bray",
+    "Cleatin",
+    "Methos"
+   ],
+   "location": "Vacar Slab",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The journey was perilous, and the party members started dying sequentially."
+  },
+  {
+   "summary": "Ophelia's brother Methos died of thirst.",
+   "participants": [
+    "Methos",
+    "Ophelia"
+   ],
+   "location": "Vacar Slab",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Then Ophelia's brother Methos too died of thirst"
+  },
+  {
+   "summary": "In a sandstorm Ophelia freed the Abuser and tried to escape, but Spirokai caught them and buried the Abuser to the neck.",
+   "participants": [
+    "Ophelia",
+    "Abuser",
+    "Spirokai"
+   ],
+   "location": "Vacar Slab",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ophelia freed the Abuser and tried to escape"
+  },
+  {
+   "summary": "A zombified Teeth slashed Spirokai's head and, cursed with undeath, became a mummy.",
+   "participants": [
+    "Teeth",
+    "Spirokai"
+   ],
+   "location": "Vacar Slab",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "a zombified Teeth showed up and slashed Spirokai in the head with his sword"
+  },
+  {
+   "summary": "Before dying the Abuser told Ophelia his name was Markus; Ophelia left alone, while Spirokai survived and began to claw his way out.",
+   "participants": [
+    "Abuser",
+    "Ophelia",
+    "Spirokai"
+   ],
+   "location": "Vacar Slab",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Before dying, the Abuser told Ophelia his name was Markus ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ophelia",
+   "relation": "family",
+   "target": "Methos",
+   "note": "Brother.",
+   "paragraph": 1,
+   "quote": "Ophelia joined her brother in escorting a prisoner"
+  },
+  {
+   "source": "Spirokai",
+   "relation": "enemy",
+   "target": "Ophelia",
+   "note": "Wanted to bury her for betraying him.",
+   "paragraph": 1,
+   "quote": "He was about to do the same to Ophelia for betraying him"
+  }
+ ],
+ "rejected": []
+}

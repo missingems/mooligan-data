@@ -1,0 +1,126 @@
+{
+ "page": "wiki/endriders",
+ "url": "https://mtg.wiki/page/Endriders",
+ "title": "Endriders",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:46Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Endriders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nomadic apocalypse punk racing team from Gastal that competed in the Ghirapur Grand Prix on Avishkar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gastal",
+   "type": "plane",
+   "aliases": [],
+   "description": "A dying plane crossed by mounted nomads.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Ghirapur Grand Prix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Aether-fueled race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Far Fortune",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of an Endrider gang who sought the Aetherspark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aetherspark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prize Far Fortune wanted to bring water to Gastal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Paths between planes that opened after the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after whose end the Omenpaths opened.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the invasion and the opening of the Omenpaths, Endrider gangs ride out of Gastal and run out of fuel.",
+   "participants": [
+    "Endriders",
+    "Gastal",
+    "Omenpaths"
+   ],
+   "location": "Gastal",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Endrider gangs rode their machines to freedom, leaving Gastal without a look in the rearview mirror"
+  },
+  {
+   "summary": "Far Fortune's gang is stranded on Avishkar and enters the Ghirapur Grand Prix.",
+   "participants": [
+    "Far Fortune",
+    "Endriders",
+    "Ghirapur Grand Prix"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they were stranded on Avishkar and quickly found their way into the Ghirapur Grand Prix"
+  },
+  {
+   "summary": "Far Fortune competes in the second Grand Prix to use the Aetherspark to bring water to Gastal and control the plane.",
+   "participants": [
+    "Far Fortune",
+    "Aetherspark",
+    "Gastal"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "placing herself in control of the plane"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Far Fortune",
+   "relation": "leader_of",
+   "target": "Endriders",
+   "note": "Her gang is among the Endriders.",
+   "paragraph": 3,
+   "quote": "Far Fortune 's gang was one of the crews who left Gastal"
+  },
+  {
+   "source": "Endriders",
+   "relation": "located_in",
+   "target": "Gastal",
+   "note": "They come from Gastal.",
+   "paragraph": 0,
+   "quote": "The Endriders are a racing team from Gastal"
+  }
+ ],
+ "rejected": []
+}

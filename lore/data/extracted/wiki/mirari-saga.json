@@ -1,0 +1,128 @@
+{
+ "page": "wiki/mirari-saga",
+ "url": "https://mtg.wiki/page/Mirari_Saga",
+ "title": "Mirari Saga",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:57Z",
+ "storyline": "Mirari Saga",
+ "entities": [
+  {
+   "name": "Mirari Saga",
+   "type": "event",
+   "aliases": [],
+   "description": "Set of storylines in the aftermath of the Weatherlight Saga, telling of the devastation caused by the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight Saga",
+   "type": "event",
+   "aliases": [],
+   "description": "Earlier storyline preceding the Mirari Saga.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Powerful artifact created by Karn as a probe and sent to Dominaria, where it caused massive havoc on Otaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Mirari who later retrieved it and took it to his artificial plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which the Mirari was sent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria devastated by the Mirari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mirari granted sentience by Karn and put in charge of Karn's artificial plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Karn's artificial plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Featured event of the Mirari Saga.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corruption of Memnarch",
+   "type": "event",
+   "aliases": [],
+   "description": "Featured event of the Mirari Saga.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Karn creates the Mirari as a probe and sends it to Dominaria, where it wreaks havoc on Otaria.",
+   "participants": [
+    "Karn",
+    "Mirari",
+    "Otaria"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "created as a probe by Karn and sent to Dominaria"
+  },
+  {
+   "summary": "Karn retrieves the Mirari, takes it to his artificial plane and grants it sentience as Memnarch, putting it in charge.",
+   "participants": [
+    "Karn",
+    "Mirari",
+    "Memnarch"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "granting the Mirari sentience as Memnarch and putting it in charge"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Mirari",
+   "note": "He made it as a probe.",
+   "paragraph": 0,
+   "quote": "created as a probe by Karn and sent to Dominaria"
+  },
+  {
+   "source": "Karn",
+   "relation": "created",
+   "target": "Memnarch",
+   "note": "He granted the Mirari sentience as Memnarch.",
+   "paragraph": 1,
+   "quote": "granting the Mirari sentience as Memnarch"
+  }
+ ],
+ "rejected": []
+}

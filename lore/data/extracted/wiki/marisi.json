@@ -1,0 +1,122 @@
+{
+ "page": "wiki/marisi",
+ "url": "https://mtg.wiki/page/Marisi",
+ "title": "Marisi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:11Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Marisi",
+   "type": "character",
+   "aliases": [],
+   "description": "Revolutionary Nacatl from Naya with mahogany fur and black stripes, believed long dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the shard of Naya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empire of the Clouds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Structured Nacatl civilization Marisi called on his people to revolt against.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coil",
+   "type": "concept",
+   "aliases": [],
+   "description": "Strictures of the Nacatl civilization, housed in a white wall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wild Nacatl",
+   "type": "faction",
+   "aliases": [],
+   "description": "Prides who followed Marisi and celebrated their animal natures in the jungle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cloud Nacatl",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nacatl who stayed in the cloudy mountain civilization.",
+   "presence": "appears"
+  },
+  {
+   "name": "Festival of Marisi",
+   "type": "event",
+   "aliases": [],
+   "description": "Yearly holiday of the Wild Nacatl celebrating Marisi.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Marisi calls on the leonin to revolt against the Empire of the Clouds and the Coil, starting a civil war.",
+   "participants": [
+    "Marisi",
+    "Empire of the Clouds"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Marisi called upon his fellow leonin to revolt against the Empire of the Clouds"
+  },
+  {
+   "summary": "The white wall housing the Coil is broken and the race splits in two.",
+   "participants": [
+    "Wild Nacatl",
+    "Cloud Nacatl"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The white wall that housed the Coil was broken, and the race was split in two."
+  },
+  {
+   "summary": "The Wild Nacatl march down from the mountains into the jungle.",
+   "participants": [
+    "Wild Nacatl"
+   ],
+   "location": "Naya",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "marching down out of the cloudy mountain peaks and into the jungle once more"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Marisi",
+   "relation": "leader_of",
+   "target": "Wild Nacatl",
+   "note": "his followers became the Wild Nacatl",
+   "paragraph": 2,
+   "quote": "The prides who followed Marisi's beliefs, calling themselves the Wild Nacatl"
+  },
+  {
+   "source": "Wild Nacatl",
+   "relation": "enemy",
+   "target": "Cloud Nacatl",
+   "note": "division persists with friction and fierce battles",
+   "paragraph": 3,
+   "quote": "which creates friction and fierce battles between prides"
+  }
+ ],
+ "rejected": []
+}

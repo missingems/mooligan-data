@@ -1,0 +1,145 @@
+{
+ "page": "wiki/boris",
+ "url": "https://mtg.wiki/page/Boris",
+ "title": "Boris",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Boris",
+   "type": "character",
+   "aliases": [],
+   "description": "A burly Umbris cultist and trapper from Traublassen, son of Lord Vytas, who betrayed Torens and Aleksandar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vytas",
+   "type": "character",
+   "aliases": [
+    "Lord Vytas"
+   ],
+   "description": "Boris's father and leader of the Umbris cult.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torens",
+   "type": "character",
+   "aliases": [],
+   "description": "Guided by Boris through the old keep; later confronted Umbris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aleksandar",
+   "type": "character",
+   "aliases": [],
+   "description": "Companion of Torens abandoned by Boris.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eruth",
+   "type": "character",
+   "aliases": [],
+   "description": "A captured prophet who revealed the keep was a trap for sacrifices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [],
+   "description": "A nightmare horror worshipped by the cult.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umbris cult",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult dedicated to worshipping Umbris, led by Vytas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Traublassen",
+   "type": "location",
+   "aliases": [],
+   "description": "Town on Innistrad that is Boris's home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Taivas",
+   "type": "character",
+   "aliases": [],
+   "description": "Boris's great-great-grandfather, who built a hellkite-embellished door.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Boris is tasked by his father with guiding Torens through the old keep, then abandons Torens and Aleksandar and flees to town.",
+   "participants": [
+    "Boris",
+    "Torens",
+    "Aleksandar",
+    "Vytas"
+   ],
+   "location": "Traublassen",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he suddenly abandoned Torens and Aleksandar"
+  },
+  {
+   "summary": "Torens and Aleksandar discover Boris and Vytas are Umbris cultists and meet the prophet Eruth, learning the keep is a sacrificial trap.",
+   "participants": [
+    "Torens",
+    "Aleksandar",
+    "Boris",
+    "Vytas",
+    "Eruth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the keep was a trap for sacrifices to their horrific master"
+  },
+  {
+   "summary": "Boris is surrounded and caught by a vengeful mob along with the rest of the cult.",
+   "participants": [
+    "Boris",
+    "Vytas",
+    "Umbris cult"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Boris, along with the rest of the Umbris cult, was caught in this frenzy of justice and retribution."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Boris",
+   "relation": "family",
+   "target": "Vytas",
+   "note": "Son of Vytas.",
+   "paragraph": 0,
+   "quote": "the son of Lord Vytas"
+  },
+  {
+   "source": "Boris",
+   "relation": "member_of",
+   "target": "Umbris cult",
+   "note": "Revealed as a cultist.",
+   "paragraph": 4,
+   "quote": "Boris was revealed to be one of the cultists"
+  }
+ ],
+ "rejected": []
+}

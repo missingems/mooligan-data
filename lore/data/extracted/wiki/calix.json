@@ -1,0 +1,189 @@
+{
+ "page": "wiki/calix",
+ "url": "https://mtg.wiki/page/Calix",
+ "title": "Calix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:43Z",
+ "storyline": "Theros Beyond Death",
+ "entities": [
+  {
+   "name": "Calix",
+   "type": "character",
+   "aliases": [
+    "Calix, Destiny's Hand",
+    "Agent of Fate"
+   ],
+   "description": "A Theran Nyxborn human and former planeswalker created by Klothys to pursue Elspeth Tirel and reweave her into Fate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god of Destiny who created Calix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [
+    "Elspeth"
+   ],
+   "description": "A planeswalker who escaped the Underworld, whom Calix pursues.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god awaiting Elspeth at the Underworld's exit, whom she defeated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "The god who granted Elspeth life in gratitude for defeating Heliod.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Calix is from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "The realm souls escaped from during the war of the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agents of Fate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Agents Klothys dispatched to stop escaped souls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Gods",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which countless souls escaped the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Desparkening",
+   "type": "event",
+   "aliases": [
+    "Great Pruning"
+   ],
+   "description": "The event in which Calix lost his spark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which Calix returned to Theros.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Klothys is furious that souls escaped the Underworld and weaves the Agent of Fate Calix to pursue Elspeth.",
+   "participants": [
+    "Klothys",
+    "Calix",
+    "Elspeth Tirel"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Klothys weaved her masterpiece — the Agent of Fate called Calix."
+  },
+  {
+   "summary": "Elspeth repeatedly clashes with Calix on her way out of the Underworld and defeats him each time, finally at the exit where Heliod awaits.",
+   "participants": [
+    "Elspeth Tirel",
+    "Calix",
+    "Heliod"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she defeated him one final time as she reached the exit where Heliod awaited her"
+  },
+  {
+   "summary": "Elspeth defeats Heliod and is granted life by Erebos, then planeswalks away; Calix sparks and planeswalks after her.",
+   "participants": [
+    "Elspeth Tirel",
+    "Heliod",
+    "Erebos",
+    "Calix"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "until he sparked and planeswalked after her for their destined confrontation"
+  },
+  {
+   "summary": "During the New Phyrexian Invasion Calix returns to Theros before losing his spark in the Great Pruning.",
+   "participants": [
+    "Calix"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "before losing his spark in the Great Pruning"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Klothys",
+   "relation": "created",
+   "target": "Calix",
+   "note": "weaved him to pursue Elspeth",
+   "paragraph": 1,
+   "quote": "He was created by Klothys , the god of Destiny"
+  },
+  {
+   "source": "Calix",
+   "relation": "serves",
+   "target": "Klothys",
+   "note": "created solely to carry out her will",
+   "paragraph": 4,
+   "quote": "Created solely to carry out the will of Klothys"
+  },
+  {
+   "source": "Calix",
+   "relation": "enemy",
+   "target": "Elspeth Tirel",
+   "note": "pursues her",
+   "paragraph": 5,
+   "quote": "until he sparked and planeswalked after her for their destined confrontation"
+  },
+  {
+   "source": "Erebos",
+   "relation": "ally",
+   "target": "Elspeth Tirel",
+   "note": "granted her life in gratitude",
+   "paragraph": 5,
+   "quote": "she was granted life by Erebos out of gratitude for her defeating Heliod"
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "enemy",
+   "target": "Heliod",
+   "note": "defeated him",
+   "paragraph": 5,
+   "quote": "When Elspeth managed to defeat Heliod"
+  }
+ ],
+ "rejected": []
+}

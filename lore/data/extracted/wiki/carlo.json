@@ -1,0 +1,151 @@
+{
+ "page": "wiki/carlo",
+ "url": "https://mtg.wiki/page/Carlo",
+ "title": "Carlo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:17Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Carlo",
+   "type": "character",
+   "aliases": [],
+   "description": "Young Avenger pilot from Kroog's River Wards killed in the Fall of Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanwell",
+   "type": "character",
+   "aliases": [],
+   "description": "Fellow pilot who guided Carlo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rica",
+   "type": "character",
+   "aliases": [],
+   "description": "Fellow pilot who guided Carlo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "City attacked by Mishra's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the attacking forces.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [
+    "Fallaji army"
+   ],
+   "description": "Army that overwhelmed the defenders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Kroog",
+   "type": "event",
+   "aliases": [],
+   "description": "Assault on Kroog by Mishra's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon engine",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fire-breathing automaton used by Mishra's forces.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mishra's forces assault Kroog; Carlo's cadets are promoted to full pilots.",
+   "participants": [
+    "Carlo",
+    "Mishra",
+    "Kroog"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The urgency of the situation saw them promoted to full pilots"
+  },
+  {
+   "summary": "A dragon engine destroys a barricade and its defenders, leaving Carlo panicked.",
+   "participants": [
+    "Carlo",
+    "Sanwell",
+    "Rica",
+    "Dragon engine"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the dragon engine obliterated a defensive barricade and its defenders"
+  },
+  {
+   "summary": "The trio retreats into an alley as Fallaji troops advance.",
+   "participants": [
+    "Carlo",
+    "Sanwell",
+    "Rica",
+    "Fallaji"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the trio retreated into an alley to escape the advancing enemy forces"
+  },
+  {
+   "summary": "Carlo is burned, crawls toward his comrades shouting for help, and is struck down by crossbow bolts.",
+   "participants": [
+    "Carlo",
+    "Sanwell",
+    "Rica",
+    "Fallaji"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Carlo was struck down by crossbow bolts before he could be saved."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Carlo",
+   "relation": "ally",
+   "target": "Sanwell",
+   "note": "fellow pilots",
+   "paragraph": 1,
+   "quote": "Carlo, along with Sanwell and Rica"
+  },
+  {
+   "source": "Fallaji",
+   "relation": "killed",
+   "target": "Carlo",
+   "note": "crossbow bolts",
+   "paragraph": 4,
+   "quote": "Carlo was struck down by crossbow bolts before he could be saved."
+  },
+  {
+   "source": "Fallaji",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "part of the assault by Mishra's forces",
+   "paragraph": 1,
+   "quote": "Kroog faced a dire assault by Mishra 's forces"
+  }
+ ],
+ "rejected": []
+}

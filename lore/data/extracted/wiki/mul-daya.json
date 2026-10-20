@@ -1,0 +1,104 @@
+{
+ "page": "wiki/mul-daya",
+ "url": "https://mtg.wiki/page/Mul_Daya",
+ "title": "Mul Daya",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mul Daya",
+   "type": "faction",
+   "aliases": [
+    "Mul Dayans"
+   ],
+   "description": "Secretive elven nation of the Guum Wilds, Bala Ged, on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazzan",
+   "type": "character",
+   "aliases": [],
+   "description": "Living leader of the Mul Daya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obuun",
+   "type": "character",
+   "aliases": [],
+   "description": "Centuries-old elvish spirit whose edicts Hazzan followed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mina",
+   "type": "character",
+   "aliases": [],
+   "description": "Greenspeaker able to commune with ancestors on another continent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Joraga",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elven tribe, also mostly wiped out by the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who wiped out most of the Mul Daya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guum Wilds",
+   "type": "location",
+   "aliases": [],
+   "description": "Wilds home of the Mul Daya.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Most of the Mul Daya are wiped out by the Eldrazi.",
+   "participants": [
+    "Mul Daya",
+    "Eldrazi"
+   ],
+   "location": "Guum Wilds",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "most of the Mul Daya were wiped out by the Eldrazi ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hazzan",
+   "relation": "leader_of",
+   "target": "Mul Daya",
+   "note": "Living leader.",
+   "paragraph": 1,
+   "quote": "their living leader was Hazzan"
+  },
+  {
+   "source": "Hazzan",
+   "relation": "serves",
+   "target": "Obuun",
+   "note": "Followed his edicts.",
+   "paragraph": 1,
+   "quote": "he followed the edicts of a centuries-old elvish spirit named Obuun"
+  },
+  {
+   "source": "Eldrazi",
+   "relation": "enemy",
+   "target": "Mul Daya",
+   "note": "Wiped most out.",
+   "paragraph": 2,
+   "quote": "most of the Mul Daya were wiped out by the Eldrazi ."
+  }
+ ],
+ "rejected": []
+}

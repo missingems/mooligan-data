@@ -1,0 +1,78 @@
+{
+ "page": "wiki/vintara",
+ "url": "https://mtg.wiki/page/Vintara",
+ "title": "Vintara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vintara",
+   "type": "location",
+   "aliases": [
+    "Wintara",
+    "Vintaran Forest"
+   ],
+   "description": "An almost impregnable forest in Jamuraa, source of elephants and home of vicious turtles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Deadalus",
+   "type": "character",
+   "aliases": [
+    "Lich Lord Deadalus"
+   ],
+   "description": "A Lich Lord who tried to take power over Chloridon and was killed by Destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chloridon",
+   "type": "creature",
+   "aliases": [],
+   "description": "A green dragon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Destruction",
+   "type": "creature",
+   "aliases": [],
+   "description": "A black dragon that killed Deadalus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nakaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp bordering Vintara.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Lich Lord Deadalus tried to take power over Chloridon but was killed by the black dragon Destruction.",
+   "participants": [
+    "Deadalus",
+    "Chloridon",
+    "Destruction"
+   ],
+   "location": "Vintara",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Vintara once saw the Lich Lord Deadalus attempt to take power over the green dragon Chloridon , but ended up being killed by the black dragon Destruction instead."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Destruction",
+   "relation": "killed",
+   "target": "Deadalus",
+   "note": "Killed him when he tried to control Chloridon.",
+   "paragraph": 3,
+   "quote": "but ended up being killed by the black dragon Destruction instead."
+  }
+ ],
+ "rejected": []
+}

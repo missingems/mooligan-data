@@ -1,0 +1,90 @@
+{
+ "page": "wiki/gate",
+ "url": "https://mtg.wiki/page/Gate",
+ "title": "Gate",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:17Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gate",
+   "type": "concept",
+   "aliases": [
+    "Gates"
+   ],
+   "description": "A nonbasic land type for cards representing guarded entrances to cities or castles, introduced in the Return to Ravnica block.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildgates",
+   "type": "location",
+   "aliases": [
+    "Guildgate"
+   ],
+   "description": "The original ten Gates representing each of the Ravnican guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gateway Plaza",
+   "type": "location",
+   "aliases": [],
+   "description": "The 11th Gate, representing the plaza connecting the Guildgates where the Chamber of the Guildpact stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chamber of the Guildpact",
+   "type": "location",
+   "aliases": [],
+   "description": "Hall that stands at Gateway Plaza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose guilds the Guildgates represent.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baldur's Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "City represented by a legendary Gate in Commander Legends: Battle for Baldur's Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The pact whose rebirth appears in the hidden Gate message.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gate is added as a new land subtype to the common dual-land cycle in Return to Ravnica so they could have a secondary mechanical purpose.",
+   "participants": [
+    "Gate",
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The solution to this problem was to add a new land subtype, Gate, to the common dual land cycle."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Guildgates",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "Represent Ravnican guilds.",
+   "paragraph": 2,
+   "quote": "The original ten Gates are the Guildgates, representing each of the Ravnican guilds ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,167 @@
+{
+ "page": "profiles/innistrad-plane",
+ "url": "https://magic.wizards.com/en/story/innistrad-plane",
+ "title": "Innistrad",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where humanity is prey to werewolves, vampires, zombies, geists, demons and other horrors once the moon rises.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Church of Avacyn",
+   "type": "faction",
+   "aliases": [
+    "The Church"
+   ],
+   "description": "The human church named for its leader, the archangel Avacyn, which humans brandish against the horrors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "A powerful archangel created by Sorin Markov to safeguard humanity; she is trapped in the Helvault, released, then driven mad and unmade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who created Avacyn to safeguard humanity and later unmade her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "character",
+   "aliases": [],
+   "description": "A demon who trapped Avacyn in the Helvault with him.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A prison in which Griselbrand trapped Avacyn; it was later sundered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thraben",
+   "type": "location",
+   "aliases": [],
+   "description": "The high city of Innistrad, marched on by zombie armies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The cathars",
+   "type": "faction",
+   "aliases": [
+    "cathars"
+   ],
+   "description": "Specialized holy warriors trained by humans to strike back at supernatural horrors.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Humans fight back with torch-wielding mobs, trained cathars, and the power of the Church of Avacyn.",
+   "participants": [
+    "The Church of Avacyn",
+    "The cathars"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They train specialized holy warriors called cathars to strike back against the supernatural horrors."
+  },
+  {
+   "summary": "Griselbrand traps Avacyn in the Helvault with him, weakening the rites that invoked her and humanity's defenses.",
+   "participants": [
+    "Griselbrand",
+    "Avacyn",
+    "The Helvault"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "First the demon Griselbrand trapped Avacyn in the Helvault with him"
+  },
+  {
+   "summary": "With zombie armies marching on Thraben, the Helvault is sundered and Avacyn is released.",
+   "participants": [
+    "The Helvault",
+    "Avacyn",
+    "Thraben"
+   ],
+   "location": "Thraben",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Helvault was sundered and Avacyn was released."
+  },
+  {
+   "summary": "Madness sweeps Innistrad as hope of Avacyn's protection turns to horror.",
+   "participants": [
+    "Avacyn",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Madness swept over Innistrad as the fleeting hope of Avacyn's angelic protection turned to horror."
+  },
+  {
+   "summary": "Sorin Markov intervenes and unmakes Avacyn, his beloved creation, and the plane's last protections fall.",
+   "participants": [
+    "Sorin Markov",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Sorin Markov finally intervened, unmaking his beloved creation."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sorin Markov",
+   "relation": "created",
+   "target": "Avacyn",
+   "note": "Created to safeguard humanity and let it coexist with its predators.",
+   "paragraph": 1,
+   "quote": "the powerful archangel Avacyn who was created by the Planeswalker Sorin Markov to safeguard humanity"
+  },
+  {
+   "source": "Avacyn",
+   "relation": "leader_of",
+   "target": "The Church of Avacyn",
+   "note": "The Church is named for its leader.",
+   "paragraph": 1,
+   "quote": "The Church is named for its leader, the powerful archangel Avacyn"
+  },
+  {
+   "source": "Griselbrand",
+   "relation": "enemy",
+   "target": "Avacyn",
+   "note": "He trapped her in the Helvault.",
+   "paragraph": 2,
+   "quote": "First the demon Griselbrand trapped Avacyn in the Helvault with him"
+  },
+  {
+   "source": "Sorin Markov",
+   "relation": "killed",
+   "target": "Avacyn",
+   "note": "He unmade her.",
+   "paragraph": 3,
+   "quote": "Sorin Markov finally intervened, unmaking his beloved creation."
+  }
+ ],
+ "rejected": []
+}

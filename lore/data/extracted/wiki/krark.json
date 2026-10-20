@@ -1,0 +1,152 @@
+{
+ "page": "wiki/krark",
+ "url": "https://mtg.wiki/page/Krark",
+ "title": "Krark",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:44Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Krark",
+   "type": "character",
+   "aliases": [],
+   "description": "A legendary goblin wizard and gambler on Mirrodin who walked to the hollow center of the plane and wrote a book of his journey; executed for heresy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Krark lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oxidda mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains of Mirrodin where Krark lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Durg",
+   "type": "character",
+   "aliases": [],
+   "description": "Gambler who won Krark's thumbs and later handed back the lucky one.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krark-Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group named after Krark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Krark",
+   "type": "faction",
+   "aliases": [],
+   "description": "A religion formed around Krark's writings, holding that Mirrodin is hollow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Book of Krark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Krark's book describing his journey to the center of Mirrodin, preached from by the cult's leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Steel Mother",
+   "type": "deity",
+   "aliases": [],
+   "description": "Figure whom Krark is believed to guide the souls of the dead to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Krark loses both his thumbs to Durg betting on a hellion race.",
+   "participants": [
+    "Krark",
+    "Durg"
+   ],
+   "location": "Oxidda mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He lost both his thumbs to Durg betting on a hellion race"
+  },
+  {
+   "summary": "Krark bets Durg a thumb that he can walk to the center of Mirrodin and back.",
+   "participants": [
+    "Krark",
+    "Durg"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He bet Durg a thumb that he could walk to the center of Mirrodin and back."
+  },
+  {
+   "summary": "Weeks later Krark returns with a book of his journey and Durg hands over the lucky thumb.",
+   "participants": [
+    "Krark",
+    "Durg"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Durg sighed and handed over Krark's lucky thumb."
+  },
+  {
+   "summary": "Krark is executed for heresy and his followers excommunicated.",
+   "participants": [
+    "Krark"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Krark was executed for heresy and his followers excommunicated."
+  },
+  {
+   "summary": "After his death the Cult of Krark forms around his writings.",
+   "participants": [
+    "Cult of Krark",
+    "Krark"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "a religion known as the Cult of Krark was formed around his writings"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Krark-Clan",
+   "relation": "other",
+   "target": "Krark",
+   "note": "named after him",
+   "paragraph": 0,
+   "quote": "The Krark-Clan is named after him."
+  },
+  {
+   "source": "Krark",
+   "relation": "enemy",
+   "target": "Durg",
+   "note": "gambling rival who won his thumbs",
+   "paragraph": 1,
+   "quote": "He lost both his thumbs to Durg betting on a hellion race"
+  },
+  {
+   "source": "Krark",
+   "relation": "located_in",
+   "target": "Oxidda mountains",
+   "note": "lived there",
+   "paragraph": 1,
+   "quote": "lived in the Oxidda mountains of Mirrodin"
+  }
+ ],
+ "rejected": []
+}

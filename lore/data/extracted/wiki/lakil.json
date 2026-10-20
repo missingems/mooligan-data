@@ -1,0 +1,116 @@
+{
+ "page": "wiki/lakil",
+ "url": "https://mtg.wiki/page/Lakil",
+ "title": "Lakil",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:34Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Lakil",
+   "type": "character",
+   "aliases": [],
+   "description": "Shepherdess from Lambholt on Innistrad, killed by Old Stickfingers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lambholt",
+   "type": "location",
+   "aliases": [],
+   "description": "Village on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Stickfingers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Nightmarish creature summoned by Arinos and Ariosa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vadrik",
+   "type": "character",
+   "aliases": [],
+   "description": "Archmage who investigated the supernatural events.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rem Karolus",
+   "type": "character",
+   "aliases": [],
+   "description": "Inquisitor who investigated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arinos",
+   "type": "character",
+   "aliases": [],
+   "description": "Villager who summoned Old Stickfingers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ariosa",
+   "type": "character",
+   "aliases": [],
+   "description": "Arinos's daughter who helped summon Old Stickfingers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lakil is found dead in the pasture, mutilated, her sheep untouched.",
+   "participants": [
+    "Lakil"
+   ],
+   "location": "Lambholt",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She was found dead in the pasture"
+  },
+  {
+   "summary": "Her death prompts the villagers to seek Vadrik and Rem Karolus.",
+   "participants": [
+    "Vadrik",
+    "Rem Karolus"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "leading them to seek help from Vadrik and Rem"
+  },
+  {
+   "summary": "Her death is revealed to be linked to Old Stickfingers, summoned by Arinos and Ariosa.",
+   "participants": [
+    "Old Stickfingers",
+    "Arinos",
+    "Ariosa"
+   ],
+   "location": "Lambholt",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "a mythical and nightmarish creature summoned by the villager Arinos and his daughter Ariosa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Old Stickfingers",
+   "relation": "killed",
+   "target": "Lakil",
+   "note": "Victim",
+   "paragraph": 0,
+   "quote": "She was one of the victims of Old Stickfingers ."
+  },
+  {
+   "source": "Arinos",
+   "relation": "family",
+   "target": "Ariosa",
+   "note": "Father and daughter",
+   "paragraph": 4,
+   "quote": "Arinos and his daughter Ariosa"
+  }
+ ],
+ "rejected": []
+}

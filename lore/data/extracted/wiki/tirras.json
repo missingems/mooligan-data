@@ -1,0 +1,133 @@
+{
+ "page": "wiki/tirras",
+ "url": "https://mtg.wiki/page/Tirras",
+ "title": "Tirras",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:22Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tirras",
+   "type": "location",
+   "aliases": [],
+   "description": "A landlocked city in southwestern Jamuraa on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing Tirras.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blue Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains at whose foot Tirras lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell that magically evaporated the Blue Mountains' glaciers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Tirras from the fortress of Krieghelm who waged Johan's War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krieghelm",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress from which Johan ruled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bryce",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the mouth of the Toloron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palmyra",
+   "type": "location",
+   "aliases": [],
+   "description": "Village of pirates and criminals halfway down the river.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johan's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Tirras swelled with refugees and soldiers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The World Spell evaporates the Blue Mountains' glaciers, causing flash floods that nearly wipe out Tirras's tribes and later make the valleys fertile.",
+   "participants": [
+    "World Spell",
+    "Tirras",
+    "Blue Mountains"
+   ],
+   "location": "Tirras",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Almost wiped out in flash floods"
+  },
+  {
+   "summary": "During Johan's War the city swells with refugees and soldiers and its forest is logged for airships.",
+   "participants": [
+    "Johan",
+    "Tirras",
+    "Palmyra",
+    "Bryce"
+   ],
+   "location": "Tirras",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "During Johan's War , the city swelled with refugees, soldiers, traders, and scoundrels"
+  },
+  {
+   "summary": "After Johan's death the Tirran elite squabble over rule and Tirras shrinks to a city-state.",
+   "participants": [
+    "Johan",
+    "Tirras"
+   ],
+   "location": "Tirras",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "becoming a mere city-state once more"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Johan",
+   "relation": "leader_of",
+   "target": "Tirras",
+   "note": "Ruled from the fortress of Krieghelm.",
+   "paragraph": 3,
+   "quote": "During the reign of Johan , who ruled from the fortress of Krieghelm 400 years later"
+  },
+  {
+   "source": "Tirras",
+   "relation": "located_in",
+   "target": "Jamuraa",
+   "note": "Southwestern Jamuraa.",
+   "paragraph": 0,
+   "quote": "Tirras is a city in southwestern Jamuraa"
+  }
+ ],
+ "rejected": []
+}

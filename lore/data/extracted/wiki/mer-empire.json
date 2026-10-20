@@ -1,0 +1,130 @@
+{
+ "page": "wiki/mer-empire",
+ "url": "https://mtg.wiki/page/Mer_Empire",
+ "title": "Mer Empire",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:02Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Mer Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "A dominant empire in the depths of the Otarian Sea led by cephalids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Berbous",
+   "type": "faction",
+   "aliases": [],
+   "description": "Civilization ruled by Emperor Tajaras, wiped out by Aboshan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajaras",
+   "type": "character",
+   "aliases": [
+    "Emperor Tajaras"
+   ],
+   "description": "Emperor of Berbous.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Betrayed Berbous.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aboshan",
+   "type": "character",
+   "aliases": [],
+   "description": "Cephalid king who conquered Berbous and died using the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Aboshan used to flood a stretch of Otaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aboshan Trench",
+   "type": "location",
+   "aliases": [],
+   "description": "Drowned land named by Aboshan's widow.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent encircled by the Mer Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle for the Mirari",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in 4305 AR during which Aboshan got the Mirari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "cephalids",
+   "type": "faction",
+   "aliases": [],
+   "description": "Primary occupants of the Mer Empire.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Betrayed by Laquatus, Berbous is conquered by Aboshan and wiped out in a single day.",
+   "participants": [
+    "Laquatus",
+    "Aboshan",
+    "Berbous",
+    "Tajaras"
+   ],
+   "location": "Mer Empire",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Betrayed by Laquatus and conquered by the cephalid king Aboshan , the Berbous civilization was wiped out in a single day"
+  },
+  {
+   "summary": "Aboshan uses the Mirari to flood a stretch of Otaria, and the act costs him his life.",
+   "participants": [
+    "Aboshan",
+    "Mirari"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Though he succeeded in his ambition, the act cost Aboshan his life."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aboshan",
+   "relation": "killed",
+   "target": "Berbous",
+   "note": "He conquered and destroyed its civilization.",
+   "paragraph": 2,
+   "quote": "conquered by the cephalid king Aboshan"
+  },
+  {
+   "source": "Laquatus",
+   "relation": "enemy",
+   "target": "Tajaras",
+   "note": "Laquatus betrayed Berbous.",
+   "paragraph": 2,
+   "quote": "Betrayed by Laquatus"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,134 @@
+{
+ "page": "wiki/chandler",
+ "url": "https://mtg.wiki/page/Chandler",
+ "title": "Chandler",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:50Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Chandler",
+   "type": "character",
+   "aliases": [],
+   "description": "Human con man and rogue of the Homelands on Ulgrotha who stole magical toys and mechanical devices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Chandler lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizards' School",
+   "type": "faction",
+   "aliases": [
+    "Wizards School"
+   ],
+   "description": "School on the Floating Island that was Chandler's preferred target.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizard Savant",
+   "type": "character",
+   "aliases": [],
+   "description": "Head of the Wizards School who placed a bounty on Chandler.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire whose minion was buying stolen devices in preparation for his day of triumph.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Joven",
+   "type": "character",
+   "aliases": [],
+   "description": "Chandler's partner in crime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [],
+   "description": "Man whom Chandler and Joven tricked into giving up his Ebony Rhino.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ebony Rhino",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Eron's prized artifact creature, tricked away by Chandler and Joven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strongrock",
+   "type": "location",
+   "aliases": [],
+   "description": "Place Eron would punish Chandler or Joven for entering.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandler stole a ring of keys useful for altering clockwork creatures, earning a bounty from the Wizard Savant.",
+   "participants": [
+    "Chandler",
+    "Wizard Savant"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Wizard Savant of the Wizards School had placed a good-sized bounty on Chandler's head"
+  },
+  {
+   "summary": "Chandler sold stolen goods to an anonymous buyer, indirectly working for a minion of Baron Sengir.",
+   "participants": [
+    "Chandler",
+    "Baron Sengir"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Chandler sold his stolen goods to an anonymous buyer for high prices"
+  },
+  {
+   "summary": "Chandler and Joven tricked Eron into giving them his Ebony Rhino.",
+   "participants": [
+    "Chandler",
+    "Joven",
+    "Eron the Relentless",
+    "Ebony Rhino"
+   ],
+   "location": "Strongrock",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Chandler and Joven tricked Eron into giving them his prized Ebony Rhino"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandler",
+   "relation": "ally",
+   "target": "Joven",
+   "note": "Partners in crime",
+   "paragraph": 3,
+   "quote": "Sometimes Chandler worked together with Joven , his partner in crime."
+  },
+  {
+   "source": "Eron the Relentless",
+   "relation": "enemy",
+   "target": "Chandler",
+   "note": "Wants revenge for the Ebony Rhino",
+   "paragraph": 3,
+   "quote": "If Eron ever caught Chandler or Joven on his side of Strongrock"
+  }
+ ],
+ "rejected": []
+}

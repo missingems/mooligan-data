@@ -1,0 +1,134 @@
+{
+ "page": "wiki/far-fortune",
+ "url": "https://mtg.wiki/page/Far_Fortune",
+ "title": "Far Fortune",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:52Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Far Fortune",
+   "type": "character",
+   "aliases": [
+    "Fortune"
+   ],
+   "description": "Captain of the Gastal Endriders racing team in the Ghirapur Grand Prix on Avishkar, seeking vengeance and to reclaim Gastal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gastal Endriders",
+   "type": "faction",
+   "aliases": [
+    "Endriders"
+   ],
+   "description": "Racing team and gang that fled Gastal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gastal",
+   "type": "plane",
+   "aliases": [],
+   "description": "Drought-stricken homeworld of the Endriders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane hosting the Ghirapur Grand Prix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Aether-fueled race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who mind-controlled Fortune to recover Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Jace's adopted child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aetherspark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prize Fortune hoped to win.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after whose end the Omenpaths opened.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the invasion ended and the Omenpaths opened, Endrider gangs left Gastal and ran out of fuel.",
+   "participants": [
+    "Gastal Endriders"
+   ],
+   "location": "Gastal",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Endrider gangs rode their machines to freedom, leaving Gastal without a look in the rearview mirror"
+  },
+  {
+   "summary": "Fortune's gang is stranded on Avishkar and enters the Ghirapur Grand Prix.",
+   "participants": [
+    "Far Fortune",
+    "Gastal Endriders"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were stranded on Avishkar and quickly found their way into the Ghirapur Grand Prix"
+  },
+  {
+   "summary": "In the final stage, Fortune's vehicle is wrecked and Jace mind controls her while trying to recover Loot.",
+   "participants": [
+    "Far Fortune",
+    "Jace Beleren",
+    "Loot"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "she was mind controlled by Jace Beleren"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Far Fortune",
+   "relation": "leader_of",
+   "target": "Gastal Endriders",
+   "note": "Captain.",
+   "paragraph": 0,
+   "quote": "is the captain of the Gastal Endriders racing team"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "family",
+   "target": "Loot",
+   "note": "Adopted child.",
+   "paragraph": 4,
+   "quote": "his adopted child Loot"
+  }
+ ],
+ "rejected": []
+}

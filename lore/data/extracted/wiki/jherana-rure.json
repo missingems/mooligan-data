@@ -1,0 +1,113 @@
+{
+ "page": "wiki/jherana-rure",
+ "url": "https://mtg.wiki/page/Jherana_Rure",
+ "title": "Jherana Rure",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jherana Rure",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander of the Order of the Ebon Hand on Sarpadia who led the counterinsurgency against the thrulls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order on Sarpadia she commanded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thrulls",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creatures created by Endrek Sahr who rose against their masters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Endrek Sahr",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the thrulls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reod Dai",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose visit made thrulls more self-confident.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Necrites",
+   "type": "faction",
+   "aliases": [],
+   "description": "Killers of Jherana Rure.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Intelligent thrulls turned the species against their masters, and Jherana Rure took command of the counterinsurgency.",
+   "participants": [
+    "Jherana Rure",
+    "Thrulls"
+   ],
+   "location": "Sarpadia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Jherana Rure became the commander of the counterinsurgency against the thrull army."
+  },
+  {
+   "summary": "Jherana Rure was killed by Necrites, ending the counterinsurgency.",
+   "participants": [
+    "Jherana Rure",
+    "Necrites"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She was eventually killed by Necrites, ending the counterinsurgency in a single blow."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Endrek Sahr",
+   "relation": "created",
+   "target": "Thrulls",
+   "note": "He created the thrulls of Sarpadia.",
+   "paragraph": 1,
+   "quote": "the Thrulls of Sarpadia - created by Endrek Sahr"
+  },
+  {
+   "source": "Jherana Rure",
+   "relation": "member_of",
+   "target": "Order of the Ebon Hand",
+   "note": "She was a commander of the order.",
+   "paragraph": 0,
+   "quote": "Jherana Rure was a commander of the Order of the Ebon Hand"
+  },
+  {
+   "source": "Necrites",
+   "relation": "killed",
+   "target": "Jherana Rure",
+   "note": "Necrites killed her.",
+   "paragraph": 1,
+   "quote": "She was eventually killed by Necrites"
+  }
+ ],
+ "rejected": []
+}

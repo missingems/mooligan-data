@@ -1,0 +1,97 @@
+{
+ "page": "wiki/joraga",
+ "url": "https://mtg.wiki/page/Joraga",
+ "title": "Joraga",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Joraga",
+   "type": "faction",
+   "aliases": [
+    "Joraga Nation"
+   ],
+   "description": "The elven nomadic nation of Zendikar's Tangled Vale, nearly eliminated by the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tangled Vale",
+   "type": "location",
+   "aliases": [],
+   "description": "Part of Bala Ged where the Joraga were seated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Joraga.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Speaker Nen",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Joraga.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings whose coming nearly eliminated the Joraga.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With the coming of the Eldrazi, the Joraga are nearly eliminated.",
+   "participants": [
+    "Joraga",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "With the coming of the Eldrazi , the Joraga were nearly eliminated."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Speaker Nen",
+   "relation": "leader_of",
+   "target": "Joraga",
+   "note": "He led the Joraga.",
+   "paragraph": 1,
+   "quote": "The leader of the Joraga was Speaker Nen"
+  },
+  {
+   "source": "Joraga",
+   "relation": "located_in",
+   "target": "Tangled Vale",
+   "note": "The nation was seated there.",
+   "paragraph": 0,
+   "quote": "seated in the Tangled Vale portion of Bala Ged on Zendikar"
+  },
+  {
+   "source": "Eldrazi",
+   "relation": "enemy",
+   "target": "Joraga",
+   "note": "The Eldrazi nearly eliminated them.",
+   "paragraph": 1,
+   "quote": "With the coming of the Eldrazi , the Joraga were nearly eliminated."
+  }
+ ],
+ "rejected": []
+}

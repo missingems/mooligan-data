@@ -1,0 +1,226 @@
+{
+ "page": "wiki/saprazzo",
+ "url": "https://mtg.wiki/page/Saprazzo",
+ "title": "Saprazzo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:49Z",
+ "storyline": "Mercadian Masques",
+ "entities": [
+  {
+   "name": "Saprazzo",
+   "type": "location",
+   "aliases": [
+    "the Coral City"
+   ],
+   "description": "Island city of merfolk and humans on Mercadia, within a volcanic caldera lake.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Saprazzo lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of the Weatherlight, wounded in Saprazzo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orim",
+   "type": "character",
+   "aliases": [],
+   "description": "Healer of the Weatherlight crew, imprisoned in a plot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hanna",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crew member.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Manno",
+   "type": "character",
+   "aliases": [],
+   "description": "Believed dead, he returns and proves Orim's innocence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lahaime",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Ramosians who stages his own execution.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oustrathmer",
+   "type": "character",
+   "aliases": [],
+   "description": "Saprazzan conspirator plotting to steal the Matrix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grand Vizier",
+   "type": "character",
+   "aliases": [
+    "the vizier"
+   ],
+   "description": "Ruler of Saprazzo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Power Matrix",
+   "type": "artifact",
+   "aliases": [
+    "the Matrix"
+   ],
+   "description": "Artifact the crew seeks in Saprazzo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramos",
+   "type": "deity",
+   "aliases": [],
+   "description": "Legendary artificer-turned-god who shattered into five artifacts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bones of Ramos",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Five sacred artifacts left from Ramos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "Skyship of Sisay's crew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ramosians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Followers led by Lahaime, allied against Mercadia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [],
+   "description": "Friends of the Saprazzan merfolk.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sisay, Orim and Hanna arrive in Saprazzo seeking the Power Matrix; Sisay is wounded after a sailor harpoons a Breaker and Orim heals her.",
+   "participants": [
+    "Sisay",
+    "Orim",
+    "Hanna"
+   ],
+   "location": "Saprazzo",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "only to be saved by Orim, who called for peace and used her healing abilities to restore her captain."
+  },
+  {
+   "summary": "The vizier tells the myth of Ramos but postpones deciding about the Matrix.",
+   "participants": [
+    "Grand Vizier",
+    "Sisay",
+    "Ramos"
+   ],
+   "location": "Saprazzo",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "the vizier hesitated, postponing the decision."
+  },
+  {
+   "summary": "Orim discovers a plot to steal the Matrix and frame the crew, and is imprisoned, falsely accused.",
+   "participants": [
+    "Orim",
+    "Oustrathmer"
+   ],
+   "location": "Saprazzo",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "Orim was ambushed and imprisoned, falsely accused of murder and theft."
+  },
+  {
+   "summary": "Cho-Manno appears with Lahaime and proves Orim's innocence by mind meld.",
+   "participants": [
+    "Cho-Manno",
+    "Lahaime",
+    "Orim",
+    "Grand Vizier"
+   ],
+   "location": "Saprazzo",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "Cho-Manno proved Orim’s innocence"
+  },
+  {
+   "summary": "Lahaime stages his own execution to feed the Mercadians false intelligence; the crew gets safe passage back to Mercadia.",
+   "participants": [
+    "Lahaime",
+    "Oustrathmer",
+    "Orim",
+    "Sisay",
+    "Hanna",
+    "Cho-Manno"
+   ],
+   "location": "Saprazzo",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "Lahaime staged his own \"execution\" before Oustrathmer"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oustrathmer",
+   "relation": "enemy",
+   "target": "Orim",
+   "note": "plot to frame the crew",
+   "paragraph": 9,
+   "quote": "scheming to steal the Matrix and frame the Weatherlight crew for the crime"
+  },
+  {
+   "source": "Cho-Manno",
+   "relation": "ally",
+   "target": "Lahaime",
+   "note": "alliance against Mercadia",
+   "paragraph": 10,
+   "quote": "revealing their survival and their alliance against Mercadia"
+  },
+  {
+   "source": "Saprazzo",
+   "relation": "located_in",
+   "target": "Mercadia",
+   "note": "",
+   "paragraph": 0,
+   "quote": "is the island city of merfolk and humans on the plane of Mercadia ."
+  },
+  {
+   "source": "Grand Vizier",
+   "relation": "leader_of",
+   "target": "Saprazzo",
+   "note": "",
+   "paragraph": 3,
+   "quote": "The leader of Saprazzo is the Grand Vizier"
+  }
+ ],
+ "rejected": []
+}

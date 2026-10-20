@@ -1,0 +1,82 @@
+{
+ "page": "wiki/caliman",
+ "url": "https://mtg.wiki/page/Caliman",
+ "title": "Caliman",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:11Z",
+ "storyline": "Portal Second Age",
+ "entities": [
+  {
+   "name": "Caliman",
+   "type": "location",
+   "aliases": [],
+   "description": "A large island far south of Dominaria, southeast of Jamuraa, where magic and technology are both used.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alaborn",
+   "type": "location",
+   "aliases": [],
+   "description": "A highly advanced human kingdom on Caliman's southern plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trokin",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Alaborn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Talas",
+   "type": "location",
+   "aliases": [],
+   "description": "A region of islands in the southwest of Caliman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Norwood",
+   "type": "location",
+   "aliases": [],
+   "description": "The elven forest covering much of northern Caliman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakmor",
+   "type": "location",
+   "aliases": [],
+   "description": "A swampy island north of the mainland, home of Tojira.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tojira",
+   "type": "character",
+   "aliases": [],
+   "description": "The swamp queen of Dakmor, with nightstalker minions.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Trokin",
+   "relation": "other",
+   "target": "Alaborn",
+   "note": "Trokin is Alaborn's capital.",
+   "paragraph": 2,
+   "quote": "Trokin - capital of Alaborn"
+  },
+  {
+   "source": "Tojira",
+   "relation": "leader_of",
+   "target": "Dakmor",
+   "note": "Swamp queen of Dakmor.",
+   "paragraph": 5,
+   "quote": "Home of the swamp queen Tojira and her nightstalker minions"
+  }
+ ],
+ "rejected": []
+}

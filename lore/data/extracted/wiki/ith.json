@@ -1,0 +1,186 @@
+{
+ "page": "wiki/ith",
+ "url": "https://mtg.wiki/page/Ith",
+ "title": "Ith",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:50Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Lord Ith",
+   "type": "character",
+   "aliases": [
+    "Ith"
+   ],
+   "description": "Powerful wizard and leader of the Conclave of Mages after the Brothers' War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "School of mages on Terisiare that Ith led and later destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barl's Cage",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Cage in which Ith was imprisoned, siphoning his mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mairsil",
+   "type": "character",
+   "aliases": [
+    "Mairsil, the Pretender"
+   ],
+   "description": "Pretender who imprisoned Ith and was later killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rag Man",
+   "type": "creature",
+   "aliases": [],
+   "description": "Messenger specter Ith summoned to find help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard brought to the Conclave who helped free Ith and restored his sanity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sima",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Jodah free Ith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reflecting Mirror",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Mirror Jodah used to restore Ith's sanity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of the Conclave of Mages",
+   "type": "event",
+   "aliases": [],
+   "description": "Destruction of the Conclave by Ith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barl",
+   "type": "character",
+   "aliases": [],
+   "description": "Original holder of the title Lord Ith in older continuity.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mairsil imprisons Ith in Barl's Cage for a dozen years, siphoning his mana while Ith slides into madness.",
+   "participants": [
+    "Mairsil",
+    "Lord Ith",
+    "Barl's Cage"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ith was imprisoned in Barl's Cage for a dozen years by Mairsil, the Pretender ."
+  },
+  {
+   "summary": "Ith summons a Rag Man, which finds Jodah and brings him to the Conclave.",
+   "participants": [
+    "Lord Ith",
+    "Rag Man",
+    "Jodah"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Rag Man tracked down Jodah and brought him to the Conclave of Mages ."
+  },
+  {
+   "summary": "Jodah and Sima free Ith by destroying the cage.",
+   "participants": [
+    "Jodah",
+    "Sima",
+    "Lord Ith",
+    "Barl's Cage"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jodah and Sima eventually freed Ith by destroying the cage."
+  },
+  {
+   "summary": "Ith attacks the Conclave and kills Mairsil before Jodah restores his sanity with the mirror.",
+   "participants": [
+    "Lord Ith",
+    "Mairsil",
+    "Jodah",
+    "Reflecting Mirror"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "An enraged Ith attacked the Conclave and killed Mairsil before Jodah used his mirror to restore his sanity."
+  },
+  {
+   "summary": "Ith frightens the remaining mages away and destroys the whole school.",
+   "participants": [
+    "Lord Ith",
+    "Conclave of Mages",
+    "Fall of the Conclave of Mages"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Ith then caused the Fall of the Conclave of Mages , destroying the entire school before retreating to be by himself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lord Ith",
+   "relation": "leader_of",
+   "target": "Conclave of Mages",
+   "note": "Leader of the Conclave.",
+   "paragraph": 0,
+   "quote": "He was leader of the Conclave of Mages ."
+  },
+  {
+   "source": "Mairsil",
+   "relation": "enemy",
+   "target": "Lord Ith",
+   "note": "Imprisoned Ith, who later killed him.",
+   "paragraph": 2,
+   "quote": "Ith was imprisoned in Barl's Cage for a dozen years by Mairsil, the Pretender ."
+  },
+  {
+   "source": "Lord Ith",
+   "relation": "killed",
+   "target": "Mairsil",
+   "note": "Ith killed Mairsil after being freed.",
+   "paragraph": 2,
+   "quote": "An enraged Ith attacked the Conclave and killed Mairsil"
+  },
+  {
+   "source": "Jodah",
+   "relation": "ally",
+   "target": "Sima",
+   "note": "Freed Ith together.",
+   "paragraph": 2,
+   "quote": "Jodah and Sima eventually freed Ith by destroying the cage."
+  }
+ ],
+ "rejected": []
+}

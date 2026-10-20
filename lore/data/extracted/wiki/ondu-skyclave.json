@@ -1,0 +1,210 @@
+{
+ "page": "wiki/ondu-skyclave",
+ "url": "https://mtg.wiki/page/Ondu_Skyclave",
+ "title": "Ondu Skyclave",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:04Z",
+ "storyline": "Zendikar Rising",
+ "entities": [
+  {
+   "name": "Ondu Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "One of seven floating fortresses built by the ancient kor empire on Zendikar; it fell over six thousand years ago and was reawakened in the Rise of the Skyclaves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Skyclaves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kor Empire",
+   "type": "faction",
+   "aliases": [
+    "Makindi empire",
+    "kor"
+   ],
+   "description": "Ancient empire that built the Skyclaves and fell in civil war.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Makindi",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of the Kor Empire, destroyed when the Ondu Skyclave turned on it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jwar Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Isle where the Skyclave fell and now floats above.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rise of the Skyclaves",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in 4561 AR in which the Skyclaves were reactivated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kesenya",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of an adventuring party that activated the Emeria skyclave's defenses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anowon",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire scholar who joins an expedition and petrifies Grakmaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarsa",
+   "type": "character",
+   "aliases": [
+    "Captain Tarsa"
+   ],
+   "description": "Captain of the expedition who offers Anowon a place among them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nadino",
+   "type": "character",
+   "aliases": [],
+   "description": "Fiery adventurer who threatens Anowon, then helps him petrify Grakmaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eret",
+   "type": "character",
+   "aliases": [],
+   "description": "Skeptical elven cleric of the expedition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grakmaw",
+   "type": "creature",
+   "aliases": [],
+   "description": "Mutated hydra likely born from ancient kor experimentation, the party's target.",
+   "presence": "appears"
+  },
+  {
+   "name": "Expeditionary Houses",
+   "type": "faction",
+   "aliases": [],
+   "description": "Groups drawn to explore the Skyclave's ruins.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the civil war the Ondu Skyclave turns against Makindi, destroying it, and falls onto Jwar Isle.",
+   "participants": [
+    "Ondu Skyclave",
+    "Makindi",
+    "Kor Empire",
+    "Jwar Isle"
+   ],
+   "location": "Jwar Isle",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the Ondu Skyclave turned against the empire's capital at Makindi"
+  },
+  {
+   "summary": "The Skyclave's fragments levitate again after Kesenya's party activates Emeria's defenses.",
+   "participants": [
+    "Ondu Skyclave",
+    "Kesenya"
+   ],
+   "location": "Jwar Isle",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "its fragments began levitating once again"
+  },
+  {
+   "summary": "Anowon joins Tarsa, Nadino and Eret on an expedition to the Skyclave.",
+   "participants": [
+    "Anowon",
+    "Tarsa",
+    "Nadino",
+    "Eret"
+   ],
+   "location": "Ondu Skyclave",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "the vampire scholar Anowon join a reluctant band of adventurers"
+  },
+  {
+   "summary": "Grakmaw attacks the party in the ruins and proves nearly impossible to kill.",
+   "participants": [
+    "Grakmaw",
+    "Anowon",
+    "Tarsa",
+    "Nadino",
+    "Eret"
+   ],
+   "location": "Ondu Skyclave",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "its regenerative heads made it nearly impossible to kill"
+  },
+  {
+   "summary": "Anowon and Nadino use a petrification potion to turn Grakmaw to stone; Tarsa offers Anowon a place among them.",
+   "participants": [
+    "Anowon",
+    "Nadino",
+    "Grakmaw",
+    "Tarsa"
+   ],
+   "location": "Ondu Skyclave",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "used it to turn Grakmaw to stone mid-battle, ending the threat"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Anowon",
+   "relation": "killed",
+   "target": "Grakmaw",
+   "note": "Petrified it with Nadino's help.",
+   "paragraph": 9,
+   "quote": "used it to turn Grakmaw to stone mid-battle, ending the threat"
+  },
+  {
+   "source": "Tarsa",
+   "relation": "ally",
+   "target": "Anowon",
+   "note": "Offered him a place among them.",
+   "paragraph": 9,
+   "quote": "Tarsa, moved by the vampire's integrity, offered him a place among them going forward."
+  },
+  {
+   "source": "Kor Empire",
+   "relation": "created",
+   "target": "Ondu Skyclave",
+   "note": "",
+   "paragraph": 0,
+   "quote": "constructed by the ancient kor empire on the plane of Zendikar"
+  },
+  {
+   "source": "Ondu Skyclave",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "",
+   "paragraph": 0,
+   "quote": "on the plane of Zendikar"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,118 @@
+{
+ "page": "wiki/tamni",
+ "url": "https://mtg.wiki/page/Tamni",
+ "title": "Tamni",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:35Z",
+ "storyline": "Ghirapur Grand Prix",
+ "entities": [
+  {
+   "name": "Tamni",
+   "type": "character",
+   "aliases": [],
+   "description": "A young, eager human artificer on Avishkar who worked with Pia Nalaar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Renegade Prime and quicksmith who taught Tamni and was arrested by the Consulate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who asked Tamni what she had seen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Authority that arrested Pia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grandmother Pashiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman seen with the Consulate who led two women toward Kujar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kujar",
+   "type": "location",
+   "aliases": [],
+   "description": "Heavily patrolled, wealthy neighborhood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Tamni lives.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Pia guides Tamni through diagnosing a burning thopter and demonstrates her quicksmithing.",
+   "participants": [
+    "Pia Nalaar",
+    "Tamni"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Pia guided Tamni through diagnosing and fixing the thopter"
+  },
+  {
+   "summary": "Tamni witnesses the Consulate arrest Pia.",
+   "participants": [
+    "Tamni",
+    "Pia Nalaar",
+    "Consulate",
+    "Grandmother Pashiri"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tamni witnessed Pia being arrested by the Consulate"
+  },
+  {
+   "summary": "Ajani Goldmane asks Tamni what she saw and reassures her that charging in would have been foolish.",
+   "participants": [
+    "Ajani Goldmane",
+    "Tamni"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "was reassured by Ajani that charging into battle unprepared would have been foolish"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "mentor_of",
+   "target": "Tamni",
+   "note": "Taught her quicksmithing.",
+   "paragraph": 1,
+   "quote": "Pia guided Tamni through diagnosing and fixing the thopter"
+  },
+  {
+   "source": "Consulate",
+   "relation": "enemy",
+   "target": "Pia Nalaar",
+   "note": "They arrested her.",
+   "paragraph": 2,
+   "quote": "The Consulate took Pia away"
+  }
+ ],
+ "rejected": []
+}

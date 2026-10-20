@@ -1,0 +1,611 @@
+{
+ "page": "stories/renegade-prime-2016-09-14",
+ "url": "https://magic.wizards.com/en/news/magic-story/renegade-prime-2016-09-14",
+ "title": "Renegade Prime",
+ "story_date": "2016-09-14",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:35:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Renegade Prime",
+    "Pia"
+   ],
+   "description": "Chandra's mother, long thought dead, a quicksmith who leads the renegades of Ghirapur against the Consulate and is arrested at the end.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A pyromancer and planeswalker who sees her mother alive, fights Consulate soldiers, and retreats in despair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baral",
+   "type": "character",
+   "aliases": [
+    "Captain Baral",
+    "Lieutenant Baral"
+   ],
+   "description": "A masked Consulate officer and secret mage, scarred by Chandra, who tormented Pia in prison and hunted her family.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiran Nalaar",
+   "type": "character",
+   "aliases": [
+    "Kiran"
+   ],
+   "description": "Pia's late husband and Chandra's father, a craftsman whose final project was Chandra's vent pack.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamni",
+   "type": "character",
+   "aliases": [],
+   "description": "A young inventor's apprentice who joins the renegades and is taught to quicksmith by Pia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Venkat",
+   "type": "character",
+   "aliases": [],
+   "description": "A former high-ranking Consulate commander who defected to Pia's renegades and wears a stolen lieutenant's uniform.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [
+    "Head Judge"
+   ],
+   "description": "The Fair's Head Judge with a metal claw arm who arrests Pia, and whom Liliana knows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dovin Baan",
+   "type": "character",
+   "aliases": [
+    "Baan",
+    "Minister of Inspections"
+   ],
+   "description": "The vedalken Minister of Inspections who accompanies Tezzeret and orders the soldiers to contain Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana",
+    "Vess"
+   ],
+   "description": "A necromancer and planeswalker who recognizes Tezzeret and hits Nissa with cruel words about Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "An elven planeswalker who follows Chandra to Kaladesh and accuses Liliana of provoking her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oviya Pashiri",
+   "type": "character",
+   "aliases": [
+    "Mrs. Pashiri"
+   ],
+   "description": "A robed older woman who comforts Chandra and promises to help rescue her mother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose scarred back Liliana remembers when she sees Tezzeret.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [
+    "the Consulate"
+   ],
+   "description": "The government of Kaladesh that tightly controls aether and arrests renegades.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renegades",
+   "type": "faction",
+   "aliases": [],
+   "description": "Citizens led by Pia who protest the Consulate's control of aether, using the leaking spire as their symbol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maulfists",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of renegades whose foundry lost its aether.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesh",
+   "type": "plane",
+   "aliases": [],
+   "description": "Chandra's home plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Regatha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Where Chandra went after her spark ignited, the site of fire monasteries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "The capital city of Kaladesh where the Inventors' Fair takes place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dhund",
+   "type": "location",
+   "aliases": [],
+   "description": "The Consulate prison where Pia was held.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weldfast",
+   "type": "location",
+   "aliases": [],
+   "description": "A district of Ghirapur where the renegades live and aether has been removed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Inventors' Fair",
+   "type": "event",
+   "aliases": [
+    "the Fair"
+   ],
+   "description": "The festival where the renegades stage their thopter display.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leaking Spire",
+   "type": "concept",
+   "aliases": [],
+   "description": "The renegades' symbol, a swirl of motion beneath a pointed spire.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In a Dhund cell Baral tells Pia he killed her daughter and tosses a melted piece of Chandra's vent pack, stamped K.N. and the leaking spire, as a memento (flashback).",
+   "participants": [
+    "Baral",
+    "Pia Nalaar",
+    "Chandra Nalaar",
+    "Kiran Nalaar"
+   ],
+   "location": "Dhund",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "I killed your daughter today, Pia."
+  },
+  {
+   "summary": "Pia recognizes the fragment as part of Kiran Nalaar's final project.",
+   "participants": [
+    "Pia Nalaar",
+    "Kiran Nalaar",
+    "Baral"
+   ],
+   "location": "Dhund",
+   "importance": "minor",
+   "paragraph": 12,
+   "quote": "a piece of Kiran Nalaar's final project"
+  },
+  {
+   "summary": "Baral returns every day repeating that Chandra was looking for Pia, until Pia vows to return to expose him.",
+   "participants": [
+    "Baral",
+    "Pia Nalaar"
+   ],
+   "location": "Dhund",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "And I'll return for her, for all those out there, so they know what you've done."
+  },
+  {
+   "summary": "Pia hurls an aether lamp that knocks off Baral's mask, revealing a blue flash, so he is a mage, and a scarred face.",
+   "participants": [
+    "Pia Nalaar",
+    "Baral"
+   ],
+   "location": "Dhund",
+   "importance": "major",
+   "paragraph": 38,
+   "quote": "dislodged his mask with a clanging reverberation"
+  },
+  {
+   "summary": "Baral blames Chandra for his scars and Pia answers that a mother could not be prouder.",
+   "participants": [
+    "Baral",
+    "Pia Nalaar",
+    "Chandra Nalaar"
+   ],
+   "location": "Dhund",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "this is the work of your child."
+  },
+  {
+   "summary": "Alone in the dark, Pia begins to plan her escape.",
+   "participants": [
+    "Pia Nalaar"
+   ],
+   "location": "Dhund",
+   "importance": "minor",
+   "paragraph": 50,
+   "quote": "And began to plan."
+  },
+  {
+   "summary": "Years later, Pia has rallied a contingent of inventors and citizens as the renegades against the Consulate's grip on aether.",
+   "participants": [
+    "Pia Nalaar",
+    "Renegades",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 52,
+   "quote": "Pia had rallied a growing contingent of inventors, tinkers, artists"
+  },
+  {
+   "summary": "On a rooftop Pia coaches the inexperienced apprentice Tamni through repairing a thopter.",
+   "participants": [
+    "Pia Nalaar",
+    "Tamni"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 65,
+   "quote": "You'll be fine, but we'll need to be fast."
+  },
+  {
+   "summary": "Venkat, a former Consulate commander, joins Pia disguised in a lieutenant's uniform.",
+   "participants": [
+    "Venkat",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 86,
+   "quote": "Once a high-ranking commander of the Consulate guard forces"
+  },
+  {
+   "summary": "Pia rallies the renegades, listing grievances about the Consulate taking their aether, before the display.",
+   "participants": [
+    "Pia Nalaar",
+    "Renegades",
+    "Maulfists",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 97,
+   "quote": "Let us be as proud, unafraid, unyielding as those who believe they can extinguish our spirits!"
+  },
+  {
+   "summary": "The renegades launch nearly a hundred thopters that form a glittering column over the fairgrounds.",
+   "participants": [
+    "Renegades",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 99,
+   "quote": "The machines dove through the air to opposite ends of the plaza, nearly a hundred in number."
+  },
+  {
+   "summary": "The thopters change colors and form the leaking spire symbol over the Fair.",
+   "participants": [
+    "Renegades",
+    "Leaking Spire",
+    "Inventors' Fair"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 101,
+   "quote": "As the metal of the thopters heated, their colors changed through yellows to greens to rich purples and blues"
+  },
+  {
+   "summary": "The thopters release a pulse of aether that topples the Consulate automatons.",
+   "participants": [
+    "Renegades",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 105,
+   "quote": "The sudden rush of energy flooded into the identical automata, creating sparks of concentrated aether."
+  },
+  {
+   "summary": "Tezzeret, flanked by automatons and Dovin Baan, seizes Pia with his metal claw.",
+   "participants": [
+    "Tezzeret",
+    "Pia Nalaar",
+    "Dovin Baan"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 117,
+   "quote": "The hand that gripped her arm was a massive claw of dark metal"
+  },
+  {
+   "summary": "Tezzeret calls Pia the Renegade Prime and she vows to stop him.",
+   "participants": [
+    "Tezzeret",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 118,
+   "quote": "I've found you at last, Renegade Prime"
+  },
+  {
+   "summary": "Liliana appears and names Tezzeret, and he names her Vess in return.",
+   "participants": [
+    "Liliana Vess",
+    "Tezzeret"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 121,
+   "quote": "A pale woman clad in dark flowing silks and a glinting golden headpiece appeared opposite the Head Judge."
+  },
+  {
+   "summary": "Pia sees Chandra, grown and unmistakable, and is flooded with memories.",
+   "participants": [
+    "Pia Nalaar",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 126,
+   "quote": "Older but unmistakable. Her little girl, now even taller than Kiran had been."
+  },
+  {
+   "summary": "Chandra charges the soldiers and burns a crowd of automatons.",
+   "participants": [
+    "Chandra Nalaar",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 135,
+   "quote": "inundated a crowd of the machines with a generous bath of flames"
+  },
+  {
+   "summary": "Baan orders the soldiers to isolate and contain the pyromancer with gearhulks.",
+   "participants": [
+    "Dovin Baan",
+    "Chandra Nalaar",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 137,
+   "quote": "Isolate and contain. Gearhulks in the front line"
+  },
+  {
+   "summary": "Nissa's vines topple guards moving on Chandra.",
+   "participants": [
+    "Nissa Revane",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 142,
+   "quote": "Several of them toppled, feet tangled in a hissing whirl of flowered vines"
+  },
+  {
+   "summary": "To protect Chandra, Pia announces herself as the renegade leader and surrenders to Consulate custody.",
+   "participants": [
+    "Pia Nalaar",
+    "Tezzeret",
+    "Dovin Baan",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 143,
+   "quote": "My name is Pia Nalaar, leader of the renegades. I'm prepared to enter Consulate custody."
+  },
+  {
+   "summary": "Soldiers manacle Pia and read out her crimes.",
+   "participants": [
+    "Pia Nalaar",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 148,
+   "quote": "you are hereby placed under the authority of the Consulate for the following crimes"
+  },
+  {
+   "summary": "Pia kicks and bashes soldiers to draw Chandra's attention and stop her advance.",
+   "participants": [
+    "Pia Nalaar",
+    "Chandra Nalaar",
+    "Consulate"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 150,
+   "quote": "You forgot assault!"
+  },
+  {
+   "summary": "Liliana tells Chandra they must retreat as the soldiers drag Pia away.",
+   "participants": [
+    "Liliana Vess",
+    "Chandra Nalaar",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 152,
+   "quote": "They have her! You can't risk it now; we have to go!"
+  },
+  {
+   "summary": "Liliana recalls Jace's scars when she thinks of Tezzeret and warns he is dangerous.",
+   "participants": [
+    "Liliana Vess",
+    "Tezzeret",
+    "Jace Beleren"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 159,
+   "quote": "Jace, his back stitched with ugly white scars from a manablade."
+  },
+  {
+   "summary": "Nissa angrily confronts Liliana for leaving without telling the others.",
+   "participants": [
+    "Nissa Revane",
+    "Liliana Vess"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 161,
+   "quote": "Why did you leave without letting us know?"
+  },
+  {
+   "summary": "Liliana cruelly tells Nissa that Chandra ran from her and came to Liliana.",
+   "participants": [
+    "Liliana Vess",
+    "Nissa Revane",
+    "Chandra Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 170,
+   "quote": "She ran from you"
+  },
+  {
+   "summary": "Oviya Pashiri comforts Chandra and says they will free her mother from the Consulate.",
+   "participants": [
+    "Oviya Pashiri",
+    "Chandra Nalaar",
+    "Nissa Revane",
+    "Pia Nalaar"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 182,
+   "quote": "when we find your mother and take her back from those Consulate soldiers, Chandra."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Chandra Nalaar",
+   "note": "Pia is Chandra's mother.",
+   "paragraph": 126,
+   "quote": "Older but unmistakable. Her little girl, now even taller than Kiran had been."
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "family",
+   "target": "Kiran Nalaar",
+   "note": "Kiran was her husband; she is a widow.",
+   "paragraph": 29,
+   "quote": "Don't you have better things to do than to hound a grieving widow?"
+  },
+  {
+   "source": "Baral",
+   "relation": "enemy",
+   "target": "Pia Nalaar",
+   "note": "He hunted her family and imprisoned her.",
+   "paragraph": 19,
+   "quote": "The voice of the man who had hunted her family: Captain Baral."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "other",
+   "target": "Baral",
+   "note": "Baral says Chandra scarred him.",
+   "paragraph": 47,
+   "quote": "this is the work of your child."
+  },
+  {
+   "source": "Venkat",
+   "relation": "ally",
+   "target": "Pia Nalaar",
+   "note": "A defected commander who trusts her.",
+   "paragraph": 87,
+   "quote": "I'm just one of many wise enough to place their trust in you"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "mentor_of",
+   "target": "Tamni",
+   "note": "She teaches the apprentice to listen to the metal.",
+   "paragraph": 72,
+   "quote": "But you'll learn its patterns even if you don't understand it completely"
+  },
+  {
+   "source": "Pia Nalaar",
+   "relation": "leader_of",
+   "target": "Renegades",
+   "note": "She calls herself the leader of the renegades.",
+   "paragraph": 143,
+   "quote": "My name is Pia Nalaar, leader of the renegades."
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Pia Nalaar",
+   "note": "He hunts and arrests the Renegade Prime.",
+   "paragraph": 118,
+   "quote": "I've found you at last, Renegade Prime"
+  },
+  {
+   "source": "Dovin Baan",
+   "relation": "member_of",
+   "target": "Consulate",
+   "note": "He is the Consulate's Minister of Inspections.",
+   "paragraph": 117,
+   "quote": "the stately vedalken Minister of Inspections himself, Dovin Baan"
+  },
+  {
+   "source": "Oviya Pashiri",
+   "relation": "ally",
+   "target": "Chandra Nalaar",
+   "note": "She knew Chandra as a child and vows to help free Pia.",
+   "paragraph": 184,
+   "quote": "It's been a while since I've seen you last, child,"
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Tezzeret",
+   "note": "She warns that Tezzeret is a great threat.",
+   "paragraph": 162,
+   "quote": "Tezzeret is more threat than you could know."
+  }
+ ],
+ "rejected": []
+}

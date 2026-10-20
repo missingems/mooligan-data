@@ -1,0 +1,144 @@
+{
+ "page": "wiki/leaf",
+ "url": "https://mtg.wiki/page/Leaf",
+ "title": "Leaf",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:24Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Leaf",
+   "type": "character",
+   "aliases": [
+    "Whisper",
+    "Brookcharm"
+   ],
+   "description": "An elder elf of Savaea, formerly named Whisper and Brookcharm, who sought to teach Kruuna the cycle of life and death and was killed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Savaea",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Busjaw",
+   "type": "character",
+   "aliases": [],
+   "description": "Groveling goblin messenger interrogated by Leaf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kruuna",
+   "type": "character",
+   "aliases": [
+    "Krunna"
+   ],
+   "description": "Goblin chieftess who used an Ivory Cup to stay immortal and was shot dead by the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ivory Cup",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Cup Kruuna used to stay immortal, no longer filled with white mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oneah",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation whose destruction stopped the cup working.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Origin of the goblin messengers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elves of Savaea",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Elves who shot Kruuna with arrows.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Around 4180 AR, single goblins from the Red Mountains each bring a rock glyph into Savaea's woods.",
+   "participants": [
+    "Elves of Savaea",
+    "Busjaw"
+   ],
+   "location": "Savaea",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "each carrying a single rock glyph"
+  },
+  {
+   "summary": "Leaf interrogates Busjaw, learning the goblins ask for help for their chieftess Kruuna.",
+   "participants": [
+    "Leaf",
+    "Busjaw",
+    "Kruuna"
+   ],
+   "location": "Savaea",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "each of the goblins had been sent as messengers asking for help from the elves on behalf of their chieftess, Kruuna"
+  },
+  {
+   "summary": "Kruuna shows Leaf the Ivory Cup that no longer holds white mana.",
+   "participants": [
+    "Kruuna",
+    "Leaf",
+    "Ivory Cup"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Leaf then offered to take the chief to Savaea"
+  },
+  {
+   "summary": "Kruuna clubs Leaf's head, cracking her skull, and the elves shoot Kruuna dead.",
+   "participants": [
+    "Kruuna",
+    "Leaf",
+    "Elves of Savaea"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the goblin clubbed Leaf's head, cracking her skull"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kruuna",
+   "relation": "killed",
+   "target": "Leaf",
+   "note": "clubbed her head",
+   "paragraph": 1,
+   "quote": "the goblin clubbed Leaf's head, cracking her skull"
+  },
+  {
+   "source": "Elves of Savaea",
+   "relation": "killed",
+   "target": "Kruuna",
+   "note": "shot her with arrows",
+   "paragraph": 1,
+   "quote": "The elves immediately shot Kruuna full of arrows, killing her on the spot."
+  }
+ ],
+ "rejected": []
+}

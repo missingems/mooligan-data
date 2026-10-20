@@ -1,0 +1,126 @@
+{
+ "page": "wiki/jwar-isle",
+ "url": "https://mtg.wiki/page/Jwar_Isle",
+ "title": "Jwar Isle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jwar Isle",
+   "type": "location",
+   "aliases": [
+    "Isle of Secrets"
+   ],
+   "description": "Small, mist-shrouded island off the southern coast of Ondu on Zendikar, home of the faduun and the Strand of Jwar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Jwar Isle lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ondu",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Zendikar off whose southern coast Jwar Isle lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Faduun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Immense granite head sculptures with glowing mouths, crafted by an ancient cabal of human mages as guardians of a secret stronghold; pre-Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strand of Jwar",
+   "type": "concept",
+   "aliases": [],
+   "description": "A swirling beam of concentrated aether rising from a seawater-filled pit at the island's heart.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ondu Skyclave",
+   "type": "location",
+   "aliases": [],
+   "description": "Floating Kor ruin of deadly arcane traps above the isle, former lair of the hydra Grakmaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grakmaw",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hydra whose lair was once the Ondu Skyclave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serpent's Maw",
+   "type": "location",
+   "aliases": [],
+   "description": "Treacherous stretch of churning sea and lightning-lashed storms encircling the isle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose monstrous spawn have emerged from the Strand of Jwar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alien titans and spawn that rose on Zendikar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Since the rise of the Eldrazi, monstrous spawn of Ulamog have emerged from the depths of the Strand of Jwar.",
+   "participants": [
+    "Ulamog",
+    "Strand of Jwar",
+    "Eldrazi"
+   ],
+   "location": "Jwar Isle",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "since the rise of the Eldrazi , monstrous spawn of Ulamog have emerged from its depths"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jwar Isle",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "island off Ondu's southern coast",
+   "paragraph": 0,
+   "quote": "lying just off the southern coast of Ondu on the plane of Zendikar"
+  },
+  {
+   "source": "Faduun",
+   "relation": "located_in",
+   "target": "Jwar Isle",
+   "note": "scattered across the island",
+   "paragraph": 2,
+   "quote": "Scattered across Jwar Isle are dozens of immense granite sculptures called faduun ."
+  },
+  {
+   "source": "Ondu Skyclave",
+   "relation": "other",
+   "target": "Grakmaw",
+   "note": "site of the hydra's former lair",
+   "paragraph": 5,
+   "quote": "site of the former lair of the hydra Grakmaw"
+  }
+ ],
+ "rejected": []
+}

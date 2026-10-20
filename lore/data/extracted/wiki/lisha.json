@@ -1,0 +1,92 @@
+{
+ "page": "wiki/lisha",
+ "url": "https://mtg.wiki/page/Lisha",
+ "title": "Lisha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lisha",
+   "type": "character",
+   "aliases": [
+    "Lisha of the Azure"
+   ],
+   "description": "Human ship captain and privateer of Bant, who rejected her role as princess of Jhess.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara where Lisha dwells.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Bant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhess",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose princess role Lisha rejected.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sunspray",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Lisha's frigate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Valeron",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose coast Lisha raids.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lisha rejected her formal role as princess of Jhess and became a privateer.",
+   "participants": [
+    "Lisha",
+    "Jhess"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Lisha rejected her formal role as princess of Jhess and became a privateer."
+  },
+  {
+   "summary": "Lisha raids Jhessian ports and distributes loot to her crew and the poor, always escaping the cavalry.",
+   "participants": [
+    "Lisha",
+    "Sunspray"
+   ],
+   "location": "Jhess",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Lisha has always escaped to her ship before the Jhessian cavalry could catch her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lisha",
+   "relation": "other",
+   "target": "Jhess",
+   "note": "Former princess of Jhess.",
+   "paragraph": 1,
+   "quote": "Lisha rejected her formal role as princess of Jhess"
+  }
+ ],
+ "rejected": []
+}

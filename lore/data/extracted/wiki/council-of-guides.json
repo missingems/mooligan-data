@@ -1,0 +1,122 @@
+{
+ "page": "wiki/council-of-guides",
+ "url": "https://mtg.wiki/page/Council_of_Guides",
+ "title": "Council of Guides",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Council of Guides",
+   "type": "faction",
+   "aliases": [
+    "Guides of Hamath"
+   ],
+   "description": "Religious governing body of the town of Hamath on Corondor, made up of the Guides of Hamath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hamath",
+   "type": "location",
+   "aliases": [],
+   "description": "Town on Corondor governed by the Council of Guides.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Visionary Kadesha",
+   "type": "character",
+   "aliases": [
+    "Kadesha"
+   ],
+   "description": "Leader of the Council of Guides, from the Ziggurat of Hamath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hamath Guard",
+   "type": "faction",
+   "aliases": [],
+   "description": "Common guard enforcing the Guides' will.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Guard",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elite guard enforcing the Guides' will.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urlan Guard",
+   "type": "faction",
+   "aliases": [],
+   "description": "Metal-armored guard that served the council directly, guarding the Hall of Stars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the D'Avenant",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order with which the Guides sought an alliance.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited Hamath in 3980 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avad",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the Council of Guides during Jared Carthalion's visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daro",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the Council of Guides during Jared Carthalion's visit.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gensai",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the Council of Guides during Jared Carthalion's visit.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Visionary Kadesha",
+   "relation": "leader_of",
+   "target": "Council of Guides",
+   "note": "Led them from the Ziggurat of Hamath.",
+   "paragraph": 1,
+   "quote": "They were led by Visionary Kadesha from the Ziggurat of Hamath"
+  },
+  {
+   "source": "Urlan Guard",
+   "relation": "serves",
+   "target": "Council of Guides",
+   "note": "Served the council directly.",
+   "paragraph": 1,
+   "quote": "who served the council directly"
+  },
+  {
+   "source": "Council of Guides",
+   "relation": "located_in",
+   "target": "Hamath",
+   "note": "Governing body of Hamath.",
+   "paragraph": 0,
+   "quote": "was the religious governing body of the town of Hamath on Corondor"
+  }
+ ],
+ "rejected": []
+}

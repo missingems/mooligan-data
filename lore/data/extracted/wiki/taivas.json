@@ -1,0 +1,92 @@
+{
+ "page": "wiki/taivas",
+ "url": "https://mtg.wiki/page/Taivas",
+ "title": "Taivas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:12Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Taivas",
+   "type": "character",
+   "aliases": [],
+   "description": "The human founder of the town of Traublassen on Innistrad, who bound the entity Umbris to the town.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Traublassen",
+   "type": "location",
+   "aliases": [],
+   "description": "A town on Innistrad founded by Taivas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Traublassen lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [],
+   "description": "A malevolent entity bound to Traublassen by Taivas's spellwork, feeding on the townspeople's fears and sorrows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vytas",
+   "type": "character",
+   "aliases": [],
+   "description": "The owner of the manor that holds a portrait of Taivas.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Taivas founds Traublassen and builds it from nothing.",
+   "participants": [
+    "Taivas",
+    "Traublassen"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Taivas was the human founder of the town of Traublassen"
+  },
+  {
+   "summary": "Taivas devises a pact with the entity Umbris, binding it to the town by spellwork to keep the townspeople in check.",
+   "participants": [
+    "Taivas",
+    "Umbris",
+    "Traublassen"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he devised a sinister pact with a malevolent entity known as Umbris"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Taivas",
+   "relation": "created",
+   "target": "Traublassen",
+   "note": "He founded the town.",
+   "paragraph": 0,
+   "quote": "Taivas was the human founder of the town of Traublassen"
+  },
+  {
+   "source": "Taivas",
+   "relation": "other",
+   "target": "Umbris",
+   "note": "He bound it to the town by spellwork.",
+   "paragraph": 3,
+   "quote": "This entity, bound to the town by Taivas’s spellwork, fed on the fears and sorrows of the town's people."
+  }
+ ],
+ "rejected": []
+}

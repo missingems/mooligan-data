@@ -1,0 +1,55 @@
+{
+ "page": "wiki/skeleton-ship",
+ "url": "https://mtg.wiki/page/Skeleton_Ship",
+ "title": "Skeleton Ship",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:27Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Skeleton Ship",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary skeletal vessel that sailed Dominaria during the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dul",
+   "type": "character",
+   "aliases": [
+    "Lim-Dûl"
+   ],
+   "description": "Necromancer associated with the ship, who may have captained it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era of the ship.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the ship sailed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Lim-Dul",
+   "relation": "other",
+   "target": "Skeleton Ship",
+   "note": "His necromancy likely animated the ship.",
+   "paragraph": 1,
+   "quote": "Its association with Lim-Dûl implies that the ship and its crew were animated through his necromantic magic"
+  }
+ ],
+ "rejected": []
+}

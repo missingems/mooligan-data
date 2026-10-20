@@ -1,0 +1,170 @@
+{
+ "page": "wiki/barl-s-cage",
+ "url": "https://mtg.wiki/page/Barl%27s_Cage",
+ "title": "Barl's Cage",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:18Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Barl's Cage",
+   "type": "artifact",
+   "aliases": [
+    "the cage"
+   ],
+   "description": "A watersilver cage forged by Barl to hold Lord Ith, strung over an abyss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barl",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer who forged the cage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mairsil",
+   "type": "character",
+   "aliases": [],
+   "description": "Imprisoned Ith in the cage with Barl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Ith",
+   "type": "character",
+   "aliases": [
+    "Ith"
+   ],
+   "description": "A powerful mage imprisoned in the cage who later destroys the Conclave in rage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rag Man",
+   "type": "creature",
+   "aliases": [],
+   "description": "Summoned by Ith to find a rescuer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought to the Conclave by the Rag Man; helps destroy the cage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sima",
+   "type": "character",
+   "aliases": [],
+   "description": "Helps Jodah destroy the cage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conclave of Mages",
+   "type": "faction",
+   "aliases": [
+    "the Conclave"
+   ],
+   "description": "An order of mages destroyed by Ith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned the cage thousands of years later.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Contained in the cage by Liana.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mairsil and Barl imprison Ith in the cage.",
+   "participants": [
+    "Mairsil",
+    "Barl",
+    "Lord Ith",
+    "Barl's Cage"
+   ],
+   "location": "Barl's Cage",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Mairsil and Barl imprisoned Ith there"
+  },
+  {
+   "summary": "Ith summons the Rag Man to find a rescuer, and it brings back Jodah.",
+   "participants": [
+    "Lord Ith",
+    "Rag Man",
+    "Jodah",
+    "Conclave of Mages"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The Rag Man obliged and brought back Jodah to the Conclave of Mages"
+  },
+  {
+   "summary": "Jodah and Sima destroy the cage; Ith falls, rises again, and destroys the Conclave in rage.",
+   "participants": [
+    "Jodah",
+    "Sima",
+    "Lord Ith",
+    "Barl's Cage",
+    "Conclave of Mages"
+   ],
+   "location": "Conclave of Mages",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jodah and Sima managed to destroy the cage together"
+  },
+  {
+   "summary": "Liana of Minorad summons the cage to contain Jared Carthalion.",
+   "participants": [
+    "Liana of Minorad",
+    "Jared Carthalion",
+    "Barl's Cage"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "it was summoned by Liana of Minorad to contain Jared Carthalion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Barl",
+   "relation": "created",
+   "target": "Barl's Cage",
+   "note": "Forged it from watersilver.",
+   "paragraph": 2,
+   "quote": "Barl's Cage was forged by the artificer Barl out of pure watersilver"
+  },
+  {
+   "source": "Mairsil",
+   "relation": "enemy",
+   "target": "Lord Ith",
+   "note": "Imprisoned him.",
+   "paragraph": 2,
+   "quote": "Mairsil and Barl imprisoned Ith there"
+  },
+  {
+   "source": "Jodah",
+   "relation": "ally",
+   "target": "Sima",
+   "note": "Together destroyed the cage.",
+   "paragraph": 2,
+   "quote": "Jodah and Sima managed to destroy the cage together"
+  }
+ ],
+ "rejected": []
+}

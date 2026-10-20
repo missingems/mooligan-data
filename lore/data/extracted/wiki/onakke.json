@@ -1,0 +1,145 @@
+{
+ "page": "wiki/onakke",
+ "url": "https://mtg.wiki/page/Onakke",
+ "title": "Onakke",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:35Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Onakke",
+   "type": "faction",
+   "aliases": [],
+   "description": "Fallen civilization of Shandalar ogres, masters of dark arts and artifice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Onakke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kothophed",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon who sent Liliana Vess to retrieve the Chain Veil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker sent to retrieve the Chain Veil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chain Veil",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact hidden in the Catacombs of the Onakke, binding angry Onakke spirits.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kurkesh",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the veil, a vengeful spirit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Catacombs of the Onakke",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Chain Veil is hidden.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which dormant Onakke reawakened.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Its Omenpaths carried magic from Ravnica to Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ursoth",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous creature hunted by Garruk Wildspeaker, resembling the ogres.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunted the Ursoth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Onakke civilization is annihilated in a night by a dark spell cast by an unknown source.",
+   "participants": [
+    "Onakke"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The massacre took only a night."
+  },
+  {
+   "summary": "Kothophed sends Liliana Vess to retrieve the Chain Veil; she meets the vengeful spirit of Kurkesh.",
+   "participants": [
+    "Kothophed",
+    "Liliana Vess",
+    "Kurkesh",
+    "Chain Veil"
+   ],
+   "location": "Catacombs of the Onakke",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "the demon Kothophed sent Liliana Vess to retrieve the Chain Veil"
+  },
+  {
+   "summary": "A group of dormant Onakke is reawakened by the Chain Veil's magic through Realmbreaker's Omenpaths.",
+   "participants": [
+    "Onakke",
+    "Chain Veil"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "a group of dormant Onakke was reawakened by the Chain Veil's magic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kurkesh",
+   "relation": "created",
+   "target": "Chain Veil",
+   "note": "Creator of the veil",
+   "paragraph": 1,
+   "quote": "Kurkesh , creator of the veil"
+  },
+  {
+   "source": "Kothophed",
+   "relation": "other",
+   "target": "Liliana Vess",
+   "note": "Sent her on the errand",
+   "paragraph": 1,
+   "quote": "the demon Kothophed sent Liliana Vess to retrieve the Chain Veil"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,128 @@
+{
+ "page": "wiki/elbrus",
+ "url": "https://mtg.wiki/page/Elbrus",
+ "title": "Elbrus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:37:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Elbrus",
+   "type": "artifact",
+   "aliases": [
+    "Binding Blade"
+   ],
+   "description": "Legendary rune-etched bone dagger on Innistrad that can trap a demon's essence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Elbrus is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Withengar",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon bound in Elbrus, freed by the Skirsdag, who killed Saint Traft.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirsdag",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cultists who tricked Saint Traft into releasing Withengar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Saint Traft",
+   "type": "character",
+   "aliases": [],
+   "description": "Monster slayer blinded by the Skirsdag and killed by Withengar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Skirsdag cultists tricked Saint Traft into releasing Withengar from the blade.",
+   "participants": [
+    "Skirsdag",
+    "Saint Traft",
+    "Withengar",
+    "Elbrus"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the demon Withengar was bound within the blade until the Skirsdag cultists tricked Saint Traft into releasing him"
+  },
+  {
+   "summary": "The cultists blinded Traft and swapped his sword for Elbrus.",
+   "participants": [
+    "Skirsdag",
+    "Saint Traft",
+    "Elbrus"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They blinded the monster slayer and swapped the sword on his hand for Elbrus."
+  },
+  {
+   "summary": "Traft slew the cultists with Elbrus, which freed Withengar.",
+   "participants": [
+    "Saint Traft",
+    "Skirsdag",
+    "Elbrus",
+    "Withengar"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "After he slew the cultists with the blade, it freed Withengar in the process."
+  },
+  {
+   "summary": "Withengar ended Traft's life while laughing.",
+   "participants": [
+    "Withengar",
+    "Saint Traft"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Withengar ended the life of Traft while laughing"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Withengar",
+   "relation": "killed",
+   "target": "Saint Traft",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Withengar ended the life of Traft while laughing"
+  },
+  {
+   "source": "Skirsdag",
+   "relation": "enemy",
+   "target": "Saint Traft",
+   "note": "Tricked and blinded him.",
+   "paragraph": 1,
+   "quote": "They blinded the monster slayer and swapped the sword on his hand for Elbrus."
+  },
+  {
+   "source": "Elbrus",
+   "relation": "located_in",
+   "target": "Innistrad",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Elbrus is a legendary blade on the plane of Innistrad that can bind demons"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,121 @@
+{
+ "page": "wiki/sursi",
+ "url": "https://mtg.wiki/page/Sursi",
+ "title": "Sursi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:53Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Sursi",
+   "type": "location",
+   "aliases": [],
+   "description": "A large plateau in southern Aerona on Dominaria and a village there, home of mesa pegasi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker attacked on the Plains of Sursi who sanctified the lands as she died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brother Angus",
+   "type": "character",
+   "aliases": [],
+   "description": "Took Serra's body and created the Cathedral of Serra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cathedral of Serra",
+   "type": "location",
+   "aliases": [],
+   "description": "Cathedral near the Sursi village.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Benalia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation that colonized Sursi in the Mending Era.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Serra",
+   "type": "faction",
+   "aliases": [],
+   "description": "Religion for which Sursi was important.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane reached by the portal near Sursi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [],
+   "description": "Resident of the Koskun Mountains on Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that likely deactivated the portal.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On the Plains of Sursi, Serra is attacked by a disguised planeswalker who thought her wedding ring was a powerful artifact.",
+   "participants": [
+    "Serra"
+   ],
+   "location": "Sursi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Serra was attacked by another (disguised) planeswalker"
+  },
+  {
+   "summary": "Dying, Serra sanctifies and revitalizes the lands; Brother Angus creates the Cathedral of Serra.",
+   "participants": [
+    "Serra",
+    "Brother Angus"
+   ],
+   "location": "Sursi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she sanctified and revitalized the lands surrounding Sursi"
+  },
+  {
+   "summary": "In the Mending Era Benalia colonizes Sursi.",
+   "participants": [
+    "Benalia",
+    "Church of Serra"
+   ],
+   "location": "Sursi",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Sursi was colonized by Benalia because of its importance to the Church of Serra"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brother Angus",
+   "relation": "created",
+   "target": "Cathedral of Serra",
+   "note": "Built it near Sursi.",
+   "paragraph": 3,
+   "quote": "Brother Angus took her body and created the Cathedral of Serra"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,41 @@
+{
+ "page": "wiki/camel",
+ "url": "https://mtg.wiki/page/Camel",
+ "title": "Camel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:40Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dromads",
+   "type": "creature",
+   "aliases": [
+    "Dromad"
+   ],
+   "description": "Giant camels with no humps used as mounts on Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where dromads are used as mounts.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Dromads",
+   "relation": "located_in",
+   "target": "Ravnica",
+   "note": "Used as mounts on the plane.",
+   "paragraph": 7,
+   "quote": "Dromads are giant camels with no humps used as mounts on the plane of"
+  }
+ ],
+ "rejected": []
+}

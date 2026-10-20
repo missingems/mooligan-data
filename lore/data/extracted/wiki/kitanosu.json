@@ -1,0 +1,130 @@
+{
+ "page": "wiki/kitanosu",
+ "url": "https://mtg.wiki/page/Kitanosu",
+ "title": "Kitanosu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:00Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kitanosu",
+   "type": "location",
+   "aliases": [],
+   "description": "A nezumi village with a derelict temple in the Takenuma swamp on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azami Ozu",
+   "type": "character",
+   "aliases": [],
+   "description": "A Minamo student who abandoned her friend Etsumi to take General Sonzaki's documents.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etsumi Urano",
+   "type": "character",
+   "aliases": [],
+   "description": "Azami's friend, who fell into quicksand.",
+   "presence": "appears"
+  },
+  {
+   "name": "General Sonzaki",
+   "type": "character",
+   "aliases": [],
+   "description": "Hid his battle plans and journal in the temple shrine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Horobi",
+   "type": "creature",
+   "aliases": [],
+   "description": "The kami of death's wail that haunted Kitanosu during the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Forked-Tongue",
+   "type": "character",
+   "aliases": [],
+   "description": "Shaman who told villagers to sacrifice someone to Horobi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sonokura",
+   "type": "character",
+   "aliases": [],
+   "description": "A human drunkard and outcast chosen as sacrifice to Horobi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which Horobi haunted Kitanosu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "nezumi",
+   "type": "faction",
+   "aliases": [],
+   "description": "The rat-folk inhabiting Kitanosu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo",
+   "type": "location",
+   "aliases": [],
+   "description": "School where Azami and Etsumi studied.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Azami and Etsumi sneak into Kitanosu Temple to find General Sonzaki's documents and are spotted.",
+   "participants": [
+    "Azami Ozu",
+    "Etsumi Urano"
+   ],
+   "location": "Kitanosu",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They found the documents but were spotted by the ochimusa, who alerted the village's nezumi."
+  },
+  {
+   "summary": "Azami prioritizes the documents over her friend, leaving Etsumi to die.",
+   "participants": [
+    "Azami Ozu",
+    "Etsumi Urano"
+   ],
+   "location": "Kitanosu",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Azami prioritized the documents over her friend, leaving Etsumi to die"
+  },
+  {
+   "summary": "During the Kami War the villagers decide to sacrifice Sonokura to appease Horobi.",
+   "participants": [
+    "Forked-Tongue",
+    "Sonokura",
+    "Horobi"
+   ],
+   "location": "Kitanosu",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they decided to sacrifice Sonokura , a human drunkard and outcast"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azami Ozu",
+   "relation": "ally",
+   "target": "Etsumi Urano",
+   "note": "Friends who studied together at Minamo.",
+   "paragraph": 1,
+   "quote": "Azami Ozu and her friend Etsumi Urano"
+  }
+ ],
+ "rejected": []
+}

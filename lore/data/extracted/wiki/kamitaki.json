@@ -1,0 +1,123 @@
+{
+ "page": "wiki/kamitaki",
+ "url": "https://mtg.wiki/page/Kamitaki",
+ "title": "Kamitaki",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:34Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kamitaki",
+   "type": "location",
+   "aliases": [
+    "Kamitaki Falls"
+   ],
+   "description": "The center for blue mana on Kamigawa; \"waterfall of the kami\", the plane's highest and widest falls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kamitaki lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yumegawa River",
+   "type": "location",
+   "aliases": [],
+   "description": "The longest flow of water on the plane; runs over the gorge forming the falls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lake Kamitaki",
+   "type": "location",
+   "aliases": [],
+   "description": "Turbulent pool below the falls that feeds the Akagi River.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akagi River",
+   "type": "location",
+   "aliases": [],
+   "description": "River near the falls where a famous battle between humans and kami took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minamo",
+   "type": "location",
+   "aliases": [],
+   "description": "The wizard academy for humans, built on the falls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otawara",
+   "type": "location",
+   "aliases": [],
+   "description": "A Soratami city resting on clouds above the lake.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oboro Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "The cloud palace of the Soratami.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soratami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sky-dwelling people of Otawara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towabara Plains",
+   "type": "location",
+   "aliases": [],
+   "description": "Plains crossed by the Akagi River.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest into which the Akagi River runs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A famous battle between humans and kami takes place near the falls on the Akagi River.",
+   "participants": [
+    "Akagi River"
+   ],
+   "location": "Akagi River",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "a river near the falls where a famous battle between humans and kami took place."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Minamo",
+   "relation": "located_in",
+   "target": "Kamitaki",
+   "note": "Perched on the falls",
+   "paragraph": 3,
+   "quote": "Perched on the falls themselves is Minamo , the wizard academy for humans"
+  },
+  {
+   "source": "Otawara",
+   "relation": "located_in",
+   "target": "Kamitaki",
+   "note": "Floats above the lake",
+   "paragraph": 3,
+   "quote": "Otawara floats in the clouds above the lake."
+  }
+ ],
+ "rejected": []
+}

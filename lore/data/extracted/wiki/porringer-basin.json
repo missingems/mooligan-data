@@ -1,0 +1,171 @@
+{
+ "page": "wiki/porringer-basin",
+ "url": "https://mtg.wiki/page/Porringer_Basin",
+ "title": "Porringer Basin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:53Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Porringer Basin",
+   "type": "location",
+   "aliases": [
+    "Porringer Valley",
+    "Porringer"
+   ],
+   "description": "Flooded valley on Lorwyn, once a wooded vale known as Porringer Valley, resettled by merrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing Porringer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wanderwine",
+   "type": "location",
+   "aliases": [],
+   "description": "River that flows through Porringer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dauba Ravine",
+   "type": "location",
+   "aliases": [],
+   "description": "Ravine abutting western Porringer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ash Treefolk",
+   "type": "faction",
+   "aliases": [
+    "ashfolk"
+   ],
+   "description": "Treefolk whose ancestral home was Porringer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boggarts",
+   "type": "faction",
+   "aliases": [],
+   "description": "Goblin-like folk who sheltered in the valley and held the Feast of Footbottom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feast of Footbottom",
+   "type": "event",
+   "aliases": [],
+   "description": "Peaceful boggart gathering held in the valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilt-Leaf",
+   "type": "faction",
+   "aliases": [
+    "Gilt-Leaf tribe"
+   ],
+   "description": "Elf tribe whose forces under Nath fought in Porringer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nath",
+   "type": "character",
+   "aliases": [],
+   "description": "Gilt-Leaf elf who commanded forces hoping to set up an outpost in the valley.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf whose powerful spell destroyed both forces; banished from the valley by a greater elemental.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "Impending event that made the boggarts feral.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merrow",
+   "type": "faction",
+   "aliases": [],
+   "description": "Community that flooded and resettled the valley as a nursery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "White Winged Elk",
+   "type": "creature",
+   "aliases": [
+    "greater elemental"
+   ],
+   "description": "Greater elemental that banished Rhys and prophesied the Great Aurora.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gilt-Leaf elves under Nath attacked boggarts at the Footbottom festival; the boggarts turned feral under the coming Great Aurora.",
+   "participants": [
+    "Nath",
+    "Gilt-Leaf",
+    "Boggarts"
+   ],
+   "location": "Porringer Basin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the boggarts began to change under the influence of the impending Great Aurora"
+  },
+  {
+   "summary": "Rhys cast a powerful spell that destroyed both forces and the valley's life.",
+   "participants": [
+    "Rhys",
+    "Gilt-Leaf",
+    "Boggarts"
+   ],
+   "location": "Porringer Basin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "a powerful spell cast by the elf Rhys"
+  },
+  {
+   "summary": "A greater elemental banished Rhys and prophesied the Great Aurora.",
+   "participants": [
+    "White Winged Elk",
+    "Rhys"
+   ],
+   "location": "Porringer Basin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The elemental banished Rhys from the valley"
+  },
+  {
+   "summary": "The valley was flooded and resettled by merrow.",
+   "participants": [
+    "Merrow"
+   ],
+   "location": "Porringer Basin",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The valley was later flooded and resettled by merrow"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nath",
+   "relation": "leader_of",
+   "target": "Gilt-Leaf",
+   "note": "Commanded the Gilt-Leaf elves",
+   "paragraph": 3,
+   "quote": "under the command of Nath"
+  }
+ ],
+ "rejected": []
+}

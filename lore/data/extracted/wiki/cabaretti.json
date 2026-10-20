@@ -1,0 +1,185 @@
+{
+ "page": "wiki/cabaretti",
+ "url": "https://mtg.wiki/page/Cabaretti",
+ "title": "Cabaretti",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:36Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [
+    "Cabaretti family"
+   ],
+   "description": "One of the five crime families of New Capenna, party-minded, drawn from the druids and bards of Old Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The city-plane with five crime families.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Earlier era where the Cabaretti were druids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [
+    "demon-cat Jetmir"
+   ],
+   "description": "Leonin boss of the Cabaretti; adoptive father of Jinnie Fay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jinnie Fay",
+   "type": "character",
+   "aliases": [],
+   "description": "Jetmir's adopted daughter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ari",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin bouncer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [],
+   "description": "Briefly an agent of the Maestros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kitt",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin singer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leonard",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin bouncer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Gown",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf stage manager.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vantoleone",
+   "type": "location",
+   "aliases": [],
+   "description": "Cabaretti headquarters in the Mezzio.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "New year celebration, grandest of Cabaretti parties.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Slaughtered Capenna's defenders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "Another crime family.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In Old Capenna the Cabaretti serve as druids; leaving nature, festivals become constant parties.",
+   "participants": [
+    "Cabaretti",
+    "Old Capenna"
+   ],
+   "location": "Old Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "During the time of Old Capenna, the Cabaretti served as the plane's druids."
+  },
+  {
+   "summary": "Rumors spread of a renewable font of halo and an Angel returned in Cabaretti hands.",
+   "participants": [
+    "Cabaretti"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Rumors of a new source of halo, a renewable font, threatens the balance of the families."
+  },
+  {
+   "summary": "The Cabaretti are unmentioned during Atraxa's slaughter, though Jetmir remains active.",
+   "participants": [
+    "Cabaretti",
+    "Jetmir",
+    "Atraxa"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "The Cabaretti were conspicuously unmentioned by the defenders of Capenna during Atraxa's slaughter."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jetmir",
+   "relation": "leader_of",
+   "target": "Cabaretti",
+   "note": "",
+   "paragraph": 8,
+   "quote": "the family's leonin boss"
+  },
+  {
+   "source": "Jetmir",
+   "relation": "family",
+   "target": "Jinnie Fay",
+   "note": "Adopted daughter.",
+   "paragraph": 11,
+   "quote": "Jetmir's adopted daughter"
+  },
+  {
+   "source": "Cabaretti",
+   "relation": "located_in",
+   "target": "Vantoleone",
+   "note": "Headquarters.",
+   "paragraph": 3,
+   "quote": "Their headquarters is the Vantoleone"
+  },
+  {
+   "source": "Elspeth Tirel",
+   "relation": "serves",
+   "target": "Maestros",
+   "note": "Briefly.",
+   "paragraph": 10,
+   "quote": "briefly, as an agent of the Maestros"
+  }
+ ],
+ "rejected": []
+}

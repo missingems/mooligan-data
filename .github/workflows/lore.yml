@@ -1,0 +1,84 @@
+name: Lore
+
+# Scrapes the Magic Story archive, has Claude extract who and what is in each page, and builds the index,
+# committing each stage's files under lore/data, then publishes the site and the app's feed (lore-site.yml).
+# Every stage only does what is new, so a run that stops part way loses nothing. See lore/README.md.
+on:
+  workflow_dispatch:
+    inputs:
+      extract_limit:
+        description: Pages to extract in this run (empty for all)
+        default: ""
+  schedule:
+    # Mondays, for the week's new chapters.
+    - cron: "37 6 * * 1"
+  push:
+    branches: [claude/lucid-allen-jjvx9l]
+    # Editing lore/run.json starts a run from the branch.
+    paths: [lore/run.json]
+
+# Two runs must never submit a batch each for the same pages.
+concurrency:
+  group: lore
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  lore:
+    runs-on: ubuntu-latest
+    # The extract step waits up to five hours for its batch; a later run collects it if that is not enough.
+    timeout-minutes: 340
+    defaults:
+      run:
+        working-directory: lore
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: lore/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: Settings
+        id: settings
+        run: |
+          limit="${{ inputs.extract_limit }}"
+          if [ "${{ github.event_name }}" = "push" ]; then limit=$(jq -r '.extract_limit // ""' run.json); fi
+          echo "limit=$limit" >> "$GITHUB_OUTPUT"
+          echo "effort=$(jq -r '.effort // "medium"' run.json)" >> "$GITHUB_OUTPUT"
+          # Fetch every page again, for when the parser changes; only from a push that asks for it.
+          refresh=""
+          if [ "${{ github.event_name }}" = "push" ] && [ "$(jq -r '.refresh // false' run.json)" = "true" ]; then refresh="--refresh"; fi
+          echo "refresh=$refresh" >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+
+      - name: Scrape
+        run: python -m mtglore scrape ${{ steps.settings.outputs.refresh }}
+      - run: bash commit.sh 'Lore - scrape the story archive'
+
+      - name: Extract
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python -m mtglore extract --effort "${{ steps.settings.outputs.effort }}" ${{ steps.settings.outputs.limit && format('--limit {0}', steps.settings.outputs.limit) || '' }}
+      - name: No API key
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo "::warning::No ANTHROPIC_API_KEY secret, so nothing was extracted. Add it under Settings > Secrets and variables > Actions."
+      # The batch state is committed too, so a run that timed out leaves the next one the batch to collect.
+      - if: always()
+        run: bash commit.sh 'Lore - extract with Claude'
+
+      # The index isn't committed; this checks the build works, and lore-site.yml builds it again to publish.
+      - name: Build the index
+        run: python -m mtglore build
+
+  # Publish what this run added: the site and the app's feed (lore/app/ on data.mooligan.com).
+  site:
+    needs: lore
+    uses: ./.github/workflows/lore-site.yml
+    with:
+      publish: true
+    secrets: inherit

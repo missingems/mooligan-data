@@ -1,0 +1,139 @@
+{
+ "page": "wiki/champions-of-amonkhet",
+ "url": "https://mtg.wiki/page/Champions_of_Amonkhet",
+ "title": "Champions of Amonkhet",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:02Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Champions of Amonkhet",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racing team from Amonkhet of living and dead that won the second Ghirapur Grand Prix.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [
+    "Grand Prix"
+   ],
+   "description": "Interplanar race won by the Champions of Amonkhet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the team comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zahur",
+   "type": "character",
+   "aliases": [],
+   "description": "Undead leonin charioteer who leads the team.",
+   "presence": "appears"
+  },
+  {
+   "name": "Basri Ket",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-leader of the racing team.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker dragon before whose era Zahur lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khuru",
+   "type": "character",
+   "aliases": [],
+   "description": "Man killed in the race for Zahur and later raised from death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aetherspark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prize claimed by the Champions.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hour of Devastation",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Amonkhet rose again.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Amonkhet rose again.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zahur leads the Amonkheti racing team in the second Ghirapur Grand Prix with Basri Ket.",
+   "participants": [
+    "Zahur",
+    "Basri Ket",
+    "Champions of Amonkhet"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Zahur leads the Amonkheti racing team"
+  },
+  {
+   "summary": "Khuru is killed in the race for Zahur and raised from death, the first during the race.",
+   "participants": [
+    "Khuru",
+    "Zahur"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "was killed in the race for Zahur"
+  },
+  {
+   "summary": "The Champions win the 2nd Ghirapur Grand Prix and claim the Aetherspark.",
+   "participants": [
+    "Champions of Amonkhet"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "claim the Aetherspark as their own"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zahur",
+   "relation": "leader_of",
+   "target": "Champions of Amonkhet",
+   "note": "Co-leader.",
+   "paragraph": 2,
+   "quote": "Zahur leads the Amonkheti racing team"
+  },
+  {
+   "source": "Khuru",
+   "relation": "serves",
+   "target": "Zahur",
+   "note": "Killed racing for him.",
+   "paragraph": 3,
+   "quote": "was killed in the race for Zahur"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,154 @@
+{
+ "page": "wiki/rill",
+ "url": "https://mtg.wiki/page/Rill",
+ "title": "Rill",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:41Z",
+ "storyline": "Duskmourn",
+ "entities": [
+  {
+   "name": "Rill",
+   "type": "character",
+   "aliases": [],
+   "description": "A resilient native survivor of Duskmourn on the Carnival's foraging team who joined the Cult of Valgavoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "City",
+   "type": "character",
+   "aliases": [],
+   "description": "Rill's companion who revealed he served the Cult of Valgavoth and betrayed them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sunset",
+   "type": "character",
+   "aliases": [],
+   "description": "Rill's companion, later held by the cult.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cult of Valgavoth",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult serving Valgavoth that captured the survivors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane, a House of horrors, where Rill lives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niko",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured with the Wanderer and Nashi.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Wanderer",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured with Niko and Nashi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nashi",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured with Niko and the Wanderer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Winter",
+   "type": "character",
+   "aliases": [],
+   "description": "Betrayed Niko's group, sealing them in the room with the cultists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wickerfolk",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster that ambushed Rill's foraging party.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A Wickerfolk ambushes Rill, City and Sunset on a foraging mission, leaving Rill with a deep gash.",
+   "participants": [
+    "Rill",
+    "City",
+    "Sunset",
+    "Wickerfolk"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They were ambushed by a Wickerfolk straying too close to the safe path"
+  },
+  {
+   "summary": "City reveals Duskmourn is now hunting the humans and his allegiance to the Cult of Valgavoth, betraying Rill; Rill and the others are captured.",
+   "participants": [
+    "City",
+    "Rill",
+    "Cult of Valgavoth"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "City betrayed Rill and the others"
+  },
+  {
+   "summary": "The wounded Rill gives in to the cultists' demands and agrees to become one of them.",
+   "participants": [
+    "Rill",
+    "Cult of Valgavoth"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "agreeing to become one of them"
+  },
+  {
+   "summary": "Winter betrays Niko, the Wanderer and Nashi, sealing them in with the cultists, who knock them out with sedative dust.",
+   "participants": [
+    "Winter",
+    "Niko",
+    "The Wanderer",
+    "Nashi",
+    "Cult of Valgavoth"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "after a betrayal by Winter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "City",
+   "relation": "member_of",
+   "target": "Cult of Valgavoth",
+   "note": "Revealed his allegiance.",
+   "paragraph": 2,
+   "quote": "revealing his allegiance to the Cult of Valgavoth"
+  },
+  {
+   "source": "Rill",
+   "relation": "member_of",
+   "target": "Cult of Valgavoth",
+   "note": "Agreed to join the cult.",
+   "paragraph": 3,
+   "quote": "agreeing to become one of them"
+  }
+ ],
+ "rejected": []
+}

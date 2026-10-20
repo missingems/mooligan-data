@@ -1,0 +1,159 @@
+{
+ "page": "wiki/brago",
+ "url": "https://mtg.wiki/page/Brago",
+ "title": "Brago",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:45Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Brago",
+   "type": "character",
+   "aliases": [
+    "The King Eternal",
+    "Count Brago"
+   ],
+   "description": "Spirit known as the King Eternal who ruled the High City of Paliano on Fiora; formerly Count Brago.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "High City of Paliano"
+   ],
+   "description": "High City of Fiora ruled by Brago.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Brago ruled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Custodi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Priesthood that prolonged Brago's life and kept his spirit as a figurehead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selvala",
+   "type": "character",
+   "aliases": [],
+   "description": "Brago's good friend who ended his suffering with a dagger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Marchesa",
+   "type": "character",
+   "aliases": [],
+   "description": "Instigated Brago's final elimination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who finally killed Brago's spirit.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Count Brago rises through the ruling class, building a coalition and gaining ever more power.",
+   "participants": [
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He built up a coalition of nobility, clergy, and the merchant class."
+  },
+  {
+   "summary": "Three years after ascending the throne, Brago is diagnosed with an incurable disease and the Custodi prolong his life.",
+   "participants": [
+    "Brago",
+    "Custodi"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "only three years after he had ascended to the throne, he was diagnosed with a hereditary and incurable disease"
+  },
+  {
+   "summary": "Selvala ends Brago's suffering with a dagger through his heart, releasing his spirit.",
+   "participants": [
+    "Selvala",
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Brago's good friend Selvala ended his suffering with a dagger through his heart."
+  },
+  {
+   "summary": "The Custodi keep Brago's spirit alive as a figurehead to retain their command.",
+   "participants": [
+    "Custodi",
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "So they kept Brago’s spirit alive as a figurehead and were able to retain their command."
+  },
+  {
+   "summary": "Instigated by Marchesa, Brago's spirit is killed finally by Kaya.",
+   "participants": [
+    "Marchesa",
+    "Kaya",
+    "Brago"
+   ],
+   "location": "Paliano",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "killed finally by the planeswalker Kaya"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Selvala",
+   "relation": "killed",
+   "target": "Brago",
+   "note": "Selvala stabbed Brago through the heart, releasing his spirit.",
+   "paragraph": 2,
+   "quote": "ended his suffering with a dagger through his heart"
+  },
+  {
+   "source": "Kaya",
+   "relation": "killed",
+   "target": "Brago",
+   "note": "Kaya killed Brago's spirit.",
+   "paragraph": 3,
+   "quote": "killed finally by the planeswalker Kaya"
+  },
+  {
+   "source": "Custodi",
+   "relation": "serves",
+   "target": "Brago",
+   "note": "They kept his spirit as figurehead to retain power.",
+   "paragraph": 2,
+   "quote": "The Custodi knew that they would lose power through the succession."
+  },
+  {
+   "source": "Brago",
+   "relation": "leader_of",
+   "target": "Paliano",
+   "note": "He ruled the High City.",
+   "paragraph": 0,
+   "quote": "was a spirit that ruled the High City of Paliano on the plane of Fiora"
+  }
+ ],
+ "rejected": []
+}

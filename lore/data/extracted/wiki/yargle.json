@@ -1,0 +1,176 @@
+{
+ "page": "wiki/yargle",
+ "url": "https://mtg.wiki/page/Yargle",
+ "title": "Yargle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Yargle",
+   "type": "creature",
+   "aliases": [
+    "Frog Spirit"
+   ],
+   "description": "Gluttonous 50-foot-tall swamp spirit that was once a frog, haunting Urborg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Great Dominarian swamp haunted by Yargle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Demon lord who turned his lieutenant Yar-Kul into a maggot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yar-Kul",
+   "type": "character",
+   "aliases": [],
+   "description": "Belzenlok's ambitious lieutenant, turned into a maggot that a frog ate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction whose Stronghold was attacked by the Weatherlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "Skyship that attacked the Cabal's Stronghold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muldrotha",
+   "type": "character",
+   "aliases": [],
+   "description": "Urborg elemental, daughter of Multani, who dragged Yargle back into the swamp and sought help for him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "Maro-sorcerer who bound himself to Yargle to give resistance to glistening oil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Invaders who charged toward Yargle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glistening oil",
+   "type": "concept",
+   "aliases": [],
+   "description": "Virulent Phyrexian substance dangerous to Yargle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Belzenlok transforms the ambitious Yar-Kul into a maggot, which a frog eats and which later grows into Yargle.",
+   "participants": [
+    "Belzenlok",
+    "Yar-Kul",
+    "Yargle"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "That maggot was eaten by a frog, which later grew into Yargle."
+  },
+  {
+   "summary": "Yargle defends the Stronghold when the Weatherlight attacks the Cabal and is dragged back into the swamp by Muldrotha.",
+   "participants": [
+    "Yargle",
+    "Muldrotha",
+    "Cabal",
+    "Weatherlight"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He was in turn dragged back into the swamp by Muldrotha ."
+  },
+  {
+   "summary": "Yargle eats the charging Phyrexians, exposing himself to glistening oil.",
+   "participants": [
+    "Yargle",
+    "Phyrexians"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the more he ate, the more he exposed himself to the dangerously virulent glistening oil."
+  },
+  {
+   "summary": "Muldrotha pleads with her father; Multani binds himself to Yargle to grant resistance to the oil.",
+   "participants": [
+    "Muldrotha",
+    "Multani",
+    "Yargle"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Multani bound himself to Yargle, using his powers and existing knowledge of Phyrexia to grant increased resistance to glistening oil."
+  },
+  {
+   "summary": "After the invasion Multani and Muldrotha gain grudging respect for Yargle.",
+   "participants": [
+    "Multani",
+    "Muldrotha",
+    "Yargle"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Multani and Muldrotha gained a grudging respect for the bizarre monster"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muldrotha",
+   "relation": "family",
+   "target": "Multani",
+   "note": "daughter",
+   "paragraph": 4,
+   "quote": "Muldrotha , an Urborg elemental who was the daughter of the maro-sorcerer Multani ."
+  },
+  {
+   "source": "Multani",
+   "relation": "ally",
+   "target": "Yargle",
+   "note": "bound himself to Yargle",
+   "paragraph": 4,
+   "quote": "Multani bound himself to Yargle"
+  },
+  {
+   "source": "Belzenlok",
+   "relation": "serves",
+   "target": "Yar-Kul",
+   "note": "Yar-Kul was Belzenlok's lieutenant",
+   "paragraph": 2,
+   "quote": "Belzenlok 's lieutenant Yar-Kul became too ambitious and was transformed into a maggot by the demon lord."
+  }
+ ],
+ "rejected": []
+}

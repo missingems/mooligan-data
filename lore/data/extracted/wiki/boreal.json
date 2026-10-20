@@ -1,0 +1,116 @@
+{
+ "page": "wiki/boreal",
+ "url": "https://mtg.wiki/page/Boreal",
+ "title": "Boreal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:56Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "The Boreal",
+   "type": "location",
+   "aliases": [
+    "Boreal"
+   ],
+   "description": "Permafrost-covered tundra region in the extreme north of Terisiare during the Ice Age, later flooded and lost beneath the Sea of Laments.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing the Boreal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ronom Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "Glacier bordering the Boreal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boreal Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "Smaller glacier bordering the Boreal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tresserhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Dark tower guarding the Boreal's southern terminus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rimewind",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult whose unnatural magic altered the Boreal's creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rimewind Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Cult of Rimewind.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Thaw",
+   "type": "event",
+   "aliases": [
+    "Thaw"
+   ],
+   "description": "Event after which the Boreal was flooded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea of Laments",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea beneath which the Boreal now lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Cold radiating from Rimewind Keep keeps the Boreal magically frozen through the first part of the Thaw.",
+   "participants": [
+    "Cult of Rimewind",
+    "Rimewind Keep",
+    "The Boreal"
+   ],
+   "location": "The Boreal",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The Boreal stayed magically frozen even through the first part of the Thaw"
+  },
+  {
+   "summary": "The Boreal is flooded after the Thaw and is lost beneath the Sea of Laments.",
+   "participants": [
+    "The Boreal",
+    "Sea of Laments"
+   ],
+   "location": "The Boreal",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Boreal was flooded after the Thaw and is now lost beneath the Sea of Laments ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cult of Rimewind",
+   "relation": "located_in",
+   "target": "Rimewind Keep",
+   "note": "They made their home there.",
+   "paragraph": 1,
+   "quote": "The Cult of Rimewind made its home here at Rimewind Keep"
+  }
+ ],
+ "rejected": []
+}

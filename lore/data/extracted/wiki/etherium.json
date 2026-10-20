@@ -1,0 +1,203 @@
+{
+ "page": "wiki/etherium",
+ "url": "https://mtg.wiki/page/Etherium",
+ "title": "Etherium",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:14Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Etherium",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A rare aether-infused alloy native to Esper, prized for beauty and durability and fused into the bodies of Esper's inhabitants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "The shard of Alara whose culture is inseparably linked to etherium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "The shard where sangrite, crystallized dragon blood, is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crucius",
+   "type": "character",
+   "aliases": [],
+   "description": "A sphinx and planeswalker said to have first created etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sangrite",
+   "type": "artifact",
+   "aliases": [
+    "carmot"
+   ],
+   "description": "Crystallized dragon's blood from Jund, the key component of etherium, long mistaken for the fictitious carmot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [
+    "the Seekers"
+   ],
+   "description": "Esper sect that sought carmot to forge etherium; slaughtered by Tezzeret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Codex Etherium",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A supposed map to carmot, revealed by Tezzeret to be a fraud.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker artificer who serves Nicol Bolas and massacred the Seekers of Carmot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon planeswalker who fought Tezzeret over mining rights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silas Renn",
+   "type": "character",
+   "aliases": [],
+   "description": "Seeker-adept who survived Tezzeret's massacre by not being at the Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breya",
+   "type": "character",
+   "aliases": [],
+   "description": "Young human artificer, the first to create etherium from sangrite harvested from Jund.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sharuum",
+   "type": "character",
+   "aliases": [],
+   "description": "Esper figure who could only show how to thin existing etherium.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "The event that merged the shards of Alara.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Etherium is said to have been created by the sphinx Crucius.",
+   "participants": [
+    "Crucius",
+    "Etherium"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Said to have been first created by the sphinx Crucius"
+  },
+  {
+   "summary": "Tezzeret reveals that the Codex Etherium is a fraud.",
+   "participants": [
+    "Tezzeret",
+    "Codex Etherium",
+    "Seekers of Carmot"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "it was revealed by Tezzeret that the Codex was a fraud"
+  },
+  {
+   "summary": "Tezzeret and Nicol Bolas fight over mining rights on an unnamed plane.",
+   "participants": [
+    "Tezzeret",
+    "Nicol Bolas"
+   ],
+   "location": "Esper",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Tezzeret and Nicol Bolas fought over mining rights on an unnamed plane"
+  },
+  {
+   "summary": "Tezzeret returns to Esper and murders the entire Seekers sect, sparing only Silas Renn, then makes the Sanctum his fortress.",
+   "participants": [
+    "Tezzeret",
+    "Seekers of Carmot",
+    "Silas Renn"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "he murdered the entire sect, eliminating the new Hieresiarch and the whole Arcane Council."
+  },
+  {
+   "summary": "Breya becomes the first to create etherium from sangrite harvested from Jund, replacing most of her body with it.",
+   "participants": [
+    "Breya",
+    "Sangrite",
+    "Etherium"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "The young human artificer Breya was the first to create etherium from sangrite harvested from Jund."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Crucius",
+   "relation": "created",
+   "target": "Etherium",
+   "note": "According to myth.",
+   "paragraph": 1,
+   "quote": "etherium was created by the sphinx Crucius"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "killed",
+   "target": "Seekers of Carmot",
+   "note": "Massacred the sect.",
+   "paragraph": 8,
+   "quote": "he murdered the entire sect, eliminating the new Hieresiarch and the whole Arcane Council."
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "Was in Bolas's service at one point.",
+   "paragraph": 8,
+   "quote": "at one point while in the service of Nicol Bolas"
+  },
+  {
+   "source": "Tezzeret",
+   "relation": "enemy",
+   "target": "Nicol Bolas",
+   "note": "They fought over mining rights.",
+   "paragraph": 7,
+   "quote": "Tezzeret and Nicol Bolas fought over mining rights on an unnamed plane"
+  }
+ ],
+ "rejected": []
+}

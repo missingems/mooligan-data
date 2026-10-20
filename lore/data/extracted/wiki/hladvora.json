@@ -1,0 +1,111 @@
+{
+ "page": "wiki/hladvora",
+ "url": "https://mtg.wiki/page/Hladvora",
+ "title": "Hladvora",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:39Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Hladvora",
+   "type": "creature",
+   "aliases": [],
+   "description": "Shape-shifting entity on Innistrad that traps victims in cursed lairs and feeds on their fear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strefan Maurer",
+   "type": "character",
+   "aliases": [
+    "Strefan"
+   ],
+   "description": "Vampire lured into the Hladvora's lair by Brandt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brandt",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire hunter who lured Strefan into the ruin and whose corpse the Hladvora puppeted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the story takes place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Brandt lures Strefan into a ruin and cuts his own throat, causing the ruin to raise walls and reveal a mansion that traps Strefan.",
+   "participants": [
+    "Brandt",
+    "Strefan Maurer",
+    "Hladvora"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Brandt cut his own throat, triggering a dark transformation within the ruin."
+  },
+  {
+   "summary": "Inside, Strefan faces Brandt's corpse controlled by the Hladvora, which torments him with visions from his past.",
+   "participants": [
+    "Strefan Maurer",
+    "Brandt",
+    "Hladvora"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Strefan faced the reanimated corpse of Brandt, now controlled by the Hladvora."
+  },
+  {
+   "summary": "Strefan snaps the neck of Brandt's corpse, but the Hladvora's essence escapes and keeps warping the house.",
+   "participants": [
+    "Strefan Maurer",
+    "Brandt",
+    "Hladvora"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "he managed to temporarily disable the creature by snapping the neck of Brandt’s animated corpse"
+  },
+  {
+   "summary": "Strefan chokes the Hladvora until it explodes in a spray of blood, the illusory walls fall away, and he stumbles into the woods injured.",
+   "participants": [
+    "Strefan Maurer",
+    "Hladvora"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Strefan managed to choke the creature until it exploded in a spray of blood, and the illusory walls fell away."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Strefan Maurer",
+   "relation": "enemy",
+   "target": "Brandt",
+   "note": "pursued him for years",
+   "paragraph": 2,
+   "quote": "a vampire hunter, whom he had pursued for years"
+  },
+  {
+   "source": "Strefan Maurer",
+   "relation": "killed",
+   "target": "Hladvora",
+   "note": "choked it until it exploded",
+   "paragraph": 4,
+   "quote": "Strefan managed to choke the creature until it exploded in a spray of blood"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,135 @@
+{
+ "page": "wiki/traxos",
+ "url": "https://mtg.wiki/page/Traxos",
+ "title": "Traxos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:31Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Traxos",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A dragon engine construct designed by Mishra, instrumental in the Fall of Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer who designed Traxos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient city destroyed by Mishra's war machines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure whose forces Traxos hunts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Phyrexians who invaded Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lyra",
+   "type": "character",
+   "aliases": [],
+   "description": "Tolaria's first angel scholar who raised Traxos in the Echoverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Academy Traxos protects in the Echoverse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Antiquities War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Kroog fell in 28 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mishra's war machines, foremost among them Traxos, destroy Kroog during the Antiquities War in 28 AR.",
+   "participants": [
+    "Mishra",
+    "Traxos",
+    "Kroog"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The ancient city of Kroog was destroyed by the artificer Mishra and his war machines"
+  },
+  {
+   "summary": "Tolaria excavation teams find and inadvertently reactivate Traxos, which prowls old battlefields in search of Urza's forces.",
+   "participants": [
+    "Traxos",
+    "Urza"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "inadvertently reactivated the ancient war machine"
+  },
+  {
+   "summary": "When Elesh Norn's Phyrexians invade, Traxos deems them an enemy to be exterminated.",
+   "participants": [
+    "Traxos",
+    "Elesh Norn"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Traxos had no allegiance to the invaders"
+  },
+  {
+   "summary": "In the Echoverse Lyra raises Traxos from inertia and rebuilds it as a defender of Tolaria.",
+   "participants": [
+    "Lyra",
+    "Traxos"
+   ],
+   "location": "Tolaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "raised it from its inertia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mishra",
+   "relation": "created",
+   "target": "Traxos",
+   "note": "Designed it.",
+   "paragraph": 0,
+   "quote": "Designed by Mishra"
+  },
+  {
+   "source": "Traxos",
+   "relation": "enemy",
+   "target": "Elesh Norn",
+   "note": "Deemed the Phyrexians enemies.",
+   "paragraph": 2,
+   "quote": "deeming them an enemy that must be exterminated as well"
+  }
+ ],
+ "rejected": []
+}

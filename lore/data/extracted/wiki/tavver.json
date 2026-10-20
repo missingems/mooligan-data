@@ -1,0 +1,82 @@
+{
+ "page": "wiki/tavver",
+ "url": "https://mtg.wiki/page/Tavver",
+ "title": "Tavver",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:32Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Tavver",
+   "type": "character",
+   "aliases": [],
+   "description": "Oriq cultist on Arcavios loyal to Extus Narr, killed when used as a shield.",
+   "presence": "appears"
+  },
+  {
+   "name": "Extus Narr",
+   "type": "character",
+   "aliases": [],
+   "description": "Oriq leader who used Tavver as a shield.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cult Tavver belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [],
+   "description": "Library beneath which Tavver was trapped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tavver was trapped beneath the Biblioplex after a failed mission and hid until nightfall.",
+   "participants": [
+    "Tavver"
+   ],
+   "location": "Biblioplex",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tavver found himself trapped underground beneath the Biblioplex after a failed mission."
+  },
+  {
+   "summary": "Extus Narr used Tavver as a shield against a wounded Silverquill student, killing him.",
+   "participants": [
+    "Extus Narr",
+    "Tavver"
+   ],
+   "location": "Biblioplex",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he used Tavver as a shield to protect himself."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tavver",
+   "relation": "serves",
+   "target": "Extus Narr",
+   "note": "Loyal Oriq cultist",
+   "paragraph": 1,
+   "quote": "Tavver was resourceful and loyal to Extus Narr ."
+  }
+ ],
+ "rejected": []
+}

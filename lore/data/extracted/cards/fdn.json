@@ -1,0 +1,998 @@
+{
+ "page": "cards/fdn",
+ "url": "https://scryfall.com/sets/fdn",
+ "title": "Foundations: card flavor text",
+ "story_date": "2024-11-15",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:06:09Z",
+ "storyline": "Foundations",
+ "entities": [
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beings born of the infinite void between realities whose one goal is to consume.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Roil",
+   "type": "concept",
+   "aliases": [
+    "the Roil"
+   ],
+   "description": "A Zendikari phenomenon that, in theory, should have stilled with the death of the Eldrazi but did not.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi titan imprisoned in the moon, the only vault great enough to hold her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koma",
+   "type": "creature",
+   "aliases": [
+    "Koma, World-Eater"
+   ],
+   "description": "A serpent-like being imprisoned by the gods who feared he would devour the Cosmos; some call him a monster, others a god.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fynn",
+   "type": "character",
+   "aliases": [
+    "Fynn, the Fangbearer"
+   ],
+   "description": "A speaker (Fynn, the Fangbearer) who challenges Koma to reclaim what he lost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arahbo",
+   "type": "creature",
+   "aliases": [
+    "Arahbo, the First Fang"
+   ],
+   "description": "A feline from whom all cats of the Multiverse are said to trace their lineage; his roar calls the hunt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lars",
+   "type": "character",
+   "aliases": [],
+   "description": "A fisherman who spares fish for hungry cats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krek",
+   "type": "character",
+   "aliases": [],
+   "description": "A daysquad captain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Basri Ket",
+   "type": "character",
+   "aliases": [],
+   "description": "A person who greets a returning little hero.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zahr",
+   "type": "character",
+   "aliases": [],
+   "description": "A climber who wept with relief when a felidar's horns appeared.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sir Brilbury",
+   "type": "character",
+   "aliases": [],
+   "description": "A knight whose fear of heights was outmatched by his sense of duty.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calydd",
+   "type": "character",
+   "aliases": [],
+   "description": "A kithkin farmer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trigori",
+   "type": "character",
+   "aliases": [],
+   "description": "An Azorius senator.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiora",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who speaks of her grappling kraken.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kari Zev",
+   "type": "character",
+   "aliases": [],
+   "description": "A skyship captain who says a pirate's nature is to be free of law.",
+   "presence": "appears"
+  },
+  {
+   "name": "Markos",
+   "type": "character",
+   "aliases": [],
+   "description": "A sailor who realized he was not the first to try sailing out of the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker necromancer who speaks of demonic pacts, the dark realms and her power.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who speaks of taming storms and whose storm detected infiltrating planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Norf",
+   "type": "character",
+   "aliases": [],
+   "description": "A competitor determined to win the arm-wrestling contest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "A munitions master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [
+    "Krenko, Mob Boss"
+   ],
+   "description": "A goblin whose protection racket gets stall owners to pay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikko",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who unintentionally started a riot.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mino",
+   "type": "character",
+   "aliases": [],
+   "description": "A person whose plan went awry when a cerberus head woke.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vizrik",
+   "type": "character",
+   "aliases": [],
+   "description": "A person inspired by a cathar's attire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "A pyromancer and planeswalker able to melt solid rock.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who comments on predators and herbivores.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elenda",
+   "type": "character",
+   "aliases": [
+    "Elenda, Saint of Dusk"
+   ],
+   "description": "A figure (Elenda, Saint of Dusk) who tells another they learned nothing in her absence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "character",
+   "aliases": [],
+   "description": "A god who placed the sun into the Champion's hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Champion",
+   "type": "character",
+   "aliases": [],
+   "description": "A hero who reached for a stone while Heliod placed the sun in her hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A planeswalker and leonin once rejected by his pride, now revered as healer and friend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who says thinking only one step ahead means falling behind.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who talks about the hedrons and the Eldrazi with Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker dragon who says the hedrons show the Eldrazi can be imprisoned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malacan",
+   "type": "character",
+   "aliases": [],
+   "description": "A Vantress exile.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beckett Brass",
+   "type": "character",
+   "aliases": [
+    "Admiral Beckett Brass"
+   ],
+   "description": "An admiral whose sayings include a rallying line for the Brazen Coalition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mort the Philosopher",
+   "type": "character",
+   "aliases": [],
+   "description": "A philosopher who died mid-sentence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Odric",
+   "type": "character",
+   "aliases": [],
+   "description": "A monster-fighter doomed by a vampire's curse to become a monster himself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tinybones",
+   "type": "character",
+   "aliases": [],
+   "description": "A thief whose heist was the greatest of all time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian who destroyed Mishra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "A man whose desperation to destroy his brother let Gix destroy him instead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "A once-mortal ogre who devoured his demonic patron and transcended mortality.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koth of the Hammer",
+   "type": "character",
+   "aliases": [],
+   "description": "A speaker who says as long as there is will to fight there are weapons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raff Slugeater",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin shortcutter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Carah",
+   "type": "character",
+   "aliases": [
+    "Syr Carah, the Bold"
+   ],
+   "description": "A knight called the Bold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tiana",
+   "type": "character",
+   "aliases": [],
+   "description": "A gunner who credits Serra and tuning cannons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Giada",
+   "type": "character",
+   "aliases": [
+    "Giada, Font of Hope"
+   ],
+   "description": "A figure who is New Capenna's greatest hope.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Muldrotha",
+   "type": "character",
+   "aliases": [],
+   "description": "A being (Muldrotha, the Gravetide) described by Multani as his child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multani",
+   "type": "character",
+   "aliases": [],
+   "description": "A being who says his child grew from rot and ruin yet bloomed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ruby",
+   "type": "character",
+   "aliases": [],
+   "description": "A girl (Ruby, Daring Tracker) set on finding her brother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon, Ravnica's sharpest mind and biggest ego, who compares storms to dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zimone",
+   "type": "character",
+   "aliases": [],
+   "description": "A student who thinks in twelve dimensions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Surrak",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter who feels the greatest honor is to feed Atarka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [],
+   "description": "A warleader on the frontlines of war in contrast with Razia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "An aloof and untouchable figure compared to Aurelia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker whose smite pierces Elesh Norn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian praetor pierced by light, her nightmare made flesh.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lyra Dawnbringer",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who says martyrs are not made of villains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who once wielded a god's power and hubris and now risks everything to fix his mistakes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sheoldred",
+   "type": "character",
+   "aliases": [
+    "Sheoldred, praetor of New Phyrexia"
+   ],
+   "description": "A praetor of New Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nokar",
+   "type": "character",
+   "aliases": [],
+   "description": "A priest of Sheoldred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samut",
+   "type": "character",
+   "aliases": [],
+   "description": "A former Tah-crop initiate urging an exodus from the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Djeru",
+   "type": "character",
+   "aliases": [],
+   "description": "The person Samut urges to gather others and leave.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "An archaeologist warning of canyon excavation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pero",
+   "type": "character",
+   "aliases": [],
+   "description": "A man who called on a memory of a lightning storm in desperation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Angrath",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who says gold without freedom is lead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamina",
+   "type": "character",
+   "aliases": [],
+   "description": "A district guide.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "A pyromancer who says the best way to learn from a pyromancy book is to burn it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gadwick",
+   "type": "character",
+   "aliases": [
+    "Gadwick, the Wizened"
+   ],
+   "description": "A wizened figure who speaks of knowing everything.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [
+    "Ghoulcaller Gisa"
+   ],
+   "description": "A ghoulcaller.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drana",
+   "type": "character",
+   "aliases": [],
+   "description": "A Kalastria bloodchief.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who says every choice alters the path of fate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Helle",
+   "type": "character",
+   "aliases": [],
+   "description": "A young valkyrie who joined the honored host after one thousand tales of her ancestors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Querana",
+   "type": "character",
+   "aliases": [],
+   "description": "A fighter who held a bridge for hours against a horde.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selis",
+   "type": "character",
+   "aliases": [],
+   "description": "A fighter whose courage and shield crumbled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Syr Ameril",
+   "type": "character",
+   "aliases": [],
+   "description": "A knight who pictured Castle Ardenvale while facing a blaze.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lazlo",
+   "type": "character",
+   "aliases": [],
+   "description": "A man stabbed in the back who vows to find the culprits.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conyan the Great",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior who awoke in a stone body after dying.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slibbo",
+   "type": "character",
+   "aliases": [],
+   "description": "A creature tired of Korvold's library rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Korvold",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon with draconian library rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gnorl",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who dreamed of eating a dragon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vurg",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who dreamed of eating a dragon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pashin",
+   "type": "character",
+   "aliases": [],
+   "description": "A would-be skyknight who must survive his first flight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon whom hunters honor by feeding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghalta",
+   "type": "character",
+   "aliases": [
+    "Ghalta, Primal Hunger"
+   ],
+   "description": "A primeval creature, the predator's appetite.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lathliss",
+   "type": "character",
+   "aliases": [],
+   "description": "A dragon queen said to keep the heart of the old dragon queen in a jewel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "location",
+   "aliases": [],
+   "description": "A plane where the Roil, Eldrazi and floating ruins are found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where gladiatorial stadiums echo with grinding metal and the machine gospel is spread.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where crystals glow near monsters and creatures constantly evolve.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where valkyries and giants live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "location",
+   "aliases": [],
+   "description": "A plane where Niv-Mizzet lives and planeswalkers infiltrated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skemfar",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm of the elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Ardenvale",
+   "type": "location",
+   "aliases": [],
+   "description": "A castle pictured by Syr Ameril as home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malakir",
+   "type": "location",
+   "aliases": [],
+   "description": "A city of vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bala Ged",
+   "type": "location",
+   "aliases": [],
+   "description": "Bogs where life returned and vampires returned to feed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starnheim",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm whose host young valkyries join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Setessa",
+   "type": "location",
+   "aliases": [],
+   "description": "A polis protected by four warrior factions named for animals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Three Tree City",
+   "type": "location",
+   "aliases": [],
+   "description": "A city celebrated in the Valley Gazetteer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brazen Coalition",
+   "type": "faction",
+   "aliases": [],
+   "description": "A coalition described by Beckett Brass as a firecannon pointed at enemies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dusk Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampires who undertake Blood Fasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings of New Phyrexia who seek to perfect all.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The gods imprison Koma, fearing he would devour the Cosmos.",
+   "participants": [
+    "Koma"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 78,
+   "quote": "The gods imprisoned Koma, fearing he would eventually devour the Cosmos itself."
+  },
+  {
+   "summary": "Emrakul is imprisoned in the moon.",
+   "participants": [
+    "Emrakul"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 105,
+   "quote": "Only one vault was great enough to hold Emrakul."
+  },
+  {
+   "summary": "Mishra's desperation to destroy his brother allows Gix to destroy him.",
+   "participants": [
+    "Mishra",
+    "Gix"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 122,
+   "quote": "In Mishra's desperation to destroy his brother, he allowed Gix to destroy him instead."
+  },
+  {
+   "summary": "Odric resists a vampire's curse but is doomed to become a monster.",
+   "participants": [
+    "Odric"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 119,
+   "quote": "Odric resisted the vampire's curse with all his strength."
+  },
+  {
+   "summary": "Hidetsugu devours his demonic patron and transcends mortality.",
+   "participants": [
+    "Hidetsugu"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 142,
+   "quote": "Hidetsugu devoured his demonic patron and transcended mortality in a fit of rage."
+  },
+  {
+   "summary": "Elesh Norn screams as light pierces her.",
+   "participants": [
+    "Elesh Norn",
+    "Elspeth"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 245,
+   "quote": "Elesh Norn screamed as the light pierced her."
+  },
+  {
+   "summary": "Fynn challenges Koma to a rematch.",
+   "participants": [
+    "Fynn",
+    "Koma"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 354,
+   "quote": "Come, Koma, and reclaim what you lost!"
+  },
+  {
+   "summary": "Ral's storm detects planeswalkers infiltrating Ravnica.",
+   "participants": [
+    "Ral Zarek",
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 174,
+   "quote": "Planeswalkers were infiltrating Ravnica."
+  },
+  {
+   "summary": "Helle takes her place among the honored host after learning one thousand tales.",
+   "participants": [
+    "Helle"
+   ],
+   "location": "Kaldheim",
+   "importance": "minor",
+   "paragraph": 185,
+   "quote": "she'd finally taken her place among the honored host."
+  },
+  {
+   "summary": "Zahr weeps with relief when he sees the felidar's horns.",
+   "participants": [
+    "Zahr"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "Zahr wept with relief when he saw the felidar's horns appear."
+  },
+  {
+   "summary": "Querana holds a bridge for hours against a horde.",
+   "participants": [
+    "Querana"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 195,
+   "quote": "Querana held the bridge for hours"
+  },
+  {
+   "summary": "Syr Ameril pictures Castle Ardenvale as a blaze approaches.",
+   "participants": [
+    "Syr Ameril",
+    "Castle Ardenvale"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 286,
+   "quote": "Syr Ameril closed her eyes and pictured Castle Ardenvale"
+  },
+  {
+   "summary": "Ruby sets out to find her brother.",
+   "participants": [
+    "Ruby"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 172,
+   "quote": "would stop her from finding her brother."
+  },
+  {
+   "summary": "Gnorl and Vurg dream of being the first goblins to eat a dragon.",
+   "participants": [
+    "Gnorl",
+    "Vurg"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 276,
+   "quote": "they were going to be the first goblins to eat a dragon."
+  },
+  {
+   "summary": "Conyan the Great awakens in a body of stone after dying.",
+   "participants": [
+    "Conyan the Great"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 211,
+   "quote": "he snapped awake in a body of stone"
+  },
+  {
+   "summary": "The Roil does not stop after the Eldrazi die.",
+   "participants": [
+    "Roil",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 256,
+   "quote": "the death of the Eldrazi should have stilled the Roil. It did not."
+  },
+  {
+   "summary": "Teferi resolves to risk everything to fix his mistakes.",
+   "participants": [
+    "Teferi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 258,
+   "quote": "To fix his mistakes, he would risk everything."
+  },
+  {
+   "summary": "Vampires return to the bogs of Bala Ged to feed on returned life.",
+   "participants": [
+    "Bala Ged"
+   ],
+   "location": "Bala Ged",
+   "importance": "minor",
+   "paragraph": 42,
+   "quote": "As life returned to the bogs of Bala Ged, the vampires returned to feed upon it."
+  },
+  {
+   "summary": "Bloodchiefs are annihilated in a fight between the free and enthralled, leaving young vampires around Malakir.",
+   "participants": [
+    "Malakir"
+   ],
+   "location": "Malakir",
+   "importance": "minor",
+   "paragraph": 264,
+   "quote": "With the bloodchiefs annihilated in the fight between the free and enthralled"
+  },
+  {
+   "summary": "Slibbo grows tired of Korvold's library rules.",
+   "participants": [
+    "Slibbo",
+    "Korvold"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 287,
+   "quote": "Slibbo was tired of following Korvold's draconian library rules."
+  },
+  {
+   "summary": "Ugin tells Jace the hedrons show the Eldrazi can be imprisoned; Jace questions how that worked last time.",
+   "participants": [
+    "Ugin",
+    "Jace Beleren",
+    "Eldrazi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 397,
+   "quote": "The Eldrazi can be imprisoned."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gix",
+   "relation": "killed",
+   "target": "Mishra",
+   "note": "Gix destroys Mishra.",
+   "paragraph": 122,
+   "quote": "he allowed Gix to destroy him instead."
+  },
+  {
+   "source": "Nokar",
+   "relation": "serves",
+   "target": "Sheoldred",
+   "note": "Nokar is a priest of Sheoldred.",
+   "paragraph": 333,
+   "quote": "Nokar, priest of Sheoldred"
+  },
+  {
+   "source": "Multani",
+   "relation": "family",
+   "target": "Muldrotha",
+   "note": "Multani calls Muldrotha his child.",
+   "paragraph": 170,
+   "quote": "My child grew from rot and ruin, yet she bloomed."
+  },
+  {
+   "source": "Samut",
+   "relation": "ally",
+   "target": "Djeru",
+   "note": "Samut urges Djeru to gather others and flee the city.",
+   "paragraph": 342,
+   "quote": "We have to get out of the city, Djeru."
+  }
+ ],
+ "rejected": []
+}

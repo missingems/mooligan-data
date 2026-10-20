@@ -1,0 +1,110 @@
+{
+ "page": "wiki/dosan",
+ "url": "https://mtg.wiki/page/Dosan",
+ "title": "Dosan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:51Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Dosan",
+   "type": "character",
+   "aliases": [
+    "Master Dosan"
+   ],
+   "description": "Oldest living kannushi on Kamigawa, perhaps the most revered, of the sacred order of Jukai Forest; teacher of Azusa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Dosan lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sacred order to which Dosan belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azusa",
+   "type": "character",
+   "aliases": [],
+   "description": "The plane's most famous wanderer, taught by Dosan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Dosan's peaceful teachings were mocked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami",
+   "type": "concept",
+   "aliases": [],
+   "description": "Spirits of Kamigawa to whom Dosan prayed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Dosan met the wanderer Azusa in the forest and became her teacher.",
+   "participants": [
+    "Dosan",
+    "Azusa"
+   ],
+   "location": "Jukai Forest",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he met Azusa , the plane's most famous wanderer, and became her teacher"
+  },
+  {
+   "summary": "During the Kami War Dosan prayed nightly to the kami, but their hate withered his body.",
+   "participants": [
+    "Dosan",
+    "Kami"
+   ],
+   "location": "Jukai Forest",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Dosan prayed each night to the kami"
+  },
+  {
+   "summary": "Dosan's teachings to live peacefully with the kami were denounced and eventually mocked.",
+   "participants": [
+    "Dosan"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Dosan's teachings to live peacefully with the kami were denounced and eventually mocked"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dosan",
+   "relation": "mentor_of",
+   "target": "Azusa",
+   "note": "He became her teacher.",
+   "paragraph": 1,
+   "quote": "became her teacher"
+  },
+  {
+   "source": "Dosan",
+   "relation": "member_of",
+   "target": "Jukai Forest",
+   "note": "He belonged to the sacred order of Jukai Forest.",
+   "paragraph": 0,
+   "quote": "He belonged to the sacred order of Jukai Forest"
+  }
+ ],
+ "rejected": []
+}

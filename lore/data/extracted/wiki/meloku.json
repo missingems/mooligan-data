@@ -1,0 +1,133 @@
+{
+ "page": "wiki/meloku",
+ "url": "https://mtg.wiki/page/Meloku",
+ "title": "Meloku",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:49Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Meloku",
+   "type": "character",
+   "aliases": [
+    "Meloku the Clouded Mirror"
+   ],
+   "description": "Soratami ambassador to the human world at Konda's court in Eiganjo and the Minamo School; wizard who assisted Konda's ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [
+    "daimyo Konda"
+   ],
+   "description": "Daimyo at whose court Meloku served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soratami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Moonfolk whose long-term plan may have been to take over Kamigawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kiki-Jiki",
+   "type": "character",
+   "aliases": [],
+   "description": "Akki who stole Meloku's dragon egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keiga",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon to whom the stolen egg belonged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "That Which Was Taken",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Object ripped from the spirit world in the crime that began the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War started by the ritual Meloku assisted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "City of Konda's court.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minamo School",
+   "type": "location",
+   "aliases": [],
+   "description": "School of human students of the arcane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Meloku assists Konda with the ritual of ripping That Which Was Taken from the spirit world, the crime that started the Kami War.",
+   "participants": [
+    "Meloku",
+    "Konda",
+    "That Which Was Taken",
+    "Kami War"
+   ],
+   "location": "Eiganjo",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The wizard Meloku assisted Konda with the ritual of ripping That Which Was Taken from the spirit world"
+  },
+  {
+   "summary": "Meloku finds a dragon egg and brings it to his palace; Kiki-Jiki, sent by Keiga, later steals it.",
+   "participants": [
+    "Meloku",
+    "Kiki-Jiki",
+    "Keiga"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "The egg was later stolen by the akki Kiki-Jiki"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Meloku",
+   "relation": "serves",
+   "target": "Konda",
+   "note": "Ambassador at Konda's court.",
+   "paragraph": 0,
+   "quote": "ambassador to the human world at daimyo Konda 's court"
+  },
+  {
+   "source": "Meloku",
+   "relation": "member_of",
+   "target": "Soratami",
+   "note": "He is a soratami.",
+   "paragraph": 0,
+   "quote": "was a soratami ambassador"
+  }
+ ],
+ "rejected": []
+}

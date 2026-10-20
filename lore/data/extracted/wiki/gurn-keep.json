@@ -1,0 +1,146 @@
+{
+ "page": "wiki/gurn-keep",
+ "url": "https://mtg.wiki/page/Gurn_Keep",
+ "title": "Gurn Keep",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:06Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Gurn Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Dwarf stronghold in the Crimson Peaks of Sarpadia, one of the last dwarven bastions to fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria where the Crimson Peaks lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reod Dai",
+   "type": "character",
+   "aliases": [],
+   "description": "Human who slipped into the besieged Gurn Keep looking for Tamun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamun",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman Reod Dai sought, reunited with him and her mother Melelki.",
+   "presence": "appears"
+  },
+  {
+   "name": "Melelki",
+   "type": "character",
+   "aliases": [],
+   "description": "Mother of Tamun and Sekena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sekena",
+   "type": "character",
+   "aliases": [],
+   "description": "Tamun's sister, who rescued them on her bonded dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarya Haasendel",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain who led the surviving dwarves into an abandoned mine after General Danhelm was slain.",
+   "presence": "appears"
+  },
+  {
+   "name": "General Danhelm",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarven leader who was slain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ivra Jursdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "Mercenary sent south by the Order of the Ebon Hand, later seen among the orcs and goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order that alone answered Sarya's pleas for help.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Reod Dai passes through the goblin army into Gurn Keep and helps organize its defenses before being imprisoned by the distrustful dwarves.",
+   "participants": [
+    "Reod Dai"
+   ],
+   "location": "Gurn Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "After the siege had begun, Reod Dai passed through the goblin army and entered the keep, looking for Tamun ."
+  },
+  {
+   "summary": "Sekena, mounted on her bonded dragon, saves Reod, Tamun and Melelki from the swarming goblins.",
+   "participants": [
+    "Sekena",
+    "Reod Dai",
+    "Tamun",
+    "Melelki"
+   ],
+   "location": "Gurn Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The three of them were saved from the swarming goblins by Tamun's sister Sekena mounted on her bonded dragon ."
+  },
+  {
+   "summary": "Surviving dwarves take refuge in an abandoned mine under Captain Sarya Haasendel after General Danhelm is slain.",
+   "participants": [
+    "Sarya Haasendel",
+    "General Danhelm"
+   ],
+   "location": "Sarpadia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "With the dwarven leader General Danhelm slain, the surviving dwarves took refuge in a nearby abandoned mine under the leadership of Captain Sarya Haasendel ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sekena",
+   "relation": "family",
+   "target": "Tamun",
+   "note": "Sisters.",
+   "paragraph": 1,
+   "quote": "Tamun's sister Sekena"
+  },
+  {
+   "source": "Melelki",
+   "relation": "family",
+   "target": "Tamun",
+   "note": "Mother and daughter.",
+   "paragraph": 1,
+   "quote": "Tamun and her mother Melelki"
+  },
+  {
+   "source": "Ivra Jursdotter",
+   "relation": "serves",
+   "target": "Order of the Ebon Hand",
+   "note": "Sent as a mercenary by the Order.",
+   "paragraph": 2,
+   "quote": "the Order of the Ebon Hand , who sent the mercenary Ivra Jursdotter to the south"
+  }
+ ],
+ "rejected": []
+}

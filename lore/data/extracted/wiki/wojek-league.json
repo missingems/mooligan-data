@@ -1,0 +1,153 @@
+{
+ "page": "wiki/wojek-league",
+ "url": "https://mtg.wiki/page/Wojek_League",
+ "title": "Wojek League",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:31Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Wojek League",
+   "type": "faction",
+   "aliases": [
+    "Jeks",
+    "'Jeks"
+   ],
+   "description": "The law enforcement division of the Boros Legion of Ravnica.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [],
+   "description": "The guild the Wojek League belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the League.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The sacred pact the League policed before its destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vict Gharti",
+   "type": "character",
+   "aliases": [
+    "Commander-General Vict Gharti"
+   ],
+   "description": "The League's original leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agyrem",
+   "type": "location",
+   "aliases": [],
+   "description": "The rising power after the Guildpact's destruction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "Took over the League after the Guildpact fell.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Migellic",
+   "type": "character",
+   "aliases": [
+    "Lt. Migellic"
+   ],
+   "description": "A later leader of the League.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anksa",
+   "type": "character",
+   "aliases": [
+    "Commander Anksa"
+   ],
+   "description": "The current leader of the League.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zelzo Base",
+   "type": "location",
+   "aliases": [],
+   "description": "Current headquarters, near Sunhome.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Parhelion",
+   "type": "location",
+   "aliases": [],
+   "description": "Former headquarters.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Guildpact's destruction, leadership passes from Agrus Kos to Lt. Migellic, and now to Commander Anksa.",
+   "participants": [
+    "Wojek League",
+    "Agrus Kos",
+    "Migellic",
+    "Anksa"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the league was taken over by Agrus Kos and then was passed to Lt. Migellic"
+  },
+  {
+   "summary": "Headquarters moves from the Parhelion to Zelzo Base.",
+   "participants": [
+    "Wojek League",
+    "Parhelion",
+    "Zelzo Base"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The headquarters of the Wojek League used to be the Parhelion but is now Zelzo Base"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wojek League",
+   "relation": "member_of",
+   "target": "Boros Legion",
+   "note": "Its law enforcement division.",
+   "paragraph": 0,
+   "quote": "The Wojek League is the law enforcement division of the Boros Legion of Ravnica ."
+  },
+  {
+   "source": "Vict Gharti",
+   "relation": "leader_of",
+   "target": "Wojek League",
+   "note": "Original leader.",
+   "paragraph": 2,
+   "quote": "The Wojek League was originally led by Commander-General Vict Gharti ."
+  },
+  {
+   "source": "Anksa",
+   "relation": "leader_of",
+   "target": "Wojek League",
+   "note": "Current leader.",
+   "paragraph": 2,
+   "quote": "The current leader is Commander Anksa ."
+  }
+ ],
+ "rejected": []
+}

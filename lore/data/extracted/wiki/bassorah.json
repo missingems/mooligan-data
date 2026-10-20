@@ -1,0 +1,121 @@
+{
+ "page": "wiki/bassorah",
+ "url": "https://mtg.wiki/page/Bassorah",
+ "title": "Bassorah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:08Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Bassorah",
+   "type": "location",
+   "aliases": [],
+   "description": "A city on Rabiah the Infinite with the famed Bazaar of Bassorah and the Mosque Quarter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rabiah",
+   "type": "plane",
+   "aliases": [
+    "Rabiah the Infinite"
+   ],
+   "description": "Plane of 1001 planes where Bassorah is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fyrah",
+   "type": "character",
+   "aliases": [],
+   "description": "Bird Maiden who battled the Eater of the Infinite.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pakhit",
+   "type": "character",
+   "aliases": [],
+   "description": "Nomad who battled the Eater of the Infinite.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eater of the Infinite",
+   "type": "creature",
+   "aliases": [],
+   "description": "Serendib Efreet with a cold heart who tried to destroy all other living beings on Rabiah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nailah",
+   "type": "character",
+   "aliases": [
+    "Sorceress Queen Nailah"
+   ],
+   "description": "Sorceress Queen who fought Taysir and Raghib in the Mosque Quarter.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taysir",
+   "type": "character",
+   "aliases": [
+    "Nomad Taysir",
+    "Dervish Taysir"
+   ],
+   "description": "Nomad (Dervish) who fought Nailah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raghib",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought Nailah in the Mosque Quarter.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Fyrah and Pakhit battle the Eater of the Infinite in Bassorah.",
+   "participants": [
+    "Fyrah",
+    "Pakhit",
+    "Eater of the Infinite"
+   ],
+   "location": "Bassorah",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "battled the Eater of the Infinite"
+  },
+  {
+   "summary": "Queen Nailah fights Taysir and Raghib in the Mosque Quarter.",
+   "participants": [
+    "Nailah",
+    "Taysir",
+    "Raghib"
+   ],
+   "location": "Bassorah",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "where the Sorceress Queen Nailah fought against the Nomad Taysir"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fyrah",
+   "relation": "enemy",
+   "target": "Eater of the Infinite",
+   "note": "Battled it.",
+   "paragraph": 1,
+   "quote": "battled the Eater of the Infinite"
+  },
+  {
+   "source": "Nailah",
+   "relation": "enemy",
+   "target": "Taysir",
+   "note": "She fought him.",
+   "paragraph": 2,
+   "quote": "fought against the Nomad Taysir"
+  }
+ ],
+ "rejected": []
+}

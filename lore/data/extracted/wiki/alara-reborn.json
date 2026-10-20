@@ -1,0 +1,81 @@
+{
+ "page": "wiki/alara-reborn",
+ "url": "https://mtg.wiki/page/Alara_Reborn",
+ "title": "Alara Reborn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:45:04Z",
+ "storyline": "Alara block",
+ "entities": [
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose five shards have merged.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "The planeswalker whose violent plans reached their cataclysmic zenith with the merging of Alara's shards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker who is the subject of the webcomic Honor Bound on Bant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara where Elspeth sees the effects of the Conflux.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grixis",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara from which evil leaks into Bant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "The event in which the shards of Alara converged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nicol Bolas's plans reach their zenith as the five shards of Alara merge.",
+   "participants": [
+    "Nicol Bolas",
+    "Alara"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The violent plans orchestrated by Nicol Bolas have reached their cataclysmic zenith, as the five shards of Alara are now merged"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Grixis",
+   "relation": "enemy",
+   "target": "Bant",
+   "note": "Evil from Grixis leaks into Bant as the Conflux takes effect.",
+   "paragraph": 5,
+   "quote": "how the effects of the Conflux can be seen as the evil from Grixis leaks in"
+  }
+ ],
+ "rejected": []
+}

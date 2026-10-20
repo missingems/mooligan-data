@@ -1,0 +1,92 @@
+{
+ "page": "wiki/temple-of-aclazotz",
+ "url": "https://mtg.wiki/page/Temple_of_Aclazotz",
+ "title": "Temple of Aclazotz",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:21Z",
+ "storyline": "The Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Temple of Aclazotz",
+   "type": "location",
+   "aliases": [],
+   "description": "A ruined jungle shrine on Ixalan dedicated to the bat god Aclazotz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the temple.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aclazotz",
+   "type": "deity",
+   "aliases": [
+    "the Great Betrayer"
+   ],
+   "description": "Bat god, patron of vampirism, imprisoned deep in Ixalan's Core.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "High Marshal Arguel",
+   "type": "character",
+   "aliases": [
+    "Arguel"
+   ],
+   "description": "A vampire knight of the Legion of Dusk who rediscovered the temple.",
+   "presence": "appears"
+  },
+  {
+   "name": "Legion of Dusk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Vampire order from Torrezon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Legion of Dusk.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Guided by blood-fast visions, Arguel finds the temple entrance but Aclazotz, imprisoned in Ixalan's Core, does not answer.",
+   "participants": [
+    "High Marshal Arguel",
+    "Temple of Aclazotz",
+    "Aclazotz"
+   ],
+   "location": "Temple of Aclazotz",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the bat god was imprisoned deep in Ixalan’s Core and did not answer"
+  }
+ ],
+ "relations": [
+  {
+   "source": "High Marshal Arguel",
+   "relation": "member_of",
+   "target": "Legion of Dusk",
+   "note": "A vampire knight.",
+   "paragraph": 3,
+   "quote": "a vampire knight of the Legion of Dusk from Torrezon"
+  },
+  {
+   "source": "Temple of Aclazotz",
+   "relation": "located_in",
+   "target": "Ixalan",
+   "note": "Surface jungle shrine.",
+   "paragraph": 0,
+   "quote": "is a ruined jungle shrine on the surface of Ixalan"
+  }
+ ],
+ "rejected": []
+}

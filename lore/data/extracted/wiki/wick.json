@@ -1,0 +1,96 @@
+{
+ "page": "wiki/wick",
+ "url": "https://mtg.wiki/page/Wick",
+ "title": "Wick",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:00Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Wick",
+   "type": "character",
+   "aliases": [],
+   "description": "A legendary ratfolk warlock from Bloomburrow, a psychic who founded a snail cult after going mad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Wick comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grotgyre",
+   "type": "creature",
+   "aliases": [
+    "the Great Snail",
+    "the God-Snail"
+   ],
+   "description": "Wick's companion snail, infested by a parasitic worm and become the godlike figure of Wick's cult.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conch",
+   "type": "location",
+   "aliases": [],
+   "description": "The town where Wick grew up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wick's cult",
+   "type": "faction",
+   "aliases": [],
+   "description": "A cult Wick founded around Grotgyre while mad with sickness.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Wick bonded with the snail Grotgyre as a young psychic in Conch.",
+   "participants": [
+    "Wick",
+    "Grotgyre"
+   ],
+   "location": "Conch",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "In Wick's case, he bonded with a snail named Grotgyre."
+  },
+  {
+   "summary": "The town's snails became infested with parasites and grew ill.",
+   "participants": [
+    "Grotgyre"
+   ],
+   "location": "Conch",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the town's snails became infested with parasites and grew ill"
+  },
+  {
+   "summary": "Sickened by proxy, Wick had visions that drove him mad, and he founded a new cult and gathered followers.",
+   "participants": [
+    "Wick",
+    "Wick's cult"
+   ],
+   "location": "Conch",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "In his insanity, Wick formed the foundations of a new cult and started gathering followers."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Wick",
+   "relation": "other",
+   "target": "Grotgyre",
+   "note": "Psychic bond with his companion snail.",
+   "paragraph": 3,
+   "quote": "Wick and Grotgyre possessed a strong connection."
+  }
+ ],
+ "rejected": []
+}

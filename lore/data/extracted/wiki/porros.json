@@ -1,0 +1,205 @@
+{
+ "page": "wiki/porros",
+ "url": "https://mtg.wiki/page/Porros",
+ "title": "Porros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:49Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [
+    "the Raptor",
+    "the Dark Prince",
+    "the Djinn",
+    "the Evil Wind"
+   ],
+   "description": "Prince of Sumifa and powerful songmage from Almaaz who betrayed the songmages and was cursed into an immortal sand wraith.",
+   "presence": "appears"
+  },
+  {
+   "name": "Samor",
+   "type": "character",
+   "aliases": [],
+   "description": "Songmage who taught Porros, bound the cockatrice, and was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City Porros was to inherit, buried under sand by his rage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the songmage Porros.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Songmages",
+   "type": "faction",
+   "aliases": [
+    "Circle of the Songmages"
+   ],
+   "description": "Order of mages that Porros joined and betrayed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brother Samor was summoned to at Sarraza.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarraza",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountain where Samor bound the rogue cockatrice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [
+    "cockatrice"
+   ],
+   "description": "Cockatrice Porros summoned and later schemed to release.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [],
+   "description": "Banished the cockatrice using song-magic in 3050 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Sumifa",
+   "type": "event",
+   "aliases": [],
+   "description": "Burial of Sumifa under a sandstorm drawn by Porros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nessian Caves",
+   "type": "location",
+   "aliases": [],
+   "description": "Shelter to which Sumifa's people fled.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Samor finds Porros tangled in a treetop after a failed flight and Porros demands to be taught; he is accepted and named the Raptor.",
+   "participants": [
+    "Samor",
+    "Porros"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Samor gave him the title \"the Raptor\""
+  },
+  {
+   "summary": "Porros warns Samor and summons him to Sarraza, where Samor binds the cockatrice; Porros is later revealed as the traitor who summoned it and disrupted the ritual.",
+   "participants": [
+    "Porros",
+    "Samor",
+    "Beast of the Hours"
+   ],
+   "location": "Sarraza",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Porros later revealed himself to be a traitor to the songmages."
+  },
+  {
+   "summary": "Porros steals the amulet key to the binding; Samor transforms him into a sand-wraith-like raptor.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "then cast a spell of transformation on Porros"
+  },
+  {
+   "summary": "Porros slashes Samor's throat with broken mirror.",
+   "participants": [
+    "Porros",
+    "Samor"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Porros slashed Samor's throat with a piece of broken mirror"
+  },
+  {
+   "summary": "Porros draws a sandstorm that buries Sumifa while its people flee to the Nessian Caves.",
+   "participants": [
+    "Porros",
+    "Sumifa",
+    "Nessian Caves"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Sumifa was buried under tons of sand"
+  },
+  {
+   "summary": "Porros, immortal, schemes in 3050 AR to release the Beast of the Hours; Ogwater Rifkin foils him.",
+   "participants": [
+    "Porros",
+    "Ogwater Rifkin",
+    "Beast of the Hours"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "his plans were foiled by Ogwater Rifkin"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Samor",
+   "relation": "mentor_of",
+   "target": "Porros",
+   "note": "taught him the songmage ways",
+   "paragraph": 3,
+   "quote": "demanding Samor teach him the ways of the songmages"
+  },
+  {
+   "source": "Porros",
+   "relation": "killed",
+   "target": "Samor",
+   "note": "slashed his throat",
+   "paragraph": 4,
+   "quote": "Porros slashed Samor's throat with a piece of broken mirror"
+  },
+  {
+   "source": "Porros",
+   "relation": "member_of",
+   "target": "Songmages",
+   "note": "later betrayed them",
+   "paragraph": 3,
+   "quote": "He was eventually accepted into their ranks"
+  },
+  {
+   "source": "Ogwater Rifkin",
+   "relation": "enemy",
+   "target": "Porros",
+   "note": "foiled his plans",
+   "paragraph": 5,
+   "quote": "his plans were foiled by Ogwater Rifkin"
+  }
+ ],
+ "rejected": []
+}

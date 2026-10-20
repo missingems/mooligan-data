@@ -1,0 +1,112 @@
+{
+ "page": "wiki/ginger",
+ "url": "https://mtg.wiki/page/Ginger",
+ "title": "Ginger",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:19Z",
+ "storyline": "Throne of Eldraine",
+ "entities": [
+  {
+   "name": "Syr Ginger",
+   "type": "character",
+   "aliases": [
+    "Gynger",
+    "the Meal Ender",
+    "Mother of Cookies",
+    "Last of Her Batch"
+   ],
+   "description": "A gingerbread woman food golem who avenged her gingerbread love against Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cinnamon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Gingerbread horse ridden by Syr Ginger.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brenard",
+   "type": "character",
+   "aliases": [],
+   "description": "Baker who created Syr Ginger.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who broke into the Castle Ardenvale kitchen and ate the gingerbread man.",
+   "presence": "appears"
+  },
+  {
+   "name": "Castle Ardenvale",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle where Ginger awoke in the kitchen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gingerbread man",
+   "type": "character",
+   "aliases": [],
+   "description": "Syr Ginger's love, eaten by Garruk.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Anniseed",
+   "type": "character",
+   "aliases": [],
+   "description": "Ginger's beloved in the Echoverse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Syr Ginger awakens in the Castle Ardenvale kitchen as Garruk breaks in; she falls into a cauldron when Garruk's axe separates her from the gingerbread man.",
+   "participants": [
+    "Syr Ginger",
+    "Garruk",
+    "Gingerbread man"
+   ],
+   "location": "Castle Ardenvale",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "they were separated by Garruk's axe, causing her to fall into the cauldron"
+  },
+  {
+   "summary": "Ginger witnesses Garruk eating the gingerbread man and leaps at him with a fork to avenge him.",
+   "participants": [
+    "Syr Ginger",
+    "Garruk",
+    "Gingerbread man"
+   ],
+   "location": "Castle Ardenvale",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "emerged only to witness the gingerbread man being eaten by Garruk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Brenard",
+   "relation": "created",
+   "target": "Syr Ginger",
+   "note": "Baker.",
+   "paragraph": 2,
+   "quote": "Syr Ginger was created by the baker Brenard"
+  },
+  {
+   "source": "Syr Ginger",
+   "relation": "enemy",
+   "target": "Garruk",
+   "note": "Avenged her love.",
+   "paragraph": 2,
+   "quote": "attempting to avenge her fallen love"
+  }
+ ],
+ "rejected": []
+}

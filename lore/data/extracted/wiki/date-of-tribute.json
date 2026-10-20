@@ -1,0 +1,175 @@
+{
+ "page": "wiki/date-of-tribute",
+ "url": "https://mtg.wiki/page/Date_of_Tribute",
+ "title": "Date of Tribute",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:09Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Date of Tribute",
+   "type": "event",
+   "aliases": [],
+   "description": "A recurring annual event in ancient Corondor in which offerings were made to Sol'Kanar under threat of destruction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sol'Kanar",
+   "type": "character",
+   "aliases": [
+    "Sol'Kanar the Swamp King"
+   ],
+   "description": "The Swamp King of Corondor who demanded tribute and submerged the caravan path.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geyadrone Dihada",
+   "type": "character",
+   "aliases": [],
+   "description": "Figure who abandoned Sol'Kanar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gydolien Mor",
+   "type": "character",
+   "aliases": [],
+   "description": "Spellcaster of Khone sent into Sol'Kanar's service.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chondaeh",
+   "type": "character",
+   "aliases": [],
+   "description": "Spellcaster of Shikar sent into Sol'Kanar's service.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kingdom of Khone",
+   "type": "faction",
+   "aliases": [
+    "Khone"
+   ],
+   "description": "A Corondor kingdom forced to pay tribute.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kingdom of Shikar",
+   "type": "faction",
+   "aliases": [
+    "Shikar"
+   ],
+   "description": "A Corondor kingdom forced to pay tribute.",
+   "presence": "appears"
+  },
+  {
+   "name": "Contrary Kingdoms",
+   "type": "faction",
+   "aliases": [],
+   "description": "Collective name for Khone and Shikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarzam Dragon",
+   "type": "creature",
+   "aliases": [],
+   "description": "Last known dragon Sol'Kanar intended to summon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient land on Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict precipitated by the tribute spellcasters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sivitri's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War centuries before the tribute began.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blackblade-Dihada War",
+   "type": "event",
+   "aliases": [],
+   "description": "Turbulent war preceding the tribute.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sol'Kanar submerges the caravan path between Khone and Shikar and uses it as leverage to demand tribute.",
+   "participants": [
+    "Sol'Kanar",
+    "Kingdom of Khone",
+    "Kingdom of Shikar"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "By deliberately submerging this critical trade artery beneath the waters of his swamp"
+  },
+  {
+   "summary": "Khone and Shikar must send regular offerings under threat of destruction, and are called the Contrary Kingdoms.",
+   "participants": [
+    "Kingdom of Khone",
+    "Kingdom of Shikar",
+    "Sol'Kanar"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the two kingdoms were compelled to send regular offerings directly to him"
+  },
+  {
+   "summary": "The tribute becomes one spellcaster per realm; Gydolien Mor and Chondaeh are sent into Sol'Kanar's service, precipitating the Dragon War.",
+   "participants": [
+    "Sol'Kanar",
+    "Gydolien Mor",
+    "Chondaeh"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Their involvement directly precipitated the outbreak of the Dragon War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kingdom of Khone",
+   "relation": "serves",
+   "target": "Sol'Kanar",
+   "note": "forced to pay tribute",
+   "paragraph": 2,
+   "quote": "the two kingdoms were compelled to send regular offerings directly to him"
+  },
+  {
+   "source": "Kingdom of Shikar",
+   "relation": "serves",
+   "target": "Sol'Kanar",
+   "note": "forced to pay tribute",
+   "paragraph": 2,
+   "quote": "the two kingdoms were compelled to send regular offerings directly to him"
+  },
+  {
+   "source": "Geyadrone Dihada",
+   "relation": "other",
+   "target": "Sol'Kanar",
+   "note": "abandoned him",
+   "paragraph": 1,
+   "quote": "the subsequent abandonment of Sol'Kanar the Swamp King by Geyadrone Dihada"
+  }
+ ],
+ "rejected": []
+}

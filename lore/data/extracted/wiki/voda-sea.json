@@ -1,0 +1,96 @@
+{
+ "page": "wiki/voda-sea",
+ "url": "https://mtg.wiki/page/Voda_Sea",
+ "title": "Voda Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Voda Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Sea in the Domains of Dominaria connected to the Vodalian merfolk empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Galina",
+   "type": "character",
+   "aliases": [],
+   "description": "Led her people from Sarpadia to Etlan Shiis, seized control of the city and became empress of New Vodalia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etlan Shiis",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose merfolk lived under a council for thousands of years.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Voda Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Original sea near Sarpadia, renamed when Galina left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Vodalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm Galina founded as empress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolarian Temporal Disaster",
+   "type": "event",
+   "aliases": [],
+   "description": "Disaster after which Galina and her retinue appeared in the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Place near which the Voda Sea originally lay.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Galina leads her people away from Sarpadia to Etlan Shiis, bringing the Voda Sea's name; the original is renamed Old Voda Sea.",
+   "participants": [
+    "Galina"
+   ],
+   "location": "Voda Sea",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "when Galina led her people away from there and settled in their new location of Etlan Shiis"
+  },
+  {
+   "summary": "Galina and her retinue take control of Etlan Shiis, murdering the councilors and making Galina empress.",
+   "participants": [
+    "Galina",
+    "Etlan Shiis"
+   ],
+   "location": "Etlan Shiis",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "murdering the councilors and placing Galina as empress of the new realm"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Galina",
+   "relation": "leader_of",
+   "target": "New Vodalia",
+   "note": "Empress",
+   "paragraph": 3,
+   "quote": "placing Galina as empress of the new realm"
+  }
+ ],
+ "rejected": []
+}

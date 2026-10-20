@@ -1,0 +1,102 @@
+{
+ "page": "wiki/vesuva",
+ "url": "https://mtg.wiki/page/Vesuva",
+ "title": "Vesuva",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vesuva",
+   "type": "location",
+   "aliases": [],
+   "description": "An island on Dominaria, home of shapeshifters and magical illusions, rebuilt after the Great Mending and ruled by queen Omo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Vesuva lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Walassa",
+   "type": "location",
+   "aliases": [],
+   "description": "Island west of which... Vesuva lies directly west of it, in the Orvada Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orvada Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire containing Walassa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shanodin",
+   "type": "location",
+   "aliases": [],
+   "description": "Land west of Vesuva.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omo",
+   "type": "character",
+   "aliases": [
+    "queen Omo"
+   ],
+   "description": "Queen who rules the rebuilt Vesuva; the Helm of the Host was made for her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helm of the Host",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary helm made of Rathi flowstone specially for Omo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Vesuva was rebuilt.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Great Mending, Vesuva is rebuilt and ruled by queen Omo.",
+   "participants": [
+    "Omo"
+   ],
+   "location": "Vesuva",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After the Great Mending , Vesuva was rebuilt, and is ruled by queen Omo ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Omo",
+   "relation": "leader_of",
+   "target": "Vesuva",
+   "note": "Queen of rebuilt Vesuva.",
+   "paragraph": 3,
+   "quote": "After the Great Mending , Vesuva was rebuilt, and is ruled by queen Omo ."
+  },
+  {
+   "source": "Vesuva",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Vesuva (veh-SOO-vuh ) is an island on Dominaria ."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,125 @@
+{
+ "page": "wiki/okina",
+ "url": "https://mtg.wiki/page/Okina",
+ "title": "Okina",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:38Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Okina",
+   "type": "location",
+   "aliases": [
+    "Okina Temple"
+   ],
+   "description": "Ancient temple on Kamigawa, the oldest of the Jukai's shrines, considered the heart of Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Okina stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest whose oldest shrine is Okina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [],
+   "description": "Great tree near which Okina stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which the Jukai kami turned violent against the monks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dosan",
+   "type": "character",
+   "aliases": [],
+   "description": "Monk who remained at Okina to defend the shrine with his trusted students.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Seshiro",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous orochi leader who trained with the monks of Okina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orochi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Snake people who first encountered humans at Okina.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When the Jukai kami turned violent, most monks refused to fight; many were killed or fled, leaving a handful to defend Okina.",
+   "participants": [
+    "Dosan",
+    "Okina"
+   ],
+   "location": "Okina",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "But when the Jukai forest kami turned violent, most of the monks refused to fight them."
+  },
+  {
+   "summary": "The first relevant encounter between humans and orochi takes place at Okina.",
+   "participants": [
+    "Orochi",
+    "Okina"
+   ],
+   "location": "Okina",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the first relevant encounter between humans and orochi took place"
+  },
+  {
+   "summary": "Seshiro trains with the monks of Okina in martial and spiritual arts.",
+   "participants": [
+    "Seshiro",
+    "Okina"
+   ],
+   "location": "Okina",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "trained with the monks of Okina in both martial and spiritual arts"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Okina",
+   "relation": "located_in",
+   "target": "Jukai",
+   "note": "Okina was the oldest of the Jukai's shrines.",
+   "paragraph": 1,
+   "quote": "The Okina Temple was the oldest of the Jukai 's shrines"
+  },
+  {
+   "source": "Dosan",
+   "relation": "member_of",
+   "target": "Okina",
+   "note": "He was among those who remained to defend the shrine.",
+   "paragraph": 1,
+   "quote": "Among them were Dosan and his most trusted students."
+  }
+ ],
+ "rejected": []
+}

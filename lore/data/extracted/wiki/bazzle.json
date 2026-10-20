@@ -1,0 +1,120 @@
+{
+ "page": "wiki/bazzle",
+ "url": "https://mtg.wiki/page/Bazzle",
+ "title": "Bazzle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:25Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Bazzle",
+   "type": "character",
+   "aliases": [],
+   "description": "Elderly Innistrad village clockworker who created the Chronomaton and was replaced by it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chronomaton",
+   "type": "artifact",
+   "aliases": [
+    "Cronomaton",
+    "the golem"
+   ],
+   "description": "Bazzle's clockwork body masterpiece, which acted on its own at night and replaced him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Butcher's Cleaver",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Weapon the Chronomaton used to sever Bazzle's arm and head.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Bazzle lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bazzle catches the creeping plague and builds himself a clockwork body as his biological body succumbs.",
+   "participants": [
+    "Bazzle"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Bazzle constructed a clockwork body for himself as his biological body slowly succumbed to the plague"
+  },
+  {
+   "summary": "Six years later Bazzle finishes the Chronomaton, but finds it wandering off at night and attacking villagers.",
+   "participants": [
+    "Bazzle",
+    "Chronomaton"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "his mechanical body wandered off on its own at night while Bazzle's mind was sleeping"
+  },
+  {
+   "summary": "Bazzle tries to deactivate the Chronomaton, but its clockwork arm punches him unconscious.",
+   "participants": [
+    "Bazzle",
+    "Chronomaton"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the clockwork arm attached to his body punched Bazzle in the face and knocked him out before he could deactivate it"
+  },
+  {
+   "summary": "Bazzle again tries to reach the deactivating key but is knocked out by a blow to the neck.",
+   "participants": [
+    "Bazzle",
+    "Chronomaton"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Bazzle tried to crawl across the room to reach the deactivating key"
+  },
+  {
+   "summary": "The Chronomaton severs Bazzle's good arm, then decapitates him with the cleaver and replaces his head with its own mechanical one, completing itself.",
+   "participants": [
+    "Chronomaton",
+    "Bazzle",
+    "Butcher's Cleaver"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The golem then used the butcher's cleaver to decapitate Bazzle's head from its body"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bazzle",
+   "relation": "created",
+   "target": "Chronomaton",
+   "note": "his masterpiece",
+   "paragraph": 0,
+   "quote": "who was responsible for the creation of the Chronomaton"
+  },
+  {
+   "source": "Chronomaton",
+   "relation": "killed",
+   "target": "Bazzle",
+   "note": "decapitated and replaced him",
+   "paragraph": 5,
+   "quote": "The golem then used the butcher's cleaver to decapitate Bazzle's head from its body"
+  }
+ ],
+ "rejected": []
+}

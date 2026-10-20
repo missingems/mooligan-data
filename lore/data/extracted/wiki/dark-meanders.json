@@ -1,0 +1,186 @@
+{
+ "page": "wiki/dark-meanders",
+ "url": "https://mtg.wiki/page/Dark_Meanders",
+ "title": "Dark Meanders",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:32Z",
+ "storyline": "Shadowmoor",
+ "entities": [
+  {
+   "name": "Dark Meanders",
+   "type": "location",
+   "aliases": [
+    "Dark Tributaries"
+   ],
+   "description": "System of underground waterways below Lorwyn-Shadowmoor, home to merrow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sygg",
+   "type": "character",
+   "aliases": [],
+   "description": "Merrow who guided a party through the Dark Tributaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "Flamekin escorted through the Dark Tributaries who first saw her bonded elemental, the Spitemare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the party led through the tributaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "Member of the party led through the tributaries.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brigid Baeli",
+   "type": "character",
+   "aliases": [],
+   "description": "Traveled with Sygg through the tributaries twice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vendilion clique",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faeries who traveled with the party.",
+   "presence": "appears"
+  },
+  {
+   "name": "Spitemare",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ashling's bonded elemental.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reejerey Kasella",
+   "type": "character",
+   "aliases": [],
+   "description": "Sygg's cousin and mate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merrow",
+   "type": "faction",
+   "aliases": [],
+   "description": "Aquatic folk who explore the waterways.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Festival of Tales",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in Kinsbaile where trouble broke out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kinsbaile",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of the Festival of Tales.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Murmuring Bosk",
+   "type": "location",
+   "aliases": [],
+   "description": "Place reached unseen via the tributaries.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sapling of Colfenor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Tree grown from a seed planted in the Murmuring Bosk.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sygg leads Ashling, Rhys, Maralen, Brigid Baeli and the Vendilion clique through the Dark Tributaries while escaping the Festival of Tales.",
+   "participants": [
+    "Sygg",
+    "Ashling",
+    "Rhys",
+    "Maralen",
+    "Brigid Baeli",
+    "Vendilion clique"
+   ],
+   "location": "Dark Meanders",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Sygg brought Ashling , Rhys , Maralen , Brigid Baeli , and the Vendilion clique through the Dark Tributaries"
+  },
+  {
+   "summary": "Ashling first witnesses her bonded elemental, the Spitemare.",
+   "participants": [
+    "Ashling",
+    "Spitemare"
+   ],
+   "location": "Dark Meanders",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "This was the first time Ashling witnessed her bonded elemental, the Spitemare ."
+  },
+  {
+   "summary": "The party reaches the Murmuring Bosk unseen and plants the seed of the Sapling of Colfenor.",
+   "participants": [
+    "Sygg",
+    "Ashling",
+    "Rhys",
+    "Maralen",
+    "Brigid Baeli"
+   ],
+   "location": "Murmuring Bosk",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "to plant the seed which would become the Sapling of Colfenor"
+  },
+  {
+   "summary": "Sygg and Brigid Baeli return to the Dark Meanders after being attacked by malignants and meet Reejerey Kasella at the redoubt.",
+   "participants": [
+    "Sygg",
+    "Brigid Baeli",
+    "Reejerey Kasella"
+   ],
+   "location": "Dark Meanders",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They traveled to the underwater redoubt, where they met with Sygg's cousin and mate, Reejerey Kasella ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Reejerey Kasella",
+   "relation": "family",
+   "target": "Sygg",
+   "note": "cousin and mate",
+   "paragraph": 3,
+   "quote": "Sygg's cousin and mate, Reejerey Kasella"
+  },
+  {
+   "source": "Merrow",
+   "relation": "located_in",
+   "target": "Dark Meanders",
+   "note": "home to merrow",
+   "paragraph": 1,
+   "quote": "that are home to merrow"
+  }
+ ],
+ "rejected": []
+}

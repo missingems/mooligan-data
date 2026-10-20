@@ -1,0 +1,84 @@
+{
+ "page": "wiki/tenza",
+ "url": "https://mtg.wiki/page/Tenza",
+ "title": "Tenza",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tenza",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary flail-like maul wielded by Godo on Kamigawa during the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Godo",
+   "type": "character",
+   "aliases": [],
+   "description": "Human warlord of the sanzoku bandits of the Sokenzan mountains who wielded Tenza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Tenza existed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict during which Tenza existed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanzoku",
+   "type": "faction",
+   "aliases": [
+    "sanzoku bandits"
+   ],
+   "description": "Bandits led by Godo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [
+    "Sokenzan mountain range"
+   ],
+   "description": "Mountain range of Godo's bandits.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Godo leads his bandits to battle wielding Tenza, even while riding an ox.",
+   "participants": [
+    "Godo",
+    "Tenza",
+    "Sanzoku"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Godo wielded it as he led his bandits to battle"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Godo",
+   "relation": "leader_of",
+   "target": "Sanzoku",
+   "note": "Human warlord of the bandits.",
+   "paragraph": 1,
+   "quote": "a human warlord of the sanzoku bandits"
+  }
+ ],
+ "rejected": []
+}

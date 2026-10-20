@@ -1,0 +1,190 @@
+{
+ "page": "wiki/talrand",
+ "url": "https://mtg.wiki/page/Talrand",
+ "title": "Talrand",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:36Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Talrand",
+   "type": "character",
+   "aliases": [],
+   "description": "A Merfolk hydromancer and warlord who rules beneath the waves of the Kapsho Seas on Shandalar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kapsho Seas",
+   "type": "location",
+   "aliases": [],
+   "description": "The seas of Shandalar ruled by Talrand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Talrand rules the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kalyntri",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon whose dominion above the sea Talrand challenged and who was killed by Talrand and a flock of drakes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drakes",
+   "type": "creature",
+   "aliases": [
+    "drake servants"
+   ],
+   "description": "Telepathic drakes who serve Talrand in exchange for his promise of an end to the tyranny of dragons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "A war during which many drakes and merfolk died protecting their waters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [
+    "Omenpath",
+    "zone path"
+   ],
+   "description": "Transplanar pathways that began to appear on Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mistral Island",
+   "type": "location",
+   "aliases": [],
+   "description": "An island on Shandalar where an Omenpath was found, claimed by Talrand as part of his territory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alandra",
+   "type": "character",
+   "aliases": [],
+   "description": "Talrand's daughter, sent to Strixhaven University.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "A prestigious school on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane that hosts Strixhaven University.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Talrand and a large flock of drakes kill the dragon Kalyntri.",
+   "participants": [
+    "Talrand",
+    "Drakes",
+    "Kalyntri"
+   ],
+   "location": "Kapsho Seas",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Talrand and a large flock of Drakes killed Kalyntri."
+  },
+  {
+   "summary": "After the invasion, Talrand works to contain horrors released from the abyss and defends his waters from human raids.",
+   "participants": [
+    "Talrand"
+   ],
+   "location": "Kapsho Seas",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Talrand, seeing his rule of the sea threatened, is working on trying to contain them."
+  },
+  {
+   "summary": "Talrand claims an Omenpath on Mistral Island as part of his territory.",
+   "participants": [
+    "Talrand",
+    "Omenpaths",
+    "Mistral Island"
+   ],
+   "location": "Mistral Island",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "one was found on Mistral Island that Tarland claimed as part of his territory"
+  },
+  {
+   "summary": "A letter arrives from Arcavios inviting Talrand's daughter to attend its school.",
+   "participants": [
+    "Talrand",
+    "Alandra",
+    "Arcavios"
+   ],
+   "location": "Shandalar",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "a letter arrived from Arcavios for his daughter with an invitation for her to attend its prestigious school"
+  },
+  {
+   "summary": "Talrand sends his daughter Alandra to Strixhaven University, to return only if she proves worthy to be his heir.",
+   "participants": [
+    "Talrand",
+    "Alandra",
+    "Strixhaven University"
+   ],
+   "location": "Arcavios",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Talrand sent his daughter Alandra to Strixhaven University on Arcavios."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Talrand",
+   "relation": "leader_of",
+   "target": "Drakes",
+   "note": "The drakes serve him.",
+   "paragraph": 2,
+   "quote": "The telepathic drakes serve him in exchange for his promise of an end to the tyranny of dragons."
+  },
+  {
+   "source": "Talrand",
+   "relation": "killed",
+   "target": "Kalyntri",
+   "note": "Killed with a flock of drakes.",
+   "paragraph": 2,
+   "quote": "Talrand and a large flock of Drakes killed Kalyntri."
+  },
+  {
+   "source": "Talrand",
+   "relation": "family",
+   "target": "Alandra",
+   "note": "Father and daughter.",
+   "paragraph": 6,
+   "quote": "Talrand sent his daughter Alandra to Strixhaven University on Arcavios."
+  },
+  {
+   "source": "Talrand",
+   "relation": "enemy",
+   "target": "Kalyntri",
+   "note": "He challenged her dominion.",
+   "paragraph": 2,
+   "quote": "Talrand challenged the dominion of the dragon Kalyntri above the sea."
+  }
+ ],
+ "rejected": []
+}

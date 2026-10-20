@@ -1,0 +1,106 @@
+{
+ "page": "wiki/urhaalan-valley",
+ "url": "https://mtg.wiki/page/Urhaalan_Valley",
+ "title": "Urhaalan Valley",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:38Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Urhaalan Valley",
+   "type": "location",
+   "aliases": [],
+   "description": "An area in northwestern Terisiare populated by goblins and Urhaalan minotaurs, later destroyed by the Great Glacier.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urhaalan minotaurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "A minotaur tribe divided into clans, decimated in a war with the elves of Eln Forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eln Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of the elves who fought the Urhaalan minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sacumon",
+   "type": "character",
+   "aliases": [],
+   "description": "A sorceress whose schemes brought the minotaurs and elves into conflict.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tiyint",
+   "type": "character",
+   "aliases": [],
+   "description": "Legendary hero whose essence was awakened into a stone colossus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Glacier",
+   "type": "concept",
+   "aliases": [],
+   "description": "The widening glacier that covered and destroyed the valley at the onset of the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent containing the valley.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Through Sacumon's schemes the Urhaalan minotaurs come into conflict with the elves of Eln Forest, escalating into war that decimates the minotaurs.",
+   "participants": [
+    "Urhaalan minotaurs",
+    "Sacumon"
+   ],
+   "location": "Urhaalan Valley",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "This escalated into an all-out war, which decimated the population of the Urhaalan minotaurs"
+  },
+  {
+   "summary": "The stone colossus of Tiyint is awakened for the Urhaalan but turns on them until deactivated.",
+   "participants": [
+    "Tiyint"
+   ],
+   "location": "Urhaalan Valley",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "eventually turned on them until its deactivation"
+  },
+  {
+   "summary": "The Great Glacier slowly covers and destroys the valley.",
+   "participants": [
+    "Great Glacier"
+   ],
+   "location": "Urhaalan Valley",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Urhaalan Valley was slowly covered and destroyed by the widening Great Glacier ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sacumon",
+   "relation": "enemy",
+   "target": "Urhaalan minotaurs",
+   "note": "Her schemes provoked their war with the elves.",
+   "paragraph": 2,
+   "quote": "through the schemes of the sorceress Sacumon"
+  }
+ ],
+ "rejected": []
+}

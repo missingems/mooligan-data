@@ -1,0 +1,123 @@
+{
+ "page": "wiki/fate-reforged",
+ "url": "https://mtg.wiki/page/Fate_Reforged",
+ "title": "Fate Reforged",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:43:31Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [
+    "Sarkhan"
+   ],
+   "description": "A planeswalker who travels 1,280 years back in time to change the moment that sealed Tarkir's fate.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose history is rewritten after the demise of its dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "The elder dragon whose battle with Ugin sealed Tarkir's fate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "Ugin, the Spirit Dragon"
+   ],
+   "description": "A colorless planeswalker and Spirit Dragon whose battle with Bolas led to his demise and that of Tarkir's dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yasova Dragonclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A khan of the past whom Sarkhan meets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Clans of Tarkir",
+   "type": "faction",
+   "aliases": [
+    "the clans"
+   ],
+   "description": "The clans, not fighting each other in the past, who constantly fend off hordes of dragons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle between Bolas and Ugin",
+   "type": "event",
+   "aliases": [],
+   "description": "The battle that ended with Ugin's demise and all the dragons of Tarkir.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sarkhan Vol travels 1,280 years back in time to change the moment that sealed Tarkir's fate.",
+   "participants": [
+    "Sarkhan Vol",
+    "Nicol Bolas",
+    "Ugin",
+    "Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Sarkhan Vol travels 1,280 years back in time"
+  },
+  {
+   "summary": "In the past the clans, not at war with each other, are fending off hordes of terrorizing dragons.",
+   "participants": [
+    "Clans of Tarkir"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "but are constantly fending off the hordes of dragons that are terrorizing their world"
+  },
+  {
+   "summary": "Sarkhan meets khans of the past such as Yasova Dragonclaw, and Tarkir's history is rewritten.",
+   "participants": [
+    "Sarkhan Vol",
+    "Yasova Dragonclaw"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The history of Tarkir is rewritten."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "enemy",
+   "target": "Ugin",
+   "note": "their battle sealed Tarkir's fate",
+   "paragraph": 5,
+   "quote": "the battle between Nicol Bolas and Ugin"
+  },
+  {
+   "source": "Sarkhan Vol",
+   "relation": "ally",
+   "target": "Ugin",
+   "note": "tries to save Ugin by changing the past",
+   "paragraph": 7,
+   "quote": "the new timeline where Ugin was saved by Sarkhan Vol"
+  }
+ ],
+ "rejected": []
+}

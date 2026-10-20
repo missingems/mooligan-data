@@ -1,0 +1,212 @@
+{
+ "page": "wiki/xenagos",
+ "url": "https://mtg.wiki/page/Xenagos",
+ "title": "Xenagos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:11Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Xenagos",
+   "type": "character",
+   "aliases": [
+    "King Stranger",
+    "God of Revels"
+   ],
+   "description": "A satyr planeswalker from Theros who ascended to godhood as God of Revels and was killed by Elspeth in Nyx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Xenagos's birthplane, home of the gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Xenagos's mother, who raised him despite his attempts to kill her.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nylea",
+   "type": "deity",
+   "aliases": [],
+   "description": "God aware of the threat Xenagos posed, who shot an arrowhead into him before his ascension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kruphix",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who enacted the Silence of the Gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "The Sun god, offended by Xenagos's ascension, who called him the usurper.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker, Sun god's champion, who led armies at Akros and killed Xenagos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani",
+   "type": "character",
+   "aliases": [],
+   "description": "Elspeth's friend who came with her to Nyx.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daxos",
+   "type": "character",
+   "aliases": [],
+   "description": "A man killed during the Great Revel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Godsend",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Elspeth's spear, thrown into Xenagos's chest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nyx",
+   "type": "location",
+   "aliases": [],
+   "description": "The realm of the gods, where Xenagos died.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silence of the Gods",
+   "type": "event",
+   "aliases": [],
+   "description": "Kruphix's act forcing the gods to remain in Nyx without contact with mortals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "A polis attacked by Xenagos's forces and besieged by minotaurs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xenagos's spark ignited during the Bakkeia and he became a planeswalker.",
+   "participants": [
+    "Xenagos"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "this lifestyle led to his ascension, his spark igniting during the Bakkeia."
+  },
+  {
+   "summary": "Xenagos returned to Theros and attacked Meletis, Akros and Setessa with otherworldly monsters, blinding the gods.",
+   "participants": [
+    "Xenagos"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "These attacks became so severe that the gods themselves began to go blind, cut off from their oracles."
+  },
+  {
+   "summary": "Kruphix enacted the Silence of the Gods, keeping the gods in Nyx.",
+   "participants": [
+    "Kruphix",
+    "Silence of the Gods"
+   ],
+   "location": "Nyx",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Kruphix then enacted the Silence of the Gods"
+  },
+  {
+   "summary": "After a Great Revel following the siege of Akros, Xenagos ascended to godhood as god of revels, and Elspeth was scapegoated for Daxos's death and exiled.",
+   "participants": [
+    "Xenagos",
+    "Elspeth",
+    "Daxos"
+   ],
+   "location": "Akros",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Xenagos held the position of the god of the revels, furthering the chaos and distrust of the established pantheon."
+  },
+  {
+   "summary": "Elspeth and Ajani arrived in Nyx, and Xenagos knocked Elspeth down.",
+   "participants": [
+    "Elspeth",
+    "Ajani",
+    "Xenagos"
+   ],
+   "location": "Nyx",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Elspeth and her friend Ajani arrived in Nyx to set Theros right again."
+  },
+  {
+   "summary": "Elspeth threw Godsend into Xenagos's chest, detonating Nylea's arrowhead and killing him in Nyx.",
+   "participants": [
+    "Elspeth",
+    "Xenagos",
+    "Godsend",
+    "Nylea"
+   ],
+   "location": "Nyx",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Elspeth managed to throw the spear into Xenagos's chest"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raissa",
+   "relation": "family",
+   "target": "Xenagos",
+   "note": "His mother.",
+   "paragraph": 3,
+   "quote": "In time, his mother, Raissa , would give birth"
+  },
+  {
+   "source": "Elspeth",
+   "relation": "killed",
+   "target": "Xenagos",
+   "note": "Killed him with Godsend.",
+   "paragraph": 8,
+   "quote": "Elspeth managed to throw the spear into Xenagos's chest"
+  },
+  {
+   "source": "Heliod",
+   "relation": "enemy",
+   "target": "Xenagos",
+   "note": "Sought to destroy the usurper.",
+   "paragraph": 7,
+   "quote": "Heliod was particularly offended by his ascension and sought to destroy the satyr"
+  },
+  {
+   "source": "Elspeth",
+   "relation": "ally",
+   "target": "Ajani",
+   "note": "Friends who went to Nyx together.",
+   "paragraph": 8,
+   "quote": "Elspeth and her friend Ajani arrived in Nyx"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,152 @@
+{
+ "page": "wiki/sokenzan",
+ "url": "https://mtg.wiki/page/Sokenzan",
+ "title": "Sokenzan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:47Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [
+    "Frost-Sword Mountains"
+   ],
+   "description": "Kamigawa's largest mountain range, home to Akki, bandits, yamabushi shamans and ronin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "A place lying north of Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Godo",
+   "type": "character",
+   "aliases": [],
+   "description": "A bandit king who ruled the mountain ronin during the Kami War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tendo Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "The steepest mountains in Kamigawa, deep within Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Untaidake",
+   "type": "location",
+   "aliases": [],
+   "description": "The tallest mountain in Kamigawa, guarded by Ryusaki Kumano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ryusaki Kumano",
+   "type": "character",
+   "aliases": [],
+   "description": "A yamabushi who guarded Untaidake.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ryusei, the Falling Star",
+   "type": "creature",
+   "aliases": [
+    "Ryusei"
+   ],
+   "description": "The dragon kami who guards Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shinka",
+   "type": "location",
+   "aliases": [
+    "Shinka Keep",
+    "the Bloodsoaked Keep"
+   ],
+   "description": "A keep in Sokenzan where Hidetsugu and his o-bakemono practised oni summoning.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "An ogre-mage who practised summoning oni at Shinka.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Asari Uprisers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A rebel organization desiring freedom from Imperial tyranny, centered in Sokenzan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war during which Godo ruled bandits and ronin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sokenzan became the center of the Asari Uprisers, rebels seeking freedom from Imperial tyranny.",
+   "participants": [
+    "Asari Uprisers",
+    "Sokenzan"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Sokenzan became the center for the Asari Uprisers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ryusei, the Falling Star",
+   "relation": "serves",
+   "target": "Sokenzan",
+   "note": "Guardian dragon kami.",
+   "paragraph": 1,
+   "quote": "The Sokenzan is guarded by the dragon kami Ryusei , the Falling Star."
+  },
+  {
+   "source": "Godo",
+   "relation": "leader_of",
+   "target": "Sokenzan",
+   "note": "Ruled bandits and ronin there during the Kami War.",
+   "paragraph": 1,
+   "quote": "ruled by the bandit king Godo during the Kami War"
+  },
+  {
+   "source": "Sokenzan",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "Largest mountain range.",
+   "paragraph": 0,
+   "quote": "is Kamigawa 's largest mountain range."
+  },
+  {
+   "source": "Hidetsugu",
+   "relation": "located_in",
+   "target": "Shinka",
+   "note": "Practised oni summoning there.",
+   "paragraph": 2,
+   "quote": "There Hidetsugu and his o-bakemono practised the summoning of oni"
+  }
+ ],
+ "rejected": []
+}

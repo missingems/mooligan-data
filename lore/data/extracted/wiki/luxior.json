@@ -1,0 +1,115 @@
+{
+ "page": "wiki/luxior",
+ "url": "https://mtg.wiki/page/Luxior",
+ "title": "Luxior",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:46Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Luxior",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary Halo-infused equipment sword from Capenna, created when Giada sacrificed herself to rearm Elspeth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Giada",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who sacrificed herself on Capenna, creating Luxior.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elspeth",
+   "type": "character",
+   "aliases": [],
+   "description": "Wielder of Luxior who struck a deadly blow against Ob Nixilis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who nearly defeated Elspeth on Capenna and was forced to planeswalk away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "In whose corpse Luxior was abandoned after the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who retrieved Luxior from Jace Beleren's corpse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Luxior was created.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after whose conclusion Luxior was abandoned in Jace's corpse.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Giada sacrificed herself to reinvigorate and rearm Elspeth, creating Luxior; Elspeth struck Ob Nixilis, forcing him to planeswalk away.",
+   "participants": [
+    "Giada",
+    "Elspeth",
+    "Ob Nixilis",
+    "Luxior"
+   ],
+   "location": "Capenna",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Luxior was created when Giada sacrificed herself to reinvigorate and rearm Elspeth"
+  },
+  {
+   "summary": "After the New Phyrexian Invasion, Luxior was abandoned in Jace Beleren's corpse and retrieved by Kaito Shizuki.",
+   "participants": [
+    "Luxior",
+    "Jace Beleren",
+    "Kaito Shizuki"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "it was abandoned in Jace Beleren 's corpse and retrieved by Kaito Shizuki"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elspeth",
+   "relation": "other",
+   "target": "Luxior",
+   "note": "Elspeth wielded Luxior against Ob Nixilis.",
+   "paragraph": 2,
+   "quote": "Now wielding Luxior, Elspeth was able to strike a deadly blow against Nixilis"
+  },
+  {
+   "source": "Luxior",
+   "relation": "located_in",
+   "target": "Capenna",
+   "note": "It is an artifact sword from Capenna.",
+   "paragraph": 0,
+   "quote": "Luxior is a legendary equipment artifact sword from Capenna"
+  }
+ ],
+ "rejected": []
+}

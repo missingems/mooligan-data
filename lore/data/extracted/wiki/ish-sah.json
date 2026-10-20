@@ -1,0 +1,123 @@
+{
+ "page": "wiki/ish-sah",
+ "url": "https://mtg.wiki/page/Ish_Sah",
+ "title": "Ish Sah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:07Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Ish Sah",
+   "type": "location",
+   "aliases": [
+    "Vault of Whispers"
+   ],
+   "description": "Giant chimney-shaped Vault of Whispers on Mirrodin, once the stronghold of a human warlord, home to Geth, Moriok and necromancers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geth",
+   "type": "character",
+   "aliases": [],
+   "description": "Controlled the nim from Ish Sah.",
+   "presence": "appears"
+  },
+  {
+   "name": "Moriok",
+   "type": "faction",
+   "aliases": [],
+   "description": "Artificers and necromancers who lodged in Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Ish Sah stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [],
+   "description": "Haze-shrouded layer around the top of Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Disciples",
+   "type": "faction",
+   "aliases": [],
+   "description": "Those who stayed in Ish Sah to study the dark arts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Lacuna",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item housed in Ish Sah.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dross Pits",
+   "type": "location",
+   "aliases": [],
+   "description": "Place into which the Mephidross was siphoned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nim",
+   "type": "faction",
+   "aliases": [],
+   "description": "Undead controlled by Geth from Ish Sah.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Geth controls the nim from Ish Sah, also a place of dark study and a lodge for Moriok artificers.",
+   "participants": [
+    "Geth",
+    "Ish Sah",
+    "Nim"
+   ],
+   "location": "Ish Sah",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Geth controlled the nim from here"
+  },
+  {
+   "summary": "After the Mephidross is siphoned into the Dross Pits, Geth's fortress towers above the layer as a structure of black bone and red sinew.",
+   "participants": [
+    "Geth",
+    "Mephidross",
+    "Dross Pits"
+   ],
+   "location": "Ish Sah",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Geth's fortress, possibly the former Ish Sah, was a colossal structure of black bone and red sinew"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Geth",
+   "relation": "leader_of",
+   "target": "Nim",
+   "note": "Geth controlled the nim.",
+   "paragraph": 2,
+   "quote": "Geth controlled the nim from here"
+  },
+  {
+   "source": "Black Lacuna",
+   "relation": "located_in",
+   "target": "Ish Sah",
+   "note": "Ish Sah housed it.",
+   "paragraph": 3,
+   "quote": "It housed the Black Lacuna ."
+  }
+ ],
+ "rejected": []
+}

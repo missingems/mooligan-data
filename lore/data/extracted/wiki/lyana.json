@@ -1,0 +1,129 @@
+{
+ "page": "wiki/lyana",
+ "url": "https://mtg.wiki/page/Lyana",
+ "title": "Lyana",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:09Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Lyana",
+   "type": "character",
+   "aliases": [],
+   "description": "A girl of about 11 or 12 from a Realm of Kaldheim with aqua eyes and magical abilities; protected by the wolf Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lathril",
+   "type": "character",
+   "aliases": [],
+   "description": "Elf bestowed with divine powers who protected Lyana and retrieved Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarulf",
+   "type": "deity",
+   "aliases": [
+    "Cosmos Wolf Sarulf"
+   ],
+   "description": "The Cosmos Wolf, father of Kit and Lukya, who gave Kit to Lyana as protection and blessed Lathril.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kit",
+   "type": "creature",
+   "aliases": [],
+   "description": "Lyana's wolf companion, a child of Sarulf, kidnapped by a draugr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukya",
+   "type": "creature",
+   "aliases": [],
+   "description": "Lathril's wolf companion and sister of Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Draugr",
+   "type": "creature",
+   "aliases": [],
+   "description": "Hostile creatures that attacked Lyana and Kit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Draugr attack Lyana and Kit during a walk in the woods, and one seizes and kidnaps Kit.",
+   "participants": [
+    "Lyana",
+    "Kit",
+    "Draugr"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "one of the draugr seized Kit and kidnapped him"
+  },
+  {
+   "summary": "Lathril and Lukya come to Lyana's aid; Lathril retrieves Kit.",
+   "participants": [
+    "Lathril",
+    "Lukya",
+    "Lyana",
+    "Kit"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Lathril retrieved Kit"
+  },
+  {
+   "summary": "Sarulf blesses Lathril, creating a permanent bond between the elves and wolves of Kaldheim.",
+   "participants": [
+    "Sarulf",
+    "Lathril"
+   ],
+   "location": "Kaldheim",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "creating a permanent bond between the elves and wolves of Kaldheim"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lathril",
+   "relation": "ally",
+   "target": "Lyana",
+   "note": "protector and guide",
+   "paragraph": 4,
+   "quote": "became a protector and guide for Lyana"
+  },
+  {
+   "source": "Kit",
+   "relation": "family",
+   "target": "Sarulf",
+   "note": "child of Sarulf",
+   "paragraph": 4,
+   "quote": "Kit's father Sarulf"
+  },
+  {
+   "source": "Lukya",
+   "relation": "family",
+   "target": "Kit",
+   "note": "sister",
+   "paragraph": 4,
+   "quote": "Lukya , sister of Kit"
+  }
+ ],
+ "rejected": []
+}

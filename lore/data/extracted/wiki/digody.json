@@ -1,0 +1,130 @@
+{
+ "page": "wiki/digody",
+ "url": "https://mtg.wiki/page/Digody",
+ "title": "Digody",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:46Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Digody",
+   "type": "character",
+   "aliases": [],
+   "description": "Non-human advisor to Lord Peemel in Iwset who secretly sought to overthrow him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Peemel",
+   "type": "character",
+   "aliases": [
+    "Peemel"
+   ],
+   "description": "Lord of the city-state of Iwset, stabbed in the back by Digody.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iwset",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state in Terisiare during the Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apepei",
+   "type": "character",
+   "aliases": [],
+   "description": "Rival of Digody and secret lover of Lady Edara, who killed Digody.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Edara of Jehesic",
+   "type": "character",
+   "aliases": [
+    "Edara"
+   ],
+   "description": "Woman kidnapped by Peemel; secret lover of Apepei.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isak Glen'Dard",
+   "type": "character",
+   "aliases": [],
+   "description": "Shapeshifter sent by Digody to kill Sacumon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sacumon",
+   "type": "character",
+   "aliases": [],
+   "description": "Blood witch targeted by Digody.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Digody sent Isak Glen'Dard to kill the blood witch Sacumon.",
+   "participants": [
+    "Digody",
+    "Isak Glen'Dard",
+    "Sacumon"
+   ],
+   "location": "Iwset",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Digody also sent Isak Glen'Dard to kill the blood witch Sacumon ."
+  },
+  {
+   "summary": "Digody stabbed Lord Peemel in the back after Peemel kidnapped Lady Edara.",
+   "participants": [
+    "Digody",
+    "Lord Peemel",
+    "Lady Edara of Jehesic"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "So Digody took his dagger and stabbed his lord in the back"
+  },
+  {
+   "summary": "Digody was stabbed in the back by his rival Apepei and died.",
+   "participants": [
+    "Digody",
+    "Apepei"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was stabbed in the back by his long-standing rival Apepei"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Digody",
+   "relation": "serves",
+   "target": "Lord Peemel",
+   "note": "advisor who secretly plotted against him",
+   "paragraph": 1,
+   "quote": "He worked as an advisor to lord Peemel , but secretly hoped to overthrow him"
+  },
+  {
+   "source": "Apepei",
+   "relation": "killed",
+   "target": "Digody",
+   "note": "rival who stabbed him",
+   "paragraph": 3,
+   "quote": "he was stabbed in the back by his long-standing rival Apepei"
+  },
+  {
+   "source": "Digody",
+   "relation": "killed",
+   "target": "Lord Peemel",
+   "note": "stabbed him in the back",
+   "paragraph": 3,
+   "quote": "stabbed his lord in the back"
+  }
+ ],
+ "rejected": []
+}

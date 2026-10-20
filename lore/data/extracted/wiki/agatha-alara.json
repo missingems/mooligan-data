@@ -1,0 +1,144 @@
+{
+ "page": "wiki/agatha-alara",
+ "url": "https://mtg.wiki/page/Agatha_%28Alara%29",
+ "title": "Agatha (Alara)",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:18Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Agatha",
+   "type": "character",
+   "aliases": [],
+   "description": "A prosaic, non-magical Esper soldier who killed her sister Callio and defected to Bant after the Conflux.",
+   "presence": "appears"
+  },
+  {
+   "name": "Callio",
+   "type": "character",
+   "aliases": [],
+   "description": "Agatha's sister, a secret member of the Seekers of Carmot obsessed with etherium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Seekers of Carmot",
+   "type": "faction",
+   "aliases": [
+    "Seekers"
+   ],
+   "description": "Ruthless etherium-pursuing group Callio belonged to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Esper",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara, Agatha's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara Agatha defected to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harborgate",
+   "type": "location",
+   "aliases": [],
+   "description": "Spire where the sisters were stationed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhess",
+   "type": "location",
+   "aliases": [],
+   "description": "Shore in Bant Agatha swam toward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Agatha defected to Bant.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Agatha and Callio, stationed at Harborgate, are teleported from Esper into Bant's landscape and scavenge etherium from the dead.",
+   "participants": [
+    "Agatha",
+    "Callio"
+   ],
+   "location": "Bant",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "teleported from Esper to become part of"
+  },
+  {
+   "summary": "Agatha is horrified when Callio uses magic to integrate etherium into a dead Bant aven and realizes Callio has long been a Seeker.",
+   "participants": [
+    "Agatha",
+    "Callio",
+    "Seekers of Carmot"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Agatha realized her sister had been a member of the ruthless Seekers of Carmot for years"
+  },
+  {
+   "summary": "Agatha defies Callio's command and fatally shoots her.",
+   "participants": [
+    "Agatha",
+    "Callio"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She then fatally shot Callio"
+  },
+  {
+   "summary": "Agatha swims toward the shore of Jhess to start a new life in Bant.",
+   "participants": [
+    "Agatha"
+   ],
+   "location": "Jhess",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She swam toward the shore of"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agatha",
+   "relation": "killed",
+   "target": "Callio",
+   "note": "Shot her sister",
+   "paragraph": 3,
+   "quote": "She then fatally shot Callio"
+  },
+  {
+   "source": "Agatha",
+   "relation": "family",
+   "target": "Callio",
+   "note": "Sisters",
+   "paragraph": 1,
+   "quote": "contrasting sharply with her sister"
+  },
+  {
+   "source": "Callio",
+   "relation": "member_of",
+   "target": "Seekers of Carmot",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Agatha realized her sister had been a member of the ruthless Seekers of Carmot for years"
+  }
+ ],
+ "rejected": []
+}

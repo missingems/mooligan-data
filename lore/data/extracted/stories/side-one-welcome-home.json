@@ -1,0 +1,164 @@
+{
+ "page": "stories/side-one-welcome-home",
+ "url": "https://magic.wizards.com/en/news/magic-story/side-one-welcome-home",
+ "title": "Duskmourn: House of Horror | Welcome Home",
+ "story_date": "2024-08-19",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:37:31Z",
+ "storyline": "Duskmourn: House of Horror",
+ "entities": [
+  {
+   "name": "Duskmourn",
+   "type": "plane",
+   "aliases": [
+    "The House",
+    "the House",
+    "the world"
+   ],
+   "description": "A plane that was once ordinary but is now a single hungry House, born from a summoning, a binding and a contract, that devours those who enter.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Boilerbilge",
+   "type": "location",
+   "aliases": [
+    "Boilerbilge"
+   ],
+   "description": "A hot part of the House where the narrator has claimed a dining room.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Demon of Duskmourn",
+   "type": "creature",
+   "aliases": [
+    "the creature",
+    "the demon"
+   ],
+   "description": "A being too great to be controlled that was bound in an ordinary house; it accepted a contract, was freed to feed, and grew into the House itself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Narrator",
+   "type": "character",
+   "aliases": [
+    "your humble host"
+   ],
+   "description": "An unnamed survivor of Duskmourn who keeps a dining room in the Boilerbilge and coaxes guests to sit and stay so the House will leave them be.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The narrator greets new arrivals in the parlor and invites them to sit, promising only a moment's rest.",
+   "participants": [
+    "The Narrator"
+   ],
+   "location": "The Boilerbilge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "You're safe here, for the moment."
+  },
+  {
+   "summary": "The narrator explains that Duskmourn is both the world and the House.",
+   "participants": [
+    "The Narrator",
+    "Duskmourn"
+   ],
+   "location": "Duskmourn",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The House is the world, the world is the House, and the word for both is Duskmourn"
+  },
+  {
+   "summary": "Flashback: the people of the plane, discontent with scarce magic, learned to summon hungry creatures from the void.",
+   "participants": [
+    "Duskmourn"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The people of what became Duskmourn learned the art of summoning creatures from the lifeless void, beings of hunger and raw strength."
+  },
+  {
+   "summary": "Flashback: a creature too great to control was bound in an ordinary house, and someone accepted its contract, freeing it to feed.",
+   "participants": [
+    "The Demon of Duskmourn"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "when it offered them a contract, they accepted. They paid its price, and it was finally free to feed."
+  },
+  {
+   "summary": "The House swallows the rest of the world until only Duskmourn and survivors in its walls remain.",
+   "participants": [
+    "Duskmourn"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "The House was a bloated corpse swallowing the rest of the world"
+  },
+  {
+   "summary": "Something changes and the House learns to open new doors in new places, reaching out to feed on other worlds.",
+   "participants": [
+    "Duskmourn"
+   ],
+   "location": "Duskmourn",
+   "importance": "major",
+   "paragraph": 10,
+   "quote": "all at once, the House could open new doors, in new places."
+  },
+  {
+   "summary": "The narrator reveals the guests are trapped by the chairs they sat in willingly, and that the House will take its first bites of them.",
+   "participants": [
+    "The Narrator",
+    "Duskmourn"
+   ],
+   "location": "The Boilerbilge",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "if I can convince people not to fight it long enough for it to take the first few bites, it lets me keep my little space"
+  },
+  {
+   "summary": "The narrator bids farewell, staying behind as the House feeds on the guests.",
+   "participants": [
+    "The Narrator",
+    "Duskmourn"
+   ],
+   "location": "The Boilerbilge",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "As long as I can keep feeding my dining hall, it won't feel the need to feed on me."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Boilerbilge",
+   "relation": "located_in",
+   "target": "Duskmourn",
+   "note": "A part of the House.",
+   "paragraph": 2,
+   "quote": "This part of the house is called the Boilerbilge."
+  },
+  {
+   "source": "The Demon of Duskmourn",
+   "relation": "other",
+   "target": "Duskmourn",
+   "note": "The bound creature that became the House, feeding on contracts.",
+   "paragraph": 14,
+   "quote": "Duskmourn woke, and Duskmourn hungered"
+  },
+  {
+   "source": "The Narrator",
+   "relation": "other",
+   "target": "Duskmourn",
+   "note": "Survives in the House by feeding it guests.",
+   "paragraph": 12,
+   "quote": "I was clever enough to learn how to survive in here"
+  }
+ ],
+ "rejected": []
+}

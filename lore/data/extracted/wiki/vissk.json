@@ -1,0 +1,95 @@
+{
+ "page": "wiki/vissk",
+ "url": "https://mtg.wiki/page/Vissk",
+ "title": "Vissk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vissk",
+   "type": "character",
+   "aliases": [
+    "magus of the future"
+   ],
+   "description": "Human wizard of Dominaria, a magus of the future with future sight, killed by Ugin's ghostfire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pinaphet",
+   "type": "character",
+   "aliases": [],
+   "description": "Vissk's apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Muggtoth",
+   "type": "creature",
+   "aliases": [],
+   "description": "A cyclops who was poisoned and dying when Vissk and Pinaphet found him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon whose ghostfire burned Vissk and Muggtoth to death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Vissk lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vissk and Pinaphet find the dying Muggtoth, and Pinaphet gives the poisoned cyclops an antidote.",
+   "participants": [
+    "Vissk",
+    "Pinaphet",
+    "Muggtoth"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "While waiting he and his apprentice encountered Muggtoth who was dying"
+  },
+  {
+   "summary": "Vissk and Muggtoth are burned to death by Ugin's ghostfire; Vissk had not realized which dragon he faced.",
+   "participants": [
+    "Vissk",
+    "Muggtoth",
+    "Ugin"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he did not realize what dragon he had encountered and was burned to death alongside Muggtoth"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Pinaphet",
+   "relation": "serves",
+   "target": "Vissk",
+   "note": "Pinaphet is Vissk's apprentice.",
+   "paragraph": 1,
+   "quote": "had an apprentice named Pinaphet"
+  },
+  {
+   "source": "Ugin",
+   "relation": "killed",
+   "target": "Vissk",
+   "note": "Ugin's ghostfire burned Vissk to death.",
+   "paragraph": 0,
+   "quote": "Vissk was a human wizard from Dominaria that was killed by Ugin ."
+  }
+ ],
+ "rejected": []
+}

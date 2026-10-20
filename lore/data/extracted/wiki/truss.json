@@ -1,0 +1,77 @@
+{
+ "page": "wiki/truss",
+ "url": "https://mtg.wiki/page/Truss",
+ "title": "Truss",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Truss",
+   "type": "character",
+   "aliases": [],
+   "description": "Vedalken rogue hacker, chief engineer of Myra the Magnificent's Intergalactic Astrotorium of Fun.",
+   "presence": "appears"
+  },
+  {
+   "name": "Myra the Magnificent",
+   "type": "character",
+   "aliases": [
+    "Myra"
+   ],
+   "description": "Owner of the park who hired Truss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Myra the Magnificent's Intergalactic Astrotorium of Fun",
+   "type": "location",
+   "aliases": [
+    "the park"
+   ],
+   "description": "Chaotic theme park employing Truss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glaxxar",
+   "type": "character",
+   "aliases": [],
+   "description": "Truss's long-suffering assistant.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Truss hacked the park for fun; Myra discovered this and hired her.",
+   "participants": [
+    "Truss",
+    "Myra the Magnificent"
+   ],
+   "location": "Myra the Magnificent's Intergalactic Astrotorium of Fun",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "When Myra discovered this, she hired her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Truss",
+   "relation": "serves",
+   "target": "Myra the Magnificent",
+   "note": "Chief engineer of Myra's park.",
+   "paragraph": 0,
+   "quote": "chief engineer of Myra the Magnificent's Intergalactic Astrotorium of Fun"
+  },
+  {
+   "source": "Glaxxar",
+   "relation": "serves",
+   "target": "Truss",
+   "note": "Her long-suffering assistant.",
+   "paragraph": 2,
+   "quote": "Truss has a long-suffering assistant named"
+  }
+ ],
+ "rejected": []
+}

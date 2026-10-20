@@ -1,0 +1,16 @@
+{
+  "name": "lore-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "serve": "node build.mjs && python3 -m http.server -d dist 8000"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

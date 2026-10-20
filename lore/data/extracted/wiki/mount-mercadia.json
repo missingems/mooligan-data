@@ -1,0 +1,89 @@
+{
+ "page": "wiki/mount-mercadia",
+ "url": "https://mtg.wiki/page/Mount_Mercadia",
+ "title": "Mount Mercadia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:56Z",
+ "storyline": "Mercadia",
+ "entities": [
+  {
+   "name": "Mount Mercadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Upside-down mountain on Mercadia with Mercadia City atop it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital city of the plane, spread atop and below the mountain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the mountain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tower of the Magistrate",
+   "type": "location",
+   "aliases": [],
+   "description": "Seat of rule over Mercadia, in the center of the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lower Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market beneath the inverted mountain inside a ring of trash.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market crowning Mercadia City for exotic goods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cliffside Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market along the edge of the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Subterranean Hangar",
+   "type": "location",
+   "aliases": [],
+   "description": "Subterranean dock for airships.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Mercadia City",
+   "relation": "located_in",
+   "target": "Mount Mercadia",
+   "note": "atop and below the mountain",
+   "paragraph": 1,
+   "quote": "On its top (on what would be the bottom of its base if it was the right way up) is Mercadia City"
+  },
+  {
+   "source": "Tower of the Magistrate",
+   "relation": "located_in",
+   "target": "Mercadia City",
+   "note": "in the center",
+   "paragraph": 2,
+   "quote": "placed directly in the center of the city"
+  }
+ ],
+ "rejected": []
+}

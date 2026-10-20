@@ -1,0 +1,145 @@
+{
+ "page": "wiki/the-river",
+ "url": "https://mtg.wiki/page/The_River",
+ "title": "The River",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:02Z",
+ "storyline": "Mercadia",
+ "entities": [
+  {
+   "name": "The River",
+   "type": "location",
+   "aliases": [
+    "the Great River"
+   ],
+   "description": "A flood sacred to the Cho-Arrim, representing the cycle of life, death and rebirth; they send their dead down it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Arrim",
+   "type": "faction",
+   "aliases": [],
+   "description": "A people who hold the River sacred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rushwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Land through which the River winds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Akhan",
+   "type": "character",
+   "aliases": [
+    "'Akhan"
+   ],
+   "description": "A Cho-Arrim who found Sia-am-Erh's tomb, took up the Ancestral Mask and emerged from the River changed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sia-am-Erh",
+   "type": "character",
+   "aliases": [],
+   "description": "An ancient shaman whose tomb lay by the River.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ancestral Mask",
+   "type": "artifact",
+   "aliases": [
+    "Sia-am-Erh's mask"
+   ],
+   "description": "A relic of immense power that consumed Cho-Akhan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mercadia City",
+   "type": "location",
+   "aliases": [],
+   "description": "City from which a plague swept across the plains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Ran",
+   "type": "character",
+   "aliases": [],
+   "description": "Cho-Akhan's brother, killed by the plague.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cho-Shadi",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Cho-Akhan's mothers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cho-Fihad",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Cho-Akhan's mothers.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "While searching for herbs by the River, Cho-Akhan found the tomb of Sia-am-Erh with the Ancestral Mask.",
+   "participants": [
+    "Cho-Akhan",
+    "Sia-am-Erh"
+   ],
+   "location": "The River",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Cho-Akhan stumbled upon the ancient tomb of the shaman Sia-am-Erh"
+  },
+  {
+   "summary": "Plague from Mercadia City killed Cho-Ran, and Cho-Akhan took up the mask; it consumed her and dragged her into the River, bound to the spirits of the fallen.",
+   "participants": [
+    "Cho-Akhan",
+    "Ancestral Mask",
+    "Cho-Ran"
+   ],
+   "location": "The River",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the mask consumed her, dragging her into the depths of the River"
+  },
+  {
+   "summary": "Cho-Akhan emerged changed and joined her mothers to march against Mercadia City.",
+   "participants": [
+    "Cho-Akhan",
+    "Cho-Shadi",
+    "Cho-Fihad"
+   ],
+   "location": "The River",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Emerging from the River forever changed, 'Akhan joined her mothers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cho-Akhan",
+   "relation": "family",
+   "target": "Cho-Ran",
+   "note": "Her brother.",
+   "paragraph": 2,
+   "quote": "claiming the life of Cho-Akhan's brother, Cho-Ran"
+  },
+  {
+   "source": "Cho-Arrim",
+   "relation": "other",
+   "target": "The River",
+   "note": "They hold the River sacred.",
+   "paragraph": 1,
+   "quote": "who hold the River in great esteem"
+  }
+ ],
+ "rejected": []
+}

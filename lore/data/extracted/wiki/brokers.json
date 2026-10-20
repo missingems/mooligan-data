@@ -1,0 +1,245 @@
+{
+ "page": "wiki/brokers",
+ "url": "https://mtg.wiki/page/Brokers",
+ "title": "Brokers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:49:25Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "The Brokers",
+   "type": "faction",
+   "aliases": [
+    "Brokers"
+   ],
+   "description": "One of the five crime families of New Capenna, a demonic law firm centered in white that fronts racketeering with contract magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [
+    "Capenna"
+   ],
+   "description": "The plane of the five crime families and the Halo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The earlier era of the plane, when the Brokers served as protectors and paladins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falco Spara",
+   "type": "character",
+   "aliases": [
+    "Falco"
+   ],
+   "description": "A demon-aven who leads the Brokers and originated their contract-weaving abilities.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nido Sanctuary",
+   "type": "location",
+   "aliases": [],
+   "description": "The Brokers' headquarters, a lavish office in the central district of the Mezzio.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Mezzio",
+   "type": "location",
+   "aliases": [
+    "Mezzio"
+   ],
+   "description": "The central district of New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Caldaia",
+   "type": "location",
+   "aliases": [
+    "Caldaia"
+   ],
+   "description": "A district of New Capenna where Riveteers might accost people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "A district of New Capenna where Maestros' assassins may corner people.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Riveteers",
+   "type": "faction",
+   "aliases": [
+    "Riveteers"
+   ],
+   "description": "A crime family whose brass-knuckle-toting gangs accost people in the Caldaia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Maestros",
+   "type": "faction",
+   "aliases": [
+    "Maestros"
+   ],
+   "description": "A crime family whose assassins corner people in Park Heights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Obscura",
+   "type": "faction",
+   "aliases": [
+    "Obscura"
+   ],
+   "description": "A crime family that shares the counters archetype with the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [
+    "New Phyrexian Invasion"
+   ],
+   "description": "The invasion during which the Brokers led Capenna's defense.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian whose massacre targeted Falco.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Halo",
+   "type": "concept",
+   "aliases": [
+    "Halo"
+   ],
+   "description": "The substance Capenna depends on; the Brokers believe it drying up will doom the city.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kros",
+   "type": "character",
+   "aliases": [],
+   "description": "A leonin enforcer of the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lagrella the Magpie",
+   "type": "character",
+   "aliases": [],
+   "description": "A human lieutenant of the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Perrie",
+   "type": "character",
+   "aliases": [
+    "Perrie the Pulverizer"
+   ],
+   "description": "A rhox enforcer of the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rigo",
+   "type": "character",
+   "aliases": [],
+   "description": "A young leonin of the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Denry Klin",
+   "type": "character",
+   "aliases": [],
+   "description": "A leonin editor in chief associated with the Brokers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During Old Capenna, the Brokers travel from village to village making pacts of protection; after the city's founding this evolves into protection rackets.",
+   "participants": [
+    "The Brokers",
+    "Old Capenna"
+   ],
+   "location": "Old Capenna",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "After the city was founded, these duties evolved into protection rackets."
+  },
+  {
+   "summary": "The Brokers lead the defense of Capenna during the New Phyrexian Invasion; Falco is a crucial target of Atraxa's massacre.",
+   "participants": [
+    "The Brokers",
+    "Falco Spara",
+    "Atraxa",
+    "The New Phyrexian Invasion"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The Brokers led the defense of Capenna during the New Phyrexian Invasion"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Falco Spara",
+   "relation": "leader_of",
+   "target": "The Brokers",
+   "note": "Falco is the boss of the family.",
+   "paragraph": 2,
+   "quote": "The Brokers are led by the demon - aven Falco Spara"
+  },
+  {
+   "source": "The Brokers",
+   "relation": "located_in",
+   "target": "Nido Sanctuary",
+   "note": "Nido Sanctuary is their headquarters.",
+   "paragraph": 2,
+   "quote": "The Brokers' headquarters is Nido Sanctuary"
+  },
+  {
+   "source": "Kros",
+   "relation": "member_of",
+   "target": "The Brokers",
+   "note": "A leonin enforcer.",
+   "paragraph": 15,
+   "quote": "a leonin enforcer"
+  },
+  {
+   "source": "Lagrella the Magpie",
+   "relation": "member_of",
+   "target": "The Brokers",
+   "note": "A human lieutenant.",
+   "paragraph": 16,
+   "quote": "a human lieutenant"
+  },
+  {
+   "source": "Perrie",
+   "relation": "member_of",
+   "target": "The Brokers",
+   "note": "A rhox enforcer.",
+   "paragraph": 17,
+   "quote": "a rhox enforcer"
+  },
+  {
+   "source": "The Brokers",
+   "relation": "enemy",
+   "target": "The Riveteers",
+   "note": "The Brokers intercede against Riveteer gangs on behalf of clients.",
+   "paragraph": 3,
+   "quote": "brass-knuckle-toting Riveteers in the Caldaia"
+  }
+ ],
+ "rejected": []
+}

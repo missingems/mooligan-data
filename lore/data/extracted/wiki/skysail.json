@@ -1,0 +1,148 @@
+{
+ "page": "wiki/skysail",
+ "url": "https://mtg.wiki/page/Skysail",
+ "title": "Skysail",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:05Z",
+ "storyline": "Ikoria: Lair of Behemoths",
+ "entities": [
+  {
+   "name": "Skysail",
+   "type": "location",
+   "aliases": [],
+   "description": "A mobile sanctuary of balloon-driven airships high in the skies of Ikoria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Skysail floats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orn",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortified sanctuary in Indatha destroyed by monsters; ancestors of Skysail's people came from it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Xyris, the Writhing Storm",
+   "type": "creature",
+   "aliases": [
+    "Xyris"
+   ],
+   "description": "A massive flying snake leviathan that pursues Skysail.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jirina Kudro",
+   "type": "character",
+   "aliases": [],
+   "description": "Monster hunter who arrived in Skysail.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mzed",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of monster hunters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tef",
+   "type": "character",
+   "aliases": [],
+   "description": "Young man who manned the balloon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leori",
+   "type": "creature",
+   "aliases": [],
+   "description": "Flying patagia tiger the hunters pursued.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Narset",
+   "type": "character",
+   "aliases": [],
+   "description": "Seen buying a stack of books.",
+   "presence": "appears"
+  },
+  {
+   "name": "Captain Falk",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of the Vermillion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vermillion",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A fast ship from Skysail.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jirina Kudro and Mzed's hunters arrive in Skysail by balloon seeking a vessel to catch Leori.",
+   "participants": [
+    "Jirina Kudro",
+    "Mzed",
+    "Tef",
+    "Leori",
+    "Skysail"
+   ],
+   "location": "Skysail",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "arrived in Skysail looking for a vessel that could catch up to the flying patagia tiger Leori"
+  },
+  {
+   "summary": "The hunters see Narset buying books and book a flight on the Vermillion.",
+   "participants": [
+    "Jirina Kudro",
+    "Narset",
+    "Captain Falk",
+    "Vermillion"
+   ],
+   "location": "Skysail",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "After witnessing Narset buying a huge stack of books"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skysail",
+   "relation": "located_in",
+   "target": "Ikoria",
+   "note": "in the skies",
+   "paragraph": 0,
+   "quote": "located high in the skies of the plane of Ikoria"
+  },
+  {
+   "source": "Skysail",
+   "relation": "enemy",
+   "target": "Xyris, the Writhing Storm",
+   "note": "pursued by it",
+   "paragraph": 3,
+   "quote": "has been known to pursue the sanctuary across vast distances"
+  },
+  {
+   "source": "Skysail",
+   "relation": "other",
+   "target": "Orn",
+   "note": "successor of Orn",
+   "paragraph": 1,
+   "quote": "trace their ancestry back to the survivors of Orn"
+  }
+ ],
+ "rejected": []
+}

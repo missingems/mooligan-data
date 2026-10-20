@@ -1,0 +1,169 @@
+{
+ "page": "wiki/abyss",
+ "url": "https://mtg.wiki/page/Abyss",
+ "title": "Abyss",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "The Abyss",
+   "type": "plane",
+   "aliases": [
+    "Abyss"
+   ],
+   "description": "A plane populated by demons; the Pit is part of it.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Pit",
+   "type": "location",
+   "aliases": [],
+   "description": "Part of the Abyss.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Wretched",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beings reputed to come from the Abyss who enslave the wills of enemies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [
+    "Liana"
+   ],
+   "description": "Died battling Ravidel in the Abyss.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Battled Liana in the Abyss.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greensleeves",
+   "type": "character",
+   "aliases": [],
+   "description": "Banished the evil creature Ur-Drago to the Abyss.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ur-Drago",
+   "type": "creature",
+   "aliases": [],
+   "description": "Evil creature banished to the Abyss by Greensleeves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder Demon who fought in the War in the Abyss and was freed by the Cabal's ritual.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War in the Abyss",
+   "type": "event",
+   "aliases": [
+    "The War in the Abyss"
+   ],
+   "description": "War between Angels and Demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group that tried to summon Kuberr but accidentally freed Belzenlok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "Being the Cabal intended to summon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Liana of Minorad and Ravidel battle in the Abyss, resulting in Liana's death.",
+   "participants": [
+    "Liana of Minorad",
+    "Ravidel"
+   ],
+   "location": "The Abyss",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Liana of Minorad and Ravidel battled there, resulting in Liana's death."
+  },
+  {
+   "summary": "Greensleeves banishes the evil creature Ur-Drago to the Abyss.",
+   "participants": [
+    "Greensleeves",
+    "Ur-Drago"
+   ],
+   "location": "The Abyss",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "It was also here that Greensleeves banished the evil creature Ur-Drago ."
+  },
+  {
+   "summary": "Belzenlok fights in the War in the Abyss between Angels and Demons and is stuck there.",
+   "participants": [
+    "Belzenlok"
+   ],
+   "location": "The Abyss",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The Elder Demon Belzenlok fought in \"The War in the Abyss\", a war between Angels and Demons"
+  },
+  {
+   "summary": "The Cabal's ritual to summon Kuberr accidentally frees Belzenlok.",
+   "participants": [
+    "Cabal",
+    "Kuberr",
+    "Belzenlok"
+   ],
+   "location": "The Abyss",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "performed a ritual to summon Kuberr , but accidentally freed Belzenlok from the Abyss"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Liana of Minorad",
+   "note": "implied by their battle ending in her death",
+   "paragraph": 3,
+   "quote": "Liana of Minorad and Ravidel battled there, resulting in Liana's death."
+  },
+  {
+   "source": "Greensleeves",
+   "relation": "enemy",
+   "target": "Ur-Drago",
+   "note": "banished him",
+   "paragraph": 3,
+   "quote": "It was also here that Greensleeves banished the evil creature Ur-Drago ."
+  },
+  {
+   "source": "The Pit",
+   "relation": "located_in",
+   "target": "The Abyss",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The Pit is part of the Abyss."
+  }
+ ],
+ "rejected": []
+}

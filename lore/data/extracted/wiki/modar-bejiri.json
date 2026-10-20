@@ -1,0 +1,112 @@
+{
+ "page": "wiki/modar-bejiri",
+ "url": "https://mtg.wiki/page/Modar_Bejiri",
+ "title": "Modar Bejiri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:14Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Modar Bejiri",
+   "type": "character",
+   "aliases": [
+    "Modor Bejiri"
+   ],
+   "description": "A vedalken court hussar promoted to field hussar in the last days of the Guildpact.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashmane",
+   "type": "creature",
+   "aliases": [],
+   "description": "Modar's faithful mount.",
+   "presence": "appears"
+  },
+  {
+   "name": "Doppelganger",
+   "type": "creature",
+   "aliases": [],
+   "description": "An unnamed-murderer doppelganger who kills Modar and takes his shape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Azorius soldiers who arrive to make the arrest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tin Street Market",
+   "type": "location",
+   "aliases": [],
+   "description": "Market where Modar staged his search.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The fraying pact binding Ravnica's guilds.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "On his first day in the field Modar encounters a doppelganger who just committed murder but cannot arrest it.",
+   "participants": [
+    "Modar Bejiri",
+    "Doppelganger",
+    "Ashmane"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "Modar encountered a doppelganger who had just committed murder"
+  },
+  {
+   "summary": "Modar requests an emergency writ of arrest for a hussar officer, himself.",
+   "participants": [
+    "Modar Bejiri"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Modor Bejiri requested an emergency writ of arrest for the capture of a Hussar officer."
+  },
+  {
+   "summary": "Modar lets the doppelganger kill him in Tin Street Market; it takes his shape just as Azorius soldiers arrive to arrest it.",
+   "participants": [
+    "Modar Bejiri",
+    "Doppelganger",
+    "Azorius"
+   ],
+   "location": "Tin Street Market",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Modar let himself be killed by the creature who then took on his shape."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Modar Bejiri",
+   "relation": "serves",
+   "target": "Azorius",
+   "note": "Hussar bound by Azorius law",
+   "paragraph": 1,
+   "quote": "Just in time for the arresting Azorius soldiers to arrive."
+  },
+  {
+   "source": "Doppelganger",
+   "relation": "killed",
+   "target": "Modar Bejiri",
+   "note": "Killed him and took his shape",
+   "paragraph": 1,
+   "quote": "Modar let himself be killed by the creature who then took on his shape."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,65 @@
+{
+ "page": "wiki/paradox-engine",
+ "url": "https://mtg.wiki/page/Paradox_Engine",
+ "title": "Paradox Engine",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:34:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Paradox Engine",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A legendary golden gear machine seen on Avishkar, submitted anonymously to the Inventors' Fair and confiscated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Was inspired by the machine to stay longer in Ghirapur.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Kaladesh where the Inventors' Fair was held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inventors' Fair",
+   "type": "event",
+   "aliases": [],
+   "description": "Fair to which the Engine was submitted.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Paradox Engine was submitted anonymously to the Inventors' Fair but was confiscated.",
+   "participants": [
+    "Paradox Engine",
+    "Inventors' Fair"
+   ],
+   "location": "Ghirapur",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "It was submitted anonymously to the Inventors' Fair but was confiscated."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Paradox Engine",
+   "relation": "other",
+   "target": "Tezzeret",
+   "note": "The machine inspired Tezzeret to stay longer in Ghirapur.",
+   "paragraph": 1,
+   "quote": "The machine inspired Tezzeret to pay more attention and stay longer in Ghirapur on Kaladesh."
+  }
+ ],
+ "rejected": []
+}

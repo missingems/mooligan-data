@@ -1,0 +1,203 @@
+{
+ "page": "wiki/mezzio",
+ "url": "https://mtg.wiki/page/Mezzio",
+ "title": "Mezzio",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:10Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Mezzio",
+   "type": "location",
+   "aliases": [
+    "the Mezzio"
+   ],
+   "description": "The middle tier and largest, most densely populated borough of New Capenna, the city's cultural heart, between Park Heights and the Caldaia.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The metropolis containing the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "The upper tier of New Capenna, a ritzy playground above the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caldaia",
+   "type": "location",
+   "aliases": [],
+   "description": "The lower tier of New Capenna, the fire of industry below the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "A crime family headquartered in the Mezzio at the Vantoleone, led by Jetmir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [],
+   "description": "A crime family of mystics with a primary home in the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "A crime family with enforcers on the Mezzio's streets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brokers",
+   "type": "faction",
+   "aliases": [],
+   "description": "A crime family of solicitors headquartered at the Central District Nido Sanctuary, led by Falco Spara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Falco Spara",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Brokers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Cabaretti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Central District Nido Sanctuary",
+   "type": "location",
+   "aliases": [],
+   "description": "Headquarters of the Brokers, a clean office complex in the heart of the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vantoleone",
+   "type": "location",
+   "aliases": [
+    "The Vantoleone"
+   ],
+   "description": "Headquarters and primary cabaret of the Cabaretti, a never-ending leisure and entertainment complex.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Angel's Breath",
+   "type": "location",
+   "aliases": [],
+   "description": "A small Cabaretti bar on the lower west side of the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bassomer Bridge",
+   "type": "location",
+   "aliases": [
+    "Bassomar Bridge"
+   ],
+   "description": "A bridge connecting the Caldaia to the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cloudponte Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "A bridge with a train station between Upper Bassomer Station and Crossponte Bridge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kallock Library",
+   "type": "location",
+   "aliases": [
+    "The Kallock Library"
+   ],
+   "description": "An Obscura location in the Mezzio.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mezzio Cleaners",
+   "type": "location",
+   "aliases": [],
+   "description": "A launderer with six sections, one for each family and one for the public.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vesti Square",
+   "type": "location",
+   "aliases": [],
+   "description": "A plaza in the never-dark center of the city.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Vanto Beatdown first began at the Vantoleone as an improvised dance-battle.",
+   "participants": [
+    "Vantoleone",
+    "Cabaretti"
+   ],
+   "location": "Vantoleone",
+   "importance": "minor",
+   "paragraph": 11,
+   "quote": "The Vanto Beatdown first began here as an improvised dance-battle."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mezzio",
+   "relation": "located_in",
+   "target": "New Capenna",
+   "note": "middle tier of the metropolis",
+   "paragraph": 0,
+   "quote": "is the middle tier of the metropolis of New Capenna"
+  },
+  {
+   "source": "Jetmir",
+   "relation": "leader_of",
+   "target": "Cabaretti",
+   "note": "the family's boss",
+   "paragraph": 11,
+   "quote": "Headquarters and primary cabaret of the Cabaretti and the family's boss"
+  },
+  {
+   "source": "Falco Spara",
+   "relation": "leader_of",
+   "target": "Brokers",
+   "note": "the family's boss",
+   "paragraph": 5,
+   "quote": "Headquarters of the Brokers and the family's boss"
+  },
+  {
+   "source": "Vantoleone",
+   "relation": "located_in",
+   "target": "Mezzio",
+   "note": "Cabaretti headquarters in the Mezzio",
+   "paragraph": 11,
+   "quote": "Headquarters and primary cabaret of the Cabaretti"
+  },
+  {
+   "source": "Cabaretti",
+   "relation": "located_in",
+   "target": "Mezzio",
+   "note": "primary home",
+   "paragraph": 0,
+   "quote": "It is the primary home of the Cabaretti"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,108 @@
+{
+ "page": "wiki/temp",
+ "url": "https://mtg.wiki/page/Temp%C3%A9",
+ "title": "Tempé",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tempé",
+   "type": "character",
+   "aliases": [
+    "Tempe"
+   ],
+   "description": "A planeswalker, manipulative and ruthless, who marooned her sangrazul servant Malvos on Cridhe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [],
+   "description": "Tempé's sangrazul servant, marooned on Cridhe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cridhe",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Malvos was marooned, leading to a Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "the Thorn",
+   "type": "character",
+   "aliases": [],
+   "description": "Rival of Tempé from whom she won the sword Soulslayer; may have the upper hand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soulslayer",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Sword Tempé won from the Thorn in a duel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Platon",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Tempé's rivals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krim",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Tempé's rivals.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tempé marooned Malvos on Cridhe, indirectly causing a Dark Age.",
+   "participants": [
+    "Tempé",
+    "Malvos"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "marooned her sangrazul servant Malvos on the plane of Cridhe"
+  },
+  {
+   "summary": "Tempé wins the sword Soulslayer from the Thorn in a duel.",
+   "participants": [
+    "Tempé",
+    "the Thorn",
+    "Soulslayer"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "from whom she won the sword Soulslayer in a duel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malvos",
+   "relation": "serves",
+   "target": "Tempé",
+   "note": "He is her sangrazul servant.",
+   "paragraph": 0,
+   "quote": "her sangrazul servant Malvos"
+  },
+  {
+   "source": "Tempé",
+   "relation": "enemy",
+   "target": "the Thorn",
+   "note": "Rivals in conflict.",
+   "paragraph": 1,
+   "quote": "most notably a figure known as the Thorn"
+  }
+ ],
+ "rejected": []
+}

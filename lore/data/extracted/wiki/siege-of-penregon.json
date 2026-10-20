@@ -1,0 +1,128 @@
+{
+ "page": "wiki/siege-of-penregon",
+ "url": "https://mtg.wiki/page/Siege_of_Penregon",
+ "title": "Siege of Penregon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Siege of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "First significant event of the Dark Age, a Church of Tal assault on Penregon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Penregon",
+   "type": "location",
+   "aliases": [],
+   "description": "City that withstood the siege and later fell to glaciers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [
+    "Talite"
+   ],
+   "description": "Faction that believed all machines were demons and attacked Penregon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [],
+   "description": "Lady of Penregon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Chief artificer who armed Penregon's civils.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raddic",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-leader of the Church army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arah",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-leader of the Church army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Next target of the Talite army.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Church of Tal masses outside Penregon, led by Raddic and Arah, and infiltrates the city with agents.",
+   "participants": [
+    "Church of Tal",
+    "Raddic",
+    "Arah",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Church of Tal massed outside Penregon 's gates"
+  },
+  {
+   "summary": "Kayla bin-Kroog has Tawnos arm his mechanized civils, which stamp down on insurgents and repel the attack.",
+   "participants": [
+    "Kayla bin-Kroog",
+    "Tawnos",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Penregon stood its ground."
+  },
+  {
+   "summary": "The Talite army abandons the siege and moves on to Urza's Tower.",
+   "participants": [
+    "Church of Tal",
+    "Urza's Tower"
+   ],
+   "location": "Penregon",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "abandoned the siege and moved on to attack Urza's Tower"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tawnos",
+   "relation": "serves",
+   "target": "Kayla bin-Kroog",
+   "note": "Her chief artificer.",
+   "paragraph": 2,
+   "quote": "bid her chief artificer Tawnos arm his mechanized civils"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Penregon",
+   "note": "Besieged it.",
+   "paragraph": 1,
+   "quote": "The Church of Tal massed outside Penregon 's gates"
+  }
+ ],
+ "rejected": []
+}

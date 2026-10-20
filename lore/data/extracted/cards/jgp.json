@@ -1,0 +1,64 @@
+{
+ "page": "cards/jgp",
+ "url": "https://scryfall.com/sets/jgp",
+ "title": "Judge Gift Cards 1998: card flavor text",
+ "story_date": "1998-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:13Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "An experimenter who designed a silver golem after a portal experiment succeeded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gamelen",
+   "type": "character",
+   "aliases": [],
+   "description": "A Citanul elder who speaks of the first seedling of Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Citanul",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of druids whose elder Gamelen speaks of Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Land where the first seedling sprouted and where the last tree will fall.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After a hundred failed experiments, Urza finds silver passes through the portal undamaged and designs a silver golem.",
+   "participants": [
+    "Urza"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "He immediately designed a golem made of the metal."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gamelen",
+   "relation": "member_of",
+   "target": "Citanul",
+   "note": "Gamelen is a Citanul elder.",
+   "paragraph": 1,
+   "quote": "—Gamelen, Citanul elder"
+  }
+ ],
+ "rejected": []
+}

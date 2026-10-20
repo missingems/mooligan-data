@@ -1,0 +1,121 @@
+{
+ "page": "wiki/crescendo",
+ "url": "https://mtg.wiki/page/Crescendo",
+ "title": "Crescendo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "The yearly New Year festivity of New Capenna, organized by the Cabaretti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "A New Capenna family that organizes the Crescendo, led by Jetmir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Crescendo is held.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adversary War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in 4562 AR during which the Crescendo took place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jinnie Myra",
+   "type": "character",
+   "aliases": [],
+   "description": "Adopted daughter of Jetmir who organized that year's Crescendo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Boss of the Cabaretti.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Giada",
+   "type": "character",
+   "aliases": [
+    "the Font"
+   ],
+   "description": "Revealed by the Cabaretti as 'the Font', a new source of Halo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Halo",
+   "type": "concept",
+   "aliases": [],
+   "description": "A power source of New Capenna, with Giada revealed as a new source.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adversary",
+   "type": "character",
+   "aliases": [],
+   "description": "Villain who activated his agents across the city to kill the Crescendo attendees.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "At the Crescendo, the Cabaretti reveal Giada as 'the Font', a new source of Halo.",
+   "participants": [
+    "Cabaretti",
+    "Giada",
+    "Jinnie Myra"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Cabaretti revealed that Giada was \"the Font,\" a new source of Halo"
+  },
+  {
+   "summary": "The Adversary activates his agents across the city, ordering them to kill everyone attending the event.",
+   "participants": [
+    "Adversary"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the Adversary activated his agents across the city, ordering them to kill everyone in attendance at the event"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jinnie Myra",
+   "relation": "family",
+   "target": "Jetmir",
+   "note": "She is his adopted daughter.",
+   "paragraph": 1,
+   "quote": "the adopted daughter of Jetmir"
+  },
+  {
+   "source": "Jetmir",
+   "relation": "leader_of",
+   "target": "Cabaretti",
+   "note": "He is the boss of the Cabaretti.",
+   "paragraph": 1,
+   "quote": "the boss of the Cabaretti"
+  }
+ ],
+ "rejected": []
+}

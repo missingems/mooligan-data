@@ -1,0 +1,585 @@
+{
+ "page": "stories/lorwyn-eclipsed-episode-5-if-we-shadows",
+ "url": "https://magic.wizards.com/en/news/magic-story/lorwyn-eclipsed-episode-5-if-we-shadows",
+ "title": "Lorwyn Eclipsed | Episode 5: If We Shadows",
+ "story_date": "2025-12-12",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:40:50Z",
+ "storyline": "Lorwyn Eclipsed",
+ "entities": [
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [
+    "fae queen"
+   ],
+   "description": "The faerie queen, an avatar of Oona in the shape of Maralen of the Mornsong, who flees Rhys and seeks Ashling's help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanar",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin Strixhaven student of the Prismari study track who blows up a flower bud to escape and befriends the boggarts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamira",
+   "type": "character",
+   "aliases": [
+    "Tam"
+   ],
+   "description": "A gorgon student who presses Maralen on her promises and her guilt over Oona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rhys",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter and tracker bound to kill Maralen if Oona returns, who pursues the fleeing group.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [
+    "old fae queen",
+    "maker-mother"
+   ],
+   "description": "The old faerie queen who made Maralen and her brother, braided the auroras into a single great aurora, and murdered a giant before her son's eyes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maralen of the Mornsong",
+   "type": "character",
+   "aliases": [],
+   "description": "The elf whose shed skin Oona slipped her avatar Maralen into.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ashling",
+   "type": "character",
+   "aliases": [],
+   "description": "A black-glass flamekin of Mount Tanufel who is an old friend and sometimes enemy of Maralen and becomes rimekin by night.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stinkdrinker Warren",
+   "type": "faction",
+   "aliases": [
+    "Boggarts"
+   ],
+   "description": "A warren of friendly, colorful boggarts in a swamp on the Wanderwine who host Maralen and lend a boat.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mount Tanufel",
+   "type": "location",
+   "aliases": [],
+   "description": "The mountain from which the Wanderwine springs, home to Ashling's flamekin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wanderwine",
+   "type": "location",
+   "aliases": [
+    "Wanderwine River"
+   ],
+   "description": "The river that the group travels, now cut by a line of night.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "Maralen's palace, which she has fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilt-Leaf Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest containing the waterfall and a grove Isilu has taken, where dawnglove grows.",
+   "presence": "appears"
+  },
+  {
+   "name": "Goldmeadow",
+   "type": "location",
+   "aliases": [],
+   "description": "The transformed Shadowmoor village toward which the group travels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani"
+   ],
+   "description": "A white-furred lion-man planeswalker who searches the dolmen gate area and rescues Kirol from Morcant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kirol",
+   "type": "character",
+   "aliases": [],
+   "description": "A vampire student forced by Morcant to gather dawnglove from a night-claimed grove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lluwen",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf hunter who refuses to send Kirol back to die and defects with Ajani and Kirol.",
+   "presence": "appears"
+  },
+  {
+   "name": "Morcant",
+   "type": "character",
+   "aliases": [
+    "Perfect Morcant",
+    "High Perfect Morcant"
+   ],
+   "description": "The High Perfect of the elves who seeks poisons to kill Isilu and coerces Kirol to retrieve dawnglove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dawnglove",
+   "type": "concept",
+   "aliases": [
+    "dawnglow"
+   ],
+   "description": "A glowing flower from Shadowmoor from which the elves distill a potion they intend to use against Isilu.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cinders",
+   "type": "faction",
+   "aliases": [],
+   "description": "Smoldering humanoids of Shadowmoor that chase Kirol in the dark grove.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brigid Baeli",
+   "type": "character",
+   "aliases": [
+    "Brigid"
+   ],
+   "description": "The kithkin hero, transformed into her moon-eyed Shadowmoor self, who leads the party that captures Maralen's group.",
+   "presence": "appears"
+  },
+  {
+   "name": "Isilu",
+   "type": "deity",
+   "aliases": [
+    "night elemental",
+    "night beast"
+   ],
+   "description": "The moon-headed incarnation walking serenely across Shadowmoor-claimed land, followed by a small green faerie.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eirdu",
+   "type": "deity",
+   "aliases": [],
+   "description": "The sun incarnation, a balancing force to Isilu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blue faerie",
+   "type": "creature",
+   "aliases": [
+    "little blue faerie",
+    "Maralen's brother"
+   ],
+   "description": "The faerie that lured the students; it flickers between blue and green and is revealed to be Maralen's brother in his Shadowmoor form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maralen's brother",
+   "type": "character",
+   "aliases": [],
+   "description": "Oona's first avatar, meant to be Shadowmoor's prince, who defied her and vanished into the green after she had a giant he called father killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilt-Leaf Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The elvish realm whose leaders plan to kill Isilu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "Oona's braided aurora that locked the plane in one state for centuries.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Maralen, Sanar and Tam escape the palace by blowing the bud off a giant stem with Sanar's improvised explosive and sliding down it.",
+   "participants": [
+    "Maralen",
+    "Sanar",
+    "Tamira"
+   ],
+   "location": "Glen Elendra",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "The bud exploded, sending sticky chunks flying in all directions."
+  },
+  {
+   "summary": "Maralen finds a hidden coracle and the trio drifts toward the Wanderwine; Maralen explains Oona was her creator and she must prove she is not her.",
+   "participants": [
+    "Maralen",
+    "Sanar",
+    "Tamira",
+    "Oona"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 17,
+   "quote": "But I'm still myself."
+  },
+  {
+   "summary": "Maralen explains she keeps Rhys alive by magic through their binding promise.",
+   "participants": [
+    "Maralen",
+    "Rhys",
+    "Tamira"
+   ],
+   "location": "Wanderwine",
+   "importance": "major",
+   "paragraph": 24,
+   "quote": "As long as he's bound to me, my magic keeps him alive."
+  },
+  {
+   "summary": "The coracle reaches the Stinkdrinker Warren, where Ashling pulls Maralen ashore.",
+   "participants": [
+    "Maralen",
+    "Ashling",
+    "Sanar",
+    "Tamira",
+    "Stinkdrinker Warren"
+   ],
+   "location": "Stinkdrinker Warren",
+   "importance": "major",
+   "paragraph": 36,
+   "quote": "A four-fingered hand made of what looked like flexible black glass caught her wrist and tugged her onto solid ground."
+  },
+  {
+   "summary": "Maralen tells Ashling their story, and Ashling reveals the elves and Morcant plan to kill the night beast with poisons.",
+   "participants": [
+    "Maralen",
+    "Ashling",
+    "Morcant",
+    "Isilu"
+   ],
+   "location": "Stinkdrinker Warren",
+   "importance": "major",
+   "paragraph": 47,
+   "quote": "They're concocting a plan to kill the creature."
+  },
+  {
+   "summary": "Maralen rejects ending the night forever, saying eternal day is Oona's way, and Ashling agrees to help stop the elves.",
+   "participants": [
+    "Maralen",
+    "Ashling",
+    "Tamira"
+   ],
+   "location": "Stinkdrinker Warren",
+   "importance": "major",
+   "paragraph": 49,
+   "quote": "Eternal day is Oona's way, not my own."
+  },
+  {
+   "summary": "The blue-and-green faerie eavesdrops on the conversation and flies off.",
+   "participants": [
+    "Blue faerie"
+   ],
+   "location": "Stinkdrinker Warren",
+   "importance": "minor",
+   "paragraph": 54,
+   "quote": "It flicked back and forth between blue and green"
+  },
+  {
+   "summary": "Ajani arrives near the dolmen gate, fights a Shadowmoor serpent and finds the students' footprints leading away.",
+   "participants": [
+    "Ajani Goldmane"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 57,
+   "quote": "until he finally had no choice but to strike it down."
+  },
+  {
+   "summary": "Ajani fights a boar and senses how out of sync and unhappy the plane is.",
+   "participants": [
+    "Ajani Goldmane"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 60,
+   "quote": "Beasts of Shadowmoor and beasts of Lorwyn, both driven to attack by the sudden change of day into night."
+  },
+  {
+   "summary": "Maralen, Tam, Sanar and Ashling set out down the Wanderwine in a boggart-crewed boat, and Maralen tells of Oona's great aurora.",
+   "participants": [
+    "Maralen",
+    "Ashling",
+    "Tamira",
+    "Sanar"
+   ],
+   "location": "Wanderwine",
+   "importance": "minor",
+   "paragraph": 71,
+   "quote": "she managed to capture the auroras that naturally flare between night and day and braid them into a single great aurora"
+  },
+  {
+   "summary": "Maralen reveals she was made by Oona as a weapon-avatar and slipped into the skin of Maralen of the Mornsong.",
+   "participants": [
+    "Maralen",
+    "Oona",
+    "Maralen of the Mornsong"
+   ],
+   "location": "Wanderwine",
+   "importance": "major",
+   "paragraph": 78,
+   "quote": "I was to be her avatar, a part of her, carrying her consciousness ahead of my own."
+  },
+  {
+   "summary": "Maralen tells of her older brother, Oona's first avatar, who defied her, befriended a giant he called father, and vanished after Oona had the giant killed.",
+   "participants": [
+    "Maralen",
+    "Oona",
+    "Maralen's brother"
+   ],
+   "location": "Wanderwine",
+   "importance": "major",
+   "paragraph": 84,
+   "quote": "The first was my brother."
+  },
+  {
+   "summary": "Shadowmoor claims the Wanderwine and the boggarts refuse to go farther, forcing the group to walk.",
+   "participants": [
+    "Maralen",
+    "Ashling",
+    "Sanar",
+    "Tamira",
+    "Wanderwine"
+   ],
+   "location": "Wanderwine",
+   "importance": "major",
+   "paragraph": 92,
+   "quote": "Shadowmoor had taken the Wanderwine."
+  },
+  {
+   "summary": "Morcant and Lluwen force Kirol, bound, toward a grove claimed by Isilu to gather dawnglove.",
+   "participants": [
+    "Morcant",
+    "Lluwen",
+    "Kirol"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 103,
+   "quote": "You're going to go inside and gather them for us."
+  },
+  {
+   "summary": "Kirol finds the dawnglove flowers and is chased by cinders but escapes with a sprig.",
+   "participants": [
+    "Kirol",
+    "Cinders",
+    "Dawnglove"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 119,
+   "quote": "they burst through the veil of rainbows with the dawnglove in their hand"
+  },
+  {
+   "summary": "Morcant orders Kirol back for more dawnglove; Kirol and Lluwen refuse.",
+   "participants": [
+    "Morcant",
+    "Kirol",
+    "Lluwen"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 124,
+   "quote": "They don't deserve to die that way."
+  },
+  {
+   "summary": "Ajani bursts in, drives back the cinders and defies Morcant, then takes Kirol away.",
+   "participants": [
+    "Ajani Goldmane",
+    "Kirol",
+    "Morcant",
+    "Cinders"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 130,
+   "quote": "My name is Ajani, and we are leaving."
+  },
+  {
+   "summary": "Lluwen decides to follow Kirol and Ajani, abandoning Morcant.",
+   "participants": [
+    "Lluwen",
+    "Morcant",
+    "Ajani Goldmane",
+    "Kirol"
+   ],
+   "location": "Gilt-Leaf Wood",
+   "importance": "major",
+   "paragraph": 131,
+   "quote": "Lluwen had an instant to make up his mind."
+  },
+  {
+   "summary": "Ashling steps into Shadowmoor and becomes rimekin, retaining her memory.",
+   "participants": [
+    "Ashling",
+    "Maralen",
+    "Tamira",
+    "Sanar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 133,
+   "quote": "By night, I'm what we call 'rimekin,'"
+  },
+  {
+   "summary": "The transformed kithkin of Goldmeadow led by Brigid surround and herd the party.",
+   "participants": [
+    "Brigid Baeli",
+    "Maralen",
+    "Ashling",
+    "Tamira",
+    "Sanar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 135,
+   "quote": "the transformed Brigid at the front of their pack."
+  },
+  {
+   "summary": "Isilu approaches with a small green faerie flitting before it, and Maralen recognizes it as her brother.",
+   "participants": [
+    "Isilu",
+    "Maralen",
+    "Blue faerie",
+    "Maralen's brother"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 147,
+   "quote": "My brother,"
+  },
+  {
+   "summary": "A line of elf torches appears while Isilu closes in, and the kithkin ready to fight.",
+   "participants": [
+    "Brigid Baeli",
+    "Isilu",
+    "Morcant"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 154,
+   "quote": "And all the while, Isilu came closer, the living night descending on the drowning dregs of day."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oona",
+   "relation": "created",
+   "target": "Maralen",
+   "note": "She made Maralen as an avatar.",
+   "paragraph": 76,
+   "quote": "She pinched off a piece of herself, like plucking a petal from a flower, and she made me."
+  },
+  {
+   "source": "Oona",
+   "relation": "created",
+   "target": "Maralen's brother",
+   "note": "Oona made him before Maralen.",
+   "paragraph": 84,
+   "quote": "she made another before me, intended to be Shadowmoor's prince in waiting."
+  },
+  {
+   "source": "Maralen",
+   "relation": "family",
+   "target": "Maralen's brother",
+   "note": "He is Maralen's older brother, made from the other half of the same petal.",
+   "paragraph": 84,
+   "quote": "I remember my older brother fighting her so hard I thought the palace might fall."
+  },
+  {
+   "source": "Maralen",
+   "relation": "ally",
+   "target": "Ashling",
+   "note": "Old friends who have also been enemies.",
+   "paragraph": 34,
+   "quote": "We've been enemies as often as we've been friends"
+  },
+  {
+   "source": "Rhys",
+   "relation": "enemy",
+   "target": "Maralen",
+   "note": "Bound by promise to kill her, he hunts her.",
+   "paragraph": 64,
+   "quote": "I'm sure he's following us."
+  },
+  {
+   "source": "Ashling",
+   "relation": "member_of",
+   "target": "Mount Tanufel",
+   "note": "She is a flamekin of Mount Tanufel.",
+   "paragraph": 34,
+   "quote": "She's one of the flamekin of Mount Tanufel, from which the Wanderwine River springs."
+  },
+  {
+   "source": "Morcant",
+   "relation": "enemy",
+   "target": "Isilu",
+   "note": "Her elves seek poisons to kill the night beast.",
+   "paragraph": 47,
+   "quote": "They're seeking poisons that might allow them to complete the task."
+  },
+  {
+   "source": "Lluwen",
+   "relation": "ally",
+   "target": "Kirol",
+   "note": "Lluwen refuses to let Kirol die and follows them.",
+   "paragraph": 124,
+   "quote": "They don't deserve to die that way."
+  },
+  {
+   "source": "Ajani Goldmane",
+   "relation": "ally",
+   "target": "Kirol",
+   "note": "Ajani rescues the missing student.",
+   "paragraph": 128,
+   "quote": "Are you one of Professor Vess's missing students?"
+  },
+  {
+   "source": "Brigid Baeli",
+   "relation": "enemy",
+   "target": "Maralen",
+   "note": "Her night self leads the kithkin who surround Maralen's party.",
+   "paragraph": 135,
+   "quote": "spears and knives in their hands, the transformed Brigid at the front of their pack."
+  },
+  {
+   "source": "Stinkdrinker Warren",
+   "relation": "ally",
+   "target": "Maralen",
+   "note": "Maralen says she has friends in this bog and the boggarts lend a boat.",
+   "paragraph": 32,
+   "quote": "I have friends in this bog."
+  }
+ ],
+ "rejected": []
+}

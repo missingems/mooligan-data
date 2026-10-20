@@ -1,0 +1,533 @@
+{
+ "page": "stories/episode-3-shadows-of-regret",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-3-shadows-of-regret",
+ "title": "Murders at Karlov Manor | Episode 3: Shadows of Regret",
+ "story_date": "2024-01-09",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:47:08Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [
+    "Master Planeswalker"
+   ],
+   "description": "A planeswalker and former Orzhov leader who stays on Ravnica for Teysa, refuses Ezrim's offer, and finds Teysa murdered.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa",
+    "Guildmaster Karlov"
+   ],
+   "description": "The head of the Orzhov Syndicate, who asks Kaya to return for a private talk and is found dead with her walking stick through her chest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [
+    "Agent Kellan"
+   ],
+   "description": "A young Agency investigator who fetches Kaya and asks if she knows his father, the planeswalker Oko.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [
+    "the chief"
+   ],
+   "description": "The archon head of the Agency, who offers Kaya leadership of the investigation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [
+    "Proft",
+    "Detective Proft"
+   ],
+   "description": "A former Azorius asset turned Agency detective who interviews Etrata and helps her escape.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etrata",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dimir assassin held in Azorius custody who claims she remembers nothing of the murder and agrees to help Proft.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vannifar",
+   "type": "character",
+   "aliases": [],
+   "description": "The Simic leader, shaken by Zegana's death and angry.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zegana",
+   "type": "character",
+   "aliases": [],
+   "description": "The murdered Simic figure.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker among the fae, Kellan's father.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker who walked away from Ravnica and did not return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who walked away from Ravnica and did not return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Guildmaster Zarek"
+   ],
+   "description": "An Izzet guildmaster who has encountered problems for being a planeswalker.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild city-plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karlov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Teysa's manor and the scene of the murders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agency headquarters",
+   "type": "location",
+   "aliases": [],
+   "description": "A floating angular building with cascading water where Ezrim's office stands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya thinks of visiting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane Kaya thinks of visiting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "The guild led by Teysa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The law guild that holds Etrata.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "Zegana's guild.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "The spy guild that employs Etrata.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnya"
+   ],
+   "description": "A guild distancing itself from Etrata.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "An unaffiliated investigative body headed by Ezrim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invaders whose script appears in a note.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian note",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A note in Teysa's handwriting but written in Phyrexian script, hidden among broken statue pieces.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Azorius mages remove Etrata from Karlov Manor and no Dimir members intervene.",
+   "participants": [
+    "Etrata",
+    "Azorius Senate",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Etrata's removal from the grounds of Karlov Manor took no time at all in the grand scheme of things."
+  },
+  {
+   "summary": "Teysa's remark about walking away stirs Kaya's memory of Jace and Vraska.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya",
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "Teysa had managed to invoke the shades of Jace and Vraska, the other two people who'd walked away from Ravnica."
+  },
+  {
+   "summary": "Teysa reports Vannifar is moving from grief to outrage over Zegana's death.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya",
+    "Vannifar",
+    "Zegana"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "Vannifar won't allow this to go unanswered."
+  },
+  {
+   "summary": "Kaya presses Teysa to say what she wanted to tell her; they agree on three days.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "Then, if you haven't called me, I come looking."
+  },
+  {
+   "summary": "Rumors about the party circulate through Ravnica, and people blame planeswalkers for the invasion.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 30,
+   "quote": "They talked about the Phyrexian invasion and how the Planeswalkers had failed them all."
+  },
+  {
+   "summary": "Kellan finds Kaya at a coffee shop to summon her to Ezrim.",
+   "participants": [
+    "Kellan",
+    "Kaya",
+    "Ezrim"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "it's the chief who'd like to speak to you"
+  },
+  {
+   "summary": "Kellan tells Kaya that his father is the fae planeswalker Oko and asks if she knows him.",
+   "participants": [
+    "Kellan",
+    "Kaya",
+    "Oko"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 52,
+   "quote": "His name's Oko"
+  },
+  {
+   "summary": "Ezrim offers Kaya leadership of the Zegana murder investigation.",
+   "participants": [
+    "Ezrim",
+    "Kaya"
+   ],
+   "location": "Agency headquarters",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "I would like you to assume leadership of this investigation."
+  },
+  {
+   "summary": "Kaya refuses Ezrim's offer and leaves.",
+   "participants": [
+    "Kaya",
+    "Ezrim"
+   ],
+   "location": "Agency headquarters",
+   "importance": "major",
+   "paragraph": 80,
+   "quote": "No. It's a complete sentence, and you know what it means."
+  },
+  {
+   "summary": "Proft visits Etrata in her isolated cell.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 87,
+   "quote": "Etrata's cell was the only one occupied in this block, leaving her entirely isolated, save for her guards"
+  },
+  {
+   "summary": "Proft asks Etrata why she killed so publicly and how she fooled the verity circles.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 94,
+   "quote": "will you tell me why you chose to kill such a prominent target in such a public way?"
+  },
+  {
+   "summary": "A courier summons Kaya to Karlov Manor with a note from Teysa.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 107,
+   "quote": "Guildmaster Karlov requests your presence at the manor."
+  },
+  {
+   "summary": "Teysa's note says it is time for the discussion they couldn't have and asks Kaya to come alone.",
+   "participants": [
+    "Teysa Karlov",
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 117,
+   "quote": "It's time for the discussion we couldn't have during the gala."
+  },
+  {
+   "summary": "Kaya enters the unlocked, silent manor.",
+   "participants": [
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "minor",
+   "paragraph": 124,
+   "quote": "The manor was eerily quiet, with no one in attendance or rushing to announce her."
+  },
+  {
+   "summary": "Kaya finds Teysa dead in her private parlor with her walking stick through her chest.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 128,
+   "quote": "the shattered shaft of her walking stick protruded from her chest, slick with blood."
+  },
+  {
+   "summary": "Kaya finds a note in Teysa's handwriting written in Phyrexian script.",
+   "participants": [
+    "Kaya",
+    "Teysa Karlov",
+    "Phyrexian note"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 133,
+   "quote": "The script was Phyrexian."
+  },
+  {
+   "summary": "Kaya decides she must join Ezrim's investigation after all.",
+   "participants": [
+    "Kaya",
+    "Ezrim"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 134,
+   "quote": "She had to tell him she was in this after all."
+  },
+  {
+   "summary": "Etrata denies killing Zegana and says she does not remember it.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft",
+    "Zegana"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 140,
+   "quote": "If I killed her, I don't remember it."
+  },
+  {
+   "summary": "Proft reasons that if Etrata was mind-controlled she is no more culpable than a knife.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 142,
+   "quote": "if mind control or magic had been used to force Etrata's actions, she was no more culpable than a knife."
+  },
+  {
+   "summary": "Proft swears to clear Etrata's name, and she gives her word to help.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 147,
+   "quote": "I am Alquist Proft, and I will risk my name to clear yours."
+  },
+  {
+   "summary": "Proft unlocks Etrata's cell and tells her to meet him at his home.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 149,
+   "quote": "the lock on her cell sprang open with a click"
+  },
+  {
+   "summary": "Etrata slips out into the shadows and Proft stages a scene over the empty cell.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 152,
+   "quote": "Etrata nodded before stepping out of the cell and melting into the shadows."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kellan",
+   "relation": "family",
+   "target": "Oko",
+   "note": "Oko is his father",
+   "paragraph": 52,
+   "quote": "His name's Oko"
+  },
+  {
+   "source": "Ezrim",
+   "relation": "leader_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "head of the Agency",
+   "paragraph": 73,
+   "quote": "I, as head of the Agency"
+  },
+  {
+   "source": "Alquist Proft",
+   "relation": "ally",
+   "target": "Etrata",
+   "note": "she gives her word to help him",
+   "paragraph": 148,
+   "quote": "As much as I can, you have my word."
+  },
+  {
+   "source": "Etrata",
+   "relation": "member_of",
+   "target": "House Dimir",
+   "note": "snuck in as the Dimir's eyes",
+   "paragraph": 138,
+   "quote": "I snuck into the party because House Dimir needed someone to be our eyes"
+  },
+  {
+   "source": "Alquist Proft",
+   "relation": "other",
+   "target": "Azorius Senate",
+   "note": "former Azorius asset who left for the Agency",
+   "paragraph": 4,
+   "quote": "Proft had been their asset before he chose to go off and ply his talents with the Agency"
+  },
+  {
+   "source": "Zegana",
+   "relation": "other",
+   "target": "Vannifar",
+   "note": "rivals who were like sisters",
+   "paragraph": 14,
+   "quote": "they were sisters, in their way"
+  },
+  {
+   "source": "Kaya",
+   "relation": "ally",
+   "target": "Teysa Karlov",
+   "note": "Teysa signs as her friend",
+   "paragraph": 119,
+   "quote": "Your friend, after everything,"
+  }
+ ],
+ "rejected": []
+}

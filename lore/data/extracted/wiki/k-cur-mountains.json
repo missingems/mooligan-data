@@ -1,0 +1,70 @@
+{
+ "page": "wiki/k-cur-mountains",
+ "url": "https://mtg.wiki/page/K%27Cur_Mountains",
+ "title": "K'Cur Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "K'Cur Mountains",
+   "type": "location",
+   "aliases": [
+    "K'Curs"
+   ],
+   "description": "Northernmost mountain range on Aerona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where the mountains lie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cape Tempest",
+   "type": "location",
+   "aliases": [],
+   "description": "Land fed by a river from the K'Curs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Coraleon",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal city given clear water by the river.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teeka's Shop of Wonders",
+   "type": "location",
+   "aliases": [],
+   "description": "Shop hosted in the K'Curs.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "K'Cur Mountains",
+   "relation": "located_in",
+   "target": "Aerona",
+   "note": "They are the northernmost range on Aerona.",
+   "paragraph": 0,
+   "quote": "The K'Cur Mountains form the northernmost mountainrange on Aerona ."
+  },
+  {
+   "source": "Teeka's Shop of Wonders",
+   "relation": "located_in",
+   "target": "K'Cur Mountains",
+   "note": "The K'Curs host the shop.",
+   "paragraph": 1,
+   "quote": "The K'Curs are also host to Teeka's Shop of Wonders ."
+  }
+ ],
+ "rejected": []
+}

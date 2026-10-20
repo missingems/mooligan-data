@@ -1,0 +1,569 @@
+{
+ "page": "stories/chronicle-bolas-first-lesson-2018-06-20",
+ "url": "https://magic.wizards.com/en/news/magic-story/chronicle-bolas-first-lesson-2018-06-20",
+ "title": "Chronicle of Bolas: The First Lesson",
+ "story_date": "2018-06-20",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:32:15Z",
+ "storyline": "Chronicle of Bolas",
+ "entities": [
+  {
+   "name": "Naiva",
+   "type": "character",
+   "aliases": [
+    "Nai"
+   ],
+   "description": "A young Temur hunter and twin of Baishya who first confronts the wounded stranger Tae Jin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baishya",
+   "type": "character",
+   "aliases": [
+    "Bai"
+   ],
+   "description": "A young whisperer and twin of Naiva who recognizes Tae Jin's words from her vision.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yasova Dragonclaw",
+   "type": "character",
+   "aliases": [
+    "Yasova",
+    "Grandmother"
+   ],
+   "description": "The former chief of the Temur and grandmother of the twins, a healer and keeper of the past, who leads the party toward Ugin's grave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fec",
+   "type": "character",
+   "aliases": [],
+   "description": "A Kolaghan-born orc with a bad leg and two swords who travels with the hunting party and keeps watch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tae Jin",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Jeskai student of a master who seeks Yasova to share the Spirit Dragon's story and is sentenced to death by Ojutai's broodling.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [
+    "Ugin Spirit Dragon",
+    "the Spirit Dragon"
+   ],
+   "description": "The Spirit Dragon whose first-person account Tae Jin recites, about being born twinned with Nicol and what became of him; he says the one he loved best killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Nicol",
+    "Bolas"
+   ],
+   "description": "Ugin's twin, who burns with desire for revenge on humans, takes the second name Bolas, and manipulates humans into murder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chromium Rhuell",
+   "type": "character",
+   "aliases": [],
+   "description": "A metallic-scaled elder dragon, a scholar of creatures who lives by a lake and sends the twins away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "A reddish-green elder dragon who hunts and scorns the twins as runts.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcades Sabboth",
+   "type": "character",
+   "aliases": [
+    "Arcades",
+    "Dragonlord",
+    "Brother Arcades"
+   ],
+   "description": "A white elder dragon who rules a human colony as Dragonlord and teaches the humans law and order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "character",
+   "aliases": [
+    "Vaevictis"
+   ],
+   "description": "A big, ugly dragon who guards a territory with his siblings and chases the twins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Te Ju Ki",
+   "type": "character",
+   "aliases": [],
+   "description": "An old holy elder at Arcades's colony who teaches Ugin about planes and cycles of life and death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ojutai",
+   "type": "deity",
+   "aliases": [
+    "Great Teacher",
+    "Dragonlord Ojutai"
+   ],
+   "description": "A Dragonlord and scholar who began the purges and destroyed records; he commands the sentence against Tae Jin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ojutai's broodling",
+   "type": "creature",
+   "aliases": [
+    "Ojutai broodling"
+   ],
+   "description": "A pale gray-white dragon of Ojutai's brood that tracks Tae Jin and sentences him to die by ice through its aven translator.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aven interpreter",
+   "type": "creature",
+   "aliases": [],
+   "description": "An aven in an elaborate vest who translates the broodling's draconic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Atarka",
+   "type": "deity",
+   "aliases": [
+    "Dragonlord Atarka"
+   ],
+   "description": "The Dragonlord whose territory the party crosses; she would eat Baishya if she suspected she was a whisperer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atarka's broodling",
+   "type": "creature",
+   "aliases": [],
+   "description": "A dragon that has followed the party for days and then vanishes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Temur",
+   "type": "faction",
+   "aliases": [
+    "Temur clan"
+   ],
+   "description": "Yasova's clan, whose whisperers are said to create ice doubles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeskai",
+   "type": "faction",
+   "aliases": [],
+   "description": "The people to whom Tae Jin belongs, who keep Ugin's story as oral tradition.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qal Sisma",
+   "type": "location",
+   "aliases": [],
+   "description": "A mountain range the party crossed before reaching the high plateau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The high plateau",
+   "type": "location",
+   "aliases": [
+    "plateau"
+   ],
+   "description": "The treacherous open land on Tarkir where the party travels toward Ugin's grave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin's grave",
+   "type": "location",
+   "aliases": [],
+   "description": "The destination of Yasova's party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eternal Peak",
+   "type": "location",
+   "aliases": [
+    "Eternal Ice"
+   ],
+   "description": "The mountain where an avalanche nearly killed the twins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakhan",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter who takes watch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorya",
+   "type": "character",
+   "aliases": [],
+   "description": "A hunter who takes watch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcades's colony",
+   "type": "location",
+   "aliases": [
+    "the walled town",
+    "the colony"
+   ],
+   "description": "A walled riverside human city ruled by Arcades Sabboth.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yasova's party sees an Ojutai dragon hunting on the high plateau, and Yasova decides to avoid it on the way to Ugin's grave.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Naiva",
+    "Baishya",
+    "Ojutai"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "I want to reach Ugin's grave without tangling with that dragon."
+  },
+  {
+   "summary": "Yasova praises Naiva and sends her and Baishya to scout a ring of stones where vultures are perched.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Naiva",
+    "Baishya"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 34,
+   "quote": "If the vultures are not afraid, then we need not be."
+  },
+  {
+   "summary": "Naiva is attacked in the rock ring by a wounded stranger; she disarms him and he faints after asking for Yasova Dragonclaw.",
+   "participants": [
+    "Naiva",
+    "Tae Jin"
+   ],
+   "location": "The high plateau",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "You are of the Temur clan. I seek Yasova Dragonclaw."
+  },
+  {
+   "summary": "Yasova suspects a trap by Ojutai's broodling but Naiva and Baishya insist she heal him.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Naiva",
+    "Baishya",
+    "Tae Jin"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 65,
+   "quote": "This could be a trap on the part of Ojutai to find me."
+  },
+  {
+   "summary": "Tae Jin explains his master's dream and that Ojutai destroyed records but the Spirit Dragon's story survives by oral tradition.",
+   "participants": [
+    "Tae Jin",
+    "Ojutai",
+    "Yasova Dragonclaw",
+    "Ugin"
+   ],
+   "location": "The high plateau",
+   "importance": "major",
+   "paragraph": 70,
+   "quote": "He wants to destroy our memory of the past, and of our ancestors"
+  },
+  {
+   "summary": "Yasova heals Tae Jin's wound with magic and tells him to prove his words.",
+   "participants": [
+    "Yasova Dragonclaw",
+    "Tae Jin"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 80,
+   "quote": "She pulled off her glove and placed a bare hand, fingers spread, atop the wound."
+  },
+  {
+   "summary": "Tae Jin recites the words of Ugin, who says the one he loved best in all the worlds is the one who killed him.",
+   "participants": [
+    "Tae Jin",
+    "Ugin"
+   ],
+   "location": "The high plateau",
+   "importance": "major",
+   "paragraph": 86,
+   "quote": "The one I loved best in all the worlds is the one who killed me."
+  },
+  {
+   "summary": "Flashback in Ugin's words: he and Nicol learn that no creature is safe after witnessing their sister's death and set out to find their siblings.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 93,
+   "quote": "We witnessed the death of a sister, and in this way, we learned that no creature is safe."
+  },
+  {
+   "summary": "Flashback: Nicol insists they should have interfered to stop the hunters and wants to learn how to destroy them.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 105,
+   "quote": "I want to know who those hunters are, and where they come from, and how we can destroy them."
+  },
+  {
+   "summary": "Flashback: the twins meet Chromium Rhuell by a lake, who dismisses them and sends them to Palladia-Mors.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Chromium Rhuell"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 121,
+   "quote": "But for now, go away, little ones."
+  },
+  {
+   "summary": "Flashback: Palladia-Mors scorns the twins as runts and flings a corpse at them.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Palladia-Mors"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 129,
+   "quote": "You're so small, the two of you. Little runts."
+  },
+  {
+   "summary": "Flashback: Ugin sees nothing wasted in the cycle of life and death, while Nicol wants to kill something.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 139,
+   "quote": "I want to kill something,"
+  },
+  {
+   "summary": "Flashback: the twins spend years perfecting tandem hunting, and meet Vaevictis Asmadi's territory.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Vaevictis Asmadi"
+   ],
+   "location": "The high plateau",
+   "importance": "minor",
+   "paragraph": 152,
+   "quote": "We spent years, as you Jeskai would measure the span of days, perfecting various techniques for hunting in tandem."
+  },
+  {
+   "summary": "Flashback: the twins find Arcades Sabboth ruling a human settlement.",
+   "participants": [
+    "Ugin",
+    "Nicol Bolas",
+    "Arcades Sabboth"
+   ],
+   "location": "Arcades's colony",
+   "importance": "minor",
+   "paragraph": 156,
+   "quote": "To our surprise our sibling Arcades Sabboth had taken up residence inside the great ring wall."
+  },
+  {
+   "summary": "Flashback: Nicol burns a tower and soldiers when humans shoot at the twins, and Arcades slams into him.",
+   "participants": [
+    "Nicol Bolas",
+    "Arcades Sabboth",
+    "Ugin"
+   ],
+   "location": "Arcades's colony",
+   "importance": "major",
+   "paragraph": 161,
+   "quote": "His blast of fire breath scorched along the highest tower and its adjoining wall walk."
+  },
+  {
+   "summary": "Flashback: Nicol takes the name Nicol Bolas and the twins are admitted to the colony as Arcades's guests.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin",
+    "Arcades Sabboth"
+   ],
+   "location": "Arcades's colony",
+   "importance": "major",
+   "paragraph": 170,
+   "quote": "I am Nicol Bolas,"
+  },
+  {
+   "summary": "Flashback: the twins live for years in the colony, Ugin befriending the holy elder Te Ju Ki.",
+   "participants": [
+    "Ugin",
+    "Te Ju Ki",
+    "Nicol Bolas",
+    "Arcades Sabboth"
+   ],
+   "location": "Arcades's colony",
+   "importance": "minor",
+   "paragraph": 186,
+   "quote": "I poked my snout into everything, and made particular friends with an old holy elder named Te Ju Ki"
+  },
+  {
+   "summary": "Flashback: Te Ju Ki shows Ugin globes of light she calls planes and teaches that death is part of endless cycles.",
+   "participants": [
+    "Te Ju Ki",
+    "Ugin"
+   ],
+   "location": "Arcades's colony",
+   "importance": "major",
+   "paragraph": 190,
+   "quote": "She called each one a \"plane,\" although I did not know what she meant by the word at that time."
+  },
+  {
+   "summary": "Flashback: one man stabs his brother in a sudden quarrel after years of peace, and Nicol watches with satisfaction.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "Arcades's colony",
+   "importance": "major",
+   "paragraph": 206,
+   "quote": "Nicol lounged there, stretched along the ridgeline, watching the scene with an avid gaze."
+  },
+  {
+   "summary": "Flashback: Nicol tells Ugin he has found a better way to avenge their sister and flies off without farewells.",
+   "participants": [
+    "Nicol Bolas",
+    "Ugin"
+   ],
+   "location": "Arcades's colony",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "I have discovered a better way to get revenge."
+  },
+  {
+   "summary": "Flashback: Arcades dismisses Ugin's concerns, and Ugin leaves Te Ju Ki to follow Nicol.",
+   "participants": [
+    "Ugin",
+    "Arcades Sabboth",
+    "Te Ju Ki"
+   ],
+   "location": "Arcades's colony",
+   "importance": "minor",
+   "paragraph": 224,
+   "quote": "I know where he's going. I must follow him."
+  },
+  {
+   "summary": "An Ojutai broodling appears and its aven interpreter sentences Tae Jin to die by ice for sacrilege.",
+   "participants": [
+    "Ojutai's broodling",
+    "Aven interpreter",
+    "Tae Jin",
+    "Fec",
+    "Yasova Dragonclaw",
+    "Ojutai"
+   ],
+   "location": "The high plateau",
+   "importance": "major",
+   "paragraph": 233,
+   "quote": "Tae Jin, by the command of the Great Teacher, you are accused of the crime of sacrilege and sentenced to die by ice."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ugin",
+   "relation": "family",
+   "target": "Nicol Bolas",
+   "note": "twin dragons born together",
+   "paragraph": 93,
+   "quote": "I was born twinned to Nicol, where in every other egg there was only one."
+  },
+  {
+   "source": "Ugin",
+   "relation": "other",
+   "target": "Tae Jin",
+   "note": "Ugin's words were passed down to Tae Jin's Jeskai ancestors",
+   "paragraph": 83,
+   "quote": "These are the words of Ugin Spirit Dragon, who spoke them in ancient days to one of my Jeskai ancestors."
+  },
+  {
+   "source": "Te Ju Ki",
+   "relation": "mentor_of",
+   "target": "Ugin",
+   "note": "teaches him meditation with globes of light",
+   "paragraph": 197,
+   "quote": "Do you wish me to teach you how to create the globes and spin them?"
+  },
+  {
+   "source": "Arcades Sabboth",
+   "relation": "leader_of",
+   "target": "Arcades's colony",
+   "note": "rules the town as Dragonlord",
+   "paragraph": 185,
+   "quote": "whom they called \"Dragonlord.\""
+  },
+  {
+   "source": "Ojutai",
+   "relation": "enemy",
+   "target": "Tae Jin",
+   "note": "Ojutai sentences Tae Jin to die by ice",
+   "paragraph": 233,
+   "quote": "by the command of the Great Teacher, you are accused of the crime of sacrilege"
+  },
+  {
+   "source": "Ojutai's broodling",
+   "relation": "serves",
+   "target": "Ojutai",
+   "note": "carries out the Great Teacher's command",
+   "paragraph": 11,
+   "quote": "An Ojutai broodling? No. They're too intelligent to do anything by mistake."
+  },
+  {
+   "source": "Yasova Dragonclaw",
+   "relation": "family",
+   "target": "Baishya",
+   "note": "grandmother and granddaughter",
+   "paragraph": 6,
+   "quote": "Grandmother has her reasons for everything she does."
+  },
+  {
+   "source": "Atarka",
+   "relation": "enemy",
+   "target": "Baishya",
+   "note": "Atarka would eat a whisperer",
+   "paragraph": 38,
+   "quote": "If Atarka ever suspects you are a whisperer, she'll eat you."
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "family",
+   "target": "Arcades Sabboth",
+   "note": "Arcades is their older brother",
+   "paragraph": 162,
+   "quote": "as our older brother, Arcades, circled back around for another attack."
+  }
+ ],
+ "rejected": []
+}

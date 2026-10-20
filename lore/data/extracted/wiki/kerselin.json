@@ -1,0 +1,91 @@
+{
+ "page": "wiki/kerselin",
+ "url": "https://mtg.wiki/page/Kerselin",
+ "title": "Kerselin",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:28Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kerselin",
+   "type": "location",
+   "aliases": [],
+   "description": "A pioneer port town on the edge of the Great Wood on Ulgrotha, the plane's major lumber producer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Hijacked a vessel of families bound for Kerselin and used them to populate his Dark Barony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rashka",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous archer who swore revenge against Baron Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reveka",
+   "type": "character",
+   "aliases": [
+    "Wizard Savant Reveka"
+   ],
+   "description": "Wizard Savant who sailed a frigate through winter storms to bring food to Kerselin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dark Barony",
+   "type": "location",
+   "aliases": [],
+   "description": "Baron Sengir's domain.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Kerselin.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Baron Sengir hijacked a vessel carrying over thirty families from Onella to Kerselin and used them to populate his Dark Barony.",
+   "participants": [
+    "Baron Sengir",
+    "Rashka"
+   ],
+   "location": "Kerselin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "A vessel carrying over thirty families from Onella to Kerselin was hijacked by Baron Sengir"
+  },
+  {
+   "summary": "Wizard Savant Reveka sailed a loaded frigate through winter storms to feed Kerselin until spring.",
+   "participants": [
+    "Reveka"
+   ],
+   "location": "Kerselin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "sailed a loaded frigate through winter storms to deliver food"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rashka",
+   "relation": "enemy",
+   "target": "Baron Sengir",
+   "note": "Swore revenge for the hijacking.",
+   "paragraph": 1,
+   "quote": "The famous archer Rashka has sworn revenge against the Baron for this heinous act."
+  }
+ ],
+ "rejected": []
+}

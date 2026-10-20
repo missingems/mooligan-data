@@ -1,0 +1,135 @@
+{
+ "page": "wiki/reckoners",
+ "url": "https://mtg.wiki/page/Reckoners",
+ "title": "Reckoners",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:37Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sprawling, loosely connected criminal gangs on Kamigawa tracing history to before the Kami War, bound by magical tattoos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hyozan Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang originally founded by Hidetsugu and Toshiro Umezawa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang specializing in stealth and subterfuge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Okiba Reckoners",
+   "type": "faction",
+   "aliases": [
+    "Okiba"
+   ],
+   "description": "Exclusively nezumi biker gang led by Greasefang.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yoruma",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gang known for advanced armor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Greasefang",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Okiba Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ink-Eyes",
+   "type": "character",
+   "aliases": [],
+   "description": "Famous ninja whose nezumi gang became the Okiba.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder of the Hyozan Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder of the Hyozan Reckoners.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kotose",
+   "type": "character",
+   "aliases": [],
+   "description": "Notable Mukotai member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tatsunari",
+   "type": "character",
+   "aliases": [],
+   "description": "Notable Mukotai member.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War before which the Reckoners' history began.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Hidetsugu",
+   "relation": "created",
+   "target": "Hyozan Reckoners",
+   "note": "Co-founded with Toshiro Umezawa.",
+   "paragraph": 4,
+   "quote": "originally founded by Hidetsugu and Toshiro Umezawa"
+  },
+  {
+   "source": "Greasefang",
+   "relation": "leader_of",
+   "target": "Okiba Reckoners",
+   "note": "Leads the nezumi gang.",
+   "paragraph": 6,
+   "quote": "a biker gang that is exclusively nezumi , led by Greasefang"
+  },
+  {
+   "source": "Okiba Reckoners",
+   "relation": "enemy",
+   "target": "Hyozan Reckoners",
+   "note": "Originally rivals.",
+   "paragraph": 6,
+   "quote": "originally a rival gang to the Hyozan Reckoners"
+  },
+  {
+   "source": "Okiba Reckoners",
+   "relation": "member_of",
+   "target": "Reckoners",
+   "note": "Known gang of the Reckoners.",
+   "paragraph": 6,
+   "quote": "The Okiba Reckoners (o-KEE-ba)"
+  }
+ ],
+ "rejected": []
+}

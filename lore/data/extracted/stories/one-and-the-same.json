@@ -1,0 +1,590 @@
+{
+ "page": "stories/one-and-the-same",
+ "url": "https://magic.wizards.com/en/news/magic-story/one-and-the-same",
+ "title": "March of the Machine | Ravnica: One and the Same",
+ "story_date": "2023-03-24",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:38:43Z",
+ "storyline": "March of the Machine",
+ "entities": [
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [
+    "Vraska, Betrayer's Sting",
+    "the guildmaster",
+    "captain"
+   ],
+   "description": "A gorgon planeswalker and Golgari guildmaster who is compleated and leads a Phyrexian legion against Ravnica, while a hidden part of her mind clings to her memories of Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace",
+    "Beleren"
+   ],
+   "description": "A mind mage and planeswalker who enters Vraska's mind, forgives her and gives her one last do-over, while his past scars are noted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Ral"
+   ],
+   "description": "The Izzet guildmaster, a planeswalker who strikes Vraska with a device attuned to Phyrexian oil; he narrates the aftermath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tomik Vrona",
+   "type": "character",
+   "aliases": [
+    "Tomik"
+   ],
+   "description": "Ral's partner, who flies in on a gargoyle and later sits with him amid the ruins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elesh Norn",
+   "type": "character",
+   "aliases": [
+    "Norn"
+   ],
+   "description": "The Phyrexian Grand Praetor who charges Vraska with leading the invasion of Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ludmilla",
+   "type": "character",
+   "aliases": [],
+   "description": "The other gorgon in Vraska's youth prison cell, who is killed by an Azorius guard while comforting the Golgari prisoners.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Nicol-Bolas",
+    "the God-Emperor"
+   ],
+   "description": "The Elder Dragon whom Vraska remembers as the only one who trusted her to lead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon whose seat in the Chamber of the Guildpact the Phyrexians destroy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lavinia",
+   "type": "character",
+   "aliases": [],
+   "description": "A Ravnican official whose office desk is seen in the exposed Chamber of the Guildpact.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A planeswalker whom Vraska thinks of when kissing Jace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alhammarret",
+   "type": "character",
+   "aliases": [],
+   "description": "A mage whose mind-magic scarred Jace in the past.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian agents",
+    "the invading forces"
+   ],
+   "description": "The invaders who compleate Ravnica's citizens, particularly the Golgari, and blind the population.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari",
+    "the Swarm"
+   ],
+   "description": "The Ravnican guild of rot and death that Vraska leads and which is largely compleated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The Ravnican guild of law whose Senate building is destroyed and whose guards imprisoned Vraska.",
+   "presence": "appears"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The Ravnican guild of mages led by Ral Zarek, many of whom are blinded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [
+    "Selesnya",
+    "Selesnyan warriors"
+   ],
+   "description": "The Ravnican guild of unity whose warriors fight in the undercity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros"
+   ],
+   "description": "The Ravnican guild whose skyship and soldiers resist the invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov Syndicate",
+   "type": "faction",
+   "aliases": [
+    "Orzhov"
+   ],
+   "description": "A Ravnican guild whose bankers flee the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [
+    "Simic"
+   ],
+   "description": "A Ravnican guild whose biomancers volunteer for the oil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild-run city plane that Vraska leads the Phyrexians to raze.",
+   "presence": "appears"
+  },
+  {
+   "name": "Realmbreaker",
+   "type": "artifact",
+   "aliases": [
+    "the Invasion Tree",
+    "the greatest tree"
+   ],
+   "description": "The mighty Phyrexian tree whose branches break into Ravnica and carry Vraska's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chamber of the Guildpact",
+   "type": "location",
+   "aliases": [],
+   "description": "The center of Ravnican law, whose roof the Phyrexians destroy.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari undercity",
+   "type": "location",
+   "aliases": [
+    "Old Below",
+    "Korozda",
+    "Svogthos"
+   ],
+   "description": "The Golgari realm beneath Ravnica, home of Korozda the maze and the cathedral of Svogthos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska's old apartment",
+   "type": "location",
+   "aliases": [
+    "her old flat"
+   ],
+   "description": "A small undercity flat filled with trinkets from other planes where Vraska recovers her memories of Jace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thaumatic compass",
+   "type": "artifact",
+   "aliases": [
+    "the compass"
+   ],
+   "description": "A silver object Jace and Vraska used, which she keeps in her pocket and which points at Ral.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyresis",
+   "type": "concept",
+   "aliases": [
+    "compleation"
+   ],
+   "description": "Phyrexian transformation that turns Vraska to metal and floods her with oil.",
+   "presence": "appears"
+  },
+  {
+   "name": "The War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The earlier war on Ravnica when Vraska reopened the memory of Jace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "The jungle plane where Vraska and Jace shared a boat trip.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Belligerent",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Vraska's ship on which she and Jace once stayed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vraska narrates being compleated: her throat and tendrils turn to metal, she petrifies Phyrexian agents until she is overwhelmed, and her self retreats into a hidden corner of her mind.",
+   "participants": [
+    "Vraska",
+    "Phyrexians",
+    "Phyresis"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "I writhed and arched my back as Phyrexian oil rushed past my teeth."
+  },
+  {
+   "summary": "Vraska rides a Realmbreaker branch down over Ravnica as general for Elesh Norn and has it plunge through the Azorius Senate.",
+   "participants": [
+    "Vraska",
+    "Realmbreaker",
+    "Elesh Norn",
+    "Azorius Senate"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 12,
+   "quote": "I choose the simplest one and order a branch to dive straight through its center."
+  },
+  {
+   "summary": "Vraska's forces land at the prison where she was held, triggering a memory of her imprisonment at seventeen.",
+   "participants": [
+    "Vraska",
+    "Realmbreaker",
+    "Phyrexians"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 14,
+   "quote": "It is the prison I was held in, the prison I tried, and succeeded, in escaping"
+  },
+  {
+   "summary": "In a flashback, Vraska at seventeen is held by an Azorius guard, and Ludmilla is killed while calling to her fellow Golgari prisoners.",
+   "participants": [
+    "Vraska",
+    "Ludmilla",
+    "Azorius Senate",
+    "Golgari Swarm"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "And then, with a wet slice and a heavy thump, she was not. I was the only gorgon left."
+  },
+  {
+   "summary": "Vraska has Phyrexian agents blind the Azorius and Boros guards, and orders the blinded forced to the Transguild Promenade as an example.",
+   "participants": [
+    "Vraska",
+    "Phyrexians",
+    "Azorius Senate",
+    "Boros Legion"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 35,
+   "quote": "\"Lead them to the Transguild Promenade as an example of what we do to the unjust.\""
+  },
+  {
+   "summary": "Vraska leads the Phyrexians into the Golgari undercity, transforming her people into Phyrexians while Realmbreaker upends Korozda and cracks Svogthos.",
+   "participants": [
+    "Vraska",
+    "Phyrexians",
+    "Golgari Swarm",
+    "Realmbreaker"
+   ],
+   "location": "Golgari undercity",
+   "importance": "major",
+   "paragraph": 39,
+   "quote": "It is a hive in the truest sense, all pieces of a single purpose."
+  },
+  {
+   "summary": "Vraska recalls singing with Jace on a boat on Ixalan.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Ixalan",
+   "importance": "minor",
+   "paragraph": 43,
+   "quote": "It is night on Ixalan, and I sing to the vast and buzzing jungle."
+  },
+  {
+   "summary": "Vraska's forces transform her subjects and defeat Selesnyan warriors in the undercity.",
+   "participants": [
+    "Vraska",
+    "Phyrexians",
+    "Selesnya Conclave"
+   ],
+   "location": "Golgari undercity",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "a cohort of Selesnyan warriors tear through a hole in the maze"
+  },
+  {
+   "summary": "Vraska enters her old apartment and finds the thaumatic compass, recalling the days before the War of the Spark when she reopened her memories of Jace.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren",
+    "Thaumatic compass"
+   ],
+   "location": "Vraska's old apartment",
+   "importance": "major",
+   "paragraph": 54,
+   "quote": "It is the weeks before the War of the Spark"
+  },
+  {
+   "summary": "Vraska sees Ral Zarek and Tomik Vrona flying over Ravnica and feels jealousy.",
+   "participants": [
+    "Vraska",
+    "Ral Zarek",
+    "Tomik Vrona"
+   ],
+   "location": "Chamber of the Guildpact",
+   "importance": "minor",
+   "paragraph": 57,
+   "quote": "Ral Zarek and Tomik Vrona approach, flying close on the back of a gargoyle."
+  },
+  {
+   "summary": "Vraska orders her compleated Golgari to spill oil and blind the populace, leaving citizens collapsed in terror in the streets.",
+   "participants": [
+    "Vraska",
+    "Golgari Swarm",
+    "Phyrexians"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 59,
+   "quote": "\"Spill as much glistening oil on the streets as you can,\""
+  },
+  {
+   "summary": "Vraska's forces destroy the roof of the Chamber of the Guildpact and Niv-Mizzet's seat.",
+   "participants": [
+    "Vraska",
+    "Phyrexians",
+    "Realmbreaker"
+   ],
+   "location": "Chamber of the Guildpact",
+   "importance": "major",
+   "paragraph": 63,
+   "quote": "delighting in crushing Niv-Mizzet's seat"
+  },
+  {
+   "summary": "Vraska welcomes curious Simic and Izzet volunteers while others flee in terror.",
+   "participants": [
+    "Vraska",
+    "Izzet League",
+    "Simic Combine",
+    "Orzhov Syndicate"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 66,
+   "quote": "I motion to welcome them."
+  },
+  {
+   "summary": "Ral Zarek fights through Phyrexian ranks to reach Vraska, and hits her sternum with a cylindrical device attuned to Phyrexian oil.",
+   "participants": [
+    "Ral Zarek",
+    "Vraska",
+    "Thaumatic compass"
+   ],
+   "location": "Chamber of the Guildpact",
+   "importance": "major",
+   "paragraph": 69,
+   "quote": "in one boxer's punch he plants it right on my sternum and hits a button."
+  },
+  {
+   "summary": "Vraska collapses, her broken body is deserted by her forces, and Ral walks away apologizing.",
+   "participants": [
+    "Vraska",
+    "Ral Zarek",
+    "Phyrexians"
+   ],
+   "location": "Chamber of the Guildpact",
+   "importance": "major",
+   "paragraph": 76,
+   "quote": "My forces do not stay long enough for me to argue my case"
+  },
+  {
+   "summary": "Vraska lies dying beneath rubble, half-flesh and half-metal, awaiting death.",
+   "participants": [
+    "Vraska"
+   ],
+   "location": "Chamber of the Guildpact",
+   "importance": "major",
+   "paragraph": 80,
+   "quote": "Now, I close my eyes and wait for the death Phyrexia promised I would never face alone."
+  },
+  {
+   "summary": "In her mind Vraska meets Jace at a café, remembers luring and betraying him, and tells him she deserves to die; he lets her share her memory.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Vraska's old apartment",
+   "importance": "major",
+   "paragraph": 89,
+   "quote": "I betrayed him. I transformed him."
+  },
+  {
+   "summary": "Jace forgives Vraska and tells her the part that led the invasion was not her, entering the corner of her mind he made.",
+   "participants": [
+    "Jace Beleren",
+    "Vraska"
+   ],
+   "location": "Vraska's old apartment",
+   "importance": "major",
+   "paragraph": 98,
+   "quote": "\"The you that kissed me wasn't you."
+  },
+  {
+   "summary": "Vraska and Jace share a kiss on a dreamed beach, a do-over, and Jace tells her he loves her too before a white light erupts.",
+   "participants": [
+    "Vraska",
+    "Jace Beleren"
+   ],
+   "location": "Vraska's old apartment",
+   "importance": "major",
+   "paragraph": 115,
+   "quote": "\"I love you, too, captain.\""
+  },
+  {
+   "summary": "Two days after the invasion, Ral learns that an officer found no sign of Vraska's body after his haemalectric switch worked.",
+   "participants": [
+    "Ral Zarek",
+    "Tomik Vrona",
+    "Vraska"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 125,
+   "quote": "\"There's no sign of her body, sir.\""
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vraska",
+   "relation": "leader_of",
+   "target": "Golgari Swarm",
+   "note": "Vraska is the Golgari guildmaster",
+   "paragraph": 51,
+   "quote": "I haven't lived here since I became guildmaster."
+  },
+  {
+   "source": "Vraska",
+   "relation": "serves",
+   "target": "Elesh Norn",
+   "note": "Vraska acts as a general under Norn",
+   "paragraph": 11,
+   "quote": "charged with purpose by Elesh Norn herself"
+  },
+  {
+   "source": "Vraska",
+   "relation": "romantic",
+   "target": "Jace Beleren",
+   "note": "They exchange I love you in her dream",
+   "paragraph": 55,
+   "quote": "what makes me weep is realizing I forgot the first time I fell in love."
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "romantic",
+   "target": "Vraska",
+   "note": "Jace says he loves Vraska too",
+   "paragraph": 115,
+   "quote": "\"I love you, too, captain.\""
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "leader_of",
+   "target": "Izzet League",
+   "note": "Ral is the Izzet guildmaster",
+   "paragraph": 67,
+   "quote": "disgusting the Izzet guildmaster."
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "enemy",
+   "target": "Vraska",
+   "note": "Ral attacks Vraska with a device",
+   "paragraph": 69,
+   "quote": "in one boxer's punch he plants it right on my sternum and hits a button."
+  },
+  {
+   "source": "Ral Zarek",
+   "relation": "romantic",
+   "target": "Tomik Vrona",
+   "note": "They grip hands and Tomik sits with Ral",
+   "paragraph": 57,
+   "quote": "Even from this distance I see them grip hands"
+  },
+  {
+   "source": "Ludmilla",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Ludmilla comforts the Golgari prisoners",
+   "paragraph": 21,
+   "quote": "\"You're not alone my doves, I'm here, I'm here.\""
+  },
+  {
+   "source": "Nicol Bolas",
+   "relation": "ally",
+   "target": "Vraska",
+   "note": "Vraska remembers Bolas as trusting her to lead",
+   "paragraph": 60,
+   "quote": "He is the only one who ever trusted me to lead."
+  },
+  {
+   "source": "Azorius Senate",
+   "relation": "enemy",
+   "target": "Vraska",
+   "note": "An Azorius guard imprisoned and tortured her and the Golgari",
+   "paragraph": 18,
+   "quote": "He is an Azorius prison guard"
+  }
+ ],
+ "rejected": []
+}

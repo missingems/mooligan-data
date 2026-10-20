@@ -1,0 +1,109 @@
+{
+ "page": "archive/savor-flavor-ajani-faces-planeswalker-2008-10-27",
+ "url": "https://web.archive.org/web/20150216090426/http://magic.wizards.com:80/en/articles/archive/savor-flavor/ajani-faces-planeswalker-2008-10-27",
+ "title": "Ajani: Faces of a Planeswalker",
+ "story_date": "2008-10-27",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:41:13Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [
+    "Ajani",
+    "Ajani Vengeant"
+   ],
+   "description": "Nacatl leonin planeswalker native to Naya on Alara, whose planeswalker spark ignited after his brother's murder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jazal",
+   "type": "character",
+   "aliases": [],
+   "description": "Ajani's brother, whose death filled Ajani with rage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker Ajani met on Jund, who showed him volcanic red magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara suffused with red, white, and green mana; Ajani's home.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "Shard of Alara adjacent to Naya, where Ajani first planeswalked and met Sarkhan Vol.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane whose shards include Naya and Jund.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ajani discovers that his brother has been killed.",
+   "participants": [
+    "Ajani Goldmane",
+    "Jazal"
+   ],
+   "location": "Naya",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "after Ajani discovered his brother was killed"
+  },
+  {
+   "summary": "Ajani makes his first planeswalk, to the shard of Jund, and meets Sarkhan Vol, who teaches him red magic to express his rage.",
+   "participants": [
+    "Ajani Goldmane",
+    "Sarkhan Vol"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "On Jund Ajani met the planeswalker Sarkhan Vol"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jazal",
+   "relation": "family",
+   "target": "Ajani Goldmane",
+   "note": "Jazal is Ajani's brother.",
+   "paragraph": 9,
+   "quote": "the death of his brother, Jazal"
+  },
+  {
+   "source": "Ajani Goldmane",
+   "relation": "located_in",
+   "target": "Naya",
+   "note": "Ajani is native to Naya.",
+   "paragraph": 3,
+   "quote": "Ajani is actually a Nacatl leonin native to Naya"
+  },
+  {
+   "source": "Naya",
+   "relation": "located_in",
+   "target": "Alara",
+   "note": "Naya is a shard of Alara.",
+   "paragraph": 3,
+   "quote": "the shard of Alara suffused with red, white, and green mana"
+  }
+ ],
+ "rejected": []
+}

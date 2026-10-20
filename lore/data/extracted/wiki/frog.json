@@ -1,0 +1,198 @@
+{
+ "page": "wiki/frog",
+ "url": "https://mtg.wiki/page/Frog",
+ "title": "Frog",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:12Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Frog",
+   "type": "creature",
+   "aliases": [
+    "frogs",
+    "toads"
+   ],
+   "description": "A creature type for tailless, stout-bodied amphibians, including sapient frog-folk across the Multiverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Burrog",
+   "type": "creature",
+   "aliases": [
+    "burrogs",
+    "frogfolk"
+   ],
+   "description": "Frog-folk native to Doradur on Arcavios, found among Witherbloom, Quandrix and Prismari students and faculty.",
+   "presence": "appears"
+  },
+  {
+   "name": "Frogfolk of the Valley",
+   "type": "faction",
+   "aliases": [
+    "Frogfolk"
+   ],
+   "description": "Animalfolk of Bloomburrow known for water magic, augury and living in Fountainport.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glarb",
+   "type": "character",
+   "aliases": [],
+   "description": "King of Fountainport and a powerful wizard who hired Cruelclaw to steal a Calamity Beast's egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cruelclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A weaselfolk hired by Glarb to steal a Calamity Beast egg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helga",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Glarb's apprentices, who assisted Mabel in her quest to stop him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Hero who set out to stop Glarb.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yargle",
+   "type": "creature",
+   "aliases": [],
+   "description": "A frog corrupted into a hulking monstrosity by the spirit of a follower of Belzenlok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Gitrog Monster",
+   "type": "creature",
+   "aliases": [
+    "Gitrog monster"
+   ],
+   "description": "An enormous frog of Nephalia on Innistrad, now on Thunder Junction.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grolnok",
+   "type": "creature",
+   "aliases": [],
+   "description": "A massive frog in Nephalia worshipped as a deity.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tatsunari",
+   "type": "character",
+   "aliases": [
+    "Toad Rider",
+    "Mukotai Reckoner Tatsunari"
+   ],
+   "description": "A Mukotai who became known as the Toad Rider after raising the toad Keimi as his mount.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keimi",
+   "type": "creature",
+   "aliases": [],
+   "description": "A corpse-swallower toad raised by Tatsunari to serve as his mount.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild that uses frogs as a favorite experimental resource.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glarb, king of Fountainport, hired Cruelclaw to steal a Calamity Beast's egg to raise as the Valley's protector.",
+   "participants": [
+    "Glarb",
+    "Cruelclaw"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "He hired the weaselfolk Cruelclaw to steal a Calamity Beast 's egg"
+  },
+  {
+   "summary": "Helga assisted Mabel in her quest to stop Glarb.",
+   "participants": [
+    "Helga",
+    "Mabel",
+    "Glarb"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 11,
+   "quote": "One of Glarb's apprentices, Helga , assisted Mabel in her quest to stop him."
+  },
+  {
+   "summary": "Yargle was created when a frog ate a transformed follower of Belzenlok, whose spirit corrupted it.",
+   "participants": [
+    "Yargle"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "Yargle was \"born\" when a frog ate a transformed ambitious follower of Belzenlok"
+  },
+  {
+   "summary": "Tatsunari became the Toad Rider by raising the toad Keimi as his mount.",
+   "participants": [
+    "Tatsunari",
+    "Keimi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "The Mukotai Reckoner Tatsunari became known as the Toad Rider after raising the corpse-swallower toad Keimi to serve as his mount."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Glarb",
+   "relation": "leader_of",
+   "target": "Frogfolk of the Valley",
+   "note": "King of Fountainport.",
+   "paragraph": 11,
+   "quote": "Glarb was the king of Fountainport and a powerful wizard ."
+  },
+  {
+   "source": "Helga",
+   "relation": "serves",
+   "target": "Glarb",
+   "note": "Was one of his apprentices.",
+   "paragraph": 11,
+   "quote": "One of Glarb's apprentices, Helga"
+  },
+  {
+   "source": "Helga",
+   "relation": "ally",
+   "target": "Mabel",
+   "note": "Assisted her quest.",
+   "paragraph": 11,
+   "quote": "assisted Mabel in her quest to stop him"
+  },
+  {
+   "source": "Glarb",
+   "relation": "serves",
+   "target": "Cruelclaw",
+   "note": "Hired him as a thief.",
+   "paragraph": 11,
+   "quote": "He hired the weaselfolk Cruelclaw"
+  }
+ ],
+ "rejected": []
+}

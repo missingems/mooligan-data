@@ -1,0 +1,132 @@
+{
+ "page": "wiki/guidelight-voyagers",
+ "url": "https://mtg.wiki/page/Guidelight_Voyagers",
+ "title": "Guidelight Voyagers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:18Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Guidelight Voyagers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Racing team of automatons from an unknown plane, lost in the Multiverse and competing in the Grand Prix to find a way home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mendicant Core",
+   "type": "character",
+   "aliases": [
+    "Mendicant"
+   ],
+   "description": "Machine and sole sapient being who captains and coordinates the Guidelight Voyagers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [
+    "Grand Prix"
+   ],
+   "description": "Multiplanar race the Voyagers compete in.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Voyagers emerged from an Omenpath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Paths between planes that opened after the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who mind controlled Mendicant while trying to recover his adopted child Loot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Jace Beleren's adopted child.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Guidelight emerge onto Avishkar from an Omenpath and wander the plane.",
+   "participants": [
+    "Guidelight Voyagers",
+    "Mendicant Core"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Omenpath they transited through essentially opened around them and deposited them upon Avishkar before closing again."
+  },
+  {
+   "summary": "Mendicant encounters the Grand Prix and decides to use it to transit Omenpaths and return home.",
+   "participants": [
+    "Mendicant Core",
+    "Guidelight Voyagers",
+    "Ghirapur Grand Prix"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Under Mendicant's guidance, they deemed the infrastructure of the race to be a perfect iterative field"
+  },
+  {
+   "summary": "In the second Grand Prix the Guidelight try new, unpredictable racecraft.",
+   "participants": [
+    "Guidelight Voyagers"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the Guidelight revised their plans, attempting new and unpredictable methods of racecraft."
+  },
+  {
+   "summary": "In the final stage Mendicant's vehicle is wrecked and Jace mind controls him to recover Loot.",
+   "participants": [
+    "Mendicant Core",
+    "Jace Beleren",
+    "Loot"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Mendicant's vehicle was wrecked, and it was mind controlled by Jace Beleren"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mendicant Core",
+   "relation": "leader_of",
+   "target": "Guidelight Voyagers",
+   "note": "captains and coordinates the team",
+   "paragraph": 1,
+   "quote": "captained and coordinated by a single mind"
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "family",
+   "target": "Loot",
+   "note": "adoptive parent",
+   "paragraph": 5,
+   "quote": "his adopted child Loot"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,144 @@
+{
+ "page": "wiki/skalla",
+ "url": "https://mtg.wiki/page/Skalla",
+ "title": "Skalla",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Skalla",
+   "type": "plane",
+   "aliases": [],
+   "description": "Home plane of Vivien Reid, destroyed by Nicol Bolas and now completely dead.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "Planeswalker from Skalla, one of the Smaragdi, who planeswalked to safety with the Arkbow.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Elder dragon who plundered the Nura for their secrets and destroyed Skalla.",
+   "presence": "appears"
+  },
+  {
+   "name": "Smaragdi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forest dwellers, rangers and druids sworn to protect Skalla's forest creatures.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nura",
+   "type": "faction",
+   "aliases": [],
+   "description": "An advanced civilization encircling the dwindling woodlands of Skalla.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arkbow",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Unique artifact made by the Nura and Smaragdi, containing an invocation of every creature that ever lived on Skalla.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nicol Bolas takes an interest in the Nura and their innovations and plunders them for their secrets.",
+   "participants": [
+    "Nicol Bolas",
+    "Nura"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nicol Bolas took an interest in the Nura and their innovations"
+  },
+  {
+   "summary": "Having drained the Nura, Bolas deems the plane useless and begins to destroy it; the Nura flee to the forest.",
+   "participants": [
+    "Nicol Bolas",
+    "Nura",
+    "Skalla"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Bolas decided the plane was useless to him and began to destroy it."
+  },
+  {
+   "summary": "The Nura and Smaragdi combine their magic into the Arkbow for a last stand against Bolas.",
+   "participants": [
+    "Nura",
+    "Smaragdi",
+    "Arkbow",
+    "Nicol Bolas"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Nura and Smaragdi combined their collective magic into a unique artifact, the Arkbow"
+  },
+  {
+   "summary": "As the forest burns and the battle is lost, Vivien instinctively planeswalks to safety with the Arkbow; Skalla dies.",
+   "participants": [
+    "Vivien Reid",
+    "Arkbow",
+    "Skalla"
+   ],
+   "location": "Skalla",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Vivien instinctively planeswalked to safety with the Arkbow."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "killed",
+   "target": "Skalla",
+   "note": "Destroyed the plane",
+   "paragraph": 0,
+   "quote": "It was destroyed by Nicol Bolas ."
+  },
+  {
+   "source": "Vivien Reid",
+   "relation": "member_of",
+   "target": "Smaragdi",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Vivien belonged to the Smaragdi"
+  },
+  {
+   "source": "Nura",
+   "relation": "created",
+   "target": "Arkbow",
+   "note": "Made jointly with the Smaragdi",
+   "paragraph": 2,
+   "quote": "the Nura and Smaragdi combined their collective magic into a unique artifact, the Arkbow"
+  },
+  {
+   "source": "Smaragdi",
+   "relation": "enemy",
+   "target": "Nura",
+   "note": "Divided, with Nura encroaching on the forests, before uniting against Bolas",
+   "paragraph": 1,
+   "quote": "Skalla was deeply divided between the Smaragdi forest dwellers and the Nura"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,132 @@
+{
+ "page": "wiki/jenzo",
+ "url": "https://mtg.wiki/page/Jenzo",
+ "title": "Jenzo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Jenzo",
+   "type": "character",
+   "aliases": [],
+   "description": "Young human mechanic from Far Corner on Kamigawa who studied at the Imperial Academy and lost a hand to the Mukotai Reckoners.",
+   "presence": "appears"
+  },
+  {
+   "name": "Far Corner",
+   "type": "location",
+   "aliases": [],
+   "description": "Town on Kamigawa defended against the Mukotai.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperial Academy",
+   "type": "location",
+   "aliases": [],
+   "description": "Academy where Jenzo studied.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [
+    "Mukotai"
+   ],
+   "description": "Gang that maimed Jenzo and attacked Far Corner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ayari",
+   "type": "character",
+   "aliases": [],
+   "description": "Saved Jenzo from a Mukotai mech and fled with him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaima",
+   "type": "character",
+   "aliases": [],
+   "description": "Vengeful kami whose emergence forced Jenzo and Ayari to flee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the events took place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Mukotai maimed Jenzo and nailed his severed hand to the town's gate.",
+   "participants": [
+    "Mukotai Reckoners",
+    "Jenzo",
+    "Far Corner"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the Mukotai maimed Jenzo, nailing his severed hand to the town's gate"
+  },
+  {
+   "summary": "Jenzo warned Far Corner of the imminent attack.",
+   "participants": [
+    "Jenzo",
+    "Far Corner"
+   ],
+   "location": "Far Corner",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Jenzo warned the community of the imminent danger"
+  },
+  {
+   "summary": "Ayari saved Jenzo from a Mukotai mech as he tried to arm a disruptor.",
+   "participants": [
+    "Ayari",
+    "Jenzo",
+    "Mukotai Reckoners"
+   ],
+   "location": "Far Corner",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was saved by Ayari and continued to assist in the town's defense."
+  },
+  {
+   "summary": "Kaima emerged and forced Jenzo and Ayari to flee their home.",
+   "participants": [
+    "Kaima",
+    "Jenzo",
+    "Ayari"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "forcing Jenzo and Ayari to flee their home or be killed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ayari",
+   "relation": "ally",
+   "target": "Jenzo",
+   "note": "Saved him in battle",
+   "paragraph": 2,
+   "quote": "He was saved by Ayari and continued to assist in the town's defense."
+  },
+  {
+   "source": "Mukotai Reckoners",
+   "relation": "enemy",
+   "target": "Jenzo",
+   "note": "Maimed him",
+   "paragraph": 2,
+   "quote": "the Mukotai maimed Jenzo"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,117 @@
+{
+ "page": "wiki/raklan",
+ "url": "https://mtg.wiki/page/Raklan",
+ "title": "Raklan",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Raklan",
+   "type": "character",
+   "aliases": [],
+   "description": "Garruk's father, a taskmage and farmer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk",
+   "type": "character",
+   "aliases": [
+    "Garruk Wildspeaker"
+   ],
+   "description": "Raklan's son, taught seedsprouting, who later avenged his father.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Faldus",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord whose men tried to recruit Garruk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "sheriff",
+   "type": "character",
+   "aliases": [],
+   "description": "Sheriff who arrested, tortured and killed Raklan; later impaled by Garruk's beast.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Raklan teaches young Garruk seedsprouting.",
+   "participants": [
+    "Raklan",
+    "Garruk"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Raklan taught his young son Garruk how to grow plants using taskmage magic"
+  },
+  {
+   "summary": "Lord Faldus' men come to recruit Garruk; Raklan refuses and orders Garruk into the woods.",
+   "participants": [
+    "Raklan",
+    "Garruk",
+    "Lord Faldus"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Raklan refused to give him up, ordering Garruk to run into the woods."
+  },
+  {
+   "summary": "The sheriff arrests Raklan, tortures and eventually kills him.",
+   "participants": [
+    "Raklan",
+    "sheriff"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Raklan was tortured by the Sheriff and was eventually killed."
+  },
+  {
+   "summary": "Years later Garruk avenges Raklan by having a beast impale the Sheriff.",
+   "participants": [
+    "Garruk",
+    "sheriff"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Garruk would avenge his death years later by having one of his beasts impale the Sheriff on its horn."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raklan",
+   "relation": "family",
+   "target": "Garruk",
+   "note": "Father.",
+   "paragraph": 0,
+   "quote": "Raklan was Garruk 's father"
+  },
+  {
+   "source": "sheriff",
+   "relation": "killed",
+   "target": "Raklan",
+   "note": "Tortured and killed him.",
+   "paragraph": 2,
+   "quote": "Raklan was tortured by the Sheriff and was eventually killed."
+  },
+  {
+   "source": "Garruk",
+   "relation": "killed",
+   "target": "sheriff",
+   "note": "Avenged his father.",
+   "paragraph": 2,
+   "quote": "having one of his beasts impale the Sheriff on its horn."
+  }
+ ],
+ "rejected": []
+}

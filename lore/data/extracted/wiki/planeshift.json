@@ -1,0 +1,80 @@
+{
+ "page": "wiki/planeshift",
+ "url": "https://mtg.wiki/page/Planeshift",
+ "title": "Planeshift",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:05Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Planeshift",
+   "type": "event",
+   "aliases": [],
+   "description": "Second set of the Invasion Block, portraying the Rathi Overlay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "A collision between the planes of Rath and Dominaria during the Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Urza and Dominaria's armies are losing.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of Dominaria's armies against the Phyrexians.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Artificial plane whose portions appear in Dominaria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane invaded by the Phyrexians.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Portions of Rath begin appearing in Dominaria, bringing Phyrexian reinforcements as Urza and Dominaria's armies lose.",
+   "participants": [
+    "Urza",
+    "Rath",
+    "Dominaria"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "portions of the artificial plane Rath begin appearing in Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Phyrexian Invasion",
+   "note": "losing the struggle",
+   "paragraph": 2,
+   "quote": "Urza and the armies of Dominaria are losing."
+  }
+ ],
+ "rejected": []
+}

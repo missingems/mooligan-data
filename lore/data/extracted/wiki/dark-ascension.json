@@ -1,0 +1,78 @@
+{
+ "page": "wiki/dark-ascension",
+ "url": "https://mtg.wiki/page/Dark_Ascension",
+ "title": "Dark Ascension",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:21Z",
+ "storyline": "Innistrad block",
+ "entities": [
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane overrun by creatures of the night, where humans are on the verge of extinction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "deity",
+   "aliases": [],
+   "description": "The guardian angel created by Sorin, locked in the Helvault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin",
+    "Sorin, Lord of Innistrad"
+   ],
+   "description": "Creator of the guardian angel Avacyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Helvault",
+   "type": "artifact",
+   "aliases": [
+    "Helvault"
+   ],
+   "description": "The prison in which Avacyn is locked.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Innistrad is overrun by creatures of the night while humans near extinction; Avacyn is revealed to be locked in the Helvault.",
+   "participants": [
+    "Avacyn",
+    "The Helvault"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "It is revealed that Avacyn , the guardian angel created by Sorin is locked in the Helvault ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sorin Markov",
+   "relation": "created",
+   "target": "Avacyn",
+   "note": "Sorin created the guardian angel",
+   "paragraph": 2,
+   "quote": "the guardian angel created by Sorin"
+  },
+  {
+   "source": "Avacyn",
+   "relation": "located_in",
+   "target": "The Helvault",
+   "note": "Locked in the Helvault",
+   "paragraph": 2,
+   "quote": "is locked in the Helvault"
+  }
+ ],
+ "rejected": []
+}

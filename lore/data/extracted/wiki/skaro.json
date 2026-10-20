@@ -1,0 +1,110 @@
+{
+ "page": "wiki/skaro",
+ "url": "https://mtg.wiki/page/Skaro",
+ "title": "Skaro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:48Z",
+ "storyline": "Doctor Who",
+ "entities": [
+  {
+   "name": "Skaro",
+   "type": "plane",
+   "aliases": [],
+   "description": "Non-canon plane, homeworld of the Thals and the Kaleds, later remade by the Daleks as the center of their empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thals",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the two humanoid races of Skaro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaleds",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the two humanoid races of Skaro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Davros",
+   "type": "character",
+   "aliases": [],
+   "description": "Kaled scientist who created the Dalek race.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Daleks",
+   "type": "faction",
+   "aliases": [
+    "Dalek race"
+   ],
+   "description": "Race created by Davros that remade Skaro into the center of the Dalek Empire.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thousand Year War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between the Thals and the Kaleds that devastated and irradiated Skaro.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dalek Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire of the Daleks centered on Skaro.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Thousand Year War led the Kaled scientist Davros to create the Daleks.",
+   "participants": [
+    "Davros",
+    "Thals",
+    "Kaleds",
+    "Daleks",
+    "Thousand Year War"
+   ],
+   "location": "Skaro",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The two races had a Thousand Year War which led to the Kaled scientist Davros creating the Dalek race."
+  },
+  {
+   "summary": "The Daleks remade Skaro as the center of the Dalek Empire.",
+   "participants": [
+    "Daleks",
+    "Dalek Empire"
+   ],
+   "location": "Skaro",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Skaro was remade by the Daleks and became the center of the Dalek Empire"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Davros",
+   "relation": "created",
+   "target": "Daleks",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The two races had a Thousand Year War which led to the Kaled scientist Davros creating the Dalek race."
+  },
+  {
+   "source": "Thals",
+   "relation": "enemy",
+   "target": "Kaleds",
+   "note": "Fought the Thousand Year War.",
+   "paragraph": 1,
+   "quote": "The two races had a Thousand Year War"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,154 @@
+{
+ "page": "wiki/bosco",
+ "url": "https://mtg.wiki/page/Bosco",
+ "title": "Bosco",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:26Z",
+ "storyline": "Implicit Maze",
+ "entities": [
+  {
+   "name": "Bosco",
+   "type": "character",
+   "aliases": [],
+   "description": "Ambitious floor mopper of the Orzhov guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drovo",
+   "type": "character",
+   "aliases": [],
+   "description": "Guildless friend Bosco recruited and fed to a Crypt Ghast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jozica",
+   "type": "character",
+   "aliases": [],
+   "description": "Orzhov enforcer whose Dutiful Thrull demands a mopper tax.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov",
+   "type": "faction",
+   "aliases": [
+    "Orzhov guild"
+   ],
+   "description": "Ravnican guild of debt and power.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Prelate",
+   "type": "character",
+   "aliases": [
+    "the high prelate"
+   ],
+   "description": "Orzhov official who gave Bosco his contract and mission.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crypt Ghast",
+   "type": "creature",
+   "aliases": [
+    "the ghast"
+   ],
+   "description": "Dread spirit in the Orzhov mausoleum fed Drovo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orzhov mausoleum",
+   "type": "location",
+   "aliases": [],
+   "description": "Place beyond the Rogue's Passage containing two sarcophagi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bosco recruits his friend Drovo to a mission, boasting of his debt and guild benefits.",
+   "participants": [
+    "Bosco",
+    "Drovo"
+   ],
+   "location": "Orzhov",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Bosco set about recruiting him to a mission."
+  },
+  {
+   "summary": "Bosco signs a new contract in the high prelate's office with Jozica, erasing years of debt and giving a promotion.",
+   "participants": [
+    "Bosco",
+    "Jozica",
+    "High Prelate"
+   ],
+   "location": "Orzhov",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "signing a new contract that would erase years of his debt and give him a promotion"
+  },
+  {
+   "summary": "Bosco leads Drovo into the Orzhov mausoleum and locks him in with the sarcophagi.",
+   "participants": [
+    "Bosco",
+    "Drovo"
+   ],
+   "location": "Orzhov mausoleum",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Bosco locked the door behind Drovo and apologized to him."
+  },
+  {
+   "summary": "A Crypt Ghast rises from a sarcophagus and attacks Drovo.",
+   "participants": [
+    "Crypt Ghast",
+    "Drovo"
+   ],
+   "location": "Orzhov mausoleum",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "It smelled the blood on Drovo and attacked."
+  },
+  {
+   "summary": "Bosco reports success to the high prelate, is promoted to mission runner and no longer fears Jozica.",
+   "participants": [
+    "Bosco",
+    "High Prelate",
+    "Jozica"
+   ],
+   "location": "Orzhov",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Bosco had been promoted to a mission runner for the high prelate"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Bosco",
+   "relation": "member_of",
+   "target": "Orzhov",
+   "note": "Floor mopper in debt to the guild.",
+   "paragraph": 0,
+   "quote": "Bosco is an ambitious floor mopper of the Orzhov guild."
+  },
+  {
+   "source": "Bosco",
+   "relation": "serves",
+   "target": "High Prelate",
+   "note": "Promoted to mission runner for the high prelate.",
+   "paragraph": 6,
+   "quote": "Bosco had been promoted to a mission runner for the high prelate"
+  },
+  {
+   "source": "Bosco",
+   "relation": "enemy",
+   "target": "Drovo",
+   "note": "Betrayed his friend by feeding him to the ghast.",
+   "paragraph": 4,
+   "quote": "Bosco locked the door behind Drovo and apologized to him."
+  }
+ ],
+ "rejected": []
+}

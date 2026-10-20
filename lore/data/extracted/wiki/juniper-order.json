@@ -1,0 +1,155 @@
+{
+ "page": "wiki/juniper-order",
+ "url": "https://mtg.wiki/page/Juniper_Order",
+ "title": "Juniper Order",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:33Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Juniper Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of druids and knights who left Kjeldor for Fyndhorn, later relocating to Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker worshipped as a goddess by the order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kolbjorn",
+   "type": "character",
+   "aliases": [],
+   "description": "High Honored druid who led the order late in the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaysa",
+   "type": "character",
+   "aliases": [],
+   "description": "Kolbjorn's daughter who took his place leading the order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Kaysa's lover and an Advocate of the Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jenson Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Current Elder Druid in the Age of Renewal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elvish Council",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves allied with the druids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Advocates of the Order",
+   "type": "faction",
+   "aliases": [],
+   "description": "Knights of the Juniper Order.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fyndhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest flooded at the end of the Ice Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest where the order relocated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the order helped settle expelled elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Yavimaya expelled the elves.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Under Kaysa the order helps Fyndhorn refugees reach Yavimaya.",
+   "participants": [
+    "Juniper Order",
+    "Kaysa"
+   ],
+   "location": "Yavimaya",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Under Kaysa the Order helped Fyndhorn refugees get to Yavimaya ."
+  },
+  {
+   "summary": "After the Great Mending Yavimaya expels the elves and the order helps settle them in New Argive.",
+   "participants": [
+    "Juniper Order"
+   ],
+   "location": "New Argive",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Yavimaya grew irritable and expelled the elves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kaysa",
+   "relation": "leader_of",
+   "target": "Juniper Order",
+   "note": "took her father's place",
+   "paragraph": 4,
+   "quote": "Later his daughter, Kaysa , took his place."
+  },
+  {
+   "source": "Kaysa",
+   "relation": "family",
+   "target": "Kolbjorn",
+   "note": "daughter",
+   "paragraph": 4,
+   "quote": "Later his daughter, Kaysa , took his place."
+  },
+  {
+   "source": "Juniper Order",
+   "relation": "serves",
+   "target": "Freyalise",
+   "note": "worship her as a goddess",
+   "paragraph": 1,
+   "quote": "The order worships the planeswalker Freyalise as a goddess"
+  },
+  {
+   "source": "Jaeuhl Carthalion",
+   "relation": "romantic",
+   "target": "Kaysa",
+   "note": "her lover",
+   "paragraph": 3,
+   "quote": "Jaeuhl Carthalion , Kaysa's lover"
+  }
+ ],
+ "rejected": []
+}

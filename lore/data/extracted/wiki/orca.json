@@ -1,0 +1,178 @@
+{
+ "page": "wiki/orca",
+ "url": "https://mtg.wiki/page/Orca",
+ "title": "Orca",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:11Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Lady Orca",
+   "type": "character",
+   "aliases": [
+    "Orca"
+   ],
+   "description": "A gigantic siege demon, once a human battlemage, who served Ramses Overdark; destroyed by Tetsuo Umezawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ramses Overdark",
+   "type": "character",
+   "aliases": [
+    "Lord Overdark",
+    "Overdark"
+   ],
+   "description": "Master of Orca and Jorgan Hage, enemy of Tetsuo Umezawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tetsuo Umezawa",
+   "type": "character",
+   "aliases": [
+    "Tetsuo"
+   ],
+   "description": "Overdark's nemesis who beat Orca back and finally destroyed her lair and her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Caleria",
+   "type": "character",
+   "aliases": [
+    "Caleria"
+   ],
+   "description": "Leader who rallied the Edemi Islands against the Empire of Madara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jorgan Hage",
+   "type": "character",
+   "aliases": [],
+   "description": "Overdark's other minion who murdered General Marhault Elsdragon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marhault Elsdragon",
+   "type": "character",
+   "aliases": [
+    "General Marhault Elsdragon"
+   ],
+   "description": "General of the kentsu, murdered by Jorgan Hage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Madara-Edemi War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between the Empire of Madara and the rebelling Edemi Islands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Empire of Madara",
+   "type": "faction",
+   "aliases": [],
+   "description": "The empire the Edemi Islands rebelled against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Edemi Islands",
+   "type": "location",
+   "aliases": [
+    "Edemis"
+   ],
+   "description": "Rebellious islands attacked by Orca and the kentsu.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Force that attacked the Edemis, led by General Marhault Elsdragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Orca's story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Overdark sends Orca to terrorize the Edemi coasts under Tetsuo's banner; Tetsuo survives and beats her back to her lair, ending the siege.",
+   "participants": [
+    "Lady Orca",
+    "Ramses Overdark",
+    "Tetsuo Umezawa",
+    "Lady Caleria"
+   ],
+   "location": "Edemi Islands",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Tetsuo not only survived but beat Orca back to her lair, ending her siege"
+  },
+  {
+   "summary": "Overdark sets Orca against an Akron Legionnaire and she wins, then turns on the kentsu as a diversion so Jorgan Hage can murder General Elsdragon.",
+   "participants": [
+    "Lady Orca",
+    "Ramses Overdark",
+    "Jorgan Hage",
+    "Marhault Elsdragon",
+    "Kentsu"
+   ],
+   "location": "Edemi Islands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Orca was victorious but immediately turned on the kentsu"
+  },
+  {
+   "summary": "Tetsuo chases Orca to her lair and fills the cave with magma, destroying her.",
+   "participants": [
+    "Tetsuo Umezawa",
+    "Lady Orca"
+   ],
+   "location": "Edemi Islands",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he filled the cave with magma, destroying it and ending Orca's existence as well"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lady Orca",
+   "relation": "serves",
+   "target": "Ramses Overdark",
+   "note": "his minion",
+   "paragraph": 0,
+   "quote": "Lady Orca was a mysterious and very powerful minion of Ramses Overdark"
+  },
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "enemy",
+   "target": "Ramses Overdark",
+   "note": "his nemesis",
+   "paragraph": 2,
+   "quote": "hoped the rebels would hold Tetsuo, his nemesis, responsible"
+  },
+  {
+   "source": "Tetsuo Umezawa",
+   "relation": "killed",
+   "target": "Lady Orca",
+   "note": "destroyed her with magma",
+   "paragraph": 3,
+   "quote": "he filled the cave with magma, destroying it and ending Orca's existence as well"
+  },
+  {
+   "source": "Jorgan Hage",
+   "relation": "killed",
+   "target": "Marhault Elsdragon",
+   "note": "murdered him to claim the generalship",
+   "paragraph": 3,
+   "quote": "Jorgan Hage , could murder General Marhault Elsdragon"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,590 @@
+{
+ "page": "wiki/wayfarer",
+ "url": "https://mtg.wiki/page/Wayfarer",
+ "title": "Wayfarer",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:43:40Z",
+ "storyline": "Wayfarer",
+ "entities": [
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [
+    "Jared",
+    "the wayfarer"
+   ],
+   "description": "A wayfarer, aged sixteen by the end, who learns magic from Kristina, destroys the Golgothian Sylex and triggers his planeswalker spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [
+    "Kristina"
+   ],
+   "description": "A planeswalker and one of the Sages of Minorad who heals and mentors Jared and becomes his lover.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "A battlemage and planeswalker, resurrected by Kristina, who seeks vengeance on the Sages with the Golgothian Sylex and serves the master Taysir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Élan d'Avenant",
+   "type": "character",
+   "aliases": [
+    "Élan"
+   ],
+   "description": "An archer hired by Kadesha to hunt Jared who is eventually used against Ravidel, her true enemy, and killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kadesha",
+   "type": "character",
+   "aliases": [],
+   "description": "The ruler of the town of Hamath who sends a thunder spirit against Jared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liana of Minorad",
+   "type": "character",
+   "aliases": [
+    "Liana"
+   ],
+   "description": "A planeswalker and one of the Sages of Minorad who holds three Moxes and sends herself and Ravidel into the Abyss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Taysir",
+   "type": "character",
+   "aliases": [
+    "Taysir of Rabiah"
+   ],
+   "description": "Kristina's former lover and Ravidel's master.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grenfell Mor",
+   "type": "character",
+   "aliases": [
+    "Grenfell"
+   ],
+   "description": "A planeswalker, one of the Sages of Minorad and Jared's maternal grandfather, who betrays Jared and Kristina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Altair of Coloni",
+   "type": "character",
+   "aliases": [
+    "Altair"
+   ],
+   "description": "One of the Sages of Minorad who rides the nightmare Caliphear and sacrifices himself to destroy the Demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caliphear",
+   "type": "creature",
+   "aliases": [],
+   "description": "A nightmare ridden by Altair that teaches Jared about black mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hoont",
+   "type": "creature",
+   "aliases": [],
+   "description": "A spitting slug Jared bonds with, killed by Ravidel's Lord of the Pit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Daria",
+   "type": "character",
+   "aliases": [],
+   "description": "Taysir's daughter who follows the Mox Beacon and helps Jared trigger his planeswalker spark.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwendolyn Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Jared's deceased mother and founder of Telemar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adam Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Jared's father, who sacrificed his wife.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Exarch Finovar",
+   "type": "character",
+   "aliases": [
+    "Finovar"
+   ],
+   "description": "Leader of the Calthyn Elves who feuds with Amadis over speaking to the Great Spirit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Exarch Amadis",
+   "type": "character",
+   "aliases": [
+    "Amadis"
+   ],
+   "description": "Leader of the Kieryn Elves who hosts Jared and Kristina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Renalt",
+   "type": "character",
+   "aliases": [],
+   "description": "A bard of the Kieryn village who tells of the history of the Quirion Elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Great Spirit",
+   "type": "deity",
+   "aliases": [
+    "Great Spirit"
+   ],
+   "description": "A newly awoken Force of Nature that tells Jared Ravidel is alive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scarlet Vizier",
+   "type": "character",
+   "aliases": [],
+   "description": "Ravidel's servant, to whom Liana was indentured, later resurrected as a zombie and destroyed by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sages of Minorad",
+   "type": "faction",
+   "aliases": [],
+   "description": "A group of planeswalkers including Embereck, Liana, Altair, Kristina and Grenfell, punished by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [
+    "sylex"
+   ],
+   "description": "Ravidel's device with which he threatens to wipe out Minorad; Jared destroys it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rust Daggers",
+   "type": "artifact",
+   "aliases": [
+    "Rust-casting Daggers"
+   ],
+   "description": "A pair of daggers that can destroy the Sylex.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Moxes",
+   "type": "artifact",
+   "aliases": [
+    "three Moxes"
+   ],
+   "description": "Three Moxes held by Liana, later stolen by Ravidel to send a beacon across the Blind Eternities.",
+   "presence": "appears"
+  },
+  {
+   "name": "Foecleaver",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Jared's sword, lost in his first fight and later returned repaired.",
+   "presence": "appears"
+  },
+  {
+   "name": "Minorad",
+   "type": "location",
+   "aliases": [],
+   "description": "The magic academy site laid waste by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "The now-inevitable war that Jared and Kristina prepare for after Ravidel's beacon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Jared battles a thunder spirit sent by Kadesha and loses his sword Foecleaver.",
+   "participants": [
+    "Jared Carthalion",
+    "Kadesha",
+    "Foecleaver"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He defeats the spirit, but at the cost of his sword, Foecleaver."
+  },
+  {
+   "summary": "Kadesha enlists the archer Élan d'Avenant to stop Jared.",
+   "participants": [
+    "Kadesha",
+    "Élan d'Avenant",
+    "Jared Carthalion"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kadesha enlists the archer Élan d'Avenant"
+  },
+  {
+   "summary": "Kristina intervenes and teleports Jared away as he is about to kill Élan.",
+   "participants": [
+    "Kristina of the Woods",
+    "Jared Carthalion",
+    "Élan d'Avenant"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "when Kristina of the Woods intervenes and teleports him away."
+  },
+  {
+   "summary": "Kristina reveals she is a planeswalker and becomes Jared's mentor.",
+   "participants": [
+    "Kristina of the Woods",
+    "Jared Carthalion"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "She reveals to him that she's also a Planeswalker"
+  },
+  {
+   "summary": "Kristina teaches Jared to bond with the slug Hoont.",
+   "participants": [
+    "Kristina of the Woods",
+    "Jared Carthalion",
+    "Hoont"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "She teaches him to bond with a spitting slug named Hoont"
+  },
+  {
+   "summary": "The Great Spirit reveals that Ravidel is alive and hunting Liana and her Moxes.",
+   "participants": [
+    "The Great Spirit",
+    "Jared Carthalion",
+    "Ravidel",
+    "Liana of Minorad"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "It reveals to Jared that Ravidel is alive and is hunting Liana of Minorad and her three Moxes"
+  },
+  {
+   "summary": "Jared abandons Kristina and heads north to save Liana.",
+   "participants": [
+    "Jared Carthalion",
+    "Kristina of the Woods",
+    "Liana of Minorad"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he immediately abandons her and heads north to save Liana from Ravidel."
+  },
+  {
+   "summary": "Ravidel duels Liana for her Moxes and reveals his master is Taysir.",
+   "participants": [
+    "Ravidel",
+    "Liana of Minorad",
+    "Taysir"
+   ],
+   "location": "Minorad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He reveals to her that his Master is Taysir"
+  },
+  {
+   "summary": "Jared fixes a Trovash engine while the Shivan Dragon teaches him red magic.",
+   "participants": [
+    "Jared Carthalion"
+   ],
+   "location": "Minorad",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Over several days, Jared fixes the engine while the dragon teaches him about red magic."
+  },
+  {
+   "summary": "Ravidel lays waste to Minorad.",
+   "participants": [
+    "Ravidel",
+    "Minorad"
+   ],
+   "location": "Minorad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ravidel has broken his promise, and laid waste to Minorad"
+  },
+  {
+   "summary": "Élan shoots Ravidel and Ravidel kills her with a blast of fire.",
+   "participants": [
+    "Élan d'Avenant",
+    "Ravidel",
+    "Jared Carthalion"
+   ],
+   "location": "Minorad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ravidel reciprocates, killing her with a blast of fire."
+  },
+  {
+   "summary": "Liana gives Jared her Moxes and sends herself and Ravidel into the Abyss.",
+   "participants": [
+    "Liana of Minorad",
+    "Ravidel",
+    "Jared Carthalion",
+    "The Moxes"
+   ],
+   "location": "Minorad",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She then casts a spell to send herself and Ravidel into the Abyss"
+  },
+  {
+   "summary": "Jared and Kristina meet Grenfell Mor in Telemar and learn the history of the Sages.",
+   "participants": [
+    "Jared Carthalion",
+    "Kristina of the Woods",
+    "Grenfell Mor",
+    "Sages of Minorad"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "they meet the Planeswalker Grenfell Mor"
+  },
+  {
+   "summary": "Grenfell betrays Jared and Kristina; Kristina beats him in a duel.",
+   "participants": [
+    "Grenfell Mor",
+    "Jared Carthalion",
+    "Kristina of the Woods"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Kristina manages to beat Grenfell in the ensuing duel"
+  },
+  {
+   "summary": "Jared and Kristina become lovers.",
+   "participants": [
+    "Jared Carthalion",
+    "Kristina of the Woods"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The two become lovers that evening"
+  },
+  {
+   "summary": "Ravidel resurrects the Scarlet Vizier as a zombie and destroys him.",
+   "participants": [
+    "Ravidel",
+    "Scarlet Vizier"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "the battlemage Ravidel briefly resurrects the Scarlet Vizier as a zombie to torment him"
+  },
+  {
+   "summary": "The Lord of House Khone refuses to join Jared and Kristina against Ravidel.",
+   "participants": [
+    "Jared Carthalion",
+    "Kristina of the Woods",
+    "Altair of Coloni"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "They beseech the Lord of House Khone to join them against Ravidel, but he refuses"
+  },
+  {
+   "summary": "Jared destroys the Golgothian Sylex with the Rust Daggers.",
+   "participants": [
+    "Jared Carthalion",
+    "Ravidel",
+    "Golgothian Sylex",
+    "Rust Daggers"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Jared has the Rust Daggers and uses them to cast a Shatter spell on the Sylex, destroying it."
+  },
+  {
+   "summary": "Altair sacrifices himself to destroy the Demon.",
+   "participants": [
+    "Altair of Coloni"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Altair sacrifices himself to destroy the Demon"
+  },
+  {
+   "summary": "Ravidel steals the three Moxes and sends a beacon for other planeswalkers.",
+   "participants": [
+    "Ravidel",
+    "Kristina of the Woods",
+    "The Moxes"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Ravidel steals the three Moxes from Kristina"
+  },
+  {
+   "summary": "Jared destroys the ground under Ravidel, who falls into the chasm.",
+   "participants": [
+    "Jared Carthalion",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Jared destroys the ground under Ravidel who falls into the chasm"
+  },
+  {
+   "summary": "Daria helps Jared trigger his planeswalker spark and he planeswalks away with Kristina.",
+   "participants": [
+    "Daria",
+    "Jared Carthalion",
+    "Kristina of the Woods"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "he Planeswalks away from the destruction with Kristina"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kristina of the Woods",
+   "relation": "mentor_of",
+   "target": "Jared Carthalion",
+   "note": "She teaches him magic.",
+   "paragraph": 1,
+   "quote": "with her as his mentor"
+  },
+  {
+   "source": "Kristina of the Woods",
+   "relation": "romantic",
+   "target": "Jared Carthalion",
+   "note": "They become lovers.",
+   "paragraph": 4,
+   "quote": "The two become lovers that evening"
+  },
+  {
+   "source": "Kristina of the Woods",
+   "relation": "romantic",
+   "target": "Taysir",
+   "note": "Taysir is her former lover.",
+   "paragraph": 3,
+   "quote": "the former lover of Kristina of the Woods"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "serves",
+   "target": "Taysir",
+   "note": "Taysir is Ravidel's master.",
+   "paragraph": 3,
+   "quote": "his Master is Taysir"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Élan d'Avenant",
+   "note": "He kills her with fire.",
+   "paragraph": 3,
+   "quote": "Ravidel reciprocates, killing her with a blast of fire."
+  },
+  {
+   "source": "Élan d'Avenant",
+   "relation": "enemy",
+   "target": "Ravidel",
+   "note": "Ravidel is her true enemy.",
+   "paragraph": 3,
+   "quote": "Ravidel is Élan's true enemy"
+  },
+  {
+   "source": "Grenfell Mor",
+   "relation": "family",
+   "target": "Jared Carthalion",
+   "note": "Maternal grandfather.",
+   "paragraph": 4,
+   "quote": "Jared's maternal grandfather"
+  },
+  {
+   "source": "Adam Carthalion",
+   "relation": "family",
+   "target": "Jared Carthalion",
+   "note": "Jared's father.",
+   "paragraph": 4,
+   "quote": "Jared's father"
+  },
+  {
+   "source": "Gwendolyn Carthalion",
+   "relation": "family",
+   "target": "Jared Carthalion",
+   "note": "Jared's deceased mother.",
+   "paragraph": 4,
+   "quote": "Jared's deceased mother Gwendolyn Carthalion"
+  },
+  {
+   "source": "Daria",
+   "relation": "family",
+   "target": "Taysir",
+   "note": "Taysir's daughter.",
+   "paragraph": 5,
+   "quote": "Taysir's daughter"
+  },
+  {
+   "source": "Jared Carthalion",
+   "relation": "enemy",
+   "target": "Ravidel",
+   "note": "Jared opposes and defeats Ravidel's sylex.",
+   "paragraph": 5,
+   "quote": "Jared destroys the ground under Ravidel who falls into the chasm"
+  },
+  {
+   "source": "Grenfell Mor",
+   "relation": "enemy",
+   "target": "Kristina of the Woods",
+   "note": "He betrays and duels her.",
+   "paragraph": 4,
+   "quote": "Grenfell betrays Jared and Kristina"
+  },
+  {
+   "source": "Jared Carthalion",
+   "relation": "ally",
+   "target": "Hoont",
+   "note": "He bonds with the slug.",
+   "paragraph": 2,
+   "quote": "bond with a spitting slug named Hoont"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,152 @@
+{
+ "page": "wiki/cosmium",
+ "url": "https://mtg.wiki/page/Cosmium",
+ "title": "Cosmium",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:23Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Cosmium",
+   "type": "concept",
+   "aliases": [],
+   "description": "A pinkish-purple mineral of immense power found in the Core of Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where cosmium is found.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Core",
+   "type": "location",
+   "aliases": [
+    "Core of Ixalan"
+   ],
+   "description": "Core of Ixalan where cosmium is densest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chimil",
+   "type": "deity",
+   "aliases": [
+    "the riven star",
+    "weeping star"
+   ],
+   "description": "Star caged by the Coin Empire who freed herself and introduced cosmium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Night War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Chimil released cosmium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coin Empire",
+   "type": "faction",
+   "aliases": [
+    "colonizers"
+   ],
+   "description": "Empire that caged Chimil.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oltec",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient civilization of the Core that mastered cosmium.",
+   "presence": "appears"
+  },
+  {
+   "name": "Komon",
+   "type": "faction",
+   "aliases": [],
+   "description": "People innervated by cosmium who became the first angels of Ixalan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Torrezon",
+   "type": "location",
+   "aliases": [],
+   "description": "Land whose wealthy prize cosmium and whose vampires ingest it.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gnomes",
+   "type": "creature",
+   "aliases": [],
+   "description": "Cosmium-powered artifact servants of the Oltec.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After 320 years of darkness, the Oltec attack the colonizers and Chimil destroys her prison.",
+   "participants": [
+    "Oltec",
+    "Coin Empire",
+    "Chimil"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After 320 years of darkness, the Oltec launched a final attack against the colonizers"
+  },
+  {
+   "summary": "Cosmium lashes out from Chimil, blasting the colonizers and creating the first angels from the Komon.",
+   "participants": [
+    "Chimil",
+    "Coin Empire",
+    "Komon",
+    "Cosmium"
+   ],
+   "location": "Ixalan",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Cosmium lashed out from Chimil, blasting away the colonizers"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Coin Empire",
+   "relation": "enemy",
+   "target": "Chimil",
+   "note": "caged her",
+   "paragraph": 2,
+   "quote": "Chimil had been caged in a metal prison by the Coin Empire ."
+  },
+  {
+   "source": "Chimil",
+   "relation": "created",
+   "target": "Cosmium",
+   "note": "introduced it",
+   "paragraph": 2,
+   "quote": "Cosmium was introduced to the Core and caverns by Chimil"
+  },
+  {
+   "source": "Oltec",
+   "relation": "enemy",
+   "target": "Coin Empire",
+   "note": "attacked colonizers",
+   "paragraph": 2,
+   "quote": "the Oltec launched a final attack against the colonizers"
+  },
+  {
+   "source": "Cosmium",
+   "relation": "located_in",
+   "target": "The Core",
+   "note": "found there",
+   "paragraph": 0,
+   "quote": "found in the Core of Ixalan"
+  }
+ ],
+ "rejected": []
+}

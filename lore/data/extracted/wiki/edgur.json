@@ -1,0 +1,136 @@
+{
+ "page": "wiki/edgur",
+ "url": "https://mtg.wiki/page/Edgur",
+ "title": "Edgur",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Edgur",
+   "type": "character",
+   "aliases": [],
+   "description": "Man from Epityr, apprentice coppersmith in Argivia, who turned into a bear and killed Joren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riliana",
+   "type": "character",
+   "aliases": [],
+   "description": "Woman Edgur loved, Joren's fiancee.",
+   "presence": "appears"
+  },
+  {
+   "name": "Joren",
+   "type": "character",
+   "aliases": [],
+   "description": "Rival courter who defeated Edgur in a duel and was killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aga",
+   "type": "character",
+   "aliases": [],
+   "description": "Panther warrior who harried Edgur.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dare",
+   "type": "character",
+   "aliases": [],
+   "description": "Nature spirit who offered Edgur an emerald that turns him into a bear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argivia",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Edgur worked as an apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Epityr",
+   "type": "location",
+   "aliases": [],
+   "description": "Edgur's birthplace.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guild of Coppersmiths",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild Edgur apprenticed to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Joren easily defeated Edgur in a duel over Riliana.",
+   "participants": [
+    "Joren",
+    "Edgur",
+    "Riliana"
+   ],
+   "location": "Argivia",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Joren , who easily defeated Edgur in a duel"
+  },
+  {
+   "summary": "Dare offered Edgur healing and an emerald that could turn him into a bear.",
+   "participants": [
+    "Dare",
+    "Edgur",
+    "Aga"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "an emerald that could turn Edgur into a bear"
+  },
+  {
+   "summary": "Edgur turned into a bear and slaughtered Joren, his men and patrons of the tavern.",
+   "participants": [
+    "Edgur",
+    "Joren"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He returned to the inn, slaughtering Joren and his men"
+  },
+  {
+   "summary": "The townsfolk killed Edgur and Riliana learned the bear was Edgur.",
+   "participants": [
+    "Edgur",
+    "Riliana"
+   ],
+   "location": "Argivia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "finally killing him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Edgur",
+   "relation": "killed",
+   "target": "Joren",
+   "note": "Killed him as a bear",
+   "paragraph": 1,
+   "quote": "slaughtering Joren and his men"
+  },
+  {
+   "source": "Edgur",
+   "relation": "romantic",
+   "target": "Riliana",
+   "note": "Fell in love with her",
+   "paragraph": 1,
+   "quote": "After falling in love with a woman named Riliana"
+  }
+ ],
+ "rejected": []
+}

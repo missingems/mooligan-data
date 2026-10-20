@@ -1,0 +1,80 @@
+{
+ "page": "wiki/colorless",
+ "url": "https://mtg.wiki/page/Colorless",
+ "title": "Colorless",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Eldrazi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ancient alien beings native to the Blind Eternities who travel between planes devouring mana and life energy, whose colorless nature marks them as alien.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ugin",
+   "type": "character",
+   "aliases": [],
+   "description": "A colorless elder dragon planeswalker whose colorlessness reflects his ancientness and transcendence beyond the colors.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between planes where the Eldrazi originate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wastes",
+   "type": "location",
+   "aliases": [],
+   "description": "Barren land left behind where the Eldrazi sap magical color, producing colorless mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "A colorless planeswalker.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Eldrazi travel from plane to plane, draining the color and energy from the lands they devour and leaving Wastes behind.",
+   "participants": [
+    "Eldrazi",
+    "Wastes"
+   ],
+   "location": "Blind Eternities",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "This sapping of energy drains its magical color and leaves behind Wastes"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eldrazi",
+   "relation": "located_in",
+   "target": "Blind Eternities",
+   "note": "The Eldrazi are native to the Blind Eternities.",
+   "paragraph": 24,
+   "quote": "The Eldrazi are native to the Blind Eternities"
+  },
+  {
+   "source": "Ugin",
+   "relation": "other",
+   "target": "Eldrazi",
+   "note": "Like the Eldrazi, Ugin is colorless because of his ancient origin.",
+   "paragraph": 25,
+   "quote": "The elder dragon planeswalker Ugin is also colorless"
+  }
+ ],
+ "rejected": []
+}

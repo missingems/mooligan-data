@@ -1,0 +1,124 @@
+{
+ "page": "wiki/olgard",
+ "url": "https://mtg.wiki/page/Olgard",
+ "title": "Olgard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:40Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Olgard",
+   "type": "character",
+   "aliases": [],
+   "description": "Famed slayer and shieldbearer, noble agent of the Skiltfolk of Nephalia and father of Mia; leader of the coastal resistance against Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mia",
+   "type": "character",
+   "aliases": [],
+   "description": "Olgard's daughter, who became a cultist of the Gitrog monster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skiltfolk of Nephalia",
+   "type": "faction",
+   "aliases": [
+    "skiltfolk"
+   ],
+   "description": "Mercenaries of Nephalia Olgard served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gitrog monster",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster whose cultists included Mia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "character",
+   "aliases": [],
+   "description": "Eldrazi whose corrupting influence the resistance opposed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Travails",
+   "type": "event",
+   "aliases": [],
+   "description": "Time of Emrakul's corruption of Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Battle of Thraben",
+   "type": "event",
+   "aliases": [],
+   "description": "Humanity's great last stand.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal region lined with smaller battlefields.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Olgard leaves Mia in charge of their farm to serve the Skiltfolk; villagers fall to the Gitrog monster and Mia becomes a cultist.",
+   "participants": [
+    "Olgard",
+    "Mia",
+    "Gitrog monster"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "his daughter became one of its cultists"
+  },
+  {
+   "summary": "Olgard becomes a leader of the resistance on Nephalia's coast, organizing and training defenders.",
+   "participants": [
+    "Olgard",
+    "Skiltfolk of Nephalia",
+    "Emrakul"
+   ],
+   "location": "Nephalia",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "became a leader of this resistance"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Olgard",
+   "relation": "family",
+   "target": "Mia",
+   "note": "father",
+   "paragraph": 0,
+   "quote": "He is the father of the Gitrog monster cultist Mia"
+  },
+  {
+   "source": "Olgard",
+   "relation": "serves",
+   "target": "Skiltfolk of Nephalia",
+   "note": "noble agent",
+   "paragraph": 0,
+   "quote": "a noble agent of the Skiltfolk of Nephalia"
+  },
+  {
+   "source": "Mia",
+   "relation": "member_of",
+   "target": "Gitrog monster",
+   "note": "cultist",
+   "paragraph": 1,
+   "quote": "his daughter became one of its cultists"
+  }
+ ],
+ "rejected": []
+}

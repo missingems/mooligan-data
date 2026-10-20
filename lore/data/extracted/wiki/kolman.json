@@ -1,0 +1,110 @@
+{
+ "page": "wiki/kolman",
+ "url": "https://mtg.wiki/page/Kolman",
+ "title": "Kolman",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:22Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Kolman",
+   "type": "character",
+   "aliases": [],
+   "description": "One of twelve elders of Gatstaf who presided over Warin's hearing; later Eldrazified and killed by Halana and Alena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatstaf",
+   "type": "location",
+   "aliases": [],
+   "description": "Village in the Ulvenwald of Kessig Province, Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Warin",
+   "type": "character",
+   "aliases": [],
+   "description": "Farmer who claimed one of his cows ate the other.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halana",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunter who attended the hearing and later killed Kolman.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunter who attended the hearing and later killed Kolman.",
+   "presence": "appears"
+  },
+  {
+   "name": "Palters",
+   "type": "character",
+   "aliases": [],
+   "description": "Victims of an apparent murder at the inn that disrupted the meeting.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kolman presides over Warin's hearing but cannot keep order, until the apparent murder of the Palters disrupts it.",
+   "participants": [
+    "Kolman",
+    "Warin",
+    "Halana",
+    "Alena",
+    "Palters"
+   ],
+   "location": "Gatstaf",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Kolman was presiding over the hearing"
+  },
+  {
+   "summary": "Eldrazified Kolman is killed by Halana and Alena in the woods.",
+   "participants": [
+    "Kolman",
+    "Halana",
+    "Alena"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The two hunters killed him and ran from the clearing together"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Halana",
+   "relation": "killed",
+   "target": "Kolman",
+   "note": "With Alena.",
+   "paragraph": 2,
+   "quote": "The two hunters killed him"
+  },
+  {
+   "source": "Alena",
+   "relation": "killed",
+   "target": "Kolman",
+   "note": "With Halana.",
+   "paragraph": 2,
+   "quote": "The two hunters killed him"
+  },
+  {
+   "source": "Kolman",
+   "relation": "member_of",
+   "target": "Gatstaf",
+   "note": "One of its twelve elders.",
+   "paragraph": 0,
+   "quote": "Kolman was one of the twelve elders of Gatstaf"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,84 @@
+{
+ "page": "wiki/prophecy",
+ "url": "https://mtg.wiki/page/Prophecy",
+ "title": "Prophecy",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:03:08Z",
+ "storyline": "Masques block",
+ "entities": [
+  {
+   "name": "Prophecy War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Keld and Jamuraa portrayed by the set.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation that declared war on Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent whose city-states formed the Kipamu League.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kipamu League",
+   "type": "faction",
+   "aliases": [],
+   "description": "League formed by the city-states of Jamuraa that repulsed the invaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the set.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Keld declares war on Jamuraa.",
+   "participants": [
+    "Keld",
+    "Jamuraa"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Keld has declared war on Jamuraa."
+  },
+  {
+   "summary": "The city-states of Jamuraa form the Kipamu League and repulse the invaders.",
+   "participants": [
+    "Kipamu League",
+    "Jamuraa",
+    "Keld"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The city-states of Jamuraa form the Kipamu League and then repulse the invaders."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Keld",
+   "relation": "enemy",
+   "target": "Jamuraa",
+   "note": "declared war",
+   "paragraph": 4,
+   "quote": "Keld has declared war on Jamuraa."
+  }
+ ],
+ "rejected": []
+}

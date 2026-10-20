@@ -1,0 +1,126 @@
+{
+ "page": "wiki/vytas",
+ "url": "https://mtg.wiki/page/Vytas",
+ "title": "Vytas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Vytas",
+   "type": "character",
+   "aliases": [],
+   "description": "Noble and Umbris cultist, lord of Traublassen on Innistrad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Traublassen",
+   "type": "location",
+   "aliases": [],
+   "description": "Village established by Vytas's great-grandfather.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Torens",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrived in Traublassen and was coerced to investigate a keep.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boris",
+   "type": "character",
+   "aliases": [],
+   "description": "Vytas's son and fellow cultist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Umbris",
+   "type": "creature",
+   "aliases": [],
+   "description": "Nightmare horror and demonic lord served by the cult.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aleksandar",
+   "type": "character",
+   "aliases": [],
+   "description": "Young villager used as a mental sacrifice.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vytas coerces Torens into investigating a supposedly haunted keep.",
+   "participants": [
+    "Vytas",
+    "Torens"
+   ],
+   "location": "Traublassen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Vytas coerced Torens into investigating a supposedly haunted keep near the village"
+  },
+  {
+   "summary": "Torens discovers villagers have been used as mental sacrifices to Umbris.",
+   "participants": [
+    "Torens",
+    "Umbris",
+    "Aleksandar",
+    "Vytas"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "had been used as mental sacrifices to serve the demonic lord Umbris"
+  },
+  {
+   "summary": "The villagers turn on their leaders and a mob kills Vytas.",
+   "participants": [
+    "Vytas",
+    "Boris"
+   ],
+   "location": "Traublassen",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Vytas met a brutal end at the hands of the mob"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vytas",
+   "relation": "family",
+   "target": "Boris",
+   "note": "father",
+   "paragraph": 3,
+   "quote": "Vytas and his son Boris were part of a dark cult"
+  },
+  {
+   "source": "Vytas",
+   "relation": "serves",
+   "target": "Umbris",
+   "note": "cultist",
+   "paragraph": 0,
+   "quote": "Vytas was a noble and an Umbris cultist"
+  },
+  {
+   "source": "Vytas",
+   "relation": "leader_of",
+   "target": "Traublassen",
+   "note": "lord",
+   "paragraph": 1,
+   "quote": "Vytas was the lord of Traublassen"
+  }
+ ],
+ "rejected": []
+}

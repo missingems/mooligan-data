@@ -1,0 +1,53 @@
+{
+ "page": "wiki/nekrataal",
+ "url": "https://mtg.wiki/page/Nekrataal",
+ "title": "Nekrataal",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Nekrataal",
+   "type": "creature",
+   "aliases": [],
+   "description": "A type of human assassin from Dominaria, said to be horrors freed by Kaervek on Jamuraa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jolrael",
+   "type": "character",
+   "aliases": [],
+   "description": "Called the Nekrataal one of the horrors Kaervek freed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Freed horrors on Jamuraa.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Land where the horrors were freed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Kaervek",
+   "relation": "other",
+   "target": "Nekrataal",
+   "note": "Freed them on Jamuraa according to Jolrael.",
+   "paragraph": 3,
+   "quote": "Jolrael called the Nekrataal one of the horrors that Kaervek freed on Jamuraa"
+  }
+ ],
+ "rejected": []
+}

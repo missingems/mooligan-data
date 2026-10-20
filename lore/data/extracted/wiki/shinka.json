@@ -1,0 +1,74 @@
+{
+ "page": "wiki/shinka",
+ "url": "https://mtg.wiki/page/Shinka",
+ "title": "Shinka",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:58Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Shinka",
+   "type": "location",
+   "aliases": [
+    "Shinka Keep"
+   ],
+   "description": "Location in the Sokenzan mountains; in the books the cave-dwelling of Hidetsugu, on the cards a skull-lined citadel built by ogres.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "O-bakemono ogre shaman who lived in the cave Shinka, performed rituals and trained apprentices.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where Shinka lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War a thousand years after which Shinka was built, per the cards.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanzoku",
+   "type": "faction",
+   "aliases": [],
+   "description": "Mountain bandits who claimed Shinka's mortar was ground bones.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ogres build Shinka a thousand years before the Kami War as a monument to the oni they worship.",
+   "participants": [
+    "Shinka",
+    "Hidetsugu"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The ogres built Shinka a thousand years before the Kami War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hidetsugu",
+   "relation": "located_in",
+   "target": "Shinka",
+   "note": "lived in the cave",
+   "paragraph": 2,
+   "quote": "Shinka was a cave-dwelling of the o-bakemono Hidetsugu"
+  }
+ ],
+ "rejected": []
+}

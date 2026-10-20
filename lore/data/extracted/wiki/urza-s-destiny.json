@@ -1,0 +1,139 @@
+{
+ "page": "wiki/urza-s-destiny",
+ "url": "https://mtg.wiki/page/Urza%27s_Destiny",
+ "title": "Urza's Destiny",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:41:08Z",
+ "storyline": "Urza's Destiny",
+ "entities": [
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure who, with the Weatherlight completed, runs a eugenics program to create a perfect crew and soldiers to fight the Phyrexian invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gatha",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Urza's geneticists, who defects and uses his knowledge to improve the Keldon race.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The ship Urza completed, for which he works to create a perfect crew.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodline Project",
+   "type": "event",
+   "aliases": [
+    "Urza's Bloodline Project"
+   ],
+   "description": "Urza's eugenics program to create a perfect crew and engineer soldiers against Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The forces massing for the coming invasion who create the plane of Rath as a staging ground.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keldons",
+   "type": "faction",
+   "aliases": [
+    "Keldon race"
+   ],
+   "description": "A race improved by Gatha's knowledge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane created by the Phyrexians as a staging ground for the invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian invasion",
+   "type": "event",
+   "aliases": [
+    "the invasion"
+   ],
+   "description": "The coming invasion for which Urza prepares and the Phyrexians mass forces.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With the Weatherlight completed, Urza begins a eugenics program to create a perfect crew and engineer soldiers against the Phyrexian invasion.",
+   "participants": [
+    "Urza",
+    "Weatherlight",
+    "Bloodline Project"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "With the Weatherlight completed, Urza now works on a eugenics program to create a perfect crew for it"
+  },
+  {
+   "summary": "Urza's geneticist Gatha defects and uses his knowledge to improve the Keldon race.",
+   "participants": [
+    "Gatha",
+    "Urza",
+    "Keldons"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "One of his geneticists, Gatha , defects, and uses his knowledge to improve the Keldon race."
+  },
+  {
+   "summary": "The Phyrexians create the plane of Rath as a staging ground for the invasion.",
+   "participants": [
+    "Phyrexians",
+    "Rath"
+   ],
+   "location": "Rath",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the Phyrexians create the plane of Rath as a staging ground for the invasion."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Phyrexians",
+   "relation": "created",
+   "target": "Rath",
+   "note": "created as a staging ground",
+   "paragraph": 5,
+   "quote": "the Phyrexians create the plane of Rath as a staging ground for the invasion."
+  },
+  {
+   "source": "Gatha",
+   "relation": "serves",
+   "target": "Urza",
+   "note": "was one of his geneticists before defecting",
+   "paragraph": 5,
+   "quote": "One of his geneticists, Gatha , defects"
+  },
+  {
+   "source": "Urza",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "prepares soldiers to fight the invasion",
+   "paragraph": 5,
+   "quote": "engineering a race of soldiers to fight the Phyrexian invasion"
+  }
+ ],
+ "rejected": []
+}

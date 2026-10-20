@@ -1,0 +1,217 @@
+{
+ "page": "wiki/hamath",
+ "url": "https://mtg.wiki/page/Hamath",
+ "title": "Hamath",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:48Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Hamath",
+   "type": "location",
+   "aliases": [],
+   "description": "City on Corondor on Dominaria, northernmost on the Tenamis River, ruled by a Council of Guides; lost to Ravidel in the Planeswalker War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Council of Guides",
+   "type": "faction",
+   "aliases": [
+    "Guides"
+   ],
+   "description": "Ruling council of Hamath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kadesha",
+   "type": "character",
+   "aliases": [],
+   "description": "Visionary with magical power who leads the Guides of Hamath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hamath Guard",
+   "type": "faction",
+   "aliases": [
+    "River Guard",
+    "Urlan Guard"
+   ],
+   "description": "Triumvirate of guards enforcing the Guides' will.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who advanced on many fronts, attacked Hamath, and opened a sinkhole beneath it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [
+    "Jared"
+   ],
+   "description": "Wayfarer who fought Hamath's champions and later made Hamath his side's home base.",
+   "presence": "appears"
+  },
+  {
+   "name": "Élan d'Avenant",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent by the Kadesha after Jared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kristina of the Woods",
+   "type": "character",
+   "aliases": [],
+   "description": "Teleported Jared away from Élan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who helped defend Hamath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who rang the gray chime, destroying Telemar City.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telemar City",
+   "type": "location",
+   "aliases": [],
+   "description": "City destroyed by the gray chime.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Hamath was attacked and lost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent where Hamath stands.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Ravidel's defeat at Castle Melmereth, Jared Carthalion appears on Hamath's plains; the Kadesha sends a thunder spirit, which is defeated.",
+   "participants": [
+    "Jared Carthalion",
+    "Kadesha",
+    "Hamath"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Kadesha sent a thunder spirit out to do battle with him"
+  },
+  {
+   "summary": "Jared brawls in Rifa's Inn, destroying it with magic.",
+   "participants": [
+    "Jared Carthalion"
+   ],
+   "location": "Hamath",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "immediately getting into a brawl in Rifa's Inn"
+  },
+  {
+   "summary": "Élan d'Avenant fights Jared atop the Ziggurat; Kristina of the Woods teleports Jared away.",
+   "participants": [
+    "Élan d'Avenant",
+    "Jared Carthalion",
+    "Kristina of the Woods",
+    "Kadesha"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kristina of the Woods intervened, teleporting Jared away"
+  },
+  {
+   "summary": "During the Planeswalker War Ravidel attacks Hamath, defended by Freyalise and the Kadesha.",
+   "participants": [
+    "Ravidel",
+    "Freyalise",
+    "Kadesha",
+    "Hamath"
+   ],
+   "location": "Hamath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "warily defended by Freyalise and the Kadesha, the city stood strong"
+  },
+  {
+   "summary": "After Leshrac destroys Telemar City, Ravidel teleports to Hamath and opens a sinkhole; Hamath is lost.",
+   "participants": [
+    "Leshrac",
+    "Ravidel",
+    "Hamath",
+    "Telemar City"
+   ],
+   "location": "Hamath",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ravidel teleported to Hamath, opening a sinkhole beneath it"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hamath",
+   "relation": "located_in",
+   "target": "Corondor",
+   "note": "city on Corondor",
+   "paragraph": 0,
+   "quote": "was a city on Corondor on the plane of Dominaria"
+  },
+  {
+   "source": "Council of Guides",
+   "relation": "leader_of",
+   "target": "Hamath",
+   "note": "ruled the city",
+   "paragraph": 1,
+   "quote": "The city was ruled by a Council of Guides"
+  },
+  {
+   "source": "Kadesha",
+   "relation": "leader_of",
+   "target": "Council of Guides",
+   "note": "led the Guides",
+   "paragraph": 1,
+   "quote": "led by the Kadesha"
+  },
+  {
+   "source": "Ravidel",
+   "relation": "enemy",
+   "target": "Hamath",
+   "note": "attacked it",
+   "paragraph": 3,
+   "quote": "Hamath was attacked by Ravidel"
+  },
+  {
+   "source": "Freyalise",
+   "relation": "ally",
+   "target": "Kadesha",
+   "note": "defended Hamath together",
+   "paragraph": 3,
+   "quote": "warily defended by Freyalise and the Kadesha"
+  }
+ ],
+ "rejected": []
+}

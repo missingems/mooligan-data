@@ -1,0 +1,141 @@
+{
+ "page": "wiki/kwaro",
+ "url": "https://mtg.wiki/page/Kwaro",
+ "title": "Kwaro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:17Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Kwaro",
+   "type": "character",
+   "aliases": [],
+   "description": "An aven veteran and sentinel of Arashin, loyal captain of the guard to Khan Anafenza in Tarkir's original timeline.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anafenza",
+   "type": "character",
+   "aliases": [
+    "Khan Anafenza",
+    "my khan"
+   ],
+   "description": "Khan of the Abzan who disowns her cousin Oret.",
+   "presence": "appears"
+  },
+  {
+   "name": "Abzan",
+   "type": "faction",
+   "aliases": [
+    "Abzan army"
+   ],
+   "description": "The clan Anafenza rules as khan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oret",
+   "type": "character",
+   "aliases": [],
+   "description": "Anafenza's cousin who betrayed her, murdered her family and destroyed her home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gvar Barzeel",
+   "type": "character",
+   "aliases": [
+    "Gvar"
+   ],
+   "description": "Anafenza's brother, who forces Oret to his knees.",
+   "presence": "appears"
+  },
+  {
+   "name": "First Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the ceremony of allegiance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the original timeline.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kwaro reports to Anafenza that the house leaders are ready, then invites them one by one, leaving Oret for last.",
+   "participants": [
+    "Kwaro",
+    "Anafenza",
+    "Oret"
+   ],
+   "location": "First Tree",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Kwaro was then sent to invite the house leaders one by one up to the Khan's dais"
+  },
+  {
+   "summary": "Gvar forces Oret to his knees.",
+   "participants": [
+    "Gvar Barzeel",
+    "Oret"
+   ],
+   "location": "First Tree",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Gvar Barzeel stepped up and forced Oret to his knees"
+  },
+  {
+   "summary": "Anafenza cuts Oret, performs a blood rite, disowns him and declares him her enemy.",
+   "participants": [
+    "Anafenza",
+    "Oret",
+    "Gvar Barzeel"
+   ],
+   "location": "First Tree",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she declared him her enemy"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kwaro",
+   "relation": "serves",
+   "target": "Anafenza",
+   "note": "Her captain of the guard.",
+   "paragraph": 0,
+   "quote": "Khan Anafenza 's loyal captain of the guard"
+  },
+  {
+   "source": "Anafenza",
+   "relation": "enemy",
+   "target": "Oret",
+   "note": "Declared her cousin her enemy.",
+   "paragraph": 3,
+   "quote": "she declared him her enemy"
+  },
+  {
+   "source": "Anafenza",
+   "relation": "family",
+   "target": "Gvar Barzeel",
+   "note": "Her brother.",
+   "paragraph": 3,
+   "quote": "Then she bid her brother Gvar to show the traitor out."
+  },
+  {
+   "source": "Anafenza",
+   "relation": "leader_of",
+   "target": "Abzan",
+   "note": "Khan of the Abzan.",
+   "paragraph": 1,
+   "quote": "When Anafenza became Khan of the Abzan"
+  }
+ ],
+ "rejected": []
+}

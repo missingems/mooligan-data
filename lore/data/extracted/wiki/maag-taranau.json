@@ -1,0 +1,210 @@
+{
+ "page": "wiki/maag-taranau",
+ "url": "https://mtg.wiki/page/Maag_Taranau",
+ "title": "Maag Taranau",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:31Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Maag Taranau",
+   "type": "location",
+   "aliases": [
+    "The Vault"
+   ],
+   "description": "Ancient Fomori-made golden sphere vault on Thunder Junction, rumored to hide untold riches, hidden inside a rock formation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Vault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarnation",
+   "type": "location",
+   "aliases": [],
+   "description": "Town the Hellspurs built around the Vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akul",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon leader of the Hellspurs, sealed inside the Vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Outlaw gang that built Tarnation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bertram Graywater",
+   "type": "character",
+   "aliases": [],
+   "description": "Sterling Company member who collected keys to the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [
+    "the Company"
+   ],
+   "description": "Faction racing for the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of a gang who stole the key and opened the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Ashiok"
+   ],
+   "description": "Planeswalker disguised as Ashiok who hired Oko's gang and took the infant from the vault.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Warlock who judged the key to be very old.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fomori",
+   "type": "faction",
+   "aliases": [],
+   "description": "Creators of Maag Taranau.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Loot",
+   "type": "character",
+   "aliases": [],
+   "description": "Infant creature in stasis at the vault's center.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Planar passages whose opening drew parties to the Vault.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vault key",
+   "type": "artifact",
+   "aliases": [
+    "the key"
+   ],
+   "description": "Six-piece key to the vault.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Fomori create Maag Taranau.",
+   "participants": [
+    "Fomori",
+    "Maag Taranau"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Maag Taranau was created by the Fomori"
+  },
+  {
+   "summary": "After the Omenpaths open, parties race for the Vault; Akul builds Tarnation, and Graywater collects keys.",
+   "participants": [
+    "Akul",
+    "Hellspurs",
+    "Bertram Graywater",
+    "Sterling Company"
+   ],
+   "location": "Tarnation",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "Akul and the Hellspurs built Tarnation around the vault hoping to control it."
+  },
+  {
+   "summary": "Oko's gang, hired by Jace as Ashiok, steals the sixth key.",
+   "participants": [
+    "Oko",
+    "Jace Beleren",
+    "Bertram Graywater"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "The key was later stolen by Oko 's gang"
+  },
+  {
+   "summary": "Akul takes the key from the gang and fits it to his medallion, revealing six pieces of one key; Oko steals it back.",
+   "participants": [
+    "Akul",
+    "Oko",
+    "Hellspurs",
+    "Sterling Company"
+   ],
+   "location": "Tarnation",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Oko stole this final key back during a shootout"
+  },
+  {
+   "summary": "Oko opens the vault and Jace takes the infant and planeswalks, triggering a trap that sends the vault into space with Akul sealed inside.",
+   "participants": [
+    "Oko",
+    "Jace Beleren",
+    "Akul",
+    "Maag Taranau"
+   ],
+   "location": "Maag Taranau",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "with Akul sealed inside"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Fomori",
+   "relation": "created",
+   "target": "Maag Taranau",
+   "note": "",
+   "paragraph": 5,
+   "quote": "Maag Taranau was created by the Fomori"
+  },
+  {
+   "source": "Akul",
+   "relation": "leader_of",
+   "target": "Hellspurs",
+   "note": "",
+   "paragraph": 8,
+   "quote": "When the gang ran afoul of the Hellspurs, the key was taken by Akul."
+  },
+  {
+   "source": "Oko",
+   "relation": "serves",
+   "target": "Jace Beleren",
+   "note": "hired by Jace disguised as Ashiok",
+   "paragraph": 6,
+   "quote": "who were hired by the planeswalker Jace Beleren"
+  }
+ ],
+ "rejected": []
+}

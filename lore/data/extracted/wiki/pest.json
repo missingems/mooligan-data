@@ -1,0 +1,81 @@
+{
+ "page": "wiki/pest",
+ "url": "https://mtg.wiki/page/Pest",
+ "title": "Pest",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:52Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Pests",
+   "type": "creature",
+   "aliases": [
+    "Pest"
+   ],
+   "description": "Small, salamander-like, irritating creatures at Strixhaven used by Witherbloom as a source of life essence and pets.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios where pests are found.",
+   "presence": "appears"
+  },
+  {
+   "name": "Witherbloom",
+   "type": "faction",
+   "aliases": [],
+   "description": "College whose students use pests as mascots and life essence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Strixhaven.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Blex",
+   "type": "character",
+   "aliases": [],
+   "description": "Precocious specimen whose mature form is known.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Attack during which some pests escaped.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the New Phyrexian Invasion some pests escape captivity and grow more than anticipated.",
+   "participants": [
+    "Pests",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "some pests escaped captivity during the attack"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Witherbloom",
+   "relation": "other",
+   "target": "Pests",
+   "note": "use them as mascots and a source of life essence",
+   "paragraph": 7,
+   "quote": "Witherbloom students use them as mascots"
+  }
+ ],
+ "rejected": []
+}

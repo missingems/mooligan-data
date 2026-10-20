@@ -1,0 +1,133 @@
+{
+ "page": "wiki/army-of-the-valley",
+ "url": "https://mtg.wiki/page/Army_of_the_Valley",
+ "title": "Army of the Valley",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:16Z",
+ "storyline": "Elder Dragons",
+ "entities": [
+  {
+   "name": "Army of the Valley",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army of the eastern Domains before the Brothers' War, formed after the destruction of Mors Ridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mors Ridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Village whose destruction led to the army's formation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Palladia-Mors",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragon freed after Mors Ridge's destruction who commanded a horde of undead and goblins.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader whose troops joined the army; killed in battle against Balgot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balgot",
+   "type": "character",
+   "aliases": [],
+   "description": "Orc general leading Palladia-Mors's horde.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ad'Amra",
+   "type": "character",
+   "aliases": [],
+   "description": "Red Donald's daughter who became general of the army.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Domains",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where the army formed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War after which the era followed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Army of the Valley formed after Mors Ridge was destroyed and Palladia-Mors was freed; the town's remaining soldiers joined Red Donald's troops.",
+   "participants": [
+    "Army of the Valley",
+    "Red Donald"
+   ],
+   "location": "Mors Ridge",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The town's remaining soldiers joined with Red Donald 's troops."
+  },
+  {
+   "summary": "The army fought off Palladia-Mors's horde of undead and goblins, led by the orc general Balgot.",
+   "participants": [
+    "Army of the Valley",
+    "Palladia-Mors",
+    "Balgot"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "led by the orc general Balgot"
+  },
+  {
+   "summary": "Red Donald was killed in battle against Balgot and his daughter Ad'Amra became general.",
+   "participants": [
+    "Red Donald",
+    "Balgot",
+    "Ad'Amra"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "his daughter Ad'Amra became the general of the army"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ad'Amra",
+   "relation": "leader_of",
+   "target": "Army of the Valley",
+   "note": "Became general after her father's death",
+   "paragraph": 1,
+   "quote": "his daughter Ad'Amra became the general of the army"
+  },
+  {
+   "source": "Balgot",
+   "relation": "killed",
+   "target": "Red Donald",
+   "note": "Red Donald was killed in battle against Balgot",
+   "paragraph": 1,
+   "quote": "When Red Donald was killed in battle against Balgot"
+  },
+  {
+   "source": "Balgot",
+   "relation": "serves",
+   "target": "Palladia-Mors",
+   "note": "Orc general of her horde",
+   "paragraph": 1,
+   "quote": "led by the orc general Balgot"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,196 @@
+{
+ "page": "wiki/nagao",
+ "url": "https://mtg.wiki/page/Nagao",
+ "title": "Nagao",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:23Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Nagao",
+   "type": "character",
+   "aliases": [
+    "Captain Nagao"
+   ],
+   "description": "Captain of the daimyo's infantry and loyal retainer of Konda on Kamigawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [],
+   "description": "Daimyo served by Nagao.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Michiko",
+   "type": "character",
+   "aliases": [
+    "the princess"
+   ],
+   "description": "Princess who left Eiganjo and got lost in Jukai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sharp-Ear",
+   "type": "character",
+   "aliases": [],
+   "description": "Kitsune tracker who tried to pull Nagao to safety.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silver-Foot",
+   "type": "character",
+   "aliases": [],
+   "description": "Kitsune leader with samurai who accompanied Michiko to Minamo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shujiro Yamazaki",
+   "type": "character",
+   "aliases": [],
+   "description": "Wounded Nagao with a bolt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Toshi Umezawa",
+   "type": "character",
+   "aliases": [
+    "Toshi"
+   ],
+   "description": "Saved the group from the All-Consuming Oni of Chaos and ferried them to the kitsune village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kiku",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Toshi save the group.",
+   "presence": "appears"
+  },
+  {
+   "name": "All-Consuming Oni of Chaos",
+   "type": "creature",
+   "aliases": [],
+   "description": "Oni that threatened the party at Minamo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sugi Hayashi",
+   "type": "location",
+   "aliases": [],
+   "description": "Kitsune village where Nagao demanded Michiko's return.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest where Michiko got lost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiganjo",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle Michiko left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minamo",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination of Michiko's escort.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nagao arrives at Sugi Hayashi and demands the princess's immediate return.",
+   "participants": [
+    "Nagao",
+    "Michiko"
+   ],
+   "location": "Sugi Hayashi",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Nagao arrived at the kitsune village Sugi Hayashi and demanded the princess' immediate return."
+  },
+  {
+   "summary": "Nagao is wounded by Shujiro Yamazaki's bolt while fighting the akki horde.",
+   "participants": [
+    "Nagao",
+    "Shujiro Yamazaki"
+   ],
+   "location": "Sugi Hayashi",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "During the fight, Nagao was wounded by Shujiro Yamazaki 's bolt in the chest."
+  },
+  {
+   "summary": "Sharp-Ear tries to rescue Nagao but must leave him; Nagao is later found and recovers.",
+   "participants": [
+    "Nagao",
+    "Sharp-Ear"
+   ],
+   "location": "Sugi Hayashi",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "However, Nagao was miraculously found, brought back, and slowly recovered"
+  },
+  {
+   "summary": "Nagao and his men escort Michiko to Minamo with Silver-Foot's kitsune.",
+   "participants": [
+    "Nagao",
+    "Silver-Foot",
+    "Michiko"
+   ],
+   "location": "Minamo",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "accompanied Michiko to Minamo"
+  },
+  {
+   "summary": "Toshi Umezawa and Kiku save them from the All-Consuming Oni of Chaos.",
+   "participants": [
+    "Toshi Umezawa",
+    "Kiku",
+    "All-Consuming Oni of Chaos",
+    "Nagao"
+   ],
+   "location": "Minamo",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "There they were saved from the All-Consuming Oni of Chaos by Toshi Umezawa and Kiku ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nagao",
+   "relation": "serves",
+   "target": "Konda",
+   "note": "loyal retainer",
+   "paragraph": 0,
+   "quote": "was a loyal retainer of Konda on Kamigawa"
+  },
+  {
+   "source": "Toshi Umezawa",
+   "relation": "ally",
+   "target": "Nagao",
+   "note": "saved and ferried him",
+   "paragraph": 2,
+   "quote": "Toshi then ferried all the men to the relative safety of the kitsune village"
+  }
+ ],
+ "rejected": []
+}

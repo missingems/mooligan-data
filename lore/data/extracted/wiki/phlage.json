@@ -1,0 +1,102 @@
+{
+ "page": "wiki/phlage",
+ "url": "https://mtg.wiki/page/Phlage",
+ "title": "Phlage",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:10Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Phlage",
+   "type": "creature",
+   "aliases": [
+    "Phlage, Titan of Fire's Fury"
+   ],
+   "description": "Titan of Burning Wind and Fire's Fury, an all-consuming whirlwind of fire imprisoned in the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of fate who volunteered as jailer of the titans in the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Titans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Primal urges made flesh sealed away by the gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gods of Theros",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gods who sprang from mortal devotion and sealed the titans away.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm where the titans are sealed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the titans.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mortals pray, giving rise to the gods, who seal the titans away in the Underworld.",
+   "participants": [
+    "Gods of Theros",
+    "Titans",
+    "Underworld"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "From this concentrated devotion sprang forth the gods themselves."
+  },
+  {
+   "summary": "Klothys volunteers as jailer, sequestering herself in the Underworld as an eternal seal.",
+   "participants": [
+    "Klothys",
+    "Titans",
+    "Underworld"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Klothys , the god of fate, volunteered as their jailer"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Klothys",
+   "relation": "other",
+   "target": "Phlage",
+   "note": "Klothys imprisons Phlage in the Underworld.",
+   "paragraph": 0,
+   "quote": "imprisoned in the Underworld by Klothys"
+  },
+  {
+   "source": "Phlage",
+   "relation": "member_of",
+   "target": "Titans",
+   "note": "Phlage is one of the Titans.",
+   "paragraph": 0,
+   "quote": "Phlage is one of the Titans of Theros"
+  }
+ ],
+ "rejected": []
+}

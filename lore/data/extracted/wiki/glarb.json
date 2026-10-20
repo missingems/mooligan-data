@@ -1,0 +1,183 @@
+{
+ "page": "wiki/glarb",
+ "url": "https://mtg.wiki/page/Glarb",
+ "title": "Glarb",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:13Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Glarb",
+   "type": "character",
+   "aliases": [
+    "King Glarb",
+    "His Moistness"
+   ],
+   "description": "A frogfolk wizard, king of the frogfolk and ruler of Fountainport, who stole Maha's egg after visions of Valley's destruction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fountainport",
+   "type": "location",
+   "aliases": [],
+   "description": "The city Glarb gently ruled from his throne atop its tiers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Glarb lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valley",
+   "type": "location",
+   "aliases": [],
+   "description": "The home region Glarb sought to protect from Calamity Beasts.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helga",
+   "type": "character",
+   "aliases": [],
+   "description": "A student of weaving whom Glarb briefly taught.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cruelclaw",
+   "type": "character",
+   "aliases": [],
+   "description": "A weasel mercenary who helped Glarb steal Maha's egg.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maha",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Calamity Beast whose egg Glarb stole.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Powerful beasts whose threat to Valley haunted Glarb's visions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of a party that investigated the Calamity Beasts and returned Maha's egg.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Visions of Valley's destruction by Calamity Beasts haunt Glarb's dreams for many seasons.",
+   "participants": [
+    "Glarb",
+    "Calamity Beasts"
+   ],
+   "location": "Valley",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Visions of Valley's destruction at the paws and talons of Calamity Beasts haunted Glarb's dreams for many seasons"
+  },
+  {
+   "summary": "Glarb schemes with Cruelclaw to steal Maha's egg, intending to raise the Calamity Beast as Valley's protector.",
+   "participants": [
+    "Glarb",
+    "Cruelclaw",
+    "Maha"
+   ],
+   "location": "Valley",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he concocted a scheme with the help of the weasel mercenary Cruelclaw to steal Maha 's egg"
+  },
+  {
+   "summary": "The theft causes an unprecedented rampage by Maha and the other Calamity Beasts.",
+   "participants": [
+    "Maha",
+    "Calamity Beasts"
+   ],
+   "location": "Valley",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the theft of the egg caused an unprecedented rampage by Maha and the other Calamity Beasts"
+  },
+  {
+   "summary": "Mabel's party gets an audience with Glarb, who admits he caused the Calamities' ire and summons Cruelclaw against them.",
+   "participants": [
+    "Mabel",
+    "Glarb",
+    "Cruelclaw"
+   ],
+   "location": "Fountainport",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the king revealed that he himself was the one responsible for the Calamities' ire"
+  },
+  {
+   "summary": "Maha appears; Mabel soothes it by returning its egg, saving the plane.",
+   "participants": [
+    "Mabel",
+    "Maha"
+   ],
+   "location": "Fountainport",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Mabel soothed the beast's wrath by returning its egg"
+  },
+  {
+   "summary": "Glarb escapes the fight and flees Fountainport.",
+   "participants": [
+    "Glarb"
+   ],
+   "location": "Fountainport",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Glarb escaped after the fight between him and Mabel’s party and fled Fountainport."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Glarb",
+   "relation": "leader_of",
+   "target": "Fountainport",
+   "note": "He ruled the city.",
+   "paragraph": 2,
+   "quote": "Glarb gently ruled the city of Fountainport from his throne atop its many tiers"
+  },
+  {
+   "source": "Glarb",
+   "relation": "mentor_of",
+   "target": "Helga",
+   "note": "He briefly taught her weaving.",
+   "paragraph": 2,
+   "quote": "Glarb briefly taught weaving to Helga"
+  },
+  {
+   "source": "Cruelclaw",
+   "relation": "ally",
+   "target": "Glarb",
+   "note": "Helped steal Maha's egg.",
+   "paragraph": 3,
+   "quote": "the help of the weasel mercenary Cruelclaw"
+  },
+  {
+   "source": "Glarb",
+   "relation": "enemy",
+   "target": "Mabel",
+   "note": "He tried to have her party killed.",
+   "paragraph": 4,
+   "quote": "He summoned Cruelclaw to dispose of Mabel's party"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,122 @@
+{
+ "page": "wiki/zaala",
+ "url": "https://mtg.wiki/page/Zaala",
+ "title": "Zaala",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:54Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Zaala",
+   "type": "character",
+   "aliases": [],
+   "description": "A noble paladin on Shandalar, daughter of Lord Alcinore, who slew the Scourge of Valkas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Alcinore",
+   "type": "character",
+   "aliases": [
+    "Alcinore"
+   ],
+   "description": "Zaala's father and a paladin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Scourge of Valkas",
+   "type": "creature",
+   "aliases": [],
+   "description": "A great dragon terrorizing Valkas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Zaala is a paladin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valkas",
+   "type": "location",
+   "aliases": [],
+   "description": "Land terrorized by the dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Telfer Peak",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the dragon was spotted.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Alcinore told Zaala of their quest to slay the Scourge of Valkas.",
+   "participants": [
+    "Zaala",
+    "Lord Alcinore",
+    "Scourge of Valkas"
+   ],
+   "location": "Valkas",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "their mission was to slay the Scourge of Valkas"
+  },
+  {
+   "summary": "Zaala gave a rousing speech to thirty surviving warriors in a blackened keep.",
+   "participants": [
+    "Zaala",
+    "Lord Alcinore"
+   ],
+   "location": "Valkas",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Zaala felt something rise within her, and she gave them a rousing speech"
+  },
+  {
+   "summary": "Zaala charged the dragon, surviving its fire, and drove her lance into its heart.",
+   "participants": [
+    "Zaala",
+    "Scourge of Valkas"
+   ],
+   "location": "Telfer Peak",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Zaala's lance plunged deep into the dragon's heart"
+  },
+  {
+   "summary": "Zaala became a paladin like her father.",
+   "participants": [
+    "Zaala"
+   ],
+   "location": "Valkas",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "She was a paladin now, like him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Zaala",
+   "relation": "family",
+   "target": "Lord Alcinore",
+   "note": "father and daughter",
+   "paragraph": 0,
+   "quote": "daugher of lord Alcinore"
+  },
+  {
+   "source": "Zaala",
+   "relation": "killed",
+   "target": "Scourge of Valkas",
+   "note": "with her father's band",
+   "paragraph": 0,
+   "quote": "She and her father are famous for having slain the dragon known as the Scourge of Valkas"
+  }
+ ],
+ "rejected": []
+}

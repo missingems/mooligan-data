@@ -1,0 +1,135 @@
+{
+ "page": "wiki/naru",
+ "url": "https://mtg.wiki/page/Naru",
+ "title": "Naru",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Naru",
+   "type": "character",
+   "aliases": [],
+   "description": "Giant fighter from Kush, champion and later master of the House of Bolk.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Bolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "House Naru served as champion and later master.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of Naru.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garth",
+   "type": "character",
+   "aliases": [],
+   "description": "Fought and beat Naru twice; became his friend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hammen",
+   "type": "character",
+   "aliases": [],
+   "description": "Stole Naru's spell satchel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorrin of Kestha",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated by Naru in the first round of the 998th Festival.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Time of Troubles",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Naru became master of Bolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arena",
+   "type": "location",
+   "aliases": [],
+   "description": "Place of Naru's fights with Garth.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Garth beat Naru outside the Arena; after Garth returned his stolen spells, they became fast friends.",
+   "participants": [
+    "Garth",
+    "Naru",
+    "Hammen"
+   ],
+   "location": "Arena",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the two became fast friends"
+  },
+  {
+   "summary": "Naru defeated Lorrin of Kestha in the first round of the 998th Festival.",
+   "participants": [
+    "Naru",
+    "Lorrin of Kestha"
+   ],
+   "location": "Arena",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He defeated Lorrin of Kestha in the first round of the 998th Festival."
+  },
+  {
+   "summary": "Naru lost to Garth again in the Arena, knocked unconscious despite a deathmatch.",
+   "participants": [
+    "Naru",
+    "Garth"
+   ],
+   "location": "Arena",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Naru later lost to Garth again in the Arena"
+  },
+  {
+   "summary": "After the Time of Troubles Naru became master of the House of Bolk.",
+   "participants": [
+    "Naru",
+    "House of Bolk"
+   ],
+   "location": "Kush",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Naru became the new master of the House of Bolk"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Naru",
+   "relation": "leader_of",
+   "target": "House of Bolk",
+   "note": "Master after the Time of Troubles.",
+   "paragraph": 4,
+   "quote": "Naru became the new master of the House of Bolk"
+  },
+  {
+   "source": "Naru",
+   "relation": "ally",
+   "target": "Garth",
+   "note": "Became fast friends.",
+   "paragraph": 3,
+   "quote": "the two became fast friends"
+  }
+ ],
+ "rejected": []
+}

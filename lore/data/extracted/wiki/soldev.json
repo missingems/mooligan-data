@@ -1,0 +1,121 @@
+{
+ "page": "wiki/soldev",
+ "url": "https://mtg.wiki/page/Soldev",
+ "title": "Soldev",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:13Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Soldev",
+   "type": "location",
+   "aliases": [],
+   "description": "Independent Kjeldoran city-state of expert machinists in northern Kjeldor, destroyed in the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kjeldor",
+   "type": "location",
+   "aliases": [],
+   "description": "Region containing Soldev.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sorine Relicbane",
+   "type": "character",
+   "aliases": [],
+   "description": "Soldevi branded a heretic for opposing the machines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arcum Dagsson",
+   "type": "character",
+   "aliases": [],
+   "description": "Soldev's greatest artificer and chief proponent of the machines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soldevi Steam Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Huge steam-venting machines that betrayed Arcum.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian War Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Beasts expropriated by the Soldevi Adnates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Soldevi Adnates",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction that expropriated Phyrexian War Beasts in destroying Soldev.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker whose spark erupted, causing a two-day firestorm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War Sorine feared would repeat.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sorine Relicbane speaks out against the machines and is branded a heretic.",
+   "participants": [
+    "Sorine Relicbane"
+   ],
+   "location": "Soldev",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He was branded a heretic for his efforts."
+  },
+  {
+   "summary": "Arcum's Steam Beasts betray him, joining the Phyrexian War Beasts in destroying Soldev.",
+   "participants": [
+    "Arcum Dagsson",
+    "Soldevi Steam Beasts",
+    "Soldevi Adnates"
+   ],
+   "location": "Soldev",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Arcum's Soldevi Steam Beasts betrayed him"
+  },
+  {
+   "summary": "Jaya Ballard's spark erupts, causing a firestorm lasting two days that completes the Fall of Soldev.",
+   "participants": [
+    "Jaya Ballard"
+   ],
+   "location": "Soldev",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jaya Ballard 's planeswalker spark erupted, causing a firestorm that lasted for two full days"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Soldev",
+   "relation": "located_in",
+   "target": "Kjeldor",
+   "note": "North of Kjeldor.",
+   "paragraph": 1,
+   "quote": "It was located in the north of Kjeldor"
+  }
+ ],
+ "rejected": []
+}

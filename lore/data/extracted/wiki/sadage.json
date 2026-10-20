@@ -1,0 +1,129 @@
+{
+ "page": "wiki/sadage",
+ "url": "https://mtg.wiki/page/Sadage",
+ "title": "Sadage",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:42Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Sadage",
+   "type": "character",
+   "aliases": [],
+   "description": "Cleric of the Cabal deeply loyal to Belzenlok, who executed Needle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dark sect on Dominaria led by Belzenlok.",
+   "presence": "appears"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [
+    "Scion of Darkness"
+   ],
+   "description": "Scion of Darkness, master of the Cabal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Needle",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal agent who delivered the Blackblade to Sadage and was executed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Legendary soul-drinking sword said to be forged by Dakkon Blackblade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dakkon Blackblade",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker said to have forged the blade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Piru",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder dragon said to have been killed with the blade.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Needle delivers the Blackblade to Sadage.",
+   "participants": [
+    "Needle",
+    "Sadage",
+    "Blackblade"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "his reception of the legendary Blackblade from Needle"
+  },
+  {
+   "summary": "Sadage claims Belzenlok forged the blade and killed Piru with it; Needle accepts the change.",
+   "participants": [
+    "Sadage",
+    "Needle",
+    "Belzenlok",
+    "Piru"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Needle accepted this change in the Blade's story."
+  },
+  {
+   "summary": "Sadage executes Needle as a reward for her service.",
+   "participants": [
+    "Sadage",
+    "Needle"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "His execution of Needle as a \"reward\" for her service"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sadage",
+   "relation": "member_of",
+   "target": "Cabal",
+   "note": "Cleric of the Cabal.",
+   "paragraph": 0,
+   "quote": "Sadage is a cleric of the Cabal"
+  },
+  {
+   "source": "Sadage",
+   "relation": "serves",
+   "target": "Belzenlok",
+   "note": "Deeply loyal.",
+   "paragraph": 1,
+   "quote": "Sadage is deeply loyal to Belzenlok"
+  },
+  {
+   "source": "Sadage",
+   "relation": "killed",
+   "target": "Needle",
+   "note": "Executed her.",
+   "paragraph": 2,
+   "quote": "His execution of Needle as a \"reward\" for her service"
+  }
+ ],
+ "rejected": []
+}

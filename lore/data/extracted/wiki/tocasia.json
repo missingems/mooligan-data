@@ -1,0 +1,145 @@
+{
+ "page": "wiki/tocasia",
+ "url": "https://mtg.wiki/page/Tocasia",
+ "title": "Tocasia",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:22Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Tocasia",
+   "type": "character",
+   "aliases": [],
+   "description": "Archeologist of Argive who taught Urza and Mishra and died stopping their fight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Tocasia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Apprentice of Tocasia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mightstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stone discovered at Koilos, used by Urza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weakstone",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stone discovered at Koilos, used by Mishra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Koilos",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the excavation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ancient civilization studied by Tocasia and the brothers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brotherhood's End",
+   "type": "event",
+   "aliases": [],
+   "description": "Night the brothers attacked each other with their stones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Tocasia's home.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tocasia accompanied Urza and Mishra to Koilos where they found the Mightstone and Weakstone.",
+   "participants": [
+    "Tocasia",
+    "Urza",
+    "Mishra",
+    "Mightstone",
+    "Weakstone"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She also accompanied them on the fateful journey to Koilos"
+  },
+  {
+   "summary": "Each brother used his stone to attack the other, beginning Brotherhood's End.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Mightstone",
+    "Weakstone",
+    "Brotherhood's End"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "each Brother used his stone to attack the other"
+  },
+  {
+   "summary": "Tocasia stepped between the stones and was killed in the explosion; Mishra fled.",
+   "participants": [
+    "Tocasia",
+    "Mishra",
+    "Urza"
+   ],
+   "location": "Koilos",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "an explosion took place, which killed Tocasia"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tocasia",
+   "relation": "mentor_of",
+   "target": "Urza",
+   "note": "Taught him artifice",
+   "paragraph": 2,
+   "quote": "Tocasia taught Urza and Mishra the basics of artifice"
+  },
+  {
+   "source": "Tocasia",
+   "relation": "mentor_of",
+   "target": "Mishra",
+   "note": "Taught him artifice",
+   "paragraph": 2,
+   "quote": "Tocasia taught Urza and Mishra the basics of artifice"
+  },
+  {
+   "source": "Urza",
+   "relation": "family",
+   "target": "Mishra",
+   "note": "Brothers",
+   "paragraph": 3,
+   "quote": "each Brother used his stone to attack the other"
+  }
+ ],
+ "rejected": []
+}

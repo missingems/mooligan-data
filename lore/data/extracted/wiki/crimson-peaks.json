@@ -1,0 +1,186 @@
+{
+ "page": "wiki/crimson-peaks",
+ "url": "https://mtg.wiki/page/Crimson_Peaks",
+ "title": "Crimson Peaks",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:09Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Crimson Peaks",
+   "type": "location",
+   "aliases": [],
+   "description": "A huge mountain range in southern Sarpadia on Dominaria, once inhabited by dwarves and humans, where dragons laid eggs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria containing the Crimson Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The world of the Crimson Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dwarves of Sarpadia",
+   "type": "faction",
+   "aliases": [
+    "dwarven empire"
+   ],
+   "description": "Dwarves who defended the Crimson Peaks but were eradicated by raids; their empire's name is lost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brave Rabbit Inn",
+   "type": "location",
+   "aliases": [],
+   "description": "Tavern in an unnamed village in the northern Crimson Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tigaden",
+   "type": "location",
+   "aliases": [],
+   "description": "Village in the far south hosting the Squat Duck inn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kalitas",
+   "type": "location",
+   "aliases": [],
+   "description": "Dwarven town in the Crimson Peaks.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teedmar",
+   "type": "location",
+   "aliases": [],
+   "description": "Dwarven town near Gurn Keep, wiped out by a volcanic eruption.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shanin",
+   "type": "location",
+   "aliases": [],
+   "description": "Northernmost mountain in the Crimson Peaks, with a dragon's roost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sekena",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarf who bonded with the dragon of Shanin before the Fall of the Sarpadian Empires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Ebon Hand",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order that helped destroy the Crimson Peaks dwarves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ivra Jursdotter",
+   "type": "character",
+   "aliases": [],
+   "description": "Led troops supplied by the Ebon Hand to aid the orcs and goblins.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orcs and goblins of Sarpadia",
+   "type": "faction",
+   "aliases": [
+    "Sarpadian orcs and goblins"
+   ],
+   "description": "Swept south into the Crimson Peaks and conquered the dwarves, then hid from thrulls.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thrulls",
+   "type": "faction",
+   "aliases": [],
+   "description": "Massing creatures from which the orcs and goblins hid.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the dwarven seat in the northern Sarpadian Mountains falls, orcs and goblins sweep south into the Crimson Peaks.",
+   "participants": [
+    "Orcs and goblins of Sarpadia",
+    "Dwarves of Sarpadia"
+   ],
+   "location": "Crimson Peaks",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the tide of orcs and goblins swept south into the Crimson Peaks"
+  },
+  {
+   "summary": "The Order of the Ebon Hand sets off a volcanic eruption wiping out Teedmar and supplies troops under Ivra Jursdotter to aid the orcs and goblins.",
+   "participants": [
+    "Order of the Ebon Hand",
+    "Ivra Jursdotter",
+    "Teedmar"
+   ],
+   "location": "Teedmar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "setting off a volcanic eruption that wiped out the city of Teedmar"
+  },
+  {
+   "summary": "The dwarves of the Crimson Peaks are eradicated by continual raids, leaving a mass grave.",
+   "participants": [
+    "Dwarves of Sarpadia",
+    "Orcs and goblins of Sarpadia"
+   ],
+   "location": "Crimson Peaks",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Crimson Peaks dwarves defended their lands valiantly but were eventually eradicated by continual raids."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Crimson Peaks",
+   "relation": "located_in",
+   "target": "Sarpadia",
+   "note": "In the southern part of Sarpadia.",
+   "paragraph": 0,
+   "quote": "a huge mountain range in the southern part of Sarpadia"
+  },
+  {
+   "source": "Order of the Ebon Hand",
+   "relation": "ally",
+   "target": "Orcs and goblins of Sarpadia",
+   "note": "Supplied troops to aid their efforts.",
+   "paragraph": 2,
+   "quote": "supplying troops led by Ivra Jursdotter that chose to aid the orcs and goblins' efforts"
+  },
+  {
+   "source": "Orcs and goblins of Sarpadia",
+   "relation": "enemy",
+   "target": "Dwarves of Sarpadia",
+   "note": "Conquered and eradicated them.",
+   "paragraph": 2,
+   "quote": "The Crimson Peaks dwarves defended their lands valiantly"
+  },
+  {
+   "source": "Sekena",
+   "relation": "ally",
+   "target": "Shanin",
+   "note": "Bonded with the dragon roosting on Shanin.",
+   "paragraph": 1,
+   "quote": "which bonded with the dwarf Sekena just before the Fall of the Sarpadian Empires"
+  }
+ ],
+ "rejected": []
+}

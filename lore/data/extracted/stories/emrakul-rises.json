@@ -1,0 +1,586 @@
+{
+ "page": "stories/emrakul-rises",
+ "url": "https://magic.wizards.com/en/news/magic-story/emrakul-rises",
+ "title": "Emrakul Rises",
+ "story_date": "2016-06-22",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:39:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "A kor planeswalker who has worked to strip Innistrad of its wards and calls Emrakul to the plane to avenge herself on Sorin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sorin Markov",
+   "type": "character",
+   "aliases": [
+    "Sorin"
+   ],
+   "description": "The vampire planeswalker Nahiri vows to punish; Jace curses him for leaving a mess.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [
+    "the titan",
+    "the god",
+    "She"
+   ],
+   "description": "An enormous Eldrazi titan with a single magenta eye who rises from the sea off Innistrad and corrupts its inhabitants.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maeli",
+   "type": "character",
+   "aliases": [],
+   "description": "A young boy who fled his burning village and is again threatened, this time by Ms. Sadie's transformed form, and prays to Avacyn.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ms. Sadie",
+   "type": "character",
+   "aliases": [
+    "the old woman with the gray hair"
+   ],
+   "description": "An old woman who took Maeli in and burst into many arms at dinner.",
+   "presence": "appears"
+  },
+  {
+   "name": "Edith",
+   "type": "character",
+   "aliases": [],
+   "description": "A devout cultist who strives to be closest to Emrakul and is chosen as she rises.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hal",
+   "type": "character",
+   "aliases": [],
+   "description": "A woman fighting corrupted townsfolk in the Ulvenwald alongside Alena, whom she loves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alena",
+   "type": "character",
+   "aliases": [],
+   "description": "Hal's steady partner, who fights corrupted townsfolk in the Ulvenwald.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elder Kolman",
+   "type": "character",
+   "aliases": [],
+   "description": "A holy elder transformed into a monster that chants Emrakul's name, killed by Hal and Alena.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A mind mage and planeswalker who resists Emrakul's touch with Tamiyo's help and goes to fetch the Gatewatch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "A moonfolk planeswalker who teaches Jace to shield his mind and protects it so he can planeswalk away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A planeswalker friend of Jace who greets him on Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A planeswalker friend who told Jace to return to Zendikar if he heard news of the titan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A planeswalker with green eyes, one of Jace's friends.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [
+    "Archangel Avacyn"
+   ],
+   "description": "The dead archangel whom Maeli prays to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bruna",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who is gone, subsumed into Emrakul's angel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gisela",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who is finished, subsumed into Emrakul's angel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul's Angel",
+   "type": "character",
+   "aliases": [],
+   "description": "A fused angel with four wings, two arms, two heads and one voice that leads the faithful in proclaiming Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane without a protector, now uprooting itself to follow Emrakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Jace returns to, where his friends are.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Ulvenwald",
+   "type": "location",
+   "aliases": [],
+   "description": "A forest twisted into horror by Emrakul's influence.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Drownyard",
+   "type": "location",
+   "aliases": [
+    "the temple"
+   ],
+   "description": "The ring of twisted stone pillars off the coast where Emrakul rises from the sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Blind Eternities",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between worlds from which Nahiri calls Emrakul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gatewatch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jace's group of planeswalker allies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cathars",
+   "type": "faction",
+   "aliases": [],
+   "description": "Armed soldiers who guard Maeli and cut Ms. Sadie's arms.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul's Cultists",
+   "type": "faction",
+   "aliases": [
+    "cultists"
+   ],
+   "description": "Worshippers who chant at the Drownyard and are warped into Emrakul's likeness.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Innistrad's final ward falls and the plane is left naked and vulnerable.",
+   "participants": [
+    "Nahiri",
+    "Innistrad"
+   ],
+   "location": "The Drownyard",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Innistrad's final ward had fallen."
+  },
+  {
+   "summary": "Nahiri calls to the sky for Emrakul to come to Innistrad as the plane trembles.",
+   "participants": [
+    "Nahiri",
+    "Emrakul",
+    "Innistrad"
+   ],
+   "location": "The Drownyard",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Come to me. Come to Innistrad!"
+  },
+  {
+   "summary": "Nahiri sees the temple she constructed for the god no longer empty.",
+   "participants": [
+    "Nahiri",
+    "Emrakul"
+   ],
+   "location": "The Drownyard",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "To the temple she had constructed for the god. It was no longer empty."
+  },
+  {
+   "summary": "Maeli, guarded by cathars, remembers fleeing his burning village as his mother ordered.",
+   "participants": [
+    "Maeli",
+    "Cathars"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "He had run into the forest like his mother had told him, and he had not gone back to the village."
+  },
+  {
+   "summary": "Ms. Sadie's chest bursts open into many arms at dinner and she chases Maeli.",
+   "participants": [
+    "Ms. Sadie",
+    "Maeli"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 16,
+   "quote": "the same writhing arms that had burst out of Ms. Sadie's chest that very night while they ate their dinner"
+  },
+  {
+   "summary": "The cathars slice off Ms. Sadie's grasping arms.",
+   "participants": [
+    "Cathars",
+    "Ms. Sadie",
+    "Maeli"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 17,
+   "quote": "The cathars shifted in the tall grass, slicing off one arm after another."
+  },
+  {
+   "summary": "Maeli prays to Avacyn, who is dead, for help.",
+   "participants": [
+    "Maeli",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "PLEASE, AVACYN! HELP ME!"
+  },
+  {
+   "summary": "A mad angel announces that Emrakul is rising and dives at Maeli.",
+   "participants": [
+    "Maeli",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 22,
+   "quote": "She dove down, her blade slicing through the air ahead of her."
+  },
+  {
+   "summary": "Edith, in a crowd of cultists, begs to be chosen as Emrakul rises.",
+   "participants": [
+    "Edith",
+    "Emrakul's Cultists",
+    "Emrakul"
+   ],
+   "location": "The Drownyard",
+   "importance": "minor",
+   "paragraph": 26,
+   "quote": "Choose me! Me! Me'mrakul."
+  },
+  {
+   "summary": "Emrakul rises from the sea at the Drownyard.",
+   "participants": [
+    "Emrakul",
+    "Edith",
+    "The Drownyard"
+   ],
+   "location": "The Drownyard",
+   "importance": "major",
+   "paragraph": 34,
+   "quote": "And then Emrakul rose."
+  },
+  {
+   "summary": "Emrakul looks upon Edith, who feels chosen.",
+   "participants": [
+    "Emrakul",
+    "Edith"
+   ],
+   "location": "The Drownyard",
+   "importance": "major",
+   "paragraph": 36,
+   "quote": "She looked down at Edith with one enormous, glowing magenta eye."
+  },
+  {
+   "summary": "Hal and Alena stand back to back in a nightmarish grove of the Ulvenwald, surrounded by corrupted townsfolk.",
+   "participants": [
+    "Hal",
+    "Alena",
+    "The Ulvenwald"
+   ],
+   "location": "The Ulvenwald",
+   "importance": "minor",
+   "paragraph": 40,
+   "quote": "They were in a grove in the Ulvenwald, but the Ulvenwald was not the woods they had known."
+  },
+  {
+   "summary": "Hal recognizes one monster as Elder Kolman.",
+   "participants": [
+    "Hal",
+    "Alena",
+    "Elder Kolman"
+   ],
+   "location": "The Ulvenwald",
+   "importance": "major",
+   "paragraph": 51,
+   "quote": "Elder Kolman. May the angel save him."
+  },
+  {
+   "summary": "Alena's touch pulls Hal back as she nearly succumbs to the chanting.",
+   "participants": [
+    "Alena",
+    "Hal"
+   ],
+   "location": "The Ulvenwald",
+   "importance": "minor",
+   "paragraph": 67,
+   "quote": "It was Alena's touch, her sweating fingers gripping Hal's wrist, that yanked Hal away from the suffocating embrace."
+  },
+  {
+   "summary": "Hal and Alena together kill the transformed Elder Kolman.",
+   "participants": [
+    "Hal",
+    "Alena",
+    "Elder Kolman"
+   ],
+   "location": "The Ulvenwald",
+   "importance": "major",
+   "paragraph": 78,
+   "quote": "Hal swung again, beheading the once-holy man."
+  },
+  {
+   "summary": "Hal and Alena flee the grove, running until they can no longer hear the chanting.",
+   "participants": [
+    "Hal",
+    "Alena"
+   ],
+   "location": "The Ulvenwald",
+   "importance": "minor",
+   "paragraph": 85,
+   "quote": "They ran until they could no longer hear the chanting, until they could no longer feel the pressure in their heads."
+  },
+  {
+   "summary": "Bruna and Gisela are gone, becoming one fused angel that proclaims Emrakul.",
+   "participants": [
+    "Bruna",
+    "Gisela",
+    "Emrakul's Angel",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 93,
+   "quote": "Emrakul's angel parted four wings, reached out with two arms, and cried with a single voice that sprang from two mouths"
+  },
+  {
+   "summary": "Emrakul's angel leads the faithful below in a chorus of We are Emrakul.",
+   "participants": [
+    "Emrakul's Angel",
+    "Emrakul's Cultists",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 97,
+   "quote": "Emrakul's angel led all below in following Her radiant form."
+  },
+  {
+   "summary": "Jace, shielding his mind with Tamiyo's teaching, is distracted by the warped angel overhead.",
+   "participants": [
+    "Jace Beleren",
+    "Tamiyo",
+    "Emrakul's Angel"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 101,
+   "quote": "This time it had been the sight of the warped angel in the sky overhead that had distracted Jace."
+  },
+  {
+   "summary": "Jace recalls Gideon told him to return to Zendikar if he heard of a titan.",
+   "participants": [
+    "Jace Beleren",
+    "Gideon Jura"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 106,
+   "quote": "Gideon himself had told Jace to come back to Zendikar if he heard news of the titan."
+  },
+  {
+   "summary": "Jace sees Emrakul for the first time, bigger than the others, with all of Innistrad following her.",
+   "participants": [
+    "Jace Beleren",
+    "Emrakul",
+    "Tamiyo"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 108,
+   "quote": "It was the first time he had actually seen Her: the titan, Emrakul."
+  },
+  {
+   "summary": "Jace asks Emrakul her name and is flooded with words of conquest.",
+   "participants": [
+    "Jace Beleren",
+    "Emrakul"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "The beginning—I shall be all."
+  },
+  {
+   "summary": "Jace resolves to bring the Gatewatch to Innistrad.",
+   "participants": [
+    "Jace Beleren",
+    "Tamiyo",
+    "Gatewatch"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 127,
+   "quote": "It was time to bring the Gatewatch to Innistrad."
+  },
+  {
+   "summary": "Tamiyo refuses to come with Jace, saying that is not her path.",
+   "participants": [
+    "Tamiyo",
+    "Jace Beleren"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 134,
+   "quote": "No, Jace. That's not my path."
+  },
+  {
+   "summary": "Tamiyo shields Jace's mind so that he can planeswalk away.",
+   "participants": [
+    "Tamiyo",
+    "Jace Beleren"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 138,
+   "quote": "I will protect your mind so you can planeswalk"
+  },
+  {
+   "summary": "Jace arrives to Chandra's greeting and the smiling face of his friend.",
+   "participants": [
+    "Jace Beleren",
+    "Chandra Nalaar",
+    "Gideon Jura"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 142,
+   "quote": "the afterimage of Emrakul looming above gave way to the smiling face of his friend."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hal",
+   "relation": "romantic",
+   "target": "Alena",
+   "note": "Hal looks up at the woman she loves.",
+   "paragraph": 67,
+   "quote": "She looked up at the woman she loved."
+  },
+  {
+   "source": "Hal",
+   "relation": "killed",
+   "target": "Elder Kolman",
+   "note": "She cleaves the monster's head in two.",
+   "paragraph": 79,
+   "quote": "she cleaved the elder's head in two"
+  },
+  {
+   "source": "Tamiyo",
+   "relation": "ally",
+   "target": "Jace Beleren",
+   "note": "She teaches him to resist Emrakul's touch.",
+   "paragraph": 99,
+   "quote": "Tamiyo had taught him how to combat Emrakul's maddening touch"
+  },
+  {
+   "source": "Edith",
+   "relation": "member_of",
+   "target": "Emrakul's Cultists",
+   "note": "A devout cultist.",
+   "paragraph": 24,
+   "quote": "She had proven that she was devout."
+  },
+  {
+   "source": "Nahiri",
+   "relation": "other",
+   "target": "Emrakul",
+   "note": "She calls Emrakul to Innistrad and built a temple for her.",
+   "paragraph": 5,
+   "quote": "Come to me. Come to Innistrad!"
+  },
+  {
+   "source": "Nahiri",
+   "relation": "enemy",
+   "target": "Sorin Markov",
+   "note": "She keeps her vow of vengeance.",
+   "paragraph": 8,
+   "quote": "As I have wept, so will Sorin."
+  },
+  {
+   "source": "Ms. Sadie",
+   "relation": "other",
+   "target": "Maeli",
+   "note": "She took him in before transforming and chasing him.",
+   "paragraph": 14,
+   "quote": "She had told him to call her Ms. Sadie, and said that her house could be his house for as long as he wanted."
+  },
+  {
+   "source": "Jace Beleren",
+   "relation": "ally",
+   "target": "Gideon Jura",
+   "note": "Jace plans to bring Gideon and his friends to help.",
+   "paragraph": 114,
+   "quote": "for Gideon and Chandra and Nissa"
+  }
+ ],
+ "rejected": []
+}

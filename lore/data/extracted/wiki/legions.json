@@ -1,0 +1,153 @@
+{
+ "page": "wiki/legions",
+ "url": "https://mtg.wiki/page/Legions",
+ "title": "Legions",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:22Z",
+ "storyline": "Onslaught block",
+ "entities": [
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The setting of Legions.",
+   "presence": "appears"
+  },
+  {
+   "name": "Akroma",
+   "type": "character",
+   "aliases": [],
+   "description": "Intent on destroying Phage; merges with Phage and Zagorka into Karona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phage the Untouchable",
+   "type": "character",
+   "aliases": [
+    "Phage"
+   ],
+   "description": "Jeska, Kamahl's sister, healed and corrupted with Cabal magic, with a deadly rotting touch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Kamahl's sister, who became Phage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zagorka",
+   "type": "character",
+   "aliases": [],
+   "description": "Being who merges with Akroma and Phage into Karona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "The being formed when Phage, Akroma and Zagorka merge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamahl",
+   "type": "character",
+   "aliases": [],
+   "description": "Allied uneasily with the Cabal to defeat Akroma.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Cabal",
+   "type": "faction",
+   "aliases": [
+    "Cabal"
+   ],
+   "description": "Faction in an uneasy alliance with Kamahl against Akroma.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixidor",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed before the events of the set's story.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Slivers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures reintroduced as clones of the originals as part of the Riptide Project.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Riptide Project",
+   "type": "event",
+   "aliases": [
+    "Riptide Project"
+   ],
+   "description": "The project that reintroduced the slivers as clones.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kamahl and the Cabal, in an uneasy alliance, set out to defeat Akroma.",
+   "participants": [
+    "Kamahl",
+    "The Cabal",
+    "Akroma"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "Kamahl and the Cabal , in an uneasy alliance, set out to defeat Akroma ."
+  },
+  {
+   "summary": "Slivers are reintroduced as clones of the originals through the Riptide Project.",
+   "participants": [
+    "Slivers",
+    "The Riptide Project"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "have been reintroduced as clones of the original slivers as part of the Riptide Project"
+  },
+  {
+   "summary": "In a final battle between Phage and Akroma, the two and Zagorka merge to form Karona.",
+   "participants": [
+    "Phage the Untouchable",
+    "Akroma",
+    "Zagorka",
+    "Karona"
+   ],
+   "location": "Otaria",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "the two beings and Zagorka merge to form Karona"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akroma",
+   "relation": "enemy",
+   "target": "Phage the Untouchable",
+   "note": "Akroma remains intent on destroying Phage",
+   "paragraph": 8,
+   "quote": "Akroma nevertheless remains intent on destroying Phage"
+  },
+  {
+   "source": "Jeska",
+   "relation": "family",
+   "target": "Kamahl",
+   "note": "Phage is Kamahl's sister",
+   "paragraph": 31,
+   "quote": "Jeska (Kamahl's sister) healed and corrupted with Cabal magic"
+  }
+ ],
+ "rejected": []
+}

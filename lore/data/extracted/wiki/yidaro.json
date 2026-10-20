@@ -1,0 +1,164 @@
+{
+ "page": "wiki/yidaro",
+ "url": "https://mtg.wiki/page/Yidaro",
+ "title": "Yidaro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:35Z",
+ "storyline": "Ikoria",
+ "entities": [
+  {
+   "name": "Yidaro",
+   "type": "creature",
+   "aliases": [
+    "Yidaro, Wandering Monster"
+   ],
+   "description": "A huge, deadly but inattentive Dinosaur Turtle from Ikoria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vivien Reid",
+   "type": "character",
+   "aliases": [
+    "Vivien"
+   ],
+   "description": "Planeswalker who saw Yidaro wander.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lukka",
+   "type": "character",
+   "aliases": [],
+   "description": "Used Yidaro as a mount in the siege of Drannith; his spark ignited.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jirina Kudro",
+   "type": "character",
+   "aliases": [],
+   "description": "Jumped onto Yidaro's back to confront Lukka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kogla",
+   "type": "creature",
+   "aliases": [],
+   "description": "Ikorian beast who fought alongside Yidaro.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ozolith",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Item overloaded by Lukka and destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Drannith",
+   "type": "location",
+   "aliases": [],
+   "description": "City besieged with Yidaro's participation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Copper Host",
+   "type": "faction",
+   "aliases": [],
+   "description": "Giant Phyrexian monstrosities Yidaro and Kogla fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Siege of Drannith",
+   "type": "event",
+   "aliases": [],
+   "description": "Siege in which Lukka used Yidaro as a mount.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Ikorian beasts grew crystals.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Vivien sees Yidaro wandering aimlessly, then barrel toward a cry.",
+   "participants": [
+    "Vivien Reid",
+    "Yidaro"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "She didn't think she had ever seen something so big move that fast."
+  },
+  {
+   "summary": "Lukka rides Yidaro in the siege of Drannith but is stranded at the wall.",
+   "participants": [
+    "Lukka",
+    "Yidaro"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "leaving Lukka somewhat stranded at the edge of the city wall"
+  },
+  {
+   "summary": "Jirina confronts Lukka on Yidaro's back; the Ozolith is overloaded and destroyed and Lukka's spark ignites.",
+   "participants": [
+    "Jirina Kudro",
+    "Lukka",
+    "Yidaro"
+   ],
+   "location": "Drannith",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Jirina Kudro jumped onto Yidaro's back to confront Lukka"
+  },
+  {
+   "summary": "Yidaro wanders away without harming Drannith further.",
+   "participants": [
+    "Yidaro"
+   ],
+   "location": "Drannith",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Yidaro wandered away without harming Drannith further."
+  },
+  {
+   "summary": "Yidaro and Kogla fight the Copper Host; Kogla uses Yidaro's shell as a blunt weapon.",
+   "participants": [
+    "Yidaro",
+    "Kogla",
+    "Copper Host"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Kogla used Yidaro's crystal-covered shell as a blunt weapon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Lukka",
+   "relation": "enemy",
+   "target": "Jirina Kudro",
+   "note": "Confronted on Yidaro's back.",
+   "paragraph": 2,
+   "quote": "Jirina Kudro jumped onto Yidaro's back to confront Lukka"
+  },
+  {
+   "source": "Yidaro",
+   "relation": "ally",
+   "target": "Kogla",
+   "note": "Fought alongside.",
+   "paragraph": 3,
+   "quote": "Alongside Kogla , it fought back against the giant monstrosities of the Copper Host."
+  }
+ ],
+ "rejected": []
+}

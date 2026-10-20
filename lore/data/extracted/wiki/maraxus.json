@@ -1,0 +1,163 @@
+{
+ "page": "wiki/maraxus",
+ "url": "https://mtg.wiki/page/Maraxus",
+ "title": "Maraxus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:20Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Maraxus of Keld",
+   "type": "character",
+   "aliases": [
+    "Maraxus"
+   ],
+   "description": "Human Keldon warrior in a torturer's mask, perfect warlord who commanded the Sawtooth Ogres and worked for Volrath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Homeland of the Keldons on Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witch Kings of Keld",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rulers of Keld whom Maraxus left.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sawtooth Ogres",
+   "type": "faction",
+   "aliases": [],
+   "description": "Bloodthirsty ogres commanded by Maraxus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler who employed Maraxus as mercenary.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Starke il-Vec",
+   "type": "character",
+   "aliases": [
+    "Starke"
+   ],
+   "description": "Pursued by Maraxus; stabbed him in the back to secure a place on the Weatherlight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alaric",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of an estate, killed by Maraxus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Weatherlight crewman who fought Maraxus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Skyship whose crew rescued Starke.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Maraxus left the Witch Kings of Keld for their inability to handle him.",
+   "participants": [
+    "Maraxus of Keld",
+    "Witch Kings of Keld"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He left the Witch Kings of Keld for their inability to handle him while he was still a young man."
+  },
+  {
+   "summary": "Maraxus pursued Starke to Alaric's estate, killed Alaric, burned the estate and captured Starke.",
+   "participants": [
+    "Maraxus of Keld",
+    "Starke il-Vec",
+    "Alaric",
+    "Sawtooth Ogres"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he killed Alaric while his ogres looted and burned down the estate, and captured Starke"
+  },
+  {
+   "summary": "Gerrard fought Maraxus in single combat and gained the upper hand.",
+   "participants": [
+    "Gerrard Capashen",
+    "Maraxus of Keld"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Engaging in single combat with Maraxus, Gerrard gained the upper hand."
+  },
+  {
+   "summary": "Starke stabbed Maraxus in the back, killing him and securing his place aboard the Weatherlight.",
+   "participants": [
+    "Starke il-Vec",
+    "Maraxus of Keld"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Starke stabbed Maraxus in the back before he could reveal Starke's duplicity"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Maraxus of Keld",
+   "relation": "serves",
+   "target": "Volrath",
+   "note": "mercenary",
+   "paragraph": 3,
+   "quote": "He worked as a mercenary for Volrath"
+  },
+  {
+   "source": "Maraxus of Keld",
+   "relation": "leader_of",
+   "target": "Sawtooth Ogres",
+   "note": "commanded them",
+   "paragraph": 3,
+   "quote": "He came to command the Sawtooth Ogres"
+  },
+  {
+   "source": "Starke il-Vec",
+   "relation": "killed",
+   "target": "Maraxus of Keld",
+   "note": "stabbed him in the back",
+   "paragraph": 3,
+   "quote": "Starke stabbed Maraxus in the back"
+  },
+  {
+   "source": "Maraxus of Keld",
+   "relation": "killed",
+   "target": "Alaric",
+   "note": "killed in rage",
+   "paragraph": 3,
+   "quote": "he killed Alaric"
+  }
+ ],
+ "rejected": []
+}

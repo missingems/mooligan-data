@@ -1,0 +1,69 @@
+{
+ "page": "wiki/orfeo",
+ "url": "https://mtg.wiki/page/Orfeo",
+ "title": "Orfeo",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mr. Orfeo",
+   "type": "character",
+   "aliases": [
+    "Orfeo",
+    "the Boulder"
+   ],
+   "description": "A towering Rhox warrior of the Riveteers in New Capenna, wielding a massive maul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "The family Orfeo belongs to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maestros",
+   "type": "faction",
+   "aliases": [],
+   "description": "A family whose agents once ambushed Orfeo.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A dozen agents of the Maestros ambush Mr. Orfeo, and the ground is said to still carry their imprints.",
+   "participants": [
+    "Mr. Orfeo",
+    "Maestros"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "He was once ambushed by a dozen agents of the Maestros"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mr. Orfeo",
+   "relation": "member_of",
+   "target": "Riveteers",
+   "note": "He is a Rhox of the Riveteers.",
+   "paragraph": 1,
+   "quote": "Mr. Orfeo is towering Rhox of the Riveteers"
+  },
+  {
+   "source": "Mr. Orfeo",
+   "relation": "enemy",
+   "target": "Maestros",
+   "note": "Maestros agents ambushed him.",
+   "paragraph": 1,
+   "quote": "He was once ambushed by a dozen agents of the Maestros"
+  }
+ ],
+ "rejected": []
+}

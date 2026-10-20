@@ -1,0 +1,116 @@
+{
+ "page": "wiki/kelse",
+ "url": "https://mtg.wiki/page/Kelse",
+ "title": "Kelse",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:07Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Kelse",
+   "type": "character",
+   "aliases": [],
+   "description": "A human peasant mother whose prayers were the last Avacyn heard in her pure form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maeli",
+   "type": "character",
+   "aliases": [],
+   "description": "Kelse's son, who got lost in the woods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel who rescued Maeli, began her descent into madness, and later burned Kelse's village.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi whose presence made itself known on Innistrad.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Avacyn finds the lost Maeli and brings him back to Kelse.",
+   "participants": [
+    "Avacyn",
+    "Maeli",
+    "Kelse"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Avacyn swooped in and found the boy, bringing him back to his mother"
+  },
+  {
+   "summary": "Emrakul's presence makes itself known, and Avacyn begins her descent into madness.",
+   "participants": [
+    "Emrakul",
+    "Avacyn",
+    "Kelse"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Avacyn started her descent into madness from that point"
+  },
+  {
+   "summary": "Kelse sends Maeli running into the forest as corrupted Avacyn and her angels return.",
+   "participants": [
+    "Kelse",
+    "Maeli",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kelse commanded Maeli to run into the forest like before"
+  },
+  {
+   "summary": "Avacyn and her angels burn the whole village and Avacyn burns Kelse to ash.",
+   "participants": [
+    "Avacyn",
+    "Kelse"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Avacyn herself made particularly sure to burn Kelse to ash."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kelse",
+   "relation": "family",
+   "target": "Maeli",
+   "note": "Mother and son.",
+   "paragraph": 1,
+   "quote": "her son Maeli"
+  },
+  {
+   "source": "Avacyn",
+   "relation": "killed",
+   "target": "Kelse",
+   "note": "Burned her to ash.",
+   "paragraph": 2,
+   "quote": "Avacyn herself made particularly sure to burn Kelse to ash."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,130 @@
+{
+ "page": "wiki/berbous",
+ "url": "https://mtg.wiki/page/Berbous",
+ "title": "Berbous",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:29Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Berbous",
+   "type": "location",
+   "aliases": [
+    "Mer Empire"
+   ],
+   "description": "The original merfolk Empire of the Otarian Sea on Dominaria, ruled by Emperor Tajaras, later taken over by cephalids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajaras",
+   "type": "character",
+   "aliases": [],
+   "description": "Emperor of Berbous, humiliated Laquatus in a duel and was overthrown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Laquatus",
+   "type": "character",
+   "aliases": [],
+   "description": "Merfolk courtier and advisor who plotted to overthrow Tajaras.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aboshan",
+   "type": "character",
+   "aliases": [],
+   "description": "Cephalid king who joined Laquatus's coup and became Emperor of the Mer Empire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Festival of Rebirth",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual during which the coup took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Berbous lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tajaras calls out Laquatus's schemes and humiliates him in a duel.",
+   "participants": [
+    "Tajaras",
+    "Laquatus"
+   ],
+   "location": "Berbous",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tajaras called Laquatus out on his schemes and humiliated him in a duel"
+  },
+  {
+   "summary": "Laquatus recruits the cephalid king Aboshan to his cause.",
+   "participants": [
+    "Laquatus",
+    "Aboshan"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "recruited king Aboshan to his cause"
+  },
+  {
+   "summary": "During the Festival of Rebirth they disrupt the ritual; the eggs hatch cephalids instead of merfolk and Tajaras's court falls.",
+   "participants": [
+    "Laquatus",
+    "Aboshan",
+    "Tajaras"
+   ],
+   "location": "Berbous",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "staged a coup during the Festival of Rebirth"
+  },
+  {
+   "summary": "Aboshan installs himself as the new Emperor of the Mer Empire.",
+   "participants": [
+    "Aboshan"
+   ],
+   "location": "Berbous",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Aboshan instilling himself as the new Emperor of the Mer Empire"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tajaras",
+   "relation": "leader_of",
+   "target": "Berbous",
+   "note": "Emperor of Berbous.",
+   "paragraph": 0,
+   "quote": "It was ruled by Emperor Tajaras"
+  },
+  {
+   "source": "Laquatus",
+   "relation": "enemy",
+   "target": "Tajaras",
+   "note": "Resented and plotted against him.",
+   "paragraph": 2,
+   "quote": "secretly plotted to overthrow him"
+  },
+  {
+   "source": "Laquatus",
+   "relation": "ally",
+   "target": "Aboshan",
+   "note": "Staged the coup together.",
+   "paragraph": 2,
+   "quote": "Together, Laquatus and Aboshan staged a coup"
+  }
+ ],
+ "rejected": []
+}

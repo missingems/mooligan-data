@@ -1,0 +1,124 @@
+{
+ "page": "wiki/falco-spara",
+ "url": "https://mtg.wiki/page/Falco_Spara",
+ "title": "Falco Spara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:32Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Falco Spara",
+   "type": "character",
+   "aliases": [
+    "Pactweaver"
+   ],
+   "description": "Aven crime-lord, demon and boss of the Brokers family in New Capenna, known as the Pactweaver.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brokers",
+   "type": "faction",
+   "aliases": [],
+   "description": "New Capenna family of professional protectors led by Falco.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "City-plane where the Brokers rule Park Heights.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nido Sanctuary",
+   "type": "location",
+   "aliases": [],
+   "description": "Falco's seat, where disloyal members are thrown off the balcony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Park Heights",
+   "type": "location",
+   "aliases": [],
+   "description": "District Falco rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adversary",
+   "type": "character",
+   "aliases": [],
+   "description": "Arrival that brought Falco's fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Atraxa",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian whom Falco was the most effective threat against.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Falco opposed Atraxa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Falco is raised from mortality to demonhood during New Capenna's founding days.",
+   "participants": [
+    "Falco Spara"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Raised from mortality to demonhood during New Capenna's founding days"
+  },
+  {
+   "summary": "The Adversary comes, and Falco falls from the top of the world.",
+   "participants": [
+    "Falco Spara",
+    "Adversary"
+   ],
+   "location": "Park Heights",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "And then the Adversary came"
+  },
+  {
+   "summary": "Falco is the most effective threat against Atraxa among the surviving family bosses.",
+   "participants": [
+    "Falco Spara",
+    "Atraxa"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Falco Spara was the most effective threat against Atraxa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Falco Spara",
+   "relation": "leader_of",
+   "target": "Brokers",
+   "note": "Boss of the family.",
+   "paragraph": 0,
+   "quote": "the crime-lord and boss of the Brokers family in New Capenna"
+  },
+  {
+   "source": "Falco Spara",
+   "relation": "enemy",
+   "target": "Atraxa",
+   "note": "Most effective threat against her.",
+   "paragraph": 5,
+   "quote": "the most effective threat against Atraxa"
+  }
+ ],
+ "rejected": []
+}

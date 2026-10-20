@@ -1,0 +1,163 @@
+{
+ "page": "wiki/dark-age",
+ "url": "https://mtg.wiki/page/Dark_Age",
+ "title": "Dark Age",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:39Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dark Age",
+   "type": "event",
+   "aliases": [
+    "Age of Darkness",
+    "The Dark"
+   ],
+   "description": "A long, troubled period of Dominaria's history after the Sylex Blast of 64 AR until about 450 AR, when the Ice Age took hold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [
+    "detonation of the Golgothian Sylex"
+   ],
+   "description": "The devastating detonation of 64 AR that shifted Dominaria's climate and began the Dark Age.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The artifact whose detonation devastated Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane in which the Dark Age occurred.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent whose great civilizations disintegrated during the Dark Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Penregon",
+   "type": "location",
+   "aliases": [],
+   "description": "Proud capital of Argive, consumed by advancing frost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "A nation whose capital was Penregon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [
+    "Talite"
+   ],
+   "description": "A dominant force in Terisiare that preached against artificers' hubris and condemned magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war whose great traditions of spellcasting and artifice were suppressed afterward.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The era that fully took hold of the plane around 450 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Golgothian Sylex detonates, dramatically shifting Dominaria's climate with shorter summers, harsher winters and destructive storms.",
+   "participants": [
+    "Golgothian Sylex",
+    "Sylex Blast"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Summers grew shorter, winters harsher, and storms became frequent and destructive."
+  },
+  {
+   "summary": "Penregon, capital of Argive, falls to creeping frost.",
+   "participants": [
+    "Penregon",
+    "Argive"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "its walls and towers consumed by the creeping advance of frost from the northern ridges of Terisiare"
+  },
+  {
+   "summary": "The Church of Tal rises to dominance and its zealots wage crusades to eradicate arcane practice.",
+   "participants": [
+    "Church of Tal"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Talite zealots waged crusades to eradicate lingering remnants of arcane practice"
+  },
+  {
+   "summary": "Clandestine circles of mages secretly preserve fragments of knowledge.",
+   "participants": [
+    "Terisiare"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "clandestine circles of mages continued their studies in secrecy"
+  },
+  {
+   "summary": "Terisiare fractures into competing tribes, city-states and faiths locked in cycles of betrayal and conquest.",
+   "participants": [
+    "Terisiare"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "The people of Terisiare fractured into competing tribes, city-states, and faiths"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dark Age",
+   "relation": "other",
+   "target": "Sylex Blast",
+   "note": "the age followed the Sylex Blast",
+   "paragraph": 0,
+   "quote": "that followed the devastating Sylex Blast of 64 AR"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Golgothian Sylex",
+   "note": "preached against the destructive hubris of the artificers and condemned magic study",
+   "paragraph": 3,
+   "quote": "preaching against the destructive hubris of the artificers and condemning the study of magic"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,110 @@
+{
+ "page": "wiki/furnace-of-rath",
+ "url": "https://mtg.wiki/page/Furnace_of_Rath",
+ "title": "Furnace of Rath",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:58Z",
+ "storyline": "Apocalypse",
+ "entities": [
+  {
+   "name": "Furnace of Rath",
+   "type": "location",
+   "aliases": [],
+   "description": "A cavernous molten chamber in the Hub beneath the evincar's stronghold of Rath where flowstone is formed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [
+    "the stronghold"
+   ],
+   "description": "The evincar's stronghold.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "A skyship whose crew invaded the Stronghold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sisay",
+   "type": "character",
+   "aliases": [],
+   "description": "Captain of the Weatherlight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "The event during which the Furnace shifted to Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "A place on Dominaria where the Furnace was shifted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flowstone",
+   "type": "concept",
+   "aliases": [],
+   "description": "Shapeshifting material formed in the Furnace.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In 4204 AR the Weatherlight crew passed the Furnace of Rath as one of many hurdles on the way to Sisay.",
+   "participants": [
+    "Weatherlight",
+    "Sisay",
+    "Furnace of Rath"
+   ],
+   "location": "Furnace of Rath",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "the Furnace of Rath were one of the many hurdles the crew had to surpass to reach their captain, Sisay"
+  },
+  {
+   "summary": "During the Rathi Overlay the Furnace was shifted to Urborg in Dominaria.",
+   "participants": [
+    "Furnace of Rath",
+    "Urborg"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "During the Rathi Overlay , the Furnace was shifted to Urborg in Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Furnace of Rath",
+   "relation": "located_in",
+   "target": "Rath",
+   "note": "Deep beneath the stronghold.",
+   "paragraph": 0,
+   "quote": "deep beneath the evincar 's stronghold of Rath"
+  },
+  {
+   "source": "Sisay",
+   "relation": "leader_of",
+   "target": "Weatherlight",
+   "note": "Captain.",
+   "paragraph": 3,
+   "quote": "to reach their captain, Sisay"
+  }
+ ],
+ "rejected": []
+}

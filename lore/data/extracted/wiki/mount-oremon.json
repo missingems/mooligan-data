@@ -1,0 +1,61 @@
+{
+ "page": "wiki/mount-oremon",
+ "url": "https://mtg.wiki/page/Mount_Oremon",
+ "title": "Mount Oremon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:20Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Mount Oremon",
+   "type": "location",
+   "aliases": [],
+   "description": "Highest mountain in the Scarlet domain of Ephren, said to hold red mana and be home of the Ash Warlords.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ephren",
+   "type": "location",
+   "aliases": [],
+   "description": "Scarlet domain containing Mount Oremon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ash Warlords",
+   "type": "faction",
+   "aliases": [],
+   "description": "Likely a race of fire elementals living at Oremon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Embereck",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker and one of the Ash Warlords.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Embereck",
+   "relation": "member_of",
+   "target": "Ash Warlords",
+   "note": "He was one of them.",
+   "paragraph": 0,
+   "quote": "One of them was the planeswalker Embereck ."
+  },
+  {
+   "source": "Mount Oremon",
+   "relation": "located_in",
+   "target": "Ephren",
+   "note": "Highest mountain of the domain.",
+   "paragraph": 0,
+   "quote": "was the highest mountain in the Scarlet domain of Ephren"
+  }
+ ],
+ "rejected": []
+}

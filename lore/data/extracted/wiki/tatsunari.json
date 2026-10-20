@@ -1,0 +1,175 @@
+{
+ "page": "wiki/tatsunari",
+ "url": "https://mtg.wiki/page/Tatsunari",
+ "title": "Tatsunari",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:38Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Tatsunari",
+   "type": "character",
+   "aliases": [
+    "Toad Rider"
+   ],
+   "description": "Human ninja of the Mukotai Reckoners who rides a massive frog named Keimi and holds a grudge against kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mukotai Reckoners",
+   "type": "faction",
+   "aliases": [
+    "Mokutai Reckoners"
+   ],
+   "description": "Outsider gang in Towashi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keimi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Massive corpse-swallower toad ridden by Tatsunari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Tatsunari lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "City where Tatsunari rejoined the gang and terrorized people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chishiro",
+   "type": "character",
+   "aliases": [],
+   "description": "Samurai bonded to the kami Kaima.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaima",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kami bonded to Chishiro, later bonded to Tatsunari's sword.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of Jukai",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order whose spy Tatsunari befriended and whose sword hilt he bought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "character",
+   "aliases": [],
+   "description": "Kami against whom Tatsunari had a special grudge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Far Corner",
+   "type": "location",
+   "aliases": [],
+   "description": "Neighborhood at the edge of the Jukai forest.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tatsunari tries to steal a monk's coin purse and is caught by the kami the monk was channeling, making him crave a kami of his own.",
+   "participants": [
+    "Tatsunari"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "he was caught by the kami the monk was channeling."
+  },
+  {
+   "summary": "Using Order of Jukai codes, Tatsunari infiltrates a village, poisons monks and threatens Chishiro to force Kaima to bond with him; the kami chases him off.",
+   "participants": [
+    "Tatsunari",
+    "Chishiro",
+    "Kaima",
+    "Order of Jukai"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After the crazed kami rampaged through the village and chased him off"
+  },
+  {
+   "summary": "He raises a corpse-swallower toad from the Towashi canal and becomes the Toad Rider.",
+   "participants": [
+    "Tatsunari",
+    "Keimi"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Tatsunari hopped on its back and became the Toad Rider"
+  },
+  {
+   "summary": "Tatsunari leads the gang into Far Corner after a scout is killed by a kami.",
+   "participants": [
+    "Tatsunari",
+    "Mukotai Reckoners",
+    "Keimi"
+   ],
+   "location": "Far Corner",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "he led the gang into the neighborhood astride his toad."
+  },
+  {
+   "summary": "Chishiro kills Keimi and drives Tatsunari out; the kami in Tatsunari's sword reveals itself as Kaima, and Chishiro and Kaima begin to heal their relationship.",
+   "participants": [
+    "Chishiro",
+    "Tatsunari",
+    "Keimi",
+    "Kaima"
+   ],
+   "location": "Far Corner",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the samurai Chishiro killed Keimi and drove Tatsunari out of the neighborhood."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tatsunari",
+   "relation": "member_of",
+   "target": "Mukotai Reckoners",
+   "note": "ninja member",
+   "paragraph": 0,
+   "quote": "Tatsunari is a human ninja member of the Mukotai Reckoners in Kamigawa ."
+  },
+  {
+   "source": "Chishiro",
+   "relation": "ally",
+   "target": "Kaima",
+   "note": "bonded samurai and kami",
+   "paragraph": 4,
+   "quote": "The samurai and the kami could start healing and renewing their relationship."
+  },
+  {
+   "source": "Chishiro",
+   "relation": "killed",
+   "target": "Keimi",
+   "note": "killed Tatsunari's toad",
+   "paragraph": 4,
+   "quote": "the samurai Chishiro killed Keimi"
+  }
+ ],
+ "rejected": []
+}

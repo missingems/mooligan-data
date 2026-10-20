@@ -1,0 +1,633 @@
+{
+ "page": "stories/episode-4-put-test-2021-04-14",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-4-put-test-2021-04-14",
+ "title": "Episode 4: Put to the Test",
+ "story_date": "2021-04-14",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:37:01Z",
+ "storyline": "Strixhaven: School of Mages",
+ "entities": [
+  {
+   "name": "Will Kenrith",
+   "type": "character",
+   "aliases": [
+    "Will"
+   ],
+   "description": "A young planeswalker with ice magic, Rowan's twin, who helps fight the mage hunters and the Oriq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rowan Kenrith",
+   "type": "character",
+   "aliases": [
+    "Rowan"
+   ],
+   "description": "A young planeswalker with lightning magic, Will's twin, who fights the Oriq and wants to draw on the Snarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Professor Onyx",
+    "Liliana"
+   ],
+   "description": "A violet-eyed necromancer posing as Professor Onyx who leads the twins through a secret tunnel to the Hall of Oracles and is teleported away by Extus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Extus",
+   "type": "character",
+   "aliases": [],
+   "description": "The masked leader of the Oriq who sacrifices his own agent, binds himself to the Snarl, and summons the Blood Avatar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tavver",
+   "type": "character",
+   "aliases": [],
+   "description": "A young, dedicated Oriq agent who delivers a book to Extus and is used as a shield.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arlo Wickel",
+   "type": "character",
+   "aliases": [
+    "Wickel"
+   ],
+   "description": "The Prismari Mage Tower point guard who raises an earth wall against the mage hunters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Plink",
+   "type": "character",
+   "aliases": [],
+   "description": "A Witherbloom friend of Rowan who panics during the attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Auvernine",
+   "type": "character",
+   "aliases": [],
+   "description": "A Witherbloom friend of Rowan who binds mage hunters with thorny roots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kianne",
+   "type": "character",
+   "aliases": [
+    "Dean Kianne"
+   ],
+   "description": "A dean of Quandrix College who fights mage hunters with geometric force constructs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imbraham",
+   "type": "character",
+   "aliases": [
+    "Dean Imbraham"
+   ],
+   "description": "A dean of Quandrix with a high, odd voice who watches over a group of students.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blood Avatar",
+   "type": "creature",
+   "aliases": [
+    "Great One"
+   ],
+   "description": "A massive four-armed war creature in a bronze helmet that rises from a fountain of blood in the Hall of Oracles at Extus's call.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mage hunters",
+   "type": "creature",
+   "aliases": [],
+   "description": "Insect-like creatures with violet spines that flood the campus, controlled by a man in a red uniform.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dragons",
+   "type": "creature",
+   "aliases": [],
+   "description": "The Founder dragons who arrive roaring and burn the mage hunters.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oriq",
+   "type": "faction",
+   "aliases": [
+    "Oriq agents"
+   ],
+   "description": "The masked mage society that invades Strixhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven Snarl",
+   "type": "concept",
+   "aliases": [
+    "the Snarl"
+   ],
+   "description": "A maelstrom of primordial mana hanging in the Hall of Oracles above containment circles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hall of Oracles",
+   "type": "location",
+   "aliases": [],
+   "description": "The hall of stone oracle statues where the Snarl hangs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Biblioplex",
+   "type": "location",
+   "aliases": [],
+   "description": "Strixhaven's library which the mage hunters surround.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "The university under attack.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quandrix College",
+   "type": "faction",
+   "aliases": [
+    "Quandrix"
+   ],
+   "description": "The mathematical college whose deans appear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prismari",
+   "type": "faction",
+   "aliases": [],
+   "description": "The college whose dorms are attacked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witherbloom",
+   "type": "faction",
+   "aliases": [],
+   "description": "The college whose dormitories are overrun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Silverquill",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Silverquill student who fights in the Biblioplex.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Will wakes to learn from Wickel that the Oriq are attacking.",
+   "participants": [
+    "Will Kenrith",
+    "Arlo Wickel",
+    "Oriq"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 8,
+   "quote": "The Oriq are here"
+  },
+  {
+   "summary": "Wickel raises a wall of earth to hold back mage hunters while students flee.",
+   "participants": [
+    "Arlo Wickel",
+    "Mage hunters",
+    "Will Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 13,
+   "quote": "A semicircle of churning soil rippled out from where he stood, rising up into a wall of dense earth between the creatures and the students."
+  },
+  {
+   "summary": "Rowan, Plink and Auvernine fight mage hunters at the Witherbloom dormitories.",
+   "participants": [
+    "Rowan Kenrith",
+    "Plink",
+    "Auvernine",
+    "Mage hunters"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 15,
+   "quote": "Rowan howled and swung her sword."
+  },
+  {
+   "summary": "Rowan decides to head for the Biblioplex, where she expects Will to be.",
+   "participants": [
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 21,
+   "quote": "If she knew her brother, that's where he would be."
+  },
+  {
+   "summary": "Liliana reflects an Oriq life-draining spell back onto its caster, killing him.",
+   "participants": [
+    "Liliana Vess",
+    "Oriq"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "With a gesture, Liliana sent it racing back toward the caster, twice as hungry as before."
+  },
+  {
+   "summary": "Dean Kianne spears a mage hunter with a lance of force.",
+   "participants": [
+    "Kianne",
+    "Liliana Vess",
+    "Mage hunters"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "Kianne sent a geometric lance of force piercing through it."
+  },
+  {
+   "summary": "Liliana spots a man in a red uniform with mandible-like features who commands the mage hunters.",
+   "participants": [
+    "Liliana Vess",
+    "Kianne",
+    "Mage hunters"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 30,
+   "quote": "He locked eyes with her, and with eerie coordination, all of the other mage hunters surged toward them."
+  },
+  {
+   "summary": "Liliana realizes the campus-wide attack is a distraction.",
+   "participants": [
+    "Liliana Vess"
+   ],
+   "location": "Strixhaven",
+   "importance": "major",
+   "paragraph": 36,
+   "quote": "An attack all across the campus, with no apparent aim but destruction and chaos."
+  },
+  {
+   "summary": "Will freezes dew to trip a mage hunter and drains heat from another's shell.",
+   "participants": [
+    "Will Kenrith",
+    "Mage hunters"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 39,
+   "quote": "Behind him, the evening dew condensed into hard ice."
+  },
+  {
+   "summary": "The dragons arrive and burn the mage hunters to ash with columns of fire.",
+   "participants": [
+    "Dragons",
+    "Mage hunters",
+    "Will Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "major",
+   "paragraph": 43,
+   "quote": "A column of fire shot down from the sky and swept over the ground."
+  },
+  {
+   "summary": "Will and Rowan reunite and hug.",
+   "participants": [
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "They ran toward each other and fell into a hug, squeezing each other tightly."
+  },
+  {
+   "summary": "Professor Onyx kills an Oriq agent aiming at the twins.",
+   "participants": [
+    "Liliana Vess",
+    "Oriq",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 49,
+   "quote": "When she opened them, she saw the Oriq splayed across the ground."
+  },
+  {
+   "summary": "Onyx tells them the mage hunters have formed a perimeter around the Biblioplex.",
+   "participants": [
+    "Liliana Vess",
+    "Will Kenrith",
+    "Rowan Kenrith",
+    "Mage hunters"
+   ],
+   "location": "Biblioplex",
+   "importance": "minor",
+   "paragraph": 55,
+   "quote": "They've formed a perimeter around the Biblioplex."
+  },
+  {
+   "summary": "Onyx admits she is not a responsible professor and recruits the twins to help her.",
+   "participants": [
+    "Liliana Vess",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 59,
+   "quote": "No. I'm not quite so responsible as that. And I need help."
+  },
+  {
+   "summary": "Onyx opens an old maintenance passage she found as a student.",
+   "participants": [
+    "Liliana Vess",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 61,
+   "quote": "It's an old maintenance passage I found when I was a student."
+  },
+  {
+   "summary": "Onyx explains Extus leads the Oriq and is responsible for the attack.",
+   "participants": [
+    "Liliana Vess",
+    "Extus",
+    "Oriq"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 69,
+   "quote": "The man responsible for all of this. The leader of the Oriq."
+  },
+  {
+   "summary": "Extus receives a book found in the East Wing from Tavver.",
+   "participants": [
+    "Extus",
+    "Tavver"
+   ],
+   "location": "Biblioplex",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "I found it in the East Wing, just as you said, sir."
+  },
+  {
+   "summary": "Extus swings Tavver into a Silverquill student's dark spell and then kills the student.",
+   "participants": [
+    "Extus",
+    "Tavver",
+    "Silverquill"
+   ],
+   "location": "Biblioplex",
+   "importance": "major",
+   "paragraph": 82,
+   "quote": "Extus tightened his grip on Tavver's arm and pulled him close, spinning him into the spell's path."
+  },
+  {
+   "summary": "Will saves Rowan from falling through a rotting bridge.",
+   "participants": [
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 93,
+   "quote": "Will dove as Rowan fell, locking one hand around her wrist."
+  },
+  {
+   "summary": "Onyx reveals she is leading them to where the most damage could be done.",
+   "participants": [
+    "Liliana Vess",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 100,
+   "quote": "I'm taking you where I would go, if I wanted to cause the most damage possible."
+  },
+  {
+   "summary": "Extus blasts open the Hall of Oracles doors.",
+   "participants": [
+    "Extus"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 103,
+   "quote": "he blasted the doors off their hinges and stepped inside"
+  },
+  {
+   "summary": "Extus sees the Snarl hanging over ancient containment circles.",
+   "participants": [
+    "Extus",
+    "Strixhaven Snarl"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 106,
+   "quote": "The Strixhaven Snarl hung in the air, tendrils of energy whipping and snapping around the hall."
+  },
+  {
+   "summary": "Oriq agents arrange books and scrolls, and Extus begins to read the ritual.",
+   "participants": [
+    "Extus",
+    "Oriq"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 110,
+   "quote": "Extus began to read."
+  },
+  {
+   "summary": "The twins zap and ice-bind Oriq agents as Liliana leads them to the Snarl.",
+   "participants": [
+    "Rowan Kenrith",
+    "Will Kenrith",
+    "Liliana Vess",
+    "Oriq"
+   ],
+   "location": "Strixhaven",
+   "importance": "minor",
+   "paragraph": 111,
+   "quote": "at the first sign of one of the masked Oriq, Rowan would zap them with a current of energy that left them twitching on the ground"
+  },
+  {
+   "summary": "Liliana senses that Extus has bound himself to the Snarl.",
+   "participants": [
+    "Liliana Vess",
+    "Extus",
+    "Strixhaven Snarl"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 113,
+   "quote": "He's already bound himself to the Snarl."
+  },
+  {
+   "summary": "Rowan blasts a group of Oriq with lightning, and Liliana pushes the soul out of an agent threatening her.",
+   "participants": [
+    "Rowan Kenrith",
+    "Liliana Vess",
+    "Oriq"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 117,
+   "quote": "With a savage thrust of will, she pushed it free of his body, which dropped in a heap on the floor."
+  },
+  {
+   "summary": "Extus hits Liliana with a forced translocation spell that sends her to the forest outside campus.",
+   "participants": [
+    "Extus",
+    "Liliana Vess"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 121,
+   "quote": "Forced translocation magic."
+  },
+  {
+   "summary": "Extus freezes and shatters Rowan's lightning and breaks Will's ice shield.",
+   "participants": [
+    "Extus",
+    "Rowan Kenrith",
+    "Will Kenrith"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 125,
+   "quote": "shattering on the ground as if made of glass"
+  },
+  {
+   "summary": "Rowan proposes to draw power from the Snarl, but Will says it is too dangerous.",
+   "participants": [
+    "Rowan Kenrith",
+    "Will Kenrith",
+    "Strixhaven Snarl"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 130,
+   "quote": "That's too dangerous!"
+  },
+  {
+   "summary": "Blood pools across the floor and the Snarl turns from blue to deep red.",
+   "participants": [
+    "Extus",
+    "Strixhaven Snarl"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 133,
+   "quote": "Where it had glowed blue before, now it shone a deep red."
+  },
+  {
+   "summary": "Extus calls upon the Blood Avatar to unleash its wrath.",
+   "participants": [
+    "Extus",
+    "Blood Avatar"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 137,
+   "quote": "Rise, Great One! I call upon you, Blood Avatar!"
+  },
+  {
+   "summary": "The four-armed Blood Avatar rises from the blood fountain in a bronze helmet.",
+   "participants": [
+    "Blood Avatar",
+    "Rowan Kenrith",
+    "Will Kenrith"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "major",
+   "paragraph": 139,
+   "quote": "In each of its four muscular arms, it clutched a cruel weapon"
+  },
+  {
+   "summary": "Rowan realizes the avatar was Extus's plan all along.",
+   "participants": [
+    "Rowan Kenrith",
+    "Extus",
+    "Blood Avatar"
+   ],
+   "location": "Hall of Oracles",
+   "importance": "minor",
+   "paragraph": 140,
+   "quote": "This was Extus's plan all along."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Extus",
+   "relation": "leader_of",
+   "target": "Oriq",
+   "note": "Onyx identifies him as the leader.",
+   "paragraph": 69,
+   "quote": "The man responsible for all of this. The leader of the Oriq."
+  },
+  {
+   "source": "Extus",
+   "relation": "killed",
+   "target": "Tavver",
+   "note": "Extus uses him as a shield, killing him.",
+   "paragraph": 82,
+   "quote": "Extus tightened his grip on Tavver's arm and pulled him close, spinning him into the spell's path."
+  },
+  {
+   "source": "Will Kenrith",
+   "relation": "family",
+   "target": "Rowan Kenrith",
+   "note": "Twin siblings.",
+   "paragraph": 21,
+   "quote": "If she knew her brother, that's where he would be."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "ally",
+   "target": "Will Kenrith",
+   "note": "She enlists the twins' help.",
+   "paragraph": 59,
+   "quote": "And I need help."
+  },
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Extus",
+   "note": "He teleports her away from the Snarl.",
+   "paragraph": 113,
+   "quote": "He's already bound himself to the Snarl."
+  },
+  {
+   "source": "Arlo Wickel",
+   "relation": "member_of",
+   "target": "Prismari",
+   "note": "A Prismari Mage Tower player.",
+   "paragraph": 4,
+   "quote": "someone from the Prismari Mage Tower team"
+  },
+  {
+   "source": "Extus",
+   "relation": "other",
+   "target": "Blood Avatar",
+   "note": "Extus summons the Blood Avatar.",
+   "paragraph": 137,
+   "quote": "I call upon you, Blood Avatar!"
+  }
+ ],
+ "rejected": []
+}

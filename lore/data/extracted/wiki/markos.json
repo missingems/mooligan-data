@@ -1,0 +1,170 @@
+{
+ "page": "wiki/markos",
+ "url": "https://mtg.wiki/page/Markos",
+ "title": "Markos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:00Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Markos",
+   "type": "character",
+   "aliases": [
+    "Lieutenant Markos"
+   ],
+   "description": "A young, battle-hardened human soldier from Kroog who led a barricade during the siege of Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kroog",
+   "type": "location",
+   "aliases": [],
+   "description": "City besieged by Mishra's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forces attacking Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yotian soldiers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Defenders of Kroog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sanwell",
+   "type": "character",
+   "aliases": [],
+   "description": "Avenger pilot who arrived at the plaza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rica",
+   "type": "character",
+   "aliases": [],
+   "description": "Avenger pilot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Carlo",
+   "type": "character",
+   "aliases": [],
+   "description": "Avenger pilot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Llora",
+   "type": "character",
+   "aliases": [],
+   "description": "Commander of the pilots.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the dragon engine Traxos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Traxos",
+   "type": "artifact",
+   "aliases": [
+    "Mishra's dragon engine"
+   ],
+   "description": "Mishra's dragon engine that assaulted the plaza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Siege of Kroog",
+   "type": "event",
+   "aliases": [
+    "Fall of Kroog"
+   ],
+   "description": "The catastrophic siege of the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War between Urza and Mishra.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Markos took charge of a strategic barricade in an abandoned market plaza and organized the Yotian defenders.",
+   "participants": [
+    "Markos",
+    "Yotian soldiers",
+    "Fallaji"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Markos took charge of a strategic barricade in an abandoned market plaza"
+  },
+  {
+   "summary": "Llora introduced Markos to Sanwell, Rica and Carlo, who arrived at the plaza.",
+   "participants": [
+    "Markos",
+    "Sanwell",
+    "Rica",
+    "Carlo",
+    "Llora"
+   ],
+   "location": "Kroog",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they were introduced to Markos by their commander, Llora"
+  },
+  {
+   "summary": "The dragon engine Traxos obliterated the barricade and incinerated many defenders including Markos.",
+   "participants": [
+    "Traxos",
+    "Markos",
+    "Fallaji"
+   ],
+   "location": "Kroog",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the dragon engine’s attack obliterated the barricade and incinerated many of the defenders, including Lieutenant Markos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Markos",
+   "relation": "member_of",
+   "target": "Yotian soldiers",
+   "note": "fought on Kroog's side",
+   "paragraph": 2,
+   "quote": "Lieutenant Markos fought on Kroog 's side during the catastrophic siege of the city"
+  },
+  {
+   "source": "Traxos",
+   "relation": "killed",
+   "target": "Markos",
+   "note": "incinerated him",
+   "paragraph": 4,
+   "quote": "the dragon engine’s attack obliterated the barricade and incinerated many of the defenders, including Lieutenant Markos"
+  },
+  {
+   "source": "Llora",
+   "relation": "leader_of",
+   "target": "Sanwell",
+   "note": "their commander",
+   "paragraph": 3,
+   "quote": "they were introduced to Markos by their commander, Llora"
+  }
+ ],
+ "rejected": []
+}

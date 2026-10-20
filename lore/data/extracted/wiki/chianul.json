@@ -1,0 +1,83 @@
+{
+ "page": "wiki/chianul",
+ "url": "https://mtg.wiki/page/Chianul",
+ "title": "Chianul",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:31Z",
+ "storyline": "Khans of Tarkir",
+ "entities": [
+  {
+   "name": "Chianul",
+   "type": "character",
+   "aliases": [
+    "Chianul, Who Whispers Twice",
+    "One Who Whispers Twice"
+   ],
+   "description": "A Temur shaman of Tarkir and clan advisor who foresaw Sarkhan's return.",
+   "presence": "appears"
+  },
+  {
+   "name": "Surrak",
+   "type": "character",
+   "aliases": [],
+   "description": "Khan of the Temur whom Chianul advised.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who spent time with Chianul as a young man.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Temur",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan of Tarkir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Chianul.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sarkhan Vol spends time with Chianul as a young man learning about his visions and knowledge of dragons.",
+   "participants": [
+    "Sarkhan Vol",
+    "Chianul"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sarkhan Vol spent some time with Chianul as a young man, learning about his visions, voices, and knowledge of dragons."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chianul",
+   "relation": "serves",
+   "target": "Surrak",
+   "note": "clan advisor when Surrak became khan",
+   "paragraph": 1,
+   "quote": "advisor of his clan when Surrak assumed khanship"
+  },
+  {
+   "source": "Chianul",
+   "relation": "mentor_of",
+   "target": "Sarkhan Vol",
+   "note": "Sarkhan learned from him",
+   "paragraph": 1,
+   "quote": "Sarkhan Vol spent some time with Chianul as a young man"
+  }
+ ],
+ "rejected": []
+}

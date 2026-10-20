@@ -1,0 +1,545 @@
+{
+ "page": "stories/episode-3-a-train-to-prosperity",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-3-a-train-to-prosperity",
+ "title": "Outlaws of Thunder Junction | Episode 3: A Train to Prosperity",
+ "story_date": "2024-03-18",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:39:01Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Akul",
+   "type": "character",
+   "aliases": [],
+   "description": "The dragon leader of the Hellspurs, who burns a copper mine and kills its overseer while hunting for the stolen key.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hellspurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Akul's outlaw gang, sent to find the shapeshifting thief.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mine overseer",
+   "type": "character",
+   "aliases": [
+    "the overseer"
+   ],
+   "description": "A Sterling Company mine overseer who tells Akul about the theft and is killed by him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [
+    "the shapeshifting fae"
+   ],
+   "description": "A fae shapeshifter who leads the crew and is reunited with his son Kellan, and who shows little concern for the lives of others.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "A young fae and Oko's son who helps the crew but wants to save the train's passengers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Annie Flash",
+   "type": "character",
+   "aliases": [
+    "Annie"
+   ],
+   "description": "A sharpshooter on Oko's crew who rescues Nolan and Umezawa on Fortune and helps Kellan save the passengers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fortune",
+   "type": "creature",
+   "aliases": [],
+   "description": "Annie's horse-like companion who carries the rescued men.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "A gorgon on Oko's crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "A warlock who examines the key and warns it could unleash another Phyrexia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Satoru Umezawa",
+   "type": "character",
+   "aliases": [
+    "Umezawa"
+   ],
+   "description": "A thief on the crew with a lockpicking device, wounded by a thunder blast on the train.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer who raises zombies on the train, in constant conflict with her brother Geralf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Geralf",
+   "type": "character",
+   "aliases": [],
+   "description": "A necromancer, Gisa's brother, who describes himself as a stitcher.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eriette",
+   "type": "character",
+   "aliases": [],
+   "description": "A witch on the crew who dislikes Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malcolm",
+   "type": "character",
+   "aliases": [],
+   "description": "A winged siren who does reconnaissance for the crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Breeches",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin explosives expert who blows up the bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tinybones",
+   "type": "character",
+   "aliases": [],
+   "description": "A skeleton thief on the crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashiok",
+   "type": "character",
+   "aliases": [],
+   "description": "A shadowy planeswalker who hired the crew and created the telepathic link; Kellan says they attacked his home.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nolan",
+   "type": "character",
+   "aliases": [
+    "the Outcaster"
+   ],
+   "description": "An Outcaster artifact expert from the territories, captured from a Sterling train by Oko's crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bertram Graywater",
+   "type": "character",
+   "aliases": [
+    "Graywater"
+   ],
+   "description": "The Sterling Company leader searching for the stolen key.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rowan Kenrith",
+   "type": "character",
+   "aliases": [],
+   "description": "A person Kellan says Ashiok manipulated into turning evil.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ral Zarek",
+   "type": "character",
+   "aliases": [
+    "Ral"
+   ],
+   "description": "A planeswalker whose relationship with Kellan was damaged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alyse",
+   "type": "character",
+   "aliases": [],
+   "description": "Kellan's mother.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sterling Company",
+   "type": "faction",
+   "aliases": [
+    "Sterling guards",
+    "Sterling mercenaries"
+   ],
+   "description": "The powerful company whose guards pursue the crew.",
+   "presence": "appears"
+  },
+  {
+   "name": "The key",
+   "type": "artifact",
+   "aliases": [
+    "the artifact"
+   ],
+   "description": "An ancient artifact, older than Thran or Phyrexian make, that unlocks the vault and may be more dangerous than a key.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarnation",
+   "type": "location",
+   "aliases": [],
+   "description": "The town built by the Hellspurs near the vault, which the crew cannot yet locate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The train to Prosperity",
+   "type": "artifact",
+   "aliases": [
+    "the train"
+   ],
+   "description": "A Sterling Company train carrying Nolan that goes over a destroyed bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Prosperity",
+   "type": "location",
+   "aliases": [],
+   "description": "The Sterling Company's city, the train's destination.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [
+    "Phyrexian"
+   ],
+   "description": "The invading force Kaervek fears the artifact could unleash again.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Akul interrogates a mine overseer, learning of a shapeshifting fae thief, and sends the Hellspurs after him.",
+   "participants": [
+    "Akul",
+    "Mine overseer",
+    "Hellspurs"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "It was some shapeshifting fae from another plane."
+  },
+  {
+   "summary": "Akul kills the overseer with his tail stinger.",
+   "participants": [
+    "Akul",
+    "Mine overseer"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 13,
+   "quote": "Akul whipped the barbed, venomous stinger on the end of his tail into the man's gut"
+  },
+  {
+   "summary": "Oko tells Kellan he is glad to have met him and promises to teach him about his heritage.",
+   "participants": [
+    "Oko",
+    "Kellan"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 35,
+   "quote": "Now that we've finally been reunited, I can teach you so much about your true heritage."
+  },
+  {
+   "summary": "Kellan recognizes Ashiok, says they attacked his home and made Rowan Kenrith turn evil, but Oko tells him to trust him instead.",
+   "participants": [
+    "Kellan",
+    "Ashiok",
+    "Oko",
+    "Rowan Kenrith"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 32,
+   "quote": "They made Rowan Kenrith turn—well, evil!"
+  },
+  {
+   "summary": "Kaervek reports that the artifact is not Thran or Phyrexian, and warns it could unleash another Phyrexia.",
+   "participants": [
+    "Kaervek",
+    "Oko",
+    "Vraska",
+    "The key"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "You could be unleashing another Phyrexia on the Multiverse."
+  },
+  {
+   "summary": "Annie names an Outcaster named Nolan who can read the artifact, and Vraska says he is on a train to Prosperity under Sterling guard.",
+   "participants": [
+    "Annie Flash",
+    "Vraska",
+    "Nolan",
+    "Sterling Company"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 55,
+   "quote": "\"The man in question is currently on a train to Prosperity, escorted by Sterling mercenaries.\""
+  },
+  {
+   "summary": "Kellan reluctantly agrees to help plan the capture after Oko promises no innocents will be harmed.",
+   "participants": [
+    "Kellan",
+    "Oko"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 67,
+   "quote": "\"I promise that no innocents will be harmed.\""
+  },
+  {
+   "summary": "Kellan and Oko, disguised as Sterling guards, ride the train with Umezawa while the rest of the crew watches over a telepathic link.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "Satoru Umezawa",
+    "Annie Flash",
+    "Malcolm",
+    "Breeches",
+    "Gisa",
+    "Geralf"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "minor",
+   "paragraph": 78,
+   "quote": "The moment Oko's voice pressed into Kellan's mind, he flinched."
+  },
+  {
+   "summary": "Gisa raises zombies too early, and Sterling guards find Kellan, Oko and Umezawa in the luggage car.",
+   "participants": [
+    "Gisa",
+    "Geralf",
+    "Kellan",
+    "Oko",
+    "Satoru Umezawa",
+    "Sterling Company"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 111,
+   "quote": "\"She raised the zombies too early,\" Geralf groaned."
+  },
+  {
+   "summary": "A fight in the luggage car leaves Umezawa wounded and two guards down.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "Satoru Umezawa",
+    "Sterling Company"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 119,
+   "quote": "Oko moved swiftly, freeing a curved knife from his belt."
+  },
+  {
+   "summary": "Oko overrules Kellan about helping Umezawa and orders Annie to blow up the bridge.",
+   "participants": [
+    "Oko",
+    "Kellan",
+    "Annie Flash",
+    "Breeches"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 130,
+   "quote": "Oko's jaw tensed. \"Take it out.\""
+  },
+  {
+   "summary": "The bridge explodes but the train does not slow, because the zombies have reached the conductor.",
+   "participants": [
+    "Breeches",
+    "Kellan",
+    "Oko",
+    "Gisa"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 132,
+   "quote": "The explosion was instant, echoing through the train walls and making the floor shake."
+  },
+  {
+   "summary": "Kellan and Oko cross the train roof, are attacked by Sterling guards, and are saved by Gisa's reanimated dead.",
+   "participants": [
+    "Kellan",
+    "Oko",
+    "Sterling Company",
+    "Gisa"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "minor",
+   "paragraph": 161,
+   "quote": "Gray rotted arms closed around the guard's shoulders, and her weapon clattered to the ground."
+  },
+  {
+   "summary": "Oko disguises himself as a guard to lure away Nolan's escorts, and he and Kellan toss them off the train, capturing Nolan.",
+   "participants": [
+    "Oko",
+    "Kellan",
+    "Nolan",
+    "Sterling Company"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 170,
+   "quote": "give Graywater my regards."
+  },
+  {
+   "summary": "Annie arrives on Fortune and carries Nolan and Umezawa away from the train.",
+   "participants": [
+    "Annie Flash",
+    "Fortune",
+    "Nolan",
+    "Satoru Umezawa",
+    "Kellan",
+    "Oko"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "minor",
+   "paragraph": 188,
+   "quote": "Annie steered Fortune toward safety and broke into a fearless gallop"
+  },
+  {
+   "summary": "Oko jumps off, abandoning the passengers, while Kellan follows and tries to stop the train with his vines.",
+   "participants": [
+    "Oko",
+    "Kellan"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 194,
+   "quote": "He leapt, tumbling across the sand with unsteady grace."
+  },
+  {
+   "summary": "Oko abandons Kellan as he struggles to hold the train at the cliff edge as the Sterling army approaches.",
+   "participants": [
+    "Oko",
+    "Kellan",
+    "Sterling Company"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 212,
+   "quote": "With a final glance, he turned his back on Kellan and fled for the hills."
+  },
+  {
+   "summary": "Annie returns and holds off the Sterling riders while the passengers jump from the train.",
+   "participants": [
+    "Annie Flash",
+    "Fortune",
+    "Kellan",
+    "Sterling Company"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 219,
+   "quote": "each of them nervously jumping for the desert floor before fleeing as far from the train as possible."
+  },
+  {
+   "summary": "Kellan releases his vines and the train plunges off the cliff and explodes; Annie and Kellan escape on Fortune.",
+   "participants": [
+    "Kellan",
+    "Annie Flash",
+    "Fortune"
+   ],
+   "location": "The train to Prosperity",
+   "importance": "major",
+   "paragraph": 222,
+   "quote": "Kellan released his vines with a gasp, and the train shot over the edge of the cliff"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Akul",
+   "relation": "leader_of",
+   "target": "Hellspurs",
+   "note": "Akul commands the Hellspurs.",
+   "paragraph": 7,
+   "quote": "Akul's gaze snapped to the Hellspurs. \"Find him. Now .\""
+  },
+  {
+   "source": "Akul",
+   "relation": "killed",
+   "target": "Mine overseer",
+   "note": "Akul stabs the overseer with his stinger.",
+   "paragraph": 14,
+   "quote": "By the time he hit the ground, he was already gone."
+  },
+  {
+   "source": "Oko",
+   "relation": "family",
+   "target": "Kellan",
+   "note": "Oko is Kellan's father.",
+   "paragraph": 36,
+   "quote": "Still, he followed his father downstairs"
+  },
+  {
+   "source": "Gisa",
+   "relation": "family",
+   "target": "Geralf",
+   "note": "Gisa and Geralf are siblings.",
+   "paragraph": 51,
+   "quote": "\"The only thing I don't have patience for is you , brother,\" she said."
+  },
+  {
+   "source": "Gisa",
+   "relation": "enemy",
+   "target": "Geralf",
+   "note": "The two siblings are at war with each other.",
+   "paragraph": 15,
+   "quote": "Gisa and Geralf stood on opposite sides of the room, clearly at war with one another."
+  },
+  {
+   "source": "Kellan",
+   "relation": "enemy",
+   "target": "Ashiok",
+   "note": "Kellan says Ashiok attacked his home.",
+   "paragraph": 32,
+   "quote": "They attacked my home and manipulated people into doing their bidding."
+  },
+  {
+   "source": "Ashiok",
+   "relation": "other",
+   "target": "Rowan Kenrith",
+   "note": "Kellan says Ashiok made Rowan turn evil.",
+   "paragraph": 32,
+   "quote": "They made Rowan Kenrith turn—well, evil!"
+  },
+  {
+   "source": "Annie Flash",
+   "relation": "ally",
+   "target": "Fortune",
+   "note": "Annie rides Fortune to rescue the others.",
+   "paragraph": 182,
+   "quote": "Annie appeared with Fortune, galloping alongside the train."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,533 @@
+{
+ "page": "stories/return-dominaria-episode-10-2018-05-16",
+ "url": "https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-10-2018-05-16",
+ "title": "Return to Dominaria: Episode 10",
+ "story_date": "2018-05-16",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:29:09Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Slimefoot",
+   "type": "creature",
+   "aliases": [
+    "thallid"
+   ],
+   "description": "A thallid that grew from a spore on the Weatherlight's hull, stowed away in the engine compartment, and is discovered by the crew; the story is told from its point of view.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Weatherlight"
+   ],
+   "description": "A skyship with a Thran structure and a glowing white star (the Powerstone) at its heart, regrown from a tree elemental seed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tiana",
+   "type": "character",
+   "aliases": [],
+   "description": "An angel who guided the ship's rebirth and is a member of its crew; she discovers Slimefoot.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arvad",
+   "type": "character",
+   "aliases": [
+    "Arvad the Cursed",
+    "the Cursed"
+   ],
+   "description": "A vampire turned against his will who has resisted drinking blood, and who is Tiana's friend and helper aboard the ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raff",
+   "type": "character",
+   "aliases": [],
+   "description": "A crew member who studied at the Tolarian Academy and who identifies Slimefoot as a thallid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shanna",
+   "type": "character",
+   "aliases": [],
+   "description": "A warrior and crew member with patterns in her blood like those woven through the ship's bones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "An artificer who regrew the Weatherlight's hull and is the ship's favorite; she decides to take the thallids back to Yavimaya later.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A time mage who gave up his spark and has a daughter, Subira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "A metal being returning to the Weatherlight who plans to take the Sylex to New Phyrexia and destroy that plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "A pyromancer and planeswalker practicing control by keeping thirty-seven fireballs aloft under Jaya's guidance.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [
+    "Jaya",
+    "Mother Luti"
+   ],
+   "description": "A legendary pyromancer who now agrees to train Chandra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "A planeswalker who keeps a friend's confidence about Josu and who sharpens a weapon aboard the ship.",
+   "presence": "appears"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "A necromancer and planeswalker with death written into her skin who asks Arvad how he resists drinking blood.",
+   "presence": "appears"
+  },
+  {
+   "name": "Belzenlok",
+   "type": "character",
+   "aliases": [],
+   "description": "A demon in the Stronghold of the Cabal in Urborg whom the group intends to destroy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Cabal",
+   "type": "faction",
+   "aliases": [
+    "Cabal"
+   ],
+   "description": "A cult whose agent fooled an academy of mages and whose stronghold is in Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "An elder dragon planeswalker the group intends to face again.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa"
+   ],
+   "description": "A planeswalker friend of Chandra who left the group because she did not trust Liliana or want to kill Belzenlok.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Multani",
+   "type": "creature",
+   "aliases": [],
+   "description": "A tree elemental whom Chandra helped calm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Molimo",
+   "type": "creature",
+   "aliases": [],
+   "description": "A tree elemental whose seed Jhoira used to regrow the Weatherlight's hull.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Sylex",
+   "type": "artifact",
+   "aliases": [
+    "Sylex"
+   ],
+   "description": "A weapon Karn retrieved from Yavimaya to destroy New Phyrexia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest from which thallids originate, disturbed by Karn's dig.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "The swampy region ahead where the Cabal's Stronghold stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bogardan",
+   "type": "location",
+   "aliases": [],
+   "description": "The hot place where Slimefoot first grew on the hull.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria West",
+   "type": "location",
+   "aliases": [],
+   "description": "The place where Jodah is at the Academy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "The Phyrexian plane Karn means to destroy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexians"
+   ],
+   "description": "The enemies Karn believes are still a threat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "An archmage who told Jhoira about Jaya and is at the Academy in Tolaria West.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Subira",
+   "type": "character",
+   "aliases": [],
+   "description": "Teferi's wife, whom he wishes Jhoira could have met.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Josu",
+   "type": "character",
+   "aliases": [],
+   "description": "A figure whose story Gideon keeps in confidence from Chandra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "deity",
+   "aliases": [],
+   "description": "An angel figure invoked by Tiana and joked about by Raff.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thallids",
+   "type": "faction",
+   "aliases": [
+    "thallid"
+   ],
+   "description": "Mushroom-like beings from Yavimaya; Slimefoot's sprouts are little thallids.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Slimefoot, a spore on the Weatherlight's hull, escapes workers about to pry it off when fire erupts and climbs onto the deck, then falls into the engine compartment near the glowing white star.",
+   "participants": [
+    "Slimefoot",
+    "The Weatherlight"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "It plunged down through dark empty air and landed with a splat."
+  },
+  {
+   "summary": "Slimefoot grows in the dark, learning the voices of the crew, including Tiana and Arvad.",
+   "participants": [
+    "Slimefoot",
+    "Tiana",
+    "Arvad"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "This Cabal agent has been able to fool an entire academy of mages"
+  },
+  {
+   "summary": "Teferi tells Jhoira he does not regret giving up his spark.",
+   "participants": [
+    "Teferi",
+    "Jhoira"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 18,
+   "quote": "I regret a lot of things. But not that."
+  },
+  {
+   "summary": "Jhoira offers to take Jaya to the Academy in Tolaria West, and Jaya says she is not sure how back she is yet.",
+   "participants": [
+    "Jhoira",
+    "Jaya Ballard"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "I'm not sure just how back I am yet, if you know what I mean."
+  },
+  {
+   "summary": "Liliana and Gideon argue over whether Gideon should have told Chandra about Josu to push her to help kill Belzenlok.",
+   "participants": [
+    "Liliana Vess",
+    "Gideon Jura",
+    "Chandra Nalaar",
+    "Josu"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 36,
+   "quote": "Because she agrees with us that it has to be done before we face Nicol Bolas again."
+  },
+  {
+   "summary": "Arvad finds Slimefoot and its sprouts in the storage space beside the engine compartment, and Slimefoot waves back at him and Tiana.",
+   "participants": [
+    "Arvad",
+    "Tiana",
+    "Slimefoot"
+   ],
+   "location": "The Weatherlight",
+   "importance": "major",
+   "paragraph": 46,
+   "quote": "Slimefoot freed a second armstalk and waved at both of them."
+  },
+  {
+   "summary": "Raff identifies Slimefoot as a thallid that probably came aboard as a spore on the tree elemental seed Jhoira used, and notes it already has about ten babies.",
+   "participants": [
+    "Raff",
+    "Tiana",
+    "Slimefoot"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 61,
+   "quote": "This one probably came aboard as a spore, stuck to that tree elemental seed Jhoira used to regrow the hull."
+  },
+  {
+   "summary": "Tiana decides to leave the thallids where they are while she goes to speak to Jhoira.",
+   "participants": [
+    "Tiana",
+    "Arvad",
+    "Raff",
+    "Slimefoot"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 68,
+   "quote": "Right, let's just leave it where it is right now. I'm going to talk to Jhoira."
+  },
+  {
+   "summary": "Slimefoot and its sprouts leave their den and meet Liliana, who asks Arvad how he resisted drinking blood.",
+   "participants": [
+    "Slimefoot",
+    "Liliana Vess",
+    "Arvad",
+    "Tiana"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 82,
+   "quote": "How did you decide not to eat people?"
+  },
+  {
+   "summary": "Arvad explains he held on to an image of himself before he was changed, and Liliana learns there is no trick; she threatens Tiana and Arvad not to tell anyone about the talk.",
+   "participants": [
+    "Liliana Vess",
+    "Arvad",
+    "Tiana"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 93,
+   "quote": "And if you tell anyone we had this conversation, you'll both regret it."
+  },
+  {
+   "summary": "Gideon and Teferi wave off the thallids as someone else's problem.",
+   "participants": [
+    "Gideon Jura",
+    "Teferi",
+    "Slimefoot"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 100,
+   "quote": "That sounds like someone else's problem,"
+  },
+  {
+   "summary": "Jhoira decides to take the thallids back to Yavimaya when possible, accepting them aboard.",
+   "participants": [
+    "Jhoira",
+    "Slimefoot",
+    "Arvad"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 122,
+   "quote": "I must have brought them here with Molimo's seed, so we'll have to take them back to Yavimaya when we have a chance."
+  },
+  {
+   "summary": "Slimefoot climbs on deck, sees open water, and meets Karn, who tells it the ship is heading to Urborg to destroy Belzenlok in the Cabal's Stronghold.",
+   "participants": [
+    "Slimefoot",
+    "Karn",
+    "Belzenlok",
+    "The Cabal"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 137,
+   "quote": "We are on our way to Urborg, to destroy the demon Belzenlok in the Stronghold of the Cabal."
+  },
+  {
+   "summary": "Karn apologizes for disturbing Yavimaya to retrieve the Sylex and says he means to end the Phyrexians forever.",
+   "participants": [
+    "Karn",
+    "Slimefoot",
+    "The Sylex"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 139,
+   "quote": "I mean to end them forever."
+  },
+  {
+   "summary": "Chandra practices concentration with thirty-seven fireballs while Jaya says what the Multani episode showed her.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jaya Ballard",
+    "Multani"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 146,
+   "quote": "It was the first indication I'd ever seen that you were capable of concentrating on something for any length of time."
+  },
+  {
+   "summary": "Chandra admits Nissa's departure made her feel abandoned and says she is now ready to burn Belzenlok and the Cabal off the plane.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jaya Ballard",
+    "Nissa Revane",
+    "Belzenlok",
+    "The Cabal"
+   ],
+   "location": "The Weatherlight",
+   "importance": "minor",
+   "paragraph": 157,
+   "quote": "I'm ready to burn Belzenlok and the Cabal right off this plane."
+  },
+  {
+   "summary": "Urborg's ash cloud comes into view on the horizon as the Weatherlight approaches.",
+   "participants": [
+    "Chandra Nalaar",
+    "Jaya Ballard"
+   ],
+   "location": "Urborg",
+   "importance": "minor",
+   "paragraph": 159,
+   "quote": "They were coming up on Urborg."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Slimefoot",
+   "relation": "other",
+   "target": "The Weatherlight",
+   "note": "Slimefoot grew up as a stowaway in the ship",
+   "paragraph": 0,
+   "quote": "For a long time Slimefoot knew nothing except the Weatherlight 's warm hull and the hot sun of Bogardan."
+  },
+  {
+   "source": "Tiana",
+   "relation": "other",
+   "target": "The Weatherlight",
+   "note": "her voice guided the ship's rebirth",
+   "paragraph": 9,
+   "quote": "This was the voice that had guided the ship's rebirth."
+  },
+  {
+   "source": "Arvad",
+   "relation": "ally",
+   "target": "Tiana",
+   "note": "called to be Tiana's friend and helper",
+   "paragraph": 10,
+   "quote": "who the white star had called from across the world to be Tiana's friend and helper."
+  },
+  {
+   "source": "Jhoira",
+   "relation": "created",
+   "target": "The Weatherlight",
+   "note": "Jhoira regrew the hull using a tree elemental seed",
+   "paragraph": 61,
+   "quote": "stuck to that tree elemental seed Jhoira used to regrow the hull."
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "other",
+   "target": "Jaya Ballard",
+   "note": "Jaya is training Chandra to master her pyromancy",
+   "paragraph": 154,
+   "quote": "If you know what you really want, you don't make mistakes."
+  },
+  {
+   "source": "Karn",
+   "relation": "enemy",
+   "target": "The Phyrexians",
+   "note": "Karn wants to destroy them forever with the Sylex",
+   "paragraph": 139,
+   "quote": "I need to take it to New Phyrexia and destroy their plane once and for all."
+  },
+  {
+   "source": "Jhoira",
+   "relation": "ally",
+   "target": "Slimefoot",
+   "note": "Jhoira accepts the thallids and plans to return them to Yavimaya",
+   "paragraph": 122,
+   "quote": "She watched it steadily for a long moment, then smiled."
+  },
+  {
+   "source": "Nissa Revane",
+   "relation": "other",
+   "target": "Liliana Vess",
+   "note": "Nissa distrusted Liliana and left the group over the plan to kill Belzenlok",
+   "paragraph": 155,
+   "quote": "She didn't trust Liliana, and didn't think we should kill Belzenlok"
+  }
+ ],
+ "rejected": []
+}

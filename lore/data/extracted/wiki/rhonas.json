@@ -1,0 +1,180 @@
+{
+ "page": "wiki/rhonas",
+ "url": "https://mtg.wiki/page/Rhonas",
+ "title": "Rhonas",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:58Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Rhonas",
+   "type": "deity",
+   "aliases": [
+    "Rhonas the Indomitable"
+   ],
+   "description": "Cobra-headed god of strength on Amonkhet, later remade as a God-Eternal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Rhonas was worshiped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scorpion God",
+   "type": "deity",
+   "aliases": [],
+   "description": "Agent of Nicol Bolas who slew Rhonas with poison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [
+    "Bolas"
+   ],
+   "description": "Planeswalker whose plan led to Rhonas's death and who remade him as a God-Eternal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "God-Eternals",
+   "type": "faction",
+   "aliases": [
+    "Eternals"
+   ],
+   "description": "Zombified Gods remade by Bolas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who destroyed Rhonas with the Blackblade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blackblade",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Weapon Gideon used to strike down Rhonas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "Massive animated elemental torn apart by the Eternals.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jessie Zane",
+   "type": "character",
+   "aliases": [],
+   "description": "Assassin who spread Rhonas's strength to other planes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which Rhonas's strength spread.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the War of the Spark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle on Ravnica where Rhonas was destroyed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Scorpion God confronts Rhonas near the Luxa River in the Hour of Glory and slays him with poison.",
+   "participants": [
+    "Scorpion God",
+    "Rhonas",
+    "Nicol Bolas"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Rhonas fought bravely but was ultimately slain in combat by the Scorpion God's deadly poison"
+  },
+  {
+   "summary": "Bolas remakes the zombified Rhonas as a God-Eternal.",
+   "participants": [
+    "Nicol Bolas",
+    "Rhonas",
+    "God-Eternals"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Rhonas was zombified and remade by Bolas as one of the terrifying God-Eternals ."
+  },
+  {
+   "summary": "During the War of the Spark, Rhonas helps tear apart the Vitu-Ghazi elemental.",
+   "participants": [
+    "Rhonas",
+    "God-Eternals",
+    "Vitu-Ghazi"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Rhonas took part in tearing apart the massive animated Vitu-Ghazi elemental"
+  },
+  {
+   "summary": "Gideon Jura destroys Rhonas with the Blackblade.",
+   "participants": [
+    "Gideon Jura",
+    "Rhonas",
+    "Blackblade"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was finally destroyed by Gideon Jura , who struck him down with the Blackblade"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Scorpion God",
+   "relation": "killed",
+   "target": "Rhonas",
+   "note": "poison",
+   "paragraph": 2,
+   "quote": "Rhonas fought bravely but was ultimately slain in combat by the Scorpion God's deadly poison"
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "killed",
+   "target": "Rhonas",
+   "note": "destroyed him as a God-Eternal",
+   "paragraph": 3,
+   "quote": "he was finally destroyed by Gideon Jura"
+  },
+  {
+   "source": "Scorpion God",
+   "relation": "serves",
+   "target": "Nicol Bolas",
+   "note": "agent of Bolas",
+   "paragraph": 2,
+   "quote": "the Scorpion God , an agent of Nicol Bolas"
+  }
+ ],
+ "rejected": []
+}

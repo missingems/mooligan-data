@@ -1,0 +1,82 @@
+{
+ "page": "wiki/licid",
+ "url": "https://mtg.wiki/page/Licid",
+ "title": "Licid",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:18Z",
+ "storyline": "Tempest",
+ "entities": [
+  {
+   "name": "Licid",
+   "type": "creature",
+   "aliases": [
+    "Licids",
+    "Lice"
+   ],
+   "description": "A species of parasitic or symbiotic magical organisms of Rath that bond with hosts and imbue them with abilities.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "The artificial plane on which licids have appeared.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vec",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Rath who use beneficial licids for combat and ceremonies.",
+   "presence": "appears"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Rath in whose operating theater licids were likely created or modified.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Volrath's fortress on Rath.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Licids bond with a host, sinking their legs into it and melding at the point of contact, and later disengage without harm.",
+   "participants": [
+    "Licid"
+   ],
+   "location": "Rath",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Licids can bond with a host (usually a human ) and then imbue that creature with some ability ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Vec",
+   "relation": "other",
+   "target": "Licid",
+   "note": "The Vec use licids for combat, ceremonies, cloth, implements and food.",
+   "paragraph": 11,
+   "quote": "The Vec use beneficial Licids to enhance their combat skills or as part of ceremonies."
+  },
+  {
+   "source": "Licid",
+   "relation": "located_in",
+   "target": "Rath",
+   "note": "Found only on Rath.",
+   "paragraph": 10,
+   "quote": "Licids have only appeared on the artificial plane of Rath ."
+  }
+ ],
+ "rejected": []
+}

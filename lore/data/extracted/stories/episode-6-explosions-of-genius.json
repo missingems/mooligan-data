@@ -1,0 +1,608 @@
+{
+ "page": "stories/episode-6-explosions-of-genius",
+ "url": "https://magic.wizards.com/en/news/magic-story/episode-6-explosions-of-genius",
+ "title": "Murders at Karlov Manor | Episode 6: Explosions of Genius",
+ "story_date": "2024-01-12",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:49:41Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [
+    "Proft",
+    "Alquist"
+   ],
+   "description": "An Agency detective whose magic recreates what he has seen, who seeks an analysis of the strange powder and rescues Kylox.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etrata",
+   "type": "character",
+   "aliases": [],
+   "description": "A Dimir assassin with psychic abilities who now accompanies Proft and breaks an attacker's fugue.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kylox",
+   "type": "character",
+   "aliases": [],
+   "description": "A paranoid red viashino Izzet inventor and Proft's friend, who is killed by a drugged attacker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "A goblin who has Kylox kidnapped to learn what he knows about the killings, fearing he is next.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker leading the investigation who is ambushed with Kellan and then argues for time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "A young Agency investigator who fights with elemental swords and finds white fur on a dissolved attacker's robe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aurelia",
+   "type": "character",
+   "aliases": [
+    "Warleader"
+   ],
+   "description": "The Boros warleader who accuses the Cult of Rakdos but grants Kaya twenty-four hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezrim",
+   "type": "character",
+   "aliases": [],
+   "description": "The archon head of the Agency who informs Kaya that Teysa's killer has been arrested.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [],
+   "description": "A ghost Boros investigator who backs Kaya's request for time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Massacre Girl",
+   "type": "character",
+   "aliases": [],
+   "description": "A Rakdos assassin who attacked Aurelia and killed ten of her guards, with no memory of it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [
+    "Teysa"
+   ],
+   "description": "The murdered Orzhov leader.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Judith",
+   "type": "character",
+   "aliases": [],
+   "description": "The Rakdos figure Kaya and Kellan interviewed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The guild city-plane.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kylox's workshop",
+   "type": "location",
+   "aliases": [],
+   "description": "A small Izzet workshop trashed by intruders, with a hidden trapdoor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boilerpits",
+   "type": "location",
+   "aliases": [],
+   "description": "Hot, fragrant tunnels of pipes and steam vents beneath the Izzet district.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karlov Manor",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Teysa was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eighth District",
+   "type": "location",
+   "aliases": [],
+   "description": "The district where the arrested hitman last remembers walking.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "The investigative body led by Ezrim.",
+   "presence": "appears"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros",
+    "the Legion"
+   ],
+   "description": "The enforcement guild led by Aurelia.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [
+    "Azorius"
+   ],
+   "description": "The law guild that holds the arrested hitman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos Cult",
+   "type": "faction",
+   "aliases": [
+    "Cult of Rakdos",
+    "Rakdos"
+   ],
+   "description": "The guild Aurelia blames.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Dimir",
+   "type": "faction",
+   "aliases": [
+    "Dimir"
+   ],
+   "description": "Etrata's guild, whose members are missing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [
+    "Izzet"
+   ],
+   "description": "The guild of inventors to which Kylox belongs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [
+    "Golgari"
+   ],
+   "description": "A guild in self-imposed exile.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Etrata pins Proft against a wall and demands to know where they are going.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "All will be clear right now, or we're not going any farther."
+  },
+  {
+   "summary": "Proft explains the powder needs analysis by someone trustworthy.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 9,
+   "quote": "The powder I found in your chamber is like nothing I've encountered before."
+  },
+  {
+   "summary": "They find Kylox's workshop door unlocked, which is unusual.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata",
+    "Kylox"
+   ],
+   "location": "Kylox's workshop",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "That's unusual. He never leaves the door unlocked."
+  },
+  {
+   "summary": "The workshop is revealed to be destroyed as if by a gang.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Kylox's workshop",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "It looked as if an entire gang of people had passed through, smashing everything they could get their hands on."
+  },
+  {
+   "summary": "Proft's magic reconstructs the workshop to find what is out of place.",
+   "participants": [
+    "Alquist Proft"
+   ],
+   "location": "Kylox's workshop",
+   "importance": "minor",
+   "paragraph": 33,
+   "quote": "The light pulsed, and the workshop was no longer destroyed."
+  },
+  {
+   "summary": "Etrata opens the hidden trapdoor by drumming a pattern.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Kylox's workshop",
+   "importance": "minor",
+   "paragraph": 46,
+   "quote": "A square portion of floor dropped several inches with a loud click."
+  },
+  {
+   "summary": "They find Kylox writing furiously in a hidden chamber.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata",
+    "Kylox"
+   ],
+   "location": "Boilerpits",
+   "importance": "minor",
+   "paragraph": 58,
+   "quote": "was a red viashino, facial scales reflecting the pallid light of the lantern on the desk's edge."
+  },
+  {
+   "summary": "Kylox reveals he was working on something secret and will only tell Ezrim.",
+   "participants": [
+    "Kylox",
+    "Alquist Proft",
+    "Etrata",
+    "Ezrim"
+   ],
+   "location": "Boilerpits",
+   "importance": "major",
+   "paragraph": 72,
+   "quote": "Something no one was meant to know."
+  },
+  {
+   "summary": "Goblins chain and abduct Kylox as Proft and Etrata hide.",
+   "participants": [
+    "Kylox",
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Boilerpits",
+   "importance": "major",
+   "paragraph": 79,
+   "quote": "The goblins produced thin lengths of mizzium chain, wrapping them around Kylox, who said nothing and only allowed himself to be taken."
+  },
+  {
+   "summary": "Proft takes a small wooden box from Kylox's shelf.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Boilerpits",
+   "importance": "minor",
+   "paragraph": 85,
+   "quote": "he paused by the shelf Kylox had been next to, just long enough to grab a small, unornamented wooden box and tuck it under his arm."
+  },
+  {
+   "summary": "Kaya notices a crowd shifting abnormally and realizes she and Kellan are being followed.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 89,
+   "quote": "We're being followed."
+  },
+  {
+   "summary": "Six robed attackers ambush Kaya and Kellan in an alley.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 91,
+   "quote": "A group of six people in long, dark robes followed them, too quickly to have arrived by accident, and fanned out to surround the pair."
+  },
+  {
+   "summary": "A captured attacker swallows a green sprout and the others do the same.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 99,
+   "quote": "he shoved something that looked like a tiny green sprout into his mouth, triumph lighting up his eyes as he swallowed."
+  },
+  {
+   "summary": "The attackers dissolve into moss, leaving empty robes.",
+   "participants": [
+    "Kaya",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 102,
+   "quote": "the flesh of the man in front of her softened and turned green, growing plush as it transmuted into moss beneath her hand."
+  },
+  {
+   "summary": "Kellan finds a tuft of white fur on the robe.",
+   "participants": [
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 108,
+   "quote": "A tuft of white fur tipped in gray clung to the fabric."
+  },
+  {
+   "summary": "An Agency thopter relays Ezrim's order to secure the scene and return.",
+   "participants": [
+    "Ezrim",
+    "Kellan",
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 110,
+   "quote": "Boros officers are on their way to your location."
+  },
+  {
+   "summary": "Ezrim tells Kaya that Teysa's killer has been caught by the Azorius.",
+   "participants": [
+    "Ezrim",
+    "Kaya",
+    "Kellan",
+    "Agrus Kos",
+    "Teysa Karlov"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 121,
+   "quote": "Teysa's killer has been apprehended by the Azorius."
+  },
+  {
+   "summary": "Ezrim explains the hitman remembers nothing but arriving covered in blood at Karlov Manor.",
+   "participants": [
+    "Ezrim",
+    "Kaya"
+   ],
+   "location": "Karlov Manor",
+   "importance": "major",
+   "paragraph": 123,
+   "quote": "One minute he was walking through the Eighth District, and the next, he was in Karlov Manor, covered in Teysa's blood."
+  },
+  {
+   "summary": "Aurelia drags in Massacre Girl, who attacked her and killed ten Boros guards.",
+   "participants": [
+    "Aurelia",
+    "Massacre Girl"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 125,
+   "quote": "She killed ten of my guards before I stopped her."
+  },
+  {
+   "summary": "Aurelia declares the Cult of Rakdos is behind the killings and prepares to march.",
+   "participants": [
+    "Aurelia",
+    "Massacre Girl",
+    "Rakdos Cult"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 127,
+   "quote": "her presence proves the Cult of Rakdos is behind all this senseless slaughter."
+  },
+  {
+   "summary": "Massacre Girl says she has no memory of the attack.",
+   "participants": [
+    "Massacre Girl",
+    "Kaya"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 136,
+   "quote": "I don't remember anything before she was sweeping my legs out from under me"
+  },
+  {
+   "summary": "Agrus Kos backs Kaya's plea and Aurelia grants twenty-four hours.",
+   "participants": [
+    "Aurelia",
+    "Kaya",
+    "Agrus Kos"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 142,
+   "quote": "Twenty-four hours, no more, and the assassin stays with us"
+  },
+  {
+   "summary": "Kaya realizes the arrest means Teysa is truly gone.",
+   "participants": [
+    "Kaya",
+    "Kellan",
+    "Teysa Karlov"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 145,
+   "quote": "having a killer means this isn't a trick. Teysa's really gone."
+  },
+  {
+   "summary": "The goblin kidnappers carry Kylox to a pawnshop.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata",
+    "Kylox",
+    "Krenko"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 149,
+   "quote": "the goblins carried Kylox to a disreputable-looking pawnshop."
+  },
+  {
+   "summary": "Krenko interrogates Kylox about the killings out of fear for himself.",
+   "participants": [
+    "Krenko",
+    "Kylox"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 153,
+   "quote": "I know enough to know I'm at risk here. You're going to tell me everything you know."
+  },
+  {
+   "summary": "Etrata subdues Krenko's six guards.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft",
+    "Krenko"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 158,
+   "quote": "in moments, all six guards were on the ground, not moving."
+  },
+  {
+   "summary": "A drugged attacker crashes in, kills Kylox, and is subdued by Etrata.",
+   "participants": [
+    "Kylox",
+    "Etrata",
+    "Alquist Proft",
+    "Krenko"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 162,
+   "quote": "There was a strangled gasp as the viashino fell out of the way and slid, motionless, to the floor."
+  },
+  {
+   "summary": "Etrata breaks the attacker's fugue with her psychic gaze.",
+   "participants": [
+    "Etrata",
+    "Alquist Proft"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 174,
+   "quote": "he jerked back, pupils returning to a more normal state as he tried to recoil from her and the fear she had induced."
+  },
+  {
+   "summary": "Proft concludes that people are being brainwashed into attacks.",
+   "participants": [
+    "Alquist Proft",
+    "Etrata"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 176,
+   "quote": "People are being brainwashed into these attacks."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aurelia",
+   "relation": "leader_of",
+   "target": "Boros Legion",
+   "note": "gathers the Legion",
+   "paragraph": 127,
+   "quote": "I'll gather the Legion"
+  },
+  {
+   "source": "Massacre Girl",
+   "relation": "member_of",
+   "target": "Rakdos Cult",
+   "note": "wears Rakdos colors",
+   "paragraph": 124,
+   "quote": "a thrashing woman in Rakdos colors"
+  },
+  {
+   "source": "Massacre Girl",
+   "relation": "enemy",
+   "target": "Aurelia",
+   "note": "attacked her and killed her guards",
+   "paragraph": 125,
+   "quote": "She was coming for me"
+  },
+  {
+   "source": "Alquist Proft",
+   "relation": "ally",
+   "target": "Kylox",
+   "note": "old friends",
+   "paragraph": 161,
+   "quote": "Alquist, thank you. I hoped you'd understand what I was asking for."
+  },
+  {
+   "source": "Kylox",
+   "relation": "member_of",
+   "target": "Izzet League",
+   "note": "stays in Izzet territory",
+   "paragraph": 51,
+   "quote": "Kylox never leaves Izzet-controlled territory if he can help it"
+  },
+  {
+   "source": "Agrus Kos",
+   "relation": "serves",
+   "target": "Aurelia",
+   "note": "sent by her to oversee",
+   "paragraph": 141,
+   "quote": "You sent me to oversee. I'm overseeing."
+  },
+  {
+   "source": "Etrata",
+   "relation": "ally",
+   "target": "Alquist Proft",
+   "note": "protects him",
+   "paragraph": 56,
+   "quote": "Why am I trying so hard to keep you alive?"
+  },
+  {
+   "source": "Ezrim",
+   "relation": "leader_of",
+   "target": "Ravnican Agency of Magicological Investigations",
+   "note": "speaks of his agents",
+   "paragraph": 133,
+   "quote": "These agents have been to see Judith of the Rakdos"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,130 @@
+{
+ "page": "wiki/greater-videnth",
+ "url": "https://mtg.wiki/page/Greater_Videnth",
+ "title": "Greater Videnth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:10Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Greater Videnth",
+   "type": "location",
+   "aliases": [],
+   "description": "An island on Dominaria north of Umber and northeast of Terisiare, more than 1200 berim north of New Argive.",
+   "presence": "appears"
+  },
+  {
+   "name": "Little Videnth Island",
+   "type": "location",
+   "aliases": [
+    "Little Videnth"
+   ],
+   "description": "A desolate, rocky atoll just east of the main island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Videnthian Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "The sea surrounding the islands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Videnth",
+   "type": "faction",
+   "aliases": [],
+   "description": "A long-dead human civilization that colonized the southern part of the arctic supercontinent, which they named Upper Videnth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Upper Videnth",
+   "type": "location",
+   "aliases": [],
+   "description": "Arctic supercontinent colonized by the Videnth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Videnthian Theory",
+   "type": "concept",
+   "aliases": [],
+   "description": "An erroneous hypothesis by some Argivian scholars that the Brothers' War took place around Videnth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war whose scale the theory disputes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient land that the theory claims was Little Videnth Island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Land northeast of which Greater Videnth lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "location",
+   "aliases": [],
+   "description": "Island 1200 berim south of Greater Videnth.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Videnth civilization colonizes the southern part of the arctic supercontinent and later dies out, probably from the Ice Age.",
+   "participants": [
+    "Videnth",
+    "Upper Videnth"
+   ],
+   "location": "Upper Videnth",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "That civilization is now long gone as well, probably due to harsh conditions during the Ice Age ."
+  },
+  {
+   "summary": "Some Argivian scholars posit that Argoth was Little Videnth and most of Terisiare lies on Greater Videnth; opponents note the lack of resemblance.",
+   "participants": [
+    "Videnthian Theory",
+    "Argoth",
+    "Little Videnth Island",
+    "Greater Videnth"
+   ],
+   "location": "Greater Videnth",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "They believe that it is far more likely that ancient Argoth is, in fact, Little Videnth Island"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Greater Videnth",
+   "relation": "located_in",
+   "target": "Videnthian Sea",
+   "note": "The surrounding sea.",
+   "paragraph": 1,
+   "quote": "The surrounding Sea is called the Videnthian Sea ."
+  },
+  {
+   "source": "Little Videnth Island",
+   "relation": "other",
+   "target": "Greater Videnth",
+   "note": "Lies just east of the main island.",
+   "paragraph": 1,
+   "quote": "Just east of the main island lies Little Videnth Island ."
+  }
+ ],
+ "rejected": []
+}

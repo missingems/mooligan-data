@@ -1,0 +1,111 @@
+{
+ "page": "wiki/fall-of-sarinth",
+ "url": "https://mtg.wiki/page/Fall_of_Sarinth",
+ "title": "Fall of Sarinth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:34Z",
+ "storyline": "Brothers' War",
+ "entities": [
+  {
+   "name": "Fall of Sarinth",
+   "type": "event",
+   "aliases": [],
+   "description": "Fall of the city of Sarinth in late 43 AR after many years of siege by Ashnod.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sarinth",
+   "type": "location",
+   "aliases": [],
+   "description": "City besieged for years for its oil and lumber; its people were pacified and sent as soldiers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent by Mishra to obtain Sarinth's resources; laid siege to the city.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Ordered Ashnod to stay and ended up relocating from his fortress to Tomakul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [],
+   "description": "Forces diverted to the siege.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liberation of Yotia",
+   "type": "event",
+   "aliases": [],
+   "description": "Enabled when Mishra had to release pressure elsewhere.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tomakul",
+   "type": "location",
+   "aliases": [],
+   "description": "City to which Mishra relocated from his fortress.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ashnod, sent by Mishra for Sarinth's oil and lumber, is refused and is ordered to stay, forcing a siege.",
+   "participants": [
+    "Ashnod",
+    "Mishra",
+    "Sarinth"
+   ],
+   "location": "Sarinth",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ashnod had been sent by Mishra to obtain the city's oil and lumber resources, but was refused."
+  },
+  {
+   "summary": "The siege diverts Fallaji forces, enabling the Liberation of Yotia and forcing Mishra to relocate to Tomakul.",
+   "participants": [
+    "Mishra",
+    "Fallaji",
+    "Liberation of Yotia",
+    "Tomakul"
+   ],
+   "location": "Tomakul",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "enabling the Liberation of Yotia and forcing Mishra to relocate from his fortress to Tomakul"
+  },
+  {
+   "summary": "In late 43 AR Sarinth finally falls, its people pacified and resources plundered.",
+   "participants": [
+    "Sarinth",
+    "Ashnod"
+   ],
+   "location": "Sarinth",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "It was late 43 AR when the city finally fell."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ashnod",
+   "relation": "serves",
+   "target": "Mishra",
+   "note": "Sent by Mishra.",
+   "paragraph": 1,
+   "quote": "Ashnod had been sent by Mishra"
+  }
+ ],
+ "rejected": []
+}

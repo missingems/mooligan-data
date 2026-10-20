@@ -1,0 +1,86 @@
+{
+ "page": "wiki/untaidake",
+ "url": "https://mtg.wiki/page/Untaidake",
+ "title": "Untaidake",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:50Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Untaidake",
+   "type": "location",
+   "aliases": [
+    "Cloud Keeper",
+    "Untaidake Peak"
+   ],
+   "description": "Called the Cloud Keeper, the largest mountain in all of Kamigawa, stretching impossibly far into the sky.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which Untaidake stands.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ryusaki Kumano",
+   "type": "character",
+   "aliases": [
+    "Ryusaki"
+   ],
+   "description": "A yamabushi who lived at the base of Untaidake and defeated Kakkazan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kakkazan",
+   "type": "character",
+   "aliases": [],
+   "description": "A great kami defeated by Ryusaki Kumano at Untaidake.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War of Kamigawa during which Ryusaki Kumano defeated Kakkazan.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Kami War, Ryusaki Kumano fought and defeated the great kami Kakkazan at the base of Untaidake.",
+   "participants": [
+    "Ryusaki Kumano",
+    "Kakkazan",
+    "Kami War"
+   ],
+   "location": "Untaidake",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "during the Kami War , this was where he fought and defeated the great kami Kakkazan"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ryusaki Kumano",
+   "relation": "enemy",
+   "target": "Kakkazan",
+   "note": "Defeated him in the Kami War.",
+   "paragraph": 2,
+   "quote": "during the Kami War , this was where he fought and defeated the great kami Kakkazan"
+  },
+  {
+   "source": "Untaidake",
+   "relation": "located_in",
+   "target": "Kamigawa",
+   "note": "",
+   "paragraph": 0,
+   "quote": "is the largest mountain in all of Kamigawa"
+  }
+ ],
+ "rejected": []
+}

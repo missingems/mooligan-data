@@ -1,0 +1,222 @@
+{
+ "page": "wiki/skophos",
+ "url": "https://mtg.wiki/page/Skophos",
+ "title": "Skophos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:16Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Skophos",
+   "type": "location",
+   "aliases": [
+    "Labyrinth of Skophos"
+   ],
+   "description": "The labyrinthine city-state of the minotaurs on Theros, a dark reflection of Akros.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "A city-state whose soldiers face the minotaurs; founded alongside Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Minotaurs",
+   "type": "faction",
+   "aliases": [
+    "Skophans",
+    "Bronzebone band"
+   ],
+   "description": "The organized warriors and population of Skophos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mogis",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of war and chief deity of the minotaurs, brother of Iroas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Iroas",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of war, brother of Mogis and enemy of the minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ephara",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god worshipped only in the Lesser Peristyle of Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karametra",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god whose ancient aspect requiring blood sacrifices is worshipped in Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god whose violent side has a temple in Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Keranos",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god whose violent side has a temple in Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Purphoros",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god whose violent side has a temple in Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thassa",
+   "type": "deity",
+   "aliases": [],
+   "description": "A god rarely recognized in Skophos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lesser Peristyle",
+   "type": "location",
+   "aliases": [
+    "The Lesser Peristyle"
+   ],
+   "description": "The only temple that openly worships Ephara, a venue for minotaur debates.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mogis's Chalice",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest temple of Mogis at the center of Skophos and seat of government.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phoberos",
+   "type": "location",
+   "aliases": [
+    "Phoberos badlands"
+   ],
+   "description": "Badlands patrolled by minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katachthon Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where humans and minotaurs fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Birth of the Poleis",
+   "type": "event",
+   "aliases": [],
+   "description": "The time humans waged war with the minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haraksi",
+   "type": "character",
+   "aliases": [],
+   "description": "A smith and priest of the Lesser Peristyle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olakia the Torn",
+   "type": "character",
+   "aliases": [],
+   "description": "Oracle of Ephara and Mogis.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "During the Birth of the Poleis, humans war with the minotaurs in Phoberos and the Katachthon Mountains; Iroas and Mogis reportedly fight over the land, resulting in the founding of Akros and Skophos.",
+   "participants": [
+    "Iroas",
+    "Mogis",
+    "Minotaurs",
+    "Akros",
+    "Skophos"
+   ],
+   "location": "Phoberos",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "This conflict resulted in the founding of Akros and Skophos"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mogis",
+   "relation": "leader_of",
+   "target": "Skophos",
+   "note": "city ruled by his priests and warlord champions",
+   "paragraph": 1,
+   "quote": "Skophos is ruled by priests and warlord champions of"
+  },
+  {
+   "source": "Mogis",
+   "relation": "enemy",
+   "target": "Iroas",
+   "note": "brothers and enemies",
+   "paragraph": 5,
+   "quote": "with his brother Iroas being their enemy"
+  },
+  {
+   "source": "Mogis",
+   "relation": "family",
+   "target": "Iroas",
+   "note": "brother",
+   "paragraph": 5,
+   "quote": "with his brother Iroas being their enemy"
+  },
+  {
+   "source": "Minotaurs",
+   "relation": "member_of",
+   "target": "Skophos",
+   "note": "predominant population",
+   "paragraph": 6,
+   "quote": "Minotaurs are the predominant population."
+  },
+  {
+   "source": "Haraksi",
+   "relation": "serves",
+   "target": "Ephara",
+   "note": "priest of the Lesser Peristyle",
+   "paragraph": 9,
+   "quote": "Haraksi the smith, priest of the lesser peristyle"
+  },
+  {
+   "source": "Olakia the Torn",
+   "relation": "serves",
+   "target": "Mogis",
+   "note": "oracle of Ephara and Mogis",
+   "paragraph": 10,
+   "quote": "Olakia the Torn, oracle of Ephara and Mogis"
+  }
+ ],
+ "rejected": []
+}

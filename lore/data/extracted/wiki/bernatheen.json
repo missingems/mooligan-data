@@ -1,0 +1,124 @@
+{
+ "page": "wiki/bernatheen",
+ "url": "https://mtg.wiki/page/Bernatheen",
+ "title": "Bernatheen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:55Z",
+ "storyline": "Ulgrotha",
+ "entities": [
+  {
+   "name": "Bernatheen",
+   "type": "character",
+   "aliases": [
+    "Wizard Savant"
+   ],
+   "description": "A manipulative Wizard Savant of the Floating Island who made Eron the Relentless immortal and was turned into a werewolf by Baron Sengir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eron the Relentless",
+   "type": "character",
+   "aliases": [
+    "Eron"
+   ],
+   "description": "Persuaded by Bernatheen to steal a spellbook; made immortal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Punished Bernatheen by turning him into a greater werewolf.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grandmother Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Owner of the library from which a spellbook was stolen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reveka",
+   "type": "character",
+   "aliases": [],
+   "description": "Dwarf who later held the position of Wizard Savant.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "Established the Wizards' School on the Floating Island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Floating Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Stable hub of magic and trade centered on the Wizards' School.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wizards' School",
+   "type": "faction",
+   "aliases": [],
+   "description": "School established by Feroz on the Floating Island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the tale.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Bernatheen persuades Eron to steal a spellbook from Grandmother Sengir's library, promising a powerful spell.",
+   "participants": [
+    "Bernatheen",
+    "Eron the Relentless",
+    "Grandmother Sengir"
+   ],
+   "location": "Floating Island",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Bernatheen's promise to cast a powerful spell in exchange for this theft led to Eron's immortality"
+  },
+  {
+   "summary": "Baron Sengir punishes Bernatheen by transforming him into a greater werewolf.",
+   "participants": [
+    "Baron Sengir",
+    "Bernatheen"
+   ],
+   "location": "Floating Island",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Bernatheen was transformed into a greater werewolf by the Baron"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Baron Sengir",
+   "relation": "enemy",
+   "target": "Bernatheen",
+   "note": "Punished him",
+   "paragraph": 2,
+   "quote": "As punishment for his transgressions"
+  },
+  {
+   "source": "Bernatheen",
+   "relation": "created",
+   "target": "Eron the Relentless",
+   "note": "Made Eron immortal",
+   "paragraph": 1,
+   "quote": "led to Eron's immortality"
+  }
+ ],
+ "rejected": []
+}

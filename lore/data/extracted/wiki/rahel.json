@@ -1,0 +1,127 @@
+{
+ "page": "wiki/rahel",
+ "url": "https://mtg.wiki/page/Rahel",
+ "title": "Rahel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:35:53Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rahel",
+   "type": "creature",
+   "aliases": [],
+   "description": "Serra Angel summoned by Eskil to fight Trine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned Rahel to fight Trine.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Trine",
+   "type": "creature",
+   "aliases": [],
+   "description": "Fallen angel who enslaved northern Corondor; Rahel's former sister.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Enslavement of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Trine's domination of northern Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Absolution of Trine",
+   "type": "event",
+   "aliases": [],
+   "description": "Rahel forgave Trine and returned her to Serra's realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Region freed by Rahel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Subject of a story Rahel wrote down.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rahel agrees to fight after seeing the purity in Eskil's soul.",
+   "participants": [
+    "Rahel",
+    "Eskil"
+   ],
+   "location": "Corondor",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Rahel agreed to fight"
+  },
+  {
+   "summary": "Rahel kills her former sister Trine.",
+   "participants": [
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Rahel killed her former sister"
+  },
+  {
+   "summary": "In the Absolution of Trine Rahel forgives Trine and returns her to the realm of Serra.",
+   "participants": [
+    "Rahel",
+    "Trine"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Rahel forgave Trine for her actions"
+  },
+  {
+   "summary": "Rahel later writes down the story of Ravidel.",
+   "participants": [
+    "Rahel",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Rahel later wrote down the story of Ravidel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rahel",
+   "relation": "killed",
+   "target": "Trine",
+   "note": "Killed her former sister",
+   "paragraph": 1,
+   "quote": "Rahel killed her former sister"
+  },
+  {
+   "source": "Rahel",
+   "relation": "serves",
+   "target": "Eskil",
+   "note": "Summoned by Eskil",
+   "paragraph": 0,
+   "quote": "summoned by Eskil to fight Trine"
+  }
+ ],
+ "rejected": []
+}

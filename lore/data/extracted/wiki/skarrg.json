@@ -1,0 +1,162 @@
+{
+ "page": "wiki/skarrg",
+ "url": "https://mtg.wiki/page/Skarrg",
+ "title": "Skarrg",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:12Z",
+ "storyline": "War of the Spark",
+ "entities": [
+  {
+   "name": "Skarrg",
+   "type": "location",
+   "aliases": [
+    "The Rage Pits",
+    "the Reunion Turf"
+   ],
+   "description": "A ruined gathering place deep in the Rubblebelt of Ravnica, the closest thing the Gruul Clans have to a guildhall.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rubblebelt",
+   "type": "location",
+   "aliases": [],
+   "description": "A devastated section of the Red Wastes on Ravnica, home to the Gruul.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Skarrg is located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [
+    "Gruul"
+   ],
+   "description": "A guild of wild clans who gather at Skarrg.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of the Spark",
+   "type": "event",
+   "aliases": [],
+   "description": "The war during which the Gruul regrouped at Skarrg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Domri Rade",
+   "type": "character",
+   "aliases": [],
+   "description": "The new guildleader of the Gruul, killed by the Dreadhorde.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dreadhorde",
+   "type": "faction",
+   "aliases": [],
+   "description": "The invading army that killed Domri Rade.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Borborygmos",
+   "type": "character",
+   "aliases": [],
+   "description": "A Gruul leader who wanted the Gruul to act independently of the other guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gan Shokta",
+   "type": "character",
+   "aliases": [
+    "Gan"
+   ],
+   "description": "A Gruul leader who wanted the Gruul to cooperate with other guilds against the invaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Araithia Shokta",
+   "type": "character",
+   "aliases": [],
+   "description": "Gan's daughter who convinced Borborygmos to let go of his grudges.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Domri Rade's death at the hands of the Dreadhorde, the Gruul Clans regroup at Skarrg.",
+   "participants": [
+    "Gruul Clans",
+    "Domri Rade",
+    "Dreadhorde"
+   ],
+   "location": "Skarrg",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the death of their new guildleader Domri Rade at the hands of the invading Dreadhorde"
+  },
+  {
+   "summary": "Borborygmos and Gan Shokta come to a showdown at Skarrg over whether the Gruul should act alone or cooperate with other guilds, and break into a fight.",
+   "participants": [
+    "Borborygmos",
+    "Gan Shokta"
+   ],
+   "location": "Skarrg",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The two broke into a fight"
+  },
+  {
+   "summary": "Araithia Shokta intervenes and convinces Borborygmos to let go of his grudges, allowing the Gruul to band together with the plane's defenders.",
+   "participants": [
+    "Araithia Shokta",
+    "Borborygmos",
+    "Gruul Clans"
+   ],
+   "location": "Skarrg",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Gan's daughter Araithia Shokta intervened and convinced Borborygmos to let go of his grudges against the other guilds"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skarrg",
+   "relation": "located_in",
+   "target": "Rubblebelt",
+   "note": "lies within the Rubblebelt",
+   "paragraph": 1,
+   "quote": "Skarrg lies within a devastated section of the Red Wastes known as the"
+  },
+  {
+   "source": "Araithia Shokta",
+   "relation": "family",
+   "target": "Gan Shokta",
+   "note": "his daughter",
+   "paragraph": 5,
+   "quote": "Gan's daughter Araithia Shokta"
+  },
+  {
+   "source": "Borborygmos",
+   "relation": "enemy",
+   "target": "Gan Shokta",
+   "note": "fought over the Gruul's course",
+   "paragraph": 5,
+   "quote": "The two broke into a fight"
+  },
+  {
+   "source": "Dreadhorde",
+   "relation": "killed",
+   "target": "Domri Rade",
+   "note": "killed him during the War of the Spark",
+   "paragraph": 5,
+   "quote": "the death of their new guildleader Domri Rade at the hands of the invading Dreadhorde"
+  }
+ ],
+ "rejected": []
+}

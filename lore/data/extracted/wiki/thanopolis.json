@@ -1,0 +1,84 @@
+{
+ "page": "wiki/thanopolis",
+ "url": "https://mtg.wiki/page/Thanopolis",
+ "title": "Thanopolis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:37Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Thanopolis",
+   "type": "location",
+   "aliases": [],
+   "description": "City on an undisclosed plane where the War of Thanopolis was fought.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thane Du-Moriss IV",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who killed Noranda-Zang in the War of Thanopolis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Noranda-Zang",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard killed by Thane who transferred his spirit into a new body.",
+   "presence": "appears"
+  },
+  {
+   "name": "War of Thanopolis",
+   "type": "event",
+   "aliases": [],
+   "description": "War fought at Thanopolis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kieve",
+   "type": "location",
+   "aliases": [],
+   "description": "Place on Dominaria where Zang arrived ten years later.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Thane Du-Moriss IV killed Noranda-Zang in battle, unaware Zang had transferred his spirit into a new body.",
+   "participants": [
+    "Thane Du-Moriss IV",
+    "Noranda-Zang",
+    "Thanopolis"
+   ],
+   "location": "Thanopolis",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the wizard Thane Du-Moriss IV killed Noranda-Zang"
+  },
+  {
+   "summary": "Zang arrived at Kieve ten years later.",
+   "participants": [
+    "Noranda-Zang",
+    "Kieve"
+   ],
+   "location": "Kieve",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "when he 10 years later arrived at"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thane Du-Moriss IV",
+   "relation": "killed",
+   "target": "Noranda-Zang",
+   "note": "Killed him, though Zang resurrected in a new body",
+   "paragraph": 1,
+   "quote": "the wizard Thane Du-Moriss IV killed Noranda-Zang"
+  }
+ ],
+ "rejected": []
+}

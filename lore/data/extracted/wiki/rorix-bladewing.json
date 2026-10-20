@@ -1,0 +1,145 @@
+{
+ "page": "wiki/rorix-bladewing",
+ "url": "https://mtg.wiki/page/Rorix_Bladewing",
+ "title": "Rorix Bladewing",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Rorix Bladewing",
+   "type": "creature",
+   "aliases": [
+    "Bladewing the Risen",
+    "Deathless Tyrant"
+   ],
+   "description": "Shivan dragon champion who became a pit-fighter, died in the Grand Coliseum and was reanimated as the undead Bladewing the Risen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Verix Bladewing",
+   "type": "creature",
+   "aliases": [],
+   "description": "Descendant of Rorix who mourns his existence and is prepared to destroy him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karox Bladewing",
+   "type": "creature",
+   "aliases": [],
+   "description": "Descendant of Rorix who mourns his existence and is prepared to destroy him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who phased out a large chunk of Shiv.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shiv",
+   "type": "plane",
+   "aliases": [],
+   "description": "Dominarian land of the Shivan dragons, partly phased out by Teferi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where Rorix fought as a pit-fighter and now haunts the skies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grand Coliseum",
+   "type": "location",
+   "aliases": [],
+   "description": "Arena in Otaria where Rorix fought and died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bladewing brood",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dragon brood originating with Rorix Bladewing.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Teferi phases out a large chunk of Shiv, and some Shivan dragons leave to restore their race's pride, Rorix among them.",
+   "participants": [
+    "Teferi",
+    "Rorix Bladewing"
+   ],
+   "location": "Shiv",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "some Shivan dragons journeyed away to seek any opportunity"
+  },
+  {
+   "summary": "Rorix becomes a pit-fighter in Otaria.",
+   "participants": [
+    "Rorix Bladewing"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Rorix became a pit-fighter in Otaria"
+  },
+  {
+   "summary": "Rorix dies in the Grand Coliseum and is reanimated as Bladewing the Risen.",
+   "participants": [
+    "Rorix Bladewing",
+    "Grand Coliseum"
+   ],
+   "location": "Grand Coliseum",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He fought and died in the Grand Coliseum"
+  },
+  {
+   "summary": "Verix and Karox Bladewing prepare to destroy their undead ancestor.",
+   "participants": [
+    "Verix Bladewing",
+    "Karox Bladewing",
+    "Rorix Bladewing"
+   ],
+   "location": "Otaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "are prepared to take down the undead ancestor for good"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rorix Bladewing",
+   "relation": "family",
+   "target": "Verix Bladewing",
+   "note": "Verix is his descendant.",
+   "paragraph": 2,
+   "quote": "His descendants Verix and Karox Bladewing"
+  },
+  {
+   "source": "Rorix Bladewing",
+   "relation": "family",
+   "target": "Karox Bladewing",
+   "note": "Karox is his descendant.",
+   "paragraph": 2,
+   "quote": "His descendants Verix and Karox Bladewing"
+  },
+  {
+   "source": "Verix Bladewing",
+   "relation": "enemy",
+   "target": "Rorix Bladewing",
+   "note": "Prepared to take down the undead ancestor.",
+   "paragraph": 2,
+   "quote": "are prepared to take down the undead ancestor for good"
+  }
+ ],
+ "rejected": []
+}

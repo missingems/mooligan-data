@@ -1,0 +1,103 @@
+{
+ "page": "wiki/evincar-s-quarters",
+ "url": "https://mtg.wiki/page/Evincar%27s_Quarters",
+ "title": "Evincar's Quarters",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:16Z",
+ "storyline": "Weatherlight Saga",
+ "entities": [
+  {
+   "name": "Evincar's Quarters",
+   "type": "location",
+   "aliases": [],
+   "description": "Chambers near the top of the Stronghold of Rath housing the evincar's trusted machines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stronghold of Rath",
+   "type": "location",
+   "aliases": [
+    "Stronghold"
+   ],
+   "description": "Volrath's fortress, later shifted to Urborg.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Volrath",
+   "type": "character",
+   "aliases": [
+    "evincar"
+   ],
+   "description": "Evincar of Rath with many sanctums.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gerrard Capashen",
+   "type": "character",
+   "aliases": [],
+   "description": "Did not find the evincar's quarters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that shifted the Stronghold to Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian place where the Stronghold shifted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane controlled by the evincar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gerrard Capashen did not find the evincar's quarters among Volrath's sanctums.",
+   "participants": [
+    "Gerrard Capashen",
+    "Volrath",
+    "Evincar's Quarters"
+   ],
+   "location": "Stronghold of Rath",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "there was one that Gerrard Capashen did not find: the evincar ’s quarters"
+  },
+  {
+   "summary": "The quarters shifted with the Stronghold to Urborg during the Rathi Overlay.",
+   "participants": [
+    "Evincar's Quarters",
+    "Rathi Overlay",
+    "Urborg"
+   ],
+   "location": "Urborg",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Evincar's Quarters shifted with the rest of the Stronghold to Urborg on Dominaria"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Evincar's Quarters",
+   "relation": "located_in",
+   "target": "Stronghold of Rath",
+   "note": "Part of it",
+   "paragraph": 0,
+   "quote": "The Evincar's Quarters are part of the Stronghold of Rath"
+  }
+ ],
+ "rejected": []
+}

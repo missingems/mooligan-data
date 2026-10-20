@@ -1,0 +1,141 @@
+{
+ "page": "wiki/enkindi",
+ "url": "https://mtg.wiki/page/Enkindi",
+ "title": "Enkindi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:28Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Enkindi",
+   "type": "character",
+   "aliases": [],
+   "description": "Brave Kor leader of a band of kitesailers on Zendikar who recruited Drana for Gideon's forces.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drana",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire bloodchief leading survivors in Guul Draz.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker whose forces gathered at Sea Gate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Melindra",
+   "type": "character",
+   "aliases": [],
+   "description": "Kor child in Drana's Orphans' Brigade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sire of Stagnation",
+   "type": "creature",
+   "aliases": [
+    "Eldrazi sire"
+   ],
+   "description": "Eldrazi that killed Enkindi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orphans' Brigade",
+   "type": "faction",
+   "aliases": [],
+   "description": "Brigade of child warriors with Drana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guul Draz",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Enkindi met Drana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Gideon's forces gathered.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gideon sends Enkindi and his kitesailers to Guul Draz, where he meets Drana and tries to recruit her.",
+   "participants": [
+    "Enkindi",
+    "Gideon Jura",
+    "Drana"
+   ],
+   "location": "Guul Draz",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Gideon sent Enkindi and his kitesailers to Guul Draz to look for any survivors"
+  },
+  {
+   "summary": "Enkindi is horrified to see children among Drana's force, but Drana is unapologetic.",
+   "participants": [
+    "Enkindi",
+    "Drana",
+    "Melindra"
+   ],
+   "location": "Guul Draz",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Drana did not offer any apologies, calling them little warriors"
+  },
+  {
+   "summary": "Enkindi leads his kitesailers into the head of the Sire of Stagnation, which tears off his head.",
+   "participants": [
+    "Enkindi",
+    "Sire of Stagnation"
+   ],
+   "location": "Guul Draz",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The tentacle squeezed and tore the kor's head off, breaking his flight."
+  },
+  {
+   "summary": "Enkindi's sacrifice spares Melindra and other children, and Drana's survivors reach Gideon at Sea Gate.",
+   "participants": [
+    "Drana",
+    "Melindra",
+    "Gideon Jura"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "his sacrifice did help spare the lives of Melindra and many of the other warrior children"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sire of Stagnation",
+   "relation": "killed",
+   "target": "Enkindi",
+   "note": "",
+   "paragraph": 5,
+   "quote": "The tentacle squeezed and tore the kor's head off, breaking his flight."
+  },
+  {
+   "source": "Enkindi",
+   "relation": "ally",
+   "target": "Drana",
+   "note": "agreed to join the fight",
+   "paragraph": 4,
+   "quote": "Enkindi agreed to have his kitesailers join in the fight if only to save the children of the camp."
+  }
+ ],
+ "rejected": []
+}

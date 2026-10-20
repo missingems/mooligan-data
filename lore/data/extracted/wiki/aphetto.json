@@ -1,0 +1,200 @@
+{
+ "page": "wiki/aphetto",
+ "url": "https://mtg.wiki/page/Aphetto",
+ "title": "Aphetto",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Aphetto",
+   "type": "location",
+   "aliases": [],
+   "description": "Second largest city on Otaria, built in a deep wet canyon; steeped in intrigue and death and ruled weakly by the Parliament of Knives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Otaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent where Aphetto lay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal City",
+   "type": "location",
+   "aliases": [],
+   "description": "City on the open salt flats, contrasted with Aphetto.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cabal",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organization that thrives in Aphetto.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raven Guild",
+   "type": "faction",
+   "aliases": [],
+   "description": "Organized crime syndicate of wizard grifters, merchants, pickpockets and spies stealing business from the Cabal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parliament of Knives",
+   "type": "faction",
+   "aliases": [],
+   "description": "Body that ran Aphetto, weakly according to the Cabal Patriarch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabal Patriarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the Cabal who made Aphetto his seat of power and ordered the Grand Coliseum built.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grand Coliseum",
+   "type": "location",
+   "aliases": [],
+   "description": "Arena built in the swamps by order of the Cabal Patriarch.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Boy",
+   "type": "character",
+   "aliases": [],
+   "description": "Child who ruled Aphetto after the First's death, channeling Cabal leaders; killed by Karona.",
+   "presence": "appears"
+  },
+  {
+   "name": "Karona",
+   "type": "character",
+   "aliases": [],
+   "description": "Returned after her Rebirth and brought war on Aphetto, annihilating most of its population.",
+   "presence": "appears"
+  },
+  {
+   "name": "The First",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal leader whose death preceded the Boy's rule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phage",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal leader channeled by the Boy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Braids",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal leader channeled by the Boy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuberr",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabal leader channeled by the Boy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karona's War",
+   "type": "event",
+   "aliases": [],
+   "description": "War Karona brought to Aphetto with her Eroshian army.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eroshian army",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army Karona brought to the canyon.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A group of mages forms the Raven Guild to steal illicit business from the Cabal.",
+   "participants": [
+    "Raven Guild",
+    "Cabal"
+   ],
+   "location": "Aphetto",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "began coordinating their efforts to steal illicit business within the city from the Cabal"
+  },
+  {
+   "summary": "Aphetto becomes the Cabal Patriarch's seat of power and he orders the Grand Coliseum built.",
+   "participants": [
+    "Cabal Patriarch",
+    "Grand Coliseum"
+   ],
+   "location": "Aphetto",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "Aphetto became the seat of power for the Cabal Patriarch"
+  },
+  {
+   "summary": "After Karona's Rebirth and the First's death, the Boy rules Aphetto.",
+   "participants": [
+    "The Boy",
+    "The First",
+    "Karona"
+   ],
+   "location": "Aphetto",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Aphetto fell under the rule of a child known only as"
+  },
+  {
+   "summary": "Karona brings her war and army to the canyon, saves 500 of 10,000 people and annihilates the rest, including the Boy.",
+   "participants": [
+    "Karona",
+    "The Boy",
+    "Eroshian army"
+   ],
+   "location": "Aphetto",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Karona saved 500 people from the population of 10,000"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aphetto",
+   "relation": "located_in",
+   "target": "Otaria",
+   "note": "Second largest city",
+   "paragraph": 0,
+   "quote": "second largest city on the Dominarian continent"
+  },
+  {
+   "source": "Parliament of Knives",
+   "relation": "leader_of",
+   "target": "Aphetto",
+   "note": "Ran the city weakly",
+   "paragraph": 3,
+   "quote": "Aphetto was run by the Parliament of Knives"
+  },
+  {
+   "source": "Karona",
+   "relation": "enemy",
+   "target": "The Boy",
+   "note": "She destroyed him and Aphetto",
+   "paragraph": 7,
+   "quote": "The Boy stood in defiance against Karona"
+  }
+ ],
+ "rejected": []
+}

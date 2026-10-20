@@ -1,0 +1,176 @@
+{
+ "page": "wiki/inys-haen",
+ "url": "https://mtg.wiki/page/Inys_Haen",
+ "title": "Inys Haen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:32Z",
+ "storyline": "Cridhe",
+ "entities": [
+  {
+   "name": "Inys Haen",
+   "type": "location",
+   "aliases": [],
+   "description": "A settlement on Cridhe in the southwestern mountains, home of the Clan Tree and its Keepers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Haen",
+   "type": "character",
+   "aliases": [],
+   "description": "The First Keeper without a tree, after whom the settlement was named.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nohrish",
+   "type": "faction",
+   "aliases": [],
+   "description": "Descendants of Nohr who raided Inys Haen.",
+   "presence": "appears"
+  },
+  {
+   "name": "RoNal",
+   "type": "character",
+   "aliases": [],
+   "description": "Soldier who led the Nohrish raid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aylith",
+   "type": "character",
+   "aliases": [],
+   "description": "Daughter of the Keeper and last Keeper, taken in the raid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thix",
+   "type": "character",
+   "aliases": [],
+   "description": "Reckless noble kinsman of the Felonarch who set fire to homes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jedhian",
+   "type": "character",
+   "aliases": [],
+   "description": "Aylith's cousin who swore to rescue her.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nazir",
+   "type": "character",
+   "aliases": [
+    "Felonarch"
+   ],
+   "description": "Former Felonarch who reformed and helped Aylith restore the Clan Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arn",
+   "type": "character",
+   "aliases": [],
+   "description": "Freed slave who became the new Keeper.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Tree",
+   "type": "location",
+   "aliases": [],
+   "description": "Tree restored by the Mending of the Clan Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soulslayer",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Long-lost blade Jedhian found in the wreckage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parting",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that broke the Blessing Stone.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Nohrish raided Inys Haen to capture the Keeper and Aylith; the Keeper and his wife died and Aylith was taken.",
+   "participants": [
+    "Nohrish",
+    "RoNal",
+    "Thix",
+    "Aylith",
+    "Jedhian"
+   ],
+   "location": "Inys Haen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Keeper and his wife perished in the flames"
+  },
+  {
+   "summary": "Jedhian buried Aylith's mother with a sword that was later revealed to be the Soulslayer.",
+   "participants": [
+    "Jedhian",
+    "Soulslayer"
+   ],
+   "location": "Inys Haen",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "a blade later revealed to be the long-lost Soulslayer"
+  },
+  {
+   "summary": "Aylith and Nazir recited the Awakening Ritual, causing the Mending of the Clan Tree.",
+   "participants": [
+    "Aylith",
+    "Nazir",
+    "Clan Tree"
+   ],
+   "location": "Inys Haen",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Reciting the ancient Awakening Ritual, they channeled the magic of the land and restored balance to the world"
+  },
+  {
+   "summary": "Arn became the new Keeper as the Clan Tree grew for 1000 years.",
+   "participants": [
+    "Arn",
+    "Clan Tree"
+   ],
+   "location": "Inys Haen",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "With the freed slave Arn as its new Keeper"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jedhian",
+   "relation": "family",
+   "target": "Aylith",
+   "note": "cousins",
+   "paragraph": 3,
+   "quote": "leaving behind her cousin, Jedhian , who swore to rescue her"
+  },
+  {
+   "source": "Nohrish",
+   "relation": "enemy",
+   "target": "Inys Haen",
+   "note": "raided it",
+   "paragraph": 2,
+   "quote": "the Keepers of Inys Haen tried to keep the peace but were harassed by raiders from Inys Nohr twice a year"
+  },
+  {
+   "source": "Haen",
+   "relation": "created",
+   "target": "Inys Haen",
+   "note": "settlement named for him",
+   "paragraph": 2,
+   "quote": "The settlement was named for Haen"
+  }
+ ],
+ "rejected": []
+}

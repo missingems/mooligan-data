@@ -1,0 +1,99 @@
+{
+ "page": "wiki/coldsnap",
+ "url": "https://mtg.wiki/page/Coldsnap",
+ "title": "Coldsnap",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:22Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The island continent of Dominaria that was home to the Brothers' War and the Ice Age and is now thawing.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Thaw",
+   "type": "event",
+   "aliases": [],
+   "description": "The rebirth of Terisiare as the icy shell encasing the continent melts away.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war once fought on Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The age of ice that encased Terisiare.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Secretive society of mages",
+   "type": "faction",
+   "aliases": [],
+   "description": "A secretive society of mages poised to shroud the continent with their icy brand of magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marit Lage",
+   "type": "creature",
+   "aliases": [],
+   "description": "A creature from the Dark Depths, represented by a promotional token.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haakon, Stromgald Scourge",
+   "type": "character",
+   "aliases": [
+    "Haakon"
+   ],
+   "description": "A character depicted on a notable Coldsnap card.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Terisiare enters the Thaw as its icy shell melts and most inhabitants rejoice at the land's rebirth.",
+   "participants": [
+    "Terisiare",
+    "The Thaw"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "The icy shell that encased the continent is melting away."
+  },
+  {
+   "summary": "A secretive society of mages seeks to use the time of change to shroud the continent in its icy magic.",
+   "participants": [
+    "Secretive society of mages",
+    "Terisiare"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "a secretive society of mages poised to shroud the continent with their icy brand of magic"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Terisiare",
+   "relation": "other",
+   "target": "The Thaw",
+   "note": "the continent is undergoing the Thaw",
+   "paragraph": 4,
+   "quote": "is in a state of rebirth known as the Thaw"
+  }
+ ],
+ "rejected": []
+}

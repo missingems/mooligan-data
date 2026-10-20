@@ -1,0 +1,110 @@
+{
+ "page": "wiki/littjara",
+ "url": "https://mtg.wiki/page/Littjara",
+ "title": "Littjara",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:11Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Littjara",
+   "type": "plane",
+   "aliases": [],
+   "description": "One of the ten realms of Kaldheim: a mysterious realm of lakes and pine forests where reality is mutable.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the ten realms, including Littjara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shapeshifters",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings who dwell in Littjara and can pass easily out of it into the Cosmos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Einir",
+   "type": "deity",
+   "aliases": [
+    "the ancient elven gods"
+   ],
+   "description": "The ancient elven gods who created the realm that would become Littjara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pentafjord Lake",
+   "type": "location",
+   "aliases": [
+    "Pentafjord"
+   ],
+   "description": "A hand-shaped enormous lake in Littjara where shapeshifters go to pass away.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cosmos",
+   "type": "concept",
+   "aliases": [],
+   "description": "The space between Kaldheim's realms.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Einir create the realm that would become Littjara, marking the land indelibly.",
+   "participants": [
+    "Einir",
+    "Littjara"
+   ],
+   "location": "Littjara",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "When the Einir , the ancient elven gods , created the realm that would become Littjara, their interference marked the land indelibly."
+  },
+  {
+   "summary": "At the end of their lives all shapeshifters return to Pentafjord Lake and slip beneath its surface to die.",
+   "participants": [
+    "Shapeshifters",
+    "Pentafjord Lake"
+   ],
+   "location": "Pentafjord Lake",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "At the end of their lives, all shapeshifters are drawn to return to Littjara"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Littjara",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "One of the ten realms.",
+   "paragraph": 0,
+   "quote": "Littjara is one of the ten realms of the plane of Kaldheim"
+  },
+  {
+   "source": "Einir",
+   "relation": "created",
+   "target": "Littjara",
+   "note": "Created the realm.",
+   "paragraph": 2,
+   "quote": "When the Einir , the ancient elven gods , created the realm that would become Littjara"
+  },
+  {
+   "source": "Pentafjord Lake",
+   "relation": "located_in",
+   "target": "Littjara",
+   "note": "A location within the realm.",
+   "paragraph": 3,
+   "quote": "The Pentafjord Lake - an enormous depression, miles wide and shaped like a hand."
+  }
+ ],
+ "rejected": []
+}

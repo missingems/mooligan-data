@@ -1,0 +1,164 @@
+{
+ "page": "wiki/dwarven-traders",
+ "url": "https://mtg.wiki/page/Dwarven_traders",
+ "title": "Dwarven traders",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:59Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Dwarven traders",
+   "type": "faction",
+   "aliases": [
+    "dwarven traders of Ulgrotha"
+   ],
+   "description": "A tribe of land dwarves of Ulgrotha who came from another plane through a subterranean planar gate and ride heart wolves into battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where the dwarven traders live.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Freedom",
+   "type": "location",
+   "aliases": [],
+   "description": "Underground city founded by the dwarven traders in the mountains of Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [
+    "Sengir"
+   ],
+   "description": "Ruler of Sengir's Dark Barony who took control of the Castle of Morning Light and New Freedom.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sengir's Dark Barony",
+   "type": "faction",
+   "aliases": [],
+   "description": "The domain of Baron Sengir, which has claimed many dwarven traders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle of Morning Light",
+   "type": "location",
+   "aliases": [],
+   "description": "A castle the dwarven traders vow to reclaim from Baron Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Irini",
+   "type": "character",
+   "aliases": [],
+   "description": "A dwarven princess, the most infamous of those lost to Sengir's Dark Barony.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sea dwarves",
+   "type": "faction",
+   "aliases": [
+    "seafarers"
+   ],
+   "description": "Dwarves who set out across the ocean to start anew; disliked by the dwarven traders but not directly hostile.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grandmother Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Traded the Apocalypse Chime to a Dwarven Trader for trinkets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An ominous artifact traded to a dwarven trader with a warning never to ring it.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The dwarven traders arrive on Ulgrotha through a planar gate found while excavating.",
+   "participants": [
+    "Dwarven traders"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 0,
+   "quote": "They are originally from a different plane and arrived on Ulgrotha through a stable subterranean planar gate"
+  },
+  {
+   "summary": "Baron Sengir takes control of the Castle of Morning Light and New Freedom; the traders stay in the mountains vowing to reclaim the castle.",
+   "participants": [
+    "Baron Sengir",
+    "Dwarven traders",
+    "Castle of Morning Light",
+    "New Freedom"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They stayed in the mountains when Baron Sengir took control of the Castle of Morning Light and New Freedom, vowing to eventually reclaim the castle."
+  },
+  {
+   "summary": "Other dwarves leave to become seafarers, earning the traders' disapproval.",
+   "participants": [
+    "Sea dwarves",
+    "Dwarven traders"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "other dwarves decided to start anew as seafarers, setting out across the ocean"
+  },
+  {
+   "summary": "Grandmother Sengir trades the Apocalypse Chime to a Dwarven Trader and warns it must never be rung.",
+   "participants": [
+    "Grandmother Sengir",
+    "Apocalypse Chime",
+    "Dwarven traders"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Grandmother Sengir has traded away the Apocalypse Chime to a Dwarven Trader for a few trinkets"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Dwarven traders",
+   "relation": "enemy",
+   "target": "Baron Sengir",
+   "note": "vow to reclaim the castle he took",
+   "paragraph": 3,
+   "quote": "vowing to eventually reclaim the castle"
+  },
+  {
+   "source": "Dwarven traders",
+   "relation": "other",
+   "target": "Sea dwarves",
+   "note": "not fond of them but not directly hostile",
+   "paragraph": 3,
+   "quote": "the two factions are not directly hostile toward one another either"
+  },
+  {
+   "source": "New Freedom",
+   "relation": "located_in",
+   "target": "Ulgrotha",
+   "note": "underground city in the mountains",
+   "paragraph": 1,
+   "quote": "They founded the underground city of New Freedom in the depths of the mountains of Ulgrotha."
+  }
+ ],
+ "rejected": []
+}

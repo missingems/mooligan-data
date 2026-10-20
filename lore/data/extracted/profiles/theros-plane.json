@@ -1,0 +1,91 @@
+{
+ "page": "profiles/theros-plane",
+ "url": "https://magic.wizards.com/en/story/theros-plane",
+ "title": "Theros",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:42:42Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane ruled by a pantheon of gods, filled with monsters, where mortals endure and thrive in walled city-states.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Gods of Theros",
+   "type": "deity",
+   "aliases": [
+    "pantheon of gods"
+   ],
+   "description": "An awe-inspiring pantheon whose petty whims and wrath mortals fear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "The polis of learning, progress, magic and devotion to the gods, hemmed in by golden wheat fields and the Siren Sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Reverent Army",
+   "type": "faction",
+   "aliases": [],
+   "description": "The army that defends Meletis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "The polis where martial prowess is held in highest esteem, centered on a cliff-top fortress.",
+   "presence": "appears"
+  },
+  {
+   "name": "Setessa",
+   "type": "location",
+   "aliases": [],
+   "description": "The isolated, fiercely independent polis surrounded by concentric rings of forest, whose people venerate nature.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mortals endure and thrive on Theros behind the walls of great poleis, each a bulwark against raging monsters.",
+   "participants": [
+    "Theros",
+    "Meletis",
+    "Akros",
+    "Setessa"
+   ],
+   "location": "Theros",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "each city-state a bulwark against the raging monsters that roam the more savage places of Theros."
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Reverent Army",
+   "relation": "serves",
+   "target": "Meletis",
+   "note": "It defends the polis.",
+   "paragraph": 1,
+   "quote": "defended by the Reverent Army."
+  },
+  {
+   "source": "Meletis",
+   "relation": "located_in",
+   "target": "Theros",
+   "note": "",
+   "paragraph": 1,
+   "quote": "Meletis, the polis of learning, progress, magic, and devotion to the gods"
+  }
+ ],
+ "rejected": []
+}

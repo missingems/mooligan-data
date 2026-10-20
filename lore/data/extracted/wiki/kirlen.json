@@ -1,0 +1,127 @@
+{
+ "page": "wiki/kirlen",
+ "url": "https://mtg.wiki/page/Kirlen",
+ "title": "Kirlen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:08Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Kirlen",
+   "type": "character",
+   "aliases": [],
+   "description": "An old wizard and master of the House of Bolk in Estark, obsessed with immortality, who lost her chance at planeswalking to Kuthuman.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Bolk",
+   "type": "faction",
+   "aliases": [
+    "House Bolk"
+   ],
+   "description": "One of the houses of Estark, led by Kirlen.",
+   "presence": "appears"
+  },
+  {
+   "name": "Estark",
+   "type": "location",
+   "aliases": [],
+   "description": "City in Kush where House Bolk stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kuthuman",
+   "type": "character",
+   "aliases": [],
+   "description": "Kirlen's former lover who took her planeswalking spell and became god-like.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House of Oor-tael",
+   "type": "faction",
+   "aliases": [],
+   "description": "A house destroyed by Kuthuman.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zarel",
+   "type": "character",
+   "aliases": [],
+   "description": "Grand Master of the Arena who stormed House Bolk to steal the spell of planeswalking.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kush",
+   "type": "location",
+   "aliases": [],
+   "description": "The region of Dominaria containing Estark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Kush lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kuthuman convinced Kirlen to give him her spark-igniting spell, promising to find enough mana for both.",
+   "participants": [
+    "Kirlen",
+    "Kuthuman"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kuthuman convinced her to give him this spell"
+  },
+  {
+   "summary": "After destroying the House of Oor-tael Kuthuman became god-like and forgot his promise; betrayed, Kirlen stopped keeping herself young and aged quickly.",
+   "participants": [
+    "Kuthuman",
+    "Kirlen",
+    "House of Oor-tael"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Feeling betrayed, Kirlen stopped keeping herself young"
+  },
+  {
+   "summary": "Zarel stormed House Bolk to steal the spell of planeswalking; Kirlen teleported away, covering the room in ice, as House Bolk fell.",
+   "participants": [
+    "Zarel",
+    "Kirlen",
+    "House of Bolk"
+   ],
+   "location": "Estark",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she managed to reach her private quarters and teleport away"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kirlen",
+   "relation": "leader_of",
+   "target": "House of Bolk",
+   "note": "She was its master.",
+   "paragraph": 0,
+   "quote": "the master of the House of Bolk"
+  },
+  {
+   "source": "Kirlen",
+   "relation": "romantic",
+   "target": "Kuthuman",
+   "note": "They were lovers before his ascension.",
+   "paragraph": 2,
+   "quote": "Kuthuman and Kirlen were lovers"
+  }
+ ],
+ "rejected": []
+}

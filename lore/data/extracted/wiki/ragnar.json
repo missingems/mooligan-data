@@ -1,0 +1,128 @@
+{
+ "page": "wiki/ragnar",
+ "url": "https://mtg.wiki/page/Ragnar",
+ "title": "Ragnar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:39Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Ragnar",
+   "type": "character",
+   "aliases": [],
+   "description": "A gifted healer from Kusho who used green mana healing and worshipped Gaea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gosta Dirk",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the tribe Ragnar belonged to, whom Ragnar resembles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kasimir the Lone Wolf",
+   "type": "character",
+   "aliases": [],
+   "description": "Person Ragnar healed several times.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Barktooth Warbeard",
+   "type": "character",
+   "aliases": [],
+   "description": "Persona of Halfdane, who posed as the Marshal.",
+   "presence": "appears"
+  },
+  {
+   "name": "Halfdane",
+   "type": "character",
+   "aliases": [],
+   "description": "Changeling posing as Barktooth Warbeard who killed Ragnar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gaea",
+   "type": "deity",
+   "aliases": [],
+   "description": "World goddess Ragnar worshipped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kentsu",
+   "type": "faction",
+   "aliases": [],
+   "description": "Captors who took Ragnar during their campaign on the island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kusho",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of Ragnar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hazezon Tamar",
+   "type": "character",
+   "aliases": [],
+   "description": "Used 'By Ragnar's beard!' as an expression in 3335 AR.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ragnar, as part of Gosta Dirk's tribe, is captured by the kentsu during their campaign on the island and put into Barktooth Warbeard's care.",
+   "participants": [
+    "Ragnar",
+    "Kentsu",
+    "Barktooth Warbeard"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he was captured by the kentsu during their campaign on the island"
+  },
+  {
+   "summary": "Left alone with Ragnar, Halfdane kills him, takes his head, gazes into it for hours and throws it off a cliff.",
+   "participants": [
+    "Halfdane",
+    "Ragnar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he killed him and took his head"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Halfdane",
+   "relation": "killed",
+   "target": "Ragnar",
+   "note": "Killed him and took his head.",
+   "paragraph": 2,
+   "quote": "he killed him and took his head"
+  },
+  {
+   "source": "Ragnar",
+   "relation": "member_of",
+   "target": "Gosta Dirk",
+   "note": "Part of Gosta Dirk's tribe.",
+   "paragraph": 2,
+   "quote": "He was part of Gosta Dirk 's tribe"
+  },
+  {
+   "source": "Ragnar",
+   "relation": "serves",
+   "target": "Gaea",
+   "note": "Devout worshipper.",
+   "paragraph": 2,
+   "quote": "a devout worshipper of Gaea"
+  }
+ ],
+ "rejected": []
+}

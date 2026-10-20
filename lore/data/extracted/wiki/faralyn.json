@@ -1,0 +1,166 @@
+{
+ "page": "wiki/faralyn",
+ "url": "https://mtg.wiki/page/Faralyn",
+ "title": "Faralyn",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Faralyn",
+   "type": "character",
+   "aliases": [
+    "Faralyn of the Shard"
+   ],
+   "description": "Manipulative planeswalker of unknown origin from the Shard of Twelve Worlds, slain by an astral dragon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vaevictis Asmadi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Elder Dragon turned into a dragon whelp by Faralyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rhuell",
+   "type": "creature",
+   "aliases": [],
+   "description": "Dragon recruited by Faralyn who died at the Summit of the Null Moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Spellsquire of Faralyn who died at the Summit of the Null Moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who studied the Shard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tevesh Szat",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who escaped the Shard with Faralyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who escaped the Shard with Faralyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kenan Sahrmal",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned the astral dragon that slew Faralyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Summit of the Null Moon",
+   "type": "event",
+   "aliases": [],
+   "description": "Gathering organized by Faralyn hoping to provoke a planeswalker's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War for Shandalar",
+   "type": "event",
+   "aliases": [],
+   "description": "War begun when Faralyn escaped the Shard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shard of Twelve Worlds",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard in which Faralyn, Rhuell and Ravidel were trapped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Faralyn escaped to.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Faralyn turns the Elder Dragon Vaevictis Asmadi into a dragon whelp.",
+   "participants": [
+    "Faralyn",
+    "Vaevictis Asmadi"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Faralyn once turned the Elder Dragon Vaevictis Asmadi into a dragon whelp"
+  },
+  {
+   "summary": "Faralyn takes Ravidel as his spellsquire.",
+   "participants": [
+    "Faralyn",
+    "Ravidel"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Faralyn took Ravidel as his spellsquire"
+  },
+  {
+   "summary": "Faralyn organizes the Summit of the Null Moon, but Rhuell and Ravidel die instead, giving him energy to escape the Shard.",
+   "participants": [
+    "Faralyn",
+    "Rhuell",
+    "Ravidel",
+    "Summit of the Null Moon"
+   ],
+   "location": "Shard of Twelve Worlds",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Instead of planeswalkers, Rhuell and Ravidel died"
+  },
+  {
+   "summary": "Faralyn is slain by an astral dragon summoned by Kenan Sahrmal.",
+   "participants": [
+    "Faralyn",
+    "Kenan Sahrmal"
+   ],
+   "location": "Shandalar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he was quickly slain by an astral dragon summoned by Kenan Sahrmal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kenan Sahrmal",
+   "relation": "killed",
+   "target": "Faralyn",
+   "note": "Summoned the astral dragon that slew him.",
+   "paragraph": 3,
+   "quote": "he was quickly slain by an astral dragon summoned by Kenan Sahrmal"
+  },
+  {
+   "source": "Faralyn",
+   "relation": "mentor_of",
+   "target": "Ravidel",
+   "note": "Took him as spellsquire.",
+   "paragraph": 2,
+   "quote": "Faralyn took Ravidel as his spellsquire"
+  }
+ ],
+ "rejected": []
+}

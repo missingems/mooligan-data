@@ -1,0 +1,149 @@
+{
+ "page": "wiki/volpaig",
+ "url": "https://mtg.wiki/page/Volpaig",
+ "title": "Volpaig",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:17Z",
+ "storyline": "Innistrad",
+ "entities": [
+  {
+   "name": "Volpaig",
+   "type": "character",
+   "aliases": [],
+   "description": "A crude-minded bishop of the Church of Avacyn who was secretly leader of the Skirsdag Cult, killed by Liliana Vess.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Avacyn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Church Volpaig served as bishop.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skirsdag Cult",
+   "type": "faction",
+   "aliases": [],
+   "description": "Demon-worshipping cult Volpaig secretly led.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Volpaig's plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gavony",
+   "type": "location",
+   "aliases": [],
+   "description": "Region where Volpaig exploited chaos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Siege of Thraben",
+   "type": "event",
+   "aliases": [],
+   "description": "Siege during which Volpaig died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who killed Volpaig seeking Griselbrand.",
+   "presence": "appears"
+  },
+  {
+   "name": "Griselbrand",
+   "type": "creature",
+   "aliases": [],
+   "description": "Demon whose location Volpaig refused to disclose.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mikaeus Cecani",
+   "type": "character",
+   "aliases": [
+    "Lunarch Mikaeus Cecani"
+   ],
+   "description": "Deceased lunarch, the only other person who knew Griselbrand's location.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Helvault",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Where Griselbrand was imprisoned.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the loss of Avacyn Volpaig openly promoted the Skirsdag's pro-demon ideology and drew citizens in in Gavony.",
+   "participants": [
+    "Volpaig",
+    "Skirsdag Cult"
+   ],
+   "location": "Gavony",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "drawing desperate and disillusioned citizens into the Skirsdag Cult"
+  },
+  {
+   "summary": "During the Siege of Thraben Liliana killed Volpaig, who refused to reveal Griselbrand's whereabouts.",
+   "participants": [
+    "Liliana Vess",
+    "Volpaig",
+    "Griselbrand"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Volpaig's demise came during the Siege of Thraben at the hands of the planeswalker Liliana Vess"
+  },
+  {
+   "summary": "Volpaig let slip that only the dead Mikaeus Cecani knew; Liliana reanimated Mikaeus and learned Griselbrand was in the Helvault.",
+   "participants": [
+    "Liliana Vess",
+    "Mikaeus Cecani",
+    "Griselbrand"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Liliana used this information to her advantage, ultimately finding and reanimating Mikaeus"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "killed",
+   "target": "Volpaig",
+   "note": "Killed him during the Siege of Thraben.",
+   "paragraph": 3,
+   "quote": "Volpaig's demise came during the Siege of Thraben at the hands of the planeswalker Liliana Vess"
+  },
+  {
+   "source": "Volpaig",
+   "relation": "leader_of",
+   "target": "Skirsdag Cult",
+   "note": "Secret leader.",
+   "paragraph": 0,
+   "quote": "secretly the leader of the Skirsdag Cult on the plane of Innistrad"
+  },
+  {
+   "source": "Volpaig",
+   "relation": "member_of",
+   "target": "Church of Avacyn",
+   "note": "Bishop.",
+   "paragraph": 0,
+   "quote": "Volpaig was a bishop of the Church of Avacyn"
+  }
+ ],
+ "rejected": []
+}

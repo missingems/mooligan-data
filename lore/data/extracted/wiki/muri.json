@@ -1,0 +1,103 @@
+{
+ "page": "wiki/muri",
+ "url": "https://mtg.wiki/page/Muri",
+ "title": "Muri",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:44Z",
+ "storyline": "New Capenna",
+ "entities": [
+  {
+   "name": "Muri",
+   "type": "creature",
+   "aliases": [],
+   "description": "A caracal, cat familiar of Jinnie Fay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jinnie Fay",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabaretti member who owns Muri.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cabaretti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crime family in New Capenna.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jetmir",
+   "type": "character",
+   "aliases": [],
+   "description": "Cabaretti leader whose office hosted the scene.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vantoleone",
+   "type": "location",
+   "aliases": [],
+   "description": "Location of Jetmir's office.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Regis",
+   "type": "creature",
+   "aliases": [],
+   "description": "Jinnie's dog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crescendo",
+   "type": "event",
+   "aliases": [],
+   "description": "Upcoming Cabaretti event.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "In Jetmir's office, Jinnie planned the Crescendo with Jetmir while stroking Muri, who then hopped into her purse.",
+   "participants": [
+    "Jinnie Fay",
+    "Jetmir",
+    "Muri",
+    "Regis"
+   ],
+   "location": "Vantoleone",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Muri hopped into Jinnie's purse"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Muri",
+   "relation": "serves",
+   "target": "Jinnie Fay",
+   "note": "Cat familiar",
+   "paragraph": 0,
+   "quote": "the cat familiar of Jinnie Fay"
+  },
+  {
+   "source": "Jinnie Fay",
+   "relation": "member_of",
+   "target": "Cabaretti",
+   "note": "Affiliated",
+   "paragraph": 0,
+   "quote": "who is affiliated with the Cabaretti crime family"
+  }
+ ],
+ "rejected": []
+}

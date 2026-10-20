@@ -1,0 +1,130 @@
+{
+ "page": "wiki/return-to-ravnica",
+ "url": "https://mtg.wiki/page/Return_to_Ravnica",
+ "title": "Return to Ravnica",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:40:56Z",
+ "storyline": "Return to Ravnica",
+ "entities": [
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane comprising a singular megalopolis in which a vast variety of inhabitants co-exist, once governed by the Guildpact and ten guilds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Guildpact",
+   "type": "concept",
+   "aliases": [],
+   "description": "The magical agreement that dictated the law of Ravnica and kept the ten guilds in relative harmony before it was broken in Dissension.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "Jace"
+   ],
+   "description": "A planeswalker who marches into Ravnica's underbelly in search of powerful magic; protagonist of the novel The Secretist.",
+   "presence": "appears"
+  },
+  {
+   "name": "Niv-Mizzet",
+   "type": "character",
+   "aliases": [
+    "Niv-Mizzet, Dracogenius"
+   ],
+   "description": "The leader of the Izzet League.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Izzet League",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the five guilds featured in Return to Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the five guilds featured in Return to Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the five guilds featured in Return to Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the five guilds featured in Return to Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "One of the five guilds featured in Return to Ravnica.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Isperia",
+   "type": "character",
+   "aliases": [],
+   "description": "The guildmaster of the Azorius Senate in the Return to Ravnica block.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Guildpact is broken in Dissension, leaving Ravnica's guilds unbound and struggling for control of the plane.",
+   "participants": [
+    "Guildpact",
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "In Dissension , however, the Guildpact had been broken."
+  },
+  {
+   "summary": "Jace Beleren marches into the depths of Ravnica's underbelly in search of powerful magic.",
+   "participants": [
+    "Jace Beleren",
+    "Ravnica"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Jace Beleren marches into the numinous depths of Ravnica's underbelly in search of the promise of powerful magic."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Niv-Mizzet",
+   "relation": "leader_of",
+   "target": "Izzet League",
+   "note": "leader of the guild",
+   "paragraph": 6,
+   "quote": "Niv-Mizzet , the leader of the Izzet League"
+  },
+  {
+   "source": "Isperia",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "guildmaster in the block",
+   "paragraph": 43,
+   "quote": "Isperia , the guildmaster of the Azorius Senate in the Return to Ravnica block"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,188 @@
+{
+ "page": "wiki/riolla-hifrata",
+ "url": "https://mtg.wiki/page/Riolla_Hifrata",
+ "title": "Riolla Hifrata",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:52:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Riolla Hifrata",
+   "type": "character",
+   "aliases": [
+    "Mercanto Schreefa"
+   ],
+   "description": "A crime boss of the merchant caste in Sumifa living in Almaaz in 3050 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Almaaz",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Riolla lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sumifa",
+   "type": "location",
+   "aliases": [],
+   "description": "City of which Riolla was a crime boss.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thedeso",
+   "type": "character",
+   "aliases": [],
+   "description": "King of Sumifa who died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maceo",
+   "type": "character",
+   "aliases": [],
+   "description": "Thedeso's son, who inherited the throne and agreed to betroth Riolla.",
+   "presence": "appears"
+  },
+  {
+   "name": "Claria",
+   "type": "character",
+   "aliases": [],
+   "description": "Maceo's former betrothed, who sought the crystals of Sarraza.",
+   "presence": "appears"
+  },
+  {
+   "name": "Porros",
+   "type": "character",
+   "aliases": [],
+   "description": "Sand wraith for whom Riolla secretly worked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cheyne",
+   "type": "character",
+   "aliases": [],
+   "description": "Archaeologist who joined Claria.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ogwater Rifkin",
+   "type": "character",
+   "aliases": [
+    "Ogwater"
+   ],
+   "description": "Songmage and former lover of Riolla who released the Beast of the Hours and completed the banishing spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Beast of the Hours",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monster released from its prison and banished.",
+   "presence": "appears"
+  },
+  {
+   "name": "Womba",
+   "type": "character",
+   "aliases": [],
+   "description": "Orc killed by the Beast of the Hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "Crystals of Sarraza",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Crystals sought in a vault.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After Thedeso dies, Riolla promises Maceo wealth if he betroths her; he agrees and casts off Claria.",
+   "participants": [
+    "Riolla Hifrata",
+    "Maceo",
+    "Claria",
+    "Thedeso"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Maceo agreed, casting off his former betrothed, Claria"
+  },
+  {
+   "summary": "Riolla learns Cheyne and Ogwater joined Claria in seeking the crystals of Sarraza and greedily follows them.",
+   "participants": [
+    "Riolla Hifrata",
+    "Cheyne",
+    "Ogwater Rifkin",
+    "Claria"
+   ],
+   "location": "Sumifa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Riolla greedily followed them, thinking the vault had a large treasure."
+  },
+  {
+   "summary": "Ogwater releases the Beast of the Hours, which kills Womba.",
+   "participants": [
+    "Ogwater Rifkin",
+    "Beast of the Hours",
+    "Womba"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ogwater released the Beast of the Hours from its prison"
+  },
+  {
+   "summary": "Riolla gives Ogwater her black pearl, the last stone to complete the banishing spell, then returns empty-handed.",
+   "participants": [
+    "Riolla Hifrata",
+    "Ogwater Rifkin",
+    "Beast of the Hours"
+   ],
+   "location": "Sumifa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Riolla gave the songmage her black pearl, the last stone he needed to complete the spell"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Riolla Hifrata",
+   "relation": "serves",
+   "target": "Porros",
+   "note": "Secretly worked for the sand wraith",
+   "paragraph": 2,
+   "quote": "Secretly working for the sand wraith Porros"
+  },
+  {
+   "source": "Riolla Hifrata",
+   "relation": "romantic",
+   "target": "Ogwater Rifkin",
+   "note": "Former lover",
+   "paragraph": 2,
+   "quote": "a former lover of Riolla's"
+  },
+  {
+   "source": "Maceo",
+   "relation": "family",
+   "target": "Thedeso",
+   "note": "Son",
+   "paragraph": 2,
+   "quote": "his son Maceo inherited the throne"
+  },
+  {
+   "source": "Beast of the Hours",
+   "relation": "killed",
+   "target": "Womba",
+   "note": "",
+   "paragraph": 3,
+   "quote": "After killing the orc Womba"
+  }
+ ],
+ "rejected": []
+}

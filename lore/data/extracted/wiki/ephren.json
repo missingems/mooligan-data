@@ -1,0 +1,136 @@
+{
+ "page": "wiki/ephren",
+ "url": "https://mtg.wiki/page/Ephren",
+ "title": "Ephren",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:35Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Plains of Ephren",
+   "type": "location",
+   "aliases": [
+    "Ephren"
+   ],
+   "description": "Enchanted plains on Corondor ruled by House Carthalion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian continent containing Ephren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Melmereth",
+   "type": "location",
+   "aliases": [],
+   "description": "Ruined castle lost when Jared defeated Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sages of Minorad",
+   "type": "faction",
+   "aliases": [],
+   "description": "First settlers of Ephren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "House Carthalion",
+   "type": "faction",
+   "aliases": [],
+   "description": "House with stewardship of Ephren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Heir who returned and defeated Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwendolyn Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Jared's mother, who died.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adam Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Jared's father, killed by Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who invaded and conquered Ephren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle of Aster Fall",
+   "type": "event",
+   "aliases": [],
+   "description": "Battle in which Ravidel conquered Ephren.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of Castle Melmereth",
+   "type": "event",
+   "aliases": [],
+   "description": "Jared defeated Ravidel at the cost of the castle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravidel invaded and conquered Ephren at the Battle of Aster Fall, killing Adam Carthalion and his army.",
+   "participants": [
+    "Ravidel",
+    "Adam Carthalion"
+   ],
+   "location": "Plains of Ephren",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "killing Jared's father, Adam Carthalion and his whole army"
+  },
+  {
+   "summary": "Jared returned and defeated Ravidel, destroying Castle Melmereth.",
+   "participants": [
+    "Jared Carthalion",
+    "Ravidel",
+    "Castle Melmereth"
+   ],
+   "location": "Castle Melmereth",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Jared returned to his ancestral lands and defeated Ravidel"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Adam Carthalion",
+   "note": "",
+   "paragraph": 2,
+   "quote": "killing Jared's father, Adam Carthalion and his whole army"
+  },
+  {
+   "source": "Jared Carthalion",
+   "relation": "family",
+   "target": "Adam Carthalion",
+   "note": "Father and son",
+   "paragraph": 2,
+   "quote": "killing Jared's father, Adam Carthalion and his whole army"
+  }
+ ],
+ "rejected": []
+}

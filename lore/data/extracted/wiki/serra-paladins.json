@@ -1,0 +1,128 @@
+{
+ "page": "wiki/serra-paladins",
+ "url": "https://mtg.wiki/page/Serra_paladins",
+ "title": "Serra paladins",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:38Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Serra Paladins",
+   "type": "faction",
+   "aliases": [],
+   "description": "Order of knights devoted to protecting Aysen and destroying Baron Sengir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aysen",
+   "type": "location",
+   "aliases": [],
+   "description": "Towns the paladins protect.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire lord, nemesis of the paladins at Castle Sengir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ihsan",
+   "type": "character",
+   "aliases": [
+    "Lord Ihsan"
+   ],
+   "description": "Most infamous paladin, who asked Sengir for immortality and was turned into a shade.",
+   "presence": "appears"
+  },
+  {
+   "name": "Serra",
+   "type": "deity",
+   "aliases": [],
+   "description": "Figure whose point of view the paladins embody.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Castle Sengir",
+   "type": "location",
+   "aliases": [
+    "Sengir Castle"
+   ],
+   "description": "Baron Sengir's castle amid the mists of Koskun Falls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Koskun Falls",
+   "type": "location",
+   "aliases": [],
+   "description": "Misty area around the castle.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ihsan goes to Castle Sengir to ask Sengir to make him immortal in order to kill him.",
+   "participants": [
+    "Ihsan",
+    "Baron Sengir"
+   ],
+   "location": "Castle Sengir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "went directly to the castle to ask the vampire lord to make him immortal"
+  },
+  {
+   "summary": "Sengir sees through the plan and turns Ihsan into a shade unable to harm him.",
+   "participants": [
+    "Baron Sengir",
+    "Ihsan"
+   ],
+   "location": "Castle Sengir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "instead turned Ihsan into a shade, unable to harm him"
+  },
+  {
+   "summary": "The paladins view this as betrayal and refuse to readmit Ihsan.",
+   "participants": [
+    "Serra Paladins",
+    "Ihsan"
+   ],
+   "location": "Aysen",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Serra Paladins viewed this as a betrayal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Serra Paladins",
+   "relation": "enemy",
+   "target": "Baron Sengir",
+   "note": "Devoted to his destruction.",
+   "paragraph": 0,
+   "quote": "the ultimate destruction of Baron Sengir"
+  },
+  {
+   "source": "Ihsan",
+   "relation": "member_of",
+   "target": "Serra Paladins",
+   "note": "Its most infamous member.",
+   "paragraph": 3,
+   "quote": "The most infamous member of the order was Ihsan"
+  },
+  {
+   "source": "Serra Paladins",
+   "relation": "serves",
+   "target": "Aysen",
+   "note": "They protect its towns.",
+   "paragraph": 0,
+   "quote": "devoted to the protection of the towns of Aysen"
+  }
+ ],
+ "rejected": []
+}

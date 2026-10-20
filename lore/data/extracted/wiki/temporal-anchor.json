@@ -1,0 +1,189 @@
+{
+ "page": "wiki/temporal-anchor",
+ "url": "https://mtg.wiki/page/Temporal_Anchor",
+ "title": "Temporal Anchor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:41Z",
+ "storyline": "Dominaria United",
+ "entities": [
+  {
+   "name": "Temporal Anchor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device crafted by Saheeli Rai to heighten Teferi's time manipulation, powered by the Weatherlight's powerstone.",
+   "presence": "appears"
+  },
+  {
+   "name": "Saheeli Rai",
+   "type": "character",
+   "aliases": [
+    "Saheeli"
+   ],
+   "description": "Planeswalker who crafted the Temporal Anchor and repaired it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker sent back in time through the Anchor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who made Teferi incorporeal for his travels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jodah",
+   "type": "character",
+   "aliases": [],
+   "description": "Gave Saheeli Urza's time machine designs.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer whose Sylex Blast Teferi witnessed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sharaman",
+   "type": "character",
+   "aliases": [],
+   "description": "Ghost of Urza's general who hindered the prototype tests.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wrenn",
+   "type": "character",
+   "aliases": [],
+   "description": "Remained with Saheeli and Jodah to fix the machine.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza's Tower",
+   "type": "location",
+   "aliases": [],
+   "description": "Site where the Anchor was installed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex",
+   "type": "artifact",
+   "aliases": [
+    "Sylex Blast"
+   ],
+   "description": "Artifact whose detonation ended the Brothers' War era conflict in 64 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Ship whose powerstone powers the Anchor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Moonsilver Key",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Component that channels the Anchor's energy.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stasis Coffin",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact confining the Anchor's pilot in stasis.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Saheeli, Kaya and Teferi install the Anchor at Urza's Tower to send Teferi back to learn how the Sylex works; Sharaman's ghost hinders tests and is put to rest by Kaya.",
+   "participants": [
+    "Saheeli Rai",
+    "Kaya",
+    "Teferi",
+    "Sharaman",
+    "Temporal Anchor"
+   ],
+   "location": "Urza's Tower",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Before he was put to rest by Kaya, Sharaman severely damaged the power stabilization subsystem, though Saheeli was able to repair it."
+  },
+  {
+   "summary": "Teferi's first three attempts land in the wrong eras.",
+   "participants": [
+    "Teferi",
+    "Temporal Anchor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Teferi first arrived amid The Dark Age , 21 years too late"
+  },
+  {
+   "summary": "Teferi witnesses Urza setting the Sylex Blast and learns the trigger was a person.",
+   "participants": [
+    "Teferi",
+    "Urza",
+    "Sylex"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The trigger to detonate the Sylex was not a spell or an artifact — it was a person."
+  },
+  {
+   "summary": "The powerstone implodes and overloads the Anchor, leaving Teferi's consciousness lost in the time stream.",
+   "participants": [
+    "Teferi",
+    "Temporal Anchor",
+    "Saheeli Rai",
+    "Wrenn",
+    "Jodah",
+    "Kaya"
+   ],
+   "location": "Urza's Tower",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the powerstone imploded and overloaded the anchor, which left Teferi's consciousness lost in the time stream."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Saheeli Rai",
+   "relation": "created",
+   "target": "Temporal Anchor",
+   "note": "",
+   "paragraph": 0,
+   "quote": "The Temporal Anchor is a device crafted by Saheeli Rai"
+  },
+  {
+   "source": "Jodah",
+   "relation": "ally",
+   "target": "Saheeli Rai",
+   "note": "gave her Urza's designs",
+   "paragraph": 1,
+   "quote": "given to Saheeli by Jodah"
+  },
+  {
+   "source": "Sharaman",
+   "relation": "enemy",
+   "target": "Temporal Anchor",
+   "note": "hindered prototype tests",
+   "paragraph": 3,
+   "quote": "Prototype tests were hindered by the ghost of Sharaman"
+  }
+ ],
+ "rejected": []
+}

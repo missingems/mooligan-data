@@ -1,0 +1,158 @@
+{
+ "page": "wiki/khali",
+ "url": "https://mtg.wiki/page/Khali",
+ "title": "Khali",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:04:48Z",
+ "storyline": "Rise of the Eldrazi",
+ "entities": [
+  {
+   "name": "Khali",
+   "type": "character",
+   "aliases": [],
+   "description": "Kor hookmaster from Zendikar who hunts Eldrazi with her twin brother.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sha'heel",
+   "type": "character",
+   "aliases": [],
+   "description": "Khali's twin brother, a Kor hookmaster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [
+    "Nissa",
+    "Shaya"
+   ],
+   "description": "Planeswalker called Shaya, Worldwaker, who summons earth elementals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hamadi",
+   "type": "character",
+   "aliases": [],
+   "description": "Human member of the Eldrazi hunting party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bahkut",
+   "type": "character",
+   "aliases": [],
+   "description": "Human member of the Eldrazi hunting party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alira",
+   "type": "character",
+   "aliases": [],
+   "description": "Human member of the Eldrazi hunting party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pathrazer",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi spawn of Ulamog that attacks adventurers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi titan whose spawn is the Pathrazer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the hunt takes place.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Khali and Sha'heel lead Nissa and the hunters up the gravity fields through the floating boulders.",
+   "participants": [
+    "Khali",
+    "Sha'heel",
+    "Nissa Revane",
+    "Hamadi",
+    "Bahkut",
+    "Alira"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Khali and her brother led the climb up the gravity fields"
+  },
+  {
+   "summary": "A Pathrazer emerges below, and Sha'heel cuts his anchor lines to dive at it on a kitesail.",
+   "participants": [
+    "Khali",
+    "Sha'heel",
+    "Pathrazer"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Sha'heel had opened up a kitesail and sped toward the Eldrazi"
+  },
+  {
+   "summary": "The Pathrazer crushes several of the expedition while Sha'heel and Khali tangle it with ropes.",
+   "participants": [
+    "Pathrazer",
+    "Sha'heel",
+    "Khali"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Then Khali streaked across the Eldrazi's legs and trailed another tangling line."
+  },
+  {
+   "summary": "Nissa summons earth elementals that crush the Pathrazer.",
+   "participants": [
+    "Nissa Revane",
+    "Pathrazer"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the other two hulks bludgeoned the Pathrazer into a wriggling mass"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Khali",
+   "relation": "family",
+   "target": "Sha'heel",
+   "note": "twin brother",
+   "paragraph": 1,
+   "quote": "Khali and her twin brother Sha'heel"
+  },
+  {
+   "source": "Khali",
+   "relation": "ally",
+   "target": "Nissa Revane",
+   "note": "joined her hunting Eldrazi",
+   "paragraph": 1,
+   "quote": "joined Nissa Revane and the three humans"
+  },
+  {
+   "source": "Pathrazer",
+   "relation": "created",
+   "target": "Ulamog",
+   "note": "spawn of Ulamog",
+   "paragraph": 2,
+   "quote": "a spawn of the titan Ulamog"
+  }
+ ],
+ "rejected": []
+}

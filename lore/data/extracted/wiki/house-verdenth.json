@@ -1,0 +1,131 @@
+{
+ "page": "wiki/house-verdenth",
+ "url": "https://mtg.wiki/page/House_Verdenth",
+ "title": "House Verdenth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:15Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "House Verdenth",
+   "type": "faction",
+   "aliases": [
+    "House Emerald"
+   ],
+   "description": "One of five powerful houses of Arathoxia, ruled by Lady Verdenth from Krysalthus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lady Verdenth",
+   "type": "character",
+   "aliases": [],
+   "description": "Green mana sorceress and mistress of House Verdenth, killed by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arathoxia",
+   "type": "location",
+   "aliases": [],
+   "description": "Land of five powerful houses.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Invader who killed Lady Verdenth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jared Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Infant saved by Lady Verdenth from wolves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ezer",
+   "type": "character",
+   "aliases": [],
+   "description": "Rushed the infant Jared away from the Battle of Aster Fall.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Marshall Bikov",
+   "type": "character",
+   "aliases": [],
+   "description": "Ally of Lady Verdenth during Ravidel's invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planar Barge",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Vessel whose blast obliterated Verdenth's castle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krysalthus",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest from which House Verdenth ruled.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravidel invades Arathoxia and destroys House Verdenth, killing Lady Verdenth in a personal duel.",
+   "participants": [
+    "Ravidel",
+    "Lady Verdenth",
+    "House Verdenth"
+   ],
+   "location": "Arathoxia",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "House Verdenth was destroyed in Ravidel’s invasion of Arathoxia, and the Lady herself was killed in a personal duel with Ravidel."
+  },
+  {
+   "summary": "Lady Verdenth saves the infant Jared Carthalion from wolves.",
+   "participants": [
+    "Lady Verdenth",
+    "Jared Carthalion",
+    "Ezer"
+   ],
+   "location": "Krysalthus",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "She saved the infant Jared Carthalion in Krysalthus from wolves as Ezer rushed the baby away from the Battle of Aster Fall ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Lady Verdenth",
+   "note": "",
+   "paragraph": 1,
+   "quote": "the Lady herself was killed in a personal duel with Ravidel"
+  },
+  {
+   "source": "Lady Verdenth",
+   "relation": "leader_of",
+   "target": "House Verdenth",
+   "note": "",
+   "paragraph": 0,
+   "quote": "ruled from the forest Krysalthus by Lady Verdenth"
+  },
+  {
+   "source": "Lady Verdenth",
+   "relation": "ally",
+   "target": "Marshall Bikov",
+   "note": "",
+   "paragraph": 3,
+   "quote": "She allied with Marshall Bikov during Ravidel 's invasion of Arathoxia"
+  }
+ ],
+ "rejected": []
+}

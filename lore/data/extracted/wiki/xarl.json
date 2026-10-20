@@ -1,0 +1,203 @@
+{
+ "page": "wiki/xarl",
+ "url": "https://mtg.wiki/page/Xarl",
+ "title": "Xarl",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:31Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Xarl Angel-Keeper",
+   "type": "character",
+   "aliases": [
+    "Xarl",
+    "Xarl Whoreson",
+    "Great Father"
+   ],
+   "description": "A wizard from Golthonor on Corondor who enslaved the angel Trine with a Horned Halo.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trine",
+   "type": "character",
+   "aliases": [
+    "Serra Angel Trine"
+   ],
+   "description": "A Serra Angel bound and enslaved by Xarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skule",
+   "type": "character",
+   "aliases": [],
+   "description": "The wizard who recruited Xarl as spellsquire.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mandek Ironfist",
+   "type": "character",
+   "aliases": [
+    "Warlord Mandek Ironfist"
+   ],
+   "description": "Barbarian warlord whom Xarl served.",
+   "presence": "appears"
+  },
+  {
+   "name": "Init",
+   "type": "character",
+   "aliases": [],
+   "description": "Xarl's infant half-sister, killed by Xarl after a rat bite.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eska of Thetia",
+   "type": "character",
+   "aliases": [
+    "Eska"
+   ],
+   "description": "A woman Xarl courted.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "A descendant of Xarl who became his spellsquire, inherited the House of Xarl and became a Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Horned Halo",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An item that bound Trine to Xarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "House of Xarl",
+   "type": "faction",
+   "aliases": [],
+   "description": "The line of descendants Xarl founded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Angel Keep",
+   "type": "location",
+   "aliases": [],
+   "description": "Xarl's castle in the mountains of Wolf's Hackle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Balthesa",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state where Xarl grew up.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent of Xarl's power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of this story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Xarl kills his infant half-sister Init and the rabid rat that bit her with an empty wine bottle.",
+   "participants": [
+    "Xarl Angel-Keeper",
+    "Init"
+   ],
+   "location": "Balthesa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Xarl himself killed both Init and the rat with a fatal blow by an empty wine bottle"
+  },
+  {
+   "summary": "Xarl forces Skule to summon the Serra Angel Trine and binds her with the Horned Halo, starting her 326-year enslavement.",
+   "participants": [
+    "Xarl Angel-Keeper",
+    "Skule",
+    "Trine",
+    "Horned Halo"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This started the 326-year-long enslavement of Trine ."
+  },
+  {
+   "summary": "Mandek Ironfist grants Xarl a castle, Angel Keep.",
+   "participants": [
+    "Mandek Ironfist",
+    "Xarl Angel-Keeper",
+    "Angel Keep"
+   ],
+   "location": "Angel Keep",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "This castle became known as Angel Keep ."
+  },
+  {
+   "summary": "Xarl uses Trine's power to rise to great power and has her forget being an angel of Serra.",
+   "participants": [
+    "Xarl Angel-Keeper",
+    "Trine"
+   ],
+   "location": "Corondor",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he magically caused Trine to forget her past as an angel of Serra"
+  },
+  {
+   "summary": "Xarl dies; Trine escapes and is killed by her angelic sisters; Eskil inherits the House and becomes a Planeswalker.",
+   "participants": [
+    "Xarl Angel-Keeper",
+    "Trine",
+    "Eskil",
+    "House of Xarl"
+   ],
+   "location": "Angel Keep",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eskil in turn became an immortal Planeswalker"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Xarl Angel-Keeper",
+   "relation": "serves",
+   "target": "Mandek Ironfist",
+   "note": "Archmage in his service.",
+   "paragraph": 1,
+   "quote": "he eventually came into the service of the barbarian Warlord Mandek Ironfist"
+  },
+  {
+   "source": "Skule",
+   "relation": "mentor_of",
+   "target": "Xarl Angel-Keeper",
+   "note": "Former mentor.",
+   "paragraph": 1,
+   "quote": "forced his former mentor Skule to summon the Serra Angel Trine"
+  },
+  {
+   "source": "Xarl Angel-Keeper",
+   "relation": "enemy",
+   "target": "Trine",
+   "note": "He enslaved her.",
+   "paragraph": 1,
+   "quote": "binding her to him and making her a fallen angel"
+  }
+ ],
+ "rejected": []
+}

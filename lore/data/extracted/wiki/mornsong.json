@@ -1,0 +1,147 @@
+{
+ "page": "wiki/mornsong",
+ "url": "https://mtg.wiki/page/Mornsong",
+ "title": "Mornsong",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:56Z",
+ "storyline": "Lorwyn",
+ "entities": [
+  {
+   "name": "Mornsong",
+   "type": "faction",
+   "aliases": [
+    "Mornsong tribe"
+   ],
+   "description": "A tribe of Lorwyn elves of the Arbor Morning, honoring singing and wearing purple and silver.",
+   "presence": "appears"
+  },
+  {
+   "name": "Arbor Morning",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Mornsong elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the elves.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gilt-Leaf",
+   "type": "faction",
+   "aliases": [
+    "Gilt-Leaf tribe"
+   ],
+   "description": "Elven tribe with unquestioned rule over Lorwyn.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Peradala",
+   "type": "character",
+   "aliases": [],
+   "description": "A Mornsong perfect and greatest singer of Lorwyn, betrothed to Eidren.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eidren",
+   "type": "character",
+   "aliases": [
+    "Eidren of Lys Alana"
+   ],
+   "description": "Betrothed of Peradala.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Queen of the fae whose agenda led to the massacre; created a duplicate of Maralen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "Peradala's handmaiden; the survivor was a duplicate created by Oona who overthrows her creator.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Mornsong plan to assimilate into the Gilt-Leaf through a strategic marriage of their ruling perfects.",
+   "participants": [
+    "Mornsong",
+    "Gilt-Leaf"
+   ],
+   "location": "Arbor Morning",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "through a strategic marriage of their ruling perfects"
+  },
+  {
+   "summary": "Enchanted vines and faeries slaughter Peradala's wedding convoy as Oona furthers her agenda.",
+   "participants": [
+    "Peradala",
+    "Eidren",
+    "Oona",
+    "Mornsong"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "enchanted vines and faeries slaughtered her wedding convoy as Oona furthered her agenda"
+  },
+  {
+   "summary": "Maralen, apparently surviving, is in fact a duplicate created by Oona and will overthrow her creator to become queen of the fae.",
+   "participants": [
+    "Maralen",
+    "Oona"
+   ],
+   "location": "Lorwyn",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "was in fact a duplicate created by Oona"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Peradala",
+   "relation": "leader_of",
+   "target": "Mornsong",
+   "note": "A perfect of the tribe",
+   "paragraph": 4,
+   "quote": "a perfect of Mornsong, was the greatest singer of Lorwyn"
+  },
+  {
+   "source": "Peradala",
+   "relation": "romantic",
+   "target": "Eidren",
+   "note": "Betrothed",
+   "paragraph": 4,
+   "quote": "Peradala was betrothed to"
+  },
+  {
+   "source": "Oona",
+   "relation": "created",
+   "target": "Maralen",
+   "note": "Duplicate",
+   "paragraph": 5,
+   "quote": "was in fact a duplicate created by Oona"
+  },
+  {
+   "source": "Maralen",
+   "relation": "serves",
+   "target": "Peradala",
+   "note": "Handmaiden",
+   "paragraph": 5,
+   "quote": "Peradala's handmaiden, Maralen"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,203 @@
+{
+ "page": "wiki/siren-sea",
+ "url": "https://mtg.wiki/page/Siren_Sea",
+ "title": "Siren Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:02Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Siren Sea",
+   "type": "location",
+   "aliases": [
+    "Great Sea"
+   ],
+   "description": "The vast ocean bordering the western coast of Theros, home of the tritons and ruled by Thassa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane whose western coast the sea borders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thassa",
+   "type": "deity",
+   "aliases": [],
+   "description": "The sea god who rules the Siren Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tritons",
+   "type": "faction",
+   "aliases": [],
+   "description": "Devoted guardians of Thassa who dwell within the sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Heliod",
+   "type": "deity",
+   "aliases": [],
+   "description": "The sun god who destroyed Olantin with his spear.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olantin",
+   "type": "location",
+   "aliases": [],
+   "description": "A prosperous coastal polis destroyed by Heliod's wrath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Triarchy",
+   "type": "faction",
+   "aliases": [],
+   "description": "Priesthood of Heliod at Olantin that conjured a false sun.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arixmethes",
+   "type": "creature",
+   "aliases": [
+    "Arixmethes, the Slumbering Isle"
+   ],
+   "description": "A slumbering kraken mistaken for an island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Callaphe",
+   "type": "character",
+   "aliases": [
+    "Callaphe, Beloved of the Sea"
+   ],
+   "description": "A hero who found sanctuary on Ketaphos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skathos",
+   "type": "location",
+   "aliases": [],
+   "description": "A cursed island once a site of Pharikan rites, now a place of stone and silence.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hythonia",
+   "type": "character",
+   "aliases": [],
+   "description": "Gorgon queen ruling Skathos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kruphix",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of horizons with a shrine at the Temple of Mystery.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Queen Korinna",
+   "type": "character",
+   "aliases": [
+    "Korinna"
+   ],
+   "description": "Her death caused Thassa's tears to form the Dakra Isles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dakra Isles",
+   "type": "location",
+   "aliases": [
+    "Isles of Enchantment"
+   ],
+   "description": "Magical islands that emerged where Thassa's tears fell.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Heliod destroys Olantin with a spear thrown from Nyx after the Triarchy conjures a false sun.",
+   "participants": [
+    "Heliod",
+    "Triarchy",
+    "Olantin"
+   ],
+   "location": "Olantin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Heliod hurled his spear down from Nyx, destroying Olantin in a single stroke."
+  },
+  {
+   "summary": "The Triarchy conjures an immense orb of light to mimic the absent sun.",
+   "participants": [
+    "Triarchy",
+    "Olantin"
+   ],
+   "location": "Olantin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the Triarchy conjured an immense orb of light to mimic the absent sun"
+  },
+  {
+   "summary": "Arixmethes awakens, destroying the city built on its back.",
+   "participants": [
+    "Arixmethes"
+   ],
+   "location": "Siren Sea",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "When Arixmethes awakened, the city was destroyed"
+  },
+  {
+   "summary": "The Dakra Isles emerge where Thassa's tears fell after Queen Korinna's death.",
+   "participants": [
+    "Thassa",
+    "Queen Korinna",
+    "Dakra Isles"
+   ],
+   "location": "Siren Sea",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "these magical islands emerged where Thassa's tears fell after the death of Queen Korinna"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Thassa",
+   "relation": "leader_of",
+   "target": "Siren Sea",
+   "note": "Rules it.",
+   "paragraph": 1,
+   "quote": "The Siren Sea is ruled by the sea god Thassa"
+  },
+  {
+   "source": "Tritons",
+   "relation": "serves",
+   "target": "Thassa",
+   "note": "Devoted guardians.",
+   "paragraph": 6,
+   "quote": "Devoted to Thassa, they act as her guardians"
+  },
+  {
+   "source": "Heliod",
+   "relation": "killed",
+   "target": "Olantin",
+   "note": "Destroyed the city.",
+   "paragraph": 4,
+   "quote": "Heliod hurled his spear down from Nyx, destroying Olantin in a single stroke."
+  },
+  {
+   "source": "Hythonia",
+   "relation": "leader_of",
+   "target": "Skathos",
+   "note": "Rules the island.",
+   "paragraph": 3,
+   "quote": "now ruled by the gorgon queen Hythonia"
+  }
+ ],
+ "rejected": []
+}

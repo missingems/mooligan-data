@@ -1,0 +1,114 @@
+{
+ "page": "wiki/elowen",
+ "url": "https://mtg.wiki/page/Elowen",
+ "title": "Elowen",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:47Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Elowen",
+   "type": "character",
+   "aliases": [
+    "Loremage Elowen"
+   ],
+   "description": "Arrogant middle-aged loremage and knight from Vantress on Eldraine, whom no magic can stick to; she joined the quest to save the High King.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Elowen lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Will Kenrith",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited Indrelon with Rowan; Elowen joined their quest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rowan Kenrith",
+   "type": "character",
+   "aliases": [],
+   "description": "Visited Indrelon with Will; Elowen joined their quest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oko",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker defeated with Elowen's help.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Algenus Kenrith",
+   "type": "character",
+   "aliases": [
+    "High King"
+   ],
+   "description": "Knight of Ardenvale who traveled with Elowen as a young knight and was saved by her.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "A spell-leaching hex is set on Elowen as a child, but it makes her into a loremage instead.",
+   "participants": [
+    "Elowen"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "A spell-leaching hex was set on Elowen as a child."
+  },
+  {
+   "summary": "Elowen witnesses Will and Rowan Kenrith visit Indrelon and joins their quest to save the High King.",
+   "participants": [
+    "Elowen",
+    "Will Kenrith",
+    "Rowan Kenrith"
+   ],
+   "location": "Eldraine",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Elowen witnessed Will and Rowan Kenrith 's visit to Indrelon"
+  },
+  {
+   "summary": "Elowen helps defeat the planeswalker Oko and save Algenus.",
+   "participants": [
+    "Elowen",
+    "Oko",
+    "Algenus Kenrith"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She was instrumental in defeating the planeswalker Oko and saving Algenus."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elowen",
+   "relation": "enemy",
+   "target": "Oko",
+   "note": "She helped defeat him.",
+   "paragraph": 2,
+   "quote": "She was instrumental in defeating the planeswalker Oko and saving Algenus."
+  },
+  {
+   "source": "Elowen",
+   "relation": "ally",
+   "target": "Will Kenrith",
+   "note": "She joined the Kenriths' quest.",
+   "paragraph": 2,
+   "quote": "afterward joined their quest to save the High King"
+  }
+ ],
+ "rejected": []
+}

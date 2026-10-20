@@ -1,0 +1,106 @@
+{
+ "page": "wiki/faerie-nobles",
+ "url": "https://mtg.wiki/page/Faerie_nobles",
+ "title": "Faerie nobles",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Faerie nobles",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaders of the faeries of the Great Wood on Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Great Wood",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest of Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the faerie nobles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Autumn Willow",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of Devin who did not want certain people to cross the River Bridge.",
+   "presence": "appears"
+  },
+  {
+   "name": "Devin",
+   "type": "character",
+   "aliases": [],
+   "description": "Faerie noble created by Autumn Willow in the likeness of Veldrane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Veldrane",
+   "type": "character",
+   "aliases": [
+    "Veldrane of Sengir"
+   ],
+   "description": "Of Sengir; model for Devin's likeness.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Bridge",
+   "type": "location",
+   "aliases": [],
+   "description": "Bridge in the Great Wood taken over by nobles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "An-Havva",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of humans whom the nobles know well.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Autumn Willow created Devin in the likeness of Veldrane of Sengir.",
+   "participants": [
+    "Autumn Willow",
+    "Devin",
+    "Veldrane"
+   ],
+   "location": "Great Wood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Autumn Willow created one of them, Devin"
+  },
+  {
+   "summary": "The nobles and their faeries took over the River Bridge, pushing unwanted travellers to their deaths.",
+   "participants": [
+    "Faerie nobles"
+   ],
+   "location": "River Bridge",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "took over the River Bridge in the Great Wood"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Autumn Willow",
+   "relation": "created",
+   "target": "Devin",
+   "note": "Created him in Veldrane's likeness.",
+   "paragraph": 1,
+   "quote": "Autumn Willow created one of them, Devin"
+  }
+ ],
+ "rejected": []
+}

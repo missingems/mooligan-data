@@ -1,0 +1,103 @@
+{
+ "page": "wiki/sliver-lair",
+ "url": "https://mtg.wiki/page/Sliver_Lair",
+ "title": "Sliver Lair",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:31Z",
+ "storyline": "Rath",
+ "entities": [
+  {
+   "name": "Sliver Lair",
+   "type": "location",
+   "aliases": [],
+   "description": "Cave and duct nest of the Sliver Queen and her brood in the Hub on Rath.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sliver Queen",
+   "type": "creature",
+   "aliases": [],
+   "description": "Queen of the slivers nesting in the lair.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [
+    "Skyship Weatherlight"
+   ],
+   "description": "Skyship that passed through the lair.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight Crew",
+   "type": "faction",
+   "aliases": [],
+   "description": "Crew that split apart to weaken the slivers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rathi Overlay",
+   "type": "concept",
+   "aliases": [],
+   "description": "Phenomenon that placed the lair in a volcano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Destination of the Weatherlight.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Weatherlight enters an exhaust vent in the Cinder Marsh and is swarmed by slivers.",
+   "participants": [
+    "Weatherlight",
+    "Weatherlight Crew",
+    "Sliver Lair"
+   ],
+   "location": "Sliver Lair",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the slivers swarmed them"
+  },
+  {
+   "summary": "The crew splits apart to force the slivers to spread out and passes through.",
+   "participants": [
+    "Weatherlight Crew"
+   ],
+   "location": "Sliver Lair",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the Weatherlight Crew split apart"
+  },
+  {
+   "summary": "The Rathi Overlay places the lair in the heart of a volcano, destroying it.",
+   "participants": [
+    "Rathi Overlay",
+    "Sliver Lair"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The Sliver Lair was destroyed when the Rathi Overlay placed it in the heart of a volcano."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sliver Queen",
+   "relation": "located_in",
+   "target": "Sliver Lair",
+   "note": "Her hive was in its deepest part.",
+   "paragraph": 1,
+   "quote": "In the deepest part of the lair the Sliver Queen had her hive"
+  }
+ ],
+ "rejected": []
+}

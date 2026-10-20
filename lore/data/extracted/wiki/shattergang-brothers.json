@@ -1,0 +1,181 @@
+{
+ "page": "wiki/shattergang-brothers",
+ "url": "https://mtg.wiki/page/Shattergang_Brothers",
+ "title": "Shattergang Brothers",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shattergang Brothers",
+   "type": "faction",
+   "aliases": [
+    "Shattergangs"
+   ],
+   "description": "A gang of goblin artificers and black market weapons runners for hire on Ravnica: Rikkig, Gardagig and Dargig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Rikkig",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin artificer, one of the Shattergang Brothers, confronted by Gideon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gardagig",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin artificer, one of the Shattergang Brothers, captured by Gideon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dargig",
+   "type": "character",
+   "aliases": [],
+   "description": "The younger Shattergang brother, an explosives specialist known for running his mouth; killed by Krenko.",
+   "presence": "appears"
+  },
+  {
+   "name": "Krenko",
+   "type": "character",
+   "aliases": [],
+   "description": "Goblin mob boss who killed Dargig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon"
+   ],
+   "description": "Planeswalker who intervened in the goblin gang war.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Shattergang Brothers operate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boros Legion",
+   "type": "faction",
+   "aliases": [
+    "Boros",
+    "the Legion"
+   ],
+   "description": "Guild that put a price on the Shattergangs' heads and was threatened by them.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that put a price on the Shattergangs' heads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rakdos",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that sometimes hired the Shattergangs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Goblin gang war",
+   "type": "event",
+   "aliases": [],
+   "description": "A gang war started by Dargig's death.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Krenko kills Dargig when a weapon drop goes bad, starting a goblin gang war.",
+   "participants": [
+    "Krenko",
+    "Dargig",
+    "Shattergang Brothers"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "was killed by the goblin mob boss Krenko when a weapon drop went bad"
+  },
+  {
+   "summary": "The remaining brothers demand the Boros turn Krenko over or face destruction of Boros territory.",
+   "participants": [
+    "Rikkig",
+    "Gardagig",
+    "Boros Legion",
+    "Krenko"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the remaining Shattergang Brothers issued an ultimatum to the Boros"
+  },
+  {
+   "summary": "Gideon intervenes and captures Gardagig, who reveals the Shattergang hideout.",
+   "participants": [
+    "Gideon Jura",
+    "Gardagig"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He managed to capture Gardagig, who gave up the location of the Shattergang hideout."
+  },
+  {
+   "summary": "Gideon confronts and defeats Rikkig at the hideout, but the last brother flees while Gideon saves prisoners from a fire.",
+   "participants": [
+    "Gideon Jura",
+    "Rikkig"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Gideon managed to put Rikkig out of the fight"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Krenko",
+   "relation": "killed",
+   "target": "Dargig",
+   "note": "Over a botched weapon drop",
+   "paragraph": 2,
+   "quote": "was killed by the goblin mob boss Krenko"
+  },
+  {
+   "source": "Gideon Jura",
+   "relation": "enemy",
+   "target": "Rikkig",
+   "note": "Fought him at the hideout",
+   "paragraph": 2,
+   "quote": "Gideon confronted Rikkig."
+  },
+  {
+   "source": "Shattergang Brothers",
+   "relation": "enemy",
+   "target": "Boros Legion",
+   "note": "Boros put a price on their heads",
+   "paragraph": 1,
+   "quote": "The Boros and Azorius both put prices on their heads"
+  },
+  {
+   "source": "Rikkig",
+   "relation": "family",
+   "target": "Dargig",
+   "note": "Brothers",
+   "paragraph": 0,
+   "quote": "Rikkig , Gardagig and Dargig , known collectively as the Shattergang Brothers"
+  }
+ ],
+ "rejected": []
+}

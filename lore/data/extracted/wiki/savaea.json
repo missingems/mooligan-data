@@ -1,0 +1,98 @@
+{
+ "page": "wiki/savaea",
+ "url": "https://mtg.wiki/page/Savaea",
+ "title": "Savaea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:41Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Savaea",
+   "type": "location",
+   "aliases": [
+    "Savaen Forest"
+   ],
+   "description": "Forest on the southern part of Oneah, home of the Savaen elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Savaen elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Leaderless elf magicians able to disenchant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Emperor Oak",
+   "type": "location",
+   "aliases": [],
+   "description": "Huge ancient tree worshipped in Savaea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elder Leaf",
+   "type": "character",
+   "aliases": [
+    "Whisper"
+   ],
+   "description": "Elf who led Kruuna to the Emperor Oak and was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kruuna",
+   "type": "character",
+   "aliases": [
+    "Goblin Chieftess Kruuna"
+   ],
+   "description": "Goblin Chieftess led to the Emperor Oak.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fall of Oneah",
+   "type": "event",
+   "aliases": [],
+   "description": "Destruction of Oneah by goblins.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Fall of Oneah, human refugees flee through Savaea and are allowed to pass.",
+   "participants": [
+    "Savaen elves",
+    "Fall of Oneah"
+   ],
+   "location": "Savaea",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "They were permitted to pass through without incident."
+  },
+  {
+   "summary": "The Elder Leaf is killed after bringing Kruuna to the Emperor Oak, and the elves turn on the goblins.",
+   "participants": [
+    "Elder Leaf",
+    "Kruuna",
+    "Emperor Oak",
+    "Savaen elves"
+   ],
+   "location": "Savaea",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the elves of Savaea started pitying the goblins first, then filling them with arrows"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Elder Leaf",
+   "relation": "enemy",
+   "target": "Kruuna",
+   "note": "The Elder Leaf was killed after leading her to the oak.",
+   "paragraph": 2,
+   "quote": "After the Elder Leaf led the Goblin Chieftess Kruuna to the Emperor Oak"
+  }
+ ],
+ "rejected": []
+}

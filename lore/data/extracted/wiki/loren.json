@@ -1,0 +1,132 @@
+{
+ "page": "wiki/loren",
+ "url": "https://mtg.wiki/page/Loren",
+ "title": "Loren",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:50:41Z",
+ "storyline": "Dominaria",
+ "entities": [
+  {
+   "name": "Loren",
+   "type": "character",
+   "aliases": [
+    "Master Scout"
+   ],
+   "description": "Elf Scout and Master Scout of Havenwood, son of Thelon, ambushed by Morgan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thelon",
+   "type": "character",
+   "aliases": [],
+   "description": "Loren's father, who helped engineer thallids.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Morgan",
+   "type": "character",
+   "aliases": [],
+   "description": "Thelonite druid who ambushed Loren to spark war against the thallids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tev Loneglade",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who rescued Loren with a fireball.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thallids",
+   "type": "faction",
+   "aliases": [
+    "thallid"
+   ],
+   "description": "Sentient fungus whose growth Loren scouted.",
+   "presence": "appears"
+  },
+  {
+   "name": "Havenwood",
+   "type": "location",
+   "aliases": [],
+   "description": "Elven homeland on Sarpadia.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarpadia",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent of Dominaria.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Elves split into factions when thallids gain sentience, and Loren is sent to scout their growth.",
+   "participants": [
+    "Loren",
+    "Thallids"
+   ],
+   "location": "Havenwood",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Loren's final mission would be to scout the thallids' growth and report on their condition."
+  },
+  {
+   "summary": "Morgan ambushes Loren, who is trapped and webbed by thallids.",
+   "participants": [
+    "Morgan",
+    "Loren",
+    "Thallids"
+   ],
+   "location": "Havenwood",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Morgan ambushed him."
+  },
+  {
+   "summary": "Tev Loneglade rescues Loren with a fireball.",
+   "participants": [
+    "Tev Loneglade",
+    "Loren"
+   ],
+   "location": "Havenwood",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "rescued Loren from the fatal trap with a powerful fireball"
+  },
+  {
+   "summary": "Morgan ambushes Loren again and shoots him with a poison arrow, revealing his plan to start war.",
+   "participants": [
+    "Morgan",
+    "Loren"
+   ],
+   "location": "Havenwood",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "this time taking a poison arrow to the chest"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Loren",
+   "relation": "family",
+   "target": "Thelon",
+   "note": "Loren is Thelon's son.",
+   "paragraph": 0,
+   "quote": "Loren (lor-EN), son of Thelon"
+  },
+  {
+   "source": "Morgan",
+   "relation": "enemy",
+   "target": "Loren",
+   "note": "Morgan tried to kill him and frame his family.",
+   "paragraph": 3,
+   "quote": "he wished to declare Loren and his family traitors"
+  }
+ ],
+ "rejected": []
+}

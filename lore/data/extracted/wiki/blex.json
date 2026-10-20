@@ -1,0 +1,110 @@
+{
+ "page": "wiki/blex",
+ "url": "https://mtg.wiki/page/Blex",
+ "title": "Blex",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:36Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Blex",
+   "type": "creature",
+   "aliases": [],
+   "description": "A Pest of Witherbloom College who escaped being consumed for a spell, fathered Blech, and died during the New Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Blech",
+   "type": "creature",
+   "aliases": [],
+   "description": "Blex's child.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Witherbloom College",
+   "type": "faction",
+   "aliases": [
+    "Witherbloom"
+   ],
+   "description": "College of Strixhaven University that raises pests and holds a yearly search for Blex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "location",
+   "aliases": [],
+   "description": "University on Arcavios.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Strixhaven lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion during which Blex died.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Blex hides live insects and escapes into the bayou after a student reaches into his cage.",
+   "participants": [
+    "Blex"
+   ],
+   "location": "Witherbloom College",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Blex vanished into the undergrowth of the bayou."
+  },
+  {
+   "summary": "Blex fathers Blech.",
+   "participants": [
+    "Blex",
+    "Blech"
+   ],
+   "location": "Arcavios",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Blex fathered a child, Blech"
+  },
+  {
+   "summary": "Blex dies during the New Phyrexian Invasion.",
+   "participants": [
+    "Blex",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Arcavios",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Blex died during the New Phyrexian Invasion ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Blex",
+   "relation": "family",
+   "target": "Blech",
+   "note": "Father of Blech",
+   "paragraph": 2,
+   "quote": "Blex fathered a child, Blech"
+  },
+  {
+   "source": "Blex",
+   "relation": "member_of",
+   "target": "Witherbloom College",
+   "note": "A Pest of Witherbloom College",
+   "paragraph": 0,
+   "quote": "Blex was a Pest of the Witherbloom College of Strixhaven University on Arcavios ."
+  }
+ ],
+ "rejected": []
+}

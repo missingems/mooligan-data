@@ -1,0 +1,100 @@
+{
+ "page": "wiki/johann",
+ "url": "https://mtg.wiki/page/Johann",
+ "title": "Johann",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:00Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Johann",
+   "type": "character",
+   "aliases": [],
+   "description": "Human wizard boy from Eldraine, a nervous village boy turned apprentice sorcerer who mastered the hydroloft spell.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gadwick",
+   "type": "character",
+   "aliases": [],
+   "description": "Archmage and sorcerer of Caervelin who took Johann as his apprentice.",
+   "presence": "appears"
+  },
+  {
+   "name": "Caervelin",
+   "type": "location",
+   "aliases": [],
+   "description": "Domain and tower of the sorcerer Gadwick, where Johann's mishap occurred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Johann comes from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Apprentice's Folly",
+   "type": "event",
+   "aliases": [],
+   "description": "Folktale that tells Johann's story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Johann is chosen to be apprentice to Gadwick.",
+   "participants": [
+    "Johann",
+    "Gadwick"
+   ],
+   "location": "Caervelin",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Johann was chosen to be an apprentice to"
+  },
+  {
+   "summary": "After Gadwick leaves, Johann fails to maintain the tower's mechanisms and unleashes a flood of elementals.",
+   "participants": [
+    "Johann"
+   ],
+   "location": "Caervelin",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "He failed and wounded up unleashing a flood of elementals throughout the tower."
+  },
+  {
+   "summary": "Johann tries draconic fire and animated furniture against the elementals, and escapes using a hydroloft spell as his home burns.",
+   "participants": [
+    "Johann"
+   ],
+   "location": "Caervelin",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "he escaped his home using a hydroloft spell as it was consumed by fire"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Johann",
+   "relation": "other",
+   "target": "Gadwick",
+   "note": "Johann is the apprentice of Gadwick.",
+   "paragraph": 0,
+   "quote": "He is the apprentice of the archmage Gadwick ."
+  },
+  {
+   "source": "Gadwick",
+   "relation": "located_in",
+   "target": "Caervelin",
+   "note": "Gadwick is the sorcerer of Caervelin.",
+   "paragraph": 3,
+   "quote": "the sorcerer of Caervelin"
+  }
+ ],
+ "rejected": []
+}

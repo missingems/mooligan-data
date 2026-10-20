@@ -1,0 +1,156 @@
+{
+ "page": "wiki/peemel",
+ "url": "https://mtg.wiki/page/Peemel",
+ "title": "Peemel",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:35Z",
+ "storyline": "Dark Age",
+ "entities": [
+  {
+   "name": "Peemel",
+   "type": "character",
+   "aliases": [
+    "Lord Peemel"
+   ],
+   "description": "Ruler of the city-state of Iwset in the Dark Age of Terisiare, a scheming man killed by his advisor Digody.",
+   "presence": "appears"
+  },
+  {
+   "name": "Iwset",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state ruled by Peemel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lady Edara",
+   "type": "character",
+   "aliases": [
+    "Edara"
+   ],
+   "description": "Lady of Jehesic whom Peemel proposed to, warred against and kidnapped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jehesic",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state of Lady Edara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sacumon",
+   "type": "character",
+   "aliases": [],
+   "description": "A blood witch ordered by Peemel to sow chaos in the north.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ihesia",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's general-in-chief, captured by Jehesic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Digody",
+   "type": "character",
+   "aliases": [],
+   "description": "Peemel's advisor who stabbed him in the back.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent whose western coast Peemel wanted to control.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Terisiare.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Peemel proposed marriage to Lady Edara, and when refused, declared war on Jehesic.",
+   "participants": [
+    "Peemel",
+    "Lady Edara",
+    "Jehesic"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "initially by proposing marriage to Lady Edara"
+  },
+  {
+   "summary": "Peemel ordered Sacumon to sow chaos in the north, pitting minotaurs against elves.",
+   "participants": [
+    "Peemel",
+    "Sacumon"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he ordered the blood witch Sacumon to sow chaos in the north"
+  },
+  {
+   "summary": "After Jehesic captured Ihesia, Peemel counterattacked and kidnapped Lady Edara.",
+   "participants": [
+    "Peemel",
+    "Ihesia",
+    "Lady Edara",
+    "Jehesic"
+   ],
+   "location": "Jehesic",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "kidnapping Lady Edara in turn"
+  },
+  {
+   "summary": "Digody stabbed Peemel in the back, killing him.",
+   "participants": [
+    "Digody",
+    "Peemel"
+   ],
+   "location": "Iwset",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "literally stabbing Lord Peemel in the back"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Digody",
+   "relation": "killed",
+   "target": "Peemel",
+   "note": "Stabbed him in the back.",
+   "paragraph": 2,
+   "quote": "literally stabbing Lord Peemel in the back"
+  },
+  {
+   "source": "Peemel",
+   "relation": "leader_of",
+   "target": "Iwset",
+   "note": "He was its ruler.",
+   "paragraph": 0,
+   "quote": "Peemel was the ruler of the city-state of Iwset"
+  },
+  {
+   "source": "Peemel",
+   "relation": "enemy",
+   "target": "Lady Edara",
+   "note": "He declared war on her after she refused his proposal.",
+   "paragraph": 2,
+   "quote": "he declared war on her"
+  }
+ ],
+ "rejected": []
+}

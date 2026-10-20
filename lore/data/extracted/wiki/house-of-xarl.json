@@ -1,0 +1,104 @@
+{
+ "page": "wiki/house-of-xarl",
+ "url": "https://mtg.wiki/page/House_of_Xarl",
+ "title": "House of Xarl",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:33Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "House of Xarl",
+   "type": "faction",
+   "aliases": [],
+   "description": "Royal family of Golthonor on ancient Corondor, headed by Archmage Xarl, which crumbled after his death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Xarl Angel-Keeper",
+   "type": "character",
+   "aliases": [
+    "Archmage Xarl"
+   ],
+   "description": "Archmage who headed the House of Xarl.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eska",
+   "type": "character",
+   "aliases": [],
+   "description": "One of Xarl's many wives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant of Xarl.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra Angel Trine",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel bound and made fallen 346 years before Xarl's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golthonor",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom of the House of Xarl on ancient Corondor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Ancient land of Golthonor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The House of Xarl crumbles after Xarl's death.",
+   "participants": [
+    "House of Xarl",
+    "Xarl Angel-Keeper"
+   ],
+   "location": "Golthonor",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The House of Xarl crumbled after Xarl's death"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Xarl Angel-Keeper",
+   "relation": "leader_of",
+   "target": "House of Xarl",
+   "note": "Headed the royal family.",
+   "paragraph": 0,
+   "quote": "headed by Archmage Xarl Angel-Keeper"
+  },
+  {
+   "source": "Eska",
+   "relation": "family",
+   "target": "Xarl Angel-Keeper",
+   "note": "One of his wives.",
+   "paragraph": 1,
+   "quote": "his many wives, including Eska"
+  },
+  {
+   "source": "Eskil",
+   "relation": "family",
+   "target": "Xarl Angel-Keeper",
+   "note": "Descendant.",
+   "paragraph": 1,
+   "quote": "including Eskil"
+  }
+ ],
+ "rejected": []
+}

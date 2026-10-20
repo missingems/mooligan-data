@@ -1,0 +1,158 @@
+{
+ "page": "wiki/the-parting",
+ "url": "https://mtg.wiki/page/The_Parting",
+ "title": "The Parting",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:03Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "The Parting",
+   "type": "event",
+   "aliases": [],
+   "description": "Cataclysm on Cridhe that killed the Clan Tree and split the land and its people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cridhe",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane on which the Parting occurred.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [
+    "Sangrazul"
+   ],
+   "description": "Exiled sangrazul banished to Cridhe for treachery against Tempe, who manipulated Nohr.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nohr",
+   "type": "character",
+   "aliases": [],
+   "description": "Ambitious mage who performed the ritual on the Clan Tree.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tempe",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker betrayed by Malvos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Clan Tree",
+   "type": "concept",
+   "aliases": [
+    "Clan Tree of Cridhe"
+   ],
+   "description": "The singular source of green mana on Cridhe.",
+   "presence": "appears"
+  },
+  {
+   "name": "Raphos",
+   "type": "character",
+   "aliases": [],
+   "description": "Blacksmith killed by Nohr while trying to stop the ritual.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Maker",
+   "type": "deity",
+   "aliases": [
+    "Maker"
+   ],
+   "description": "Creator-god of Cridhe who laid an ancient curse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Long Winter",
+   "type": "event",
+   "aliases": [],
+   "description": "Cold snap following the Parting.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nohrland",
+   "type": "location",
+   "aliases": [],
+   "description": "Region whose jungles withered into mushroom forests.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Malvos manipulated Nohr into performing a ritual upon the Clan Tree.",
+   "participants": [
+    "Malvos",
+    "Nohr",
+    "Clan Tree"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "manipulated Nohr into performing a ritual upon the Clan Tree of Cridhe"
+  },
+  {
+   "summary": "Raphos tried to stop the ritual and was killed by Nohr wielding Malvos's sword.",
+   "participants": [
+    "Raphos",
+    "Nohr",
+    "Malvos"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The blacksmith Raphos attempted to stop the ritual and was killed by Nohr"
+  },
+  {
+   "summary": "The ritual killed the Clan Tree, fulfilling the Maker's curse and splitting the land in two.",
+   "participants": [
+    "Nohr",
+    "Clan Tree",
+    "The Maker",
+    "The Parting"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "the land split in two, physically and spiritually dividing the people of the plane"
+  },
+  {
+   "summary": "Nohr's descendants were afflicted with madness and the Long Winter followed.",
+   "participants": [
+    "Nohr",
+    "Long Winter"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Those descended from Nohr were afflicted with madness"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nohr",
+   "relation": "killed",
+   "target": "Raphos",
+   "note": "",
+   "paragraph": 1,
+   "quote": "The blacksmith Raphos attempted to stop the ritual and was killed by Nohr"
+  },
+  {
+   "source": "Malvos",
+   "relation": "enemy",
+   "target": "Tempe",
+   "note": "banished for treachery against her",
+   "paragraph": 1,
+   "quote": "having been banished to Cridhe for his treachery against the planeswalker Tempe"
+  }
+ ],
+ "rejected": []
+}

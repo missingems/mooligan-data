@@ -1,0 +1,122 @@
+{
+ "page": "wiki/hydra",
+ "url": "https://mtg.wiki/page/Hydra",
+ "title": "Hydra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:43:25Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Hydra",
+   "type": "creature",
+   "aliases": [
+    "Hydras"
+   ],
+   "description": "A serpent with many heads, each of which grows back if cut off; the iconic creature type of green found on many planes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Progenitus",
+   "type": "creature",
+   "aliases": [],
+   "description": "The behemoth regarded as the soul of the world of Alara, of which hydras are manifestations.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose hydras are manifestations of its world soul Progenitus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane whose hydras have cobra-like heads.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaladesha",
+   "type": "plane",
+   "aliases": [
+    "Avishkar",
+    "Kaladesh"
+   ],
+   "description": "A plane whose hydras emit the glow of aether and devour aether-powered machines.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane with snapping hydras that resemble multi-headed snapping turtles.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild that creates hydra mutants such as the Hydroid Krasis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild that grows carnivorous phytohydras.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Ravnican guild that uses Savageborn Hydras to unleash devastation and reveres them.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Following the Sundering of Alara, hydras are limited to the Shards of Naya and Jund; during the Conflux new hydras such as the Apocalypse Hydra come into conflict with other Shards.",
+   "participants": [
+    "Hydra",
+    "Progenitus",
+    "Alara"
+   ],
+   "location": "Alara",
+   "importance": "minor",
+   "paragraph": 6,
+   "quote": "During the Conflux , new types of Hydras, like the Apocalypse Hydra , appeared that came into conflict with the other Shards, like Bant ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hydra",
+   "relation": "other",
+   "target": "Progenitus",
+   "note": "Hydras are regarded as manifestations of Progenitus, Alara's world soul.",
+   "paragraph": 6,
+   "quote": "Hydras are regarded as the manifestations of the \"soul of the world\" of Alara , the behemoth Progenitus ."
+  },
+  {
+   "source": "Selesnya Conclave",
+   "relation": "created",
+   "target": "Hydra",
+   "note": "Grows carnivorous phytohydras.",
+   "paragraph": 20,
+   "quote": "Phytohydras are carnivorous plants with hydra-like regeneration and growth abilities grown by the Selesnya Conclave ."
+  },
+  {
+   "source": "Gruul Clans",
+   "relation": "other",
+   "target": "Hydra",
+   "note": "Savageborn Hydras are part of the clans, which revere them.",
+   "paragraph": 22,
+   "quote": "The Gruul revere these multiheaded predators as vestiges of the ancient times before the guilds took over the world."
+  }
+ ],
+ "rejected": []
+}

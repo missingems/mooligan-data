@@ -1,0 +1,114 @@
+{
+ "page": "wiki/oskar",
+ "url": "https://mtg.wiki/page/Oskar",
+ "title": "Oskar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:01Z",
+ "storyline": "Streets of New Capenna",
+ "entities": [
+  {
+   "name": "Oskar, Rubbish Reclaimer",
+   "type": "character",
+   "aliases": [
+    "Oskar"
+   ],
+   "description": "A human wizard and Obscura informant who salvages trash and commands rats.",
+   "presence": "appears"
+  },
+  {
+   "name": "Obscura",
+   "type": "faction",
+   "aliases": [
+    "Obscura family"
+   ],
+   "description": "Crime family of New Capenna.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Oskar lives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamiz",
+   "type": "character",
+   "aliases": [],
+   "description": "Contacted Oskar to investigate the warehouse explosion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lacey Lanine",
+   "type": "character",
+   "aliases": [],
+   "description": "Reporter involved in the Halo theft, found mind-wiped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queza",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Kamiz set a trap for Lagrella.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lagrella",
+   "type": "character",
+   "aliases": [],
+   "description": "Instigator of the scheme exposed by Oskar's work.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kamiz contacted Oskar to investigate the warehouse explosion; Oskar found it had imploded and been occupied for a week.",
+   "participants": [
+    "Kamiz",
+    "Oskar, Rubbish Reclaimer"
+   ],
+   "location": "New Capenna",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Oskar clarified that the building didn't explode, but rather imploded"
+  },
+  {
+   "summary": "Oskar discovered Lacey Lanine in a dumpster, mind-wiped.",
+   "participants": [
+    "Oskar, Rubbish Reclaimer",
+    "Lacey Lanine"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Oskar discovered Lacey Lanine"
+  },
+  {
+   "summary": "Oskar's recognition of the Broker contract helped Kamiz and Queza set a trap for Lagrella.",
+   "participants": [
+    "Oskar, Rubbish Reclaimer",
+    "Kamiz",
+    "Queza",
+    "Lagrella"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "which helped Kamiz and Queza set a trap for Lagrella"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Oskar, Rubbish Reclaimer",
+   "relation": "member_of",
+   "target": "Obscura",
+   "note": "informant",
+   "paragraph": 1,
+   "quote": "Oskar is an Obscura informant."
+  }
+ ],
+ "rejected": []
+}

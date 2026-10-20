@@ -1,0 +1,107 @@
+{
+ "page": "wiki/sutina",
+ "url": "https://mtg.wiki/page/Sutina",
+ "title": "Sutina",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:38Z",
+ "storyline": "Rise of the Eldrazi",
+ "entities": [
+  {
+   "name": "Sutina",
+   "type": "character",
+   "aliases": [
+    "Speaker of the Tajuru"
+   ],
+   "description": "Legendary elf scout and Speaker of the Tajuru nation on Zendikar, slain by Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajuru",
+   "type": "faction",
+   "aliases": [
+    "Tajuru nation"
+   ],
+   "description": "Elven nation of Zendikar led by Sutina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tumbled Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "Sutina's seat on the cliffs of Sunder Bay.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorthos",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous octopus with which Sutina had a special connection.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Brinelin",
+   "type": "creature",
+   "aliases": [],
+   "description": "Kraken, Sutina's closest friend.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa Revane",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker present when Eldrazi first killed Sutina.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Slew Sutina in their early awakening.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sutina is slain by Eldrazi during the early days of their awakening, the first time Nissa Revane encounters them.",
+   "participants": [
+    "Sutina",
+    "Eldrazi",
+    "Nissa Revane"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She was slain by Eldrazi during the early days of their awakening"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Sutina",
+   "relation": "leader_of",
+   "target": "Tajuru",
+   "note": "Speaker of the nation.",
+   "paragraph": 2,
+   "quote": "She was the Speaker of the Tajuru nation of elves"
+  },
+  {
+   "source": "Sutina",
+   "relation": "ally",
+   "target": "Brinelin",
+   "note": "Closest friend.",
+   "paragraph": 2,
+   "quote": "the closest friend of the kraken Brinelin"
+  },
+  {
+   "source": "Eldrazi",
+   "relation": "killed",
+   "target": "Sutina",
+   "note": "Slew her.",
+   "paragraph": 2,
+   "quote": "She was slain by Eldrazi"
+  }
+ ],
+ "rejected": []
+}

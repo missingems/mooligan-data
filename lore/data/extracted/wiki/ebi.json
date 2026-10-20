@@ -1,0 +1,140 @@
+{
+ "page": "wiki/ebi",
+ "url": "https://mtg.wiki/page/Ebi",
+ "title": "Ebi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:53:15Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Ebi",
+   "type": "character",
+   "aliases": [],
+   "description": "A kor sentry at the reclaimed Sea Gate on Zendikar, killed by a demon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sea Gate",
+   "type": "location",
+   "aliases": [
+    "the reclaimed Sea Gate"
+   ],
+   "description": "A reclaimed city on Zendikar with a lighthouse where a council is held.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Sea Gate lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ob Nixilis",
+   "type": "character",
+   "aliases": [
+    "the demon"
+   ],
+   "description": "A demon who attacks and strangles Ebi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jace Beleren",
+   "type": "character",
+   "aliases": [
+    "the mind-mage"
+   ],
+   "description": "A mind-mage and planeswalker who returns from the Eye of Ugin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gideon Jura",
+   "type": "character",
+   "aliases": [
+    "Gideon",
+    "the Commander-General"
+   ],
+   "description": "A planeswalker and Commander-General at Sea Gate who thanks Ebi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [
+    "the titan Ulamog"
+   ],
+   "description": "An Eldrazi titan approaching Sea Gate, trapped by the hedrons.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ebi spots Jace returning from the Eye of Ugin and leads him up to the council room in the lighthouse.",
+   "participants": [
+    "Ebi",
+    "Jace Beleren",
+    "Sea Gate"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Ebi led the mind-mage up the stairs leading to the council room at the top of the lighthouse"
+  },
+  {
+   "summary": "Ebi reports the perimeter is secure and Gideon thanks him.",
+   "participants": [
+    "Ebi",
+    "Gideon Jura",
+    "Jace Beleren"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Ebi reported that the perimeter was secure"
+  },
+  {
+   "summary": "Ebi watches the forces of Sea Gate trap Ulamog in a circle of hedrons and cheers.",
+   "participants": [
+    "Ebi",
+    "Ulamog"
+   ],
+   "location": "Sea Gate",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He could not help whooping a cheer at the impressive spectacle"
+  },
+  {
+   "summary": "A demon lands in front of Ebi and strangles him until he dies.",
+   "participants": [
+    "Ebi",
+    "Ob Nixilis"
+   ],
+   "location": "Sea Gate",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "the demon squeezed his powerful hands until blackness took him"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ob Nixilis",
+   "relation": "killed",
+   "target": "Ebi",
+   "note": "The demon strangles Ebi on his cliffside post.",
+   "paragraph": 5,
+   "quote": "the demon squeezed his powerful hands until blackness took him"
+  },
+  {
+   "source": "Ebi",
+   "relation": "serves",
+   "target": "Gideon Jura",
+   "note": "Ebi is a sentry; Gideon was counting on him.",
+   "paragraph": 5,
+   "quote": "Gideon was counting on him"
+  }
+ ],
+ "rejected": []
+}

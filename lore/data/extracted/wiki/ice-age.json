@@ -1,0 +1,92 @@
+{
+ "page": "wiki/ice-age",
+ "url": "https://mtg.wiki/page/Ice_Age",
+ "title": "Ice Age",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:29Z",
+ "storyline": "Ice Age block",
+ "entities": [
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane, made dark and frigid by the Ice Age.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "The continent of Dominaria where the Brothers' War and the Ice Age storyline took place.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "The war that ended with the Sylex Blast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "The blast ending the Brothers' War, powerful enough to alter the planet's climate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "The era of glaciers and blizzards in which new cultures fought for survival.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lim-Dûl",
+   "type": "character",
+   "aliases": [
+    "the necromancer"
+   ],
+   "description": "The villain necromancer who unleashed a horde of undead during the Ice Age.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Sylex Blast ends the Brothers' War and alters Dominaria's climate, beginning the Ice Age.",
+   "participants": [
+    "Brothers' War",
+    "Sylex Blast",
+    "Dominaria"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "That war ended with the Sylex Blast , which was powerful enough to alter the planet's climate"
+  },
+  {
+   "summary": "Lim-Dûl unleashes a horde of undead, forcing old enemies to work together.",
+   "participants": [
+    "Lim-Dûl"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "when the necromancer Lim-Dûl unleashed a horde of undead , old enemies were forced to work together or be overwhelmed"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Terisiare",
+   "relation": "located_in",
+   "target": "Dominaria",
+   "note": "continent of Dominaria",
+   "paragraph": 6,
+   "quote": "occurred on the continent of Terisiare"
+  }
+ ],
+ "rejected": []
+}

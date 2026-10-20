@@ -1,0 +1,68 @@
+{
+ "page": "cards/pal99",
+ "url": "https://scryfall.com/sets/pal99",
+ "title": "Arena League 1999: card flavor text",
+ "story_date": "1999-01-01",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:22:16Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [
+    "master wizard"
+   ],
+   "description": "A master wizard of Tolaria who compares time to a river.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where wizards practice the art of building dams against the flow of time.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Realm with towers through which imps' cries echo.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skittering Skirge",
+   "type": "creature",
+   "aliases": [
+    "imps"
+   ],
+   "description": "Imps whose warbling cries echo through Phyrexia's towers.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Barrin explains that in Tolaria wizards practice the art of building dams against time.",
+   "participants": [
+    "Barrin"
+   ],
+   "location": "Tolaria",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "In Tolaria we practice the art of building dams."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Skittering Skirge",
+   "relation": "located_in",
+   "target": "Phyrexia",
+   "note": "Imps' cries echo through Phyrexia's towers.",
+   "paragraph": 1,
+   "quote": "The imps' warbling cries echo through Phyrexia's towers"
+  }
+ ],
+ "rejected": []
+}

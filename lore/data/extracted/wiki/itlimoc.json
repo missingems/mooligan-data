@@ -1,0 +1,140 @@
+{
+ "page": "wiki/itlimoc",
+ "url": "https://mtg.wiki/page/Itlimoc",
+ "title": "Itlimoc",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:13Z",
+ "storyline": "Ixalan",
+ "entities": [
+  {
+   "name": "Itlimoc",
+   "type": "location",
+   "aliases": [
+    "Cradle of the Sun's Radiance"
+   ],
+   "description": "Sacred forest in Ixalan's interior, the Cradle of the Sun's Radiance, protected by the River Heralds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Itlimoc lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "River Heralds",
+   "type": "faction",
+   "aliases": [],
+   "description": "Merfolk who dwelled in Ixalan's interior and protect Itlimoc.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orazca",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state west of Itlimoc, later the golden city reclaimed by the River Heralds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Chacanto Intli",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader who raised Orazca and united neighboring city-states.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apatzec Intli I",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant of Chacanto who used the Immortal Sun to try to conquer merfolk lands.",
+   "presence": "appears"
+  },
+  {
+   "name": "Immortal Sun",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Apatzec harnessed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azor",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who intervened and cast a spell making humans forget Orazca's location.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pachatupa",
+   "type": "location",
+   "aliases": [],
+   "description": "Coastal city humans established east of Itlimoc.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sun Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Human empire that arose later.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Apatzec Intli I harnessed the Immortal Sun to try to conquer the merfolk's sacred lands; Azor intervened.",
+   "participants": [
+    "Apatzec Intli I",
+    "Azor",
+    "Immortal Sun"
+   ],
+   "location": "Itlimoc",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "This aggression brought the planeswalker Azor to intervene."
+  },
+  {
+   "summary": "The River Heralds overthrew Orazca's human rulers and reclaimed the golden city, pushing the humans east.",
+   "participants": [
+    "River Heralds",
+    "Azor",
+    "Orazca"
+   ],
+   "location": "Orazca",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the River Heralds overthrew Orazca's human rulers and reclaimed the golden city"
+  },
+  {
+   "summary": "Azor cast a spell making the humans forget the golden city's location.",
+   "participants": [
+    "Azor"
+   ],
+   "location": "Orazca",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "A spell cast by Azor ensured that the golden city's location was forgotten by the humans"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chacanto Intli",
+   "relation": "leader_of",
+   "target": "Orazca",
+   "note": "Rose to prominence",
+   "paragraph": 2,
+   "quote": "gradually rose to prominence under the ambitious leadership of Chacanto Intli"
+  },
+  {
+   "source": "River Heralds",
+   "relation": "ally",
+   "target": "Azor",
+   "note": "Guided by Azor",
+   "paragraph": 3,
+   "quote": "With Azor's guidance"
+  }
+ ],
+ "rejected": []
+}

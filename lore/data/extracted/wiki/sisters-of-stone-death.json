@@ -1,0 +1,191 @@
+{
+ "page": "wiki/sisters-of-stone-death",
+ "url": "https://mtg.wiki/page/Sisters_of_Stone_Death",
+ "title": "Sisters of Stone Death",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:23Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Sisters of Stone Death",
+   "type": "faction",
+   "aliases": [
+    "Sisters of the Stone Death"
+   ],
+   "description": "Gorgon usurper guildmasters of the Golgari Swarm on Ravnica, originally a quintet.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ludmilla",
+   "type": "character",
+   "aliases": [],
+   "description": "Eldest surviving Sister, last living sister, later blinded and killed by the Azorius.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lexya",
+   "type": "character",
+   "aliases": [],
+   "description": "Middle surviving Sister of Stone Death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lydya",
+   "type": "character",
+   "aliases": [],
+   "description": "Youngest surviving Sister of Stone Death.",
+   "presence": "appears"
+  },
+  {
+   "name": "Svogthir",
+   "type": "character",
+   "aliases": [],
+   "description": "Necromancer Golgari parun overthrown by the Sisters, later given a new body by Savra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Savra",
+   "type": "character",
+   "aliases": [],
+   "description": "Devkarin matka who became the true new Golgari guildmaster.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Savra find Svogthir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feather",
+   "type": "character",
+   "aliases": [],
+   "description": "Granted Ludmilla mercy on condition she never show her face on the surface.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vraska",
+   "type": "character",
+   "aliases": [],
+   "description": "Teenager captured alongside Ludmilla by the Azorius.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari Swarm",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican guild ruled by the Sisters.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guild that captured Ludmilla and Vraska.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wojek",
+   "type": "faction",
+   "aliases": [],
+   "description": "Guards who deflected the Golgari attack on Centerfort.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Centerfort",
+   "type": "location",
+   "aliases": [],
+   "description": "Location attacked by Golgari during the Decamillennial.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the guilds.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Duskend Purges",
+   "type": "event",
+   "aliases": [],
+   "description": "Purges during which Ludmilla was killed.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Sisters overthrow their master Svogthir, imprison him and seal his remains in the Undercity, at the cost of two of their number.",
+   "participants": [
+    "Sisters of Stone Death",
+    "Svogthir"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They turned against their master and overthrew him, at the cost of the lives of two of them."
+  },
+  {
+   "summary": "Savra, with Szadek, finds Svogthir and gives him a new body; he kills two Sisters, leaving Ludmilla.",
+   "participants": [
+    "Savra",
+    "Szadek",
+    "Svogthir",
+    "Ludmilla",
+    "Lexya",
+    "Lydya"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "swiftly killed two of them, making Ludmilla the last living sister"
+  },
+  {
+   "summary": "Ludmilla leads the Golgari attack on Centerfort and is spared by Feather on condition of never showing her face on the surface.",
+   "participants": [
+    "Ludmilla",
+    "Feather",
+    "Wojek"
+   ],
+   "location": "Centerfort",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Ludmilla later led the Golgari attack on Centerfort during the Decamillennial."
+  },
+  {
+   "summary": "The Azorius capture Ludmilla and teenage Vraska; Ludmilla is blinded and killed in the Duskend Purges.",
+   "participants": [
+    "Ludmilla",
+    "Vraska",
+    "Azorius"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Ludmilla was blinded and killed during the Duskend Purges, starting Vraska on her path of vengeance."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Savra",
+   "relation": "leader_of",
+   "target": "Golgari Swarm",
+   "note": "true new guildmaster",
+   "paragraph": 3,
+   "quote": "the true new guildmaster, Savra"
+  },
+  {
+   "source": "Svogthir",
+   "relation": "enemy",
+   "target": "Sisters of Stone Death",
+   "note": "they overthrew him",
+   "paragraph": 2,
+   "quote": "They turned against their master and overthrew him"
+  }
+ ],
+ "rejected": []
+}

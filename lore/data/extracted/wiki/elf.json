@@ -1,0 +1,920 @@
+{
+ "page": "wiki/elf",
+ "url": "https://mtg.wiki/page/Elf",
+ "title": "Elf",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:42:58Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Elves",
+   "type": "creature",
+   "aliases": [
+    "Elf",
+    "elf"
+   ],
+   "description": "A species of pointed-eared humanoids typically living in forests and close to the land; the characteristic race of green.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alaran Elves",
+   "type": "faction",
+   "aliases": [
+    "Cylian Elves",
+    "Canopy Elves"
+   ],
+   "description": "The Cylian or Canopy Elves of Alara who swear allegiance to the Anima and monitor Progenitus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Anima",
+   "type": "concept",
+   "aliases": [],
+   "description": "The high priest title of the elves of Alara, chosen from a line of female druids; currently Mayael.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mayael",
+   "type": "character",
+   "aliases": [],
+   "description": "The current Anima of the Alaran elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Progenitus",
+   "type": "creature",
+   "aliases": [],
+   "description": "An enormous five-headed hydra that sleeps beneath the Valley of the Ancient and is worshipped by the Alaran elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argothian Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who lived on the forest island of Argoth until the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "A Phyrexian lord who turned the Creeping Mold of Argoth into a plague against the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elyssendril Lademmdrith",
+   "type": "character",
+   "aliases": [],
+   "description": "The priestess of the Argothian elves, kidnapped by Yawgmoth and later a delegate to Halcyon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "The artificer who destroyed Argoth by activating the Golgothian Sylex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's brother, against whom Urza waged war over Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harbin",
+   "type": "character",
+   "aliases": [],
+   "description": "Urza's son, helped by an Argothian elf when he found Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest island of the Argothian elves, devastated by the Sylex Blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [
+    "Sylex"
+   ],
+   "description": "The artifact Urza activated to destroy Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "The explosion that decimated Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fyndhorn Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Survivors of the Argothian elves who engaged in diplomacy with Kjeldor and later fled to Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaysa",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader who led the Fyndhorn refugees to Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader who led the Fyndhorn refugees to Yavimaya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "The forest where the Yavimayan elves live.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yavimayan Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves of Yavimaya sharing thoughts with the forest, later Kavu riders cast out by Multani.",
+   "presence": "appears"
+  },
+  {
+   "name": "Multani",
+   "type": "creature",
+   "aliases": [],
+   "description": "The spirit of Yavimaya whose rage cast out the elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Meria",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Yavimayan exiles.",
+   "presence": "appears"
+  },
+  {
+   "name": "Coalition",
+   "type": "faction",
+   "aliases": [
+    "The Coalition"
+   ],
+   "description": "The alliance formed against the Second Phyrexian Invasion.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves transported to Rath by Phyrexians and later planeshifted to Keld with the Skyshroud forest.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker worshipped as a goddess by Llanowar and Skyshroud elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Llanowar Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Xenophobic elves of the Llanowar forest who worshipped Freyalise.",
+   "presence": "appears"
+  },
+  {
+   "name": "Havenwood Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Sarpadian elves whose magical fungus created the thallids that drove them to extinction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Thallids",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monstrous fungal creatures created by the Havenwood elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirari",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An artifact whose mana waves mutated the Wirewood elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wirewood Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Otarian elves mutated by the Mirari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Red Donald",
+   "type": "character",
+   "aliases": [],
+   "description": "A foe of the black elves of Glenar who survived their poison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Black elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves of the Domains who lived in the forest of Glenar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Calthyn Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Corondor clan, enemies of the Kieryn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kieryn Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Corondor clan using wingcapes, enemies of the Calthyn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Exarch Finovar",
+   "type": "character",
+   "aliases": [],
+   "description": "A leader of the Calthyn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Exarch Amadis",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Kieryn clan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elves of Skemfar",
+   "type": "faction",
+   "aliases": [
+    "Kaldheim elves"
+   ],
+   "description": "The Kaldheim elves, formerly the Einir gods, split into Wood and Shadow elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Einir",
+   "type": "deity",
+   "aliases": [],
+   "description": "The elvish gods of Kaldheim replaced by the Skoti.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harald",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf who united the warring clans of Skemfar and named himself king.",
+   "presence": "appears"
+  },
+  {
+   "name": "Locthwain elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "The noble elves of the court of Locthwain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen Ayara",
+   "type": "character",
+   "aliases": [],
+   "description": "The ancient elf who rules the court of Locthwain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn Elves",
+   "type": "faction",
+   "aliases": [
+    "Blessed Nation"
+   ],
+   "description": "The dominant supremacist elves of Lorwyn who call themselves the Blessed Nation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eyeblights",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creatures judged ugly by elvish standards and hunted by the Lorwyn elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadowmoor Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "The elves of Shadowmoor who preserve beauty in safeholds.",
+   "presence": "appears"
+  },
+  {
+   "name": "Viridian Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves of Mirrodin drawn from another world by Memnarch, living in the Tangle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Mirrodin's mad guardian who drew the elves there.",
+   "presence": "appears"
+  },
+  {
+   "name": "Resurgents",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves who survived the Vanishing and became militant eco-terrorists.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Elves",
+   "type": "faction",
+   "aliases": [
+    "Vicious Swarm"
+   ],
+   "description": "Elves compleated by glistening oil and part of the Vicious Swarm.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "The de facto Phyrexian leader of the Tangle region.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erstwhile",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elvish aristocrats entombed in the Undercity and reanimated by the Golgari.",
+   "presence": "appears"
+  },
+  {
+   "name": "Golgari",
+   "type": "faction",
+   "aliases": [
+    "Golgari Swarm"
+   ],
+   "description": "The Ravnican guild that reanimated the Erstwhile and took in cast-out Silhana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Selesnya Conclave",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild of the Silhana elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Simic Combine",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Ravnican guild joined by the surviving Simic elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Devkarin Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "The dark elves of Ravnica presided over by a Matka.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silhana Elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnican elves in the Selesnya Conclave.",
+   "presence": "appears"
+  },
+  {
+   "name": "Joraga Nation",
+   "type": "faction",
+   "aliases": [],
+   "description": "A Zendikari elf nation nearly eliminated by the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Speaker Nen",
+   "type": "character",
+   "aliases": [],
+   "description": "The leader of the Joraga Nation.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mul Daya Nation",
+   "type": "faction",
+   "aliases": [],
+   "description": "A secretive Zendikari elf nation wiped out by the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hazzan",
+   "type": "character",
+   "aliases": [],
+   "description": "The living leader of the Mul Daya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tajuru Nation",
+   "type": "faction",
+   "aliases": [],
+   "description": "The largest and most prominent Zendikari elf faction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sutina",
+   "type": "character",
+   "aliases": [
+    "Speaker Sutina"
+   ],
+   "description": "The Speaker of the Tajuru who died in the tentacles of Kozilek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kazandu Splinter",
+   "type": "faction",
+   "aliases": [],
+   "description": "A faction that broke from the Tajuru, refusing to accept Sutina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kozilek",
+   "type": "creature",
+   "aliases": [],
+   "description": "An Eldrazi Titan whose tentacles killed Sutina.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "The titans and brood that nearly wiped out Zendikari elf nations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kor Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "The empire that subjugates the elves of Zendikar in the Echoverse.",
+   "presence": "appears"
+  },
+  {
+   "name": "Echoverse",
+   "type": "plane",
+   "aliases": [],
+   "description": "An alternate reality where Zendikar's elves are subjugated.",
+   "presence": "appears"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane where elves were driven to extinction.",
+   "presence": "appears"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "The Avishkari authority that granted elves judicial autonomy.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion that compleated many elves and diminished Lorwyn's elven order.",
+   "presence": "appears"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion of Dominaria that displaced Yavimaya and created Gaea's Skyfolk.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yawgmoth turns the Creeping Mold of Argoth into a plague that eats away the elves.",
+   "participants": [
+    "Yawgmoth",
+    "Argothian Elves",
+    "Argoth"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "Yawgmoth turned the Creeping Mold of Argoth into a virulent plague that ate away the elves there."
+  },
+  {
+   "summary": "Yawgmoth kidnaps the priestess Elyssendril and her healers and extorts the elves.",
+   "participants": [
+    "Yawgmoth",
+    "Elyssendril Lademmdrith",
+    "Argothian Elves"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 23,
+   "quote": "When the elves paid, he delivered only sweetened water and 12 dead healers to them."
+  },
+  {
+   "summary": "Elyssendril is sent as a delegate to Halcyon against Yawgmoth.",
+   "participants": [
+    "Elyssendril Lademmdrith",
+    "Yawgmoth"
+   ],
+   "location": "Argoth",
+   "importance": "minor",
+   "paragraph": 24,
+   "quote": "Elyssendril survived and was later part of the delegates sent to Halcyon on behalf of the Thran Alliance against Yawgmoth."
+  },
+  {
+   "summary": "Harbin is helped by an Argothian elf and tells Urza of the island.",
+   "participants": [
+    "Harbin",
+    "Urza",
+    "Argothian Elves"
+   ],
+   "location": "Argoth",
+   "importance": "minor",
+   "paragraph": 25,
+   "quote": "When, millennia later, Harbin stumbled upon Argoth, he was helped by an Argothian elf."
+  },
+  {
+   "summary": "Urza activates the Golgothian Sylex and destroys Argoth and its elves.",
+   "participants": [
+    "Urza",
+    "Mishra",
+    "Argothian Elves",
+    "Golgothian Sylex",
+    "Sylex Blast"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 25,
+   "quote": "ultimately they were all destroyed when Urza activated the Golgothian Sylex"
+  },
+  {
+   "summary": "Fyndhorn is swallowed by the sea and refugees are led to Yavimaya.",
+   "participants": [
+    "Fyndhorn Elves",
+    "Kaysa",
+    "Jaeuhl Carthalion",
+    "Yavimaya"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 27,
+   "quote": "Fyndhorn was swallowed by the sea"
+  },
+  {
+   "summary": "Part of Yavimaya is displaced to Urborg during the Phyrexian Invasion.",
+   "participants": [
+    "Yavimayan Elves",
+    "Yavimaya",
+    "Phyrexian Invasion"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 28,
+   "quote": "During the third phase of the Phyrexian Invasion, part of Yavimaya was displaced to Urborg."
+  },
+  {
+   "summary": "The enraged spirit of Multani casts out the Yavimayan elves.",
+   "participants": [
+    "Multani",
+    "Yavimayan Elves"
+   ],
+   "location": "Yavimaya",
+   "importance": "major",
+   "paragraph": 29,
+   "quote": "Cast out by the enraged spirit of Multani"
+  },
+  {
+   "summary": "The Yavimayan exiles under Meria join the Coalition.",
+   "participants": [
+    "Meria",
+    "Yavimayan Elves",
+    "Coalition"
+   ],
+   "location": "Yavimaya",
+   "importance": "minor",
+   "paragraph": 29,
+   "quote": "they joined The Coalition against the Second Phyrexian Invasion"
+  },
+  {
+   "summary": "The black elves poison Red Donald, who recovers.",
+   "participants": [
+    "Black elves",
+    "Red Donald"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 31,
+   "quote": "They managed to poison him, but he recovered."
+  },
+  {
+   "summary": "The Skyshroud elves take up worship of Freyalise after the forest planeshifts to Keld.",
+   "participants": [
+    "Skyshroud Elves",
+    "Freyalise"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 37,
+   "quote": "where the elves took up the worship of Freyalise"
+  },
+  {
+   "summary": "The Havenwood elves inadvertently create the thallids, which cause their extinction.",
+   "participants": [
+    "Havenwood Elves",
+    "Thallids"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 44,
+   "quote": "inadvertently creating the monstrous thallids"
+  },
+  {
+   "summary": "The Mirari's mana waves mutate many Wirewood elves.",
+   "participants": [
+    "Wirewood Elves",
+    "Mirari"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 47,
+   "quote": "When the Mirari started spreading its mana waves over the continent, many of the elves mutated"
+  },
+  {
+   "summary": "Harald unites the warring clans of Skemfar and names himself king.",
+   "participants": [
+    "Harald",
+    "Elves of Skemfar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 57,
+   "quote": "Harald united the warring clans and named himself king"
+  },
+  {
+   "summary": "The leaders of the Einir are imprisoned inside trees after the gods are replaced.",
+   "participants": [
+    "Einir",
+    "Elves of Skemfar"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 57,
+   "quote": "After their defeat, the leaders of the elvish Einir were imprisoned inside trees"
+  },
+  {
+   "summary": "Elves are driven to extinction on Innistrad.",
+   "participants": [
+    "Elves",
+    "Innistrad"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "but were driven to extinction"
+  },
+  {
+   "summary": "Many Lorwyn elves fall out of favor after the New Phyrexian Invasion.",
+   "participants": [
+    "Lorwyn Elves",
+    "New Phyrexian Invasion"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 61,
+   "quote": "they fell out of favor after the New Phyrexian Invasion"
+  },
+  {
+   "summary": "Memnarch draws the Viridian elves to Mirrodin from another world.",
+   "participants": [
+    "Memnarch",
+    "Viridian Elves"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 73,
+   "quote": "by Mirrodin's mad guardian, Memnarch"
+  },
+  {
+   "summary": "Survivors of the Vanishing organize as the Resurgents.",
+   "participants": [
+    "Resurgents",
+    "Viridian Elves"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 74,
+   "quote": "Many of those who survived the Vanishing called themselves the Resurgents"
+  },
+  {
+   "summary": "Many elves are compleated and join the Vicious Swarm.",
+   "participants": [
+    "Phyrexian Elves",
+    "Glissa",
+    "New Phyrexian Invasion"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 75,
+   "quote": "many elves have been compleated by the glistening oil and become a part of the Phyrexian faction, the Vicious Swarm"
+  },
+  {
+   "summary": "The Golgari unearth the Erstwhile's coffins and reanimate them.",
+   "participants": [
+    "Golgari",
+    "Erstwhile"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 77,
+   "quote": "The Golgari have unearthed their coffins and reanimated them as part of the Swarm."
+  },
+  {
+   "summary": "The Eldrazi nearly eliminate the Joraga.",
+   "participants": [
+    "Eldrazi",
+    "Joraga Nation"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 83,
+   "quote": "the Joraga were nearly eliminated"
+  },
+  {
+   "summary": "Most of the Mul Daya are wiped out by the Eldrazi.",
+   "participants": [
+    "Eldrazi",
+    "Mul Daya Nation"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 85,
+   "quote": "most of the Mul Daya were wiped out by the Eldrazi"
+  },
+  {
+   "summary": "Sutina dies in the tentacles of Kozilek.",
+   "participants": [
+    "Sutina",
+    "Kozilek"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 86,
+   "quote": "Before the creature died in the tentacles of Kozilek"
+  },
+  {
+   "summary": "The Kazandu Splinter breaks off from the Tajuru, refusing to see Sutina as their leader.",
+   "participants": [
+    "Kazandu Splinter",
+    "Tajuru Nation",
+    "Sutina"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 87,
+   "quote": "they broke off from the nation, refusing to see Speaker Sutina as their leader"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yawgmoth",
+   "relation": "enemy",
+   "target": "Argothian Elves",
+   "note": "",
+   "paragraph": 23,
+   "quote": "Yawgmoth turned the Creeping Mold of Argoth into a virulent plague that ate away the elves there."
+  },
+  {
+   "source": "Glissa",
+   "relation": "leader_of",
+   "target": "Phyrexian Elves",
+   "note": "Glissa is the de facto leader of the region.",
+   "paragraph": 75,
+   "quote": "led by the de facto leader of the region, Glissa"
+  },
+  {
+   "source": "Harald",
+   "relation": "leader_of",
+   "target": "Elves of Skemfar",
+   "note": "",
+   "paragraph": 57,
+   "quote": "Harald united the warring clans and named himself king"
+  },
+  {
+   "source": "Sutina",
+   "relation": "leader_of",
+   "target": "Tajuru Nation",
+   "note": "",
+   "paragraph": 86,
+   "quote": "Through the leadership of Speaker Sutina"
+  },
+  {
+   "source": "Speaker Nen",
+   "relation": "leader_of",
+   "target": "Joraga Nation",
+   "note": "",
+   "paragraph": 83,
+   "quote": "Their leader was Speaker Nen"
+  },
+  {
+   "source": "Hazzan",
+   "relation": "leader_of",
+   "target": "Mul Daya Nation",
+   "note": "",
+   "paragraph": 84,
+   "quote": "While their living leader was Hazzan"
+  },
+  {
+   "source": "Queen Ayara",
+   "relation": "leader_of",
+   "target": "Locthwain elves",
+   "note": "",
+   "paragraph": 51,
+   "quote": "The court of Locthwain is ruled by Queen Ayara"
+  },
+  {
+   "source": "Exarch Finovar",
+   "relation": "leader_of",
+   "target": "Calthyn Elves",
+   "note": "",
+   "paragraph": 41,
+   "quote": "One of their leaders was Exarch Finovar"
+  },
+  {
+   "source": "Exarch Amadis",
+   "relation": "leader_of",
+   "target": "Kieryn Elves",
+   "note": "",
+   "paragraph": 42,
+   "quote": "They were led by Exarch Amadis"
+  },
+  {
+   "source": "Calthyn Elves",
+   "relation": "enemy",
+   "target": "Kieryn Elves",
+   "note": "",
+   "paragraph": 41,
+   "quote": "were enemies of the Kieryn elves"
+  },
+  {
+   "source": "Llanowar Elves",
+   "relation": "serves",
+   "target": "Freyalise",
+   "note": "They worshiped her as a goddess.",
+   "paragraph": 33,
+   "quote": "They worshiped the planeswalker Freyalise as a goddess."
+  },
+  {
+   "source": "Meria",
+   "relation": "leader_of",
+   "target": "Yavimayan Elves",
+   "note": "Leader of the exiles.",
+   "paragraph": 29,
+   "quote": "Under their leader Meria"
+  },
+  {
+   "source": "Memnarch",
+   "relation": "other",
+   "target": "Viridian Elves",
+   "note": "Memnarch drew the elves to Mirrodin.",
+   "paragraph": 73,
+   "quote": "by Mirrodin's mad guardian, Memnarch"
+  },
+  {
+   "source": "Mayael",
+   "relation": "other",
+   "target": "Anima",
+   "note": "Mayael is the current Anima.",
+   "paragraph": 12,
+   "quote": "The Anima, currently Mayael"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,77 @@
+{
+ "page": "wiki/shadowmoor",
+ "url": "https://mtg.wiki/page/Shadowmoor",
+ "title": "Shadowmoor",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:17:57Z",
+ "storyline": "Lorwyn-Shadowmoor",
+ "entities": [
+  {
+   "name": "Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "A dark reflection of Lorwyn, changed by the Great Aurora into a world of perpetual night, gloom and fog.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lorwyn",
+   "type": "plane",
+   "aliases": [],
+   "description": "The sunny world that Shadowmoor once was.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Great Aurora",
+   "type": "event",
+   "aliases": [
+    "Great Aurora"
+   ],
+   "description": "The event that changed Lorwyn into Shadowmoor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Reaper King",
+   "type": "character",
+   "aliases": [
+    "King of the scarecrows"
+   ],
+   "description": "The King of the scarecrows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarecrows",
+   "type": "faction",
+   "aliases": [],
+   "description": "A race of artifact creatures introduced in Shadowmoor.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Great Aurora changes Lorwyn into Shadowmoor, turning a constantly sunny world into one of perpetual night.",
+   "participants": [
+    "The Great Aurora",
+    "Shadowmoor",
+    "Lorwyn"
+   ],
+   "location": "Shadowmoor",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "But thanks to the Great Aurora , everything's changed."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Reaper King",
+   "relation": "leader_of",
+   "target": "Scarecrows",
+   "note": "King of the scarecrows",
+   "paragraph": 4,
+   "quote": "the Reaper King , the King of the scarecrows"
+  }
+ ],
+ "rejected": []
+}

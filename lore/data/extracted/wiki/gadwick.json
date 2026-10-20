@@ -1,0 +1,106 @@
+{
+ "page": "wiki/gadwick",
+ "url": "https://mtg.wiki/page/Gadwick",
+ "title": "Gadwick",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:46Z",
+ "storyline": "Throne of Eldraine",
+ "entities": [
+  {
+   "name": "Gadwick, the Wizened",
+   "type": "character",
+   "aliases": [
+    "Gadwick"
+   ],
+   "description": "Human wizard of Eldraine and archmage of Vantress, master of Johann.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Gadwick is from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vantress",
+   "type": "faction",
+   "aliases": [],
+   "description": "Court of Eldraine led by the Magic Mirror Indrelon and its archmage.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Johann",
+   "type": "character",
+   "aliases": [],
+   "description": "Elementalist chosen as Gadwick's apprentice who accidentally burned down the tower.",
+   "presence": "appears"
+  },
+  {
+   "name": "Indrelon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Sentient Magic Mirror that led Vantress, spending most of its time underwater.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Caervelin",
+   "type": "location",
+   "aliases": [],
+   "description": "Gadwick's residence, whose tower burned down.",
+   "presence": "appears"
+  },
+  {
+   "name": "Merlin",
+   "type": "character",
+   "aliases": [],
+   "description": "Arthurian legend Gadwick was designed after.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Gadwick chooses the elementalist Johann as his apprentice.",
+   "participants": [
+    "Gadwick, the Wizened",
+    "Johann"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Gadwick chose the elementalist Johann as his apprentice"
+  },
+  {
+   "summary": "While Gadwick is away, Johann fails to maintain the mechanisms, burning down the tower at Caervelin.",
+   "participants": [
+    "Johann"
+   ],
+   "location": "Caervelin",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "accidentally causing the tower to burn down"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gadwick, the Wizened",
+   "relation": "mentor_of",
+   "target": "Johann",
+   "note": "Master of his apprentice.",
+   "paragraph": 0,
+   "quote": "He is the master of the apprentice mage Johann"
+  },
+  {
+   "source": "Gadwick, the Wizened",
+   "relation": "leader_of",
+   "target": "Vantress",
+   "note": "Its most recent archmage.",
+   "paragraph": 1,
+   "quote": "Gadwick is the most recent archmage of Vantress"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,96 @@
+{
+ "page": "wiki/glen-elendra",
+ "url": "https://mtg.wiki/page/Glen_Elendra",
+ "title": "Glen Elendra",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:01:19Z",
+ "storyline": "Lorwyn Eclipsed",
+ "entities": [
+  {
+   "name": "Glen Elendra",
+   "type": "location",
+   "aliases": [],
+   "description": "Secluded haven of the queen of the fae on Lorwyn-Shadowmoor, a wellspring of blue and black mana.",
+   "presence": "appears"
+  },
+  {
+   "name": "Maralen",
+   "type": "character",
+   "aliases": [],
+   "description": "Current queen of the fae, who glamers the glen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Oona",
+   "type": "character",
+   "aliases": [],
+   "description": "Former eternally-blooming queen of the fae whose protective magic kept Glen Elendra unchanged by the Great Aurora.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lys Alana",
+   "type": "location",
+   "aliases": [],
+   "description": "Region north of the glen.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fae",
+   "type": "faction",
+   "aliases": [
+    "faeries"
+   ],
+   "description": "Guard Glen Elendra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aurora",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that changed Lorwyn but not Glen Elendra.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lorwyn-Shadowmoor",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane containing the glen.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Oona fell and Maralen assumed control as queen of the fae; the palace expanded to fit her.",
+   "participants": [
+    "Maralen",
+    "Oona"
+   ],
+   "location": "Glen Elendra",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "After her fall, Maralen assumed control as the queen of the plane's fae"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Maralen",
+   "relation": "leader_of",
+   "target": "Fae",
+   "note": "Reigning queen",
+   "paragraph": 0,
+   "quote": "The current reigning queen is Maralen ."
+  },
+  {
+   "source": "Oona",
+   "relation": "leader_of",
+   "target": "Glen Elendra",
+   "note": "Former queen",
+   "paragraph": 0,
+   "quote": "Glen Elendra was occupied by the eternally-blooming queen Oona ."
+  }
+ ],
+ "rejected": []
+}

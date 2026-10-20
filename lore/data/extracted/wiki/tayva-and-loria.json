@@ -1,0 +1,156 @@
+{
+ "page": "wiki/tayva-and-loria",
+ "url": "https://mtg.wiki/page/Tayva_and_Loria",
+ "title": "Tayva and Loria",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:33Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Tayva",
+   "type": "character",
+   "aliases": [],
+   "description": "Older, grayer necromancer cousin of Loria, cold and immune to poison.",
+   "presence": "appears"
+  },
+  {
+   "name": "Loria",
+   "type": "character",
+   "aliases": [],
+   "description": "Younger necromancer cousin of Tayva who poisoned her and died of plague.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ebnezzer",
+   "type": "character",
+   "aliases": [],
+   "description": "Dark mage who taught them necromancy and was later possessed and killed by them.",
+   "presence": "appears"
+  },
+  {
+   "name": "dark spirit",
+   "type": "creature",
+   "aliases": [
+    "lake spirit"
+   ],
+   "description": "Evil entity that possessed Ebnezzer, then the lake's waters, then Winton.",
+   "presence": "appears"
+  },
+  {
+   "name": "Winton",
+   "type": "character",
+   "aliases": [],
+   "description": "Hunter killed by the cousins who rose undead possessed by the lake spirit.",
+   "presence": "appears"
+  },
+  {
+   "name": "World Spell",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that drained the cousins of most necromantic power.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where they lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ebnezzer teaches the cousins necromancy and they turn their household into zombies.",
+   "participants": [
+    "Tayva",
+    "Loria",
+    "Ebnezzer"
+   ],
+   "location": "Dominaria",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they slowly turned their entire household into servile zombies"
+  },
+  {
+   "summary": "The World Spell drains the cousins' power and leaves Ebnezzer possessed by a dark spirit.",
+   "participants": [
+    "Tayva",
+    "Loria",
+    "Ebnezzer",
+    "dark spirit",
+    "World Spell"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "leaving Ebnezzer possessed by a dark spirit"
+  },
+  {
+   "summary": "They kill Ebnezzer and put his head into a lake, where the spirit takes possession of the waters.",
+   "participants": [
+    "Tayva",
+    "Loria",
+    "Ebnezzer",
+    "dark spirit"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They killed Ebnezzer and took his head with them north into the backwoods."
+  },
+  {
+   "summary": "Loria poisons Tayva's food but Tayva, immune and having served plagued meat, survives; Loria dies of the plague on the shore.",
+   "participants": [
+    "Loria",
+    "Tayva"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Loria secretly poisoned Tayva's food"
+  },
+  {
+   "summary": "The undead Winton, possessed by the lake spirit, drags both cousins into the waters.",
+   "participants": [
+    "Winton",
+    "dark spirit",
+    "Tayva",
+    "Loria"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "The lake spirit did not want either of the cousins to leave the swamp and dragged them both into the waters."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tayva",
+   "relation": "family",
+   "target": "Loria",
+   "note": "cousins",
+   "paragraph": 0,
+   "quote": "Tayva and Loria were necromancer cousins"
+  },
+  {
+   "source": "Ebnezzer",
+   "relation": "mentor_of",
+   "target": "Tayva",
+   "note": "taught necromancy to both cousins",
+   "paragraph": 3,
+   "quote": "The dark mage Ebnezzer taught them necromantic magic"
+  },
+  {
+   "source": "Tayva",
+   "relation": "killed",
+   "target": "Ebnezzer",
+   "note": "with Loria",
+   "paragraph": 3,
+   "quote": "They killed Ebnezzer and took his head with them north into the backwoods."
+  }
+ ],
+ "rejected": []
+}

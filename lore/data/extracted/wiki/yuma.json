@@ -1,0 +1,161 @@
+{
+ "page": "wiki/yuma",
+ "url": "https://mtg.wiki/page/Yuma",
+ "title": "Yuma",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:00Z",
+ "storyline": "Outlaws of Thunder Junction",
+ "entities": [
+  {
+   "name": "Yuma",
+   "type": "character",
+   "aliases": [],
+   "description": "Human ranger and former Riveteer from New Capenna who fled through an Omenpath to Thunder Junction and opened a bar.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Capenna",
+   "type": "plane",
+   "aliases": [
+    "Capenna"
+   ],
+   "description": "Plane Yuma came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thunder Junction",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane Yuma fled to.",
+   "presence": "appears"
+  },
+  {
+   "name": "Riveteers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Capennan gang Yuma belonged to as weaponsmith and enforcer.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elnor",
+   "type": "character",
+   "aliases": [],
+   "description": "Yuma's friend who left the Riveteers with him and later came to reclaim the money.",
+   "presence": "appears"
+  },
+  {
+   "name": "Shadress",
+   "type": "character",
+   "aliases": [],
+   "description": "Elnor's girlfriend, who left the Riveteers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kirri",
+   "type": "character",
+   "aliases": [],
+   "description": "Cactusfolk Yuma took in as an infant.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which Yuma grew disillusioned with the gang.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpath",
+   "type": "concept",
+   "aliases": [],
+   "description": "Path between planes Yuma ran through.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yuma, Elnor, Shadress and others leave the Riveteers to start a co-operative.",
+   "participants": [
+    "Yuma",
+    "Elnor",
+    "Shadress",
+    "Riveteers"
+   ],
+   "location": "New Capenna",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "left the Riveteers to start their own co-operative"
+  },
+  {
+   "summary": "Overwhelmed by debt and enemies, Yuma flees through a random Omenpath with the remaining money.",
+   "participants": [
+    "Yuma"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "ran through a random Omenpath with all the money they had left"
+  },
+  {
+   "summary": "Yuma takes in an infant cactusfolk he names Kirri and opens a bar.",
+   "participants": [
+    "Yuma",
+    "Kirri"
+   ],
+   "location": "Thunder Junction",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Yuma encountered an infant cactusfolk he named Kirri and took him under his care"
+  },
+  {
+   "summary": "Elnor arrives to reclaim the money; they shoot it out until Kirri intervenes and Yuma talks her into moving on.",
+   "participants": [
+    "Elnor",
+    "Yuma",
+    "Kirri"
+   ],
+   "location": "Thunder Junction",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "He was able to talk her into moving on after Kirri intervened in the fight."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yuma",
+   "relation": "member_of",
+   "target": "Riveteers",
+   "note": "former member",
+   "paragraph": 3,
+   "quote": "As a member of the Riveteers, Yuma was a weaponsmith and enforcer."
+  },
+  {
+   "source": "Yuma",
+   "relation": "ally",
+   "target": "Elnor",
+   "note": "friend turned adversary over the money",
+   "paragraph": 3,
+   "quote": "he, together with his friend Elnor"
+  },
+  {
+   "source": "Elnor",
+   "relation": "romantic",
+   "target": "Shadress",
+   "note": "girlfriend",
+   "paragraph": 3,
+   "quote": "her girlfriend Shadress"
+  },
+  {
+   "source": "Yuma",
+   "relation": "serves",
+   "target": "Kirri",
+   "note": "cares for him",
+   "paragraph": 4,
+   "quote": "took him under his care"
+  }
+ ],
+ "rejected": []
+}

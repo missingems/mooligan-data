@@ -1,0 +1,123 @@
+{
+ "page": "wiki/okinec-ahau",
+ "url": "https://mtg.wiki/page/Okinec_Ahau",
+ "title": "Okinec Ahau",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:18Z",
+ "storyline": "Lost Caverns of Ixalan",
+ "entities": [
+  {
+   "name": "Okinec Ahau",
+   "type": "character",
+   "aliases": [
+    "Sovereign Okinec Ahau",
+    "Deep King"
+   ],
+   "description": "Sovereign of the Malamet on Ixalan, called the Deep King and worshipped as the only god among his people.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malamet",
+   "type": "faction",
+   "aliases": [],
+   "description": "People of Ixalan's caverns ruled by Okinec Ahau.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ban Koj",
+   "type": "location",
+   "aliases": [],
+   "description": "Cavern site where Okinec sits in a pyramid.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vito",
+   "type": "character",
+   "aliases": [],
+   "description": "Heretic leading the Queen's Bay Company expedition.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kutzil",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought the vampires before Okinec.",
+   "presence": "appears"
+  },
+  {
+   "name": "Amalia",
+   "type": "character",
+   "aliases": [],
+   "description": "Vampire cartomancer who created an escape from the sand pit.",
+   "presence": "appears"
+  },
+  {
+   "name": "Queen's Bay Company",
+   "type": "faction",
+   "aliases": [],
+   "description": "Surface company that sent an expedition into the caverns.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion after which the caverns beneath Ixalan opened.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Okinec rules.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kutzil brings the vampire expedition before Okinec's throne; Vito accidentally insults him by implying other gods exist.",
+   "participants": [
+    "Okinec Ahau",
+    "Kutzil",
+    "Vito"
+   ],
+   "location": "Ban Koj",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Vampires were brought before Okinec's throne by Kutzil"
+  },
+  {
+   "summary": "Okinec decrees the vampires be thrown into quicksand, but Amalia creates an escape.",
+   "participants": [
+    "Okinec Ahau",
+    "Amalia"
+   ],
+   "location": "Ban Koj",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "their cartomancer Amalia created an escape from the sand pit"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Okinec Ahau",
+   "relation": "leader_of",
+   "target": "Malamet",
+   "note": "Sovereign",
+   "paragraph": 1,
+   "quote": "He is the sovereign of the Malamet"
+  },
+  {
+   "source": "Vito",
+   "relation": "serves",
+   "target": "Queen's Bay Company",
+   "note": "Led its expedition",
+   "paragraph": 2,
+   "quote": "led by the heretic Vito"
+  }
+ ],
+ "rejected": []
+}

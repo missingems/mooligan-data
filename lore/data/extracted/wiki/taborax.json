@@ -1,0 +1,87 @@
+{
+ "page": "wiki/taborax",
+ "url": "https://mtg.wiki/page/Taborax",
+ "title": "Taborax",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Taborax",
+   "type": "character",
+   "aliases": [],
+   "description": "A notorious demon from Zendikar who has gathered the largest cult among demons worshipped after the Eldrazi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Taborax originates and where people turned to demon worship after the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldrazi",
+   "type": "faction",
+   "aliases": [],
+   "description": "Beings whose rise and fall left Zendikar's inhabitants fearing future threats.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Taborax",
+   "type": "faction",
+   "aliases": [
+    "Taborax's cult"
+   ],
+   "description": "The largest cult of demon worshippers on Zendikar, who believe Taborax alone can shield them from the Eldrazi.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the fall of the Eldrazi, Zendikari despair drives many to worship demons; Taborax gathers the largest cult.",
+   "participants": [
+    "Taborax",
+    "Cult of Taborax",
+    "Eldrazi"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Taborax has succeeded in gathering the largest cult"
+  },
+  {
+   "summary": "Taborax grants fragments of power to faithful followers while demanding far greater tribute and loyalty.",
+   "participants": [
+    "Taborax",
+    "Cult of Taborax"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he ensures that the tribute and loyalty he demands in return far exceed what he bestows"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Taborax",
+   "relation": "leader_of",
+   "target": "Cult of Taborax",
+   "note": "He is the demon the cult worships.",
+   "paragraph": 1,
+   "quote": "Taborax has succeeded in gathering the largest cult"
+  },
+  {
+   "source": "Taborax",
+   "relation": "located_in",
+   "target": "Zendikar",
+   "note": "Originates from Zendikar.",
+   "paragraph": 0,
+   "quote": "Taborax is a notorious demon originating from the plane of Zendikar"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,215 @@
+{
+ "page": "wiki/jamira",
+ "url": "https://mtg.wiki/page/Jamira",
+ "title": "Jamira",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:48Z",
+ "storyline": "Strixhaven",
+ "entities": [
+  {
+   "name": "Jamira",
+   "type": "character",
+   "aliases": [
+    "Jammy"
+   ],
+   "description": "A minotaur geomancer and blacksmith from Aranzhur, daughter of Angrath, student at Strixhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Angrath",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker, Jamira's father.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rumi",
+   "type": "character",
+   "aliases": [],
+   "description": "Jamira's sibling.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aranzhur",
+   "type": "plane",
+   "aliases": [],
+   "description": "Jamira's destroyed home plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Strixhaven University",
+   "type": "faction",
+   "aliases": [
+    "Strixhaven"
+   ],
+   "description": "University on Arcavios.",
+   "presence": "appears"
+  },
+  {
+   "name": "Quandrix",
+   "type": "faction",
+   "aliases": [],
+   "description": "College of mathematical magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Professor Kasmina",
+   "type": "character",
+   "aliases": [
+    "Kasmina"
+   ],
+   "description": "Professor who recruited the students to steal their sparks.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eula Blue",
+   "type": "character",
+   "aliases": [],
+   "description": "Classmate of Jamira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Segante",
+   "type": "character",
+   "aliases": [],
+   "description": "Classmate of Jamira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Alandra",
+   "type": "character",
+   "aliases": [],
+   "description": "Classmate of Jamira.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kequia Akosa",
+   "type": "character",
+   "aliases": [
+    "Kequia"
+   ],
+   "description": "Classmate for whom Jamira developed feelings.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orestes",
+   "type": "character",
+   "aliases": [],
+   "description": "Abducted by Jamira under Kasmina's manipulation.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Arcavios Preservation Society",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Kasmina manipulated Jamira into working with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Professor Vess",
+   "type": "character",
+   "aliases": [
+    "Vess"
+   ],
+   "description": "Professor who punished the five students.",
+   "presence": "appears"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Destroyed Aranzhur.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kasmina recruits Jamira as an ember; Jamira begs her to remove her spark.",
+   "participants": [
+    "Jamira",
+    "Professor Kasmina"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Afraid, she begged the Professor to remove her spark if possible"
+  },
+  {
+   "summary": "Kasmina manipulates Jamira into work with the Preservation Society and abducting Orestes.",
+   "participants": [
+    "Professor Kasmina",
+    "Jamira",
+    "Orestes",
+    "Arcavios Preservation Society"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "She manipulated Jamira into work with the Arcavios Preservation Society"
+  },
+  {
+   "summary": "The five students combine their powers and thwart Kasmina's plot; Kasmina presumably dies in a snarl.",
+   "participants": [
+    "Jamira",
+    "Eula Blue",
+    "Segante",
+    "Alandra",
+    "Kequia Akosa",
+    "Professor Kasmina"
+   ],
+   "location": "Strixhaven University",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "This plot was thwarted by the five students combining their powers"
+  },
+  {
+   "summary": "Professor Vess lets the students stay as residential advisors.",
+   "participants": [
+    "Professor Vess",
+    "Jamira"
+   ],
+   "location": "Strixhaven University",
+   "importance": "minor",
+   "paragraph": 7,
+   "quote": "She allowed them to stay on and pledge to their individual colleges"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jamira",
+   "relation": "family",
+   "target": "Angrath",
+   "note": "daughter",
+   "paragraph": 1,
+   "quote": "She is the daughter of the planeswalker Angrath"
+  },
+  {
+   "source": "Professor Kasmina",
+   "relation": "enemy",
+   "target": "Jamira",
+   "note": "planned to rob her spark",
+   "paragraph": 6,
+   "quote": "to rob their sparks to reignite her own"
+  },
+  {
+   "source": "Jamira",
+   "relation": "romantic",
+   "target": "Kequia Akosa",
+   "note": "developing feelings",
+   "paragraph": 5,
+   "quote": "she began to have feelings for Kequia"
+  },
+  {
+   "source": "Jamira",
+   "relation": "member_of",
+   "target": "Strixhaven University",
+   "note": "student",
+   "paragraph": 0,
+   "quote": "She was invited to join the first official multiplanar class of Strixhaven University on Arcavios ."
+  }
+ ],
+ "rejected": []
+}

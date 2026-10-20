@@ -1,0 +1,133 @@
+{
+ "page": "wiki/drownyard",
+ "url": "https://mtg.wiki/page/Drownyard",
+ "title": "Drownyard",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:43:03Z",
+ "storyline": "Eldritch Moon",
+ "entities": [
+  {
+   "name": "Drownyard",
+   "type": "location",
+   "aliases": [
+    "Drownyard temple"
+   ],
+   "description": "Seagraf reef near Nephalia on Innistrad where many ships were lost and Nahiri built a ring of cryptoliths; focal point of redirected leylines.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nephalia",
+   "type": "location",
+   "aliases": [],
+   "description": "Region near the Drownyard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Drownyard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Crazed Lithomancer who constructed the cryptolith ring.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cryptoliths",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Stones pointing toward the Drownyard.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gisa",
+   "type": "character",
+   "aliases": [],
+   "description": "Necromancer whose ghouls built the temple.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tamiyo",
+   "type": "character",
+   "aliases": [],
+   "description": "Researcher whose findings suggested an eldritch moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Emrakul",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi drawn to the plane through the planar portal by Nahiri, kept from fully manifesting until Avacyn was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Angel protector of Innistrad whose death left it unprotected.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Nahiri builds a ring of cryptoliths at the Drownyard using Gisa's ghouls.",
+   "participants": [
+    "Nahiri",
+    "Gisa",
+    "Cryptoliths"
+   ],
+   "location": "Drownyard",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "She made use of Gisa 's ghouls to build this so-called Drownyard temple"
+  },
+  {
+   "summary": "Tamiyo's findings link the temple to an unseen massive object in the sky, an eldritch moon.",
+   "participants": [
+    "Tamiyo"
+   ],
+   "location": "Drownyard",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The findings of Tamiyo supported a connection between the temple and an invisible object"
+  },
+  {
+   "summary": "Emrakul, drawn through the portal by Nahiri, is kept from fully manifesting until Avacyn is killed.",
+   "participants": [
+    "Emrakul",
+    "Nahiri",
+    "Avacyn"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "kept from fully manifesting until Avacyn was killed and Innistrad was thus left unprotected"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nahiri",
+   "relation": "created",
+   "target": "Drownyard",
+   "note": "She built the cryptolith ring there.",
+   "paragraph": 0,
+   "quote": "the crazed Lithomancer Nahiri constructed a ring of cryptoliths"
+  },
+  {
+   "source": "Nahiri",
+   "relation": "other",
+   "target": "Emrakul",
+   "note": "Drew Emrakul to the plane.",
+   "paragraph": 1,
+   "quote": "Emrakul who had been drawn to the plane through the planar portal by Nahiri"
+  }
+ ],
+ "rejected": []
+}

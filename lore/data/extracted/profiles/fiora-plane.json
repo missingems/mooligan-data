@@ -1,0 +1,84 @@
+{
+ "page": "profiles/fiora-plane",
+ "url": "https://magic.wizards.com/en/story/fiora-plane",
+ "title": "Fiora",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-01T22:39:26Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Fiora",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane of perpetual renaissance with beautiful cities, ingenious inventors and dangerous politics.",
+   "presence": "appears"
+  },
+  {
+   "name": "Paliano",
+   "type": "location",
+   "aliases": [
+    "the High City"
+   ],
+   "description": "The capital of Fiora, where murder and subterfuge are common and political factions vie for control; its laws mystically bind the populace.",
+   "presence": "appears"
+  },
+  {
+   "name": "Drakestown",
+   "type": "location",
+   "aliases": [],
+   "description": "A town far from the High City bordering the wilderness, where everyone was viciously murdered years ago.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The massacre of Drakestown",
+   "type": "event",
+   "aliases": [],
+   "description": "The vicious murder of everyone in Drakestown years ago, their lives lost to an unknown scheme.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Selvala",
+   "type": "character",
+   "aliases": [],
+   "description": "An explorer, one of the first to travel Fiora's frontier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Everyone in Drakestown was viciously murdered years ago to an unknown scheme.",
+   "participants": [
+    "The massacre of Drakestown",
+    "Drakestown"
+   ],
+   "location": "Drakestown",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "everyone was viciously murdered here years ago, their lives lost to an unknown scheme."
+  },
+  {
+   "summary": "The explorer Selvala was one of the first to travel the frontier, seeking the world beyond the nobles' debauchery.",
+   "participants": [
+    "Selvala"
+   ],
+   "location": "Fiora",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "The explorer Selvala was one of the first to travel the frontier"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Paliano",
+   "relation": "located_in",
+   "target": "Fiora",
+   "note": "Capital of Fiora.",
+   "paragraph": 0,
+   "quote": "In the capital of Fiora—Paliano, the High City—murder and subterfuge are common."
+  }
+ ],
+ "rejected": []
+}

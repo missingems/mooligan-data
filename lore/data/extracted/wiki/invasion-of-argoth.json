@@ -1,0 +1,209 @@
+{
+ "page": "wiki/invasion-of-argoth",
+ "url": "https://mtg.wiki/page/Invasion_of_Argoth",
+ "title": "Invasion of Argoth",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Invasion of Argoth",
+   "type": "event",
+   "aliases": [],
+   "description": "Event in 57 AR in which Harbin and Mishra brought armies to Argoth, starting a six-year battleground.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argoth",
+   "type": "location",
+   "aliases": [],
+   "description": "Island whose resources were stripped and which became a battleground.",
+   "presence": "appears"
+  },
+  {
+   "name": "Harbin",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought the Combined Kingdoms to Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mishra",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought the Fallaji Empire to Argoth.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gix",
+   "type": "character",
+   "aliases": [],
+   "description": "Whose schemes led Mishra to the island.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titania",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler of Argoth's defenders at the Court of Titania in Citanul.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ashnod",
+   "type": "character",
+   "aliases": [],
+   "description": "Later arrival carrying the Golgothian Sylex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Hajar",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought Ashnod to Mishra.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gwenna",
+   "type": "character",
+   "aliases": [],
+   "description": "Carried off the island with Hajar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent Harbin to oppose Gwenna and Hajar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Golgothian Sylex",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact Ashnod carried; it required magic to use.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brotherhood of Gix",
+   "type": "faction",
+   "aliases": [],
+   "description": "Faction that demanded Ashnod give them the Sylex.",
+   "presence": "appears"
+  },
+  {
+   "name": "Combined Kingdoms",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nations brought by Harbin to Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji Empire",
+   "type": "faction",
+   "aliases": [],
+   "description": "Empire brought by Mishra to Argoth.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Citanul",
+   "type": "location",
+   "aliases": [
+    "Court of Titania"
+   ],
+   "description": "Location of the Court of Titania.",
+   "presence": "appears"
+  },
+  {
+   "name": "Battle at Argoth",
+   "type": "event",
+   "aliases": [],
+   "description": "The last battle at which the invasion culminated.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Harbin brings the Combined Kingdoms to Argoth and starts stripping its resources; Mishra brings the Fallaji Empire; defenders retaliate.",
+   "participants": [
+    "Harbin",
+    "Mishra",
+    "Gix"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The island's defenders retaliated, starting a six-year-long battleground."
+  },
+  {
+   "summary": "Harbin is summoned to the Court of Titania, asks for aid against Mishra, is refused, and leaves on foot.",
+   "participants": [
+    "Harbin",
+    "Titania"
+   ],
+   "location": "Citanul",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he had to return on foot"
+  },
+  {
+   "summary": "Ashnod arrives with the Golgothian Sylex; Mishra is unimpressed; she gives the Brotherhood of Gix a counterfeit.",
+   "participants": [
+    "Ashnod",
+    "Hajar",
+    "Mishra",
+    "Brotherhood of Gix",
+    "Golgothian Sylex"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Ashnod then gave them a counterfeit sylex to trick them"
+  },
+  {
+   "summary": "Ashnod arranges a ship carrying Gwenna and Hajar off the island to raid Urza's shipyards; Harbin is sent by Tawnos to oppose them.",
+   "participants": [
+    "Ashnod",
+    "Gwenna",
+    "Hajar",
+    "Harbin",
+    "Tawnos"
+   ],
+   "location": "Argoth",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Harbin was sent by Tawnos to oppose them."
+  },
+  {
+   "summary": "The invasion culminates with the last Battle at Argoth.",
+   "participants": [
+    "Argoth"
+   ],
+   "location": "Argoth",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "The invasion culminated with the last Battle at Argoth ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Harbin",
+   "relation": "enemy",
+   "target": "Mishra",
+   "note": "Harbin sought to defeat Mishra.",
+   "paragraph": 2,
+   "quote": "Harbin tried to persuade Titania to side with the Combined Kingdoms to defeat Mishra"
+  },
+  {
+   "source": "Tawnos",
+   "relation": "serves",
+   "target": "Harbin",
+   "note": "Tawnos sent Harbin.",
+   "paragraph": 4,
+   "quote": "Harbin was sent by Tawnos to oppose them."
+  }
+ ],
+ "rejected": []
+}

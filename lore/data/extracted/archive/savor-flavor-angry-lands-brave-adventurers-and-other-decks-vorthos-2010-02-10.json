@@ -1,0 +1,169 @@
+{
+ "page": "archive/savor-flavor-angry-lands-brave-adventurers-and-other-decks-vorthos-2010-02-10",
+ "url": "https://web.archive.org/web/20160823155318/http://magic.wizards.com:80/en/articles/archive/savor-flavor/angry-lands-brave-adventurers-and-other-decks-vorthos-2010-02-10",
+ "title": "Angry Lands, Brave Adventurers, and Other Decks for Vorthos",
+ "story_date": "2010-02-10",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:39:37Z",
+ "storyline": "Worldwake",
+ "entities": [
+  {
+   "name": "Liliana Vess",
+   "type": "character",
+   "aliases": [
+    "Liliana"
+   ],
+   "description": "Planeswalker who is said to hate Garruk Wildspeaker, and whose discard ability is mentioned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [
+    "Garruk"
+   ],
+   "description": "Planeswalker who is said to hate Liliana Vess; his beasts are mentioned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where a battle rages between its sentient humanoid adventurers and its hostile lands, with vampires as a third party.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Adventurers of Zendikar",
+   "type": "faction",
+   "aliases": [
+    "sentient humanoids of Zendikar",
+    "humanoids"
+   ],
+   "description": "Hardy humanoids who brave the elements to explore Zendikar's wild places, chasing treasure and mana-rich sites.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar's lands",
+   "type": "faction",
+   "aliases": [
+    "the land",
+    "the land's side"
+   ],
+   "description": "The angry lands and their monsters, which strike back at the adventurers trampling and plundering the landscape.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vampires of Zendikar",
+   "type": "faction",
+   "aliases": [
+    "vampires"
+   ],
+   "description": "Hunting race of Zendikar that sides with neither adventurers nor the land; bloodchiefs sire new vampires and command nulls.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodchiefs",
+   "type": "faction",
+   "aliases": [
+    "bloodchief"
+   ],
+   "description": "Powerful vampires of Zendikar who alone can sire new vampires and can command small armies of nulls and lesser vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nulls",
+   "type": "creature",
+   "aliases": [
+    "null"
+   ],
+   "description": "Strange, faceless thralls that result when a lesser vampire drains a victim on Zendikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Guul Draz",
+   "type": "location",
+   "aliases": [],
+   "description": "Gloomy continent of Zendikar that people stay out of because of its vampires.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avenger of Zendikar",
+   "type": "creature",
+   "aliases": [],
+   "description": "Huge angry plant monster that represents the land striking back.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Archon of Justice",
+   "type": "creature",
+   "aliases": [
+    "Archon"
+   ],
+   "description": "Eventide Archon, a surreal humanoid figure riding a winged white stag, representing white-aligned principles.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Zendikar's lands rise against the adventurers who trample and plunder them, striking back.",
+   "participants": [
+    "Zendikar's lands",
+    "Adventurers of Zendikar",
+    "Avenger of Zendikar"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 10,
+   "quote": "On the other side of the battle are Zendikar's lands themselves."
+  },
+  {
+   "summary": "Vampires of Zendikar hunt by stealth, with bloodchiefs leveling outposts with their armies of nulls.",
+   "participants": [
+    "Vampires of Zendikar",
+    "Bloodchiefs",
+    "Nulls"
+   ],
+   "location": "Zendikar",
+   "importance": "minor",
+   "paragraph": 26,
+   "quote": "Powerful vampires such as bloodchiefs possess overwhelming power and can command small armies of nulls and lesser vampires"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Liliana Vess",
+   "relation": "enemy",
+   "target": "Garruk Wildspeaker",
+   "note": "They hate each other and attack on sight.",
+   "paragraph": 0,
+   "quote": "Liliana Vess and Garruk Wildspeaker hate each other's guts."
+  },
+  {
+   "source": "Bloodchiefs",
+   "relation": "leader_of",
+   "target": "Nulls",
+   "note": "Bloodchiefs command small armies of nulls.",
+   "paragraph": 26,
+   "quote": "can command small armies of nulls and lesser vampires"
+  },
+  {
+   "source": "Bloodchiefs",
+   "relation": "member_of",
+   "target": "Vampires of Zendikar",
+   "note": "Bloodchiefs are powerful vampires.",
+   "paragraph": 26,
+   "quote": "Powerful vampires such as bloodchiefs possess overwhelming power"
+  },
+  {
+   "source": "Adventurers of Zendikar",
+   "relation": "enemy",
+   "target": "Zendikar's lands",
+   "note": "The lands are fed up with the adventurers.",
+   "paragraph": 10,
+   "quote": "They have had it up to here"
+  }
+ ],
+ "rejected": []
+}

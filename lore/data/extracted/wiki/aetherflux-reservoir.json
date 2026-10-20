@@ -1,0 +1,104 @@
+{
+ "page": "wiki/aetherflux-reservoir",
+ "url": "https://mtg.wiki/page/Aetherflux_Reservoir",
+ "title": "Aetherflux Reservoir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:37Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Aetherflux Reservoir",
+   "type": "location",
+   "aliases": [],
+   "description": "The largest aether storage facility of Avishkar, in Ghirapur, designed by Satya.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur",
+   "type": "location",
+   "aliases": [],
+   "description": "Bustling city on Kaladesh holding the Reservoir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Satya",
+   "type": "character",
+   "aliases": [],
+   "description": "Eccentric inventor who designed the Aetherflux Reservoir.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avaati Vya",
+   "type": "character",
+   "aliases": [
+    "Avaati"
+   ],
+   "description": "Discovered how to harness aether, an equal collaborator with Satya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Great Aether Boom",
+   "type": "event",
+   "aliases": [],
+   "description": "Era when aether was refined and made accessible to all.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Consulate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ruling body that regulates aether flow and clashes with renegade inventors.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Inventors' Fair",
+   "type": "event",
+   "aliases": [],
+   "description": "Fair during which the Reservoir drew renegade inventors' attention.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Satya designed the Aetherflux Reservoir in the early days of the Great Aether Boom.",
+   "participants": [
+    "Satya",
+    "Aetherflux Reservoir"
+   ],
+   "location": "Ghirapur",
+   "importance": "major",
+   "paragraph": 0,
+   "quote": "Designed by the eccentric inventor Satya during the early days of the Great Aether Boom"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Satya",
+   "relation": "created",
+   "target": "Aetherflux Reservoir",
+   "note": "designer",
+   "paragraph": 4,
+   "quote": "he's best known for designing the Aetherflux Reservoir"
+  },
+  {
+   "source": "Satya",
+   "relation": "ally",
+   "target": "Avaati Vya",
+   "note": "equal collaboration",
+   "paragraph": 3,
+   "quote": "in reality, theirs was an equal collaboration"
+  },
+  {
+   "source": "Aetherflux Reservoir",
+   "relation": "located_in",
+   "target": "Ghirapur",
+   "note": "",
+   "paragraph": 1,
+   "quote": "located in the bustling city of Ghirapur"
+  }
+ ],
+ "rejected": []
+}

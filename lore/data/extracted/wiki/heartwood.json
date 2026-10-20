@@ -1,0 +1,86 @@
+{
+ "page": "wiki/heartwood",
+ "url": "https://mtg.wiki/page/Heartwood",
+ "title": "Heartwood",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Heartwood",
+   "type": "location",
+   "aliases": [],
+   "description": "A location on Rath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heartwood Shard",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A relic found on Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aerid Konstrari",
+   "type": "character",
+   "aliases": [],
+   "description": "In the Echoverse, mastered animating inert materials by condensing leyline energy into a heartwood crystal and taught the Konstrari cadets of Hexhaven.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konstrari cadets",
+   "type": "faction",
+   "aliases": [],
+   "description": "Cadets of Hexhaven taught by Aerid Konstrari.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hexhaven",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Konstrari cadets.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rath",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Heartwood was a location.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Heartwood Shard was found.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Aerid Konstrari masters animating inert materials with a heartwood crystal and passes on the knowledge.",
+   "participants": [
+    "Aerid Konstrari",
+    "Konstrari cadets"
+   ],
+   "location": "Hexhaven",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Aerid Konstrari mastered the ability to animate inert materials by condensing leyline energy into a heartwood crystal"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aerid Konstrari",
+   "relation": "mentor_of",
+   "target": "Konstrari cadets",
+   "note": "Passed on her knowledge",
+   "paragraph": 4,
+   "quote": "passed this knowledge on to the Konstrari cadets of Hexhaven"
+  }
+ ],
+ "rejected": []
+}

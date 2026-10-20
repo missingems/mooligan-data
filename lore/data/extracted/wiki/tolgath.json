@@ -1,0 +1,82 @@
+{
+ "page": "wiki/tolgath",
+ "url": "https://mtg.wiki/page/Tolgath",
+ "title": "Tolgath",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:02Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tolgath",
+   "type": "faction",
+   "aliases": [],
+   "description": "Expansive group of knowledge-hungry planeswalkers who fought the Ancients on Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ancients",
+   "type": "faction",
+   "aliases": [],
+   "description": "Rival group of the Tolgath on Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravi",
+   "type": "character",
+   "aliases": [],
+   "description": "Tolgath member who rang the Apocalypse Chime.",
+   "presence": "appears"
+  },
+  {
+   "name": "Apocalypse Chime",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Artifact whose ringing annihilated the Tolgath, the Ancients and most life on Ulgrotha.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Tolgath and Ancients fought.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Ravi rings the Apocalypse Chime, annihilating the Tolgath, the Ancients and most life on Ulgrotha.",
+   "participants": [
+    "Ravi",
+    "Apocalypse Chime",
+    "Tolgath",
+    "Ancients"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "When one of its members, Ravi , rang the Apocalypse Chime"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tolgath",
+   "relation": "enemy",
+   "target": "Ancients",
+   "note": "Rival groups in conflict.",
+   "paragraph": 1,
+   "quote": "led to the conflict with the Ancients"
+  },
+  {
+   "source": "Ravi",
+   "relation": "member_of",
+   "target": "Tolgath",
+   "note": "He rang the chime as a member.",
+   "paragraph": 2,
+   "quote": "When one of its members, Ravi"
+  }
+ ],
+ "rejected": []
+}

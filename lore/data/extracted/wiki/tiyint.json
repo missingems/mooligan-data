@@ -1,0 +1,151 @@
+{
+ "page": "wiki/tiyint",
+ "url": "https://mtg.wiki/page/Tiyint",
+ "title": "Tiyint",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:46:30Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Tiyint",
+   "type": "character",
+   "aliases": [],
+   "description": "A legendary minotaur hero of the Dark Age of Terisiare, able to wield magic and fight; his spirit was summoned into a mountainside statue that turned on its summoners.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mytaru",
+   "type": "character",
+   "aliases": [],
+   "description": "A minotaur who summoned Tiyint's spirit into the statue and sacrificed himself to stop it.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pardano",
+   "type": "character",
+   "aliases": [],
+   "description": "Son of Aesor, killed in a cave-in caused by Tiyint's rampage.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aesor",
+   "type": "character",
+   "aliases": [],
+   "description": "Father of Pardano.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Living Armor",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Armor Mytaru donned to drain the statue's life force.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urhaalan Valley minotaurs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Minotaurs of northwestern Terisiare who revered Tiyint.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eln Forest elves",
+   "type": "faction",
+   "aliases": [],
+   "description": "Elves at war with the minotaurs.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Colekgan Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains where Tiyint's statue was carved.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Terisiare",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Dominaria where the Dark Age took place.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Tiyint lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mytaru summons Tiyint's spirit into the statue during the war with the Eln Forest elves.",
+   "participants": [
+    "Mytaru",
+    "Tiyint",
+    "Urhaalan Valley minotaurs",
+    "Eln Forest elves"
+   ],
+   "location": "Colekgan Mountains",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the minotaur Mytaru summoned Tiyint's spirit into the statue, awakening it as a massive stone avatar of war"
+  },
+  {
+   "summary": "The colossus slaughters elves, then turns on its summoners in a rampage.",
+   "participants": [
+    "Tiyint",
+    "Mytaru"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "a command uttered in battlelust suddenly turned the avatar against its summoners"
+  },
+  {
+   "summary": "Pardano is killed in a cave-in caused by Tiyint's earthquakes.",
+   "participants": [
+    "Pardano",
+    "Tiyint"
+   ],
+   "location": "Terisiare",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Pardano , son of Aesor , was killed in a cave-in caused by one of these earthquakes."
+  },
+  {
+   "summary": "Mytaru sacrifices himself in the Living Armor, ending Tiyint's rampage.",
+   "participants": [
+    "Mytaru",
+    "Tiyint",
+    "Living Armor"
+   ],
+   "location": "Terisiare",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Mytaru saw no other way out than to sacrifice himself by donning the Living Armor"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mytaru",
+   "relation": "created",
+   "target": "Tiyint",
+   "note": "Summoned Tiyint's spirit into the statue",
+   "paragraph": 1,
+   "quote": "the minotaur Mytaru summoned Tiyint's spirit into the statue"
+  },
+  {
+   "source": "Pardano",
+   "relation": "family",
+   "target": "Aesor",
+   "note": "Pardano was Aesor's son",
+   "paragraph": 2,
+   "quote": "Pardano , son of Aesor , was killed in a cave-in caused by one of these earthquakes."
+  }
+ ],
+ "rejected": []
+}

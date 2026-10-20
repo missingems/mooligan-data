@@ -1,0 +1,192 @@
+{
+ "page": "wiki/jukai",
+ "url": "https://mtg.wiki/page/Jukai",
+ "title": "Jukai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:21:41Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Jukai",
+   "type": "location",
+   "aliases": [
+    "Jukai Forest",
+    "Sea of Trees"
+   ],
+   "description": "A major green-aligned ancient forest on Kamigawa made of huge cedars, home to many kami, orochi and kitsune.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane containing the Jukai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [],
+   "description": "The oldest and tallest tree on Kamigawa, a huge twisted cedar whose name means she who shelters all.",
+   "presence": "appears"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "A city that grew into the Jukai and engulfed the grove of Boseiju; now Kamigawa's metropolitan center.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami",
+   "type": "faction",
+   "aliases": [
+    "forest kami"
+   ],
+   "description": "Spirits of the Jukai who attacked Towashi's builders after their homes were destroyed.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Emperor",
+   "type": "character",
+   "aliases": [],
+   "description": "The emperor who brokered an agreement between Towashi and the kami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Order of Jukai",
+   "type": "faction",
+   "aliases": [],
+   "description": "An order established to preserve nature and reverence for the spirits, opposed to reckless use of technology.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jugan",
+   "type": "deity",
+   "aliases": [
+    "the Rising Star"
+   ],
+   "description": "The spirit who watches over Jukai Forest.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "A war between mortals and kami, after which the Order of Jukai was established.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Pearl-Ear",
+   "type": "character",
+   "aliases": [],
+   "description": "Kitsune born in Sugi Hayashi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sharp-Ear",
+   "type": "character",
+   "aliases": [],
+   "description": "Kitsune born in Sugi Hayashi.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Part of Jukai was destroyed during the soratami invasion.",
+   "participants": [
+    "Jukai"
+   ],
+   "location": "Jukai",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Part of Jukai was destroyed during the soratami invasion"
+  },
+  {
+   "summary": "Towashi's growth consumed the edges of Jukai and enclosed the grove of Boseiju, displacing forest kami.",
+   "participants": [
+    "Towashi",
+    "Jukai",
+    "Boseiju",
+    "Kami"
+   ],
+   "location": "Jukai",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "As Towashi's boundaries stretched outward, the city began encroaching upon the ancient Jukai Forest, gradually consuming its edges."
+  },
+  {
+   "summary": "The angered kami attacked, demolishing new structures and cursing those responsible.",
+   "participants": [
+    "Kami",
+    "Towashi"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the kami unleashed their wrath by demolishing recently built structures and casting curses upon those responsible for the desecration."
+  },
+  {
+   "summary": "The emperor brokered an agreement: Towashi would stop growing into the forest, Boseiju could not be cut down, and Jukai closed to mortals without the kami's permission.",
+   "participants": [
+    "The Emperor",
+    "Kami",
+    "Towashi",
+    "Boseiju"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "He brokered an agreement that the city would halt further growth into the forest."
+  },
+  {
+   "summary": "The Order of Jukai was established about 1,200 years after the Kami War.",
+   "participants": [
+    "Order of Jukai",
+    "Kami War"
+   ],
+   "location": "Jukai",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "the Order of Jukai was established to preserve nature and reverence for the spirits."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jugan",
+   "relation": "other",
+   "target": "Jukai",
+   "note": "Watches over the forest.",
+   "paragraph": 2,
+   "quote": "Jukai Forest is watched over by Jugan"
+  },
+  {
+   "source": "Boseiju",
+   "relation": "located_in",
+   "target": "Jukai",
+   "note": "The tree stood in the Jukai.",
+   "paragraph": 1,
+   "quote": "Jukai was the location of Boseiju"
+  },
+  {
+   "source": "Kami",
+   "relation": "enemy",
+   "target": "Towashi",
+   "note": "Attacked it over the forest's destruction.",
+   "paragraph": 4,
+   "quote": "These guardian spirits, angered by the destruction of their homes, retaliated fiercely."
+  },
+  {
+   "source": "Order of Jukai",
+   "relation": "ally",
+   "target": "Kami",
+   "note": "Reveres and welcomes the spirits.",
+   "paragraph": 9,
+   "quote": "the Order of Jukai has built temples to make sure the kami feel welcomed"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,168 @@
+{
+ "page": "wiki/kotis",
+ "url": "https://mtg.wiki/page/Kotis",
+ "title": "Kotis",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:16Z",
+ "storyline": "Tarkir",
+ "entities": [
+  {
+   "name": "Kotis",
+   "type": "character",
+   "aliases": [
+    "Kotis, Fangkeeper"
+   ],
+   "description": "A sibsig warrior from Kishla Village, Fangkeeper (khan) of the Sultai Brood, bound to the spirit dragon Teval.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kishla Village",
+   "type": "location",
+   "aliases": [
+    "Kishla"
+   ],
+   "description": "Village on Tarkir where Kotis was a farmer.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tarkir",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Kotis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sultai Brood",
+   "type": "faction",
+   "aliases": [
+    "Sultai"
+   ],
+   "description": "A clan led by the Fangkeeper.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teval",
+   "type": "deity",
+   "aliases": [],
+   "description": "A spirit dragon called into being by Kotis.",
+   "presence": "appears"
+  },
+  {
+   "name": "Silumgar",
+   "type": "character",
+   "aliases": [],
+   "description": "Dragonlord whose minions stole the village's crops; ruled over the village.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sidisi",
+   "type": "character",
+   "aliases": [],
+   "description": "Ruler defeated in the rebellion, partly through Kotis.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion in which Kotis fought and was killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Stormnexus Ritual",
+   "type": "event",
+   "aliases": [],
+   "description": "Ritual during which Kotis called Teval into being.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kotis organizes his village's resistance against Silumgar, earning brief independence; rebels flee to the jungle after a counterattack.",
+   "participants": [
+    "Kotis",
+    "Silumgar",
+    "Kishla Village"
+   ],
+   "location": "Kishla Village",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he organized his village's resistance, earning it brief independence from Silumgar's rule"
+  },
+  {
+   "summary": "Kotis fights in the New Phyrexian Invasion and is killed, then revived in a necromantic ritual as a sibsig.",
+   "participants": [
+    "Kotis",
+    "New Phyrexian Invasion"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "so he was brought back to life in a necromantic ritual"
+  },
+  {
+   "summary": "Kotis is partly responsible for Sidisi's defeat.",
+   "participants": [
+    "Kotis",
+    "Sidisi"
+   ],
+   "location": "Tarkir",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kotis was partially responsible for Sidisi 's defeat"
+  },
+  {
+   "summary": "During the Stormnexus Ritual Kotis calls the spirit dragon Teval into being.",
+   "participants": [
+    "Kotis",
+    "Teval",
+    "Stormnexus Ritual"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Kotis called the spirit dragon Teval into being"
+  },
+  {
+   "summary": "After the dragonlords fall, Kotis is installed as Fangkeeper.",
+   "participants": [
+    "Kotis",
+    "Sultai Brood"
+   ],
+   "location": "Tarkir",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Kotis was installed as the Fangkeeper"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kotis",
+   "relation": "leader_of",
+   "target": "Sultai Brood",
+   "note": "Current Fangkeeper (khan).",
+   "paragraph": 0,
+   "quote": "He is the current Fangkeeper ( khan ) of the Sultai Brood"
+  },
+  {
+   "source": "Kotis",
+   "relation": "created",
+   "target": "Teval",
+   "note": "Called the spirit dragon into being.",
+   "paragraph": 4,
+   "quote": "Kotis called the spirit dragon Teval into being"
+  },
+  {
+   "source": "Kotis",
+   "relation": "enemy",
+   "target": "Silumgar",
+   "note": "Led resistance against his rule.",
+   "paragraph": 3,
+   "quote": "he organized his village's resistance, earning it brief independence from Silumgar's rule"
+  }
+ ],
+ "rejected": []
+}

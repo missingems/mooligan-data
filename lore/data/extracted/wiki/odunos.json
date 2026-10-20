@@ -1,0 +1,225 @@
+{
+ "page": "wiki/odunos",
+ "url": "https://mtg.wiki/page/Odunos",
+ "title": "Odunos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:31Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Odunos",
+   "type": "location",
+   "aliases": [],
+   "description": "City on the Siren Sea coast of Theros inhabited by hateful Returned who raid the living.",
+   "presence": "appears"
+  },
+  {
+   "name": "Returned",
+   "type": "faction",
+   "aliases": [
+    "Noston",
+    "palamnites"
+   ],
+   "description": "Masked undead who escaped the Underworld; those in Odunos are motivated by hate and envy of the living.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tymaret",
+   "type": "character",
+   "aliases": [
+    "the Murder King",
+    "murder king"
+   ],
+   "description": "De facto ruler of Odunos, a Returned warlord and servant of Erebos charged with dragging Phenax back to the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Erebos",
+   "type": "deity",
+   "aliases": [
+    "god of the dead"
+   ],
+   "description": "God of the dead, dominant deity in Odunos; Tymaret serves him.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phenax",
+   "type": "deity",
+   "aliases": [
+    "god of deception",
+    "trickster god"
+   ],
+   "description": "God of deception who as a mortal escaped the Underworld and conquered Odunos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Athreos",
+   "type": "deity",
+   "aliases": [],
+   "description": "God whose notice Phenax avoided when escaping the Underworld.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Black Oak of Odunos",
+   "type": "location",
+   "aliases": [
+    "Black Oak"
+   ],
+   "description": "Large tree guarding Odunos's entrance, said to be made from the bodies of its original inhabitants.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bothros",
+   "type": "location",
+   "aliases": [],
+   "description": "Bottomless pit at the northern edge of Odunos where raiders dispose of spoils and captives.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Crypts of the Lost",
+   "type": "location",
+   "aliases": [],
+   "description": "Large cemetery inland, inhabited by lost Returned.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Path of Phenax",
+   "type": "location",
+   "aliases": [],
+   "description": "First path out of the Underworld, discovered by Phenax.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "Realm of the dead from which the Returned escaped.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akros",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state raided by Odunos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Meletis",
+   "type": "location",
+   "aliases": [],
+   "description": "City-state raided by Odunos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phoberos",
+   "type": "location",
+   "aliases": [],
+   "description": "Badlands near Odunos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Odunos lies.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Phenax becomes the first mortal to escape the Underworld unnoticed by Athreos or Erebos.",
+   "participants": [
+    "Phenax",
+    "Athreos",
+    "Erebos",
+    "Underworld"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Phenax was the first mortal to escape the Underworld without drawing the notice of Athreos or Erebos"
+  },
+  {
+   "summary": "Phenax assembles Returned, conquers Odunos, slaughters the population and binds their souls to the Black Oak.",
+   "participants": [
+    "Phenax",
+    "Returned",
+    "Odunos",
+    "Black Oak of Odunos"
+   ],
+   "location": "Odunos",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "conquered Odunos, slaughtering the population and binding their souls to the Black Oak"
+  },
+  {
+   "summary": "Tymaret witnesses Phenax's escape and informs Erebos, who lets him leave the Underworld as a Returned to catch Phenax.",
+   "participants": [
+    "Tymaret",
+    "Erebos",
+    "Phenax"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The only witness to Phenax's escape was Tymaret"
+  },
+  {
+   "summary": "Tymaret sends nightly raiding parties against minotaurs and human settlements near Akros.",
+   "participants": [
+    "Tymaret",
+    "Returned"
+   ],
+   "location": "Odunos",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Tymaret regularly sends nightly raiding parties"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tymaret",
+   "relation": "serves",
+   "target": "Erebos",
+   "note": "loyal servant",
+   "paragraph": 0,
+   "quote": "a loyal servant of Erebos"
+  },
+  {
+   "source": "Tymaret",
+   "relation": "leader_of",
+   "target": "Odunos",
+   "note": "de facto ruler",
+   "paragraph": 8,
+   "quote": "The de facto ruler of Odunos is the tyrant Tymaret"
+  },
+  {
+   "source": "Tymaret",
+   "relation": "enemy",
+   "target": "Phenax",
+   "note": "charged with dragging Phenax back to the Underworld",
+   "paragraph": 0,
+   "quote": "Tymaret has been charged with dragging the trickster god Phenax back to the Underworld"
+  },
+  {
+   "source": "Phenax",
+   "relation": "created",
+   "target": "Black Oak of Odunos",
+   "note": "said to have created the oak",
+   "paragraph": 3,
+   "quote": "Phenax is said to have created the oak"
+  },
+  {
+   "source": "Odunos",
+   "relation": "located_in",
+   "target": "Theros",
+   "note": "located near the badlands of Phoberos",
+   "paragraph": 2,
+   "quote": "Odunos is located near the badlands of Phoberos on the coast of the Siren Sea."
+  }
+ ],
+ "rejected": []
+}

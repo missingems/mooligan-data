@@ -1,0 +1,142 @@
+{
+ "page": "wiki/emil",
+ "url": "https://mtg.wiki/page/Emil",
+ "title": "Emil",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Emil",
+   "type": "character",
+   "aliases": [],
+   "description": "A middle-aged Wojek officer who investigated a Cult of Rakdos massacre in Merrytown.",
+   "presence": "appears"
+  },
+  {
+   "name": "Wojek",
+   "type": "faction",
+   "aliases": [],
+   "description": "The law enforcement organization Emil served in.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Cult of Rakdos",
+   "type": "faction",
+   "aliases": [
+    "Rakdos guild"
+   ],
+   "description": "Guild whose massacre in Merrytown Emil investigated.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Merrytown",
+   "type": "location",
+   "aliases": [],
+   "description": "A place plagued by crime and decay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Titan's Keg",
+   "type": "location",
+   "aliases": [],
+   "description": "A tavern in Merrytown that was burned.",
+   "presence": "appears"
+  },
+  {
+   "name": "Orik",
+   "type": "character",
+   "aliases": [],
+   "description": "A massive troll and former bouncer of the Titan's Keg, affiliated with the Rakdos guild.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vatek",
+   "type": "character",
+   "aliases": [],
+   "description": "A character with eccentricities whom Emil handled calmly.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Piggy",
+   "type": "character",
+   "aliases": [],
+   "description": "A zombie involved in the tavern incident.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Uzric",
+   "type": "character",
+   "aliases": [],
+   "description": "A Rakdos guildmage who orchestrated the troll's presence to relay information.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Emil is tasked with investigating the burning of the Titan's Keg tavern.",
+   "participants": [
+    "Emil",
+    "Titan's Keg"
+   ],
+   "location": "Merrytown",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Emil was tasked with investigating the burning of the Titan’s Keg tavern."
+  },
+  {
+   "summary": "Emil interviews Orik and learns grotesque details of the night's events, involving goblins, an imp and the zombie Piggy.",
+   "participants": [
+    "Emil",
+    "Orik",
+    "Piggy"
+   ],
+   "location": "Titan's Keg",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Emil engaged in a conversation with Orik, a massive troll and former bouncer of the tavern."
+  },
+  {
+   "summary": "Emil learns that Uzric orchestrated the troll's presence; Orik, under magical influence, explodes, killing everyone present and leveling a third of Merrytown.",
+   "participants": [
+    "Emil",
+    "Orik",
+    "Uzric"
+   ],
+   "location": "Merrytown",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Orik, under magical influence, self-destructed in a fiery explosion, killing everyone present and leveling a third of Merrytown."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Emil",
+   "relation": "member_of",
+   "target": "Wojek",
+   "note": "Wojek officer",
+   "paragraph": 0,
+   "quote": "Emil was a Wojek officer"
+  },
+  {
+   "source": "Orik",
+   "relation": "member_of",
+   "target": "Cult of Rakdos",
+   "note": "affiliated with the Rakdos guild",
+   "paragraph": 2,
+   "quote": "Orik's intimidating appearance and affiliation with the Rakdos guild"
+  },
+  {
+   "source": "Uzric",
+   "relation": "other",
+   "target": "Orik",
+   "note": "orchestrated Orik's presence and magically influenced him",
+   "paragraph": 3,
+   "quote": "Uzric, a Rakdos guildmage, orchestrated the presence of the troll to relay information about the incident"
+  }
+ ],
+ "rejected": []
+}

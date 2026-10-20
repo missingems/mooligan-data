@@ -1,0 +1,157 @@
+{
+ "page": "wiki/augustin-iv",
+ "url": "https://mtg.wiki/page/Augustin_IV",
+ "title": "Augustin IV",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:52Z",
+ "storyline": "Ravnica",
+ "entities": [
+  {
+   "name": "Augustin IV",
+   "type": "character",
+   "aliases": [
+    "Grand Arbiter"
+   ],
+   "description": "Blind, legless Grand Arbiter of the Azorius Senate, killed by Szadek.",
+   "presence": "appears"
+  },
+  {
+   "name": "Szadek",
+   "type": "character",
+   "aliases": [],
+   "description": "Parun and Guildmaster of House Dimir, killed and enslaved as a ghost by Augustin IV, then killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Agrus Kos",
+   "type": "character",
+   "aliases": [
+    "Kos"
+   ],
+   "description": "Azorius officer who arrested Szadek and killed Momir Vig.",
+   "presence": "appears"
+  },
+  {
+   "name": "Leonos II",
+   "type": "character",
+   "aliases": [],
+   "description": "Elected new Grand Arbiter after Augustin's death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Momir Vig",
+   "type": "character",
+   "aliases": [],
+   "description": "Simic guildmaster killed by Kos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Razia",
+   "type": "character",
+   "aliases": [],
+   "description": "Boros guildmaster targeted by Szadek's ghost.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Azorius Senate",
+   "type": "faction",
+   "aliases": [],
+   "description": "Ravnica's technical ruling body.",
+   "presence": "appears"
+  },
+  {
+   "name": "Parhelion",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Boros airship that exploded overhead.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the story.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Finding Szadek in prison, Augustin IV kills him and enslaves his ghost, then sends him to kill the Boros angels and Razia.",
+   "participants": [
+    "Augustin IV",
+    "Szadek",
+    "Razia"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Augustin, finding Szadek in prison, killed him and enslaved his ghost"
+  },
+  {
+   "summary": "After Kos kills Momir Vig, the senate votes to place Ravnica under martial law under Augustin.",
+   "participants": [
+    "Augustin IV",
+    "Azorius Senate",
+    "Agrus Kos",
+    "Momir Vig"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they voted to place Ravnica under martial law under his guidance"
+  },
+  {
+   "summary": "Szadek breaks free and kills Augustin IV by tearing out his soul before the Parhelion explodes.",
+   "participants": [
+    "Szadek",
+    "Augustin IV",
+    "Agrus Kos"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Szadek broke free from the container and killed Augustin IV by tearing out his soul"
+  },
+  {
+   "summary": "The Azorius Senate elects Leonos II as the new Grand Arbiter.",
+   "participants": [
+    "Azorius Senate",
+    "Leonos II"
+   ],
+   "location": "Ravnica",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the Azorius Senate elected Leonos II as the new Grand Arbiter"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Szadek",
+   "relation": "killed",
+   "target": "Augustin IV",
+   "note": "tore out his soul",
+   "paragraph": 3,
+   "quote": "Szadek broke free from the container and killed Augustin IV by tearing out his soul"
+  },
+  {
+   "source": "Augustin IV",
+   "relation": "killed",
+   "target": "Szadek",
+   "note": "killed him in prison",
+   "paragraph": 2,
+   "quote": "killed him and enslaved his ghost"
+  },
+  {
+   "source": "Augustin IV",
+   "relation": "leader_of",
+   "target": "Azorius Senate",
+   "note": "Grand Arbiter",
+   "paragraph": 0,
+   "quote": "As the Grand Arbiter of the Azorius Senate"
+  }
+ ],
+ "rejected": []
+}

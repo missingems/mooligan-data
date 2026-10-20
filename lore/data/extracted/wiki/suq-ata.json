@@ -1,0 +1,210 @@
+{
+ "page": "wiki/suq-ata",
+ "url": "https://mtg.wiki/page/Suq%27Ata",
+ "title": "Suq'Ata",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:18:56Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Suq'Ata",
+   "type": "faction",
+   "aliases": [
+    "Suq'Ata Empire"
+   ],
+   "description": "One of the oldest and most powerful Jamuraan empires on Dominaria, a nation of traders led by a royal house.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane on which Suq'Ata exists.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "The huge continent where Suq'Ata is located.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Rabiah",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane some Suq'Ata founders came from, birthplace of the way of the assassin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wildfire",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane some Suq'Ata founders came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Femeref",
+   "type": "faction",
+   "aliases": [],
+   "description": "Kingdom from which Suq'Ata annexed the northern Ekundu Mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ekundu Mountains",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountains annexed by Suq'Ata, one of its natural borders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Suq'Ata sustained the least damage of the three kingdoms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Breathstealers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Assassins from Urborg who infiltrated Suq'Atan society.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaervek",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of armies in the Mirage War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Qhattib",
+   "type": "character",
+   "aliases": [],
+   "description": "Vizier of Amiqat, murdered by the Breathstealers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Telim'Tor",
+   "type": "character",
+   "aliases": [],
+   "description": "A brute who succeeded the Pasha after Qhattib's murder.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who phased out most of Suq'Ata's territories.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "Closed the Zhalfirin rift by force.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which Suq'Ata's territories were phased out.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amiqat",
+   "type": "location",
+   "aliases": [],
+   "description": "The capital of Suq'Ata, ruled by the Pasha and his vizier.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Settlers from Wildfire and Rabiah arrive on Dominaria through planar portals and found Suq'Ata.",
+   "participants": [
+    "Suq'Ata"
+   ],
+   "location": "Jamuraa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Suq’Ata was founded by people from the planes of Wildfire and Rabiah"
+  },
+  {
+   "summary": "Suq'Ata annexes the northern Ekundu Mountains from Femeref.",
+   "participants": [
+    "Suq'Ata",
+    "Femeref"
+   ],
+   "location": "Ekundu Mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "They annexed the northern Ekundu Mountains from Femeref"
+  },
+  {
+   "summary": "During the Mirage War the Breathstealers infiltrate Suq'Atan society and murder Qhattib, letting Telim'Tor succeed the Pasha.",
+   "participants": [
+    "Breathstealers",
+    "Qhattib",
+    "Telim'Tor",
+    "Suq'Ata"
+   ],
+   "location": "Amiqat",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "This was made manifest by the murder of Qhattib"
+  },
+  {
+   "summary": "Teferi phases out most of Suq'Ata's territories during the Phyrexian Invasion; they are lost forever after Jeska closes the rift.",
+   "participants": [
+    "Teferi",
+    "Jeska",
+    "Suq'Ata"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "During the Phyrexian Invasion Teferi planeswalker phased out most of Suq'Ata's territorities."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Suq'Ata",
+   "relation": "located_in",
+   "target": "Jamuraa",
+   "note": "A Jamuraan empire.",
+   "paragraph": 0,
+   "quote": "one of the oldest and most powerful of the Jamuraan empires on Dominaria"
+  },
+  {
+   "source": "Qhattib",
+   "relation": "serves",
+   "target": "Suq'Ata",
+   "note": "Vizier to the Pasha of Amiqat.",
+   "paragraph": 6,
+   "quote": "It was ruled by the Pasha of Suq'ata and his vizier Qhattib"
+  },
+  {
+   "source": "Breathstealers",
+   "relation": "killed",
+   "target": "Qhattib",
+   "note": "Implied by the murder of Qhattib during their infiltration.",
+   "paragraph": 4,
+   "quote": "This was made manifest by the murder of Qhattib"
+  },
+  {
+   "source": "Amiqat",
+   "relation": "located_in",
+   "target": "Suq'Ata",
+   "note": "Its capital.",
+   "paragraph": 6,
+   "quote": "the capital of Suq'Ata"
+  }
+ ],
+ "rejected": []
+}

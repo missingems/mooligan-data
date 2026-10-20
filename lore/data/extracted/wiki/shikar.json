@@ -1,0 +1,204 @@
+{
+ "page": "wiki/shikar",
+ "url": "https://mtg.wiki/page/Shikar",
+ "title": "Shikar",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:43Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shikar",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom of Casindral in southern Corondor, a majestic trade city west of the Great Salt Marshes.",
+   "presence": "appears"
+  },
+  {
+   "name": "Casindral",
+   "type": "location",
+   "aliases": [],
+   "description": "Region of Corondor containing Shikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Khone",
+   "type": "location",
+   "aliases": [],
+   "description": "Kingdom Shikar traded with.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sulgh",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp across the river from Shikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sol'Kanar the Swamp King",
+   "type": "creature",
+   "aliases": [
+    "Sol'Kanar"
+   ],
+   "description": "Ruler of the Sulgh swamp who destroyed the trade path.",
+   "presence": "appears"
+  },
+  {
+   "name": "Contrary Kingdoms",
+   "type": "faction",
+   "aliases": [],
+   "description": "Khone and Shikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chondaeh",
+   "type": "character",
+   "aliases": [],
+   "description": "Killed everyone in Khone but Gydolien Mor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gydolien Mor",
+   "type": "character",
+   "aliases": [
+    "Gydolien"
+   ],
+   "description": "Survivor of Khone who plotted revenge.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dragon War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that weakened Sol'Kanar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aldon",
+   "type": "character",
+   "aliases": [],
+   "description": "Brought by his Serra Angel to see Shikar's Elvish Archers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravidel",
+   "type": "character",
+   "aliases": [],
+   "description": "Conqueror of Shikar during the Planeswalker War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Planeswalker War",
+   "type": "event",
+   "aliases": [],
+   "description": "War during which Ravidel conquered Shikar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eskil",
+   "type": "character",
+   "aliases": [],
+   "description": "Defender of Shikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Embereck",
+   "type": "character",
+   "aliases": [],
+   "description": "Defender convinced by Leshrac to fight Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who convinced Embereck to take on Ravidel.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Elder Druid of Corondor",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped citizens escape and was killed by Ravidel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who came to help Shikar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sol'Kanar destroys the path to Khone, forcing both kingdoms to send tribute.",
+   "participants": [
+    "Sol'Kanar the Swamp King",
+    "Shikar",
+    "Khone"
+   ],
+   "location": "Sulgh",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "When Sol'Kanar the Swamp King destroyed the path"
+  },
+  {
+   "summary": "Ravidel conquers Shikar during the Planeswalker War; Eskil tries to defend it.",
+   "participants": [
+    "Ravidel",
+    "Eskil",
+    "Embereck",
+    "Leshrac"
+   ],
+   "location": "Shikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Shikar was conquered by Ravidel during the Planeswalker War"
+  },
+  {
+   "summary": "The Elder Druid of Corondor and Teferi arrive too late and only help citizens escape.",
+   "participants": [
+    "Elder Druid of Corondor",
+    "Teferi"
+   ],
+   "location": "Shikar",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "the three could do little more than help the citizens of Shikar escape alive"
+  },
+  {
+   "summary": "Ravidel kills the Elder Druid.",
+   "participants": [
+    "Ravidel",
+    "Elder Druid of Corondor"
+   ],
+   "location": "Shikar",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "killed the Elder Druid"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Ravidel",
+   "relation": "killed",
+   "target": "Elder Druid of Corondor",
+   "note": "",
+   "paragraph": 4,
+   "quote": "killed the Elder Druid"
+  },
+  {
+   "source": "Sol'Kanar the Swamp King",
+   "relation": "enemy",
+   "target": "Contrary Kingdoms",
+   "note": "Forced tribute.",
+   "paragraph": 2,
+   "quote": "became known as the Contrary Kingdoms"
+  }
+ ],
+ "rejected": []
+}

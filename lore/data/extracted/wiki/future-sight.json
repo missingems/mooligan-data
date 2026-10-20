@@ -1,0 +1,171 @@
+{
+ "page": "wiki/future-sight",
+ "url": "https://mtg.wiki/page/Future_Sight",
+ "title": "Future Sight",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-02T05:47:09Z",
+ "storyline": "Time Spiral block",
+ "entities": [
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane suffering temporal and planar damage that the heroes try to mend.",
+   "presence": "appears"
+  },
+  {
+   "name": "Freyalise",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who gave her spark and life to close a temporal rift, protecting her sanctum of Skyshroud one last time.",
+   "presence": "appears"
+  },
+  {
+   "name": "Skyshroud",
+   "type": "location",
+   "aliases": [],
+   "description": "Freyalise's sanctum protected by closing the rift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Karn",
+   "type": "character",
+   "aliases": [],
+   "description": "The planeswalker and only being ever to travel through time, who seals the Tolaria rift and is lost.",
+   "presence": "appears"
+  },
+  {
+   "name": "Barrin",
+   "type": "character",
+   "aliases": [],
+   "description": "An archwizard who cast a spell obliterating countless Phyrexians and himself.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolaria",
+   "type": "location",
+   "aliases": [],
+   "description": "The site of planar damage so severe it could not be healed in the present day.",
+   "presence": "appears"
+  },
+  {
+   "name": "Venser",
+   "type": "character",
+   "aliases": [],
+   "description": "A character beginning to realize his full potential.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jeska",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who returns to Dominaria, angry at Karn's loss and driven by Leshrac.",
+   "presence": "appears"
+  },
+  {
+   "name": "Teferi",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker working with Jhoira to complete Dominaria's healing.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jhoira",
+   "type": "character",
+   "aliases": [],
+   "description": "A character working with Teferi to heal Dominaria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leshrac",
+   "type": "character",
+   "aliases": [],
+   "description": "An ancient evil intelligence that has returned and drives Jeska's wrath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [
+    "Phyrexian horrors"
+   ],
+   "description": "Horrors who crossed from an alternate Dominaria through a temporal rift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Future Sight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The third Time Spiral block expansion, accompanied by a novel by Scott McGough.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Freyalise gives her spark and her life to close a temporal rift that let Phyrexian horrors cross into the present.",
+   "participants": [
+    "Freyalise",
+    "Phyrexians",
+    "Skyshroud"
+   ],
+   "location": "Skyshroud",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "Freyalise is gone, having given her planeswalker's spark and her life to close that rift"
+  },
+  {
+   "summary": "Karn enters the Tolaria rift and returns to the moment before Barrin's spell, sealing the rift before it opens; Karn is lost.",
+   "participants": [
+    "Karn",
+    "Barrin",
+    "Tolaria"
+   ],
+   "location": "Tolaria",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "Karn succeeds and seals the planar rift before Barrin's actions can rip it open."
+  },
+  {
+   "summary": "Jeska returns to Dominaria seeking vengeance for Karn as Leshrac returns.",
+   "participants": [
+    "Jeska",
+    "Karn",
+    "Leshrac"
+   ],
+   "location": "Dominaria",
+   "importance": "major",
+   "paragraph": 8,
+   "quote": "Her friend and ally Karn is gone, and someone will pay."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Jeska",
+   "relation": "ally",
+   "target": "Karn",
+   "note": "friend and ally",
+   "paragraph": 8,
+   "quote": "Her friend and ally Karn is gone"
+  },
+  {
+   "source": "Leshrac",
+   "relation": "other",
+   "target": "Jeska",
+   "note": "an evil intelligence drives her wrath",
+   "paragraph": 8,
+   "quote": "An ancient, evil intelligence drives Jeska's wrath"
+  },
+  {
+   "source": "Jeska",
+   "relation": "enemy",
+   "target": "Teferi",
+   "note": "her wrath threatens to undermine Teferi and Jhoira's efforts",
+   "paragraph": 8,
+   "quote": "threatens to undermine Teferi and Jhoira ’s efforts to complete Dominaria’s healing"
+  }
+ ],
+ "rejected": []
+}

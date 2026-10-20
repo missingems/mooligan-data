@@ -1,0 +1,202 @@
+{
+ "page": "wiki/penregon",
+ "url": "https://mtg.wiki/page/Penregon",
+ "title": "Penregon",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:59:47Z",
+ "storyline": "The Brothers' War",
+ "entities": [
+  {
+   "name": "Penregon",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Argive during the Brothers' War on the east coast of Terisiare, until the Fall of Penregon in 80 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation whose capital was Penregon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylex Blast",
+   "type": "event",
+   "aliases": [],
+   "description": "Blast that severely damaged Penregon with earthquakes and tidal waves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lion's Hall",
+   "type": "location",
+   "aliases": [],
+   "description": "Citadel on cliffs overlooking Penregon Harbor that collapsed into the sea.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kayla bin-Kroog",
+   "type": "character",
+   "aliases": [],
+   "description": "Princess and wife of the alliance's leader who ruled Penregon after the blast.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tawnos",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped Kayla rebuild with civil automatons; later destroyed Urza's archives.",
+   "presence": "appears"
+  },
+  {
+   "name": "Church of Tal",
+   "type": "faction",
+   "aliases": [
+    "Talites"
+   ],
+   "description": "Church angered by use of machines, which launched the Siege of Penregon.",
+   "presence": "appears"
+  },
+  {
+   "name": "Siege of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "Church of Tal assault beaten back by civil automatons in spring of 69 AR.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fall of Penregon",
+   "type": "event",
+   "aliases": [],
+   "description": "Flight of inhabitants west in 80 AR to avoid the cold.",
+   "presence": "appears"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Artificer whose archives Tawnos destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kjeld",
+   "type": "location",
+   "aliases": [],
+   "description": "Later built on Penregon's site.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Argive",
+   "type": "faction",
+   "aliases": [],
+   "description": "Nation including Penregon's site after the Thaw.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Argivia",
+   "type": "location",
+   "aliases": [],
+   "description": "Original city destroyed in the Phyrexian Invasion; new city built on former Penregon.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Penregon survives the Sylex Blast severely damaged; earthquakes and tidal waves level it and the king and court fall into the sea.",
+   "participants": [
+    "Penregon",
+    "Sylex Blast",
+    "Lion's Hall"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "collapsed into the sea"
+  },
+  {
+   "summary": "Kayla bin-Kroog inherits rule and rebuilds with Tawnos and civil automatons.",
+   "participants": [
+    "Kayla bin-Kroog",
+    "Tawnos",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "the rule of the city fell to her"
+  },
+  {
+   "summary": "The Church of Tal launches the Siege of Penregon and is beaten back by the civil automatons.",
+   "participants": [
+    "Church of Tal",
+    "Penregon",
+    "Siege of Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "which launched the Siege of Penregon but were beaten back"
+  },
+  {
+   "summary": "Tawnos destroys Urza's archives and leaves, ending the age of artifice.",
+   "participants": [
+    "Tawnos",
+    "Urza",
+    "Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the repentant Tawnos destroyed Urza's archives and left the city"
+  },
+  {
+   "summary": "The inhabitants flee west to escape the cold in the Fall of Penregon.",
+   "participants": [
+    "Penregon",
+    "Fall of Penregon"
+   ],
+   "location": "Penregon",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "the inhabitants were forced to flee to the west to avoid the encroaching cold"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Penregon",
+   "relation": "serves",
+   "target": "Argive",
+   "note": "capital of Argive",
+   "paragraph": 0,
+   "quote": "Penregon was the capital of Argive"
+  },
+  {
+   "source": "Kayla bin-Kroog",
+   "relation": "leader_of",
+   "target": "Penregon",
+   "note": "ruled after the blast",
+   "paragraph": 3,
+   "quote": "the rule of the city fell to her"
+  },
+  {
+   "source": "Tawnos",
+   "relation": "ally",
+   "target": "Kayla bin-Kroog",
+   "note": "helped rebuild",
+   "paragraph": 3,
+   "quote": "Kayla tried to rebuild the city with the help of Tawnos"
+  },
+  {
+   "source": "Church of Tal",
+   "relation": "enemy",
+   "target": "Penregon",
+   "note": "besieged it",
+   "paragraph": 3,
+   "quote": "which launched the Siege of Penregon"
+  }
+ ],
+ "rejected": []
+}

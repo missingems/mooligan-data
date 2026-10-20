@@ -1,0 +1,176 @@
+{
+ "page": "wiki/radix",
+ "url": "https://mtg.wiki/page/Radix",
+ "title": "Radix",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:44Z",
+ "storyline": "Scars of Mirrodin",
+ "entities": [
+  {
+   "name": "Radix",
+   "type": "location",
+   "aliases": [
+    "The Radix"
+   ],
+   "description": "A sacred humming sphere of green metal at the center of the Tangle on Mirrodin, destroyed to form the Green Lacuna.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tangle",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest region of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the Radix stood.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Green Lacuna",
+   "type": "location",
+   "aliases": [],
+   "description": "Site formed where the Radix was destroyed; fifth moon of Mirrodin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Araneas Altar",
+   "type": "location",
+   "aliases": [],
+   "description": "Eight-sided shrine built by the Sylvok around the Radix to honor Lord Araneas.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lord Araneas",
+   "type": "character",
+   "aliases": [],
+   "description": "Honored by the Araneas Altar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Viridian elves",
+   "type": "faction",
+   "aliases": [
+    "elves"
+   ],
+   "description": "Elves who sent their honored dead to the Radix and banished unnatural machines there.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sylvok",
+   "type": "faction",
+   "aliases": [
+    "Sylvok druids"
+   ],
+   "description": "Druids of the Tangle who built the Araneas Altar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Heartwood Shard",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Rare exception to items that vanish on the Radix.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Tapped a large amount of mana to destroy the Kaldra Champion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldra Champion",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature Glissa destroyed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mana Core",
+   "type": "location",
+   "aliases": [],
+   "description": "Mirrodin's source of green mana.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fifth Dawn",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which metallo-organic growths sprouted.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Glissa taps large mana to destroy the Kaldra Champion; a surge of green mana discharges through the Radix and becomes Mirrodin's fifth moon, destroying the Radix and forming the Green Lacuna.",
+   "participants": [
+    "Glissa",
+    "Kaldra Champion",
+    "Radix",
+    "Green Lacuna",
+    "Mana Core"
+   ],
+   "location": "Tangle",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "effectively destroying the Radix and forming the Green Lacuna in its place"
+  },
+  {
+   "summary": "After the fifth dawn, metallo-organic growths (lamina) sprout around the lacuna.",
+   "participants": [
+    "Green Lacuna"
+   ],
+   "location": "Tangle",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "strange, metallo-organic growths began to sprout around and within the lacuna"
+  },
+  {
+   "summary": "The Sylvok build the Araneas Altar around the Radix to honor Lord Araneas.",
+   "participants": [
+    "Sylvok",
+    "Araneas Altar",
+    "Lord Araneas",
+    "Radix"
+   ],
+   "location": "Tangle",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The Sylvok built a shrine around the Radix."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Radix",
+   "relation": "located_in",
+   "target": "Tangle",
+   "note": "very center",
+   "paragraph": 0,
+   "quote": "The Radix was a site in the very center of the Tangle"
+  },
+  {
+   "source": "Sylvok",
+   "relation": "created",
+   "target": "Araneas Altar",
+   "note": "built it around the Radix",
+   "paragraph": 3,
+   "quote": "The Sylvok built a shrine around the Radix."
+  },
+  {
+   "source": "Glissa",
+   "relation": "enemy",
+   "target": "Kaldra Champion",
+   "note": "destroyed it",
+   "paragraph": 2,
+   "quote": "Glissa tapped a large amount of mana to destroy the Kaldra Champion"
+  }
+ ],
+ "rejected": []
+}

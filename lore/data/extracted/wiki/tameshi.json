@@ -1,0 +1,190 @@
+{
+ "page": "wiki/tameshi",
+ "url": "https://mtg.wiki/page/Tameshi",
+ "title": "Tameshi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:55:20Z",
+ "storyline": "Kamigawa: Neon Dynasty",
+ "entities": [
+  {
+   "name": "Tameshi",
+   "type": "character",
+   "aliases": [],
+   "description": "A Moonfolk futurist wizard from Kamigawa who studied how kami bridge the mortal and spirit realms and developed the Reality Chip.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Tameshi lived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Katsumasa",
+   "type": "character",
+   "aliases": [],
+   "description": "Renowned moonfolk scientist under whom Tameshi apprenticed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaito Shizuki",
+   "type": "character",
+   "aliases": [
+    "Kaito"
+   ],
+   "description": "A young planeswalker, Tameshi's friend and apprentice, who wears one of Tameshi's drones.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reality Chip",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A device embedded in the skin that gives a mysterious connection to planar physics.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jukai Forest",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Kaito met Tameshi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eiko Shizuki",
+   "type": "character",
+   "aliases": [
+    "Eiko"
+   ],
+   "description": "Kaito's sister who warned him about Tameshi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Mysterious figure with whom Tameshi traded illegal merge studies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi",
+   "type": "location",
+   "aliases": [],
+   "description": "City whose Undercity Kaito followed Tameshi to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jin-Gitaxias",
+   "type": "character",
+   "aliases": [],
+   "description": "Phyrexian praetor who worked with Tameshi to learn to compleat a planeswalker without removing their soul and then killed him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami",
+   "type": "creature",
+   "aliases": [],
+   "description": "Spirits of Kamigawa that Tameshi sought to protect.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Tameshi apprentices under Katsumasa and makes origami drones to house kami, later developing technology letting kami merge into robot bodies.",
+   "participants": [
+    "Tameshi",
+    "Katsumasa",
+    "Kami"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he later built on this design to develop a technology that made it possible for Kami to merge into robot bodies"
+  },
+  {
+   "summary": "Tameshi gives a drone to Kaito Shizuki.",
+   "participants": [
+    "Tameshi",
+    "Kaito Shizuki"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "He gave one of the drones to his friend, Kaito Shizuki"
+  },
+  {
+   "summary": "Kaito meets Tameshi in Jukai Forest; Tameshi becomes his mentor and best friend for nine years.",
+   "participants": [
+    "Kaito Shizuki",
+    "Tameshi"
+   ],
+   "location": "Jukai Forest",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Tameshi became the young planeswalker's mentor and best friend"
+  },
+  {
+   "summary": "Eiko warns Kaito that Tameshi trades illegal merge studies with Tezzeret.",
+   "participants": [
+    "Eiko Shizuki",
+    "Kaito Shizuki",
+    "Tameshi",
+    "Tezzeret"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Kaito's sister Eiko warned him that Tameshi was involved in trading illegal merge studies"
+  },
+  {
+   "summary": "Kaito discovers Tameshi was secretly working with Jin-Gitaxias, who kills Tameshi after getting what he needed.",
+   "participants": [
+    "Kaito Shizuki",
+    "Tameshi",
+    "Jin-Gitaxias"
+   ],
+   "location": "Towashi",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Jin-Gitaxias killed Tameshi."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Tameshi",
+   "relation": "mentor_of",
+   "target": "Kaito Shizuki",
+   "note": "Mentor and best friend.",
+   "paragraph": 4,
+   "quote": "Tameshi became the young planeswalker's mentor and best friend"
+  },
+  {
+   "source": "Katsumasa",
+   "relation": "mentor_of",
+   "target": "Tameshi",
+   "note": "Tameshi apprenticed under him.",
+   "paragraph": 2,
+   "quote": "apprenticed under Katsumasa"
+  },
+  {
+   "source": "Jin-Gitaxias",
+   "relation": "killed",
+   "target": "Tameshi",
+   "note": "Killed him after getting what he needed.",
+   "paragraph": 5,
+   "quote": "Jin-Gitaxias killed Tameshi."
+  },
+  {
+   "source": "Tameshi",
+   "relation": "ally",
+   "target": "Jin-Gitaxias",
+   "note": "Secretly worked with him.",
+   "paragraph": 5,
+   "quote": "he found that his friend had also secretly been working with the Phyrexian praetor Jin-Gitaxias"
+  }
+ ],
+ "rejected": []
+}

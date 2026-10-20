@@ -1,0 +1,73 @@
+{
+ "page": "wiki/rhindle",
+ "url": "https://mtg.wiki/page/Rhindle",
+ "title": "Rhindle",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:43Z",
+ "storyline": "Ice Age",
+ "entities": [
+  {
+   "name": "Rhindle",
+   "type": "creature",
+   "aliases": [],
+   "description": "Legendary massive scaled wurm of Fyndhorn with blue scales who threatened Jornstad.",
+   "presence": "appears"
+  },
+  {
+   "name": "Finroy",
+   "type": "character",
+   "aliases": [],
+   "description": "Attacked by Rhindle while dressed as Lord Rothchild; suffered a broken thigh.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lord Rothchild",
+   "type": "character",
+   "aliases": [],
+   "description": "Lord of Jornstad who received credit despite not being present.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jornstad",
+   "type": "location",
+   "aliases": [],
+   "description": "City on the border of Fyndhorn threatened by Rhindle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fyndhorn",
+   "type": "location",
+   "aliases": [],
+   "description": "Forest where Rhindle lived.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rhindle attacks Finroy, clad as Lord Rothchild; the townsfolk attack the wurm until it retreats into the forest.",
+   "participants": [
+    "Rhindle",
+    "Finroy",
+    "Lord Rothchild"
+   ],
+   "location": "Jornstad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "the townsfolk attacked the wurm from all angles, until it retreated into the forest"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rhindle",
+   "relation": "enemy",
+   "target": "Jornstad",
+   "note": "Threatened the city.",
+   "paragraph": 1,
+   "quote": "threatening the city of Jornstad on the border of the forest"
+  }
+ ],
+ "rejected": []
+}

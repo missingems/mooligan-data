@@ -1,0 +1,201 @@
+{
+ "page": "wiki/rafiq",
+ "url": "https://mtg.wiki/page/Rafiq",
+ "title": "Rafiq",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:58:29Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Rafiq",
+   "type": "character",
+   "aliases": [
+    "Knight-General Rafiq",
+    "Rafiq of the Many",
+    "Grand Champion of Sigils"
+   ],
+   "description": "The commander of the Knights of the Reliquary of Bant and its highest-ranked Sigiled.",
+   "presence": "appears"
+  },
+  {
+   "name": "Knights of the Reliquary",
+   "type": "faction",
+   "aliases": [],
+   "description": "A knightly order of Bant commanded by Rafiq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "plane",
+   "aliases": [],
+   "description": "A shard of Alara whose champions settle conflict through ritualized duels.",
+   "presence": "appears"
+  },
+  {
+   "name": "Esper",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara whose forces fought Bant and which uses Etherium magic.",
+   "presence": "appears"
+  },
+  {
+   "name": "Grixis",
+   "type": "location",
+   "aliases": [],
+   "description": "A shard of Alara where Rafiq rescued Levac and Salay.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mubin",
+   "type": "character",
+   "aliases": [],
+   "description": "Rafiq's friend, mind-controlled by an Esper mage and paralyzed by Rafiq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Levac",
+   "type": "character",
+   "aliases": [],
+   "description": "A person rescued from Grixis by Rafiq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Salay",
+   "type": "character",
+   "aliases": [],
+   "description": "A person rescued from Grixis by Rafiq.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malfegor",
+   "type": "creature",
+   "aliases": [],
+   "description": "A demon whose invasion force attacked Bant.",
+   "presence": "appears"
+  },
+  {
+   "name": "Elspeth Tirel",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who gave Rafiq the Sword of Asha and wings of light. Planeswalker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sword of Asha",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A legendary sword thrown to Rafiq by Elspeth Tirel.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [
+    "the Conflux"
+   ],
+   "description": "The event bringing the shards of Alara together.",
+   "presence": "appears"
+  },
+  {
+   "name": "Tezzeret",
+   "type": "character",
+   "aliases": [],
+   "description": "Sent Rafiq a message to employ the angels against the Phyrexians.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Rafiq leads Bant's armies into a disastrous battle against Esper; Mubin is mind-controlled and Rafiq stabs him in the back, paralyzing him.",
+   "participants": [
+    "Rafiq",
+    "Mubin",
+    "Esper",
+    "Bant"
+   ],
+   "location": "Esper",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Rafiq was forced to stab his old friend in the back, paralyzing him in the process."
+  },
+  {
+   "summary": "Rafiq rescues Levac and Salay from Grixis and fails to exorcise their zombified son.",
+   "participants": [
+    "Rafiq",
+    "Levac",
+    "Salay"
+   ],
+   "location": "Grixis",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Rafiq managed to rescue Levac and Salay from Grixis"
+  },
+  {
+   "summary": "Rafiq returns to Bant with Etherium and the rescued pair in time to warn of Malfegor's invasion.",
+   "participants": [
+    "Rafiq",
+    "Levac",
+    "Salay",
+    "Malfegor"
+   ],
+   "location": "Bant",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "just in time to warn Bant of Malfegor 's invasion force"
+  },
+  {
+   "summary": "Elspeth Tirel gives Rafiq the Sword of Asha and wings of light, and he slays Malfegor.",
+   "participants": [
+    "Elspeth Tirel",
+    "Rafiq",
+    "Malfegor",
+    "Sword of Asha"
+   ],
+   "location": "Bant",
+   "importance": "major",
+   "paragraph": 4,
+   "quote": "Elspeth Tirel threw Rafiq the legendary Sword of Asha"
+  },
+  {
+   "summary": "Tezzeret messages Rafiq to employ the angels against the Phyrexians.",
+   "participants": [
+    "Tezzeret",
+    "Rafiq"
+   ],
+   "location": "Bant",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "Tezzeret sent him a message to employ the angels against the Phyrexians ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Rafiq",
+   "relation": "leader_of",
+   "target": "Knights of the Reliquary",
+   "note": "Commander of the order.",
+   "paragraph": 0,
+   "quote": "Knight-General Rafiq was the commander of the Knights of the Reliquary from Bant ."
+  },
+  {
+   "source": "Rafiq",
+   "relation": "ally",
+   "target": "Mubin",
+   "note": "Old friend.",
+   "paragraph": 4,
+   "quote": "Rafiq's friend Mubin was the victim of mind-controlling magic"
+  },
+  {
+   "source": "Rafiq",
+   "relation": "killed",
+   "target": "Malfegor",
+   "note": "Slew the demon with two swings.",
+   "paragraph": 4,
+   "quote": "slayed it with two swings"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,127 @@
+{
+ "page": "wiki/zhulodok",
+ "url": "https://mtg.wiki/page/Zhulodok",
+ "title": "Zhulodok",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:57:00Z",
+ "storyline": "Battle for Zendikar",
+ "entities": [
+  {
+   "name": "Zhulodok",
+   "type": "creature",
+   "aliases": [
+    "Zhulodok, Void Gorger"
+   ],
+   "description": "An Eldrazi of Ulamog's lineage that razed Akoum and whose followers became the first vampires of Zendikar.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ulamog",
+   "type": "creature",
+   "aliases": [],
+   "description": "Eldrazi Titan who tricked cultists into weakening his prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nahiri",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who slew Zhulodok and resealed the Eldrazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Akoum",
+   "type": "location",
+   "aliases": [],
+   "description": "Mountainous region of Zendikar where the escape began.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Windblast Gorge",
+   "type": "location",
+   "aliases": [],
+   "description": "Gorge carved out by a night of Zhulodok's feeding.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zendikar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Eldrazi prison.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hedron Network",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Prison binding the Eldrazi Titans.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "As the Hedron Network weakens, Zhulodok is among the first Eldrazi to awaken at the head of Ulamog's brood.",
+   "participants": [
+    "Zhulodok",
+    "Ulamog"
+   ],
+   "location": "Akoum",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "Zhulodok was among the first wave to awaken"
+  },
+  {
+   "summary": "Zhulodok's feeding carves out Windblast Gorge.",
+   "participants": [
+    "Zhulodok"
+   ],
+   "location": "Windblast Gorge",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "a single night of feeding carved out the shape of the Windblast Gorge"
+  },
+  {
+   "summary": "Cultists who followed Zhulodok's carnage become the first vampires of Zendikar.",
+   "participants": [
+    "Zhulodok"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They became the first vampires of Zendikar."
+  },
+  {
+   "summary": "Nahiri slays Zhulodok and reseals the Eldrazi in their hedronic prison.",
+   "participants": [
+    "Nahiri",
+    "Zhulodok"
+   ],
+   "location": "Zendikar",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nahiri slew Zhulodok and sealed the Eldrazi in their hedronic prison again"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nahiri",
+   "relation": "killed",
+   "target": "Zhulodok",
+   "note": "",
+   "paragraph": 2,
+   "quote": "Nahiri slew Zhulodok"
+  },
+  {
+   "source": "Zhulodok",
+   "relation": "serves",
+   "target": "Ulamog",
+   "note": "head of Ulamog's brood",
+   "paragraph": 1,
+   "quote": "Zhulodok appeared at the head of Ulamog's brood"
+  }
+ ],
+ "rejected": []
+}

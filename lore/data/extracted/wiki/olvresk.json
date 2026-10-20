@@ -1,0 +1,164 @@
+{
+ "page": "wiki/olvresk",
+ "url": "https://mtg.wiki/page/Olvresk",
+ "title": "Olvresk",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:00:15Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Olvresk",
+   "type": "character",
+   "aliases": [
+    "Doyen Olvresk",
+    "the Bastard of Bogardan"
+   ],
+   "description": "Keldon doyen responsible for honing Astor into a powerful warlord.",
+   "presence": "appears"
+  },
+  {
+   "name": "Astor",
+   "type": "character",
+   "aliases": [],
+   "description": "Former camp runner trained by Tajamin and Olvresk who became warlord of Keld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Treulk",
+   "type": "character",
+   "aliases": [
+    "Commander Treulk"
+   ],
+   "description": "Commander for whom Astor was camp runner.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tajamin",
+   "type": "character",
+   "aliases": [
+    "Doyenne Tajamin"
+   ],
+   "description": "Keeper of the Book of Keld who trained Astor.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kradak",
+   "type": "character",
+   "aliases": [],
+   "description": "Keld's first warlord, who appeared to Astor in a vision.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keld",
+   "type": "location",
+   "aliases": [],
+   "description": "Land of the Keldons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Keldon Twilight",
+   "type": "event",
+   "aliases": [],
+   "description": "Coming calamity Kradak warned of.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fists",
+   "type": "faction",
+   "aliases": [],
+   "description": "Olvresk's elite soldiers.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Olvresk takes Astor from Treulk and sends him to train under Tajamin.",
+   "participants": [
+    "Olvresk",
+    "Astor",
+    "Treulk",
+    "Tajamin"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Olvresk took him from Treulk and sent Astor to train under Doyenne Tajamin"
+  },
+  {
+   "summary": "Olvresk stormed Tajamin's compound with his Fists and slaughtered many; Tajamin saves herself and Astor by proposing Olvresk teach the Tinder Spell.",
+   "participants": [
+    "Olvresk",
+    "Tajamin",
+    "Fists",
+    "Astor"
+   ],
+   "location": "Keld",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He stormed Tajamin's compound and used his Fists, his elite soldiers, to slaughter many of Tajamin's people."
+  },
+  {
+   "summary": "Astor learns the spell in two days without food; Tajamin tells him of Jezal's Covenant.",
+   "participants": [
+    "Astor",
+    "Olvresk",
+    "Tajamin"
+   ],
+   "location": "Keld",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Two days later, Astor knew the spell"
+  },
+  {
+   "summary": "Astor slays a Colos on the Mountain and fights off wolves.",
+   "participants": [
+    "Astor"
+   ],
+   "location": "",
+   "importance": "minor",
+   "paragraph": 4,
+   "quote": "Astor fought them off before continuing further up the mountain."
+  },
+  {
+   "summary": "At the peak Astor sees a vision of Kradak, who warns of the Keldon Twilight, and becomes a warlord.",
+   "participants": [
+    "Astor",
+    "Kradak"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Kradak warned Astor of the coming of the Keldon Twilight in Astor's lifetime."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Olvresk",
+   "relation": "mentor_of",
+   "target": "Astor",
+   "note": "honed him into a warlord",
+   "paragraph": 0,
+   "quote": "Olvresk was a Keldon doyen who was responsible for honing Astor into a powerful warlord."
+  },
+  {
+   "source": "Tajamin",
+   "relation": "mentor_of",
+   "target": "Astor",
+   "note": "trained him",
+   "paragraph": 1,
+   "quote": "train under Doyenne Tajamin , the Keeper of the Book of Keld"
+  },
+  {
+   "source": "Olvresk",
+   "relation": "enemy",
+   "target": "Tajamin",
+   "note": "disagreed with her methods and attacked her compound",
+   "paragraph": 2,
+   "quote": "Olvresk disagreed strongly with these methods."
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,139 @@
+{
+ "page": "wiki/al-hayat",
+ "url": "https://mtg.wiki/page/Al-Hayat",
+ "title": "Al-Hayat",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:56Z",
+ "storyline": "Mirrodin",
+ "entities": [
+  {
+   "name": "Al-Hayat",
+   "type": "creature",
+   "aliases": [],
+   "description": "A rare ancient talking wolf of Mirrodin who opposed the levelers and helped Glissa, and died after the battle.",
+   "presence": "appears"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Helped by Al-Hayat in opposing Memnarch's tyranny.",
+   "presence": "appears"
+  },
+  {
+   "name": "Slobad",
+   "type": "character",
+   "aliases": [],
+   "description": "Buried alive by a beetle and rescued with Al-Hayat's help.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Tyrant of Mirrodin opposed by Glissa and Al-Hayat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaldra Champion",
+   "type": "creature",
+   "aliases": [],
+   "description": "Assembled in the Vault of Whispers; rained destruction on the Vedalken and levelers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vedalken",
+   "type": "faction",
+   "aliases": [],
+   "description": "Enemies in the battle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "levelers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Memnarch's servants opposed by Al-Hayat.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mephidross",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the group set off for.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vault of Whispers",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the Kaldra Champion was assembled.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of Al-Hayat.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "With Al-Hayat's help Glissa finds Slobad; the wolf vows to help rid Mirrodin of Memnarch.",
+   "participants": [
+    "Glissa",
+    "Slobad",
+    "Al-Hayat"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Al-Hayat vowed to help Glissa rid Mirrodin of Memnarch's reign of tyranny."
+  },
+  {
+   "summary": "In the Vault of Whispers they assemble the Kaldra Champion, which wins the battle against the Vedalken and levelers.",
+   "participants": [
+    "Glissa",
+    "Kaldra Champion",
+    "Vedalken"
+   ],
+   "location": "Vault of Whispers",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "In the Vault of Whispers thay assembled the Kaldra Champion which rained destruction on the Vedalken and levelers alike."
+  },
+  {
+   "summary": "Al-Hayat dies of mortal wounds after the victory, bidding Glissa to liberate Mirrodin from Memnarch.",
+   "participants": [
+    "Al-Hayat",
+    "Glissa"
+   ],
+   "location": "Vault of Whispers",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "With the last of his energy, the ancient wolf bade Glissa to liberate Mirrodin from Memnarch."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Al-Hayat",
+   "relation": "ally",
+   "target": "Glissa",
+   "note": "He vowed to help her against Memnarch.",
+   "paragraph": 1,
+   "quote": "Al-Hayat vowed to help Glissa rid Mirrodin of Memnarch's reign of tyranny."
+  },
+  {
+   "source": "Al-Hayat",
+   "relation": "enemy",
+   "target": "Memnarch",
+   "note": "He opposed Memnarch's servants.",
+   "paragraph": 1,
+   "quote": "it was through the intervention of his diminished race that the myr and Memnarch ’s other servants did not enter the Tangle"
+  }
+ ],
+ "rejected": []
+}

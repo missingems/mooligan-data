@@ -1,0 +1,101 @@
+{
+ "page": "wiki/karrthus",
+ "url": "https://mtg.wiki/page/Karrthus",
+ "title": "Karrthus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:04Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Karrthus",
+   "type": "creature",
+   "aliases": [
+    "Tyrant of Jund"
+   ],
+   "description": "A dragon called the Tyrant of Jund, encountered by Ajani Goldmane on his first planeswalk, later mindwiped by Nicol Bolas.",
+   "presence": "appears"
+  },
+  {
+   "name": "Jund",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Karrthus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ajani Goldmane",
+   "type": "character",
+   "aliases": [],
+   "description": "Leonin planeswalker who encountered Karrthus on his first planeswalk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sarkhan Vol",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who fooled Karrthus to spare Ajani's life.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nicol Bolas",
+   "type": "character",
+   "aliases": [],
+   "description": "Elder dragon planeswalker who captured and brainwashed Karrthus.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Naya",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane against which the dragons were used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Obelisk of Naya",
+   "type": "artifact",
+   "aliases": [],
+   "description": "An obelisk wrested in the battle for Naya.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Sarkhan Vol fools Karrthus into thinking Ajani was his kill to spare the leonin's life.",
+   "participants": [
+    "Sarkhan Vol",
+    "Karrthus",
+    "Ajani Goldmane"
+   ],
+   "location": "Jund",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Sarkhan Vol fooled Karrthus into thinking that Ajani was his kill in order to spare the leonin's life."
+  },
+  {
+   "summary": "Nicol Bolas captures Karrthus and four smaller dragons, mindwipes and brainwashes them, then hands them to Sarkhan for the battle for Naya.",
+   "participants": [
+    "Nicol Bolas",
+    "Karrthus",
+    "Sarkhan Vol"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Nicol Bolas captured Karrthus, along with four other, smaller dragons, mindwiped them all and brainwashed them"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nicol Bolas",
+   "relation": "other",
+   "target": "Karrthus",
+   "note": "Bolas captured and brainwashed Karrthus into serving.",
+   "paragraph": 2,
+   "quote": "brainwashed them into serving Sarkhan and him"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,113 @@
+{
+ "page": "wiki/kokusho",
+ "url": "https://mtg.wiki/page/Kokusho",
+ "title": "Kokusho",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:38Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Kokusho",
+   "type": "creature",
+   "aliases": [
+    "Kokusho, the Evening Star"
+   ],
+   "description": "Great ryuu (divine dragon) of Kamigawa's swamps who guarded Takenuma; reincarnated as Junji.",
+   "presence": "appears"
+  },
+  {
+   "name": "Junji",
+   "type": "creature",
+   "aliases": [
+    "Junji, the Midnight Sky"
+   ],
+   "description": "Male reincarnation of Kokusho, the Midnight Sky, living in the canals of the Towashi Undercity.",
+   "presence": "appears"
+  },
+  {
+   "name": "Takenuma",
+   "type": "location",
+   "aliases": [],
+   "description": "Swamp Kokusho guarded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War Kokusho survived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Boseiju",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the ryuu slumbered in eggs beneath.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Towashi Undercity",
+   "type": "location",
+   "aliases": [],
+   "description": "Where Junji took residence.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reckoner gangs",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gangs kept in check by Junji's presence.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Kokusho survives the Kami War but centuries later is killed guarding Takenuma against an oni attack.",
+   "participants": [
+    "Kokusho",
+    "Takenuma"
+   ],
+   "location": "Takenuma",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "he was killed guarding the denizens of Takenuma swamp against an oni attack"
+  },
+  {
+   "summary": "Kokusho is reborn after a fifty-year slumber in an egg beneath Boseiju as Junji.",
+   "participants": [
+    "Kokusho",
+    "Junji"
+   ],
+   "location": "Boseiju",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Kokusho was reborn after a fifty-year slumber in an egg beneath Boseiju"
+  },
+  {
+   "summary": "As Junji, Kokusho abandons Takenuma and takes residence in the canals of the Towashi Undercity.",
+   "participants": [
+    "Junji",
+    "Takenuma",
+    "Towashi Undercity"
+   ],
+   "location": "Towashi Undercity",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "abandoning Takenuma and leaving its inhabitants to fend for themselves"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kokusho",
+   "relation": "other",
+   "target": "Junji",
+   "note": "reincarnation of the same ryuu",
+   "paragraph": 2,
+   "quote": "His new form was that of Junji"
+  }
+ ],
+ "rejected": []
+}

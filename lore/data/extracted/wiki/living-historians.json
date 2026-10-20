@@ -1,0 +1,81 @@
+{
+ "page": "wiki/living-historians",
+ "url": "https://mtg.wiki/page/Living_Historians",
+ "title": "Living Historians",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:32Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Living Historians",
+   "type": "faction",
+   "aliases": [],
+   "description": "Historical society founded by Azusa and Reki after the Kami War to preserve knowledge through tattoos, dance, theater and song.",
+   "presence": "appears"
+  },
+  {
+   "name": "Azusa",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder of the Living Historians whose diary is a sacred text.",
+   "presence": "appears"
+  },
+  {
+   "name": "Reki",
+   "type": "character",
+   "aliases": [],
+   "description": "Co-founder of the Living Historians.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War after which the Living Historians were founded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the society was founded.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Reki and Azusa found the Living Historians after the Kami War to preserve endangered knowledge.",
+   "participants": [
+    "Reki",
+    "Azusa",
+    "Living Historians"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The Living Historians were founded in the wake of The Kami War by Reki and Azusa"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Azusa",
+   "relation": "member_of",
+   "target": "Living Historians",
+   "note": "Co-founder",
+   "paragraph": 0,
+   "quote": "founded by Azusa and Reki"
+  },
+  {
+   "source": "Reki",
+   "relation": "member_of",
+   "target": "Living Historians",
+   "note": "Co-founder",
+   "paragraph": 1,
+   "quote": "by Reki and Azusa"
+  }
+ ],
+ "rejected": []
+}

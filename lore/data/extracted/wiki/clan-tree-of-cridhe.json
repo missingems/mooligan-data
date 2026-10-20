@@ -1,0 +1,135 @@
+{
+ "page": "wiki/clan-tree-of-cridhe",
+ "url": "https://mtg.wiki/page/Clan_Tree_of_Cridhe",
+ "title": "Clan Tree of Cridhe",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:55Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Clan Tree of Cridhe",
+   "type": "artifact",
+   "aliases": [],
+   "description": "A magical oak at the center of Cridhe, as old as the plane, holding its primary leyline and controlling its seasons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Cridhe",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the tree grows.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Maker",
+   "type": "deity",
+   "aliases": [],
+   "description": "God who created the plane and carved the Blessing and Curse.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nohr",
+   "type": "character",
+   "aliases": [],
+   "description": "Wizard who destroyed the tree trying to become a planeswalker; his line was cursed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Malvos",
+   "type": "character",
+   "aliases": [],
+   "description": "Instigated Nohr's destruction of the tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haen",
+   "type": "character",
+   "aliases": [],
+   "description": "Foretold the Mending.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aylith",
+   "type": "character",
+   "aliases": [],
+   "description": "Keeper who broke the curse on Nazir.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nazir",
+   "type": "character",
+   "aliases": [],
+   "description": "Descendant of Nohr whose curse was broken.",
+   "presence": "appears"
+  },
+  {
+   "name": "The Parting",
+   "type": "event",
+   "aliases": [],
+   "description": "The destruction of the tree and splitting of the isle.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Mending",
+   "type": "event",
+   "aliases": [],
+   "description": "Recreation of the Clan Tree.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "People separated when the isle split.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Instigated by Malvos, Nohr destroys the tree; the isle splits and Nohr's line is cursed with madness.",
+   "participants": [
+    "Nohr",
+    "Malvos",
+    "Clan Tree of Cridhe"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The isle split in two, separating the Clan."
+  },
+  {
+   "summary": "Aylith breaks the curse on Nazir and, together, they recreate the Clan Tree from the last acorn.",
+   "participants": [
+    "Aylith",
+    "Nazir",
+    "Clan Tree of Cridhe"
+   ],
+   "location": "Cridhe",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Together, they spoke the litany of light and recreated the Clan Tree of Cridhe from the last existing acorn."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Malvos",
+   "relation": "other",
+   "target": "Nohr",
+   "note": "Instigated his destruction of the tree.",
+   "paragraph": 2,
+   "quote": "Instigated by Malvos , the wizard Nohr destroyed the tree"
+  },
+  {
+   "source": "Maker",
+   "relation": "created",
+   "target": "Cridhe",
+   "note": "Created the plane.",
+   "paragraph": 2,
+   "quote": "The ancient curse of the god who created this plane became true."
+  }
+ ],
+ "rejected": []
+}

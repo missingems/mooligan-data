@@ -1,0 +1,117 @@
+{
+ "page": "wiki/erg-mirab",
+ "url": "https://mtg.wiki/page/Erg_Mirab",
+ "title": "Erg Mirab",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:54:15Z",
+ "storyline": "Aerona",
+ "entities": [
+  {
+   "name": "Erg Mirab",
+   "type": "location",
+   "aliases": [
+    "the Mirab"
+   ],
+   "description": "A large desert in the center of South Aerona.",
+   "presence": "appears"
+  },
+  {
+   "name": "South Aerona",
+   "type": "location",
+   "aliases": [],
+   "description": "Region containing the Erg Mirab.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "The Aerie",
+   "type": "location",
+   "aliases": [
+    "Aerie"
+   ],
+   "description": "Cliff dwelling at the heart of the Mirab, ancestral home of the Haari Clan.",
+   "presence": "appears"
+  },
+  {
+   "name": "High Ledge",
+   "type": "location",
+   "aliases": [],
+   "description": "The top of the Aerie.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Indorin's Tomb",
+   "type": "location",
+   "aliases": [],
+   "description": "Monument to a fallen knight in the Mirab mountains.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Haari Clan",
+   "type": "faction",
+   "aliases": [
+    "Haari",
+    "the Pack",
+    "bloodkin"
+   ],
+   "description": "A tribe of warrior thieves who fly using the Form.",
+   "presence": "appears"
+  },
+  {
+   "name": "Old Ones",
+   "type": "faction",
+   "aliases": [
+    "Great Ones"
+   ],
+   "description": "Beings who legend says granted the Haari the Task; possibly the Thran.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Thran",
+   "type": "faction",
+   "aliases": [],
+   "description": "Possibly the Old Ones, so called by the Fallaji.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fallaji",
+   "type": "faction",
+   "aliases": [],
+   "description": "People who called the Thran the Old Ones.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Haari youth undertake the Hunt, a Lone Flight stealing a Gift for the tribe, and become hunters with a seat at High Council.",
+   "participants": [
+    "Haari Clan"
+   ],
+   "location": "Erg Mirab",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "they undertake the Hunt, in which they perform a Lone Flight and steal an item, called the Gift, for the tribe"
+  }
+ ],
+ "relations": [
+  {
+   "source": "The Aerie",
+   "relation": "located_in",
+   "target": "Erg Mirab",
+   "note": "",
+   "paragraph": 1,
+   "quote": "In the heart of the Mirab lies the Aerie"
+  },
+  {
+   "source": "Haari Clan",
+   "relation": "other",
+   "target": "Old Ones",
+   "note": "Legend says the Old Ones granted them the Task",
+   "paragraph": 3,
+   "quote": "granted the Haari the Task"
+  }
+ ],
+ "rejected": []
+}

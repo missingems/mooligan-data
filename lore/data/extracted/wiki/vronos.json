@@ -1,0 +1,123 @@
+{
+ "page": "wiki/vronos",
+ "url": "https://mtg.wiki/page/Vronos",
+ "title": "Vronos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:21Z",
+ "storyline": "Duels of the Planeswalkers",
+ "entities": [
+  {
+   "name": "Vronos",
+   "type": "character",
+   "aliases": [
+    "Gray Fencer",
+    "Vronos, Masked Inquisitor"
+   ],
+   "description": "Planeswalker from Innistrad called the Gray Fencer, a former Elite Inquisitor killed by Garruk Wildspeaker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Garruk Wildspeaker",
+   "type": "character",
+   "aliases": [],
+   "description": "Cursed planeswalker who killed Vronos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Avacyn",
+   "type": "character",
+   "aliases": [],
+   "description": "Charged Vronos with finding Garruk so she could heal him.",
+   "presence": "appears"
+  },
+  {
+   "name": "Vedalken Ethersworn",
+   "type": "faction",
+   "aliases": [],
+   "description": "Alaran vedalken who studied the wounded Vronos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where Vronos ended up wounded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Innistrad",
+   "type": "plane",
+   "aliases": [],
+   "description": "Vronos's home plane.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Attacked by young werewolves, Vronos's spark ignites and he ends up wounded on Alara.",
+   "participants": [
+    "Vronos",
+    "Vedalken Ethersworn"
+   ],
+   "location": "Alara",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When he was attacked by a pack of young werewolves his planeswalker's spark ignited"
+  },
+  {
+   "summary": "Vronos returns to Innistrad as a penitent.",
+   "participants": [
+    "Vronos"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "he returned to Innistrad as a penitent"
+  },
+  {
+   "summary": "Avacyn charges Vronos with finding the cursed Garruk Wildspeaker so she can heal him.",
+   "participants": [
+    "Avacyn",
+    "Vronos",
+    "Garruk Wildspeaker"
+   ],
+   "location": "Innistrad",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was then charged by Avacyn to find the cursed Garruk Wildspeaker"
+  },
+  {
+   "summary": "Vronos fails and is killed by Garruk.",
+   "participants": [
+    "Vronos",
+    "Garruk Wildspeaker"
+   ],
+   "location": "Innistrad",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "He failed and was killed by Garruk instead."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Garruk Wildspeaker",
+   "relation": "killed",
+   "target": "Vronos",
+   "note": "Killed him.",
+   "paragraph": 2,
+   "quote": "He failed and was killed by Garruk instead."
+  },
+  {
+   "source": "Vronos",
+   "relation": "serves",
+   "target": "Avacyn",
+   "note": "Charged by her to find Garruk.",
+   "paragraph": 2,
+   "quote": "He was then charged by Avacyn to find the cursed Garruk Wildspeaker"
+  }
+ ],
+ "rejected": []
+}

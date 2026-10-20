@@ -1,0 +1,129 @@
+{
+ "page": "wiki/mouse",
+ "url": "https://mtg.wiki/page/Mouse",
+ "title": "Mouse",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T23:02:29Z",
+ "storyline": "Bloomburrow",
+ "entities": [
+  {
+   "name": "Mousefolk",
+   "type": "faction",
+   "aliases": [
+    "Mice",
+    "Mouse"
+   ],
+   "description": "One of the animalfolk of Bloomburrow, plucky and loyal seekers of adventure, often leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bloomburrow",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of the animalfolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Birdfolk",
+   "type": "faction",
+   "aliases": [],
+   "description": "Closest natural allies of the mousefolk.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Order of the Holly Leaf",
+   "type": "faction",
+   "aliases": [],
+   "description": "A legendary order that includes mousefolk soldiers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Lily Emberseed",
+   "type": "character",
+   "aliases": [],
+   "description": "A mousefolk who repelled the Calamity Beasts and ended the War of Cinders.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mabel",
+   "type": "character",
+   "aliases": [],
+   "description": "Lily's descendant who assembled a rag-tag group to defend Valley around 4564 AR.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Calamity Beasts",
+   "type": "creature",
+   "aliases": [],
+   "description": "Monsters repelled by Lily and later threatening Valley.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "War of Cinders",
+   "type": "event",
+   "aliases": [],
+   "description": "War ended by Lily Emberseed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane with non-sentient mice.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Assault on Delverhaugh",
+   "type": "event",
+   "aliases": [],
+   "description": "Event that some mice helped repel.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Lily Emberseed repels the Calamity Beasts, ending the War of Cinders.",
+   "participants": [
+    "Lily Emberseed",
+    "Calamity Beasts"
+   ],
+   "location": "Bloomburrow",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "the mousefolk Lily Emberseed repelled the Calamity Beasts , ending the War of Cinders"
+  },
+  {
+   "summary": "Around 4564 AR Mabel assembles a rag-tag group of warriors and misfits to defend Valley.",
+   "participants": [
+    "Mabel",
+    "Calamity Beasts"
+   ],
+   "location": "Bloomburrow",
+   "importance": "major",
+   "paragraph": 9,
+   "quote": "assembled a rag-tag group of warriors and misfits to defend Valley against the Calamity Beasts"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mousefolk",
+   "relation": "ally",
+   "target": "Birdfolk",
+   "note": "Closest natural allies.",
+   "paragraph": 6,
+   "quote": "They are the closest natural allies of the Birdfolk ."
+  },
+  {
+   "source": "Mabel",
+   "relation": "family",
+   "target": "Lily Emberseed",
+   "note": "Lily's descendant.",
+   "paragraph": 9,
+   "quote": "Around 4564 AR , her ancestor, Mabel"
+  }
+ ],
+ "rejected": []
+}

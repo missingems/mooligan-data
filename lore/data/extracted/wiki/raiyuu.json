@@ -1,0 +1,101 @@
+{
+ "page": "wiki/raiyuu",
+ "url": "https://mtg.wiki/page/Raiyuu",
+ "title": "Raiyuu",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:41:47Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Raiyuu",
+   "type": "character",
+   "aliases": [],
+   "description": "A human samurai and captain in the Asari Uprisers on Kamigawa, imbued with the power of lightning and thunder.",
+   "presence": "appears"
+  },
+  {
+   "name": "Asari Uprisers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Group Raiyuu captains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Imperials",
+   "type": "faction",
+   "aliases": [],
+   "description": "Imperial tax collectors and forces who arrested Raiyuu's friends.",
+   "presence": "appears"
+  },
+  {
+   "name": "Sokenzan",
+   "type": "location",
+   "aliases": [],
+   "description": "Region whose village Raiyuu went to free.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Raiyuu.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Raiyuu's friends were caught in an avalanche and arrested by the Imperials during a thunderstorm.",
+   "participants": [
+    "Raiyuu",
+    "Imperials"
+   ],
+   "location": "Sokenzan",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Raiyuu's friends were caught in an avalanche and quickly arrested by the Imperials."
+  },
+  {
+   "summary": "Lightning struck Raiyuu's sword, imbuing him with the power of lightning and thunder.",
+   "participants": [
+    "Raiyuu"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the storm imbued him with the power of lightning and thunder"
+  },
+  {
+   "summary": "Raiyuu single-handedly freed his friends and became a hero to the Asari uprisers.",
+   "participants": [
+    "Raiyuu",
+    "Asari Uprisers"
+   ],
+   "location": "Sokenzan",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "He single-handedly freed his friends and became a hero"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Raiyuu",
+   "relation": "member_of",
+   "target": "Asari Uprisers",
+   "note": "Captain of the group.",
+   "paragraph": 0,
+   "quote": "captain in the Asari Uprisers in Kamigawa"
+  },
+  {
+   "source": "Raiyuu",
+   "relation": "enemy",
+   "target": "Imperials",
+   "note": "Fought the Imperial tax collectors.",
+   "paragraph": 1,
+   "quote": "to free a Sokenzan village from a group of unfair Imperial tax collectors"
+  }
+ ],
+ "rejected": []
+}

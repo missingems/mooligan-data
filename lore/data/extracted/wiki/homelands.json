@@ -1,0 +1,134 @@
+{
+ "page": "wiki/homelands",
+ "url": "https://mtg.wiki/page/Homelands",
+ "title": "Homelands",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:19:21Z",
+ "storyline": "Homelands",
+ "entities": [
+  {
+   "name": "Feroz",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who found Ulgrotha, married Serra, and helped restore the plane before dying in a lab accident.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Serra",
+   "type": "character",
+   "aliases": [],
+   "description": "A planeswalker who married Feroz and worked to restore Ulgrotha, then abandoned the plane after his death.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Baron Sengir",
+   "type": "character",
+   "aliases": [
+    "Sengir"
+   ],
+   "description": "A vampire who plots to take control of Ulgrotha under the fading Ban of Feroz.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ulgrotha",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane where Homelands is set, once beautiful and destroyed by the Wizards' Wars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wizards' Wars",
+   "type": "event",
+   "aliases": [],
+   "description": "The conflict that destroyed the once-beautiful plane of Ulgrotha.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Feroz's Ban",
+   "type": "concept",
+   "aliases": [
+    "Ban of Feroz"
+   ],
+   "description": "A protection created to guard Ulgrotha, now fading.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Feroz comes across Ulgrotha, a plane ruined by the Wizards' Wars.",
+   "participants": [
+    "Feroz",
+    "Ulgrotha",
+    "Wizards' Wars"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "The planeswalker Feroz came across Ulgrotha , the once-beautiful plane now destroyed by the Wizards' Wars ."
+  },
+  {
+   "summary": "At the last unspoiled oasis Feroz meets and marries Serra; together they work to restore the plane and create Feroz's Ban.",
+   "participants": [
+    "Feroz",
+    "Serra",
+    "Feroz's Ban"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "he met fellow planeswalker Serra , whom he married."
+  },
+  {
+   "summary": "Feroz dies in a lab accident and the grief-stricken Serra abandons the plane.",
+   "participants": [
+    "Feroz",
+    "Serra"
+   ],
+   "location": "Ulgrotha",
+   "importance": "major",
+   "paragraph": 5,
+   "quote": "Later, Feroz died during a lab accident, and the grief-stricken Serra abandoned the plane."
+  },
+  {
+   "summary": "With Serra gone, civilizations fight each other while Baron Sengir plots to take control under the fading Ban.",
+   "participants": [
+    "Baron Sengir",
+    "Feroz's Ban"
+   ],
+   "location": "Ulgrotha",
+   "importance": "minor",
+   "paragraph": 5,
+   "quote": "the vampire Baron Sengir plots to take control of the plane under the fading Ban of Feroz."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Feroz",
+   "relation": "romantic",
+   "target": "Serra",
+   "note": "They married.",
+   "paragraph": 5,
+   "quote": "he met fellow planeswalker Serra , whom he married."
+  },
+  {
+   "source": "Feroz",
+   "relation": "created",
+   "target": "Feroz's Ban",
+   "note": "The Ban was created to protect the plane.",
+   "paragraph": 5,
+   "quote": "Together they worked to restore the plane, and to protect it, Feroz's Ban was created."
+  },
+  {
+   "source": "Baron Sengir",
+   "relation": "enemy",
+   "target": "Feroz's Ban",
+   "note": "Plots to take control under its fading.",
+   "paragraph": 5,
+   "quote": "the vampire Baron Sengir plots to take control of the plane under the fading Ban of Feroz."
+  }
+ ],
+ "rejected": []
+}

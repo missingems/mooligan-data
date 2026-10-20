@@ -1,0 +1,116 @@
+{
+ "page": "wiki/eos",
+ "url": "https://mtg.wiki/page/Eos",
+ "title": "Eos",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:42:46Z",
+ "storyline": "Alara",
+ "entities": [
+  {
+   "name": "Eos",
+   "type": "location",
+   "aliases": [],
+   "description": "One of the Inner Three nations of Bant, ruled by those with ancient documents claiming Topa's watering holes; home of the Olive Branch.",
+   "presence": "appears"
+  },
+  {
+   "name": "Bant",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard of Alara containing Eos.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valeron",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation of which Eos is nominally the ally.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Topa",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation disputing Eos's claim to ancient watering holes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Olive Branch",
+   "type": "faction",
+   "aliases": [],
+   "description": "Knightly order of Eos seeking to broker peace among Bant's nations.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aran",
+   "type": "character",
+   "aliases": [],
+   "description": "Valiant defender of Eos.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eos Castle",
+   "type": "location",
+   "aliases": [],
+   "description": "Castle left a smoking ruin.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [],
+   "description": "Event after which Eos was attacked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Grixis",
+   "type": "location",
+   "aliases": [],
+   "description": "Shard where the attackers likely came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alara",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of Eos.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Conflux, Eos is attacked by terrible forces, likely horrors from Grixis; Aran defends it valiantly but Eos Castle is left a smoking ruin.",
+   "participants": [
+    "Eos",
+    "Aran",
+    "Eos Castle"
+   ],
+   "location": "Eos",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "Eos was defended valiantly by Aran , but Eos Castle was left a smoking ruin."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eos",
+   "relation": "ally",
+   "target": "Valeron",
+   "note": "Nominal ally.",
+   "paragraph": 1,
+   "quote": "Eos is nominally Valeron 's ally"
+  },
+  {
+   "source": "Olive Branch",
+   "relation": "located_in",
+   "target": "Eos",
+   "note": "Eos is its home.",
+   "paragraph": 1,
+   "quote": "Eos is home to the Olive Branch"
+  }
+ ],
+ "rejected": []
+}

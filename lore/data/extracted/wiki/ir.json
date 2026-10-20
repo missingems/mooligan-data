@@ -1,0 +1,54 @@
+{
+ "page": "wiki/ir",
+ "url": "https://mtg.wiki/page/Ir",
+ "title": "Ir",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:03Z",
+ "storyline": "Planechase",
+ "entities": [
+  {
+   "name": "Ir",
+   "type": "plane",
+   "aliases": [],
+   "description": "Obscure plane featured in Planechase on the card Turri Island.",
+   "presence": "appears"
+  },
+  {
+   "name": "Turri Island",
+   "type": "location",
+   "aliases": [],
+   "description": "Island on Ir with a fortress that is a mana haven, often assaulted by planeswalkers.",
+   "presence": "appears"
+  },
+  {
+   "name": "Fomori",
+   "type": "faction",
+   "aliases": [],
+   "description": "Species of barbaric giants native to Turri Island who built and protect its fortress.",
+   "presence": "appears"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Turri Island",
+   "relation": "located_in",
+   "target": "Ir",
+   "note": "Turri Island is on the plane Ir.",
+   "paragraph": 0,
+   "quote": "Ir is a plane featured in Planechase , on the card Turri Island"
+  },
+  {
+   "source": "Fomori",
+   "relation": "serves",
+   "target": "Turri Island",
+   "note": "They built and still protect its fortress.",
+   "paragraph": 1,
+   "quote": "They built and still protect the fortress of Turri Island"
+  }
+ ],
+ "rejected": []
+}

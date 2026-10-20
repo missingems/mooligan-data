@@ -1,0 +1,91 @@
+{
+ "page": "wiki/kephalai",
+ "url": "https://mtg.wiki/page/Kephalai",
+ "title": "Kephalai",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:36:57Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Kephalai",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of gothic bustling cities surrounded by water, with a totalitarian bureaucratic government.",
+   "presence": "appears"
+  },
+  {
+   "name": "Aretopolis",
+   "type": "location",
+   "aliases": [],
+   "description": "Capital of Kephalai, an elegant coastal city of marble buildings, canals and temples.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker who once visited Aretopolis and accidentally destroyed the Sanctum of Stars.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Prelate's Palace",
+   "type": "location",
+   "aliases": [],
+   "description": "Fortress-like edifice from which the city's prelate rules.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Sanctum of Stars",
+   "type": "location",
+   "aliases": [],
+   "description": "Building accidentally destroyed by Chandra.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Chandra Nalaar visited Aretopolis.",
+   "participants": [
+    "Chandra Nalaar",
+    "Aretopolis"
+   ],
+   "location": "Aretopolis",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "which was once visited by Chandra Nalaar"
+  },
+  {
+   "summary": "Chandra accidentally destroyed the Sanctum of Stars.",
+   "participants": [
+    "Chandra Nalaar",
+    "Sanctum of Stars"
+   ],
+   "location": "Aretopolis",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "accidentally destroyed by Chandra"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Aretopolis",
+   "relation": "located_in",
+   "target": "Kephalai",
+   "note": "Its capital.",
+   "paragraph": 1,
+   "quote": "The capital is Aretopolis"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "other",
+   "target": "Sanctum of Stars",
+   "note": "Accidentally destroyed it.",
+   "paragraph": 3,
+   "quote": "accidentally destroyed by Chandra"
+  }
+ ],
+ "rejected": []
+}

@@ -1,0 +1,215 @@
+{
+ "page": "wiki/yarus",
+ "url": "https://mtg.wiki/page/Yarus",
+ "title": "Yarus",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:49:14Z",
+ "storyline": "Murders at Karlov Manor",
+ "entities": [
+  {
+   "name": "Yarus",
+   "type": "character",
+   "aliases": [],
+   "description": "A centaur druid of the Zhur-Taa Clan and a leader among the Gruul Clans, who tries to summon the ancient Gruul gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ravnica",
+   "type": "plane",
+   "aliases": [],
+   "description": "Yarus's plane.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Gruul Clans",
+   "type": "faction",
+   "aliases": [],
+   "description": "The clans Yarus is a leader among.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Zhur-Taa Clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Yarus's clan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ilharg",
+   "type": "deity",
+   "aliases": [
+    "Ilharg, the Raze-Boar"
+   ],
+   "description": "Gruul god whose awakening Yarus witnessed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Anzrag",
+   "type": "deity",
+   "aliases": [
+    "Anzrag, the Quake-Mole"
+   ],
+   "description": "A Utmungr god Yarus summoned who rampaged.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Utmungr",
+   "type": "concept",
+   "aliases": [],
+   "description": "Ancient Gruul gods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ravnican Agency of Magicological Investigations",
+   "type": "faction",
+   "aliases": [
+    "the Agency"
+   ],
+   "description": "Investigative agency dispatched to deal with Anzrag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Agency employee who contained Anzrag in an evidence capsule.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teysa Karlov",
+   "type": "character",
+   "aliases": [],
+   "description": "Hosted a party at her manor.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Alquist Proft",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned guild figures to a meeting at Vitu-Ghazi.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vitu-Ghazi",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of the meeting.",
+   "presence": "appears"
+  },
+  {
+   "name": "Oba",
+   "type": "creature",
+   "aliases": [],
+   "description": "Central dryad of Trostani, who attacked the guild leaders.",
+   "presence": "appears"
+  },
+  {
+   "name": "Trostani",
+   "type": "character",
+   "aliases": [],
+   "description": "Selesnya leader accused of exploiting Anzrag.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tolsimir Wolfblood",
+   "type": "character",
+   "aliases": [],
+   "description": "Fatally impaled by Yarus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Oba with Etrata, freeing Yarus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Etrata",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated Oba with Kaya.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Yarus summoned Anzrag, who rampaged until the Agency's Kellan contained him.",
+   "participants": [
+    "Yarus",
+    "Anzrag",
+    "Kellan"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "their new employee Kellan contained him in an evidence capsule"
+  },
+  {
+   "summary": "Yarus tried to fight his way into a party at Teysa Karlov's manor but was escorted out.",
+   "participants": [
+    "Yarus",
+    "Teysa Karlov"
+   ],
+   "location": "Ravnica",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Yarus tried to fight his way into a party at Teysa Karlov 's manor"
+  },
+  {
+   "summary": "At Vitu-Ghazi Oba attacked the guild leaders and Yarus fought back, fatally impaling Tolsimir Wolfblood by mistake.",
+   "participants": [
+    "Yarus",
+    "Oba",
+    "Tolsimir Wolfblood"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he fatally impaled Tolsimir Wolfblood instead"
+  },
+  {
+   "summary": "Yarus was captured by Oba but freed after Kaya and Etrata defeated her.",
+   "participants": [
+    "Yarus",
+    "Oba",
+    "Kaya",
+    "Etrata"
+   ],
+   "location": "Vitu-Ghazi",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "He was captured by the dryad, but was freed after Kaya and Etrata defeated her."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Yarus",
+   "relation": "killed",
+   "target": "Tolsimir Wolfblood",
+   "note": "Accidentally impaled him.",
+   "paragraph": 2,
+   "quote": "he fatally impaled Tolsimir Wolfblood instead"
+  },
+  {
+   "source": "Yarus",
+   "relation": "member_of",
+   "target": "Zhur-Taa Clan",
+   "note": "Member.",
+   "paragraph": 1,
+   "quote": "A member of the Zhur-Taa Clan and a druid of the Old Ways"
+  },
+  {
+   "source": "Oba",
+   "relation": "serves",
+   "target": "Trostani",
+   "note": "Her central dryad.",
+   "paragraph": 2,
+   "quote": "Oba , the central dryad of Trostani"
+  }
+ ],
+ "rejected": []
+}

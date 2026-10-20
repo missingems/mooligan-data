@@ -1,0 +1,92 @@
+{
+ "page": "wiki/orthion",
+ "url": "https://mtg.wiki/page/Orthion",
+ "title": "Orthion",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:51Z",
+ "storyline": "Ikoria",
+ "entities": [
+  {
+   "name": "Orthion",
+   "type": "character",
+   "aliases": [
+    "Captain Orthion",
+    "the Hero of Lavabrink"
+   ],
+   "description": "A human soldier from Ikoria, legendary Captain and Hero of Lavabrink who fought with a long spear.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lava Serpent",
+   "type": "creature",
+   "aliases": [],
+   "description": "A resident lava monster who helped Orthion hold back the Phyrexians at the Lavabrink Floodgates.",
+   "presence": "appears"
+  },
+  {
+   "name": "Lavabrink Floodgates",
+   "type": "location",
+   "aliases": [],
+   "description": "The site where Orthion fought the Phyrexian hordes.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The Phyrexian invasion in which Orthion defended Ikoria.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ikoria",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane Orthion defended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexians",
+   "type": "faction",
+   "aliases": [],
+   "description": "The relentless hordes Orthion fought.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Orthion fights at the Lavabrink Floodgates alongside the Lava Serpent and another lava monster to hold back the Phyrexian hordes.",
+   "participants": [
+    "Orthion",
+    "Lava Serpent",
+    "Phyrexians",
+    "Lavabrink Floodgates"
+   ],
+   "location": "Lavabrink Floodgates",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "he fought at the Lavabrink Floodgates"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Orthion",
+   "relation": "ally",
+   "target": "Lava Serpent",
+   "note": "They held back the Phyrexians together.",
+   "paragraph": 2,
+   "quote": "he collaborated with the resident Lava Serpent"
+  },
+  {
+   "source": "Orthion",
+   "relation": "enemy",
+   "target": "Phyrexians",
+   "note": "He fought the Phyrexian hordes.",
+   "paragraph": 2,
+   "quote": "hold back the relentless Phyrexian hordes"
+  }
+ ],
+ "rejected": []
+}

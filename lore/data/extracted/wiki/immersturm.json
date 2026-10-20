@@ -1,0 +1,169 @@
+{
+ "page": "wiki/immersturm",
+ "url": "https://mtg.wiki/page/Immersturm",
+ "title": "Immersturm",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:20:49Z",
+ "storyline": "Kaldheim",
+ "entities": [
+  {
+   "name": "Immersturm",
+   "type": "location",
+   "aliases": [],
+   "description": "A realm of Kaldheim of fire, demons, vampiric dragons and constant warfare.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kaldheim",
+   "type": "plane",
+   "aliases": [],
+   "description": "The plane of ten realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Bloodcrag",
+   "type": "location",
+   "aliases": [
+    "The Bloodcrag"
+   ],
+   "description": "A volcano filled with blood that is the source of all demons.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fields of Elskul",
+   "type": "location",
+   "aliases": [],
+   "description": "Battlegrounds where rival demon jarls fight.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vaults of Hellir",
+   "type": "location",
+   "aliases": [],
+   "description": "Chambers holding plunder from other realms.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Einir",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gods who birthed the elven race and sealed the demons into Immersturm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Skoti",
+   "type": "faction",
+   "aliases": [],
+   "description": "Gods who defeated the Einir and resealed Immersturm with runic magic.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaya",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker on Immersturm who failed to stop Tibalt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tyvar Kell",
+   "type": "character",
+   "aliases": [],
+   "description": "Planeswalker on Immersturm who failed to stop Tibalt.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tibalt",
+   "type": "character",
+   "aliases": [],
+   "description": "A devilish planeswalker who created a Doomskar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Doomskar",
+   "type": "event",
+   "aliases": [],
+   "description": "A rift event through which demons attacked another realm.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Varragoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Leader of the demons who streamed through the rift.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Valla",
+   "type": "plane",
+   "aliases": [],
+   "description": "A plane that split off from Kaldheim and has an Immersturm remnant.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Einir seal the demons into Immersturm; after the Skoti defeat the Einir the relics are lost and the Skoti reseal it with runes.",
+   "participants": [
+    "Einir",
+    "Skoti",
+    "Immersturm"
+   ],
+   "location": "Immersturm",
+   "importance": "major",
+   "paragraph": 6,
+   "quote": "The Skoti used runic magic to reseal Immersturm"
+  },
+  {
+   "summary": "Kaya and Tyvar fail to stop Tibalt from creating a Doomskar, and thousands of demons led by Varragoth attack another realm.",
+   "participants": [
+    "Kaya",
+    "Tyvar Kell",
+    "Tibalt",
+    "Varragoth",
+    "Doomskar"
+   ],
+   "location": "Immersturm",
+   "importance": "major",
+   "paragraph": 7,
+   "quote": "thousands of demons streamed through a giant rift in space to attack another realm"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Immersturm",
+   "relation": "located_in",
+   "target": "Kaldheim",
+   "note": "One of its ten realms.",
+   "paragraph": 0,
+   "quote": "Immersturm is one of the ten realms of the plane of Kaldheim"
+  },
+  {
+   "source": "Einir",
+   "relation": "enemy",
+   "target": "Skoti",
+   "note": "The Skoti challenged and defeated the Einir.",
+   "paragraph": 6,
+   "quote": "When the Skoti challenged the Einir's supremacy and defeated them"
+  },
+  {
+   "source": "Varragoth",
+   "relation": "leader_of",
+   "target": "Immersturm",
+   "note": "Led the demons through the rift (leader of the raiding demons).",
+   "paragraph": 7,
+   "quote": "Lead by Varragoth"
+  },
+  {
+   "source": "Tibalt",
+   "relation": "enemy",
+   "target": "Kaya",
+   "note": "She could not stop him creating a Doomskar.",
+   "paragraph": 7,
+   "quote": "unable to prevent the devilish Tibalt from creating a Doomskar"
+  }
+ ],
+ "rejected": []
+}

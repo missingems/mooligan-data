@@ -1,0 +1,177 @@
+{
+ "page": "wiki/mochi",
+ "url": "https://mtg.wiki/page/Mochi",
+ "title": "Mochi",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:40:39Z",
+ "storyline": "Kamigawa",
+ "entities": [
+  {
+   "name": "Mochi",
+   "type": "character",
+   "aliases": [
+    "Mochi, the Smiling Kami of the Crescent Moon"
+   ],
+   "description": "Smiling Kami of the Crescent Moon, a powerful diminutive kami who manipulated Toshiro Umezawa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Toshiro Umezawa",
+   "type": "character",
+   "aliases": [],
+   "description": "Ronin manipulated by Mochi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Soratami",
+   "type": "faction",
+   "aliases": [],
+   "description": "Moonfolk whom Mochi secretly worked with.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kamigawa",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane the Soratami sought to dominate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hisoka",
+   "type": "character",
+   "aliases": [],
+   "description": "Aided Konda's quest for immortality alongside the Soratami.",
+   "presence": "appears"
+  },
+  {
+   "name": "Konda",
+   "type": "character",
+   "aliases": [
+    "Lord Konda"
+   ],
+   "description": "Seeker of immortality and power whose quest began the Kami War.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kami War",
+   "type": "event",
+   "aliases": [],
+   "description": "War begun when Konda gained access to the spirit world.",
+   "presence": "appears"
+  },
+  {
+   "name": "Michiko Konda",
+   "type": "character",
+   "aliases": [
+    "Princess Michiko Konda",
+    "Michiko"
+   ],
+   "description": "Princess manipulated by Mochi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kyodai",
+   "type": "character",
+   "aliases": [],
+   "description": "Defeated O-Kagachi and Konda with Michiko.",
+   "presence": "appears"
+  },
+  {
+   "name": "O-Kagachi",
+   "type": "creature",
+   "aliases": [],
+   "description": "Defeated by Michiko and Kyodai.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hidetsugu",
+   "type": "character",
+   "aliases": [],
+   "description": "Summoned by Michiko and Kyodai, he devoured Mochi.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kobo",
+   "type": "character",
+   "aliases": [],
+   "description": "Character whose death Hidetsugu avenged.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mochi aided the Soratami and Hisoka in Konda's quest by helping him access the spirit world, beginning the Kami War.",
+   "participants": [
+    "Mochi",
+    "Soratami",
+    "Hisoka",
+    "Konda",
+    "Kami War"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "this action began the Kami War ."
+  },
+  {
+   "summary": "Sixteen years later Mochi manipulated Michiko and Toshiro into prolonging the conflict, but their distrust ended his plans.",
+   "participants": [
+    "Mochi",
+    "Michiko Konda",
+    "Toshiro Umezawa"
+   ],
+   "location": "Kamigawa",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Sixteen years later, he manipulated Princess Michiko Konda and the ronin Toshiro Umezawa into prolonging the conflict"
+  },
+  {
+   "summary": "Michiko and Kyodai defeated O-Kagachi and Konda.",
+   "participants": [
+    "Michiko Konda",
+    "Kyodai",
+    "O-Kagachi",
+    "Konda"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "After Michiko and Kyodai defeated O-Kagachi and Konda"
+  },
+  {
+   "summary": "Michiko and Kyodai summoned Hidetsugu, who devoured Mochi in vengeance for Kobo's death.",
+   "participants": [
+    "Hidetsugu",
+    "Mochi",
+    "Michiko Konda",
+    "Kyodai"
+   ],
+   "location": "Kamigawa",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "they in turn summoned Hidetsugu , who devoured him in vengeance for Kobo 's death."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Hidetsugu",
+   "relation": "killed",
+   "target": "Mochi",
+   "note": "Devoured him.",
+   "paragraph": 3,
+   "quote": "who devoured him in vengeance for Kobo 's death."
+  },
+  {
+   "source": "Mochi",
+   "relation": "ally",
+   "target": "Soratami",
+   "note": "Secretly worked with them.",
+   "paragraph": 0,
+   "quote": "while secretly working with the Soratami"
+  }
+ ],
+ "rejected": []
+}

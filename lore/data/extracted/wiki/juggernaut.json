@@ -1,0 +1,105 @@
+{
+ "page": "wiki/juggernaut",
+ "url": "https://mtg.wiki/page/Juggernaut",
+ "title": "Juggernaut",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:39:48Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Levelers",
+   "type": "creature",
+   "aliases": [],
+   "description": "Giant, merciless Juggernauts created by Memnarch that ripped through Mirrodin once each century.",
+   "presence": "appears"
+  },
+  {
+   "name": "Memnarch",
+   "type": "character",
+   "aliases": [],
+   "description": "Creator of the Levelers, later deposed.",
+   "presence": "appears"
+  },
+  {
+   "name": "Mirrodin",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane ravaged by the Levelers each century.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Glissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Character whose family the Levelers killed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Leveler War",
+   "type": "event",
+   "aliases": [],
+   "description": "War that began after Levelers killed Glissa's family.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Fifth Dawn",
+   "type": "event",
+   "aliases": [],
+   "description": "Conflict the Leveler War later became.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexia",
+   "type": "plane",
+   "aliases": [],
+   "description": "Mirrodin after its compleation; absorbed many captured Levelers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Graaz",
+   "type": "creature",
+   "aliases": [],
+   "description": "The first Legendary Juggernaut.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Levelers killed Glissa's family in an attack, causing the Leveler War and later the Fifth Dawn.",
+   "participants": [
+    "Levelers",
+    "Glissa"
+   ],
+   "location": "Mirrodin",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "They killed Glissa 's family in one such attack, causing what became known as the Leveler War and later the Fifth Dawn ."
+  },
+  {
+   "summary": "When Memnarch was deposed, the Levelers were left leaderless; many were captured and absorbed into New Phyrexia.",
+   "participants": [
+    "Levelers",
+    "Memnarch",
+    "New Phyrexia"
+   ],
+   "location": "Mirrodin",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Many were captured and absorbed into New Phyrexia ."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Memnarch",
+   "relation": "created",
+   "target": "Levelers",
+   "note": "Created the Levelers.",
+   "paragraph": 2,
+   "quote": "giant, merciless Juggernauts created by Memnarch"
+  }
+ ],
+ "rejected": []
+}

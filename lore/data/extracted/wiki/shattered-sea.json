@@ -1,0 +1,125 @@
+{
+ "page": "wiki/shattered-sea",
+ "url": "https://mtg.wiki/page/Shattered_Sea",
+ "title": "Shattered Sea",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:47:14Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Shattered Sea",
+   "type": "location",
+   "aliases": [],
+   "description": "Southeastern sea of the Terisian Isles, formed during the Thaw.",
+   "presence": "appears"
+  },
+  {
+   "name": "Terisian Isles",
+   "type": "location",
+   "aliases": [],
+   "description": "Isles formed when Terisiare was flooded.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kelsinko",
+   "type": "location",
+   "aliases": [],
+   "description": "City at the bottom of the Shattered Sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaya Ballard",
+   "type": "character",
+   "aliases": [],
+   "description": "Mage who led a team trying to hold back the waters from Kelsinko.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jaeuhl Carthalion",
+   "type": "character",
+   "aliases": [],
+   "description": "Guided Kelsinko's refugees to Yavimaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Kaysa",
+   "type": "character",
+   "aliases": [],
+   "description": "Guided Kelsinko's refugees to Yavimaya.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Yavimaya",
+   "type": "location",
+   "aliases": [],
+   "description": "Place where Kelsinko refugees fled.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Krov",
+   "type": "location",
+   "aliases": [],
+   "description": "Plague-ridden vampire-haunted city swallowed by the sea.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Flooding of Terisiare",
+   "type": "event",
+   "aliases": [],
+   "description": "Flooding over several decades during the Thaw.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Shattered Sea formed during the Thaw as meltwater rushed out of Terisiare's glaciers.",
+   "participants": [
+    "Shattered Sea",
+    "Flooding of Terisiare"
+   ],
+   "location": "Terisian Isles",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Shattered Sea came into being during the Thaw"
+  },
+  {
+   "summary": "Jaya Ballard's team of mages failed to hold the waters back and Kelsinko's people fled to Yavimaya.",
+   "participants": [
+    "Jaya Ballard",
+    "Kelsinko",
+    "Jaeuhl Carthalion",
+    "Kaysa",
+    "Yavimaya"
+   ],
+   "location": "Kelsinko",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "They failed, and the city's inhabitants were forced to become refugees"
+  },
+  {
+   "summary": "The rising sea swallowed the streets of Krov.",
+   "participants": [
+    "Shattered Sea",
+    "Krov"
+   ],
+   "location": "Krov",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "eventually also swallowing the plague-ridden, vampire-haunted streets of Krov"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kelsinko",
+   "relation": "located_in",
+   "target": "Shattered Sea",
+   "note": "Lies at its bottom",
+   "paragraph": 1,
+   "quote": "Kelsinko lies at the bottom of the Shattered Sea."
+  }
+ ],
+ "rejected": []
+}

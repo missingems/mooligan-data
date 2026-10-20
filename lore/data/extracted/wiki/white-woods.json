@@ -1,0 +1,167 @@
+{
+ "page": "wiki/white-woods",
+ "url": "https://mtg.wiki/page/White_Woods",
+ "title": "White Woods",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:48:01Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "White Woods",
+   "type": "location",
+   "aliases": [],
+   "description": "A vast mysterious forest in Casindral in southern Corondor on Dominaria, refuge of the Quirion Elves.",
+   "presence": "appears"
+  },
+  {
+   "name": "Casindral",
+   "type": "location",
+   "aliases": [],
+   "description": "Region containing the White Woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Corondor",
+   "type": "location",
+   "aliases": [],
+   "description": "Dominarian region in which Casindral lies.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Dominaria",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the White Woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Quirion Elves",
+   "type": "faction",
+   "aliases": [
+    "Quirion"
+   ],
+   "description": "Elves who migrated into the White Woods and became a society of warrior-mages.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eskil the White",
+   "type": "character",
+   "aliases": [
+    "Eskil"
+   ],
+   "description": "Old blind planeswalker who lived in the White Woods and trained Mangara.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mangara",
+   "type": "character",
+   "aliases": [
+    "Mangarao"
+   ],
+   "description": "Trained by Eskil in the White Woods; later took the Quirion to the Mirage War.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Estolade",
+   "type": "location",
+   "aliases": [],
+   "description": "River running through the White Woods.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Teferi's Isle",
+   "type": "location",
+   "aliases": [],
+   "description": "Island whose disappearance Mangara went to Jamuraa to investigate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jamuraa",
+   "type": "location",
+   "aliases": [],
+   "description": "Continent Mangara travelled to.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Mirage War",
+   "type": "event",
+   "aliases": [],
+   "description": "War in which Mangara brought the Quirion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ice Age",
+   "type": "event",
+   "aliases": [],
+   "description": "Era after which the Quirion migrated into the woods.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Quirion elves migrate into the White Woods' inner regions after the Ice Age and defend their independence.",
+   "participants": [
+    "Quirion Elves",
+    "White Woods"
+   ],
+   "location": "White Woods",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "The Quirion elves migrated into the White Woods' dense inner regions after the Ice Age"
+  },
+  {
+   "summary": "Mangara is trained in the White Woods by Eskil and gains the Quirion's loyalty.",
+   "participants": [
+    "Mangara",
+    "Eskil the White",
+    "Quirion Elves"
+   ],
+   "location": "White Woods",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Mangara was trained in the White Woods by old blind Eskil"
+  },
+  {
+   "summary": "More than a century later Mangara brings the Quirion to the Mirage War.",
+   "participants": [
+    "Mangara",
+    "Quirion Elves",
+    "Mirage War"
+   ],
+   "location": "",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "he brought them with him to take part in the Mirage War"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eskil the White",
+   "relation": "mentor_of",
+   "target": "Mangara",
+   "note": "trained him",
+   "paragraph": 3,
+   "quote": "Mangara was trained in the White Woods by old blind Eskil"
+  },
+  {
+   "source": "Quirion Elves",
+   "relation": "serves",
+   "target": "Mangara",
+   "note": "gained their loyalty",
+   "paragraph": 3,
+   "quote": "Mangarao thus gained the loyalty of the Quirion who lived there"
+  },
+  {
+   "source": "White Woods",
+   "relation": "located_in",
+   "target": "Casindral",
+   "note": "",
+   "paragraph": 0,
+   "quote": "The White Woods is a region of Casindral"
+  }
+ ],
+ "rejected": []
+}

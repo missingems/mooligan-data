@@ -1,0 +1,121 @@
+{
+ "page": "wiki/nylah",
+ "url": "https://mtg.wiki/page/Nylah",
+ "title": "Nylah",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-19T22:56:16Z",
+ "storyline": "Amonkhet",
+ "entities": [
+  {
+   "name": "Nylah",
+   "type": "character",
+   "aliases": [],
+   "description": "An Amonkheti mage who became a fervent believer in the God-Pharaoh during the Hours.",
+   "presence": "appears"
+  },
+  {
+   "name": "God-Pharaoh",
+   "type": "character",
+   "aliases": [
+    "Nicol Bolas"
+   ],
+   "description": "Ruler of Amonkhet in whom Nylah believed.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Amonkhet",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the Trials.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Final Hours",
+   "type": "event",
+   "aliases": [
+    "the Hours"
+   ],
+   "description": "Event when the gate to paradise opened to horror.",
+   "presence": "appears"
+  },
+  {
+   "name": "Luxa River",
+   "type": "location",
+   "aliases": [],
+   "description": "River filled with blood during the Final Hours.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Scarab God",
+   "type": "deity",
+   "aliases": [],
+   "description": "Dread figure leading the Eternals.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eternals",
+   "type": "faction",
+   "aliases": [],
+   "description": "Army of the worthy dead.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "When the gate opened during the Final Hours, Nylah witnessed horror, destruction and the gods dying, and questioned their divinity.",
+   "participants": [
+    "Nylah",
+    "Final Hours"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "When the gate to paradise opened during the Final Hours , instead of divine bliss, she witnessed horror."
+  },
+  {
+   "summary": "Nylah witnessed the Scarab God arrive with the Eternals and desired their fate.",
+   "participants": [
+    "Nylah",
+    "Scarab God",
+    "Eternals"
+   ],
+   "location": "Amonkhet",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Nylah witnessed the arrival of a dread figure"
+  },
+  {
+   "summary": "Nylah embraced the Eternals and was stabbed to death, believing her faith rewarded.",
+   "participants": [
+    "Nylah",
+    "Eternals"
+   ],
+   "location": "Amonkhet",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "She shouted her belief as they swarmed and stabbed her"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eternals",
+   "relation": "killed",
+   "target": "Nylah",
+   "note": "stabbed her",
+   "paragraph": 2,
+   "quote": "She shouted her belief as they swarmed and stabbed her"
+  },
+  {
+   "source": "Eternals",
+   "relation": "serves",
+   "target": "Scarab God",
+   "note": "army following him",
+   "paragraph": 2,
+   "quote": "followed by an army of the worthy dead"
+  }
+ ],
+ "rejected": []
+}
