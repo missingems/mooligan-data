@@ -1,0 +1,157 @@
+{
+ "page": "wiki/sardian-mountains",
+ "url": "https://mtg.wiki/page/Sardian_Mountains",
+ "title": "Sardian Mountains",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:26Z",
+ "storyline": "Antiquities",
+ "entities": [
+  {
+   "name": "Sardian Mountains",
+   "type": "location",
+   "aliases": [
+    "Karplusan Mountains"
+   ],
+   "description": "A metal- and stone-rich range on Terisiare peopled by human clans, dwarves, goblins and minotaurs; later the Karplusan Mountains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kathwar",
+   "type": "character",
+   "aliases": [],
+   "description": "Chief of the Malpiri clan, invited to join the Union of the Third Path.",
+   "presence": "appears"
+  },
+  {
+   "name": "Archmandrite of the Ivory Tower",
+   "type": "character",
+   "aliases": [],
+   "description": "Invited Kathwar to the Union.",
+   "presence": "appears"
+  },
+  {
+   "name": "Union of the Third Path",
+   "type": "faction",
+   "aliases": [],
+   "description": "Union Kathwar was invited to join.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Malpiri clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Clan led by Kathwar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urza",
+   "type": "character",
+   "aliases": [],
+   "description": "Traded with Sardian dwarves to fuel his war effort.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dwarves of Sardia",
+   "type": "faction",
+   "aliases": [],
+   "description": "Dwarves who traded with Urza and reported burning rains.",
+   "presence": "appears"
+  },
+  {
+   "name": "Brothers' War",
+   "type": "event",
+   "aliases": [],
+   "description": "War Urza fought.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Storgard",
+   "type": "location",
+   "aliases": [],
+   "description": "Nation built in the western ranges.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Tanglewoods",
+   "type": "location",
+   "aliases": [],
+   "description": "Woods that grew north of Storgard.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Raynor Glacier",
+   "type": "location",
+   "aliases": [],
+   "description": "Glacier filling the valleys.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Archmandrite invites Kathwar to join the Union of the Third Path.",
+   "participants": [
+    "Archmandrite of the Ivory Tower",
+    "Kathwar",
+    "Union of the Third Path"
+   ],
+   "location": "Sardian Mountains",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "invited Kathwar"
+  },
+  {
+   "summary": "Urza trades with the Sardian dwarves to fuel his war effort.",
+   "participants": [
+    "Urza",
+    "Dwarves of Sardia"
+   ],
+   "location": "Sardian Mountains",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "Urza traded with the dwarves of Sardia to fuel his war effort"
+  },
+  {
+   "summary": "Late in the war, Sardian dwarves report burning rains falling from the sky.",
+   "participants": [
+    "Dwarves of Sardia"
+   ],
+   "location": "Sardian Mountains",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "burning rains were falling from the sky into their land"
+  },
+  {
+   "summary": "After the war the range becomes enveloped in ice and Storgard is built in the west.",
+   "participants": [
+    "Storgard",
+    "Sardian Mountains"
+   ],
+   "location": "Sardian Mountains",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "The nation of Storgard was built in the western ranges"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Kathwar",
+   "relation": "leader_of",
+   "target": "Malpiri clan",
+   "note": "Chief of the clan.",
+   "paragraph": 1,
+   "quote": "chief of the Malpiri clan"
+  },
+  {
+   "source": "Urza",
+   "relation": "ally",
+   "target": "Dwarves of Sardia",
+   "note": "Trading partners.",
+   "paragraph": 2,
+   "quote": "Urza traded with the dwarves of Sardia"
+  }
+ ],
+ "rejected": []
+}

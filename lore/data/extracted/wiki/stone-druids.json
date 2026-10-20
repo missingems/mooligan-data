@@ -1,0 +1,156 @@
+{
+ "page": "wiki/stone-druids",
+ "url": "https://mtg.wiki/page/Stone_Druids",
+ "title": "Stone Druids",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:44:32Z",
+ "storyline": "Invasion",
+ "entities": [
+  {
+   "name": "Stone Druids",
+   "type": "faction",
+   "aliases": [
+    "rock druids"
+   ],
+   "description": "Dominarian dwarves with earth magic who met Eladamri in the Stronghold and caused the volcano to erupt.",
+   "presence": "appears"
+  },
+  {
+   "name": "Nadeen Dormet",
+   "type": "character",
+   "aliases": [],
+   "description": "Sister who led the Stone Druids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eladamri",
+   "type": "character",
+   "aliases": [],
+   "description": "Made a pact with the druids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Stronghold",
+   "type": "location",
+   "aliases": [],
+   "description": "Yawgmoth's base purged by the druids.",
+   "presence": "appears"
+  },
+  {
+   "name": "Yawgmoth",
+   "type": "character",
+   "aliases": [],
+   "description": "Prevented from fleeing back to Phyrexia by the lava.",
+   "presence": "appears"
+  },
+  {
+   "name": "Weatherlight",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Channeled a white mana blast from the Null Moon.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Null Moon",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Source of the white mana blast.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Portcullis",
+   "type": "location",
+   "aliases": [],
+   "description": "Guarded by Phyrexians the druids' tunnel outflanked.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Martyrs' Tomb",
+   "type": "location",
+   "aliases": [],
+   "description": "Site of a ceremony the druids attended.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Urborg",
+   "type": "location",
+   "aliases": [],
+   "description": "Land where the druids arrived.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "The invasion during which they met Eladamri.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Eladamri makes a pact with the druids to defend them in exchange for use of their tunnel to outflank the Phyrexians at Portcullis.",
+   "participants": [
+    "Eladamri",
+    "Stone Druids"
+   ],
+   "location": "Stronghold",
+   "importance": "minor",
+   "paragraph": 1,
+   "quote": "Eladamri made a pact with them to defend them"
+  },
+  {
+   "summary": "The druids cause the volcano to erupt, engulfing the Stronghold in lava and preventing Yawgmoth's escape.",
+   "participants": [
+    "Stone Druids",
+    "Yawgmoth",
+    "Stronghold"
+   ],
+   "location": "Stronghold",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "The druids successfully caused the volcano to erupt"
+  },
+  {
+   "summary": "The dwarves are shielded from Yawgmoth by Weatherlight's white mana blast from the Null Moon.",
+   "participants": [
+    "Weatherlight",
+    "Yawgmoth",
+    "Stone Druids"
+   ],
+   "location": "Stronghold",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the dwarves were shielded by the white mana blast Weatherlight channeled from the Null Moon"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Nadeen Dormet",
+   "relation": "leader_of",
+   "target": "Stone Druids",
+   "note": "Led them.",
+   "paragraph": 0,
+   "quote": "They were led by sister Nadeen Dormet"
+  },
+  {
+   "source": "Eladamri",
+   "relation": "ally",
+   "target": "Stone Druids",
+   "note": "Pact.",
+   "paragraph": 1,
+   "quote": "Eladamri made a pact with them"
+  },
+  {
+   "source": "Stone Druids",
+   "relation": "enemy",
+   "target": "Yawgmoth",
+   "note": "They blocked his escape.",
+   "paragraph": 1,
+   "quote": "preventing Yawgmoth from fleeing back to"
+  }
+ ],
+ "rejected": []
+}
