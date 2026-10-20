@@ -141,6 +141,38 @@ def duplicate_pages(pages: Dict[str, dict]) -> Set[str]:
     return dropped
 
 
+def apply_merges(extractions: List[dict], merges: dict) -> List[dict]:
+    """The hand-kept fixes that act on single pages, before names are grouped.
+
+    - split: [{"name": "Finneas", "as": "Finneas (Witch Woods)", "pages": ["stories/episode-1-..."]}]: on those pages
+      the name means someone else, who gets the new name;
+    - drop_aliases: {"Jace Beleren": ["Ashiok"]}: an alias pages wrongly gave an entity;
+    - not_names: ["a dragon"]: phrases that are never anyone's name.
+    """
+    splits = [(fold(rule["name"]), rule["as"], set(rule["pages"])) for rule in merges.get("split", [])]
+    drops = {fold(name): {fold(a) for a in aliases} for name, aliases in merges.get("drop_aliases", {}).items()}
+    generic = {fold(n) for n in merges.get("not_names", [])}
+    if not (splits or drops or generic):
+        return extractions
+    result = []
+    for extraction in extractions:
+        renamed = {old: new for old, new, pages in splits if extraction["page"] in pages}
+
+        def rename(name: str) -> str:
+            return renamed.get(fold(name), name)
+
+        entities = []
+        for entity in extraction["entities"]:
+            name = rename(entity["name"])
+            dropped = drops.get(fold(name), set()) | drops.get(fold(entity["name"]), set())
+            aliases = [rename(a) for a in entity["aliases"] if fold(a) not in generic and fold(a) not in dropped and fold(a) not in renamed]
+            entities.append({**entity, "name": name, "aliases": aliases})
+        events = [{**e, "participants": [rename(p) for p in e["participants"]], "location": rename(e["location"])} for e in extraction["events"]]
+        relations = [{**r, "source": rename(r["source"]), "target": rename(r["target"])} for r in extraction["relations"]]
+        result.append({**extraction, "entities": entities, "events": events, "relations": relations})
+    return result
+
+
 def build(directory: Path) -> dict:
     pages = load_pages(directory)
     extractions = [json.loads(path.read_text()) for path in sorted((directory / "extracted").glob("*/*.json"))]
@@ -148,6 +180,7 @@ def build(directory: Path) -> dict:
     extractions = _page_order([e for e in extractions if e["page"] not in duplicates], pages)
     merges = json.loads((directory / "merges.json").read_text()) if (directory / "merges.json").exists() else {}
     storyline_names = merges.get("storylines", {})
+    extractions = apply_merges(extractions, merges)
 
     # 1. Group names into entities.
     groups = _Groups((fold(a), fold(b)) for a, b in merges.get("different", []))
@@ -377,6 +410,9 @@ def build(directory: Path) -> dict:
         for name in [entity["name"], *entity["aliases"]]:
             names[fold(name)].add(entity["id"])
     for alias, owners in shared.items():
+        # An alias several entities share may mean any of them, unless it is one entity's own name ("Ashiok").
+        if alias in names:
+            continue
         for owner in owners:
             names[alias].add(entity_of[groups.find(owner)])
     write(out / "entities.json", ranked)

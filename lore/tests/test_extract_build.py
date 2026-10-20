@@ -139,3 +139,26 @@ def test_an_old_column_saved_under_several_dates_is_one_page():
         "savor-flavor-other-2010-01-01": column("Other"),
     }
     assert duplicate_pages(pages) == {"savor-flavor-tropes-2009-04-01", "savor-flavor-tropes-2009-03-31-0"}
+
+
+def test_merges_split_a_name_drop_wrong_aliases_and_ignore_generic_phrases():
+    from mtglore.build import apply_merges
+
+    page = {
+        "page": "stories/a",
+        "entities": [{"name": "Finneas", "aliases": ["a dragon"]}, {"name": "Jace Beleren", "aliases": ["Ashiok", "Jace"]}],
+        "events": [{"participants": ["Finneas", "Jace"], "location": ""}],
+        "relations": [{"source": "Finneas", "target": "Jace Beleren"}],
+    }
+    other = {**page, "page": "stories/b"}
+    merges = {
+        "split": [{"name": "Finneas", "as": "Finneas (Agatha's husband)", "pages": ["stories/a"]}],
+        "drop_aliases": {"Jace Beleren": ["Ashiok"]},
+        "not_names": ["a dragon"],
+    }
+    a, b = apply_merges([page, other], merges)
+    assert a["entities"][0] == {"name": "Finneas (Agatha's husband)", "aliases": []}
+    assert a["events"][0]["participants"] == ["Finneas (Agatha's husband)", "Jace"]
+    assert a["relations"][0]["source"] == "Finneas (Agatha's husband)"
+    assert a["entities"][1]["aliases"] == ["Jace"]
+    assert b["entities"][0]["name"] == "Finneas"
