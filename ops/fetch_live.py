@@ -38,6 +38,7 @@ STATE_FILES = [
     "state/localized.json.gz",
     "state/rules-keywords.json",
     "state/set-art.json",
+    "state/set-products.json",
 ]
 
 
