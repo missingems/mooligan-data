@@ -106,8 +106,8 @@ def test_the_file_maps_each_set_code_to_the_art_of_its_pages(tmp_path):
         "generated_at": "2026-10-20T09:30:00Z",
         "sets": {
             "dsk": {
-                "url": DSK_IMAGE, "width": 1200, "height": 630, "title": "Duskmourn: House of Horror", "source": "wizards",
-                "page": f"{BASE}/products/duskmourn-house-of-horror",
+                "url": DSK_GALLERY_IMAGE, "width": 768, "height": 432, "title": "Duskmourn: House of Horror", "source": "wizards",
+                "page": f"{BASE}/products/duskmourn-house-of-horror/card-image-gallery",
             },
             "fdn": {"url": FDN_IMAGE, "width": 1200, "height": 630, "title": "Foundations", "source": "wizards", "page": f"{BASE}/products/foundations"},
             "frf": {"url": FRF_IMAGE, "width": 1920, "height": 1080, "title": "Fate Reforged", "source": "wizards", "page": f"{BASE}/news/card-image-gallery/frf-cig-en"},
@@ -184,15 +184,20 @@ def test_a_failing_sitemap_writes_nothing_and_leaves_the_published_file(tmp_path
     assert not (tmp_path / "sets").exists()
 
 
-def test_the_widest_landscape_image_wins_and_a_product_page_wins_a_tie(tmp_path):
+def test_a_gallery_image_beats_a_product_page_and_the_larger_gallery_image_wins(tmp_path):
     product = Page("p", PRODUCT, "x", None)
     product_gallery = Page("pg", PRODUCT_GALLERY, "x", None)
     gallery = Page("g", GALLERY, "x", None)
     wide = {"image": "w", "width": 1920, "height": 1080}
-    social = {"image": "s", "width": 1200, "height": 630}
+    art = {"image": "a", "width": 960, "height": 540}
+    poster = {"image": "s", "width": 1200, "height": 630}
     square = {"image": "q", "width": 2000, "height": 2000}
-    assert pick([(product, social), (gallery, wide), (product_gallery, square)]) == (gallery, wide)
-    assert pick([(gallery, social), (product_gallery, social), (product, social)]) == (product, social)
+    assert pick([(product, poster), (product_gallery, art)]) == (product_gallery, art)
+    assert pick([(product, wide), (gallery, art)]) == (gallery, art)
+    assert pick([(product, poster), (gallery, wide), (product_gallery, art)]) == (gallery, wide)
+    assert pick([(gallery, art), (product_gallery, art)]) == (product_gallery, art)
+    assert pick([(product, poster)]) == (product, poster)
+    assert pick([(product, poster), (gallery, square), (product_gallery, {"image": None})]) == (product, poster)
     assert pick([(product, square), (gallery, {"image": None})]) is None
 
 
