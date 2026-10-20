@@ -92,7 +92,7 @@ Everything is in `lore/` (see [`lore/README.md`](lore/README.md)):
 
 ## Known gaps and cautions
 
-- **MTG Wiki is CC BY-NC-SA 4.0: non-commercial.** Many facts come from it, and they are marked `MTG Wiki` and credited in `## Sources`. If the app is sold, has ads, or is otherwise commercial, those lines can't be shown. A feed built from official sources only (`mtg-wiki` facts left out) would need a small change to `python -m mtglore app`. Decide this before shipping.
+- **MTG Wiki is CC BY-NC-SA 4.0: non-commercial.** Many facts come from it. Jun decided to keep them: the app is free with no ads. They stay marked `MTG Wiki` and credited in `## Sources`; keep that credit visible wherever they're shown. If the app ever becomes paid or ad-supported, those lines have to go: `python -m mtglore app` would need an official-sources-only mode, leaving out `mtg-wiki` facts.
 - **Wizards' text:** pages carry short quotes in their links and summaries written from the sources, not the stories themselves. Keep it that way.
 - **Order and eras:** story order is the order the story was published in, not in-world time. Wiki events are dated by the set or year that told them (`eras.json`), and a few dozen of those era tags are best guesses.
 - **Card matching** is name-based and deliberately strict. Card names that differ from the character's own name (nicknames, titles, flavor names) stay unmatched rather than guessed. Some aliases in the index are wrong (Ashiok was listed under Jace); the card matcher ignores aliases that don't agree with the entity's own name, but other wrong aliases may still show in entity pages.
