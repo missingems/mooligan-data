@@ -1,0 +1,196 @@
+{
+ "page": "wiki/agatha",
+ "url": "https://mtg.wiki/page/Agatha",
+ "title": "Agatha",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:51:20Z",
+ "storyline": "Wilds of Eldraine",
+ "entities": [
+  {
+   "name": "Agatha",
+   "type": "character",
+   "aliases": [
+    "Agatha the Hungry"
+   ],
+   "description": "A powerful, bestial witch of Eldraine who enchants victims with song and was killed by Kellan.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eriette",
+   "type": "character",
+   "aliases": [],
+   "description": "Witch, sister of Agatha; helped cast the Wicked Slumber.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Hylda",
+   "type": "character",
+   "aliases": [],
+   "description": "Witch, sister of Agatha; helped cast the Wicked Slumber.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Talion",
+   "type": "character",
+   "aliases": [],
+   "description": "Faerie who cast the Wicked Slumber with the witches and gave Agatha the Vile Cauldron.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Wicked Slumber",
+   "type": "event",
+   "aliases": [],
+   "description": "Spell cast to end the New Phyrexian Invasion.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "New Phyrexian Invasion",
+   "type": "event",
+   "aliases": [],
+   "description": "Invasion ended by the Wicked Slumber.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Vile Cauldron",
+   "type": "artifact",
+   "aliases": [],
+   "description": "Cauldron that boils down the essence of those within.",
+   "presence": "appears"
+  },
+  {
+   "name": "Dunbarrow",
+   "type": "location",
+   "aliases": [],
+   "description": "Place near Agatha's cabin.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Peter",
+   "type": "character",
+   "aliases": [
+    "Wolf Knight"
+   ],
+   "description": "Woodsman enchanted by Agatha into the Wolf Knight.",
+   "presence": "appears"
+  },
+  {
+   "name": "Syr Imodane",
+   "type": "character",
+   "aliases": [],
+   "description": "Captured by Agatha and Peter, nearly cooked in a stew.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kellan",
+   "type": "character",
+   "aliases": [],
+   "description": "Slew Agatha by pushing her into her cauldron.",
+   "presence": "appears"
+  },
+  {
+   "name": "Eldraine",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane of the witches.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Agatha, Eriette and Hylda help Talion cast the Wicked Slumber to end the New Phyrexian Invasion; Talion gives Agatha the Vile Cauldron.",
+   "participants": [
+    "Agatha",
+    "Eriette",
+    "Hylda",
+    "Talion",
+    "Vile Cauldron"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "helped the faerie Talion cast the Wicked Slumber to end the New Phyrexian Invasion"
+  },
+  {
+   "summary": "Agatha begins influencing forest animals from her cabin near Dunbarrow.",
+   "participants": [
+    "Agatha"
+   ],
+   "location": "Dunbarrow",
+   "importance": "minor",
+   "paragraph": 2,
+   "quote": "turning them more vicious and carnivorous"
+  },
+  {
+   "summary": "Agatha enchants the woodsman Peter into the Wolf Knight.",
+   "participants": [
+    "Agatha",
+    "Peter"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she enchanted the woodsman Peter , turning him into the Wolf Knight"
+  },
+  {
+   "summary": "With Peter's help Agatha captures Syr Imodane and prepares to cook her.",
+   "participants": [
+    "Agatha",
+    "Peter",
+    "Syr Imodane"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "she captured Syr Imodane and prepared to cook her into a stew"
+  },
+  {
+   "summary": "Kellan kills Agatha by pushing her into her cauldron.",
+   "participants": [
+    "Kellan",
+    "Agatha"
+   ],
+   "location": "Eldraine",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Kellan slew the witch by pushing her into her cauldron and boiling her alive."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agatha",
+   "relation": "family",
+   "target": "Eriette",
+   "note": "sisters",
+   "paragraph": 0,
+   "quote": "She was the sister of Eriette , Hylda"
+  },
+  {
+   "source": "Kellan",
+   "relation": "killed",
+   "target": "Agatha",
+   "note": "",
+   "paragraph": 3,
+   "quote": "Kellan slew the witch by pushing her into her cauldron and boiling her alive."
+  },
+  {
+   "source": "Peter",
+   "relation": "serves",
+   "target": "Agatha",
+   "note": "enchanted into the Wolf Knight",
+   "paragraph": 3,
+   "quote": "she enchanted the woodsman Peter , turning him into the Wolf Knight"
+  },
+  {
+   "source": "Talion",
+   "relation": "ally",
+   "target": "Agatha",
+   "note": "gave her the Vile Cauldron",
+   "paragraph": 2,
+   "quote": "Talion gave her the Vile Cauldron"
+  }
+ ],
+ "rejected": []
+}
