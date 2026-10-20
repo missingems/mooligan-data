@@ -1,0 +1,122 @@
+{
+ "page": "wiki/uro",
+ "url": "https://mtg.wiki/page/Uro",
+ "title": "Uro",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:53:50Z",
+ "storyline": "Theros",
+ "entities": [
+  {
+   "name": "Uro",
+   "type": "creature",
+   "aliases": [
+    "Uro, Titan of Nature's Wrath"
+   ],
+   "description": "The most solitary of the titans of Theros, at home on the ocean floor, sealed in the Underworld for eons.",
+   "presence": "appears"
+  },
+  {
+   "name": "Theros",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane where the gods and titans exist.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Titans",
+   "type": "faction",
+   "aliases": [],
+   "description": "Horrific primal urges made flesh that roamed the mortal realm before the gods.",
+   "presence": "appears"
+  },
+  {
+   "name": "Gods of Theros",
+   "type": "faction",
+   "aliases": [
+    "gods"
+   ],
+   "description": "Gods sprung from mortal devotion who sealed the titans in the Underworld.",
+   "presence": "appears"
+  },
+  {
+   "name": "Klothys",
+   "type": "deity",
+   "aliases": [],
+   "description": "God of fate who volunteered to act as jailer, sealing herself in the Underworld to keep the titans trapped.",
+   "presence": "appears"
+  },
+  {
+   "name": "Underworld",
+   "type": "location",
+   "aliases": [],
+   "description": "Where the titans are sealed.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "Mortals pray in their hour of need and from their devotion the gods spring forth.",
+   "participants": [
+    "Gods of Theros",
+    "Titans"
+   ],
+   "location": "Theros",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "From this concentrated devotion , sprang forth the gods themselves."
+  },
+  {
+   "summary": "The gods seal the titans away in the Underworld.",
+   "participants": [
+    "Gods of Theros",
+    "Titans",
+    "Uro"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "the gods sealed the titans away in the Underworld"
+  },
+  {
+   "summary": "Klothys volunteers as jailer, sequestering herself in the Underworld as the eternal seal.",
+   "participants": [
+    "Klothys",
+    "Titans"
+   ],
+   "location": "Underworld",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "volunteered to act as jailer and sequestered herself in the Underworld for eternity"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Gods of Theros",
+   "relation": "enemy",
+   "target": "Titans",
+   "note": "Sealed them in the Underworld",
+   "paragraph": 1,
+   "quote": "the gods sealed the titans away in the Underworld"
+  },
+  {
+   "source": "Klothys",
+   "relation": "other",
+   "target": "Titans",
+   "note": "Jailer of the titans",
+   "paragraph": 1,
+   "quote": "ensuring the titans remained trapped"
+  },
+  {
+   "source": "Uro",
+   "relation": "member_of",
+   "target": "Titans",
+   "note": "",
+   "paragraph": 0,
+   "quote": "Uro is the titan of Nature's Wrath, on the plane of Theros ."
+  }
+ ],
+ "rejected": []
+}

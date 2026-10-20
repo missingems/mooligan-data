@@ -1,0 +1,63 @@
+{
+ "page": "wiki/cave",
+ "url": "https://mtg.wiki/page/Cave",
+ "title": "Cave",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:53:51Z",
+ "storyline": "",
+ "entities": [
+  {
+   "name": "Atzal, Cave of Eternity",
+   "type": "location",
+   "aliases": [
+    "Atzal"
+   ],
+   "description": "A cave of Ixalan.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Catacombs of Shandalar",
+   "type": "location",
+   "aliases": [],
+   "description": "A cave of Shandalar.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Ixalan",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane with caves such as Atzal.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Shandalar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane with the Catacombs of Shandalar.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [],
+ "relations": [
+  {
+   "source": "Atzal, Cave of Eternity",
+   "relation": "located_in",
+   "target": "Ixalan",
+   "note": "Listed under Caves of Ixalan",
+   "paragraph": 14,
+   "quote": "Atzal, Cave of Eternity"
+  },
+  {
+   "source": "Catacombs of Shandalar",
+   "relation": "located_in",
+   "target": "Shandalar",
+   "note": "Listed under Caves of Shandalar",
+   "paragraph": 15,
+   "quote": "Catacombs of Shandalar"
+  }
+ ],
+ "rejected": []
+}

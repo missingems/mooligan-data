@@ -1,0 +1,168 @@
+{
+ "page": "wiki/cloudspire-racing-team",
+ "url": "https://mtg.wiki/page/Cloudspire_Racing_Team",
+ "title": "Cloudspire Racing Team",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:53:52Z",
+ "storyline": "Aetherdrift",
+ "entities": [
+  {
+   "name": "Cloudspire Racing Team",
+   "type": "faction",
+   "aliases": [],
+   "description": "A high-speed racing team from Kylem that won the first interplanar Ghirapur Grand Prix and competes again in the second.",
+   "presence": "appears"
+  },
+  {
+   "name": "Ghirapur Grand Prix",
+   "type": "event",
+   "aliases": [],
+   "description": "Interplanar race won by Cloudspire in its first running.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kylem",
+   "type": "location",
+   "aliases": [],
+   "description": "Home of the Cloudspire racers and engineers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Avishkar",
+   "type": "plane",
+   "aliases": [],
+   "description": "Plane to which the team immigrated after the Omenpaths opened.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Omenpaths",
+   "type": "concept",
+   "aliases": [],
+   "description": "Passages between planes whose opening led the team to immigrate.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aether Rangers",
+   "type": "faction",
+   "aliases": [],
+   "description": "Local Avishkari team, fired up by Cloudspire's victory.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Chandra Nalaar",
+   "type": "character",
+   "aliases": [
+    "Chandra"
+   ],
+   "description": "Racer and co-captain of Cloudspire in the second Grand Prix; planeswalker who joined to win the Aetherspark for Nissa.",
+   "presence": "appears"
+  },
+  {
+   "name": "Kolodin",
+   "type": "character",
+   "aliases": [],
+   "description": "Mechanic and co-captain of Cloudspire, previous year's sole captain.",
+   "presence": "appears"
+  },
+  {
+   "name": "Pia Nalaar",
+   "type": "character",
+   "aliases": [
+    "Pia"
+   ],
+   "description": "Chandra's mother, co-captain of the Aether Rangers.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Nissa",
+   "type": "character",
+   "aliases": [],
+   "description": "Chandra's lover, for whom she wants to win the Aetherspark.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Aetherspark",
+   "type": "artifact",
+   "aliases": [],
+   "description": "The prize Chandra wants to win for Nissa.",
+   "presence": "mentioned"
+  }
+ ],
+ "events": [
+  {
+   "summary": "The Cloudspire Racing Team surprises fans by winning the first interplanar Ghirapur Grand Prix.",
+   "participants": [
+    "Cloudspire Racing Team",
+    "Ghirapur Grand Prix",
+    "Aether Rangers"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 1,
+   "quote": "This team surprised fans by winning the very first interplanar Ghirapur Grand Prix"
+  },
+  {
+   "summary": "Chandra joins Cloudspire over the Aether Rangers, shocking the Avishkari public who expected her to join her mother Pia.",
+   "participants": [
+    "Chandra Nalaar",
+    "Pia Nalaar",
+    "Cloudspire Racing Team",
+    "Aether Rangers"
+   ],
+   "location": "Avishkar",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "Chandra's choice to join Cloudspire over the Aether Rangers sent shockwaves through the Avishkari public"
+  },
+  {
+   "summary": "Chandra and Kolodin become co-captains for the second Grand Prix, with Kolodin working to integrate her.",
+   "participants": [
+    "Chandra Nalaar",
+    "Kolodin",
+    "Cloudspire Racing Team"
+   ],
+   "location": "Avishkar",
+   "importance": "minor",
+   "paragraph": 3,
+   "quote": "Kolodin, ever the team player, has worked to integrate her into his squad with as little friction as possible."
+  }
+ ],
+ "relations": [
+  {
+   "source": "Chandra Nalaar",
+   "relation": "member_of",
+   "target": "Cloudspire Racing Team",
+   "note": "Co-captain",
+   "paragraph": 3,
+   "quote": "Cloudspire's co-captains in the second annual interplanar Ghirapur Grand Prix are racer Chandra Nalaar and mechanic Kolodin"
+  },
+  {
+   "source": "Kolodin",
+   "relation": "member_of",
+   "target": "Cloudspire Racing Team",
+   "note": "Co-captain",
+   "paragraph": 3,
+   "quote": "mechanic Kolodin , the latter being the previous year's sole captain"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "family",
+   "target": "Pia Nalaar",
+   "note": "Mother and daughter",
+   "paragraph": 3,
+   "quote": "join her mother Pia as co-captain of the home team"
+  },
+  {
+   "source": "Chandra Nalaar",
+   "relation": "romantic",
+   "target": "Nissa",
+   "note": "Lover",
+   "paragraph": 3,
+   "quote": "Chandra's desire to win the Aetherspark for her lover, Nissa , overrode other loyalties."
+  }
+ ],
+ "rejected": []
+}

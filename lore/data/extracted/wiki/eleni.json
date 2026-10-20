@@ -1,0 +1,128 @@
+{
+ "page": "wiki/eleni",
+ "url": "https://mtg.wiki/page/Eleni",
+ "title": "Eleni",
+ "story_date": "",
+ "model": "claude-sonnet-5-5 (Claude Code session)",
+ "prompt_version": 1,
+ "effort": null,
+ "extracted_at": "2026-10-20T02:53:52Z",
+ "storyline": "Shards of Alara",
+ "entities": [
+  {
+   "name": "Eleni",
+   "type": "character",
+   "aliases": [],
+   "description": "An elf of the Knotvine tribe from Naya who, stranded in Jund after the Conflux, became a tattooed berserker.",
+   "presence": "appears"
+  },
+  {
+   "name": "Naya",
+   "type": "location",
+   "aliases": [],
+   "description": "Paradise jungle Shard of Alara, Eleni's homeland.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Jund",
+   "type": "location",
+   "aliases": [],
+   "description": "Harsh volcanic Shard where Eleni was stranded.",
+   "presence": "appears"
+  },
+  {
+   "name": "Conflux",
+   "type": "event",
+   "aliases": [
+    "the Conflux"
+   ],
+   "description": "Event after which Eleni was stranded in Jund.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Knotvine tribe",
+   "type": "faction",
+   "aliases": [
+    "Knotvine"
+   ],
+   "description": "Naya tribe Eleni came from.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Progenitus",
+   "type": "creature",
+   "aliases": [],
+   "description": "Entity honored by an elvish monument whose relic Eleni used.",
+   "presence": "mentioned"
+  },
+  {
+   "name": "Undead wurm",
+   "type": "creature",
+   "aliases": [],
+   "description": "Creature Eleni destroyed with the relic of Progenitus.",
+   "presence": "appears"
+  },
+  {
+   "name": "Human warrior clan",
+   "type": "faction",
+   "aliases": [],
+   "description": "Jund warrior clan Eleni integrated into.",
+   "presence": "appears"
+  }
+ ],
+ "events": [
+  {
+   "summary": "After the Conflux, Eleni is stranded in the volcanic wilds of Jund far from her homeland.",
+   "participants": [
+    "Eleni",
+    "Conflux"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "After the Conflux , Eleni was stranded in the dangerous volcanic wilds of Jund"
+  },
+  {
+   "summary": "Eleni uses the relic of Progenitus to end an undead wurm's ability to resist death, so it withers to dust.",
+   "participants": [
+    "Eleni",
+    "Undead wurm",
+    "Progenitus"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 2,
+   "quote": "using the relic of Progenitus to end the wurm's supernatural ability to resist death"
+  },
+  {
+   "summary": "Eleni adapts to Jund, becoming a respected figure among the human warrior clan and negotiating with their leader.",
+   "participants": [
+    "Eleni",
+    "Human warrior clan"
+   ],
+   "location": "Jund",
+   "importance": "major",
+   "paragraph": 3,
+   "quote": "She became a respected figure among the human warrior clan, negotiating with their leader"
+  }
+ ],
+ "relations": [
+  {
+   "source": "Eleni",
+   "relation": "member_of",
+   "target": "Knotvine tribe",
+   "note": "Originally from it",
+   "paragraph": 2,
+   "quote": "Eleni was originally from the Knotvine tribe of Naya ."
+  },
+  {
+   "source": "Eleni",
+   "relation": "member_of",
+   "target": "Human warrior clan",
+   "note": "Integrated into their culture",
+   "paragraph": 3,
+   "quote": "adapt and integrate into the warrior culture of Jund"
+  }
+ ],
+ "rejected": []
+}
