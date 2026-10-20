@@ -511,13 +511,16 @@ def estimate_tokens(text: str) -> int:
 
 
 def _client():
-    """The Anthropic client, with the key from ANTHROPIC_API_KEY; None when it is not set."""
+    """The Anthropic client, with the key from ANTHROPIC_API_KEY and, for a key not scoped to one, the workspace from
+    ANTHROPIC_WORKSPACE_ID; None when the key is not set."""
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         return None
     import anthropic
 
-    return anthropic.Anthropic(api_key=key)
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    headers = {"anthropic-workspace-id": workspace} if workspace else None
+    return anthropic.Anthropic(api_key=key, default_headers=headers)
 
 
 def main(
