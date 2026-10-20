@@ -37,6 +37,7 @@ STATE_FILES = [
     "state/today-commanders.json",
     "state/localized.json.gz",
     "state/rules-keywords.json",
+    "state/set-art.json",
 ]
 
 
