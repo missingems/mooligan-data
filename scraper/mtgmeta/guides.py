@@ -26,6 +26,7 @@ from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 from .cards import slug as card_slug
+from .guide_combos import find, with_combos
 from .scryfall import HEADERS as SCRYFALL_HEADERS
 from .top import top_slugs
 
@@ -453,6 +454,7 @@ def run(
     force: bool = False,
     dry_run: bool = False,
     now: Optional[Callable[[], datetime]] = None,
+    find_combos: Optional[Callable[[dict], List[dict]]] = None,
 ) -> Result:
     """Asks for the guide of each commander whose input changed, writing each one and the state as it goes."""
     clock = now or (lambda: datetime.now(timezone.utc))
@@ -491,6 +493,8 @@ def run(
             log.error("Guide %s failed: %s: %s", slug, type(error).__name__, error)
             result.failed.append(slug)
             continue
+        if find_combos is not None:
+            guide = with_combos(guide, find_combos)
         for warning in warnings:
             log.warning("Guide %s: %s", slug, warning)
         if checker.dropped:
@@ -524,7 +528,12 @@ def _client():
 
 
 def main(
-    argv: Sequence[str], make_client: Callable[[], object] = _client, load_catalog=None, fetch_banned=banned_oracle_ids, fetch_oracle=oracle_text
+    argv: Sequence[str],
+    make_client: Callable[[], object] = _client,
+    load_catalog=None,
+    fetch_banned=banned_oracle_ids,
+    fetch_oracle=oracle_text,
+    find_combos: Callable[[dict], List[dict]] = find,
 ) -> int:
     parser = argparse.ArgumentParser(prog="python -m mtgmeta guides", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket; missing pages are read from DATA_URL")
@@ -555,7 +564,16 @@ def main(
             from .scryfall import card_catalog as load_catalog
         catalog, banned = load_catalog(), fetch_banned()
     result = run(
-        args.directory, slugs, source, client=client, catalog=catalog, banned=banned, fetch_oracle=fetch_oracle, force=args.force, dry_run=args.dry_run
+        args.directory,
+        slugs,
+        source,
+        client=client,
+        catalog=catalog,
+        banned=banned,
+        fetch_oracle=fetch_oracle,
+        force=args.force,
+        dry_run=args.dry_run,
+        find_combos=find_combos,
     )
 
     if args.dry_run:
