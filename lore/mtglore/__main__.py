@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "era-ingest", "build", "publish"])
+    parser.add_argument("step", choices=["scrape", "extract", "ingest", "prompt", "recheck", "bio-input", "bio-ingest", "scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall", "era-ingest", "build", "publish"])
     parser.add_argument("page", nargs="?", help='ingest, prompt: the page, as "stories/<slug>" or "profiles/<slug>"')
     parser.add_argument("raw", nargs="?", type=Path, help="ingest: a JSON file in the extraction schema")
     parser.add_argument("--model", default="claude-code-session", help="ingest: who made the extraction")
@@ -41,13 +41,15 @@ def main() -> int:
             logging.error("  %s", failure)
         return 1 if report["failed"] and not report["saved"] else 0
 
-    if args.step in ("scrape-cards", "scrape-archive", "scrape-wiki"):
+    if args.step in ("scrape-cards", "scrape-archive", "scrape-wiki", "scrape-scryfall"):
         from .extract import load_pages
-        from .sources import Fetcher, scrape_archive, scrape_cards, scrape_wiki
+        from .sources import Fetcher, scrape_archive, scrape_cards, scrape_scryfall, scrape_wiki
 
         fetcher = Fetcher(delay=float(os.environ.get("LORE_DELAY", "1.0")))
         if args.step == "scrape-cards":
             report = scrape_cards(fetcher, args.data)
+        elif args.step == "scrape-scryfall":
+            report = scrape_scryfall(fetcher, args.data)
         elif args.step == "scrape-archive":
             known = {page["title"].strip().lower() for page in load_pages(args.data).values()}
             minutes = float(os.environ.get("LORE_ARCHIVE_MINUTES", "300"))

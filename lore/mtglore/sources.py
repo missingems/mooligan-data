@@ -146,6 +146,56 @@ def scrape_cards(fetcher: Fetcher, directory: Path) -> dict:
     return {"sets": len(pages), "flavor_texts": sum(len(p["paragraphs"]) for p in pages.values())}
 
 
+# --- the card catalog the app keys lore to ---------------------------------------------------------------
+
+# Set types whose printings say nothing about where a card belongs in the story.
+_NO_STORY_SETS = {"token", "memorabilia", "minigame", "alchemy", "treasure_chest", "vanguard"}
+
+
+def _is_lore_card(type_line: str) -> bool:
+    """Cards that can depict a character, place or thing: legends, planeswalkers, planes and lands."""
+    return any(word in type_line for word in ("Legendary", "Planeswalker", "Plane ", "Plane—", "Phenomenon", "Land"))
+
+
+def scryfall_catalog(cards: Iterable[dict]) -> dict:
+    """Each lore card once, by Scryfall oracle_id, with the sets it was printed in; and every set."""
+    catalog: Dict[str, dict] = {}
+    sets: Dict[str, dict] = {}
+    for card in cards:
+        if card.get("lang", "en") != "en" or not card.get("oracle_id"):
+            continue
+        code = card["set"]
+        sets.setdefault(code, {"code": code, "name": card.get("set_name", code), "released": card.get("released_at", ""), "type": card.get("set_type", "")})
+        faces = card.get("card_faces") or [card]
+        type_line = card.get("type_line") or faces[0].get("type_line", "")
+        if card.get("layout") in ("token", "double_faced_token", "emblem", "art_series") or not _is_lore_card(type_line):
+            continue
+        entry = catalog.setdefault(card["oracle_id"], {
+            "oracle_id": card["oracle_id"],
+            "name": card.get("name", ""),
+            "faces": [face.get("name", "") for face in faces] if card.get("card_faces") else [],
+            "type_line": type_line,
+            "sets": {},
+        })
+        if card.get("set_type") not in _NO_STORY_SETS:
+            entry["sets"][code] = min(entry["sets"].get(code, "9999"), card.get("released_at", "") or "9999")
+    cards_out = []
+    for entry in catalog.values():
+        printed = sorted(entry["sets"].items(), key=lambda item: item[1])
+        cards_out.append({**entry, "sets": [code for code, _ in printed], "first_printed": printed[0][1] if printed else ""})
+    cards_out.sort(key=lambda c: c["name"])
+    return {"cards": cards_out, "sets": sorted(sets.values(), key=lambda s: (s["released"], s["code"]))}
+
+
+def scrape_scryfall(fetcher: Fetcher, directory: Path) -> dict:
+    catalog = scryfall_catalog(scryfall_cards(fetcher))
+    folder = directory / "scryfall"
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "cards.json").write_text(json.dumps(catalog["cards"], ensure_ascii=False, separators=(",", ":")) + "\n")
+    (folder / "sets.json").write_text(json.dumps(catalog["sets"], ensure_ascii=False, indent=1) + "\n")
+    return {"cards": len(catalog["cards"]), "sets": len(catalog["sets"])}
+
+
 # --- wizards.com on the Internet Archive ----------------------------------------------------------------
 
 # The story columns, by the URL prefix the Internet Archive knows them under.

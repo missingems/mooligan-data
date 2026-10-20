@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        source: [cards, archive, wiki]
+        source: [cards, archive, wiki, scryfall]
     defaults:
       run:
         working-directory: lore
@@ -41,7 +41,7 @@ jobs:
           # The Archive is slow: stop in time for the commit below, and let the next run carry on.
           LORE_ARCHIVE_MINUTES: "300"
         run: |
-          # sources.json can name the sources to run ("only"); without it, all three run.
+          # sources.json can name the sources to run ("only"); without it, all of them run.
           if jq -e --arg s "${{ matrix.source }}" '(.only // null) != null and (.only | index($s) | not)' sources.json > /dev/null; then
             echo "Skipping ${{ matrix.source }}: not in sources.json's only"; exit 0
           fi
