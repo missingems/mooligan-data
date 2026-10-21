@@ -79,6 +79,22 @@ class Edhrec:
                 log.warning("EDHREC: no top commanders for the %s window", window)
         return windows
 
+    def more_top_commanders(self, window: str = "30d", pages: int = 2) -> List[dict]:
+        """The ranked commanders after a window's first 100, `pages` more pages of 100, as `top_commanders` has them.
+
+        A page it cannot read ends the list there.
+        """
+        page = TOP_WINDOWS[window]
+        rows: List[dict] = []
+        for number in range(1, pages + 1):
+            time.sleep(self._delay)
+            more = _top_rows(self._json(f"{COMMANDER_URL}/{page}-past{page}-{number}.json"))
+            if not more:
+                log.warning("EDHREC: no commanders on page %d after the %s window's first", number, window)
+                break
+            rows += more
+        return rows
+
     def _json(self, url: str) -> Optional[dict]:
         request = urllib.request.Request(url, headers={"User-Agent": self._user_agent})
         try:
@@ -136,10 +152,14 @@ def _entry(body: dict, slug: str) -> Optional[dict]:
 
 
 def _top_rows(body: Optional[dict]) -> List[dict]:
-    """The ranked commanders of a top page, in rank order; a row with no deck count or slug is skipped."""
+    """The ranked commanders of a top page, in rank order; a row with no deck count or slug is skipped.
+
+    The first page of a window holds them in its container; the pages after it hold `cardviews` alone.
+    """
     cardlists = ((body or {}).get("container", {}).get("json_dict", {}).get("cardlists")) or [{}]
+    views = (body or {}).get("cardviews") if isinstance((body or {}).get("cardviews"), list) else cardlists[0].get("cardviews", [])
     rows: List[dict] = []
-    for view in cardlists[0].get("cardviews", []):
+    for view in views:
         if not isinstance(view.get("num_decks"), int) or not view.get("sanitized") or not view.get("name"):
             continue
         trend = view.get("trend_zscore")
@@ -244,13 +264,19 @@ def due_slugs(known: Dict[str, dict], wanted: Dict[str, str], limit: int) -> Lis
     return ordered[:limit]
 
 
-def due_commanders(known: Dict[str, dict], wanted: Dict[str, str], priority: Sequence[str], limit: int) -> List[Tuple[str, str]]:
-    """The commanders to refresh this run: the `priority` ones first, in the order given, then as `due_slugs` has it.
+def due_commanders(
+    known: Dict[str, dict], wanted: Dict[str, str], priority: Sequence[str], limit: int,
+    weekly: Sequence[str] = (), stale_before: str = "",
+) -> List[Tuple[str, str]]:
+    """The commanders to refresh this run: the `priority` ones first, in the order given, then the `weekly` ones last
+    checked before `stale_before` (or never), then as `due_slugs` has it.
 
-    A priority commander is read whether or not a card page names it, and the limit holds for both together.
+    A priority or weekly commander is read whether or not a card page names it, and the limit holds for all together.
     """
     if limit <= 0:
         return []
     first = list(dict.fromkeys(priority))[:limit]
+    stale = [slug for slug in dict.fromkeys(weekly) if slug not in first and known.get(slug, {}).get("checked_at", "") < stale_before]
+    first += stale[: limit - len(first)]
     rest = {key: slug for key, slug in wanted.items() if slug not in first}
     return [(slug, slug) for slug in first] + due_slugs(known, rest, limit - len(first))
