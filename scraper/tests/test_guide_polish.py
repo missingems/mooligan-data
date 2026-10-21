@@ -5,7 +5,13 @@ from mtgmeta import guide_polish
 GUIDE = {
     "slug": "atraxa", "name": "Atraxa, Praetors' Voice", "decks": 1000, "model": None,
     "styles": [{"id": "infect", "name": "Infect", "decks": 400, "brackets": [2, 3], "summary": "Templated.",
-                "cards": [{"name": "Blighted Agent", "role": "payoff"}], "lists": [{"level": 3, "combos": ["1-2"]}]}],
+                "cards": [{"name": "Blighted Agent", "role": "payoff"}],
+                "lists": [{"level": 2, "combos": [], "key_cards": [], "synergy": [], "win_lines": [], "plan": "Plan 2."},
+                          {"level": 3, "combos": ["1-2"], "key_cards": [{"name": "Tainted Strike"}],
+                           "synergy": [{"role": "draw", "name": "Card draw", "cards": [{"name": "Rhystic Study"}]}],
+                           "win_lines": [{"combo": "1-2", "pieces": [{"name": "A"}, {"name": "B"}], "result": "Infinite mana",
+                                          "outlet": [{"name": "Walking Ballista"}], "outlet_combo": None, "win": "Infinite damage", "speed": "slow"}],
+                           "plan": "Plan 3."}]}],
     "brackets": [{"level": level, "name": f"B{level}", "decks": 10, "summary": f"Bracket {level}.", "cards": [{"name": "Sol Ring"}]} for level in range(1, 6)],
     "combos": [{"id": "1-2", "bracket": 3, "cards": [{"name": "A"}, {"name": "B"}], "results": ["Infinite mana"]}],
 }
@@ -52,7 +58,19 @@ def polisher(client, wait_minutes=30):
 def test_the_facts_carry_the_styles_combos_and_brackets():
     facts = guide_polish.facts(GUIDE)
     assert "## Style infect: Infect" in facts and "Blighted Agent (payoff)" in facts
-    assert "Combo (bracket 3): A + B -> Infinite mana" in facts and "## Bracket 5: B5" in facts
+    assert "### Deck infect at bracket 3" in facts and "Key cards (what this bracket's deck adds): Tainted Strike" in facts
+    assert "Card draw: Rhystic Study" in facts and "Win line (slow): A + B -> Infinite mana -> outlet Walking Ballista -> Infinite damage" in facts
+    assert "Win lines: none (it wins through its payoffs and combat)" in facts and "## Bracket 5: B5" in facts
+
+
+def test_the_plans_are_written_per_deck_and_carried_over_with_the_rest():
+    answer = {"styles": [], "brackets": [], "plans": [{"style": "infect", "level": 3, "plan": "Ballista ends it."}]}
+    polished = guide_polish.apply(GUIDE, answer, "claude-sonnet-5-5")
+    assert [deck["plan"] for deck in polished["styles"][0]["lists"]] == ["Plan 2.", "Ballista ends it."]
+    carried = guide_polish.carry_over(GUIDE, polished)
+    assert [deck["plan"] for deck in carried["styles"][0]["lists"]] == ["Plan 2.", "Ballista ends it."]
+    fewer = {**GUIDE, "styles": [{**GUIDE["styles"][0], "lists": GUIDE["styles"][0]["lists"][:1]}]}
+    assert guide_polish.carry_over(fewer, polished) is None
 
 
 def test_one_batch_carries_every_guide_and_its_answers_replace_only_the_summaries():

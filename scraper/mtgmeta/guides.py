@@ -34,6 +34,7 @@ from .edhrec import COMMANDER_URL, _commander_entry as commander_entry
 from .guide_brackets import NAMES, Pool, Rules, counts, deck_bracket, find_pool, post_json
 from .guide_builder import BASICS, Candidate, Deck, fill, role
 from .guide_edhrec import Page, SubPages, published_page, read_sub_pages
+from .guide_lines import style_lines, win_of
 from .scryfall import HEADERS as SCRYFALL_HEADERS
 from .top import top_slugs
 from .top_brackets import bracket_slugs
@@ -42,7 +43,7 @@ log = logging.getLogger(__name__)
 
 SCHEMA = 1
 # Bumped whenever a change to the build would change a guide, so every guide is built again.
-GENERATOR = "data-2"
+GENERATOR = "data-3"
 STATE_PATH = "state/guides.json"
 POLISH_BATCH_PATH = "state/polish-batch.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
@@ -56,6 +57,13 @@ MIN_BRACKET_SHARE = 0.10
 MAX_STYLE_CARDS = 60
 MAX_BRACKET_CARDS = 30
 SIGNATURE_CARDS = 3
+KEY_CARDS = 8
+SYNERGY_CARDS = 5
+# The groups a deck's synergy is shown in, in this order: the builder's roles, EDHREC synergy ordering each.
+SYNERGY_GROUPS = (
+    ("engine", "Engines"), ("payoff", "Payoffs"), ("draw", "Card draw"), ("tutor", "Tutors"), ("ramp", "Ramp"),
+    ("protection", "Protection"), ("removal", "Removal"), ("counter", "Counterspells"), ("wipe", "Board wipes"),
+)
 REFRESH_DAYS = 7
 # Spellbook reads at most 600 cards besides the commanders.
 MAX_POOL = 600
@@ -273,6 +281,49 @@ def deck_json(level: int, deck: Deck, pool: Pool, commanders: Set[str], basic_pr
     }
 
 
+def inclusion(page: Optional[Page], base: Page, name: str) -> float:
+    if page is not None and name in page.cards:
+        return page.cards[name].inclusion
+    return base.cards[name].inclusion if name in base.cards else 0.0
+
+
+def key_cards(level: int, decks: Dict[int, Deck], base: Page, sub: SubPages, limit: int = KEY_CARDS) -> List[Candidate]:
+    """What sets a style's deck at `level` apart from its decks at the other levels.
+
+    A card every deck of the style plays is no key card. The rest are ordered by how much more the level's bracket
+    page plays them than the other levels' pages do on average (the commander's whole page stands in for a style
+    with one level), and a card no more played here is kept only when nothing is.
+    """
+    others = [other for other in decks if other != level]
+    everywhere = set.intersection(*({card.name for card in deck.cards} for deck in decks.values())) if others else set()
+    page = nearest_bracket(sub, level)
+    pages = [nearest_bracket(sub, other) for other in others]
+
+    def lift(card: Candidate) -> float:
+        there = sum(inclusion(other, base, card.name) for other in pages) / len(pages) if pages else inclusion(None, base, card.name)
+        return inclusion(page, base, card.name) - there
+
+    kept = [card for card in decks[level].cards if not card.is_land and card.name not in everywhere]
+    ordered = sorted(kept, key=lambda card: (-lift(card), -card.score, card.name))
+    lifted = [card for card in ordered if lift(card) > 0]
+    return (lifted or ordered)[:limit]
+
+
+def synergy_groups(deck: Deck, limit: int = SYNERGY_CARDS) -> List[dict]:
+    """The deck's cards with EDHREC synergy, grouped by what they do (their builder role), most synergy first."""
+    groups = []
+    for key, name in SYNERGY_GROUPS:
+        cards = sorted((card for card in deck.cards if card.role == key and card.synergy > 0), key=lambda card: (-card.synergy, card.name))
+        if cards:
+            groups.append({"role": key, "name": name, "cards": [card_json(card) for card in cards[:limit]]})
+    return groups
+
+
+def catalog_lookup(catalog: Dict[str, dict]) -> Callable[[str], Optional[dict]]:
+    """A card's catalog entry by name, the commander's too; a double-faced card by its front face."""
+    return lambda name: catalog.get(card_slug(name.split("//")[0].strip()))
+
+
 def build_deck(level: int, base: Page, theme: Page, sub: SubPages, resolver: Resolver, pool: Pool, commanders: Set[str], identity: Sequence[str]) -> Deck:
     rules = Rules(level, pool, commanders)
     return fill(
@@ -347,22 +398,37 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
     chosen = [(theme, themed) for theme in themes(page) if (themed := usable(sub.themes.get(theme["slug"]))) is not None]
     if not chosen:
         chosen = [({"slug": "", "name": "Average Deck", "decks": base.decks}, base)]
+    lookup = catalog_lookup(catalog)
     styles, used = [], set()
     for theme, themed in chosen:
         split = bracket_split(themed, base)
         levels = style_levels(split)
-        decks = [deck_json(level, build_deck(level, base, themed, sub, resolver, pool, commanders, identity), pool, commanders, prices) for level in levels]
+        built = {level: build_deck(level, base, themed, sub, resolver, pool, commanders, identity) for level in levels}
+        names = {level: {card.name for card in deck.cards} for level, deck in built.items()}
+        lines = style_lines(levels, {level: deck_combos(names[level], pool, commanders) for level in levels}, names, pool.combos, commanders, lookup)
+        decks = []
+        for level in levels:
+            deck = deck_json(level, built[level], pool, commanders, prices)
+            key = [card_json(card) for card in key_cards(level, built, base, sub)]
+            synergy = synergy_groups(built[level])
+            deck.update({
+                "key_cards": key,
+                "synergy": synergy,
+                "win_lines": lines[level],
+                "plan": guide_text.deck_plan(level, [card["name"] for card in key], synergy, lines[level]),
+            })
+            decks.append(deck)
         order = {card.name: index for index, card in enumerate(sorted(candidates(scores(base, themed, None), resolver), key=lambda card: (-card.score, -card.synergy, card.name)))}
         style_cards = sorted((card for card in decks[0]["cards"] if card["role"] != "land"), key=lambda card: order.get(card["name"], len(order)))
         combo_ids = {each for deck in decks for each in deck["combos"]}
-        combos = [combo for combo in pool.combos if combo["id"] in combo_ids]
         used |= combo_ids
+        first_line = next(((deck["level"], deck["win_lines"][0]) for deck in decks if deck["win_lines"]), None)
         styles.append({
             "id": theme["slug"] or card_slug(theme["name"]),
             "name": theme["name"],
             "summary": guide_text.style_summary(
                 page["name"], theme["name"], theme["decks"], base.decks, levels, most_played(split, levels),
-                signature(base, themed, resolver), combos[0] if combos else None,
+                signature(base, themed, resolver), first_line,
             ),
             "brackets": levels,
             "decks": theme["decks"],
@@ -393,7 +459,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
         "url": page.get("url"),
         "styles": styles,
         "brackets": brackets,
-        "combos": [combo for combo in pool.combos if combo["id"] in used],
+        "combos": [{**combo, "wins": win_of(combo["results"]) is not None} for combo in pool.combos if combo["id"] in used],
     }
 
 

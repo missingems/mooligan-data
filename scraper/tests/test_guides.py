@@ -45,6 +45,8 @@ add("Thassa's Oracle", "Creature — Merfolk Wizard", "When this enters, look at
 add("Demonic Consultation", "Instant", "Exile cards from the top of your library.", "B", 1.0, "{B}")
 add("Lightning Bolt", "Instant", "Lightning Bolt deals 3 damage to any target.", "R", 1.0, "{R}")
 add("Mana Crypt", "Artifact", "{T}: Add {C}{C}.", "", 0.0, "{0}")
+# A mana sink among the payoffs, for the win line of the infinite mana Payoff 3 and Payoff 4 make.
+CATALOG[guides.card_slug("Payoff 10")]["oracle_text"] = "{1}{B}: Each opponent loses 1 life."
 
 FILLERS = [entry["name"] for entry in CATALOG.values() if entry["name"].split()[0] in {job.title() for job in JOBS}]
 POWER = ["Demonic Tutor", "Vampiric Tutor", "Rhystic Study", "Smothering Tithe", "Cyclonic Rift", "Armageddon", "Time Warp",
@@ -91,12 +93,12 @@ PAGES = {
 }
 
 
-def combo(id, names, tag, two_card=False, popularity=100):
+def combo(id, names, tag, two_card=False, popularity=100, result="Win the game"):
     return {
         "combo": {
             "id": id, "status": "OK", "spoiler": False, "legalities": {"commander": True}, "bracketTag": tag, "popularity": popularity,
             "uses": [{"card": {"name": name, "oracleId": CATALOG[guides.card_slug(name)]["oracle_id"]}} for name in names],
-            "requires": [], "produces": [{"feature": {"name": "Win the game", "status": "S"}}],
+            "requires": [], "produces": [{"feature": {"name": result, "status": "S"}}],
         },
         "definitelyTwoCard": two_card, "arguablyTwoCard": two_card, "relevant": True,
     }
@@ -120,6 +122,7 @@ class Spellbook:
             "combos": [
                 combo("oracle-consult", ["Thassa's Oracle", "Demonic Consultation"], "R", two_card=True, popularity=900),
                 combo("casual-three", ["Payoff 0", "Payoff 1", "Payoff 2"], "E", popularity=50),
+                combo("payoff-mana", ["Payoff 3", "Payoff 4"], "P", popularity=500, result="Infinite colorless mana"),
             ],
         }
 
@@ -255,6 +258,36 @@ def test_the_five_brackets_name_what_sets_each_apart(tmp_path):
     # Bracket 1 has 5 decks, too few, so the nearest bracket with enough stands in, within bracket 1's rules.
     assert not {card["name"] for card in brackets[0]["cards"]} & set(CHANGERS)
     assert all(len(bracket["cards"]) <= 30 for bracket in brackets)
+
+
+def test_each_deck_has_its_key_cards_synergy_win_lines_and_plan(tmp_path):
+    build(tmp_path)
+    infect = guide(tmp_path)["styles"][0]
+    decks = {deck["level"]: deck for deck in infect["lists"]}
+
+    # Key cards set a bracket's deck apart: the Game Changers the Bracket 3 page plays, not the staples of every deck.
+    assert [card["name"] for card in decks[3]["key_cards"][:3]] == ["Demonic Tutor", "Rhystic Study", "Smothering Tithe"]
+    everywhere = set.intersection(*({card["name"] for card in deck["cards"]} for deck in decks.values()))
+    assert not everywhere & {card["name"] for deck in decks.values() for card in deck["key_cards"]}
+    assert decks[3]["synergy"][0] == {"role": "payoff", "name": "Payoffs", "cards": decks[3]["synergy"][0]["cards"]}
+    assert all(card["role"] == group["role"] for group in decks[3]["synergy"] for card in group["cards"])
+
+    # No lines at Bracket 2; slow ones at 3, the mana combo with the deck's own sink; the fast win at 4, not repeating 3's.
+    assert decks[2]["win_lines"] == [] and "casual-three" in decks[2]["combos"]
+    assert [(line["combo"], [card["name"] for card in line["outlet"]], line["speed"]) for line in decks[3]["win_lines"]] == [
+        ("casual-three", [], "slow"), ("payoff-mana", ["Payoff 10"], "slow"),
+    ]
+    assert decks[3]["win_lines"][1]["win"] == "Infinite lifeloss" and decks[3]["win_lines"][1]["result"] == "Infinite colorless mana"
+    assert [line["combo"] for line in decks[4]["win_lines"]] == ["oracle-consult"]
+    assert decks[2]["plan"].endswith("It wins through combat and value, with payoffs like Payoff 0 and Payoff 1.")
+    assert "It wins with Thassa's Oracle and Demonic Consultation (Win the game)." in decks[4]["plan"]
+    assert {combo["id"]: combo["wins"] for combo in guide(tmp_path)["combos"]} == {"oracle-consult": True, "payoff-mana": False, "casual-three": True}
+
+
+def test_the_style_summary_names_its_first_win_line_not_a_bracket_one_combo(tmp_path):
+    build(tmp_path)
+    summary = guide(tmp_path)["styles"][0]["summary"]
+    assert "From Bracket 3 it wins with Payoff 0, Payoff 1 and Payoff 2 (Win the game)." in summary and "Bracket 1" not in summary
 
 
 def test_a_guide_is_built_again_only_when_due(tmp_path):
