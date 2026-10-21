@@ -82,13 +82,11 @@ def card_note(role: str) -> str:
 
 
 def win_text(line: dict) -> str:
-    """ "Assembling A and B (Infinite colorless mana) and then C turns that into infinite damage"; an outright win names its result alone."""
-    pieces = listing([card["name"] for card in line["pieces"]])
-    result = line["result"].rstrip(".")
-    win = line["win"][0].lower() + line["win"][1:]
+    """ "It wins by assembling A and B (Infinite colorless mana). C then turns that into infinite damage."; an outright win names its result alone."""
+    text = f"It wins by assembling {listing([card['name'] for card in line['pieces']])} ({line['result'].rstrip('.')})."
     if line["outlet"]:
-        return f"assembling {pieces} ({result}) and then {listing([card['name'] for card in line['outlet']])} turns that into {win}"
-    return f"assembling {pieces} ({result})"
+        text += f" {listing([card['name'] for card in line['outlet']])} then turns that into {line['win'][0].lower() + line['win'][1:]}."
+    return text
 
 
 def deck_plan(level: int, key: Sequence[str], synergy: Sequence[dict], lines: Sequence[dict]) -> str:
@@ -100,7 +98,7 @@ def deck_plan(level: int, key: Sequence[str], synergy: Sequence[dict], lines: Se
     if leans:
         parts.append(f"It builds around {' and '.join(leans)}.")
     if lines:
-        parts.append(f"It wins by {win_text(lines[0])}.")
+        parts.append(win_text(lines[0]))
     else:
         payoffs = next((group for group in synergy if group["role"] == "payoff"), None)
         parts.append(

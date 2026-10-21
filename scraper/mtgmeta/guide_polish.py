@@ -32,7 +32,6 @@ MAX_TOKENS = 16000
 TOOL_NAME = "write_summaries"
 KEY_CARDS = 12
 ORACLE_CHARS = 200
-NOTE_CHARS = 70
 WAIT_MINUTES = 30
 POLL_SECONDS = 30
 # Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.

@@ -523,5 +523,5 @@ def test_a_plan_with_an_outlet_reads_as_complete_steps():
     plan = guide_text.deck_plan(4, ["Sol Ring"], [], [line])
     assert plan == (
         "What sets the Bracket 4 (Optimized) deck apart is Sol Ring. "
-        "It wins by assembling Hullbreaker Horror and Sol Ring (Infinite colorless mana) and then Walking Ballista turns that into infinite damage."
+        "It wins by assembling Hullbreaker Horror and Sol Ring (Infinite colorless mana). Walking Ballista then turns that into infinite damage."
     )
