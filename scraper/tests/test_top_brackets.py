@@ -148,7 +148,7 @@ def test_top_json_gets_each_brackets_ranked_commanders_beside_the_windows(tmp_pa
     }
     cedh = document["brackets"]["5"]
     # Etali is no candidate of brackets 1 to 4 here, but its EDHREC page is read to match EDHTop16's entry.
-    assert (cedh["name"], cedh["source"], cedh["window"], cedh["entries"]) == ("cEDH", "edhtop16", "3m", 1171)
+    assert (cedh["name"], cedh["source"], cedh["window"], cedh["entries"], cedh["decks"]) == ("cEDH", "edhtop16", "3m", 1171, 4142 + 2532)
     assert cedh["commanders"][0]["share"] == 89.8 and cedh["commanders"][0]["oracle_id"] is None
     assert "brackets" not in build_top(windows, NOW)
 

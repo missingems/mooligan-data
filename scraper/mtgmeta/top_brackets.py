@@ -250,7 +250,7 @@ def rank_cedh(rows: Sequence[dict], counts: Counts, limit: int = PER_BRACKET) ->
             "entries": row["entries"],
             "top_cuts": row["top_cuts"],
             "conversion_rate": row["conversion_rate"],
-            "decks": (entry.get("bracket_decks") or {}).get(str(CEDH)),
+            "decks": (entry.get("bracket_decks") or {}).get(str(CEDH)) or 0,
             "of_decks": entry.get("decks") or 0,
         })
         if len(ranked) == limit:

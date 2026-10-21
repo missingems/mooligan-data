@@ -84,6 +84,8 @@ def _bracket(level: int, block: dict, catalog: Dict[str, dict]) -> dict:
     measure = "entries" if block["source"] == "edhtop16" else "decks"
     total = sum(row[measure] or 0 for row in block["rows"])
     head = {"name": NAMES[level], "source": block["source"], **({"window": block["window"]} if block.get("window") else {}), measure: total}
+    # Every bracket has its EDHREC deck total, cEDH's beside its tournament entries.
+    head["decks"] = sum(row["decks"] for row in block["rows"])
     return {
         **head,
         "commanders": [
