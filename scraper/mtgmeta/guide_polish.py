@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 
 MODEL = "claude-sonnet-5-5"
 EFFORT = "low"
-MAX_TOKENS = 8000
+MAX_TOKENS = 12000
 TOOL_NAME = "write_summaries"
 KEY_CARDS = 12
 WAIT_MINUTES = 30
@@ -41,7 +41,7 @@ TOOL = {
     "input_schema": {
         "type": "object",
         "additionalProperties": False,
-        "required": ["styles", "brackets"],
+        "required": ["styles", "brackets", "plans"],
         "properties": {
             "styles": {
                 "type": "array",
@@ -61,30 +61,49 @@ TOOL = {
                     "properties": {"level": {"type": "integer"}, "summary": {"type": "string"}},
                 },
             },
+            "plans": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["style", "level", "plan"],
+                    "properties": {"style": {"type": "string"}, "level": {"type": "integer"}, "plan": {"type": "string"}},
+                },
+            },
         },
     },
 }
 
 SYSTEM = """You are an expert Magic: The Gathering Commander writer. You are given one commander's guide as facts read from EDHREC and Commander Spellbook, with a plain templated summary for each play style and each Commander Bracket.
 
-Call the write_summaries tool once, with a new summary for every style (by its id) and every bracket (by its level), and write nothing else.
+Call the write_summaries tool once, with a new summary for every style (by its id), every bracket (by its level) and every deck's plan (by its style id and level), and write nothing else.
 
-Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, its plan and how it wins; for a bracket, what the deck looks like at that power level. Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, card or statistic."""
+Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, its plan and how it wins; for a bracket, what the deck looks like at that power level. Each deck's plan is one or two sentences on how that style plays at that bracket and how it wins, from that deck's key cards, synergy groups and win lines. A win line wins as written: its pieces make the result, and its outlet, when it has one, turns that into the win. A deck with no win line wins through its payoffs and combat: never give it a combo. Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, outlet, card or statistic."""
 
 
 def facts(guide: dict) -> str:
     lines = [f"Commander: {guide['name']} ({guide.get('decks', 0):,} decks on EDHREC)", ""]
-    combos = {combo["id"]: combo for combo in guide.get("combos") or []}
     for style in guide.get("styles") or []:
         lines += [
             f"## Style {style['id']}: {style['name']}",
             f"Decks: {style.get('decks', 0):,}. Brackets: {', '.join(str(level) for level in style['brackets'])}.",
             "Key cards: " + ", ".join(f"{card['name']} ({card['role']})" for card in style["cards"][:KEY_CARDS]),
         ]
-        ids = list(dict.fromkeys(each for deck in style.get("lists") or [] for each in deck.get("combos") or []))
-        for combo in (combos[each] for each in ids if each in combos):
-            lines.append(f"Combo (bracket {combo['bracket']}): {' + '.join(card['name'] for card in combo['cards'])} -> {', '.join(combo['results'])}")
         lines += [f"Templated summary: {style['summary']}", ""]
+        for deck in style.get("lists") or []:
+            lines.append(f"### Deck {style['id']} at bracket {deck['level']}")
+            if deck.get("key_cards"):
+                lines.append("Key cards (what this bracket's deck adds): " + ", ".join(card["name"] for card in deck["key_cards"]))
+            for group in deck.get("synergy") or []:
+                lines.append(f"{group['name']}: " + ", ".join(card["name"] for card in group["cards"]))
+            for line in deck.get("win_lines") or []:
+                outlet = f" -> outlet {' + '.join(card['name'] for card in line['outlet'])}" if line["outlet"] else ""
+                lines.append(f"Win line ({line['speed']}): {' + '.join(card['name'] for card in line['pieces'])} -> {line['result']}{outlet} -> {line['win']}")
+            if not deck.get("win_lines"):
+                lines.append("Win lines: none (it wins through its payoffs and combat)")
+            if deck.get("plan"):
+                lines.append(f"Templated plan: {deck['plan']}")
+            lines.append("")
     for bracket in guide.get("brackets") or []:
         lines += [
             f"## Bracket {bracket['level']}: {bracket['name']}",
@@ -134,10 +153,16 @@ def apply(guide: dict, answer: dict, model: str) -> dict:
     """The guide with every summary Claude rewrote; a style or bracket it skipped keeps its templated one."""
     styles = {each.get("id"): str(each.get("summary") or "").strip() for each in answer.get("styles") or []}
     brackets = {each.get("level"): str(each.get("summary") or "").strip() for each in answer.get("brackets") or []}
+    plans = {(each.get("style"), each.get("level")): str(each.get("plan") or "").strip() for each in answer.get("plans") or []}
+
+    def style_of(style: dict) -> dict:
+        lists = [{**deck, "plan": plans.get((style["id"], deck["level"])) or deck.get("plan")} if "plan" in deck else deck for deck in style.get("lists") or []]
+        return {**style, "summary": styles.get(style["id"]) or style["summary"], **({"lists": lists} if "lists" in style else {})}
+
     return {
         **guide,
         "model": model,
-        "styles": [{**style, "summary": styles.get(style["id"]) or style["summary"]} for style in guide["styles"]],
+        "styles": [style_of(style) for style in guide["styles"]],
         "brackets": [{**bracket, "summary": brackets.get(bracket["level"]) or bracket["summary"]} for bracket in guide["brackets"]],
     }
 
@@ -148,11 +173,21 @@ def carry_over(guide: dict, previous: Optional[dict]) -> Optional[dict]:
         return None
     styles = {style["id"]: style.get("summary") for style in previous.get("styles") or []}
     brackets = {bracket["level"]: bracket.get("summary") for bracket in previous.get("brackets") or []}
-    if set(styles) != {style["id"] for style in guide["styles"]} or set(brackets) != {bracket["level"] for bracket in guide["brackets"]}:
+
+    def plans_of(document: dict) -> Dict[Tuple[str, int], Optional[str]]:
+        return {(style["id"], deck["level"]): deck.get("plan") for style in document.get("styles") or [] for deck in style.get("lists") or [] if "plan" in deck}
+
+    plans = plans_of(previous)
+    if (
+        set(styles) != {style["id"] for style in guide["styles"]}
+        or set(brackets) != {bracket["level"] for bracket in guide["brackets"]}
+        or set(plans) != set(plans_of(guide))
+    ):
         return None
     answer = {
         "styles": [{"id": key, "summary": value} for key, value in styles.items()],
         "brackets": [{"level": key, "summary": value} for key, value in brackets.items()],
+        "plans": [{"style": style, "level": level, "plan": value} for (style, level), value in plans.items()],
     }
     return apply(guide, answer, previous["model"])
 

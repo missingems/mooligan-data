@@ -1,7 +1,7 @@
 """The summaries of a data-built guide, written from its numbers by template."""
 from __future__ import annotations
 
-from typing import List, Optional, Sequence
+from typing import List, Optional, Sequence, Tuple
 
 from .guide_brackets import NAMES
 
@@ -31,8 +31,15 @@ def levels_text(levels: Sequence[int]) -> str:
     return f"Bracket {low}" if low == high else f"Brackets {low} to {high}"
 
 
-def combo_text(combo: dict) -> str:
-    return f"{listing([card['name'] for card in combo['cards']])} ({combo['results'][0].rstrip('.')})"
+def line_text(line: dict) -> str:
+    """ "A and B (Infinite colorless mana), cashed in by C for infinite damage"; an outright win names its result alone."""
+    text = f"{listing([card['name'] for card in line['pieces']])} ({line['result'].rstrip('.')})"
+    win = line["win"][0].lower() + line["win"][1:]
+    if line["outlet"]:
+        text += f", cashed in by {listing([card['name'] for card in line['outlet']])} for {win}"
+    elif win.lower() not in line["result"].lower():
+        text += f" for {win}"
+    return text
 
 
 def style_summary(
@@ -43,8 +50,10 @@ def style_summary(
     levels: Sequence[int],
     mode: Optional[int],
     signature: Sequence[str],
-    combo: Optional[dict],
+    line: Optional[Tuple[int, dict]],
 ) -> str:
+    """The style in a few lines: its share of the commander's decks, its signature cards, its brackets, and its first
+    win line at the lowest bracket that shows one."""
     who = short_name(commander)
     share = decks * 100 / total if total else 0
     parts = [
@@ -55,8 +64,28 @@ def style_summary(
         parts.append(f"It leans on {listing(signature)}.")
     played = f"It is played at {levels_text(levels)}"
     parts.append(f"{played}, most often {mode} ({NAMES[mode]})." if mode else f"{played}.")
-    if combo:
-        parts.append(f"Its most played combo, from Bracket {combo['bracket']}, is {combo_text(combo)}.")
+    if line:
+        level, shown = line
+        parts.append(f"From Bracket {level} it wins with {line_text(shown)}.")
+    return " ".join(parts)
+
+
+def deck_plan(level: int, key: Sequence[str], synergy: Sequence[dict], lines: Sequence[dict]) -> str:
+    """One deck in two or three sentences: what it adds at its bracket, what it leans on, and how it wins."""
+    parts = []
+    if key:
+        parts.append(f"At Bracket {level}, {NAMES[level]}, it adds {listing(key[:3])}.")
+    leans = [f"{group['name'][0].lower() + group['name'][1:]} such as {listing([card['name'] for card in group['cards'][:2]])}" for group in synergy[:2]]
+    if leans:
+        parts.append(f"It leans on {' and '.join(leans)}.")
+    if lines:
+        parts.append(f"It wins with {line_text(lines[0])}.")
+    else:
+        payoffs = next((group for group in synergy if group["role"] == "payoff"), None)
+        parts.append(
+            f"It wins through combat and value, with payoffs like {listing([card['name'] for card in payoffs['cards'][:2]])}."
+            if payoffs else "It wins through combat and value rather than a combo."
+        )
     return " ".join(parts)
 
 
