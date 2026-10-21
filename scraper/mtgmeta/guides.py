@@ -43,7 +43,7 @@ log = logging.getLogger(__name__)
 
 SCHEMA = 1
 # Bumped whenever a change to the build would change a guide, so every guide is built again.
-GENERATOR = "data-3"
+GENERATOR = "data-4"
 STATE_PATH = "state/guides.json"
 POLISH_BATCH_PATH = "state/polish-batch.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
@@ -262,6 +262,10 @@ def deck_combos(names: Set[str], pool: Pool, commanders: Set[str]) -> List[dict]
     return [combo for combo in pool.combos if {card["name"] for card in combo["cards"]} <= have]
 
 
+def noted_json(card: Candidate) -> dict:
+    return {**card_json(card), "note": guide_text.card_note(card.role)}
+
+
 def deck_json(level: int, deck: Deck, pool: Pool, commanders: Set[str], basic_prices: Dict[str, float]) -> dict:
     """One style's whole deck at one bracket; a spell that is a piece of one of its combos has the `combo` role."""
     names = {card.name for card in deck.cards}
@@ -315,7 +319,7 @@ def synergy_groups(deck: Deck, limit: int = SYNERGY_CARDS) -> List[dict]:
     for key, name in SYNERGY_GROUPS:
         cards = sorted((card for card in deck.cards if card.role == key and card.synergy > 0), key=lambda card: (-card.synergy, card.name))
         if cards:
-            groups.append({"role": key, "name": name, "cards": [card_json(card) for card in cards[:limit]]})
+            groups.append({"role": key, "name": name, "cards": [noted_json(card) for card in cards[:limit]]})
     return groups
 
 
@@ -409,7 +413,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
         decks = []
         for level in levels:
             deck = deck_json(level, built[level], pool, commanders, prices)
-            key = [card_json(card) for card in key_cards(level, built, base, sub)]
+            key = [noted_json(card) for card in key_cards(level, built, base, sub)]
             synergy = synergy_groups(built[level])
             deck.update({
                 "key_cards": key,
@@ -520,7 +524,7 @@ def apply_batch(directory: Path, source: Source, polisher: BatchPolisher, batch:
                 guide = source.read(guide_path(slug))
             except Exception as error:  # noqa: BLE001 - one guide must not stop the others
                 log.warning("Polish %s: its guide could not be read: %s", slug, error)
-        if not guide or polish_hash(guide) != batch.hashes.get(slug):
+        if not guide or polish_hash(guide, polisher.lookup) != batch.hashes.get(slug):
             log.info("Polish %s: its facts changed since the batch was sent; left for the next polish", slug)
             continue
         path = write_guide(directory, apply_polish(guide, answer, model))
@@ -590,6 +594,9 @@ def run(
     changer_ids = {card["oracle_id"] for card in game_changers}
     state_path = directory / STATE_PATH
     state: Dict[str, dict] = json.loads(state_path.read_text()) if state_path.exists() else {}
+    lookup = catalog_lookup(catalog)
+    if polish is not None:
+        polish.lookup = lookup
     result = Result()
     due: List[Tuple[str, dict, str]] = []
     for slug in slugs:
@@ -632,7 +639,7 @@ def run(
         if guide is None:
             result.failed.append(slug)
             continue
-        hashed = polish_hash(guide)
+        hashed = polish_hash(guide, lookup)
         before = state.get(slug) or {}
         entry = {"generator": GENERATOR, "fingerprint": digest, "built_at": guide["generated_at"], "decks": page.get("decks") or 0}
         if before.get("polish_hash") == hashed:

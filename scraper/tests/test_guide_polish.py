@@ -6,9 +6,9 @@ GUIDE = {
     "slug": "atraxa", "name": "Atraxa, Praetors' Voice", "decks": 1000, "model": None,
     "styles": [{"id": "infect", "name": "Infect", "decks": 400, "brackets": [2, 3], "summary": "Templated.",
                 "cards": [{"name": "Blighted Agent", "role": "payoff"}],
-                "lists": [{"level": 2, "combos": [], "key_cards": [], "synergy": [], "win_lines": [], "plan": "Plan 2."},
-                          {"level": 3, "combos": ["1-2"], "key_cards": [{"name": "Tainted Strike"}],
-                           "synergy": [{"role": "draw", "name": "Card draw", "cards": [{"name": "Rhystic Study"}]}],
+                "lists": [{"level": 2, "combos": [], "key_cards": [{"name": "Rhystic Study", "role": "draw", "note": "Card draw"}], "synergy": [], "win_lines": [], "plan": "Plan 2."},
+                          {"level": 3, "combos": ["1-2"], "key_cards": [{"name": "Tainted Strike", "role": "payoff", "note": "Payoff"}],
+                           "synergy": [{"role": "draw", "name": "Card draw", "cards": [{"name": "Rhystic Study", "role": "draw", "note": "Card draw"}]}],
                            "win_lines": [{"combo": "1-2", "pieces": [{"name": "A"}, {"name": "B"}], "result": "Infinite mana",
                                           "outlet": [{"name": "Walking Ballista"}], "outlet_combo": None, "win": "Infinite damage", "speed": "slow"}],
                            "plan": "Plan 3."}]}],
@@ -48,6 +48,12 @@ class BatchClient:
             content = [SimpleNamespace(type="thinking"), SimpleNamespace(type="tool_use", name="write_summaries", input=answer)]
             message = SimpleNamespace(stop_reason="tool_use", model="claude-sonnet-5-5", content=content, usage=usage)
             yield SimpleNamespace(custom_id=each["custom_id"], result=SimpleNamespace(type="succeeded", message=message))
+
+
+ORACLE = {
+    "Rhystic Study": {"oracle_text": "Whenever an opponent casts a spell, you may draw a card unless that player pays {1}. (Reminder.)"},
+    "Tainted Strike": {"oracle_text": "Target creature gets +1/+0 and gains infect until end of turn.\nDraw a card."},
+}
 
 
 def polisher(client, wait_minutes=30):
@@ -146,3 +152,37 @@ def test_the_strict_tool_schema_closes_every_object():
                 yield from objects(value)
 
     assert all(each.get("additionalProperties") is False for each in objects(guide_polish.TOOL["input_schema"]))
+
+
+def test_the_facts_list_each_key_and_synergy_card_once_with_its_role_and_trimmed_rules_text():
+    facts = guide_polish.facts(GUIDE, ORACLE.get)
+    cards = facts.split("## Cards (one note each)\n")[1].split("\n\n")[0].splitlines()
+    assert cards == [
+        "- Rhystic Study (draw): Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.",
+        "- Tainted Strike (payoff): Target creature gets +1/+0 and gains infect until end of turn. / Draw a card.",
+    ]
+    assert facts.count("Rhystic Study (draw)") == 1
+    assert "- Tainted Strike (payoff)" in guide_polish.facts(GUIDE)
+    assert len(guide_polish.oracle_text({"Long": {"oracle_text": "word " * 100}}.get, "Long")) <= guide_polish.ORACLE_CHARS + 3
+
+
+def test_a_note_is_written_once_and_lands_on_every_card_it_names():
+    answer = {"styles": [], "brackets": [], "plans": [], "notes": [{"name": "Rhystic Study", "note": "Taxes every spell they cast."}, {"name": "Unknown", "note": "Ignored."}]}
+    polished = guide_polish.apply(GUIDE, answer, "claude-sonnet-5-5")
+    decks = polished["styles"][0]["lists"]
+    assert decks[0]["key_cards"][0]["note"] == "Taxes every spell they cast."
+    assert decks[1]["synergy"][0]["cards"][0]["note"] == "Taxes every spell they cast."
+    assert decks[1]["key_cards"][0]["note"] == "Payoff"
+    assert guide_polish.carry_over(GUIDE, polished)["styles"][0]["lists"][1]["synergy"][0]["cards"][0]["note"] == "Taxes every spell they cast."
+
+
+def test_the_polish_hash_moves_with_the_rules_text_the_notes_are_written_from():
+    changed = {**ORACLE, "Rhystic Study": {"oracle_text": "Errata."}}
+    assert guide_polish.polish_hash(GUIDE, ORACLE.get) == guide_polish.polish_hash(GUIDE, ORACLE.get) != guide_polish.polish_hash(GUIDE, changed.get)
+
+
+def test_the_instructions_ask_for_short_notes_and_complete_plans_and_the_tool_takes_them():
+    system = guide_polish.SYSTEM
+    assert "at most 70 characters" in system and "a note for every card" in system
+    assert "no fragments" in system and "the same engine" in system
+    assert "notes" in guide_polish.TOOL["input_schema"]["required"]

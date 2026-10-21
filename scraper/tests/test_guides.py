@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta, timezone
 
-from mtgmeta import guide_polish, guides
+from mtgmeta import guide_polish, guide_text, guides
 
 from .test_guide_polish import BatchClient, polisher
 
@@ -279,8 +279,10 @@ def test_each_deck_has_its_key_cards_synergy_win_lines_and_plan(tmp_path):
     ]
     assert decks[3]["win_lines"][1]["win"] == "Infinite lifeloss" and decks[3]["win_lines"][1]["result"] == "Infinite colorless mana"
     assert [line["combo"] for line in decks[4]["win_lines"]] == ["oracle-consult"]
-    assert decks[2]["plan"].endswith("It wins through combat and value, with payoffs like Payoff 0 and Payoff 1.")
-    assert "It wins with Thassa's Oracle and Demonic Consultation (Win the game)." in decks[4]["plan"]
+    assert decks[3]["key_cards"][0]["note"] == "Tutor" and "note" not in decks[3]["cards"][0]
+    assert all(card["note"] == guide_text.card_note(group["role"]) for group in decks[3]["synergy"] for card in group["cards"])
+    assert decks[2]["plan"].endswith("It has no combo: it wins through combat and value, with payoffs like Payoff 0 and Payoff 1.")
+    assert "It wins by assembling Thassa's Oracle and Demonic Consultation (Win the game)." in decks[4]["plan"]
     assert {combo["id"]: combo["wins"] for combo in guide(tmp_path)["combos"]} == {"oracle-consult": True, "payoff-mana": False, "casual-three": True}
 
 
@@ -393,6 +395,22 @@ def test_the_runs_guides_are_polished_as_one_batch(tmp_path):
     assert result.polished == [SLUG] and len(client.created) == 1
 
 
+def test_the_batch_is_asked_for_the_notes_from_the_catalog_rules_text_and_writes_them(tmp_path):
+    def notes(custom_id, params):
+        names = [line[2:].split(" (")[0] for line in params["messages"][0]["content"].splitlines() if line.startswith("- ")]
+        return {**prose(custom_id, params), "notes": [{"name": name, "note": f"Job of {name}."} for name in names]}
+
+    client = BatchClient(notes)
+
+    build(tmp_path, polish=polisher(client))
+
+    content = client.created[0][0]["params"]["messages"][0]["content"]
+    assert "- Demonic Tutor (tutor): Search your library for a card." in content
+    deck = guide(tmp_path)["styles"][0]["lists"][1]
+    assert deck["key_cards"] and all(card["note"] == f"Job of {card['name']}." for card in deck["key_cards"])
+    assert all(card["note"].startswith("Job of ") for group in deck["synergy"] for card in group["cards"])
+
+
 def test_a_guide_rebuilt_with_the_same_facts_keeps_its_polish_without_asking(tmp_path):
     build(tmp_path, polish=polisher(BatchClient(prose)))
     client = BatchClient(prose)
@@ -498,3 +516,12 @@ def test_pages_missing_locally_come_from_the_live_site(tmp_path):
     live = guides.Source(tmp_path, "https://data.example/", lambda url: requested.append(url) or {"name": "live"})
     assert live.read(f"edh/commanders/{SLUG}.json") == {"name": "live"}
     assert requested == [f"https://data.example/edh/commanders/{SLUG}.json"]
+
+
+def test_a_plan_with_an_outlet_reads_as_complete_steps():
+    line = {"pieces": [{"name": "Hullbreaker Horror"}, {"name": "Sol Ring"}], "result": "Infinite colorless mana", "outlet": [{"name": "Walking Ballista"}], "win": "Infinite damage"}
+    plan = guide_text.deck_plan(4, ["Sol Ring"], [], [line])
+    assert plan == (
+        "What sets the Bracket 4 (Optimized) deck apart is Sol Ring. "
+        "It wins by assembling Hullbreaker Horror and Sol Ring (Infinite colorless mana). Walking Ballista then turns that into infinite damage."
+    )
