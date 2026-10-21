@@ -1,7 +1,8 @@
 """`guides --polish`: Claude rewrites data-built guides' summaries as prose, and changes nothing else.
 
 Claude is sent each guide's own facts (each style's decks, brackets, key cards and combos; each bracket's decks and the
-cards that set it apart) with the templated summaries, and returns new summaries through a tool. The cards, decks,
+cards that set it apart; once for each key or synergy card, its role and trimmed rules text) with the templated
+summaries, and returns new summaries, plans and one note per key or synergy card through a tool. The cards, decks,
 brackets and combos stay as the data made them.
 
 The guides of a run go to Claude as one Message Batch, at half the price of single calls: `BatchPolisher` submits it,
@@ -18,6 +19,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Callable, Dict, List, Optional, Tuple
@@ -26,9 +28,11 @@ log = logging.getLogger(__name__)
 
 MODEL = "claude-sonnet-5-5"
 EFFORT = "low"
-MAX_TOKENS = 12000
+MAX_TOKENS = 16000
 TOOL_NAME = "write_summaries"
 KEY_CARDS = 12
+ORACLE_CHARS = 200
+NOTE_CHARS = 70
 WAIT_MINUTES = 30
 POLL_SECONDS = 30
 # Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.
@@ -36,12 +40,12 @@ BATCH_PRICES = {MODEL: (1.00, 5.00, 1.25, 0.10)}
 
 TOOL = {
     "name": TOOL_NAME,
-    "description": "Records the rewritten summaries of the guide's play styles and brackets.",
+    "description": "Records the rewritten summaries of the guide's play styles and brackets, each deck's plan and a note for each card.",
     "strict": True,
     "input_schema": {
         "type": "object",
         "additionalProperties": False,
-        "required": ["styles", "brackets", "plans"],
+        "required": ["styles", "brackets", "plans", "notes"],
         "properties": {
             "styles": {
                 "type": "array",
@@ -70,19 +74,64 @@ TOOL = {
                     "properties": {"style": {"type": "string"}, "level": {"type": "integer"}, "plan": {"type": "string"}},
                 },
             },
+            "notes": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["name", "note"],
+                    "properties": {"name": {"type": "string"}, "note": {"type": "string"}},
+                },
+            },
         },
     },
 }
 
-SYSTEM = """You are an expert Magic: The Gathering Commander writer. You are given one commander's guide as facts read from EDHREC and Commander Spellbook, with a plain templated summary for each play style and each Commander Bracket.
+SYSTEM = """You are an expert Magic: The Gathering Commander writer. You are given one commander's guide as facts read from EDHREC and Commander Spellbook, with a plain templated summary for each play style and each Commander Bracket, and a list of the cards the decks feature with each one's role and rules text.
 
-Call the write_summaries tool once, with a new summary for every style (by its id), every bracket (by its level) and every deck's plan (by its style id and level), and write nothing else.
+Call the write_summaries tool once, with a new summary for every style (by its id), every bracket (by its level), every deck's plan (by its style id and level) and a note for every card in the Cards list (by its name), and write nothing else.
 
-Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, its plan and how it wins; for a bracket, what the deck looks like at that power level. Each deck's plan is one or two sentences on how that style plays at that bracket and how it wins, from that deck's key cards, synergy groups and win lines. A win line wins as written: its pieces make the result, and its outlet, when it has one, turns that into the win. A deck with no win line wins through its payoffs and combat: never give it a combo. Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, outlet, card or statistic."""
+Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, its plan and how it wins; for a bracket, what the deck looks like at that power level.
+
+Each deck's plan is one to three plain, complete sentences on how that style plays at that bracket and how it wins. Every sentence has a subject and a verb and reads on its own: no fragments, and no reference to something unspecified such as "the same engine" or "that package"; name the card or cards you mean. Explain how the deck wins in concrete steps (what it sets up, what that makes, what finishes the game), naming only cards listed for that deck. Take the winning step only from the deck's win lines: a win line wins as written, its pieces make the result and its outlet, when it has one, turns that into the win. A deck with no win line wins through its payoffs and combat: never give it a combo.
+
+Each card's note says, in at most 70 characters, what the card does in these decks: its job in the plan, or its part in a win line it is in. It is a short phrase, not the card's name and not its rules text copied, for example "Makes a token whenever you cast a noncreature spell" or "Sac outlet for the Ballista loop". Write it from the card's role, its rules text and the win lines it is in, and from nothing else.
+
+Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, outlet, card or statistic."""
 
 
-def facts(guide: dict) -> str:
+Lookup = Callable[[str], Optional[dict]]
+
+
+def oracle_text(lookup: Optional[Lookup], name: str) -> str:
+    """A card's rules text without reminder text, on one line and cut at ORACLE_CHARS."""
+    text = ((lookup or (lambda _: None))(name) or {}).get("oracle_text") or ""
+    text = " / ".join(line.strip() for line in re.sub(r"\s*\([^)]*\)", "", text).split("\n") if line.strip())
+    return text if len(text) <= ORACLE_CHARS else text[:ORACLE_CHARS].rstrip() + "..."
+
+
+def noted_cards(guide: dict) -> Dict[str, Optional[str]]:
+    """Each key or synergy card of the guide's decks once, by name, with its role."""
+    cards: Dict[str, Optional[str]] = {}
+    for style in guide.get("styles") or []:
+        for deck in style.get("lists") or []:
+            for card in deck.get("key_cards") or []:
+                cards.setdefault(card["name"], card.get("role"))
+            for group in deck.get("synergy") or []:
+                for card in group["cards"]:
+                    cards.setdefault(card["name"], card.get("role") or group.get("role"))
+    return cards
+
+
+def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
     lines = [f"Commander: {guide['name']} ({guide.get('decks', 0):,} decks on EDHREC)", ""]
+    cards = noted_cards(guide)
+    if cards:
+        lines.append("## Cards (one note each)")
+        for name, role in cards.items():
+            text = oracle_text(lookup, name)
+            lines.append(f"- {name} ({role or 'utility'})" + (f": {text}" if text else ""))
+        lines.append("")
     for style in guide.get("styles") or []:
         lines += [
             f"## Style {style['id']}: {style['name']}",
@@ -114,13 +163,13 @@ def facts(guide: dict) -> str:
     return "\n".join(lines)
 
 
-def polish_hash(guide: dict) -> str:
+def polish_hash(guide: dict, lookup: Optional[Lookup] = None) -> str:
     """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries."""
-    body = json.dumps({"model": MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide)}, sort_keys=True)
+    body = json.dumps({"model": MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide, lookup)}, sort_keys=True)
     return hashlib.sha256(body.encode()).hexdigest()[:16]
 
 
-def request(guide: dict) -> dict:
+def request(guide: dict, lookup: Optional[Lookup] = None) -> dict:
     """One guide's Messages request. The Batches API takes no fallbacks, and this model no forced tool choice, so the
     tool is offered (`auto`, strict) and the instructions ask for it."""
     return {
@@ -131,7 +180,7 @@ def request(guide: dict) -> dict:
         "tool_choice": {"type": "auto"},
         # The instructions are below the shortest prefix a cache holds, so the log's cache tokens stay 0 for now.
         "system": [{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
-        "messages": [{"role": "user", "content": facts(guide)}],
+        "messages": [{"role": "user", "content": facts(guide, lookup)}],
     }
 
 
@@ -154,9 +203,23 @@ def apply(guide: dict, answer: dict, model: str) -> dict:
     styles = {each.get("id"): str(each.get("summary") or "").strip() for each in answer.get("styles") or []}
     brackets = {each.get("level"): str(each.get("summary") or "").strip() for each in answer.get("brackets") or []}
     plans = {(each.get("style"), each.get("level")): str(each.get("plan") or "").strip() for each in answer.get("plans") or []}
+    notes = {each.get("name"): str(each.get("note") or "").strip() for each in answer.get("notes") or []}
+
+    def noted(card: dict) -> dict:
+        return {**card, "note": notes[card["name"]]} if notes.get(card["name"]) else card
+
+    def deck_of(style: dict, deck: dict) -> dict:
+        changes = {}
+        if "plan" in deck:
+            changes["plan"] = plans.get((style["id"], deck["level"])) or deck.get("plan")
+        if "key_cards" in deck:
+            changes["key_cards"] = [noted(card) for card in deck["key_cards"]]
+        if "synergy" in deck:
+            changes["synergy"] = [{**group, "cards": [noted(card) for card in group["cards"]]} for group in deck["synergy"]]
+        return {**deck, **changes}
 
     def style_of(style: dict) -> dict:
-        lists = [{**deck, "plan": plans.get((style["id"], deck["level"])) or deck.get("plan")} if "plan" in deck else deck for deck in style.get("lists") or []]
+        lists = [deck_of(style, deck) for deck in style.get("lists") or []]
         return {**style, "summary": styles.get(style["id"]) or style["summary"], **({"lists": lists} if "lists" in style else {})}
 
     return {
@@ -165,6 +228,15 @@ def apply(guide: dict, answer: dict, model: str) -> dict:
         "styles": [style_of(style) for style in guide["styles"]],
         "brackets": [{**bracket, "summary": brackets.get(bracket["level"]) or bracket["summary"]} for bracket in guide["brackets"]],
     }
+
+
+def noted_in(deck: dict):
+    """The (name, card) of a deck's key cards and synergy cards."""
+    for card in deck.get("key_cards") or []:
+        yield card["name"], card
+    for group in deck.get("synergy") or []:
+        for card in group["cards"]:
+            yield card["name"], card
 
 
 def carry_over(guide: dict, previous: Optional[dict]) -> Optional[dict]:
@@ -177,17 +249,23 @@ def carry_over(guide: dict, previous: Optional[dict]) -> Optional[dict]:
     def plans_of(document: dict) -> Dict[Tuple[str, int], Optional[str]]:
         return {(style["id"], deck["level"]): deck.get("plan") for style in document.get("styles") or [] for deck in style.get("lists") or [] if "plan" in deck}
 
+    def notes_of(document: dict) -> Dict[str, Optional[str]]:
+        return {name: card.get("note") for style in document.get("styles") or [] for deck in style.get("lists") or [] for name, card in noted_in(deck)}
+
     plans = plans_of(previous)
+    notes = notes_of(previous)
     if (
         set(styles) != {style["id"] for style in guide["styles"]}
         or set(brackets) != {bracket["level"] for bracket in guide["brackets"]}
         or set(plans) != set(plans_of(guide))
+        or set(notes) != set(notes_of(guide))
     ):
         return None
     answer = {
         "styles": [{"id": key, "summary": value} for key, value in styles.items()],
         "brackets": [{"level": key, "summary": value} for key, value in brackets.items()],
         "plans": [{"style": style, "level": level, "plan": value} for (style, level), value in plans.items()],
+        "notes": [{"name": name, "note": value} for name, value in notes.items() if value],
     }
     return apply(guide, answer, previous["model"])
 
@@ -241,15 +319,16 @@ class BatchPolisher:
     poll_seconds: float = POLL_SECONDS
     sleep: Callable[[float], None] = time.sleep
     clock: Callable[[], float] = time.monotonic
+    lookup: Optional[Lookup] = None
 
     def submit(self, guides: List[dict]) -> Batch:
         # A slug can pass the 64 characters a custom_id may have, so the requests are numbered.
         slugs = {f"g{index}": guide["slug"] for index, guide in enumerate(guides)}
         batch = self.client.messages.batches.create(
-            requests=[{"custom_id": custom_id, "params": request(guide)} for custom_id, guide in zip(slugs, guides)]
+            requests=[{"custom_id": custom_id, "params": request(guide, self.lookup)} for custom_id, guide in zip(slugs, guides)]
         )
         log.info("Polish: batch %s submitted with %d guides", batch.id, len(guides))
-        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide) for guide in guides})
+        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide, self.lookup) for guide in guides})
 
     def ended(self, batch: Batch) -> bool:
         return self.client.messages.batches.retrieve(batch.id).processing_status == "ended"

@@ -70,21 +70,42 @@ def style_summary(
     return " ".join(parts)
 
 
+ROLE_NOTES = {
+    "ramp": "Ramp", "draw": "Card draw", "removal": "Removal", "counter": "Counterspell", "wipe": "Board wipe",
+    "protection": "Protection", "tutor": "Tutor", "payoff": "Payoff", "engine": "Engine", "combo": "Combo piece", "utility": "Utility",
+}
+
+
+def card_note(role: str) -> str:
+    """The note of a key or synergy card before it is polished: what its builder role says it is."""
+    return ROLE_NOTES.get(role, "Utility")
+
+
+def win_text(line: dict) -> str:
+    """ "Assembling A and B (Infinite colorless mana) and then C turns that into infinite damage"; an outright win names its result alone."""
+    pieces = listing([card["name"] for card in line["pieces"]])
+    result = line["result"].rstrip(".")
+    win = line["win"][0].lower() + line["win"][1:]
+    if line["outlet"]:
+        return f"assembling {pieces} ({result}) and then {listing([card['name'] for card in line['outlet']])} turns that into {win}"
+    return f"assembling {pieces} ({result})"
+
+
 def deck_plan(level: int, key: Sequence[str], synergy: Sequence[dict], lines: Sequence[dict]) -> str:
-    """One deck in two or three sentences: what it adds at its bracket, what it leans on, and how it wins."""
+    """One deck in two or three plain sentences: what it adds at its bracket, what it leans on, and how it wins."""
     parts = []
     if key:
-        parts.append(f"At Bracket {level}, {NAMES[level]}, it adds {listing(key[:3])}.")
+        parts.append(f"What sets the Bracket {level} ({NAMES[level]}) deck apart is {listing(key[:3])}.")
     leans = [f"{group['name'][0].lower() + group['name'][1:]} such as {listing([card['name'] for card in group['cards'][:2]])}" for group in synergy[:2]]
     if leans:
-        parts.append(f"It leans on {' and '.join(leans)}.")
+        parts.append(f"It builds around {' and '.join(leans)}.")
     if lines:
-        parts.append(f"It wins with {line_text(lines[0])}.")
+        parts.append(f"It wins by {win_text(lines[0])}.")
     else:
         payoffs = next((group for group in synergy if group["role"] == "payoff"), None)
         parts.append(
-            f"It wins through combat and value, with payoffs like {listing([card['name'] for card in payoffs['cards'][:2]])}."
-            if payoffs else "It wins through combat and value rather than a combo."
+            f"It has no combo: it wins through combat and value, with payoffs like {listing([card['name'] for card in payoffs['cards'][:2]])}."
+            if payoffs else "It has no combo: it wins through combat and value."
         )
     return " ".join(parts)
 
