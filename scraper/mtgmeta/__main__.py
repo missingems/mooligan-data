@@ -32,6 +32,7 @@ from .scryfall import card_catalog
 from .scrape import ScrapeConfig, scrape
 from .store import SnapshotStore
 from .top import top_slugs, write_top
+from .top_brackets import bracket_slugs
 
 
 def _list(name: str, default: str):
@@ -68,44 +69,90 @@ def publish_premier(directory: Path, report) -> list:
     return ["premier/schedule.json"]
 
 
-def publish_top(directory: Path, report, top: dict, catalog: Optional[dict] = None) -> list:
-    """EDHREC's ranked top commanders of the past week and month, as edh/top.json.
+def published_bracket_slugs(data_url: str) -> list:
+    """The commanders the published edh/top.json ranks at a bracket, whose pages the commander refresh keeps a week fresh."""
+    from .guides import http_json
+
+    try:
+        return bracket_slugs(http_json(f"{data_url}/edh/top.json"))
+    except Exception:  # noqa: BLE001 - the refresh goes on without them
+        logging.warning("The published edh/top.json could not be read", exc_info=True)
+        return []
+
+
+def rank_brackets(directory: Path, report, edhrec: Edhrec, top: dict) -> dict:
+    """The 50 commanders most played at each Commander Bracket, for edh/top.json (see top_brackets.py).
+
+    Brackets 1 to 4 rank EDHREC's top 300 of the past month by their decks at the bracket; cEDH ranks EDHTop16's
+    tournament entries. Ranking fails soft: top.json is then written without `brackets`.
+    """
+    if not top:
+        return {}
+    from .guides import edhrec_json
+    from .top_brackets import rank_brackets as rank
+
+    try:
+        candidates = top_slugs(top) + [row["slug"] for row in edhrec.more_top_commanders("30d", pages=2)]
+        return rank(
+            directory, candidates, datetime.now(timezone.utc), fetch_edhrec=edhrec_json,
+            limit=int(os.environ.get("BRACKET_PAGES_PER_RUN", "150")), delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
+        )
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Bracket rankings failed", exc_info=True)
+        report.warnings.append(f"bracket rankings: {error}")
+        return {}
+
+
+def publish_top(directory: Path, report, top: dict, catalog: Optional[dict] = None, brackets: Optional[dict] = None) -> list:
+    """EDHREC's ranked top commanders of the past week and month, and each bracket's, as edh/top.json.
 
     `top` is what `Edhrec.top_commanders` read before `store.finish`. A window it could not read is left out, and when it
     read none the file stays published as it was.
     """
     try:
-        return write_top(directory, top, datetime.now(timezone.utc), catalog)
+        return write_top(directory, top, datetime.now(timezone.utc), catalog, brackets)
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
         logging.exception("EDHREC top commanders failed")
         report.errors.append(f"edhrec top commanders: {error}")
         return []
 
 
-def publish_guides(directory: Path, report, top: dict, catalog: Optional[dict], data_url: str) -> list:
+def publish_guides(directory: Path, report, top: dict, catalog: Optional[dict], data_url: str, brackets: Optional[dict] = None) -> list:
     """The commander guides of the top commanders, built from EDHREC and Commander Spellbook, as edh/commanders/{slug}/guide.json.
 
-    It reads the commander pages `store.finish` wrote this run (else the published ones at `data_url`) and builds the guides that
-    are due, at most GUIDES_PER_RUN of them, so a run asks EDHREC for a few dozen pages and the rest come round on later runs.
+    The commanders are the first GUIDES_TOP (100) of the windows and every one a bracket ranks. It reads the commander pages
+    `store.finish` wrote this run (else the published ones at `data_url`) and builds the guides that are due, at most
+    GUIDES_PER_RUN of them, so a run asks EDHREC for a few hundred pages and the rest come round on later runs. With
+    ANTHROPIC_API_KEY set, the guides whose facts changed are polished by Claude as one Message Batch (see guide_polish.py).
     A guide that fails stays published as it was; that is a warning, not an error, so the run passes.
     """
-    limit = int(os.environ.get("GUIDES_PER_RUN", "25"))
+    limit = int(os.environ.get("GUIDES_PER_RUN", "60"))
     if limit <= 0 or not catalog:
         return []
+    from .guide_polish import make_polisher
     from .guides import Source, run as build_guides
 
-    slugs = top_slugs(top)[: int(os.environ.get("GUIDES_TOP", "100"))]
+    ranked = [row["slug"] for _, block in sorted((brackets or {}).items()) for row in block["rows"]]
+    slugs = list(dict.fromkeys(top_slugs(top)[: int(os.environ.get("GUIDES_TOP", "100"))] + ranked))
+    try:
+        polish = make_polisher()
+    except Exception:  # noqa: BLE001 - the guides are still built, templated
+        logging.warning("The guide polisher could not be made", exc_info=True)
+        polish = None
+    if polish is None:
+        logging.info("Commander guides: not polished (no ANTHROPIC_API_KEY, or GUIDE_POLISH=0)")
     try:
         result = build_guides(
             directory, slugs, Source(directory, data_url), catalog, limit=limit, delay=float(os.environ.get("GUIDE_DELAY", "1.0")),
+            polish=polish,
         )
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
         logging.warning("Commander guides failed", exc_info=True)
         report.warnings.append(f"commander guides: {error}")
         return []
     logging.info(
-        "Commander guides: %d written, %d unchanged, %d left for the next run, %d failed",
-        len(result.written), len(result.unchanged), len(result.deferred), len(result.failed),
+        "Commander guides of %d commanders: %d written, %d unchanged, %d left for the next run, %d failed; %d polished, %d kept their polish",
+        len(slugs), len(result.written), len(result.unchanged), len(result.deferred), len(result.failed), len(result.polished), len(result.carried),
     )
     if result.failed:
         report.warnings.append(f"commander guides failed: {', '.join(result.failed)}")
@@ -405,8 +452,10 @@ def main() -> int:
         delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
     )
     commander_limit = int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150"))
-    # Read first: the commanders it ranks go to the front of the commander refresh below.
+    # Read first: the commanders it ranks go to the front of the commander refresh below, then those the last run's
+    # top.json ranked at a bracket, a week apart.
     top = edhrec.top_commanders() if commander_limit > 0 else {}
+    weekly = published_bracket_slugs(data_url) if commander_limit > 0 else []
     written = store.finish(
         fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
         fetch_edh=edhrec.cards,
@@ -416,10 +465,12 @@ def main() -> int:
         commander_limit=commander_limit,
         deck_resolve_limit=int(os.environ.get("DECK_RESOLVE_PER_RUN", "300")),
         priority_commanders=top_slugs(top),
+        weekly_commanders=weekly,
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
-    written += publish_top(args.directory, report, top, catalog)
-    written += publish_guides(args.directory, report, top, catalog, data_url)
+    brackets = rank_brackets(args.directory, report, edhrec, top)
+    written += publish_top(args.directory, report, top, catalog, brackets)
+    written += publish_guides(args.directory, report, top, catalog, data_url, brackets)
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)

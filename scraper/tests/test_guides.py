@@ -1,7 +1,9 @@
 import json
 from datetime import datetime, timedelta, timezone
 
-from mtgmeta import guides
+from mtgmeta import guide_polish, guides
+
+from .test_guide_polish import BatchClient, polisher
 
 NOW = datetime(2026, 10, 21, 14, 0, tzinfo=timezone.utc)
 SLUG = "atraxa-praetors-voice"
@@ -340,15 +342,60 @@ def test_a_page_published_before_it_had_themes_is_read_again_from_edhrec(tmp_pat
     assert [style["id"] for style in guide(tmp_path)["styles"]] == ["infect"]
 
 
-def test_polish_replaces_only_what_it_returns(tmp_path):
-    def polish(written):
-        return {**written, "model": "claude-test", "styles": [{**style, "summary": "Prose."} for style in written["styles"]]}
+def prose(custom_id, params):
+    return {"styles": [{"id": "infect", "summary": "Prose."}, {"id": "superfriends", "summary": "Prose."}], "brackets": []}
 
-    build(tmp_path, polish=polish)
+
+def test_the_runs_guides_are_polished_as_one_batch(tmp_path):
+    client = BatchClient(prose)
+
+    result = build(tmp_path, polish=polisher(client))
 
     written = guide(tmp_path)
-    assert written["model"] == "claude-test" and {style["summary"] for style in written["styles"]} == {"Prose."}
-    assert json.loads((tmp_path / "state" / "guides.json").read_text())[SLUG]["model"] == "claude-test"
+    assert written["model"] == "claude-sonnet-5-5" and {style["summary"] for style in written["styles"]} == {"Prose."}
+    assert written["brackets"][0]["summary"].startswith("5 of Atraxa's decks")
+    state = json.loads((tmp_path / "state" / "guides.json").read_text())[SLUG]
+    # The hash is of the templated guide's facts, the ones the batch was asked from.
+    assert state["model"] == "claude-sonnet-5-5" and state["polish_hash"] != guide_polish.polish_hash(written) and len(state["polish_hash"]) == 16
+    assert result.polished == [SLUG] and len(client.created) == 1
+
+
+def test_a_guide_rebuilt_with_the_same_facts_keeps_its_polish_without_asking(tmp_path):
+    build(tmp_path, polish=polisher(BatchClient(prose)))
+    client = BatchClient(prose)
+
+    result = build(tmp_path, polish=polisher(client), force=True)
+
+    assert client.created == [] and result.carried == [SLUG] and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+
+
+def test_a_guide_whose_facts_moved_is_polished_again(tmp_path):
+    build(tmp_path, polish=polisher(BatchClient(prose)))
+    setup(tmp_path, published(decks=1250))
+    client = BatchClient(prose)
+
+    build(tmp_path, polish=polisher(client), force=True)
+
+    assert len(client.created) == 1 and len(client.created[0]) == 1
+
+
+def test_a_batch_left_running_is_collected_by_the_next_run(tmp_path):
+    first = BatchClient(prose, statuses=("in_progress",))
+    build(tmp_path, polish=polisher(first, wait_minutes=1))
+    assert guide(tmp_path)["model"] is None
+    pending = json.loads((tmp_path / "state" / "polish-batch.json").read_text())["batches"]
+    assert [batch["slugs"] for batch in pending] == [{"g0": SLUG}]
+
+    first.statuses = ["ended"]
+    result = build(tmp_path, polish=polisher(first))
+
+    assert result.unchanged == [SLUG] and result.polished == [SLUG] and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+    assert not (tmp_path / "state" / "polish-batch.json").exists()
+
+
+def test_a_failed_batch_call_keeps_the_templated_guides(tmp_path):
+    result = build(tmp_path, polish=polisher(BatchClient(error=RuntimeError("overloaded"))))
+    assert result.written and guide(tmp_path)["model"] is None and result.polished == []
 
 
 def test_the_command_builds_the_top_commanders(tmp_path, capsys):
