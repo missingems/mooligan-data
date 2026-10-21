@@ -110,6 +110,7 @@ def request(guide: dict) -> dict:
         "output_config": {"effort": EFFORT},
         "tools": [TOOL],
         "tool_choice": {"type": "auto"},
+        # The instructions are below the shortest prefix a cache holds, so the log's cache tokens stay 0 for now.
         "system": [{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
         "messages": [{"role": "user", "content": facts(guide)}],
     }

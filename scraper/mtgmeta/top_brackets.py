@@ -270,6 +270,9 @@ def rank_brackets(
 ) -> Dict[int, dict]:
     """Each bracket's ranked commanders, as `top.build_top` takes them: {level: {"source", "rows"[, "window"]}}."""
     counts = Counts(directory, now, fetch_edhrec, limit=limit, delay=delay)
+    # cEDH first: its few pages must not wait behind the 300 candidates' on a run that reads many of those.
+    tournament = cached_edhtop16(directory, now, read_edhtop16)
+    cedh = rank_cedh(tournament, counts) if tournament else []
     known = {slug: entry for slug in dict.fromkeys(candidates) for entry in [counts.get(slug)] if entry}
     brackets: Dict[int, dict] = {}
     for level in NAMES:
@@ -278,8 +281,6 @@ def rank_brackets(
         rows = rank_by_decks(known, level)
         if rows:
             brackets[level] = {"source": "edhrec", "rows": rows}
-    tournament = cached_edhtop16(directory, now, read_edhtop16)
-    cedh = rank_cedh(tournament, counts) if tournament else []
     if cedh:
         brackets[CEDH] = {"source": "edhtop16", "window": EDHTOP16_WINDOW, "rows": cedh}
     else:

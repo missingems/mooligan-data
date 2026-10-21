@@ -403,6 +403,19 @@ def test_a_guide_the_left_batch_polished_is_not_sent_again_when_rebuilt(tmp_path
     assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == "claude-sonnet-5-5"
 
 
+def test_a_batch_whose_results_cannot_be_read_is_kept_for_the_next_run(tmp_path):
+    client = BatchClient(prose)
+    broken = polisher(client)
+    broken.collect = lambda batch: (_ for _ in ()).throw(OSError("connection reset"))
+    build(tmp_path, polish=broken)
+    assert guide(tmp_path)["model"] is None
+    assert [batch["id"] for batch in json.loads((tmp_path / "state" / "polish-batch.json").read_text())["batches"]] == ["batch-1"]
+
+    result = build(tmp_path, polish=polisher(client))
+
+    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+
+
 def test_a_commander_with_no_published_page_is_read_from_edhrec(tmp_path):
     body = edhrec_page(1000, INFECT, {"3": 400})
     body["container"]["json_dict"]["card"].update({"name": "Atraxa, Praetors' Voice", "color_identity": ["W", "U", "B", "G"]})

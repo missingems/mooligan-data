@@ -62,6 +62,13 @@ def test_brackets_one_to_four_rank_edhrecs_decks_and_cedh_ranks_tournament_entri
     ]
 
 
+def test_cedh_is_matched_before_the_candidates_use_up_the_runs_pages(tmp_path):
+    fetch = Fetch()
+    brackets = rank_brackets(tmp_path, ["atraxa", "krenko"], NOW, fetch_edhrec=fetch, read_edhtop16=lambda: EDHTOP16, limit=2, delay=0)
+    assert [row["slug"] for row in brackets[5]["rows"]] == ["kraum-ludevics-opus-tymna-the-weaver"]
+    assert fetch.urls[0] == f"{EDHREC}/kraum-ludevics-opus-tymna-the-weaver.json"
+
+
 def test_cedh_falls_back_to_edhrecs_counts_when_edhtop16_cannot_be_read(tmp_path):
     brackets = rank_brackets(tmp_path, ["atraxa", "krenko", "etali-primal-conqueror"], NOW, fetch_edhrec=Fetch(), read_edhtop16=lambda: None, delay=0)
     assert brackets[5]["source"] == "edhrec" and [row["slug"] for row in brackets[5]["rows"]] == ["etali-primal-conqueror", "atraxa", "krenko"]

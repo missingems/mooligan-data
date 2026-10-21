@@ -479,10 +479,12 @@ def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guid
                 apply_batch(directory, source, polisher, batch, {}, state, result)
             else:
                 running.append(batch)
-        except Exception as error:  # noqa: BLE001 - the templated guides stay
+        except Exception as error:  # noqa: BLE001 - the templated guides stay, and the paid batch is tried again
             log.warning("Polish: the batch %s left by an earlier run could not be read: %s", batch.id, error)
+            running.append(batch)
     guides = {slug: guide for slug, guide in guides.items() if slug not in result.polished}
     if guides:
+        batch = None
         try:
             batch = polisher.submit(list(guides.values()))
             if polisher.wait(batch):
@@ -491,6 +493,9 @@ def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guid
                 running.append(batch)
         except Exception as error:  # noqa: BLE001 - the templated guides stay
             log.warning("Polish failed, keeping the templated summaries: %s", error)
+            if batch is not None:
+                # Submitted and paid for: the next run reads its results again.
+                running.append(batch)
     if running:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps({"batches": [batch.json() for batch in running]}, indent=1))
