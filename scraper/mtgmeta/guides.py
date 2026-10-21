@@ -481,6 +481,7 @@ def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guid
                 running.append(batch)
         except Exception as error:  # noqa: BLE001 - the templated guides stay
             log.warning("Polish: the batch %s left by an earlier run could not be read: %s", batch.id, error)
+    guides = {slug: guide for slug, guide in guides.items() if slug not in result.polished}
     if guides:
         try:
             batch = polisher.submit(list(guides.values()))
@@ -528,6 +529,9 @@ def run(
             page = None
         if page and "themes" not in page:
             page = fresh_page(slug, page, fetch_edhrec)
+        elif not page:
+            # A commander ranked at a bracket before the refresh wrote its page.
+            page = fresh_page(slug, {}, fetch_edhrec)
         if not page or not page.get("name"):
             result.failed.append(slug)
             continue
@@ -542,6 +546,7 @@ def run(
     if limit is not None:
         result.deferred = [slug for slug, _, _ in due[limit:]]
         due = due[:limit]
+
     def save_state() -> None:
         state_path.parent.mkdir(parents=True, exist_ok=True)
         state_path.write_text(json.dumps(state, sort_keys=True, indent=1))

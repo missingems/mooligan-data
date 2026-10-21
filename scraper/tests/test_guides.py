@@ -393,6 +393,27 @@ def test_a_batch_left_running_is_collected_by_the_next_run(tmp_path):
     assert not (tmp_path / "state" / "polish-batch.json").exists()
 
 
+def test_a_guide_the_left_batch_polished_is_not_sent_again_when_rebuilt(tmp_path):
+    client = BatchClient(prose, statuses=("in_progress",))
+    build(tmp_path, polish=polisher(client, wait_minutes=1))
+    client.statuses = ["ended"]
+
+    result = build(tmp_path, polish=polisher(client), force=True)
+
+    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+
+
+def test_a_commander_with_no_published_page_is_read_from_edhrec(tmp_path):
+    body = edhrec_page(1000, INFECT, {"3": 400})
+    body["container"]["json_dict"]["card"].update({"name": "Atraxa, Praetors' Voice", "color_identity": ["W", "U", "B", "G"]})
+    body["tag_counts"] = [{"slug": "infect", "value": "Infect", "count": 400}]
+    fetch = Fetch({**PAGES, f"{EDHREC}/{SLUG}.json": body})
+
+    result = guides.run(tmp_path, [SLUG], source(tmp_path), CATALOG, fetch_edhrec=fetch, post_spellbook=Spellbook(), delay=0, now=lambda: NOW)
+
+    assert result.written and fetch.urls[0] == f"{EDHREC}/{SLUG}.json" and [style["id"] for style in guide(tmp_path)["styles"]] == ["infect"]
+
+
 def test_a_failed_batch_call_keeps_the_templated_guides(tmp_path):
     result = build(tmp_path, polish=polisher(BatchClient(error=RuntimeError("overloaded"))))
     assert result.written and guide(tmp_path)["model"] is None and result.polished == []
