@@ -24,7 +24,8 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    # The scrape and upload take about 85 minutes; the bracket rankings, commander guides and their polish add up to 30.
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
