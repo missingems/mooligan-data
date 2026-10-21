@@ -38,7 +38,7 @@ log = logging.getLogger(__name__)
 
 SCHEMA = 1
 # Bumped whenever a change to the build would change a guide, so every guide is built again.
-GENERATOR = "data-1"
+GENERATOR = "data-2"
 STATE_PATH = "state/guides.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
 EDHREC_USER_AGENT = "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"

@@ -160,7 +160,7 @@ def test_each_theme_with_enough_decks_is_a_play_style(tmp_path):
 
     assert result.written == [f"edh/commanders/{SLUG}/guide.json"] and not result.failed
     written = guide(tmp_path)
-    assert (written["schema"], written["slug"], written["name"], written["generator"], written["model"]) == (1, SLUG, "Atraxa, Praetors' Voice", "data-1", None)
+    assert (written["schema"], written["slug"], written["name"], written["generator"], written["model"]) == (1, SLUG, "Atraxa, Praetors' Voice", guides.GENERATOR, None)
     # Tiny has 12 decks, under the 30 a theme needs.
     assert [(style["id"], style["name"], style["decks"]) for style in written["styles"]] == [("infect", "Infect", 400), ("superfriends", "Superfriends", 200)]
     infect = written["styles"][0]
@@ -258,7 +258,7 @@ def test_the_five_brackets_name_what_sets_each_apart(tmp_path):
 def test_a_guide_is_built_again_only_when_due(tmp_path):
     build(tmp_path)
     state = json.loads((tmp_path / "state" / "guides.json").read_text())
-    assert state[SLUG]["generator"] == "data-1" and state[SLUG]["built_at"] == "2026-10-21T14:00:00Z" and state[SLUG]["decks"] == 1000
+    assert state[SLUG]["generator"] == guides.GENERATOR and state[SLUG]["built_at"] == "2026-10-21T14:00:00Z" and state[SLUG]["decks"] == 1000
 
     fetch = Fetch()
     assert build(tmp_path, fetch=fetch, now=NOW + timedelta(days=6)).unchanged == [SLUG] and fetch.urls == []

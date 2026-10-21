@@ -71,8 +71,10 @@ def included(deck: dict, post: Callable[[str, dict], dict] = post_json) -> List[
 def combos(variants: Iterable[dict], limit: Optional[int] = MAX_COMBOS) -> List[dict]:
     """The guide's combos from Spellbook's variants: the most played first, one per set of cards.
 
-    A variant can come wrapped as estimate-bracket returns it, `{"combo": variant, "definitelyTwoCard": …}`; a two-card
-    combo that wins or loops is then kept at bracket 3 or above, which the brackets' rules ask.
+    A combo of two pieces is two-card whatever Spellbook's flags say: it calls Hullbreaker Horror and Sol Ring neither
+    definitely nor arguably two-card, and tags it Exhibition. A variant can also come wrapped as estimate-bracket returns
+    it, `{"combo": variant, "definitelyTwoCard": …}`, and one it calls two-card there is one too. A two-card combo is
+    kept at bracket 3 or above, as the brackets allow none below.
     """
     kept, seen = [], set()
     entries = [each if "combo" in each else {"combo": each} for each in variants]
@@ -99,10 +101,10 @@ def combos(variants: Iterable[dict], limit: Optional[int] = MAX_COMBOS) -> List[
             "bracket": BRACKETS[tag],
             "bracket_tag": tag,
         }
-        if "definitelyTwoCard" in entry or "arguablyTwoCard" in entry:
-            combo["two_card"] = bool(entry.get("definitelyTwoCard") or entry.get("arguablyTwoCard"))
-            if combo["two_card"] and entry.get("relevant", True):
-                combo["bracket"] = max(combo["bracket"], TWO_CARD_COMBOS_FROM)
+        flagged = bool(entry.get("definitelyTwoCard") or entry.get("arguablyTwoCard"))
+        combo["two_card"] = len(cards) <= 2 or flagged
+        if len(cards) <= 2 or (flagged and entry.get("relevant", True)):
+            combo["bracket"] = max(combo["bracket"], TWO_CARD_COMBOS_FROM)
         kept.append(combo)
         if len(kept) == limit:
             break
