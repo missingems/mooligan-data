@@ -108,3 +108,14 @@ def test_the_commander_is_no_card_of_a_lines_count_or_mana_value():
     line = deck_lines([combo("solo", ["Jace", "Sol Ring"], ["Infinite colorless mana"])], [], {"Sol Ring", "Walking Ballista"}, {"Jace"}, LOOKUP)[0]
     assert (line.cards, line.mana_value) == (2, CARDS["Sol Ring"]["mana_value"] + CARDS["Walking Ballista"]["mana_value"])
     assert guide_lines.line_json(line, LOOKUP)["outlet"] == [{"name": "Walking Ballista", "oracle_id": CARDS["Walking Ballista"]["oracle_id"]}]
+
+
+def test_a_line_reads_as_pieces_result_outlet_and_win():
+    from mtgmeta.guide_text import line_text
+
+    bond = {"pieces": [{"name": "Sanguine Bond"}, {"name": "Exquisite Blood"}], "result": "Infinite lifegain triggers", "outlet": [], "win": "Infinite lifeloss"}
+    assert line_text(bond) == "Sanguine Bond and Exquisite Blood (Infinite lifegain triggers) for infinite lifeloss"
+    hull = {"pieces": [{"name": "Hullbreaker Horror"}, {"name": "Sol Ring"}], "result": "Infinite colorless mana", "outlet": [{"name": "Walking Ballista"}], "win": "Infinite damage"}
+    assert line_text(hull) == "Hullbreaker Horror and Sol Ring (Infinite colorless mana), cashed in by Walking Ballista for infinite damage"
+    oracle = {"pieces": [{"name": "Thassa's Oracle"}, {"name": "Demonic Consultation"}], "result": "Win the game", "outlet": [], "win": "Win the game"}
+    assert line_text(oracle) == "Thassa's Oracle and Demonic Consultation (Win the game)"

@@ -34,8 +34,11 @@ def levels_text(levels: Sequence[int]) -> str:
 def line_text(line: dict) -> str:
     """ "A and B (Infinite colorless mana), cashed in by C for infinite damage"; an outright win names its result alone."""
     text = f"{listing([card['name'] for card in line['pieces']])} ({line['result'].rstrip('.')})"
+    win = line["win"][0].lower() + line["win"][1:]
     if line["outlet"]:
-        text += f", cashed in by {listing([card['name'] for card in line['outlet']])} for {line['win'][0].lower() + line['win'][1:]}"
+        text += f", cashed in by {listing([card['name'] for card in line['outlet']])} for {win}"
+    elif win.lower() not in line["result"].lower():
+        text += f" for {win}"
     return text
 
 
