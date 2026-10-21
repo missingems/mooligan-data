@@ -24,7 +24,8 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    # The scrape and upload take about 85 minutes; the bracket rankings, commander guides and their polish add up to 30.
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,6 +43,10 @@ jobs:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          # Claude polishes the commander guides' summaries (one Message Batch a run). Without the secret the guides
+          # keep their templated summaries; the workspace id is only for a key not scoped to one workspace.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
           # The script publishes nothing unless told to, so a local run never does by accident.
           PUBLISH: "1"
           SYNC: r2

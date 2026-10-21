@@ -25,6 +25,8 @@ from .popular import build_popular_cards
 from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, EventSummary, Meta, to_document
 
 SCHEMA = 1
+# A commander edh/top.json ranks at a bracket, but not in its windows, has its page read again after this many days.
+WEEKLY_COMMANDER_DAYS = 7
 
 log = logging.getLogger(__name__)
 
@@ -197,6 +199,7 @@ class SnapshotStore:
         commander_limit: int = 0,
         deck_resolve_limit: int = 300,
         priority_commanders: Sequence[str] = (),
+        weekly_commanders: Sequence[str] = (),
     ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
@@ -207,7 +210,8 @@ class SnapshotStore:
         Magic has, keyed by slug, which gives pages their oracle id and widens
         the Commander refresh past the cards tournaments play.
         `fetch_commanders(slugs) -> {slug: entry}` reads at most `commander_limit`
-        commanders, `priority_commanders` first. Decklist entries
+        commanders, `priority_commanders` first, then the `weekly_commanders` not read
+        in a week (the ones edh/top.json ranks at a bracket). Decklist entries
         the catalog could not name are looked up again for at most
         `deck_resolve_limit` decks.
         """
@@ -286,7 +290,7 @@ class SnapshotStore:
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
         written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
-        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders)
+        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders, weekly_commanders)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
@@ -445,11 +449,16 @@ class SnapshotStore:
         log.info("Card pages: %d played, %d changed", len(pages), len(written))
         return ["cards/index.json"]
 
-    def _write_commander_pages(self, fetch_commanders, limit: int, catalog: Dict[str, dict], priority: Sequence[str] = ()) -> List[str]:
-        """Refreshes a slice of the commanders a card page names, `priority` ones first, and publishes their pages."""
+    def _write_commander_pages(
+        self, fetch_commanders, limit: int, catalog: Dict[str, dict], priority: Sequence[str] = (), weekly: Sequence[str] = (),
+    ) -> List[str]:
+        """Refreshes a slice of the commanders a card page names, `priority` ones first, then the stale `weekly` ones, and publishes their pages."""
         wanted = {slug: name for slug, name in self._wanted_commanders.items()}
-        if fetch_commanders and limit > 0 and (wanted or priority):
-            due = due_commanders({slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, priority, limit)
+        if fetch_commanders and limit > 0 and (wanted or priority or weekly):
+            due = due_commanders(
+                {slug: state for slug, state in self._commanders.items()}, {s: s for s in wanted}, priority, limit,
+                weekly=weekly, stale_before=_iso(self._now - timedelta(days=WEEKLY_COMMANDER_DAYS)),
+            )
             entries = fetch_commanders([slug for _, slug in due])
             for slug, entry in entries.items():
                 if not entry:

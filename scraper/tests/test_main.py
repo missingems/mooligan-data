@@ -66,3 +66,20 @@ def test_guides_build_the_top_commanders_up_to_the_runs_limit(monkeypatch, tmp_p
 
     monkeypatch.setenv("GUIDES_PER_RUN", "0")
     assert entry.publish_guides(tmp_path, report, top, {"x": {}}, "https://data.example") == [] and len(calls) == 1
+
+
+def test_guides_cover_the_top_commanders_and_every_one_a_bracket_ranks(monkeypatch, tmp_path):
+    from mtgmeta import guides
+    from mtgmeta.guides import Result
+
+    calls = []
+    monkeypatch.setattr(guides, "run", lambda directory, slugs, source, catalog, **options: calls.append((slugs, options["polish"])) or Result())
+    monkeypatch.setenv("GUIDES_TOP", "2")
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    top = {"7d": [{"slug": "a"}, {"slug": "b"}, {"slug": "c"}]}
+    brackets = {5: {"source": "edhtop16", "rows": [{"slug": "e"}, {"slug": "a"}]}, 2: {"source": "edhrec", "rows": [{"slug": "d"}]}}
+
+    entry.publish_guides(tmp_path, RunReport(), top, {"x": {}}, "https://data.example", brackets)
+
+    # No key, so no polisher: the guides are built and keep their templated summaries.
+    assert calls == [(["a", "b", "d", "e"], None)]

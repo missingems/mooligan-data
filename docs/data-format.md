@@ -789,7 +789,7 @@ A commander's play styles and what each of Wizards' five Commander Brackets look
   "slug": "atraxa-praetors-voice",
   "name": "Atraxa, Praetors' Voice",
   "generated_at": "2026-10-21T14:40:00Z",
-  "generator": "data-1",
+  "generator": "data-2",
   "model": null,
   "decks": 45745,
   "url": "https://edhrec.com/commanders/atraxa-praetors-voice",
@@ -850,16 +850,16 @@ A commander's play styles and what each of Wizards' five Commander Brackets look
 - **A card** has **`name`** and **`oracle_id`** as Scryfall's catalog has them (a double-faced card is named with both faces), and **`role`**, one of `land`, `ramp`, `draw`, `removal`, `counter`, `wipe`, `protection`, `tutor`, `payoff`, `engine`, `combo`, `utility`. The role is the app builder's reading of the card's rules text: the first of land, wipe, counter, removal, ramp, tutor, draw, protection, engine (a permanent with "whenever" or "at the beginning of"), payoff (a creature or planeswalker), else utility. In a deck of `lists`, a spell that is a piece of one of the deck's combos is `combo`.
 - **The bracket rules** (Wizards', October 2025), checked card by card as a deck is filled: no Game Changers at 1 and 2, at most three at 3; no mass land denial below 4; no extra turns at 1 and at most two at 2 and 3; and no card that completes a combo whose `bracket` is above the deck's. The Game Changers are `scraper/mtgmeta/game_changers.json`, by oracle id; which cards are mass land denial or extra turns, and which are banned, is Spellbook's estimate-bracket reading of the commander's whole card pool (at most 600 cards, the best by inclusion on any of its pages).
 - **`brackets`**: always five, levels **1** to **5** in order, with Wizards' names: 1 `Exhibition`, 2 `Core`, 3 `Upgraded`, 4 `Optimized`, 5 `cEDH`. **`decks`** is how many of the commander's decks are built for it. **`cards`** (at most 30) set it apart: the cards its decks play more than the commander's decks overall, most lifted first, within the bracket's rules (the nearest bracket page with 30 decks stands in for a smaller one). The app shows a style's deck at a level as the style's `cards` and these.
-- **`combos`**: the combos the guide's decks hold, from Spellbook's estimate-bracket on the commander's card pool, every one some deck of `lists` holds, the most played first, one per set of cards. A combo is kept when Spellbook marks it OK, not a spoiler, legal in Commander and not banned. **`id`** is Spellbook's variant id (`https://commanderspellbook.com/combo/{id}`). **`cards`** are its pieces, the commander among them when it is one, named and identified as Spellbook has them. **`requires`** names the other pieces it needs, as Spellbook's templates (`"Permanent Castable for {C}"`). **`results`** is what it makes, Spellbook's standalone and contextual features only. **`bracket_tag`** is Spellbook's own tag: `E` (Exhibition), `C` (Core), `O` (Oddball), `P` (Powerful), `S` (Spicy), `R` (Ruthless). **`bracket`** is the lowest bracket it is allowed at: from the tag, `E` 1, `C` and `O` 2, `P` and `S` 3, `R` 4, and at least 3 for a **`two_card`** combo (one Spellbook calls two-card, definitely or arguably), as the brackets allow none below 3. A style's combos are those its `lists` name. A guide written by `guide-combos` (below) has no `two_card`, and its `bracket` is the tag's alone.
-- **`summary`** of a style and of a bracket is written from these numbers by template. `python -m mtgmeta guides … --polish` has Claude (`claude-sonnet-5-5`) rewrite them as prose from the guide's own facts, and changes nothing else; **`model`** is then the model that wrote them, and `null` otherwise. **`generator`** names the build (`data-1`); a change to it rebuilds every guide. **`generated_at`** is when it was built. `name` and `decks` are EDHREC's, as on the commander's page.
+- **`combos`**: the combos the guide's decks hold, from Spellbook's estimate-bracket on the commander's card pool, every one some deck of `lists` holds, the most played first, one per set of cards. A combo is kept when Spellbook marks it OK, not a spoiler, legal in Commander and not banned. **`id`** is Spellbook's variant id (`https://commanderspellbook.com/combo/{id}`). **`cards`** are its pieces, the commander among them when it is one, named and identified as Spellbook has them. **`requires`** names the other pieces it needs, as Spellbook's templates (`"Permanent Castable for {C}"`). **`results`** is what it makes, Spellbook's standalone and contextual features only. **`bracket_tag`** is Spellbook's own tag: `E` (Exhibition), `C` (Core), `O` (Oddball), `P` (Powerful), `S` (Spicy), `R` (Ruthless). **`bracket`** is the lowest bracket it is allowed at: from the tag, `E` 1, `C` and `O` 2, `P` and `S` 3, `R` 4, and at least 3 for a **`two_card`** combo, as the brackets allow none below 3. A combo is `two_card` when it has two pieces (the commander counts as one), whatever Spellbook's flags say: Spellbook tags Hullbreaker Horror + Sol Ring `E` and does not call it two-card, but it is `bracket` 3. A combo Spellbook calls two-card (definitely or arguably) is `two_card` too. A style's combos are those its `lists` name.
+- **`summary`** of a style and of a bracket is written from these numbers by template, and then, on the daily run when the `ANTHROPIC_API_KEY` secret is set, rewritten by Claude (`claude-sonnet-5-5`) as prose from the guide's own facts, with nothing else changed; **`model`** is then the model that wrote them, and `null` for a templated guide. A guide can be published templated and polished by a later run (a day at most when the batch outlasts the run). A polish is asked for only when the guide's facts changed since its last one: a guide rebuilt with the same facts keeps its polished summaries. **`generator`** names the build (`data-2`); a change to it rebuilds every guide. **`generated_at`** is when it was built. `name` and `decks` are EDHREC's, as on the commander's page.
 - **The Game Changers** are kept in `scraper/mtgmeta/game_changers.json` (53 cards on 20 October 2026, read from Scryfall's `is:gamechanger`, which follows Wizards' list). Update it when Wizards changes the list; a change rebuilds every guide on its next run.
-- **When it is written.** Each daily run builds the guides of the first 100 commanders of [`edh/top.json`](#edhtopjson) (`GUIDES_TOP`) that are due, at most `GUIDES_PER_RUN` (25) a run, never built first and then the oldest: at most 10 EDHREC pages (up to 5 theme pages and the five bracket pages; the commander's own page is the one the run just wrote), `GUIDE_DELAY` (1) seconds apart, and one Spellbook call each. A guide is due when it was never built by this generator, a week after it was built, when the commander's themes or the Game Changers change, or when its decks have moved by a tenth. `state/guides.json` keeps, per slug, the `generator`, a `fingerprint` of the themes and Game Changers, `built_at`, the `decks` it was built from, and the `model` that polished it. A commander Spellbook cannot be read for this run is not built, and its published guide stays. `python -m mtgmeta guides DIR --top N` (or `--slug`) builds them by hand; `--force` builds them whether due or not. Guides of commanders that leave the top 100 are not removed.
+- **When it is written.** Each daily run builds the guides of the first 100 commanders of [`edh/top.json`](#edhtopjson)'s windows (`GUIDES_TOP`) and of every commander its `brackets` rank (about 200 together) that are due, at most `GUIDES_PER_RUN` (45) a run, never built first and then the oldest: at most 10 EDHREC pages (up to 5 theme pages and the five bracket pages; the commander's own page is the one the run just wrote), `GUIDE_DELAY` (1) seconds apart, and one Spellbook call each. A guide is due when it was never built by this generator, a week after it was built, when the commander's themes or the Game Changers change, or when its decks have moved by a tenth. `state/guides.json` keeps, per slug, the `generator`, a `fingerprint` of the themes and Game Changers, `built_at`, the `decks` it was built from, the `model` that polished it and the `polish_hash` of the facts it was polished from (the model, the instructions and the guide's facts). The run's polish is one Message Batch of the guides it built whose facts changed; the run waits for it up to `POLISH_WAIT_MINUTES` (15), and a batch still running is kept in `state/polish-batch.json` and written by the next run, if the guide's facts are still the ones it was asked from. A request that fails, or answers without the tool, leaves that guide templated. A commander Spellbook cannot be read for this run is not built, and its published guide stays. `python -m mtgmeta guides DIR --top N` (or `--slug`) builds them by hand, `--brackets` adds every commander `edh/top.json`'s brackets rank, `--limit` caps how many are built, `--polish` polishes them as one batch, and `--force` builds them whether due or not. Guides of commanders that leave the lists are not removed.
 - `python -m mtgmeta guide-combos DIR --top N` still adds find-my-combos combos to published AI-written guides, and leaves a guide with a `generator` as it is.
 - The card pool it is built from is EDHREC's data, used with their permission: credit them and link to the `url` of the guide and of each style.
 
 ## `edh/top.json`
 
-EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (`30d`), each with its share of the window. Each commander's `slug` is the one of its page, `edh/commanders/{slug}.json`; a run puts these commanders at the front of the commander refresh, so a commander listed here has a page.
+EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (`30d`), each with its share of the window, and the 50 commanders most played at each Commander Bracket (`brackets`). Each commander's `slug` is the one of its page, `edh/commanders/{slug}.json`; a run puts the windows' commanders at the front of the commander refresh, and reads the pages of the ones `brackets` ranks a week apart, so a commander listed here has a page.
 
 ```json
 {
@@ -883,6 +883,49 @@ EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (
       ]
     },
     "30d": { "decks": 291869, "commanders": [] }
+  },
+  "brackets": {
+    "3": {
+      "name": "Upgraded",
+      "source": "edhrec",
+      "decks": 61234,
+      "commanders": [
+        {
+          "rank": 1,
+          "slug": "atraxa-praetors-voice",
+          "name": "Atraxa, Praetors' Voice",
+          "decks": 5012,
+          "of_decks": 45745,
+          "share": 8.2,
+          "color_identity": ["W", "U", "B", "G"],
+          "oracle_id": "…",
+          "scryfall_id": "…"
+        }
+      ]
+    },
+    "5": {
+      "name": "cEDH",
+      "source": "edhtop16",
+      "window": "3m",
+      "entries": 10253,
+      "decks": 61870,
+      "commanders": [
+        {
+          "rank": 1,
+          "slug": "kraum-ludevics-opus-tymna-the-weaver",
+          "name": "Kraum, Ludevic's Opus // Tymna the Weaver",
+          "entries": 1051,
+          "top_cuts": 309,
+          "conversion_rate": 29.4,
+          "decks": 4142,
+          "of_decks": 12131,
+          "share": 10.3,
+          "color_identity": ["W", "U", "B", "R"],
+          "oracle_id": null,
+          "scryfall_id": null
+        }
+      ]
+    }
   }
 }
 ```
@@ -891,7 +934,11 @@ EDHREC's ranked top 100 commanders for the past week (`7d`) and the past month (
 - **`rank`** is EDHREC's, 1 the most played; the commanders are listed in rank order. **`trend`** is EDHREC's trend z-score, to one decimal (`null` when it has none).
 - **`color_identity`** (`W`, `U`, `B`, `R`, `G`, in that order; `[]` is colourless), **`oracle_id`** and **`scryfall_id`** are Scryfall's, looked up by name in the card catalog, and `null` for a name it does not know, or when the run could not load the catalog. A partner pair EDHREC lists as one commander ("Kraum, Ludevic's Opus // Tymna the Weaver") is no one card: its ids are `null` and its colour identity is both halves' together.
 - **A window that could not be read is left out of `windows`**; when neither could be, the file is not rewritten and the last one stays published. Decode `windows` keys as optional. A run with `EDHREC_COMMANDERS_PER_RUN=0` does not read EDHREC for it either.
-- It is listed in `explore-manifest.json`. **This is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page.**
+- **`brackets`** has a key per Commander Bracket, `"1"` to `"5"`, each with Wizards' **`name`** (`Exhibition`, `Core`, `Upgraded`, `Optimized`, `cEDH`) and up to 50 **`commanders`**, most played first. A bracket that could not be ranked this run is left out, and `brackets` itself is missing when none could be (or from a file written before it existed): decode both as optional. The keys are strings, as JSON's must be.
+  - **Brackets 1 to 4** (`source` `edhrec`) rank EDHREC's top 300 commanders of the past month by **`decks`**, how many of each one's decks their builders put at that bracket, out of its **`of_decks`** decks on EDHREC (most decks give no bracket, so the levels do not add up to `of_decks`). The bracket's **`decks`** is the sum of its commanders', and a commander's **`share`** its `decks` as a percent of that, to one decimal. EDHREC's counts are over every deck it has for the commander, not only the past month's; the past month picks which commanders are ranked. Bracket 1 counts are small (tens of decks), so its order is noisy.
+  - **Bracket 5** (`source` `edhtop16`) ranks the commanders of competitive tournaments by **`entries`**, their decks entered at [EDHTop16](https://edhtop16.com)'s events of 30 or more players in the past three months (**`window`** `3m`), with **`top_cuts`** and **`conversion_rate`** (the percent of entries that made the top cut, to one decimal). The bracket's **`entries`** is the sum of its commanders', and `share` is of that. A commander's **`decks`** and **`of_decks`** are EDHREC's Bracket 5 and total counts for it (`decks` 0 when EDHREC gives none), and the bracket's `decks` is the sum of its commanders' `decks`, so every bracket has a `decks` total. EDHREC's Bracket 5 counts are what builders call their own decks, so they rank popular casual commanders beside cEDH ones (Etali, Primal Conqueror has 2,532 "cEDH" decks on EDHREC and about 40 tournament entries a month); tournament results are what cEDH players do play. A commander EDHTop16 lists that EDHREC has no page for is left out. When EDHTop16 cannot be read (and no read of the past week is cached), Bracket 5 is ranked like the others, by EDHREC's counts, with `source` `edhrec` and no `window` or `entries`.
+  - A commander's `name` is EDHREC's (a partner pair is "A // B"), and its ids and colour identity are found as for the windows.
+- It is listed in `explore-manifest.json`. **This is EDHREC's data, used with their permission: credit them and link to the commander's `url` on its page. Bracket 5 with `source` `edhtop16` is EDHTop16's tournament data: credit EDHTop16 and link to https://edhtop16.com.**
 
 ## `locator/{place}.json`
 

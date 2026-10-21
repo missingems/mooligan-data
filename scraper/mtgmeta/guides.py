@@ -4,11 +4,13 @@ Each play style is one of EDHREC's themes for the commander, with its own cards 
 whole deck for every bracket it is played at, filled by the Mooligan app's builder rules (guide_builder.py) from
 EDHREC's inclusion rates under that bracket's rules (guide_brackets.py), and the Commander Spellbook combos that deck
 holds. Prices are Scryfall's, from the card catalog. The summaries are templates over those numbers (guide_text.py);
-`--polish` has Claude rewrite them as prose (guide_polish.py), and is the only part that needs ANTHROPIC_API_KEY.
+`--polish` has Claude rewrite them as prose through one Message Batch a run (guide_polish.py), and is the only part
+that needs ANTHROPIC_API_KEY. A guide rebuilt with the same facts keeps its last polish rather than being sent again.
 
-The daily scrape runs it for the commanders of `edh/top.json`, a few a run. `state/guides.json` remembers what each
-guide was built from, so a commander is read again only when its themes change, its decks move by a tenth, or its
-guide is a week old. `python -m mtgmeta guides DIR --top 5` runs it by hand. See docs/data-format.md.
+The daily scrape runs it for the commanders of `edh/top.json` (the first 100 of its windows and every one its brackets
+rank), a few dozen a run. `state/guides.json` remembers what each guide was built from, so a commander is read again
+only when its themes change, its decks move by a tenth, or its guide is a week old. `python -m mtgmeta guides DIR --top 5`
+runs it by hand. See docs/data-format.md.
 """
 from __future__ import annotations
 
@@ -26,6 +28,7 @@ from pathlib import Path
 from typing import Callable, Dict, List, Optional, Sequence, Set, Tuple
 
 from . import guide_text
+from .guide_polish import Batch, BatchPolisher, apply as apply_polish, carry_over, polish_hash
 from .cards import slug as card_slug
 from .edhrec import COMMANDER_URL, _commander_entry as commander_entry
 from .guide_brackets import NAMES, Pool, Rules, counts, deck_bracket, find_pool, post_json
@@ -33,13 +36,15 @@ from .guide_builder import BASICS, Candidate, Deck, fill, role
 from .guide_edhrec import Page, SubPages, published_page, read_sub_pages
 from .scryfall import HEADERS as SCRYFALL_HEADERS
 from .top import top_slugs
+from .top_brackets import bracket_slugs
 
 log = logging.getLogger(__name__)
 
 SCHEMA = 1
 # Bumped whenever a change to the build would change a guide, so every guide is built again.
-GENERATOR = "data-1"
+GENERATOR = "data-2"
 STATE_PATH = "state/guides.json"
+POLISH_BATCH_PATH = "state/polish-batch.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
 EDHREC_USER_AGENT = "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"
 
@@ -97,9 +102,11 @@ class Source:
         return self._fetch(f"{self._data_url}/{path}")
 
 
-def commander_slugs(top: Optional[dict], count: int) -> List[str]:
+def commander_slugs(top: Optional[dict], count: int, brackets: bool = False) -> List[str]:
+    """The first `count` commanders of top.json's windows, and with `brackets` every one its brackets rank after them."""
     windows = {window: body.get("commanders", []) for window, body in ((top or {}).get("windows") or {}).items()}
-    return top_slugs(windows)[:count]
+    first = top_slugs(windows)[:count]
+    return list(dict.fromkeys(first + bracket_slugs(top))) if brackets else first
 
 
 def commander_names(name: str) -> List[str]:
@@ -421,6 +428,79 @@ class Result:
     unchanged: List[str] = field(default_factory=list)
     failed: List[str] = field(default_factory=list)
     deferred: List[str] = field(default_factory=list)
+    polished: List[str] = field(default_factory=list)
+    carried: List[str] = field(default_factory=list)
+
+
+def guide_path(slug: str) -> str:
+    return f"edh/commanders/{slug}/guide.json"
+
+
+def write_guide(directory: Path, guide: dict) -> str:
+    path = guide_path(guide["slug"])
+    target = directory / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(guide, ensure_ascii=False, separators=(",", ":")))
+    return path
+
+
+def apply_batch(directory: Path, source: Source, polisher: BatchPolisher, batch: Batch, guides: Dict[str, dict], state: Dict[str, dict], result: Result) -> None:
+    """Writes each guide of an ended batch with Claude's summaries, if its facts are still the ones it was asked from."""
+    collected = polisher.collect(batch)
+    for slug, (answer, model) in sorted(collected.answers.items()):
+        guide = guides.get(slug)
+        if guide is None:
+            try:
+                guide = source.read(guide_path(slug))
+            except Exception as error:  # noqa: BLE001 - one guide must not stop the others
+                log.warning("Polish %s: its guide could not be read: %s", slug, error)
+        if not guide or polish_hash(guide) != batch.hashes.get(slug):
+            log.info("Polish %s: its facts changed since the batch was sent; left for the next polish", slug)
+            continue
+        path = write_guide(directory, apply_polish(guide, answer, model))
+        if path not in result.written:
+            result.written.append(path)
+        state.setdefault(slug, {}).update({"model": model, "polish_hash": batch.hashes[slug]})
+        result.polished.append(slug)
+
+
+def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guides: Dict[str, dict], state: Dict[str, dict], result: Result) -> None:
+    """Collects the batches earlier runs left running, then polishes this run's guides as one batch and waits for it.
+
+    A batch still running when the wait is over is kept in `state/polish-batch.json` for the next run. A failed call
+    leaves the guides templated; it never fails the run.
+    """
+    path = directory / POLISH_BATCH_PATH
+    pending = [Batch.of(body) for body in (json.loads(path.read_text()).get("batches") or [] if path.exists() else [])]
+    running: List[Batch] = []
+    for batch in pending:
+        try:
+            if polisher.ended(batch):
+                apply_batch(directory, source, polisher, batch, {}, state, result)
+            else:
+                running.append(batch)
+        except Exception as error:  # noqa: BLE001 - the templated guides stay, and the paid batch is tried again
+            log.warning("Polish: the batch %s left by an earlier run could not be read: %s", batch.id, error)
+            running.append(batch)
+    guides = {slug: guide for slug, guide in guides.items() if slug not in result.polished}
+    if guides:
+        batch = None
+        try:
+            batch = polisher.submit(list(guides.values()))
+            if polisher.wait(batch):
+                apply_batch(directory, source, polisher, batch, guides, state, result)
+            else:
+                running.append(batch)
+        except Exception as error:  # noqa: BLE001 - the templated guides stay
+            log.warning("Polish failed, keeping the templated summaries: %s", error)
+            if batch is not None:
+                # Submitted and paid for: the next run reads its results again.
+                running.append(batch)
+    if running:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"batches": [batch.json() for batch in running]}, indent=1))
+    elif path.exists():
+        path.unlink()
 
 
 def run(
@@ -434,10 +514,11 @@ def run(
     limit: Optional[int] = None,
     delay: float = 1.0,
     force: bool = False,
-    polish: Optional[Callable[[dict], dict]] = None,
+    polish: Optional[BatchPolisher] = None,
     now: Optional[Callable[[], datetime]] = None,
 ) -> Result:
-    """Builds the guide of each commander that is due, up to `limit` of them, writing each one and the state as it goes."""
+    """Builds the guide of each commander that is due, up to `limit` of them, writing each one and the state as it goes,
+    then has `polish` rewrite the summaries of the ones whose facts changed since their last polish."""
     clock = now or (lambda: datetime.now(timezone.utc))
     game_changers = load_game_changers()
     changer_ids = {card["oracle_id"] for card in game_changers}
@@ -453,6 +534,9 @@ def run(
             page = None
         if page and "themes" not in page:
             page = fresh_page(slug, page, fetch_edhrec)
+        elif not page:
+            # A commander ranked at a bracket before the refresh wrote its page.
+            page = fresh_page(slug, {}, fetch_edhrec)
         if not page or not page.get("name"):
             result.failed.append(slug)
             continue
@@ -467,27 +551,43 @@ def run(
     if limit is not None:
         result.deferred = [slug for slug, _, _ in due[limit:]]
         due = due[:limit]
+
+    def save_state() -> None:
+        state_path.parent.mkdir(parents=True, exist_ok=True)
+        state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
+
+    unpolished: Dict[str, dict] = {}
     for slug, page, digest in due:
         try:
             guide = build_one(page, catalog, changer_ids, fetch_edhrec, post_spellbook, delay, clock())
-            if guide is not None and polish is not None:
-                guide = polish(guide)
         except Exception as error:  # noqa: BLE001 - one commander must not stop the others
             log.exception("Guide %s failed: %s", slug, error)
             guide = None
         if guide is None:
             result.failed.append(slug)
             continue
-        target = directory / "edh" / "commanders" / slug / "guide.json"
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(json.dumps(guide, ensure_ascii=False, separators=(",", ":")))
-        state[slug] = {"generator": GENERATOR, "fingerprint": digest, "built_at": guide["generated_at"], "decks": page.get("decks") or 0}
-        if guide.get("model"):
-            state[slug]["model"] = guide["model"]
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
-        result.written.append(f"edh/commanders/{slug}/guide.json")
+        hashed = polish_hash(guide)
+        before = state.get(slug) or {}
+        entry = {"generator": GENERATOR, "fingerprint": digest, "built_at": guide["generated_at"], "decks": page.get("decks") or 0}
+        if before.get("polish_hash") == hashed:
+            try:
+                carried = carry_over(guide, source.read(guide_path(slug)))
+            except Exception as error:  # noqa: BLE001 - it is polished again instead
+                log.warning("Guide %s: its last polish could not be read: %s", slug, error)
+                carried = None
+            if carried is not None:
+                guide = carried
+                entry.update({"model": guide["model"], "polish_hash": hashed})
+                result.carried.append(slug)
+        if not guide.get("model"):
+            unpolished[slug] = guide
+        state[slug] = entry
+        result.written.append(write_guide(directory, guide))
+        save_state()
         log.info("Guide %s: %d styles, %d combos", slug, len(guide["styles"]), len(guide["combos"]))
+    if polish is not None:
+        polish_guides(directory, source, polish, unpolished, state, result)
+        save_state()
     return result
 
 
@@ -495,9 +595,11 @@ def main(argv: Sequence[str], load_catalog=None, fetch_edhrec=edhrec_json, post_
     parser = argparse.ArgumentParser(prog="python -m mtgmeta guides", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("directory", type=Path, help="data directory, mirroring the R2 bucket; missing pages are read from DATA_URL")
     parser.add_argument("--top", type=int, default=5, help="the first N commanders of edh/top.json, the week's first (default 5)")
+    parser.add_argument("--brackets", action="store_true", help="also every commander edh/top.json ranks at a bracket")
+    parser.add_argument("--limit", type=int, default=None, help="build at most N of the due guides")
     parser.add_argument("--slug", action="append", default=[], help="a commander's slug, in place of --top; repeatable")
     parser.add_argument("--force", action="store_true", help="build again even when the guide is not due")
-    parser.add_argument("--polish", action="store_true", help="have Claude rewrite the summaries as prose (needs ANTHROPIC_API_KEY)")
+    parser.add_argument("--polish", action="store_true", help="have Claude rewrite the summaries as prose, as one Message Batch (needs ANTHROPIC_API_KEY)")
     parser.add_argument("--delay", type=float, default=1.0, help="seconds between EDHREC pages (default 1)")
     args = parser.parse_args(list(argv))
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -505,7 +607,7 @@ def main(argv: Sequence[str], load_catalog=None, fetch_edhrec=edhrec_json, post_
         logging.getLogger(name).setLevel(logging.WARNING)
 
     source = Source(args.directory, os.environ.get("DATA_URL", "https://data.mooligan.com"))
-    slugs = args.slug or commander_slugs(source.read("edh/top.json"), args.top)
+    slugs = args.slug or commander_slugs(source.read("edh/top.json"), args.top, args.brackets)
     if not slugs:
         log.error("No commanders: edh/top.json could not be read")
         return 1
@@ -515,15 +617,18 @@ def main(argv: Sequence[str], load_catalog=None, fetch_edhrec=edhrec_json, post_
             from .guide_polish import make_polisher
         polish = make_polisher()
         if polish is None:
-            log.error("--polish needs ANTHROPIC_API_KEY")
+            log.error("--polish needs ANTHROPIC_API_KEY (and GUIDE_POLISH not 0)")
             return 2
     if load_catalog is None:
         from .scryfall import card_catalog as load_catalog
     result = run(
         args.directory, slugs, source, load_catalog(),
-        fetch_edhrec=fetch_edhrec, post_spellbook=post_spellbook, delay=args.delay, force=args.force, polish=polish,
+        fetch_edhrec=fetch_edhrec, post_spellbook=post_spellbook, limit=args.limit, delay=args.delay, force=args.force, polish=polish,
     )
-    print(f"{len(result.written)} written, {len(result.unchanged)} unchanged, {len(result.failed)} failed")
+    print(
+        f"{len(result.written)} written, {len(result.unchanged)} unchanged, {len(result.failed)} failed, "
+        f"{len(result.polished)} polished, {len(result.carried)} kept their polish"
+    )
     return 1 if result.failed else 0
 
 

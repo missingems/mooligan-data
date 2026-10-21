@@ -239,3 +239,22 @@ def test_the_top_commanders_are_read_before_the_rest_of_the_queue():
     assert due_commanders(known, wanted, ["b"], 0) == []
     windows = {"7d": [{"slug": "x"}, {"slug": "y"}], "30d": [{"slug": "y"}, {"slug": "w"}]}
     assert top_slugs(windows) == ["x", "y", "w"]
+
+
+def test_the_pages_after_a_windows_first_hold_its_next_hundred(monkeypatch):
+    views = [{"name": f"Commander {n}", "sanitized": f"commander-{n}", "num_decks": 500 - n, "rank": 100 + n} for n in range(1, 4)]
+    _serve(monkeypatch, {
+        "https://json.edhrec.com/pages/commanders/month-pastmonth-1.json": {"cardviews": views[:2], "more": "commanders/month-pastmonth-2.json"},
+        "https://json.edhrec.com/pages/commanders/month-pastmonth-2.json": {"cardviews": views[2:]},
+    })
+    rows = Edhrec("test", delay=0).more_top_commanders("30d", pages=3)
+    # The third page is not there, which ends the list.
+    assert [(row["rank"], row["slug"]) for row in rows] == [(101, "commander-1"), (102, "commander-2"), (103, "commander-3")]
+
+
+def test_a_weekly_commander_is_read_after_the_priority_ones_once_a_week():
+    known = {"fresh": {"checked_at": "2026-10-18T00:00:00Z"}, "stale": {"checked_at": "2026-10-01T00:00:00Z"}, "c": {"checked_at": "2026-09-01T00:00:00Z"}}
+    wanted = {"c": "c"}
+    due = due_commanders(known, wanted, ["a"], 5, weekly=["fresh", "stale", "new", "a"], stale_before="2026-10-12T00:00:00Z")
+    assert due == [("a", "a"), ("stale", "stale"), ("new", "new"), ("c", "c")]
+    assert due_commanders(known, wanted, ["a"], 2, weekly=["stale", "new"], stale_before="2026-10-12T00:00:00Z") == [("a", "a"), ("stale", "stale")]

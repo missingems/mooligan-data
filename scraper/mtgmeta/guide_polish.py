@@ -1,26 +1,38 @@
-"""`guides --polish`: Claude rewrites a data-built guide's summaries as prose, and changes nothing else.
+"""`guides --polish`: Claude rewrites data-built guides' summaries as prose, and changes nothing else.
 
-Claude is sent the guide's own facts (each style's decks, brackets, key cards and combos; each bracket's decks and the
+Claude is sent each guide's own facts (each style's decks, brackets, key cards and combos; each bracket's decks and the
 cards that set it apart) with the templated summaries, and returns new summaries through a tool. The cards, decks,
-brackets and combos stay as the data made them. It reads ANTHROPIC_API_KEY (and ANTHROPIC_WORKSPACE_ID for a key not
-scoped to one workspace) from the environment.
+brackets and combos stay as the data made them.
+
+The guides of a run go to Claude as one Message Batch, at half the price of single calls: `BatchPolisher` submits it,
+polls until it ends (at most POLISH_WAIT_MINUTES), and hands back each guide's answer. A batch still running then is
+kept in `state/polish-batch.json` and collected by the next run (see guides.py). A guide is sent only when its facts
+changed since it was last polished (`polish_hash`, kept in `state/guides.json`). Each batch's tokens and dollars are logged.
+
+It reads ANTHROPIC_API_KEY (and ANTHROPIC_WORKSPACE_ID for a key not scoped to one workspace) from the environment, and
+never logs either. With no key, or GUIDE_POLISH=0, there is no polisher and the guides keep their templated summaries.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import os
-from dataclasses import dataclass
-from typing import Callable, Optional
+import time
+from dataclasses import dataclass, field
+from typing import Callable, Dict, List, Optional, Tuple
 
 log = logging.getLogger(__name__)
 
 MODEL = "claude-sonnet-5-5"
 EFFORT = "low"
 MAX_TOKENS = 8000
-BETAS = ["server-side-fallback-2026-07-01"]
 TOOL_NAME = "write_summaries"
 KEY_CARDS = 12
+WAIT_MINUTES = 30
+POLL_SECONDS = 30
+# Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.
+BATCH_PRICES = {MODEL: (1.00, 5.00, 1.25, 0.10)}
 
 TOOL = {
     "name": TOOL_NAME,
@@ -83,15 +95,22 @@ def facts(guide: dict) -> str:
     return "\n".join(lines)
 
 
+def polish_hash(guide: dict) -> str:
+    """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries."""
+    body = json.dumps({"model": MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide)}, sort_keys=True)
+    return hashlib.sha256(body.encode()).hexdigest()[:16]
+
+
 def request(guide: dict) -> dict:
+    """One guide's Messages request. The Batches API takes no fallbacks, and this model no forced tool choice, so the
+    tool is offered (`auto`, strict) and the instructions ask for it."""
     return {
         "model": MODEL,
         "max_tokens": MAX_TOKENS,
-        "betas": BETAS,
-        "fallbacks": "default",
         "output_config": {"effort": EFFORT},
         "tools": [TOOL],
-        "tool_choice": {"type": "tool", "name": TOOL_NAME},
+        "tool_choice": {"type": "auto"},
+        # The instructions are below the shortest prefix a cache holds, so the log's cache tokens stay 0 for now.
         "system": [{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
         "messages": [{"role": "user", "content": facts(guide)}],
     }
@@ -101,15 +120,13 @@ class PolishError(Exception):
     pass
 
 
-def ask(client, call: dict):
-    """The tool's input and the model that answered."""
-    with client.beta.messages.stream(**call) as stream:
-        message = stream.get_final_message()
+def answer_of(message) -> dict:
+    """The tool's input from a finished message."""
     if message.stop_reason in ("refusal", "max_tokens"):
         raise PolishError(f"stopped: {message.stop_reason}")
     for block in message.content:
         if getattr(block, "type", None) == "tool_use" and block.name == TOOL_NAME:
-            return block.input, message.model
+            return block.input
     raise PolishError(f"no {TOOL_NAME} call (stop reason {message.stop_reason})")
 
 
@@ -125,20 +142,123 @@ def apply(guide: dict, answer: dict, model: str) -> dict:
     }
 
 
+def carry_over(guide: dict, previous: Optional[dict]) -> Optional[dict]:
+    """The guide with its last polish's summaries, when that polish had the same styles and brackets; else None."""
+    if not previous or not previous.get("model"):
+        return None
+    styles = {style["id"]: style.get("summary") for style in previous.get("styles") or []}
+    brackets = {bracket["level"]: bracket.get("summary") for bracket in previous.get("brackets") or []}
+    if set(styles) != {style["id"] for style in guide["styles"]} or set(brackets) != {bracket["level"] for bracket in guide["brackets"]}:
+        return None
+    answer = {
+        "styles": [{"id": key, "summary": value} for key, value in styles.items()],
+        "brackets": [{"level": key, "summary": value} for key, value in brackets.items()],
+    }
+    return apply(guide, answer, previous["model"])
+
+
 @dataclass
-class Polisher:
+class Usage:
+    input_tokens: int = 0
+    output_tokens: int = 0
+    cache_creation_input_tokens: int = 0
+    cache_read_input_tokens: int = 0
+
+    def add(self, usage) -> None:
+        for name in ("input_tokens", "output_tokens", "cache_creation_input_tokens", "cache_read_input_tokens"):
+            setattr(self, name, getattr(self, name) + (getattr(usage, name, 0) or 0))
+
+    def dollars(self, model: str = MODEL) -> float:
+        prices = BATCH_PRICES.get(model, BATCH_PRICES[MODEL])
+        counts = (self.input_tokens, self.output_tokens, self.cache_creation_input_tokens, self.cache_read_input_tokens)
+        return sum(count * price for count, price in zip(counts, prices)) / 1_000_000
+
+
+@dataclass
+class Batch:
+    """A submitted batch: its id, the guide each request is for, and the polish hash each was asked from."""
+
+    id: str
+    slugs: Dict[str, str]
+    hashes: Dict[str, str]
+
+    def json(self) -> dict:
+        return {"id": self.id, "slugs": self.slugs, "hashes": self.hashes}
+
+    @staticmethod
+    def of(body: dict) -> "Batch":
+        return Batch(body["id"], dict(body.get("slugs") or {}), dict(body.get("hashes") or {}))
+
+
+@dataclass
+class Collected:
+    """What an ended batch gave: each polished guide's answer and model by slug, and why the others were not."""
+
+    answers: Dict[str, Tuple[dict, str]] = field(default_factory=dict)
+    failed: Dict[str, str] = field(default_factory=dict)
+    usage: Usage = field(default_factory=Usage)
+
+
+@dataclass
+class BatchPolisher:
     client: object
+    wait_minutes: float = WAIT_MINUTES
+    poll_seconds: float = POLL_SECONDS
+    sleep: Callable[[float], None] = time.sleep
+    clock: Callable[[], float] = time.monotonic
 
-    def __call__(self, guide: dict) -> dict:
-        try:
-            answer, model = ask(self.client, request(guide))
-        except Exception as error:  # noqa: BLE001 - the templated guide is still a guide
-            log.warning("Polish %s failed, keeping the templated summaries: %s", guide.get("slug"), error)
-            return guide
-        return apply(guide, answer, model)
+    def submit(self, guides: List[dict]) -> Batch:
+        # A slug can pass the 64 characters a custom_id may have, so the requests are numbered.
+        slugs = {f"g{index}": guide["slug"] for index, guide in enumerate(guides)}
+        batch = self.client.messages.batches.create(
+            requests=[{"custom_id": custom_id, "params": request(guide)} for custom_id, guide in zip(slugs, guides)]
+        )
+        log.info("Polish: batch %s submitted with %d guides", batch.id, len(guides))
+        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide) for guide in guides})
+
+    def ended(self, batch: Batch) -> bool:
+        return self.client.messages.batches.retrieve(batch.id).processing_status == "ended"
+
+    def wait(self, batch: Batch) -> bool:
+        """True once the batch has ended; False when it is still running after `wait_minutes`."""
+        deadline = self.clock() + self.wait_minutes * 60
+        while not self.ended(batch):
+            if self.clock() >= deadline:
+                log.warning("Polish: batch %s is still running after %.0f minutes; the next run collects it", batch.id, self.wait_minutes)
+                return False
+            self.sleep(self.poll_seconds)
+        return True
+
+    def collect(self, batch: Batch) -> Collected:
+        collected = Collected()
+        for result in self.client.messages.batches.results(batch.id):
+            slug = batch.slugs.get(result.custom_id)
+            if slug is None:
+                continue
+            if result.result.type != "succeeded":
+                collected.failed[slug] = result.result.type
+                continue
+            message = result.result.message
+            collected.usage.add(message.usage)
+            try:
+                collected.answers[slug] = (answer_of(message), message.model)
+            except PolishError as error:
+                collected.failed[slug] = str(error)
+        usage = collected.usage
+        log.info(
+            "Polish: batch %s: %d polished, %d kept templated; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
+            batch.id, len(collected.answers), len(collected.failed), usage.input_tokens, usage.output_tokens,
+            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, usage.dollars(),
+        )
+        for slug, reason in sorted(collected.failed.items()):
+            log.warning("Polish %s failed, keeping the templated summaries: %s", slug, reason)
+        return collected
 
 
-def make_polisher() -> Optional[Callable[[dict], dict]]:
+def make_polisher() -> Optional[BatchPolisher]:
+    """The batch polisher, or None when there is no ANTHROPIC_API_KEY or GUIDE_POLISH=0."""
+    if os.environ.get("GUIDE_POLISH", "1") == "0":
+        return None
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         return None
@@ -146,7 +266,10 @@ def make_polisher() -> Optional[Callable[[dict], dict]]:
 
     workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
     headers = {"anthropic-workspace-id": workspace} if workspace else None
-    return Polisher(anthropic.Anthropic(api_key=key, default_headers=headers))
+    return BatchPolisher(
+        anthropic.Anthropic(api_key=key, default_headers=headers),
+        wait_minutes=float(os.environ.get("POLISH_WAIT_MINUTES", WAIT_MINUTES)),
+    )
 
 
 if __name__ == "__main__":

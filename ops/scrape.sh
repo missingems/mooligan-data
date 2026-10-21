@@ -190,10 +190,19 @@ fi
 # EDHREC is read with their permission: a slice of the cards each run.
 : "${EDHREC_CARDS_PER_RUN=1600}"
 : "${EDHREC_COMMANDERS_PER_RUN=300}"
-# The top commanders' guides, built from EDHREC's theme and bracket pages and Commander Spellbook: the
-# ones due (new, a week old, or whose themes changed), this many a run, GUIDE_DELAY seconds between pages.
-: "${GUIDES_PER_RUN=25}"
+# The guides of the top 100 commanders and of every one edh/top.json ranks at a bracket (about 200), built from
+# EDHREC's theme and bracket pages and Commander Spellbook: the ones due (new, a week old, or whose themes changed),
+# this many a run, GUIDE_DELAY seconds between pages.
+# 45 builds the ~190 guides in about four days, then ~27 a day come due; a guide takes ~14 s.
+: "${GUIDES_PER_RUN=45}"
 : "${GUIDE_DELAY=1}"
+# EDHREC commander pages read a run to rank the past month's top 300 by bracket; the rest come from state/.
+: "${BRACKET_PAGES_PER_RUN=150}"
+# Claude polishes the summaries of the guides whose facts changed, as one Message Batch, when ANTHROPIC_API_KEY is
+# set. Only on a run that publishes, unless GUIDE_POLISH=1 asks for it, so a local run spends nothing by accident.
+# The run waits this long for the batch; one still running is collected by the next run.
+: "${GUIDE_POLISH=$PUBLISH}"
+: "${POLISH_WAIT_MINUTES=15}"
 # Upcoming events near these places, from Wizards' locator; semicolon-separated.
 : "${LOCATOR_PLACES=Singapore}"
 : "${LOCATOR_DISTANCE_MILES=15}"
@@ -203,7 +212,7 @@ fi
 # through. UC mode runs headed (on Linux, SeleniumBase starts Xvfb itself).
 : "${HEADLESS=0}"
 export FORMATS MAX_NEW_DECKS META_DAYS REQUEST_DELAY CONCURRENCY EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
-  GUIDES_PER_RUN GUIDE_DELAY LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
+  GUIDES_PER_RUN GUIDE_DELAY BRACKET_PAGES_PER_RUN GUIDE_POLISH POLISH_WAIT_MINUTES LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
 
 # continue-on-error: whatever the scrape collected is still published.
 PYTHONUNBUFFERED=1 "$VENV/bin/python" -m mtgmeta work

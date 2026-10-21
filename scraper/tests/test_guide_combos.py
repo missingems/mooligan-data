@@ -75,8 +75,10 @@ def test_combos_keep_the_playable_most_played_first_once_per_set_of_cards():
         "results": ["Infinite colorless mana"],
         "bracket": 4,
         "bracket_tag": "R",
+        "two_card": True,
     }
-    assert combos[1]["bracket"] == 1
+    # Sol Ring and Basalt Monolith are two cards, so Spellbook's Exhibition tag is not their bracket.
+    assert (combos[1]["bracket"], combos[1]["two_card"]) == (3, True)
 
 
 def test_a_failed_lookup_leaves_the_guide_as_it_was():
@@ -107,8 +109,19 @@ def test_a_wrapped_two_card_combo_is_kept_from_bracket_three():
     combos = {each["id"]: each for each in guide_combos.combos(wrapped)}
     assert (combos["two"]["bracket"], combos["two"]["two_card"]) == (3, True)
     assert (combos["three"]["bracket"], combos["three"]["two_card"]) == (2, False)
-    # A variant from find-my-combos carries no such flags, and no two_card.
-    assert "two_card" not in guide_combos.combos([variant("plain", [KINNAN, BASALT], 10, tag="C")])[0]
+    # A variant from find-my-combos carries no such flags; its pieces are counted all the same.
+    plain = guide_combos.combos([variant("plain", [KINNAN, BASALT], 10, tag="C"), variant("trio", [KINNAN, BASALT, ("Sol Ring", "ring")], 5, tag="C")])
+    assert [(each["bracket"], each["two_card"]) for each in plain] == [(3, True), (2, False)]
+
+
+def test_hullbreaker_horror_and_sol_ring_are_a_two_card_combo_from_bracket_three():
+    """Spellbook tags it Exhibition and does not flag it two-card; a guide said it was "from Bracket 1"."""
+    entry = {
+        "combo": variant("hullbreaker", [("Hullbreaker Horror", "hull"), ("Sol Ring", "ring")], 900, tag="E"),
+        "definitelyTwoCard": False, "arguablyTwoCard": False, "relevant": True,
+    }
+    combo = guide_combos.combos([entry])[0]
+    assert (combo["bracket"], combo["bracket_tag"], combo["two_card"]) == (3, "E", True)
 
 
 def test_a_data_built_guide_keeps_its_own_combos(tmp_path):
