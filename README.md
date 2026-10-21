@@ -132,7 +132,7 @@ ops/scrape.sh                                           # the full daily run, wi
 SYNC=none QUICK=1 ops/scrape.sh                         # from nothing, like a first run
 ```
 
-`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0`, `MOVERS=0` and `LOCALIZE=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
+`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0`, `GUIDES_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0`, `MOVERS=0` and `LOCALIZE=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
 
 `ops/backfill_oracle_ids.py DIR` is a one-off: it reads the published decks listed in `DIR/state/deck-ids.json` (from `DATA_URL`) and adds those with an entry lacking an `oracle_id` to `DIR/state/unresolved-deck-ids.json`, for the next run to name. Run it against a work dir freshly populated from the live state, so the merge keeps the tries already recorded, then upload the result to R2 before the next scheduled run, because that run syncs `state/` down from R2 and would overwrite a file that only exists locally:
 
@@ -207,6 +207,8 @@ Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds 
 ## EDHREC
 
 Commander usage on each card page comes from EDHREC, used with their permission. A run refreshes `EDHREC_CARDS_PER_RUN` cards (800 by default, 1600 in `ops/scrape.sh`) and `EDHREC_COMMANDERS_PER_RUN` commanders (150, 300 in `ops/scrape.sh`, so a daily run reads as many as two runs a day did), at `EDHREC_DELAY` seconds apart, longest unchecked first, so the set comes round over days and the rate stays low. A commander page carries what that commander's decks play and its average decklist, so a reader never has to leave for the numbers. Their numbers move about once a day. Anything showing this data must credit EDHREC and link back to the `url` on each entry.
+
+The top commanders' guides (`edh/commanders/{slug}/guide.json`) are built from EDHREC's theme and bracket pages, Commander Spellbook's estimate-bracket and Scryfall's catalog, with no model and no key: `GUIDES_PER_RUN` (25) a run of the first `GUIDES_TOP` (100) commanders of `edh/top.json`, the ones due (never built, a week old, or whose themes changed), `GUIDE_DELAY` (1) seconds between EDHREC pages. `python -m mtgmeta guides DIR --top 5` builds them by hand, and `--polish` has Claude rewrite their summaries, which needs `ANTHROPIC_API_KEY`. See [`docs/data-format.md`](docs/data-format.md#edhcommandersslugguidejson).
 
 ## Caveats
 

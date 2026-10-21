@@ -185,7 +185,27 @@ def _commander_entry(body: dict, average: Optional[dict], slug: str) -> Optional
         "scryfall_id": card.get("id"),
         "sections": sections,
         "average_deck": _average_deck(average),
+        "themes": _themes(body),
+        "bracket_decks": _bracket_decks(body),
+        "lands": body.get("land") if isinstance(body.get("land"), int) else None,
+        "basics": body.get("basic") if isinstance(body.get("basic"), int) else None,
     }
+
+
+def _themes(body: dict) -> List[dict]:
+    """EDHREC's themes for the commander (its tags), most decks first: each one's slug, name and decks."""
+    themes = [
+        {"slug": tag["slug"], "name": tag["value"], "decks": tag["count"]}
+        for tag in body.get("tag_counts") or []
+        if isinstance(tag, dict) and tag.get("slug") and tag.get("value") and isinstance(tag.get("count"), int)
+    ]
+    return sorted(themes, key=lambda theme: -theme["decks"])
+
+
+def _bracket_decks(body: dict) -> Dict[str, int]:
+    """How many of the commander's decks their builders put at each Commander Bracket, by level ("1" to "5")."""
+    counts = body.get("bracket_counts") or {}
+    return {level: counts[level] for level in sorted(counts) if level in "12345" and len(level) == 1 and isinstance(counts[level], int)}
 
 
 def oracle_ids(entry: dict, catalog: Optional[Dict[str, dict]]) -> Dict[str, str]:

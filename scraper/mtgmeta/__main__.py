@@ -4,7 +4,7 @@ DIR holds the previous snapshots and deck id list on the way in, and the files
 to publish on the way out.
 
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
-`python -m mtgmeta guides DIR --top 5` asks Claude for the top commanders' guides (see guides.py).
+`python -m mtgmeta guides DIR --top 5` builds the top commanders' guides by hand, `--polish` having Claude write their summaries (see guides.py).
 `python -m mtgmeta guide-combos DIR --top 5` adds Commander Spellbook's combos to the top commanders' guides (see guide_combos.py).
 `python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
 `python -m mtgmeta set-products DIR` writes sets/products/{code}.json, each recent set's sealed products (see setproducts.py).
@@ -80,6 +80,36 @@ def publish_top(directory: Path, report, top: dict, catalog: Optional[dict] = No
         logging.exception("EDHREC top commanders failed")
         report.errors.append(f"edhrec top commanders: {error}")
         return []
+
+
+def publish_guides(directory: Path, report, top: dict, catalog: Optional[dict], data_url: str) -> list:
+    """The commander guides of the top commanders, built from EDHREC and Commander Spellbook, as edh/commanders/{slug}/guide.json.
+
+    It reads the commander pages `store.finish` wrote this run (else the published ones at `data_url`) and builds the guides that
+    are due, at most GUIDES_PER_RUN of them, so a run asks EDHREC for a few dozen pages and the rest come round on later runs.
+    A guide that fails stays published as it was; that is a warning, not an error, so the run passes.
+    """
+    limit = int(os.environ.get("GUIDES_PER_RUN", "25"))
+    if limit <= 0 or not catalog:
+        return []
+    from .guides import Source, run as build_guides
+
+    slugs = top_slugs(top)[: int(os.environ.get("GUIDES_TOP", "100"))]
+    try:
+        result = build_guides(
+            directory, slugs, Source(directory, data_url), catalog, limit=limit, delay=float(os.environ.get("GUIDE_DELAY", "1.0")),
+        )
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Commander guides failed", exc_info=True)
+        report.warnings.append(f"commander guides: {error}")
+        return []
+    logging.info(
+        "Commander guides: %d written, %d unchanged, %d left for the next run, %d failed",
+        len(result.written), len(result.unchanged), len(result.deferred), len(result.failed),
+    )
+    if result.failed:
+        report.warnings.append(f"commander guides failed: {', '.join(result.failed)}")
+    return result.written
 
 
 def publish_locator(directory: Path, report) -> list:
@@ -389,6 +419,7 @@ def main() -> int:
     )
     logging.info("Wrote %s", ", ".join(written) or "no snapshots")
     written += publish_top(args.directory, report, top, catalog)
+    written += publish_guides(args.directory, report, top, catalog, data_url)
     written += publish_locator(args.directory, report)
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)

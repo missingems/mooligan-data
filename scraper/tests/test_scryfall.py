@@ -31,6 +31,10 @@ CARDS = [
      "card_faces": [{"mana_cost": "{1}{B}"}, {"mana_cost": "{5}{B}{R}"}]},
     {"name": "Reversible spell", "layout": "reversible_card", "card_faces": [{"oracle_id": "spell-oracle", "mana_cost": "{G}"}, {"mana_cost": "{G}"}]},
     {"name": "Ornithopter", "oracle_id": "ornithopter-oracle", "layout": "normal", "mana_cost": "{0}"},
+    {"name": "Brainstorm", "oracle_id": "brainstorm-oracle", "layout": "normal", "oracle_text": "Draw three cards, then put two cards from your hand on top of your library in any order."},
+    {"name": "Bala Ged Recovery // Bala Ged Sanctuary", "oracle_id": "bala-oracle", "layout": "modal_dfc",
+     "card_faces": [{"oracle_text": "Return target card from your graveyard to your hand."}, {"oracle_text": "As Bala Ged Sanctuary enters, you may pay 3 life.\n{T}: Add {G}."}]},
+    {"name": "Smuggler’s Copter", "oracle_id": "copter-oracle", "layout": "normal", "oracle_text": "Whenever Smuggler’s Copter attacks or blocks, you may draw a card."},
 ]
 
 
@@ -52,6 +56,20 @@ def test_the_catalog_keys_real_cards_by_slug(tmp_path: Path):
     # A reversible card keeps its oracle id on the face.
     assert catalog["reversible-thing"]["oracle_id"] == "face-oracle"
     assert "some-token" not in catalog
+
+
+def test_the_catalog_keeps_every_face_s_rules_text(tmp_path: Path):
+    path = tmp_path / "oracle-cards.jsonl.gz"
+    path.write_bytes(gzip.compress(b"\n".join(json.dumps(card).encode() for card in CARDS)))
+
+    catalog = card_catalog(path.as_uri())
+
+    assert catalog["brainstorm"]["oracle_text"].startswith("Draw three cards")
+    assert catalog["bala-ged-recovery"]["oracle_text"] == (
+        "Return target card from your graveyard to your hand.\nAs Bala Ged Sanctuary enters, you may pay 3 life.\n{T}: Add {G}."
+    )
+    assert catalog["smugglers-copter"]["oracle_text"] == "Whenever Smuggler's Copter attacks or blocks, you may draw a card."
+    assert "oracle_text" not in catalog["sol-ring"]
 
 
 def test_the_catalog_marks_a_card_whose_front_face_is_a_land(tmp_path: Path):

@@ -163,7 +163,7 @@ if [ "$rc" -ne 0 ]; then
   exit 3
 fi
 
-# A small, fast run: one format, a few decks, no EDHREC, locator, premier schedule, movers or localized names.
+# A small, fast run: one format, a few decks, no EDHREC, commander guides, locator, premier schedule, movers or localized names.
 if [ "${QUICK:-0}" = 1 ]; then
   : "${FORMATS:=modern}"
   : "${MAX_NEW_DECKS:=20}"
@@ -171,6 +171,7 @@ if [ "${QUICK:-0}" = 1 ]; then
   : "${MAX_SEARCH_PAGES=2}"
   : "${EDHREC_CARDS_PER_RUN=0}"
   : "${EDHREC_COMMANDERS_PER_RUN=0}"
+  : "${GUIDES_PER_RUN=0}"
   : "${LOCATOR_PLACES=}"
   : "${PREMIER_SCHEDULE=0}"
   : "${MOVERS=0}"
@@ -189,6 +190,10 @@ fi
 # EDHREC is read with their permission: a slice of the cards each run.
 : "${EDHREC_CARDS_PER_RUN=1600}"
 : "${EDHREC_COMMANDERS_PER_RUN=300}"
+# The top commanders' guides, built from EDHREC's theme and bracket pages and Commander Spellbook: the
+# ones due (new, a week old, or whose themes changed), this many a run, GUIDE_DELAY seconds between pages.
+: "${GUIDES_PER_RUN=25}"
+: "${GUIDE_DELAY=1}"
 # Upcoming events near these places, from Wizards' locator; semicolon-separated.
 : "${LOCATOR_PLACES=Singapore}"
 : "${LOCATOR_DISTANCE_MILES=15}"
@@ -198,7 +203,7 @@ fi
 # through. UC mode runs headed (on Linux, SeleniumBase starts Xvfb itself).
 : "${HEADLESS=0}"
 export FORMATS MAX_NEW_DECKS META_DAYS REQUEST_DELAY CONCURRENCY EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
-  LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
+  GUIDES_PER_RUN GUIDE_DELAY LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
 
 # continue-on-error: whatever the scrape collected is still published.
 PYTHONUNBUFFERED=1 "$VENV/bin/python" -m mtgmeta work

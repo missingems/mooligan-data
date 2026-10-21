@@ -61,8 +61,13 @@ def test_a_commander_entry_keeps_its_colour_identity_and_scryfall_id(monkeypatch
             {"tag": "topcards", "cardviews": [{"name": "Brainstorm", "num_decks": 28385, "synergy": 0.281}]}]}}}
 
     bodies = {
-        "https://json.edhrec.com/pages/commanders/vivi-ornitier.json": page(
-            {"num_decks": 40779, "color_identity": ["U", "R"], "id": "ecc1027a-8c07-44a0-bdde-fa2844cff694"}),
+        "https://json.edhrec.com/pages/commanders/vivi-ornitier.json": {
+            **page({"num_decks": 40779, "color_identity": ["U", "R"], "id": "ecc1027a-8c07-44a0-bdde-fa2844cff694"}),
+            "tag_counts": [{"count": 300, "slug": "storm", "value": "Storm"}, {"count": 2100, "slug": "spellslinger", "value": "Spellslinger"}],
+            "bracket_counts": {"4": 900, "3": 1200, "2": 400, "1": 9, "5": 70},
+            "land": 33,
+            "basic": 9,
+        },
         "https://json.edhrec.com/pages/commanders/no-identity.json": page({"num_decks": 12}),
     }
 
@@ -82,9 +87,15 @@ def test_a_commander_entry_keeps_its_colour_identity_and_scryfall_id(monkeypatch
     monkeypatch.setattr(module.urllib.request, "urlopen", lambda request, timeout=None: Response(bodies.get(request.full_url, {})))
     vivi = Edhrec("test").commander("vivi-ornitier")
     assert vivi["color_identity"] == ["U", "R"] and vivi["scryfall_id"] == "ecc1027a-8c07-44a0-bdde-fa2844cff694"
+    # Its themes, most decks first, and how its decks split by bracket, for the guides.
+    assert [theme["slug"] for theme in vivi["themes"]] == ["spellslinger", "storm"]
+    assert vivi["themes"][0] == {"slug": "spellslinger", "name": "Spellslinger", "decks": 2100}
+    assert vivi["bracket_decks"] == {"1": 9, "2": 400, "3": 1200, "4": 900, "5": 70}
+    assert (vivi["lands"], vivi["basics"]) == (33, 9)
     # EDHREC without either leaves them null, not missing.
     bare = Edhrec("test").commander("no-identity")
     assert bare["color_identity"] is None and bare["scryfall_id"] is None
+    assert bare["themes"] == [] and bare["bracket_decks"] == {} and bare["lands"] is None
 
 
 def test_a_card_edhrec_does_not_have_is_none(monkeypatch):

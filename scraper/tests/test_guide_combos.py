@@ -97,3 +97,24 @@ def test_the_command_adds_combos_to_a_guide(tmp_path, capsys):
     assert guide_combos.main([str(tmp_path), "--slug", "kinnan-bonder-prodigy"], find_combos=find) == 0
     assert json.loads(path.read_text())["combos"][0]["id"] == "high"
     assert "1 written, 0 without a guide, 0 failed" in capsys.readouterr().out
+
+
+def test_a_wrapped_two_card_combo_is_kept_from_bracket_three():
+    wrapped = [
+        {"combo": variant("two", [KINNAN, BASALT], 50, tag="C"), "definitelyTwoCard": True, "arguablyTwoCard": True, "relevant": True},
+        {"combo": variant("three", [KINNAN, BASALT, ("Sol Ring", "ring")], 40, tag="C"), "definitelyTwoCard": False, "arguablyTwoCard": False},
+    ]
+    combos = {each["id"]: each for each in guide_combos.combos(wrapped)}
+    assert (combos["two"]["bracket"], combos["two"]["two_card"]) == (3, True)
+    assert (combos["three"]["bracket"], combos["three"]["two_card"]) == (2, False)
+    # A variant from find-my-combos carries no such flags, and no two_card.
+    assert "two_card" not in guide_combos.combos([variant("plain", [KINNAN, BASALT], 10, tag="C")])[0]
+
+
+def test_a_data_built_guide_keeps_its_own_combos(tmp_path):
+    path = tmp_path / "edh" / "commanders" / "kinnan-bonder-prodigy" / "guide.json"
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps({**GUIDE, "generator": "data-1", "combos": [{"id": "own"}]}))
+
+    assert guide_combos.main([str(tmp_path), "--slug", "kinnan-bonder-prodigy"], find_combos=lambda guide: []) == 0
+    assert json.loads(path.read_text())["combos"] == [{"id": "own"}]

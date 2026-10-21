@@ -43,3 +43,26 @@ def test_two_blocked_runs_in_a_row_fail_the_run():
 
 def test_a_run_that_was_not_blocked_passes_whatever_the_count():
     assert entry.exit_code(RunReport(), 5) == 0
+
+
+def test_guides_build_the_top_commanders_up_to_the_runs_limit(monkeypatch, tmp_path):
+    from mtgmeta import guides
+    from mtgmeta.guides import Result
+
+    calls = []
+
+    def run(directory, slugs, source, catalog, **options):
+        calls.append((slugs, options["limit"]))
+        return Result(written=["edh/commanders/a/guide.json"], failed=["b"])
+
+    monkeypatch.setattr(guides, "run", run)
+    monkeypatch.setenv("GUIDES_PER_RUN", "2")
+    monkeypatch.setenv("GUIDES_TOP", "2")
+    top = {"7d": [{"slug": "a"}, {"slug": "b"}, {"slug": "c"}]}
+    report = RunReport()
+
+    assert entry.publish_guides(tmp_path, report, top, {"x": {}}, "https://data.example") == ["edh/commanders/a/guide.json"]
+    assert calls == [(["a", "b"], 2)] and report.warnings == ["commander guides failed: b"] and not report.errors
+
+    monkeypatch.setenv("GUIDES_PER_RUN", "0")
+    assert entry.publish_guides(tmp_path, report, top, {"x": {}}, "https://data.example") == [] and len(calls) == 1
