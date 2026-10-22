@@ -170,7 +170,7 @@ def test_each_theme_with_enough_decks_is_a_play_style(tmp_path):
     assert [(style["id"], style["name"], style["decks"]) for style in written["styles"]] == [("infect", "Infect", 400), ("superfriends", "Superfriends", 200)]
     infect = written["styles"][0]
     assert infect["url"] == f"https://edhrec.com/commanders/{SLUG}/infect"
-    assert infect["summary"].startswith("Infect is how 400 of Atraxa's 1,000 decks on EDHREC are built (40%). It leans on Payoff 29, Payoff 28")
+    assert infect["summary"].startswith("Infect leans on Payoff 29, Payoff 28")
     # Its brackets come from its own decks: a tenth or more at 2, 3 and 4.
     assert infect["brackets"] == [2, 3, 4]
     # Too few of Superfriends' decks say a bracket, so the commander's split stands in.
@@ -254,7 +254,7 @@ def test_the_five_brackets_name_what_sets_each_apart(tmp_path):
     upgraded = brackets[2]
     assert upgraded["decks"] == 400
     assert len({card["name"] for card in upgraded["cards"]} & set(CHANGERS)) == 3
-    assert upgraded["summary"].startswith("400 of Atraxa's decks on EDHREC are built for Bracket 3, Upgraded. Up to three Game Changers")
+    assert upgraded["summary"].startswith("Up to three Game Changers")
     # Bracket 1 has 5 decks, too few, so the nearest bracket with enough stands in, within bracket 1's rules.
     assert not {card["name"] for card in brackets[0]["cards"]} & set(CHANGERS)
     assert all(len(bracket["cards"]) <= 30 for bracket in brackets)
@@ -357,7 +357,7 @@ def test_a_commander_with_no_theme_pages_gets_the_average_deck(tmp_path):
 
     styles = guide(tmp_path)["styles"]
     assert [(style["id"], style["name"], style["decks"]) for style in styles] == [("average-deck", "Average Deck", 1000)]
-    assert styles[0]["summary"].startswith("The cards most of Atraxa's 1,000 decks on EDHREC play.")
+    assert styles[0]["summary"].startswith("It is played at ")
     assert styles[0]["url"] == f"https://edhrec.com/commanders/{SLUG}"
 
 
@@ -388,7 +388,7 @@ def test_the_runs_guides_are_polished_as_one_batch(tmp_path):
 
     written = guide(tmp_path)
     assert written["model"] == "claude-sonnet-5-5" and {style["summary"] for style in written["styles"]} == {"Prose."}
-    assert written["brackets"][0]["summary"].startswith("5 of Atraxa's decks")
+    assert written["brackets"][0]["summary"].startswith("No Game Changers")
     state = json.loads((tmp_path / "state" / "guides.json").read_text())[SLUG]
     # The hash is of the templated guide's facts, the ones the batch was asked from.
     assert state["model"] == "claude-sonnet-5-5" and state["polish_hash"] != guide_polish.polish_hash(written) and len(state["polish_hash"]) == 16
@@ -422,7 +422,7 @@ def test_a_guide_rebuilt_with_the_same_facts_keeps_its_polish_without_asking(tmp
 
 def test_a_guide_whose_facts_moved_is_polished_again(tmp_path):
     build(tmp_path, polish=polisher(BatchClient(prose)))
-    setup(tmp_path, published(decks=1250))
+    setup(tmp_path, published(themes=[{"slug": "infect", "name": "Infect", "decks": 400}]))
     client = BatchClient(prose)
 
     build(tmp_path, polish=polisher(client), force=True)

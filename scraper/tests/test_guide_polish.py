@@ -123,7 +123,7 @@ def test_a_batch_still_running_after_the_wait_is_left_for_later():
 
 def test_the_polish_hash_moves_with_the_facts_only():
     same = {**GUIDE, "generated_at": "later"}
-    moved = {**GUIDE, "decks": 1001}
+    moved = {**GUIDE, "name": "Atraxa, Grand Unifier"}
     assert guide_polish.polish_hash(same) == guide_polish.polish_hash(GUIDE) != guide_polish.polish_hash(moved)
 
 
