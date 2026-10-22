@@ -43,7 +43,7 @@ log = logging.getLogger(__name__)
 
 SCHEMA = 1
 # Bumped whenever a change to the build would change a guide, so every guide is built again.
-GENERATOR = "data-4"
+GENERATOR = "data-5"
 STATE_PATH = "state/guides.json"
 POLISH_BATCH_PATH = "state/polish-batch.json"
 GAME_CHANGERS = Path(__file__).with_name("game_changers.json")
@@ -431,7 +431,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
             "id": theme["slug"] or card_slug(theme["name"]),
             "name": theme["name"],
             "summary": guide_text.style_summary(
-                page["name"], theme["name"], theme["decks"], base.decks, levels, most_played(split, levels),
+                theme["name"], levels, most_played(split, levels),
                 signature(base, themed, resolver), first_line,
             ),
             "brackets": levels,
@@ -448,7 +448,7 @@ def build_guide(page: dict, sub: SubPages, catalog: Dict[str, dict], pool: Pool,
         brackets.append({
             "level": level,
             "name": name,
-            "summary": guide_text.bracket_summary(page["name"], level, decks, [card.name for card in cards[:3]]),
+            "summary": guide_text.bracket_summary(page["name"], level, [card.name for card in cards[:3]]),
             "decks": decks,
             "cards": [card_json(card) for card in cards],
         })

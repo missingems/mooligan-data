@@ -43,25 +43,17 @@ def line_text(line: dict) -> str:
 
 
 def style_summary(
-    commander: str,
     theme: str,
-    decks: int,
-    total: int,
     levels: Sequence[int],
     mode: Optional[int],
     signature: Sequence[str],
     line: Optional[Tuple[int, dict]],
 ) -> str:
-    """The style in a few lines: its share of the commander's decks, its signature cards, its brackets, and its first
-    win line at the lowest bracket that shows one."""
-    who = short_name(commander)
-    share = decks * 100 / total if total else 0
-    parts = [
-        f"{theme} is how {decks:,} of {who}'s {total:,} decks on EDHREC are built ({share:.0f}%)."
-        if decks < total else f"The cards most of {who}'s {total:,} decks on EDHREC play."
-    ]
+    """The style in a few lines: its signature cards, its brackets, and its first win line at the lowest bracket that
+    shows one."""
+    parts = []
     if signature:
-        parts.append(f"It leans on {listing(signature)}.")
+        parts.append(f"{theme} leans on {listing(signature)}.")
     played = f"It is played at {levels_text(levels)}"
     parts.append(f"{played}, most often {mode} ({NAMES[mode]})." if mode else f"{played}.")
     if line:
@@ -108,12 +100,9 @@ def deck_plan(level: int, key: Sequence[str], synergy: Sequence[dict], lines: Se
     return " ".join(parts)
 
 
-def bracket_summary(commander: str, level: int, decks: Optional[int], lifted: List[str]) -> str:
+def bracket_summary(commander: str, level: int, lifted: List[str]) -> str:
     who = short_name(commander)
-    parts = []
-    if decks:
-        parts.append(f"{decks:,} of {who}'s decks on EDHREC are built for Bracket {level}, {NAMES[level]}.")
-    parts.append(RULES[level])
+    parts = [RULES[level]]
     if lifted:
         parts.append(f"Compared with {who}'s other decks, these play more of {listing(lifted)}.")
     return " ".join(parts)

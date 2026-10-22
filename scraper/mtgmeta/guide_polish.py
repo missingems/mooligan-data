@@ -1,7 +1,7 @@
 """`guides --polish`: Claude rewrites data-built guides' summaries as prose, and changes nothing else.
 
-Claude is sent each guide's own facts (each style's decks, brackets, key cards and combos; each bracket's decks and the
-cards that set it apart; once for each key or synergy card, its role and trimmed rules text) with the templated
+Claude is sent each guide's own facts (each style's brackets, key cards and combos; each bracket's rules and the cards
+that set it apart; once for each key or synergy card, its role and trimmed rules text) with the templated
 summaries, and returns new summaries, plans and one note per key or synergy card through a tool. The cards, decks,
 brackets and combos stay as the data made them.
 
@@ -90,13 +90,13 @@ SYSTEM = """You are an expert Magic: The Gathering Commander writer. You are giv
 
 Call the write_summaries tool once, with a new summary for every style (by its id), every bracket (by its level), every deck's plan (by its style id and level) and a note for every card in the Cards list (by its name), and write nothing else.
 
-Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, its plan and how it wins; for a bracket, what the deck looks like at that power level.
+Each summary is two or three sentences of plain, confident prose for a player choosing how to build the deck: for a style, what the deck does, the cards it relies on and how it wins, combos included; for a bracket, what the deck looks like at that power level.
 
 Each deck's plan is one to three plain, complete sentences on how that style plays at that bracket and how it wins. Every sentence has a subject and a verb and reads on its own: no fragments, and no reference to something unspecified such as "the same engine" or "that package"; name the card or cards you mean. Explain how the deck wins in concrete steps (what it sets up, what that makes, what finishes the game), naming only cards listed for that deck. Take the winning step only from the deck's win lines: a win line wins as written, its pieces make the result and its outlet, when it has one, turns that into the win. A deck with no win line wins through its payoffs and combat: never give it a combo.
 
 Each card's note says, in at most 70 characters, what the card does in these decks: its job in the plan, or its part in a win line it is in. It is a short phrase, not the card's name and not its rules text copied, for example "Makes a token whenever you cast a noncreature spell" or "Sac outlet for the Ballista loop". Write it from the card's role, its rules text and the win lines it is in, and from nothing else.
 
-Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, outlet, card or statistic."""
+Use only the facts given: name only cards listed in the facts, keep every number as given, and never invent a combo, outlet, card or statistic. Never mention EDHREC, how many decks there are or what share of decks play something: go straight to what the deck does, how it wins, the cards it relies on and its combos."""
 
 
 Lookup = Callable[[str], Optional[dict]]
@@ -123,7 +123,7 @@ def noted_cards(guide: dict) -> Dict[str, Optional[str]]:
 
 
 def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
-    lines = [f"Commander: {guide['name']} ({guide.get('decks', 0):,} decks on EDHREC)", ""]
+    lines = [f"Commander: {guide['name']}", ""]
     cards = noted_cards(guide)
     if cards:
         lines.append("## Cards (one note each)")
@@ -134,7 +134,7 @@ def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
     for style in guide.get("styles") or []:
         lines += [
             f"## Style {style['id']}: {style['name']}",
-            f"Decks: {style.get('decks', 0):,}. Brackets: {', '.join(str(level) for level in style['brackets'])}.",
+            f"Brackets: {', '.join(str(level) for level in style['brackets'])}.",
             "Key cards: " + ", ".join(f"{card['name']} ({card['role']})" for card in style["cards"][:KEY_CARDS]),
         ]
         lines += [f"Templated summary: {style['summary']}", ""]
@@ -155,7 +155,7 @@ def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
     for bracket in guide.get("brackets") or []:
         lines += [
             f"## Bracket {bracket['level']}: {bracket['name']}",
-            f"Decks: {bracket.get('decks', 0):,}. Cards that set it apart: " + ", ".join(card["name"] for card in bracket["cards"][:KEY_CARDS]),
+            "Cards that set it apart: " + ", ".join(card["name"] for card in bracket["cards"][:KEY_CARDS]),
             f"Templated summary: {bracket['summary']}",
             "",
         ]
