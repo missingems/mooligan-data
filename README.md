@@ -38,6 +38,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `previews.json` lists the printings Scryfall added in the last 7 days from sets not released yet (`window_days`, `count`, `cards`), ordered by the day each was first seen; it is the list behind Explore's "View N more", and its format is in `docs/data-format.md`.
 - `rules/keywords.json` holds what Magic's Comprehensive Rules say about each keyword action and keyword ability, and the ability words, read from the text file Wizards links on magic.wizards.com/en/rules. Every run reads it, but the file changes only when Wizards publishes new rules.
 - `sets/art.json` holds Wizards' official art for each set, keyed by Scryfall set code, for a set page's hero banner. A set Wizards has no art for is left out.
+- `sets/tints.json` holds one tint colour per Scryfall set, for a set icon tile (a coloured rounded square with the white set symbol), taken from the set's Wizards art or its most played card's art; a child set has its parent's. A set with neither is left out.
 - `sets/products/{code}.json` holds the sealed products (boosters, boxes, bundles, decks) of one set released since 2023 or yet to come, keyed by Scryfall set code, with TCGplayer's picture, link and price, read from TCGCSV. A set with no sealed products has no file.
 - `sets/mechanics.json` holds the keyword abilities, keyword actions and ability words each set introduced, by Scryfall set code, with the rules, reminder text and example cards.
 - `explore-manifest.json` lists the SHA-256 of each Explore file (`explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`), so the app fetches it first and downloads only the files whose hash differs. A file a run does not rewrite keeps its entry from the last manifest, which is kept in `state/explore-manifest.json`.
@@ -90,6 +91,8 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json`, which reads the Comprehensive Rules from Wizards' site |
 | `SET_ART` | `1` | `0` skips `sets/art.json`, which reads each set's art from Wizards' site |
 | `SET_ART_DELAY` | `0.5` | Seconds between requests to Wizards' site for `sets/art.json` |
+| `SET_TINTS` | `1` | `0` skips `sets/tints.json`, which reads each main set's art (Wizards', else its most played card's from Scryfall) for a tint colour |
+| `SET_TINTS_DELAY` | `0.1` | Seconds between requests for `sets/tints.json` (Scryfall asks for at least 0.1) |
 | `SET_PRODUCTS` | `1` | `0` skips `sets/products/{code}.json`, which reads each recent set's sealed products from TCGCSV |
 | `SET_PRODUCTS_DELAY` | `0.25` | Seconds between requests to TCGCSV (it asks for at least 0.1) |
 | `SET_MECHANICS` | `1` | `0` skips `sets/mechanics.json`, which reads Scryfall's every-printing file (about 80 MB gzipped) for the mechanics each set introduced |
@@ -187,6 +190,8 @@ Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds 
 ## Set art
 
 `sets/art.json` is read from Wizards' sitemap: each set's product page and card image gallery are matched to a Scryfall set by name, and their `og:image` is kept with its measured size (see `scraper/mtgmeta/setart.py`). Requests are 0.5 seconds apart with a descriptive User-Agent. The pages read are cached in `state/set-art.json` by URL and the sitemap's `lastmod`, so after the first run (about 300 requests) a run reads only the pages that changed. It can be run alone with `python -m mtgmeta set-art DIR`. When Wizards' site cannot be read the run logs a warning and carries on, and the published file stays as it was. See `docs/data-format.md`.
+
+`sets/tints.json` takes one colour from each main set's picture: Wizards' art for it from `sets/art.json` (fetched 96 pixels wide), else the art crop of its most played card from Scryfall. The picture is shrunk to 16 by 16 pixels, the hue bin with the most saturation times brightness wins, and its colour is made dark or light enough for a white symbol (see `scraper/mtgmeta/settints.py`). Every child set (`parent_set_code`) gets its root parent's colour. Colours are kept in `state/set-tints.json` by set code and picture URL, so after the first run (about 1,000 requests, at least 0.1 seconds apart) a run reads only the new sets and those whose Wizards art changed. It can be run alone with `python -m mtgmeta set-tints DIR`. When Scryfall's sets cannot be read the run logs a warning and carries on, and the published file stays as it was. See `docs/data-format.md`.
 
 ## Set products
 

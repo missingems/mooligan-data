@@ -1,5 +1,7 @@
 # Versions tested end to end against MTGGoldfish on 2026-09-22.
 seleniumbase==4.51.12
 beautifulsoup4==4.15.0
+# Reads the pictures behind sets/tints.json.
+Pillow==13.0.0
 # Only `python -m mtgmeta guides --polish` imports it. 1.x needs Python 3.10 or later.
 anthropic==1.15.0
