@@ -112,6 +112,10 @@ step_upload() (
     if [ -f work/sets/art.json ]; then
       cp work/sets/art.json "$R2/sets/art.json" --cache-control "public, max-age=300"
     fi
+    # One tint colour per set for its icon tile, from the art above and Scryfall's card art, with nothing pointing at it.
+    if [ -f work/sets/tints.json ]; then
+      cp work/sets/tints.json "$R2/sets/tints.json" --cache-control "public, max-age=300"
+    fi
     # Each recent set's sealed products, from TCGCSV's mirror of TCGplayer, with nothing pointing at them.
     if [ -d work/sets/products ]; then
       cp work/sets/products "$R2/sets/products" --recursive --cache-control "public, max-age=300"
@@ -233,7 +237,7 @@ elif [ "$PUBLISH" != 1 ]; then
   for dir in decks cards edh locator premier archetypes events popular-cards breakouts movers sets/products snapshots state; do
     if [ -d "work/$dir" ]; then echo "  $dir/: $(find "work/$dir" -type f | wc -l | tr -d ' ') files"; fi
   done
-  for file in index.json explore.json today.json previews.json rules/keywords.json sets/art.json sets/mechanics.json explore-manifest.json; do
+  for file in index.json explore.json today.json previews.json rules/keywords.json sets/art.json sets/tints.json sets/mechanics.json explore-manifest.json; do
     if [ -f "work/$file" ]; then echo "  $file"; fi
   done
   if [ ! -f work/index.json ]; then echo "  (no index.json: the run did not finish)"; fi

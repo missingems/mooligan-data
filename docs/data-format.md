@@ -20,6 +20,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `sets/art.json` | Wizards' official art for each set, by Scryfall set code, for a set page's hero banner. Sets without art are left out | `max-age=300` |
+| `sets/tints.json` | One tint colour per Scryfall set, for a set icon tile (a coloured rounded square with the set's white symbol). Sets with no art to take it from are left out | `max-age=300` |
 | `sets/products/{code}.json` | One recent set's sealed products (boxes, boosters, bundles, decks) with TCGplayer's picture, link and price. Sets with no sealed products have no file | `max-age=300` |
 | `sets/mechanics.json` | The keyword abilities, keyword actions and ability words each set introduced, by Scryfall set code, with rules, reminder text and example cards | `max-age=300` |
 | `edh/commanders/{slug}.json` | One commander: what its decks play, and its average decklist | `max-age=300` |
@@ -34,7 +35,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the sealed products already read for each set (`state/set-products.json`), what each commander guide was built from and when (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the colour already taken from each main set's art (`state/set-tints.json`), the sealed products already read for each set (`state/set-products.json`), what each commander guide was built from and when (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -1095,6 +1096,26 @@ Wizards' own art for each set, so a set page can open with a hero banner. Wizard
 - **`title`** is the set's name, from Scryfall. **`source`** is always `"wizards"`. **`page`** is the Wizards page the image was read from, to link to or credit.
 - **Updates.** A page is read again only when the sitemap says it changed, so an image changes when Wizards changes the page: an upcoming set's first image can be a placeholder until its art is ready. The file is rebuilt from the pages read so far on every run, so `generated_at` is the run's and says nothing about the art. A run that cannot read the sitemap or Scryfall's sets logs a warning and does not fail; the file stays as last published. Until the first successful run it is a 404.
 - **Images are not ours.** They are Wizards' marketing art, served from their CDN; show them as the set's banner and link to `page` where you credit them.
+
+## `sets/tints.json`
+
+One tint colour for each Scryfall set, so the app can draw a set's icon as a tile like the Settings app's: a coloured rounded square with the set's symbol in white on it. The app draws the tile and its corner radius; this file only says the colour.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-23T14:10:00Z",
+  "sets": {
+    "trk": {"tint": "#8a3f5c", "source": "wizards"},
+    "trc": {"tint": "#8a3f5c", "source": "parent"}
+  }
+}
+```
+
+- **`sets`** is keyed by the **lower-case Scryfall set code** and holds every set Scryfall lists, digital ones included, that has a colour. A set with none is **not in the file**: draw a neutral tile.
+- **`tint`** is an sRGB hex colour, `#rrggbb`. It is already made dark enough, or light enough, for a white symbol to read on it (its luminance is held between 0.06 and 0.24 in linear sRGB), so use it as it is.
+- **`source`** says where the colour came from. `"wizards"`: the dominant hue of Wizards' art for the set (`sets/art.json`). `"card"`: the same, of the art crop of the set's most played card (by EDHREC rank), for a main set Wizards has no art for. `"parent"`: the set is a child of another (it has a `parent_set_code`: a token set, a promo set, a Commander deck's set) and has the colour of the main set at the top of its chain of parents.
+- **Updates.** A colour is worked out again only when the set is new or Wizards' art for it changed, so a colour does not move on its own. A card-art colour is kept once found. A run that cannot read Scryfall's sets logs a warning and does not fail; the file stays as last published. Until the first successful run it is a 404.
 
 ## `sets/products/{code}.json`
 

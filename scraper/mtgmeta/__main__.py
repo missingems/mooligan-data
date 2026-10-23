@@ -7,6 +7,7 @@ to publish on the way out.
 `python -m mtgmeta guides DIR --top 5` builds the top commanders' guides by hand, `--polish` having Claude write their summaries (see guides.py).
 `python -m mtgmeta guide-combos DIR --top 5` adds Commander Spellbook's combos to the top commanders' guides (see guide_combos.py).
 `python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
+`python -m mtgmeta set-tints DIR` writes sets/tints.json, one tint colour per set for its icon tile (see settints.py).
 `python -m mtgmeta set-products DIR` writes sets/products/{code}.json, each recent set's sealed products (see setproducts.py).
 `python -m mtgmeta set-mechanics DIR` writes sets/mechanics.json, the mechanics each set introduced (see setmechanics.py).
 """
@@ -237,6 +238,26 @@ def publish_set_art(directory: Path, report) -> list:
         return []
 
 
+def publish_set_tints(directory: Path, report, data_url: str) -> list:
+    """One tint colour for each set's icon tile, by Scryfall set code, as sets/tints.json.
+
+    It reads sets/art.json from `directory` when `publish_set_art` wrote it this run, else the published file at `data_url`,
+    so it runs after `publish_set_art`. Nothing is written when Scryfall's sets cannot be read: the file stays published as it was.
+    That is a warning, not an error, so the run passes.
+    """
+    if os.environ.get("SET_TINTS", "1") != "1":
+        return []
+    try:
+        from .settints import ART_PATH, DELAY, USER_AGENT, paced_get, write_set_tints
+
+        get = paced_get(os.environ.get("SET_TINTS_USER_AGENT", USER_AGENT), float(os.environ.get("SET_TINTS_DELAY", str(DELAY))))
+        return write_set_tints(directory, datetime.now(timezone.utc), get, f"{data_url}/{ART_PATH}")
+    except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
+        logging.warning("Set tints failed", exc_info=True)
+        report.warnings.append(f"set tints: {error}")
+        return []
+
+
 def publish_set_products(directory: Path, report) -> list:
     """The sealed products of each recent set, by Scryfall set code, as sets/products/{code}.json.
 
@@ -400,6 +421,10 @@ def main() -> int:
         from .setart import main as set_art
 
         return set_art(sys.argv[2:])
+    if sys.argv[1:2] == ["set-tints"]:
+        from .settints import main as set_tints
+
+        return set_tints(sys.argv[2:])
     if sys.argv[1:2] == ["set-products"]:
         from .setproducts import main as set_products
 
@@ -475,6 +500,7 @@ def main() -> int:
     written += publish_premier(args.directory, report)
     written += publish_rules(args.directory, report)
     written += publish_set_art(args.directory, report)
+    written += publish_set_tints(args.directory, report, data_url)
     written += publish_set_products(args.directory, report)
     written += publish_set_mechanics(args.directory, report, data_url)
     # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
