@@ -14,6 +14,8 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional
 
+from .premier_formats import rule_formats
+
 log = logging.getLogger(__name__)
 
 SCHEDULE_URL = "https://magic.gg/schedule"
@@ -72,11 +74,12 @@ def premier_events(entries: List[dict], now: Optional[datetime] = None, months_a
         local_start, local_end = _parse(entry.get("startTime"), local=True), _parse(entry.get("endTime"), local=True)
         name = (entry.get("eventName") or entry.get("entryTitle") or "").strip()
         place = name.split(": ", 1)[1].strip() if ": " in name else None
+        kind = (entry.get("eventScheduleType") or {}).get("typeTitle")
         events.append(
             {
                 "id": entry.get("id"),
                 "name": name,
-                "type": (entry.get("eventScheduleType") or {}).get("typeTitle"),
+                "type": kind,
                 "start": local_start.strftime("%Y-%m-%d"),
                 "end": (local_end or local_start).strftime("%Y-%m-%d"),
                 "start_time": entry.get("startTime"),
@@ -84,6 +87,7 @@ def premier_events(entries: List[dict], now: Optional[datetime] = None, months_a
                 "place": place,
                 "region": region_of(name),
                 "game_type": entry.get("gameType"),
+                "formats": rule_formats({"name": name, "type": kind}),
                 "url": entry.get("link") or SCHEDULE_URL,
             }
         )

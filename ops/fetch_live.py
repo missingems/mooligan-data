@@ -40,6 +40,7 @@ STATE_FILES = [
     "state/set-art.json",
     "state/set-tints.json",
     "state/set-products.json",
+    "state/premier-formats.json",
 ]
 
 

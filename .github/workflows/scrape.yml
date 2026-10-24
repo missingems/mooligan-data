@@ -43,8 +43,9 @@ jobs:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          # Claude polishes the commander guides' summaries (one Message Batch a run). Without the secret the guides
-          # keep their templated summaries; the workspace id is only for a key not scoped to one workspace.
+          # Claude polishes the commander guides' summaries (one Message Batch a run) and tags premier events with their
+          # formats (premier/schedule.json). Without the secret the guides keep their templated summaries and the events
+          # only the formats their type and name give; the workspace id is only for a key not scoped to one workspace.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
           # The script publishes nothing unless told to, so a local run never does by accident.

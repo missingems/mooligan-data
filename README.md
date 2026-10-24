@@ -203,7 +203,7 @@ Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds 
 
 ## Premier play calendar
 
-`premier/schedule.json` is magic.gg's schedule of Pro Tours, Regional Championships, Spotlight Series, Worlds and CommandFests, read once a run. The page embeds its calendar as Nuxt state, which the scraper evaluates with Node. Each event gets a `region` from its name so an app can show the user's own Regional Championship.
+`premier/schedule.json` is magic.gg's schedule of Pro Tours, Regional Championships, Spotlight Series, Worlds and CommandFests, read once a run. The page embeds its calendar as Nuxt state, which the scraper evaluates with Node. Each event gets a `region` from its name so an app can show the user's own Regional Championship, and `formats` from its type and name, from `scraper/mtgmeta/premier_format_overrides.json`, or, with `ANTHROPIC_API_KEY` set, from Claude (`claude-haiku-5-5`) reading its magic.gg article once (cached in `state/premier-formats.json`).
 
 ## Wizards' event locator
 
