@@ -54,14 +54,24 @@ def publish_premier(directory: Path, report) -> list:
     if os.environ.get("PREMIER_SCHEDULE", "1") != "1":
         return []
     from .premier import by_type, calendar_from_html, fetch_schedule, premier_events, schedule_page
+    from .premier_formats import fetch_article, make_client, read_cache, tag_formats, write_cache
 
+    agent = os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)")
     try:
-        html = fetch_schedule(os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"))
+        html = fetch_schedule(agent)
         events = premier_events(calendar_from_html(html))
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
         logging.exception("Premier schedule failed")
         report.errors.append(f"premier schedule: {error}")
         return []
+    try:
+        client = make_client()
+        if client is None:
+            logging.info("Premier formats: no ANTHROPIC_API_KEY, so only the rules and overrides tag events")
+        write_cache(directory, tag_formats(events, read_cache(directory), client, lambda url: fetch_article(url, agent)))
+    except Exception as error:  # noqa: BLE001 - the schedule is still published, with the rules' formats
+        logging.warning("Premier formats failed", exc_info=True)
+        report.warnings.append(f"premier formats: {error}")
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     path = directory / "premier" / "schedule.json"
     path.parent.mkdir(parents=True, exist_ok=True)
