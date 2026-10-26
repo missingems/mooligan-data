@@ -2,6 +2,9 @@ import json
 from copy import deepcopy
 from datetime import datetime, timezone
 
+import pytest
+
+from mtgmeta import today as today_module
 from mtgmeta.today import build_today, read_published, rising_commander, write_today
 
 NOW = datetime(2026, 10, 3, 14, 41, 7, tzinfo=timezone.utc)
@@ -55,12 +58,19 @@ def pick(*files):
 # ---- Breakouts
 
 
-def test_up_to_three_cards_are_published_and_fewer_when_fewer_exist():
-    four = breakouts("modern", row("A", decks=40), row("B", decks=30), row("C", decks=20), row("D", decks=10))
-    assert names(four) == ["A", "B", "C"]
+@pytest.fixture
+def three_places(monkeypatch):
+    """The choosing rules, shown on three places: the same rules fill however many places Today has."""
+    monkeypatch.setattr(today_module, "MAX_BREAKOUTS", 3)
+
+
+def test_up_to_six_cards_are_published_and_fewer_when_fewer_exist():
+    seven = breakouts("modern", *(row(name, decks=70 - 10 * place) for place, name in enumerate("ABCDEFG")))
+    assert names(seven) == ["A", "B", "C", "D", "E", "F"]
     assert names(breakouts("modern", row("A"), row("B"))) == ["A", "B"]
 
 
+@pytest.mark.usefixtures("three_places")
 def test_the_best_card_of_each_of_three_formats_is_taken_before_a_second_card_of_one_format():
     files = (
         breakouts("modern", row("A", decks=50), row("B", decks=40)),
@@ -70,6 +80,7 @@ def test_the_best_card_of_each_of_three_formats_is_taken_before_a_second_card_of
     assert names(*files) == ["A", "C", "D"]
 
 
+@pytest.mark.usefixtures("three_places")
 def test_a_strong_card_of_a_third_format_beats_a_second_card_of_a_format_already_listed():
     files = (
         breakouts("modern", row("A", decks=50), row("B", decks=40)),
@@ -80,6 +91,7 @@ def test_a_strong_card_of_a_third_format_beats_a_second_card_of_a_format_already
     assert [card["new"] for card in cards_of(*files)] == [False, True, True]
 
 
+@pytest.mark.usefixtures("three_places")
 def test_a_card_counts_for_its_busiest_format_when_the_formats_are_counted():
     files = (
         breakouts("modern", row("X", decks=10), row("Y", decks=8)),
@@ -91,6 +103,7 @@ def test_a_card_counts_for_its_busiest_format_when_the_formats_are_counted():
     assert pick(*files)["format"] == "legacy"
 
 
+@pytest.mark.usefixtures("three_places")
 def test_a_format_is_repeated_only_when_fewer_than_three_formats_have_a_breakout():
     two = (
         breakouts("modern", row("A", decks=50), row("B", decks=40), row("C", decks=30)),
@@ -102,6 +115,7 @@ def test_a_format_is_repeated_only_when_fewer_than_three_formats_have_a_breakout
     assert names(one) == ["A", "B", "C"]
 
 
+@pytest.mark.usefixtures("three_places")
 def test_the_cards_keep_their_ranked_order_when_a_later_format_adds_its_card():
     files = (
         breakouts("modern", row("A", decks=50), row("B", decks=40)),
@@ -125,6 +139,7 @@ def test_a_released_card_with_more_decks_comes_before_a_new_card_and_new_only_br
     assert names(tie) == ["Zed Fresh", "Abe Old"]
 
 
+@pytest.mark.usefixtures("three_places")
 def test_the_strongest_cards_fill_the_places_whether_or_not_they_are_new():
     files = (
         breakouts("modern", row("New A", decks=5), row("Old A", new=False, decks=50), row("Old B", new=False, decks=40)),
@@ -236,6 +251,7 @@ def test_a_card_is_listed_once_as_its_busiest_format_whether_or_not_it_is_new_th
     assert (listed[0]["format"], listed[0]["decks"], listed[0]["new"], listed[0]["formats"]) == ("legacy", 50, False, ["legacy", "modern"])
 
 
+@pytest.mark.usefixtures("three_places")
 def test_four_deck_techs_do_not_outrank_a_card_seeing_play_in_several_formats():
     files = (
         breakouts("standard", row("Cryomancer", new=False, decks=26, top8=4, share=13.5, previous_share=0.6)),
