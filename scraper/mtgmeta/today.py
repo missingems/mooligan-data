@@ -1,7 +1,7 @@
 """today.json: what matters today in one response, for Explore's Today widgets, published each run.
 
-Built from files already published: up to three breakout cards from `breakouts/{format}.json`, from three formats
-where three have one (the strongest first: most decks and top 8s over the formats), the week's biggest mover
+Built from files already published: up to six breakout cards from `breakouts/{format}.json`, from six formats
+where six have one (the strongest first: most decks and top 8s over the formats), the week's biggest mover
 and loser from `movers/all.json` with their price over that week, the EDH commander whose deck count rose fastest since
 EDHREC was last asked about it (from the commander check times in `state/edhrec-commanders.json` and the snapshot
 this file keeps of them), and a preview, one of the printings Scryfall added since the last run, from a set not released yet (see previews.py).
@@ -24,7 +24,7 @@ log = logging.getLogger(__name__)
 SCHEMA = 2
 
 # How many breakout cards the file holds at most.
-MAX_BREAKOUTS = 3
+MAX_BREAKOUTS = 6
 # The breakout row's fields a breakout card keeps, in this order; `scryfall_id` and `price` are missing from a row
 # that has none.
 CARD_FIELDS = ("name", "oracle_id", "scryfall_id", "type", "decks", "share", "previous_share", "new", "first_seen", "top8", "wins", "price")
@@ -82,11 +82,11 @@ def build_today(
 
 
 def _breakouts(breakouts: Dict[str, dict], archetype_pages) -> List[dict]:
-    """Up to three cards, from three different formats where three formats have one.
+    """Up to six cards, from six different formats where six formats have one.
 
     The cards are ranked as one list by strength (see `_rank`; a card new to a format only breaks a tie), one entry
     per card, and the best-ranked card of each format comes first: a card whose busiest format already has a card is
-    taken only when fewer than three formats have a breakout. The cards keep their ranked order.
+    taken only when fewer than six formats have a breakout. The cards keep their ranked order.
     """
     cards: Dict[str, List[Tuple[str, dict]]] = {}
     for key, document in breakouts.items():
