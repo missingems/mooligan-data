@@ -6,6 +6,7 @@ to publish on the way out.
 `python -m mtgmeta clusters DIR ...` is instead a dry run of archetype merging (see clusters.py).
 `python -m mtgmeta guides DIR --top 5` builds the top commanders' guides by hand, `--polish` having Claude write their summaries (see guides.py).
 `python -m mtgmeta guide-combos DIR --top 5` adds Commander Spellbook's combos to the top commanders' guides (see guide_combos.py).
+`python -m mtgmeta primers DIR` has Claude write the archetype primers that are missing or stale, `--publish` putting them on api.mooligan.com (see primers.py).
 `python -m mtgmeta set-art DIR` writes sets/art.json, Wizards' art for each set (see setart.py).
 `python -m mtgmeta set-tints DIR` writes sets/tints.json, one tint colour per set for its icon tile (see settints.py).
 `python -m mtgmeta set-products DIR` writes sets/products/{code}.json, each recent set's sealed products (see setproducts.py).
@@ -434,6 +435,10 @@ def main() -> int:
         from .guides import main as guides
 
         return guides(sys.argv[2:])
+    if sys.argv[1:2] == ["primers"]:
+        from .primers import main as primers
+
+        return primers(sys.argv[2:])
     if sys.argv[1:2] == ["guide-combos"]:
         from .guide_combos import main as guide_combos
 
