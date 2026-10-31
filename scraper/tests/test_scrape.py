@@ -3,7 +3,7 @@ import random
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from mtgmeta.browser import Fetched
+from mtgmeta.browser import BlockedError, Fetched
 from mtgmeta.pacing import Pacer
 from mtgmeta.models import Event, EventResult, EventSummary, RunReport
 from mtgmeta.scrape import ScrapeConfig, _events_to_reread, _read_events, scrape
@@ -221,6 +221,68 @@ def test_an_unwindowed_metagame_is_published_once(tmp_path):
     report = run(tmp_path, browser, config(meta_days=("30", "7")))
     assert report.meta == ["modern_30d"]
     assert list(snapshot(tmp_path)["meta"]) == ["30d"]
+
+
+
+class WindowBrowser(FixtureBrowser):
+    """Serves the fixture metagame, except a window in `failures`: its errors are raised in turn, then it is served too."""
+
+    def __init__(self, failures):
+        super().__init__()
+        self.failures = {days: list(errors) for days, errors in failures.items()}
+        self.loads = []
+
+    def metagame(self, format, days):
+        self.loads.append(days)
+        if self.failures.get(days):
+            error = self.failures[days].pop(0)
+            if isinstance(error, str):
+                return error, True  # a page that loaded, without tiles
+            raise error
+        return super().metagame(format, days)
+
+
+def meta_messages(messages):
+    return [message for message in messages if message.startswith("meta")]
+
+
+def test_a_window_that_cannot_be_read_is_a_warning_and_the_last_one_stays(tmp_path):
+    run(tmp_path, FixtureBrowser(), config(meta_days=("30", "14")))
+    before = snapshot(tmp_path)["meta"]["14d"]
+
+    # Penny Dreadful from 17 to 28 October 2026, on every run.
+    stuck = TimeoutError("The modern metagame did not switch to 14 days")
+    report = run(tmp_path, WindowBrowser({"14": [stuck, stuck]}), config(meta_days=("30", "14")))
+
+    assert report.meta == ["modern_30d"] and meta_messages(report.errors) == []
+    assert meta_messages(report.warnings) == [
+        "meta modern 14d: The modern metagame did not switch to 14 days (the snapshot keeps the last 14d window read)"
+    ]
+    assert snapshot(tmp_path)["meta"]["14d"] == before
+
+
+def test_a_window_is_loaded_again_after_a_browser_error(tmp_path):
+    # Modern's 14 days on 16 October 2026: a script hung once.
+    browser = WindowBrowser({"14": [RuntimeError("Message: script timeout")]})
+    report = run(tmp_path, browser, config(meta_days=("30", "14")))
+    assert report.meta == ["modern_30d", "modern_14d"] and meta_messages(report.warnings) == []
+    assert browser.loads == ["30", "14", "14"]
+
+
+def test_a_window_without_tiles_is_not_loaded_again(tmp_path):
+    # Penny Dreadful's 7 days on 23 and 24 October 2026 had no decks.
+    browser = WindowBrowser({"7": ["<html></html>"]})
+    report = run(tmp_path, browser, config(meta_days=("30", "7")))
+    assert browser.loads == ["30", "7"] and meta_messages(report.errors) == []
+    assert meta_messages(report.warnings) == [
+        "meta modern 7d: No archetype tiles on the modern metagame page (the snapshot keeps the last 7d window read)"
+    ]
+
+
+def test_a_run_that_reads_no_window_in_any_format_fails(tmp_path):
+    blocked = BlockedError("Blocked on https://www.mtggoldfish.com/metagame/modern/full")
+    report = run(tmp_path, WindowBrowser({"30": [blocked, blocked]}), config())
+    assert report.meta == [] and meta_messages(report.errors) == ["meta: no window read in any of 1 formats"]
 
 
 def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):

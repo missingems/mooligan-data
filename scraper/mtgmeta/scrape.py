@@ -123,6 +123,9 @@ def scrape(
             if _save(report, f"event {event.event_id}", lambda: store.save_event(event)):
                 report.events.append(event.event_id)
         wanted[format] = _wanted_decks(format, histories, events)
+    if config.formats and config.meta_days and not report.meta:
+        # One format's windows failing is a warning; none read in any format means the pages changed or are blocked.
+        report.errors.append(f"meta: no window read in any of {len(config.formats)} formats")
 
     # The decks come last, once every format's pages are read, so the pace is set by the deck phase alone.
     _download_decks(browser, store, wanted, config, report, pacer)
@@ -130,20 +133,39 @@ def scrape(
 
 
 def _read_metas(browser: Browser, format: str, meta_days: Sequence[str], report: RunReport) -> List[Meta]:
+    """The format's metagame windows that could be read.
+
+    A window that cannot be read is a warning, not an error: the snapshot keeps the last one read, with its own
+    last_updated, and the other formats publish as usual.
+    """
     metas = []
     for days in meta_days:
         try:
-            html, windowed = browser.metagame(format, days)
-            meta = parse_meta(html, format, f"{days}d")
-            log.info("Read meta %s (%d archetypes)", meta.doc_id, len(meta.archetypes))
-            metas.append(meta)
-            if not windowed:
-                # One unwindowed page: publishing it again under other windows would repeat it.
-                log.info("The %s metagame has one window only; skipping %s", format, ", ".join(meta_days[1:]))
-                break
-        except Exception as error:  # noqa: BLE001 - one failed page must not stop the run
-            _fail(report, f"meta {format} {days}d", error)
+            meta, windowed = _read_meta(browser, format, days)
+        except Exception as error:  # noqa: BLE001 - one failed window must not stop the run, or fail it
+            log.warning("Could not read meta %s %sd", format, days, exc_info=True)
+            report.warnings.append(f"meta {format} {days}d: {error} (the snapshot keeps the last {days}d window read)")
+            continue
+        log.info("Read meta %s (%d archetypes)", meta.doc_id, len(meta.archetypes))
+        metas.append(meta)
+        if not windowed:
+            # One unwindowed page: publishing it again under other windows would repeat it.
+            log.info("The %s metagame has one window only; skipping %s", format, ", ".join(meta_days[1:]))
+            break
     return metas
+
+
+def _read_meta(browser: Browser, format: str, days: str) -> Tuple[Meta, bool]:
+    """One metagame window, loaded once more after a browser error such as a hung script or a switch that never came.
+
+    A page that loads but has no tiles is not loaded again: it would show the same.
+    """
+    try:
+        html, windowed = browser.metagame(format, days)
+    except Exception:  # noqa: BLE001 - Modern's 14 days on 16 October 2026 hung once, then read fine on the next run
+        log.warning("Could not read meta %s %sd; loading it again", format, days, exc_info=True)
+        html, windowed = browser.metagame(format, days)
+    return parse_meta(html, format, f"{days}d"), windowed
 
 
 def _ranked_archetypes(metas: List[Meta]) -> List[Archetype]:

@@ -66,6 +66,8 @@ One failed page doesn't stop the run. Whatever was collected is still published,
 
 Blocked deck downloads are different: they are a warning, the run passes, and the decks wait for the next run. The run fails when the downloads are blocked two runs in a row. The count is in `state/deck-downloads.json`.
 
+A metagame window that cannot be read is a warning too. After a browser error (a hung script, or a window switch that never came) the window is loaded once more; failing that, the snapshot keeps the last one read, with its own `last_updated`, and every format still publishes. The run fails only when no window was read in any format.
+
 A first run reads a month of history for every archetype. For Vintage (23 archetypes, 400 decklists) that took 4 minutes; Modern has about three times as many archetypes. Later runs usually read one page per archetype.
 
 | Variable | Default | Meaning |
