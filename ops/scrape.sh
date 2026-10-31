@@ -9,6 +9,12 @@
 #   none   nothing: the run starts from an empty work/
 #   auto   r2 when the keys are set, else https
 # QUICK=1 presets a small, fast run for development. Every preset can be set by hand.
+# The daily workflow splits the run in two kinds of job, so a format that fails loses only its own day:
+#   SHARED=0  one per format: scrapes FORMATS and publishes their files and the state, but none of the files built
+#             from every format (index.json, explore.json, today.json, the card pages, EDHREC, the guides...)
+#   SCRAPE=0  once, after them: reads nothing from MTGGoldfish and builds those files from every format's
+#             stored snapshot, whatever FORMATS says
+# Both default to 1, one run that does it all.
 set -uo pipefail
 
 . "$(dirname "$0")/lib.sh"
@@ -19,6 +25,13 @@ case $SYNC in
   auto) if have_credentials; then SYNC=r2; else SYNC=https; fi ;;
   r2 | https | none) ;;
   *) echo "ERROR: SYNC must be auto, r2, https or none, not '$SYNC'" >&2; exit 2 ;;
+esac
+SHARED=${SHARED:-1}
+SCRAPE=${SCRAPE:-1}
+case $SHARED$SCRAPE in
+  01 | 10 | 11) ;;
+  00) echo "ERROR: SHARED=0 with SCRAPE=0 would build nothing" >&2; exit 2 ;;
+  *) echo "ERROR: SHARED and SCRAPE must each be 0 or 1, not '$SHARED' and '$SCRAPE'" >&2; exit 2 ;;
 esac
 if [ "$SYNC" = r2 ] && ! have_credentials; then
   echo "ERROR: SYNC=r2 needs R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY" >&2
@@ -138,9 +151,13 @@ step_upload() (
     if [ -f work/explore-manifest.json ]; then
       cp work/explore-manifest.json "$R2/explore-manifest.json" --cache-control "public, max-age=60"
     fi
-    cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
+    # With SHARED=0 it lists only this run's formats, so it stays here and the run with every format publishes it.
+    # Until then the app keeps the snapshots the published index names, in step with explore.json and the rest.
+    if [ "$SHARED" = 1 ]; then
+      cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
+    fi
     echo "Published: $(ls work/decks 2>/dev/null | wc -l) new decks, $(ls work/cards 2>/dev/null | wc -l) card pages, $(ls work/archetypes 2>/dev/null | wc -l) archetype pages, $(ls work/events 2>/dev/null | wc -l) event pages"
-    cat work/index.json
+    if [ "$SHARED" = 1 ]; then cat work/index.json; fi
 )
 
 cd "$REPO/scraper" || exit 1
@@ -187,6 +204,11 @@ if [ "${QUICK:-0}" = 1 ]; then
   export MAX_NEW_EVENTS MAX_SEARCH_PAGES PREMIER_SCHEDULE MOVERS LOCALIZE
 fi
 
+if [ "$SCRAPE" = 0 ]; then
+  # The files built from every format need every format's snapshot.
+  FORMATS=
+fi
+
 # The defaults are the workflow's. FORMATS and MAX_NEW_DECKS also fall back when empty, because the
 # workflow passes its inputs through empty; the rest only when unset, so LOCATOR_PLACES= switches the
 # locator off.
@@ -219,7 +241,7 @@ fi
 # The scraper defaults to a headless browser on macOS, which MTGGoldfish's bot check does not let
 # through. UC mode runs headed (on Linux, SeleniumBase starts Xvfb itself).
 : "${HEADLESS=0}"
-export FORMATS MAX_NEW_DECKS META_DAYS REQUEST_DELAY CONCURRENCY EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
+export SHARED SCRAPE FORMATS MAX_NEW_DECKS META_DAYS REQUEST_DELAY CONCURRENCY EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
   GUIDES_PER_RUN GUIDE_DELAY BRACKET_PAGES_PER_RUN GUIDE_POLISH POLISH_WAIT_MINUTES LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
 
 # continue-on-error: whatever the scrape collected is still published.

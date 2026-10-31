@@ -287,6 +287,23 @@ def test_a_run_that_reads_no_window_in_any_format_fails(tmp_path):
     assert browser.loads == ["30"]
 
 
+
+def test_a_format_job_writes_its_format_and_the_state_but_none_of_the_files_built_from_every_format(tmp_path):
+    cfg = config()
+    store = SnapshotStore(tmp_path, cfg.formats, cfg.history_days, now=NOW)
+    scrape(FixtureBrowser(), store, cfg, now=NOW, pacer=quiet_pacer(cfg))
+    store.finish(shared=False)
+
+    assert (tmp_path / "snapshots" / "modern.json").exists() and (tmp_path / "state" / "snapshots" / "modern.json").exists()
+    assert (tmp_path / "state" / "deck-ids.json").exists() and (tmp_path / "state" / "deck-cards" / "modern.json").exists()
+    assert list((tmp_path / "archetypes").glob("*.json")) and list((tmp_path / "decks").glob("*.json"))
+    for built_from_every_format in ("explore.json", "cards", "edh", "state/card-hashes.json", "state/edhrec.json"):
+        assert not (tmp_path / built_from_every_format).exists(), built_from_every_format
+    # The same run with every file: the ones left out above are what a shared run adds.
+    run(tmp_path / "all", FixtureBrowser(), cfg)
+    assert (tmp_path / "all" / "explore.json").exists() and (tmp_path / "all" / "cards" / "index.json").exists()
+
+
 def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):
     run(tmp_path, FixtureBrowser(), config())
 

@@ -200,6 +200,7 @@ class SnapshotStore:
         deck_resolve_limit: int = 300,
         priority_commanders: Sequence[str] = (),
         weekly_commanders: Sequence[str] = (),
+        shared: bool = True,
     ) -> List[str]:
         """Writes the snapshots, deck id list and index, and returns the paths written.
 
@@ -214,6 +215,10 @@ class SnapshotStore:
         in a week (the ones edh/top.json ranks at a bracket). Decklist entries
         the catalog could not name are looked up again for at most
         `deck_resolve_limit` decks.
+        With `shared` false (one format's job of the daily scrape) only the files of this run's formats and the
+        state are written: explore.json, the card pages and the commander pages need every format, and a run that
+        has them all builds them. index.json, which then lists only this run's formats, is still written, as the
+        sign the run finished, for ops/scrape.sh to leave unpublished.
         """
         written = []
         formats = {}
@@ -284,13 +289,15 @@ class SnapshotStore:
                 "events": len(events),
                 "archetypes": len(published["archetypes"]),
             }
-        written += self._write_explore(documents, catalog)
+        if shared:
+            written += self._write_explore(documents, catalog)
         self._write_popular_cards(documents, catalog)
         self._write_drilldown(documents, catalog)
         for format, contents in self._deck_cards.items():
             self._write(f"state/deck-cards/{format}.json", json.dumps(contents, ensure_ascii=False, separators=(",", ":")).encode())
-        written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
-        written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders, weekly_commanders)
+        if shared:
+            written += self._write_card_pages(card_decks, fetch_edh, edh_limit, catalog)
+            written += self._write_commander_pages(fetch_commanders, commander_limit, catalog, priority_commanders, weekly_commanders)
         self._write("state/deck-ids.json", json.dumps(sorted(self._deck_ids)).encode())
         self._write("state/duplicate-event-ids.json", json.dumps(sorted(self._duplicates)).encode())
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
