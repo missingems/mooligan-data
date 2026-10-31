@@ -1,6 +1,6 @@
 name: Write archetype primers
 
-# Claude writes the deck guides (the archetype primers on api.mooligan.com) that are missing or stale, checks each one
+# Claude writes the deck guides (the archetype primers on api.mooligan.com) that are missing or changed, checks each one
 # and publishes it. What is due is in scraper/mtgmeta/primers.py. The whole job is ops/primers.sh, which also runs on a
 # Mac (see the README, "Archetype primers"). The commander guides are not here: the scrape builds and polishes those.
 on:
@@ -38,7 +38,8 @@ jobs:
     # A cancelled scrape published nothing new.
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
-    # A primer takes a few minutes; ops/primers.sh starts none after MINUTES, so the run ends before this.
+    # The run sends one Message Batch and waits for it at most MINUTES, then checks the answers (a draft with problems
+    # is sent back with one streamed call); a batch still running is collected by the next run.
     timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
@@ -66,8 +67,8 @@ jobs:
           FORMATS: ${{ inputs.formats }}
           COUNT: ${{ inputs.count }}
           BUDGET: ${{ inputs.budget }}
-          # The budget usually ends a run first (about 8 primers at a few minutes each); this stops a slow one in time.
-          MINUTES: "120"
+          # The longest the run waits for its batch, which usually ends within the hour; this stops a slow one in time.
+          MINUTES: "90"
           # setup-python's interpreter, which the script builds scraper/.venv from.
           PYTHON: python
       # What was written, published or not, and each draft's problems, to read without opening the API.

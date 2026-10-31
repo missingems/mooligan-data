@@ -26,7 +26,7 @@ from typing import Callable, Dict, List, Optional, Tuple
 
 log = logging.getLogger(__name__)
 
-MODEL = "claude-sonnet-5-5"
+MODEL = "claude-haiku-5-5"
 EFFORT = "low"
 MAX_TOKENS = 16000
 TOOL_NAME = "write_summaries"
@@ -35,7 +35,8 @@ ORACLE_CHARS = 200
 WAIT_MINUTES = 30
 POLL_SECONDS = 30
 # Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.
-BATCH_PRICES = {MODEL: (1.00, 5.00, 1.25, 0.10)}
+# Sonnet stays for a batch sent on it before the switch to Haiku and collected after.
+BATCH_PRICES = {MODEL: (0.05, 0.25, 0.0625, 0.005), "claude-sonnet-5-5": (1.00, 5.00, 1.25, 0.10)}
 
 TOOL = {
     "name": TOOL_NAME,
@@ -169,7 +170,7 @@ def polish_hash(guide: dict, lookup: Optional[Lookup] = None) -> str:
 
 
 def request(guide: dict, lookup: Optional[Lookup] = None) -> dict:
-    """One guide's Messages request. The Batches API takes no fallbacks, and this model no forced tool choice, so the
+    """One guide's Messages request. The Batches API takes no fallbacks, and Sonnet 5.5 took no forced tool choice, so the
     tool is offered (`auto`, strict) and the instructions ask for it."""
     return {
         "model": MODEL,
@@ -304,11 +305,13 @@ class Batch:
 
 @dataclass
 class Collected:
-    """What an ended batch gave: each polished guide's answer and model by slug, and why the others were not."""
+    """What an ended batch gave: each polished guide's answer and model by slug, why the others were not, its tokens and
+    what it cost at batch prices."""
 
     answers: Dict[str, Tuple[dict, str]] = field(default_factory=dict)
     failed: Dict[str, str] = field(default_factory=dict)
     usage: Usage = field(default_factory=Usage)
+    dollars: float = 0.0
 
 
 @dataclass
@@ -352,7 +355,10 @@ class BatchPolisher:
                 collected.failed[slug] = result.result.type
                 continue
             message = result.result.message
+            priced = Usage()
+            priced.add(message.usage)
             collected.usage.add(message.usage)
+            collected.dollars += priced.dollars(message.model)
             try:
                 collected.answers[slug] = (answer_of(message), message.model)
             except PolishError as error:
@@ -361,7 +367,7 @@ class BatchPolisher:
         log.info(
             "Polish: batch %s: %d polished, %d kept templated; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
             batch.id, len(collected.answers), len(collected.failed), usage.input_tokens, usage.output_tokens,
-            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, usage.dollars(),
+            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, collected.dollars,
         )
         for slug, reason in sorted(collected.failed.items()):
             log.warning("Polish %s failed, keeping the templated summaries: %s", slug, reason)

@@ -1,5 +1,7 @@
 from types import SimpleNamespace
 
+import pytest
+
 from mtgmeta import guide_polish
 
 GUIDE = {
@@ -20,8 +22,8 @@ GUIDE = {
 class BatchClient:
     """The Message Batches API as `BatchPolisher` uses it: each request is answered by `answer(custom_id, params)`."""
 
-    def __init__(self, answer=None, statuses=("ended",), error=None):
-        self.created, self.retrieved = [], 0
+    def __init__(self, answer=None, statuses=("ended",), error=None, model=guide_polish.MODEL):
+        self.created, self.retrieved, self.model = [], 0, model
         self.answer = answer or (lambda custom_id, params: {"styles": [], "brackets": []})
         self.statuses, self.error = list(statuses), error
         self.messages = SimpleNamespace(batches=SimpleNamespace(create=self.create, retrieve=self.retrieve, results=self.results))
@@ -46,7 +48,7 @@ class BatchClient:
                 continue
             usage = SimpleNamespace(input_tokens=3600, output_tokens=1800, cache_creation_input_tokens=0, cache_read_input_tokens=0)
             content = [SimpleNamespace(type="thinking"), SimpleNamespace(type="tool_use", name="write_summaries", input=answer)]
-            message = SimpleNamespace(stop_reason="tool_use", model="claude-sonnet-5-5", content=content, usage=usage)
+            message = SimpleNamespace(stop_reason="tool_use", model=self.model, content=content, usage=usage)
             yield SimpleNamespace(custom_id=each["custom_id"], result=SimpleNamespace(type="succeeded", message=message))
 
 
@@ -91,18 +93,27 @@ def test_one_batch_carries_every_guide_and_its_answers_replace_only_the_summarie
     assert len(client.created) == 1 and [each["custom_id"] for each in client.created[0]] == ["g0", "g1"]
     answer, model = collected.answers["atraxa"]
     polished = guide_polish.apply(GUIDE, answer, model)
-    assert polished["model"] == "claude-sonnet-5-5" and polished["styles"][0]["summary"] == "Poison them out."
+    assert polished["model"] == guide_polish.MODEL and polished["styles"][0]["summary"] == "Poison them out."
     assert [bracket["summary"] for bracket in polished["brackets"]] == ["Bracket 1.", "Bracket 2.", "Tuned.", "Bracket 4.", "Bracket 5."]
     assert polished["styles"][0]["cards"] == GUIDE["styles"][0]["cards"]
     assert set(collected.answers) == {"atraxa", "a" * 80}
     assert (collected.usage.input_tokens, collected.usage.output_tokens) == (7200, 3600)
-    assert round(collected.usage.dollars(), 4) == 0.0252
+    assert collected.dollars == pytest.approx(7200 * 0.05 / 1e6 + 3600 * 0.25 / 1e6)
+
+
+def test_a_batch_is_priced_by_the_model_of_each_message():
+    for model, dollars in (("claude-haiku-5-5", 0.00126), ("claude-sonnet-5-5", 0.0252)):
+        batch_polisher = polisher(BatchClient(model=model))
+        collected = batch_polisher.collect(batch_polisher.submit([GUIDE, {**GUIDE, "slug": "other"}]))
+        assert collected.dollars == pytest.approx(dollars) and {each for _, each in collected.answers.values()} == {model}
+    assert guide_polish.Usage(input_tokens=1_000_000, output_tokens=1_000_000).dollars("claude-haiku-5-5") == pytest.approx(0.30)
+    assert guide_polish.Usage(input_tokens=1_000_000, output_tokens=1_000_000).dollars("claude-sonnet-5-5") == pytest.approx(6.00)
 
 
 def test_the_request_asks_for_the_tool_without_forcing_it_or_naming_fallbacks():
-    """Sonnet 5.5 refuses a forced tool choice, and the Batches API refuses fallbacks and their beta."""
+    """The tool is offered, not forced (Sonnet 5.5 refused a forced choice), and the Batches API refuses fallbacks and their beta."""
     call = guide_polish.request(GUIDE)
-    assert call["model"] == "claude-sonnet-5-5" and call["tool_choice"] == {"type": "auto"}
+    assert call["model"] == "claude-haiku-5-5" and call["output_config"] == {"effort": "low"} and call["tool_choice"] == {"type": "auto"}
     assert "betas" not in call and "fallbacks" not in call and "thinking" not in call
     assert call["tools"][0]["strict"] is True and "Call the write_summaries tool once" in call["system"][0]["text"]
 

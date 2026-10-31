@@ -18,7 +18,7 @@ GitHub Actions (14:00 UTC)
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
 | `ops/` | The scrape, catalog and primer jobs as scripts (`scrape.sh`, `catalog.sh`, `primers.sh`), which the workflows call and which run the same on a Mac |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
-| `.github/workflows/guides.yml` | After each scrape, Claude writes the archetype primers that are missing or stale and publishes them to api.mooligan.com (see [Archetype primers](#archetype-primers)) |
+| `.github/workflows/guides.yml` | After each scrape, Claude writes the archetype primers that are missing or changed and publishes them to api.mooligan.com (see [Archetype primers](#archetype-primers)) |
 | `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
@@ -223,11 +223,11 @@ Commander usage on each card page comes from EDHREC, used with their permission.
 
 `edh/top.json` also ranks the 50 commanders most played at each Commander Bracket: Brackets 1 to 4 from EDHREC's bracket counts of the past month's top 300 commanders (`BRACKET_PAGES_PER_RUN`, 150, EDHREC pages a run, the rest cached a week in `state/bracket-counts.json`), and cEDH from [EDHTop16](https://edhtop16.com)'s tournament entries of the past three months (two requests a day at most, cached in `state/edhtop16.json`; EDHREC's counts stand in when it cannot be read). EDHTop16 has no published API: the scraper asks its site's own GraphQL endpoint with the query id its page script uses (`EDHTOP16_QUERY_ID` in `top_brackets.py`, read again from the site when it changes).
 
-The guides (`edh/commanders/{slug}/guide.json`) of the first `GUIDES_TOP` (100) commanders of `edh/top.json` and of every one its brackets rank are built from EDHREC's theme and bracket pages, Commander Spellbook's estimate-bracket and Scryfall's catalog: `GUIDES_PER_RUN` (60, 45 in `ops/scrape.sh`) a run, the ones due (never built, a week old, or whose themes changed), `GUIDE_DELAY` (1) seconds between EDHREC pages. With `ANTHROPIC_API_KEY` set (the GitHub secret of the same name), Claude (`claude-sonnet-5-5`) then rewrites the summaries of the guides whose facts changed, as one Message Batch at half price; the run waits for it up to `POLISH_WAIT_MINUTES` (30, 15 in `ops/scrape.sh`) and logs its tokens and dollars, and a batch still running is collected by the next run. `GUIDE_POLISH=0` turns that off; `ops/scrape.sh` only polishes on a run that publishes unless `GUIDE_POLISH=1`. `python -m mtgmeta guides DIR --top 5 [--brackets] [--polish]` builds them by hand. See [`docs/data-format.md`](docs/data-format.md#edhcommandersslugguidejson).
+The guides (`edh/commanders/{slug}/guide.json`) of the first `GUIDES_TOP` (100) commanders of `edh/top.json` and of every one its brackets rank are built from EDHREC's theme and bracket pages, Commander Spellbook's estimate-bracket and Scryfall's catalog: `GUIDES_PER_RUN` (60, 45 in `ops/scrape.sh`) a run, the ones due (never built, a week old, or whose themes changed), `GUIDE_DELAY` (1) seconds between EDHREC pages. With `ANTHROPIC_API_KEY` set (the GitHub secret of the same name), Claude (`claude-haiku-5-5`) then rewrites the summaries of the guides whose facts changed, as one Message Batch at half price; the run waits for it up to `POLISH_WAIT_MINUTES` (30, 15 in `ops/scrape.sh`) and logs its tokens and dollars, and a batch still running is collected by the next run (`state/polish-batch.json`, which holds `{"batches": []}` when none is running). `GUIDE_POLISH=0` turns that off; `ops/scrape.sh` only polishes on a run that publishes unless `GUIDE_POLISH=1`. `python -m mtgmeta guides DIR --top 5 [--brackets] [--polish]` builds them by hand. See [`docs/data-format.md`](docs/data-format.md#edhcommandersslugguidejson).
 
 ## Archetype primers
 
-The deck guides on an archetype's Primers tab are playgraph Markdown on api.mooligan.com (the API's `format_guide` describes it). `.github/workflows/guides.yml` ("Write archetype primers") runs `ops/primers.sh` after each scrape that wasn't cancelled. Claude (`claude-opus-5-5`, effort high) then writes the primers that are due and publishes them.
+The deck guides on an archetype's Primers tab are playgraph Markdown on api.mooligan.com (the API's `format_guide` describes it). `.github/workflows/guides.yml` ("Write archetype primers") runs `ops/primers.sh` after each scrape that wasn't cancelled. Claude then writes the primers that are due, as one Message Batch at half price, and the run publishes them.
 
 Which archetypes get a primer, set in one place at the top of `scraper/mtgmeta/primers.py`:
 
@@ -238,7 +238,7 @@ A primer is due when:
 
 - **missing:** the archetype has no primer under its id. The app finds a primer by its archetype's id, so the primer of an archetype since merged into this one (the snapshot's `merges`) doesn't count. A new primer is written under this archetype's id, starting from the old one's text; the old one is left as it is;
 - **changed:** its consensus main deck has moved by 6 cards or more since the primer was written, or its top card (the first of `hand`) is new to the deck. `state/primers.json` keeps the consensus each primer written here came from. For a primer written or edited by hand, its `Main cards` grid stands in, and only copies that left the deck count;
-- **old:** the primer was last updated 30 or more days ago.
+- **old:** the primer was last updated 90 or more days ago (`STALE_DAYS`) and its main deck has moved by a card or more since it was written (counted as for *changed*, with the grid standing in for a primer written by hand). An old primer whose deck is the same is left alone.
 
 Everything else is left alone:
 
@@ -246,6 +246,8 @@ Everything else is left alone:
 - Commander, whose guides the scrape builds (see [EDHREC](#edhrec)).
 
 A primer that is due again is replaced by a new version of the same id, with a note saying what it was written from and why.
+
+A missing primer is written by `claude-opus-5-5` at effort high. A refresh of one that exists (changed or old) is a revision by `claude-sonnet-5-5` at effort medium: it is told to keep what still holds in the primer it has now and to rewrite what the changes make wrong (the Main cards grid, the sideboard and matchups, and anything said about cards the deck no longer plays or now plays), and it replies with the whole primer.
 
 Claude is sent:
 
@@ -262,15 +264,17 @@ Each draft is checked by the API's `validate_primer`. It is then checked for pro
 - `in:` cards the sideboard doesn't play and `out:` cards the main deck doesn't play;
 - matchups that bring in a different number of cards than they take out.
 
-A draft with problems is sent back once, and one that still has them is not published. Every draft and its problems are kept for 30 days as the run's `primers` artifact.
+A draft with problems is sent back once, as a single streamed call to the same model at the standard price, and one that still has them is not published. Every draft and its problems are kept for 30 days as the run's `primers` artifact.
 
-A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run: the first 16 before the others, and missing ones first. Claude writes for a few minutes per primer, so a $5 run should take roughly 30 to 60 minutes of Actions time. This is an estimate, not yet timed. Once every primer is current, the 30-day rule over about 180 archetypes comes to about 6 primers a day, roughly $90 a month. The most it can reach is $150 a month, if every daily run spends its $5. Catching up costs the same whatever the budget, about $55 for the roughly 107 primers due today. The budget only sets the pace: about 13 runs at $5, or 4 to 5 at $15.
+The run sends the primers it can afford as one batch and polls it every 30 seconds for at most `MINUTES` (60 when 0, 90 in the workflow, which leaves an hour of the job's 150 minutes for checks and drafts sent back). A batch that hasn't ended by then is kept in `state/primer-batch.json` (each request's primer id, archetype, format and model), which `ops/primers.sh` downloads and uploads beside `state/primers.json`. The next run collects it first, once it has ended. A primer of it that is still due is checked and published as if it had come back at once, and isn't sent again; one that isn't due any more is dropped and logged. A batch still running keeps its primers out of that run's batch. With no batch left the file holds `{"batches": []}`, because `ops/primers.sh` never deletes in R2. A run that doesn't publish uploads nothing, so a batch it leaves running is lost.
+
+A primer costs about $0.30 by Opus and a revision about $0.15 by Sonnet, at batch prices: 13k tokens in, plus up to 25k of thinking and primer. These are the estimates (`ESTIMATES`) that pick the primers a run sends: in order, while their sum fits `BUDGET` ($5) less what the batches it collected first cost. The real cost, from each batch's usage, is added to the budget afterwards and logged with the tokens; a draft sent back costs a call at the standard price, twice an estimate, and is sent only if the budget covers it. The primers left wait for the next run: the first 16 before the others, and missing ones first. Most batches end within the hour, though one may take up to 24. This is not yet timed. Catching up on the roughly 107 primers due today, if all are missing, comes to about $32 whatever the budget; the budget only sets the pace, about 7 runs at $5. Once every primer is current only a moved deck costs anything, as a revision; there is no figure for how many a day yet. A run is meant to stay within `BUDGET`, though the estimates can be off, so $5 a day comes to about $150 a month at most.
 
 The workflow needs these GitHub secrets:
 
 - `ANTHROPIC_API_KEY`;
 - `PRIMERS_ADMIN_TOKEN`;
-- the R2 keys, for `state/primers.json`.
+- the R2 keys, for `state/primers.json` and `state/primer-batch.json`.
 
 It shares the scrape's concurrency group, because the scrape uploads the `state/` it downloaded when it started. From the Actions tab, Run workflow takes:
 

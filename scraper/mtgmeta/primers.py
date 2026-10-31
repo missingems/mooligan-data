@@ -15,22 +15,36 @@ that is due:
   each primer written here came from. A primer written by hand (or edited since) has none, so its own `Main cards` grid
   stands in; the grid lists only the main cards, so it counts only copies that left the deck (a card the grid has at 4
   and the deck now plays at 1 is 3 cards), and its top card counts as new when the primer never names it.
-- old: the primer was last updated STALE_DAYS (30) or more days ago.
+- old: the primer was last updated STALE_DAYS (90) or more days ago, and its main deck has moved by a card or more since
+  it was written (counted as for "changed"). A primer whose deck is the same is left alone, however old.
 
 Other archetypes, and their primers, are left alone. Commander primers are not written here: a commander's
 primer is shaped differently (its abilities, its builds by bracket) and needs other facts than a decklist.
 
-Claude (MODEL, effort EFFORT) is sent the archetype's shares, consensus list and other cards its lists play, its recent
-results, the format's other top archetypes, the Oracle text of every card, and the primer it has now, and writes the
-whole primer. Each draft is checked: by the API's `validate_primer` (the parser that rejects a primer on publish); that
-every [[card]] is one Scryfall knows, or a token one of the facts' cards makes; that every matchup is an archetype of
-the format; that every `in:` card is one of the deck's sideboard cards and every `out:` card one of its main deck cards;
-and that each matchup takes out as many cards as it brings in. A draft with problems is sent back once with them, and
-one that still has them is not published. Every draft is written to DIR/primers/{id}.md.
+A missing primer is written by MODEL (claude-opus-5-5) at effort EFFORT (high). A refresh of one that exists (changed
+or old) is a revision by REVISION_MODEL (claude-sonnet-5-5) at effort REVISION_EFFORT (medium): it is told to keep what
+still holds in the primer it has now and rewrite what the changes make wrong, and replies with the whole primer.
+
+Claude is sent the archetype's shares, consensus list and other cards its lists play, its recent results, the format's
+other top archetypes, the Oracle text of every card, and the primer it has now. The primers of a run go as one Message
+Batch, at half the price of single calls: `Writer` submits it, polls until it ends (at most `--minutes`, WAIT_MINUTES
+(60) when 0), and each primer is checked as its answer comes back: by the API's `validate_primer` (the parser that
+rejects a primer on publish); that every [[card]] is one Scryfall knows, or a token one of the facts' cards makes; that
+every matchup is an archetype of the format; that every `in:` card is one of the deck's sideboard cards and every `out:`
+card one of its main deck cards; and that each matchup takes out as many cards as it brings in. A draft with problems is
+sent back once with them, as a single streamed call at the standard price, and one that still has them is not published.
+Every draft is written to DIR/primers/{id}.md.
+
+A batch still running when the wait is over is kept in `state/primer-batch.json` (the primer and model of each request).
+The next run collects it first, once it has ended: a primer of it that is still due is checked and published as if it
+had come back at once, and is not sent again; the others are dropped. A batch still running keeps its primers out of
+that run's batch. The file is written as {"batches": []} when none is left, since ops/primers.sh never deletes in R2.
 
 `--publish` puts each passing draft with PRIMERS_ADMIN_TOKEN as a new version of the primer's id. `--budget` stops
-asking Claude before the run would pass that many dollars; the primers left wait for the next run, the first
-archetypes' before the rest and the missing ones first. `--plan` lists what is due and why, and `--check` validates the published primers; neither needs a key.
+asking Claude before the run would pass that many dollars: the primers picked for the batch are the first, in order,
+whose estimates (ESTIMATES, at batch prices) fit what is left, and a draft is sent back only if its call fits too. The
+primers left wait for the next run, the first archetypes' before the rest and the missing ones first. `--plan` lists
+what is due and why, and `--check` validates the published primers; neither needs a key.
 
 It reads ANTHROPIC_API_KEY (and ANTHROPIC_WORKSPACE_ID for a key not scoped to one workspace) and PRIMERS_ADMIN_TOKEN
 from the environment, and never logs them.
@@ -49,6 +63,7 @@ import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
+from functools import partial
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
@@ -62,31 +77,43 @@ FORMATS = ("standard", "pioneer", "modern", "legacy", "pauper", "vintage")
 COUNT = 16
 MIN_RESULTS = 10
 BACKFILL = 25
-# When a primer is written again: its deck moved by CHANGED_SLOTS cards, or it is STALE_DAYS old.
-STALE_DAYS = 30
+# When a primer is written again: its deck moved by CHANGED_SLOTS cards, or it is STALE_DAYS old and its deck moved at all.
+STALE_DAYS = 90
 CHANGED_SLOTS = 6
 STATE_PATH = "state/primers.json"
+BATCH_PATH = "state/primer-batch.json"
 DRAFTS = "primers"
 API_URL = "https://api.mooligan.com"
 USER_AGENT = "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"
 EXAMPLE = Path(__file__).with_name("primer_example.md")
 
+# A missing primer is written by MODEL; a refresh of one that exists is a revision by REVISION_MODEL.
 MODEL = "claude-opus-5-5"
 EFFORT = "high"
+REVISION_MODEL = "claude-sonnet-5-5"
+REVISION_EFFORT = "medium"
+EFFORTS = {MODEL: EFFORT, REVISION_MODEL: REVISION_EFFORT}
 MAX_TOKENS = 64000
+# The batch is polled this often, for at most the run's minutes (WAIT_MINUTES when it has none).
+WAIT_MINUTES = 60
+POLL_SECONDS = 30
+CACHE = {"type": "ephemeral", "ttl": "1h"}
 # A refusal is run again on the model Anthropic recommends for its category, in the same call.
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
 # A draft with problems goes back this many times.
 REPAIRS = 1
-# Dollars per million tokens: input, output, cache write, cache read. Thinking is billed as output. A fallback is billed
-# at its own model's prices; an unknown model at the dearest here.
+# Dollars per million tokens: input, output, cache write (the 1-hour cache, twice the input), cache read. Thinking is
+# billed as output. A fallback is billed at its own model's prices; an unknown model at the dearest here. A batch is
+# billed at half.
 PRICES = {
-    "claude-opus-5-5": (4.00, 20.00, 5.00, 0.20),
-    "claude-opus-5": (5.00, 25.00, 6.25, 0.50),
-    "claude-opus-4-8": (5.00, 25.00, 6.25, 0.50),
+    "claude-opus-5-5": (4.00, 20.00, 8.00, 0.20),
+    "claude-sonnet-5-5": (2.00, 10.00, 4.00, 0.20),
+    "claude-opus-5": (5.00, 25.00, 10.00, 0.50),
+    "claude-opus-4-8": (5.00, 25.00, 10.00, 0.50),
 }
-# What one call is taken to cost before the run has seen one: about 13k tokens of facts and up to 25k of thinking and primer.
-ESTIMATE = 0.60
+# What one primer is taken to cost at batch prices, which picks the primers a budget covers: about 13k tokens of facts
+# and up to 25k of thinking and primer. A draft sent back is a call at the standard price, twice that.
+ESTIMATES = {MODEL: 0.30, REVISION_MODEL: 0.15}
 # Cards some lists play beyond the consensus, from this share of the lists.
 FLEX_SHARE = 25.0
 FLEX_CARDS = 15
@@ -300,6 +327,20 @@ class Item:
         return self.row["id"]
 
     @property
+    def model(self) -> str:
+        """A primer that exists is revised by the cheaper model; a missing one (or one starting from a merged archetype's
+        primer) is written by the better."""
+        return REVISION_MODEL if self.primer else MODEL
+
+    @property
+    def effort(self) -> str:
+        return EFFORTS[self.model]
+
+    @property
+    def estimate(self) -> float:
+        return ESTIMATES[self.model]
+
+    @property
     def previous(self) -> Optional[Published]:
         """The primer whose text the new one starts from."""
         return self.primer or self.merged_from
@@ -356,10 +397,12 @@ def match_primers(rows: Sequence[dict], primers: Sequence[Published], merges: Di
 
 
 def reasons_for(archetype: dict, primer: Published, entry: Optional[dict], markdown: Optional[str], today: date) -> Tuple[List[str], int]:
-    """Why the archetype's primer is due, and its rank (changed 1, old 2); [] when it is not."""
+    """Why the archetype's primer is due, and its rank (changed 1, old 2); [] when it is not. An old primer is due only if
+    its deck has moved at all."""
     found: List[Tuple[int, str]] = []
     now = consensus(archetype)
     top = top_card(archetype)
+    slots = 0
     if entry and entry.get("version") == primer.version and entry.get("consensus"):
         before = entry["consensus"]
         slots = moved(before, now)
@@ -374,7 +417,7 @@ def reasons_for(archetype: dict, primer: Published, entry: Optional[dict], markd
         if top and top not in linked(markdown):
             found.append((1, f"its top card {top} is not in the primer"))
     days = age(primer, today)
-    if days is not None and days >= STALE_DAYS:
+    if days is not None and days >= STALE_DAYS and slots:
         found.append((2, f"updated {days} days ago"))
     return [reason for _, reason in found], min((rank for rank, _ in found), default=3)
 
@@ -498,7 +541,17 @@ def facts(item: Item, read: Callable[[str], Optional[dict]], lookup: Lookup, pre
     cards_block = archetype.get("cards") or {}
     days = 7 if cards_block.get("window") == "7d" else 30
     shares = archetype.get("shares") or {}
-    lines = ["Write the primer for this archetype.", "", "## Front matter"]
+    if item.primer and previous:
+        lines = [
+            "Revise the primer this archetype has now, given at the end. Keep what still holds, and rewrite what the changes "
+            "make wrong: the Main cards grid, the sideboard and matchups, and anything said about cards the deck no longer "
+            "plays or now plays. Reply with the whole revised primer.",
+            f"Why it is revised: {'; '.join(item.reasons)}.",
+            "",
+            "## Front matter",
+        ]
+    else:
+        lines = ["Write the primer for this archetype.", "", "## Front matter"]
     lines += [f"{key}: {value}" for key, value in front_matter(item, today).items()]
     lines += [
         "",
@@ -651,29 +704,34 @@ class Usage:
         for name in ("input_tokens", "output_tokens", "cache_creation_input_tokens", "cache_read_input_tokens"):
             setattr(self, name, getattr(self, name) + (getattr(usage, name, 0) or 0))
 
-    def dollars(self, model: str) -> float:
+    def dollars(self, model: str, batch: bool = False) -> float:
         prices = PRICES.get(model) or max(PRICES.values())
         counts = (self.input_tokens, self.output_tokens, self.cache_creation_input_tokens, self.cache_read_input_tokens)
-        return sum(count * price for count, price in zip(counts, prices)) / 1_000_000
+        return sum(count * price for count, price in zip(counts, prices)) / 1_000_000 / (2 if batch else 1)
 
 
 @dataclass
 class Budget:
-    """Dollars a run may spend. A call is taken to cost the most of ESTIMATE and the run's average so far."""
+    """Dollars a run may spend."""
 
     limit: float
     spent: float = 0.0
-    calls: int = 0
 
-    def estimate(self) -> float:
-        return max(ESTIMATE, self.spent / self.calls) if self.calls else ESTIMATE
-
-    def allows(self) -> bool:
-        return self.spent + self.estimate() <= self.limit
+    def allows(self, dollars: float) -> bool:
+        return self.spent + dollars <= self.limit
 
     def spend(self, dollars: float) -> None:
         self.spent += dollars
-        self.calls += 1
+
+
+def affordable(items: Sequence[Item], budget: Budget) -> Tuple[List[Item], List[Item]]:
+    """The first of the items, in order, whose estimates (at batch prices) the budget left covers, and the rest."""
+    total = 0.0
+    for count, item in enumerate(items):
+        if not budget.allows(total + item.estimate):
+            return list(items[:count]), list(items[count:])
+        total += item.estimate
+    return list(items), []
 
 
 def markdown_of(message) -> str:
@@ -694,25 +752,113 @@ def markdown_of(message) -> str:
 
 
 @dataclass
+class Batch:
+    """A submitted batch: its id and, for each request, the primer it is for with its archetype, format and model."""
+
+    id: str
+    items: Dict[str, dict]
+
+    def json(self) -> dict:
+        return {"id": self.id, "items": self.items}
+
+    @staticmethod
+    def of(body: dict) -> "Batch":
+        return Batch(body["id"], dict(body.get("items") or {}))
+
+
+@dataclass
+class Collected:
+    """What an ended batch gave: each request's finished message by custom_id, why the others have none, its tokens and
+    what it cost at batch prices."""
+
+    messages: Dict[str, object] = field(default_factory=dict)
+    failed: Dict[str, str] = field(default_factory=dict)
+    usage: Usage = field(default_factory=Usage)
+    dollars: float = 0.0
+
+
+@dataclass
 class Writer:
-    """Asks Claude for a primer, one streamed Messages call at a time."""
+    """Asks Claude for primers: a run's as one Message Batch, a draft sent back as one streamed Messages call."""
 
     client: object
     system: str
-    model: str = MODEL
-    effort: str = EFFORT
+    wait_minutes: float = WAIT_MINUTES
+    poll_seconds: float = POLL_SECONDS
+    sleep: Callable[[float], None] = time.sleep
+    clock: Callable[[], float] = time.monotonic
 
-    def write(self, messages: List[dict]):
+    def write(self, messages: List[dict], model: str, effort: str):
         with self.client.beta.messages.stream(
-            model=self.model,
+            model=model,
             max_tokens=MAX_TOKENS,
             betas=[FALLBACK_BETA],
             fallbacks="default",
-            output_config={"effort": self.effort},
-            system=[{"type": "text", "text": self.system, "cache_control": {"type": "ephemeral"}}],
+            output_config={"effort": effort},
+            system=[{"type": "text", "text": self.system, "cache_control": CACHE}],
             messages=messages,
         ) as stream:
             return stream.get_final_message()
+
+    def submit(self, items: Sequence[Item], prompts: Sequence[str]) -> Batch:
+        """The Batches API takes no betas and no fallbacks. A primer id can pass the 64 characters a custom_id may have,
+        so the requests are numbered."""
+        entries = {
+            f"p{index}": {"primer_id": item.primer_id, "archetype": item.id, "format": item.format["format"], "model": item.model}
+            for index, item in enumerate(items)
+        }
+        requests = [
+            {
+                "custom_id": custom_id,
+                "params": {
+                    "model": item.model,
+                    "max_tokens": MAX_TOKENS,
+                    "output_config": {"effort": item.effort},
+                    "system": [{"type": "text", "text": self.system, "cache_control": CACHE}],
+                    "messages": [{"role": "user", "content": prompt}],
+                },
+            }
+            for custom_id, item, prompt in zip(entries, items, prompts)
+        ]
+        batch = self.client.messages.batches.create(requests=requests)
+        log.info("Primers: batch %s submitted with %d primers", batch.id, len(requests))
+        return Batch(batch.id, entries)
+
+    def ended(self, batch: Batch) -> bool:
+        return self.client.messages.batches.retrieve(batch.id).processing_status == "ended"
+
+    def wait(self, batch: Batch) -> bool:
+        """True once the batch has ended; False when it is still running after `wait_minutes`."""
+        deadline = self.clock() + self.wait_minutes * 60
+        while not self.ended(batch):
+            if self.clock() >= deadline:
+                log.warning("Primers: batch %s is still running after %.0f minutes; the next run collects it", batch.id, self.wait_minutes)
+                return False
+            self.sleep(self.poll_seconds)
+        return True
+
+    def collect(self, batch: Batch) -> Collected:
+        collected = Collected()
+        for result in self.client.messages.batches.results(batch.id):
+            entry = batch.items.get(result.custom_id)
+            if entry is None:
+                continue
+            if result.result.type != "succeeded":
+                collected.failed[result.custom_id] = result.result.type
+                continue
+            message = result.result.message
+            usage = Usage()
+            usage.add(message.usage)
+            collected.usage.add(message.usage)
+            collected.dollars += usage.dollars(getattr(message, "model", None) or entry["model"], batch=True)
+            collected.messages[result.custom_id] = message
+        usage = collected.usage
+        log.info(
+            "Primers: batch %s: %d answered, %d not; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
+            batch.id, len(collected.messages), len(collected.failed), usage.input_tokens, usage.output_tokens,
+            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, collected.dollars,
+        )
+        return collected
 
 
 def make_client():
@@ -740,6 +886,7 @@ class Result:
     drafted: List[str] = field(default_factory=list)
     failed: List[str] = field(default_factory=list)
     deferred: List[str] = field(default_factory=list)
+    pending: List[str] = field(default_factory=list)
     usage: Usage = field(default_factory=Usage)
     spent: float = 0.0
 
@@ -755,86 +902,154 @@ def write_draft(directory: Path, primer_id: str, markdown: str, problems: Sequen
         report.unlink()
 
 
-def run(
-    directory: Path, items: Sequence[Item], *, writer: Writer, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup,
-    budget: Budget, publish: bool, state: Dict[str, dict], today: date, minutes: float = 0, clock: Callable[[], float] = time.monotonic,
-) -> Result:
-    """Writes, checks and (with `publish`) publishes the primer of each item in turn, while the budget allows and, with
-    `minutes`, until that long has passed."""
-    result = Result()
-    state_path = directory / STATE_PATH
-    deadline = clock() + minutes * 60 if minutes else None
-    for position, item in enumerate(items):
-        late = deadline is not None and clock() >= deadline
-        if late or not budget.allows():
-            result.deferred = [each.primer_id for each in items[position:]]
-            why = f"{minutes:.0f} minutes have passed" if late else f"${budget.spent:.2f} of ${budget.limit:.2f} is spent"
-            log.info("%s, so %d primers wait for the next run", why[0].upper() + why[1:], len(result.deferred))
-            break
-        previous = (api.source(item.previous.id) or {}).get("markdown") if item.previous else None
-        prompt, named = facts(item, read, lookup, previous, today)
-        known = format_ids(item.format)
-        messages: List[dict] = [{"role": "user", "content": prompt}]
-        markdown, problems, model, tries = None, [Problem("claude", "not written")], MODEL, 0
-        for attempt in range(1 + REPAIRS):
-            if attempt and not budget.allows():
+def prompt_of(item: Item, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup, today: date) -> Tuple[str, List[str]]:
+    previous = (api.source(item.previous.id) or {}).get("markdown") if item.previous else None
+    return facts(item, read, lookup, previous, today)
+
+
+def settle(
+    item: Item, message, model: str, *, directory: Path, writer: Writer, api: Api, read: Callable[[str], Optional[dict]],
+    lookup: Lookup, budget: Budget, publish: bool, state: Dict[str, dict], today: date, result: Result,
+) -> None:
+    """Checks the primer in the batch's answer for `item`, sends it back once if it has problems (a streamed call at the
+    standard price to `model`, the one the batch asked), and with `publish` publishes it."""
+    prompt, named = prompt_of(item, api, read, lookup, today)
+    known = format_ids(item.format)
+    messages: List[dict] = [{"role": "user", "content": prompt}]
+    markdown, problems, written = None, [Problem("claude", "not written")], getattr(message, "model", None) or model
+    for attempt in range(1 + REPAIRS):
+        if attempt:
+            if not budget.allows(2 * ESTIMATES[model]):
                 break
-            tries += 1
-            message = writer.write(messages)
-            model = getattr(message, "model", MODEL) or MODEL
+            message = writer.write(messages, model, EFFORTS[model])
+            written = getattr(message, "model", None) or model
             usage = Usage()
             usage.add(message.usage)
-            cost = usage.dollars(model)
+            cost = usage.dollars(written)
             budget.spend(cost)
             result.usage.add(message.usage)
             log.info(
-                "Primer %s: try %d by %s; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
-                item.primer_id, tries, model, usage.input_tokens, usage.output_tokens, usage.cache_creation_input_tokens,
+                "Primer %s: sent back to %s; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
+                item.primer_id, written, usage.input_tokens, usage.output_tokens, usage.cache_creation_input_tokens,
                 usage.cache_read_input_tokens, cost,
             )
-            try:
-                markdown = markdown_of(message)
-            except PrimerError as error:
-                problems = [Problem("claude", str(error))]
-                break
-            problems = check(markdown, api.validate(markdown), item, lookup, known, named)
-            write_draft(directory, item.primer_id, markdown, problems)
-            if not any(problem.blocking for problem in problems):
-                break
-            messages += [{"role": "assistant", "content": message.content}, {"role": "user", "content": repair_message(problems)}]
-        blocking = [problem for problem in problems if problem.blocking]
-        if blocking or markdown is None:
-            log.warning("Primer %s not published: %s", item.primer_id, "; ".join(str(problem) for problem in blocking[:5]))
-            result.failed.append(item.primer_id)
-            continue
-        if not publish:
-            result.drafted.append(item.primer_id)
-            continue
-        cards = item.archetype.get("cards") or {}
-        note = (
-            f"Written by {model} from {cards.get('list_count') or 0} lists of the last {7 if cards.get('window') == '7d' else 30} days "
-            f"on {today.isoformat()}: {'; '.join(item.reasons)}"
-        )
         try:
-            version = api.publish(item.primer_id, markdown, note)
+            markdown = markdown_of(message)
         except PrimerError as error:
-            log.warning("Primer %s: %s", item.primer_id, error)
+            problems = [Problem("claude", str(error))]
+            break
+        problems = check(markdown, api.validate(markdown), item, lookup, known, named)
+        write_draft(directory, item.primer_id, markdown, problems)
+        if not any(problem.blocking for problem in problems):
+            break
+        messages += [{"role": "assistant", "content": message.content}, {"role": "user", "content": repair_message(problems)}]
+    blocking = [problem for problem in problems if problem.blocking]
+    if blocking or markdown is None:
+        log.warning("Primer %s not published: %s", item.primer_id, "; ".join(str(problem) for problem in blocking[:5]))
+        result.failed.append(item.primer_id)
+        return
+    if not publish:
+        result.drafted.append(item.primer_id)
+        return
+    cards = item.archetype.get("cards") or {}
+    note = (
+        f"Written by {written} from {cards.get('list_count') or 0} lists of the last {7 if cards.get('window') == '7d' else 30} days "
+        f"on {today.isoformat()}: {'; '.join(item.reasons)}"
+    )
+    try:
+        version = api.publish(item.primer_id, markdown, note)
+    except PrimerError as error:
+        log.warning("Primer %s: %s", item.primer_id, error)
+        result.failed.append(item.primer_id)
+        return
+    state[item.primer_id] = {
+        "archetype": item.id,
+        "format": item.format["format"],
+        "version": version,
+        "written_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "model": written,
+        "lists": cards.get("list_count") or 0,
+        "window": cards.get("window"),
+        "consensus": consensus(item.archetype),
+    }
+    state_path = directory / STATE_PATH
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
+    result.published.append(item.primer_id)
+    log.info("Primer %s: published as version %d (%s)", item.primer_id, version, "; ".join(item.reasons))
+
+
+def save_batches(path: Path, batches: Sequence[Batch]) -> None:
+    """The batches still running. The file is written even with none, since ops/primers.sh never deletes a file in R2."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"batches": [batch.json() for batch in batches]}, sort_keys=True, indent=1))
+
+
+def collect_batch(
+    batch: Batch, due: Dict[str, Item], *, writer: Writer, budget: Budget, result: Result, handle: Callable[..., None],
+) -> Set[str]:
+    """Reads an ended batch: each primer in it that is still due is settled with its item, the others are dropped and
+    logged. Returns the ids of the primers it settled."""
+    collected = writer.collect(batch)
+    budget.spend(collected.dollars)
+    result.usage.add(collected.usage)
+    taken: Set[str] = set()
+    for custom_id, entry in batch.items.items():
+        item = due.get(entry["primer_id"])
+        if item is None:
+            log.info("Primer %s: dropped from batch %s, it is not due any more", entry["primer_id"], batch.id)
+            continue
+        taken.add(item.primer_id)
+        message = collected.messages.get(custom_id)
+        if message is None:
+            log.warning("Primer %s: batch %s gave no primer (%s)", item.primer_id, batch.id, collected.failed.get(custom_id, "no result"))
             result.failed.append(item.primer_id)
             continue
-        state[item.primer_id] = {
-            "archetype": item.id,
-            "format": item.format["format"],
-            "version": version,
-            "written_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "model": model,
-            "lists": cards.get("list_count") or 0,
-            "window": cards.get("window"),
-            "consensus": consensus(item.archetype),
-        }
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
-        result.published.append(item.primer_id)
-        log.info("Primer %s: published as version %d (%s)", item.primer_id, version, "; ".join(item.reasons))
+        handle(item, message, entry["model"])
+    return taken
+
+
+def run(
+    directory: Path, items: Sequence[Item], *, writer: Writer, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup,
+    budget: Budget, publish: bool, state: Dict[str, dict], today: date,
+) -> Result:
+    """Collects the batches earlier runs left that have ended, then writes the primers of the items still to do, as many as
+    the budget covers, as one batch and waits for it (`writer.wait_minutes`). Each primer is checked and, with `publish`,
+    published as its answer is read; a batch still running is kept in BATCH_PATH."""
+    result = Result()
+    path = directory / BATCH_PATH
+    due = {item.primer_id: item for item in items}
+    handle = partial(
+        settle, directory=directory, writer=writer, api=api, read=read, lookup=lookup, budget=budget, publish=publish,
+        state=state, today=today, result=result,
+    )
+    collect = partial(collect_batch, due=due, writer=writer, budget=budget, result=result, handle=handle)
+    running: List[Batch] = []
+    taken: Set[str] = set()
+    for batch in [Batch.of(body) for body in (read(BATCH_PATH) or {}).get("batches") or []]:
+        if writer.ended(batch):
+            taken |= collect(batch)
+        else:
+            log.info("Primers: batch %s is still running", batch.id)
+            running.append(batch)
+    held = {entry["primer_id"] for batch in running for entry in batch.items.values()}
+    fresh = [item for item in items if item.primer_id not in taken | held]
+    chosen, deferred = affordable(fresh, budget)
+    if deferred:
+        result.deferred = [item.primer_id for item in deferred]
+        log.info(
+            "$%.2f of $%.2f is left, which covers %d primers, so %d wait for the next run",
+            budget.limit - budget.spent, budget.limit, len(chosen), len(deferred),
+        )
+    if chosen:
+        batch = writer.submit(chosen, [prompt_of(item, api, read, lookup, today)[0] for item in chosen])
+        running.append(batch)
+        save_batches(path, running)
+        if writer.wait(batch):
+            running.remove(batch)
+            collect(batch)
+    save_batches(path, running)
+    result.pending = [entry["primer_id"] for batch in running for entry in batch.items.values()]
     result.spent = budget.spent
     return result
 
@@ -890,7 +1105,10 @@ def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, clie
         help=f"the first N archetypes of each format's 30-day standings, before the ones with {MIN_RESULTS} results (default {COUNT})",
     )
     parser.add_argument("--budget", type=float, default=5.0, help="the most dollars the run may spend on Claude (default 5)")
-    parser.add_argument("--minutes", type=float, default=0, help="start no primer after this many minutes, so the run ends in time (default: no limit)")
+    parser.add_argument(
+        "--minutes", type=float, default=0,
+        help=f"wait this long for the batch; one still running is collected by the next run (default {WAIT_MINUTES})",
+    )
     parser.add_argument("--archetype", action="append", default=[], help="an archetype id to write a primer for even when it is not due; repeatable")
     parser.add_argument("--publish", action="store_true", help="publish each passing primer (needs PRIMERS_ADMIN_TOKEN)")
     mode = parser.add_mutually_exclusive_group()
@@ -943,10 +1161,11 @@ def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, clie
         for item in items:
             label = item.id if item.primer_id == item.id else f"{item.id} (primer {item.primer_id})"
             print(f"{item.format['format']:8} {label:60} {', '.join(item.reasons)}")
-        affordable = int(args.budget // ESTIMATE)
+        chosen, _ = affordable(items, Budget(args.budget))
         print(
-            f"{len(items)} primers due. At about ${ESTIMATE:.2f} a try (a primer sent back once costs two), "
-            f"a budget of ${args.budget:.2f} writes about {min(affordable, len(items))} of them this run."
+            f"{len(items)} primers due. At batch prices a primer costs about ${ESTIMATES[MODEL]:.2f} by {MODEL} and a revision "
+            f"${ESTIMATES[REVISION_MODEL]:.2f} by {REVISION_MODEL} (a draft sent back once costs a call at twice that), so a budget "
+            f"of ${args.budget:.2f} writes about {len(chosen)} of them this run."
         )
         return 0
     if not items:
@@ -959,15 +1178,16 @@ def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, clie
     if args.publish and not api.can_publish:
         log.error("--publish needs PRIMERS_ADMIN_TOKEN")
         return 2
-    writer = Writer(client, system_prompt(api.format_guide(), EXAMPLE.read_text()))
+    writer = Writer(client, system_prompt(api.format_guide(), EXAMPLE.read_text()), wait_minutes=args.minutes or WAIT_MINUTES)
     result = run(
         args.directory, items, writer=writer, api=api, read=read, lookup=lookup, budget=Budget(args.budget),
-        publish=args.publish, state=dict(state), today=today, minutes=args.minutes,
+        publish=args.publish, state=dict(state), today=today,
     )
     usage = result.usage
     print(
         f"{len(result.published)} published, {len(result.drafted)} drafted, {len(result.failed)} failed, "
-        f"{len(result.deferred)} left for the next run; tokens: {usage.input_tokens} input, {usage.output_tokens} output, "
+        f"{len(result.deferred)} left for the next run, {len(result.pending)} in a batch still running; "
+        f"tokens: {usage.input_tokens} input, {usage.output_tokens} output, "
         f"{usage.cache_creation_input_tokens} cache write, {usage.cache_read_input_tokens} cache read; cost ${result.spent:.2f}"
     )
     if result.failed:
