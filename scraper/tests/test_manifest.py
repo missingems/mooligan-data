@@ -57,7 +57,7 @@ def test_the_explore_files_are_listed_and_nothing_else(tmp_path):
         "decks/7966104.json", "cards/lightning-bolt.json", "cards/index.json", "edh/commanders/atraxa.json", "edh/commanders/index.json", "edh/top.json.bak", "index.json",
         "locator/singapore.json", "premier/schedule.json", "state/deck-ids.json", "state/deck-cards/modern.json",
         "popular-cards/readme.txt", "popular-cards/nested/modern.json", "explore.json.bak", "other/today.json", "breakouts.json",
-        "rules/keywords.json.bak", "rules/other.json", "state/rules-keywords.json",
+        "rules/keywords.json.bak", "rules/other.json", "state/rules-keywords.json", "rules/comprehensive.json", "state/rules-comprehensive.json",
     ):
         put(tmp_path, path)
     write_manifest(tmp_path, NOW)
@@ -71,7 +71,7 @@ def test_is_explore_path_names_exactly_the_explore_files():
     assert all(is_explore_path(path) for path in ("explore.json", "today.json", "previews.json", "edh/top.json", "rules/keywords.json", "popular-cards/modern.json", "breakouts/duel_commander.json"))
     assert not any(
         is_explore_path(path)
-        for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "rules/other.json", "rules/keywords.json.bak", "rules/", "")
+        for path in ("movers/all.json", "index.json", "snapshots/modern.json", "popular-cards/", "popular-cards/.json", "popular-cards/a/b.json", "breakouts/modern.txt", "state/explore-manifest.json", "explore-manifest.json", "rules/other.json", "rules/keywords.json.bak", "rules/comprehensive.json", "rules/", "")
     )
 
 
@@ -225,7 +225,7 @@ def upload_lines():
 def test_the_workflow_uploads_the_manifest_after_the_files_it_lists_and_the_state_and_before_the_index():
     lines = upload_lines()
     manifest = lines["work/explore-manifest.json"]
-    for before in ("work/popular-cards", "work/breakouts", "work/today.json", "work/rules/keywords.json", "work/explore.json", "work/state"):
+    for before in ("work/popular-cards", "work/breakouts", "work/today.json", "work/rules/keywords.json", "work/rules/comprehensive.json", "work/explore.json", "work/state"):
         assert lines[before] < manifest, before
     assert manifest < lines["work/index.json"]
     assert lines["work/index.json"] == max(lines.values())
@@ -248,6 +248,15 @@ def test_the_workflow_uploads_the_keyword_rules_only_when_the_run_wrote_them_lik
     # The cp wrapper gives every upload the JSON content type.
     assert "--content-type application/json" in next(line for line in lines if line.strip().startswith("cp() {"))
     assert "rules/keywords.json" in UPLOAD.read_text().split("PUBLISH=0: nothing was uploaded")[1]
+
+
+def test_the_workflow_uploads_the_comprehensive_rules_only_when_the_run_wrote_them_like_the_keyword_rules():
+    lines = UPLOAD.read_text().splitlines()
+    number = upload_lines()["work/rules/comprehensive.json"]
+    assert lines[number - 1].strip() == "if [ -f work/rules/comprehensive.json ]; then"
+    assert lines[number + 1].strip() == "fi"
+    assert '"$R2/rules/comprehensive.json" --cache-control "public, max-age=300"' in lines[number]
+    assert "rules/comprehensive.json" in UPLOAD.read_text().split("PUBLISH=0: nothing was uploaded")[1]
 
 
 def written_after_each_step():

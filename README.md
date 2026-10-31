@@ -37,6 +37,7 @@ See [docs/data-format.md](docs/data-format.md). In short:
 - `today.json` is one response for Explore's Today widgets: up to three breakouts (the strongest by decks and top 8s over the formats, `new` only breaking a tie) with the decks that play them, the day's biggest price mover and loser from `movers/all.json` with their price history, the uprising EDH commander (the one whose deck count on EDHREC rose most since EDHREC was last asked; EDHREC's data, used with their permission, so an app must credit them), and one preview: a printing Scryfall added since the last run from a set not released yet, or none on a day it added no such printing.
 - `previews.json` lists the printings Scryfall added in the last 7 days from sets not released yet (`window_days`, `count`, `cards`), ordered by the day each was first seen; it is the list behind Explore's "View N more", and its format is in `docs/data-format.md`.
 - `rules/keywords.json` holds what Magic's Comprehensive Rules say about each keyword action and keyword ability, and the ability words, read from the text file Wizards links on magic.wizards.com/en/rules. Every run reads it, but the file changes only when Wizards publishes new rules.
+- `rules/comprehensive.json` holds the whole of the same rules as a book (chapters, sections, rules with their subrules and examples, and the glossary), from the same download. It is about 1.1 MB and not in `explore-manifest.json`: the app reads it when it opens the rules.
 - `sets/art.json` holds Wizards' official art for each set, keyed by Scryfall set code, for a set page's hero banner. A set Wizards has no art for is left out.
 - `sets/tints.json` holds one tint colour per Scryfall set, for a set icon tile (a coloured rounded square with the white set symbol), taken from the set's Wizards art or its most played card's art; a child set has its parent's. A set with neither is left out.
 - `sets/products/{code}.json` holds the sealed products (boosters, boxes, bundles, decks) of one set released since 2023 or yet to come, keyed by Scryfall set code, with TCGplayer's picture, link and price, read from TCGCSV. A set with no sealed products has no file.
@@ -88,7 +89,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 | `REQUEST_DELAY` | `1` in `ops/scrape.sh` | Base seconds between those batches, plus up to 50% random extra |
 | `LOCALIZE` | `1`, `0` with `QUICK=1` | Add the `localized` map (printed names and pictures in ja, fr, it, es and de) to `today.json` and `explore.json`. It streams Scryfall's every-printing file, about 400 MB gzipped, so it adds a minute or two to a run; `0` skips it |
 | `LOCALIZE_ALL_CARDS_URL` | Scryfall's `all_cards` bulk file | Read another file instead; a `file://` URL works |
-| `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json`, which reads the Comprehensive Rules from Wizards' site |
+| `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json` and `rules/comprehensive.json`, which read the Comprehensive Rules from Wizards' site |
 | `SET_ART` | `1` | `0` skips `sets/art.json`, which reads each set's art from Wizards' site |
 | `SET_ART_DELAY` | `0.5` | Seconds between requests to Wizards' site for `sets/art.json` |
 | `SET_TINTS` | `1` | `0` skips `sets/tints.json`, which reads each main set's art (Wizards', else its most played card's from Scryfall) for a tint colour |
@@ -186,6 +187,8 @@ The same read of the default-cards file finds the preview in `today.json`. Each 
 ## Keyword rules
 
 Each run also reads the Comprehensive Rules for `rules/keywords.json`: it finds the link to the text file on <https://magic.wizards.com/en/rules> (the file name carries its date, so the link is never hard-coded), downloads it, and keeps rule 701 (keyword actions), rule 702 (keyword abilities) and the ability words of rule 207.2c. The state keeps a fingerprint of what was published (`state/rules-keywords.json`), and a run that finds the same rules writes nothing, so the file, its hash in the manifest and its ETag stay as they were until Wizards publishes new rules. When Wizards' site cannot be read, or its page or text has changed shape, the run logs a warning and carries on, and the published file stays as it was. See `scraper/mtgmeta/rules.py` and `docs/data-format.md`.
+
+The same download also gives `rules/comprehensive.json`, the whole book: every chapter, section, rule, subrule and example, and the glossary, in the order of the text. It has its own fingerprint (`state/rules-comprehensive.json`) and is written only when the rules changed, like the keyword file. The two are parsed separately, so a text one of them cannot read leaves the other to publish, and a text with fewer than about 60% of the chapters, sections, rules or glossary entries of the current edition is not published.
 
 ## Set art
 
