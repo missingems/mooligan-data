@@ -52,15 +52,35 @@ def explore():
     ]}]}
 
 
+def results(count, wins=1):
+    return [{"date": "2026-10-30T00:00:00Z", "finish": "1st Place" if index < wins else "5-0"} for index in range(count)]
+
+
+def snapshot():
+    """The standings' archetypes and three past them: rho and sigma with enough results, tau without."""
+    counts = {"modern-alpha": 30, "modern-beta": 25, "modern-gamma": 20, "modern-delta": 20, "modern-omega": 3, "modern-rho": 15, "modern-sigma": 12, "modern-tau": 9}
+    month = [{"id": "modern-sigma", "name": "Sigma", "percentage": 0.5, "deck_count": 12, "colors": ["U"], "key_cards": [{"name": "Counterspell"}]}]
+    return {
+        "format": "modern",
+        "meta": {"30d": {"archetypes": month}, "7d": {"archetypes": []}},
+        "archetypes": {archetype_id: {"name": archetype_id.split("-")[1].title(), "results": results(count)} for archetype_id, count in counts.items()},
+        "merges": {"modern-old-beta": "modern-beta"},
+    }
+
+
 def data():
     return {
         "explore.json": explore(),
+        "snapshots/modern.json": snapshot(),
         "archetypes/modern-alpha.json": archetype("modern-alpha", MAIN),
         "archetypes/modern-beta.json": archetype("modern-beta", MAIN),
         "archetypes/modern-gamma.json": archetype("modern-gamma", {"Bolt": 4, "Counterspell": 4, "Wrath": 4, "Island": 20}),
         "archetypes/modern-delta.json": archetype("modern-delta", MAIN),
         "archetypes/modern-omega.json": archetype("modern-omega", MAIN),
         "archetypes/modern-old-beta.json": archetype("modern-beta", MAIN, merged_into="modern-beta"),
+        "archetypes/modern-rho.json": archetype("modern-rho", MAIN),
+        "archetypes/modern-sigma.json": archetype("modern-sigma", MAIN),
+        "archetypes/modern-tau.json": archetype("modern-tau", MAIN),
     }
 
 
@@ -203,53 +223,77 @@ def test_grid_reads_the_main_cards_grid():
     assert primers.grid(markdown()) == {"Bolt": 4, "Shock": 4, "Ragavan": 4}
 
 
-def test_plan_orders_missing_merged_changed_and_old_and_leaves_the_rest():
+def test_plan_orders_the_first_archetypes_missing_changed_and_old_then_the_ones_with_enough_results():
     files = data()
     rows = [
         primer_row("modern-old-beta", "modern-old-beta"),
         primer_row("modern-gamma", "modern-gamma"),
         primer_row("modern-delta", "modern-delta", updated="2026-09-25"),
         primer_row("modern-omega", "modern-omega", updated="2026-09-01"),
+        primer_row("modern-rho", "modern-rho", updated="2026-10-25"),
     ]
-    state = {"modern-gamma": {"version": 1, "consensus": MAIN}}
+    state = {"modern-gamma": {"version": 1, "consensus": MAIN}, "modern-rho": {"version": 1, "consensus": MAIN}}
     client, _ = api(rows, {"modern-old-beta": markdown("modern-old-beta"), "modern-delta": markdown("modern-delta")})
     items, notes = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, state, client, TODAY)
-    assert [(item.id, item.primer_id) for item in items] == [
-        ("modern-alpha", "modern-alpha"), ("modern-beta", "modern-old-beta"), ("modern-gamma", "modern-gamma"), ("modern-delta", "modern-delta"),
+    assert [(item.id, item.primer_id, item.tier) for item in items] == [
+        ("modern-alpha", "modern-alpha", 0), ("modern-beta", "modern-beta", 0), ("modern-gamma", "modern-gamma", 0),
+        ("modern-delta", "modern-delta", 0), ("modern-sigma", "modern-sigma", 1),
     ]
     assert items[0].reasons == ["no primer"]
-    assert "now merged into modern-beta" in items[1].reasons[0]
+    # The primer of an archetype merged into beta is not beta's: a new one is written under beta's id, from its text.
+    assert items[1].reasons == ["no primer, but modern-old-beta was written for modern-old-beta, since merged into it"]
+    assert items[1].primer is None and items[1].previous.id == "modern-old-beta"
     assert items[2].reasons == ["8 main deck cards changed since it was written"]
     assert items[3].reasons == ["updated 37 days ago"]
+    # Past the first four: rho is up to date, sigma has no primer, omega and tau have too few results.
+    assert items[4].reasons == ["no primer"]
+    assert {key: items[4].row[key] for key in ("name", "share_30d", "deck_count_30d", "top8_30d", "wins_30d", "results")} == {
+        "name": "Sigma", "share_30d": 0.5, "deck_count_30d": 12, "top8_30d": 1, "wins_30d": 1, "results": 12,
+    }
     assert notes == []
+
+
+def test_plan_writes_at_most_backfill_primers_past_the_first_archetypes_the_formats_taking_turns():
+    files = data()
+    files["explore.json"]["formats"].append({"format": "pauper", "name": "Pauper", "standings": [row("pauper-one", "One", 30.0)]})
+    files["snapshots/pauper.json"] = {"archetypes": {"pauper-one": {"results": results(30)}, "pauper-two": {"results": results(11)}}, "merges": {}}
+    files["archetypes/pauper-one.json"] = archetype("pauper-one", MAIN)
+    files["archetypes/pauper-two.json"] = archetype("pauper-two", MAIN)
+    client, _ = api()
+    items, notes = primers.plan(files["explore.json"], ["modern", "pauper"], 2, client.primers(), files.get, {}, client, TODAY, backfill=3)
+    # The first two of each by share; then each format's next by results, in turns: Pauper's two (11 results) comes
+    # before Modern's delta (20), and rho (15) and sigma (12) wait.
+    assert [item.id for item in items] == ["pauper-one", "modern-alpha", "modern-beta", "modern-gamma", "pauper-two", "modern-delta"]
+    assert notes == ["2 past the first 2 wait for the next runs, at most 3 a run"]
 
 
 def test_a_new_top_card_is_one_the_deck_did_not_play_not_a_reordering():
     primer = primers.Published.of(primer_row("modern-alpha", "modern-alpha"))
     state = {"version": 1, "consensus": MAIN}
     reordered = archetype("modern-alpha", MAIN, hand=["Shock", "Bolt"])
-    assert primers.reasons_for(reordered, primer, False, state, None, TODAY) == ([], 4)
+    assert primers.reasons_for(reordered, primer, state, None, TODAY) == ([], 3)
     new = archetype("modern-alpha", {**MAIN, "Fatal Push": 2}, hand=["Fatal Push", "Bolt"])
-    assert primers.reasons_for(new, primer, False, state, None, TODAY)[0] == ["its top card Fatal Push is new to the deck"]
+    assert primers.reasons_for(new, primer, state, None, TODAY)[0] == ["its top card Fatal Push is new to the deck"]
     # A hand-written primer has no state: its grid stands in, and a top card it never names is new.
-    reasons, rank = primers.reasons_for(new, primer, False, None, markdown(), TODAY)
-    assert (reasons, rank) == (["its top card Fatal Push is not in the primer"], 2)
+    reasons, rank = primers.reasons_for(new, primer, None, markdown(), TODAY)
+    assert (reasons, rank) == (["its top card Fatal Push is not in the primer"], 1)
     # State from a version since edited by hand is not used.
-    assert primers.reasons_for(new, primer, False, {"version": 3, "consensus": MAIN}, markdown(), TODAY)[0] == ["its top card Fatal Push is not in the primer"]
+    assert primers.reasons_for(new, primer, {"version": 3, "consensus": MAIN}, markdown(), TODAY)[0] == ["its top card Fatal Push is not in the primer"]
 
 
 def test_plan_with_archetype_writes_it_even_when_not_due():
     files = data()
     client, _ = api([primer_row("modern-delta", "modern-delta")], {"modern-delta": markdown("modern-delta")})
-    items, _ = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, {}, client, TODAY, only=["modern-delta"])
-    assert [(item.id, item.reasons) for item in items] == [("modern-delta", ["asked for"])]
+    items, _ = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, {}, client, TODAY, only=["modern-delta", "modern-tau"])
+    # tau has too few results to be due, but can still be asked for.
+    assert [(item.id, item.reasons) for item in items] == [("modern-delta", ["asked for"]), ("modern-tau", ["no primer"])]
 
 
 def test_an_archetype_with_no_lists_is_skipped():
     files = data()
     files["archetypes/modern-alpha.json"] = archetype("modern-alpha", {})
     client, _ = api()
-    items, notes = primers.plan(files["explore.json"], ["modern"], 1, client.primers(), files.get, {}, client, TODAY)
+    items, notes = primers.plan(files["explore.json"], ["modern"], 1, client.primers(), files.get, {}, client, TODAY, min_results=100)
     assert items == [] and notes == ["modern-alpha: no stored lists, so no primer"]
 
 
@@ -319,6 +363,16 @@ def test_facts_give_the_lists_the_opponents_and_the_primer_it_has():
     assert named[:4] == ["Bolt", "Shock", "Ragavan", "Island"]
 
 
+def test_facts_of_a_merged_archetype_start_from_its_old_primer():
+    files = data()
+    old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
+    beta = item("modern-beta")
+    merged = primers.Item(beta.format, beta.row, beta.archetype, None, "modern-beta", ["no primer"], 0, merged_from=old)
+    text, _ = primers.facts(merged, files.get, LOOKUP, "OLD PRIMER", TODAY)
+    assert "archetype: modern-beta\nformat: Modern\ntitle: Beta\nauthor: Greg\nwritten: 2026-11-01" in text
+    assert text.endswith("## The primer of modern-old-beta, since merged into this archetype\n\nOLD PRIMER")
+
+
 def run(client, budget=5.0, publish=True, items=None, tmp_path=None, token="secret"):
     fake_api, fake = api(token=token)
     writer = primers.Writer(client, primers.system_prompt("# playgraph", "EXAMPLE"))
@@ -386,7 +440,7 @@ def test_main_plan_needs_no_key(capsys, tmp_path):
     out = capsys.readouterr().out
     assert code == 0
     assert "modern   modern-alpha" in out and "modern   modern-delta" in out and "updated 37 days ago" in out
-    assert "4 primers due" in out
+    assert "6 primers due" in out and "modern   modern-sigma" in out
     assert not any(method == "PUT" for method, _ in fake.calls)
 
 
@@ -394,7 +448,7 @@ def test_main_writes_and_publishes(capsys, tmp_path):
     fake_api, fake = api()
     client = Client(markdown())
     code = primers.main(
-        [str(tmp_path), "--format", "modern", "--count", "1", "--publish"], api=fake_api, source=Reader(data()), client=client,
+        [str(tmp_path), "--format", "modern", "--archetype", "modern-alpha", "--publish"], api=fake_api, source=Reader(data()), client=client,
         load_catalog=lambda: CATALOG, today=TODAY,
     )
     assert code == 0 and [path for path, _ in fake.puts] == ["/v1/primers/modern-alpha"]
@@ -415,9 +469,11 @@ def test_main_writes_no_commander_primers(tmp_path):
 
 
 def test_check_published_reports_each_primer(capsys):
-    fake_api, _ = api([primer_row("modern-alpha", "modern-alpha"), primer_row("modern-old-beta", "modern-old-beta")],
-                      {"modern-alpha": markdown(), "modern-old-beta": markdown("modern-old-beta", extra="[[Made Up Card]]")})
-    checked, broken = primers.check_published(explore(), ["modern"], 2, fake_api, data().get, LOOKUP)
+    rows = [primer_row("modern-alpha", "modern-alpha"), primer_row("modern-old-beta", "modern-old-beta"), primer_row("modern-sigma", "modern-sigma")]
+    sources = {"modern-alpha": markdown(), "modern-old-beta": markdown("modern-old-beta"), "modern-sigma": markdown("modern-sigma", extra="[[Made Up Card]]")}
+    fake_api, _ = api(rows, sources)
+    checked, broken = primers.check_published(explore(), ["modern"], 2, fake_api, data().get, LOOKUP, TODAY)
     out = capsys.readouterr().out
+    # The primer under an id merged away is not beta's, so it is not checked; sigma's is, for its 12 results.
     assert (checked, broken) == (2, 1)
-    assert "modern-alpha: ok" in out and "modern-old-beta: 1 problems" in out and "[[Made Up Card]]" in out
+    assert "modern-alpha: ok" in out and "modern-sigma: 1 problems" in out and "[[Made Up Card]]" in out and "old-beta" not in out

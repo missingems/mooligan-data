@@ -1,11 +1,15 @@
 """Archetype primers for api.mooligan.com, written by Claude from the published metagame and checked before they go up.
 
 A primer is the playgraph Markdown an archetype page shows on its Primers tab (its format is the API's `format_guide`).
-For each of the six main formats, the first `--count` (16) archetypes of `explore.json`'s 30-day standings are set
-against the primers the API lists, and a primer is written for each one that is due:
+Each of the six main formats' archetypes is set against the primers the API lists: first the first `--count` (16) of
+`explore.json`'s 30-day standings, then every other archetype with MIN_RESULTS (10) results or more in
+`snapshots/{format}.json`, at most BACKFILL (25) of those a run: each format's with the most results first, the formats
+taking turns, so one with many results (Modern) does not keep the others waiting. A primer is written for each one
+that is due:
 
-- missing: the archetype has no primer. A primer whose archetype was merged into this one (its `archetypes/{id}.json`
-  has `merged_into`) is this archetype's primer, and is written again under its own id, now pointing at this archetype.
+- missing: the archetype has no primer. The app finds a primer by the archetype's id, so a primer of an archetype since
+  merged into this one (the snapshot's `merges`) does not count: a new one is written under this archetype's id,
+  starting from that primer's text, which is left as it is.
 - changed: the archetype's consensus main deck moved by CHANGED_SLOTS (6) cards or more since the primer was written,
   or its top card (the first of `hand`) is one the primer's deck did not play. `state/primers.json` keeps the consensus
   each primer written here came from. A primer written by hand (or edited since) has none, so its own `Main cards` grid
@@ -13,7 +17,7 @@ against the primers the API lists, and a primer is written for each one that is 
   and the deck now plays at 1 is 3 cards), and its top card counts as new when the primer never names it.
 - old: the primer was last updated STALE_DAYS (30) or more days ago.
 
-Archetypes past `--count`, and their primers, are left alone. Commander primers are not written here: a commander's
+Other archetypes, and their primers, are left alone. Commander primers are not written here: a commander's
 primer is shaped differently (its abilities, its builds by bracket) and needs other facts than a decklist.
 
 Claude (MODEL, effort EFFORT) is sent the archetype's shares, consensus list and other cards its lists play, its recent
@@ -25,8 +29,8 @@ and that each matchup takes out as many cards as it brings in. A draft with prob
 one that still has them is not published. Every draft is written to DIR/primers/{id}.md.
 
 `--publish` puts each passing draft with PRIMERS_ADMIN_TOKEN as a new version of the primer's id. `--budget` stops
-asking Claude before the run would pass that many dollars; the primers left wait for the next run, the missing ones
-first. `--plan` lists what is due and why, and `--check` validates the published primers; neither needs a key.
+asking Claude before the run would pass that many dollars; the primers left wait for the next run, the first
+archetypes' before the rest and the missing ones first. `--plan` lists what is due and why, and `--check` validates the published primers; neither needs a key.
 
 It reads ANTHROPIC_API_KEY (and ANTHROPIC_WORKSPACE_ID for a key not scoped to one workspace) and PRIMERS_ADMIN_TOKEN
 from the environment, and never logs them.
@@ -44,14 +48,21 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
+
+from .explore import WINDOW_DAYS, _places
 
 log = logging.getLogger(__name__)
 
 FORMATS = ("standard", "pioneer", "modern", "legacy", "pauper", "vintage")
+# Which archetypes get a primer: the first COUNT of each format's 30-day standings, then every other one with
+# MIN_RESULTS results or more in its snapshot, at most BACKFILL of those a run, the formats taking turns.
 COUNT = 16
+MIN_RESULTS = 10
+BACKFILL = 25
+# When a primer is written again: its deck moved by CHANGED_SLOTS cards, or it is STALE_DAYS old.
 STALE_DAYS = 30
 CHANGED_SLOTS = 6
 STATE_PATH = "state/primers.json"
@@ -279,15 +290,58 @@ class Item:
     primer_id: str
     reasons: List[str]
     rank: int
+    # The primer of an archetype since merged into this one, which the new primer starts from.
+    merged_from: Optional[Published] = None
+    # 0 for the first archetypes of the standings, 1 for the ones past them.
+    tier: int = 0
 
     @property
     def id(self) -> str:
         return self.row["id"]
 
+    @property
+    def previous(self) -> Optional[Published]:
+        """The primer whose text the new one starts from."""
+        return self.primer or self.merged_from
 
-def match_primers(rows: Sequence[dict], primers: Sequence[Published], read: Callable[[str], Optional[dict]]) -> Dict[str, Tuple[Published, bool]]:
-    """Each archetype's primer, and whether it is the primer of an archetype merged into it. An archetype with several
-    primers keeps the one named after it, else the one updated last."""
+
+def standing(snapshot: dict, archetype_id: str, today: date) -> dict:
+    """An archetype's row as explore.json's standings would have it, for one past them."""
+    meta = snapshot.get("meta") or {}
+    month = next((each for each in (meta.get("30d") or {}).get("archetypes") or [] if each["id"] == archetype_id), {})
+    week = next((each for each in (meta.get("7d") or {}).get("archetypes") or [] if each["id"] == archetype_id), {})
+    results = ((snapshot.get("archetypes") or {}).get(archetype_id) or {}).get("results") or []
+    now = datetime.combine(today, datetime.max.time(), tzinfo=timezone.utc)
+    places = _places(results, now - timedelta(days=WINDOW_DAYS), now)
+    return {
+        "id": archetype_id,
+        "name": month.get("name") or ((snapshot.get("archetypes") or {}).get(archetype_id) or {}).get("name") or archetype_id,
+        "share_30d": month.get("percentage"),
+        "share_7d": week.get("percentage"),
+        "deck_count_30d": month.get("deck_count"),
+        "top8_30d": sum(1 for place in places if place <= 8),
+        "wins_30d": sum(1 for place in places if place == 1),
+        "colors": month.get("colors") or [],
+        "key_cards": month.get("key_cards") or [],
+        "results": len(results),
+    }
+
+
+def covered(block: dict, snapshot: Optional[dict], count: int, min_results: int, today: date) -> List[Tuple[dict, int]]:
+    """The archetypes of a format that get a primer, each with its tier: the first `count` of the 30-day standings (0),
+    then every other archetype with `min_results` results or more in the snapshot, most results first (1)."""
+    archetypes = (snapshot or {}).get("archetypes") or {}
+    rows = [({**row, "results": len(archetypes.get(row["id"], {}).get("results") or [])}, 0) for row in (block.get("standings") or [])[:count]]
+    first = {row["id"] for row, _ in rows}
+    counts = sorted(((len(body.get("results") or []), archetype_id) for archetype_id, body in archetypes.items()), key=lambda each: -each[0])
+    rows += [(standing(snapshot, archetype_id, today), 1) for results, archetype_id in counts if results >= min_results and archetype_id not in first]
+    return rows
+
+
+def match_primers(rows: Sequence[dict], primers: Sequence[Published], merges: Dict[str, str]) -> Dict[str, Tuple[Published, bool]]:
+    """Each archetype's primer, and whether it is instead the primer of an archetype since merged into it (`merges`
+    maps each id merged away to the one it went into). An archetype with several primers keeps the one named after it,
+    else the one updated last."""
     ids = {row["id"] for row in rows}
     matched: Dict[str, Tuple[Published, bool]] = {}
     newest = sorted(primers, key=lambda each: each.updated, reverse=True)
@@ -295,49 +349,45 @@ def match_primers(rows: Sequence[dict], primers: Sequence[Published], read: Call
         if primer.archetype in ids and primer.archetype not in matched:
             matched[primer.archetype] = (primer, False)
     for primer in newest:
-        if primer.archetype in ids:
-            continue
-        leader = (read(f"archetypes/{primer.archetype}.json") or {}).get("merged_into")
-        if leader in ids and leader not in matched:
+        leader = merges.get(primer.archetype) or merges.get(primer.id)
+        if primer.archetype not in ids and leader in ids and leader not in matched:
             matched[leader] = (primer, True)
     return matched
 
 
-def reasons_for(
-    archetype: dict, primer: Published, merged: bool, entry: Optional[dict], markdown: Optional[str], today: date,
-) -> Tuple[List[str], int]:
-    """Why the archetype's primer is due, and its rank (missing 0, merged 1, changed 2, old 3); [] when it is not."""
+def reasons_for(archetype: dict, primer: Published, entry: Optional[dict], markdown: Optional[str], today: date) -> Tuple[List[str], int]:
+    """Why the archetype's primer is due, and its rank (changed 1, old 2); [] when it is not."""
     found: List[Tuple[int, str]] = []
-    if merged:
-        found.append((1, f"its primer {primer.id} names {primer.archetype}, now merged into {archetype['id']}"))
     now = consensus(archetype)
     top = top_card(archetype)
     if entry and entry.get("version") == primer.version and entry.get("consensus"):
         before = entry["consensus"]
         slots = moved(before, now)
         if slots >= CHANGED_SLOTS:
-            found.append((2, f"{slots} main deck cards changed since it was written"))
+            found.append((1, f"{slots} main deck cards changed since it was written"))
         if top and top not in before:
-            found.append((2, f"its top card {top} is new to the deck"))
+            found.append((1, f"its top card {top} is new to the deck"))
     elif markdown:
         slots = moved(grid(markdown), now, partial=True)
         if slots >= CHANGED_SLOTS:
-            found.append((2, f"{slots} of its main cards' copies left the deck"))
+            found.append((1, f"{slots} of its main cards' copies left the deck"))
         if top and top not in linked(markdown):
-            found.append((2, f"its top card {top} is not in the primer"))
+            found.append((1, f"its top card {top} is not in the primer"))
     days = age(primer, today)
     if days is not None and days >= STALE_DAYS:
-        found.append((3, f"updated {days} days ago"))
-    return [reason for _, reason in found], min((rank for rank, _ in found), default=4)
+        found.append((2, f"updated {days} days ago"))
+    return [reason for _, reason in found], min((rank for rank, _ in found), default=3)
 
 
 def plan(
     explore: dict, formats: Sequence[str], count: int, primers: Sequence[Published], read: Callable[[str], Optional[dict]],
-    state: Dict[str, dict], api: Api, today: date, only: Sequence[str] = (),
+    state: Dict[str, dict], api: Api, today: date, only: Sequence[str] = (), min_results: int = MIN_RESULTS,
+    backfill: int = BACKFILL,
 ) -> Tuple[List[Item], List[str]]:
-    """The archetypes whose primer is due, the missing ones first, then the merged, changed and old, each by its share;
-    and a note for each archetype that was skipped."""
-    items: List[Tuple[int, float, Item]] = []
+    """The archetypes whose primer is due: the first of the standings by share, then the ones past them (at most
+    `backfill`), each format's by results and the formats taking turns; missing first, then changed, then old. And a
+    note for each one skipped or left."""
+    items: List[Tuple[Tuple[int, int, int, float], Item]] = []
     notes: List[str] = []
     blocks = {block["format"]: block for block in explore.get("formats") or []}
     for name in formats:
@@ -345,32 +395,52 @@ def plan(
         if not block:
             notes.append(f"{name}: not in explore.json")
             continue
-        rows = (block.get("standings") or [])[:count]
+        snapshot = read(f"snapshots/{name}.json")
+        if not snapshot:
+            notes.append(f"{name}: snapshots/{name}.json could not be read, so only its first {count} archetypes")
+        rows = covered(block, snapshot, count, 0 if only else min_results, today)
         if only:
-            rows = [row for row in block.get("standings") or [] if row["id"] in only]
+            rows = [(row, tier) for row, tier in rows if row["id"] in only]
         mine = [primer for primer in primers if primer.format.lower() == block["name"].lower()]
-        matched = match_primers(rows, mine, read)
-        for row in rows:
+        matched = match_primers([row for row, _ in rows], mine, (snapshot or {}).get("merges") or {})
+        # How many of this format's archetypes past the first are due before this one, so the formats take turns.
+        turn = 0
+        for row, tier in rows:
             archetype = read(f"archetypes/{row['id']}.json")
             if not archetype or not consensus(archetype):
                 notes.append(f"{row['id']}: no stored lists, so no primer")
                 continue
             primer, merged = matched.get(row["id"], (None, False))
-            if primer is None:
+            merged_from = primer if merged else None
+            if merged:
+                primer = None
+                reasons, rank = [f"no primer, but {merged_from.id} was written for {merged_from.archetype}, since merged into it"], 0
+            elif primer is None:
                 reasons, rank = ["no primer"], 0
             else:
                 entry = state.get(primer.id)
                 markdown = None
                 if not (entry and entry.get("version") == primer.version):
                     markdown = (api.source(primer.id) or {}).get("markdown")
-                reasons, rank = reasons_for(archetype, primer, merged, entry, markdown, today)
+                reasons, rank = reasons_for(archetype, primer, entry, markdown, today)
             if only and not reasons:
-                reasons, rank = ["asked for"], 2
+                reasons, rank = ["asked for"], 1
             if reasons:
-                item = Item(block, row, archetype, primer, primer.id if primer else row["id"], reasons, rank)
-                items.append((rank, -(row.get("share_30d") or 0.0), item))
-    items.sort(key=lambda each: (each[0], each[1]))
-    return [item for _, _, item in items], notes
+                item = Item(block, row, archetype, primer, primer.id if primer else row["id"], reasons, rank, merged_from, tier)
+                weight = (row.get("results") if tier else row.get("share_30d")) or 0.0
+                items.append(((tier, rank, turn if tier else 0, -weight), item))
+                turn += tier
+    items.sort(key=lambda each: each[0])
+    due: List[Item] = []
+    waiting = 0
+    for _, item in items:
+        if item.tier and not only and sum(1 for each in due if each.tier) >= backfill:
+            waiting += 1
+            continue
+        due.append(item)
+    if waiting:
+        notes.append(f"{waiting} past the first {count} wait for the next runs, at most {backfill} a run")
+    return due, notes
 
 
 # --- the facts Claude is given ---------------------------------------------------------------------------------------
@@ -472,7 +542,9 @@ def facts(item: Item, read: Callable[[str], Optional[dict]], lookup: Lookup, pre
     named = list(dict.fromkeys(named))
     lines += ["", "## Oracle text"]
     lines += [oracle_line(name, lookup) for name in named]
-    if previous:
+    if previous and item.merged_from:
+        lines += ["", f"## The primer of {item.merged_from.archetype}, since merged into this archetype", "", previous.strip()]
+    elif previous:
         lines += ["", "## The primer it has now", "", previous.strip()]
     return "\n".join(lines), named
 
@@ -699,7 +771,7 @@ def run(
             why = f"{minutes:.0f} minutes have passed" if late else f"${budget.spent:.2f} of ${budget.limit:.2f} is spent"
             log.info("%s, so %d primers wait for the next run", why[0].upper() + why[1:], len(result.deferred))
             break
-        previous = (api.source(item.primer.id) or {}).get("markdown") if item.primer else None
+        previous = (api.source(item.previous.id) or {}).get("markdown") if item.previous else None
         prompt, named = facts(item, read, lookup, previous, today)
         known = format_ids(item.format)
         messages: List[dict] = [{"role": "user", "content": prompt}]
@@ -772,8 +844,10 @@ def run(
 
 def check_published(
     explore: dict, formats: Sequence[str], count: int, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup,
+    today: date, min_results: int = MIN_RESULTS,
 ) -> Tuple[int, int]:
-    """Validates the published primer of each top archetype of `formats`, as a draft of it would be. Prints each one's
+    """Validates the published primer of each archetype of `formats` that gets one, as a draft of it would be (a primer
+    under an archetype since merged away is not that archetype's: the app does not find it). Prints each one's
     problems and returns how many primers were checked and how many have a format or card problem (one the app or the
     API would trip on); matchup problems are the lists having moved since the primer was written."""
     primers = api.primers()
@@ -783,8 +857,8 @@ def check_published(
         block = blocks.get(name)
         if not block:
             continue
-        rows = (block.get("standings") or [])[:count]
-        matched = match_primers(rows, [primer for primer in primers if primer.format.lower() == block["name"].lower()], read)
+        rows = [row for row, _ in covered(block, read(f"snapshots/{name}.json"), count, min_results, today)]
+        matched = match_primers(rows, [primer for primer in primers if primer.format.lower() == block["name"].lower()], {})
         for row in rows:
             primer, _ = matched.get(row["id"], (None, False))
             archetype = read(f"archetypes/{row['id']}.json")
@@ -794,9 +868,7 @@ def check_published(
             item = Item(block, row, archetype, primer, primer.id, [], 0)
             named = [card["name"] for board in ("main", "side") for card in ((archetype.get("cards") or {}).get(board) or [])]
             named += [card for _, cards in opponents(item, read) for card in cards]
-            validation = api.validate(markdown)
-            # A primer names the archetype it was written for, which may since have been merged into this one.
-            problems = check(markdown, {**validation, "archetype": row["id"]}, item, lookup, format_ids(block), named)
+            problems = check(markdown, api.validate(markdown), item, lookup, format_ids(block), named)
             checked += 1
             serious = [problem for problem in problems if problem.blocking and problem.kind in ("format", "card")]
             broken += bool(serious)
@@ -813,14 +885,17 @@ def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, clie
     parser = argparse.ArgumentParser(prog="python -m mtgmeta primers", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("directory", type=Path, help="work directory: state/primers.json and the drafts; the data is read from DATA_URL")
     parser.add_argument("--format", action="append", default=[], help=f"a format, repeatable or comma-separated (default: {', '.join(FORMATS)})")
-    parser.add_argument("--count", type=int, default=COUNT, help=f"the first N archetypes of each format's 30-day standings (default {COUNT})")
+    parser.add_argument(
+        "--count", type=int, default=COUNT,
+        help=f"the first N archetypes of each format's 30-day standings, before the ones with {MIN_RESULTS} results (default {COUNT})",
+    )
     parser.add_argument("--budget", type=float, default=5.0, help="the most dollars the run may spend on Claude (default 5)")
     parser.add_argument("--minutes", type=float, default=0, help="start no primer after this many minutes, so the run ends in time (default: no limit)")
     parser.add_argument("--archetype", action="append", default=[], help="an archetype id to write a primer for even when it is not due; repeatable")
     parser.add_argument("--publish", action="store_true", help="publish each passing primer (needs PRIMERS_ADMIN_TOKEN)")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--plan", action="store_true", help="list the primers that are due and why, and stop")
-    mode.add_argument("--check", action="store_true", help="validate the published primers of the formats' top archetypes, and stop")
+    mode.add_argument("--check", action="store_true", help="validate the published primers of the archetypes that get one, and stop")
     args = parser.parse_args(list(argv))
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     for name in ("anthropic", "httpx", "httpx2", "httpcore"):
@@ -856,14 +931,14 @@ def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, clie
 
         lookup = catalog_lookup(load_catalog())
     if args.check:
-        checked, broken = check_published(explore, formats, args.count, api, read, lookup)
+        checked, broken = check_published(explore, formats, args.count, api, read, lookup, today)
         print(f"{checked} primers checked, {broken} with a format or card problem")
         return 1 if broken else 0
 
     state = read(STATE_PATH) or {}
     items, notes = plan(explore, formats, args.count, api.primers(), read, state, api, today, args.archetype)
     for note in notes:
-        log.info("Skipped %s", note)
+        log.info("%s", note)
     if args.plan:
         for item in items:
             label = item.id if item.primer_id == item.id else f"{item.id} (primer {item.primer_id})"

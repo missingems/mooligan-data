@@ -223,18 +223,25 @@ The guides (`edh/commanders/{slug}/guide.json`) of the first `GUIDES_TOP` (100) 
 
 ## Archetype primers
 
-The deck guides on an archetype's Primers tab are playgraph Markdown on api.mooligan.com (the API's `format_guide` describes it). `.github/workflows/guides.yml` ("Write archetype primers") runs `ops/primers.sh` after each scrape that wasn't cancelled. Claude (`claude-opus-5-5`, effort high) then writes the primers that are due and publishes them. The job takes the first 16 archetypes of each of the six main formats' 30-day standings in `explore.json`. A primer is due when:
+The deck guides on an archetype's Primers tab are playgraph Markdown on api.mooligan.com (the API's `format_guide` describes it). `.github/workflows/guides.yml` ("Write archetype primers") runs `ops/primers.sh` after each scrape that wasn't cancelled. Claude (`claude-opus-5-5`, effort high) then writes the primers that are due and publishes them.
 
-- **missing:** the archetype has no primer. A primer whose archetype was merged into this one (`merged_into`) is rewritten under its own id, now pointing at the archetype it was merged into;
+Which archetypes get a primer, set in one place at the top of `scraper/mtgmeta/primers.py`:
+
+- first, the first 16 (`COUNT`) of each of the six main formats' 30-day standings in `explore.json`;
+- then every other archetype with 10 (`MIN_RESULTS`) results or more in `snapshots/{format}.json`, at most 25 (`BACKFILL`) of them a run. Each format's go by most results, and the formats take turns, so Modern's many results don't keep the others waiting. Today that covers 25 archetypes in Standard and 45 in Modern, about 180 in all.
+
+A primer is due when:
+
+- **missing:** the archetype has no primer under its id. The app finds a primer by its archetype's id, so the primer of an archetype since merged into this one (the snapshot's `merges`) doesn't count. A new primer is written under this archetype's id, starting from the old one's text; the old one is left as it is;
 - **changed:** its consensus main deck has moved by 6 cards or more since the primer was written, or its top card (the first of `hand`) is new to the deck. `state/primers.json` keeps the consensus each primer written here came from. For a primer written or edited by hand, its `Main cards` grid stands in, and only copies that left the deck count;
 - **old:** the primer was last updated 30 or more days ago.
 
 Everything else is left alone:
 
-- archetypes past the 16th, and their primers;
+- archetypes past the 16th with fewer than 10 results, and their primers;
 - Commander, whose guides the scrape builds (see [EDHREC](#edhrec)).
 
-A new primer replaces the old one as a new version of the same id, with a note saying what it was written from and why.
+A primer that is due again is replaced by a new version of the same id, with a note saying what it was written from and why.
 
 Claude is sent:
 
@@ -253,7 +260,7 @@ Each draft is checked by the API's `validate_primer`. It is then checked for pro
 
 A draft with problems is sent back once, and one that still has them is not published. Every draft and its problems are kept for 30 days as the run's `primers` artifact.
 
-A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run, missing ones first. Claude writes for a few minutes per primer, so a $5 run should take roughly 30 to 60 minutes of Actions time. This is an estimate, not yet timed. Once every primer is current, the 30-day rule comes to about 3 primers a day, roughly $50 a month. The most it can reach is $150 a month, if every daily run spends its $5.
+A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run: the first 16 before the others, and missing ones first. Claude writes for a few minutes per primer, so a $5 run should take roughly 30 to 60 minutes of Actions time. This is an estimate, not yet timed. Once every primer is current, the 30-day rule over about 180 archetypes comes to about 6 primers a day, roughly $90 a month. The most it can reach is $150 a month, if every daily run spends its $5. Catching up costs the same whatever the budget, about $55 for the roughly 107 primers due today. The budget only sets the pace: about 13 runs at $5, or 4 to 5 at $15.
 
 The workflow needs these GitHub secrets:
 
