@@ -16,8 +16,9 @@ GitHub Actions (14:00 UTC)
 | `generators/` | Swift generators for the card catalog: image feature prints, pull odds, price catalog (from the MTGImageHash repository; see `generators/README.md`) |
 | `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
-| `ops/` | The scrape and catalog jobs as scripts (`scrape.sh`, `catalog.sh`), which the workflows call and which run the same on a Mac |
+| `ops/` | The scrape, catalog and primer jobs as scripts (`scrape.sh`, `catalog.sh`, `primers.sh`), which the workflows call and which run the same on a Mac |
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
+| `.github/workflows/guides.yml` | After each scrape, Claude writes the archetype primers that are missing or stale and publishes them to api.mooligan.com (see [Archetype primers](#archetype-primers)) |
 | `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
@@ -101,7 +102,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 ## Setup
 
 - **R2:** the bucket is `mtg-meta-data`, with custom domain `data.mooligan.com`. The app is native, so the bucket needs no CORS rule.
-- **GitHub secrets:** `R2_ACCOUNT_ID`, and `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` from an account API token with Object Read & Write on that bucket only.
+- **GitHub secrets:** `R2_ACCOUNT_ID`, and `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` from an account API token with Object Read & Write on that bucket only. `ANTHROPIC_API_KEY` for what Claude writes: the commander guides' summaries, the premier events' formats and the archetype primers. `PRIMERS_ADMIN_TOKEN`, the API Worker's `ADMIN_TOKEN`, for publishing the archetype primers.
 
 ## Running locally
 
@@ -219,6 +220,86 @@ Commander usage on each card page comes from EDHREC, used with their permission.
 `edh/top.json` also ranks the 50 commanders most played at each Commander Bracket: Brackets 1 to 4 from EDHREC's bracket counts of the past month's top 300 commanders (`BRACKET_PAGES_PER_RUN`, 150, EDHREC pages a run, the rest cached a week in `state/bracket-counts.json`), and cEDH from [EDHTop16](https://edhtop16.com)'s tournament entries of the past three months (two requests a day at most, cached in `state/edhtop16.json`; EDHREC's counts stand in when it cannot be read). EDHTop16 has no published API: the scraper asks its site's own GraphQL endpoint with the query id its page script uses (`EDHTOP16_QUERY_ID` in `top_brackets.py`, read again from the site when it changes).
 
 The guides (`edh/commanders/{slug}/guide.json`) of the first `GUIDES_TOP` (100) commanders of `edh/top.json` and of every one its brackets rank are built from EDHREC's theme and bracket pages, Commander Spellbook's estimate-bracket and Scryfall's catalog: `GUIDES_PER_RUN` (60, 45 in `ops/scrape.sh`) a run, the ones due (never built, a week old, or whose themes changed), `GUIDE_DELAY` (1) seconds between EDHREC pages. With `ANTHROPIC_API_KEY` set (the GitHub secret of the same name), Claude (`claude-sonnet-5-5`) then rewrites the summaries of the guides whose facts changed, as one Message Batch at half price; the run waits for it up to `POLISH_WAIT_MINUTES` (30, 15 in `ops/scrape.sh`) and logs its tokens and dollars, and a batch still running is collected by the next run. `GUIDE_POLISH=0` turns that off; `ops/scrape.sh` only polishes on a run that publishes unless `GUIDE_POLISH=1`. `python -m mtgmeta guides DIR --top 5 [--brackets] [--polish]` builds them by hand. See [`docs/data-format.md`](docs/data-format.md#edhcommandersslugguidejson).
+
+## Archetype primers
+
+The deck guides on an archetype's Primers tab are playgraph Markdown on api.mooligan.com (the API's `format_guide` describes it). `.github/workflows/guides.yml` ("Write archetype primers") runs `ops/primers.sh` after each scrape that wasn't cancelled. Claude (`claude-opus-5-5`, effort high) then writes the primers that are due and publishes them.
+
+Which archetypes get a primer, set in one place at the top of `scraper/mtgmeta/primers.py`:
+
+- first, the first 16 (`COUNT`) of each of the six main formats' 30-day standings in `explore.json`;
+- then every other archetype with 10 (`MIN_RESULTS`) results or more in `snapshots/{format}.json`, at most 25 (`BACKFILL`) of them a run. Each format's go by most results, and the formats take turns, so Modern's many results don't keep the others waiting. Today that covers 25 archetypes in Standard and 45 in Modern, about 180 in all.
+
+A primer is due when:
+
+- **missing:** the archetype has no primer under its id. The app finds a primer by its archetype's id, so the primer of an archetype since merged into this one (the snapshot's `merges`) doesn't count. A new primer is written under this archetype's id, starting from the old one's text; the old one is left as it is;
+- **changed:** its consensus main deck has moved by 6 cards or more since the primer was written, or its top card (the first of `hand`) is new to the deck. `state/primers.json` keeps the consensus each primer written here came from. For a primer written or edited by hand, its `Main cards` grid stands in, and only copies that left the deck count;
+- **old:** the primer was last updated 30 or more days ago.
+
+Everything else is left alone:
+
+- archetypes past the 16th with fewer than 10 results, and their primers;
+- Commander, whose guides the scrape builds (see [EDHREC](#edhrec)).
+
+A primer that is due again is replaced by a new version of the same id, with a note saying what it was written from and why.
+
+Claude is sent:
+
+- the archetype's shares, consensus and other cards;
+- its recent results;
+- the format's other top archetypes;
+- the Oracle text of every card;
+- the primer as it stands.
+
+Each draft is checked by the API's `validate_primer`. It is then checked for problems:
+
+- cards Scryfall doesn't know;
+- matchups that aren't archetypes of the format;
+- `in:` cards the sideboard doesn't play and `out:` cards the main deck doesn't play;
+- matchups that bring in a different number of cards than they take out.
+
+A draft with problems is sent back once, and one that still has them is not published. Every draft and its problems are kept for 30 days as the run's `primers` artifact.
+
+A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run: the first 16 before the others, and missing ones first. Claude writes for a few minutes per primer, so a $5 run should take roughly 30 to 60 minutes of Actions time. This is an estimate, not yet timed. Once every primer is current, the 30-day rule over about 180 archetypes comes to about 6 primers a day, roughly $90 a month. The most it can reach is $150 a month, if every daily run spends its $5. Catching up costs the same whatever the budget, about $55 for the roughly 107 primers due today. The budget only sets the pace: about 13 runs at $5, or 4 to 5 at $15.
+
+The workflow needs these GitHub secrets:
+
+- `ANTHROPIC_API_KEY`;
+- `PRIMERS_ADMIN_TOKEN`;
+- the R2 keys, for `state/primers.json`.
+
+It shares the scrape's concurrency group, because the scrape uploads the `state/` it downloaded when it started. From the Actions tab, Run workflow takes:
+
+- a mode: `write`; `plan`, which lists what is due and why; or `check`, which validates the published primers. `plan` and `check` need no key and spend nothing;
+- the formats;
+- the count;
+- the budget.
+
+From a terminal:
+
+```bash
+gh workflow run guides.yml -f mode=plan
+```
+
+```bash
+gh workflow run guides.yml -f mode=write -f formats=pauper -f budget=2
+```
+
+On a Mac, `ops/primers.sh` does the same, and publishes nothing unless `PUBLISH=1`. The drafts land in `scraper/work-primers/primers/`:
+
+```bash
+MODE=plan ops/primers.sh
+```
+
+```bash
+MODE=check FORMATS=modern ops/primers.sh
+```
+
+```bash
+FORMATS=pauper BUDGET=1 ops/primers.sh    # needs ANTHROPIC_API_KEY
+```
+
+`python -m mtgmeta primers DIR [--archetype ID] [--plan | --check | --publish]`, run in `scraper/`, is the step itself.
 
 ## Caveats
 
