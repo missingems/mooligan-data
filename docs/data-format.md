@@ -16,7 +16,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `popular-cards/{format}.json` | The cards one format's recent decks play most, in each of three windows, by kind of card and for the sideboard | `max-age=300` |
 | `breakouts/{format}.json` | The cards new to one format's metagame: played in the last 7 days and barely before, with how those decks did | `max-age=300` |
 | `movers/{format}.json` | The cards whose price rose or fell most over the last day, week and month, among those legal in a format (`movers/all.json`: every card) | `max-age=300` |
-| `today.json` | One response for Explore's Today widgets: up to three breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
+| `today.json` | One response for Explore's Today widgets: up to six breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
 | `rules/comprehensive.json` | The whole of Magic's Comprehensive Rules as a book: chapters, sections, rules with their subrules and examples, and the glossary. About 1.1 MB, not in `explore-manifest.json`: read it when the rules are opened. Changes only when Wizards publishes new rules | `max-age=300` |
@@ -647,11 +647,11 @@ This example is the generator's real output for the files of the 4 October run, 
 }
 ```
 
-Today is a row of widgets of four kinds: up to three breakout cards, the movers, the rising commander and the preview. The breakouts and the movers are built from files already published, so they add no data of their own; the commander comes from the EDHREC pages the run refreshed, and the preview from Scryfall's default-cards bulk file, which the movers read anyway. Every section is always present; one with nothing to show is `[]` (`breakouts`) or `null` (`commander`, `mover`, `loser`, `preview.card`).
+Today is a row of widgets of four kinds: up to six breakout cards, the movers, the rising commander and the preview. The breakouts and the movers are built from files already published, so they add no data of their own; the commander comes from the EDHREC pages the run refreshed, and the preview from Scryfall's default-cards bulk file, which the movers read anyway. Every section is always present; one with nothing to show is `[]` (`breakouts`) or `null` (`commander`, `mover`, `loser`, `preview.card`).
 
 ### `breakouts`
 
-A list of **1 to 3 cards**, fewer when fewer exist and `[]` when no format has a breakout. They are taken from one ranking, strongest first. Cards are ranked as cards, not as rows: a real release finds a home in several formats at once, while a card that four decks of one small format play may just be a tech. Cards are told apart by `oracle_id` (`name` when a row has none), and a card is listed once. The ranking, in this order:
+A list of **1 to 6 cards**, fewer when fewer exist and `[]` when no format has a breakout (at most 3 until the first run after 26 October 2026). They are taken from one ranking, strongest first. Cards are ranked as cards, not as rows: a real release finds a home in several formats at once, while a card that four decks of one small format play may just be a tech. Cards are told apart by `oracle_id` (`name` when a row has none), and a card is listed once. The ranking, in this order:
 
 1. The most **`decks` plus `top8`** added up over every format whose `breakouts/{format}.json` lists the card (a top 8 deck counts twice).
 2. The largest gain in share (`share` minus `previous_share`) in any one format.
@@ -660,7 +660,7 @@ A list of **1 to 3 cards**, fewer when fewer exist and `[]` when no format has a
 
 So a card seeing play in three formats (26 Standard decks, 13 in Pioneer, 6 in Modern) comes before a card 4 decks of Pauper play, new or not.
 
-**Three formats where it can.** The three cards come from three different formats when three formats have a breakout: going down the ranking, a card is taken when no card taken so far has its busiest format (below), until there are three. Only when fewer than three formats have one is the list filled up with the next best cards whatever their format. The cards are listed in their ranked order. So the best card of a third format comes before a second card of a format already listed.
+**Six formats where it can.** The six cards come from six different formats when six formats have a breakout: going down the ranking, a card is taken when no card taken so far has its busiest format (below), until there are six. Only when fewer than six formats have one is the list filled up with the next best cards whatever their format. The cards are listed in their ranked order. So the best card of a sixth format comes before a second card of a format already listed.
 
 Each card is shown as its row in its busiest format: the format where it has the most `decks`, ties going to the format's place in the order of the formats above (`modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander`; a format not in it comes after, alphabetically). It has:
 
