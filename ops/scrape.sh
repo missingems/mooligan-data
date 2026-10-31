@@ -152,7 +152,8 @@ step_upload() (
       cp work/explore-manifest.json "$R2/explore-manifest.json" --cache-control "public, max-age=60"
     fi
     # With SHARED=0 it lists only this run's formats, so it stays here and the run with every format publishes it.
-    # Until then the app keeps the snapshots the published index names, in step with explore.json and the rest.
+    # Until then the published index has the previous snapshots' hashes: an app whose cached snapshot matches keeps it,
+    # in step with explore.json and the rest, and one that downloads a snapshot meanwhile gets a newer one.
     if [ "$SHARED" = 1 ]; then
       cp work/index.json "$R2/index.json" --cache-control "public, max-age=60"
     fi
