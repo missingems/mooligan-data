@@ -183,3 +183,73 @@ def test_a_metagame_page_that_never_shows_tiles_is_returned_after_two_loads(monk
     session = MetagameSession(has_selector=True, tiles_from_load=None)
     html, _ = GoldfishBrowser(session, delay=0, concurrency=3).metagame("legacy", "30")
     assert session.reloads == 2 and html == session.html
+
+
+
+class Clock:
+    """Time that passes only when the browser sleeps, so a 20 second wait takes none."""
+
+    def __init__(self):
+        self.now = 0.0
+
+    def time(self):
+        return self.now
+
+    def sleep(self, seconds):
+        self.now += seconds
+
+
+class SwitchingSession(MetagameSession):
+    """A metagame page on 30 days whose select swaps its tiles for ones reading `after`, or never swaps them (None)."""
+
+    def __init__(self, after):
+        super().__init__(has_selector=True)
+        self.statistics = "12.3%|4.5%"
+        self.after = after
+        self.stale = 0  # tiles on the page that carry the stamp
+
+    def execute_script(self, script):
+        if "dispatchEvent" in script:
+            self.scripts.append(script)
+            stamped = self.stale = len(self.statistics.split("|"))
+            if self.after is not None:
+                # The swap renders the new window's tiles, which carry no stamp.
+                self.statistics, self.stale = self.after, 0
+            return stamped
+        if "data-mtgmeta-stale" in script:
+            return self.stale
+        return self.statistics if "archetype-tile-statistic-value" in script else ""
+
+
+def switch(monkeypatch, session, days="14"):
+    monkeypatch.setattr(browser_module, "time", Clock())
+    return GoldfishBrowser(session, delay=0, concurrency=3).metagame("penny_dreadful", days)
+
+
+def test_a_window_with_other_tiles_is_switched_to(monkeypatch):
+    session = SwitchingSession(after="20.0%|9.1%")
+    assert switch(monkeypatch, session) == (session.html, True)
+    assert 'select.value = "14"' in session.scripts[0]
+
+
+def test_a_window_whose_tiles_read_the_same_is_switched_to(monkeypatch):
+    # Penny Dreadful from 17 to 28 October 2026: a season had just started, so the 14 and 7 days held every deck
+    # of the 30 and the tiles came back the same. Waiting for them to change timed out on every run.
+    session = SwitchingSession(after="12.3%|4.5%")
+    assert switch(monkeypatch, session) == (session.html, True)
+
+
+def test_a_window_with_no_tiles_is_switched_to(monkeypatch):
+    # Penny Dreadful's 7 days on 23 and 24 October 2026 had no decks; parsing the page then says so.
+    session = SwitchingSession(after="")
+    assert switch(monkeypatch, session, days="7") == (session.html, True)
+
+
+def test_a_window_that_never_comes_times_out(monkeypatch):
+    session = SwitchingSession(after=None)
+    try:
+        switch(monkeypatch, session)
+    except TimeoutError as error:
+        assert str(error) == "The penny_dreadful metagame did not switch to 14 days"
+    else:
+        raise AssertionError("no TimeoutError")

@@ -113,16 +113,24 @@ class GoldfishBrowser:
         before = self._tile_statistics()
         # Changing the select submits a Turbo form that swaps only the tiles, so
         # the option's `selected` attribute in the HTML keeps saying 30 days.
-        self._sb.execute_script(
+        # The tiles on show are stamped first, since the swap can bring tiles that read exactly the same: in
+        # the weeks after a Penny Dreadful season starts, every deck of the 30 days is also in the 14 and the 7.
+        # Whether the swap replaces the tiles or morphs them, the new ones carry no stamp.
+        stamped = self._sb.execute_script(
+            "const tiles = document.querySelectorAll('.archetype-tile');"
+            "tiles.forEach(tile => tile.setAttribute('data-mtgmeta-stale', ''));"
             "const select = document.querySelector('select#period');"
             "select.value = %s;"
-            "select.dispatchEvent(new Event('change', {bubbles: true}));" % json.dumps(days)
+            "select.dispatchEvent(new Event('change', {bubbles: true}));"
+            "return tiles.length;" % json.dumps(days)
         )
         deadline = time.time() + 20
         while time.time() < deadline:
             time.sleep(0.5)
-            if self._tile_statistics() != before:
+            if (stamped and not self._stale_tiles()) or self._tile_statistics() != before:
                 time.sleep(1)  # let the rest of the tiles land
+                if not self._tile_statistics():
+                    log.info("The %s metagame shows no archetypes for %s days", format, days)
                 return self._sb.get_page_source(), True
         raise TimeoutError(f"The {format} metagame did not switch to {days} days")
 
@@ -240,6 +248,10 @@ class GoldfishBrowser:
             "return [...document.querySelectorAll('.metagame-percentage .archetype-tile-statistic-value')]"
             ".map(e => e.textContent.trim()).join('|')"
         )
+
+    def _stale_tiles(self) -> int:
+        """How many of the tiles stamped before a window switch are still on the page."""
+        return self._sb.execute_script("return document.querySelectorAll('.archetype-tile[data-mtgmeta-stale]').length")
 
 
 @contextmanager
