@@ -1,0 +1,904 @@
+"""Archetype primers for api.mooligan.com, written by Claude from the published metagame and checked before they go up.
+
+A primer is the playgraph Markdown an archetype page shows on its Primers tab (its format is the API's `format_guide`).
+For each of the six main formats, the first `--count` (16) archetypes of `explore.json`'s 30-day standings are set
+against the primers the API lists, and a primer is written for each one that is due:
+
+- missing: the archetype has no primer. A primer whose archetype was merged into this one (its `archetypes/{id}.json`
+  has `merged_into`) is this archetype's primer, and is written again under its own id, now pointing at this archetype.
+- changed: the archetype's consensus main deck moved by CHANGED_SLOTS (6) cards or more since the primer was written,
+  or its top card (the first of `hand`) is one the primer's deck did not play. `state/primers.json` keeps the consensus
+  each primer written here came from. A primer written by hand (or edited since) has none, so its own `Main cards` grid
+  stands in; the grid lists only the main cards, so it counts only copies that left the deck (a card the grid has at 4
+  and the deck now plays at 1 is 3 cards), and its top card counts as new when the primer never names it.
+- old: the primer was last updated STALE_DAYS (30) or more days ago.
+
+Archetypes past `--count`, and their primers, are left alone. Commander primers are not written here: a commander's
+primer is shaped differently (its abilities, its builds by bracket) and needs other facts than a decklist.
+
+Claude (MODEL, effort EFFORT) is sent the archetype's shares, consensus list and other cards its lists play, its recent
+results, the format's other top archetypes, the Oracle text of every card, and the primer it has now, and writes the
+whole primer. Each draft is checked: by the API's `validate_primer` (the parser that rejects a primer on publish); that
+every [[card]] is one Scryfall knows, or a token one of the facts' cards makes; that every matchup is an archetype of
+the format; that every `in:` card is one of the deck's sideboard cards and every `out:` card one of its main deck cards;
+and that each matchup takes out as many cards as it brings in. A draft with problems is sent back once with them, and
+one that still has them is not published. Every draft is written to DIR/primers/{id}.md.
+
+`--publish` puts each passing draft with PRIMERS_ADMIN_TOKEN as a new version of the primer's id. `--budget` stops
+asking Claude before the run would pass that many dollars; the primers left wait for the next run, the missing ones
+first. `--plan` lists what is due and why, and `--check` validates the published primers; neither needs a key.
+
+It reads ANTHROPIC_API_KEY (and ANTHROPIC_WORKSPACE_ID for a key not scoped to one workspace) and PRIMERS_ADMIN_TOKEN
+from the environment, and never logs them.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import os
+import re
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from dataclasses import dataclass, field
+from datetime import date, datetime, timezone
+from pathlib import Path
+from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
+
+log = logging.getLogger(__name__)
+
+FORMATS = ("standard", "pioneer", "modern", "legacy", "pauper", "vintage")
+COUNT = 16
+STALE_DAYS = 30
+CHANGED_SLOTS = 6
+STATE_PATH = "state/primers.json"
+DRAFTS = "primers"
+API_URL = "https://api.mooligan.com"
+USER_AGENT = "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"
+EXAMPLE = Path(__file__).with_name("primer_example.md")
+
+MODEL = "claude-opus-5-5"
+EFFORT = "high"
+MAX_TOKENS = 64000
+# A refusal is run again on the model Anthropic recommends for its category, in the same call.
+FALLBACK_BETA = "server-side-fallback-2026-07-01"
+# A draft with problems goes back this many times.
+REPAIRS = 1
+# Dollars per million tokens: input, output, cache write, cache read. Thinking is billed as output. A fallback is billed
+# at its own model's prices; an unknown model at the dearest here.
+PRICES = {
+    "claude-opus-5-5": (4.00, 20.00, 5.00, 0.20),
+    "claude-opus-5": (5.00, 25.00, 6.25, 0.50),
+    "claude-opus-4-8": (5.00, 25.00, 6.25, 0.50),
+}
+# What one call is taken to cost before the run has seen one: about 13k tokens of facts and up to 25k of thinking and primer.
+ESTIMATE = 0.60
+# Cards some lists play beyond the consensus, from this share of the lists.
+FLEX_SHARE = 25.0
+FLEX_CARDS = 15
+OPPONENTS = 8
+RESULTS = 6
+AUTHOR = "greg"
+AUTHOR_NAME = "Greg"
+TYPES = ("aggro", "tempo", "midrange", "control", "combo", "ramp", "prison")
+
+SYSTEM = """You write archetype primers for Mooligan, a Magic: The Gathering app. A primer teaches a player who has just picked up a deck how it plays, how it wins, what to watch out for and how to sideboard. Players rely on every rules statement in it, so accuracy comes before everything else.
+
+You are given one archetype's facts: its share of the format, its consensus decklist and the other cards its lists play, its recent results, the format's other top archetypes, the Oracle text of the cards, and, when it has one, the primer it has now. Write the whole primer in playgraph Markdown, in the format described below, and reply with the Markdown only: start with the front matter's opening `---` line, with nothing before it and nothing after the primer.
+
+A primer has, in this order:
+- Front matter with exactly the archetype, format, title, author, written and updated values you are given, and `type:` as one to three of: """ + ", ".join(TYPES) + """.
+- `## The deck`: what the deck does and how it wins, in a paragraph or two, and how much of the format plays it, from the shares given.
+- `## Main cards`: one `:::cards` grid of the eight to twelve cards that define the deck, each with its copies in the consensus list and a short line on its job.
+- One to three sections on how the deck plays and wins (its engine, its combo, its key turns), each with at least one `playgraph` diagram. Title them for this deck.
+- `## Gotchas and tips`: four to seven `:::gotcha` and `:::tip` blocks on the rules details and play patterns that trip players up.
+- `## Matchups and sideboarding`: one sentence saying Mooligan has no head-to-head records yet, so these say what to bring in and why, based on the number of lists given over the days given. Then a `:::matchup` block against each of four to six of the top archetypes given (the mirror only if the deck itself is among them), with no `verdict` and no `record`, each with an `about:` line on what that deck does, `key:` naming one to three of its cards from the facts, `in:` and `out:` lines, and a sentence or two on why.
+
+Rules for the content:
+- Take every number from the facts: shares, list counts, copies. Never invent a statistic, a result or a decklist.
+- Name a card only when it is in the facts or you are certain it exists under exactly that name, and write it exactly as the facts write it. A token is written as `token [[Name]]` in a diagram, named as the card that makes it names it.
+- Every rules statement must follow from the Oracle text given and the Comprehensive Rules. Never describe an interaction, combo or loop the Oracle text does not support. When you are not sure something works, leave it out.
+- Mark a diagram `verified` only when every step in it follows from the Oracle text given; otherwise mark it `unverified`.
+- `in:` cards come only from the deck's sideboard (its consensus sideboard, or the other sideboard cards its lists play), at most as many copies as its lists play. `out:` cards come only from its main deck. Each matchup takes out as many cards as it brings in.
+- A matchup's `archetype=` is exactly the id given for that archetype.
+- When the archetype has a primer already, keep what is still right in it (its explanations, its structure, its voice) and change what the current lists, results and format no longer support.
+
+Write plain, confident second person for a player who knows the rules of Magic but not this deck. Short sentences. No hype and no filler, no headings beyond the sections above, and no mention of where the data comes from beyond the list counts."""
+
+
+class PrimerError(Exception):
+    pass
+
+
+# --- the API ------------------------------------------------------------------------------------------------------
+
+
+def http(method: str, url: str, body: Optional[dict] = None, headers: Optional[dict] = None) -> Tuple[int, object]:
+    """The status and the JSON body (None when it has none) of one request."""
+    data = json.dumps(body).encode() if body is not None else None
+    sent = {"User-Agent": USER_AGENT, "Accept": "application/json, text/event-stream", **(headers or {})}
+    if data is not None:
+        sent["Content-Type"] = "application/json"
+    request = urllib.request.Request(url, data=data, method=method, headers=sent)
+    try:
+        with urllib.request.urlopen(request, timeout=120) as response:
+            return response.status, json.loads(response.read() or b"null")
+    except urllib.error.HTTPError as error:
+        try:
+            return error.code, json.loads(error.read() or b"null")
+        except ValueError:
+            return error.code, None
+
+
+@dataclass
+class Published:
+    """A primer as `GET /v1/primers` lists it."""
+
+    id: str
+    archetype: str
+    format: str
+    title: str
+    written: str
+    updated: str
+    version: int
+
+    @staticmethod
+    def of(row: dict) -> "Published":
+        return Published(
+            str(row["id"]), str(row.get("archetype") or ""), str(row.get("format") or ""), str(row.get("title") or ""),
+            str(row.get("written") or ""), str(row.get("updated") or ""), int(row.get("version") or 0),
+        )
+
+
+class Api:
+    """api.mooligan.com: the primers it lists, their Markdown, its `validate_primer` and `format_guide` tools (over MCP,
+    which needs no token), and the admin PUT that publishes a primer."""
+
+    def __init__(self, base: str = API_URL, token: Optional[str] = None, request: Callable = http) -> None:
+        self.base = base.rstrip("/")
+        self._token = token
+        self._request = request
+        self._sources: Dict[str, Optional[dict]] = {}
+
+    @property
+    def can_publish(self) -> bool:
+        return bool(self._token)
+
+    def primers(self) -> List[Published]:
+        status, body = self._request("GET", f"{self.base}/v1/primers")
+        if status != 200:
+            raise PrimerError(f"GET /v1/primers: HTTP {status}")
+        rows = body if isinstance(body, list) else (body or {}).get("primers") or []
+        return [Published.of(row) for row in rows]
+
+    def source(self, primer_id: str) -> Optional[dict]:
+        """`{ markdown, author, version, ... }` of a primer's current version, None when there is none."""
+        if primer_id not in self._sources:
+            status, body = self._request("GET", f"{self.base}/v1/primers/{urllib.parse.quote(primer_id)}/source")
+            if status not in (200, 404):
+                raise PrimerError(f"GET /v1/primers/{primer_id}/source: HTTP {status}")
+            self._sources[primer_id] = body if status == 200 else None
+        return self._sources[primer_id]
+
+    def tool(self, name: str, arguments: dict) -> str:
+        body = {"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": name, "arguments": arguments}}
+        status, reply = self._request("POST", f"{self.base}/mcp", body, {"MCP-Protocol-Version": "2025-06-18"})
+        result = (reply or {}).get("result") if isinstance(reply, dict) else None
+        if status != 200 or not result:
+            raise PrimerError(f"MCP {name}: HTTP {status} {(reply or {}).get('error') if isinstance(reply, dict) else ''}".strip())
+        text = "".join(part.get("text") or "" for part in result.get("content") or [])
+        if result.get("isError"):
+            raise PrimerError(f"MCP {name}: {text}")
+        return text
+
+    def validate(self, markdown: str) -> dict:
+        return json.loads(self.tool("validate_primer", {"markdown": markdown}))
+
+    def format_guide(self) -> str:
+        return self.tool("format_guide", {})
+
+    def publish(self, primer_id: str, markdown: str, note: str, author: str = AUTHOR) -> int:
+        """Adds a version of the primer and returns its number. The API checks the Markdown again and answers 422 with
+        its diagnostics when it has errors."""
+        if not self._token:
+            raise PrimerError("publishing needs PRIMERS_ADMIN_TOKEN")
+        status, body = self._request(
+            "PUT", f"{self.base}/v1/primers/{urllib.parse.quote(primer_id)}", {"markdown": markdown, "author": author, "note": note},
+            {"Authorization": f"Bearer {self._token}"},
+        )
+        if status != 201:
+            raise PrimerError(f"PUT /v1/primers/{primer_id}: HTTP {status} {json.dumps(body)[:500]}")
+        return int(body["version"])
+
+
+# --- what is due ----------------------------------------------------------------------------------------------------
+
+
+def consensus(archetype: dict, board: str = "main") -> Dict[str, int]:
+    return {card["name"]: int(card["quantity"]) for card in ((archetype.get("consensus") or {}).get(board) or [])}
+
+
+def top_card(archetype: dict) -> Optional[str]:
+    hand = archetype.get("hand") or []
+    return hand[0]["name"] if hand else None
+
+
+CARD_LINE = re.compile(r"^\s*(\d+)\s+\[\[([^\]|]+)")
+LINK = re.compile(r"\[\[([^\]|]+)")
+
+
+def grid(markdown: str) -> Dict[str, int]:
+    """The copies of each card in the primer's `Main cards` grid (else its first grid)."""
+    lines = markdown.splitlines()
+    start = next((index for index, line in enumerate(lines) if line.strip().lower() == "## main cards"), 0)
+    cards: Dict[str, int] = {}
+    inside = False
+    for line in lines[start:]:
+        if line.strip().startswith(":::cards"):
+            inside = True
+        elif inside and line.strip() == ":::":
+            break
+        elif inside:
+            match = CARD_LINE.match(line)
+            if match:
+                cards[match.group(2).strip()] = int(match.group(1))
+    return cards
+
+
+def linked(markdown: str) -> Set[str]:
+    return {name.strip() for name in LINK.findall(markdown)}
+
+
+def moved(before: Dict[str, int], now: Dict[str, int], partial: bool = False) -> int:
+    """The cards of the main deck that changed: copies added or taken out, whichever is more. With `partial` (a grid of
+    some of the deck's cards) only the copies that left can be seen."""
+    removed = sum(max(0, copies - now.get(name, 0)) for name, copies in before.items())
+    if partial:
+        return removed
+    return max(removed, sum(max(0, copies - before.get(name, 0)) for name, copies in now.items()))
+
+
+def age(primer: Published, today: date) -> Optional[int]:
+    try:
+        return (today - date.fromisoformat(primer.updated[:10])).days
+    except ValueError:
+        return None
+
+
+@dataclass
+class Item:
+    """One archetype whose primer is due."""
+
+    format: dict
+    row: dict
+    archetype: dict
+    primer: Optional[Published]
+    primer_id: str
+    reasons: List[str]
+    rank: int
+
+    @property
+    def id(self) -> str:
+        return self.row["id"]
+
+
+def match_primers(rows: Sequence[dict], primers: Sequence[Published], read: Callable[[str], Optional[dict]]) -> Dict[str, Tuple[Published, bool]]:
+    """Each archetype's primer, and whether it is the primer of an archetype merged into it. An archetype with several
+    primers keeps the one named after it, else the one updated last."""
+    ids = {row["id"] for row in rows}
+    matched: Dict[str, Tuple[Published, bool]] = {}
+    newest = sorted(primers, key=lambda each: each.updated, reverse=True)
+    for primer in sorted(newest, key=lambda each: each.id != each.archetype):
+        if primer.archetype in ids and primer.archetype not in matched:
+            matched[primer.archetype] = (primer, False)
+    for primer in newest:
+        if primer.archetype in ids:
+            continue
+        leader = (read(f"archetypes/{primer.archetype}.json") or {}).get("merged_into")
+        if leader in ids and leader not in matched:
+            matched[leader] = (primer, True)
+    return matched
+
+
+def reasons_for(
+    archetype: dict, primer: Published, merged: bool, entry: Optional[dict], markdown: Optional[str], today: date,
+) -> Tuple[List[str], int]:
+    """Why the archetype's primer is due, and its rank (missing 0, merged 1, changed 2, old 3); [] when it is not."""
+    found: List[Tuple[int, str]] = []
+    if merged:
+        found.append((1, f"its primer {primer.id} names {primer.archetype}, now merged into {archetype['id']}"))
+    now = consensus(archetype)
+    top = top_card(archetype)
+    if entry and entry.get("version") == primer.version and entry.get("consensus"):
+        before = entry["consensus"]
+        slots = moved(before, now)
+        if slots >= CHANGED_SLOTS:
+            found.append((2, f"{slots} main deck cards changed since it was written"))
+        if top and top not in before:
+            found.append((2, f"its top card {top} is new to the deck"))
+    elif markdown:
+        slots = moved(grid(markdown), now, partial=True)
+        if slots >= CHANGED_SLOTS:
+            found.append((2, f"{slots} of its main cards' copies left the deck"))
+        if top and top not in linked(markdown):
+            found.append((2, f"its top card {top} is not in the primer"))
+    days = age(primer, today)
+    if days is not None and days >= STALE_DAYS:
+        found.append((3, f"updated {days} days ago"))
+    return [reason for _, reason in found], min((rank for rank, _ in found), default=4)
+
+
+def plan(
+    explore: dict, formats: Sequence[str], count: int, primers: Sequence[Published], read: Callable[[str], Optional[dict]],
+    state: Dict[str, dict], api: Api, today: date, only: Sequence[str] = (),
+) -> Tuple[List[Item], List[str]]:
+    """The archetypes whose primer is due, the missing ones first, then the merged, changed and old, each by its share;
+    and a note for each archetype that was skipped."""
+    items: List[Tuple[int, float, Item]] = []
+    notes: List[str] = []
+    blocks = {block["format"]: block for block in explore.get("formats") or []}
+    for name in formats:
+        block = blocks.get(name)
+        if not block:
+            notes.append(f"{name}: not in explore.json")
+            continue
+        rows = (block.get("standings") or [])[:count]
+        if only:
+            rows = [row for row in block.get("standings") or [] if row["id"] in only]
+        mine = [primer for primer in primers if primer.format.lower() == block["name"].lower()]
+        matched = match_primers(rows, mine, read)
+        for row in rows:
+            archetype = read(f"archetypes/{row['id']}.json")
+            if not archetype or not consensus(archetype):
+                notes.append(f"{row['id']}: no stored lists, so no primer")
+                continue
+            primer, merged = matched.get(row["id"], (None, False))
+            if primer is None:
+                reasons, rank = ["no primer"], 0
+            else:
+                entry = state.get(primer.id)
+                markdown = None
+                if not (entry and entry.get("version") == primer.version):
+                    markdown = (api.source(primer.id) or {}).get("markdown")
+                reasons, rank = reasons_for(archetype, primer, merged, entry, markdown, today)
+            if only and not reasons:
+                reasons, rank = ["asked for"], 2
+            if reasons:
+                item = Item(block, row, archetype, primer, primer.id if primer else row["id"], reasons, rank)
+                items.append((rank, -(row.get("share_30d") or 0.0), item))
+    items.sort(key=lambda each: (each[0], each[1]))
+    return [item for _, _, item in items], notes
+
+
+# --- the facts Claude is given ---------------------------------------------------------------------------------------
+
+
+Lookup = Callable[[str], Optional[dict]]
+
+
+def oracle_line(name: str, lookup: Lookup) -> str:
+    card = lookup(name) or {}
+    text = " / ".join(line.strip() for line in (card.get("oracle_text") or "").splitlines() if line.strip())
+    parts = [part for part in (card.get("mana_cost"), card.get("type_line")) if part]
+    return f"- {name}" + (f" ({'; '.join(parts)})" if parts else "") + (f": {text}" if text else ": (not in Scryfall's catalog)" if not card else "")
+
+
+def flex(archetype: dict, board: str) -> List[dict]:
+    """The cards some of the lists play on a board that the consensus does not."""
+    listed = consensus(archetype, board)
+    cards = ((archetype.get("cards") or {}).get(board)) or []
+    return [card for card in cards if card["name"] not in listed and (card.get("share") or 0) >= FLEX_SHARE][:FLEX_CARDS]
+
+
+def percent(value) -> str:
+    return "not played" if value is None else f"{value}%"
+
+
+def opponents(item: Item, read: Callable[[str], Optional[dict]]) -> List[Tuple[dict, List[str]]]:
+    """The format's top archetypes but this one, each with its key cards."""
+    found = []
+    for row in (item.format.get("standings") or [])[: OPPONENTS + 1]:
+        if row["id"] == item.id or len(found) >= OPPONENTS:
+            continue
+        document = read(f"archetypes/{row['id']}.json") or {}
+        cards = [card["name"] for card in document.get("hand") or row.get("key_cards") or []][:5]
+        found.append((row, cards))
+    return found
+
+
+def front_matter(item: Item, today: date) -> Dict[str, str]:
+    primer = item.primer
+    keep = primer is not None and primer.archetype == item.id
+    return {
+        "archetype": item.id,
+        "format": item.format["name"],
+        "title": primer.title if keep and primer.title else item.archetype.get("name") or item.row["name"],
+        "author": AUTHOR_NAME,
+        "written": (primer.written[:10] if primer and primer.written else today.isoformat()),
+        "updated": today.isoformat(),
+    }
+
+
+def facts(item: Item, read: Callable[[str], Optional[dict]], lookup: Lookup, previous: Optional[str], today: date) -> Tuple[str, List[str]]:
+    """The message Claude is sent for one archetype, and the cards it names."""
+    archetype, row = item.archetype, item.row
+    cards_block = archetype.get("cards") or {}
+    days = 7 if cards_block.get("window") == "7d" else 30
+    shares = archetype.get("shares") or {}
+    lines = ["Write the primer for this archetype.", "", "## Front matter"]
+    lines += [f"{key}: {value}" for key, value in front_matter(item, today).items()]
+    lines += [
+        "",
+        f"## {row['name']} in {item.format['name']}",
+        f"Archetype id: {item.id}",
+        f"Colours: {''.join(archetype.get('colors') or row.get('colors') or []) or 'colourless'}",
+        f"Share of the format's decks: {percent(shares.get('30d'))} over 30 days, {percent(shares.get('14d'))} over 14, {percent(shares.get('7d'))} over 7.",
+        f"Last 30 days: {row.get('deck_count_30d') or 'unknown'} decks, {row.get('top8_30d') or 0} top-8 finishes, {row.get('wins_30d') or 0} wins.",
+        f"The lists below are {cards_block.get('list_count') or 0} decklists of its {cards_block.get('deck_count') or 0} decks of the last {days} days.",
+        "",
+        "## Consensus main deck",
+    ]
+    named: List[str] = []
+    tally = {(board, card["name"]): card for board in ("main", "side") for card in cards_block.get(board) or []}
+    for board, title in (("main", None), ("side", "## Consensus sideboard")):
+        if title:
+            lines += ["", title]
+        for name, copies in consensus(archetype, board).items():
+            share = (tally.get((board, name)) or {}).get("share")
+            lines.append(f"{copies} {name}" + (f" (in {share}% of the lists)" if share is not None else ""))
+            named.append(name)
+    for board, title in (("main", "## Other main deck cards some lists play"), ("side", "## Other sideboard cards some lists play")):
+        extra = flex(archetype, board)
+        if extra:
+            lines += ["", title]
+            for card in extra:
+                lines.append(f"{card['name']}: in {card['share']}% of the lists, {card['copies']} copies on average")
+                named.append(card["name"])
+    results = [
+        deck for deck in archetype.get("decks") or []
+        if (deck.get("event") or {}).get("prestige", 0) >= 2 and re.match(r"^[1-8](st|nd|rd|th) Place$", deck.get("finish") or "")
+    ][:RESULTS]
+    if results:
+        lines += ["", "## Recent top-8 finishes"]
+        lines += [f"{deck['date']}: {deck['finish']}, {deck.get('event_name') or deck['event']['name']}" for deck in results]
+    lines += ["", f"## The format's other top archetypes (for matchups; use these ids)"]
+    others = opponents(item, read)
+    for other, cards in others:
+        lines.append(f"- {other['name']} (id {other['id']}): {percent(other.get('share_30d'))} of the format over 30 days; key cards: {', '.join(cards) or 'none listed'}")
+        named += cards
+    named = list(dict.fromkeys(named))
+    lines += ["", "## Oracle text"]
+    lines += [oracle_line(name, lookup) for name in named]
+    if previous:
+        lines += ["", "## The primer it has now", "", previous.strip()]
+    return "\n".join(lines), named
+
+
+def system_prompt(format_guide: str, example: str) -> str:
+    return f"{SYSTEM}\n\n# The primer format\n\n{format_guide.strip()}\n\n# An example primer\n\n{example.strip()}\n"
+
+
+# --- checks ---------------------------------------------------------------------------------------------------------
+
+
+@dataclass
+class Problem:
+    kind: str
+    message: str
+    blocking: bool = True
+
+    def __str__(self) -> str:
+        return f"{self.kind}: {self.message}"
+
+
+MATCHUP = re.compile(r'^:::matchup\s+"([^"]*)"(.*)$')
+QUANTITY = re.compile(r"(\d+)\s*\[\[([^\]|]+)")
+
+
+def matchups(markdown: str) -> List[dict]:
+    """Each `:::matchup` block's name, archetype and in and out cards."""
+    found: List[dict] = []
+    current: Optional[dict] = None
+    for line in markdown.splitlines():
+        stripped = line.strip()
+        match = MATCHUP.match(stripped)
+        if match:
+            archetype = re.search(r"\barchetype=(\S+)", match.group(2))
+            current = {"name": match.group(1), "archetype": archetype.group(1) if archetype else None, "in": [], "out": []}
+            found.append(current)
+        elif current is not None and stripped == ":::":
+            current = None
+        elif current is not None:
+            for key in ("in", "out"):
+                if stripped.lower().startswith(f"{key}:"):
+                    current[key] += [(int(copies), name.strip()) for copies, name in QUANTITY.findall(stripped)]
+    return found
+
+
+def check(
+    markdown: str, validation: dict, item: Item, lookup: Lookup, known: Set[str], named: Iterable[str],
+) -> List[Problem]:
+    """What is wrong with a primer of `item`'s archetype. `validation` is the API's `validate_primer` answer for it,
+    `known` the format's archetype ids and `named` the cards of its facts, whose Oracle text names the tokens it makes."""
+    problems: List[Problem] = []
+    for each in validation.get("diagnostics") or []:
+        where = f"{each.get('block')}, line {each.get('line')}" if each.get("block") else "the primer"
+        problems.append(Problem("format", f"{where}: {each.get('message')}", each.get("severity") == "error"))
+    if not validation.get("valid", False) and not any(problem.blocking for problem in problems):
+        problems.append(Problem("format", "validate_primer says it is not valid"))
+    if validation.get("archetype") != item.id:
+        problems.append(Problem("format", f"front matter archetype is {validation.get('archetype')!r}, not {item.id!r}"))
+    if (validation.get("format") or "").lower() != item.format["name"].lower():
+        problems.append(Problem("format", f"front matter format is {validation.get('format')!r}, not {item.format['name']!r}"))
+    texts = " ".join(((lookup(name) or {}).get("oracle_text") or "") for name in named).lower()
+    for name in validation.get("cards") or []:
+        token = re.search(rf"\b{re.escape(name.lower())}\b", texts) or f"token [[{name}]]" in markdown
+        if lookup(name) is None and not token:
+            problems.append(Problem("card", f"[[{name}]] is not a card Scryfall knows, nor a token the deck's cards make"))
+    cards = item.archetype.get("cards") or {}
+    main = {card["name"] for card in cards.get("main") or []} | set(consensus(item.archetype))
+    side = {card["name"] for card in cards.get("side") or []} | set(consensus(item.archetype, "side"))
+    for matchup in matchups(markdown):
+        label = f"matchup {matchup['name']!r}"
+        if matchup["archetype"] not in known:
+            problems.append(Problem("matchup", f"{label}: archetype={matchup['archetype']} is not an archetype of {item.format['name']}"))
+        for _, name in matchup["in"]:
+            if name not in side:
+                problems.append(Problem("matchup", f"{label}: in: [[{name}]] is not one of the deck's sideboard cards"))
+        for _, name in matchup["out"]:
+            if name not in main:
+                problems.append(Problem("matchup", f"{label}: out: [[{name}]] is not one of the deck's main deck cards"))
+        brought, taken = sum(copies for copies, _ in matchup["in"]), sum(copies for copies, _ in matchup["out"])
+        if brought != taken:
+            problems.append(Problem("matchup", f"{label}: brings in {brought} cards and takes out {taken}"))
+    return problems
+
+
+def format_ids(block: dict) -> Set[str]:
+    """Every archetype id of a format's standings, in any window."""
+    rows = list(block.get("standings") or [])
+    for window in (block.get("standings_by_window") or {}).values():
+        rows += window or []
+    return {row["id"] for row in rows if isinstance(row, dict) and row.get("id")}
+
+
+# --- writing --------------------------------------------------------------------------------------------------------
+
+
+@dataclass
+class Usage:
+    input_tokens: int = 0
+    output_tokens: int = 0
+    cache_creation_input_tokens: int = 0
+    cache_read_input_tokens: int = 0
+
+    def add(self, usage) -> None:
+        for name in ("input_tokens", "output_tokens", "cache_creation_input_tokens", "cache_read_input_tokens"):
+            setattr(self, name, getattr(self, name) + (getattr(usage, name, 0) or 0))
+
+    def dollars(self, model: str) -> float:
+        prices = PRICES.get(model) or max(PRICES.values())
+        counts = (self.input_tokens, self.output_tokens, self.cache_creation_input_tokens, self.cache_read_input_tokens)
+        return sum(count * price for count, price in zip(counts, prices)) / 1_000_000
+
+
+@dataclass
+class Budget:
+    """Dollars a run may spend. A call is taken to cost the most of ESTIMATE and the run's average so far."""
+
+    limit: float
+    spent: float = 0.0
+    calls: int = 0
+
+    def estimate(self) -> float:
+        return max(ESTIMATE, self.spent / self.calls) if self.calls else ESTIMATE
+
+    def allows(self) -> bool:
+        return self.spent + self.estimate() <= self.limit
+
+    def spend(self, dollars: float) -> None:
+        self.spent += dollars
+        self.calls += 1
+
+
+def markdown_of(message) -> str:
+    """The primer in a finished message: its text from the front matter's opening line, without a code fence around it."""
+    if message.stop_reason == "refusal":
+        raise PrimerError("Claude declined to write it")
+    if message.stop_reason == "max_tokens":
+        raise PrimerError(f"Claude ran out of tokens ({MAX_TOKENS})")
+    text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
+    lines = text.splitlines()
+    start = next((index for index, line in enumerate(lines) if line.strip() == "---"), None)
+    if start is None:
+        raise PrimerError("the reply has no front matter")
+    lines = lines[start:]
+    while lines and (not lines[-1].strip() or lines[-1].strip().startswith("```")):
+        lines.pop()
+    return "\n".join(lines) + "\n"
+
+
+@dataclass
+class Writer:
+    """Asks Claude for a primer, one streamed Messages call at a time."""
+
+    client: object
+    system: str
+    model: str = MODEL
+    effort: str = EFFORT
+
+    def write(self, messages: List[dict]):
+        with self.client.beta.messages.stream(
+            model=self.model,
+            max_tokens=MAX_TOKENS,
+            betas=[FALLBACK_BETA],
+            fallbacks="default",
+            output_config={"effort": self.effort},
+            system=[{"type": "text", "text": self.system, "cache_control": {"type": "ephemeral"}}],
+            messages=messages,
+        ) as stream:
+            return stream.get_final_message()
+
+
+def make_client():
+    """The Anthropic client, or None when there is no ANTHROPIC_API_KEY."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        return None
+    import anthropic
+
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    return anthropic.Anthropic(api_key=key, default_headers={"anthropic-workspace-id": workspace} if workspace else None)
+
+
+def repair_message(problems: Sequence[Problem]) -> str:
+    listed = "\n".join(f"- {problem}" for problem in problems if problem.blocking)
+    return (
+        "The primer has these problems:\n" + listed + "\n\nFix every one and reply with the whole corrected primer, Markdown only, "
+        "starting with the front matter's `---` line."
+    )
+
+
+@dataclass
+class Result:
+    published: List[str] = field(default_factory=list)
+    drafted: List[str] = field(default_factory=list)
+    failed: List[str] = field(default_factory=list)
+    deferred: List[str] = field(default_factory=list)
+    usage: Usage = field(default_factory=Usage)
+    spent: float = 0.0
+
+
+def write_draft(directory: Path, primer_id: str, markdown: str, problems: Sequence[Problem]) -> None:
+    folder = directory / DRAFTS
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / f"{primer_id}.md").write_text(markdown)
+    report = folder / f"{primer_id}.problems.txt"
+    if problems:
+        report.write_text("".join(f"{problem}{'' if problem.blocking else ' (warning)'}\n" for problem in problems))
+    elif report.exists():
+        report.unlink()
+
+
+def run(
+    directory: Path, items: Sequence[Item], *, writer: Writer, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup,
+    budget: Budget, publish: bool, state: Dict[str, dict], today: date, minutes: float = 0, clock: Callable[[], float] = time.monotonic,
+) -> Result:
+    """Writes, checks and (with `publish`) publishes the primer of each item in turn, while the budget allows and, with
+    `minutes`, until that long has passed."""
+    result = Result()
+    state_path = directory / STATE_PATH
+    deadline = clock() + minutes * 60 if minutes else None
+    for position, item in enumerate(items):
+        late = deadline is not None and clock() >= deadline
+        if late or not budget.allows():
+            result.deferred = [each.primer_id for each in items[position:]]
+            why = f"{minutes:.0f} minutes have passed" if late else f"${budget.spent:.2f} of ${budget.limit:.2f} is spent"
+            log.info("%s, so %d primers wait for the next run", why[0].upper() + why[1:], len(result.deferred))
+            break
+        previous = (api.source(item.primer.id) or {}).get("markdown") if item.primer else None
+        prompt, named = facts(item, read, lookup, previous, today)
+        known = format_ids(item.format)
+        messages: List[dict] = [{"role": "user", "content": prompt}]
+        markdown, problems, model, tries = None, [Problem("claude", "not written")], MODEL, 0
+        for attempt in range(1 + REPAIRS):
+            if attempt and not budget.allows():
+                break
+            tries += 1
+            message = writer.write(messages)
+            model = getattr(message, "model", MODEL) or MODEL
+            usage = Usage()
+            usage.add(message.usage)
+            cost = usage.dollars(model)
+            budget.spend(cost)
+            result.usage.add(message.usage)
+            log.info(
+                "Primer %s: try %d by %s; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
+                item.primer_id, tries, model, usage.input_tokens, usage.output_tokens, usage.cache_creation_input_tokens,
+                usage.cache_read_input_tokens, cost,
+            )
+            try:
+                markdown = markdown_of(message)
+            except PrimerError as error:
+                problems = [Problem("claude", str(error))]
+                break
+            problems = check(markdown, api.validate(markdown), item, lookup, known, named)
+            write_draft(directory, item.primer_id, markdown, problems)
+            if not any(problem.blocking for problem in problems):
+                break
+            messages += [{"role": "assistant", "content": message.content}, {"role": "user", "content": repair_message(problems)}]
+        blocking = [problem for problem in problems if problem.blocking]
+        if blocking or markdown is None:
+            log.warning("Primer %s not published: %s", item.primer_id, "; ".join(str(problem) for problem in blocking[:5]))
+            result.failed.append(item.primer_id)
+            continue
+        if not publish:
+            result.drafted.append(item.primer_id)
+            continue
+        cards = item.archetype.get("cards") or {}
+        note = (
+            f"Written by {model} from {cards.get('list_count') or 0} lists of the last {7 if cards.get('window') == '7d' else 30} days "
+            f"on {today.isoformat()}: {'; '.join(item.reasons)}"
+        )
+        try:
+            version = api.publish(item.primer_id, markdown, note)
+        except PrimerError as error:
+            log.warning("Primer %s: %s", item.primer_id, error)
+            result.failed.append(item.primer_id)
+            continue
+        state[item.primer_id] = {
+            "archetype": item.id,
+            "format": item.format["format"],
+            "version": version,
+            "written_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "model": model,
+            "lists": cards.get("list_count") or 0,
+            "window": cards.get("window"),
+            "consensus": consensus(item.archetype),
+        }
+        state_path.parent.mkdir(parents=True, exist_ok=True)
+        state_path.write_text(json.dumps(state, sort_keys=True, indent=1))
+        result.published.append(item.primer_id)
+        log.info("Primer %s: published as version %d (%s)", item.primer_id, version, "; ".join(item.reasons))
+    result.spent = budget.spent
+    return result
+
+
+# --- check mode -----------------------------------------------------------------------------------------------------
+
+
+def check_published(
+    explore: dict, formats: Sequence[str], count: int, api: Api, read: Callable[[str], Optional[dict]], lookup: Lookup,
+) -> Tuple[int, int]:
+    """Validates the published primer of each top archetype of `formats`, as a draft of it would be. Prints each one's
+    problems and returns how many primers were checked and how many have a format or card problem (one the app or the
+    API would trip on); matchup problems are the lists having moved since the primer was written."""
+    primers = api.primers()
+    blocks = {block["format"]: block for block in explore.get("formats") or []}
+    checked = broken = 0
+    for name in formats:
+        block = blocks.get(name)
+        if not block:
+            continue
+        rows = (block.get("standings") or [])[:count]
+        matched = match_primers(rows, [primer for primer in primers if primer.format.lower() == block["name"].lower()], read)
+        for row in rows:
+            primer, _ = matched.get(row["id"], (None, False))
+            archetype = read(f"archetypes/{row['id']}.json")
+            if primer is None or not archetype:
+                continue
+            markdown = (api.source(primer.id) or {}).get("markdown") or ""
+            item = Item(block, row, archetype, primer, primer.id, [], 0)
+            named = [card["name"] for board in ("main", "side") for card in ((archetype.get("cards") or {}).get(board) or [])]
+            named += [card for _, cards in opponents(item, read) for card in cards]
+            validation = api.validate(markdown)
+            # A primer names the archetype it was written for, which may since have been merged into this one.
+            problems = check(markdown, {**validation, "archetype": row["id"]}, item, lookup, format_ids(block), named)
+            checked += 1
+            serious = [problem for problem in problems if problem.blocking and problem.kind in ("format", "card")]
+            broken += bool(serious)
+            print(f"{name:8} {primer.id}: " + ("ok" if not problems else f"{len(problems)} problems"))
+            for problem in problems:
+                print(f"    {problem}{'' if problem.blocking else ' (warning)'}")
+    return checked, broken
+
+
+# --- the command ----------------------------------------------------------------------------------------------------
+
+
+def main(argv: Sequence[str], load_catalog=None, api: Optional[Api] = None, client=None, source=None, today: Optional[date] = None) -> int:
+    parser = argparse.ArgumentParser(prog="python -m mtgmeta primers", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("directory", type=Path, help="work directory: state/primers.json and the drafts; the data is read from DATA_URL")
+    parser.add_argument("--format", action="append", default=[], help=f"a format, repeatable or comma-separated (default: {', '.join(FORMATS)})")
+    parser.add_argument("--count", type=int, default=COUNT, help=f"the first N archetypes of each format's 30-day standings (default {COUNT})")
+    parser.add_argument("--budget", type=float, default=5.0, help="the most dollars the run may spend on Claude (default 5)")
+    parser.add_argument("--minutes", type=float, default=0, help="start no primer after this many minutes, so the run ends in time (default: no limit)")
+    parser.add_argument("--archetype", action="append", default=[], help="an archetype id to write a primer for even when it is not due; repeatable")
+    parser.add_argument("--publish", action="store_true", help="publish each passing primer (needs PRIMERS_ADMIN_TOKEN)")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--plan", action="store_true", help="list the primers that are due and why, and stop")
+    mode.add_argument("--check", action="store_true", help="validate the published primers of the formats' top archetypes, and stop")
+    args = parser.parse_args(list(argv))
+    logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    for name in ("anthropic", "httpx", "httpx2", "httpcore"):
+        logging.getLogger(name).setLevel(logging.WARNING)
+
+    formats = [part.strip().lower() for each in args.format for part in each.split(",") if part.strip()] or list(FORMATS)
+    unknown = [name for name in formats if name not in FORMATS]
+    if unknown:
+        log.error("No primers for %s: only %s (Commander primers are not written here)", ", ".join(unknown), ", ".join(FORMATS))
+        return 2
+    if source is None:
+        from .guides import Source
+
+        source = Source(args.directory, os.environ.get("DATA_URL", "https://data.mooligan.com"))
+    cache: Dict[str, Optional[dict]] = {}
+
+    def read(path: str) -> Optional[dict]:
+        if path not in cache:
+            cache[path] = source.read(path)
+        return cache[path]
+
+    api = api or Api(os.environ.get("PRIMERS_API_URL", API_URL), os.environ.get("PRIMERS_ADMIN_TOKEN") or None)
+    explore = read("explore.json")
+    if not explore:
+        log.error("explore.json could not be read")
+        return 1
+    today = today or datetime.now(timezone.utc).date()
+    lookup = None
+    if args.check or not args.plan:
+        if load_catalog is None:
+            from .scryfall import card_catalog as load_catalog
+        from .guides import catalog_lookup
+
+        lookup = catalog_lookup(load_catalog())
+    if args.check:
+        checked, broken = check_published(explore, formats, args.count, api, read, lookup)
+        print(f"{checked} primers checked, {broken} with a format or card problem")
+        return 1 if broken else 0
+
+    state = read(STATE_PATH) or {}
+    items, notes = plan(explore, formats, args.count, api.primers(), read, state, api, today, args.archetype)
+    for note in notes:
+        log.info("Skipped %s", note)
+    if args.plan:
+        for item in items:
+            label = item.id if item.primer_id == item.id else f"{item.id} (primer {item.primer_id})"
+            print(f"{item.format['format']:8} {label:60} {', '.join(item.reasons)}")
+        affordable = int(args.budget // ESTIMATE)
+        print(
+            f"{len(items)} primers due. At about ${ESTIMATE:.2f} a try (a primer sent back once costs two), "
+            f"a budget of ${args.budget:.2f} writes about {min(affordable, len(items))} of them this run."
+        )
+        return 0
+    if not items:
+        print("No primer is due")
+        return 0
+    client = client or make_client()
+    if client is None:
+        log.error("Writing primers needs ANTHROPIC_API_KEY (or --plan or --check)")
+        return 2
+    if args.publish and not api.can_publish:
+        log.error("--publish needs PRIMERS_ADMIN_TOKEN")
+        return 2
+    writer = Writer(client, system_prompt(api.format_guide(), EXAMPLE.read_text()))
+    result = run(
+        args.directory, items, writer=writer, api=api, read=read, lookup=lookup, budget=Budget(args.budget),
+        publish=args.publish, state=dict(state), today=today, minutes=args.minutes,
+    )
+    usage = result.usage
+    print(
+        f"{len(result.published)} published, {len(result.drafted)} drafted, {len(result.failed)} failed, "
+        f"{len(result.deferred)} left for the next run; tokens: {usage.input_tokens} input, {usage.output_tokens} output, "
+        f"{usage.cache_creation_input_tokens} cache write, {usage.cache_read_input_tokens} cache read; cost ${result.spent:.2f}"
+    )
+    if result.failed:
+        print(f"Failed: {', '.join(result.failed)} (drafts and their problems in {args.directory / DRAFTS})")
+    return 1 if result.failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

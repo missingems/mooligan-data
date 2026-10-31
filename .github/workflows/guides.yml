@@ -1,0 +1,80 @@
+name: Write archetype primers
+
+# Claude writes the deck guides (the archetype primers on api.mooligan.com) that are missing or stale, checks each one
+# and publishes it. What is due is in scraper/mtgmeta/primers.py. The whole job is ops/primers.sh, which also runs on a
+# Mac (see the README, "Archetype primers"). The commander guides are not here: the scrape builds and polishes those.
+on:
+  # After each scrape, which publishes the metagame the primers are written from. Not a cron: the scrape's own 14:00
+  # cron starts hours late on some days, and this follows it either way.
+  workflow_run:
+    workflows: ["Scrape MTGGoldfish"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "write: write and publish the due primers; plan: list them; check: validate the published ones"
+        type: choice
+        options: [write, plan, check]
+        default: write
+      formats:
+        description: Formats
+        default: standard,pioneer,modern,legacy,pauper,vintage
+      count:
+        description: Top archetypes per format
+        default: "16"
+      budget:
+        description: The most dollars this run may spend on Claude
+        default: "5"
+
+# Two runs must never publish over each other, and neither may run during a scrape: the scrape uploads the state/ it
+# downloaded two hours earlier, which would put back an old state/primers.json. So this shares the scrape's group.
+# GitHub keeps one run waiting per group: a run waiting behind a scrape is cancelled if another is queued after it.
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  primers:
+    # A cancelled scrape published nothing new.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    # A primer takes a few minutes; ops/primers.sh starts none after MINUTES, so the run ends before this.
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            scraper/requirements.txt
+            ops/requirements.txt
+      - name: Write and publish
+        run: ops/primers.sh
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+          # The API Worker's ADMIN_TOKEN, which PUT /v1/primers/:id asks for.
+          PRIMERS_ADMIN_TOKEN: ${{ secrets.PRIMERS_ADMIN_TOKEN }}
+          # The script publishes nothing unless told to, so a local run never does by accident.
+          PUBLISH: "1"
+          # Empty after a scrape, which means the script's defaults: write, the six formats, 16 archetypes, $5.
+          MODE: ${{ inputs.mode }}
+          FORMATS: ${{ inputs.formats }}
+          COUNT: ${{ inputs.count }}
+          BUDGET: ${{ inputs.budget }}
+          MINUTES: "120"
+          # setup-python's interpreter, which the script builds scraper/.venv from.
+          PYTHON: python
+      # What was written, published or not, and each draft's problems, to read without opening the API.
+      - name: Keep the drafts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: primers
+          path: scraper/work-primers/primers/
+          if-no-files-found: ignore
+          retention-days: 30
