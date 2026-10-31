@@ -483,59 +483,77 @@ def main() -> int:
             per_run=int(os.environ.get("DECKS_PER_RUN", "800")),
         ),
     )
+    # The daily scrape is a job per format with SHARED=0, then one with SCRAPE=0 that builds the files every format
+    # goes into, from the snapshots those jobs published (see ops/scrape.sh). Both default to 1: one run does it all.
+    shared = os.environ.get("SHARED", "1") == "1"
     report = RunReport()
     catalog = load_catalog(report)
     store = SnapshotStore(args.directory, config.formats, config.history_days, catalog=catalog)
-    headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
-    with open_browser(
-        headless=headless,
-        delay=float(os.environ.get("REQUEST_DELAY", "1.5")),
-        concurrency=int(os.environ.get("CONCURRENCY", "6")),
-    ) as browser:
-        scrape(browser, store, config, report=report)
-    blocked_runs = note_deck_block(
-        args.directory / "state" / "deck-downloads.json", report.deck_block is not None, report.deck_block, datetime.now(timezone.utc)
-    )
+    blocked_runs = 0
+    if os.environ.get("SCRAPE", "1") == "1":
+        headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
+        with open_browser(
+            headless=headless,
+            delay=float(os.environ.get("REQUEST_DELAY", "1.5")),
+            concurrency=int(os.environ.get("CONCURRENCY", "6")),
+        ) as browser:
+            scrape(browser, store, config, report=report)
+        blocked_runs = note_deck_block(
+            args.directory / "state" / "deck-downloads.json", report.deck_block is not None, report.deck_block, datetime.now(timezone.utc)
+        )
+    else:
+        # No deck was downloaded, so the count of blocked runs in a row stays as the format jobs left it.
+        logging.info("SCRAPE=0: MTGGoldfish is not read; the files are built from the stored snapshots")
     data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
-    # EDHREC is read with their permission: a slice of the cards each run, at a low rate.
-    edhrec = Edhrec(
-        user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
-        delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
-    )
-    commander_limit = int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150"))
-    # Read first: the commanders it ranks go to the front of the commander refresh below, then those the last run's
-    # top.json ranked at a bracket, a week apart.
-    top = edhrec.top_commanders() if commander_limit > 0 else {}
-    weekly = published_bracket_slugs(data_url) if commander_limit > 0 else []
-    written = store.finish(
-        fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
-        fetch_edh=edhrec.cards,
-        edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
-        catalog=catalog,
-        fetch_commanders=edhrec.commanders,
-        commander_limit=commander_limit,
-        deck_resolve_limit=int(os.environ.get("DECK_RESOLVE_PER_RUN", "300")),
-        priority_commanders=top_slugs(top),
-        weekly_commanders=weekly,
-    )
-    logging.info("Wrote %s", ", ".join(written) or "no snapshots")
-    brackets = rank_brackets(args.directory, report, edhrec, top)
-    written += publish_top(args.directory, report, top, catalog, brackets)
-    written += publish_guides(args.directory, report, top, catalog, data_url, brackets)
-    written += publish_locator(args.directory, report)
-    written += publish_premier(args.directory, report)
-    written += publish_rules(args.directory, report)
-    written += publish_set_art(args.directory, report)
-    written += publish_set_tints(args.directory, report, data_url)
-    written += publish_set_products(args.directory, report)
-    written += publish_set_mechanics(args.directory, report, data_url)
-    # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
-    new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
-    written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
-    written += publish_today(args.directory, report, new_printings, catalog)
-    written += publish_localized(args.directory, report)
-    # Last, after every file it lists.
-    written += publish_manifest(args.directory, report)
+    if not shared:
+        written = store.finish(
+            fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
+            catalog=catalog,
+            # Reading the published decklists again for a card name is for the run with every format, once a day.
+            deck_resolve_limit=0,
+            shared=False,
+        )
+        logging.info("Wrote %s; SHARED=0 leaves index.json and the files built from every format to another run", ", ".join(written) or "no snapshots")
+    else:
+        # EDHREC is read with their permission: a slice of the cards each run, at a low rate.
+        edhrec = Edhrec(
+            user_agent=os.environ.get("EDHREC_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)"),
+            delay=float(os.environ.get("EDHREC_DELAY", "0.4")),
+        )
+        commander_limit = int(os.environ.get("EDHREC_COMMANDERS_PER_RUN", "150"))
+        # Read first: the commanders it ranks go to the front of the commander refresh below, then those the last run's
+        # top.json ranked at a bracket, a week apart.
+        top = edhrec.top_commanders() if commander_limit > 0 else {}
+        weekly = published_bracket_slugs(data_url) if commander_limit > 0 else []
+        written = store.finish(
+            fetch_decks=lambda ids: fetch_published_decks(data_url, ids),
+            fetch_edh=edhrec.cards,
+            edh_limit=int(os.environ.get("EDHREC_CARDS_PER_RUN", "800")),
+            catalog=catalog,
+            fetch_commanders=edhrec.commanders,
+            commander_limit=commander_limit,
+            deck_resolve_limit=int(os.environ.get("DECK_RESOLVE_PER_RUN", "300")),
+            priority_commanders=top_slugs(top),
+            weekly_commanders=weekly,
+        )
+        logging.info("Wrote %s", ", ".join(written) or "no snapshots")
+        brackets = rank_brackets(args.directory, report, edhrec, top)
+        written += publish_top(args.directory, report, top, catalog, brackets)
+        written += publish_guides(args.directory, report, top, catalog, data_url, brackets)
+        written += publish_locator(args.directory, report)
+        written += publish_premier(args.directory, report)
+        written += publish_rules(args.directory, report)
+        written += publish_set_art(args.directory, report)
+        written += publish_set_tints(args.directory, report, data_url)
+        written += publish_set_products(args.directory, report)
+        written += publish_set_mechanics(args.directory, report, data_url)
+        # The printings the last run saw, so the movers' read of the default-cards file also finds the new ones for today.json's preview and previews.json.
+        new_printings = NewPrintings(read_seen(args.directory), read_first_seen(args.directory), datetime.now(timezone.utc).date())
+        written += publish_movers(args.directory, report, data_url, watch=new_printings.watch)
+        written += publish_today(args.directory, report, new_printings, catalog)
+        written += publish_localized(args.directory, report)
+        # Last, after every file it lists.
+        written += publish_manifest(args.directory, report)
 
     # Blocked deck downloads are a warning; two runs in a row fail the run (see exit_code).
     code = exit_code(report, blocked_runs)

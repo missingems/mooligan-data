@@ -1,8 +1,11 @@
 name: Scrape MTGGoldfish
 
-# Downloads the published snapshots from R2, scrapes what is new, and uploads
-# the result. See docs/data-format.md for the files. The whole job is ops/scrape.sh,
-# which also runs on a Mac for development (see the README, "Running locally").
+# Downloads the published snapshots from R2, scrapes what is new, and uploads the result. See docs/data-format.md for
+# the files. Each format is a job of its own, one after another, so a format that fails only loses its own day: the
+# others still publish, and it keeps its previous snapshot. The files built from every format (index.json,
+# explore.json, today.json, the card pages, EDHREC, the guides...) are built once, by a last job, from whatever the
+# format jobs published. Every job is ops/scrape.sh, which also runs on a Mac for development (see the README,
+# "Running locally").
 on:
   schedule:
     # Once a day, after the card catalog's 10:17 build, so the price movers read that day's prices.
@@ -10,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       formats:
-        description: Formats to scrape
+        description: Formats to scrape, one job each; the files built from every format are built either way
         default: modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander
       max_new_decks:
         description: New decklists per format per run
@@ -22,10 +25,53 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scrape:
+  # The format jobs, from the formats input (empty on a scheduled run, which means all nine).
+  plan:
     runs-on: ubuntu-latest
-    # The scrape and upload take about 85 minutes; the bracket rankings, commander guides and their polish add up to 30.
-    timeout-minutes: 150
+    timeout-minutes: 5
+    outputs:
+      formats: ${{ steps.plan.outputs.formats }}
+    steps:
+      - id: plan
+        env:
+          FORMATS: ${{ inputs.formats }}
+        run: |
+          # The 40 minutes and 800 decks the deck downloads had when every format shared one job, split by each
+          # format's share of the decks of the last 7 days in October 2026 (about 450 a day in all), at about 16
+          # decks a minute. The timeout adds the setup, the pages (1 to 3 minutes) and the upload, with room to spare.
+          # A format not listed gets the last line's.
+          budgets='[
+            {"format": "standard", "deck_minutes": 9, "decks": 150, "timeout": 35},
+            {"format": "modern", "deck_minutes": 9, "decks": 150, "timeout": 35},
+            {"format": "pauper", "deck_minutes": 7, "decks": 110, "timeout": 35},
+            {"format": "legacy", "deck_minutes": 7, "decks": 110, "timeout": 35},
+            {"format": "pioneer", "deck_minutes": 3, "decks": 50, "timeout": 25},
+            {"format": "vintage", "deck_minutes": 3, "decks": 50, "timeout": 25},
+            {"format": "premodern", "deck_minutes": 3, "decks": 50, "timeout": 25},
+            {"format": "penny_dreadful", "deck_minutes": 2, "decks": 30, "timeout": 20},
+            {"format": "duel_commander", "deck_minutes": 2, "decks": 30, "timeout": 20},
+            {"format": "", "deck_minutes": 3, "decks": 50, "timeout": 25}
+          ]'
+          formats=$(jq -c --arg wanted "${FORMATS:-modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander}" '
+            . as $budgets
+            | [$wanted | split(",")[] | gsub("^\\s+|\\s+$"; "") | select(length > 0)]
+            | map(. as $format | (($budgets | map(select(.format == $format)) | .[0]) // ($budgets[-1] | .format = $format)))
+          ' <<< "$budgets")
+          echo "formats=$formats" >> "$GITHUB_OUTPUT"
+          echo "$formats" | jq .
+
+  scrape:
+    needs: plan
+    name: scrape ${{ matrix.format }}
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ matrix.timeout }}
+    strategy:
+      # One format at a time, as one browser read MTGGoldfish when the formats shared a job; a format that fails
+      # does not stop the ones after it.
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.formats) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,7 +83,44 @@ jobs:
             ops/requirements.txt
       # The runner image ships Google Chrome; UC mode runs it headed inside Xvfb.
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
-      - name: Scrape and upload
+      - name: Scrape ${{ matrix.format }} and upload it
+        run: ops/scrape.sh
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          # The script publishes nothing unless told to, so a local run never does by accident.
+          PUBLISH: "1"
+          SYNC: r2
+          FORMATS: ${{ matrix.format }}
+          # This format's files and the state; the files built from every format are the shared job's.
+          SHARED: "0"
+          DECK_MINUTES: ${{ matrix.deck_minutes }}
+          DECKS_PER_RUN: ${{ matrix.decks }}
+          # Empty on a scheduled run, which means the script's default.
+          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
+          # setup-python's interpreter, which the script builds scraper/.venv from.
+          PYTHON: python
+
+  shared:
+    needs: [plan, scrape]
+    # After the format jobs whether they passed or not, since a format that failed keeps its previous snapshot and
+    # the files are built from it. Not after the run was cancelled.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    # EDHREC and the card pages take about 30 minutes, the bracket rankings, commander guides and their polish 20,
+    # and the upload 13.
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            scraper/requirements.txt
+            ops/requirements.txt
+      - name: Build the files from every format and upload them
         run: ops/scrape.sh
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -48,11 +131,8 @@ jobs:
           # only the formats their type and name give; the workspace id is only for a key not scoped to one workspace.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
-          # The script publishes nothing unless told to, so a local run never does by accident.
           PUBLISH: "1"
           SYNC: r2
-          # Empty on a scheduled run, which means the script's defaults.
-          FORMATS: ${{ inputs.formats }}
-          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
-          # setup-python's interpreter, which the script builds scraper/.venv from.
+          # Nothing is read from MTGGoldfish: every format's stored snapshot, as the format jobs left it.
+          SCRAPE: "0"
           PYTHON: python

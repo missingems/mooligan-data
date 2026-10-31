@@ -1,4 +1,9 @@
+import json
 import logging
+import sys
+from contextlib import contextmanager
+
+import pytest
 
 from mtgmeta import __main__ as entry
 from mtgmeta.models import RunReport
@@ -83,3 +88,38 @@ def test_guides_cover_the_top_commanders_and_every_one_a_bracket_ranks(monkeypat
 
     # No key, so no polisher: the guides are built and keep their templated summaries.
     assert calls == [(["a", "b", "d", "e"], None)]
+
+
+def run_main(monkeypatch, root, **env):
+    """main() on `root` for Modern, offline: no card catalog, and EDHREC, the first of the files built from every format, fails the test."""
+    for name, value in {"SCRYFALL_CATALOG": "0", "FORMATS": "modern", **env}.items():
+        monkeypatch.setenv(name, value)
+    monkeypatch.setattr(sys, "argv", ["mtgmeta", str(root)])
+    monkeypatch.setattr(entry, "Edhrec", lambda **kwargs: pytest.fail("the files built from every format were built"))
+    return entry.main()
+
+
+def test_a_format_job_scrapes_its_format_and_builds_none_of_the_files_built_from_every_format(monkeypatch, tmp_path):
+    scraped = []
+
+    @contextmanager
+    def browser(**kwargs):
+        yield "browser"
+
+    monkeypatch.setattr(entry, "open_browser", browser)
+    monkeypatch.setattr(entry, "scrape", lambda browser, store, config, report: scraped.append(config.formats))
+    assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
+    assert scraped == [("modern",)]
+    # index.json, written as the sign the run finished, for ops/scrape.sh to leave unpublished.
+    assert (tmp_path / "index.json").exists() and not (tmp_path / "explore.json").exists()
+    assert json.loads((tmp_path / "state" / "deck-downloads.json").read_text())["blocked_runs"] == 0
+
+
+def test_a_run_that_does_not_scrape_opens_no_browser_and_leaves_the_blocked_count_as_it_was(monkeypatch, tmp_path):
+    # Two format jobs in a row were blocked: the job after them must not reset the count. SHARED=0 keeps EDHREC out.
+    blocked = tmp_path / "state" / "deck-downloads.json"
+    blocked.parent.mkdir(parents=True)
+    blocked.write_text(json.dumps({"blocked_runs": 2, "last_blocked": "2026-11-01T14:30:00+00:00", "detail": "HTTP 429"}))
+    monkeypatch.setattr(entry, "open_browser", lambda **kwargs: pytest.fail("MTGGoldfish was read"))
+    assert run_main(monkeypatch, tmp_path, SHARED="0", SCRAPE="0") == 0
+    assert json.loads(blocked.read_text())["blocked_runs"] == 2
