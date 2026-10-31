@@ -280,9 +280,11 @@ def test_a_window_without_tiles_is_not_loaded_again(tmp_path):
 
 
 def test_a_run_that_reads_no_window_in_any_format_fails(tmp_path):
-    blocked = BlockedError("Blocked on https://www.mtggoldfish.com/metagame/modern/full")
-    report = run(tmp_path, WindowBrowser({"30": [blocked, blocked]}), config())
+    browser = WindowBrowser({"30": [BlockedError("Blocked on https://www.mtggoldfish.com/metagame/modern/full")]})
+    report = run(tmp_path, browser, config())
     assert report.meta == [] and meta_messages(report.errors) == ["meta: no window read in any of 1 formats"]
+    # The page had its attempts at the challenge already, so it is not loaded again.
+    assert browser.loads == ["30"]
 
 
 def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):

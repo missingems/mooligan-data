@@ -19,7 +19,7 @@ from .models import (
     Meta,
     RunReport,
 )
-from .browser import Fetched
+from .browser import BlockedError, Fetched
 from .pacing import DeckPacing, Pacer, Visit, build_plan, deck_path, run_downloads
 from .parsing import (
     event_kind,
@@ -158,10 +158,13 @@ def _read_metas(browser: Browser, format: str, meta_days: Sequence[str], report:
 def _read_meta(browser: Browser, format: str, days: str) -> Tuple[Meta, bool]:
     """One metagame window, loaded once more after a browser error such as a hung script or a switch that never came.
 
-    A page that loads but has no tiles is not loaded again: it would show the same.
+    A page that loads but has no tiles is not loaded again: it would show the same. Nor is a blocked one, which
+    has had its attempts already.
     """
     try:
         html, windowed = browser.metagame(format, days)
+    except BlockedError:
+        raise
     except Exception:  # noqa: BLE001 - Modern's 14 days on 16 October 2026 hung once, then read fine on the next run
         log.warning("Could not read meta %s %sd; loading it again", format, days, exc_info=True)
         html, windowed = browser.metagame(format, days)
