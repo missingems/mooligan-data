@@ -253,7 +253,7 @@ Each draft is checked by the API's `validate_primer`. It is then checked for pro
 
 A draft with problems is sent back once, and one that still has them is not published. Every draft and its problems are kept for 30 days as the run's `primers` artifact.
 
-A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run, missing ones first. Once every primer is current, the 30-day rule comes to about 3 primers a day, roughly $50 a month. The most it can reach is $150 a month, if every daily run spends its $5.
+A primer costs about $0.35 to $0.60: 13k tokens in, plus 15k to 25k tokens of thinking and primer. A draft sent back costs twice that. A run spends at most `BUDGET` dollars ($5, about 8 primers) and starts no primer after `MINUTES` (120 in the workflow). The rest wait for the next run, missing ones first. Claude writes for a few minutes per primer, so a $5 run should take roughly 30 to 60 minutes of Actions time. This is an estimate, not yet timed. Once every primer is current, the 30-day rule comes to about 3 primers a day, roughly $50 a month. The most it can reach is $150 a month, if every daily run spends its $5.
 
 The workflow needs these GitHub secrets:
 

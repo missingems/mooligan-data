@@ -66,6 +66,7 @@ jobs:
           FORMATS: ${{ inputs.formats }}
           COUNT: ${{ inputs.count }}
           BUDGET: ${{ inputs.budget }}
+          # The budget usually ends a run first (about 8 primers at a few minutes each); this stops a slow one in time.
           MINUTES: "120"
           # setup-python's interpreter, which the script builds scraper/.venv from.
           PYTHON: python
