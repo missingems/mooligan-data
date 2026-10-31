@@ -210,22 +210,33 @@ def publish_locator(directory: Path, report) -> list:
 
 
 def publish_rules(directory: Path, report) -> list:
-    """The keyword actions, keyword abilities and ability words of the Comprehensive Rules, as rules/keywords.json.
+    """The Comprehensive Rules, read once: their keyword actions, keyword abilities and ability words as
+    rules/keywords.json, and the whole book as rules/comprehensive.json.
 
-    Nothing is written when the rules are the same as the last run's, or when Wizards' site cannot be read or its
-    rules cannot be parsed: the file stays published as it was. That is a warning, not an error, so the run passes.
+    A file is not written when its rules are the same as the last run's, or when Wizards' site cannot be read or the
+    file's part of the rules cannot be parsed: it stays published as it was, and the other file is still written. That
+    is a warning, not an error, so the run passes.
     """
     if os.environ.get("KEYWORD_RULES", "1") != "1":
         return []
-    from .rules import fetch, write_rules
+    from .rules import fetch, read_rules, write_comprehensive_rules, write_rules
 
     user_agent = os.environ.get("LOCATOR_USER_AGENT", "mtg-meta-pipeline/1.0 (+https://data.mooligan.com)")
     try:
-        return write_rules(directory, datetime.now(timezone.utc), lambda url: fetch(url, user_agent))
+        text, url = read_rules(lambda address: fetch(address, user_agent))
     except Exception as error:  # noqa: BLE001 - the rest of the run still publishes
-        logging.warning("Keyword rules failed", exc_info=True)
-        report.warnings.append(f"keyword rules: {error}")
+        logging.warning("Comprehensive Rules could not be read", exc_info=True)
+        report.warnings.append(f"rules: {error}")
         return []
+    now = datetime.now(timezone.utc)
+    written = []
+    for name, write in (("keyword rules", write_rules), ("comprehensive rules", write_comprehensive_rules)):
+        try:
+            written += write(directory, now, text, url)
+        except Exception as error:  # noqa: BLE001 - the other file and the rest of the run still publish
+            logging.warning("%s failed", name.capitalize(), exc_info=True)
+            report.warnings.append(f"{name}: {error}")
+    return written
 
 
 def publish_set_art(directory: Path, report) -> list:

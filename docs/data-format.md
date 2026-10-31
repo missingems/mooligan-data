@@ -19,6 +19,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `today.json` | One response for Explore's Today widgets: up to three breakout cards, the week's biggest mover and loser with their price over that week, the uprising EDH commander, and a preview | `max-age=300` |
 | `previews.json` | The printings Scryfall added in the last 7 days from sets not released yet: the cards being previewed. `today.json`'s `preview` is one of them | `max-age=300` |
 | `rules/keywords.json` | The keyword actions and keyword abilities of Magic's Comprehensive Rules, and the ability words, with the date the rules take effect. Changes only when Wizards publishes new rules | `max-age=300` |
+| `rules/comprehensive.json` | The whole of Magic's Comprehensive Rules as a book: chapters, sections, rules with their subrules and examples, and the glossary. About 1.1 MB, not in `explore-manifest.json`: read it when the rules are opened. Changes only when Wizards publishes new rules | `max-age=300` |
 | `sets/art.json` | Wizards' official art for each set, by Scryfall set code, for a set page's hero banner. Sets without art are left out | `max-age=300` |
 | `sets/tints.json` | One tint colour per Scryfall set, for a set icon tile (a coloured rounded square with the set's white symbol). Sets with no art to take it from are left out | `max-age=300` |
 | `sets/products/{code}.json` | One recent set's sealed products (boxes, boosters, bundles, decks) with TCGplayer's picture, link and price. Sets with no sealed products have no file | `max-age=300` |
@@ -35,7 +36,7 @@ Everything is static JSON at **`https://data.mooligan.com`**, rewritten by the s
 | `lore/app/entities.json` | Every lore entity that has a page: a one-sentence summary, a portrait card and its sets | `max-age=3600` |
 | `lore/app/entities/{id}.md` | One entity's lore page, in playgraph primer markdown | `max-age=3600` |
 | `catalog/…` | The card catalog: image feature prints, pull odds, price catalog. Layout in [`generators/README.md`](../generators/README.md) | `max-age=3600`; metas `max-age=300` |
-| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprint of the published keyword rules (`state/rules-keywords.json`), the set art pages already read (`state/set-art.json`), the colour already taken from each main set's art (`state/set-tints.json`), the sealed products already read for each set (`state/set-products.json`), Claude's answers for the formats of premier events (`state/premier-formats.json`), what each commander guide was built from and when (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
+| `state/…` | The scraper's own bookkeeping: stored deck ids, duplicate and empty events, deleted decks, decks with entries still lacking an `oracle_id` (`state/unresolved-deck-ids.json`), EDHREC check times, the commander counts `today.json`'s commander is compared with (`state/today-commanders.json`), the Scryfall printings the last run saw (`state/printing-ids.json.gz`) and when each recent one was first seen (`state/printing-first-seen.json.gz`), the localized cards of the last good run (`state/localized.json.gz`), the fingerprints of the published keyword rules and comprehensive rules (`state/rules-keywords.json`, `state/rules-comprehensive.json`), the set art pages already read (`state/set-art.json`), the colour already taken from each main set's art (`state/set-tints.json`), the sealed products already read for each set (`state/set-products.json`), Claude's answers for the formats of premier events (`state/premier-formats.json`), what each commander guide was built from and when (`state/guides.json`), the last run's manifest (`state/explore-manifest.json`), each format's snapshot as scraped, before its archetypes are merged (`state/snapshots/{format}.json`, which the next run starts from), and the last run's archetype groups (`state/archetype-groups/{format}.json`, member id to leader id). Apps can ignore them | `no-cache` |
 
 Formats are `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful` and `duel_commander`. MTGGoldfish's Arena formats (Historic, Alchemy, Explorer, Timeless) are not published: it has almost no tournament data for them. `schema` is `1` (`today.json`'s is `2`), and it will change only if a field is removed or its meaning changes. Adding fields doesn't bump it, so decoders should ignore unknown keys.
 
@@ -110,7 +111,7 @@ The SHA-256 of each Explore file, so an app that keeps them can tell from one sm
 }
 ```
 
-- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
+- **`files`** is keyed by path, as in the file's URL. It lists `explore.json`, `today.json`, `previews.json`, `edh/top.json`, `rules/keywords.json`, `popular-cards/{format}.json` and `breakouts/{format}.json`, and no other file. The `movers/{format}.json` files are not listed, as the app gets the movers through `today.json`, nor is `rules/comprehensive.json`, which an app reads only when it shows the rules; the snapshots are in `index.json`, and archetype, event, deck and card files are reached by following links.
 - **`sha256`** is the SHA-256 of the file's bytes as written and uploaded, in lower-case hex. Cloudflare compresses a response in transit, so hash the body as received, after HTTP decompression (`URLSession` already hands you that), or the bytes you stored.
 - **A run does not rewrite every file.** A run for some formats leaves the other formats' `popular-cards/` and `breakouts/` files as published, a run that could not read Scryfall's card catalog writes none of them, and `explore.json` and `today.json` can be skipped when they fail, and `previews.json` is skipped on a run that could not read Scryfall's printings, and `rules/keywords.json` is written only on a run that finds new rules. A file a run did not rewrite keeps the entry of the run that wrote it, and a file never published is not listed. The scraper carries the entries over from the last manifest, which it keeps in `state/explore-manifest.json`.
 - **Uploaded last but for `index.json`**, after the files it lists and the state, so the manifest never names a hash that a file does not have yet. Its `generated_at` is when the manifest was written; each file has its own.
@@ -1071,6 +1072,56 @@ What the Comprehensive Rules say about each keyword, so an app can show the rule
 - **`ability_words`** is rule 207.2c: **`text`** is its sentences before the list (what an ability word is), and **`words`** are the listed ability words, lower-cased as the rules write them and in their order (about 60; "descend 4" and "descend 8" are two words). An ability word has no entry of its own in the rules, so an app that shows 207.2c for it names the word itself.
 - **Looking a word up.** Keys are lower-cased and spelled as the rules spell them, curly apostrophes included (`council’s dilemma`), so lower-case a card's keyword and compare apostrophes the same way. The rules describe a family of keywords in one entry: every “[type]walk” (islandwalk, snow swampwalk) is under `landwalk`, and the typecycling variants (plainscycling, swampcycling) are under `cycling`. An ability word has no entry of its own: `ability_words` is all the rules say about it.
 - **When it is missing.** A run that cannot read Wizards' page or file (the site is down, the link or the text changed shape) logs a warning and does not fail; the file stays as last published, and the next run tries again. Until the first successful run the file is a 404.
+
+## `rules/comprehensive.json`
+
+The whole of the Comprehensive Rules, for a rule book that opens at one rule and scrolls through the rest. Each run reads it from the same download as [`rules/keywords.json`](#ruleskeywordsjson) and, like that file, it **changes only when Wizards publishes new rules**: it has its own fingerprint (`state/rules-comprehensive.json`), a run that finds the same rules writes nothing, and `generated_at` is when the rules last changed here. It is compact JSON, about 1.1 MB (240 KB gzipped), and it is **not in `explore-manifest.json`**: download it when the rules are opened (with its ETag), not with the Explore files.
+
+```json
+{
+  "schema": 1,
+  "generated_at": "2026-10-31T14:00:07Z",
+  "effective_date": "2026-09-25",
+  "source_url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020260925.txt",
+  "chapters": [
+    {
+      "number": "1",
+      "title": "Game Concepts",
+      "sections": [
+        {
+          "number": "100",
+          "title": "General",
+          "rules": [
+            {
+              "number": "100.1",
+              "text": "These Magic rules apply to any Magic game with two or more players, including two-player games and multiplayer games.",
+              "examples": [],
+              "subrules": [
+                { "number": "100.1a", "text": "A two-player game is a game that begins with only two players.", "examples": [] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Abandon", "definition": "To turn a face-up ongoing scheme card face down and put it on the bottom of its owner’s scheme deck. See rule 701.33, “Abandon.”" }
+  ]
+}
+```
+
+- **Every key is always present.** `examples` and `subrules` are `[]` when there are none, never left out, so a decoder can require every key.
+- **`effective_date`** and **`source_url`** are as in `rules/keywords.json`.
+- **`chapters`** are the nine chapters ("1. Game Concepts" to "9. Casual Variants"): **`number`** (`"1"`), **`title`** (`"Game Concepts"`) and **`sections`**. A section ("100. General") has **`number`** (`"100"`), **`title`** and **`rules`**. Numbers are strings.
+- **A rule** has **`number`** without its trailing dot (`"100.1"`, `"701.71"`), **`text`**, **`examples`** and **`subrules`**; **a subrule** has **`number`** (`"100.1a"`, `"704.5aa"`), **`text`** and **`examples`**. A rule's text can be one word: the named entries of rules 701 and 702 are rules whose text is the name (`"701.2"`: `"Activate"`) with the rules about it as subrules. A section's introduction (`"701.1"`) is a rule like any other.
+- **`examples`** are the "Example:" paragraphs below a rule or subrule, without that prefix, in order. An example under a rule before its first subrule belongs to the rule; any other belongs to the subrule above it.
+- **Text is kept as published**: cross references ("See rule 602, “Activating Activated Abilities.”", "(see rules 119.7–8)") and reminder text stay, with the rules' curly quotes and apostrophes. A line of the text that is not a chapter, section, rule, subrule or example continues the text above it after a newline (`\n`); the edition of 25 September 2026 has none. A few texts hold a U+2028 line separator as Wizards wrote them (the glossary's "Ability" separates its two meanings with it). Show both as line breaks.
+- **`glossary`** is every entry of the glossary in its order: **`term`** (`"Abandon"`) and **`definition`**. A definition written on several lines is joined with `\n` (`"Defense"`: `"1. Part of a card that only battle cards have. …\n2. A characteristic that only battles can have. …"`).
+- **Order.** Chapters, sections, rules, subrules, examples and glossary entries are in the order of the text.
+- **Numbers are read as the text writes them**, a stray dot included: the edition of 25 September 2026 writes rule 606.5 without the dot after its number ("606.5 If the total cost …") and subrule 119.1d with one ("119.1d. In a two-player Brawl game …"), and both are read as a rule and a subrule.
+- **Finding a rule.** Every number is unique. A subrule's rule is its number without the letters (`"702.19b"` is under `"702.19"`), a rule's section is its first three digits, and a section's chapter its first digit.
+- **When it is missing.** As for `rules/keywords.json`: a run that cannot read Wizards' page or file, or reads a text with fewer than about 60% of the chapters, sections, rules and subrules or glossary entries of the edition of 25 September 2026 (9, 147, 3,166 and 741), logs a warning and does not fail, and the file stays as last published. The two files are parsed separately, so one that cannot be parsed does not stop the other. Until the first successful run the file is a 404.
 
 ## `sets/art.json`
 
