@@ -405,6 +405,17 @@ def test_run_sends_a_draft_back_with_its_problems_then_publishes_it(tmp_path):
     assert result.spent == pytest.approx(2 * (13000 * 4 + 20000 * 20 + 5000 * 0.2) / 1e6)
 
 
+def test_run_writes_a_merged_archetype_under_its_own_id_from_the_old_text(tmp_path):
+    old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
+    beta = item("modern-beta")
+    merged = primers.Item(beta.format, beta.row, beta.archetype, None, "modern-beta", ["no primer"], 0, merged_from=old)
+    text = markdown("modern-beta", matchup="modern-alpha")
+    result, fake, state = run(Client(text), items=[merged], tmp_path=tmp_path)
+    assert ("GET", "https://api.test/v1/primers/modern-old-beta/source") in fake.calls
+    assert result.published == ["modern-beta"] and [path for path, _ in fake.puts] == ["/v1/primers/modern-beta"]
+    assert list(state) == ["modern-beta"]
+
+
 def test_run_keeps_a_primer_that_still_has_problems(tmp_path):
     bad = markdown(matchup="modern-nope")
     result, fake, state = run(Client(bad, bad), tmp_path=tmp_path)
