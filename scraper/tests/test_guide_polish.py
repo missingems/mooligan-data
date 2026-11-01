@@ -132,6 +132,15 @@ def test_a_batch_still_running_after_the_wait_is_left_for_later():
     assert client.retrieved >= 5
 
 
+def test_a_batch_is_checked_with_the_model_it_was_sent_on_and_one_kept_without_a_model_was_sent_on_sonnet():
+    sonnet = "claude-sonnet-5-5"
+    assert guide_polish.polish_hash(GUIDE) != guide_polish.polish_hash(GUIDE, model=sonnet)
+    batch = polisher(BatchClient()).submit([GUIDE])
+    assert batch.model == guide_polish.MODEL and guide_polish.Batch.of(batch.json()) == batch
+    kept = {key: value for key, value in batch.json().items() if key != "model"}
+    assert guide_polish.Batch.of(kept).model == sonnet
+
+
 def test_the_polish_hash_moves_with_the_facts_only():
     same = {**GUIDE, "generated_at": "later"}
     moved = {**GUIDE, "name": "Atraxa, Grand Unifier"}

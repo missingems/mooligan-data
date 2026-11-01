@@ -445,6 +445,22 @@ def test_a_batch_left_running_is_collected_by_the_next_run(tmp_path):
     assert json.loads((tmp_path / "state" / "polish-batch.json").read_text()) == {"batches": []}
 
 
+def test_a_batch_sent_on_the_old_model_is_still_applied_after_the_switch(tmp_path, monkeypatch):
+    sonnet = guide_polish.BATCH_MODEL_BEFORE_HAIKU
+    monkeypatch.setattr(guide_polish, "MODEL", sonnet)
+    client = BatchClient(prose, statuses=("in_progress",), model=sonnet)
+    build(tmp_path, polish=polisher(client, wait_minutes=1))
+    pending = json.loads((tmp_path / "state" / "polish-batch.json").read_text())["batches"]
+    assert [batch["model"] for batch in pending] == [sonnet]
+    monkeypatch.undo()
+    client.statuses = ["ended"]
+
+    result = build(tmp_path, polish=polisher(client))
+
+    assert result.polished == [SLUG] and guide(tmp_path)["model"] == sonnet
+    assert json.loads((tmp_path / "state" / "polish-batch.json").read_text()) == {"batches": []}
+
+
 def test_a_guide_the_left_batch_polished_is_not_sent_again_when_rebuilt(tmp_path):
     client = BatchClient(prose, statuses=("in_progress",))
     build(tmp_path, polish=polisher(client, wait_minutes=1))

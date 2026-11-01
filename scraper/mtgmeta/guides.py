@@ -524,7 +524,7 @@ def apply_batch(directory: Path, source: Source, polisher: BatchPolisher, batch:
                 guide = source.read(guide_path(slug))
             except Exception as error:  # noqa: BLE001 - one guide must not stop the others
                 log.warning("Polish %s: its guide could not be read: %s", slug, error)
-        if not guide or polish_hash(guide, polisher.lookup) != batch.hashes.get(slug):
+        if not guide or polish_hash(guide, polisher.lookup, batch.model) != batch.hashes.get(slug):
             log.info("Polish %s: its facts changed since the batch was sent; left for the next polish", slug)
             continue
         path = write_guide(directory, apply_polish(guide, answer, model))

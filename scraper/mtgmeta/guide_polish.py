@@ -35,8 +35,10 @@ ORACLE_CHARS = 200
 WAIT_MINUTES = 30
 POLL_SECONDS = 30
 # Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.
-# Sonnet stays for a batch sent on it before the switch to Haiku and collected after.
-BATCH_PRICES = {MODEL: (0.05, 0.25, 0.0625, 0.005), "claude-sonnet-5-5": (1.00, 5.00, 1.25, 0.10)}
+# Sonnet stays for a batch sent on it before the switch to Haiku and collected after; it is also the model of a kept batch
+# that records none.
+BATCH_MODEL_BEFORE_HAIKU = "claude-sonnet-5-5"
+BATCH_PRICES = {MODEL: (0.05, 0.25, 0.0625, 0.005), BATCH_MODEL_BEFORE_HAIKU: (1.00, 5.00, 1.25, 0.10)}
 
 TOOL = {
     "name": TOOL_NAME,
@@ -163,9 +165,10 @@ def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
     return "\n".join(lines)
 
 
-def polish_hash(guide: dict, lookup: Optional[Lookup] = None) -> str:
-    """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries."""
-    body = json.dumps({"model": MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide, lookup)}, sort_keys=True)
+def polish_hash(guide: dict, lookup: Optional[Lookup] = None, model: Optional[str] = None) -> str:
+    """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries.
+    A batch is checked with the model it was sent on, which may not be the current MODEL."""
+    body = json.dumps({"model": model or MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide, lookup)}, sort_keys=True)
     return hashlib.sha256(body.encode()).hexdigest()[:16]
 
 
@@ -289,18 +292,20 @@ class Usage:
 
 @dataclass
 class Batch:
-    """A submitted batch: its id, the guide each request is for, and the polish hash each was asked from."""
+    """A submitted batch: its id, the guide each request is for, the polish hash each was asked from and the model it was
+    sent on."""
 
     id: str
     slugs: Dict[str, str]
     hashes: Dict[str, str]
+    model: str = BATCH_MODEL_BEFORE_HAIKU
 
     def json(self) -> dict:
-        return {"id": self.id, "slugs": self.slugs, "hashes": self.hashes}
+        return {"id": self.id, "slugs": self.slugs, "hashes": self.hashes, "model": self.model}
 
     @staticmethod
     def of(body: dict) -> "Batch":
-        return Batch(body["id"], dict(body.get("slugs") or {}), dict(body.get("hashes") or {}))
+        return Batch(body["id"], dict(body.get("slugs") or {}), dict(body.get("hashes") or {}), body.get("model") or BATCH_MODEL_BEFORE_HAIKU)
 
 
 @dataclass
@@ -330,7 +335,7 @@ class BatchPolisher:
             requests=[{"custom_id": custom_id, "params": request(guide, self.lookup)} for custom_id, guide in zip(slugs, guides)]
         )
         log.info("Polish: batch %s submitted with %d guides", batch.id, len(guides))
-        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide, self.lookup) for guide in guides})
+        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide, self.lookup) for guide in guides}, MODEL)
 
     def ended(self, batch: Batch) -> bool:
         return self.client.messages.batches.retrieve(batch.id).processing_status == "ended"

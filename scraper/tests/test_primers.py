@@ -1,7 +1,7 @@
 import itertools
 import json
 import logging
-from datetime import date
+from datetime import date, timedelta
 from types import SimpleNamespace
 
 import pytest
@@ -320,11 +320,21 @@ def test_an_old_primer_is_due_only_when_its_deck_moved_at_all():
     assert primers.reasons_for(same, old, state, None, TODAY) == ([], 3)
     assert primers.reasons_for(one_card, old, state, None, TODAY) == (["updated 123 days ago"], 2)
     assert primers.reasons_for(one_card, young, state, None, TODAY) == ([], 3)
-    # A primer written by hand has its grid stand in, which sees only copies that left the deck.
-    assert primers.reasons_for(same, old, None, markdown(), TODAY) == ([], 3)
-    assert primers.reasons_for(archetype("modern-alpha", {**MAIN, "Fatal Push": 1}), old, None, markdown(), TODAY) == ([], 3)
-    assert primers.reasons_for(archetype("modern-alpha", {**MAIN, "Shock": 3}), old, None, markdown(), TODAY) == (["updated 123 days ago"], 2)
     assert primers.reasons_for(archetype("modern-alpha", {**MAIN, "Shock": 3}), young, None, markdown(), TODAY) == ([], 3)
+
+
+def test_a_primer_written_by_hand_is_old_by_its_age_alone_since_its_grid_sees_only_some_of_the_deck():
+    old = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-07-01"))
+    young = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-08-15"))
+    same = archetype("modern-alpha", MAIN)
+    # Neither a swap outside the grid nor an unchanged deck keeps it from being refreshed.
+    for now in (same, archetype("modern-alpha", {**MAIN, "Fatal Push": 1})):
+        assert primers.reasons_for(now, old, None, markdown(), TODAY) == (["updated 123 days ago"], 2)
+        assert primers.reasons_for(now, young, None, markdown(), TODAY) == ([], 3)
+    # State from a version since edited by hand is not used either.
+    assert primers.reasons_for(same, old, {"version": 3, "consensus": MAIN}, markdown(), TODAY) == (["updated 123 days ago"], 2)
+    # A primer written here with its deck unmoved is still left alone.
+    assert primers.reasons_for(same, old, {"version": 1, "consensus": MAIN}, None, TODAY) == ([], 3)
 
 
 def test_plan_with_archetype_writes_it_even_when_not_due():
@@ -333,6 +343,23 @@ def test_plan_with_archetype_writes_it_even_when_not_due():
     items, _ = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, {}, client, TODAY, only=["modern-delta", "modern-tau"])
     # tau has too few results to be due, but can still be asked for.
     assert [(item.id, item.reasons) for item in items] == [("modern-delta", ["asked for"]), ("modern-tau", ["no primer"])]
+
+
+def test_plan_leaves_a_primer_that_failed_its_checks_until_the_cooldown_has_passed():
+    files = data()
+    client, _ = api([primer_row("modern-gamma", "modern-gamma")])
+    state = {
+        "modern-alpha": {"failed_at": "2026-10-30"}, "modern-beta": {"failed_at": "2026-10-25"},
+        "modern-gamma": {"version": 1, "consensus": MAIN, "failed_at": "2026-10-31"},
+    }
+    items, notes = primers.plan(files["explore.json"], ["modern"], 3, client.primers(), files.get, state, client, TODAY, min_results=100)
+    assert [item.id for item in items] == ["modern-beta"]
+    assert notes == [
+        "modern-alpha: failed its checks on 2026-10-30, so not tried again before 7 days have passed",
+        "modern-gamma: failed its checks on 2026-10-31, so not tried again before 7 days have passed",
+    ]
+    asked, _ = primers.plan(files["explore.json"], ["modern"], 3, client.primers(), files.get, state, client, TODAY, only=["modern-alpha"], min_results=100)
+    assert [(item.id, item.reasons) for item in asked] == [("modern-alpha", ["no primer"])]
 
 
 def test_an_archetype_with_no_lists_is_skipped():
@@ -453,14 +480,14 @@ def reader(directory):
     return read
 
 
-def run(client, budget=5.0, publish=True, items=None, tmp_path=None, token="secret", sources=None, state=None, **options):
+def run(client, budget=5.0, publish=True, items=None, tmp_path=None, token="secret", sources=None, state=None, today=TODAY, **options):
     fake_api, fake = api(sources=sources, token=token)
     options.setdefault("sleep", lambda seconds: None)
     writer = primers.Writer(client, primers.system_prompt("# playgraph", "EXAMPLE"), **options)
     state = {} if state is None else state
     result = primers.run(
         tmp_path, items or [item()], writer=writer, api=fake_api, read=reader(tmp_path), lookup=LOOKUP, budget=primers.Budget(budget),
-        publish=publish, state=state, today=TODAY,
+        publish=publish, state=state, today=today,
     )
     return result, fake, state
 
@@ -527,9 +554,11 @@ def test_run_sends_a_draft_back_once_at_the_standard_price_to_the_model_that_wro
     assert second["model"] == "claude-opus-5-5" and second["output_config"] == {"effort": "high"}
     assert second["fallbacks"] == "default" and second["betas"] == ["server-side-fallback-2026-07-01"]
     assert second["system"][0]["cache_control"] == {"type": "ephemeral", "ttl": "1h"} and "# playgraph" in second["system"][0]["text"]
-    assert [message["role"] for message in second["messages"]] == ["user", "assistant", "user"]
-    assert second["messages"][0]["content"].startswith("Write the primer for this archetype.")
-    assert "archetype=modern-nope is not an archetype of Modern" in second["messages"][2]["content"]
+    # One message: the facts, the draft and its problems, not the batch's own turn with its thinking.
+    [only_message] = second["messages"]
+    assert only_message["role"] == "user" and only_message["content"].startswith("Write the primer for this archetype.")
+    assert "## Your draft\n\n" + markdown(matchup="modern-nope").strip() in only_message["content"]
+    assert "archetype=modern-nope is not an archetype of Modern" in only_message["content"]
     [(path, body)] = fake.puts
     assert path == "/v1/primers/modern-alpha" and body["markdown"] == markdown() and body["author"] == "greg"
     assert state["modern-alpha"]["consensus"] == MAIN and state["modern-alpha"]["version"] == 2
@@ -554,10 +583,11 @@ def test_run_does_not_send_a_draft_back_when_the_budget_does_not_cover_a_call(tm
     assert result.spent == pytest.approx(CALL / 2)
 
 
-def test_run_keeps_a_primer_that_still_has_problems(tmp_path):
+def test_run_keeps_a_primer_that_still_has_problems_and_notes_the_day_it_failed(tmp_path):
     bad = markdown(matchup="modern-nope")
     result, fake, state = run(Client(bad, repairs=[bad]), tmp_path=tmp_path)
-    assert result.failed == ["modern-alpha"] and fake.puts == [] and state == {}
+    assert result.failed == ["modern-alpha"] and fake.puts == [] and state == {"modern-alpha": {"failed_at": "2026-11-01"}}
+    assert json.loads((tmp_path / "state" / "primers.json").read_text()) == state
     assert "archetype=modern-nope" in (tmp_path / "primers" / "modern-alpha.problems.txt").read_text()
 
 
@@ -566,6 +596,88 @@ def test_run_counts_an_errored_expired_or_refused_result_as_failed_and_pays_only
     result, fake, _ = run(Client("errored", "refusal", "expired"), items=items, tmp_path=tmp_path)
     assert sorted(result.failed) == ["modern-alpha", "modern-beta", "modern-delta"] and fake.puts == [] and result.published == []
     assert result.spent == pytest.approx(CALL / 2)
+
+
+class ApiError(Exception):
+    def __init__(self, status):
+        super().__init__(f"HTTP {status}")
+        self.status_code = status
+
+
+def failing(client, name, status, batch_id="batch-1"):
+    """The call `name` of the Batches API fails for one batch."""
+    original = getattr(client.messages.batches, name)
+
+    def fail(asked):
+        if asked == batch_id:
+            raise ApiError(status)
+        return original(asked)
+
+    setattr(client.messages.batches, name, fail)
+
+
+@pytest.mark.parametrize("name", ["retrieve", "results"])
+def test_a_batch_the_api_no_longer_has_is_dropped_and_its_primer_written_again(tmp_path, name, caplog):
+    client = Client(markdown(), markdown(), running=["batch-1"])
+    sent_late(client, tmp_path, item())
+    client.running.clear()
+    failing(client, name, 404)
+    second, _, _ = run(client, items=[item()], tmp_path=tmp_path)
+    assert "batch batch-1 is gone" in caplog.text
+    assert len(client.created) == 2 and second.published == ["modern-alpha"] and kept(tmp_path) == {"batches": []}
+
+
+@pytest.mark.parametrize("name", ["retrieve", "results"])
+def test_a_batch_that_cannot_be_read_for_another_reason_is_kept_and_the_run_goes_on(tmp_path, name, caplog):
+    client = Client(markdown(), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item())
+    client.running.clear()
+    failing(client, name, 500)
+    second, _, _ = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
+    assert "batch batch-1 could not be read" in caplog.text
+    assert second.published == ["modern-beta"] and second.pending == ["modern-alpha"] and [batch["id"] for batch in kept(tmp_path)["batches"]] == ["batch-1"]
+
+
+def test_a_primer_that_cannot_be_checked_fails_without_stopping_the_others_of_its_batch(tmp_path, monkeypatch):
+    validate = primers.Api.validate
+
+    def flaky(self, text):
+        if "archetype: modern-alpha" in text:
+            raise primers.PrimerError("MCP validate_primer: HTTP 503")
+        return validate(self, text)
+
+    monkeypatch.setattr(primers.Api, "validate", flaky)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"))
+    result, _, _ = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert result.failed == ["modern-alpha"] and result.published == ["modern-delta"] and kept(tmp_path) == {"batches": []}
+
+
+def test_a_late_collected_batch_is_dated_by_the_day_it_was_sent(tmp_path):
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()], running=["batch-1"])
+    sent_late(client, tmp_path, item(), today=date(2026, 10, 30))
+    client.running.clear()
+    second, fake, _ = run(client, items=[item()], tmp_path=tmp_path)
+    [sent] = client.sent
+    assert "author: Greg\nwritten: 2026-10-30\nupdated: 2026-10-30" in sent["messages"][0]["content"]
+    assert second.published == ["modern-alpha"]
+    assert fake.puts[0][1]["note"] == "Written by claude-opus-5-5 from 20 lists of the last 7 days on 2026-10-30: no primer"
+
+
+def test_run_sends_no_draft_back_once_the_run_is_out_of_time(tmp_path, caplog):
+    def late(client):
+        seconds = itertools.chain([0, 0], itertools.repeat(primers.RUN_MINUTES * 60))
+        return run(client, tmp_path=tmp_path, clock=lambda: next(seconds))
+
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, fake, state = late(client)
+    assert result.failed == ["modern-alpha"] and client.sent == [] and fake.puts == [] and result.spent == pytest.approx(CALL / 2)
+    assert "Primer modern-alpha: not sent back, the run is out of time" in caplog.text
+    assert state == {"modern-alpha": {"failed_at": "2026-11-01"}}
+
+    seconds = itertools.chain([0, 0], itertools.repeat(primers.RUN_MINUTES * 60 - 1))
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, _, _ = run(client, tmp_path=tmp_path, clock=lambda: next(seconds))
+    assert result.published == ["modern-alpha"] and len(client.sent) == 1
 
 
 def test_run_without_publish_only_drafts(tmp_path):
@@ -594,27 +706,61 @@ def test_run_sends_only_the_primers_the_budget_covers_and_leaves_the_rest(tmp_pa
     assert result.published == ["modern-alpha"] and result.deferred == ["modern-beta", "modern-delta"]
 
 
-def test_run_keeps_a_batch_that_has_not_ended_in_time_and_the_next_run_collects_it(tmp_path, caplog):
-    caplog.set_level(logging.INFO)
-    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
-    ticks, sleeps = itertools.count(0, 1800), []
+def sent_late(client, tmp_path, *items, **options):
+    """A first run that sends `items` and leaves their batch running."""
+    ticks = itertools.count(0, 1800)
+    return run(client, items=list(items), tmp_path=tmp_path, wait_minutes=60, poll_seconds=30, clock=lambda: next(ticks), **options)
+
+
+def test_run_keeps_a_batch_that_has_not_ended_in_time_and_the_next_run_collects_it(tmp_path):
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), running=["batch-1"])
+    sleeps = []
+    ticks = itertools.count(0, 1800)
     first, fake, state = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path, wait_minutes=60, poll_seconds=30, clock=lambda: next(ticks), sleep=sleeps.append)
     assert first.published == [] and first.pending == ["modern-alpha", "modern-delta"] and first.spent == 0 and state == {}
     assert sleeps == [30]
-    assert kept(tmp_path) == {"batches": [{"id": "batch-1", "items": {
+    assert kept(tmp_path) == {"batches": [{"id": "batch-1", "submitted": "2026-11-01", "items": {
         "p0": {"primer_id": "modern-alpha", "archetype": "modern-alpha", "format": "modern", "model": "claude-opus-5-5"},
         "p1": {"primer_id": "modern-delta", "archetype": "modern-delta", "format": "modern", "model": "claude-opus-5-5"},
     }}]}
 
     client.running.clear()
-    second, fake, state = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
-    assert len(client.created) == 2 and [each["custom_id"] for each in client.created[1]] == ["p0"]
-    assert client.created[1][0]["params"]["messages"][0]["content"].count("Archetype id: modern-beta") == 1
-    assert second.published == ["modern-alpha", "modern-beta"] and second.failed == [] and second.pending == []
-    assert [path for path, _ in fake.puts] == ["/v1/primers/modern-alpha", "/v1/primers/modern-beta"]
-    assert "Primer modern-delta: dropped from batch batch-1, it is not due any more" in caplog.text
-    assert second.spent == pytest.approx(3 * CALL / 2)
+    second, fake, state = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert len(client.created) == 1
+    assert second.published == ["modern-alpha", "modern-delta"] and second.failed == [] and second.pending == []
+    assert [path for path, _ in fake.puts] == ["/v1/primers/modern-alpha", "/v1/primers/modern-delta"]
+    assert second.spent == pytest.approx(CALL)
     assert kept(tmp_path) == {"batches": []}
+
+
+def test_a_batch_with_a_primer_that_is_not_due_in_this_run_waits_for_a_run_that_has_them_all(tmp_path, caplog):
+    caplog.set_level(logging.INFO)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item(), item("modern-delta"))
+    client.running.clear()
+
+    # A narrowed run: delta is not among its items. The paid answers are not read; beta, which is not held, goes in a batch of its own.
+    narrowed, fake, _ = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
+    assert narrowed.published == ["modern-beta"] and narrowed.pending == ["modern-alpha", "modern-delta"] and narrowed.spent == pytest.approx(CALL / 2)
+    assert "batch batch-1 waits for a run in which modern-delta is due" in caplog.text
+    assert [batch["id"] for batch in kept(tmp_path)["batches"]] == ["batch-1"]
+
+    whole, fake, _ = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert whole.published == ["modern-alpha", "modern-delta"] and whole.pending == [] and len(client.created) == 2
+    assert kept(tmp_path) == {"batches": []}
+
+
+def test_a_batch_held_for_a_primer_that_is_not_due_is_read_after_hold_days_and_drops_that_primer(tmp_path, caplog):
+    caplog.set_level(logging.INFO)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item(), item("modern-delta"))
+    client.running.clear()
+    soon = run(client, items=[item()], tmp_path=tmp_path, today=TODAY + timedelta(days=primers.HOLD_DAYS - 1))[0]
+    assert soon.published == [] and soon.pending == ["modern-alpha", "modern-delta"]
+
+    late, _, _ = run(client, items=[item()], tmp_path=tmp_path, today=TODAY + timedelta(days=primers.HOLD_DAYS))
+    assert late.published == ["modern-alpha"] and late.pending == [] and kept(tmp_path) == {"batches": []}
+    assert "Primer modern-delta: dropped from batch batch-1, it is not due any more" in caplog.text
 
 
 def test_run_leaves_the_primers_of_a_batch_still_running_out_of_its_own_batch(tmp_path):
@@ -632,9 +778,30 @@ def test_what_a_collected_batch_cost_counts_against_the_budget_of_the_next_run(t
     ticks = itertools.count(0, 1800)
     run(client, items=[item(), item("modern-delta")], budget=0.60, tmp_path=tmp_path, wait_minutes=60, clock=lambda: next(ticks))
     client.running.clear()
-    second, _, _ = run(client, items=[item(), item("modern-beta")], budget=0.60, tmp_path=tmp_path)
-    assert second.published == ["modern-alpha"] and second.deferred == ["modern-beta"] and len(client.created) == 1
+    second, _, _ = run(client, items=[item(), item("modern-delta"), item("modern-beta")], budget=0.60, tmp_path=tmp_path)
+    assert second.published == ["modern-alpha", "modern-delta"] and second.deferred == ["modern-beta"] and len(client.created) == 1
     assert second.spent == pytest.approx(CALL)
+
+
+def test_a_batch_in_flight_holds_its_estimate_so_the_budget_is_not_spent_twice(tmp_path):
+    client = Client(markdown(), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    first, _, _ = sent_late(client, tmp_path, item(), budget=0.30)
+    assert first.spent == 0 and first.pending == ["modern-alpha"]
+    second, _, _ = run(client, items=[item(), item("modern-beta")], budget=0.50, tmp_path=tmp_path)
+    assert second.deferred == ["modern-beta"] and len(client.created) == 1 and second.pending == ["modern-alpha"]
+    client.running.clear()
+    third, _, _ = run(client, items=[item(), item("modern-beta")], budget=0.50, tmp_path=tmp_path)
+    assert third.published == ["modern-alpha"] and third.deferred == ["modern-beta"]
+
+
+def test_the_budget_holds_estimates_until_they_are_released_for_the_real_cost():
+    budget = primers.Budget(1.00)
+    budget.hold("batch-1", 0.60)
+    assert budget.allows(0.40) and not budget.allows(0.41)
+    budget.release("batch-1")
+    budget.spend(0.25)
+    assert budget.allows(0.75) and not budget.allows(0.76)
+    budget.release("batch-1")
 
 
 def test_a_kept_batch_is_repaired_with_the_model_it_was_asked_to(tmp_path):
