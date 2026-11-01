@@ -1,5 +1,7 @@
+import itertools
 import json
-from datetime import date
+import logging
+from datetime import date, timedelta
 from types import SimpleNamespace
 
 import pytest
@@ -88,7 +90,10 @@ def primer_row(id, archetype, updated="2026-10-20", version=1):
     return {"id": id, "archetype": archetype, "format": "Modern", "title": archetype, "written": "2026-10-19", "updated": updated, "version": version}
 
 
-def markdown(archetype="modern-alpha", matchup="modern-beta", brought="2 [[Negate]]", taken="2 [[Shock]]", extra=""):
+GRID = "4 [[Bolt]] Three damage.\n4 [[Shock]] Two damage.\n4 [[Ragavan]] Treasure."
+
+
+def markdown(archetype="modern-alpha", matchup="modern-beta", brought="2 [[Negate]]", taken="2 [[Shock]]", extra="", cards=GRID):
     return f"""---
 archetype: {archetype}
 format: Modern
@@ -106,9 +111,7 @@ Burn them out.
 ## Main cards
 
 :::cards
-4 [[Bolt]] Three damage.
-4 [[Shock]] Two damage.
-4 [[Ragavan]] Treasure.
+{cards}
 :::
 
 ## Gotchas and tips
@@ -195,21 +198,47 @@ class Stream:
         return self.message
 
 
-class Client:
-    """Answers each `beta.messages.stream` call with the next of `replies`, and keeps what it was sent."""
+def message(text, model=primers.MODEL, output_tokens=20000, stop_reason="end_turn"):
+    content = [SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="text", text=text)]
+    usage = SimpleNamespace(input_tokens=13000, output_tokens=output_tokens, cache_creation_input_tokens=0, cache_read_input_tokens=5000)
+    return SimpleNamespace(stop_reason=stop_reason, model=model, content=content, usage=usage)
 
-    def __init__(self, *replies, output_tokens=20000):
-        self.replies = list(replies)
-        self.sent = []
+
+class Client:
+    """The Anthropic client as `Writer` uses it. Each batch request is answered by the next of `batch` (a primer's Markdown,
+    "refusal", or the result type of a request that has no message), the results coming back in reverse order. `running`
+    holds the ids of the batches that have not ended. `repairs` answer the streamed calls, which `sent` keeps."""
+
+    def __init__(self, *batch, repairs=(), running=(), output_tokens=20000):
+        self.replies = list(batch)
+        self.repairs = list(repairs)
+        self.running = set(running)
         self.output_tokens = output_tokens
+        self.created, self.answers, self.sent = [], {}, []
+        self.messages = SimpleNamespace(batches=SimpleNamespace(create=self.create, retrieve=self.retrieve, results=self.results))
         self.beta = SimpleNamespace(messages=SimpleNamespace(stream=self.stream))
+
+    def create(self, requests):
+        self.created.append(requests)
+        batch_id = f"batch-{len(self.created)}"
+        self.answers[batch_id] = [(each, self.replies.pop(0)) for each in requests]
+        return SimpleNamespace(id=batch_id)
+
+    def retrieve(self, batch_id):
+        return SimpleNamespace(id=batch_id, processing_status="in_progress" if batch_id in self.running else "ended")
+
+    def results(self, batch_id):
+        for each, reply in reversed(self.answers[batch_id]):
+            if reply in ("errored", "expired", "canceled"):
+                yield SimpleNamespace(custom_id=each["custom_id"], result=SimpleNamespace(type=reply))
+                continue
+            refused = reply == "refusal"
+            answer = message("" if refused else reply, each["params"]["model"], self.output_tokens, "refusal" if refused else "end_turn")
+            yield SimpleNamespace(custom_id=each["custom_id"], result=SimpleNamespace(type="succeeded", message=answer))
 
     def stream(self, **params):
         self.sent.append(json.loads(json.dumps(params, default=lambda block: block.__dict__)))
-        reply = self.replies.pop(0)
-        content = [SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="text", text=reply)]
-        usage = SimpleNamespace(input_tokens=13000, output_tokens=self.output_tokens, cache_creation_input_tokens=0, cache_read_input_tokens=5000)
-        return Stream(SimpleNamespace(stop_reason="end_turn", model=primers.MODEL, content=content, usage=usage))
+        return Stream(message(self.repairs.pop(0), params["model"], self.output_tokens))
 
 
 def test_moved_counts_cards_in_or_out_and_a_grid_only_out():
@@ -228,12 +257,13 @@ def test_plan_orders_the_first_archetypes_missing_changed_and_old_then_the_ones_
     rows = [
         primer_row("modern-old-beta", "modern-old-beta"),
         primer_row("modern-gamma", "modern-gamma"),
-        primer_row("modern-delta", "modern-delta", updated="2026-09-25"),
+        primer_row("modern-delta", "modern-delta", updated="2026-07-01"),
         primer_row("modern-omega", "modern-omega", updated="2026-09-01"),
-        primer_row("modern-rho", "modern-rho", updated="2026-10-25"),
+        primer_row("modern-rho", "modern-rho", updated="2026-07-01"),
     ]
     state = {"modern-gamma": {"version": 1, "consensus": MAIN}, "modern-rho": {"version": 1, "consensus": MAIN}}
-    client, _ = api(rows, {"modern-old-beta": markdown("modern-old-beta"), "modern-delta": markdown("modern-delta")})
+    gone = markdown("modern-delta", cards=GRID + "\n1 [[Fatal Push]] Cheap removal.")
+    client, _ = api(rows, {"modern-old-beta": markdown("modern-old-beta"), "modern-delta": gone})
     items, notes = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, state, client, TODAY)
     assert [(item.id, item.primer_id, item.tier) for item in items] == [
         ("modern-alpha", "modern-alpha", 0), ("modern-beta", "modern-beta", 0), ("modern-gamma", "modern-gamma", 0),
@@ -244,8 +274,8 @@ def test_plan_orders_the_first_archetypes_missing_changed_and_old_then_the_ones_
     assert items[1].reasons == ["no primer, but modern-old-beta was written for modern-old-beta, since merged into it"]
     assert items[1].primer is None and items[1].previous.id == "modern-old-beta"
     assert items[2].reasons == ["8 main deck cards changed since it was written"]
-    assert items[3].reasons == ["updated 37 days ago"]
-    # Past the first four: rho is up to date, sigma has no primer, omega and tau have too few results.
+    assert items[3].reasons == ["updated 123 days ago"]
+    # Past the first four: rho is old but plays the deck it was written for, sigma has no primer, omega and tau have too few results.
     assert items[4].reasons == ["no primer"]
     assert {key: items[4].row[key] for key in ("name", "share_30d", "deck_count_30d", "top8_30d", "wins_30d", "results")} == {
         "name": "Sigma", "share_30d": 0.5, "deck_count_30d": 12, "top8_30d": 1, "wins_30d": 1, "results": 12,
@@ -281,12 +311,55 @@ def test_a_new_top_card_is_one_the_deck_did_not_play_not_a_reordering():
     assert primers.reasons_for(new, primer, {"version": 3, "consensus": MAIN}, markdown(), TODAY)[0] == ["its top card Fatal Push is not in the primer"]
 
 
+def test_an_old_primer_is_due_only_when_its_deck_moved_at_all():
+    old = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-07-01"))
+    young = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-08-15"))
+    state = {"version": 1, "consensus": MAIN}
+    same = archetype("modern-alpha", MAIN)
+    one_card = archetype("modern-alpha", {**MAIN, "Island": 19})
+    assert primers.reasons_for(same, old, state, None, TODAY) == ([], 3)
+    assert primers.reasons_for(one_card, old, state, None, TODAY) == (["updated 123 days ago"], 2)
+    assert primers.reasons_for(one_card, young, state, None, TODAY) == ([], 3)
+    assert primers.reasons_for(archetype("modern-alpha", {**MAIN, "Shock": 3}), young, None, markdown(), TODAY) == ([], 3)
+
+
+def test_a_primer_written_by_hand_is_old_by_its_age_alone_since_its_grid_sees_only_some_of_the_deck():
+    old = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-07-01"))
+    young = primers.Published.of(primer_row("modern-alpha", "modern-alpha", updated="2026-08-15"))
+    same = archetype("modern-alpha", MAIN)
+    # Neither a swap outside the grid nor an unchanged deck keeps it from being refreshed.
+    for now in (same, archetype("modern-alpha", {**MAIN, "Fatal Push": 1})):
+        assert primers.reasons_for(now, old, None, markdown(), TODAY) == (["updated 123 days ago"], 2)
+        assert primers.reasons_for(now, young, None, markdown(), TODAY) == ([], 3)
+    # State from a version since edited by hand is not used either.
+    assert primers.reasons_for(same, old, {"version": 3, "consensus": MAIN}, markdown(), TODAY) == (["updated 123 days ago"], 2)
+    # A primer written here with its deck unmoved is still left alone.
+    assert primers.reasons_for(same, old, {"version": 1, "consensus": MAIN}, None, TODAY) == ([], 3)
+
+
 def test_plan_with_archetype_writes_it_even_when_not_due():
     files = data()
     client, _ = api([primer_row("modern-delta", "modern-delta")], {"modern-delta": markdown("modern-delta")})
     items, _ = primers.plan(files["explore.json"], ["modern"], 4, client.primers(), files.get, {}, client, TODAY, only=["modern-delta", "modern-tau"])
     # tau has too few results to be due, but can still be asked for.
     assert [(item.id, item.reasons) for item in items] == [("modern-delta", ["asked for"]), ("modern-tau", ["no primer"])]
+
+
+def test_plan_leaves_a_primer_that_failed_its_checks_until_the_cooldown_has_passed():
+    files = data()
+    client, _ = api([primer_row("modern-gamma", "modern-gamma")])
+    state = {
+        "modern-alpha": {"failed_at": "2026-10-30"}, "modern-beta": {"failed_at": "2026-10-25"},
+        "modern-gamma": {"version": 1, "consensus": MAIN, "failed_at": "2026-10-31"},
+    }
+    items, notes = primers.plan(files["explore.json"], ["modern"], 3, client.primers(), files.get, state, client, TODAY, min_results=100)
+    assert [item.id for item in items] == ["modern-beta"]
+    assert notes == [
+        "modern-alpha: failed its checks on 2026-10-30, so not tried again before 7 days have passed",
+        "modern-gamma: failed its checks on 2026-10-31, so not tried again before 7 days have passed",
+    ]
+    asked, _ = primers.plan(files["explore.json"], ["modern"], 3, client.primers(), files.get, state, client, TODAY, only=["modern-alpha"], min_results=100)
+    assert [(item.id, item.reasons) for item in asked] == [("modern-alpha", ["no primer"])]
 
 
 def test_an_archetype_with_no_lists_is_skipped():
@@ -297,11 +370,15 @@ def test_an_archetype_with_no_lists_is_skipped():
     assert items == [] and notes == ["modern-alpha: no stored lists, so no primer"]
 
 
-def item(id="modern-alpha", primer=None):
+def item(id="modern-alpha", primer=None, reasons=("no primer",)):
     files = data()
     block = files["explore.json"]["formats"][0]
     row_ = next(each for each in block["standings"] if each["id"] == id)
-    return primers.Item(block, row_, files[f"archetypes/{id}.json"], primer, primer.id if primer else id, ["no primer"], 0)
+    return primers.Item(block, row_, files[f"archetypes/{id}.json"], primer, primer.id if primer else id, list(reasons), 0)
+
+
+def revision(id="modern-delta"):
+    return item(id, primers.Published.of(primer_row(id, id)), ["updated 123 days ago"])
 
 
 def validate(text):
@@ -363,6 +440,26 @@ def test_facts_give_the_lists_the_opponents_and_the_primer_it_has():
     assert named[:4] == ["Bolt", "Shock", "Ragavan", "Island"]
 
 
+def test_a_missing_primer_is_written_by_opus_and_a_revision_by_sonnet():
+    old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
+    beta = item("modern-beta")
+    merged = primers.Item(beta.format, beta.row, beta.archetype, None, "modern-beta", ["no primer"], 0, merged_from=old)
+    assert [(each.model, each.effort, each.estimate) for each in (item(), merged, revision())] == [
+        ("claude-opus-5-5", "high", 0.30), ("claude-opus-5-5", "high", 0.30), ("claude-sonnet-5-5", "medium", 0.15),
+    ]
+
+
+def test_facts_of_a_revision_ask_to_keep_what_holds_and_give_the_reasons():
+    files = data()
+    text, _ = primers.facts(revision(), files.get, LOOKUP, "OLD PRIMER", TODAY)
+    assert text.startswith("Revise the primer this archetype has now, given at the end. Keep what still holds, and rewrite what")
+    assert "the Main cards grid, the sideboard and matchups, and anything said about cards the deck no longer plays or now plays" in text
+    assert "\nWhy it is revised: updated 123 days ago.\n\n## Front matter\narchetype: modern-delta" in text
+    assert text.endswith("## The primer it has now\n\nOLD PRIMER")
+    fresh, _ = primers.facts(item("modern-delta"), files.get, LOOKUP, None, TODAY)
+    assert fresh.startswith("Write the primer for this archetype.\n\n## Front matter") and "Why it is revised" not in fresh
+
+
 def test_facts_of_a_merged_archetype_start_from_its_old_primer():
     files = data()
     old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
@@ -373,54 +470,214 @@ def test_facts_of_a_merged_archetype_start_from_its_old_primer():
     assert text.endswith("## The primer of modern-old-beta, since merged into this archetype\n\nOLD PRIMER")
 
 
-def run(client, budget=5.0, publish=True, items=None, tmp_path=None, token="secret"):
-    fake_api, fake = api(token=token)
-    writer = primers.Writer(client, primers.system_prompt("# playgraph", "EXAMPLE"))
-    state = {}
+def reader(directory):
+    files = data()
+
+    def read(path):
+        local = directory / path
+        return json.loads(local.read_text()) if local.exists() else files.get(path)
+
+    return read
+
+
+def run(client, budget=5.0, publish=True, items=None, tmp_path=None, token="secret", sources=None, state=None, today=TODAY, **options):
+    fake_api, fake = api(sources=sources, token=token)
+    options.setdefault("sleep", lambda seconds: None)
+    writer = primers.Writer(client, primers.system_prompt("# playgraph", "EXAMPLE"), **options)
+    state = {} if state is None else state
     result = primers.run(
-        tmp_path, items or [item()], writer=writer, api=fake_api, read=data().get, lookup=LOOKUP, budget=primers.Budget(budget),
-        publish=publish, state=state, today=TODAY,
+        tmp_path, items or [item()], writer=writer, api=fake_api, read=reader(tmp_path), lookup=LOOKUP, budget=primers.Budget(budget),
+        publish=publish, state=state, today=today,
     )
     return result, fake, state
 
 
-def test_run_sends_a_draft_back_with_its_problems_then_publishes_it(tmp_path):
-    client = Client(markdown(matchup="modern-nope"), markdown())
-    result, fake, state = run(client, tmp_path=tmp_path)
-    assert result.published == ["modern-alpha"] and result.failed == []
-    first, second = client.sent
-    assert first["model"] == "claude-opus-5-5" and first["output_config"] == {"effort": "high"}
-    assert first["fallbacks"] == "default" and first["betas"] == ["server-side-fallback-2026-07-01"]
-    assert first["system"][0]["cache_control"] == {"type": "ephemeral"} and "# playgraph" in first["system"][0]["text"]
-    assert [message["role"] for message in second["messages"]] == ["user", "assistant", "user"]
-    assert "archetype=modern-nope is not an archetype of Modern" in second["messages"][2]["content"]
-    [(path, body)] = fake.puts
-    assert path == "/v1/primers/modern-alpha" and body["markdown"] == markdown() and body["author"] == "greg"
-    assert body["note"] == "Written by claude-opus-5-5 from 20 lists of the last 7 days on 2026-11-01: no primer"
-    assert state["modern-alpha"]["consensus"] == MAIN and state["modern-alpha"]["version"] == 2
+def kept(tmp_path):
+    return json.loads((tmp_path / "state" / "primer-batch.json").read_text())
+
+
+CALL = (13000 * 4 + 20000 * 20 + 5000 * 0.2) / 1e6
+SONNET_CALL = (13000 * 2 + 20000 * 10 + 5000 * 0.2) / 1e6
+
+
+def test_affordable_takes_items_in_order_while_their_estimates_fit_what_is_left():
+    opus, other, cheap = item(), item("modern-beta"), revision()
+    chosen, deferred = primers.affordable([opus, other, cheap], primers.Budget(0.50))
+    assert (chosen, deferred) == ([opus], [other, cheap])
+    chosen, deferred = primers.affordable([opus, cheap, other], primers.Budget(0.50))
+    assert (chosen, deferred) == ([opus, cheap], [other])
+    chosen, deferred = primers.affordable([opus, cheap], primers.Budget(0.50, spent=0.10))
+    assert (chosen, deferred) == ([opus], [cheap])
+    assert primers.affordable([opus], primers.Budget(0.20)) == ([], [opus])
+    assert primers.affordable([], primers.Budget(5)) == ([], [])
+
+
+def test_run_writes_a_missing_primer_with_opus_and_a_revision_with_sonnet_in_one_batch_and_publishes_both(tmp_path):
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"))
+    result, fake, state = run(client, items=[item(), revision()], sources={"modern-delta": markdown("modern-delta")}, tmp_path=tmp_path)
+    [requests] = client.created
+    assert [each["custom_id"] for each in requests] == ["p0", "p1"]
+    opus, sonnet = (each["params"] for each in requests)
+    assert opus["model"] == "claude-opus-5-5" and opus["output_config"] == {"effort": "high"}
+    assert sonnet["model"] == "claude-sonnet-5-5" and sonnet["output_config"] == {"effort": "medium"}
+    assert set(opus) == {"model", "max_tokens", "output_config", "system", "messages"} and opus["max_tokens"] == primers.MAX_TOKENS
+    assert opus["system"] == [{"type": "text", "text": opus["system"][0]["text"], "cache_control": {"type": "ephemeral", "ttl": "1h"}}]
+    assert "# playgraph" in opus["system"][0]["text"]
+    assert opus["messages"][0]["content"].startswith("Write the primer for this archetype.")
+    assert sonnet["messages"][0]["content"].startswith("Revise the primer this archetype has now") and "Why it is revised: updated 123 days ago." in sonnet["messages"][0]["content"]
+    assert client.sent == []
+    assert result.published == ["modern-alpha", "modern-delta"] and result.failed == [] and result.deferred == [] and result.pending == []
+    assert [(path, body["note"]) for path, body in fake.puts] == [
+        ("/v1/primers/modern-alpha", "Written by claude-opus-5-5 from 20 lists of the last 7 days on 2026-11-01: no primer"),
+        ("/v1/primers/modern-delta", "Written by claude-sonnet-5-5 from 20 lists of the last 7 days on 2026-11-01: updated 123 days ago"),
+    ]
+    assert [(state[key]["model"], state[key]["version"]) for key in ("modern-alpha", "modern-delta")] == [("claude-opus-5-5", 2), ("claude-sonnet-5-5", 2)]
     assert json.loads((tmp_path / "state" / "primers.json").read_text()) == state
     assert (tmp_path / "primers" / "modern-alpha.md").read_text() == markdown()
+    assert kept(tmp_path) == {"batches": []}
+    assert result.spent == pytest.approx((CALL + SONNET_CALL) / 2)
+    assert result.usage.output_tokens == 40000
+
+
+def test_run_matches_results_to_primers_by_custom_id_not_by_position(tmp_path):
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"))
+    result, _, _ = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert [each.custom_id for each in client.results("batch-1")] == ["p1", "p0"]
+    assert result.published == ["modern-alpha", "modern-delta"] and result.failed == []
+
+
+def test_run_sends_a_draft_back_once_at_the_standard_price_to_the_model_that_wrote_it(tmp_path):
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, fake, state = run(client, tmp_path=tmp_path)
+    assert result.published == ["modern-alpha"] and result.failed == []
+    [second] = client.sent
+    assert second["model"] == "claude-opus-5-5" and second["output_config"] == {"effort": "high"}
+    assert second["fallbacks"] == "default" and second["betas"] == ["server-side-fallback-2026-07-01"]
+    assert second["system"][0]["cache_control"] == {"type": "ephemeral", "ttl": "1h"} and "# playgraph" in second["system"][0]["text"]
+    # One message: the facts, the draft and its problems, not the batch's own turn with its thinking.
+    [only_message] = second["messages"]
+    assert only_message["role"] == "user" and only_message["content"].startswith("Write the primer for this archetype.")
+    assert "## Your draft\n\n" + markdown(matchup="modern-nope").strip() in only_message["content"]
+    assert "archetype=modern-nope is not an archetype of Modern" in only_message["content"]
+    [(path, body)] = fake.puts
+    assert path == "/v1/primers/modern-alpha" and body["markdown"] == markdown() and body["author"] == "greg"
+    assert state["modern-alpha"]["consensus"] == MAIN and state["modern-alpha"]["version"] == 2
+    assert (tmp_path / "primers" / "modern-alpha.md").read_text() == markdown()
     assert not (tmp_path / "primers" / "modern-alpha.problems.txt").exists()
-    # Two calls of 13k input, 20k output and 5k cache read tokens at $4, $20 and $0.20 a million.
-    assert result.spent == pytest.approx(2 * (13000 * 4 + 20000 * 20 + 5000 * 0.2) / 1e6)
+    assert result.spent == pytest.approx(CALL / 2 + CALL)
 
 
-def test_run_writes_a_merged_archetype_under_its_own_id_from_the_old_text(tmp_path):
-    old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
-    beta = item("modern-beta")
-    merged = primers.Item(beta.format, beta.row, beta.archetype, None, "modern-beta", ["no primer"], 0, merged_from=old)
-    text = markdown("modern-beta", matchup="modern-alpha")
-    result, fake, state = run(Client(text), items=[merged], tmp_path=tmp_path)
-    assert ("GET", "https://api.test/v1/primers/modern-old-beta/source") in fake.calls
-    assert result.published == ["modern-beta"] and [path for path, _ in fake.puts] == ["/v1/primers/modern-beta"]
-    assert list(state) == ["modern-beta"]
+def test_run_sends_a_revision_back_to_sonnet(tmp_path):
+    client = Client(markdown("modern-delta", matchup="modern-nope"), repairs=[markdown("modern-delta", matchup="modern-alpha")])
+    result, _, _ = run(client, items=[revision()], sources={"modern-delta": markdown("modern-delta")}, tmp_path=tmp_path)
+    [second] = client.sent
+    assert result.published == ["modern-delta"]
+    assert second["model"] == "claude-sonnet-5-5" and second["output_config"] == {"effort": "medium"}
+    assert result.spent == pytest.approx(SONNET_CALL / 2 + SONNET_CALL)
 
 
-def test_run_keeps_a_primer_that_still_has_problems(tmp_path):
+def test_run_does_not_send_a_draft_back_when_the_budget_does_not_cover_a_call(tmp_path):
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, fake, _ = run(client, budget=0.40, tmp_path=tmp_path)
+    assert result.failed == ["modern-alpha"] and client.sent == [] and fake.puts == []
+    assert result.spent == pytest.approx(CALL / 2)
+
+
+def test_run_keeps_a_primer_that_still_has_problems_and_notes_the_day_it_failed(tmp_path):
     bad = markdown(matchup="modern-nope")
-    result, fake, state = run(Client(bad, bad), tmp_path=tmp_path)
-    assert result.failed == ["modern-alpha"] and fake.puts == [] and state == {}
+    result, fake, state = run(Client(bad, repairs=[bad]), tmp_path=tmp_path)
+    assert result.failed == ["modern-alpha"] and fake.puts == [] and state == {"modern-alpha": {"failed_at": "2026-11-01"}}
+    assert json.loads((tmp_path / "state" / "primers.json").read_text()) == state
     assert "archetype=modern-nope" in (tmp_path / "primers" / "modern-alpha.problems.txt").read_text()
+
+
+def test_run_counts_an_errored_expired_or_refused_result_as_failed_and_pays_only_for_a_message(tmp_path):
+    items = [item(), item("modern-beta"), item("modern-delta")]
+    result, fake, _ = run(Client("errored", "refusal", "expired"), items=items, tmp_path=tmp_path)
+    assert sorted(result.failed) == ["modern-alpha", "modern-beta", "modern-delta"] and fake.puts == [] and result.published == []
+    assert result.spent == pytest.approx(CALL / 2)
+
+
+class ApiError(Exception):
+    def __init__(self, status):
+        super().__init__(f"HTTP {status}")
+        self.status_code = status
+
+
+def failing(client, name, status, batch_id="batch-1"):
+    """The call `name` of the Batches API fails for one batch."""
+    original = getattr(client.messages.batches, name)
+
+    def fail(asked):
+        if asked == batch_id:
+            raise ApiError(status)
+        return original(asked)
+
+    setattr(client.messages.batches, name, fail)
+
+
+@pytest.mark.parametrize("name", ["retrieve", "results"])
+def test_a_batch_the_api_no_longer_has_is_dropped_and_its_primer_written_again(tmp_path, name, caplog):
+    client = Client(markdown(), markdown(), running=["batch-1"])
+    sent_late(client, tmp_path, item())
+    client.running.clear()
+    failing(client, name, 404)
+    second, _, _ = run(client, items=[item()], tmp_path=tmp_path)
+    assert "batch batch-1 is gone" in caplog.text
+    assert len(client.created) == 2 and second.published == ["modern-alpha"] and kept(tmp_path) == {"batches": []}
+
+
+@pytest.mark.parametrize("name", ["retrieve", "results"])
+def test_a_batch_that_cannot_be_read_for_another_reason_is_kept_and_the_run_goes_on(tmp_path, name, caplog):
+    client = Client(markdown(), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item())
+    client.running.clear()
+    failing(client, name, 500)
+    second, _, _ = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
+    assert "batch batch-1 could not be read" in caplog.text
+    assert second.published == ["modern-beta"] and second.pending == ["modern-alpha"] and [batch["id"] for batch in kept(tmp_path)["batches"]] == ["batch-1"]
+
+
+def test_a_primer_that_cannot_be_checked_fails_without_stopping_the_others_of_its_batch(tmp_path, monkeypatch):
+    validate = primers.Api.validate
+
+    def flaky(self, text):
+        if "archetype: modern-alpha" in text:
+            raise primers.PrimerError("MCP validate_primer: HTTP 503")
+        return validate(self, text)
+
+    monkeypatch.setattr(primers.Api, "validate", flaky)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"))
+    result, _, _ = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert result.failed == ["modern-alpha"] and result.published == ["modern-delta"] and kept(tmp_path) == {"batches": []}
+
+
+def test_a_late_collected_batch_is_dated_by_the_day_it_was_sent(tmp_path):
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()], running=["batch-1"])
+    sent_late(client, tmp_path, item(), today=date(2026, 10, 30))
+    client.running.clear()
+    second, fake, _ = run(client, items=[item()], tmp_path=tmp_path)
+    [sent] = client.sent
+    assert "author: Greg\nwritten: 2026-10-30\nupdated: 2026-10-30" in sent["messages"][0]["content"]
+    assert second.published == ["modern-alpha"]
+    assert fake.puts[0][1]["note"] == "Written by claude-opus-5-5 from 20 lists of the last 7 days on 2026-10-30: no primer"
+
+
+def test_run_sends_no_draft_back_once_the_run_is_out_of_time(tmp_path, caplog):
+    def late(client):
+        seconds = itertools.chain([0, 0], itertools.repeat(primers.RUN_MINUTES * 60))
+        return run(client, tmp_path=tmp_path, clock=lambda: next(seconds))
+
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, fake, state = late(client)
+    assert result.failed == ["modern-alpha"] and client.sent == [] and fake.puts == [] and result.spent == pytest.approx(CALL / 2)
+    assert "Primer modern-alpha: not sent back, the run is out of time" in caplog.text
+    assert state == {"modern-alpha": {"failed_at": "2026-11-01"}}
+
+    seconds = itertools.chain([0, 0], itertools.repeat(primers.RUN_MINUTES * 60 - 1))
+    client = Client(markdown(matchup="modern-nope"), repairs=[markdown()])
+    result, _, _ = run(client, tmp_path=tmp_path, clock=lambda: next(seconds))
+    assert result.published == ["modern-alpha"] and len(client.sent) == 1
 
 
 def test_run_without_publish_only_drafts(tmp_path):
@@ -428,30 +685,144 @@ def test_run_without_publish_only_drafts(tmp_path):
     assert result.drafted == ["modern-alpha"] and fake.puts == [] and state == {}
 
 
-def test_run_stops_before_the_budget_and_leaves_the_rest(tmp_path):
-    items = [item(), item("modern-delta")]
-    # The first call costs $0.453; the next is taken to cost $0.60, which would pass $1.
-    result, _, _ = run(Client(markdown()), budget=1.0, items=items, tmp_path=tmp_path)
-    assert result.published == ["modern-alpha"] and result.deferred == ["modern-delta"]
+def test_run_writes_a_merged_archetype_under_its_own_id_from_the_old_text(tmp_path):
+    old = primers.Published.of(primer_row("modern-old-beta", "modern-old-beta"))
+    beta = item("modern-beta")
+    merged = primers.Item(beta.format, beta.row, beta.archetype, None, "modern-beta", ["no primer"], 0, merged_from=old)
+    text = markdown("modern-beta", matchup="modern-alpha")
+    client = Client(text)
+    result, fake, state = run(client, items=[merged], tmp_path=tmp_path)
+    assert ("GET", "https://api.test/v1/primers/modern-old-beta/source") in fake.calls
+    assert client.created[0][0]["params"]["model"] == "claude-opus-5-5"
+    assert result.published == ["modern-beta"] and [path for path, _ in fake.puts] == ["/v1/primers/modern-beta"]
+    assert list(state) == ["modern-beta"]
 
 
-def test_run_starts_no_primer_after_its_minutes(tmp_path):
-    fake_api, fake = api()
-    ticks = iter([0, 0, 61 * 60])
-    result = primers.run(
-        tmp_path, [item(), item("modern-delta")], writer=primers.Writer(Client(markdown()), "SYSTEM"), api=fake_api, read=data().get,
-        lookup=LOOKUP, budget=primers.Budget(50), publish=True, state={}, today=TODAY, minutes=60, clock=lambda: next(ticks),
-    )
-    assert result.published == ["modern-alpha"] and result.deferred == ["modern-delta"]
+def test_run_sends_only_the_primers_the_budget_covers_and_leaves_the_rest(tmp_path):
+    client = Client(markdown())
+    result, _, _ = run(client, budget=0.50, items=[item(), item("modern-beta"), revision()], tmp_path=tmp_path)
+    [requests] = client.created
+    assert [each["custom_id"] for each in requests] == ["p0"]
+    assert result.published == ["modern-alpha"] and result.deferred == ["modern-beta", "modern-delta"]
+
+
+def sent_late(client, tmp_path, *items, **options):
+    """A first run that sends `items` and leaves their batch running."""
+    ticks = itertools.count(0, 1800)
+    return run(client, items=list(items), tmp_path=tmp_path, wait_minutes=60, poll_seconds=30, clock=lambda: next(ticks), **options)
+
+
+def test_run_keeps_a_batch_that_has_not_ended_in_time_and_the_next_run_collects_it(tmp_path):
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), running=["batch-1"])
+    sleeps = []
+    ticks = itertools.count(0, 1800)
+    first, fake, state = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path, wait_minutes=60, poll_seconds=30, clock=lambda: next(ticks), sleep=sleeps.append)
+    assert first.published == [] and first.pending == ["modern-alpha", "modern-delta"] and first.spent == 0 and state == {}
+    assert sleeps == [30]
+    assert kept(tmp_path) == {"batches": [{"id": "batch-1", "submitted": "2026-11-01", "items": {
+        "p0": {"primer_id": "modern-alpha", "archetype": "modern-alpha", "format": "modern", "model": "claude-opus-5-5"},
+        "p1": {"primer_id": "modern-delta", "archetype": "modern-delta", "format": "modern", "model": "claude-opus-5-5"},
+    }}]}
+
+    client.running.clear()
+    second, fake, state = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert len(client.created) == 1
+    assert second.published == ["modern-alpha", "modern-delta"] and second.failed == [] and second.pending == []
+    assert [path for path, _ in fake.puts] == ["/v1/primers/modern-alpha", "/v1/primers/modern-delta"]
+    assert second.spent == pytest.approx(CALL)
+    assert kept(tmp_path) == {"batches": []}
+
+
+def test_a_batch_with_a_primer_that_is_not_due_in_this_run_waits_for_a_run_that_has_them_all(tmp_path, caplog):
+    caplog.set_level(logging.INFO)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item(), item("modern-delta"))
+    client.running.clear()
+
+    # A narrowed run: delta is not among its items. The paid answers are not read; beta, which is not held, goes in a batch of its own.
+    narrowed, fake, _ = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
+    assert narrowed.published == ["modern-beta"] and narrowed.pending == ["modern-alpha", "modern-delta"] and narrowed.spent == pytest.approx(CALL / 2)
+    assert "batch batch-1 waits for a run in which modern-delta is due" in caplog.text
+    assert [batch["id"] for batch in kept(tmp_path)["batches"]] == ["batch-1"]
+
+    whole, fake, _ = run(client, items=[item(), item("modern-delta")], tmp_path=tmp_path)
+    assert whole.published == ["modern-alpha", "modern-delta"] and whole.pending == [] and len(client.created) == 2
+    assert kept(tmp_path) == {"batches": []}
+
+
+def test_a_batch_held_for_a_primer_that_is_not_due_is_read_after_hold_days_and_drops_that_primer(tmp_path, caplog):
+    caplog.set_level(logging.INFO)
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), running=["batch-1"])
+    sent_late(client, tmp_path, item(), item("modern-delta"))
+    client.running.clear()
+    soon = run(client, items=[item()], tmp_path=tmp_path, today=TODAY + timedelta(days=primers.HOLD_DAYS - 1))[0]
+    assert soon.published == [] and soon.pending == ["modern-alpha", "modern-delta"]
+
+    late, _, _ = run(client, items=[item()], tmp_path=tmp_path, today=TODAY + timedelta(days=primers.HOLD_DAYS))
+    assert late.published == ["modern-alpha"] and late.pending == [] and kept(tmp_path) == {"batches": []}
+    assert "Primer modern-delta: dropped from batch batch-1, it is not due any more" in caplog.text
+
+
+def test_run_leaves_the_primers_of_a_batch_still_running_out_of_its_own_batch(tmp_path):
+    client = Client(markdown(), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    ticks = itertools.count(0, 1800)
+    run(client, items=[item()], tmp_path=tmp_path, wait_minutes=60, clock=lambda: next(ticks))
+    second, fake, _ = run(client, items=[item(), item("modern-beta")], tmp_path=tmp_path)
+    assert [[each["custom_id"] for each in requests] for requests in client.created] == [["p0"], ["p0"]]
+    assert second.published == ["modern-beta"] and second.pending == ["modern-alpha"]
+    assert [batch["id"] for batch in kept(tmp_path)["batches"]] == ["batch-1"]
+
+
+def test_what_a_collected_batch_cost_counts_against_the_budget_of_the_next_run(tmp_path):
+    client = Client(markdown(), markdown("modern-delta", matchup="modern-alpha"), running=["batch-1"])
+    ticks = itertools.count(0, 1800)
+    run(client, items=[item(), item("modern-delta")], budget=0.60, tmp_path=tmp_path, wait_minutes=60, clock=lambda: next(ticks))
+    client.running.clear()
+    second, _, _ = run(client, items=[item(), item("modern-delta"), item("modern-beta")], budget=0.60, tmp_path=tmp_path)
+    assert second.published == ["modern-alpha", "modern-delta"] and second.deferred == ["modern-beta"] and len(client.created) == 1
+    assert second.spent == pytest.approx(CALL)
+
+
+def test_a_batch_in_flight_holds_its_estimate_so_the_budget_is_not_spent_twice(tmp_path):
+    client = Client(markdown(), markdown("modern-beta", matchup="modern-alpha"), running=["batch-1"])
+    first, _, _ = sent_late(client, tmp_path, item(), budget=0.30)
+    assert first.spent == 0 and first.pending == ["modern-alpha"]
+    second, _, _ = run(client, items=[item(), item("modern-beta")], budget=0.50, tmp_path=tmp_path)
+    assert second.deferred == ["modern-beta"] and len(client.created) == 1 and second.pending == ["modern-alpha"]
+    client.running.clear()
+    third, _, _ = run(client, items=[item(), item("modern-beta")], budget=0.50, tmp_path=tmp_path)
+    assert third.published == ["modern-alpha"] and third.deferred == ["modern-beta"]
+
+
+def test_the_budget_holds_estimates_until_they_are_released_for_the_real_cost():
+    budget = primers.Budget(1.00)
+    budget.hold("batch-1", 0.60)
+    assert budget.allows(0.40) and not budget.allows(0.41)
+    budget.release("batch-1")
+    budget.spend(0.25)
+    assert budget.allows(0.75) and not budget.allows(0.76)
+    budget.release("batch-1")
+
+
+def test_a_kept_batch_is_repaired_with_the_model_it_was_asked_to(tmp_path):
+    client = Client(markdown("modern-delta", matchup="modern-nope"), repairs=[markdown("modern-delta", matchup="modern-alpha")], running=["batch-1"])
+    ticks = itertools.count(0, 1800)
+    sources = {"modern-delta": markdown("modern-delta")}
+    run(client, items=[revision()], tmp_path=tmp_path, sources=sources, wait_minutes=60, clock=lambda: next(ticks))
+    client.running.clear()
+    second, _, _ = run(client, items=[item("modern-delta")], tmp_path=tmp_path)
+    assert second.published == ["modern-delta"] and [call["model"] for call in client.sent] == ["claude-sonnet-5-5"]
 
 
 def test_main_plan_needs_no_key(capsys, tmp_path):
-    fake_api, fake = api([primer_row("modern-delta", "modern-delta", updated="2026-09-25")], {"modern-delta": markdown("modern-delta")}, token=None)
+    gone = markdown("modern-delta", cards=GRID + "\n1 [[Fatal Push]] Cheap removal.")
+    fake_api, fake = api([primer_row("modern-delta", "modern-delta", updated="2026-07-01")], {"modern-delta": gone}, token=None)
     code = primers.main([str(tmp_path), "--format", "modern", "--count", "4", "--plan"], api=fake_api, source=Reader(data()), today=TODAY)
     out = capsys.readouterr().out
     assert code == 0
-    assert "modern   modern-alpha" in out and "modern   modern-delta" in out and "updated 37 days ago" in out
+    assert "modern   modern-alpha" in out and "modern   modern-delta" in out and "updated 123 days ago" in out
     assert "6 primers due" in out and "modern   modern-sigma" in out
+    assert "about $0.30 by claude-opus-5-5 and a revision $0.15 by claude-sonnet-5-5" in out and "a budget of $5.00 writes about 6 of them" in out
     assert not any(method == "PUT" for method, _ in fake.calls)
 
 

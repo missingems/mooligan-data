@@ -387,12 +387,13 @@ def test_the_runs_guides_are_polished_as_one_batch(tmp_path):
     result = build(tmp_path, polish=polisher(client))
 
     written = guide(tmp_path)
-    assert written["model"] == "claude-sonnet-5-5" and {style["summary"] for style in written["styles"]} == {"Prose."}
+    assert written["model"] == guide_polish.MODEL and {style["summary"] for style in written["styles"]} == {"Prose."}
     assert written["brackets"][0]["summary"].startswith("No Game Changers")
     state = json.loads((tmp_path / "state" / "guides.json").read_text())[SLUG]
     # The hash is of the templated guide's facts, the ones the batch was asked from.
-    assert state["model"] == "claude-sonnet-5-5" and state["polish_hash"] != guide_polish.polish_hash(written) and len(state["polish_hash"]) == 16
+    assert state["model"] == guide_polish.MODEL and state["polish_hash"] != guide_polish.polish_hash(written) and len(state["polish_hash"]) == 16
     assert result.polished == [SLUG] and len(client.created) == 1
+    assert json.loads((tmp_path / "state" / "polish-batch.json").read_text()) == {"batches": []}
 
 
 def test_the_batch_is_asked_for_the_notes_from_the_catalog_rules_text_and_writes_them(tmp_path):
@@ -417,7 +418,7 @@ def test_a_guide_rebuilt_with_the_same_facts_keeps_its_polish_without_asking(tmp
 
     result = build(tmp_path, polish=polisher(client), force=True)
 
-    assert client.created == [] and result.carried == [SLUG] and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+    assert client.created == [] and result.carried == [SLUG] and guide(tmp_path)["model"] == guide_polish.MODEL
 
 
 def test_a_guide_whose_facts_moved_is_polished_again(tmp_path):
@@ -440,8 +441,24 @@ def test_a_batch_left_running_is_collected_by_the_next_run(tmp_path):
     first.statuses = ["ended"]
     result = build(tmp_path, polish=polisher(first))
 
-    assert result.unchanged == [SLUG] and result.polished == [SLUG] and guide(tmp_path)["model"] == "claude-sonnet-5-5"
-    assert not (tmp_path / "state" / "polish-batch.json").exists()
+    assert result.unchanged == [SLUG] and result.polished == [SLUG] and guide(tmp_path)["model"] == guide_polish.MODEL
+    assert json.loads((tmp_path / "state" / "polish-batch.json").read_text()) == {"batches": []}
+
+
+def test_a_batch_sent_on_the_old_model_is_still_applied_after_the_switch(tmp_path, monkeypatch):
+    sonnet = guide_polish.BATCH_MODEL_BEFORE_HAIKU
+    monkeypatch.setattr(guide_polish, "MODEL", sonnet)
+    client = BatchClient(prose, statuses=("in_progress",), model=sonnet)
+    build(tmp_path, polish=polisher(client, wait_minutes=1))
+    pending = json.loads((tmp_path / "state" / "polish-batch.json").read_text())["batches"]
+    assert [batch["model"] for batch in pending] == [sonnet]
+    monkeypatch.undo()
+    client.statuses = ["ended"]
+
+    result = build(tmp_path, polish=polisher(client))
+
+    assert result.polished == [SLUG] and guide(tmp_path)["model"] == sonnet
+    assert json.loads((tmp_path / "state" / "polish-batch.json").read_text()) == {"batches": []}
 
 
 def test_a_guide_the_left_batch_polished_is_not_sent_again_when_rebuilt(tmp_path):
@@ -451,7 +468,7 @@ def test_a_guide_the_left_batch_polished_is_not_sent_again_when_rebuilt(tmp_path
 
     result = build(tmp_path, polish=polisher(client), force=True)
 
-    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == guide_polish.MODEL
 
 
 def test_a_batch_whose_results_cannot_be_read_is_kept_for_the_next_run(tmp_path):
@@ -464,7 +481,7 @@ def test_a_batch_whose_results_cannot_be_read_is_kept_for_the_next_run(tmp_path)
 
     result = build(tmp_path, polish=polisher(client))
 
-    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == "claude-sonnet-5-5"
+    assert result.polished == [SLUG] and len(client.created) == 1 and guide(tmp_path)["model"] == guide_polish.MODEL
 
 
 def test_a_commander_with_no_published_page_is_read_from_edhrec(tmp_path):

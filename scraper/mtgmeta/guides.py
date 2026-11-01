@@ -524,7 +524,7 @@ def apply_batch(directory: Path, source: Source, polisher: BatchPolisher, batch:
                 guide = source.read(guide_path(slug))
             except Exception as error:  # noqa: BLE001 - one guide must not stop the others
                 log.warning("Polish %s: its guide could not be read: %s", slug, error)
-        if not guide or polish_hash(guide, polisher.lookup) != batch.hashes.get(slug):
+        if not guide or polish_hash(guide, polisher.lookup, batch.model) != batch.hashes.get(slug):
             log.info("Polish %s: its facts changed since the batch was sent; left for the next polish", slug)
             continue
         path = write_guide(directory, apply_polish(guide, answer, model))
@@ -537,8 +537,9 @@ def apply_batch(directory: Path, source: Source, polisher: BatchPolisher, batch:
 def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guides: Dict[str, dict], state: Dict[str, dict], result: Result) -> None:
     """Collects the batches earlier runs left running, then polishes this run's guides as one batch and waits for it.
 
-    A batch still running when the wait is over is kept in `state/polish-batch.json` for the next run. A failed call
-    leaves the guides templated; it never fails the run.
+    A batch still running when the wait is over is kept in `state/polish-batch.json` for the next run. With none
+    running the file holds `{"batches": []}` rather than going, as the upload to R2 never deletes and would keep the old
+    batch. A failed call leaves the guides templated; it never fails the run.
     """
     path = directory / POLISH_BATCH_PATH
     pending = [Batch.of(body) for body in (json.loads(path.read_text()).get("batches") or [] if path.exists() else [])]
@@ -566,11 +567,8 @@ def polish_guides(directory: Path, source: Source, polisher: BatchPolisher, guid
             if batch is not None:
                 # Submitted and paid for: the next run reads its results again.
                 running.append(batch)
-    if running:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps({"batches": [batch.json() for batch in running]}, indent=1))
-    elif path.exists():
-        path.unlink()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"batches": [batch.json() for batch in running]}, indent=1))
 
 
 def run(

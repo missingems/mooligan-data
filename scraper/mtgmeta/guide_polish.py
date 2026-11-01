@@ -26,7 +26,7 @@ from typing import Callable, Dict, List, Optional, Tuple
 
 log = logging.getLogger(__name__)
 
-MODEL = "claude-sonnet-5-5"
+MODEL = "claude-haiku-5-5"
 EFFORT = "low"
 MAX_TOKENS = 16000
 TOOL_NAME = "write_summaries"
@@ -35,7 +35,10 @@ ORACLE_CHARS = 200
 WAIT_MINUTES = 30
 POLL_SECONDS = 30
 # Dollars per million tokens through the Batches API (half the standard price): input, output, cache write, cache read.
-BATCH_PRICES = {MODEL: (1.00, 5.00, 1.25, 0.10)}
+# Sonnet stays for a batch sent on it before the switch to Haiku and collected after; it is also the model of a kept batch
+# that records none.
+BATCH_MODEL_BEFORE_HAIKU = "claude-sonnet-5-5"
+BATCH_PRICES = {MODEL: (0.05, 0.25, 0.0625, 0.005), BATCH_MODEL_BEFORE_HAIKU: (1.00, 5.00, 1.25, 0.10)}
 
 TOOL = {
     "name": TOOL_NAME,
@@ -162,14 +165,15 @@ def facts(guide: dict, lookup: Optional[Lookup] = None) -> str:
     return "\n".join(lines)
 
 
-def polish_hash(guide: dict, lookup: Optional[Lookup] = None) -> str:
-    """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries."""
-    body = json.dumps({"model": MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide, lookup)}, sort_keys=True)
+def polish_hash(guide: dict, lookup: Optional[Lookup] = None, model: Optional[str] = None) -> str:
+    """What a polish is written from: the model, the instructions and the guide's facts. Equal hashes, equal summaries.
+    A batch is checked with the model it was sent on, which may not be the current MODEL."""
+    body = json.dumps({"model": model or MODEL, "system": SYSTEM, "tool": TOOL, "facts": facts(guide, lookup)}, sort_keys=True)
     return hashlib.sha256(body.encode()).hexdigest()[:16]
 
 
 def request(guide: dict, lookup: Optional[Lookup] = None) -> dict:
-    """One guide's Messages request. The Batches API takes no fallbacks, and this model no forced tool choice, so the
+    """One guide's Messages request. The Batches API takes no fallbacks, and Sonnet 5.5 took no forced tool choice, so the
     tool is offered (`auto`, strict) and the instructions ask for it."""
     return {
         "model": MODEL,
@@ -288,27 +292,31 @@ class Usage:
 
 @dataclass
 class Batch:
-    """A submitted batch: its id, the guide each request is for, and the polish hash each was asked from."""
+    """A submitted batch: its id, the guide each request is for, the polish hash each was asked from and the model it was
+    sent on."""
 
     id: str
     slugs: Dict[str, str]
     hashes: Dict[str, str]
+    model: str = BATCH_MODEL_BEFORE_HAIKU
 
     def json(self) -> dict:
-        return {"id": self.id, "slugs": self.slugs, "hashes": self.hashes}
+        return {"id": self.id, "slugs": self.slugs, "hashes": self.hashes, "model": self.model}
 
     @staticmethod
     def of(body: dict) -> "Batch":
-        return Batch(body["id"], dict(body.get("slugs") or {}), dict(body.get("hashes") or {}))
+        return Batch(body["id"], dict(body.get("slugs") or {}), dict(body.get("hashes") or {}), body.get("model") or BATCH_MODEL_BEFORE_HAIKU)
 
 
 @dataclass
 class Collected:
-    """What an ended batch gave: each polished guide's answer and model by slug, and why the others were not."""
+    """What an ended batch gave: each polished guide's answer and model by slug, why the others were not, its tokens and
+    what it cost at batch prices."""
 
     answers: Dict[str, Tuple[dict, str]] = field(default_factory=dict)
     failed: Dict[str, str] = field(default_factory=dict)
     usage: Usage = field(default_factory=Usage)
+    dollars: float = 0.0
 
 
 @dataclass
@@ -327,7 +335,7 @@ class BatchPolisher:
             requests=[{"custom_id": custom_id, "params": request(guide, self.lookup)} for custom_id, guide in zip(slugs, guides)]
         )
         log.info("Polish: batch %s submitted with %d guides", batch.id, len(guides))
-        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide, self.lookup) for guide in guides})
+        return Batch(batch.id, slugs, {guide["slug"]: polish_hash(guide, self.lookup) for guide in guides}, MODEL)
 
     def ended(self, batch: Batch) -> bool:
         return self.client.messages.batches.retrieve(batch.id).processing_status == "ended"
@@ -352,7 +360,10 @@ class BatchPolisher:
                 collected.failed[slug] = result.result.type
                 continue
             message = result.result.message
+            priced = Usage()
+            priced.add(message.usage)
             collected.usage.add(message.usage)
+            collected.dollars += priced.dollars(message.model)
             try:
                 collected.answers[slug] = (answer_of(message), message.model)
             except PolishError as error:
@@ -361,7 +372,7 @@ class BatchPolisher:
         log.info(
             "Polish: batch %s: %d polished, %d kept templated; tokens: %d input, %d output, %d cache write, %d cache read; cost $%.4f",
             batch.id, len(collected.answers), len(collected.failed), usage.input_tokens, usage.output_tokens,
-            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, usage.dollars(),
+            usage.cache_creation_input_tokens, usage.cache_read_input_tokens, collected.dollars,
         )
         for slug, reason in sorted(collected.failed.items()):
             log.warning("Polish %s failed, keeping the templated summaries: %s", slug, reason)
