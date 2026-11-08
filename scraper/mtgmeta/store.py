@@ -22,7 +22,7 @@ from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
 from .popular import build_popular_cards
-from .models import ArchetypeHistory, ArchetypeResult, Deck, Event, EventSummary, Meta, to_document
+from .models import ArchetypeHistory, ArchetypeResult, Deck, DeckCard, Event, EventResult, EventSummary, Meta, to_document
 
 SCHEMA = 1
 # A commander edh/top.json ranks at a bracket, but not in its windows, has its page read again after this many days.
@@ -45,6 +45,9 @@ class Store(Protocol):
     def stored_events(self, format: str) -> List[EventSummary]: ...
     def missing_deck_ids(self) -> Set[str]: ...
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
+    def events_since(self, format: str, cutoff: datetime) -> List[Event]: ...
+    def reference_decks(self, format: str, cutoff: datetime) -> List[Deck]: ...
+    def source_state(self, format: str) -> Dict[str, Dict[str, Any]]: ...
 
 
 class SnapshotStore:
@@ -83,6 +86,8 @@ class SnapshotStore:
         self._missing: Set[str] = set(json.loads(missing_path.read_text())) if missing_path.exists() else set()
         unresolved_path = root / "state" / "unresolved-deck-ids.json"
         self._unresolved: Dict[str, dict] = json.loads(unresolved_path.read_text()) if unresolved_path.exists() else {}
+        sources_path = root / "state" / "sources.json"
+        self._sources: Dict[str, Dict[str, Dict[str, Any]]] = json.loads(sources_path.read_text()) if sources_path.exists() else {}
         self._saved: Set[str] = set()
         # What each stored deck plays, so card pages can be built without downloading every deck again.
         self._wanted_commanders: Dict[str, str] = {}
@@ -181,6 +186,56 @@ class SnapshotStore:
 
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None:
         self._missing |= set(deck_ids)
+
+    def events_since(self, format: str, cutoff: datetime) -> List[Event]:
+        """The format's stored events dated on or after `cutoff`, newest first."""
+        events = []
+        for document in self._snapshot(format)["events"].values():
+            date = _parse(document["date"])
+            if date < cutoff:
+                continue
+            results = [
+                EventResult(
+                    result["player"], result["archetype"], result["finish"], result["deck_id"], result.get("archetype_id"), result.get("colors")
+                )
+                for result in document["results"]
+            ]
+            events.append(
+                Event(
+                    document["event_id"], document["event_name"], format, date, results, document["url"],
+                    document.get("kind", "other"), document.get("source"),
+                )
+            )
+        return sorted(events, key=lambda event: (event.date, event.event_id), reverse=True)
+
+    def reference_decks(self, format: str, cutoff: datetime) -> List[Deck]:
+        """The decks of the format's stored events since `cutoff` that have an archetype id and a stored list.
+
+        The snapshot's results hold the archetype ids and `state/deck-cards` the lists, so decks named earlier in a run count too.
+        """
+        cards = self._deck_cards.get(format, {})
+        decks = []
+        for event in self.events_since(format, cutoff):
+            for result in event.results:
+                stored = cards.get(result.deck_id)
+                if result.archetype_id and stored:
+                    decks.append(
+                        Deck(
+                            result.deck_id, result.player, result.archetype,
+                            [DeckCard(quantity, name) for quantity, name in stored["m"]],
+                            [DeckCard(quantity, name) for quantity, name in stored["s"]],
+                            format, event.event_id, result.archetype_id,
+                        )
+                    )
+        return decks
+
+    def source_state(self, format: str) -> Dict[str, Dict[str, Any]]:
+        """What the scrape remembers about MTGTop8 for the format, changed in place: `seen` maps event ids not to publish
+        (mtgo.com's own, or without decks) to their date, `failed` maps deck ids whose list did not parse to the attempts made."""
+        state = self._sources.setdefault(format, {})
+        state.setdefault("seen", {})
+        state.setdefault("failed", {})
+        return state
 
     def save_archetype(self, history: ArchetypeHistory) -> None:
         document = _jsonable(to_document(history, drop=("format",)))
@@ -303,10 +358,19 @@ class SnapshotStore:
         self._write("state/missing-deck-ids.json", json.dumps(sorted(self._missing)).encode())
         self._write("state/unresolved-deck-ids.json", json.dumps(self._unresolved, sort_keys=True).encode())
         self._write("state/empty-event-ids.json", json.dumps(sorted(self._empty_events)).encode())
+        self._write("state/sources.json", json.dumps(self._pruned_sources(), sort_keys=True).encode())
         # Written last: the workflow uploads it last, so it never points at a snapshot not yet uploaded.
         index = {"schema": SCHEMA, "generated_at": self._stamp(), "formats": formats}
         self._write("index.json", json.dumps(index, indent=2).encode())
         return written
+
+    def _pruned_sources(self) -> Dict[str, Dict[str, Dict[str, Any]]]:
+        oldest = f"{self._cutoff:%Y-%m-%d}"
+        return {
+            format: {"seen": {key: day for key, day in state["seen"].items() if day >= oldest}, "failed": state["failed"]}
+            for format, state in self._sources.items()
+            if "seen" in state and "failed" in state
+        }
 
     def _merged(self, format: str, document: dict, catalog: Dict[str, dict]) -> dict:
         """The snapshot to publish: its archetypes that play one deck merged (see clusters.py).

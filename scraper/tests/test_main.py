@@ -1,7 +1,6 @@
 import json
 import logging
 import sys
-from contextlib import contextmanager
 
 import pytest
 
@@ -92,6 +91,8 @@ def test_guides_cover_the_top_commanders_and_every_one_a_bracket_ranks(monkeypat
 
 def run_main(monkeypatch, root, **env):
     """main() on `root` for Modern, offline: no card catalog, and EDHREC, the first of the files built from every format, fails the test."""
+    for name in ("SCRAPE_DELAY", "REQUEST_DELAY", "SCRAPE_MINUTES"):
+        monkeypatch.delenv(name, raising=False)
     for name, value in {"SCRYFALL_CATALOG": "0", "FORMATS": "modern", **env}.items():
         monkeypatch.setenv(name, value)
     monkeypatch.setattr(sys, "argv", ["mtgmeta", str(root)])
@@ -101,25 +102,37 @@ def run_main(monkeypatch, root, **env):
 
 def test_a_format_job_scrapes_its_format_and_builds_none_of_the_files_built_from_every_format(monkeypatch, tmp_path):
     scraped = []
-
-    @contextmanager
-    def browser(**kwargs):
-        yield "browser"
-
-    monkeypatch.setattr(entry, "open_browser", browser)
-    monkeypatch.setattr(entry, "scrape", lambda browser, store, config, report: scraped.append(config.formats))
+    monkeypatch.setattr(entry, "scrape", lambda client, store, config, report, catalog: scraped.append((config.formats, client.delay)))
     assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
-    assert scraped == [("modern",)]
+    assert scraped == [(("modern",), 10.0)]
     # index.json, written as the sign the run finished, for ops/scrape.sh to leave unpublished.
     assert (tmp_path / "index.json").exists() and not (tmp_path / "explore.json").exists()
     assert json.loads((tmp_path / "state" / "deck-downloads.json").read_text())["blocked_runs"] == 0
 
 
-def test_a_run_that_does_not_scrape_opens_no_browser_and_leaves_the_blocked_count_as_it_was(monkeypatch, tmp_path):
+def test_the_delay_and_budget_of_the_requests_come_from_the_environment_and_the_delay_never_drops_below_crawl_delay(monkeypatch, tmp_path):
+    seen = []
+    monkeypatch.setattr(entry, "scrape", lambda client, store, config, report, catalog: seen.append((client.delay, client.budget_minutes)))
+    run_main(monkeypatch, tmp_path, SHARED="0", SCRAPE_DELAY="12", SCRAPE_MINUTES="20")
+    run_main(monkeypatch, tmp_path, SHARED="0", SCRAPE_DELAY="1", REQUEST_DELAY="1")
+    assert seen == [(12.0, 20.0), (5.0, 90.0)]
+
+
+def test_a_run_that_refuses_the_requests_counts_as_blocked(monkeypatch, tmp_path):
+    def refused(client, store, config, report, catalog):
+        report.deck_block = "www.mtgtop8.com: HTTP 403"
+
+    monkeypatch.setattr(entry, "scrape", refused)
+    assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
+    assert run_main(monkeypatch, tmp_path, SHARED="0") == 1
+    assert json.loads((tmp_path / "state" / "deck-downloads.json").read_text())["blocked_runs"] == 2
+
+
+def test_a_run_that_does_not_scrape_requests_nothing_and_leaves_the_blocked_count_as_it_was(monkeypatch, tmp_path):
     # Two format jobs in a row were blocked: the job after them must not reset the count. SHARED=0 keeps EDHREC out.
     blocked = tmp_path / "state" / "deck-downloads.json"
     blocked.parent.mkdir(parents=True)
     blocked.write_text(json.dumps({"blocked_runs": 2, "last_blocked": "2026-11-01T14:30:00+00:00", "detail": "HTTP 429"}))
-    monkeypatch.setattr(entry, "open_browser", lambda **kwargs: pytest.fail("MTGGoldfish was read"))
+    monkeypatch.setattr(entry, "PoliteClient", lambda **kwargs: pytest.fail("mtgo.com or MTGTop8 was read"))
     assert run_main(monkeypatch, tmp_path, SHARED="0", SCRAPE="0") == 0
     assert json.loads(blocked.read_text())["blocked_runs"] == 2

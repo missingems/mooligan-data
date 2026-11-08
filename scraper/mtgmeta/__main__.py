@@ -23,11 +23,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from .browser import open_browser
 from .edhrec import Edhrec
+from .http import MIN_DELAY, PoliteClient, note_deck_block
 from .locator import Locator, place_page
 from .models import RunReport
-from .pacing import DeckPacing, note_deck_block
 from .previews import NewPrintings, read_first_seen, read_seen
 from .published import fetch_published_decks
 from .scryfall import card_catalog
@@ -465,23 +464,8 @@ def main() -> int:
     logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
     config = ScrapeConfig(
-        formats=_list("FORMATS", "modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander"),
-        meta_days=_list("META_DAYS", "30"),
-        events_per_format=int(os.environ.get("EVENTS_PER_FORMAT", "10")),
-        max_new_decks=int(os.environ.get("MAX_NEW_DECKS", "400")),
-        archetype_decks=int(os.environ.get("ARCHETYPE_DECKS", "100")),
-        max_new_events=int(os.environ.get("MAX_NEW_EVENTS", "150")),
-        recheck_days=int(os.environ.get("RECHECK_DAYS", "7")),
-        max_search_pages=int(os.environ.get("MAX_SEARCH_PAGES", "25")),
+        formats=_list("FORMATS", "modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander"),
         history_days=int(os.environ.get("HISTORY_DAYS", "30")),
-        max_archetype_pages=int(os.environ.get("MAX_ARCHETYPE_PAGES", "20")),
-        # The decklists are paced like a reader: see pacing.py. CONCURRENCY and REQUEST_DELAY are for the other pages.
-        deck_pacing=DeckPacing(
-            concurrency=int(os.environ.get("DECK_CONCURRENCY", "2")),
-            delay=float(os.environ.get("DECK_DELAY", "2")),
-            minutes=float(os.environ.get("DECK_MINUTES", "40")),
-            per_run=int(os.environ.get("DECKS_PER_RUN", "800")),
-        ),
     )
     # The daily scrape is a job per format with SHARED=0, then one with SCRAPE=0 that builds the files every format
     # goes into, from the snapshots those jobs published (see ops/scrape.sh). Both default to 1: one run does it all.
@@ -491,19 +475,17 @@ def main() -> int:
     store = SnapshotStore(args.directory, config.formats, config.history_days, catalog=catalog)
     blocked_runs = 0
     if os.environ.get("SCRAPE", "1") == "1":
-        headless = os.environ.get("HEADLESS", "0" if sys.platform.startswith("linux") else "1") == "1"
-        with open_browser(
-            headless=headless,
-            delay=float(os.environ.get("REQUEST_DELAY", "1.5")),
-            concurrency=int(os.environ.get("CONCURRENCY", "6")),
-        ) as browser:
-            scrape(browser, store, config, report=report)
+        client = PoliteClient(
+            delay=max(MIN_DELAY, float(os.environ.get("SCRAPE_DELAY", "10"))),
+            budget_minutes=float(os.environ.get("SCRAPE_MINUTES", "90")),
+        )
+        scrape(client, store, config, report=report, catalog=catalog)
         blocked_runs = note_deck_block(
             args.directory / "state" / "deck-downloads.json", report.deck_block is not None, report.deck_block, datetime.now(timezone.utc)
         )
     else:
-        # No deck was downloaded, so the count of blocked runs in a row stays as the format jobs left it.
-        logging.info("SCRAPE=0: MTGGoldfish is not read; the files are built from the stored snapshots")
+        # Nothing was requested, so the count of blocked runs in a row stays as the format jobs left it.
+        logging.info("SCRAPE=0: mtgo.com and MTGTop8 are not read; the files are built from the stored snapshots")
     data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
     if not shared:
         written = store.finish(

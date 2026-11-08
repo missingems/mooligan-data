@@ -6,13 +6,16 @@ numbers are passed in, so the tests run instantly without a network.
 from __future__ import annotations
 
 import gzip
+import json
 import logging
 import random
 import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
+from datetime import datetime
 from http.client import HTTPException
+from pathlib import Path
 from typing import Callable, Dict, Mapping, Optional, Tuple
 from urllib.parse import urlsplit
 
@@ -20,6 +23,8 @@ log = logging.getLogger(__name__)
 
 USER_AGENT = "MooliganData/1.0 (+https://github.com/missingems/mooligan-data)"
 TIMEOUT = 30.0
+# MTGTop8's robots.txt Crawl-delay: no setting goes faster.
+MIN_DELAY = 5.0
 # The extra wait on top of the delay, as a share of it, chosen at random each time.
 JITTER = 0.5
 
@@ -140,3 +145,19 @@ class PoliteClient:
                 detail += f", Retry-After {retry_after}"
             self._stop(host, detail)
         return fetched
+
+
+def note_deck_block(path: Path, blocked: bool, detail: Optional[str], now: datetime) -> int:
+    """Counts the runs in a row whose requests were refused, in the JSON file at `path`, and returns the count."""
+    try:
+        previous = json.loads(path.read_text())
+        count = int(previous["blocked_runs"])
+        last = previous.get("last_blocked")
+    except (OSError, ValueError, KeyError, TypeError):
+        count, last = 0, None
+    count = count + 1 if blocked else 0
+    if blocked:
+        last = now.isoformat()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"blocked_runs": count, "last_blocked": last, "detail": detail}))
+    return count

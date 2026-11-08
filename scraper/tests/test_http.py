@@ -1,8 +1,9 @@
 import gzip
 import random
 import urllib.error
+from datetime import datetime, timezone
 
-from mtgmeta.http import USER_AGENT, Fetched, PoliteClient
+from mtgmeta.http import USER_AGENT, Fetched, PoliteClient, note_deck_block
 
 A = "https://www.mtgo.com/decklists/2026/11"
 B = "https://www.mtgtop8.com/format?f=MO"
@@ -203,3 +204,12 @@ def test_text_replaces_bytes_it_cannot_decode():
     fetched = Fetched(A, 200, b"ok \xff", {})
     assert fetched.text() == "ok �"
     assert Fetched(A, 200, "café".encode("latin-1"), {}).text("latin-1") == "café"
+
+
+def test_runs_in_a_row_with_a_refusal_are_counted_in_a_file(tmp_path):
+    path = tmp_path / "state" / "deck-downloads.json"
+    now = datetime(2026, 11, 8, tzinfo=timezone.utc)
+
+    assert note_deck_block(path, True, "www.mtgtop8.com: HTTP 403", now) == 1
+    assert note_deck_block(path, True, "www.mtgtop8.com: HTTP 403", now) == 2
+    assert note_deck_block(path, False, None, now) == 0

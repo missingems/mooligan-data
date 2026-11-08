@@ -1,604 +1,298 @@
 import json
 import random
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
-from mtgmeta.browser import BlockedError, Fetched
-from mtgmeta.pacing import Pacer
-from mtgmeta.models import Event, EventResult, EventSummary, RunReport
-from mtgmeta.scrape import ScrapeConfig, _events_to_reread, _read_events, scrape
+import pytest
+from bs4 import BeautifulSoup
+
+from mtgmeta import mtgo, mtgtop8
+from mtgmeta.http import PoliteClient
+from mtgmeta.models import RunReport
+from mtgmeta.scrape import ScrapeConfig, scrape
 from mtgmeta.store import SnapshotStore
 
 FIXTURES = Path(__file__).parent / "fixtures"
-NOW = datetime(2026, 9, 22, tzinfo=timezone.utc)
-EMPTY_DECKS_PAGE = "<table><tr><th>Date</th><th>Deck</th><th>Author</th><th>Event</th><th>Place</th></tr></table>"
+NOW = datetime(2026, 11, 8, tzinfo=timezone.utc)
+
+MTGO = "https://www.mtgo.com"
+TOP8 = "https://www.mtgtop8.com"
+CHALLENGE = "modern-challenge-32-2026-11-0712857687"
+LEAGUE_TODAY = "modern-league-2026-11-0811161"
+LEAGUE_OLD = "modern-league-2026-11-0511161"
+PAPER_DECKS = [str(number) for number in range(907298, 907314)]
 
 
-class FixtureBrowser:
-    def __init__(self, event_pages=("66753",)):
-        self.event_pages = set(event_pages)
-        self.requests = []
-        self.deck_downloads = []
-
-    def page(self, path):
-        self.requests.append(path)
-        if path.startswith("/deck/download/"):
-            self.deck_downloads.append(path.rsplit("/", 1)[1])
-            return (FIXTURES / "deck_7967072.txt").read_text()
-        if path == "/tournaments/modern":
-            return (FIXTURES / "tournaments_modern.html").read_text()
-        if path.startswith("/tournament_searches/create?"):
-            # Page 1 is a real results page that says a next page exists; page 2 is empty.
-            if path.endswith("&page=1"):
-                return (FIXTURES / "tournament_search_modern_p2.html").read_text()
-            return "<table><tr><th>Date</th><th>Name</th><th>Format</th><th>Decklists</th></tr></table>"
-        if path.startswith("/tournament/") and path.rsplit("/", 1)[1] in self.event_pages:
-            return (FIXTURES / "tournament_66753.html").read_text()
-        if path == "/archetype/modern-izzet-prowess/decks?page=1":
-            return (FIXTURES / "archetype_decks_modern_izzet_prowess.html").read_text()
-        if path.startswith("/archetype/") and "/decks?page=" in path:
-            return EMPTY_DECKS_PAGE
-        if path.startswith("/archetype/"):
-            # Give each archetype a featured deck of its own.
-            deck_id = {"/archetype/modern-izzet-prowess": "9000001", "/archetype/modern-eldrazi": "9000002"}[path]
-            return (FIXTURES / "archetype_modern_izzet_prowess.html").read_text().replace("7945486", deck_id)
-        raise RuntimeError(f"503 on {path}")
-
-    def metagame(self, format, days):
-        return (FIXTURES / "metagame_modern.html").read_text(), True
-
-    def fetch_batch(self, paths):
-        """What the browser's fetch() gives: a body for a page, and a 503 for a path that raises."""
-        answers = []
-        for path in paths:
-            try:
-                answers.append(Fetched(path, 200, self.page(path)))
-            except Exception as error:
-                answers.append(Fetched(path, 503, str(error)))
-        return answers
-
-    def fetch_pages(self, paths):
-        results = {}
-        for path in paths:
-            try:
-                results[path] = self.page(path)
-            except Exception as error:
-                results[path] = error
-        return results
+def fixture(name):
+    return (FIXTURES / name).read_text(encoding="latin-1")
 
 
-def quiet_pacer(cfg):
-    """A pacer that skips its waiting, so a scrape takes no time."""
-    return Pacer(cfg.deck_pacing, random.Random(7), sleep=lambda seconds: None)
+def month_page():
+    soup = BeautifulSoup(fixture("mtgo_decklists_2026_11.html"), "html.parser")
+    for item in soup.select("li.decklists-item"):
+        if item.find("a")["href"].removeprefix("/decklist/") not in (CHALLENGE, LEAGUE_TODAY, LEAGUE_OLD):
+            item.decompose()
+    return str(soup)
 
 
-def run(root, browser, cfg):
-    """One scrape as the workflow runs it: load the directory, scrape, publish."""
-    store = SnapshotStore(root, cfg.formats, cfg.history_days, now=NOW)
-    report = scrape(browser, store, cfg, now=NOW, pacer=quiet_pacer(cfg))
+def format_page():
+    soup = BeautifulSoup(fixture("mtgtop8_format_modern.html"), "html.parser")
+    for row in soup.select("tr.hover_tr"):
+        if not any(f"e={event}&" in link["href"] for link in row.find_all("a") for event in ("93409", "93441", "93285", "93303")):
+            row.decompose()
+    return str(soup)
+
+
+def older_format_page():
+    return (
+        '<div class="w_title">Events 21 to 40</div><table>'
+        "<tr class=hover_tr><td class=S14><a href=event?e=93105&f=MO>Regional Championship - MIT Championship</a></td>"
+        "<td class=S12>01/11/26</td></tr></table>"
+    )
+
+
+def challenge_copy(challenge_players):
+    """MTGTop8's page for the Challenge, with its sixteen decks held by the sixteen best players of the mtgo.com event."""
+    html = fixture("mtgtop8_event_93409.html")
+    for deck, player in zip(mtgtop8.parse_event(html, "93409").decks, challenge_players):
+        html = html.replace(f">{deck.player}<", f">{player}<")
+    return html
+
+
+def challenge_players():
+    ref = mtgo.EventRef("12857687", CHALLENGE, "modern", "Modern Challenge 32", datetime(2026, 11, 7, tzinfo=timezone.utc), "mtgo_challenge")
+    event, _ = mtgo.parse_event(fixture("mtgo_modern_challenge_32_12857687.html"), ref)
+    return [result.player for result in event.results]
+
+
+class Clock:
+    def __init__(self):
+        self.now = 1000.0
+
+    def sleep(self, seconds):
+        self.now += seconds
+
+    def __call__(self):
+        return self.now
+
+
+class Site:
+    """The two sites as a table of url to (status, body), and the urls asked for."""
+
+    def __init__(self):
+        self.asked = []
+        self.refused = set()
+        self.pages = {
+            f"{MTGO}/decklists/2026/11": month_page(),
+            f"{MTGO}/decklists/2026/10": "<html></html>",
+            f"{MTGO}/decklist/{CHALLENGE}": fixture("mtgo_modern_challenge_32_12857687.html"),
+            f"{MTGO}/decklist/{LEAGUE_OLD}": fixture("mtgo_modern_league_11161.html"),
+            f"{TOP8}/format?f=MO&meta=51": format_page(),
+            f"{TOP8}/format?f=MO&meta=51&cp=2": older_format_page(),
+            f"{TOP8}/event?e=93409&f=MO": challenge_copy(challenge_players()),
+            f"{TOP8}/event?e=93285&f=MO": fixture("mtgtop8_event_93304.html"),
+            f"{TOP8}/event?e=93303&f=MO": fixture("mtgtop8_event_93304.html"),
+            f"{TOP8}/event?e=93105&f=MO": fixture("mtgtop8_event_93105.html"),
+        }
+        for deck_id in PAPER_DECKS:
+            self.pages[f"{TOP8}/mtgo?d={deck_id}"] = fixture("mtgtop8_deck_909613.txt")
+
+    def opener(self, url, headers, timeout):
+        self.asked.append(url)
+        if any(host in url for host in self.refused):
+            return 403, {}, b""
+        body = self.pages.get(url)
+        return (404, {}, b"") if body is None else (200, {}, body.encode("latin-1", errors="replace"))
+
+    def client(self, **options):
+        clock = Clock()
+        return PoliteClient(
+            delay=10, opener=self.opener, sleep=clock.sleep, clock=clock, rng=random.Random(1), **options
+        )
+
+
+def run(root, site, client=None, now=NOW, **options):
+    cfg = ScrapeConfig(formats=("modern",), **options)
+    store = SnapshotStore(root, cfg.formats, cfg.history_days, now=now)
+    client = client or site.client()
+    report = scrape(client, store, cfg, now=now, report=RunReport())
     store.finish()
-    return report
+    return report, client
 
 
 def snapshot(root):
-    return json.loads((root / "snapshots" / "modern.json").read_text())
+    path = root / "snapshots" / "modern.json"
+    return json.loads(path.read_text()) if path.exists() else {"meta": {}, "events": [], "archetypes": {}}
+
+
+def events_by_id(root):
+    return {event["event_id"]: event for event in snapshot(root)["events"]}
 
 
 def deck(root, deck_id):
     return json.loads((root / "decks" / f"{deck_id}.json").read_text())
 
 
-def config(**overrides):
-    values = dict(formats=("modern",), events_per_format=2, max_new_events=0, max_new_decks=10, archetype_decks=2, recheck_days=1)
-    values.update(overrides)
-    return ScrapeConfig(**values)
+def test_a_challenge_is_saved_with_its_places_and_decks_named_by_mtgtop8(tmp_path):
+    report, _ = run(tmp_path, Site())
+
+    event = events_by_id(tmp_path)["mtgo-12857687"]
+    assert (event["event_name"], event["kind"], event["source"]) == ("Modern Challenge 32", "mtgo_challenge", "mtgo.com")
+    assert event["url"] == f"{MTGO}/decklist/{CHALLENGE}"
+    assert [result["finish"] for result in event["results"][:3]] == ["1st Place", "2nd Place", "3rd Place"]
+    assert len(event["results"]) == 32
+    assert event["results"][0]["archetype"] == "Scepter Chant"
+    assert event["results"][0]["archetype_id"] == "modern-scepter-chant"
+    assert report.named_by_top8 == 16 and report.errors == []
+
+    winner = deck(tmp_path, event["results"][0]["deck_id"])
+    assert (winner["archetype"], winner["archetype_id"], winner["event_id"]) == ("Scepter Chant", "modern-scepter-chant", "mtgo-12857687")
+    assert winner["mainboard"]
 
 
-def test_scrape_publishes_meta_archetypes_events_and_decks(tmp_path):
-    browser = FixtureBrowser()
+def test_a_recent_event_with_no_mtgtop8_copy_is_left_for_the_next_run(tmp_path):
+    site = Site()
+    run(tmp_path, site)
 
-    report = run(tmp_path, browser, config())
-
-    assert report.meta == ["modern_30d"]
-    assert report.archetypes == ["modern_modern-izzet-prowess", "modern_modern-eldrazi"]
-    # 66764 fails to load; 66753 is saved and the run carries on.
-    assert report.events == ["66753"]
-    assert len(report.errors) == 2 and "66764" in report.errors[0] and "66742" in report.errors[1]
-
-    published = snapshot(tmp_path)
-    meta = published["meta"]["30d"]
-    assert [a.get("deck_id") for a in meta["archetypes"]] == ["9000001", "9000002", None, None, None, None]
-
-    izzet = published["archetypes"]["modern-izzet-prowess"]
-    assert (izzet["name"], izzet["deck_id"], izzet["featured_player"]) == ("Izzet Prowess", "9000001", "Roy Varney")
-    assert len(izzet["results"]) == 12
-    assert izzet["results"][0] == {
-        "deck_id": "7966110",
-        "date": "2026-09-21T00:00:00Z",
-        "player": "Xsper",
-        "event_id": "66753",
-        "event_name": "Modern Challenge 32 2026-09-21",
-        "finish": "13th Place",
-    }
-
-    # Event rows of a tracked archetype carry its name and id.
-    event = next(e for e in published["events"] if e["event_id"] == "66753")
-    xsper = next(r for r in event["results"] if r["deck_id"] == "7966110")
-    assert (xsper["archetype"], xsper["archetype_id"]) == ("Izzet Prowess", "modern-izzet-prowess")
-
-    # Featured decks rank first, so they are in the first visits; the rest are the newest, up to the budget.
-    assert report.decks_written == 10
-    assert {"9000001", "9000002"} <= set(browser.deck_downloads[:6])
-    assert deck(tmp_path, "9000001")["event_id"] is None
-    assert deck(tmp_path, "7966110")["archetype"] == "Izzet Prowess"
-    # A deck carries its archetype's id, so the app can open the archetype from the deck.
-    assert deck(tmp_path, "7966110")["archetype_id"] == "modern-izzet-prowess"
-    assert deck(tmp_path, "9000001")["archetype_id"] == "modern-izzet-prowess"
-    assert len(json.loads((tmp_path / "state" / "deck-ids.json").read_text())) == 10
+    assert "mtgo-11161-2026-11-08" not in events_by_id(tmp_path)
+    assert f"{MTGO}/decklist/{LEAGUE_TODAY}" not in site.asked
 
 
-def test_a_second_run_reads_one_page_and_keeps_the_history(tmp_path):
-    run(tmp_path, FixtureBrowser(), config())
-    browser = FixtureBrowser()
+def test_an_older_event_with_no_matching_copy_is_saved_without_an_mtgtop8_name(tmp_path):
+    report, _ = run(tmp_path, Site())
 
-    report = run(tmp_path, browser, config(max_new_decks=100))
-
-    # Page 1 held nothing new, so page 2 was never asked for.
-    assert "/archetype/modern-izzet-prowess/decks?page=2" not in browser.requests
-    assert len(snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]) == 12
-    assert report.decks_skipped == 10
-    assert not set(browser.deck_downloads) & {"9000001", "9000002", "7966110"}
+    league = events_by_id(tmp_path)["mtgo-11161-2026-11-05"]
+    assert (league["kind"], [result["finish"] for result in league["results"]]) == ("mtgo_league", ["5-0"] * 5)
+    assert all(result["archetype"] for result in league["results"])
+    assert report.named_by_top8 == 16
 
 
-def test_history_older_than_the_window_is_dropped(tmp_path):
-    run(tmp_path, FixtureBrowser(), config(history_days=3))
-    dates = {r["date"][:10] for r in snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]}
-    assert dates == {"2026-09-20", "2026-09-21"}  # 2026-09-16 is out
+def test_a_paper_event_is_saved_with_top_n_finishes_and_its_decks(tmp_path):
+    report, _ = run(tmp_path, Site())
+
+    event = events_by_id(tmp_path)["t8-93105"]
+    assert (event["event_name"], event["kind"], event["source"]) == (
+        "Regional Championship - MIT Championship", "regional_championship", "melee.gg",
+    )
+    assert event["date"] == "2026-11-01T00:00:00Z"
+    assert event["url"] == f"{TOP8}/event?e=93105&f=MO"
+    assert [result["finish"] for result in event["results"]] == (
+        ["1st Place", "2nd Place"] + ["Top 4"] * 2 + ["Top 8"] * 4 + ["Top 16"] * 8
+    )
+    first = event["results"][0]
+    assert (first["deck_id"], first["archetype"], first["archetype_id"]) == ("t8-907298", "Rakdos Delirium", "modern-rakdos-delirium")
+    assert deck(tmp_path, "t8-907298")["archetype_id"] == "modern-rakdos-delirium"
+    assert all((tmp_path / "decks" / f"t8-{deck_id}.json").exists() for deck_id in PAPER_DECKS)
+    assert report.errors == []
 
 
-def test_events_found_through_archetypes_are_read(tmp_path):
-    browser = FixtureBrowser(event_pages=("66753", "66742", "66728"))
+def test_an_mtgtop8_event_from_mtgo_com_is_not_saved_as_paper_and_not_asked_for_again(tmp_path):
+    site = Site()
+    run(tmp_path, site)
+    assert "t8-93303" not in events_by_id(tmp_path)
+    assert json.loads((tmp_path / "state" / "sources.json").read_text())["modern"]["seen"] == {"93303": "2026-11-05"}
 
-    report = run(tmp_path, browser, config(max_new_events=2, max_new_decks=0))
-
-    # The two newest events the Izzet list mentions that the tournaments list did not.
-    assert report.events == ["66753", "66742", "66728"]
-
-
-def test_rows_and_events_of_known_duplicates_are_skipped(tmp_path):
-    (tmp_path / "state").mkdir()
-    (tmp_path / "state" / "duplicate-event-ids.json").write_text('["66742"]')
-    # Only 66753 has a page: the fixture would otherwise make every event look identical.
-    browser = FixtureBrowser(event_pages=("66753",))
-
-    report = run(tmp_path, browser, config(max_new_events=5, max_new_decks=0))
-
-    assert "66742" not in report.events
-    assert "/tournament/66742" not in browser.requests
-    results = snapshot(tmp_path)["archetypes"]["modern-izzet-prowess"]["results"]
-    assert "66742" not in {r["event_id"] for r in results} and len(results) == 8
+    site.asked.clear()
+    run(tmp_path, site)
+    assert f"{TOP8}/event?e=93303&f=MO" not in site.asked
 
 
-def test_each_format_has_its_own_deck_allowance(tmp_path):
-    browser = FixtureBrowser()
-    browser_page = browser.page
+def test_the_metagame_windows_and_archetype_histories_come_from_the_stored_results(tmp_path):
+    report, _ = run(tmp_path, Site(), now=datetime(2026, 11, 10, tzinfo=timezone.utc))
 
-    def page(path):
-        # Serve the Modern fixtures for a second format too.
-        return browser_page(path.replace("/tournaments/legacy", "/tournaments/modern").replace("legacy-", "modern-"))
+    meta = snapshot(tmp_path)["meta"]
+    assert sorted(meta) == ["14d", "30d", "7d"]
+    assert report.meta == ["modern_7d", "modern_14d", "modern_30d"]
+    for window in meta.values():
+        shares = [archetype["percentage"] for archetype in window["archetypes"]]
+        assert shares == sorted(shares, reverse=True) and sum(shares) <= 100
+    seven = {archetype["id"]: archetype for archetype in meta["7d"]["archetypes"]}
+    thirty = {archetype["id"]: archetype for archetype in meta["30d"]["archetypes"]}
+    assert "modern-reanimator" not in seven and "modern-reanimator" in thirty
+    winner = events_by_id(tmp_path)["mtgo-12857687"]["results"][0]
+    chant = seven["modern-scepter-chant"]
+    assert (chant["name"], chant["deck_count"], chant["percentage"]) == ("Scepter Chant", 1, round(100 / 37, 1))
+    assert (chant["deck_id"], chant["colors"], chant["key_cards"]) == (winner["deck_id"], [], [])
+    assert thirty["modern-scepter-chant"]["deck_count"] == 4
 
-    browser.page = page
-    report = run(tmp_path, browser, config(formats=("modern", "legacy"), max_new_decks=3))
-    # A shared allowance would stop at 3 in total; each format gets its own 3.
-    assert report.decks_written == 6
-    assert len(browser.deck_downloads) == 6
-
-
-def test_decks_mtggoldfish_no_longer_serves_are_skipped_next_run(tmp_path):
-    browser = FixtureBrowser()
-    browser_page = browser.page
-
-    def page(path):
-        # A deleted deck redirects to a page instead of a list.
-        if path == "/deck/download/7966110":
-            browser.deck_downloads.append("7966110")
-            return "<!DOCTYPE html><html><head><title>Metagame</title></head><body></body></html>"
-        return browser_page(path)
-
-    browser.page = page
-    report = run(tmp_path, browser, config())
-    assert report.errors == ["event 66764: 503 on /tournament/66764", "event 66742: 503 on /tournament/66742"]  # the dead deck is not an error
-    assert json.loads((tmp_path / "state" / "missing-deck-ids.json").read_text()) == ["7966110"]
-
-    second = FixtureBrowser()
-    run(tmp_path, second, config(max_new_decks=100))
-    assert "7966110" not in second.deck_downloads
+    history = snapshot(tmp_path)["archetypes"]["modern-scepter-chant"]
+    assert (history["name"], history["deck_id"], history["featured_player"]) == ("Scepter Chant", winner["deck_id"], winner["player"])
+    assert {result["event_id"] for result in history["results"]} == {"mtgo-12857687", "t8-93105"}
+    assert report.archetypes and all(name.startswith("modern_") for name in report.archetypes)
 
 
-def test_an_unwindowed_metagame_is_published_once(tmp_path):
-    browser = FixtureBrowser()
-    browser.metagame = lambda format, days: ((FIXTURES / "metagame_modern.html").read_text(), False)
-    report = run(tmp_path, browser, config(meta_days=("30", "7")))
-    assert report.meta == ["modern_30d"]
-    assert list(snapshot(tmp_path)["meta"]) == ["30d"]
+def test_the_featured_deck_is_the_newest_best_placed_one(tmp_path):
+    run(tmp_path, Site())
+
+    thirty = {archetype["id"]: archetype for archetype in snapshot(tmp_path)["meta"]["30d"]["archetypes"]}
+    assert thirty["modern-rakdos-delirium"]["deck_id"] == "t8-907298"
+    assert thirty["modern-scepter-chant"]["deck_id"] == events_by_id(tmp_path)["mtgo-12857687"]["results"][0]["deck_id"]
 
 
+def test_the_first_run_makes_these_requests(tmp_path):
+    site = Site()
+    _, client = run(tmp_path, site)
 
-class WindowBrowser(FixtureBrowser):
-    """Serves the fixture metagame, except a window in `failures`: its errors are raised in turn, then it is served too."""
-
-    def __init__(self, failures):
-        super().__init__()
-        self.failures = {days: list(errors) for days, errors in failures.items()}
-        self.loads = []
-
-    def metagame(self, format, days):
-        self.loads.append(days)
-        if self.failures.get(days):
-            error = self.failures[days].pop(0)
-            if isinstance(error, str):
-                return error, True  # a page that loaded, without tiles
-            raise error
-        return super().metagame(format, days)
-
-
-def meta_messages(messages):
-    return [message for message in messages if message.startswith("meta")]
-
-
-def test_a_window_that_cannot_be_read_is_a_warning_and_the_last_one_stays(tmp_path):
-    run(tmp_path, FixtureBrowser(), config(meta_days=("30", "14")))
-    before = snapshot(tmp_path)["meta"]["14d"]
-
-    # Penny Dreadful from 17 to 28 October 2026, on every run.
-    stuck = TimeoutError("The modern metagame did not switch to 14 days")
-    report = run(tmp_path, WindowBrowser({"14": [stuck, stuck]}), config(meta_days=("30", "14")))
-
-    assert report.meta == ["modern_30d"] and meta_messages(report.errors) == []
-    assert meta_messages(report.warnings) == [
-        "meta modern 14d: The modern metagame did not switch to 14 days (the snapshot keeps the last 14d window read)"
+    assert client.requests == len(site.asked) == 26
+    assert site.asked[:2] == [f"{MTGO}/decklists/2026/11", f"{MTGO}/decklists/2026/10"]
+    assert [url for url in site.asked if "/decklist/" in url] == [f"{MTGO}/decklist/{CHALLENGE}", f"{MTGO}/decklist/{LEAGUE_OLD}"]
+    assert [url for url in site.asked if "/event?" in url] == [
+        f"{TOP8}/event?e=93409&f=MO",
+        f"{TOP8}/event?e=93285&f=MO",
+        f"{TOP8}/event?e=93303&f=MO",
+        f"{TOP8}/event?e=93105&f=MO",
     ]
-    assert snapshot(tmp_path)["meta"]["14d"] == before
+    assert f"{TOP8}/event?e=93441&f=MO" not in site.asked
 
 
-def test_a_window_is_loaded_again_after_a_browser_error(tmp_path):
-    # Modern's 14 days on 16 October 2026: a script hung once.
-    browser = WindowBrowser({"14": [RuntimeError("Message: script timeout")]})
-    report = run(tmp_path, browser, config(meta_days=("30", "14")))
-    assert report.meta == ["modern_30d", "modern_14d"] and meta_messages(report.warnings) == []
-    assert browser.loads == ["30", "14", "14"]
+def test_a_second_run_asks_only_for_the_pages_that_list_events(tmp_path):
+    site = Site()
+    run(tmp_path, site)
+    site.asked.clear()
 
+    report, client = run(tmp_path, site)
 
-def test_a_window_without_tiles_is_not_loaded_again(tmp_path):
-    # Penny Dreadful's 7 days on 23 and 24 October 2026 had no decks.
-    browser = WindowBrowser({"7": ["<html></html>"]})
-    report = run(tmp_path, browser, config(meta_days=("30", "7")))
-    assert browser.loads == ["30", "7"] and meta_messages(report.errors) == []
-    assert meta_messages(report.warnings) == [
-        "meta modern 7d: No archetype tiles on the modern metagame page (the snapshot keeps the last 7d window read)"
-    ]
+    assert site.asked == [f"{MTGO}/decklists/2026/11", f"{MTGO}/decklists/2026/10", f"{TOP8}/format?f=MO&meta=51"]
+    assert report.events == [] and report.decks_written == 0 and report.errors == []
+    assert report.meta == ["modern_7d", "modern_14d", "modern_30d"]
 
 
-def test_a_run_that_reads_no_window_in_any_format_fails(tmp_path):
-    browser = WindowBrowser({"30": [BlockedError("Blocked on https://www.mtggoldfish.com/metagame/modern/full")]})
-    report = run(tmp_path, browser, config())
-    assert report.meta == [] and meta_messages(report.errors) == ["meta: no window read in any of 1 formats"]
-    # The page had its attempts at the challenge already, so it is not loaded again.
-    assert browser.loads == ["30"]
+@pytest.mark.parametrize("host, saved", [("www.mtgtop8.com", {"mtgo-11161-2026-11-05"}), ("www.mtgo.com", {"t8-93105"})])
+def test_a_refusal_is_a_warning_and_stops_that_site_for_the_run_while_older_mtgo_events_still_go_out_named_by_lists(tmp_path, host, saved):
+    site = Site()
+    site.refused = {host}
 
+    report, client = run(tmp_path, site)
 
+    assert client.refusals == {host: "HTTP 403"}
+    assert len([url for url in site.asked if host in url]) == 1
+    assert len(report.warnings) == 1 and host in report.warnings[0]
+    assert report.deck_block == f"{host}: HTTP 403" and report.errors == []
+    assert set(events_by_id(tmp_path)) == saved
 
-def test_a_format_job_writes_its_format_and_the_state_but_none_of_the_files_built_from_every_format(tmp_path):
-    cfg = config()
-    store = SnapshotStore(tmp_path, cfg.formats, cfg.history_days, now=NOW)
-    scrape(FixtureBrowser(), store, cfg, now=NOW, pacer=quiet_pacer(cfg))
-    store.finish(shared=False)
 
-    assert (tmp_path / "snapshots" / "modern.json").exists() and (tmp_path / "state" / "snapshots" / "modern.json").exists()
-    assert (tmp_path / "state" / "deck-ids.json").exists() and (tmp_path / "state" / "deck-cards" / "modern.json").exists()
-    assert list((tmp_path / "archetypes").glob("*.json")) and list((tmp_path / "decks").glob("*.json"))
-    for built_from_every_format in ("explore.json", "cards", "edh", "state/card-hashes.json", "state/edhrec.json"):
-        assert not (tmp_path / built_from_every_format).exists(), built_from_every_format
-    # The same run with every file: the ones left out above are what a shared run adds.
-    run(tmp_path / "all", FixtureBrowser(), cfg)
-    assert (tmp_path / "all" / "explore.json").exists() and (tmp_path / "all" / "cards" / "index.json").exists()
+def test_a_run_that_runs_out_of_time_stops_cleanly_and_the_next_run_goes_on(tmp_path):
+    site = Site()
+    report, client = run(tmp_path, site, client=site.client(budget_minutes=1))
 
+    assert 0 < client.requests < 26 and report.errors == []
+    for event in snapshot(tmp_path)["events"]:
+        assert all((tmp_path / "decks" / f"{result['deck_id']}.json").exists() for result in event["results"])
 
-def test_a_run_publishes_card_pages_for_what_the_decks_play(tmp_path):
-    run(tmp_path, FixtureBrowser(), config())
+    run(tmp_path, site)
+    assert set(events_by_id(tmp_path)) == {"mtgo-12857687", "mtgo-11161-2026-11-05", "t8-93105"}
 
-    index = json.loads((tmp_path / "cards" / "index.json").read_text())
-    assert index["cards"]["lightning-bolt"] == {"name": "Lightning Bolt", "formats": ["modern"], "oracle_id": None}
-    bolt = json.loads((tmp_path / "cards" / "lightning-bolt.json").read_text())
-    modern = bolt["formats"]["modern"]
-    # Every fixture deck is the same Izzet list. 9 of the 10 downloaded are counted:
-    # Eldrazi has no results in the fixture, so neither it nor its featured deck is published.
-    assert (modern["decks"], modern["of_decks"]) == (9, 9)
-    assert modern["archetypes"][0]["archetype_id"] == "modern-izzet-prowess"
-    assert modern["archetypes"][0]["deck_ids"][0] in modern["archetypes"][0]["deck_ids"]
 
-    # A run that finds nothing new rewrites no card page, only the index.
-    before = {p.name for p in (tmp_path / "cards").glob("*.json")}
-    for path in (tmp_path / "cards").glob("*.json"):
-        path.unlink()
-    run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
-    after = {p.name for p in (tmp_path / "cards").glob("*.json")}
-    assert after == {"index.json"} and len(before) > 10
+def test_a_deck_that_does_not_parse_is_left_out_and_tried_once_more(tmp_path):
+    site = Site()
+    site.pages[f"{TOP8}/mtgo?d=907300"] = "<html>not a list</html>"
+    run(tmp_path, site)
+    assert not (tmp_path / "decks" / "t8-907300.json").exists()
+    assert "t8-93105" in events_by_id(tmp_path)
 
-
-def test_events_come_from_the_tournament_search_and_carry_their_kind(tmp_path):
-    browser = FixtureBrowser(event_pages=("66753", "66742", "66728", "66737", "66723", "66651", "66660"))
-
-    report = run(tmp_path, browser, config(max_new_events=6, max_new_decks=0))
-
-    # After the tournaments list's own: the newest unstored events first, whether the
-    # archetype lists mention them (66742, 66728, 66737, 66723) or only the search does.
-    assert report.events == ["66753", "66742", "66728", "66737", "66723", "66651", "66660"]
-    searched = [p for p in browser.requests if p.startswith("/tournament_searches/create?")]
-    assert len(searched) == 2 and "tournament_search%5Bformat%5D=modern" in searched[0]
-    # Every fixture event page is the same, so the duplicate check keeps one; it carries its tier and source.
-    events = snapshot(tmp_path)["events"]
-    assert len(events) == 1 and (events[0]["kind"], events[0]["source"]) == ("mtgo_challenge", "mtgo.com")
-
-
-def test_events_without_decklists_are_skipped_and_remembered(tmp_path):
-    browser = FixtureBrowser(event_pages=("66753",))
-    page = browser.page
-
-    def serve(path):
-        if path == "/tournament/66742":
-            return "<html><h2>Modern League 2026-09-21</h2><p>Date: 2026-09-21</p><p>No decklists yet</p></html>"
-        return page(path)
-
-    browser.page = serve
-    report = run(tmp_path, browser, config(max_new_events=1, max_new_decks=0))
-    assert not any("66742" in error for error in report.errors)
-    assert "66742" in json.loads((tmp_path / "state" / "empty-event-ids.json").read_text())
-    second = FixtureBrowser(event_pages=("66753",))
-    run(tmp_path, second, config(max_new_events=1, max_new_decks=0))
-    assert "/tournament/66742" not in second.requests
-
-
-def refusing(browser, status=403):
-    """Makes every deck download come back refused, as on 5 October 2026."""
-    fetch_batch = browser.fetch_batch
-
-    def refuse(paths):
-        if paths and paths[0].startswith("/deck/download/"):
-            return [Fetched(path, status, "<title>Just a moment...</title>", None, "challenge") for path in paths]
-        return fetch_batch(paths)
-
-    browser.fetch_batch = refuse
-
-
-def test_deck_downloads_that_are_all_refused_are_a_warning_not_an_error(tmp_path):
-    browser = FixtureBrowser()
-    refusing(browser)
-
-    report = run(tmp_path, browser, config())
-
-    # The pages before the decks were published as usual; only the 66764 page fails, as in every run here.
-    assert report.meta == ["modern_30d"] and report.events == ["66753"] and len(report.archetypes) == 2
-    assert [error for error in report.errors if "deck" in error] == []
-    assert report.decks_written == 0
-    assert report.deck_block.startswith("HTTP 403, cf-mitigated=challenge")
-    assert len(report.warnings) == 1 and report.warnings[0].startswith("Deck downloads blocked after 0 (HTTP 403")
-    # Everything wanted waits for the next run: 44 decks, 10 of them within the format's allowance.
-    assert report.decks_deferred == 44
-    assert browser.deck_downloads == []
-    assert not (tmp_path / "decks").exists()
-
-
-def test_a_run_that_downloads_every_deck_has_no_warning_and_nothing_deferred(tmp_path):
-    report = run(tmp_path, FixtureBrowser(), config(max_new_decks=1000))
-    assert (report.warnings, report.deck_block, report.decks_deferred) == ([], None, 0)
-    assert report.decks_written == 44
-
-
-def test_decks_past_an_allowance_are_deferred(tmp_path):
-    cfg = config(max_new_decks=8)
-    cfg.deck_pacing.per_run = 6
-    report = run(tmp_path, FixtureBrowser(), cfg)
-    stored = len(list((tmp_path / "decks").glob("*.json")))
-    assert report.decks_written == stored == 6
-    # 44 are wanted, 8 are within the format's allowance and the run's allowance of 6 is the tighter.
-    assert report.decks_deferred == 44 - 6
-
-
-def test_a_deck_error_that_is_not_a_refusal_is_still_an_error(tmp_path):
-    browser = FixtureBrowser()
-    fetch_batch = browser.fetch_batch
-
-    def fetch(paths):
-        return [Fetched(a.path, 404, "Not found") if a.path.endswith("/7966110") else a for a in fetch_batch(paths)]
-
-    browser.fetch_batch = fetch
-    report = run(tmp_path, browser, config())
-    assert "deck 7966110: HTTP 404 on /deck/download/7966110" in report.errors
-    assert report.deck_block is None and report.warnings == []
-    assert not (tmp_path / "decks" / "7966110.json").exists()
-
-
-def day(date):
-    return datetime.strptime(date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-
-
-def stored_event(event_id, name, date="2026-09-20", results=10):
-    return EventSummary(event_id, name, day(date), results)
-
-
-CUTOFF = day("2026-08-23")
-
-
-def test_a_stored_fallback_name_is_selected_for_a_re_read():
-    stored = {"1": stored_event("1", "Tournament 1"), "2": stored_event("2", "Modern League 2026-09-20")}
-
-    chosen = _events_to_reread(stored, {}, set(), CUTOFF)
-
-    assert chosen == [EventSummary("1", "", day("2026-09-20"))]
-
-
-def test_a_listing_with_another_name_or_more_results_selects_the_event():
-    stored = {
-        "1": stored_event("1", "Modern Challenge 2026-09-20"),
-        "2": stored_event("2", "Modern League 2026-09-19", results=10),
-        "3": stored_event("3", "Modern League 2026-09-18", results=10),
-        "4": stored_event("4", "Modern League 2026-09-17", results=10),
-    }
-    listed = {
-        "1": EventSummary("1", "MTG SEA Championships Singapore Open", day("2026-09-20"), 40),
-        "2": EventSummary("2", "Modern League 2026-09-19", day("2026-09-19"), 12),
-        "3": EventSummary("3", "Modern League 2026-09-18", day("2026-09-18"), 10),
-        "4": EventSummary("4", "Modern League 2026-09-17", day("2026-09-17"), 8),
-    }
-
-    chosen = _events_to_reread(stored, listed, set(), CUTOFF)
-
-    assert chosen == [listed["1"], listed["2"]]
-
-
-def test_a_listing_that_is_itself_the_fallback_name_is_not_passed_on():
-    stored = {"1": stored_event("1", "Tournament 1")}
-    listed = {"1": EventSummary("1", "Tournament 1", day("2026-09-20"), 10)}
-
-    assert _events_to_reread(stored, listed, set(), CUTOFF) == [EventSummary("1", "", day("2026-09-20"))]
-
-
-def test_events_outside_the_window_or_already_read_this_run_are_not_selected():
-    stored = {"1": stored_event("1", "Tournament 1", "2026-08-01"), "2": stored_event("2", "Tournament 2")}
-
-    assert _events_to_reread(stored, {}, {"2"}, CUTOFF) == []
-
-
-def tamper_stored_event(root, event_id, **changes):
-    path = root / "state" / "snapshots" / "modern.json"
-    document = json.loads(path.read_text())
-    next(e for e in document["events"] if e["event_id"] == event_id).update(changes)
-    path.write_text(json.dumps(document))
-
-
-def stored_event_name(root, event_id):
-    return next(e["event_name"] for e in snapshot(root)["events"] if e["event_id"] == event_id)
-
-
-class OlderFixtureBrowser(FixtureBrowser):
-    """A tournaments list that no longer shows 66753, so only the reconcile can reach it."""
-
-    def page(self, path):
-        if path == "/tournaments/modern":
-            return "<html></html>"
-        return super().page(path)
-
-
-def test_a_stored_fallback_name_is_read_again_and_replaced(tmp_path):
-    run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
-    tamper_stored_event(tmp_path, "66753", event_name="Tournament 66753")
-
-    second = OlderFixtureBrowser()
-    run(tmp_path, second, config(max_new_decks=0, recheck_days=0))
-
-    assert "/tournament/66753" in second.requests
-    assert stored_event_name(tmp_path, "66753") == "Modern Challenge 32 2026-09-21"
-
-
-def test_the_re_reads_of_a_run_are_capped(tmp_path):
-    run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
-    tamper_stored_event(tmp_path, "66753", event_name="Tournament 66753")
-
-    second = OlderFixtureBrowser()
-    run(tmp_path, second, config(max_new_decks=0, max_reread_events=0, recheck_days=0))
-
-    assert "/tournament/66753" not in second.requests
-    assert stored_event_name(tmp_path, "66753") == "Tournament 66753"
-
-
-def test_a_page_without_a_name_does_not_overwrite_the_stored_name(tmp_path):
-    run(tmp_path, FixtureBrowser(), config(max_new_decks=0))
-    tamper_stored_event(tmp_path, "66753", event_name="Real Name")
-
-    class Nameless(FixtureBrowser):
-        def page(self, path):
-            html = super().page(path)
-            if path == "/tournaments/modern":
-                return html.replace("Modern Challenge 32 2026-09-21", "Tournament 66753")
-            if path == "/tournament/66753":
-                return html.replace("<h2>Modern Challenge 32 2026-09-21</h2>", "")
-            return html
-
-    run(tmp_path, Nameless(), config(max_new_decks=0))
-
-    event = next(e for e in snapshot(tmp_path)["events"] if e["event_id"] == "66753")
-    assert (event["event_name"], event["kind"]) == ("Real Name", "other")
-
-
-class ListingBrowser:
-    def __init__(self, listing=""):
-        self.listing = listing
-        self.requests = []
-
-    def page(self, path):
-        self.requests.append(path)
-        if path == "/tournaments/modern":
-            return self.listing
-        if path.startswith("/tournament_searches/create?"):
-            return "<table><tr><th>Date</th><th>Name</th><th>Format</th><th>Decklists</th></tr></table>"
-        return (
-            "<h2>Modern League 2026-09-16</h2><p>Date: 2026-09-16</p>"
-            '<table class="table-tournament"><tr><td>5 - 0</td><td><a href="/deck/1">UR</a></td>'
-            '<td><a href="/player/x">P</a></td></tr></table>'
-        )
-
-    def fetch_pages(self, paths):
-        return {path: self.page(path) for path in paths}
-
-
-def read_events_with(store, browser, **overrides):
-    values = dict(formats=("modern",), max_new_events=0, recheck_days=7)
-    values.update(overrides)
-    return _read_events(browser, store, "modern", [], ScrapeConfig(**values), RunReport(), NOW - timedelta(days=30), NOW)
-
-
-def store_with(tmp_path, *events):
-    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
-    for event_id, name, date in events:
-        store.save_event(Event(event_id, name, "modern", day(date), [EventResult("p", "Eldrazi", "5-0", "1")], "url"))
-    return store
-
-
-def test_a_stored_event_six_days_old_is_read_again_and_one_eight_days_old_is_not(tmp_path):
-    store = store_with(tmp_path, ("1", "Modern League 2026-09-16", "2026-09-16"), ("2", "Modern League 2026-09-14", "2026-09-14"))
-    browser = ListingBrowser()
-
-    events = read_events_with(store, browser)
-
-    assert [event.event_id for event in events] == ["1"]
-    assert "/tournament/1" in browser.requests and "/tournament/2" not in browser.requests
-
-
-def test_an_event_eight_days_old_is_read_when_the_reconcile_rule_picks_it(tmp_path):
-    store = store_with(tmp_path, ("1", "Modern League 2026-09-16", "2026-09-16"), ("2", "Tournament 2", "2026-09-14"))
-    browser = ListingBrowser()
-
-    events = read_events_with(store, browser)
-
-    assert sorted(event.event_id for event in events) == ["1", "2"]
-    assert browser.requests.count("/tournament/1") == 1 and browser.requests.count("/tournament/2") == 1
-
-
-def test_every_event_of_the_last_days_is_read_however_many_there_are(tmp_path):
-    store = store_with(tmp_path, *[(str(n), f"Modern League 2026-09-{16 + n % 6}", f"2026-09-{16 + n % 6}") for n in range(1, 31)])
-    browser = ListingBrowser()
-
-    events = read_events_with(store, browser, max_reread_events=0)
-
-    assert len(events) == 30
-
-
-def test_a_listed_event_not_yet_stored_is_read_within_the_last_days(tmp_path):
-    store = store_with(tmp_path)
-    listing = '<h4><a href="/tournament/5">Modern League 2026-09-20</a> 2026-09-20</h4>'
-    browser = ListingBrowser(listing)
-
-    events = read_events_with(store, browser)
-
-    assert [event.event_id for event in events] == ["5"]
+    site.asked.clear()
+    run(tmp_path, site)
+    assert f"{TOP8}/mtgo?d=907300" in site.asked
+    site.asked.clear()
+    run(tmp_path, site)
+    assert f"{TOP8}/mtgo?d=907300" not in site.asked

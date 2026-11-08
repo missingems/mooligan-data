@@ -564,3 +564,48 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
     again.finish()
     assert json.loads((tmp_path / "snapshots" / "modern.json").read_text())["meta"] == published["meta"]
     assert [r["archetype_id"] for r in json.loads((tmp_path / "state" / "snapshots" / "modern.json").read_text())["events"][0]["results"]] == ["burn", "burn", "rakdos-burn", None]
+
+
+def test_events_since_lists_the_stored_events_of_a_format_newest_first(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_event(event("old", "2026-08-01"))
+    store.save_event(event("a", "2026-09-20"))
+    store.save_event(event("b", "2026-09-21"))
+
+    events = store.events_since("modern", day("2026-09-01"))
+
+    assert [e.event_id for e in events] == ["b", "a"]
+    assert events[0] == event("b", "2026-09-21")
+    assert store.events_since("pioneer", day("2026-09-01")) == []
+
+
+def test_reference_decks_are_the_named_decks_with_a_stored_list(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    named = EventResult("p", "Eldrazi", "5-0", "1", "modern-eldrazi")
+    unnamed = EventResult("q", "Other", "5-0", "2")
+    store.save_event(Event("e", "Modern League", "modern", day("2026-09-20"), [named, unnamed], "url"))
+    store.save_decks([
+        Deck("1", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [DeckCard(2, "Wasteland")], "modern", "e", "modern-eldrazi"),
+        Deck("2", "q", "Other", [DeckCard(4, "Island")], [], "modern", "e"),
+    ])
+
+    decks = store.reference_decks("modern", day("2026-09-01"))
+
+    assert decks == [
+        Deck("1", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [DeckCard(2, "Wasteland")], "modern", "e", "modern-eldrazi")
+    ]
+    assert store.reference_decks("modern", day("2026-09-21")) == []
+
+
+def test_source_state_is_kept_between_runs_and_its_old_events_forgotten(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    state = first.source_state("modern")
+    state["seen"].update({"93303": "2026-09-20", "80000": "2026-07-01"})
+    state["failed"]["t8-1"] = 1
+    first.finish()
+
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    assert later.source_state("modern") == {"seen": {"93303": "2026-09-20"}, "failed": {"t8-1": 1}}
+    assert later.source_state("pioneer") == {"seen": {}, "failed": {}}
