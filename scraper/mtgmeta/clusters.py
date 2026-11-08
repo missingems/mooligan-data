@@ -1,4 +1,4 @@
-"""Archetypes MTGGoldfish names apart that play one deck, found from their decklists, and merged when published.
+"""Archetypes named apart that play one deck, found from their decklists, and merged when published.
 
 `plan` decides the groups of a snapshot and `apply` turns the snapshot into the one published, with one archetype per
 group (see docs/data-format.md). `python -m mtgmeta clusters DIR --format modern --days 7` is a dry run: it reads DIR's
@@ -455,7 +455,7 @@ def apply(document: dict, merging: Merging, colors: Optional[Dict[str, List[str]
                     "colors": shown if shown is not None else base.get("colors", []),
                 }
             )
-        # sorted() is stable, so equal shares keep MTGGoldfish's order.
+        # sorted() is stable, so equal shares keep the snapshot's order.
         merged.sort(key=lambda tile: tile["percentage"], reverse=True)
         meta[timeframe] = {**listing, "archetypes": merged}
 

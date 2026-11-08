@@ -12,7 +12,7 @@ from typing import Dict, List, Optional, Sequence
 
 from .cards import slug
 from .colors import color_weights, deck_colors
-from .parsing import latin_lookalikes
+from .parsing import latin_lookalikes, place
 
 # In the order the tab shows them.
 FORMATS = (
@@ -45,8 +45,6 @@ TREND_TENTHS = 10
 # The colours a share is split into: the five, and colourless.
 SHARE_COLORS = ("W", "U", "B", "R", "G", "C")
 
-# "1st Place" and so on: a league's "5-0" is a record, not a placing.
-_PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
 # The latest event is a recent one without the winner's player.
 _LATEST_KEYS = ("id", "name", "date", "kind", "prestige", "source", "url", "deck_count", "result_count", "winner_archetype", "lead", "top")
 # Which window's tile an archetype's colours and key cards are read from: the longest first.
@@ -96,7 +94,7 @@ def _standings(snapshot: dict, now: datetime, previews: "Previews") -> List[dict
     week = {archetype["id"]: archetype for archetype in meta.get("7d", {}).get("archetypes", [])}
     since = now - timedelta(days=WINDOW_DAYS)
     standings = []
-    # sorted() is stable, so equal shares keep MTGGoldfish's order.
+    # sorted() is stable, so equal shares keep the snapshot's order.
     for archetype in sorted(month, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]:
         places = _places(snapshot.get("archetypes", {}).get(archetype["id"], {}).get("results", []), since, now)
         in_week = week.get(archetype["id"])
@@ -196,8 +194,7 @@ class Previews:
     whose archetype is untracked, has left the metagame or has no tile gets two cards of its own
     deck instead (see `deck_key_cards`), when that deck's contents are known.
 
-    The colours are the first of: the pips MTGGoldfish showed beside the deck on the event page (stored on the
-    result); the colours its own stored decklist is built in (see `colors.deck_colors`); its archetype's
+    The colours are the first of: the colours stored on the result (none for events from mtgo.com and MTGTop8); the colours its own stored decklist is built in (see `colors.deck_colors`); its archetype's
     tile colours. See `colors`.
     """
 
@@ -388,14 +385,14 @@ def _places(results: List[dict], since: datetime, now: datetime) -> List[int]:
     """The placings among an archetype's results in the window, leaving out league records and dates yet to come."""
     places = []
     for result in results:
-        match = _PLACE.match(result["finish"])
-        if match and since <= _parse(result["date"]) and _parse(result["date"]).date() <= now.date():
-            places.append(int(match.group(1)))
+        found = place(result["finish"])
+        if found is not None and since <= _parse(result["date"]) and _parse(result["date"]).date() <= now.date():
+            places.append(found)
     return places
 
 
 def _recent_events(events: List[dict], now: datetime, previews: Previews) -> List[dict]:
-    # MTGGoldfish lists at least one result dated months ahead (an event still to be played).
+    # A result can be dated ahead (an event still to be played).
     past = [event for event in events if _parse(event["date"]).date() <= now.date()]
     past.sort(key=lambda event: (event["date"], int(event["event_id"]) if event["event_id"].isdigit() else 0), reverse=True)
     recent = []
@@ -443,12 +440,12 @@ def _top(results: List[dict], previews: Previews) -> List[dict]:
 
 
 def _place(result: dict) -> float:
-    match = _PLACE.match(result["finish"])
-    return int(match.group(1)) if match else float("inf")
+    found = place(result["finish"])
+    return float("inf") if found is None else found
 
 
 def name_without_date(name: str, date: str) -> str:
-    """MTGGoldfish puts the event's date in its name ("Modern League 2026-09-29 (1)"); the entry has it on its own."""
+    """An event's name can carry its date ("Modern League 2026-09-29 (1)"); the entry has it on its own."""
     return re.sub(r"\s{2,}", " ", name.replace(date, " ")).strip() or name
 
 

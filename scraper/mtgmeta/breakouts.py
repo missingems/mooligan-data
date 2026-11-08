@@ -7,11 +7,11 @@ docs/data-format.md.
 """
 from __future__ import annotations
 
-import re
 from datetime import datetime
 from typing import Dict, List, Optional
 
 from .explore import Previews, name_without_date, prestige
+from .parsing import place
 from .popular import _copies, _deck_ids, _iso, card_kind, deck_dates, is_basic
 
 SCHEMA = 1
@@ -27,8 +27,6 @@ GROWTH = 3
 # With fewer earlier decks than this, everything would look new, so nothing breaks out.
 MIN_BASELINE_DECKS = 20
 LIMIT = 25
-
-_PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
 
 
 def build_breakouts(document: dict, deck_cards: Dict[str, dict], catalog: Dict[str, dict], now: datetime) -> dict:
@@ -140,8 +138,7 @@ def _results(document: dict) -> Dict[str, dict]:
 
 
 def _place(result: dict) -> Optional[int]:
-    match = _PLACE.match(result.get("finish") or "")
-    return int(match.group(1)) if match else None
+    return place(result.get("finish") or "")
 
 
 def _row(card, known, decks, earlier, share, previous_share, played, results, dates, previews, copies) -> dict:

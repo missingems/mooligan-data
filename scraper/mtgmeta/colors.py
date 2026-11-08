@@ -1,7 +1,7 @@
 """The colours of a deck, from the mana costs of the cards in it.
 
-Two readings of the same costs: `deck_colors` is the set of colours a deck is built in (what an
-MTGGoldfish tile shows as pips), and `color_weights` says how much of each colour its mana symbols
+Two readings of the same costs: `deck_colors` is the set of colours a deck is built in (what a
+metagame tile shows as pips), and `color_weights` says how much of each colour its mana symbols
 ask for. Both read Scryfall's `mana_cost` as kept by `scryfall.card_catalog`.
 """
 from __future__ import annotations

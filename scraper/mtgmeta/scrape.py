@@ -13,7 +13,7 @@ from . import mtgo, mtgtop8
 from .http import Fetched, is_refusal
 from .models import Archetype, ArchetypeHistory, ArchetypeResult, Deck, Event, EventResult, Meta, RunReport
 from .naming import name_event
-from .parsing import ParseError, event_kind, parse_decklist
+from .parsing import ParseError, event_kind, parse_decklist, place
 from .store import Store
 
 log = logging.getLogger(__name__)
@@ -25,8 +25,6 @@ DECK_ATTEMPTS = 2
 LEAGUE_PLACE = 9
 
 _SIZE = re.compile(r"\b(16|32|64)\b")
-_PLACE = re.compile(r"^(\d+)(?:st|nd|rd|th) Place$")
-_TOP = re.compile(r"^Top (\d+)$")
 
 
 class Client(Protocol):
@@ -413,12 +411,8 @@ def _name(group: List[Tuple[Event, EventResult]]) -> str:
 
 
 def _place(finish: str) -> int:
-    ordinal, top = _PLACE.match(finish), _TOP.match(finish)
-    if ordinal:
-        return int(ordinal.group(1))
-    if top:
-        return int(top.group(1)) // 2 + 1
-    return LEAGUE_PLACE
+    found = place(finish)
+    return LEAGUE_PLACE if found is None else found
 
 
 def _featured(group: List[Tuple[Event, EventResult]], published: set) -> Optional[Tuple[Event, EventResult]]:

@@ -416,11 +416,11 @@ def load_catalog(report: RunReport) -> dict:
 
 
 def exit_code(report: RunReport, blocked_runs: int) -> int:
-    """1 when the run logged errors, or when MTGGoldfish blocked the deck downloads this run and the run before."""
+    """1 when the run logged errors, or when mtgo.com or MTGTop8 refused requests this run and the run before."""
     if report.errors:
         return 1
     if report.deck_block is not None and blocked_runs >= 2:
-        report.errors.append(f"deck downloads blocked {blocked_runs} runs in a row: {report.deck_block}")
+        report.errors.append(f"requests refused {blocked_runs} runs in a row: {report.deck_block}")
         return 1
     return 0
 
@@ -537,7 +537,7 @@ def main() -> int:
         # Last, after every file it lists.
         written += publish_manifest(args.directory, report)
 
-    # Blocked deck downloads are a warning; two runs in a row fail the run (see exit_code).
+    # Refused requests are a warning; two runs in a row fail the run (see exit_code).
     code = exit_code(report, blocked_runs)
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d decks left for the next run, %d errors",

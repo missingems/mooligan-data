@@ -1,8 +1,8 @@
 """Reads decklists the pipeline published earlier, to fill in what a run doesn't download.
 
 Card pages are counted from every deck in the window, but decks are downloaded
-from MTGGoldfish once and never again. Their contents come back from our own
-bucket instead, which is free, fast and needs no browser.
+from mtgo.com and MTGTop8 once and never again. Their contents come back from our own
+bucket instead, which is free and fast.
 """
 from __future__ import annotations
 

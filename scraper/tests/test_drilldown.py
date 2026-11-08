@@ -83,7 +83,7 @@ def source_event(event_id, date, results, name=None, kind="mtgo_challenge"):
         "event_id": event_id,
         "event_name": name or f"Modern Challenge 32 {date}",
         "date": f"{date}T00:00:00Z",
-        "url": f"https://www.mtggoldfish.com/tournament/{event_id}",
+        "url": f"https://www.mtgo.com/decklist/modern-challenge-32-2026-09-29{event_id}",
         "kind": kind,
         "source": "mtgo.com",
         "results": results,
@@ -103,7 +103,7 @@ def test_an_event_page_lists_its_results_in_order_with_two_key_cards_each():
     assert (page["id"], page["name"], page["date"], page["kind"], page["prestige"], page["source"], page["format"]) == (
         "66947", "Modern Challenge 32", "2026-09-29", "mtgo_challenge", 2, "mtgo.com", "modern",
     )
-    assert page["url"] == "https://www.mtggoldfish.com/tournament/66947"
+    assert page["url"] == "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-2966947"
     first, second, third = page["results"]
     assert list(first) == ["finish", "player", "archetype", "archetype_id", "deck_id", "published", "colors", "key_cards"]
     assert (first["finish"], first["archetype_id"], first["deck_id"], first["published"]) == ("1st Place", "a", "10", True)
@@ -390,7 +390,7 @@ def test_an_archetypes_key_cards_are_the_first_of_its_hand_and_its_tile_s_withou
     for window in ("30d", "7d"):
         tiles = {t["id"]: t for t in published["meta"][window]["archetypes"]}
         assert tiles["a"]["key_cards"] == first
-        assert tiles["b"]["key_cards"] == tile("b", 0)["key_cards"]  # MTGGoldfish's, as scraped
+        assert tiles["b"]["key_cards"] == tile("b", 0)["key_cards"]  # as scraped
     assert pages["b"]["key_cards"] == [{"name": f"b card {n}", "oracle_id": f"b-o{n}"} for n in range(3)]
     assert document["meta"]["30d"]["archetypes"][0]["key_cards"] == tile("a", 0)["key_cards"]  # the snapshot itself is left alone
     assert build_archetype_pages(document, NOW, set(), decks, TALLY)["a"]["key_cards"] == first  # the hand even when the tile still has its own

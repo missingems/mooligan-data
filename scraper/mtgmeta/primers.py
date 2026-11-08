@@ -80,6 +80,7 @@ from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 from .explore import WINDOW_DAYS, _places
+from .parsing import place
 
 log = logging.getLogger(__name__)
 
@@ -619,7 +620,7 @@ def facts(item: Item, read: Callable[[str], Optional[dict]], lookup: Lookup, pre
                 named.append(card["name"])
     results = [
         deck for deck in archetype.get("decks") or []
-        if (deck.get("event") or {}).get("prestige", 0) >= 2 and re.match(r"^[1-8](st|nd|rd|th) Place$", deck.get("finish") or "")
+        if (deck.get("event") or {}).get("prestige", 0) >= 2 and (place(deck.get("finish") or "") or 99) <= 8
     ][:RESULTS]
     if results:
         lines += ["", "## Recent top-8 finishes"]

@@ -70,7 +70,7 @@ def test_a_deck_of_only_hybrid_symbols_takes_the_colours_of_those_symbols():
 
 
 def test_a_two_halves_card_has_the_colours_of_both_halves():
-    assert deck_colors([[4, "Wear/Tear"]], CATALOG) == ["W", "R"]  # MTGGoldfish writes the split with a single slash
+    assert deck_colors([[4, "Wear/Tear"]], CATALOG) == ["W", "R"]  # MTGO and MTGTop8 write the split with a single slash
     assert deck_colors([[4, "Bonecrusher Giant"]], CATALOG) == ["R"]
     assert deck_colors([[1, "Delver of Secrets"]], CATALOG) == ["U"]
 

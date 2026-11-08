@@ -22,7 +22,7 @@ from .explore import FORMATS as EXPLORE_FORMATS, build_explore
 from .parsing import event_kind
 from .breakouts import build_breakouts
 from .popular import build_popular_cards
-from .models import ArchetypeHistory, ArchetypeResult, Deck, DeckCard, Event, EventResult, EventSummary, Meta, to_document
+from .models import ArchetypeHistory, ArchetypeResult, Deck, DeckCard, Event, EventResult, Meta, to_document
 
 SCHEMA = 1
 # A commander edh/top.json ranks at a bracket, but not in its windows, has its page read again after this many days.
@@ -39,10 +39,7 @@ class Store(Protocol):
     def existing_event_ids(self, event_ids: Iterable[str]) -> Set[str]: ...
     def load_archetype_results(self, format: str, archetype_id: str) -> List[ArchetypeResult]: ...
     def save_archetype(self, history: ArchetypeHistory) -> None: ...
-    def ignored_event_ids(self) -> Set[str]: ...
     def mark_empty_events(self, event_ids: Iterable[str]) -> None: ...
-    def events_missing_source(self, format: str) -> List[str]: ...
-    def stored_events(self, format: str) -> List[EventSummary]: ...
     def missing_deck_ids(self) -> Set[str]: ...
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None: ...
     def events_since(self, format: str, cutoff: datetime) -> List[Event]: ...
@@ -161,27 +158,11 @@ class SnapshotStore:
             return []
         return [ArchetypeResult(**{**result, "date": _parse(result["date"])}) for result in archetype["results"]]
 
-    def ignored_event_ids(self) -> Set[str]:
-        """Events the scrape must not read or count again: duplicates, and events with no decklists."""
-        return self._duplicates | self._empty_events
-
     def mark_empty_events(self, event_ids: Iterable[str]) -> None:
         self._empty_events |= set(event_ids)
 
-    def events_missing_source(self, format: str) -> List[str]:
-        """Stored events read before the page's source was kept, newest first, so a run can fill it in."""
-        events = self._snapshot(format)["events"].values()
-        return [e["event_id"] for e in sorted(events, key=lambda e: e["date"], reverse=True) if not e.get("source")]
-
-    def stored_events(self, format: str) -> List[EventSummary]:
-        """Stored events as a listing shows them, with the number of results kept, so a run can compare."""
-        return [
-            EventSummary(e["event_id"], e["event_name"], _parse(e["date"]), len(e["results"]))
-            for e in self._snapshot(format)["events"].values()
-        ]
-
     def missing_deck_ids(self) -> Set[str]:
-        """Decks MTGGoldfish no longer serves; asking again every run would be wasted."""
+        """Decks whose list could not be read; asking again every run would be wasted."""
         return set(self._missing)
 
     def mark_missing_decks(self, deck_ids: Iterable[str]) -> None:
@@ -474,7 +455,7 @@ class SnapshotStore:
     def _write_drilldown(self, documents: Dict[str, dict], catalog: Dict[str, dict]) -> None:
         """Writes archetypes/{id}.json and events/{id}.json for the formats this run built.
 
-        MTGGoldfish's archetype and tournament ids are global (each belongs to one format), so
+        Archetype ids carry their format and event ids their source, so
         the files sit side by side, and a format this run skipped keeps the files already
         published. Nothing is deleted: a page for an event or archetype that has aged out stays where it
         is, unlinked, until the bucket is cleaned.
@@ -620,7 +601,7 @@ def _unresolved_names(deck: dict) -> List[str]:
 
 
 def _duplicate_event_ids(events: Iterable[Dict[str, Any]]) -> Set[str]:
-    """Events MTGGoldfish imported twice: same players at the same finishes, under a second id.
+    """Events imported twice: same players at the same finishes, under a second id.
 
     The copy's name usually ends in " (1)". MTGO also runs several Challenges a
     day under one name, so only identical standings count as a duplicate, and

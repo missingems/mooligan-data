@@ -42,7 +42,7 @@ def test_one_blocked_run_is_a_warning_the_run_passes():
 def test_two_blocked_runs_in_a_row_fail_the_run():
     report = RunReport(deck_block="HTTP 403, cf-mitigated=challenge")
     assert entry.exit_code(report, 2) == 1
-    assert report.errors == ["deck downloads blocked 2 runs in a row: HTTP 403, cf-mitigated=challenge"]
+    assert report.errors == ["requests refused 2 runs in a row: HTTP 403, cf-mitigated=challenge"]
 
 
 def test_a_run_that_was_not_blocked_passes_whatever_the_count():
