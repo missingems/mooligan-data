@@ -108,6 +108,7 @@ def test_a_429_stops_that_host_and_records_it_while_another_host_still_fetches()
     assert client.stopped("www.mtgo.com")
     assert "429" in client.refusals["www.mtgo.com"]
     assert "120" in client.refusals["www.mtgo.com"]
+    assert client.refused == client.refusals
     assert client.get(A) is None
     assert client.get(A + "/other") is None
     assert len(opener.calls) == 1
@@ -151,10 +152,12 @@ def test_a_network_error_stops_the_host_and_returns_none():
     assert client.get(B).status == 200
 
 
-def test_a_timeout_stops_the_host():
+def test_a_timeout_stops_the_host_for_this_job_only():
     client, opener, clock = make_client({A: TimeoutError("timed out")})
     assert client.get(A) is None
     assert client.stopped("www.mtgo.com")
+    # A slow answer is not a refusal, so the format jobs after this one still ask the site.
+    assert client.refused == {}
 
 
 def test_a_spent_budget_returns_none_without_a_request():

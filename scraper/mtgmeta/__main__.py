@@ -484,7 +484,7 @@ def main() -> int:
         for host, detail in recent_refusals(refusals_path, datetime.now(timezone.utc)).items():
             client.stop(host, f"refused an earlier job ({detail})")
         scrape(client, store, config, report=report, catalog=catalog)
-        blocked_runs = note_deck_block(refusals_path, client.refusals, datetime.now(timezone.utc))
+        blocked_runs = note_deck_block(refusals_path, client.refused, datetime.now(timezone.utc))
     else:
         # Nothing was requested, so the count of blocked days stays as the format jobs left it.
         logging.info("SCRAPE=0: mtgo.com and MTGTop8 are not read; the files are built from the stored snapshots")

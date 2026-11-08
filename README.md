@@ -63,7 +63,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the format's job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
-Refused requests are different: they are a warning, the run passes and publishes what it has read, and the rest waits for the next run. A site that refused one format's job is not asked by the format jobs after it for 12 hours, so a day's refusal is one request. The run fails when requests are refused two days in a row. The count and the sites that refused are in `state/deck-downloads.json`, and the last job, which makes no requests, leaves it as it is.
+Refused requests are different: they are a warning, the run passes and publishes what it has read, and the rest waits for the next run. A site that refused one format's job (a 403, 429 or 5xx) is not asked by the format jobs after it for 12 hours, so a day's refusal is one request. A network error such as a timeout stops that site for its own job only, and isn't counted. The run fails when requests are refused two days in a row. The count and the sites that refused are in `state/deck-downloads.json`, and the last job, which makes no requests, leaves it as it is.
 
 A window with no events in it keeps the one an earlier run published, with its own `last_updated`, and every format still publishes.
 

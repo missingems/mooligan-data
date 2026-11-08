@@ -132,6 +132,17 @@ def test_a_refusal_the_day_after_a_refusal_fails_the_job(monkeypatch, tmp_path):
     assert json.loads(blocked.read_text())["blocked_runs"] == 2
 
 
+def test_a_timeout_is_not_carried_to_the_jobs_after(monkeypatch, tmp_path):
+    def timed_out(client, store, config, report, catalog):
+        client.stop("www.mtgo.com", "network error: The read operation timed out", refused=False)
+        report.deck_block = "www.mtgo.com: network error: The read operation timed out"
+
+    monkeypatch.setattr(entry, "scrape", timed_out)
+    assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
+    blocked = json.loads((tmp_path / "state" / "deck-downloads.json").read_text())
+    assert blocked["blocked_runs"] == 0 and blocked["hosts"] == {}
+
+
 def test_a_site_that_refused_an_earlier_job_today_is_not_asked_and_the_count_stays(monkeypatch, tmp_path):
     now = datetime.now(timezone.utc).isoformat()
     blocked = tmp_path / "state" / "deck-downloads.json"

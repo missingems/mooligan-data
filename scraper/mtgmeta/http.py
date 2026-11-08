@@ -98,6 +98,9 @@ class PoliteClient:
         self.started = clock()
         self.requests = 0
         self.refusals: Dict[str, str] = {}
+        # The stopped hosts that answered with a refusal, as against a timeout or a dropped connection: only these are
+        # kept from asking the format jobs after this one (see note_deck_block).
+        self.refused: Dict[str, str] = {}
         self._last: Optional[float] = None
 
     def elapsed(self) -> float:
@@ -118,9 +121,11 @@ class PoliteClient:
         if seconds > 0:
             self._sleep(seconds)
 
-    def stop(self, host: str, detail: str) -> None:
+    def stop(self, host: str, detail: str, refused: bool = True) -> None:
         if host not in self.refusals:
             self.refusals[host] = detail
+            if refused:
+                self.refused[host] = detail
             log.warning("%s stopped for this run: %s", host, detail)
 
     def get(self, url: str) -> Optional[Fetched]:
@@ -138,7 +143,7 @@ class PoliteClient:
                 fetched.body = gzip.decompress(body)
         except (OSError, HTTPException, EOFError, zlib.error) as error:
             self._last = self._clock()
-            self.stop(host, f"network error: {error}")
+            self.stop(host, f"network error: {error}", refused=False)
             return None
         self._last = self._clock()
         if is_refusal(fetched.status):
