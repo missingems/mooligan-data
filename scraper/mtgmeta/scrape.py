@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 from . import mtgo, mtgtop8
 from .http import Fetched, is_refusal
 from .models import Archetype, ArchetypeHistory, ArchetypeResult, Deck, Event, EventResult, Meta, RunReport
-from .naming import name_event
+from .naming import name_event, name_from_top8
 from .parsing import ParseError, event_kind, parse_decklist, place
 from .store import Store
 
@@ -120,7 +120,7 @@ class _Run:
         refs = self.new_refs(format)
         listings = self.top8_listings(format, refs)
         self.listings[format] = listings
-        reference: Optional[List[Deck]] = None
+        read: List[Tuple[Event, List[Deck], Optional[mtgtop8.Top8Event]]] = []
         for ref in refs:
             if not self.online(MTGO_HOST):
                 break
@@ -128,9 +128,18 @@ class _Run:
             if not candidates and self.recent(ref):
                 log.info("%s waits for MTGTop8: it has no copy yet", ref.slug)
                 continue
-            if reference is None:
-                reference = self.store.reference_decks(format, self.cutoff)
-            self.read_mtgo_event(format, ref, candidates, reference)
+            found = self.read_mtgo_event(format, ref, candidates)
+            if found:
+                read.append(found)
+        if not read:
+            return
+        reference = self.store.reference_decks(format, self.cutoff)
+        for event, decks, top8 in read:
+            if top8 is not None:
+                self.report.named_by_top8 += name_from_top8(event, decks, top8, format)
+                reference.extend(deck for deck in decks if deck.archetype_id)
+        for event, decks, _ in read:
+            self.save_mtgo_event(event, decks, reference)
 
     def new_refs(self, format: str) -> List[mtgo.EventRef]:
         refs = [
@@ -176,31 +185,40 @@ class _Run:
                 found.append(listing)
         return sorted(found, key=lambda listing: (abs((listing.date - day).days), -int(listing.event_id)))
 
-    def read_mtgo_event(self, format: str, ref: mtgo.EventRef, candidates: List[mtgtop8.Listing], reference: List[Deck]) -> None:
+    def read_mtgo_event(
+        self, format: str, ref: mtgo.EventRef, candidates: List[mtgtop8.Listing]
+    ) -> Optional[Tuple[Event, List[Deck], Optional[mtgtop8.Top8Event]]]:
+        """The event and its decks, with MTGTop8's copy when one matches; None when it is not ready or waits for names."""
         fetched = self.get(f"{mtgo.BASE_URL}/decklist/{ref.slug}")
         if fetched is None or fetched.status != 200:
-            return
+            return None
         try:
             event, decks = mtgo.parse_event(fetched.text(), ref)
         except ParseError as error:
             self.warn(f"mtgo.com event {ref.slug}: {error}")
-            return
+            return None
         if not decks:
             log.info("%s has no decklists yet", ref.slug)
-            return
+            return None
         top8 = self.matching_copy(format, ref, event, candidates)
         if top8 is None and self.recent(ref):
             log.info("%s waits for MTGTop8: no copy matches yet", ref.slug)
-            return
-        stats = name_event(format, event, decks, top8, reference, self.catalog)
-        reference.extend(deck for deck in decks if deck.archetype_id)
+            return None
+        return event, decks, top8
+
+    def save_mtgo_event(self, event: Event, decks: List[Deck], reference: List[Deck]) -> None:
+        """Names what MTGTop8 left, by the nearest named list of the window and then by colours, and saves the event."""
+        top8_named = sum(1 for deck in decks if deck.archetype_id)
+        stats = name_event(event.format, event, decks, None, reference, self.catalog)
+        stats.top8 = top8_named
+        known = {deck.deck_id for deck in reference}
+        reference.extend(deck for deck in decks if deck.archetype_id and deck.deck_id not in known)
         stored = self.store.existing_deck_ids(deck.deck_id for deck in decks)
         fresh = [deck for deck in decks if deck.deck_id not in stored]
         if self.save(f"event {event.event_id}", lambda: (self.store.save_decks(fresh), self.store.save_event(event))):
             self.report.events.append(event.event_id)
             self.report.decks_written += len(fresh)
             self.report.decks_skipped += len(decks) - len(fresh)
-            self.report.named_by_top8 += stats.top8
             self.report.named_by_lists += stats.lists
             self.report.named_by_colors += stats.colors
             log.info(
