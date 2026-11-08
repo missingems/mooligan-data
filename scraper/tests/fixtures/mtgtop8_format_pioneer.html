@@ -1,0 +1,784 @@
+
+	<!DOCTYPE HTML>
+	<html lang="en">
+	
+<head>
+<title>Pioneer events and metagame @ mtgtop8.com</title>
+<link rel="icon" type="image/png" href="https://www.mtgtop8.com/graph/favicon.png">
+<link href="/styles.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="https://cache.consentframework.com/js/pa/39346/c/PMQm4/stub"></script>
+<script type="text/javascript" src="https://choices.consentframework.com/js/pa/39346/c/PMQm4/cmp" async></script>
+
+	<script async="async" src="//cdn-a.yieldlove.com/v2/yieldlove.js?mtgtop8.com"></script>
+	<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+	<script>
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	googletag.cmd.push(function() {
+	googletag.pubads().disableInitialLoad();
+	googletag.enableServices();
+	});
+	</script>
+<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q2DH80JYF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-0Q2DH80JYF');
+	</script>
+
+<script>
+
+var x
+var y
+
+function MAJCoords(evt){
+	x=evt.clientX
+	y=evt.clientY
+	return false;	
+}
+
+
+function AffOther(pref){
+	odel=document.getElementById("other_div");
+	var r = odel.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	if(document.getElementById("other_tooltip").style.visibility=="visible"){
+		document.getElementById("other_tooltip").style.visibility="hidden";
+	}
+	else {
+		document.getElementById("other_tooltip").style.width=(r.right-r.left+80)+"px";
+		document.getElementById("other_tooltip").style.left=(r.left-40)+"px";
+		document.getElementById("other_tooltip").style.top=(theTop+r.top+30)+"px";
+		document.getElementById("other_tooltip").style.visibility="visible";
+	}
+	
+}
+
+function EffOther(){document.getElementById('other_tooltip').style.visibility="hidden";}
+
+function AffMTGA(pref){
+	odel=document.getElementById("mtga_div");
+	var r = odel.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	if(document.getElementById("mtga_tooltip").style.visibility=="visible"){
+		document.getElementById("mtga_tooltip").style.visibility="hidden";
+	}
+	else {
+		document.getElementById("mtga_tooltip").style.width=(r.right-r.left+80)+"px";
+		document.getElementById("mtga_tooltip").style.left=(r.left-40)+"px";
+		document.getElementById("mtga_tooltip").style.top=(theTop+r.top+30)+"px";
+		document.getElementById("mtga_tooltip").style.visibility="visible";
+	}
+	
+}
+
+function EffMTGA(){document.getElementById("mtga_tooltip").style.visibility="hidden";}
+
+</script>
+</head>
+	<body >
+	<div align=center class=page>
+	<div style="max-width:1280px;" valign=top>
+<div id=other_tooltip style="visibility:hidden;width:200px;z-index:10;position: absolute;box-shadow: 0px 10px 10px #666666;padding:2px;background:white;border: 1px white solid;">
+
+	<div id=other_tooltip_content style="padding:3px;" align=center>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=PEA>PEASANT</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=BL>BLOCK</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=EX>EXTENDED</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=HIGH>HIGHLANDER</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=CHL>CANADIAN HIGHLANDER</a></div></div>
+	<div onclick="EffOther();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div id=mtga_tooltip style="visibility:hidden;width:200px;z-index:10;position: absolute;box-shadow: 0px 10px 10px #666666;padding:2px;background:white;border: 1px white solid;">
+
+	<div id=mtga_tooltip_content style="padding:3px;" align=center>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=EXP>EXPLORER</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=HI>HISTORIC</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=ALCH>ALCHEMY</a></div></div>
+	<div onclick="EffMTGA();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div style="display:flex;justify-content:space-evenly;align-items:center;flex-wrap:wrap;">
+  <div>
+    <div><a href=/index><img style="width:250px;" src=/graph/title.png></a></div>
+    <div class=G16 style="margin-top:5px;">netdecking with the stars</div>
+    
+  </div> 	
+  <div>
+    <div style="width:728px;height:90px;overflow:hidden;">
+<!-- Yieldlove AdTag - mtgtop8.com_d_728x90_1 -->
+<div id='div-gpt-ad-1407836193899-0'>
+  <script type='text/javascript'>
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/53015287,22663084435/mtgtop8.com_d_728x90_1', [728, 90], 'div-gpt-ad-1407836193899-0').addService(googletag.pubads());
+      googletag.display('div-gpt-ad-1407836193899-0');
+    });
+  </script>
+</div></div></td>
+  </div>
+</div>
+
+<div style="position:relative;">
+<div style="margin:5px 0px 5px 0px;display:flex;justify-content:space-evenly;align-items:center;">
+<div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=ST>STANDARD</a></div><div style="position:relative;width:160px;"><a class=menu_item_chosen href=/format?f=PI>PIONEER<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=MO>MODERN</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=LE>LEGACY</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=VI>VINTAGE</a></div><div id=mtga_div onclick="AffMTGA('');" style="cursor:pointer;width:160px;"><a class=menu_item>MTG <img src=/graph/online/mtga.png>rena</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=search>SEARCH</a></div>
+</div>
+<div style="margin:0px 0px 5px 0px;display:flex;justify-content:space-evenly;align-items:center;">
+<div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=PAU>PAUPER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=cEDH>cEDH</a></div><div  style="position:relative;width:160px;"><a class=menu_item_14 href=/format?f=EDH>DUEL COMMANDER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=PREM>PREMODERN</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=format_limited>LIMITED</a><img style="display:inline-block;height:18px;vertical-align:-12%;" src=/graph/symbols/fdn-c.png></div><div id=other_div onclick="AffOther('');" style="cursor:pointer;width:160px;"><a class=menu_item>OTHER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=submit>SUBMIT</a></div>
+</div>
+<div style="position:absolute;top:8px;right:180px;display:block;"><img src=/graph/star.png></div><div style="position:absolute;top:37px;right:180px;display:block;"><img src=/graph/star.png></div>
+</div>
+<table border=0 width=100%>
+  <tr>
+    <td valign=top width=40%>
+	<div class=w_title align=center>METAGAME BREAKDOWN<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></div>
+	<div align=center>
+		<div style="position:relative;width:90%;margin:5px;">
+			<div style="background:#00528b;width:100%;padding:2px;"><div style="background:white;width:100%;" align=left onclick="ToggleMetaList();"><div style="padding:3px;" class=S14>Last 2 Weeks</div></div></div>
+			<div id=metas_list style="width:100%;max-height:0px;overflow:scroll;position:absolute;left:2px;transition:max-height 0.2s;">
+			  <div style="width:98%;border-width:0px 1px 1px 1px;border-color:#00528b;border-style:solid;" align=left><a href="?f=PI&meta=194&a="><div style="padding:3px;" class="S14 chosen_tr">Last 2 Weeks</div></a><a href="?f=PI&meta=193&a="><div style="padding:3px;" class="S14 hover_tr">Last 2 Months</div></a><a href="?f=PI&meta=305&a="><div style="padding:3px;" class="S14 hover_tr">Last 5 Days</div></a><a href="?f=PI&meta=279&a="><div style="padding:3px;" class="S14 hover_tr">Last Major Events (2 Months)</div></a><a href="?f=PI&meta=278&a="><div style="padding:3px;" class="S14 hover_tr">Live Tournaments Last 2 Months</div></a><a href="?f=PI&meta=340&a="><div style="padding:3px;" class="S14 hover_tr">All 2026 Decks</div></a><a href="?f=PI&meta=314&a="><div style="padding:3px;" class="S14 hover_tr">All 2025 Decks</div></a><a href="?f=PI&meta=277&a="><div style="padding:3px;" class="S14 hover_tr">All 2024 Decks</div></a><a href="?f=PI&meta=247&a="><div style="padding:3px;" class="S14 hover_tr">All 2023 Decks</div></a><a href="?f=PI&meta=235&a="><div style="padding:3px;" class="S14 hover_tr">All 2022 Decks</div></a><a href="?f=PI&meta=222&a="><div style="padding:3px;" class="S14 hover_tr">All 2021 Decks</div></a><a href="?f=PI&meta=202&a="><div style="padding:3px;" class="S14 hover_tr">All 2020 Decks</div></a><a href="?f=PI&meta=201&a="><div style="padding:3px;" class="S14 hover_tr">All 2019 Decks</div></a><a href="?f=PI&meta=260&a="><div style="padding:3px;" class="S14 hover_tr">All Major Events</div></a><a href="?f=PI&meta=191&a="><div style="padding:3px;" class="S14 hover_tr">All Pioneer Decks</div></a></div>
+			</div>
+			<div style="position:absolute;z-index:11;top:5px;right:10px;" onclick="ToggleMetaList();"><img id=expand_img src=/graph/expand.png style="height:15px;"></div>
+		</div></div>
+	<div class=S14 align=center>160 decks</div>
+	
+	  
+		  <div class=meta_arch align=center style="margin:10px;">AGGRO 53%</div>
+		  
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/875.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=875&meta=194&f=PI>UR Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>14 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/862.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=862&meta=194&f=PI>Red Deck Wins</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>8 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/981.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=981&meta=194&f=PI>Selesnya Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/up_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/864.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=864&meta=194&f=PI>Devotion to Green</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>5 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/881.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=881&meta=194&f=PI>Azorius Tempo / Spirit Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>4 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/up_light.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/865.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=865&meta=194&f=PI>Arclight Phoenix</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>4 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/up_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/961.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=961&meta=194&f=PI>Jund</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/880.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=880&meta=194&f=PI>Weenie White</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/857.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=857&meta=194&f=PI>Mono Black Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/888.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=888&meta=194&f=PI>Boros Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>2 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/1549.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=1549&meta=194&f=PI>Dimir Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>1 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/858.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=858&meta=194&f=PI>Golgari Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/920.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=920&meta=194&f=PI>Rakdos Aggro</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_light.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		  <div class=meta_arch align=center style="margin:10px;">CONTROL 30%</div>
+		  
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/2898.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=2898&meta=194&f=PI>The Rock (Golgari Control)</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>14 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/859.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=859&meta=194&f=PI>Izzet Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/3172.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=3172&meta=194&f=PI>Jeskai Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>4 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/up_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/877.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=877&meta=194&f=PI>UW Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/962.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=962&meta=194&f=PI>Dimir Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_strong.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/876.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=876&meta=194&f=PI>Green Ramp</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/919.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=919&meta=194&f=PI>Temur Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/906.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=906&meta=194&f=PI>Bant Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/2869.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=2869&meta=194&f=PI>Orzhov Control</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		  <div class=meta_arch align=center style="margin:10px;">COMBO 17%</div>
+		  
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/1365.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=1365&meta=194&f=PI>Creativity</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>9 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/up_light.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/1317.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=1317&meta=194&f=PI>Greasefang Parhelion</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14><img src=/graph/down_light.png></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/884.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=884&meta=194&f=PI>Lotus Field</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>3 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/861.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=861&meta=194&f=PI>Jeskai Ascendancy</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/1555.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=1555&meta=194&f=PI>Retraction Helix</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div style="display:inline-block;width:48%;" class=hover_tr>
+				  <div style="display:flex;">
+				    <div style="width:80px;height:40px;background:black;"><img src=/metas_thumbs/872.jpg></div>
+				    <div align=center style="width:100%;">
+				      <div class=S14><a href=archetype?a=872&meta=194&f=PI>Other - Combo</a></div>
+				      <div>
+				        
+				        <div style="display:inline-block;width:48%;" class=S14>0.6 %</div>
+				        <div style="display:inline-block;width:48%;" class=S14></div>
+				      </div>
+				    </div>
+				  </div>
+				</div></td>
+    <td valign=top width=60%>
+     
+		<div class=w_title align=center>LAST MAJOR EVENTS<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></div>
+		<table border=0 class=Stable width=98% align=center>
+		  
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93138&f=PI>MTGO Showcase Challenge</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>01/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93045&f=PI>MTGO RC Super Qualifier</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>30/10/26</td>
+		</tr>
+		</table>
+      
+		<div class=w_title align=center>LAST 20 EVENTS<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></div>
+		<table border=0 class=Stable width=98% align=center>
+		  
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93312&f=PI>Mega Event - November</a> @ <a class=und href=event?e=93312&f=PI>Fortalúdica (Fortaleza, Brazil)</a> <span class=new>NEW</span></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>05/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93314&f=PI>MTGO Challenge 32</a> <span class=new>NEW</span></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>05/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93252&f=PI>MTGO League</a> <span class=new>NEW</span></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>05/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93311&f=PI>10º Etapa - Liga Praia 2026.2</a> @ <a class=und href=event?e=93311&f=PI>Caverna Do Dragão (Recife, Brazil)</a> <span class=new>NEW</span></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>04/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93155&f=PI>MTGO Challenge 32</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>03/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93154&f=PI>Weekly Event</a> @ <a class=und href=event?e=93154&f=PI>Redraft Store (Katowice, Poland)</a></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>02/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93313&f=PI>Star Trek Play Booster Box Giveaway</a> @ <a class=und href=event?e=93313&f=PI>TC (Osaka, Japan)</a> <span class=new>NEW</span></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>01/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93144&f=PI>MTGO Challenge 16</a></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>01/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93138&f=PI>MTGO Showcase Challenge</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>01/11/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93050&f=PI>The Last Sun 2026 Qualifier</a> @ <a class=und href=event?e=93050&f=PI>Akihabara (Japan)</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>31/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93045&f=PI>MTGO RC Super Qualifier</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>30/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=93015&f=PI>MTGO Challenge 32</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>29/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=92979&f=PI>MTGO League</a></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>29/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=93162&f=PI>9º Etapa - Liga Praia 2026.2</a> @ <a class=und href=event?e=93162&f=PI>Caverna Do Dragão (Recife, Brazil)</a></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>28/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/paper.png height=17 title="Paper"></td>
+		  <td width=70% class=S14><a href=event?e=92957&f=PI>Weekly Event</a> @ <a class=und href=event?e=92957&f=PI>Redraft Store (Katowice, Poland)</a></td>
+		  <td width=13% align=center><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>26/10/26</td>
+		</tr>
+		<tr class=hover_tr>
+		  <td width=5% align=center><img src=/graph/online/mtgo.png height=14 title="MTG Online"></td>
+		  <td width=70% class=S14><a href=event?e=92893&f=PI>MTGO Challenge 32</a></td>
+		  <td width=13% align=center><img src=/graph/star.png><img src=/graph/star.png></td>
+		  <td align=right width=12% class=S12>26/10/26</td>
+		</tr>
+		</table>
+      
+      
+		<div class=w_title align=center>MOST PLAYED CARDS<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></div>
+		 
+		 <div align=center style="margin: 5px 0px 5px 0px;">
+		   <a target=_blank href=https://www.mtgpics.com/card?ref=otj270><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">37 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/otj/270.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=trk298><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">36 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/trk/298.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=neo266><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">28 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/neo/266.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=14m228><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">27 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/14m/228.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=znr264><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">27 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/znr/264.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=aer057><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">25 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/aer/057.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=ths098><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">24 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/ths/098.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=dft260><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">22 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/dft/260.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=tla167><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">21 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/tla/167.jpg></td></tr>
+				</table>
+				</div></a><a target=_blank href=https://www.mtgpics.com/card?ref=neo278><div style="display:inline-block;vertical-align:bottom;padding:2px;position:relative;">
+				  <div class=most_perc align=center style="position:absolute;bottom:30px;left:60px;">21 %</div>
+				  <table width=147 height=205 border=0 cellspacing=0 cellpadding=0 style="border-radius:6px;background:black;border:1px black solid;">
+				  <tr><td align=center valign=middle><img style="display:block;width:134px;height:191px;" src=/pics/neo/278.jpg></td></tr>
+				</table>
+				</div></a>
+		   <div>
+			 <a href=topcards?f=PI&meta=194>Would you like to know more ?</a> (now with awesome filtering options.)
+		  </div>
+		</div>
+      
+	<div class=w_title align=center>RELATED LINKS<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div></div>
+	<div style="margin-top:5px;display:flex;justify-content:space-around;"><div class=S14><a target=_blank href=https://magic.wizards.com/en/game-info/gameplay/formats/pioneer>Pioneer Construction Rules</a></div><div align=center><div class=S14><a href=event?e=92560&f=PI>The Decks to Beat - October '26</a></div><div><select name=archive_d2b onchange="window.open(this.value,'_top')"><option value="">Decks to beat archives</option><option value="event?e=91370&f=PI">The Decks to Beat - September '26</option><option value="event?e=90087&f=PI">The Decks to Beat - August '26</option><option value="event?e=88979&f=PI">The Decks to Beat - July '26</option><option value="event?e=87175&f=PI">The Decks to Beat - June '26</option><option value="event?e=85754&f=PI">The Decks to Beat - May '26</option><option value="event?e=84467&f=PI">The Rogue Corner - May '26</option><option value="event?e=83901&f=PI">The Decks to Beat - April '26</option><option value="event?e=82353&f=PI">The Decks to Beat - March '26</option><option value="event?e=81028&f=PI">The Decks to Beat - February '26</option><option value="event?e=79304&f=PI">The Decks to Beat - January '26</option><option value="event?e=78246&f=PI">The Decks to Beat - December '25</option><option value="event?e=77049&f=PI">The Decks to Beat - November '25</option><option value="event?e=75791&f=PI">The Decks to Beat - October '25</option><option value="event?e=74323&f=PI">The Decks to Beat - September '25</option><option value="event?e=73031&f=PI">The Decks to Beat - August '25</option><option value="event?e=71700&f=PI">The Decks to Beat - July '25</option><option value="event?e=70436&f=PI">The Decks to Beat - June '25</option><option value="event?e=69164&f=PI">The Decks to Beat - May '25</option><option value="event?e=67830&f=PI">The Decks to Beat - April '25</option><option value="event?e=66710&f=PI">The Decks to Beat - March '25</option><option value="event?e=65388&f=PI">The Decks to Beat - February '25</option><option value="event?e=64095&f=PI">The Decks to Beat - January '25</option><option value="event?e=62985&f=PI">The Decks to Beat - December '24</option><option value="event?e=61836&f=PI">The Decks to Beat - November '24</option><option value="event?e=60898&f=PI">The Decks to Beat - October '24</option><option value="event?e=59862&f=PI">The Decks to Beat - September '24</option><option value="event?e=58930&f=PI">The Decks to Beat - August '24</option><option value="event?e=57816&f=PI">The Decks to Beat - July '24</option><option value="event?e=56833&f=PI">The Decks to Beat - June '24</option><option value="event?e=55813&f=PI">The Decks to Beat - May '24</option><option value="event?e=54991&f=PI">The Decks to Beat - April '24</option><option value="event?e=53798&f=PI">The Decks to Beat - March '24</option><option value="event?e=52794&f=PI">The Decks to Beat - February '24</option><option value="event?e=51389&f=PI">The Decks to Beat - January '24</option><option value="event?e=50768&f=PI">The Decks to Beat - December '23</option><option value="event?e=49908&f=PI">The Decks to Beat - November '23</option><option value="event?e=49034&f=PI">The Decks to Beat - October '23</option><option value="event?e=47883&f=PI">The Decks to Beat - September '23</option><option value="event?e=46851&f=PI">The Decks to Beat - August '23</option><option value="event?e=45440&f=PI">The Decks to Beat - June '23</option><option value="event?e=44565&f=PI">The Decks to Beat - May '23</option><option value="event?e=43766&f=PI">The Decks to Beat - April '23</option><option value="event?e=43015&f=PI">The Decks to Beat - March '23</option><option value="event?e=41721&f=PI">The Decks to Beat - February '23</option><option value="event?e=40998&f=PI">The Decks to Beat - January '23</option><option value="event?e=40233&f=PI">The Decks to Beat - December '22</option><option value="event?e=39653&f=PI">The Decks to Beat - November '22</option><option value="event?e=39094&f=PI">The Decks to Beat - October '22</option><option value="event?e=38579&f=PI">The Decks to Beat - September '22</option><option value="event?e=38038&f=PI">The Decks to Beat - August '22</option><option value="event?e=37027&f=PI">The Decks to Beat - June '22</option><option value="event?e=36447&f=PI">The Decks to Beat - May '22</option><option value="event?e=35892&f=PI">The Decks to Beat - April '22</option><option value="event?e=35415&f=PI">The Decks to Beat - March '22</option><option value="event?e=34820&f=PI">The Decks to Beat - February '22</option><option value="event?e=34358&f=PI">The Decks to Beat - January '22</option><option value="event?e=33976&f=PI">The Decks to Beat - December '21</option><option value="event?e=33471&f=PI">The Decks to Beat - November '21</option><option value="event?e=32958&f=PI">The Decks to Beat - October '21</option><option value="event?e=32593&f=PI">The Decks to Beat - September '21</option><option value="event?e=32063&f=PI">The Decks to Beat - August '21</option><option value="event?e=31726&f=PI">The Decks to Beat - July '21</option><option value="event?e=31237&f=PI">The Decks to Beat - June '21</option><option value="event?e=30845&f=PI">The Decks to Beat - May '21</option><option value="event?e=30359&f=PI">The Decks to Beat - April '21</option><option value="event?e=29802&f=PI">The Decks to Beat - March '21</option><option value="event?e=29357&f=PI">The Decks to Beat - February '21</option><option value="event?e=28984&f=PI">The Decks to Beat - January '21</option><option value="event?e=28650&f=PI">The Decks to Beat - December '20</option><option value="event?e=28308&f=PI">The Decks to Beat - November '20</option><option value="event?e=27909&f=PI">The Decks to Beat - October '20</option><option value="event?e=27527&f=PI">The Decks to Beat - September '20</option><option value="event?e=27059&f=PI">The Decks to Beat - August '20</option><option value="event?e=26640&f=PI">The Decks to Beat - July '20</option><option value="event?e=26229&f=PI">The Decks to Beat - June '20</option><option value="event?e=25853&f=PI">The Decks to Beat - May '20</option><option value="event?e=25447&f=PI">The Decks to Beat - April '20</option><option value="event?e=25039&f=PI">The Decks to Beat - March '20</option><option value="event?e=24773&f=PI">The Decks to Beat - February '20</option><option value="event?e=24421&f=PI">The Decks to Beat - January '20</option><option value="event?e=24077&f=PI">The Decks to Beat - December '19</option></select></div></div><div align=center><div class=S14><a href=event?e=93142&f=PI>The Rogue Corner - November '26</a></div><div><select name=archive_rogue onchange="window.open(this.value,'_top')"><option value="">Rogue corner archives</option><option value="event?e=91564&f=PI">The Rogue Corner - October '26</option><option value="event?e=90328&f=PI">The Rogue Corner - September '26</option><option value="event?e=89149&f=PI">The Rogue Corner - August '26</option><option value="event?e=87547&f=PI">The Rogue Corner - July '26</option><option value="event?e=86001&f=PI">The Rogue Corner - June '26</option><option value="event?e=83033&f=PI">The Rogue Corner - April '26</option><option value="event?e=81196&f=PI">The Rogue Corner - March '26</option><option value="event?e=79804&f=PI">The Rogue Corner - February '26</option><option value="event?e=78486&f=PI">The Rogue Corner - January '26</option><option value="event?e=77189&f=PI">The Rogue Corner - December '25</option><option value="event?e=75960&f=PI">The Rogue Corner - November '25</option><option value="event?e=74507&f=PI">The Rogue Corner - October '25</option><option value="event?e=73139&f=PI">The Rogue Corner - September '25</option><option value="event?e=72108&f=PI">The Rogue Corner - August '25</option><option value="event?e=70687&f=PI">The Rogue Corner - July '25</option><option value="event?e=69460&f=PI">The Rogue Corner - June '25</option><option value="event?e=68146&f=PI">The Rogue Corner - May '25</option><option value="event?e=66927&f=PI">The Rogue Corner - April '25</option><option value="event?e=65559&f=PI">The Rogue Corner - March '25</option><option value="event?e=64357&f=PI">The Rogue Corner - February '25</option><option value="event?e=63217&f=PI">The Rogue Corner - January '25</option><option value="event?e=62213&f=PI">The Rogue Corner - December '24</option><option value="event?e=61175&f=PI">The Rogue Corner - November '24</option><option value="event?e=60043&f=PI">The Rogue Corner - October '24</option><option value="event?e=59061&f=PI">The Rogue Corner - September '24</option><option value="event?e=58044&f=PI">The Rogue Corner - August '24</option><option value="event?e=57000&f=PI">The Rogue Corner - July'24</option><option value="event?e=56135&f=PI">The Rogue Corner - June'24</option><option value="event?e=55074&f=PI">The Rogue Corner - May'24</option><option value="event?e=53982&f=PI">The Rogue Corner - April '24</option><option value="event?e=52869&f=PI">The Rogue Corner - March '24</option><option value="event?e=51875&f=PI">The Rogue Corner - February '24</option><option value="event?e=50899&f=PI">The Rogue Corner - January '24</option><option value="event?e=50041&f=PI">The Rogue Corner - December '23</option><option value="event?e=49213&f=PI">The Rogue Corner - November '23</option><option value="event?e=48276&f=PI">The Rogue Corner - October '23</option><option value="event?e=47247&f=PI">The Rogue Corner - September '23</option><option value="event?e=46441&f=PI">The Rogue Corner - August '23</option><option value="event?e=45600&f=PI">The Rogue Corner - July '23</option><option value="event?e=44745&f=PI">The Rogue Corner - June '23</option><option value="event?e=43929&f=PI">The Rogue Corner - May '23</option><option value="event?e=43139&f=PI">The Rogue Corner - April '23</option><option value="event?e=42024&f=PI">The Rogue Corner - March '23</option><option value="event?e=41103&f=PI">The Rogue Corner - February '23</option><option value="event?e=40368&f=PI">The Rogue Corner - January '23</option><option value="event?e=39805&f=PI">The Rogue Corner - December '22</option><option value="event?e=39174&f=PI">The Rogue Corner - November '22</option><option value="event?e=38629&f=PI">The Rogue Corner - October '22</option><option value="event?e=38160&f=PI">The Rogue Corner - September '22</option><option value="event?e=37634&f=PI">The Rogue Corner - August '22</option><option value="event?e=37057&f=PI">The Rogue Corner - July '22</option><option value="event?e=36571&f=PI">The Rogue Corner - June '22</option><option value="event?e=36028&f=PI">The Rogue Corner - May '22</option><option value="event?e=35490&f=PI">The Rogue Corner - April '22</option><option value="event?e=34955&f=PI">The Rogue Corner - March '22</option><option value="event?e=34494&f=PI">The Rogue Corner - February '22</option><option value="event?e=34041&f=PI">The Rogue Corner - January '22</option><option value="event?e=33638&f=PI">The Rogue Corner - December '21</option><option value="event?e=33062&f=PI">The Rogue Corner - November '21</option><option value="event?e=32641&f=PI">The Rogue Corner - October '21</option><option value="event?e=32190&f=PI">The Rogue Corner - September '21</option><option value="event?e=31809&f=PI">The Rogue Corner - August '21</option><option value="event?e=31393&f=PI">The Rogue Corner - July '21</option><option value="event?e=31051&f=PI">The Rogue Corner - June '21</option><option value="event?e=30822&f=PI">The Rogue Corner - May '21</option><option value="event?e=30354&f=PI">The Rogue Corner - April '21</option><option value="event?e=29797&f=PI">The Rogue Corner - March '21</option><option value="event?e=29347&f=PI">The Rogue Corner - February '21</option><option value="event?e=28979&f=PI">The Rogue Corner - January '21</option><option value="event?e=28645&f=PI">The Rogue Corner - December '20</option><option value="event?e=28303&f=PI">The Rogue Corner - November '20</option><option value="event?e=27914&f=PI">The Rogue Corner - October '20</option><option value="event?e=27531&f=PI">The Rogue Corner - September '20</option><option value="event?e=27063&f=PI">The Rogue Corner - August '20</option><option value="event?e=26643&f=PI">The Rogue Corner - July '20</option><option value="event?e=26225&f=PI">The Rogue Corner - June '20</option><option value="event?e=25857&f=PI">The Rogue Corner - May '20</option><option value="event?e=25442&f=PI">The Rogue Corner - April '20</option><option value="event?e=25034&f=PI">The Rogue Corner - March '20</option><option value="event?e=24769&f=PI">The Rogue Corner - February '20</option><option value="event?e=24417&f=PI">The Rogue Corner - January '20</option><option value="event?e=24072&f=PI">The Rogue Corner - December '19</option></select></div></div></div>
+    </td>
+  </tr>
+</table>
+<script>
+
+var checkflag = "true";
+
+
+
+function CheckAll() {
+	if (checkflag == "false") {
+		for (i=1;i<=2; i++) {document.compare_decks['deck_check['+i+']'].checked=true;}
+		checkflag="true";
+	}
+	else {
+		for (i=1;i<=2; i++)  {document.compare_decks['deck_check['+i+']'].checked=false;}
+		checkflag = "false";
+	}
+}
+
+function PageSubmit(id) {
+	document.format_form["cp"].value=id;
+	document.format_form.submit();
+}
+
+function PageSubmit_arch(id) {
+	document.nav_form["current_page"].value=id;
+	document.nav_form.submit();
+}
+
+function ToggleMetaList(){
+	if(document.getElementById("metas_list").style.maxHeight=="0px"){
+		document.getElementById("metas_list").style.maxHeight="600px";
+		document.getElementById("expand_img").src="/graph/shrink.png";
+	}
+	else{
+		document.getElementById("metas_list").style.maxHeight="0px";
+		document.getElementById("expand_img").src="/graph/expand.png";
+	}
+}
+
+function RequestContent(my_url,my_dest) {
+var xhr_object = null;
+
+if(window.XMLHttpRequest) // Firefox
+   xhr_object = new XMLHttpRequest();
+else if(window.ActiveXObject) // Internet Explorer
+   xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+
+
+xhr_object.open("POST", my_url, true);
+
+xhr_object.onreadystatechange = function() {
+   if(xhr_object.readyState == 4) document.getElementById(my_dest).innerHTML=xhr_object.responseText;
+}
+
+xhr_object.send(null);
+}
+
+	
+
+</script>
+<div class=w_title style="margin-top:20px;">
+<div align=center>
+<a class=white href=/privacy>Privacy Policy</a>
+
+<div style="padding:5px;" valign=top class=W10 align=center>
+The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast.
+This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast..
+<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div>
+</div>
+</div>
+</div></div>
+	</div></body>
+	</html>
