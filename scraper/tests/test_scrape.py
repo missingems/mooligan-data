@@ -257,8 +257,8 @@ def test_a_second_run_asks_only_for_the_pages_that_list_events(tmp_path):
     assert report.meta == ["modern_7d", "modern_14d", "modern_30d"]
 
 
-@pytest.mark.parametrize("host, saved", [("www.mtgtop8.com", {"mtgo-11161-2026-11-05"}), ("www.mtgo.com", {"t8-93105"})])
-def test_a_refusal_is_a_warning_and_stops_that_site_for_the_run_while_older_mtgo_events_still_go_out_named_by_lists(tmp_path, host, saved):
+@pytest.mark.parametrize("host, saved", [("www.mtgtop8.com", set()), ("www.mtgo.com", {"t8-93105"})])
+def test_a_refusal_is_a_warning_and_stops_that_site_for_the_run(tmp_path, host, saved):
     site = Site()
     site.refused = {host}
 
@@ -269,6 +269,38 @@ def test_a_refusal_is_a_warning_and_stops_that_site_for_the_run_while_older_mtgo
     assert len(report.warnings) == 1 and host in report.warnings[0]
     assert report.deck_block == f"{host}: HTTP 403" and report.errors == []
     assert set(events_by_id(tmp_path)) == saved
+
+
+def test_mtgo_events_wait_while_mtgtop8_does_not_answer_and_are_named_by_it_the_run_after(tmp_path):
+    later = datetime(2026, 11, 12, tzinfo=timezone.utc)
+    site = Site()
+    site.refused = {"event?e=93409"}
+
+    run(tmp_path, site, now=later)
+    assert "mtgo-12857687" not in events_by_id(tmp_path)
+
+    site.refused = set()
+    run(tmp_path, site, now=later)
+    winner = events_by_id(tmp_path)["mtgo-12857687"]["results"][0]
+    assert (winner["archetype"], winner["archetype_id"]) == ("Scepter Chant", "modern-scepter-chant")
+
+
+def test_a_window_with_no_events_is_published_empty_rather_than_left_as_it_was(tmp_path):
+    run(tmp_path, Site())
+    run(tmp_path, Site(), now=datetime(2026, 11, 20, tzinfo=timezone.utc))
+
+    meta = snapshot(tmp_path)["meta"]
+    assert meta["7d"]["archetypes"] == [] and meta["30d"]["archetypes"]
+
+
+def test_an_mtgo_event_page_that_does_not_parse_is_a_warning_and_the_rest_goes_on(tmp_path):
+    site = Site()
+    site.pages[f"{MTGO}/decklist/{LEAGUE_OLD}"] = '<script>window.MTGO.decklists.data = {"decklists": [{"player": "x"}]};</script>'
+
+    report, _ = run(tmp_path, site)
+
+    assert report.errors == [] and any(LEAGUE_OLD in warning for warning in report.warnings)
+    assert "mtgo-12857687" in events_by_id(tmp_path)
 
 
 def test_a_run_that_runs_out_of_time_stops_cleanly_and_the_next_run_goes_on(tmp_path):

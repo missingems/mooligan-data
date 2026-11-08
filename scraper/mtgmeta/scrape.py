@@ -6,7 +6,7 @@ import re
 from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Protocol, Sequence, Tuple
+from typing import Dict, List, Optional, Protocol, Sequence, Set, Tuple
 from urllib.parse import urlsplit
 
 from . import mtgo, mtgtop8
@@ -98,6 +98,7 @@ class _Run:
         self.months: Dict[Tuple[int, int], Optional[List[mtgo.EventRef]]] = {}
         self.top8_events: Dict[str, Optional[mtgtop8.Top8Event]] = {}
         self.listings: Dict[str, List[mtgtop8.Listing]] = {}
+        self.listed: Set[str] = set()
 
     def online(self, host: str) -> bool:
         return self.client.budget_left() and not self.client.stopped(host)
@@ -120,6 +121,10 @@ class _Run:
         refs = self.new_refs(format)
         listings = self.top8_listings(format, refs)
         self.listings[format] = listings
+        if format not in self.listed:
+            if refs:
+                log.info("%s: MTGTop8 did not answer, so its %d new mtgo.com events wait for names", format, len(refs))
+            return
         read: List[Tuple[Event, List[Deck], Optional[mtgtop8.Top8Event]]] = []
         for ref in refs:
             if not self.online(MTGO_HOST):
@@ -194,13 +199,16 @@ class _Run:
             return None
         try:
             event, decks = mtgo.parse_event(fetched.text(), ref)
-        except ParseError as error:
+        except Exception as error:  # noqa: BLE001 - one odd page must not stop the format
             self.warn(f"mtgo.com event {ref.slug}: {error}")
             return None
         if not decks:
             log.info("%s has no decklists yet", ref.slug)
             return None
         top8 = self.matching_copy(format, ref, event, candidates)
+        if top8 is None and not all(listing.event_id in self.top8_events for listing in candidates):
+            log.info("%s waits for MTGTop8: it did not answer", ref.slug)
+            return None
         if top8 is None and self.recent(ref):
             log.info("%s waits for MTGTop8: no copy matches yet", ref.slug)
             return None
@@ -253,6 +261,8 @@ class _Run:
             except Exception as error:  # noqa: BLE001
                 self.warn(f"MTGTop8 {format} page {page}: {error}")
                 break
+            if page == 1:
+                self.listed.add(format)
             found.extend(listings)
             if not has_next or not listings:
                 break
@@ -298,6 +308,9 @@ class _Run:
     def read_paper_event(self, format: str, listing: mtgtop8.Listing, state: dict) -> None:
         copy = self.top8_event(format, listing.event_id)
         if copy is None:
+            return
+        if not copy.decks and copy.source != mtgo.SOURCE and (self.now.date() - listing.date).days <= self.config.top8_lag_days:
+            log.info("MTGTop8 event %s has no decks yet", listing.event_id)
             return
         if copy.source == mtgo.SOURCE or not copy.decks:
             state["seen"][listing.event_id] = f"{listing.date:%Y-%m-%d}"
@@ -372,8 +385,6 @@ class _Run:
         for days in WINDOWS:
             start = self.now - timedelta(days=days)
             window = [(event, result) for event, result in rows if event.date >= start]
-            if not window:
-                continue
             meta = Meta(format, f"{days}d", self.archetypes(window, published))
             if self.save(f"meta {meta.doc_id}", lambda: self.store.save_meta(meta)):
                 self.report.meta.append(meta.doc_id)
