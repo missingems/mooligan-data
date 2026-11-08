@@ -291,3 +291,26 @@ def test_a_groups_colours_are_those_at_least_half_its_known_decks_play():
     assert majority_colors(["1", "2", "3", "4", "unknown"], colors) == ["R", "G"]  # red in two of four
     assert majority_colors(["1", "2", "3", "4", "5"], colors) == ["G"]  # two of five is short of half
     assert majority_colors(["unknown"], colors) is None
+
+
+def test_an_archetype_that_merged_nothing_takes_the_colours_its_decks_play_since_tiles_have_none():
+    document = {
+        "generated_at": "2026-11-08T12:00:00Z",
+        "meta": {"7d": {"timeframe": "7d", "archetypes": [tile("titan", 5.0, 9, [])]}},
+        "archetypes": {"titan": {"archetype_id": "titan", "name": "Titan", "deck_id": "1", "results": [{"deck_id": "1", "date": "2026-11-07T00:00:00Z"}]}},
+        "events": [
+            {
+                "event_id": "mtgo-1",
+                "event_name": "Modern Challenge 32",
+                "date": "2026-11-07T00:00:00Z",
+                "results": [
+                    {"finish": "1st Place", "player": "a", "deck_id": "1", "archetype": "Titan", "archetype_id": "titan"},
+                    {"finish": "2nd Place", "player": "b", "deck_id": "2", "archetype": "Titan", "archetype_id": "titan"},
+                ],
+            }
+        ],
+    }
+
+    published = apply(document, Merging({}, {}, {}), {"1": ["G"], "2": ["U", "G"]})
+
+    assert [(t["id"], t["colors"]) for t in published["meta"]["7d"]["archetypes"]] == [("titan", ["U", "G"])]
