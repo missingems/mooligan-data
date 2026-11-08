@@ -168,7 +168,13 @@ class _Run:
     def month(self, year: int, month: int) -> Optional[List[mtgo.EventRef]]:
         if (year, month) not in self.months:
             fetched = self.get(f"{mtgo.BASE_URL}/decklists/{year}/{month:02d}")
-            self.months[(year, month)] = mtgo.parse_month(fetched.text()) if fetched and fetched.status == 200 else None
+            refs = None
+            if fetched and fetched.status == 200:
+                try:
+                    refs = mtgo.parse_month(fetched.text())
+                except Exception as error:  # noqa: BLE001 - every format's job reads it first
+                    self.warn(f"mtgo.com month {year}-{month:02d}: {error}")
+            self.months[(year, month)] = refs
         return self.months[(year, month)]
 
     def recent(self, ref: mtgo.EventRef) -> bool:
