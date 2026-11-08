@@ -185,7 +185,7 @@ def test_each_window_counts_the_decks_dated_inside_it_once_each():
             (8, bolt),  # out of the 7 days, in the 14
             (20, bolt),  # in the 30 only
             (40, bolt),  # in none
-            (-2, bolt),  # dated ahead, which MTGGoldfish does for an event still to be played
+            (-2, bolt),  # dated ahead
         ],
         featured=bolt,  # an archetype's own deck has no date
     )

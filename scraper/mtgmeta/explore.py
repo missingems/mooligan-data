@@ -129,7 +129,7 @@ def _standings_by_window(snapshot: dict, now: datetime, previews: "Previews") ->
         archetypes = meta.get(window, {}).get("archetypes", [])
         since = now - timedelta(days=_days(window))
         entries = []
-        # sorted() is stable, so equal shares keep MTGGoldfish's order.
+        # sorted() is stable, so equal shares keep the snapshot's order.
         for archetype in sorted(archetypes, key=lambda archetype: archetype["percentage"], reverse=True)[:STANDINGS]:
             places = _places(snapshot.get("archetypes", {}).get(archetype["id"], {}).get("results", []), since, now)
             entries.append(

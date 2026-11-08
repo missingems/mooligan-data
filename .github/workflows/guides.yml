@@ -7,7 +7,7 @@ on:
   # After each scrape, which publishes the metagame the primers are written from. Not a cron: the scrape's own 14:00
   # cron starts hours late on some days, and this follows it either way.
   workflow_run:
-    workflows: ["Scrape MTGGoldfish"]
+    workflows: ["Scrape mtgo.com and MTGTop8"]
     types: [completed]
   workflow_dispatch:
     inputs:
