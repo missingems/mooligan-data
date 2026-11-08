@@ -63,7 +63,7 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the format's job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
-Refused requests are different: they are a warning, the run passes and publishes what it has read, and the rest waits for the next run. The run fails when requests are refused two runs in a row; with the workflow's format jobs, that is a format's job refused right after the one before it. The count is in `state/deck-downloads.json`, and the last job, which makes no requests, leaves it as it is.
+Refused requests are different: they are a warning, the run passes and publishes what it has read, and the rest waits for the next run. A site that refused one format's job is not asked by the format jobs after it for 12 hours, so a day's refusal is one request. The run fails when requests are refused two days in a row. The count and the sites that refused are in `state/deck-downloads.json`, and the last job, which makes no requests, leaves it as it is.
 
 A window with no events in it keeps the one an earlier run published, with its own `last_updated`, and every format still publishes.
 
@@ -75,7 +75,7 @@ A first run backfills 30 days. mtgo.com's roughly 500 events are read in the fir
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |
 | `SCRAPE_DELAY` | `10` | Seconds between requests to mtgo.com and MTGTop8, plus up to 50% random extra. Values under 5 (MTGTop8's `Crawl-delay`) are raised to 5 |
 | `SCRAPE_MINUTES` | `90`, `10` with `QUICK=1` | Minutes of requests a run may make; what is not read waits for the next run |
-| `FRESH` | `0` | `1` ignores the downloaded snapshots (`snapshots/`, `state/snapshots/`) and the scrape's state (events seen, decks stored, the lists behind the archetypes), so the run starts from nothing. It deletes only local files; nothing in R2 is deleted, and the run overwrites the same keys. `formats` ignores only those of `FORMATS`, which is how the workflow's later format jobs follow the first |
+| `FRESH` | `0` | `1` ignores the downloaded snapshots (`snapshots/`, `state/snapshots/`) and the scrape's state (events seen, decks stored, the lists behind the archetypes), so the run starts from nothing. It deletes only local files; nothing in R2 is deleted, and the run overwrites the same keys. `formats` ignores only those of `FORMATS`, which is how the workflow's later format jobs follow the first, and how a fresh dispatch of some formats starts only those over |
 | `DECK_RESOLVE_PER_RUN` | `300` | Published decklists read again per run to name entries the card catalog could not name when they were saved; each deck is tried 3 times |
 | `SHARED` | `1` | `0` writes only `FORMATS`' own files and the state, and publishes neither `index.json` nor any file built from every format (a format job of the workflow) |
 | `SCRAPE` | `1` | `0` reads nothing from mtgo.com or MTGTop8 and builds every file from the stored snapshots of every format, whatever `FORMATS` says (the workflow's last job). `SHARED=0` with `SCRAPE=0` is refused |
@@ -306,6 +306,6 @@ The results come from **mtgo.com**, whose decklist pages are Wizards' official o
 ## Caveats
 
 - mtgo.com's and MTGTop8's markup can change. The parsers raise `ParseError` rather than write empty data, so a layout change shows up as a failed run.
-- If a site refuses requests (the log says which, with the HTTP status), raise `SCRAPE_DELAY`; the run does not look for a way round. Two refused runs in a row fail the job.
+- If a site refuses requests (the log says which, with the HTTP status), raise `SCRAPE_DELAY`; the run does not look for a way round. Two days in a row with a refusal fail the job.
 - GitHub disables scheduled workflows in a public repo after 60 days without commits. If the schedule stops, re-enable it from the Actions tab.
 - Scraping may conflict with the sites' terms of use. Keep the rate low, and don't redistribute the data commercially.

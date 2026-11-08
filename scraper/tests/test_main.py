@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 import logging
 import sys
 
@@ -34,15 +35,15 @@ def test_errors_fail_the_run():
     assert entry.exit_code(RunReport(errors=["event 1: boom"]), 0) == 1
 
 
-def test_one_blocked_run_is_a_warning_the_run_passes():
-    report = RunReport(deck_block="HTTP 403, cf-mitigated=challenge", warnings=["Deck downloads blocked after 0"])
+def test_one_blocked_day_is_a_warning_the_run_passes():
+    report = RunReport(deck_block="www.mtgtop8.com: HTTP 429", warnings=["www.mtgtop8.com refused requests"])
     assert entry.exit_code(report, 1) == 0 and report.errors == []
 
 
-def test_two_blocked_runs_in_a_row_fail_the_run():
-    report = RunReport(deck_block="HTTP 403, cf-mitigated=challenge")
+def test_two_blocked_days_in_a_row_fail_the_run():
+    report = RunReport(deck_block="www.mtgtop8.com: HTTP 429")
     assert entry.exit_code(report, 2) == 1
-    assert report.errors == ["requests refused 2 runs in a row: HTTP 403, cf-mitigated=challenge"]
+    assert report.errors == ["requests refused 2 days in a row: www.mtgtop8.com: HTTP 429"]
 
 
 def test_a_run_that_was_not_blocked_passes_whatever_the_count():
@@ -118,14 +119,29 @@ def test_the_delay_and_budget_of_the_requests_come_from_the_environment_and_the_
     assert seen == [(12.0, 20.0), (5.0, 90.0)]
 
 
-def test_a_run_that_refuses_the_requests_counts_as_blocked(monkeypatch, tmp_path):
+def test_a_refusal_the_day_after_a_refusal_fails_the_job(monkeypatch, tmp_path):
     def refused(client, store, config, report, catalog):
+        client.stop("www.mtgtop8.com", "HTTP 403")
         report.deck_block = "www.mtgtop8.com: HTTP 403"
 
+    blocked = tmp_path / "state" / "deck-downloads.json"
+    blocked.parent.mkdir(parents=True)
+    blocked.write_text(json.dumps({"blocked_runs": 1, "last_blocked": "2026-01-01T06:00:00+00:00", "hosts": {}}))
     monkeypatch.setattr(entry, "scrape", refused)
-    assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
     assert run_main(monkeypatch, tmp_path, SHARED="0") == 1
-    assert json.loads((tmp_path / "state" / "deck-downloads.json").read_text())["blocked_runs"] == 2
+    assert json.loads(blocked.read_text())["blocked_runs"] == 2
+
+
+def test_a_site_that_refused_an_earlier_job_today_is_not_asked_and_the_count_stays(monkeypatch, tmp_path):
+    now = datetime.now(timezone.utc).isoformat()
+    blocked = tmp_path / "state" / "deck-downloads.json"
+    blocked.parent.mkdir(parents=True)
+    blocked.write_text(json.dumps({"blocked_runs": 1, "last_blocked": now, "hosts": {"www.mtgtop8.com": {"at": now, "detail": "HTTP 429"}}}))
+    stopped = []
+    monkeypatch.setattr(entry, "scrape", lambda client, store, config, report, catalog: stopped.append(client.stopped("www.mtgtop8.com")))
+    assert run_main(monkeypatch, tmp_path, SHARED="0") == 0
+    assert stopped == [True]
+    assert json.loads(blocked.read_text())["blocked_runs"] == 1
 
 
 def test_a_run_that_does_not_scrape_requests_nothing_and_leaves_the_blocked_count_as_it_was(monkeypatch, tmp_path):

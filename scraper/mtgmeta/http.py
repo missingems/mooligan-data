@@ -12,8 +12,9 @@ import random
 import time
 import urllib.error
 import urllib.request
+import zlib
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from http.client import HTTPException
 from pathlib import Path
 from typing import Callable, Dict, Mapping, Optional, Tuple
@@ -27,6 +28,8 @@ TIMEOUT = 30.0
 MIN_DELAY = 5.0
 # The extra wait on top of the delay, as a share of it, chosen at random each time.
 JITTER = 0.5
+# A site that refused one format's job is left alone by the jobs after it, for this long.
+REFUSAL_HOURS = 12
 
 Opener = Callable[[str, Dict[str, str], float], Tuple[int, Mapping[str, str], bytes]]
 
@@ -115,7 +118,7 @@ class PoliteClient:
         if seconds > 0:
             self._sleep(seconds)
 
-    def _stop(self, host: str, detail: str) -> None:
+    def stop(self, host: str, detail: str) -> None:
         if host not in self.refusals:
             self.refusals[host] = detail
             log.warning("%s stopped for this run: %s", host, detail)
@@ -133,9 +136,9 @@ class PoliteClient:
             fetched = Fetched(url, status, body, dict(received))
             if (fetched.header("Content-Encoding") or "").lower() == "gzip":
                 fetched.body = gzip.decompress(body)
-        except (OSError, HTTPException, EOFError) as error:
+        except (OSError, HTTPException, EOFError, zlib.error) as error:
             self._last = self._clock()
-            self._stop(host, f"network error: {error}")
+            self.stop(host, f"network error: {error}")
             return None
         self._last = self._clock()
         if is_refusal(fetched.status):
@@ -143,21 +146,46 @@ class PoliteClient:
             retry_after = fetched.header("Retry-After")
             if retry_after:
                 detail += f", Retry-After {retry_after}"
-            self._stop(host, detail)
+            self.stop(host, detail)
         return fetched
 
 
-def note_deck_block(path: Path, blocked: bool, detail: Optional[str], now: datetime) -> int:
-    """Counts the runs in a row whose requests were refused, in the JSON file at `path`, and returns the count."""
+def recent_refusals(path: Path, now: datetime) -> Dict[str, str]:
+    """The hosts that refused a run in the last REFUSAL_HOURS, by the file note_deck_block writes."""
+    try:
+        hosts = json.loads(path.read_text()).get("hosts") or {}
+        return {
+            host: entry["detail"]
+            for host, entry in hosts.items()
+            if now - datetime.fromisoformat(entry["at"]) < timedelta(hours=REFUSAL_HOURS)
+        }
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        return {}
+
+
+def note_deck_block(path: Path, refusals: Mapping[str, str], now: datetime) -> int:
+    """Counts the days in a row whose requests were refused, in the JSON file at `path`, and returns the count.
+
+    Every format job of a day writes it, so a refusal within REFUSAL_HOURS of the last one keeps the count, and the
+    hosts that refused stay recorded, from their first refusal, for the jobs after (see recent_refusals).
+    """
+    known = recent_refusals(path, now)
     try:
         previous = json.loads(path.read_text())
         count = int(previous["blocked_runs"])
         last = previous.get("last_blocked")
-    except (OSError, ValueError, KeyError, TypeError):
-        count, last = 0, None
-    count = count + 1 if blocked else 0
-    if blocked:
+        same_day = bool(last) and now - datetime.fromisoformat(last) < timedelta(hours=REFUSAL_HOURS)
+        stored = previous.get("hosts") or {}
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        count, last, same_day, stored = 0, None, False, {}
+    hosts: Dict[str, dict] = {}
+    if refusals:
+        count = max(count, 1) if same_day else count + 1
         last = now.isoformat()
+        hosts = {host: stored[host] if host in known else {"at": last, "detail": detail} for host, detail in refusals.items()}
+    else:
+        count = 0
+    detail = "; ".join(f"{host}: {entry['detail']}" for host, entry in hosts.items()) or None
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps({"blocked_runs": count, "last_blocked": last, "detail": detail}))
+    path.write_text(json.dumps({"blocked_runs": count, "last_blocked": last, "detail": detail, "hosts": hosts}))
     return count

@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Optional
 
 from .edhrec import Edhrec
-from .http import MIN_DELAY, PoliteClient, note_deck_block
+from .http import MIN_DELAY, PoliteClient, note_deck_block, recent_refusals
 from .locator import Locator, place_page
 from .models import RunReport
 from .previews import NewPrintings, read_first_seen, read_seen
@@ -416,11 +416,11 @@ def load_catalog(report: RunReport) -> dict:
 
 
 def exit_code(report: RunReport, blocked_runs: int) -> int:
-    """1 when the run logged errors, or when mtgo.com or MTGTop8 refused requests this run and the run before."""
+    """1 when the run logged errors, or when mtgo.com or MTGTop8 refused requests today and the day before."""
     if report.errors:
         return 1
     if report.deck_block is not None and blocked_runs >= 2:
-        report.errors.append(f"requests refused {blocked_runs} runs in a row: {report.deck_block}")
+        report.errors.append(f"requests refused {blocked_runs} days in a row: {report.deck_block}")
         return 1
     return 0
 
@@ -479,12 +479,14 @@ def main() -> int:
             delay=max(MIN_DELAY, float(os.environ.get("SCRAPE_DELAY", "10"))),
             budget_minutes=float(os.environ.get("SCRAPE_MINUTES", "90")),
         )
+        refusals_path = args.directory / "state" / "deck-downloads.json"
+        # A site that refused an earlier format job today is not asked again until tomorrow's run.
+        for host, detail in recent_refusals(refusals_path, datetime.now(timezone.utc)).items():
+            client.stop(host, f"refused an earlier job ({detail})")
         scrape(client, store, config, report=report, catalog=catalog)
-        blocked_runs = note_deck_block(
-            args.directory / "state" / "deck-downloads.json", report.deck_block is not None, report.deck_block, datetime.now(timezone.utc)
-        )
+        blocked_runs = note_deck_block(refusals_path, client.refusals, datetime.now(timezone.utc))
     else:
-        # Nothing was requested, so the count of blocked runs in a row stays as the format jobs left it.
+        # Nothing was requested, so the count of blocked days stays as the format jobs left it.
         logging.info("SCRAPE=0: mtgo.com and MTGTop8 are not read; the files are built from the stored snapshots")
     data_url = os.environ.get("DATA_URL", "https://data.mooligan.com").rstrip("/")
     if not shared:
@@ -537,7 +539,7 @@ def main() -> int:
         # Last, after every file it lists.
         written += publish_manifest(args.directory, report)
 
-    # Refused requests are a warning; two runs in a row fail the run (see exit_code).
+    # Refused requests are a warning; two days in a row fail the run (see exit_code).
     code = exit_code(report, blocked_runs)
     logging.info(
         "Done: %d meta, %d archetypes, %d events, %d decks written, %d already stored, %d decks left for the next run, %d errors",
