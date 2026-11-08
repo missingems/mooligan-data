@@ -252,9 +252,18 @@ def test_a_disabled_format_merges_nothing():
     assert plan(document, deck_cards, set(), overrides=Overrides(disabled=True)).leaders == {}
 
 
-def test_the_seeded_overrides_keep_4c_energy_from_azorius_control_and_leave_duel_commander_alone():
-    assert load_overrides("modern").apart("modern-4c-energy-d4762aac-7d2e-4a0e-95d3-3ca4f4dd535b", "wu-68d6e340-6601-4aab-9a70-4bdccc013e7e")
-    assert load_overrides("duel_commander").disabled and not load_overrides("modern").disabled
+def test_the_shipped_overrides_name_no_archetype_and_leave_duel_commander_alone():
+    shipped = load_overrides("modern")
+    assert shipped.keep_apart == [] and shipped.always_merge == [] and not shipped.disabled
+    assert load_overrides("duel_commander").disabled
+
+
+def test_overrides_are_read_per_format(tmp_path):
+    path = tmp_path / "overrides.json"
+    path.write_text('{"disabled": ["legacy"], "keep_apart": {"modern": [["a", "b"]]}, "always_merge": {"modern": [["c", "d"]]}}')
+    modern = load_overrides("modern", path)
+    assert modern.apart("a", "b") and not modern.apart("a", "c") and modern.always_merge == [{"c", "d"}] and not modern.disabled
+    assert load_overrides("legacy", path).disabled and load_overrides("legacy", path).keep_apart == []
 
 
 def test_a_member_of_the_last_runs_group_stays_at_a_lower_score_than_a_new_one_needs():
@@ -282,3 +291,26 @@ def test_a_groups_colours_are_those_at_least_half_its_known_decks_play():
     assert majority_colors(["1", "2", "3", "4", "unknown"], colors) == ["R", "G"]  # red in two of four
     assert majority_colors(["1", "2", "3", "4", "5"], colors) == ["G"]  # two of five is short of half
     assert majority_colors(["unknown"], colors) is None
+
+
+def test_an_archetype_that_merged_nothing_takes_the_colours_its_decks_play_since_tiles_have_none():
+    document = {
+        "generated_at": "2026-11-08T12:00:00Z",
+        "meta": {"7d": {"timeframe": "7d", "archetypes": [tile("titan", 5.0, 9, [])]}},
+        "archetypes": {"titan": {"archetype_id": "titan", "name": "Titan", "deck_id": "1", "results": [{"deck_id": "1", "date": "2026-11-07T00:00:00Z"}]}},
+        "events": [
+            {
+                "event_id": "mtgo-1",
+                "event_name": "Modern Challenge 32",
+                "date": "2026-11-07T00:00:00Z",
+                "results": [
+                    {"finish": "1st Place", "player": "a", "deck_id": "1", "archetype": "Titan", "archetype_id": "titan"},
+                    {"finish": "2nd Place", "player": "b", "deck_id": "2", "archetype": "Titan", "archetype_id": "titan"},
+                ],
+            }
+        ],
+    }
+
+    published = apply(document, Merging({}, {}, {}), {"1": ["G"], "2": ["U", "G"]})
+
+    assert [(t["id"], t["colors"]) for t in published["meta"]["7d"]["archetypes"]] == [("titan", ["U", "G"])]

@@ -25,7 +25,7 @@ def event(event_id, name, date, finishes, kind="mtgo_challenge", source="mtgo.co
         "event_id": event_id,
         "event_name": name,
         "date": f"{date}T00:00:00Z",
-        "url": f"https://www.mtggoldfish.com/tournament/{event_id}",
+        "url": f"https://www.mtgo.com/decklist/{event_id}",
         "kind": kind,
         "source": source,
         "results": [
@@ -167,6 +167,24 @@ def test_top8_and_wins_count_placings_in_the_window_only():
     assert (standing["top8_30d"], standing["wins_30d"]) == (3, 2)
 
 
+def test_a_top_n_finish_counts_at_its_lowest_place():
+    results = [
+        result("2026-09-29", "1st Place"),
+        result("2026-09-28", "Top 4"),
+        result("2026-09-27", "Top 8"),
+        result("2026-09-26", "Top 16"),  # lowest place 9, outside the top 8
+        result("2026-09-25", "Top 32"),
+    ]
+    standing = modern(meta30=[archetype("a", 5.0)], archetypes={"a": {"results": results}})["standings"][0]
+    assert (standing["top8_30d"], standing["wins_30d"]) == (3, 1)
+
+
+def test_top_puts_a_paper_events_top_n_finishes_after_its_winner_by_their_lowest_place():
+    paper = event("9", "Regional Championship", "2026-09-29", ["Top 16", "Top 8", "1st Place", "Top 4", "2nd Place"], kind="regional_championship", source="melee.gg")
+    top = modern(meta30=[archetype("a", 5.0)], events=[paper])["recent_events"][0]["top"]
+    assert [r["finish"] for r in top] == ["1st Place", "2nd Place", "Top 4"]
+
+
 def test_an_archetype_with_no_results_counts_zero():
     standing = modern(meta30=[archetype("a", 5.0)])["standings"][0]
     assert (standing["top8_30d"], standing["wins_30d"]) == (0, 0)
@@ -237,7 +255,7 @@ def test_an_event_has_its_id_and_result_count():
     challenge = event("66947", "Modern Challenge 32 2026-09-29", "2026-09-29", ["1st Place", "2nd Place", "3rd Place"])
     recent = modern(meta30=[archetype("a", 1.0)], events=[challenge])["recent_events"][0]
     assert (recent["id"], recent["result_count"], recent["deck_count"]) == ("66947", 3, 3)
-    assert recent["url"].endswith("/66947")  # the id is the tournament id in the url
+    assert recent["url"].endswith("/66947")  # the id is the last part of the url
 
 
 def test_the_lead_of_an_event_is_its_winner_with_the_first_two_key_cards_of_its_archetype():
@@ -506,7 +524,7 @@ def test_colour_shares_weigh_every_archetype_by_its_share_and_the_colours_of_its
 
 
 def test_colour_shares_are_scaled_to_a_hundred_and_always_have_all_six_colours():
-    # MTGGoldfish's shares don't add up to 100 (the archetypes listed cover about 97% of the format).
+    # The shares don't add up to 100 (the archetypes listed cover about 97% of the format).
     meta = [archetype("burn", 45.0, colors=["R"]), archetype("white", 15.0, colors=["W"])]
     month = shares(meta, {"burn": history(["1"]), "white": history(["2"])}, {"1": RED, "2": WHITE})["30d"]
     assert month == {"W": 25.0, "U": 0.0, "B": 0.0, "R": 75.0, "G": 0.0, "C": 0.0}

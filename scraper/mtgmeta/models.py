@@ -12,11 +12,11 @@ class Archetype:
     percentage: float
     id: str
     deck_count: Optional[int] = None
-    # The featured list on the archetype's MTGGoldfish page, stored in `decks`.
+    # The archetype's featured list: the newest best-placed deck, stored in `decks`.
     deck_id: Optional[str] = None
-    # WUBRG letters in WUBRG order, from the tile's colour pips; empty when colourless or not shown.
+    # WUBRG letters in WUBRG order; empty, since no source shows tile pips (the colours come from decklists).
     colors: List[str] = field(default_factory=list)
-    # Card names from the tile's key card list (three at most), in the tile's order.
+    # Card names; empty, since no source shows tile key cards (they come from the archetype's hand).
     key_cards: List[str] = field(default_factory=list)
 
 
@@ -40,14 +40,13 @@ class EventResult:
     # Set when the deck appears in an archetype's list, whose name then replaces
     # the pilot's own deck title (leagues show titles like "UR").
     archetype_id: Optional[str] = None
-    # WUBRG letters in WUBRG order, from the pips MTGGoldfish shows beside the deck on the event page.
-    # None when it shows none (a colourless deck, or an event page read before this was kept).
+    # WUBRG letters in WUBRG order, when a source gives them; None otherwise (the colours come from the decklist).
     colors: Optional[List[str]] = None
 
 
 @dataclass
 class ArchetypeResult:
-    """One row of an archetype's deck list on MTGGoldfish."""
+    """One row of an archetype's deck list."""
 
     deck_id: str
     date: datetime
@@ -72,17 +71,6 @@ class ArchetypeHistory:
 
 
 @dataclass
-class EventSummary:
-    """An event as a listing shows it, before its own page is read."""
-
-    event_id: str
-    event_name: str
-    date: Optional[datetime]
-    # The search results give the decklist count; the tournaments list does not.
-    decklists: Optional[int] = None
-
-
-@dataclass
 class Event:
     event_id: str
     event_name: str
@@ -92,7 +80,7 @@ class Event:
     url: str
     # Pro Tour, Regional Championship, RCQ and so on: see parsing.event_kind.
     kind: str = "other"
-    # Where MTGGoldfish took the results from: "mtgo.com", "melee.gg", or None.
+    # Where the results come from: "mtgo.com", or what MTGTop8 names as its source ("melee.gg" and so on), or None.
     source: Optional[str] = None
 
 
@@ -112,14 +100,8 @@ class Deck:
     format: str
     # None for an archetype's featured deck, which is not from a scraped event.
     event_id: Optional[str]
-    # The archetype's MTGGoldfish id, when the deck is in a tracked archetype's list.
+    # The archetype's id, when the deck is in a tracked archetype's list.
     archetype_id: Optional[str] = None
-
-
-@dataclass
-class FeaturedDeck:
-    deck_id: str
-    player: str
 
 
 def to_document(record: Any, drop: tuple = ()) -> Dict[str, Any]:
@@ -138,7 +120,10 @@ class RunReport:
     decks_skipped: int = 0
     # Decks wanted but left for the next run: past an allowance, or not reached before the downloads stopped.
     decks_deferred: int = 0
-    # What MTGGoldfish's refusal looked like, when it ended the deck downloads.
+    named_by_top8: int = 0
+    named_by_lists: int = 0
+    named_by_colors: int = 0
+    # What a site's refusal looked like, when it stopped the run's requests to that site.
     deck_block: Optional[str] = None
     errors: List[str] = field(default_factory=list)
     # Things worth a look that do not fail the run.

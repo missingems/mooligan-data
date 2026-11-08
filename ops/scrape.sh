@@ -8,11 +8,17 @@
 #   https  the live files at DATA_URL (default https://data.mooligan.com), with no keys
 #   none   nothing: the run starts from an empty work/
 #   auto   r2 when the keys are set, else https
-# QUICK=1 presets a small, fast run for development. Every preset can be set by hand.
+# QUICK=1 presets a small, fast run for development (modern only, 3 days of history, 10 minutes of requests at the
+# usual 10 s apart). Every preset can be set by hand.
+# FRESH=1 starts the scrape from nothing: it ignores the downloaded snapshots (snapshots/, state/snapshots/) and the
+# scrape's state (events seen, decks stored, the lists behind the archetypes), whatever SYNC fetched. It only removes
+# local files; nothing in R2 is deleted, and what the run publishes overwrites the same keys. FRESH=formats ignores
+# only the stored data of FORMATS and leaves the ids every format shares, which is how the workflow's later format
+# jobs follow the first one.
 # The daily workflow splits the run in two kinds of job, so a format that fails loses only its own day:
 #   SHARED=0  one per format: scrapes FORMATS and publishes their files and the state, but none of the files built
 #             from every format (index.json, explore.json, today.json, the card pages, EDHREC, the guides...)
-#   SCRAPE=0  once, after them: reads nothing from MTGGoldfish and builds those files from every format's
+#   SCRAPE=0  once, after them: reads nothing from mtgo.com or MTGTop8 and builds those files from every format's
 #             stored snapshot, whatever FORMATS says
 # Both default to 1, one run that does it all.
 set -uo pipefail
@@ -179,7 +185,7 @@ case $SYNC in
     rc=$?
     ;;
   none)
-    warn "SYNC=none: starting from an empty work/, so this run reads a month of history from MTGGoldfish"
+    warn "SYNC=none: starting from an empty work/, so this run starts the 30-day backfill of mtgo.com and MTGTop8, within SCRAPE_MINUTES"
     rc=0
     ;;
 esac
@@ -189,12 +195,11 @@ if [ "$rc" -ne 0 ]; then
   exit 3
 fi
 
-# A small, fast run: one format, a few decks, no EDHREC, commander guides, locator, premier schedule, movers or localized names.
+# A small, fast run: one format, 3 days of history, 10 minutes of requests (still 10 s apart), no EDHREC, commander guides, locator, premier schedule, movers or localized names.
 if [ "${QUICK:-0}" = 1 ]; then
   : "${FORMATS:=modern}"
-  : "${MAX_NEW_DECKS:=20}"
-  : "${MAX_NEW_EVENTS=10}"
-  : "${MAX_SEARCH_PAGES=2}"
+  : "${HISTORY_DAYS=3}"
+  : "${SCRAPE_MINUTES:=10}"
   : "${EDHREC_CARDS_PER_RUN=0}"
   : "${EDHREC_COMMANDERS_PER_RUN=0}"
   : "${GUIDES_PER_RUN=0}"
@@ -202,7 +207,7 @@ if [ "${QUICK:-0}" = 1 ]; then
   : "${PREMIER_SCHEDULE=0}"
   : "${MOVERS=0}"
   : "${LOCALIZE=0}"
-  export MAX_NEW_EVENTS MAX_SEARCH_PAGES PREMIER_SCHEDULE MOVERS LOCALIZE
+  export PREMIER_SCHEDULE MOVERS LOCALIZE
 fi
 
 if [ "$SCRAPE" = 0 ]; then
@@ -210,14 +215,15 @@ if [ "$SCRAPE" = 0 ]; then
   FORMATS=
 fi
 
-# The defaults are the workflow's. FORMATS and MAX_NEW_DECKS also fall back when empty, because the
+# The defaults are the workflow's. FORMATS and SCRAPE_MINUTES also fall back when empty, because the
 # workflow passes its inputs through empty; the rest only when unset, so LOCATOR_PLACES= switches the
 # locator off.
-: "${FORMATS:=modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander}"
-: "${MAX_NEW_DECKS:=1500}"
-: "${META_DAYS=30,14,7}"
-: "${REQUEST_DELAY=1}"
-: "${CONCURRENCY=6}"
+: "${FORMATS:=modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander}"
+# mtgo.com and MTGTop8 are asked one page at a time, SCRAPE_DELAY seconds apart (never under 5, and 10 by default),
+# for at most SCRAPE_MINUTES; what is not read in a run is read in the next.
+: "${HISTORY_DAYS=30}"
+: "${SCRAPE_DELAY=10}"
+: "${SCRAPE_MINUTES:=90}"
 # EDHREC is read with their permission: a slice of the cards each run.
 : "${EDHREC_CARDS_PER_RUN=1600}"
 : "${EDHREC_COMMANDERS_PER_RUN=300}"
@@ -239,11 +245,41 @@ fi
 : "${LOCATOR_DISTANCE_MILES=15}"
 : "${LOCATOR_DAYS=14}"
 : "${EDHREC_DELAY=0.4}"
-# The scraper defaults to a headless browser on macOS, which MTGGoldfish's bot check does not let
-# through. UC mode runs headed (on Linux, SeleniumBase starts Xvfb itself).
-: "${HEADLESS=0}"
-export SHARED SCRAPE FORMATS MAX_NEW_DECKS META_DAYS REQUEST_DELAY CONCURRENCY EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
-  GUIDES_PER_RUN GUIDE_DELAY BRACKET_PAGES_PER_RUN GUIDE_POLISH POLISH_WAIT_MINUTES LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY HEADLESS
+export SHARED SCRAPE FORMATS HISTORY_DAYS SCRAPE_DELAY SCRAPE_MINUTES EDHREC_CARDS_PER_RUN EDHREC_COMMANDERS_PER_RUN \
+  GUIDES_PER_RUN GUIDE_DELAY BRACKET_PAGES_PER_RUN GUIDE_POLISH POLISH_WAIT_MINUTES LOCATOR_PLACES LOCATOR_DISTANCE_MILES LOCATOR_DAYS EDHREC_DELAY
+
+FRESH=${FRESH:-0}
+case $FRESH in
+  0) ;;
+  1 | formats)
+    if [ "$SCRAPE" = 0 ]; then
+      echo "ERROR: FRESH starts the scrape over, and SCRAPE=0 does not scrape" >&2
+      exit 2
+    fi
+    log "FRESH=$FRESH: ignoring the downloaded snapshots and scrape state of $FORMATS"
+    for format in $(printf '%s' "$FORMATS" | tr ',' ' '); do
+      case $format in
+        *[!a-z0-9_]*) echo "ERROR: FORMATS has an unexpected name '$format'" >&2; exit 2 ;;
+      esac
+      rm -f "work/snapshots/$format.json" "work/state/snapshots/$format.json" "work/state/deck-cards/$format.json" \
+        "work/state/archetype-groups/$format.json"
+    done
+    if [ "$FRESH" = 1 ]; then
+      rm -f work/state/deck-ids.json work/state/duplicate-event-ids.json work/state/empty-event-ids.json work/state/missing-deck-ids.json \
+        work/state/unresolved-deck-ids.json work/state/sources.json work/state/deck-downloads.json
+    elif [ -f work/state/sources.json ]; then
+      "$VENV/bin/python" -I - work/state/sources.json "$FORMATS" <<'PY' || exit 1
+import json
+import sys
+
+path, formats = sys.argv[1], [name.strip() for name in sys.argv[2].split(",") if name.strip()]
+sources = json.load(open(path))
+json.dump({name: state for name, state in sources.items() if name not in formats}, open(path, "w"), sort_keys=True)
+PY
+    fi
+    ;;
+  *) echo "ERROR: FRESH must be 0, 1 or formats, not '$FRESH'" >&2; exit 2 ;;
+esac
 
 # continue-on-error: whatever the scrape collected is still published.
 PYTHONUNBUFFERED=1 "$VENV/bin/python" -m mtgmeta work

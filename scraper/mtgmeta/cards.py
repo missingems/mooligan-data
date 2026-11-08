@@ -22,8 +22,8 @@ def slug(card_name: str) -> str:
     """The file name for a card: "Fable of the Mirror-Breaker" -> "fable-of-the-mirror-breaker".
 
     Only the front face counts, whether written "Fire // Ice" (Scryfall) or
-    "Fire/Ice" (MTGGoldfish), and accents fold away, since MTGGoldfish writes
-    "Bartolome" for Scryfall's "Bartolomé". MTGMetaKit's CardSlug applies the
+    "Fire/Ice" (mtgo.com and MTGTop8 write "Wear/Tear" too), and accents fold
+    away, since MTGTop8 can write "Bartolome" for Scryfall's "Bartolomé". MTGMetaKit's CardSlug applies the
     same rule, so the two must change together.
     """
     front = card_name.split("/", 1)[0]

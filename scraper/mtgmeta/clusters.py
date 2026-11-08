@@ -1,4 +1,4 @@
-"""Archetypes MTGGoldfish names apart that play one deck, found from their decklists, and merged when published.
+"""Archetypes named apart that play one deck, found from their decklists, and merged when published.
 
 `plan` decides the groups of a snapshot and `apply` turns the snapshot into the one published, with one archetype per
 group (see docs/data-format.md). `python -m mtgmeta clusters DIR --format modern --days 7` is a dry run: it reads DIR's
@@ -407,9 +407,9 @@ def apply(document: dict, merging: Merging, colors: Optional[Dict[str, List[str]
 
     In each window's metagame a group is one tile: its members' shares and deck counts added up (the deck count null
     when a member's is), and the leader's key cards and featured deck (from the leader's tile in that window, else its
-    tile in the longest window that has one, else the biggest member's). A group that merged anything has the colours
-    at least half of its decks with known colours play (`colors`, deck id -> colours; see `majority_colors`), over
-    every result of the group, and the leader's tile colours when none is known. The list is then in order of share.
+    tile in the longest window that has one, else the biggest member's). Every archetype has the colours at least
+    half of its decks with known colours play (`colors`, deck id -> colours; see `majority_colors`), over every
+    result of its group, and the leader's tile colours when none is known. The list is then in order of share.
     The leader's results are every member's, and the results with no archetype that joined it; an event result of a
     member, or one that joined, takes the leader's id and name. `merges` maps each merged-away id to its leader.
     The document is not changed; the one returned shares what it leaves alone with it.
@@ -430,8 +430,7 @@ def apply(document: dict, merging: Merging, colors: Optional[Dict[str, List[str]
                 group_decks.setdefault(leader_of.get(key, key), set()).add(result["deck_id"])
             elif result["deck_id"] in merging.assigned:
                 group_decks.setdefault(merging.assigned[result["deck_id"]][0], set()).add(result["deck_id"])
-    merged_groups = set(leader_of.values()) | {leader for leader, _ in merging.assigned.values()}
-    group_colors = {key: majority_colors(group_decks.get(key, ()), colors or {}) for key in merged_groups}
+    group_colors = {key: majority_colors(decks, colors or {}) for key, decks in group_decks.items()}
     meta = {}
     for timeframe, listing in document.get("meta", {}).items():
         grouped: Dict[str, List[dict]] = {}
@@ -455,7 +454,7 @@ def apply(document: dict, merging: Merging, colors: Optional[Dict[str, List[str]
                     "colors": shown if shown is not None else base.get("colors", []),
                 }
             )
-        # sorted() is stable, so equal shares keep MTGGoldfish's order.
+        # sorted() is stable, so equal shares keep the snapshot's order.
         merged.sort(key=lambda tile: tile["percentage"], reverse=True)
         meta[timeframe] = {**listing, "archetypes": merged}
 

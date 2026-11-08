@@ -1,546 +1,472 @@
-"""Walks formats, archetypes, events and decklists, writing each record as soon as it is parsed."""
+"""Reads mtgo.com's decklists and MTGTop8's events, names the decks, and builds the metagame from what is stored."""
 from __future__ import annotations
 
 import logging
-import random
 import re
-from dataclasses import dataclass, field
-from urllib.parse import urlencode
+from collections import Counter
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Protocol, Sequence, Set, Tuple, Union
+from typing import Dict, List, Optional, Protocol, Sequence, Set, Tuple
+from urllib.parse import urlsplit
 
-from .models import (
-    Archetype,
-    ArchetypeHistory,
-    ArchetypeResult,
-    Deck,
-    Event,
-    EventSummary,
-    Meta,
-    RunReport,
-)
-from .browser import BlockedError, Fetched
-from .pacing import DeckPacing, Pacer, Visit, build_plan, deck_path, run_downloads
-from .parsing import (
-    event_kind,
-    ParseError,
-    parse_archetype,
-    parse_archetype_decks,
-    parse_decklist,
-    parse_meta,
-    parse_tournament,
-    parse_tournament_list,
-    parse_tournament_search,
-)
+from . import mtgo, mtgtop8
+from .http import Fetched, is_refusal
+from .models import Archetype, ArchetypeHistory, ArchetypeResult, Deck, Event, EventResult, Meta, RunReport
+from .naming import name_event, name_from_top8
+from .parsing import ParseError, event_kind, parse_decklist, place
 from .store import Store
 
 log = logging.getLogger(__name__)
 
-_FALLBACK_NAME = re.compile(r"^Tournament \d+$")
+MTGO_HOST = urlsplit(mtgo.BASE_URL).hostname
+TOP8_HOST = urlsplit(mtgtop8.BASE_URL).hostname
+WINDOWS = (7, 14, 30)
+DECK_ATTEMPTS = 2
+LEAGUE_PLACE = 9
+
+_SIZE = re.compile(r"\b(16|32|64)\b")
 
 
-class Browser(Protocol):
-    def page(self, path: str) -> str: ...
-    def metagame(self, format: str, days: str) -> Tuple[str, bool]: ...
-    def fetch_pages(self, paths: Sequence[str]) -> Dict[str, Union[str, Exception]]: ...
-    def fetch_batch(self, paths: Sequence[str]) -> List[Fetched]: ...
+class Client(Protocol):
+    refusals: Dict[str, str]
+
+    def get(self, url: str) -> Optional[Fetched]: ...
+    def budget_left(self) -> bool: ...
+    def stopped(self, host: str) -> bool: ...
 
 
 @dataclass
 class ScrapeConfig:
-    formats: Sequence[str] = (
-        "modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "penny_dreadful", "duel_commander",
-    )
-    meta_days: Sequence[str] = ("30",)
-    # The tournaments list only ever shows the latest 10; they are listings like the search's.
-    events_per_format: int = 10
-    # Pages of the tournament search read per format, 20 events each, newest
-    # first, until the window is covered. Modern's 30 days is about 7 pages.
-    max_search_pages: int = 25
-    # Events not yet stored (from the search or archetype lists) read per format per run.
-    max_new_events: int = 150
-    # Events dated within this many days of the run are read again every run, stored or not.
-    recheck_days: int = 7
-    # Per format per run, for older events. Stored events whose name is the "Tournament <id>" fallback, or that a listing now
-    # names differently or shows with more results, are read again.
-    max_reread_events: int = 20
-    # Per format. Decks never change once published, so each run only downloads
-    # new ones; the cap keeps one format's backlog from starving the others.
-    max_new_decks: int = 400
-    # How the downloads move, and how many a run may take in all formats together.
-    deck_pacing: DeckPacing = field(default_factory=DeckPacing)
-    # Archetypes per format, most played first, whose results and featured deck are kept.
-    archetype_decks: int = 100
-    # How far back each archetype's results go.
+    formats: Sequence[str] = ("modern", "standard", "pioneer", "legacy", "pauper", "vintage", "premodern", "duel_commander")
     history_days: int = 30
-    # Pages of 50 decks read per archetype per run. A first run needs about one
-    # page per 50 decks in the history window; later runs usually need one.
-    max_archetype_pages: int = 20
-
-
-@dataclass
-class _WantedDeck:
-    deck_id: str
-    date: datetime
-    player: str
-    archetype: str
-    format: str
-    event_id: Optional[str]
-    archetype_id: Optional[str] = None
+    max_mtgtop8_pages: int = 10
+    top8_lag_days: int = 2
 
 
 def scrape(
-    browser: Browser,
+    client: Client,
     store: Store,
     config: ScrapeConfig,
     now: Optional[datetime] = None,
-    pacer: Optional[Pacer] = None,
     report: Optional[RunReport] = None,
+    catalog: Optional[Dict[str, dict]] = None,
 ) -> RunReport:
-    """Reads every format, then downloads the new decks. Adds to `report` when the caller already has one."""
+    """Reads the new mtgo.com events and MTGTop8's paper events of every format, then builds each format's metagame.
+
+    Adds to `report` when the caller already has one.
+    """
     report = report or RunReport()
-    cutoff = (now or datetime.now(timezone.utc)) - timedelta(days=config.history_days)
-    wanted: Dict[str, List[_WantedDeck]] = {}
-    for format in config.formats:
-        metas = _read_metas(browser, format, config.meta_days, report)
-        histories = _read_archetypes(browser, store, format, _ranked_archetypes(metas)[: config.archetype_decks], config, cutoff, report)
-        featured = {history.archetype_id: history.deck_id for history in histories if history.deck_id}
-        for meta in metas:
-            for archetype in meta.archetypes:
-                archetype.deck_id = featured.get(archetype.id)
-            if _save(report, f"meta {meta.doc_id}", lambda: store.save_meta(meta)):
-                report.meta.append(meta.doc_id)
-
-        # Every deck of a tracked archetype, so event results can use the archetype's name.
-        canonical: Dict[str, Tuple[str, str]] = {
-            result.deck_id: (history.name, history.archetype_id) for history in histories for result in history.results
-        }
-        events = _read_events(browser, store, format, histories, config, report, cutoff, now or datetime.now(timezone.utc))
-        for event in events:
-            for result in event.results:
-                if result.deck_id in canonical:
-                    result.archetype, result.archetype_id = canonical[result.deck_id]
-            if _save(report, f"event {event.event_id}", lambda: store.save_event(event)):
-                report.events.append(event.event_id)
-        wanted[format] = _wanted_decks(format, histories, events)
-    if config.formats and config.meta_days and not report.meta:
-        # One format's windows failing is a warning; none read in any format means the pages changed or are blocked.
-        report.errors.append(f"meta: no window read in any of {len(config.formats)} formats")
-
-    # The decks come last, once every format's pages are read, so the pace is set by the deck phase alone.
-    _download_decks(browser, store, wanted, config, report, pacer)
+    run = _Run(client, store, config, now or datetime.now(timezone.utc), report, catalog or {})
+    formats = [format for format in config.formats if _supported(format)]
+    for format in formats:
+        run.mtgo_events(format)
+    for format in formats:
+        run.paper_events(format)
+    for format in formats:
+        run.metagame(format)
+    for host, detail in client.refusals.items():
+        report.warnings.append(f"{host} refused requests ({detail}); the run kept what it had read")
+    if client.refusals:
+        report.deck_block = "; ".join(f"{host}: {detail}" for host, detail in client.refusals.items())
+    log.info(
+        "Named %d decks by MTGTop8, %d by lists and %d by colours",
+        report.named_by_top8, report.named_by_lists, report.named_by_colors,
+    )
+    if not client.budget_left():
+        log.info("The time budget ended the run; what is left comes next run")
     return report
 
 
-def _read_metas(browser: Browser, format: str, meta_days: Sequence[str], report: RunReport) -> List[Meta]:
-    """The format's metagame windows that could be read.
-
-    A window that cannot be read is a warning, not an error: the snapshot keeps the last one read, with its own
-    last_updated, and the other formats publish as usual.
-    """
-    metas = []
-    for days in meta_days:
-        try:
-            meta, windowed = _read_meta(browser, format, days)
-        except Exception as error:  # noqa: BLE001 - one failed window must not stop the run, or fail it
-            log.warning("Could not read meta %s %sd", format, days, exc_info=True)
-            report.warnings.append(f"meta {format} {days}d: {error} (the snapshot keeps the last {days}d window read)")
-            continue
-        log.info("Read meta %s (%d archetypes)", meta.doc_id, len(meta.archetypes))
-        metas.append(meta)
-        if not windowed:
-            # One unwindowed page: publishing it again under other windows would repeat it.
-            log.info("The %s metagame has one window only; skipping %s", format, ", ".join(meta_days[1:]))
-            break
-    return metas
-
-
-def _read_meta(browser: Browser, format: str, days: str) -> Tuple[Meta, bool]:
-    """One metagame window, loaded once more after a browser error such as a hung script or a switch that never came.
-
-    A page that loads but has no tiles is not loaded again: it would show the same. Nor is a blocked one, which
-    has had its attempts already.
-    """
-    try:
-        html, windowed = browser.metagame(format, days)
-    except BlockedError:
-        raise
-    except Exception:  # noqa: BLE001 - Modern's 14 days on 16 October 2026 hung once, then read fine on the next run
-        log.warning("Could not read meta %s %sd; loading it again", format, days, exc_info=True)
-        html, windowed = browser.metagame(format, days)
-    return parse_meta(html, format, f"{days}d"), windowed
-
-
-def _ranked_archetypes(metas: List[Meta]) -> List[Archetype]:
-    """Every archetype in any window, once, most played first."""
-    best: Dict[str, Archetype] = {}
-    for meta in metas:
-        for archetype in meta.archetypes:
-            if archetype.id not in best or archetype.percentage > best[archetype.id].percentage:
-                best[archetype.id] = archetype
-    return sorted(best.values(), key=lambda archetype: archetype.percentage, reverse=True)
-
-
-def _read_archetypes(
-    browser: Browser,
-    store: Store,
-    format: str,
-    archetypes: List[Archetype],
-    config: ScrapeConfig,
-    cutoff: datetime,
-    report: RunReport,
-) -> List[ArchetypeHistory]:
-    featured_pages = browser.fetch_pages([f"/archetype/{archetype.id}" for archetype in archetypes])
-    fresh, failed = _new_archetype_results(browser, store, format, archetypes, cutoff, config.max_archetype_pages, report)
-    histories = []
-    for archetype in archetypes:
-        if archetype.id in failed:
-            continue
-        featured = None
-        try:
-            featured = parse_archetype(_body(featured_pages[f"/archetype/{archetype.id}"]), archetype.id)
-        except ParseError as error:
-            # A catch-all archetype such as "Other" has no featured deck of its own.
-            log.info("No featured deck for %s: %s", archetype.id, error)
-        except Exception as error:  # noqa: BLE001
-            _fail(report, f"archetype {archetype.id}", error)
-        known = store.load_archetype_results(format, archetype.id)
-        fresh_ids = {result.deck_id for result in fresh[archetype.id]}
-        # A stable sort keeps MTGGoldfish's order among decks of the same day.
-        results = sorted(
-            (result for result in fresh[archetype.id] + [r for r in known if r.deck_id not in fresh_ids] if result.date >= cutoff),
-            key=lambda result: result.date,
-            reverse=True,
-        )
-        history = ArchetypeHistory(
-            format=format,
-            archetype_id=archetype.id,
-            name=archetype.name,
-            deck_id=featured.deck_id if featured else None,
-            featured_player=featured.player if featured else None,
-            # Bounds the snapshot's size if an archetype takes over the format.
-            results=results[:3000],
-        )
-        if _save(report, f"archetype {history.doc_id}", lambda: store.save_archetype(history)):
-            report.archetypes.append(history.doc_id)
-            log.info("Saved archetype %s (%d results, %d new)", history.doc_id, len(results), len(fresh[archetype.id]))
-        histories.append(history)
-    return histories
-
-
-def _new_archetype_results(
-    browser: Browser,
-    store: Store,
-    format: str,
-    archetypes: List[Archetype],
-    cutoff: datetime,
-    max_pages: int,
-    report: RunReport,
-) -> Tuple[Dict[str, List[ArchetypeResult]], set]:
-    """Reads every archetype's deck pages a page number at a time, all archetypes together.
-
-    An archetype stops once a page holds nothing new or reaches past the cutoff.
-    Returns the new rows per archetype, and the archetypes whose pages failed.
-    """
-    ignored = store.ignored_event_ids()
-    known = {a.id: {r.deck_id for r in store.load_archetype_results(format, a.id)} for a in archetypes}
-    fresh: Dict[str, List[ArchetypeResult]] = {a.id: [] for a in archetypes}
-    failed = set()
-    active = [a.id for a in archetypes]
-    for page in range(1, max_pages + 1):
-        if not active:
-            break
-        pages = browser.fetch_pages([f"/archetype/{archetype_id}/decks?page={page}" for archetype_id in active])
-        still_active = []
-        for archetype_id in active:
-            try:
-                rows, has_next = parse_archetype_decks(_body(pages[f"/archetype/{archetype_id}/decks?page={page}"]), archetype_id)
-            except Exception as error:  # noqa: BLE001
-                _fail(report, f"archetype decks {archetype_id} page {page}", error)
-                failed.add(archetype_id)
-                continue
-            new_rows = [
-                row for row in rows if row.deck_id not in known[archetype_id] and row.event_id not in ignored and row.date >= cutoff
-            ]
-            fresh[archetype_id].extend(new_rows)
-            # Rows are newest first, but an event can be posted days late, so a
-            # page is only "caught up" once none of its rows are new.
-            if new_rows and has_next and not (rows and rows[-1].date < cutoff):
-                still_active.append(archetype_id)
-        active = still_active
-    return fresh, failed
-
-
-def _read_events(
-    browser: Browser,
-    store: Store,
-    format: str,
-    histories: List[ArchetypeHistory],
-    config: ScrapeConfig,
-    report: RunReport,
-    cutoff: Optional[datetime] = None,
-    now: Optional[datetime] = None,
-) -> List[Event]:
-    try:
-        latest = parse_tournament_list(browser.page(f"/tournaments/{format}"))[: config.events_per_format]
-    except Exception as error:  # noqa: BLE001
-        _fail(report, f"tournaments {format}", error)
-        latest = []
-
-    ignored = store.ignored_event_ids()
-    stored_events = {summary.event_id: summary for summary in store.stored_events(format)}
-    # Every event of the format in the window, from the tournament search: the
-    # only listing that goes past the latest ten, and the one that has the Pro
-    # Tours, Regional Championships and RCQs.
-    searched = _search_events(browser, format, cutoff, now, config.max_search_pages, report) if cutoff and now else []
-    # The search comes first for the decklist count it gives.
-    listed: Dict[str, EventSummary] = {}
-    for summary in searched + latest:
-        listed.setdefault(summary.event_id, summary)
-    # Plus the events the archetype lists mention, which cover multi-format events.
-    for history in histories:
-        for result in history.results:
-            if result.event_id:
-                listed.setdefault(result.event_id, EventSummary(result.event_id, result.event_name, result.date))
-    # Listed, but nothing to read.
-    listed = {
-        event_id: summary
-        for event_id, summary in listed.items()
-        if event_id not in ignored and (summary.decklists != 0 or event_id in stored_events)
-    }
-    anywhere = store.existing_event_ids(listed)
-
-    # Everything dated within the last few days is read again, stored or not, since results keep arriving.
-    horizon = (now or datetime.now(timezone.utc)) - timedelta(days=config.recheck_days)
-    recheck: Dict[str, EventSummary] = {
-        event_id: summary
-        for event_id, summary in listed.items()
-        if (event_id in stored_events or event_id not in anywhere) and (summary.date is None or summary.date >= horizon)
-    }
-    for event_id, kept in stored_events.items():
-        if event_id not in ignored and event_id not in recheck and kept.date >= horizon:
-            recheck[event_id] = EventSummary(event_id, "", kept.date)
-    recent = sorted(recheck.values(), key=lambda s: s.date or datetime.max.replace(tzinfo=timezone.utc), reverse=True)
-
-    older = sorted(
-        (s for event_id, s in listed.items() if event_id not in recheck and event_id not in anywhere),
-        key=lambda s: s.date or datetime.min.replace(tzinfo=timezone.utc),
-        reverse=True,
-    )
-    if len(older) > config.max_new_events:
-        log.info("%d older %s events wait for the next run", len(older) - config.max_new_events, format)
-    # Stored events read before their source was kept are re-read with whatever room is left.
-    room = max(config.max_new_events - len(older), 0)
-    seen = set(recheck) | ignored
-    reread = _events_to_reread(stored_events, listed, seen, cutoff)[: config.max_reread_events]
-    taken = seen | {summary.event_id for summary in reread}
-    refresh = [EventSummary(event_id, "", None) for event_id in store.events_missing_source(format) if event_id not in taken][:room]
-
-    summaries = recent + older[: config.max_new_events] + reread + refresh
-    pages = browser.fetch_pages([f"/tournament/{summary.event_id}" for summary in summaries])
-    events = []
-    empty = []
-    for summary in summaries:
-        try:
-            html = _body(pages[f"/tournament/{summary.event_id}"])
-            event = parse_tournament(html, summary.event_id, format, summary)
-            kept = stored_events.get(summary.event_id)
-            if _FALLBACK_NAME.match(event.event_name) and kept and not _FALLBACK_NAME.match(kept.event_name):
-                event.event_name = kept.event_name
-                event.kind = event_kind(kept.event_name, event.source)
-            log.info("Read event %s %s (%d results)", event.event_id, event.event_name, len(event.results))
-            events.append(event)
-        except ParseError as error:
-            # An event with no decklists has no results table; there is nothing to come back for.
-            log.info("Event %s has nothing to read: %s", summary.event_id, error)
-            empty.append(summary.event_id)
-        except Exception as error:  # noqa: BLE001
-            _fail(report, f"event {summary.event_id}", error)
-    if empty:
-        store.mark_empty_events(empty)
-    return events
-
-
-def _events_to_reread(
-    stored: Dict[str, EventSummary], listed: Dict[str, EventSummary], skip: Set[str], cutoff: Optional[datetime]
-) -> List[EventSummary]:
-    """Stored events in the window that were read badly or have changed, newest first.
-
-    Each comes with its listing's summary when there is one, so its name can come from there.
-    """
-    found = []
-    for event_id, kept in stored.items():
-        if event_id in skip or (cutoff and kept.date < cutoff):
-            continue
-        listing = listed.get(event_id)
-        named = listing is not None and bool(listing.event_name) and not _FALLBACK_NAME.match(listing.event_name)
-        renamed = named and listing.event_name != kept.event_name
-        grown = listing is not None and (listing.decklists or 0) > (kept.decklists or 0)
-        if _FALLBACK_NAME.match(kept.event_name) or renamed or grown:
-            found.append(listing if named else EventSummary(event_id, "", kept.date))
-    return sorted(found, key=lambda summary: summary.date or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
-
-
-def _search_events(
-    browser: Browser, format: str, cutoff: datetime, now: datetime, max_pages: int, report: RunReport
-) -> List[EventSummary]:
-    """Walks the tournament search for the format, newest first, until it reaches the cutoff."""
-    query = urlencode(
-        {
-            "tournament_search[name]": "",
-            "tournament_search[format]": format,
-            "tournament_search[date_range]": f"{cutoff:%m/%d/%Y} - {now:%m/%d/%Y}",
-            "commit": "Search",
-        }
-    )
-    found: List[EventSummary] = []
-    for page in range(1, max_pages + 1):
-        path = f"/tournament_searches/create?{query}&page={page}"
-        try:
-            events, has_next = parse_tournament_search(_body(browser.fetch_pages([path])[path]))
-        except Exception as error:  # noqa: BLE001
-            _fail(report, f"tournament search {format} page {page}", error)
-            break
-        found.extend(event for event in events if event.date is None or event.date >= cutoff)
-        if not has_next or not events or (events[-1].date and events[-1].date < cutoff):
-            break
-    log.info("Tournament search: %d %s events in the window", len(found), format)
-    return found
-
-
-def _wanted_decks(format: str, histories: List[ArchetypeHistory], events: List[Event]) -> List[_WantedDeck]:
-    """Featured decks first, then every result, newest first."""
-    wanted: Dict[str, _WantedDeck] = {}
-    far_future = datetime.max.replace(tzinfo=timezone.utc)
-    for history in histories:
-        if history.deck_id:
-            wanted[history.deck_id] = _WantedDeck(
-                history.deck_id, far_future, history.featured_player or "", history.name, format, None, history.archetype_id
-            )
-    for history in histories:
-        for result in history.results:
-            wanted.setdefault(
-                result.deck_id,
-                _WantedDeck(
-                    result.deck_id, result.date, result.player, history.name, format, result.event_id, history.archetype_id
-                ),
-            )
-    for event in events:
-        for result in event.results:
-            wanted.setdefault(
-                result.deck_id,
-                _WantedDeck(
-                    result.deck_id, event.date, result.player, result.archetype, format, event.event_id, result.archetype_id
-                ),
-            )
-    return sorted(wanted.values(), key=lambda deck: deck.date, reverse=True)
-
-
-def _download_decks(
-    browser: Browser,
-    store: Store,
-    wanted: Dict[str, List[_WantedDeck]],
-    config: ScrapeConfig,
-    report: RunReport,
-    pacer: Optional[Pacer] = None,
-) -> None:
-    """Downloads the new decks of every format the way a reader would, saving each batch as it comes."""
-    everything = [want for decks in wanted.values() for want in decks]
-    existing = store.existing_deck_ids(want.deck_id for want in everything)
-    report.decks_skipped += len(existing)
-    gone = store.missing_deck_ids()
-    allowance = max(config.max_new_decks, 0)
-    # Each format has its own allowance, so one big backlog can't starve the others.
-    todo: Dict[str, List[_WantedDeck]] = {}
-    chosen: Set[str] = set()
-    over_allowance = 0
-    for format, decks in wanted.items():
-        fresh = [want for want in decks if want.deck_id not in existing and want.deck_id not in gone and want.deck_id not in chosen]
-        todo[format] = fresh[:allowance]
-        chosen.update(want.deck_id for want in todo[format])
-        if len(fresh) > allowance:
-            over_allowance += len(fresh) - allowance
-            log.info("%d %s decks wait past the limit of %d new decks a format; they come next run", len(fresh) - allowance, format, allowance)
-    if not chosen:
-        return
-
-    pacer = pacer or Pacer(config.deck_pacing, random.Random())
-    plan = build_plan(todo, pacer.pacing, pacer.rng)
-    planned = sum(len(visit.decks) for visit in plan)
-    over_run = len(chosen) - planned
-    if over_run:
-        log.info("%d decks wait past the limit of %d new decks a run; they come next run", over_run, pacer.pacing.per_run)
-    by_path = {deck_path(want.deck_id): want for decks in todo.values() for want in decks}
-    missing: List[str] = []
-
-    def handle(visit: Visit, fetched: List[Fetched]) -> None:
-        pending: List[Deck] = []
-        for answer in fetched:
-            want = by_path[answer.path]
-            if answer.status != 200:
-                # Not inside an except, so logged without a traceback.
-                log.error("Failed on deck %s: HTTP %d", want.deck_id, answer.status)
-                report.errors.append(f"deck {want.deck_id}: HTTP {answer.status} on {answer.path}")
-                continue
-            try:
-                mainboard, sideboard = parse_decklist(answer.body)
-            except ParseError:
-                # MTGGoldfish redirects a deleted deck to its metagame page.
-                log.info("Deck %s is no longer on MTGGoldfish", want.deck_id)
-                missing.append(want.deck_id)
-                continue
-            pending.append(
-                Deck(want.deck_id, want.player, want.archetype, mainboard, sideboard, want.format, want.event_id, want.archetype_id)
-            )
-        _flush_decks(store, pending, report)
-
-    outcome = run_downloads(browser, plan, pacer, handle)
-    if missing:
-        store.mark_missing_decks(missing)
-        log.info("%d decks are no longer on MTGGoldfish; later runs skip them", len(missing))
-
-    report.decks_deferred = over_allowance + over_run + outcome.left
-    minutes = pacer.elapsed() / 60
-    if outcome.reason == "blocked":
-        report.deck_block = outcome.refusal
-        warning = (
-            f"Deck downloads blocked after {outcome.downloaded_attempted} ({outcome.refusal}); "
-            f"{report.decks_deferred} left for the next run"
-        )
-        report.warnings.append(warning)
-    elif outcome.reason == "time":
-        log.info(
-            "Deck downloads stopped at the %.0f-minute budget after %d; %d left for the next run",
-            pacer.pacing.minutes, outcome.downloaded_attempted, report.decks_deferred,
-        )
-    else:
-        log.info("Downloaded %d new decks in %.0f min; %d wait for the next run", report.decks_written, minutes, report.decks_deferred)
-
-
-def _body(result: Union[str, Exception]) -> str:
-    if isinstance(result, Exception):
-        raise result
-    return result
-
-
-def _flush_decks(store: Store, pending: List[Deck], report: RunReport) -> None:
-    if not pending:
-        return
-    if _save(report, f"{len(pending)} decks", lambda: store.save_decks(pending)):
-        report.decks_written += len(pending)
-        log.info("Saved %d decks", len(pending))
-    pending.clear()
-
-
-def _save(report: RunReport, what: str, write) -> bool:
-    try:
-        write()
+def _supported(format: str) -> bool:
+    if format in mtgo.MTGO_FORMATS and format in mtgtop8.FORMAT_CODES:
         return True
-    except Exception as error:  # noqa: BLE001
-        _fail(report, f"saving {what}", error)
-        return False
+    log.warning("%s is on neither mtgo.com nor MTGTop8; skipped", format)
+    return False
 
 
-def _fail(report: RunReport, what: str, error: Exception) -> None:
-    log.exception("Failed on %s", what)
-    report.errors.append(f"{what}: {error}")
+class _Run:
+    def __init__(
+        self, client: Client, store: Store, config: ScrapeConfig, now: datetime, report: RunReport, catalog: Dict[str, dict]
+    ) -> None:
+        self.client = client
+        self.store = store
+        self.config = config
+        self.now = now
+        self.report = report
+        self.catalog = catalog
+        self.cutoff = now - timedelta(days=config.history_days)
+        self.months: Dict[Tuple[int, int], Optional[List[mtgo.EventRef]]] = {}
+        self.top8_events: Dict[str, Optional[mtgtop8.Top8Event]] = {}
+        self.listings: Dict[str, List[mtgtop8.Listing]] = {}
+        self.listed: Set[str] = set()
+
+    def online(self, host: str) -> bool:
+        return self.client.budget_left() and not self.client.stopped(host)
+
+    def get(self, url: str) -> Optional[Fetched]:
+        fetched = self.client.get(url)
+        if fetched is None or is_refusal(fetched.status):
+            return None
+        if fetched.status != 200:
+            log.info("%s answered HTTP %d", url, fetched.status)
+        return fetched
+
+    def warn(self, message: str) -> None:
+        log.warning(message)
+        self.report.warnings.append(message)
+
+    # ---- mtgo.com events
+
+    def mtgo_events(self, format: str) -> None:
+        refs = self.new_refs(format)
+        listings = self.top8_listings(format, refs)
+        self.listings[format] = listings
+        if format not in self.listed:
+            if refs:
+                log.info("%s: MTGTop8 did not answer, so its %d new mtgo.com events wait for names", format, len(refs))
+            return
+        read: List[Tuple[Event, List[Deck], Optional[mtgtop8.Top8Event]]] = []
+        for ref in refs:
+            if not self.online(MTGO_HOST):
+                break
+            candidates = self.candidates(ref, listings)
+            if not candidates and self.recent(ref):
+                log.info("%s waits for MTGTop8: it has no copy yet", ref.slug)
+                continue
+            found = self.read_mtgo_event(format, ref, candidates)
+            if found:
+                read.append(found)
+        if not read:
+            return
+        reference = self.store.reference_decks(format, self.cutoff)
+        for event, decks, top8 in read:
+            if top8 is not None:
+                self.report.named_by_top8 += name_from_top8(event, decks, top8, format)
+                reference.extend(deck for deck in decks if deck.archetype_id)
+        for event, decks, _ in read:
+            self.save_mtgo_event(event, decks, reference)
+
+    def new_refs(self, format: str) -> List[mtgo.EventRef]:
+        refs = [
+            ref
+            for month in self.month_numbers()
+            for ref in self.month(*month) or []
+            if ref.format == format and ref.date >= self.cutoff
+        ]
+        stored = self.store.existing_event_ids(mtgo.event_id(ref) for ref in refs)
+        fresh = [ref for ref in refs if mtgo.event_id(ref) not in stored]
+        return sorted(fresh, key=lambda ref: (ref.date, ref.event_id), reverse=True)
+
+    def month_numbers(self) -> List[Tuple[int, int]]:
+        months = []
+        year, month = self.cutoff.year, self.cutoff.month
+        while (year, month) <= (self.now.year, self.now.month):
+            months.append((year, month))
+            year, month = (year + 1, 1) if month == 12 else (year, month + 1)
+        return months[::-1]
+
+    def month(self, year: int, month: int) -> Optional[List[mtgo.EventRef]]:
+        if (year, month) not in self.months:
+            fetched = self.get(f"{mtgo.BASE_URL}/decklists/{year}/{month:02d}")
+            refs = None
+            if fetched and fetched.status == 200:
+                try:
+                    refs = mtgo.parse_month(fetched.text())
+                except Exception as error:  # noqa: BLE001 - every format's job reads it first
+                    self.warn(f"mtgo.com month {year}-{month:02d}: {error}")
+            self.months[(year, month)] = refs
+        return self.months[(year, month)]
+
+    def recent(self, ref: mtgo.EventRef) -> bool:
+        return (self.now.date() - ref.date.date()).days <= self.config.top8_lag_days
+
+    def candidates(self, ref: mtgo.EventRef, listings: List[mtgtop8.Listing]) -> List[mtgtop8.Listing]:
+        day = ref.date.date()
+        league = ref.kind == "mtgo_league"
+        size = _SIZE.search(ref.name)
+        found = []
+        for listing in listings:
+            theirs = _SIZE.search(listing.name)
+            if (
+                "mtgo" in listing.name.lower()
+                and ("league" in listing.name.lower()) == league
+                and not (size and theirs and size.group(1) != theirs.group(1))
+                and abs((listing.date - day).days) <= 1
+            ):
+                found.append(listing)
+        return sorted(found, key=lambda listing: (abs((listing.date - day).days), -int(listing.event_id)))
+
+    def read_mtgo_event(
+        self, format: str, ref: mtgo.EventRef, candidates: List[mtgtop8.Listing]
+    ) -> Optional[Tuple[Event, List[Deck], Optional[mtgtop8.Top8Event]]]:
+        """The event and its decks, with MTGTop8's copy when one matches; None when it is not ready or waits for names."""
+        fetched = self.get(f"{mtgo.BASE_URL}/decklist/{ref.slug}")
+        if fetched is None or fetched.status != 200:
+            return None
+        try:
+            event, decks = mtgo.parse_event(fetched.text(), ref)
+        except Exception as error:  # noqa: BLE001 - one odd page must not stop the format
+            self.warn(f"mtgo.com event {ref.slug}: {error}")
+            return None
+        if not decks:
+            log.info("%s has no decklists yet", ref.slug)
+            return None
+        top8 = self.matching_copy(format, ref, event, candidates)
+        if top8 is None and not all(listing.event_id in self.top8_events for listing in candidates):
+            log.info("%s waits for MTGTop8: it did not answer", ref.slug)
+            return None
+        if top8 is None and self.recent(ref):
+            log.info("%s waits for MTGTop8: no copy matches yet", ref.slug)
+            return None
+        return event, decks, top8
+
+    def save_mtgo_event(self, event: Event, decks: List[Deck], reference: List[Deck]) -> None:
+        """Names what MTGTop8 left, by the nearest named list of the window and then by colours, and saves the event."""
+        top8_named = sum(1 for deck in decks if deck.archetype_id)
+        stats = name_event(event.format, event, decks, None, reference, self.catalog)
+        stats.top8 = top8_named
+        known = {deck.deck_id for deck in reference}
+        reference.extend(deck for deck in decks if deck.archetype_id and deck.deck_id not in known)
+        stored = self.store.existing_deck_ids(deck.deck_id for deck in decks)
+        fresh = [deck for deck in decks if deck.deck_id not in stored]
+        if self.save(f"event {event.event_id}", lambda: (self.store.save_decks(fresh), self.store.save_event(event))):
+            self.report.events.append(event.event_id)
+            self.report.decks_written += len(fresh)
+            self.report.decks_skipped += len(decks) - len(fresh)
+            self.report.named_by_lists += stats.lists
+            self.report.named_by_colors += stats.colors
+            log.info(
+                "Saved %s (%d decks: %d named by MTGTop8, %d by lists, %d by colours)",
+                event.event_id, len(decks), stats.top8, stats.lists, stats.colors,
+            )
+
+    def matching_copy(
+        self, format: str, ref: mtgo.EventRef, event: Event, candidates: List[mtgtop8.Listing]
+    ) -> Optional[mtgtop8.Top8Event]:
+        players = [result.player for result in event.results]
+        for listing in candidates:
+            copy = self.top8_event(format, listing.event_id)
+            found = mtgtop8.match_event(players, ref.date.date(), [copy]) if copy else None
+            if found:
+                return found
+        return None
+
+    # ---- MTGTop8
+
+    def top8_listings(self, format: str, refs: List[mtgo.EventRef]) -> List[mtgtop8.Listing]:
+        """Page 1 of the format, then older pages while one has paper events not yet known, or does not reach back to the oldest new mtgo.com event."""
+        first_day = self.cutoff.date()
+        reach = min((ref.date.date() for ref in refs), default=None)
+        found: List[mtgtop8.Listing] = []
+        for page in range(1, self.config.max_mtgtop8_pages + 1):
+            fetched = self.get(mtgtop8.BASE_URL + mtgtop8.format_path(format, page))
+            if fetched is None or fetched.status != 200:
+                break
+            try:
+                listings, has_next = mtgtop8.parse_format_events(_text(fetched))
+            except Exception as error:  # noqa: BLE001
+                self.warn(f"MTGTop8 {format} page {page}: {error}")
+                break
+            if page == 1:
+                self.listed.add(format)
+            found.extend(listings)
+            if not has_next or not listings:
+                break
+            oldest = min(listing.date for listing in listings)
+            if oldest < first_day:
+                break
+            if not (self.unknown_paper(format, listings) or (reach and oldest >= reach - timedelta(days=1))):
+                break
+        return [listing for listing in found if listing.date >= first_day]
+
+    def unknown_paper(self, format: str, listings: List[mtgtop8.Listing]) -> List[mtgtop8.Listing]:
+        paper = [listing for listing in listings if not listing.name.startswith("MTGO")]
+        stored = self.store.existing_event_ids(f"t8-{listing.event_id}" for listing in paper)
+        seen = self.store.source_state(format)["seen"]
+        return [listing for listing in paper if f"t8-{listing.event_id}" not in stored and listing.event_id not in seen]
+
+    def top8_event(self, format: str, event_id: str) -> Optional[mtgtop8.Top8Event]:
+        if event_id not in self.top8_events:
+            fetched = self.get(mtgtop8.BASE_URL + mtgtop8.event_path(event_id, format))
+            if fetched is None:
+                return None
+            copy = None
+            if fetched.status == 200:
+                try:
+                    copy = mtgtop8.parse_event(_text(fetched), event_id)
+                except Exception as error:  # noqa: BLE001
+                    self.warn(f"MTGTop8 event {event_id}: {error}")
+            self.top8_events[event_id] = copy
+        return self.top8_events[event_id]
+
+    # ---- paper events
+
+    def paper_events(self, format: str) -> None:
+        state = self.store.source_state(format)
+        for event in self.store.events_since(format, self.cutoff):
+            if event.event_id.startswith("t8-") and self.online(TOP8_HOST):
+                self.read_decks(format, event.event_id, event.results, state)
+        for listing in sorted(self.unknown_paper(format, self.listings.get(format, [])), key=lambda item: item.date, reverse=True):
+            if not self.online(TOP8_HOST):
+                return
+            self.read_paper_event(format, listing, state)
+
+    def read_paper_event(self, format: str, listing: mtgtop8.Listing, state: dict) -> None:
+        copy = self.top8_event(format, listing.event_id)
+        if copy is None:
+            return
+        if not copy.decks and copy.source != mtgo.SOURCE and (self.now.date() - listing.date).days <= self.config.top8_lag_days:
+            log.info("MTGTop8 event %s has no decks yet", listing.event_id)
+            return
+        if copy.source == mtgo.SOURCE or not copy.decks:
+            state["seen"][listing.event_id] = f"{listing.date:%Y-%m-%d}"
+            return
+        kind = event_kind(copy.name, copy.source)
+        published = f"t8-{copy.event_id}"
+        try:
+            results = [
+                EventResult(
+                    player=deck.player,
+                    archetype=deck.archetype,
+                    finish=mtgtop8.finish(deck.place, kind == "mtgo_league"),
+                    deck_id=f"t8-{deck.deck_id}",
+                    archetype_id=mtgtop8.archetype_id(format, deck.archetype),
+                )
+                for deck in copy.decks
+            ]
+        except ValueError as error:
+            self.warn(f"MTGTop8 event {copy.event_id}: {error}")
+            state["seen"][listing.event_id] = f"{listing.date:%Y-%m-%d}"
+            return
+        event = Event(
+            event_id=published,
+            event_name=copy.name,
+            format=format,
+            date=datetime(copy.date.year, copy.date.month, copy.date.day, tzinfo=timezone.utc),
+            results=results,
+            url=mtgtop8.BASE_URL + mtgtop8.event_path(copy.event_id, format),
+            kind=kind,
+            source=copy.source,
+        )
+        if self.read_decks(format, published, results, state):
+            if self.save(f"event {published}", lambda: self.store.save_event(event)):
+                self.report.events.append(published)
+                log.info("Saved %s %s (%d decks)", published, event.event_name, len(results))
+
+    def read_decks(self, format: str, event_id: str, results: List[EventResult], state: dict) -> bool:
+        """Downloads the event's decks not yet stored and not given up on, and saves them. False when the run ran out before the last."""
+        stored = self.store.existing_deck_ids(result.deck_id for result in results)
+        fresh: List[Deck] = []
+        complete = True
+        for result in results:
+            deck_id = result.deck_id
+            if deck_id in stored or state["failed"].get(deck_id, 0) >= DECK_ATTEMPTS:
+                continue
+            if not self.online(TOP8_HOST):
+                complete = False
+                break
+            fetched = self.get(mtgtop8.BASE_URL + mtgtop8.deck_path(deck_id[len("t8-"):]))
+            if fetched is None:
+                complete = False
+                break
+            try:
+                if fetched.status != 200:
+                    raise ParseError(f"HTTP {fetched.status}")
+                mainboard, sideboard = parse_decklist(_text(fetched))
+            except ParseError as error:
+                state["failed"][deck_id] = state["failed"].get(deck_id, 0) + 1
+                log.info("Deck %s could not be read (attempt %d): %s", deck_id, state["failed"][deck_id], error)
+                continue
+            fresh.append(Deck(deck_id, result.player, result.archetype, mainboard, sideboard, format, event_id, result.archetype_id))
+        if fresh and self.save(f"{len(fresh)} decks of {event_id}", lambda: self.store.save_decks(fresh)):
+            self.report.decks_written += len(fresh)
+        return complete
+
+    # ---- metagame
+
+    def metagame(self, format: str) -> None:
+        events = self.store.events_since(format, self.cutoff)
+        published = self.store.existing_deck_ids(result.deck_id for event in events for result in event.results)
+        rows = [(event, result) for event in events for result in event.results]
+        for days in WINDOWS:
+            start = self.now - timedelta(days=days)
+            window = [(event, result) for event, result in rows if event.date >= start]
+            meta = Meta(format, f"{days}d", self.archetypes(window, published))
+            if self.save(f"meta {meta.doc_id}", lambda: self.store.save_meta(meta)):
+                self.report.meta.append(meta.doc_id)
+        for archetype_id, group in _by_archetype(rows).items():
+            history = _history(format, archetype_id, group, published)
+            if history.results and self.save(f"archetype {history.doc_id}", lambda: self.store.save_archetype(history)):
+                self.report.archetypes.append(history.doc_id)
+
+    def archetypes(self, window: List[Tuple[Event, EventResult]], published: set) -> List[Archetype]:
+        archetypes = []
+        for archetype_id, group in _by_archetype(window).items():
+            featured = _featured(group, published)
+            archetypes.append(
+                Archetype(
+                    name=_name(group),
+                    percentage=round(len(group) / len(window) * 100, 1),
+                    id=archetype_id,
+                    deck_count=len(group),
+                    deck_id=featured[1].deck_id if featured else None,
+                )
+            )
+        return sorted(archetypes, key=lambda archetype: (-archetype.percentage, archetype.name))
+
+    # ---- saving
+
+    def save(self, what: str, write) -> bool:
+        try:
+            write()
+            return True
+        except Exception as error:  # noqa: BLE001
+            log.exception("Failed on saving %s", what)
+            self.report.errors.append(f"saving {what}: {error}")
+            return False
+
+
+def _text(fetched: Fetched) -> str:
+    try:
+        return fetched.body.decode("utf-8")
+    except UnicodeDecodeError:
+        return fetched.body.decode("latin-1")
+
+
+def _by_archetype(rows: List[Tuple[Event, EventResult]]) -> Dict[str, List[Tuple[Event, EventResult]]]:
+    groups: Dict[str, List[Tuple[Event, EventResult]]] = {}
+    for event, result in rows:
+        if result.archetype_id:
+            groups.setdefault(result.archetype_id, []).append((event, result))
+    return groups
+
+
+def _name(group: List[Tuple[Event, EventResult]]) -> str:
+    return Counter(result.archetype for _, result in group).most_common(1)[0][0]
+
+
+def _place(finish: str) -> int:
+    found = place(finish)
+    return LEAGUE_PLACE if found is None else found
+
+
+def _featured(group: List[Tuple[Event, EventResult]], published: set) -> Optional[Tuple[Event, EventResult]]:
+    """The best-placed deck of the group, the newest of those; a League's 5-0 counts as the lowest Top 16 place."""
+    decks = [(event, result) for event, result in group if result.deck_id in published]
+    return min(decks, key=lambda row: (_place(row[1].finish), -row[0].date.timestamp()), default=None)
+
+
+def _history(format: str, archetype_id: str, group: List[Tuple[Event, EventResult]], published: set) -> ArchetypeHistory:
+    featured = _featured(group, published)
+    return ArchetypeHistory(
+        format=format,
+        archetype_id=archetype_id,
+        name=_name(group),
+        deck_id=featured[1].deck_id if featured else None,
+        featured_player=featured[1].player if featured else None,
+        results=[
+            ArchetypeResult(result.deck_id, event.date, result.player, event.event_id, event.event_name, result.finish)
+            for event, result in group
+            if result.deck_id in published
+        ],
+    )

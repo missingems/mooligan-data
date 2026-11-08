@@ -162,3 +162,11 @@ def test_a_result_without_scraped_colours_has_those_of_its_deck():
     catalog = {**CATALOG, slug("Psychic Frog"): card("Psychic Frog", "Creature — Frog", mana_cost="{1}{U}{B}")}
     [row] = build_breakouts(document, deck_cards, catalog, NOW)["cards"]
     assert {tuple(r["colors"]) for r in row["results"]} == {("U", "B")}
+
+
+def test_a_top_n_finish_counts_at_its_lowest_place():
+    frog = [(4, "Psychic Frog")]
+    recent = [(frog, [], finish, "dimir") for finish in ("Top 4", "Top 8", "Top 16", "Top 32")] + [(frog, [], "1st Place", "dimir")]
+    [row] = breakouts(recent)["cards"]
+    assert (row["top8"], row["wins"]) == (3, 1)
+    assert [(r["finish"], r["top8"]) for r in row["results"]] == [("1st Place", True), ("Top 4", True), ("Top 8", True), ("Top 16", False), ("Top 32", False)]

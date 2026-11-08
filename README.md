@@ -1,6 +1,6 @@
 # mooligan-data
 
-Scrapes MTGGoldfish's metagame, tournament results and decklists once a day, and publishes them as static JSON at **`https://data.mooligan.com`**, a Cloudflare R2 bucket. The mobile app reads them. There's no server or database.
+Scrapes the metagame, tournament results and decklists of Magic Online (from mtgo.com) and paper events (from MTGTop8) once a day, and publishes them as static JSON at **`https://data.mooligan.com`**, a Cloudflare R2 bucket. The mobile app reads them. There's no server or database.
 
 ```
 GitHub Actions (14:00 UTC)
@@ -12,7 +12,7 @@ GitHub Actions (14:00 UTC)
 
 | Path | What it holds |
 | --- | --- |
-| `scraper/` | Python SeleniumBase (UC mode) scraper, and the snapshot store it publishes |
+| `scraper/` | Python scraper (plain HTTP to mtgo.com and MTGTop8, no browser), and the snapshot store it publishes |
 | `generators/` | Swift generators for the card catalog: image feature prints, pull odds, price catalog (from the MTGImageHash repository; see `generators/README.md`) |
 | `docs/data-format.md` | **The published files and their fields.** This is what the app codes against |
 | [MTGMetaKit](https://github.com/missingems/MTGMetaKit) | Swift package with models and a client for the feed (separate repository) |
@@ -49,49 +49,36 @@ Card details come from Scryfall's API, not from this pipeline. Scryfall's bulk f
 
 ## How a run works
 
-`.github/workflows/scrape.yml` runs once a day, scheduled for 14:00 UTC after the card catalog's 10:17 build, so the price movers read that day's prices. GitHub's scheduler has been starting it hours late (between 17:52 and 19:24 UTC on 30 September to 3 October 2026), and the files land over two to three hours after it starts, one format after another and `index.json` last, so read a file's own `generated_at`. It can be started by hand from the Actions tab, though a change is better tried on a Mac first (see [Running locally](#running-locally)), since this private repository's Actions minutes are paid for. The workflow runs `ops/scrape.sh` with `PUBLISH=1`, as a job per format and then one more. The format jobs run one after another (never two at once against MTGGoldfish), each with `FORMATS` set to its format and `SHARED=0`: it scrapes that format and publishes its snapshot, decklists, archetype, event, popular-card and breakout files and the state, and its own share of the deck downloads (`DECK_MINUTES` and `DECKS_PER_RUN`, set in the workflow by the format's share of the week's decks). A format whose job fails keeps the snapshot it had, and the jobs after it run as usual. The last job, `SCRAPE=0`, reads nothing from MTGGoldfish: it builds everything made from every format (`index.json`, `explore.json`, `today.json`, the card and commander pages, EDHREC, the guides, the set files, the movers) from the snapshots the format jobs left, whether they passed or not. Until it publishes `index.json`, the published index has the previous snapshots' `sha256`: an app whose cached snapshot matches keeps it, and one that downloads a snapshot in between gets the newer file. A run started by hand with some `formats` runs those formats' jobs and the last job. Once a day matches its sources: MTGJSON builds its prices daily, Scryfall's bulk files and prices change about daily, and EDHREC's numbers about once a day. MTGGoldfish adds results through the day, so a day's later events show up the next day.
+`.github/workflows/scrape.yml` runs once a day, scheduled for 14:00 UTC after the card catalog's 10:17 build, so the price movers read that day's prices. GitHub's scheduler has been starting it hours late (between 17:52 and 19:24 UTC on 30 September to 3 October 2026), and the files land over two to three hours after it starts, one format after another and `index.json` last, so read a file's own `generated_at`. It can be started by hand from the Actions tab, though a change is better tried on a Mac first (see [Running locally](#running-locally)), since this private repository's Actions minutes are paid for. The workflow runs `ops/scrape.sh` with `PUBLISH=1`, as a job per format and then one more. The format jobs run one after another (so mtgo.com and MTGTop8 are only ever asked for one page at a time), each with `FORMATS` set to its format and `SHARED=0`: it scrapes that format and publishes its snapshot, decklists, archetype, event, popular-card and breakout files and the state. A format whose job fails keeps the snapshot it had, and the jobs after it run as usual. The last job, `SCRAPE=0`, reads nothing from mtgo.com or MTGTop8: it builds everything made from every format (`index.json`, `explore.json`, `today.json`, the card and commander pages, EDHREC, the guides, the set files, the movers) from the snapshots the format jobs left, whether they passed or not. Until it publishes `index.json`, the published index has the previous snapshots' `sha256`: an app whose cached snapshot matches keeps it, and one that downloads a snapshot in between gets the newer file. A run started by hand with some `formats` runs those formats' jobs and the last job; `fresh` has them ignore their stored snapshots and scrape state, and so start over (nothing in R2 is deleted, the new files overwrite the same keys), and `minutes` sets how long each job may request pages. Once a day matches its sources: MTGJSON builds its prices daily, Scryfall's bulk files and prices change about daily, and EDHREC's numbers about once a day. An MTGO event is published once MTGTop8 has named its decks, or is 3 days old, so an event of the last two days can show up a day or two late.
 
 1. **Download.** It downloads `snapshots/` and `state/` from R2. They are the previous run's output, and the only state the scraper keeps.
-2. **Scrape.** `python -m mtgmeta work` opens MTGGoldfish in SeleniumBase UC mode, with Chrome inside Xvfb on the runner. For each format it:
-   - reads the metagame page (30-day window);
-   - reads each archetype's page for its featured deck, then `/archetype/<id>/decks` for its results. Results merge with the previous snapshot, so an archetype stops at the first page with nothing new;
-   - reads every event of the window from MTGGoldfish's tournament search (20 a page, `MAX_SEARCH_PAGES` at most), plus the archetype lists' mentions for multi-format events, and reads up to `MAX_NEW_EVENTS` not yet stored, newest first. Each event is classed by name and source (Pro Tour, Regional Championship, RCQ, Store Championship, MTGO Challenge or League, other; a League is MTGO's only when its results came from mtgo.com), and each result keeps the colour pips MTGGoldfish shows beside its deck;
-   - picks the new decklists to download, up to `MAX_NEW_DECKS` per format. A deck MTGGoldfish has deleted redirects to its metagame page; those ids go in `state/missing-deck-ids.json` so later runs skip them. Featured decks come first, then the newest.
+2. **Scrape.** `python -m mtgmeta work` reads mtgo.com and MTGTop8 with plain HTTP (the standard library's `urllib`; no browser), one request at a time. For each format it:
+   - reads mtgo.com's month page (`/decklists/{yyyy}/{mm}`, and the previous month's while the window reaches into it), and each event on it not yet stored: one page that holds every decklist of the event and its standings. Challenges, Showcases and Leagues are `mtgo_challenge` and `mtgo_league` events with the finishes mtgo.com gives ("12th Place"; a League's "5-0");
+   - reads MTGTop8's list of the format (page 1, and older pages only while one holds events not seen yet or does not reach back to the oldest new MTGO event), then the MTGTop8 copy of each MTGO event, which names the decks by player. A deck MTGTop8 did not post takes the archetype whose average 30-day list is nearest (0.8 or more), else its colour letters; an event of the last 2 days with no MTGTop8 copy waits for a later run. See *Sources* in `docs/data-format.md`;
+   - reads the paper events (every MTGTop8 event whose source is not mtgo.com) and, for each, the lists of its top 8 to 16 decks, newest first, with finishes "1st Place", "2nd Place", "Top 4", "Top 8" and "Top 16". A list that cannot be read is tried twice, then left (`state/sources.json`);
+   - works out the shares of the 7, 14 and 30 day windows from the stored results, and each archetype's history and featured deck.
 
-   Only the metagame and tournaments-list pages are real browser visits. Everything else is fetched with `fetch()` from inside the open page, `CONCURRENCY` requests at a time. Those requests reuse the page's Cloudflare clearance and skip rendering, so a batch of 6 takes about a second, where a visit takes about 7. For these pages, a refused batch (403 or a challenge page, as happens straight after the first page load) makes the browser reload a page to renew the clearance and retry.
-
-   The decklists are downloaded after every format's pages, and slowly, like a reader. A run once downloaded 501 decks in two minutes, and the next run had every download refused. So the formats take turns, newest decks first within each, and every few decks follow a real visit to the event or archetype page they come from. They download two at a time, with random gaps (a median of `DECK_DELAY` seconds, and now and then 20 to 60), at most `DECKS_PER_RUN` decks a run and `DECK_MINUTES` minutes. When a download is refused, it waits 30 seconds, then 60, and visits the page again before retrying. After 3 refusals in a row it stops downloading decks for the run, logs one line with the HTTP status and headers, and leaves the rest for the next run.
-3. **Publish.** `SnapshotStore.finish()` builds a page per card from every decklist in the window (reading back from `data.mooligan.com` the ones this run didn't download) (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops events MTGGoldfish imported twice (identical standings under a second id, remembered in `state/duplicate-event-ids.json` so later runs skip them), then merges the archetypes whose decklists show they play one deck under the biggest of them (see *Merged archetypes* in `docs/data-format.md`; `python -m mtgmeta clusters DIR --format modern --days 7` prints what would merge, writing nothing), then writes the snapshots, `explore.json`, a page per archetype in the metagame and per event, the deck id list and `index.json`. The snapshots as scraped, unmerged, go in `state/snapshots/`, which the next run starts from. `ops/scrape.sh` uploads decks first and `index.json` last, so the index never points at a file that isn't there yet. `explore-manifest.json` goes up just before it, after the Explore files it lists and the state, so it never names a hash a file doesn't have yet.
+   Requests are made one at a time, `SCRAPE_DELAY` seconds apart (10 by default, never under 5) plus up to 50% random extra, with the User-Agent `MooliganData/1.0 (+https://github.com/missingems/mooligan-data)`, for at most `SCRAPE_MINUTES` (90) a run, in the order mtgo.com events, names, then paper events newest first. What the time ran out on is read by the next run. A 403, 429 or 5xx from a site (or a network error) stops requests to that site for the run: no retry, no workaround.
+3. **Publish.** `SnapshotStore.finish()` builds a page per card from every decklist in the window (reading back from `data.mooligan.com` the ones this run didn't download) (which archetypes play it, in how many decks), drops anything older than `HISTORY_DAYS`, and drops an event whose standings are identical to another's (remembered in `state/duplicate-event-ids.json` so later runs skip them), then merges the archetypes whose decklists show they play one deck under the biggest of them (see *Merged archetypes* in `docs/data-format.md`; `python -m mtgmeta clusters DIR --format modern --days 7` prints what would merge, writing nothing), then writes the snapshots, `explore.json`, a page per archetype in the metagame and per event, the deck id list and `index.json`. The snapshots as scraped, unmerged, go in `state/snapshots/`, which the next run starts from. `ops/scrape.sh` uploads decks first and `index.json` last, so the index never points at a file that isn't there yet. `explore-manifest.json` goes up just before it, after the Explore files it lists and the state, so it never names a hash a file doesn't have yet.
 
 One failed page doesn't stop the run. Whatever was collected is still published, and the format's job is then marked failed so the errors show up in the Actions tab. Two runs never overlap.
 
-Blocked deck downloads are different: they are a warning, the run passes, and the decks wait for the next run. The run fails when the downloads are blocked two runs in a row; with the workflow's format jobs, that is a format's job blocked right after the one before it. The count is in `state/deck-downloads.json`, and the last job, which downloads no decks, leaves it as it is.
+Refused requests are different: they are a warning, the run passes and publishes what it has read, and the rest waits for the next run. A site that refused one format's job is not asked by the format jobs after it for 12 hours, so a day's refusal is one request. The run fails when requests are refused two days in a row. The count and the sites that refused are in `state/deck-downloads.json`, and the last job, which makes no requests, leaves it as it is.
 
-A metagame window that cannot be read is a warning too. After a browser error (a hung script, or a window switch that never came) the window is loaded once more; failing that, the snapshot keeps the last one read, with its own `last_updated`, and every format still publishes. The run fails only when no window was read in any of its formats, which in the workflow fails that one format's job.
+A window with no events in it keeps the one an earlier run published, with its own `last_updated`, and every format still publishes.
 
-A first run reads a month of history for every archetype. For Vintage (23 archetypes, 400 decklists) that took 4 minutes; Modern has about three times as many archetypes. Later runs usually read one page per archetype.
+A first run backfills 30 days. mtgo.com's roughly 500 events are read in the first run; MTGTop8's roughly 500 event pages for names and the paper decks are about 2,500 requests, which fill in over about a week of daily runs, using the room each leaves in `SCRAPE_MINUTES`. The 7-day window is right within a day or two. A normal day is about 110 requests, roughly 20 minutes.
 
 | Variable | Default | Meaning |
 | --- | --- | --- |
-| `FORMATS` | the nine below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `penny_dreadful`, `duel_commander` |
-| `META_DAYS` | `30,14,7` in `ops/scrape.sh` | Metagame windows to publish |
-| `EVENTS_PER_FORMAT` | `10` | Events taken from the tournaments list, which never shows more than 10 |
-| `RECHECK_DAYS` | `7` | Events dated within this many days of the run are read again every run, stored or not |
-| `MAX_NEW_EVENTS` | `150` | Events not yet stored read per format per run |
-| `MAX_SEARCH_PAGES` | `25` | Tournament-search pages read per format, 20 events each |
+| `FORMATS` | the eight below | Formats to scrape: `modern`, `standard`, `pioneer`, `legacy`, `pauper`, `vintage`, `premodern`, `duel_commander` |
 | `HISTORY_DAYS` | `30` | How far back events and archetype results go |
-| `ARCHETYPE_DECKS` | `100` | Archetypes per format, most played first, whose results are kept |
-| `MAX_ARCHETYPE_PAGES` | `20` | Deck-list pages per archetype per run |
-| `MAX_NEW_DECKS` | `400`, `1500` in `ops/scrape.sh` | New decklists per format per run. `DECKS_PER_RUN` caps the total |
-| `DECKS_PER_RUN` | `800` | New decklists per run, all formats together; the workflow sets each format job's |
+| `SCRAPE_DELAY` | `10` | Seconds between requests to mtgo.com and MTGTop8, plus up to 50% random extra. Values under 5 (MTGTop8's `Crawl-delay`) are raised to 5 |
+| `SCRAPE_MINUTES` | `90`, `10` with `QUICK=1` | Minutes of requests a run may make; what is not read waits for the next run |
+| `FRESH` | `0` | `1` ignores the downloaded snapshots (`snapshots/`, `state/snapshots/`) and the scrape's state (events seen, decks stored, the lists behind the archetypes), so the run starts from nothing. It deletes only local files; nothing in R2 is deleted, and the run overwrites the same keys. `formats` ignores only those of `FORMATS`, which is how the workflow's later format jobs follow the first, and how a fresh dispatch of some formats starts only those over |
 | `DECK_RESOLVE_PER_RUN` | `300` | Published decklists read again per run to name entries the card catalog could not name when they were saved; each deck is tried 3 times |
-| `DECK_CONCURRENCY` | `2` | Decklists downloaded at once |
-| `DECK_DELAY` | `2` | Median seconds between decklist batches, randomised, with a long pause now and then |
-| `DECK_MINUTES` | `40` | Minutes the decklist downloads may take, all formats together; the workflow sets each format job's |
 | `SHARED` | `1` | `0` writes only `FORMATS`' own files and the state, and publishes neither `index.json` nor any file built from every format (a format job of the workflow) |
-| `SCRAPE` | `1` | `0` reads nothing from MTGGoldfish and builds every file from the stored snapshots of all nine formats, whatever `FORMATS` says (the workflow's last job). `SHARED=0` with `SCRAPE=0` is refused |
-| `CONCURRENCY` | `6` | Requests fetched at once from inside the page, for the pages other than decklists |
-| `REQUEST_DELAY` | `1` in `ops/scrape.sh` | Base seconds between those batches, plus up to 50% random extra |
+| `SCRAPE` | `1` | `0` reads nothing from mtgo.com or MTGTop8 and builds every file from the stored snapshots of every format, whatever `FORMATS` says (the workflow's last job). `SHARED=0` with `SCRAPE=0` is refused |
 | `LOCALIZE` | `1`, `0` with `QUICK=1` | Add the `localized` map (printed names and pictures in ja, fr, it, es and de) to `today.json` and `explore.json`. It streams Scryfall's every-printing file, about 400 MB gzipped, so it adds a minute or two to a run; `0` skips it |
 | `LOCALIZE_ALL_CARDS_URL` | Scryfall's `all_cards` bulk file | Read another file instead; a `file://` URL works |
 | `KEYWORD_RULES` | `1` | `0` skips `rules/keywords.json` and `rules/comprehensive.json`, which read the Comprehensive Rules from Wizards' site |
@@ -113,7 +100,7 @@ A first run reads a month of history for every archetype. For Vintage (23 archet
 ```bash
 cd scraper && python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/python -m pytest -q
-FORMATS=modern ARCHETYPE_DECKS=5 HISTORY_DAYS=3 MAX_NEW_DECKS=5 .venv/bin/python -m mtgmeta work
+FORMATS=modern HISTORY_DAYS=3 SCRAPE_MINUTES=10 .venv/bin/python -m mtgmeta work
 ```
 
 A local run writes into `scraper/work/` and publishes nothing. To run the whole job the way the workflow does, use `ops/scrape.sh` below.
@@ -130,18 +117,19 @@ mise install python@3.12
 scraper/.venv/bin/pip install -r scraper/requirements-dev.txt -r ops/requirements.txt
 ```
 
-No keys are needed. With none, a run starts from the live data: it downloads `snapshots/` and `state/` read-only from `https://data.mooligan.com`, as the workflow syncs them from R2. Chrome opens a window on the Mac (UC mode runs headed; Linux uses Xvfb instead).
+No keys are needed. With none, a run starts from the live data: it downloads `snapshots/` and `state/` read-only from `https://data.mooligan.com`, as the workflow syncs them from R2. Nothing opens a browser: the scraper uses plain HTTP, so there is no Chrome or Xvfb to install.
 
 ```bash
-QUICK=1 ops/scrape.sh                                   # modern only, few decks, no EDHREC, locator, premier or movers
-QUICK=1 FORMATS=pauper,vintage MAX_NEW_DECKS=50 ops/scrape.sh  # any setting overrides the preset
+QUICK=1 ops/scrape.sh                                   # modern only, 3 days, 10 minutes of requests, no EDHREC, locator, premier or movers
+QUICK=1 FORMATS=pauper,vintage SCRAPE_MINUTES=20 ops/scrape.sh  # any setting overrides the preset
 QUICK=1 MOVERS=1 ops/scrape.sh                          # with price movers, today.json's preview and previews.json (downloads Scryfall's bulk file)
 QUICK=1 LOCALIZE=1 ops/scrape.sh                        # with the localized names (downloads Scryfall's 400 MB all_cards file)
 ops/scrape.sh                                           # the full daily run, without the upload
 SYNC=none QUICK=1 ops/scrape.sh                         # from nothing, like a first run
+FRESH=1 QUICK=1 ops/scrape.sh                           # the downloaded snapshots and scrape state ignored
 ```
 
-`QUICK=1` sets `FORMATS=modern`, `MAX_NEW_DECKS=20`, `MAX_NEW_EVENTS=10`, `MAX_SEARCH_PAGES=2`, `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0` (so no bracket rankings either), `GUIDES_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0`, `MOVERS=0` and `LOCALIZE=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
+`QUICK=1` sets `FORMATS=modern`, `HISTORY_DAYS=3`, `SCRAPE_MINUTES=10` (requests stay `SCRAPE_DELAY`, 10 seconds, apart), `EDHREC_CARDS_PER_RUN=0`, `EDHREC_COMMANDERS_PER_RUN=0` (so no bracket rankings either), `GUIDES_PER_RUN=0`, `LOCATOR_PLACES=` (none), `PREMIER_SCHEDULE=0`, `MOVERS=0` and `LOCALIZE=0`, each only when not set already. `SYNC` picks where a run starts from: `auto` (the default: R2 when keys are set, else HTTPS), `r2`, `https` or `none`. The other variables are the scraper's, in the table above.
 
 `ops/backfill_oracle_ids.py DIR` is a one-off: it reads the published decks listed in `DIR/state/deck-ids.json` (from `DATA_URL`) and adds those with an entry lacking an `oracle_id` to `DIR/state/unresolved-deck-ids.json`, for the next run to name. Run it against a work dir freshly populated from the live state, so the merge keeps the tries already recorded, then upload the result to R2 before the next scheduled run, because that run syncs `state/` down from R2 and would overwrite a file that only exists locally:
 
@@ -311,9 +299,13 @@ FORMATS=pauper BUDGET=1 ops/primers.sh    # needs ANTHROPIC_API_KEY
 
 `python -m mtgmeta primers DIR [--archetype ID] [--plan | --check | --publish]`, run in `scraper/`, is the step itself.
 
+## Sources and courtesy
+
+The results come from **mtgo.com**, whose decklist pages are Wizards' official ones (its `robots.txt` is a 404, so it states no rules), and **MTGTop8**, whose `robots.txt` asks for a `Crawl-delay` of 5 seconds; we wait 10. The scraper asks for one page at a time, names itself in its User-Agent, makes about 110 requests on a normal day, reads each finished event and decklist once, and stops asking a site that refuses. The app credits both sources where it shows their results.
+
 ## Caveats
 
-- MTGGoldfish sits behind Cloudflare, and its markup can change. The parsers raise `ParseError` rather than write empty data, so a layout change shows up as a failed run.
-- Cloudflare challenges an address that scrapes a lot. GitHub's runners have got through so far. If runs start failing with "Blocked on …", lower `CONCURRENCY` or raise `REQUEST_DELAY`. If decklists are refused, the log says with which HTTP status; raise `DECK_DELAY`, lower `DECK_CONCURRENCY` or `DECKS_PER_RUN`.
+- mtgo.com's and MTGTop8's markup can change. The parsers raise `ParseError` rather than write empty data, so a layout change shows up as a failed run.
+- If a site refuses requests (the log says which, with the HTTP status), raise `SCRAPE_DELAY`; the run does not look for a way round. Two days in a row with a refusal fail the job.
 - GitHub disables scheduled workflows in a public repo after 60 days without commits. If the schedule stops, re-enable it from the Actions tab.
-- Scraping may conflict with MTGGoldfish's terms of use. Keep the rate low, and don't redistribute the data commercially.
+- Scraping may conflict with the sites' terms of use. Keep the rate low, and don't redistribute the data commercially.

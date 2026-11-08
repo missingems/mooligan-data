@@ -21,7 +21,7 @@ ARCHETYPES = {
 def test_slug():
     assert slug("Fable of the Mirror-Breaker") == "fable-of-the-mirror-breaker"
     assert slug("Fire // Ice") == "fire"
-    assert slug("Fire/Ice") == "fire", "MTGGoldfish writes split cards with one slash"
+    assert slug("Fire/Ice") == "fire", "MTGO and MTGTop8 write split cards with one slash"
     assert slug("Bartolomé del Presidio") == "bartolome-del-presidio"
     assert slug("Bartolome del Presidio") == "bartolome-del-presidio"
 

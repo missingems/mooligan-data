@@ -95,7 +95,7 @@ def test_duplicates_are_remembered_for_later_runs(tmp_path):
     first.save_event(standings_event("66776", "Modern Challenge 32 2026-09-22 (1)", 2000))
     first.save_event(standings_event("66774", "Modern Challenge 32 2026-09-22", 1000))
     first.finish()
-    assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"66776"}
+    assert "66776" in json.loads((tmp_path / "state" / "duplicate-event-ids.json").read_text())
 
 
 def test_published_decks_fill_in_the_card_pages(tmp_path):
@@ -209,7 +209,7 @@ def test_the_top_commanders_are_refreshed_first_and_within_the_limit(tmp_path):
     assert not (tmp_path / "edh" / "commanders" / "older.json").exists()
 
 
-def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp_path):
+def test_stored_events_get_their_tier_at_publish(tmp_path):
     first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
     first.save_event(event("1", "2026-09-20"))
     first.finish()
@@ -221,13 +221,12 @@ def test_stored_events_get_their_tier_at_publish_and_report_a_missing_source(tmp
     path.write_text(json.dumps(stored))
 
     second = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
-    assert second.events_missing_source("modern") == ["1"]
     second.mark_empty_events(["9"])
     second.finish()
     published = json.loads(path.read_text())["events"][0]
     # A League is Magic Online's only when the source says so, and this one's isn't known yet.
     assert (published["kind"], published["source"]) == ("other", None)
-    assert SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW).ignored_event_ids() == {"9"}
+    assert json.loads((tmp_path / "state" / "empty-event-ids.json").read_text()) == ["9"]
 
 
 def test_finish_puts_the_kind_of_every_stored_event_right_by_the_current_rules(tmp_path):
@@ -329,7 +328,7 @@ def test_finish_writes_a_page_per_archetype_and_event_and_flags_the_decks_it_has
     store.save_event(Event("7", "Modern Challenge 32 2026-09-21", "modern", day("2026-09-21"), [
         EventResult("p1", "Eldrazi", "1st Place", "5", "modern-eldrazi"),
         EventResult("p2", "Some Brew", "2nd Place", "6"),
-    ], "https://www.mtggoldfish.com/tournament/7"))
+    ], "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"))
     store.save_archetype(ArchetypeHistory("modern", "modern-eldrazi", "Eldrazi", "9", "Roy", [
         ArchetypeResult("5", day("2026-09-21"), "p1", "7", "Modern Challenge 32 2026-09-21", "1st Place"),
     ]))
@@ -353,6 +352,34 @@ def test_finish_writes_a_page_per_archetype_and_event_and_flags_the_decks_it_has
     assert not (tmp_path / "archetypes" / "pioneer.json").exists() and not (tmp_path / "events" / "pioneer.json").exists()
 
 
+def test_an_archetype_saved_without_tile_colours_or_key_cards_takes_both_from_its_featured_deck(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    catalog = {
+        "lightning-bolt": {"name": "Lightning Bolt", "oracle_id": "oracle-bolt", "mana_cost": "{R}", "type_line": "Instant", "layout": "normal"},
+        "mountain": {"name": "Mountain", "oracle_id": "oracle-mountain", "type_line": "Basic Land - Mountain", "layout": "normal", "land": True},
+    }
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW, catalog=catalog)
+    store.save_meta(Meta("modern", "30d", [Archetype("Burn", 50.0, "modern-burn", 1, deck_id="mtgo-5")]))
+    store.save_event(Event("mtgo-7", "Modern Challenge 32", "modern", day("2026-09-21"), [
+        EventResult("p1", "Burn", "1st Place", "mtgo-5", "modern-burn"),
+    ], "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"))
+    store.save_archetype(ArchetypeHistory("modern", "modern-burn", "Burn", "mtgo-5", "p1", [
+        ArchetypeResult("mtgo-5", day("2026-09-21"), "p1", "mtgo-7", "Modern Challenge 32", "1st Place"),
+    ]))
+    store.save_decks([Deck("mtgo-5", "p1", "Burn", [DeckCard(4, "Lightning Bolt"), DeckCard(20, "Mountain")], [], "modern", "mtgo-7")])
+    store.finish()
+
+    page = json.loads((tmp_path / "archetypes" / "modern-burn.json").read_text())
+    assert page["colors"] == ["R"]
+    assert [card["name"] for card in page["key_cards"]] == ["Lightning Bolt"]
+    explore = json.loads((tmp_path / "explore.json").read_text())["formats"][0]
+    assert [(row["id"], row["colors"]) for row in explore["standings"]] == [("modern-burn", ["R"])]
+    event_page = json.loads((tmp_path / "events" / "mtgo-7.json").read_text())
+    assert event_page["url"] == "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"
+    assert event_page["results"][0]["colors"] == ["R"]
+
+
 def test_a_run_for_one_format_writes_no_pages_for_the_others(tmp_path):
     store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
     store.save_event(event("1", "2026-09-20"))
@@ -368,7 +395,7 @@ def _league_with_a_brew(store):
     store.save_event(Event("7", "Modern League 2026-09-21", "modern", day("2026-09-21"), [
         EventResult("p1", "Gruul Aggro", "5-0", "5"),
         EventResult("p2", "Some Brew", "5-0", "6"),  # never downloaded
-    ], "https://www.mtggoldfish.com/tournament/7"))
+    ], "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"))
     store.save_decks([Deck("5", "p1", "Gruul Aggro", [DeckCard(4, "Mountain"), DeckCard(3, "Bonecrusher Giant"), DeckCard(4, "Kumano Faces Kakkazan")], [], "modern", "7")])
 
 
@@ -449,7 +476,7 @@ def _two_decks_in_a_league(store, format="modern"):
     store.save_event(Event("7", "Modern League 2026-09-21", format, day("2026-09-21"), [
         EventResult("p1", "Gruul Aggro", "5-0", "5"),
         EventResult("p2", "Gruul Aggro", "5-0", "6"),
-    ], "https://www.mtggoldfish.com/tournament/7"))
+    ], "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"))
     store.save_archetype(ArchetypeHistory(format, "gruul-aggro", "Gruul Aggro", "5", "Roy", [
         ArchetypeResult("8", day("2026-09-22"), "p3", None, "A paper event", "1st Place"),
     ]))
@@ -537,7 +564,7 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
         EventResult("p2", "Burn", "5-0", "2", "burn"),
         EventResult("p3", "Rakdos Burn", "5-0", "3", "rakdos-burn"),
         EventResult("p4", "RB", "5-0", "4"),
-    ], "https://www.mtggoldfish.com/tournament/7"))
+    ], "https://www.mtgo.com/decklist/modern-challenge-32-2026-09-217"))
     for deck_id in ("1", "2", "3", "4"):
         store.save_decks([Deck(deck_id, "p", "Burn", [DeckCard(4, "Lightning Bolt"), DeckCard(4, "Lava Spike"), DeckCard(20, "Mountain")], [], "modern", "7")])
     store.finish()
@@ -564,3 +591,48 @@ def test_archetypes_that_play_one_deck_are_published_merged_and_stored_as_scrape
     again.finish()
     assert json.loads((tmp_path / "snapshots" / "modern.json").read_text())["meta"] == published["meta"]
     assert [r["archetype_id"] for r in json.loads((tmp_path / "state" / "snapshots" / "modern.json").read_text())["events"][0]["results"]] == ["burn", "burn", "rakdos-burn", None]
+
+
+def test_events_since_lists_the_stored_events_of_a_format_newest_first(tmp_path):
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    store.save_event(event("old", "2026-08-01"))
+    store.save_event(event("a", "2026-09-20"))
+    store.save_event(event("b", "2026-09-21"))
+
+    events = store.events_since("modern", day("2026-09-01"))
+
+    assert [e.event_id for e in events] == ["b", "a"]
+    assert events[0] == event("b", "2026-09-21")
+    assert store.events_since("pioneer", day("2026-09-01")) == []
+
+
+def test_reference_decks_are_the_named_decks_with_a_stored_list(tmp_path):
+    from mtgmeta.models import Deck, DeckCard
+
+    store = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    named = EventResult("p", "Eldrazi", "5-0", "1", "modern-eldrazi")
+    unnamed = EventResult("q", "Other", "5-0", "2")
+    store.save_event(Event("e", "Modern League", "modern", day("2026-09-20"), [named, unnamed], "url"))
+    store.save_decks([
+        Deck("1", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [DeckCard(2, "Wasteland")], "modern", "e", "modern-eldrazi"),
+        Deck("2", "q", "Other", [DeckCard(4, "Island")], [], "modern", "e"),
+    ])
+
+    decks = store.reference_decks("modern", day("2026-09-01"))
+
+    assert decks == [
+        Deck("1", "p", "Eldrazi", [DeckCard(4, "Eldrazi Temple")], [DeckCard(2, "Wasteland")], "modern", "e", "modern-eldrazi")
+    ]
+    assert store.reference_decks("modern", day("2026-09-21")) == []
+
+
+def test_source_state_is_kept_between_runs_and_its_old_events_forgotten(tmp_path):
+    first = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    state = first.source_state("modern")
+    state["seen"].update({"93303": "2026-09-20", "80000": "2026-07-01"})
+    state["failed"]["t8-1"] = 1
+    first.finish()
+
+    later = SnapshotStore(tmp_path, ["modern"], history_days=30, now=NOW)
+    assert later.source_state("modern") == {"seen": {"93303": "2026-09-20"}, "failed": {"t8-1": 1}}
+    assert later.source_state("pioneer") == {"seen": {}, "failed": {}}

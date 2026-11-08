@@ -1,4 +1,4 @@
-name: Scrape MTGGoldfish
+name: Scrape mtgo.com and MTGTop8
 
 # Downloads the published snapshots from R2, scrapes what is new, and uploads the result. See docs/data-format.md for
 # the files. Each format is a job of its own, one after another, so a format that fails only loses its own day: the
@@ -14,10 +14,14 @@ on:
     inputs:
       formats:
         description: Formats to scrape, one job each; the files built from every format are built either way
-        default: modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander
-      max_new_decks:
-        description: New decklists per format per run
-        default: "1500"
+        default: modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander
+      fresh:
+        description: Start the scrape from nothing, ignoring the stored snapshots and state of these formats (nothing in R2 is deleted)
+        type: boolean
+        default: false
+      minutes:
+        description: Minutes of requests per format job (empty means 90)
+        default: ""
 
 # Two runs must never publish over each other.
 concurrency:
@@ -25,7 +29,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # The format jobs, from the formats input (empty on a scheduled run, which means all nine).
+  # The format jobs, from the formats input (empty on a scheduled run, which means all eight). A fresh run of all eight
+  # clears the shared state in its first job; one of some formats starts only those over.
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -36,27 +41,11 @@ jobs:
         env:
           FORMATS: ${{ inputs.formats }}
         run: |
-          # The 40 minutes and 800 decks the deck downloads had when every format shared one job, split by each
-          # format's share of the decks of the last 7 days in October 2026 (about 450 a day in all), at about 16
-          # decks a minute. The timeout adds the setup, the pages (1 to 3 minutes) and the upload, with room to spare.
-          # A format not listed gets the last line's.
-          budgets='[
-            {"format": "standard", "deck_minutes": 9, "decks": 150, "timeout": 35},
-            {"format": "modern", "deck_minutes": 9, "decks": 150, "timeout": 35},
-            {"format": "pauper", "deck_minutes": 7, "decks": 110, "timeout": 35},
-            {"format": "legacy", "deck_minutes": 7, "decks": 110, "timeout": 35},
-            {"format": "pioneer", "deck_minutes": 3, "decks": 50, "timeout": 25},
-            {"format": "vintage", "deck_minutes": 3, "decks": 50, "timeout": 25},
-            {"format": "premodern", "deck_minutes": 3, "decks": 50, "timeout": 25},
-            {"format": "penny_dreadful", "deck_minutes": 2, "decks": 30, "timeout": 20},
-            {"format": "duel_commander", "deck_minutes": 2, "decks": 30, "timeout": 20},
-            {"format": "", "deck_minutes": 3, "decks": 50, "timeout": 25}
-          ]'
-          formats=$(jq -c --arg wanted "${FORMATS:-modern,standard,pioneer,legacy,pauper,vintage,premodern,penny_dreadful,duel_commander}" '
-            . as $budgets
-            | [$wanted | split(",")[] | gsub("^\\s+|\\s+$"; "") | select(length > 0)]
-            | map(. as $format | (($budgets | map(select(.format == $format)) | .[0]) // ($budgets[-1] | .format = $format)))
-          ' <<< "$budgets")
+          formats=$(jq -cn --arg wanted "${FORMATS:-modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander}" '
+            [$wanted | split(",")[] | gsub("^\\s+|\\s+$"; "") | select(length > 0)]
+            | to_entries
+            | map({format: .value, fresh: (if .key == 0 and ($ENV.FORMATS // "") == "" then "1" else "formats" end)})
+          ')
           echo "formats=$formats" >> "$GITHUB_OUTPUT"
           echo "$formats" | jq .
 
@@ -64,9 +53,9 @@ jobs:
     needs: plan
     name: scrape ${{ matrix.format }}
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ matrix.timeout }}
+    timeout-minutes: 150
     strategy:
-      # One format at a time, as one browser read MTGGoldfish when the formats shared a job; a format that fails
+      # One format at a time, so mtgo.com and MTGTop8 are only ever asked for one page at a time; a format that fails
       # does not stop the ones after it.
       max-parallel: 1
       fail-fast: false
@@ -81,8 +70,6 @@ jobs:
           cache-dependency-path: |
             scraper/requirements.txt
             ops/requirements.txt
-      # The runner image ships Google Chrome; UC mode runs it headed inside Xvfb.
-      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
       - name: Scrape ${{ matrix.format }} and upload it
         run: ops/scrape.sh
         env:
@@ -95,10 +82,11 @@ jobs:
           FORMATS: ${{ matrix.format }}
           # This format's files and the state; the files built from every format are the shared job's.
           SHARED: "0"
-          DECK_MINUTES: ${{ matrix.deck_minutes }}
-          DECKS_PER_RUN: ${{ matrix.decks }}
           # Empty on a scheduled run, which means the script's default.
-          MAX_NEW_DECKS: ${{ inputs.max_new_decks }}
+          SCRAPE_MINUTES: ${{ inputs.minutes }}
+          # The first format ignores everything stored by the scrape, the others only their own, so the ids every
+          # format shares are cleared once.
+          FRESH: ${{ inputs.fresh && matrix.fresh || '0' }}
           # setup-python's interpreter, which the script builds scraper/.venv from.
           PYTHON: python
 
@@ -133,6 +121,6 @@ jobs:
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
           PUBLISH: "1"
           SYNC: r2
-          # Nothing is read from MTGGoldfish: every format's stored snapshot, as the format jobs left it.
+          # Nothing is read from mtgo.com or MTGTop8: every format's stored snapshot, as the format jobs left it.
           SCRAPE: "0"
           PYTHON: python
