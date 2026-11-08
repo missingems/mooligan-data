@@ -29,8 +29,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # The format jobs, from the formats input (empty on a scheduled run, which means all eight). A fresh run of all eight
-  # clears the shared state in its first job; one of some formats starts only those over.
+  # The format jobs, from the formats input (empty on a scheduled run, which means all eight; a dispatch left empty gets
+  # the default, all eight too). A fresh run of all eight clears the shared state in its first job; one of some formats
+  # starts only those over.
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -40,11 +41,14 @@ jobs:
       - id: plan
         env:
           FORMATS: ${{ inputs.formats }}
+          ALL: modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander
         run: |
-          formats=$(jq -cn --arg wanted "${FORMATS:-modern,standard,pioneer,legacy,pauper,vintage,premodern,duel_commander}" '
-            [$wanted | split(",")[] | gsub("^\\s+|\\s+$"; "") | select(length > 0)]
+          formats=$(jq -cn --arg wanted "${FORMATS:-$ALL}" --arg all "$ALL" '
+            [$wanted | split(",")[] | gsub("^\\s+|\\s+$"; "") | select(length > 0)] as $list
+            | (($all | split(",")) - $list | length == 0) as $every
+            | $list
             | to_entries
-            | map({format: .value, fresh: (if .key == 0 and ($ENV.FORMATS // "") == "" then "1" else "formats" end)})
+            | map({format: .value, fresh: (if .key == 0 and $every then "1" else "formats" end)})
           ')
           echo "formats=$formats" >> "$GITHUB_OUTPUT"
           echo "$formats" | jq .
