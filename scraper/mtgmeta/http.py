@@ -30,6 +30,9 @@ MIN_DELAY = 5.0
 JITTER = 0.5
 # A site that refused one format's job is left alone by the jobs after it, for this long.
 REFUSAL_HOURS = 12
+# After a network error such as a timeout, the same page is asked for once more after this long; a second error stops
+# the site for the job. A refusal is never retried.
+RETRY_PAUSE = 60.0
 
 Opener = Callable[[str, Dict[str, str], float], Tuple[int, Mapping[str, str], bytes]]
 
@@ -76,7 +79,8 @@ def _host(url: str) -> str:
 
 class PoliteClient:
     """One request at a time, at least `delay` seconds apart (plus up to half as much again, at random),
-    within `budget_minutes` of wall-clock time. A refusal or a network error stops that host for the run."""
+    within `budget_minutes` of wall-clock time. A refusal stops that host for the run, and so does a network error
+    that happens again when the page is asked for once more, RETRY_PAUSE seconds later."""
 
     def __init__(
         self,
@@ -134,18 +138,16 @@ class PoliteClient:
         if not self.budget_left() or self.stopped(host):
             return None
         self._wait()
-        headers = {"User-Agent": self.user_agent, "Accept-Encoding": "gzip"}
-        self.requests += 1
-        try:
-            status, received, body = self._opener(url, headers, TIMEOUT)
-            fetched = Fetched(url, status, body, dict(received))
-            if (fetched.header("Content-Encoding") or "").lower() == "gzip":
-                fetched.body = gzip.decompress(body)
-        except (OSError, HTTPException, EOFError, zlib.error) as error:
-            self._last = self._clock()
-            self.stop(host, f"network error: {error}", refused=False)
+        fetched = self._ask(url)
+        if isinstance(fetched, Exception):
+            log.info("%s: network error (%s), asking once more in %.0f s", host, fetched, RETRY_PAUSE)
+            self._sleep(RETRY_PAUSE)
+            if not self.budget_left():
+                return None
+            fetched = self._ask(url)
+        if isinstance(fetched, Exception):
+            self.stop(host, f"network error: {fetched}", refused=False)
             return None
-        self._last = self._clock()
         if is_refusal(fetched.status):
             detail = f"HTTP {fetched.status}"
             retry_after = fetched.header("Retry-After")
@@ -153,6 +155,21 @@ class PoliteClient:
                 detail += f", Retry-After {retry_after}"
             self.stop(host, detail)
         return fetched
+
+    def _ask(self, url: str):
+        """The answer for `url`, or the network error that came instead."""
+        headers = {"User-Agent": self.user_agent, "Accept-Encoding": "gzip"}
+        self.requests += 1
+        try:
+            status, received, body = self._opener(url, headers, TIMEOUT)
+            fetched = Fetched(url, status, body, dict(received))
+            if (fetched.header("Content-Encoding") or "").lower() == "gzip":
+                fetched.body = gzip.decompress(body)
+            return fetched
+        except (OSError, HTTPException, EOFError, zlib.error) as error:
+            return error
+        finally:
+            self._last = self._clock()
 
 
 def recent_refusals(path: Path, now: datetime) -> Dict[str, str]:
