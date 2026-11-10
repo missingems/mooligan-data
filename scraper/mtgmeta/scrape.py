@@ -65,7 +65,10 @@ def scrape(
     for format in formats:
         run.metagame(format)
     for host, detail in client.refusals.items():
-        report.warnings.append(f"{host} refused requests ({detail}); the run kept what it had read")
+        if host in client.refused:
+            report.warnings.append(f"{host} refused requests ({detail}); the run kept what it had read")
+        else:
+            report.warnings.append(f"{host} failed twice in a row ({detail}); the run kept what it had read")
     if client.refusals:
         report.deck_block = "; ".join(f"{host}: {detail}" for host, detail in client.refusals.items())
     log.info(

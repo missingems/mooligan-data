@@ -3,7 +3,7 @@ import random
 import urllib.error
 from datetime import datetime, timedelta, timezone
 
-from mtgmeta.http import USER_AGENT, Fetched, PoliteClient, note_deck_block, recent_refusals
+from mtgmeta.http import RETRY_PAUSE, USER_AGENT, Fetched, PoliteClient, note_deck_block, recent_refusals
 
 A = "https://www.mtgo.com/decklists/2026/11"
 B = "https://www.mtgtop8.com/format?f=MO"
@@ -37,6 +37,8 @@ class Opener:
     def __call__(self, url, headers, timeout):
         self.calls.append((url, headers, timeout))
         answer = self.answers.get(url, (200, {}, b"ok"))
+        if isinstance(answer, list):
+            answer = answer.pop(0) if answer else (200, {}, b"ok")
         if isinstance(answer, Exception):
             raise answer
         return answer
@@ -148,7 +150,7 @@ def test_a_network_error_stops_the_host_and_returns_none():
     assert client.stopped("www.mtgo.com")
     assert "unreachable" in client.refusals["www.mtgo.com"]
     assert client.get(A) is None
-    assert len(opener.calls) == 1
+    assert len(opener.calls) == 2
     assert client.get(B).status == 200
 
 
@@ -158,6 +160,37 @@ def test_a_timeout_stops_the_host_for_this_job_only():
     assert client.stopped("www.mtgo.com")
     # A slow answer is not a refusal, so the format jobs after this one still ask the site.
     assert client.refused == {}
+
+
+def test_a_timeout_is_asked_once_more_a_minute_later():
+    client, opener, clock = make_client({A: [TimeoutError("timed out"), (200, {}, b"late")]})
+    assert client.get(A).body == b"late"
+    assert clock.slept == [RETRY_PAUSE]
+    assert [call[0] for call in opener.calls] == [A, A]
+    assert client.requests == 2
+    assert not client.stopped("www.mtgo.com")
+    assert client.get(A).body == b"ok"
+
+
+def test_a_second_timeout_stops_the_host():
+    client, opener, clock = make_client({A: [TimeoutError("timed out"), TimeoutError("timed out again")]})
+    assert client.get(A) is None
+    assert client.refusals == {"www.mtgo.com": "network error: timed out again"}
+    assert len(opener.calls) == 2
+
+
+def test_a_refusal_is_not_asked_again():
+    client, opener, clock = make_client({A: (429, {}, b"")})
+    assert client.get(A).status == 429
+    assert len(opener.calls) == 1
+    assert clock.slept == []
+
+
+def test_no_second_try_once_the_budget_is_spent():
+    client, opener, clock = make_client({A: TimeoutError("timed out")}, budget_minutes=0.5)
+    assert client.get(A) is None
+    assert len(opener.calls) == 1
+    assert not client.stopped("www.mtgo.com")
 
 
 def test_a_spent_budget_returns_none_without_a_request():
