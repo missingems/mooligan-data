@@ -9,7 +9,7 @@ name: Scrape mtgo.com and MTGTop8
 on:
   schedule:
     # Once a day, after the card catalog's 10:17 build, so the price movers read that day's prices.
-    - cron: "0 14 * * *"
+    - cron: "11 14 * * *"
   workflow_dispatch:
     inputs:
       formats:

@@ -20,6 +20,7 @@ GitHub Actions (14:00 UTC)
 | `.github/workflows/scrape.yml` | The scheduled scrape and upload |
 | `.github/workflows/guides.yml` | After each scrape, Claude writes the archetype primers that are missing or changed and publishes them to api.mooligan.com (see [Archetype primers](#archetype-primers)) |
 | `.github/workflows/catalog.yml` | The card catalog build on macOS (Vision), publishing under `catalog/` |
+| `.github/workflows/alerts.yml` | Opens or comments on a "Pipeline alert" issue when the scrape, primers, catalog or lore jobs fail, and once a day when `today.json`, `explore.json`, `index.json` or `catalog/index.json` is more than 30 hours old |
 | `.github/workflows/r2-check.yml` | Manual check that the R2 token, bucket and domain work together |
 
 ## Published data
