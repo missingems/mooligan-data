@@ -1,0 +1,70 @@
+name: Alerts
+
+# Opens a "Pipeline alert" issue, or comments on the open one, when a scheduled job fails or a feed the app reads
+# stops updating. GitHub then notifies the repository's owner. Close the issue once it's fixed; the next alert opens
+# a new one.
+on:
+  workflow_run:
+    workflows:
+      - Scrape mtgo.com and MTGTop8
+      - Write archetype primers
+      - Build card catalog
+      - Lore
+      - Lore site
+    types: [completed]
+  schedule:
+    # Once a day, late enough that the previous evening's scrape and catalog have published.
+    - cron: "23 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  failed:
+    if: github.event_name == 'workflow_run' && contains(fromJSON('["failure","timed_out","startup_failure"]'), github.event.workflow_run.conclusion)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github
+      - name: Report the failed run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_NAME: ${{ github.event.workflow_run.name }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          RUN_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: |
+          bash .github/alert.sh "**$RUN_NAME** ended in \`$CONCLUSION\` on \`$RUN_BRANCH\`: $RUN_URL"
+
+  stale:
+    if: github.event_name != 'workflow_run'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github
+      - name: Check feed ages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          now=$(date -u +%s)
+          stale=""
+          for path in today.json explore.json index.json catalog/index.json; do
+            modified=$(curl -fsSI "https://data.mooligan.com/$path" | tr -d '\r' | awk -F': ' 'tolower($1)=="last-modified"{print $2}')
+            if [ -z "$modified" ]; then
+              stale="$stale\n- \`$path\`: no Last-Modified (fetch failed)"
+              continue
+            fi
+            hours=$(( (now - $(date -u -d "$modified" +%s)) / 3600 ))
+            echo "$path: ${hours}h old"
+            if [ "$hours" -gt 30 ]; then
+              stale="$stale\n- \`$path\`: ${hours} hours old (last modified $modified)"
+            fi
+          done
+          if [ -n "$stale" ]; then
+            bash .github/alert.sh "$(printf 'Feeds on data.mooligan.com are older than 30 hours:%b' "$stale")"
+          fi
